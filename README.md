@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repo contains presentations, links, and other resources related to [Modern Testing Principles](http://http://moderntesting.org/).  Initially collected from resources shared at our [slack channel] (https://oneofthethree.slack.com/) which you can join [by clicking here](https://join.slack.com/t/oneofthethree/shared_invite/enQtMzQ4NDAxNjE1OTg2LTExMzQwMmQ2NTBlYzcwYWI4Mjg3NjhmYThlYjdhZmIzZGNmM2MyMGNhNjExMGIwMmE2ODI2YjZmYzU2MmQ4NGQ).
+This repo contains presentations, links, and other resources related to [Modern Testing Principles](http://http://moderntesting.org/).  Initially collected from resources shared at our [slack channel](https://oneofthethree.slack.com/) which you can join [by clicking here](https://join.slack.com/t/oneofthethree/shared_invite/enQtMzQ4NDAxNjE1OTg2LTExMzQwMmQ2NTBlYzcwYWI4Mjg3NjhmYThlYjdhZmIzZGNmM2MyMGNhNjExMGIwMmE2ODI2YjZmYzU2MmQ4NGQ).
 
 
 All material on this site is shared with permission from the creators, unless otherwise noted, it is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License.](https://creativecommons.org/licenses/by-sa/4.0/)
