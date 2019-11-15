@@ -20,6 +20,8 @@ All material on this site is shared with permission from the creators, unless ot
 
 [Alan on Twitter](https://twitter.com/alanpage?lang=en)
 
+[Brent's Blog](https://testastic.wordpress.com/)
+
 [Brent on Twitter](https://twitter.com/BrentMJensen) 
 
 
