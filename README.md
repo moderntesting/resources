@@ -16,6 +16,9 @@ All material on this site is shared with permission from the creators, unless ot
 
 [Modern testing Course](https://www.ministryoftesting.com/dojo/lessons/modern-testing-principles) 
 
+
+## The People
+
 [Alan Page's Blog](https://angryweasel.com/blog/)
 
 [Alan on Twitter](https://twitter.com/alanpage?lang=en)
@@ -23,6 +26,7 @@ All material on this site is shared with permission from the creators, unless ot
 [Brent's Blog](https://testastic.wordpress.com/)
 
 [Brent on Twitter](https://twitter.com/BrentMJensen) 
+
 
 
 
