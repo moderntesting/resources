@@ -24,6 +24,7 @@ All material on this site is shared with permission from the creators, unless ot
 
 - [Adventures in Modern Testing by Alan Page](https://www.youtube.com/watch?v=7IAkkpI5YhA)
 - [Back and Beyond: A reflection on Modern Testing by Alan Page](https://vimeo.com/372252456)
+- [Ten Reasons You Think Modern Testing Won’t Work for You by Brent Jensen and Alan Page](https://www.youtube.com/watch?&v=heU3xHqWecE)
 
 
 ## The Repository
