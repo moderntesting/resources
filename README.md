@@ -27,7 +27,7 @@ All material on this site is shared with permission from the creators.  Unless o
 - [Ten Reasons You Think Modern Testing Won’t Work for You by Brent Jensen and Alan Page](https://www.youtube.com/watch?&v=heU3xHqWecE)
 - [Building a Data-Centric Modern Quality Culture by Brent Jensen](https://www.youtube.com/watch?v=7Q87RqN_FcM)
 - [Split Teams differently by building CoP](https://speakerdeck.com/eayedi/split-teams-differently-by-building-cop) By [Emna Ayadi](https://twitter.com/emna__ayadi)
-- [Modern Testing in Today's World](https://github.com/moderntesting/resources/blob/master/presentations/Modern_Testing_In_Today_World_Final_Version.pptx)By [Emna Ayadi](https://twitter.com/emna__ayadi)
+- [Modern Testing in Today's World](https://github.com/moderntesting/resources/blob/master/presentations/Modern_Testing_In_Today_World_Final_Version.pptx) By  [Emna Ayadi](https://twitter.com/emna__ayadi)
 - [Practical Applications of Modern Testing Principles](https://github.com/MelTheTester/practical_application_of_mtp) By [MelTheTester](https://github.com/MelTheTester)
 
 ## Articles
