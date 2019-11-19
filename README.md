@@ -10,7 +10,7 @@ All material on this site is shared with permission from the creators.  Unless o
 ## The Links
 
 - [Modern Testing Principles](http://http://moderntesting.org/)
-- [The A/B Testing Podcast](https://www.angryweasel.com/ABTesting/)
+- [The AB Testing Podcast](https://www.angryweasel.com/ABTesting/)
 - [Modern testing Course](https://www.ministryoftesting.com/dojo/lessons/modern-testing-principles)
 
 ## The People
