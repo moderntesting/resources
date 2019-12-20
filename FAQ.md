@@ -12,8 +12,7 @@
 
 ### Q: What is the minimum to get started with Modern Testing?
 
-
-
+### A:
 
 
 
