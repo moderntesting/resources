@@ -39,6 +39,10 @@ All material on this site is shared with permission from the creators.  Unless o
 - [Quality Culture Transition Guide (google doc) by Alan Page](https://docs.google.com/spreadsheets/d/1kan20hYsdbvk7HW4si-X6Ve1fLtCeTI2H_PjiniKsxY/edit?usp=sharing)
 - [Modern Testing Mind Map](https://github.com/mwyrodek/ModernTestingMindMap) By [Maciej Wyrodek](https://github.com/mwyrodek)
 
+## Miscellaneous
+
+- [Books the Three Find Interesting](https://github.com/moderntesting/resources/blob/master/miscellaneous/Books%20the%20Three%20Find%20Interesting.md)
+
 ## Contributing
 
 If you want to contribute, create an issue, a pull request, or join us on [Slack](https://oneofthethree.slack.com/).
