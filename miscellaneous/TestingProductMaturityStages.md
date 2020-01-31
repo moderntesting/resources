@@ -1,4 +1,4 @@
-Adapted from ["Leading Quality: How Great Leaders Deliver High Quality Software and Accelelrate growth"](https://www.goodreads.com/book/show/47516084-leading-quality?ac=1&from_search=true&qid=IYhVqmNjBR&rank=1)
+Adapted from ["Leading Quality: How Great Leaders Deliver High Quality Software and Accellerate growth"](https://www.goodreads.com/book/show/47516084-leading-quality?ac=1&from_search=true&qid=IYhVqmNjBR&rank=1)
 
 | Stage | Users | Purpose | Testing | 
 | ------ | ------ | ----- | ----- |
