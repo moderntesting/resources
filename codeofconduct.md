@@ -30,7 +30,7 @@ This Code of Conduct applies within all community spaces (e.g. including our git
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community admins responsible for enforcement at admin@learningfromincidents.io​, ​via a private DM, or a post in #lfi-admin-retro​. ​All complaints will be reviewed and investigated promptly and fairly. All community admins are obligated to respect the privacy and security of the reporter of any incident.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community admins responsible for enforcement ​via a private DM or email to abtesting@angryweasel.com. ​All complaints will be reviewed and investigated promptly and fairly. All community admins are obligated to respect the privacy and security of the reporter of any incident.
 
 ## Enforcement Guidelines
 
