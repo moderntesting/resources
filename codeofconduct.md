@@ -2,7 +2,7 @@
 
 ## Our Pledge
 
-The goal of this community is to provide a community of people who listen to, support, or want to discuss the AB Testing Podcast. We welcome all points of view and discussions, and strive to be a safe place for engagement.
+The goal of this community is to provide a community of people who listen to, support, or want to discuss the AB Testing Podcast and what we call "Modern Testing". We welcome all points of view and discussions, and strive to be a safe place for engagement.
 
 We as members and admins pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, education, socio-economic status, nationality, personal appearance, race, religion, political affiliation, or sexual identity and orientation.
 
@@ -14,7 +14,7 @@ Overeall, ask anything. Share your stories and ask questions about whatever is c
 
 As Phillip Armour would say, it provides a place for all of us to discover what we don't know we don't know.
 
-**Have a learning attitude** ​— if you see a conversation drifting into being polarizing, help guide the conversation. Ask questions before you get combative — and seek to understand before you make assumptions. Assume good faith and intention from your fellow community members. If someone else is not following this, use the :red_circle: emoji and alert an admin. Most of the topics in this Slack are newer to the software industry. As a result, misunderstandings will naturally arise and that’s ok, as long as there is a commitment to repair misunderstandings proactively and maturely as they arise.
+**Have a learning attitude** ​— if you see a conversation drifting into being polarizing, help guide the conversation. Ask questions before you get combative — and seek to understand before you make assumptions. Assume good faith and intention from your fellow community members. 
 
 **Trolling, attention-stealing behavior, or harassment of any kind is not tolerated** ​. If you are noticed trolling, you will receive one warning, if you are told again, you will be asked to exit the workspace for a short amount of time, possibly indefinitely. If an admin notices that a message is harmful to the community, they will either remove it or ask you to remove it. ​ _More details on this in below sections._
 
