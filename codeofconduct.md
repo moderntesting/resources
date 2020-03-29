@@ -18,7 +18,7 @@ As Phillip Armour would say, it provides a place for all of us to discover what 
 
 **Trolling, attention-stealing behavior, or harassment of any kind is not tolerated** ​. If you are noticed trolling, you will receive one warning, if you are told again, you will be asked to exit the workspace for a short amount of time, possibly indefinitely. If an admin notices that a message is harmful to the community, they will either remove it or ask you to remove it. ​ _More details on this in below sections._
 
-This workspace is governed by ​Chatham House rules​. This means no taking screenshots or posting content from OneOfTheThre outside of the Slack (unless you have a member’s permission). 
+This workspace is governed by ​Chatham House rules​. This means no taking screenshots or posting content from OneOfTheThree outside of the Slack (unless you have a member’s permission). 
 
 ## Enforcement Responsibilities
 
