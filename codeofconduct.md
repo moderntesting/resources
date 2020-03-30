@@ -10,7 +10,7 @@ We pledge to act and interact in ways that contribute to an open, welcoming, div
 
 ## Our Standards
 
-Overeall, ask anything. Share your stories and ask questions about whatever is challenging you. This community is a great place to vet ideas or to get feedback on a variety of software development and testing challenges. We are powered by our members.
+Overall, ask anything. Share your stories and ask questions about whatever is challenging you. This community is a great place to vet ideas or to get feedback on a variety of software development and testing challenges. We are powered by our members.
 
 As Phillip Armour would say, it provides a place for all of us to discover what we don't know we don't know.
 
