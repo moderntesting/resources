@@ -28,9 +28,10 @@ All material on this site is shared with permission from the creators.  Unless o
 ## Presentations by One of the Three
 - [Practical Applications of Modern Testing Principles](https://github.com/MelTheTester/practical_application_of_mtp) *by [Melissa Eaden](https://twitter.com/melthetester)*
 - [Modern Testing in Today's World](https://github.com/moderntesting/resources/blob/master/presentations/Modern_Testing_In_Today_World_Final_Version.pptx) *by [Emna Ayadi](https://twitter.com/emna__ayadi)*
-- [Split Teams differently by building CoP](https://speakerdeck.com/eayedi/split-teams-differently-by-building-cop) by *[Emna Ayadi](https://twitter.com/emna__ayadi)*
-- [Experimenting our Way to Team-based Testing](https://www.slideshare.net/ConorFitzgerald8/experimenting-our-way-to-teambased-testing-soft-test-2019-final-version) by *[Conor Fitzgerald](https://twitter.com/conorfi) and [Robert Meaney](https://twitter.com/RobMeaney)*
+- [Split Teams differently by building CoP](https://speakerdeck.com/eayedi/split-teams-differently-by-building-cop) *by [Emna Ayadi](https://twitter.com/emna__ayadi)*
+- [Experimenting our Way to Team-based Testing](https://www.slideshare.net/ConorFitzgerald8/experimenting-our-way-to-teambased-testing-soft-test-2019-final-version) *by [Conor Fitzgerald](https://twitter.com/conorfi) and [Robert Meaney](https://twitter.com/RobMeaney)*
 - [Modern Testing Meets Reality](https://www.youtube.com/watch?v=bhn3tGP0XFY&t=11m58s) *by [Danny Faught](https://twitter.com/swalchemist)*
+- [Embracing Change: From Tester to Quality Coach](https://noti.st/unremarkableqa/eKU5vW/embracing-change-from-tester-to-quality-coach) *by [Areti Panou]()*
 
 ## Articles
 - [Getting Testing Bottlenecks Out of Your Pipelines](https://devops.com/get-testing-bottlenecks-out-of-your-pipelines/) *by [Lisa Crispin](https://lisacrispin.com/)*
