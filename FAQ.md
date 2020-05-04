@@ -1,6 +1,7 @@
 ### Q: I am new to Modern Testing and the podcast.  Where should I start?
 
-### A: Alan and Brent have condensed their thoughts on Modern Testing into 7 principles you can find [here](http://https://www.angryweasel.com/ABTesting/modern-testing-principles/)
+### A: 
+Alan and Brent have condensed their thoughts on Modern Testing into 7 principles you can find [here](http://https://www.angryweasel.com/ABTesting/modern-testing-principles/)
 
 Starting [here](https://www.angryweasel.com/ABTesting/page/6/) the podcast goes into each principle in detail.  
 
@@ -37,7 +38,8 @@ Principle 7: We expand testing abilities and knowhow across the team; understand
 
 ### Q: Is modern testing a "no testers" movement?
 
-### A: No.  Principle #7, read carefully, implies that when Modern Testing principles are followed, the team may mature to a point where a dedicated tester is not necessary.  [Source](https://www.reddit.com/r/softwaretesting/comments/ed5v8r/what_books_can_i_read_that_are_based_on_modern/). Alan has stated in (episode number needed) that it will be "very obvious" when this is the case.
+### A: 
+No.  Principle #7, read carefully, implies that when Modern Testing principles are followed, the team may mature to a point where a dedicated tester is not necessary.  [Source](https://www.reddit.com/r/softwaretesting/comments/ed5v8r/what_books_can_i_read_that_are_based_on_modern/). Alan has stated in (episode number needed) that it will be "very obvious" when this is the case.
 
 ### Q: So, you're saying automation is bad, right?
 
