@@ -37,7 +37,7 @@ Principle 7: We expand testing abilities and knowhow across the team; understand
 
 ### Q: Is modern testing a "no testers" movement?
 
-### A:
+### A: No.  Principle #7, read carefully, implies that when Modern Testing principles are followed, the team may mature to a point where a dedicated tester is not necessary.  [Source](https://www.reddit.com/r/softwaretesting/comments/ed5v8r/what_books_can_i_read_that_are_based_on_modern/). Alan has stated in (episode number needed) that it will be "very obvious" when this is the case.
 
 ### Q: So, you're saying automation is bad, right?
 
