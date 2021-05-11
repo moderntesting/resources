@@ -8,7 +8,7 @@ All material on this site is shared with permission from the creators.  Unless o
 
 ## The Essentials
 - [Modern Testing Principles](https://moderntesting.org/)
-- [The AB Testing Podcast](https://www.angryweasel.com/ABTesting/)
+- [The AB Testing Podcast](https://anchor.fm/abtesting)
 
 ## The People
 - Read [Alan's](https://angryweasel.com/blog/) and [Brent's](https://testastic.wordpress.com/) blogs
