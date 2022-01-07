@@ -17,7 +17,7 @@ All material on this site is shared with permission from the creators.  Unless o
 ## Resources
 - [Modern testing Course](https://www.ministryoftesting.com/dojo/courses/introduction-to-modern-testing-alan-page) *by Alan Page*
 - [Quality Culture Transition Guide (google doc)](https://docs.google.com/spreadsheets/d/1kan20hYsdbvk7HW4si-X6Ve1fLtCeTI2H_PjiniKsxY/edit?usp=sharing) *by Alan Page*
-- [Team's Quality Culture Model (google doc)](https://docs.google.com/spreadsheets/d/1rlEmCR76oYoFvvXExKaFo3dgqT8LGd97SPNOr7n9b7I/edit#gid=1338066538) *based on the Quality Culture Transtion Guide by Ladislav Cicon*
+- [Team's Quality Culture Model (google doc)](https://docs.google.com/spreadsheets/d/1rlEmCR76oYoFvvXExKaFo3dgqT8LGd97SPNOr7n9b7I/edit#gid=1338066538) *by Ladislav Cicon based on the Quality Culture Transtion Guide*
 - [Modern Testing Mind Map](https://github.com/mwyrodek/ModernTestingMindMap) *by [Maciej Wyrodek](https://github.com/mwyrodek)*
 
 ## Presentations by Alan and Brent
