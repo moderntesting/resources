@@ -17,7 +17,8 @@ All material on this site is shared with permission from the creators.  Unless o
 ## Resources
 - [Modern testing Course](https://www.ministryoftesting.com/dojo/courses/introduction-to-modern-testing-alan-page) *by Alan Page*
 - [Quality Culture Transition Guide (google doc)](https://docs.google.com/spreadsheets/d/1kan20hYsdbvk7HW4si-X6Ve1fLtCeTI2H_PjiniKsxY/edit?usp=sharing) *by Alan Page*
-- [Team's Quality Culture Model (google doc)](https://docs.google.com/spreadsheets/d/1rlEmCR76oYoFvvXExKaFo3dgqT8LGd97SPNOr7n9b7I/edit#gid=1338066538) *by Ladislav Cicon based on the Quality Culture Transtion Guide*
+   - [Quality Culture Transition Guide (miro board)]https://miro.com/app/board/o9J_lxoBNX4=/?share_link_id=893740643967) *adaptation by [Maciej Wyrodek](https://github.com/mwyrodek)*
+   - [Team's Quality Culture Model (google doc)](https://docs.google.com/spreadsheets/d/1rlEmCR76oYoFvvXExKaFo3dgqT8LGd97SPNOr7n9b7I/edit#gid=1338066538) *by Ladislav Cicon based on the Quality Culture Transtion Guide*
 - [Modern Testing Mind Map](https://github.com/mwyrodek/ModernTestingMindMap) *by [Maciej Wyrodek](https://github.com/mwyrodek)*
 
 ## Presentations by Alan and Brent
@@ -37,10 +38,12 @@ All material on this site is shared with permission from the creators.  Unless o
 ## Articles
 - [Getting Testing Bottlenecks Out of Your Pipelines](https://devops.com/get-testing-bottlenecks-out-of-your-pipelines/) *by [Lisa Crispin](https://lisacrispin.com/)*
 - [A Collection of Suggestions I Strenuously Resisted](https://unremarkabletester.com/2019/05/08/a-collection-of-suggestions-i-strenuously-resisted/) *by [Areti Panou](https://twitter.com/unremarkableQA)*
+- [Modern Testing Principles](https://blog.testproject.io/2022/04/21/modern-testing-principles/) *by Mira Sisic
 
 ## Miscellaneous
 
 - [Books the Three Find Interesting](https://github.com/moderntesting/resources/blob/master/miscellaneous/Books%20the%20Three%20Find%20Interesting.md)
+
 
 ## Contributing
 
