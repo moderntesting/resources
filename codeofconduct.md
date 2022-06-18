@@ -8,6 +8,8 @@ We as members and admins pledge to make participation in our community a harassm
 
 We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community with our goal in mind. We pledge to remember this is a ​ professional setting ​and to act as we would in a work environment.
 
+**Note:** Often, we will discuss content created outside of this community (tweets, blog posts, etc.). In these discussions, we will have safe and respectful conversations *as if the author of the content is part of our community*. We welcome everyone to this community, including those whom we may not agree with.
+
 ## Our Standards
 
 Overall, ask anything. Share your stories and ask questions about whatever is challenging you. This community is a great place to vet ideas or to get feedback on a variety of software development and testing challenges. We are powered by our members.
