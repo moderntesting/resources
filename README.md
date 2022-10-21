@@ -39,6 +39,7 @@ All material on this site is shared with permission from the creators.  Unless o
 - [Getting Testing Bottlenecks Out of Your Pipelines](https://devops.com/get-testing-bottlenecks-out-of-your-pipelines/) *by [Lisa Crispin](https://lisacrispin.com/)*
 - [A Collection of Suggestions I Strenuously Resisted](https://unremarkabletester.com/2019/05/08/a-collection-of-suggestions-i-strenuously-resisted/) *by [Areti Panou](https://twitter.com/unremarkableQA)*
 - [Modern Testing Principles](https://blog.testproject.io/2022/04/21/modern-testing-principles/) *by [Mirza Sisic](https://mirzasisic.com/)*
+- [Modern Testing trough BDD](https://softwaretestingboard.com/blogs/modern-testing-trough-bdd/) *by [Mirza Sisic](https://mirzasisic.com/)*
 
 ## Miscellaneous
 
