@@ -1,0 +1,6212 @@
+WEBVTT
+
+00:00:08.720 --> 00:00:15.080
+Hey everybody. Howdy. I'm Alan. I'm Brent. And we're back for AAB testing episode 46.
+
+00:00:15.080 --> 00:00:24.550
+Hey Brent. Yes, I don't think we're alone now. We are not. Today we have a special guest.
+
+00:00:24.550 --> 00:00:32.580
+Is he special or just a guest? He's a special guest. A special guest. Steve Rowe is a data
+
+00:00:32.580 --> 00:00:42.300
+scientist manager in the Windows team. His journey has been much like myself. Why don't
+
+00:00:42.300 --> 00:00:45.870
+you say a few words, Steve, about how you got here?
+
+00:00:45.870 --> 00:00:53.910
+Sure. So I'm Steve Rowe. I came through the same similar channel to Brent and perhaps Alan.
+
+00:00:53.910 --> 00:00:58.570
+I was a test developer for a long time in the Windows team. I did multimedia for a long
+
+00:00:58.570 --> 00:01:02.870
+time and then I did some developer service stuff and then made a changeover to data science
+
+00:01:02.870 --> 00:01:08.230
+as I saw things moving and changing and I thought that there was a lot more power in
+
+00:01:08.230 --> 00:01:10.950
+figuring out whether we were doing the right thing or not and bringing quality through
+
+00:01:10.950 --> 00:01:18.320
+data rather than quality through repeating testing over and over and over and over again.
+
+00:01:18.320 --> 00:01:24.670
+What's wrong with that? People are now worried for their jobs. Don't freak them out.
+
+00:01:24.670 --> 00:01:29.180
+There is, yes, there's some of that. There's going to be, what was it called, creative
+
+00:01:29.180 --> 00:01:33.820
+destruction. I think would be Schumpeter's turn that is going on in some of this. So
+
+00:01:33.820 --> 00:01:36.700
+I don't think you'll get rid of testers but I think that there's definitely a reduction
+
+00:01:36.700 --> 00:01:41.300
+in the need for raw testers as they were replaced by data. Just the same way that there was kind
+
+00:01:41.300 --> 00:01:45.940
+of a reduction in the need for manual testers as test development picked up.
+
+00:01:45.940 --> 00:01:51.660
+You'll see if you follow Steve Rowe's blogs, you'll definitely see that he's cut from
+
+00:01:51.660 --> 00:01:58.980
+the same cloth as most of the three. Actually, it occurs to me. We have two of the three
+
+00:01:58.980 --> 00:02:00.760
+in the room today.
+
+00:02:00.760 --> 00:02:01.760
+Wait.
+
+00:02:01.760 --> 00:02:02.760
+Yeah.
+
+00:02:02.760 --> 00:02:03.760
+I think I'm one.
+
+00:02:03.760 --> 00:02:05.520
+Yeah, but Alan doesn't listen to the podcast.
+
+00:02:05.520 --> 00:02:06.520
+I do.
+
+00:02:06.520 --> 00:02:07.520
+I have multiple personalities.
+
+00:02:07.520 --> 00:02:08.520
+Those guys are smart.
+
+00:02:08.520 --> 00:02:09.520
+Oh, God.
+
+00:02:09.520 --> 00:02:15.400
+Brent, Brent, Brent. So I have a question. I've been waiting to have a guest to do this because
+
+00:02:15.400 --> 00:02:19.520
+like testing, if you ask two testers what they do, there's a lot of overlap Venn diagram
+
+00:02:19.520 --> 00:02:24.960
+but there's differences. I think I bet my hunch is it's the same thing in the data
+
+00:02:24.960 --> 00:02:29.720
+science world. So you've listened, you know Brent really well, you know what he does.
+
+00:02:29.720 --> 00:02:34.400
+What are some things that maybe differ in what your approach and what you do and then
+
+00:02:34.400 --> 00:02:36.200
+what Brent does?
+
+00:02:36.200 --> 00:02:38.800
+I don't quite know what Brent does well enough to tell you exactly what.
+
+00:02:38.800 --> 00:02:40.120
+Yeah, Brent doesn't do anything well.
+
+00:02:40.120 --> 00:02:42.520
+Well, then I do things well. So there's the difference.
+
+00:02:42.520 --> 00:02:46.120
+I do perception management really well, apparently.
+
+00:02:46.120 --> 00:02:49.600
+So my team is kind of a split team. Half my team is what I would call a data engineering
+
+00:02:49.600 --> 00:02:53.280
+team and the other half is a data science team. And so we spend some of our time
+
+00:02:53.280 --> 00:02:57.160
+figuring out how to move data and process data at volume and then some of our time
+
+00:02:57.160 --> 00:03:01.000
+trying to actually analyze data and figure out what the insights are.
+
+00:03:01.000 --> 00:03:04.000
+I think the big difference is organizationally we're probably at different
+
+00:03:04.000 --> 00:03:08.800
+spots in an organization. Windows is still trying to figure out how to use data.
+
+00:03:08.800 --> 00:03:13.640
+And so as you guys have been talking the last few times about the process through
+
+00:03:13.640 --> 00:03:17.640
+data, we're clearly past the data oblivious phase. We know no data exists but we're
+
+00:03:17.640 --> 00:03:20.960
+still in this phase that I don't think you quite mentioned but kind of a
+
+00:03:20.960 --> 00:03:24.640
+confirmatory data stage where half the time we want to use data but only if it
+
+00:03:24.640 --> 00:03:28.680
+confirms our intuition. And we don't really want to be challenged by the data.
+
+00:03:28.680 --> 00:03:33.400
+I've heard some people around me say, you know, I only want this result if it's
+
+00:03:33.400 --> 00:03:36.360
+going to show me what I want because if it's not what I think is true, then I
+
+00:03:36.360 --> 00:03:39.880
+know that the data is wrong, which is clearly an interesting stage to be in.
+
+00:03:39.880 --> 00:03:44.760
+So a lot of our job is spent trying to get the organization to pay attention
+
+00:03:44.760 --> 00:03:48.080
+to data, to become more data literate and more understanding of what data
+
+00:03:48.080 --> 00:03:53.120
+should be used for. So we have less opinions and more data-driven decisions.
+
+00:03:53.120 --> 00:03:57.840
+That's actually very interesting. There's something we talked about that data aware
+
+00:03:57.840 --> 00:04:01.120
+stage, which was interesting and maybe it's somewhere in there. I think you're
+
+00:04:01.120 --> 00:04:07.310
+much farther along than my org, for example. But there's a data trustworthy.
+
+00:04:07.310 --> 00:04:11.630
+Remember we used to deal with, used to, like last week with test trustworthiness.
+
+00:04:11.630 --> 00:04:16.830
+Can I trust that this test failure is a product failure? Or can I trust that
+
+00:04:16.830 --> 00:04:21.430
+this test passing means the product's working correctly? We kind of, not kind
+
+00:04:21.430 --> 00:04:27.590
+of, there's a huge parallel with data. Can I, is this data telling me, do I
+
+00:04:27.590 --> 00:04:31.590
+believe this data? Do I not believe this data? Right. And I think that's, that's
+
+00:04:31.590 --> 00:04:35.390
+accurately a question people ask because the one thing I keep telling my team
+
+00:04:35.390 --> 00:04:38.470
+is when you're writing programs and you get them wrong, oftentimes they crash
+
+00:04:38.470 --> 00:04:42.270
+or they go clearly incorrect. If you're using math, it doesn't generally crash.
+
+00:04:42.270 --> 00:04:45.710
+You can divide by zero. You can get some imaginary numbers, but not in
+
+00:04:45.710 --> 00:04:49.270
+numbers, but otherwise it doesn't crash. It will happily tell you that the
+
+00:04:49.270 --> 00:04:53.910
+average house price is $2 billion. And if you believe it, you know, that's the
+
+00:04:53.910 --> 00:04:56.830
+case, right? It won't tell you, sorry, you gave me the wrong input. It'll just
+
+00:04:56.830 --> 00:04:59.910
+tell you the average house price and value is $2 billion, which is off by at
+
+00:04:59.910 --> 00:05:06.570
+least one zero. At least yeah. So I just had this happen yesterday. I, I got the
+
+00:05:06.570 --> 00:05:14.700
+phone call, the IM, summoning me to the boss's rooms, the VP's room. And yeah,
+
+00:05:14.820 --> 00:05:20.740
+we looked at the bug data and some just going back a decade looking at bug data
+
+00:05:20.740 --> 00:05:26.340
+and incoming rate was dropping way down. We're at the part of our product, right?
+
+00:05:26.340 --> 00:05:32.170
+Where it should and he looked, I don't believe it's dropped down that far. I said,
+
+00:05:32.170 --> 00:05:36.850
+well, that's what the data says. I'm gonna go take a look at it. I, that it
+
+00:05:36.850 --> 00:05:40.970
+is a little bit too good to be true, but I think we're over that corner. And
+
+00:05:40.970 --> 00:05:43.570
+sure enough, I go back to the data. Someone had mucked with a query
+
+00:05:43.570 --> 00:05:50.260
+underneath me and got the, and screwed it up and they're off by about half. So
+
+00:05:50.260 --> 00:05:58.060
+the numbers were not good, but it's like, I think anytime what my lesson learned
+
+00:05:58.060 --> 00:06:03.060
+there was trust, but verify just, I think with, yeah, I think that was the
+
+00:06:03.060 --> 00:06:07.420
+wise wisdom from way back. I've definitely seen it happen both ways. It's still
+
+00:06:07.420 --> 00:06:10.820
+true here. People find data that they want to believe and they, they believe it
+
+00:06:10.820 --> 00:06:13.740
+to be true. I remember years and years ago, somebody did some analysis, not like
+
+00:06:13.780 --> 00:06:19.220
+data analysis, but some analysis of a, we had this big system called WTT windows
+
+00:06:19.220 --> 00:06:21.700
+test technology or whatever. And there's all these jobs that ran tests, like
+
+00:06:21.700 --> 00:06:25.100
+thousands and thousands of jobs that ran tests. And somebody came in one day to
+
+00:06:25.100 --> 00:06:28.100
+a develop directors meeting and they said, half of these jobs don't work. I
+
+00:06:28.100 --> 00:06:31.500
+ran my tool and I found out that half of them don't work. They just can't run
+
+00:06:31.500 --> 00:06:35.170
+it all. And they were beating us up because we were all idiots for not
+
+00:06:35.170 --> 00:06:38.170
+having working jobs. And we go back and we're like, well, they actually do
+
+00:06:38.170 --> 00:06:42.410
+work. So what was going on? Well, their tool had forgotten how to parse or
+
+00:06:42.410 --> 00:06:45.810
+they hadn't built it, how to parse variables. And so there might be a
+
+00:06:45.810 --> 00:06:48.930
+directory like, you know, SQL and back just windows. And then we would say
+
+00:06:48.930 --> 00:06:52.290
+winder in as a variable and it wouldn't parse the directory and go, well,
+
+00:06:52.290 --> 00:06:55.650
+there's no directory called winder. So therefore this can't possibly be
+
+00:06:55.650 --> 00:06:59.170
+accessing anything on the system. They were happily trusting their data
+
+00:06:59.530 --> 00:07:03.130
+instead of verifying it. And they were, you know, and that happens both
+
+00:07:03.130 --> 00:07:05.890
+what happens that way, or it happens on the dev side or the PM side
+
+00:07:05.890 --> 00:07:08.170
+sometimes where they don't want the data to tell them something wrong.
+
+00:07:08.170 --> 00:07:11.490
+Like I don't trust it no matter what, because it's not matching my
+
+00:07:11.490 --> 00:07:16.450
+intuition. You do have a lot of those problems in, in the data science
+
+00:07:16.450 --> 00:07:20.770
+space. I'll give you an example. Just yesterday, we have a new data
+
+00:07:20.770 --> 00:07:26.090
+scientist that ramped up he's come from office, where they have a much
+
+00:07:26.090 --> 00:07:32.570
+more well documented curated list of data sets. And he's like, Hey, I
+
+00:07:32.570 --> 00:07:38.010
+want to do is essentially, hey, I want to do data science. Can you
+
+00:07:38.730 --> 00:07:43.800
+point me to the documentation for our data sources? And I'm like, okay,
+
+00:07:43.800 --> 00:07:49.440
+dude, you and I need to meet. Because there are literally hundreds of
+
+00:07:49.440 --> 00:07:55.840
+them, none documented. Right, we have, we have this one system that
+
+00:07:55.840 --> 00:08:04.130
+does kind of automate away all the data movement for us. And they
+
+00:08:04.130 --> 00:08:07.850
+able to use reflection to get essentially a reflection to get the
+
+00:08:07.850 --> 00:08:14.490
+schema and publish the schema. But you have you have things like a
+
+00:08:14.490 --> 00:08:19.250
+widget, goo it in a widget ID. Are these things the same thing? Or
+
+00:08:19.250 --> 00:08:24.330
+are they not, right? We you have a lot of exceptions in the data
+
+00:08:24.330 --> 00:08:28.170
+because the data doesn't come to us clean. You have a lot of
+
+00:08:28.170 --> 00:08:32.850
+people who go to the raw data directly directly operate under the
+
+00:08:32.850 --> 00:08:36.490
+belief that they do actually understand everything about the
+
+00:08:36.490 --> 00:08:40.330
+data that they need to, which is I think similar to what Steve was
+
+00:08:40.330 --> 00:08:44.050
+talking about, but they don't. So part of the things I do now is, hey,
+
+00:08:44.050 --> 00:08:50.870
+I'll point you to the data. If you present any analyses you do
+
+00:08:51.430 --> 00:08:54.750
+without vetting it through me to make sure you've got the tribal
+
+00:08:54.750 --> 00:08:58.020
+knowledge, right, dude, you're on your own. And when someone
+
+00:08:58.020 --> 00:09:01.380
+comes to me and says, hey, your numbers don't line up with
+
+00:09:01.380 --> 00:09:04.980
+Brent's. I'm telling you upfront, you're the one that's
+
+00:09:04.980 --> 00:09:09.020
+going to do the the the digging to figure out why. So what do
+
+00:09:09.020 --> 00:09:11.780
+you think is the right level of documentation to do on data
+
+00:09:11.780 --> 00:09:15.740
+sources? Like I've seen people that want a white pages of data,
+
+00:09:15.740 --> 00:09:17.860
+right? I want to be able to like point you at every single data
+
+00:09:17.860 --> 00:09:20.540
+source. I want to have them all fully documented. And then I've
+
+00:09:20.540 --> 00:09:23.060
+seen teams that operate more like what you're talking about
+
+00:09:23.060 --> 00:09:25.460
+where it's there's a bunch of data and you can kind of tell
+
+00:09:25.460 --> 00:09:27.460
+the names, but you can't tell anything else. Where's the
+
+00:09:27.460 --> 00:09:29.300
+right balance? Because you can get it right. You can easily
+
+00:09:29.340 --> 00:09:32.500
+over index. So I'll tell you the approach that my team's
+
+00:09:32.500 --> 00:09:39.600
+taking now. We are building what we call the CDW, which is a
+
+00:09:39.600 --> 00:09:44.160
+common data warehouse. And it's initially we had planned it to
+
+00:09:44.160 --> 00:09:47.800
+be something more directive where we would build it up and
+
+00:09:47.800 --> 00:09:52.260
+then democratize it. Now what we are doing because I so I
+
+00:09:52.260 --> 00:09:57.940
+flatted that as a proposal. And what it turns out is my own
+
+00:09:57.940 --> 00:10:03.150
+team, Dev and PM, they're at the phase of Yeah, that could be
+
+00:10:03.150 --> 00:10:06.780
+really useful as long as we don't have to build it. And so I
+
+00:10:06.780 --> 00:10:13.220
+think the ROI of us doing that upfront is rather low, because
+
+00:10:13.220 --> 00:10:16.340
+it's uncertain who who are going to be my customers if I
+
+00:10:16.340 --> 00:10:22.540
+build it. But I need the data curated for I need a subset of
+
+00:10:22.540 --> 00:10:27.380
+it for my purposes. So what my team is going to do is every
+
+00:10:27.380 --> 00:10:30.180
+time we ingest a new data set, we'll curate it and then
+
+00:10:30.180 --> 00:10:34.180
+we'll document it and we'll do it one at a time. I'd say right
+
+00:10:34.180 --> 00:10:38.900
+now, most of 80% of what I'm working with is against 20
+
+00:10:38.900 --> 00:10:43.900
+different data sets. That's easy enough to document. There's
+
+00:10:43.900 --> 00:10:48.700
+there's a lot of asks for a lot more. But it's not high in my
+
+00:10:48.700 --> 00:10:52.820
+backlog today. So when it becomes when it becomes it and I
+
+00:10:52.860 --> 00:10:57.500
+then I pull the data in, I'll document it. In the meantime, what
+
+00:10:57.500 --> 00:11:03.300
+I will do is document and police standards of practice. So
+
+00:11:03.300 --> 00:11:06.060
+those those others who want a different data set, I'll say,
+
+00:11:06.060 --> 00:11:10.100
+Hey, you're welcome to add to the CDW turn it into sort of a
+
+00:11:10.100 --> 00:11:15.260
+shared source type project. And but you need to you will follow
+
+00:11:15.260 --> 00:11:18.260
+these rules. Because if you don't, and I discover it, I
+
+00:11:18.260 --> 00:11:21.220
+will remove your data from the CDW. Right? So I turned it
+
+00:11:21.220 --> 00:11:24.180
+into much more of a shared source, but moderated to
+
+00:11:24.180 --> 00:11:25.540
+prevent broken window theory.
+
+00:11:25.540 --> 00:11:28.020
+So you have a few sources, a limited number of sources that
+
+00:11:28.020 --> 00:11:32.180
+are commonly used, they're all documented, and then everything
+
+00:11:32.180 --> 00:11:33.700
+else is kind of still the wild west.
+
+00:11:34.060 --> 00:11:34.700
+Absolutely.
+
+00:11:35.060 --> 00:11:38.820
+What are some examples of data sources you use for data sets?
+
+00:11:40.490 --> 00:11:43.210
+You can you can generify for the external audience.
+
+00:11:43.890 --> 00:11:47.850
+Until right now, I'm spending a large portion of my time
+
+00:11:47.850 --> 00:11:50.690
+focused on availability concerns and reliability
+
+00:11:50.690 --> 00:11:56.360
+concerns. So we have a transaction feed for the
+
+00:11:56.360 --> 00:12:03.110
+heartbeat of VMs is the VM up or down. We have a ton of
+
+00:12:03.110 --> 00:12:06.470
+metadata feeds, we have another transaction feed that that we use
+
+00:12:06.470 --> 00:12:11.500
+quite often, which is our we call it our control plane. It's
+
+00:12:11.500 --> 00:12:16.540
+essentially, hey, how many times the customer says create a VM?
+
+00:12:16.660 --> 00:12:21.220
+Do we actually create a VM? Because now those two together,
+
+00:12:21.220 --> 00:12:28.540
+we can then come up with new insights like hey, if a if a VM
+
+00:12:28.540 --> 00:12:33.660
+goes down, can we determine if it was because the customer
+
+00:12:33.660 --> 00:12:36.500
+asked for it to be down, which the heartbeat feed won't
+
+00:12:36.500 --> 00:12:41.290
+necessarily tell you, but the control plane feed will. And
+
+00:12:41.290 --> 00:12:45.690
+then we have a just a crap ton of dimension feeds, which is
+
+00:12:45.690 --> 00:12:48.770
+essentially metadata about the nouns that we see in the
+
+00:12:48.770 --> 00:12:54.050
+transaction feeds. So we'll have a VM dimension, it tells us
+
+00:12:54.050 --> 00:12:58.690
+everything about where that VM lived and who it belongs to, we
+
+00:12:58.690 --> 00:13:03.810
+have customer dimensions that say, hey, this customer is
+
+00:13:04.490 --> 00:13:07.530
+Walmart, for example, and their headquarters are over and
+
+00:13:07.690 --> 00:13:08.210
+wherever.
+
+00:13:08.770 --> 00:13:11.770
+Isn't that personally identifiable information?
+
+00:13:12.170 --> 00:13:17.380
+It is not. That is tenant, what's known as tenant identifiable
+
+00:13:17.380 --> 00:13:20.020
+information. And that is fine.
+
+00:13:20.300 --> 00:13:22.820
+I said that because we've had the same discussion often in my
+
+00:13:22.820 --> 00:13:25.740
+team. So what about you, Steve, what data sets is your team
+
+00:13:25.820 --> 00:13:26.460
+primarily working?
+
+00:13:26.460 --> 00:13:29.100
+So we have quite a I work in the developer space. So I work
+
+00:13:29.100 --> 00:13:31.780
+with a lot of application development and application
+
+00:13:31.780 --> 00:13:34.940
+lifecycle kind of data. So we have a lot of streams that
+
+00:13:34.940 --> 00:13:38.730
+show us like what applications this is for people that send us
+
+00:13:38.730 --> 00:13:41.810
+data or in the beta program, not the general machines out
+
+00:13:41.810 --> 00:13:45.290
+there. But we have data that tells us like what applications
+
+00:13:45.290 --> 00:13:47.210
+were installed or attempted to install and which ones
+
+00:13:47.210 --> 00:13:49.610
+succeeded or didn't succeed what the application lifecycles
+
+00:13:49.610 --> 00:13:52.290
+were, was it launched? Did it go into suspend? When was it
+
+00:13:52.290 --> 00:13:55.450
+killed? Or was it closed down? That kind of stuff. And so we
+
+00:13:55.450 --> 00:13:58.490
+can see whether or not applications are successful or
+
+00:13:58.490 --> 00:14:01.490
+not. We also have interesting data, we can watch what API's
+
+00:14:01.530 --> 00:14:04.730
+various apps call. And so we can use that data to do cool
+
+00:14:04.730 --> 00:14:07.210
+things like figure out whether or not the build of the
+
+00:14:07.210 --> 00:14:09.810
+operating system regressed an app. So let's say that maybe
+
+00:14:09.810 --> 00:14:13.250
+the Facebook app calls this networking API 40 times in the
+
+00:14:13.250 --> 00:14:16.050
+first minute or whatever. If I can actually watch that over
+
+00:14:16.050 --> 00:14:18.530
+time and say, Oh, on this day, it dropped down to 20, we
+
+00:14:18.530 --> 00:14:20.810
+probably just broke that application. What we do wrong,
+
+00:14:20.810 --> 00:14:22.330
+I don't know yet, we'll go figure it out. But we can
+
+00:14:22.330 --> 00:14:25.450
+actually see in the data that that application broke on a
+
+00:14:25.450 --> 00:14:28.010
+given build of Windows because that it behaves very
+
+00:14:28.010 --> 00:14:28.970
+differently than it used to behave.
+
+00:14:30.300 --> 00:14:30.940
+That's cool.
+
+00:14:32.380 --> 00:14:35.940
+Wasn't Windows recently in the news on this data thing?
+
+00:14:36.060 --> 00:14:39.420
+Isn't it wasn't at Windows, the where we announced or
+
+00:14:39.420 --> 00:14:43.940
+where it was announced that we are following all of you?
+
+00:14:44.860 --> 00:14:47.300
+I don't think so. No, there was some news. I don't
+
+00:14:47.300 --> 00:14:51.060
+actually follow the news. We don't follow everybody. We
+
+00:14:51.060 --> 00:14:53.460
+certainly don't. We have very strict restrictions on
+
+00:14:53.460 --> 00:14:55.500
+pride, personally identifiable information and all
+
+00:14:55.500 --> 00:14:57.620
+kinds of stuff that we do to make sure that we can't
+
+00:14:57.660 --> 00:15:00.860
+track people. You can also turn it off. And, you know,
+
+00:15:00.980 --> 00:15:02.820
+that kind of stuff. So if you're in the beta program, we
+
+00:15:02.820 --> 00:15:04.980
+tend to watch more because it'll check boxes that tend to
+
+00:15:04.980 --> 00:15:09.140
+be on by default. But a typical person using Windows has
+
+00:15:09.140 --> 00:15:10.940
+a lot more control over it. And we don't do anything
+
+00:15:10.940 --> 00:15:13.540
+that we would identify you as anything. So
+
+00:15:13.740 --> 00:15:18.940
+so you do not have the ability to see what websites
+
+00:15:18.980 --> 00:15:19.900
+Alan is looking at.
+
+00:15:19.940 --> 00:15:21.220
+We go out of our way not to be.
+
+00:15:22.260 --> 00:15:25.770
+Just mostly I shop on Amazon. Just total tangent
+
+00:15:25.770 --> 00:15:28.970
+because that's part of the show. I was talking to
+
+00:15:29.490 --> 00:15:32.760
+neighbor my works at Amazon and I said, man, if I
+
+00:15:32.760 --> 00:15:35.000
+got a discount there, oh, it says we get a discount.
+
+00:15:36.230 --> 00:15:39.560
+And but it's like, it's not really much they get
+
+00:15:39.560 --> 00:15:41.480
+like 10 percent up to a thousand dollars.
+
+00:15:43.110 --> 00:15:44.390
+Yeah. So they get one hundred dollars a year.
+
+00:15:44.430 --> 00:15:47.070
+Yeah. So basically they get a hundred. It's not much.
+
+00:15:47.470 --> 00:15:49.110
+And you worked there for two years. So really you
+
+00:15:49.110 --> 00:15:49.990
+got about two hundred dollars as you.
+
+00:15:52.030 --> 00:15:54.710
+It's more than that. But it's like a really when
+
+00:15:54.710 --> 00:15:56.710
+you do the math, he's really excited about it.
+
+00:15:56.710 --> 00:15:57.670
+The math. I go, wait a minute.
+
+00:15:58.270 --> 00:16:00.190
+Yeah, it is something like that. I've heard friends
+
+00:16:00.190 --> 00:16:00.630
+talk about it.
+
+00:16:01.190 --> 00:16:03.430
+So that's their equivalent of the company store
+
+00:16:03.430 --> 00:16:03.950
+program.
+
+00:16:04.630 --> 00:16:10.400
+I guess because yeah, I'm I don't like shopping in
+
+00:16:10.400 --> 00:16:12.800
+stores. So I'll buy clothes in stores. And
+
+00:16:12.800 --> 00:16:14.480
+obviously I don't buy clothes very often, but
+
+00:16:15.040 --> 00:16:16.680
+everything else I buy. Eventually they wear out.
+
+00:16:18.410 --> 00:16:20.650
+Well, you don't have to stop wearing them when
+
+00:16:20.650 --> 00:16:23.650
+they wear out. That is a common misconception.
+
+00:16:23.890 --> 00:16:25.850
+You can just keep on wearing them. This T-shirt I
+
+00:16:25.850 --> 00:16:30.090
+bought in 1998. Still little colors falling off.
+
+00:16:30.450 --> 00:16:31.730
+Windows 95 on it or something.
+
+00:16:32.170 --> 00:16:34.170
+No, I was wearing this when I was working on
+
+00:16:34.170 --> 00:16:34.970
+Windows 95.
+
+00:16:35.690 --> 00:16:40.500
+And that's the nice thing, right? With with if
+
+00:16:40.500 --> 00:16:43.620
+he just waits long enough, he'll have his team
+
+00:16:43.780 --> 00:16:45.380
+feed him new clothes.
+
+00:16:46.570 --> 00:16:49.650
+Although no one commonly gives out T-shirts or
+
+00:16:49.650 --> 00:16:51.210
+common, but no one's doing pants.
+
+00:16:51.930 --> 00:16:53.170
+No, I haven't. I don't know that I've ever
+
+00:16:53.170 --> 00:16:53.770
+gotten pants.
+
+00:16:53.770 --> 00:16:58.610
+I have me neither. No, I'm I'm kind of upset.
+
+00:16:59.520 --> 00:17:01.080
+I think I saw a pair of shorts once.
+
+00:17:01.120 --> 00:17:03.480
+That's an oversight. I don't nothing shirt.
+
+00:17:03.520 --> 00:17:04.360
+Lots of T-shirts.
+
+00:17:04.600 --> 00:17:06.920
+Jackets. I just got to meet yet another jacket.
+
+00:17:06.960 --> 00:17:09.360
+I've got two jackets on this team, a sweatshirt
+
+00:17:09.360 --> 00:17:09.960
+and a jacket.
+
+00:17:10.440 --> 00:17:12.400
+So maybe you should propose when your when your
+
+00:17:12.400 --> 00:17:15.160
+product finally ships, you get a pair of sweat
+
+00:17:15.160 --> 00:17:16.800
+pants with the product name right on the butt.
+
+00:17:18.440 --> 00:17:19.400
+Like those pink ones.
+
+00:17:19.560 --> 00:17:20.960
+Right. Yeah. Juicy.
+
+00:17:21.780 --> 00:17:23.100
+That's the name of our product.
+
+00:17:23.100 --> 00:17:24.900
+They just take things for a leak in our product
+
+00:17:24.900 --> 00:17:27.700
+game. Microsoft Juicy for business.
+
+00:17:28.500 --> 00:17:31.660
+Actually, I saw PR for your product recently.
+
+00:17:31.660 --> 00:17:32.980
+So you guys are announced now.
+
+00:17:33.180 --> 00:17:33.660
+No, we're not.
+
+00:17:35.500 --> 00:17:36.340
+I didn't see anything.
+
+00:17:36.380 --> 00:17:37.380
+Nothing. Nothing.
+
+00:17:37.420 --> 00:17:38.740
+Nothing. I saw something.
+
+00:17:38.860 --> 00:17:41.900
+There's nothing nothing condoned by our
+
+00:17:41.900 --> 00:17:44.660
+organization has been released on the interwebs.
+
+00:17:44.740 --> 00:17:45.220
+Gotcha.
+
+00:17:45.860 --> 00:17:47.340
+And that's where we're going to keep that one.
+
+00:17:48.070 --> 00:17:51.030
+So I've done enough things to piss off management.
+
+00:17:51.310 --> 00:17:52.590
+I'm not going to go there.
+
+00:17:53.230 --> 00:17:54.350
+So Steve's here.
+
+00:17:54.390 --> 00:17:55.430
+Yeah. Hey.
+
+00:17:57.460 --> 00:17:58.300
+So back to Steve.
+
+00:17:58.500 --> 00:17:59.180
+What are we going to say?
+
+00:17:59.740 --> 00:18:00.140
+How about now?
+
+00:18:00.460 --> 00:18:01.020
+Sabre.
+
+00:18:02.790 --> 00:18:03.430
+Go ahead.
+
+00:18:03.470 --> 00:18:05.430
+So Steve.
+
+00:18:06.270 --> 00:18:06.990
+Yes, Brad.
+
+00:18:07.970 --> 00:18:10.170
+Um, I anxiously await your question.
+
+00:18:10.930 --> 00:18:12.450
+I anxiously wait his question too.
+
+00:18:12.690 --> 00:18:15.690
+So I've, I've gone through and sort of walk
+
+00:18:15.690 --> 00:18:19.370
+through how I got to the position I'm in right now.
+
+00:18:20.130 --> 00:18:25.160
+Uh, a lot of our listeners are, I'll say data
+
+00:18:25.160 --> 00:18:27.640
+curious, right?
+
+00:18:27.760 --> 00:18:32.440
+Um, and it's very, very clear that they are
+
+00:18:32.480 --> 00:18:37.220
+operating in worlds that are behind us in some
+
+00:18:37.220 --> 00:18:41.100
+degree, very similar to us, uh, 10, 15 years ago.
+
+00:18:42.020 --> 00:18:42.980
+Or three years ago.
+
+00:18:43.220 --> 00:18:46.700
+How would you, how would you guide from, from your
+
+00:18:46.700 --> 00:18:49.940
+experience, how would you guide people, uh, making
+
+00:18:49.940 --> 00:18:50.740
+this transition?
+
+00:18:51.260 --> 00:18:53.300
+I think it depends on what course you're going
+
+00:18:53.300 --> 00:18:53.540
+to take.
+
+00:18:53.540 --> 00:18:55.580
+So there's two courses to try to get your team
+
+00:18:55.580 --> 00:18:56.580
+to be more data driven.
+
+00:18:56.860 --> 00:18:59.140
+Uh, one is a top down approach and the other one
+
+00:18:59.140 --> 00:19:00.460
+is kind of a bottoms up approach.
+
+00:19:00.740 --> 00:19:03.570
+Um, so you can either try to find or convince
+
+00:19:03.570 --> 00:19:04.890
+management that this is a good thing.
+
+00:19:04.890 --> 00:19:06.690
+And then management can create the edict that we
+
+00:19:06.690 --> 00:19:10.600
+will go do this and, uh, then started building up
+
+00:19:10.600 --> 00:19:12.040
+the organizational skills from there.
+
+00:19:12.320 --> 00:19:14.600
+Or you can try to make your little section of
+
+00:19:14.600 --> 00:19:17.640
+the world more data driven and do that in a way
+
+00:19:17.640 --> 00:19:19.680
+that also gets your other jobs done and try to
+
+00:19:19.680 --> 00:19:20.680
+become a center of excellence.
+
+00:19:20.680 --> 00:19:23.000
+And people might mock, might follow you, uh, over
+
+00:19:23.000 --> 00:19:24.200
+time and emulate you.
+
+00:19:24.480 --> 00:19:26.520
+And those are both possible routes.
+
+00:19:26.680 --> 00:19:28.760
+Um, I suspect most of our readers, listeners,
+
+00:19:28.800 --> 00:19:31.040
+whatever, uh, we'll have to be in the second
+
+00:19:31.040 --> 00:19:33.000
+bucket because probably most of them are not
+
+00:19:33.000 --> 00:19:35.520
+directors or, you know, CEOs or whatever, and
+
+00:19:35.520 --> 00:19:37.000
+they don't get to come down with the, with
+
+00:19:37.000 --> 00:19:38.720
+the edict, they can try to convince management,
+
+00:19:38.720 --> 00:19:40.920
+but it's not always easy to convince management
+
+00:19:40.920 --> 00:19:43.320
+to do anything new and different because it's
+
+00:19:43.320 --> 00:19:44.400
+scary and dangerous.
+
+00:19:44.520 --> 00:19:47.720
+Um, and so I think that the pattern is to try
+
+00:19:47.720 --> 00:19:48.600
+to start at the bottom.
+
+00:19:48.720 --> 00:19:50.800
+Uh, a lot of times as unfortunate as that is,
+
+00:19:50.800 --> 00:19:52.640
+I think it's a harder road to go, but it's
+
+00:19:52.640 --> 00:19:54.920
+also the only road available a lot of times.
+
+00:19:55.240 --> 00:19:56.800
+Um, and I think the right way to do that is
+
+00:19:56.800 --> 00:20:00.870
+to figure out where, where you can replace
+
+00:20:00.870 --> 00:20:02.870
+current functionality with this data or
+
+00:20:02.870 --> 00:20:04.030
+supplement it with data.
+
+00:20:04.230 --> 00:20:05.510
+I don't think that you can just say, we're
+
+00:20:05.510 --> 00:20:06.350
+not going to test anymore.
+
+00:20:06.350 --> 00:20:07.150
+We're going to use data.
+
+00:20:07.190 --> 00:20:08.670
+Cause I don't think anybody's going to believe
+
+00:20:08.790 --> 00:20:10.550
+that that is effective enough in order to
+
+00:20:10.550 --> 00:20:11.870
+let you spend the time doing that.
+
+00:20:11.870 --> 00:20:13.470
+They're going to still expect their test passes,
+
+00:20:13.710 --> 00:20:15.990
+but you can start running data analysis on
+
+00:20:15.990 --> 00:20:16.670
+the test passes.
+
+00:20:16.670 --> 00:20:17.390
+You can start running data.
+
+00:20:17.390 --> 00:20:19.390
+You can try to get some instrumentation into
+
+00:20:19.390 --> 00:20:19.790
+the builds.
+
+00:20:19.790 --> 00:20:21.430
+A lot of people have at least logs or
+
+00:20:21.430 --> 00:20:22.790
+something along those lines, convince the
+
+00:20:22.790 --> 00:20:24.510
+devs or go at it yourself, depending on
+
+00:20:24.510 --> 00:20:25.830
+where you are organizationally and
+
+00:20:25.830 --> 00:20:27.910
+what's allowed, and then use that to
+
+00:20:27.910 --> 00:20:31.430
+try to understand, uh, whether, um, your,
+
+00:20:31.470 --> 00:20:32.550
+the quality is high or not.
+
+00:20:32.870 --> 00:20:34.590
+I think there's two major uses of
+
+00:20:34.590 --> 00:20:36.310
+data, um, in an organization.
+
+00:20:36.310 --> 00:20:38.630
+One use is to understand the health of
+
+00:20:38.630 --> 00:20:39.750
+the product and the other one is to
+
+00:20:39.750 --> 00:20:41.550
+understand what I call the success of
+
+00:20:41.550 --> 00:20:42.030
+the product.
+
+00:20:42.030 --> 00:20:43.230
+So the first one is to figure out whether
+
+00:20:43.230 --> 00:20:44.870
+or not what you built is doing what you
+
+00:20:44.870 --> 00:20:45.870
+expected it to do.
+
+00:20:46.070 --> 00:20:47.670
+And the other one is figuring out, figure
+
+00:20:47.670 --> 00:20:49.510
+out whether or not the users are
+
+00:20:49.510 --> 00:20:50.830
+appreciating what you built.
+
+00:20:51.270 --> 00:20:53.350
+Um, and I think it's much easier to bootstrap
+
+00:20:53.350 --> 00:20:55.070
+the first one, the health metrics than
+
+00:20:55.070 --> 00:20:56.110
+it is the other ones, because it's
+
+00:20:56.110 --> 00:20:58.270
+more of a drop in replacement for, or
+
+00:20:58.270 --> 00:21:00.270
+a supplement for traditional testing.
+
+00:21:01.030 --> 00:21:02.910
+And, uh, I have a couple of blog posts
+
+00:21:02.910 --> 00:21:04.150
+from way back talking about data
+
+00:21:04.150 --> 00:21:05.350
+driven quality and kind of moving in
+
+00:21:05.350 --> 00:21:07.230
+that direction, which focused mostly on
+
+00:21:07.230 --> 00:21:08.230
+those health metrics.
+
+00:21:08.310 --> 00:21:09.990
+And so I think one thing you can do is
+
+00:21:09.990 --> 00:21:12.510
+you can start monitoring the percentage
+
+00:21:12.510 --> 00:21:14.950
+of time that your test passes fit, pass
+
+00:21:14.950 --> 00:21:15.430
+or fail.
+
+00:21:15.430 --> 00:21:17.030
+You can start monitoring data about
+
+00:21:17.030 --> 00:21:19.150
+the machines or the builds or the, the
+
+00:21:19.150 --> 00:21:20.630
+environments that they're in and try
+
+00:21:20.630 --> 00:21:22.150
+to tease out data from there.
+
+00:21:22.310 --> 00:21:23.710
+Um, and then you can over time, maybe
+
+00:21:23.710 --> 00:21:26.470
+start getting data from real instances
+
+00:21:26.470 --> 00:21:27.910
+of the application, either through logs
+
+00:21:27.910 --> 00:21:29.350
+or through some kind of, uh, you
+
+00:21:29.350 --> 00:21:31.750
+know, data API that you have.
+
+00:21:31.750 --> 00:21:32.710
+If you're in a server, you can do
+
+00:21:32.710 --> 00:21:33.790
+it much more easily than if you're,
+
+00:21:33.790 --> 00:21:35.270
+you're running distributed software.
+
+00:21:35.510 --> 00:21:37.870
+Um, and then figure out whether or not
+
+00:21:37.990 --> 00:21:39.150
+I can give you some sense for the
+
+00:21:39.150 --> 00:21:41.030
+quality of your product, uh, for the,
+
+00:21:41.030 --> 00:21:42.150
+the health of your product.
+
+00:21:42.150 --> 00:21:43.710
+And then maybe you can turn down
+
+00:21:43.710 --> 00:21:44.950
+the dial on testing and turn up the
+
+00:21:44.950 --> 00:21:45.590
+dial on data.
+
+00:21:46.670 --> 00:21:48.830
+What about your journey personally?
+
+00:21:49.810 --> 00:21:52.690
+So how long ago were you in a, a,
+
+00:21:52.970 --> 00:21:55.650
+let's just say a pure traditional
+
+00:21:55.730 --> 00:21:56.410
+test manager role?
+
+00:21:56.410 --> 00:21:57.370
+About three years ago.
+
+00:21:57.370 --> 00:21:59.290
+It was the fall, about three years
+
+00:21:59.290 --> 00:21:59.610
+ago, right?
+
+00:21:59.610 --> 00:22:00.850
+When we started the work on, on
+
+00:22:00.850 --> 00:22:02.530
+windows 10 that I moved from a
+
+00:22:02.530 --> 00:22:04.770
+traditional test developer job to,
+
+00:22:05.010 --> 00:22:06.130
+uh, a data science job.
+
+00:22:06.370 --> 00:22:10.830
+When, when, uh, so windows was
+
+00:22:10.830 --> 00:22:14.470
+essentially the first of your two
+
+00:22:14.510 --> 00:22:15.510
+ways to get there.
+
+00:22:15.510 --> 00:22:18.590
+If I, if I recall correctly, you, in
+
+00:22:18.590 --> 00:22:19.790
+other words, it wasn't a bunch of
+
+00:22:19.790 --> 00:22:21.470
+small satellite teams trying to
+
+00:22:21.470 --> 00:22:23.110
+convince upper management upper
+
+00:22:23.110 --> 00:22:24.830
+men, as this is my perception from
+
+00:22:24.830 --> 00:22:25.990
+outside of windows, it was upper
+
+00:22:25.990 --> 00:22:27.350
+management said, no, we're doing.
+
+00:22:27.390 --> 00:22:29.830
+It was definitely a, a, a student
+
+00:22:29.830 --> 00:22:30.830
+body left movement.
+
+00:22:30.830 --> 00:22:32.950
+Like everybody, uh, has to go this
+
+00:22:32.950 --> 00:22:33.270
+direction.
+
+00:22:33.270 --> 00:22:35.070
+We took what was a standard test
+
+00:22:35.070 --> 00:22:36.390
+developer role and said that role
+
+00:22:36.390 --> 00:22:37.390
+no longer exists.
+
+00:22:37.510 --> 00:22:39.110
+We now have a quality role, which is
+
+00:22:39.110 --> 00:22:40.510
+not the same as a data science role,
+
+00:22:40.750 --> 00:22:42.470
+but this thing we call the quality
+
+00:22:42.470 --> 00:22:43.670
+role, which is just a label we put
+
+00:22:43.670 --> 00:22:46.470
+on it, um, was all about using data
+
+00:22:46.470 --> 00:22:47.790
+to understand the quality of our
+
+00:22:47.790 --> 00:22:48.110
+product.
+
+00:22:48.110 --> 00:22:49.430
+So we had in that group, we have
+
+00:22:49.430 --> 00:22:50.830
+people that are more traditional
+
+00:22:51.310 --> 00:22:53.310
+developers whose job it is to
+
+00:22:53.310 --> 00:22:54.870
+instrument the builds and then do
+
+00:22:54.870 --> 00:22:56.830
+basic analysis on those builds and,
+
+00:22:56.830 --> 00:22:58.310
+and understand the area very well.
+
+00:22:58.310 --> 00:23:00.470
+And then we have data scientists
+
+00:23:00.470 --> 00:23:02.510
+whose job it is to help bring actual
+
+00:23:02.510 --> 00:23:04.270
+math to the, to the problems, um,
+
+00:23:04.270 --> 00:23:05.470
+in, in non-basic ways.
+
+00:23:05.750 --> 00:23:06.790
+Um, I'd like to think of, there's
+
+00:23:06.790 --> 00:23:07.990
+a Venn diagram that's pretty
+
+00:23:07.990 --> 00:23:08.950
+popular out there that says data
+
+00:23:08.950 --> 00:23:10.190
+science is kind of a combination
+
+00:23:10.190 --> 00:23:11.590
+of area knowledge, programming
+
+00:23:11.590 --> 00:23:12.590
+knowledge, and statistics or
+
+00:23:12.590 --> 00:23:12.990
+math.
+
+00:23:13.190 --> 00:23:14.390
+And I tend to think that no one
+
+00:23:14.390 --> 00:23:16.110
+person really has all of those.
+
+00:23:16.110 --> 00:23:17.070
+And so we've almost ended up in
+
+00:23:17.070 --> 00:23:18.750
+a world where the area knowledge
+
+00:23:18.750 --> 00:23:19.790
+and the programming knowledge are
+
+00:23:19.790 --> 00:23:21.190
+owned by one group of people.
+
+00:23:21.190 --> 00:23:22.590
+That's the quality teams.
+
+00:23:22.750 --> 00:23:24.430
+And then the, the data science
+
+00:23:24.430 --> 00:23:26.030
+knowledge or the, the statistics
+
+00:23:26.030 --> 00:23:26.990
+knowledge, and then maybe some of
+
+00:23:26.990 --> 00:23:28.430
+the programming knowledge as well is
+
+00:23:28.430 --> 00:23:29.910
+owned by the data science teams.
+
+00:23:29.910 --> 00:23:31.670
+And so the combination ends up with
+
+00:23:31.750 --> 00:23:32.830
+a sweet spot in the middle.
+
+00:23:33.840 --> 00:23:36.040
+So when, when they pulled this
+
+00:23:36.040 --> 00:23:39.320
+trigger, were you anxious or
+
+00:23:39.320 --> 00:23:40.120
+excited about it?
+
+00:23:40.280 --> 00:23:41.440
+I was personally excited about it.
+
+00:23:41.440 --> 00:23:42.520
+I'd thought about it for a while.
+
+00:23:42.520 --> 00:23:43.760
+I'd actually been looking for ways
+
+00:23:43.760 --> 00:23:46.400
+to try to go do this in my, my old job.
+
+00:23:46.560 --> 00:23:47.920
+The difficulty that I had as I was
+
+00:23:47.920 --> 00:23:49.200
+on the team that was developing
+
+00:23:49.200 --> 00:23:50.320
+what was called Windows runtime,
+
+00:23:50.520 --> 00:23:52.600
+which is the API model for all
+
+00:23:52.600 --> 00:23:55.640
+of the, the Windows apps, uh, the
+
+00:23:55.640 --> 00:23:57.600
+app store apps, the hard part
+
+00:23:57.600 --> 00:23:58.560
+about that is trying to use
+
+00:23:58.560 --> 00:24:00.000
+data in something that has a very
+
+00:24:00.000 --> 00:24:01.760
+long pipeline is super difficult.
+
+00:24:01.760 --> 00:24:03.600
+You can't exactly A B test an API.
+
+00:24:03.800 --> 00:24:04.680
+You can't send it out, you know,
+
+00:24:04.680 --> 00:24:05.960
+one version of the API to it, to
+
+00:24:05.960 --> 00:24:07.160
+developer a and one version of
+
+00:24:07.160 --> 00:24:08.240
+developer B and see which one
+
+00:24:08.240 --> 00:24:08.840
+works better.
+
+00:24:09.320 --> 00:24:10.440
+You know, you can't really watch
+
+00:24:10.440 --> 00:24:11.960
+for applications to be submitted to
+
+00:24:11.960 --> 00:24:13.760
+a store somewhere six months after
+
+00:24:13.760 --> 00:24:14.840
+you introduce the API and then
+
+00:24:14.840 --> 00:24:15.720
+start gathering data.
+
+00:24:15.840 --> 00:24:17.320
+So it was the, one of the more
+
+00:24:17.320 --> 00:24:18.840
+difficult places to go use data.
+
+00:24:18.840 --> 00:24:19.920
+And so I hadn't figured out yet
+
+00:24:19.920 --> 00:24:21.640
+the right way to go use it in
+
+00:24:21.640 --> 00:24:22.880
+that space until the edict came
+
+00:24:22.880 --> 00:24:24.720
+down. Um, and then we moved, but
+
+00:24:24.720 --> 00:24:26.080
+even there we ended up in a world
+
+00:24:26.080 --> 00:24:28.080
+where although upper management
+
+00:24:28.080 --> 00:24:30.200
+said, go do this upper management
+
+00:24:30.200 --> 00:24:31.320
+didn't really know exactly what
+
+00:24:31.320 --> 00:24:31.960
+they wanted to do with it.
+
+00:24:31.960 --> 00:24:32.880
+Either they knew they wanted to
+
+00:24:32.880 --> 00:24:34.160
+get there, but they didn't know
+
+00:24:34.240 --> 00:24:35.160
+they'd never done it before.
+
+00:24:35.360 --> 00:24:36.120
+And so they didn't know what
+
+00:24:36.120 --> 00:24:37.160
+parts to appreciate or not
+
+00:24:37.160 --> 00:24:38.040
+appreciate. And there was a lot
+
+00:24:38.040 --> 00:24:40.000
+of, of trying and failing and
+
+00:24:40.000 --> 00:24:41.440
+learning that happened along the
+
+00:24:41.440 --> 00:24:42.560
+way. And so we had a lot of
+
+00:24:43.900 --> 00:24:45.100
+we're getting much better, but
+
+00:24:45.100 --> 00:24:46.540
+we had a lot of, uh, early
+
+00:24:46.540 --> 00:24:47.620
+pressure from the top to go do
+
+00:24:47.620 --> 00:24:49.180
+this. And then various teams
+
+00:24:49.180 --> 00:24:50.260
+tried different things. And so
+
+00:24:50.260 --> 00:24:51.020
+you ended up with kind of
+
+00:24:51.020 --> 00:24:52.020
+this hybrid model where there
+
+00:24:52.020 --> 00:24:53.820
+was a lot of local, uh, idea
+
+00:24:53.820 --> 00:24:54.660
+development and talent
+
+00:24:54.660 --> 00:24:56.580
+development and, and ways to
+
+00:24:56.580 --> 00:24:57.940
+use stuff that was developed and
+
+00:24:57.940 --> 00:24:58.700
+then kind of pushed out to
+
+00:24:58.700 --> 00:24:59.500
+other people as centers of
+
+00:24:59.500 --> 00:24:59.940
+excellence.
+
+00:25:00.260 --> 00:25:01.660
+So it was a couple of things on
+
+00:25:01.660 --> 00:25:02.700
+you, uh, touch on that you
+
+00:25:02.700 --> 00:25:05.340
+talked about one was, uh, going
+
+00:25:05.340 --> 00:25:08.700
+way back the, um, this is why I
+
+00:25:08.700 --> 00:25:11.870
+edit. You were talking about,
+
+00:25:12.350 --> 00:25:13.790
+uh, you can either have an edict
+
+00:25:13.790 --> 00:25:15.150
+from top or sort of, you know,
+
+00:25:15.150 --> 00:25:17.230
+grassroots and, you know, try
+
+00:25:17.230 --> 00:25:18.990
+stuff and do it gradually. Uh,
+
+00:25:19.230 --> 00:25:20.830
+generally that latter approach
+
+00:25:20.870 --> 00:25:23.230
+in my experience sticks more. If
+
+00:25:23.350 --> 00:25:24.950
+it's harder to do driving from
+
+00:25:24.950 --> 00:25:27.550
+the bottom up, but it, in my
+
+00:25:27.550 --> 00:25:28.430
+experience in any sort of
+
+00:25:28.430 --> 00:25:29.390
+organizational changes sort of
+
+00:25:29.390 --> 00:25:31.670
+sticks more, um, edicts are
+
+00:25:31.670 --> 00:25:33.430
+interesting and they can often
+
+00:25:33.430 --> 00:25:37.480
+work. They're often difficult to
+
+00:25:37.480 --> 00:25:39.360
+get, you know, all the time I
+
+00:25:39.360 --> 00:25:40.920
+see people, they go to a VP or
+
+00:25:40.960 --> 00:25:42.240
+somebody high up and go, you
+
+00:25:42.240 --> 00:25:43.400
+should demand that the whole
+
+00:25:43.400 --> 00:25:45.520
+org does this. And they rarely
+
+00:25:45.520 --> 00:25:46.960
+ever do that because they,
+
+00:25:47.640 --> 00:25:48.840
+it's not always a good thing to
+
+00:25:48.840 --> 00:25:51.420
+make an edict. Uh, but one
+
+00:25:51.420 --> 00:25:52.380
+thing was interesting, glad you
+
+00:25:52.380 --> 00:25:52.940
+touched on it with the
+
+00:25:52.940 --> 00:25:56.140
+windows one is, is they said
+
+00:25:56.140 --> 00:25:59.970
+we're making this change and
+
+00:26:00.010 --> 00:26:02.050
+the, how does it happen and
+
+00:26:02.050 --> 00:26:05.130
+what does it mean was all left
+
+00:26:05.130 --> 00:26:08.090
+in the air. So was why, no, no,
+
+00:26:08.090 --> 00:26:10.130
+why was there? Why was not
+
+00:26:10.410 --> 00:26:12.650
+partially there. I'll go more
+
+00:26:12.650 --> 00:26:14.570
+than what or how. So there was
+
+00:26:14.570 --> 00:26:16.450
+this and either it was, and
+
+00:26:17.250 --> 00:26:18.730
+Steve and I may be on two sides
+
+00:26:18.730 --> 00:26:19.970
+of this, but it may be either
+
+00:26:20.530 --> 00:26:22.730
+genius or idiocy of this. Just
+
+00:26:22.730 --> 00:26:24.210
+let a thousand flowers bloom.
+
+00:26:25.090 --> 00:26:25.890
+And the end of worked out.
+
+00:26:25.890 --> 00:26:26.850
+All right. Regardless of the
+
+00:26:26.850 --> 00:26:27.930
+how it got there, let a
+
+00:26:27.930 --> 00:26:29.210
+thousand flowers bloom and the
+
+00:26:29.210 --> 00:26:31.960
+strong flowers will guide the
+
+00:26:32.080 --> 00:26:33.520
+way for the slash and burn all
+
+00:26:33.520 --> 00:26:34.760
+the white ones, keep the red
+
+00:26:34.760 --> 00:26:36.160
+ones. Is that you describe it
+
+00:26:36.160 --> 00:26:37.320
+like we were sitting on a hill
+
+00:26:37.320 --> 00:26:38.440
+and we, they showed us this
+
+00:26:38.440 --> 00:26:39.720
+picture across the valley of
+
+00:26:39.720 --> 00:26:40.800
+another city on another hill.
+
+00:26:40.800 --> 00:26:41.480
+And he said, we want to get
+
+00:26:41.480 --> 00:26:42.560
+there. And you have this
+
+00:26:42.560 --> 00:26:43.840
+valley laid out in front of
+
+00:26:43.840 --> 00:26:45.360
+you covered with clouds, you
+
+00:26:45.360 --> 00:26:46.840
+know, and fog. And they said,
+
+00:26:46.840 --> 00:26:47.760
+go over to that other hill.
+
+00:26:47.760 --> 00:26:48.280
+And you're like, well, what
+
+00:26:48.280 --> 00:26:49.320
+do I need? Do I need like a
+
+00:26:49.320 --> 00:26:51.360
+camel? Do I need a parka? Do
+
+00:26:51.360 --> 00:26:52.600
+I need a boat? Like, how am
+
+00:26:52.600 --> 00:26:53.320
+I getting there? Like, we
+
+00:26:53.320 --> 00:26:54.960
+don't know, just go, you
+
+00:26:54.960 --> 00:26:56.000
+know. And so we all tried. And
+
+00:26:56.000 --> 00:26:56.680
+those of us that chose
+
+00:26:56.680 --> 00:26:57.680
+camels, you know, ended up
+
+00:26:57.680 --> 00:26:58.800
+poor in the, in the, you
+
+00:26:58.800 --> 00:27:00.040
+know, middle of the Arctic or
+
+00:27:02.290 --> 00:27:03.570
+and you get halfway there. And
+
+00:27:03.570 --> 00:27:04.410
+some people say, let's turn
+
+00:27:04.410 --> 00:27:05.530
+back. This isn't working.
+
+00:27:05.810 --> 00:27:06.530
+We're not all the way to the
+
+00:27:06.530 --> 00:27:07.610
+city yet. Let's turn back. And
+
+00:27:07.610 --> 00:27:08.610
+so we had those people that
+
+00:27:08.610 --> 00:27:09.890
+said, let's go back to the
+
+00:27:09.890 --> 00:27:10.890
+traditional ways of doing
+
+00:27:10.890 --> 00:27:12.170
+things. I miss this part
+
+00:27:12.170 --> 00:27:13.530
+that I had before. And then
+
+00:27:13.530 --> 00:27:14.930
+some of us pushed on and
+
+00:27:14.930 --> 00:27:15.690
+we're still in the process.
+
+00:27:15.690 --> 00:27:16.290
+We haven't gotten all the
+
+00:27:16.290 --> 00:27:17.130
+way to the city. Maybe a
+
+00:27:17.130 --> 00:27:17.890
+few. I think that's true
+
+00:27:17.890 --> 00:27:19.090
+across a lot of Microsoft.
+
+00:27:19.090 --> 00:27:20.050
+I think a lot of people
+
+00:27:20.050 --> 00:27:21.010
+have made it to the city.
+
+00:27:21.410 --> 00:27:22.610
+There are a ton of people
+
+00:27:22.610 --> 00:27:23.410
+who just want to go back
+
+00:27:23.410 --> 00:27:24.330
+to their old comfortable
+
+00:27:24.330 --> 00:27:26.710
+city that that comfortable
+
+00:27:26.710 --> 00:27:28.190
+city that's it's now been
+
+00:27:28.190 --> 00:27:29.230
+raised to the ground.
+
+00:27:29.270 --> 00:27:30.670
+No, it's full. It's full
+
+00:27:30.670 --> 00:27:32.510
+of great 90s grunge music
+
+00:27:32.510 --> 00:27:33.270
+and other things from the
+
+00:27:33.270 --> 00:27:35.660
+90s, many other things from
+
+00:27:35.660 --> 00:27:36.260
+the 90s.
+
+00:27:36.620 --> 00:27:37.820
+Yes. The problem is that
+
+00:27:37.820 --> 00:27:38.740
+people don't realize that
+
+00:27:38.740 --> 00:27:39.820
+the old way was just not
+
+00:27:39.820 --> 00:27:40.540
+fast enough. You're
+
+00:27:40.540 --> 00:27:41.740
+guaranteed to be beaten by
+
+00:27:41.740 --> 00:27:42.780
+your competition. That's
+
+00:27:42.780 --> 00:27:43.660
+what I was saying. All the
+
+00:27:43.660 --> 00:27:45.220
+old ways. That's what I
+
+00:27:45.220 --> 00:27:46.740
+was saying when when this
+
+00:27:46.740 --> 00:27:49.850
+first rolled out, like, I
+
+00:27:49.850 --> 00:27:51.010
+think we were still doing
+
+00:27:51.050 --> 00:27:52.570
+a we we were doing the
+
+00:27:52.570 --> 00:27:54.530
+podcast then one of the
+
+00:27:54.530 --> 00:27:56.410
+biggest things that both
+
+00:27:56.410 --> 00:27:57.650
+Alan and I discovered during
+
+00:27:57.650 --> 00:27:59.090
+those phases, explaining to
+
+00:27:59.090 --> 00:28:00.810
+people why from a business
+
+00:28:00.810 --> 00:28:02.290
+context, because the
+
+00:28:02.290 --> 00:28:04.050
+number one question we got,
+
+00:28:04.250 --> 00:28:06.130
+at least I got from from
+
+00:28:07.050 --> 00:28:08.330
+individuals in the
+
+00:28:08.330 --> 00:28:11.290
+Windows org was no one's
+
+00:28:11.290 --> 00:28:13.370
+explaining why the old
+
+00:28:13.370 --> 00:28:14.650
+system is broken today.
+
+00:28:16.030 --> 00:28:17.630
+Right. It's kind of a
+
+00:28:17.630 --> 00:28:18.870
+precursor towards these
+
+00:28:18.870 --> 00:28:22.880
+folks who if if they're
+
+00:28:22.880 --> 00:28:23.920
+forced to journey are
+
+00:28:23.920 --> 00:28:25.360
+likely to want to go
+
+00:28:25.360 --> 00:28:25.880
+back.
+
+00:28:26.120 --> 00:28:26.760
+Right. I think that
+
+00:28:26.760 --> 00:28:27.800
+they're there. We could
+
+00:28:27.800 --> 00:28:28.520
+have been better about
+
+00:28:28.520 --> 00:28:29.640
+that. If you go back,
+
+00:28:29.640 --> 00:28:30.360
+there's some blog posts I
+
+00:28:30.360 --> 00:28:31.200
+have on kind of the
+
+00:28:31.200 --> 00:28:32.040
+development of tests or the
+
+00:28:32.040 --> 00:28:33.000
+evolution of testing and
+
+00:28:33.000 --> 00:28:34.200
+we kind of walk through. I
+
+00:28:34.200 --> 00:28:34.920
+think the important thing
+
+00:28:34.920 --> 00:28:35.920
+to recognize is that the
+
+00:28:35.920 --> 00:28:37.600
+people who have made it
+
+00:28:37.600 --> 00:28:38.960
+to data science, you know,
+
+00:28:39.000 --> 00:28:40.200
+Island or Hill or
+
+00:28:40.200 --> 00:28:41.280
+whatever, sometimes look
+
+00:28:41.280 --> 00:28:42.280
+back and go, we were all
+
+00:28:42.280 --> 00:28:43.240
+idiots. That was a terrible
+
+00:28:43.240 --> 00:28:43.960
+way to do things. It was
+
+00:28:43.960 --> 00:28:45.240
+never a good way. You
+
+00:28:45.240 --> 00:28:45.840
+know, and I think that's
+
+00:28:45.840 --> 00:28:46.680
+wrong. I think there was
+
+00:28:46.680 --> 00:28:47.440
+certainly a point in
+
+00:28:47.440 --> 00:28:48.920
+time and certain
+
+00:28:51.270 --> 00:28:52.230
+requirements in the in
+
+00:28:52.230 --> 00:28:53.550
+the environment and around
+
+00:28:53.550 --> 00:28:54.870
+the ecosystem that made
+
+00:28:54.870 --> 00:28:55.670
+that the right way to go
+
+00:28:55.670 --> 00:28:56.710
+do things and still to
+
+00:28:56.710 --> 00:28:57.510
+this day makes it the
+
+00:28:57.510 --> 00:28:58.470
+right way way to do
+
+00:28:58.470 --> 00:28:59.830
+certain kinds of work. I
+
+00:28:59.830 --> 00:29:00.430
+think you can't say
+
+00:29:00.430 --> 00:29:01.870
+that data science and
+
+00:29:01.870 --> 00:29:02.870
+data driven quality is the
+
+00:29:02.870 --> 00:29:04.350
+only possible way to
+
+00:29:05.390 --> 00:29:06.350
+handle quality and it's
+
+00:29:06.350 --> 00:29:07.270
+probably not the end way
+
+00:29:07.270 --> 00:29:08.030
+that will handle quality.
+
+00:29:08.030 --> 00:29:08.630
+There are probably other
+
+00:29:08.630 --> 00:29:09.070
+ways that will be
+
+00:29:09.070 --> 00:29:10.030
+invented later that will
+
+00:29:10.190 --> 00:29:11.510
+replace those a lot of it.
+
+00:29:11.830 --> 00:29:13.710
+But to say that manual
+
+00:29:13.710 --> 00:29:14.750
+testing was always a bad
+
+00:29:14.750 --> 00:29:16.110
+idea or that S-net work
+
+00:29:16.110 --> 00:29:17.230
+was always a bad idea is
+
+00:29:17.230 --> 00:29:18.270
+to ignore what was
+
+00:29:18.270 --> 00:29:19.510
+actually happening in the
+
+00:29:19.510 --> 00:29:20.350
+industry at the time. And
+
+00:29:20.350 --> 00:29:20.830
+I think those were
+
+00:29:20.830 --> 00:29:21.830
+actually very good
+
+00:29:22.590 --> 00:29:23.830
+things to happen at
+
+00:29:23.830 --> 00:29:25.270
+points in time when you
+
+00:29:25.270 --> 00:29:26.310
+had certain requirements
+
+00:29:26.310 --> 00:29:26.950
+from the ecosystem. If
+
+00:29:26.950 --> 00:29:27.590
+you don't have the
+
+00:29:27.590 --> 00:29:29.190
+ability to quickly push
+
+00:29:29.190 --> 00:29:30.390
+new software out, if you
+
+00:29:30.390 --> 00:29:31.470
+have to get it into a box
+
+00:29:31.470 --> 00:29:32.190
+and get it onto somebody's
+
+00:29:32.190 --> 00:29:33.870
+desk, you can't use the
+
+00:29:33.870 --> 00:29:34.630
+data driven world that
+
+00:29:34.630 --> 00:29:35.190
+we have. If you're not
+
+00:29:35.190 --> 00:29:36.150
+connected, you can't use a
+
+00:29:36.150 --> 00:29:37.430
+data driven system. And
+
+00:29:37.430 --> 00:29:38.150
+so there was a point in
+
+00:29:38.150 --> 00:29:39.190
+time when that was exactly
+
+00:29:39.190 --> 00:29:40.510
+the right solution. We've
+
+00:29:40.510 --> 00:29:41.390
+just moved past that
+
+00:29:41.390 --> 00:29:43.510
+time. Right. I think I
+
+00:29:43.510 --> 00:29:47.050
+totally agree. And one bit
+
+00:29:47.050 --> 00:29:48.010
+of advice for pretty much
+
+00:29:48.010 --> 00:29:49.370
+anything you're doing is
+
+00:29:50.490 --> 00:29:51.650
+look for efficiency and
+
+00:29:51.650 --> 00:29:52.810
+don't fall into that.
+
+00:29:52.810 --> 00:29:53.850
+That's the way we've
+
+00:29:53.850 --> 00:29:55.650
+always done it. Trap. And
+
+00:29:55.650 --> 00:29:56.290
+don't fall into that.
+
+00:29:56.290 --> 00:29:57.050
+That's the new way to
+
+00:29:57.050 --> 00:29:57.890
+do a trap either.
+
+00:29:57.890 --> 00:29:58.850
+Sometimes it's the new
+
+00:29:58.850 --> 00:29:59.970
+shiny way. And so
+
+00:29:59.970 --> 00:30:00.890
+everything has to be
+
+00:30:00.890 --> 00:30:02.530
+rewritten or redone to be
+
+00:30:02.530 --> 00:30:03.370
+the new shiny way. And
+
+00:30:03.370 --> 00:30:04.410
+it doesn't always apply to
+
+00:30:04.410 --> 00:30:05.170
+every part of every
+
+00:30:05.170 --> 00:30:06.010
+industry, right? If
+
+00:30:06.010 --> 00:30:06.570
+you're working on
+
+00:30:06.570 --> 00:30:07.890
+healthcare equipment, I'm
+
+00:30:07.890 --> 00:30:09.090
+not sure that data driven
+
+00:30:09.090 --> 00:30:09.970
+stuff is the best way to
+
+00:30:09.970 --> 00:30:10.890
+go. Like, oh, we killed
+
+00:30:10.890 --> 00:30:11.490
+three people. We should
+
+00:30:11.490 --> 00:30:12.610
+probably change that. It
+
+00:30:12.610 --> 00:30:13.570
+depends on the area of
+
+00:30:13.570 --> 00:30:14.690
+health, right? If it's
+
+00:30:15.410 --> 00:30:16.610
+in some areas, yeah, but
+
+00:30:16.610 --> 00:30:19.050
+there may be some, uh,
+
+00:30:19.090 --> 00:30:20.330
+I'm trying to think while
+
+00:30:20.330 --> 00:30:22.250
+I talk here, but, uh,
+
+00:30:22.330 --> 00:30:23.930
+some more preventative
+
+00:30:23.930 --> 00:30:24.610
+things. Maybe there's a
+
+00:30:24.610 --> 00:30:25.810
+better way to measure your
+
+00:30:25.810 --> 00:30:26.850
+blood pressure. I always
+
+00:30:26.850 --> 00:30:27.530
+see every time I go to
+
+00:30:27.530 --> 00:30:28.170
+the doctor, they have
+
+00:30:28.170 --> 00:30:29.290
+like some better device
+
+00:30:29.290 --> 00:30:30.330
+measure my blood pressure
+
+00:30:30.650 --> 00:30:32.290
+and, and they have like
+
+00:30:32.290 --> 00:30:33.730
+scales that are networked.
+
+00:30:33.730 --> 00:30:35.130
+And there's a lot of, there
+
+00:30:35.130 --> 00:30:37.450
+is room for, I think even
+
+00:30:37.450 --> 00:30:39.570
+in healthcare to have more
+
+00:30:39.570 --> 00:30:40.810
+data science and to learn
+
+00:30:40.810 --> 00:30:41.970
+how doctors are using
+
+00:30:41.970 --> 00:30:42.890
+things and to make tweaks
+
+00:30:42.890 --> 00:30:43.530
+in the equipment. Yeah,
+
+00:30:43.530 --> 00:30:44.010
+you got to figure out
+
+00:30:44.010 --> 00:30:45.650
+where the places are. I
+
+00:30:45.650 --> 00:30:46.290
+think it's always a
+
+00:30:46.290 --> 00:30:48.290
+question of, of how long
+
+00:30:48.290 --> 00:30:49.050
+the damage is going to be
+
+00:30:49.050 --> 00:30:50.050
+sustained and how big the
+
+00:30:50.050 --> 00:30:51.210
+damage is. Right. And
+
+00:30:51.210 --> 00:30:51.850
+that's how you figure
+
+00:30:51.850 --> 00:30:52.730
+out whether you need,
+
+00:30:52.730 --> 00:30:53.410
+whether you need to
+
+00:30:53.410 --> 00:30:54.490
+scale things. And so if I,
+
+00:30:54.490 --> 00:30:55.810
+if I, the advantage of
+
+00:30:55.810 --> 00:30:57.010
+using data is that I can
+
+00:30:57.010 --> 00:30:57.690
+release something into
+
+00:30:57.690 --> 00:30:58.650
+the wild for a little
+
+00:30:58.650 --> 00:30:59.770
+while, and I can quickly
+
+00:30:59.770 --> 00:31:00.890
+fix it, which means that
+
+00:31:00.890 --> 00:31:01.930
+the data is the damage
+
+00:31:01.930 --> 00:31:02.570
+that is doing, if it's
+
+00:31:02.570 --> 00:31:03.610
+wrong, isn't sustained
+
+00:31:03.610 --> 00:31:04.930
+very long in the old
+
+00:31:04.930 --> 00:31:05.450
+world, it had to be
+
+00:31:05.450 --> 00:31:06.370
+sustained for months or
+
+00:31:06.370 --> 00:31:07.250
+years because of the
+
+00:31:07.250 --> 00:31:08.250
+release cycles. Now you
+
+00:31:08.250 --> 00:31:09.050
+can have it out there for
+
+00:31:09.050 --> 00:31:10.410
+a day or half a day and
+
+00:31:10.410 --> 00:31:11.610
+fix it, which is all
+
+00:31:11.610 --> 00:31:12.770
+awesome until you have
+
+00:31:12.770 --> 00:31:14.370
+an infinite cost, right?
+
+00:31:14.370 --> 00:31:15.770
+If, if one second of
+
+00:31:15.770 --> 00:31:16.570
+damage or one split
+
+00:31:16.570 --> 00:31:17.690
+second of damage, it
+
+00:31:17.690 --> 00:31:18.810
+causes a death or causes
+
+00:31:18.810 --> 00:31:19.690
+major harm and you
+
+00:31:19.690 --> 00:31:20.490
+can't afford to let that
+
+00:31:20.490 --> 00:31:21.090
+go. And you have to
+
+00:31:21.090 --> 00:31:21.850
+fix it before you
+
+00:31:21.850 --> 00:31:23.130
+possibly, or even
+
+00:31:23.130 --> 00:31:23.970
+worse breaks the
+
+00:31:23.970 --> 00:31:26.370
+Facebook app. Yes. Yeah.
+
+00:31:26.370 --> 00:31:27.010
+That's, that's
+
+00:31:27.010 --> 00:31:27.810
+unconscionable. We are
+
+00:31:27.810 --> 00:31:29.210
+definitely, we are
+
+00:31:29.210 --> 00:31:30.250
+definitely in a world
+
+00:31:30.370 --> 00:31:33.610
+where we have a lot more
+
+00:31:33.610 --> 00:31:34.770
+options than we did
+
+00:31:34.770 --> 00:31:36.730
+back in the day. I do,
+
+00:31:37.530 --> 00:31:38.770
+to your point, like there
+
+00:31:38.770 --> 00:31:42.290
+is a lot of revisionism
+
+00:31:42.770 --> 00:31:43.690
+in a lot of the people
+
+00:31:43.690 --> 00:31:45.210
+that I talked to, right?
+
+00:31:45.210 --> 00:31:46.770
+It's easy to predict the
+
+00:31:46.770 --> 00:31:48.050
+future in hindsight.
+
+00:31:48.210 --> 00:31:48.730
+Yeah. Especially to
+
+00:31:48.730 --> 00:31:52.500
+create it. Right. The
+
+00:31:55.600 --> 00:31:56.960
+lot of the world and
+
+00:31:57.600 --> 00:31:58.720
+back in those days, a
+
+00:31:58.720 --> 00:32:00.440
+lot of the world and in
+
+00:32:00.520 --> 00:32:01.480
+a lot of our listeners, I
+
+00:32:01.480 --> 00:32:04.120
+think I still are still in
+
+00:32:04.120 --> 00:32:05.560
+what we refer to as the
+
+00:32:05.560 --> 00:32:07.360
+old days. Yeah, I think
+
+00:32:07.360 --> 00:32:08.160
+they are. They're, they're
+
+00:32:08.160 --> 00:32:09.800
+missing knowledge. They're
+
+00:32:09.800 --> 00:32:11.760
+missing assets that we've
+
+00:32:11.760 --> 00:32:13.160
+built up over, over the
+
+00:32:13.160 --> 00:32:16.310
+years. Um, the, the
+
+00:32:16.310 --> 00:32:17.790
+positive thing though,
+
+00:32:17.950 --> 00:32:21.650
+is in today's world,
+
+00:32:21.650 --> 00:32:22.850
+there's a lot of other
+
+00:32:22.850 --> 00:32:24.890
+examples to learn from.
+
+00:32:25.250 --> 00:32:26.650
+You don't have to treat
+
+00:32:26.650 --> 00:32:28.890
+it as theoretical. I know
+
+00:32:29.370 --> 00:32:31.130
+back in the windows 95
+
+00:32:31.130 --> 00:32:32.970
+days, if I had brought up
+
+00:32:32.970 --> 00:32:34.570
+anything along the lines
+
+00:32:34.570 --> 00:32:37.170
+of what I do today, they
+
+00:32:37.170 --> 00:32:38.330
+would look at me like I
+
+00:32:38.330 --> 00:32:40.690
+had three heads. Right. And
+
+00:32:40.690 --> 00:32:43.510
+it's just because the
+
+00:32:43.510 --> 00:32:46.150
+ideas of this type of
+
+00:32:46.150 --> 00:32:48.150
+work that we do and the
+
+00:32:48.150 --> 00:32:50.030
+benefits of it were sort
+
+00:32:50.030 --> 00:32:52.310
+of academic theoretical at
+
+00:32:52.390 --> 00:32:53.270
+that point in time.
+
+00:32:53.270 --> 00:32:53.830
+Well, at that point,
+
+00:32:53.830 --> 00:32:54.190
+that would have been
+
+00:32:54.190 --> 00:32:55.150
+impossible to carry out.
+
+00:32:55.150 --> 00:32:55.870
+But even if assuming it
+
+00:32:55.870 --> 00:32:56.550
+was possible, you're
+
+00:32:56.550 --> 00:32:57.470
+right. They would have
+
+00:32:57.470 --> 00:32:58.230
+looked at you like, this
+
+00:32:58.230 --> 00:32:58.990
+doesn't make any sense
+
+00:32:58.990 --> 00:32:59.630
+because they were just
+
+00:32:59.630 --> 00:33:00.710
+moving to a large test
+
+00:33:00.710 --> 00:33:02.150
+organization at that
+
+00:33:02.150 --> 00:33:02.830
+point in time. Like that
+
+00:33:02.830 --> 00:33:04.190
+was kind of when a lot of
+
+00:33:04.190 --> 00:33:04.990
+the independent test
+
+00:33:04.990 --> 00:33:05.750
+organizations are starting
+
+00:33:05.750 --> 00:33:07.190
+to spin up. Um, I think
+
+00:33:07.190 --> 00:33:07.870
+around that time, maybe
+
+00:33:07.870 --> 00:33:09.110
+today, just been up not
+
+00:33:09.110 --> 00:33:10.110
+too long before that.
+
+00:33:12.040 --> 00:33:13.760
+Now back to your personal
+
+00:33:14.470 --> 00:33:15.390
+journey. So you've been,
+
+00:33:15.390 --> 00:33:16.230
+you've been doing this
+
+00:33:16.230 --> 00:33:17.270
+for three years.
+
+00:33:17.270 --> 00:33:17.630
+Correct.
+
+00:33:17.670 --> 00:33:20.390
+What did you do to
+
+00:33:20.390 --> 00:33:22.870
+prepare yourself to be
+
+00:33:22.870 --> 00:33:24.470
+the head of a, of a
+
+00:33:24.470 --> 00:33:25.230
+data science that
+
+00:33:25.230 --> 00:33:26.270
+engineering team, did you
+
+00:33:26.270 --> 00:33:27.150
+have that skillset
+
+00:33:27.150 --> 00:33:27.630
+beforehand?
+
+00:33:27.630 --> 00:33:28.790
+No, I didn't at all. I,
+
+00:33:28.830 --> 00:33:29.590
+in fact, I've never even
+
+00:33:29.590 --> 00:33:30.470
+taken a statistics course
+
+00:33:30.470 --> 00:33:31.470
+when I was in college. So
+
+00:33:31.630 --> 00:33:33.230
+I was uniquely on
+
+00:33:33.550 --> 00:33:34.630
+skilled in this particular,
+
+00:33:34.790 --> 00:33:35.550
+in this particular thing.
+
+00:33:35.550 --> 00:33:36.670
+So what I did is what I
+
+00:33:36.670 --> 00:33:37.630
+always do. And I started
+
+00:33:37.630 --> 00:33:38.750
+reading, I started
+
+00:33:38.750 --> 00:33:39.910
+reading blogs, I started
+
+00:33:39.910 --> 00:33:41.110
+reading books, I started
+
+00:33:41.110 --> 00:33:42.470
+reading papers. Um, and
+
+00:33:42.470 --> 00:33:43.950
+then around that time,
+
+00:33:43.990 --> 00:33:45.510
+all the, the MOOCs, the
+
+00:33:45.510 --> 00:33:46.470
+Massly online open
+
+00:33:46.470 --> 00:33:47.790
+courses, like Coursera and
+
+00:33:47.790 --> 00:33:49.230
+edX, et cetera, uh,
+
+00:33:49.230 --> 00:33:50.270
+started existing. And so
+
+00:33:50.270 --> 00:33:50.870
+I took a lot of the
+
+00:33:50.870 --> 00:33:52.430
+courses. There's a whole
+
+00:33:52.430 --> 00:33:54.030
+series of, of almost
+
+00:33:54.030 --> 00:33:54.910
+collegiate level courses
+
+00:33:54.910 --> 00:33:55.750
+that you can take for,
+
+00:33:55.910 --> 00:33:56.950
+for free or almost for
+
+00:33:56.950 --> 00:33:58.430
+free. Um, and so I went
+
+00:33:58.430 --> 00:33:59.470
+through a lot of those,
+
+00:33:59.550 --> 00:34:01.230
+um, over time, I had to
+
+00:34:01.230 --> 00:34:02.230
+learn a lot of the
+
+00:34:02.230 --> 00:34:02.990
+techniques that I had to
+
+00:34:02.990 --> 00:34:03.710
+go learn. So you have to
+
+00:34:03.710 --> 00:34:04.630
+kind of become rigorous
+
+00:34:04.630 --> 00:34:05.150
+and go back to
+
+00:34:05.150 --> 00:34:06.430
+fundamentals and learn
+
+00:34:06.430 --> 00:34:07.190
+the basics so you can
+
+00:34:07.190 --> 00:34:08.430
+figure out what to apply.
+
+00:34:08.710 --> 00:34:09.830
+Um, and then you have to
+
+00:34:09.830 --> 00:34:10.910
+read, you have to figure
+
+00:34:10.910 --> 00:34:11.550
+out where it applies and
+
+00:34:11.550 --> 00:34:12.110
+where it doesn't apply.
+
+00:34:12.110 --> 00:34:12.670
+But a lot of it, you
+
+00:34:12.670 --> 00:34:13.430
+have to understand enough
+
+00:34:13.430 --> 00:34:14.150
+techniques in order to
+
+00:34:14.150 --> 00:34:14.910
+go back and be able to
+
+00:34:14.910 --> 00:34:15.550
+figure out which ones to
+
+00:34:15.550 --> 00:34:16.310
+apply and not apply.
+
+00:34:16.830 --> 00:34:19.430
+Is there one thing if
+
+00:34:19.430 --> 00:34:20.390
+you were to say, if you
+
+00:34:20.390 --> 00:34:21.830
+only do one to start
+
+00:34:22.110 --> 00:34:22.950
+from your experience,
+
+00:34:22.950 --> 00:34:24.390
+what is the one concrete
+
+00:34:24.390 --> 00:34:25.510
+thing you would suggest?
+
+00:34:26.190 --> 00:34:27.630
+If you're trying to,
+
+00:34:28.030 --> 00:34:29.270
+is there a data scientist?
+
+00:34:29.310 --> 00:34:30.070
+Right. Yeah. So there's
+
+00:34:30.070 --> 00:34:30.750
+there's a series of
+
+00:34:30.750 --> 00:34:31.790
+MOOCs, about nine, eight
+
+00:34:31.790 --> 00:34:32.590
+or nine of them, depending
+
+00:34:32.590 --> 00:34:33.390
+on the take the caps in
+
+00:34:33.390 --> 00:34:35.190
+from, uh, Johns Hopkins
+
+00:34:35.190 --> 00:34:36.630
+University, um, which is
+
+00:34:36.630 --> 00:34:37.750
+called, I think like data
+
+00:34:37.750 --> 00:34:39.110
+science or whatever. Um,
+
+00:34:39.110 --> 00:34:40.150
+it's on Coursera and
+
+00:34:40.150 --> 00:34:40.870
+there's a series of,
+
+00:34:40.870 --> 00:34:41.710
+of they're offered every
+
+00:34:41.710 --> 00:34:42.710
+month or one per month.
+
+00:34:42.710 --> 00:34:43.350
+And I would suggest going
+
+00:34:43.350 --> 00:34:43.830
+through that set of
+
+00:34:43.830 --> 00:34:44.750
+courses. It's a very good
+
+00:34:44.750 --> 00:34:45.990
+set of courses. Most of
+
+00:34:45.990 --> 00:34:46.630
+them aren't too hard.
+
+00:34:46.630 --> 00:34:47.310
+There's a few of them
+
+00:34:47.310 --> 00:34:48.150
+that are quite rigorous.
+
+00:34:48.430 --> 00:34:49.390
+Um, but when you get
+
+00:34:49.390 --> 00:34:49.990
+to the end of it, you'll
+
+00:34:49.990 --> 00:34:51.110
+have a very good sense
+
+00:34:51.110 --> 00:34:51.710
+for things. You won't
+
+00:34:51.710 --> 00:34:53.190
+be a PhD by any stretch
+
+00:34:53.190 --> 00:34:54.270
+of the imagination, but
+
+00:34:54.270 --> 00:34:54.950
+you will have a very
+
+00:34:54.950 --> 00:34:55.910
+strong sense of things.
+
+00:34:56.550 --> 00:34:57.710
+And how often have you
+
+00:34:57.710 --> 00:34:58.790
+been finding yourself
+
+00:34:58.990 --> 00:35:00.110
+using what you've
+
+00:35:00.110 --> 00:35:01.510
+learned in your job?
+
+00:35:02.030 --> 00:35:03.390
+Daily, probably. Right.
+
+00:35:03.390 --> 00:35:04.510
+So my job today is as
+
+00:35:04.510 --> 00:35:05.550
+a manager. So I don't do
+
+00:35:05.550 --> 00:35:07.190
+a lot of the direct, uh,
+
+00:35:07.470 --> 00:35:08.590
+data analysis, but I
+
+00:35:08.590 --> 00:35:09.510
+overview a lot of with
+
+00:35:09.510 --> 00:35:10.270
+the data analysis. And
+
+00:35:10.270 --> 00:35:11.390
+so I will oftentimes meet
+
+00:35:11.390 --> 00:35:11.910
+with my teams and
+
+00:35:11.910 --> 00:35:12.310
+they'll say, we're going
+
+00:35:12.310 --> 00:35:13.030
+to go report this. And
+
+00:35:13.030 --> 00:35:14.030
+I'm like, well, what
+
+00:35:14.030 --> 00:35:14.870
+about that? You've
+
+00:35:14.870 --> 00:35:15.710
+missed this corner over
+
+00:35:15.710 --> 00:35:16.630
+here. Maybe you should
+
+00:35:16.630 --> 00:35:17.750
+use this technique. And
+
+00:35:17.750 --> 00:35:18.510
+so those all become
+
+00:35:18.510 --> 00:35:20.550
+useful to ask questions
+
+00:35:20.550 --> 00:35:21.870
+to make suggestions, um,
+
+00:35:21.870 --> 00:35:22.670
+and to understand what
+
+00:35:22.670 --> 00:35:23.430
+is possible and what's
+
+00:35:23.430 --> 00:35:25.550
+not a lot of data science
+
+00:35:25.550 --> 00:35:27.030
+can feel like magic and
+
+00:35:27.190 --> 00:35:27.870
+but it can't do
+
+00:35:27.870 --> 00:35:28.790
+everything. And so you
+
+00:35:28.790 --> 00:35:29.470
+have to understand where
+
+00:35:29.470 --> 00:35:30.430
+the constraints are in
+
+00:35:30.430 --> 00:35:30.950
+order to be able to
+
+00:35:30.950 --> 00:35:31.910
+figure out what to tell
+
+00:35:31.910 --> 00:35:32.950
+your teams to go do or
+
+00:35:32.950 --> 00:35:34.430
+to try to go do. Um,
+
+00:35:34.630 --> 00:35:35.070
+one of the things I
+
+00:35:35.070 --> 00:35:35.750
+think is important is
+
+00:35:35.750 --> 00:35:36.430
+to realize that you
+
+00:35:36.430 --> 00:35:37.350
+also need to be
+
+00:35:37.350 --> 00:35:38.590
+willing to make mistakes
+
+00:35:38.590 --> 00:35:39.430
+and willing to fail. And
+
+00:35:39.430 --> 00:35:40.030
+so there's definitely
+
+00:35:40.030 --> 00:35:41.470
+times when I have sent
+
+00:35:41.470 --> 00:35:42.350
+my team off to go do
+
+00:35:42.350 --> 00:35:43.390
+something and it turned
+
+00:35:43.390 --> 00:35:44.190
+out it wasn't possible
+
+00:35:44.190 --> 00:35:45.110
+to do like we went and
+
+00:35:45.110 --> 00:35:45.950
+tried really hard and
+
+00:35:45.950 --> 00:35:46.870
+then realized, you
+
+00:35:46.870 --> 00:35:47.910
+know, PhDs in the
+
+00:35:47.910 --> 00:35:48.790
+corners of universities
+
+00:35:48.790 --> 00:35:49.430
+haven't yet figured
+
+00:35:49.430 --> 00:35:50.030
+out how to go do this
+
+00:35:50.030 --> 00:35:50.430
+thing. So it's
+
+00:35:50.430 --> 00:35:51.550
+probably not possible.
+
+00:35:52.150 --> 00:35:52.630
+And then it's your
+
+00:35:52.630 --> 00:35:53.310
+reaction to that.
+
+00:35:53.310 --> 00:35:53.950
+That's important. You
+
+00:35:53.950 --> 00:35:54.630
+have to go like, okay,
+
+00:35:54.630 --> 00:35:55.990
+cool. Now we know and
+
+00:35:55.990 --> 00:35:56.590
+we'll go down a different
+
+00:35:56.590 --> 00:35:57.750
+path. No way they
+
+00:35:57.750 --> 00:35:58.390
+can't figure out you
+
+00:35:58.390 --> 00:35:59.310
+fire them all. Get some
+
+00:35:59.310 --> 00:36:00.230
+smarter people in the
+
+00:36:00.230 --> 00:36:01.790
+room. That is sometimes
+
+00:36:01.790 --> 00:36:02.990
+the management strategy.
+
+00:36:02.990 --> 00:36:03.590
+That's not the one
+
+00:36:03.590 --> 00:36:05.470
+that I recommend. Um,
+
+00:36:05.870 --> 00:36:06.550
+just just throwing
+
+00:36:06.550 --> 00:36:07.670
+spitballs. I think
+
+00:36:07.670 --> 00:36:08.470
+we're very much in a
+
+00:36:08.470 --> 00:36:09.870
+world. Uh, one thing
+
+00:36:09.870 --> 00:36:10.430
+that I've noticed is
+
+00:36:10.430 --> 00:36:11.990
+the world of, of test
+
+00:36:11.990 --> 00:36:13.150
+development and to some
+
+00:36:13.150 --> 00:36:13.750
+extent, the world of
+
+00:36:13.750 --> 00:36:14.750
+development is a much
+
+00:36:14.750 --> 00:36:16.390
+more constrained world,
+
+00:36:16.390 --> 00:36:17.430
+meaning you generally
+
+00:36:17.430 --> 00:36:18.270
+don't send people to go
+
+00:36:18.270 --> 00:36:18.910
+do something that you
+
+00:36:18.910 --> 00:36:19.910
+don't know is possible
+
+00:36:19.910 --> 00:36:21.110
+to go do. It does
+
+00:36:21.110 --> 00:36:22.990
+happen. Um, and you
+
+00:36:22.990 --> 00:36:23.670
+can go read like show
+
+00:36:23.670 --> 00:36:24.350
+stopper about the
+
+00:36:24.350 --> 00:36:25.270
+building of NT and there
+
+00:36:25.270 --> 00:36:25.870
+were people that were
+
+00:36:25.870 --> 00:36:26.950
+sent off to go build a
+
+00:36:26.950 --> 00:36:27.830
+graphic system that they
+
+00:36:27.830 --> 00:36:28.470
+didn't even know was
+
+00:36:28.470 --> 00:36:29.430
+possible. And they went
+
+00:36:29.430 --> 00:36:30.030
+off and I think lived on
+
+00:36:30.030 --> 00:36:30.790
+a boat for like three
+
+00:36:30.790 --> 00:36:31.830
+months and came back
+
+00:36:31.830 --> 00:36:33.390
+with a, with, with GDI
+
+00:36:33.550 --> 00:36:34.670
+or whatever, uh, out of
+
+00:36:34.670 --> 00:36:36.350
+the system. But, um,
+
+00:36:36.950 --> 00:36:37.870
+that's rare. Most of
+
+00:36:37.870 --> 00:36:38.350
+the time you're sent
+
+00:36:38.350 --> 00:36:38.830
+to go do something
+
+00:36:38.830 --> 00:36:39.510
+that everybody knows
+
+00:36:39.510 --> 00:36:40.230
+is doable. It's just a
+
+00:36:40.230 --> 00:36:41.550
+question of how long it
+
+00:36:41.550 --> 00:36:42.390
+takes. When you're in
+
+00:36:42.390 --> 00:36:42.990
+the world of data
+
+00:36:42.990 --> 00:36:43.870
+science, you don't know
+
+00:36:43.870 --> 00:36:44.310
+if there's enough
+
+00:36:44.310 --> 00:36:45.750
+signal among all the
+
+00:36:45.750 --> 00:36:46.350
+noise in order to be
+
+00:36:46.350 --> 00:36:47.390
+able to generate what
+
+00:36:47.390 --> 00:36:47.910
+you need. You
+
+00:36:47.910 --> 00:36:48.710
+sometimes will go,
+
+00:36:48.830 --> 00:36:49.430
+we'll get something and
+
+00:36:49.430 --> 00:36:50.630
+realize all I can tell
+
+00:36:50.630 --> 00:36:51.350
+you is there's no
+
+00:36:51.350 --> 00:36:53.020
+conclusive answer and
+
+00:36:53.020 --> 00:36:53.980
+that has to be okay.
+
+00:36:54.460 --> 00:36:56.020
+There's another
+
+00:36:56.020 --> 00:36:57.220
+tangent. This is my job
+
+00:36:57.220 --> 00:36:58.060
+to make tangents today
+
+00:36:58.060 --> 00:36:59.180
+cause I don't know
+
+00:36:59.180 --> 00:37:00.100
+nothing about no data
+
+00:37:00.100 --> 00:37:02.210
+science. I know a little
+
+00:37:02.210 --> 00:37:03.250
+just enough to freak
+
+00:37:03.250 --> 00:37:05.290
+Brent out, but for the
+
+00:37:05.290 --> 00:37:06.490
+younger of the three
+
+00:37:06.490 --> 00:37:08.090
+listeners, there's only
+
+00:37:08.090 --> 00:37:08.890
+one left of two are
+
+00:37:08.890 --> 00:37:11.010
+here. Um, one thing I
+
+00:37:11.010 --> 00:37:11.810
+wanted to call out, it
+
+00:37:11.810 --> 00:37:12.450
+wasn't just that the
+
+00:37:12.450 --> 00:37:13.290
+guys went off and
+
+00:37:13.850 --> 00:37:15.770
+built GDI, but it, you
+
+00:37:15.770 --> 00:37:16.970
+know, in seclusion, but
+
+00:37:17.330 --> 00:37:18.810
+imagine if you will
+
+00:37:19.130 --> 00:37:20.490
+building complex
+
+00:37:20.490 --> 00:37:21.690
+software without the
+
+00:37:21.690 --> 00:37:24.980
+internet. Yeah. Without
+
+00:37:25.060 --> 00:37:26.820
+stack overflow, without
+
+00:37:26.820 --> 00:37:28.740
+Google or Bing, you can't
+
+00:37:28.740 --> 00:37:29.500
+just ask somebody how to
+
+00:37:29.500 --> 00:37:31.840
+go do it. Uh, what an
+
+00:37:31.840 --> 00:37:34.320
+archaic world. My job
+
+00:37:34.320 --> 00:37:35.480
+today, trees that will
+
+00:37:35.480 --> 00:37:36.360
+give you a hint. Yeah.
+
+00:37:36.960 --> 00:37:38.560
+My job today would,
+
+00:37:39.080 --> 00:37:40.680
+would have been so much
+
+00:37:40.680 --> 00:37:43.280
+harder to get to. And,
+
+00:37:44.040 --> 00:37:46.670
+um, I'll double quote
+
+00:37:46.670 --> 00:37:48.270
+master without the
+
+00:37:48.270 --> 00:37:50.030
+internet for sure. One
+
+00:37:50.030 --> 00:37:50.710
+thing. And yeah,
+
+00:37:51.430 --> 00:37:52.990
+everything is faster. Uh,
+
+00:37:52.990 --> 00:37:54.070
+the reason that we're
+
+00:37:54.870 --> 00:37:55.870
+data science as a role
+
+00:37:55.870 --> 00:37:56.670
+is cause we're moving so
+
+00:37:56.670 --> 00:37:57.430
+much faster, both for
+
+00:37:57.430 --> 00:37:58.550
+necessity and for, and
+
+00:37:58.550 --> 00:38:00.750
+because, uh, possibility.
+
+00:38:01.190 --> 00:38:02.230
+One of the great moves
+
+00:38:02.230 --> 00:38:03.070
+about moving to a lot more
+
+00:38:03.070 --> 00:38:04.150
+open source at Microsoft
+
+00:38:04.150 --> 00:38:05.150
+using things like Git
+
+00:38:05.150 --> 00:38:06.750
+for source control is
+
+00:38:06.750 --> 00:38:08.590
+all of a sudden, uh, we
+
+00:38:08.590 --> 00:38:09.030
+used to have like
+
+00:38:09.030 --> 00:38:09.870
+horrible internal
+
+00:38:09.870 --> 00:38:10.830
+documentation for our
+
+00:38:10.830 --> 00:38:11.670
+internal tools, if
+
+00:38:11.670 --> 00:38:12.390
+they were documented at
+
+00:38:12.390 --> 00:38:13.230
+all. But now that we're
+
+00:38:13.230 --> 00:38:14.190
+using a lot more stuff,
+
+00:38:14.270 --> 00:38:15.910
+open source answers are
+
+00:38:15.910 --> 00:38:17.150
+on stack overflow answers
+
+00:38:17.150 --> 00:38:18.150
+are documented in blog
+
+00:38:18.150 --> 00:38:19.870
+posts. It's, it's, it's
+
+00:38:19.870 --> 00:38:21.350
+been, it's accelerated.
+
+00:38:21.390 --> 00:38:23.310
+At least one fantastic
+
+00:38:23.310 --> 00:38:24.310
+thing our team does, I
+
+00:38:24.310 --> 00:38:25.030
+pick on our lack of
+
+00:38:25.030 --> 00:38:26.390
+data science, but, uh,
+
+00:38:26.390 --> 00:38:27.190
+we have a very good
+
+00:38:27.190 --> 00:38:28.110
+modern engineering
+
+00:38:28.110 --> 00:38:29.310
+system. It's all builds
+
+00:38:29.310 --> 00:38:31.270
+in Azure. I find them
+
+00:38:31.270 --> 00:38:32.990
+red. Woo hoo. Use a
+
+00:38:32.990 --> 00:38:34.310
+lot of VSTS get first
+
+00:38:34.310 --> 00:38:36.670
+source control, uh, the
+
+00:38:36.670 --> 00:38:38.630
+whole crap ton of open
+
+00:38:38.630 --> 00:38:39.830
+source and enables us
+
+00:38:39.830 --> 00:38:40.630
+to move pretty fast
+
+00:38:40.750 --> 00:38:41.550
+despite ourselves.
+
+00:38:42.940 --> 00:38:43.460
+Yeah. It's, it's
+
+00:38:43.460 --> 00:38:44.100
+interesting to leverage
+
+00:38:44.100 --> 00:38:44.620
+the new world, but
+
+00:38:44.620 --> 00:38:45.820
+it's also changed the
+
+00:38:45.820 --> 00:38:46.660
+way that people learn.
+
+00:38:46.700 --> 00:38:47.460
+It used to be, you went
+
+00:38:47.460 --> 00:38:48.420
+and you got a book and
+
+00:38:48.420 --> 00:38:49.500
+you read and you got,
+
+00:38:49.660 --> 00:38:50.100
+and that kind of
+
+00:38:50.100 --> 00:38:51.020
+forced you to get an
+
+00:38:51.060 --> 00:38:51.940
+overview of the whole
+
+00:38:51.940 --> 00:38:52.860
+area and kind of get
+
+00:38:52.860 --> 00:38:53.700
+deep and realize how
+
+00:38:53.700 --> 00:38:54.100
+the pieces are
+
+00:38:54.100 --> 00:38:55.260
+connected. And now you
+
+00:38:55.260 --> 00:38:57.900
+almost have, um, a
+
+00:38:57.900 --> 00:38:59.580
+paging system where you
+
+00:38:59.580 --> 00:39:00.820
+don't even have the data
+
+00:39:00.820 --> 00:39:01.660
+until you need it. And
+
+00:39:01.660 --> 00:39:02.300
+then you go to stack
+
+00:39:02.300 --> 00:39:03.500
+overflow or you go to a
+
+00:39:03.500 --> 00:39:04.260
+search engine and you
+
+00:39:04.260 --> 00:39:05.340
+find it. And so you
+
+00:39:05.340 --> 00:39:06.340
+kind of piecemeal build
+
+00:39:06.340 --> 00:39:06.900
+this thing up in your
+
+00:39:06.900 --> 00:39:07.500
+head, but you don't
+
+00:39:07.500 --> 00:39:08.220
+understand the big
+
+00:39:08.220 --> 00:39:09.300
+picture sometimes
+
+00:39:09.300 --> 00:39:10.540
+almost ever. You just
+
+00:39:10.540 --> 00:39:11.140
+learn the pieces you
+
+00:39:11.140 --> 00:39:11.780
+absolutely need to
+
+00:39:11.780 --> 00:39:12.660
+learn. And then you
+
+00:39:12.660 --> 00:39:13.540
+move on and that's
+
+00:39:13.540 --> 00:39:15.180
+good and bad.
+
+00:39:15.580 --> 00:39:16.540
+Yeah, I agree too. I
+
+00:39:16.700 --> 00:39:17.700
+call it just in time
+
+00:39:17.700 --> 00:39:20.380
+learning the, actually
+
+00:39:20.540 --> 00:39:21.580
+to that point. So you've
+
+00:39:21.580 --> 00:39:22.660
+been here at least 15
+
+00:39:22.660 --> 00:39:23.180
+years, right?
+
+00:39:23.740 --> 00:39:26.160
+About 19. Okay. So
+
+00:39:26.200 --> 00:39:26.880
+almost catching up with
+
+00:39:26.880 --> 00:39:27.240
+you guys.
+
+00:39:27.760 --> 00:39:34.030
+The, the, the situation
+
+00:39:34.030 --> 00:39:34.790
+you went through three
+
+00:39:34.790 --> 00:39:35.910
+years ago, where you
+
+00:39:35.910 --> 00:39:38.310
+were, um, told to go
+
+00:39:38.310 --> 00:39:39.270
+into this space, which
+
+00:39:39.270 --> 00:39:40.030
+was fine. Cause that's
+
+00:39:40.030 --> 00:39:40.670
+where you wanted to go
+
+00:39:40.670 --> 00:39:43.250
+anyway. If that had
+
+00:39:43.250 --> 00:39:45.130
+happened 15 years ago,
+
+00:39:45.850 --> 00:39:46.450
+what do you think would
+
+00:39:46.450 --> 00:39:47.090
+have happened to you?
+
+00:39:48.830 --> 00:39:49.310
+It would have been
+
+00:39:49.310 --> 00:39:49.950
+different, right? It
+
+00:39:49.950 --> 00:39:50.750
+would have been, you
+
+00:39:50.750 --> 00:39:51.870
+know, go find books and
+
+00:39:51.870 --> 00:39:52.790
+read a lot of books
+
+00:39:52.790 --> 00:39:53.550
+and then, and then
+
+00:39:53.550 --> 00:39:54.470
+figure out how to go
+
+00:39:54.470 --> 00:39:55.590
+do it from there. Um,
+
+00:39:55.630 --> 00:39:57.350
+which is a lot harder.
+
+00:39:57.590 --> 00:39:58.350
+The hardest part
+
+00:39:58.350 --> 00:39:59.430
+actually would 15 years
+
+00:39:59.430 --> 00:40:00.470
+ago is there's no
+
+00:40:00.470 --> 00:40:01.910
+tooling. So 15 years
+
+00:40:01.910 --> 00:40:02.470
+ago, everything was
+
+00:40:02.470 --> 00:40:03.310
+proprietary tooling.
+
+00:40:03.510 --> 00:40:04.350
+Everything costs money
+
+00:40:04.350 --> 00:40:05.030
+or the company had to
+
+00:40:05.030 --> 00:40:06.350
+go build it. And so
+
+00:40:06.470 --> 00:40:07.510
+today I can just go and
+
+00:40:07.510 --> 00:40:08.590
+I can get our, or I can
+
+00:40:08.590 --> 00:40:09.630
+get Python and I can
+
+00:40:09.630 --> 00:40:10.830
+have basically every
+
+00:40:11.030 --> 00:40:12.430
+data tool I want at my
+
+00:40:12.430 --> 00:40:13.670
+fingertips and a bunch
+
+00:40:13.670 --> 00:40:14.310
+of documentation on how
+
+00:40:14.310 --> 00:40:14.790
+to go use it.
+
+00:40:14.870 --> 00:40:16.110
+And examples everywhere.
+
+00:40:16.510 --> 00:40:17.270
+And examples everywhere.
+
+00:40:17.270 --> 00:40:18.190
+Back then you
+
+00:40:18.190 --> 00:40:18.750
+probably would have to
+
+00:40:18.750 --> 00:40:19.670
+go get a book that told
+
+00:40:19.670 --> 00:40:20.670
+you here's how
+
+00:40:20.670 --> 00:40:21.590
+logistic regression is
+
+00:40:21.590 --> 00:40:22.870
+implemented in math and
+
+00:40:22.870 --> 00:40:23.270
+you would have had to
+
+00:40:23.270 --> 00:40:23.990
+turn that into an
+
+00:40:24.110 --> 00:40:25.270
+algorithm and write your
+
+00:40:25.270 --> 00:40:26.110
+own logistic regression
+
+00:40:26.110 --> 00:40:26.430
+routine.
+
+00:40:26.870 --> 00:40:29.510
+I, as, as our listeners
+
+00:40:29.510 --> 00:40:30.470
+know, I've gone back
+
+00:40:30.470 --> 00:40:33.970
+to school on this. Um, I
+
+00:40:33.970 --> 00:40:35.130
+don't, if, if this had
+
+00:40:35.130 --> 00:40:36.490
+happened to me 15 years
+
+00:40:36.490 --> 00:40:39.420
+ago, I don't think I'd
+
+00:40:39.420 --> 00:40:41.690
+be in this role. Right.
+
+00:40:41.690 --> 00:40:44.680
+Cause it, it's, um, it
+
+00:40:44.680 --> 00:40:45.680
+would have been a lot
+
+00:40:45.680 --> 00:40:49.000
+harder to, to quickly,
+
+00:40:49.120 --> 00:40:51.680
+first and foremost, online
+
+00:40:52.040 --> 00:40:54.000
+academia didn't exist.
+
+00:40:54.820 --> 00:40:56.380
+Right. Um, so I would
+
+00:40:56.380 --> 00:40:58.820
+have had to gone to U-Dub
+
+00:40:58.820 --> 00:41:01.980
+or some other, um, travel
+
+00:41:01.980 --> 00:41:02.940
+situation, which would
+
+00:41:02.940 --> 00:41:05.620
+made my life a lot harder.
+
+00:41:06.540 --> 00:41:08.660
+Uh, so much so I may not
+
+00:41:08.660 --> 00:41:09.300
+have done it.
+
+00:41:10.780 --> 00:41:11.380
+Yeah. I mean, you kind
+
+00:41:11.380 --> 00:41:12.580
+of had to, I actually
+
+00:41:12.660 --> 00:41:13.620
+had to some extent that
+
+00:41:13.620 --> 00:41:15.060
+I was strangely enough,
+
+00:41:15.060 --> 00:41:16.620
+I was, uh, in law school
+
+00:41:16.620 --> 00:41:17.100
+when I started at
+
+00:41:17.100 --> 00:41:18.580
+Microsoft. Um, and it
+
+00:41:18.580 --> 00:41:19.300
+didn't have much in the
+
+00:41:19.300 --> 00:41:20.100
+programming background.
+
+00:41:20.100 --> 00:41:21.020
+So I went to U-Dub's
+
+00:41:21.020 --> 00:41:22.140
+website that existed, but
+
+00:41:22.140 --> 00:41:22.700
+didn't have much
+
+00:41:22.740 --> 00:41:23.740
+resources on it. And I,
+
+00:41:23.900 --> 00:41:24.580
+I figured out what books
+
+00:41:24.580 --> 00:41:27.020
+you read for a, uh, CS
+
+00:41:27.020 --> 00:41:27.940
+degree. And I read those
+
+00:41:27.940 --> 00:41:29.540
+books. Um, I went to, you
+
+00:41:29.540 --> 00:41:30.780
+know, the local borders
+
+00:41:30.780 --> 00:41:31.700
+and I bought them and
+
+00:41:31.700 --> 00:41:32.700
+then I read those books.
+
+00:41:32.820 --> 00:41:33.780
+So I have like half of
+
+00:41:33.780 --> 00:41:34.860
+a CS degree cause I
+
+00:41:34.860 --> 00:41:35.300
+didn't do any of the
+
+00:41:35.300 --> 00:41:36.340
+homework. C plus plus
+
+00:41:36.340 --> 00:41:37.620
+programming in 21 days.
+
+00:41:37.740 --> 00:41:38.380
+Probably not.
+
+00:41:38.460 --> 00:41:39.580
+Not so much that. Yeah.
+
+00:41:39.580 --> 00:41:40.380
+This was Hennessy and
+
+00:41:40.380 --> 00:41:41.220
+Patterson and a bunch of
+
+00:41:41.220 --> 00:41:42.380
+those books. So I was
+
+00:41:42.380 --> 00:41:43.260
+talking with one of my
+
+00:41:43.260 --> 00:41:44.460
+children the other day.
+
+00:41:44.660 --> 00:41:48.520
+Um, actually they were
+
+00:41:48.520 --> 00:41:49.720
+listening to a podcast
+
+00:41:49.720 --> 00:41:50.440
+and they were talking
+
+00:41:50.440 --> 00:41:52.480
+about you are so cruel
+
+00:41:52.480 --> 00:41:53.960
+to your kids. And I'm
+
+00:41:53.960 --> 00:41:55.280
+leaving that statement in
+
+00:41:55.280 --> 00:41:56.000
+the podcast.
+
+00:41:56.120 --> 00:41:57.160
+They think it's cool.
+
+00:41:57.720 --> 00:41:58.520
+They think Allen's cool.
+
+00:41:59.720 --> 00:42:00.080
+Yeah.
+
+00:42:00.400 --> 00:42:01.400
+So that you drug them
+
+00:42:01.400 --> 00:42:02.320
+too. That's awesome,
+
+00:42:02.320 --> 00:42:03.600
+Brent. Nice fathering.
+
+00:42:04.280 --> 00:42:05.680
+And they were surprised
+
+00:42:05.800 --> 00:42:06.720
+cause there was
+
+00:42:06.720 --> 00:42:07.680
+something you brought up.
+
+00:42:07.680 --> 00:42:08.240
+I think it was your
+
+00:42:08.240 --> 00:42:09.240
+music major. And they
+
+00:42:09.240 --> 00:42:11.040
+were like, Allen's a
+
+00:42:11.040 --> 00:42:12.480
+music major. I'm like,
+
+00:42:12.480 --> 00:42:13.960
+oh yeah. I mean, there
+
+00:42:13.960 --> 00:42:16.810
+are, um, I don't know
+
+00:42:16.810 --> 00:42:17.770
+what the stats are, but
+
+00:42:17.770 --> 00:42:19.290
+there are just a ton of
+
+00:42:19.290 --> 00:42:22.170
+people here that didn't
+
+00:42:22.170 --> 00:42:24.520
+grow up through the
+
+00:42:24.680 --> 00:42:26.600
+prescribed and defined
+
+00:42:26.600 --> 00:42:28.840
+academic route.
+
+00:42:29.080 --> 00:42:30.560
+Yeah, there's a good
+
+00:42:30.560 --> 00:42:31.960
+fraction of us that are
+
+00:42:31.960 --> 00:42:33.080
+that way. It's still a
+
+00:42:33.080 --> 00:42:34.280
+much harder route to go
+
+00:42:34.280 --> 00:42:35.400
+through than going
+
+00:42:35.400 --> 00:42:36.160
+through a computer
+
+00:42:36.160 --> 00:42:37.360
+science degree, kind of
+
+00:42:37.360 --> 00:42:38.240
+traditional route to
+
+00:42:38.240 --> 00:42:39.560
+get here. Um, both
+
+00:42:39.720 --> 00:42:40.800
+organizationally, like
+
+00:42:40.800 --> 00:42:41.280
+it's hard to get
+
+00:42:41.280 --> 00:42:42.000
+through the gauntlets. If
+
+00:42:42.000 --> 00:42:42.600
+you don't have the right
+
+00:42:42.600 --> 00:42:44.040
+degrees, um, and it's
+
+00:42:44.040 --> 00:42:44.640
+hard to get the right
+
+00:42:44.640 --> 00:42:46.080
+level of knowledge. Self
+
+00:42:46.080 --> 00:42:46.880
+taught people tend to
+
+00:42:46.880 --> 00:42:47.760
+have big gaps in their
+
+00:42:47.760 --> 00:42:48.720
+knowledge a lot of
+
+00:42:48.720 --> 00:42:49.640
+times. And so it's much
+
+00:42:49.640 --> 00:42:51.640
+easier to have a better
+
+00:42:51.640 --> 00:42:52.360
+sense of how everything
+
+00:42:52.360 --> 00:42:53.760
+works together. Um, if
+
+00:42:53.760 --> 00:42:54.800
+you, if you're forced to
+
+00:42:54.800 --> 00:42:55.520
+learn all the pieces in
+
+00:42:55.520 --> 00:42:56.760
+between, um, that usually
+
+00:42:56.760 --> 00:42:57.320
+means you don't know the,
+
+00:42:57.320 --> 00:42:59.360
+the details of any given
+
+00:42:59.360 --> 00:43:00.200
+piece as much, but you
+
+00:43:00.200 --> 00:43:00.640
+know how they work
+
+00:43:00.640 --> 00:43:00.960
+together.
+
+00:43:00.960 --> 00:43:02.000
+The self taught people
+
+00:43:02.000 --> 00:43:04.540
+today, um, the way I've
+
+00:43:04.540 --> 00:43:06.100
+seen, I don't see a whole
+
+00:43:06.100 --> 00:43:07.300
+lot of self taught people
+
+00:43:07.660 --> 00:43:08.900
+today in the resumes
+
+00:43:08.900 --> 00:43:10.940
+that I look at, but the
+
+00:43:10.940 --> 00:43:14.300
+ones that I do see have
+
+00:43:14.300 --> 00:43:17.700
+been, have a, a large
+
+00:43:17.700 --> 00:43:19.180
+number of examples of
+
+00:43:19.180 --> 00:43:19.980
+things that they've
+
+00:43:19.980 --> 00:43:21.140
+shipped and applied.
+
+00:43:21.140 --> 00:43:22.180
+This goes back to what
+
+00:43:22.420 --> 00:43:23.260
+Steve was talking about
+
+00:43:23.260 --> 00:43:24.660
+earlier. I think the way
+
+00:43:24.660 --> 00:43:25.980
+Steve and I self taught
+
+00:43:25.980 --> 00:43:27.500
+ourselves gave us those
+
+00:43:27.500 --> 00:43:29.260
+overviews that are missing
+
+00:43:29.260 --> 00:43:30.060
+with the way people are
+
+00:43:30.060 --> 00:43:31.060
+self taught today, which
+
+00:43:31.060 --> 00:43:32.020
+is the just in time
+
+00:43:32.020 --> 00:43:32.780
+learning of just a little
+
+00:43:32.780 --> 00:43:34.260
+chunk here and there. So
+
+00:43:34.260 --> 00:43:35.460
+I think it's more
+
+00:43:35.460 --> 00:43:37.940
+difficult if you're
+
+00:43:37.940 --> 00:43:38.740
+learning that way,
+
+00:43:38.740 --> 00:43:39.540
+cause you really do need
+
+00:43:39.540 --> 00:43:40.340
+that overview cause
+
+00:43:40.340 --> 00:43:41.340
+systems thinking, whether
+
+00:43:41.340 --> 00:43:42.060
+it's data science or
+
+00:43:42.060 --> 00:43:43.980
+testing is so important.
+
+00:43:44.300 --> 00:43:45.140
+I think Joel Spolsky
+
+00:43:45.140 --> 00:43:46.580
+used to talk about, uh,
+
+00:43:46.700 --> 00:43:47.940
+he's created stack overflow.
+
+00:43:47.940 --> 00:43:48.420
+One of the guys who
+
+00:43:48.420 --> 00:43:49.260
+created stack overflow.
+
+00:43:49.540 --> 00:43:50.220
+Um, and he's talked
+
+00:43:50.220 --> 00:43:51.180
+about abstractions and
+
+00:43:51.180 --> 00:43:52.060
+how abstraction layers are
+
+00:43:52.060 --> 00:43:52.500
+useful, but they
+
+00:43:52.500 --> 00:43:53.300
+always leak and you have
+
+00:43:53.300 --> 00:43:54.020
+to understand the level
+
+00:43:54.020 --> 00:43:55.220
+below that abstraction
+
+00:43:55.220 --> 00:43:55.820
+layer. And I think the
+
+00:43:55.820 --> 00:43:57.140
+problem with a lot of
+
+00:43:57.140 --> 00:43:57.980
+today's learning models
+
+00:43:57.980 --> 00:43:58.700
+is you only learn the
+
+00:43:58.700 --> 00:43:59.220
+top level of the
+
+00:43:59.220 --> 00:44:00.140
+abstraction and you
+
+00:44:00.140 --> 00:44:00.700
+don't learn anything
+
+00:44:00.700 --> 00:44:02.020
+down below, you know,
+
+00:44:02.020 --> 00:44:03.060
+and that, that shows,
+
+00:44:03.060 --> 00:44:04.140
+I've seen people in
+
+00:44:04.180 --> 00:44:04.900
+interviews that will
+
+00:44:04.900 --> 00:44:05.980
+do things like they need
+
+00:44:05.980 --> 00:44:06.700
+to concatenate two
+
+00:44:06.700 --> 00:44:07.460
+numbers together. So
+
+00:44:07.460 --> 00:44:08.060
+they will turn them into
+
+00:44:08.060 --> 00:44:09.620
+strings, add the strings
+
+00:44:09.620 --> 00:44:10.420
+together and then turn
+
+00:44:10.420 --> 00:44:11.340
+them back into numbers.
+
+00:44:11.420 --> 00:44:12.540
+I'm like, yeah, that
+
+00:44:12.540 --> 00:44:13.580
+works. But what, how much
+
+00:44:13.580 --> 00:44:14.420
+work just happened in
+
+00:44:14.420 --> 00:44:15.500
+the system in order to
+
+00:44:15.500 --> 00:44:16.740
+make that simple thing
+
+00:44:16.740 --> 00:44:17.220
+happen, you could
+
+00:44:17.220 --> 00:44:18.100
+have multiplied by 10
+
+00:44:18.500 --> 00:44:19.820
+and you know, added. And
+
+00:44:19.820 --> 00:44:21.020
+instead you, you know,
+
+00:44:21.060 --> 00:44:21.740
+did a whole bunch of
+
+00:44:21.740 --> 00:44:22.780
+parsing and conversion
+
+00:44:22.780 --> 00:44:23.780
+and then re parsing.
+
+00:44:23.900 --> 00:44:25.060
+Yeah. But you told me to
+
+00:44:25.060 --> 00:44:26.180
+concatenate so I
+
+00:44:26.180 --> 00:44:27.380
+concatenated. So
+
+00:44:28.580 --> 00:44:29.660
+technically it got the
+
+00:44:29.660 --> 00:44:30.540
+job done, but not in a
+
+00:44:30.540 --> 00:44:31.540
+way that was, I'll
+
+00:44:31.540 --> 00:44:32.180
+save the long
+
+00:44:32.180 --> 00:44:33.180
+explanation so they can
+
+00:44:33.180 --> 00:44:35.140
+get onto the bag. But
+
+00:44:36.330 --> 00:44:38.220
+I'll just say this for
+
+00:44:38.220 --> 00:44:38.900
+the first time in my
+
+00:44:38.900 --> 00:44:39.740
+career, I'm working on
+
+00:44:39.740 --> 00:44:40.300
+a team full of
+
+00:44:40.300 --> 00:44:41.420
+JavaScript programmers.
+
+00:44:42.520 --> 00:44:43.040
+They're a different
+
+00:44:43.040 --> 00:44:44.280
+breed. Yeah, they are.
+
+00:44:44.360 --> 00:44:45.240
+It's a trip that
+
+00:44:45.240 --> 00:44:46.960
+they're at an
+
+00:44:46.960 --> 00:44:47.880
+abstraction level way
+
+00:44:47.880 --> 00:44:48.640
+higher than I've ever
+
+00:44:48.640 --> 00:44:51.340
+worked with. Hey, it is
+
+00:44:51.340 --> 00:44:52.940
+time. And I've never
+
+00:44:52.940 --> 00:44:53.500
+done this in front of
+
+00:44:53.500 --> 00:44:54.340
+anyone but Brent before.
+
+00:44:57.710 --> 00:45:01.880
+Mail bag.
+
+00:45:02.160 --> 00:45:02.640
+I always wondered if
+
+00:45:02.640 --> 00:45:03.440
+you did that live or if
+
+00:45:03.440 --> 00:45:04.400
+that was just in post.
+
+00:45:05.500 --> 00:45:06.220
+Apparently it's live.
+
+00:45:06.580 --> 00:45:07.980
+Live and a little
+
+00:45:07.980 --> 00:45:08.620
+reverb later.
+
+00:45:08.620 --> 00:45:09.020
+It'd be good.
+
+00:45:09.140 --> 00:45:09.980
+Yeah. It's really hard
+
+00:45:09.980 --> 00:45:11.020
+for him to get the
+
+00:45:11.260 --> 00:45:12.780
+the reverb across.
+
+00:45:12.780 --> 00:45:13.500
+He's he's been
+
+00:45:13.500 --> 00:45:14.340
+working on this for a
+
+00:45:14.340 --> 00:45:15.220
+long time. Yeah.
+
+00:45:15.980 --> 00:45:17.140
+All right. So we
+
+00:45:17.140 --> 00:45:17.780
+have two mail bag
+
+00:45:17.780 --> 00:45:19.100
+questions. We'll see if
+
+00:45:19.100 --> 00:45:19.740
+we can get both of
+
+00:45:19.740 --> 00:45:20.940
+them. I'll go in order.
+
+00:45:21.380 --> 00:45:22.140
+And Brent wrote down
+
+00:45:22.140 --> 00:45:22.780
+the names for me
+
+00:45:22.780 --> 00:45:24.700
+because I always get
+
+00:45:24.700 --> 00:45:26.660
+them wrong. So Abraham
+
+00:45:26.660 --> 00:45:27.420
+Lincoln said,
+
+00:45:28.180 --> 00:45:28.820
+no,
+
+00:45:28.820 --> 00:45:29.980
+or score.
+
+00:45:29.980 --> 00:45:32.780
+And I memorized that
+
+00:45:32.780 --> 00:45:36.200
+in seventh grade,
+
+00:45:36.200 --> 00:45:38.840
+I think, and still have
+
+00:45:38.840 --> 00:45:39.600
+like the first two or
+
+00:45:39.600 --> 00:45:40.480
+three lines memorized,
+
+00:45:40.480 --> 00:45:41.000
+but I won't do them
+
+00:45:41.000 --> 00:45:41.640
+today.
+
+00:45:42.640 --> 00:45:44.840
+Percy asks, where or how
+
+00:45:44.840 --> 00:45:45.840
+do we start with this
+
+00:45:45.840 --> 00:45:47.960
+data democratization thing?
+
+00:45:48.040 --> 00:45:48.720
+That's the word Brent
+
+00:45:48.720 --> 00:45:49.480
+made up last time.
+
+00:45:49.480 --> 00:45:50.040
+That's apparently
+
+00:45:50.040 --> 00:45:50.760
+people had heard of.
+
+00:45:51.520 --> 00:45:52.800
+My company has BI
+
+00:45:52.800 --> 00:45:54.000
+data and analytics group,
+
+00:45:54.000 --> 00:45:55.120
+but it seems that only
+
+00:45:55.120 --> 00:45:56.280
+senior management are
+
+00:45:56.280 --> 00:45:57.560
+the ones getting insight
+
+00:45:57.560 --> 00:45:58.480
+from what information
+
+00:45:58.480 --> 00:46:02.420
+they provide. So how
+
+00:46:02.420 --> 00:46:03.020
+do you start?
+
+00:46:03.660 --> 00:46:04.300
+I'll just bring it to
+
+00:46:04.300 --> 00:46:05.060
+your word. How do you
+
+00:46:05.060 --> 00:46:05.820
+start with this data
+
+00:46:05.820 --> 00:46:06.540
+democratization?
+
+00:46:08.300 --> 00:46:09.660
+Well, you sweet.
+
+00:46:10.260 --> 00:46:12.780
+I am retroactively
+
+00:46:12.780 --> 00:46:13.940
+be going down as record
+
+00:46:13.940 --> 00:46:14.620
+as the guy who
+
+00:46:14.620 --> 00:46:16.380
+invented data democratization.
+
+00:46:16.420 --> 00:46:17.500
+That's fantastic.
+
+00:46:18.660 --> 00:46:19.180
+It's one of those time
+
+00:46:19.180 --> 00:46:20.060
+travel movies where you
+
+00:46:20.060 --> 00:46:20.580
+invented it in the
+
+00:46:20.580 --> 00:46:21.260
+future and then brought
+
+00:46:21.260 --> 00:46:21.980
+it to the past.
+
+00:46:22.020 --> 00:46:22.460
+Right.
+
+00:46:23.540 --> 00:46:24.780
+Just second, my mind
+
+00:46:24.780 --> 00:46:25.500
+settle after that.
+
+00:46:26.530 --> 00:46:27.050
+Okay, go on.
+
+00:46:27.690 --> 00:46:30.620
+So Percy has a
+
+00:46:30.620 --> 00:46:31.820
+situation where they
+
+00:46:31.820 --> 00:46:34.740
+have a data science BI
+
+00:46:34.740 --> 00:46:36.700
+team that essentially
+
+00:46:36.700 --> 00:46:38.500
+services the executives
+
+00:46:38.500 --> 00:46:39.500
+and he wants to know how
+
+00:46:39.500 --> 00:46:41.900
+does he get into data
+
+00:46:41.900 --> 00:46:42.820
+democratization?
+
+00:46:46.320 --> 00:46:47.000
+Well, so the
+
+00:46:47.000 --> 00:46:48.320
+data democratization
+
+00:46:48.320 --> 00:46:49.440
+means you publish your
+
+00:46:49.440 --> 00:46:50.160
+data, you make your
+
+00:46:50.160 --> 00:46:51.000
+data available.
+
+00:46:51.000 --> 00:46:51.840
+I think he wants to
+
+00:46:51.840 --> 00:46:53.160
+be a consumer of it.
+
+00:46:53.600 --> 00:46:54.720
+So what he needs to
+
+00:46:54.720 --> 00:46:57.400
+do is start off with
+
+00:46:57.440 --> 00:46:59.200
+what actions does he
+
+00:46:59.200 --> 00:47:01.720
+want to improve the
+
+00:47:01.720 --> 00:47:03.320
+productivity or efficiency?
+
+00:47:03.320 --> 00:47:04.280
+He is a manager.
+
+00:47:04.480 --> 00:47:05.320
+What actions does he
+
+00:47:05.320 --> 00:47:08.100
+want to take to improve
+
+00:47:08.100 --> 00:47:09.700
+the productivity efficiency
+
+00:47:09.700 --> 00:47:10.780
+of either his team or
+
+00:47:10.780 --> 00:47:11.780
+his product?
+
+00:47:12.340 --> 00:47:13.460
+So you start off with
+
+00:47:13.500 --> 00:47:15.420
+what are the, where do
+
+00:47:15.420 --> 00:47:16.140
+you think you can make
+
+00:47:16.140 --> 00:47:19.100
+better decisions and
+
+00:47:19.100 --> 00:47:20.700
+take stronger, faster
+
+00:47:20.700 --> 00:47:21.340
+actions.
+
+00:47:22.420 --> 00:47:23.380
+Then what you do is you
+
+00:47:23.380 --> 00:47:24.380
+go and you just talk
+
+00:47:24.380 --> 00:47:25.220
+with that team, say,
+
+00:47:25.220 --> 00:47:26.620
+hey, I have this
+
+00:47:26.620 --> 00:47:28.140
+concrete situation that
+
+00:47:28.140 --> 00:47:30.540
+I think you have the
+
+00:47:30.540 --> 00:47:31.300
+data for.
+
+00:47:31.340 --> 00:47:32.100
+Do you?
+
+00:47:32.540 --> 00:47:33.820
+If they don't, then
+
+00:47:33.820 --> 00:47:34.860
+that's also going to be
+
+00:47:34.860 --> 00:47:36.820
+a good team to get
+
+00:47:36.820 --> 00:47:39.060
+advice from on the
+
+00:47:39.060 --> 00:47:40.300
+data engineering front.
+
+00:47:40.300 --> 00:47:40.980
+In order for you to
+
+00:47:40.980 --> 00:47:42.060
+democratize data, you
+
+00:47:42.060 --> 00:47:43.540
+have to have the data.
+
+00:47:44.060 --> 00:47:47.540
+If your BI team has it,
+
+00:47:48.410 --> 00:47:49.210
+then work with them
+
+00:47:49.210 --> 00:47:49.930
+to figure out how to
+
+00:47:49.930 --> 00:47:50.410
+share it.
+
+00:47:50.970 --> 00:47:52.130
+Now, I'll tell you, a
+
+00:47:52.130 --> 00:47:53.090
+lot of these guys will
+
+00:47:53.090 --> 00:47:54.370
+view themselves as, oh,
+
+00:47:54.370 --> 00:47:55.690
+we were the guys that
+
+00:47:55.690 --> 00:47:56.730
+build the scorecard for
+
+00:47:56.730 --> 00:47:57.490
+the execs.
+
+00:47:58.210 --> 00:48:00.210
+So you may need to be
+
+00:48:00.210 --> 00:48:01.130
+willing to pony up
+
+00:48:01.130 --> 00:48:02.610
+resources in order to
+
+00:48:02.810 --> 00:48:03.770
+share that data.
+
+00:48:04.130 --> 00:48:05.130
+The thing is that most
+
+00:48:05.130 --> 00:48:05.770
+of the data doesn't
+
+00:48:05.770 --> 00:48:07.130
+exist. It's not created
+
+00:48:07.130 --> 00:48:07.930
+by the BI team.
+
+00:48:07.970 --> 00:48:08.890
+It's collected by the
+
+00:48:08.890 --> 00:48:09.370
+BI team.
+
+00:48:09.490 --> 00:48:09.650
+Yep.
+
+00:48:09.650 --> 00:48:11.010
+So one possibility is to
+
+00:48:11.010 --> 00:48:11.850
+go to the team that
+
+00:48:11.850 --> 00:48:12.450
+they're collecting it
+
+00:48:12.450 --> 00:48:13.730
+from and say, hey, you
+
+00:48:13.730 --> 00:48:14.610
+have this database with
+
+00:48:14.610 --> 00:48:15.650
+this information in it,
+
+00:48:15.770 --> 00:48:17.130
+or you have this Hadoop
+
+00:48:17.130 --> 00:48:17.690
+server with this
+
+00:48:17.690 --> 00:48:18.410
+information in it, or
+
+00:48:18.410 --> 00:48:19.330
+you have this, you
+
+00:48:19.330 --> 00:48:20.410
+know, spreadsheet with
+
+00:48:20.410 --> 00:48:21.210
+this information in it,
+
+00:48:21.210 --> 00:48:22.650
+whatever your form of
+
+00:48:22.650 --> 00:48:23.690
+information is, could
+
+00:48:23.690 --> 00:48:25.250
+you please share that
+
+00:48:25.250 --> 00:48:26.530
+out company wide or to
+
+00:48:26.530 --> 00:48:27.250
+a much larger group of
+
+00:48:27.250 --> 00:48:28.250
+people, you know, not
+
+00:48:28.250 --> 00:48:29.450
+just me, because that
+
+00:48:29.450 --> 00:48:30.050
+doesn't really, that's
+
+00:48:30.050 --> 00:48:30.970
+not data democratization.
+
+00:48:30.970 --> 00:48:31.850
+If you say you have
+
+00:48:31.850 --> 00:48:32.370
+this data, can you
+
+00:48:32.370 --> 00:48:33.370
+share it with my team?
+
+00:48:33.570 --> 00:48:34.090
+That's not really
+
+00:48:34.090 --> 00:48:34.970
+democratizing things.
+
+00:48:34.970 --> 00:48:35.650
+That's making yourself
+
+00:48:35.650 --> 00:48:36.490
+part of the special,
+
+00:48:36.610 --> 00:48:37.290
+you know, part of the
+
+00:48:37.290 --> 00:48:39.730
+elite. The better model
+
+00:48:39.730 --> 00:48:41.090
+is to say, Hey, I need
+
+00:48:41.090 --> 00:48:41.930
+access to this data.
+
+00:48:42.010 --> 00:48:42.650
+There's others that
+
+00:48:42.650 --> 00:48:43.650
+probably do too. Could
+
+00:48:43.650 --> 00:48:44.210
+you make it more
+
+00:48:44.210 --> 00:48:45.250
+broadly available? Could
+
+00:48:45.250 --> 00:48:46.610
+you lower the access
+
+00:48:46.610 --> 00:48:47.690
+rights on that server
+
+00:48:48.210 --> 00:48:49.010
+and start having that
+
+00:48:49.010 --> 00:48:50.290
+conversation plus any
+
+00:48:50.290 --> 00:48:51.330
+data that you control
+
+00:48:52.050 --> 00:48:52.850
+demonstrate how it
+
+00:48:52.850 --> 00:48:54.090
+works, make it openly
+
+00:48:54.090 --> 00:48:54.890
+available. A lot of
+
+00:48:54.890 --> 00:48:55.370
+times people are
+
+00:48:55.370 --> 00:48:56.650
+scared to open their
+
+00:48:56.650 --> 00:48:57.890
+data because what might
+
+00:48:57.890 --> 00:48:58.850
+happen if somebody gets
+
+00:48:58.850 --> 00:49:00.130
+ahold of this. And I
+
+00:49:00.130 --> 00:49:01.050
+think too often we
+
+00:49:01.050 --> 00:49:02.090
+are, there's no
+
+00:49:02.090 --> 00:49:03.450
+advantage to opening and
+
+00:49:03.450 --> 00:49:04.370
+there might be some
+
+00:49:04.370 --> 00:49:05.410
+risks somewhere, some
+
+00:49:05.410 --> 00:49:06.730
+existential corner case
+
+00:49:06.730 --> 00:49:09.410
+risk where we're like,
+
+00:49:09.410 --> 00:49:10.010
+okay, I don't want to
+
+00:49:10.010 --> 00:49:10.930
+share it because it might
+
+00:49:10.930 --> 00:49:11.810
+cause, it might leak and
+
+00:49:11.810 --> 00:49:13.090
+this might happen. And
+
+00:49:13.090 --> 00:49:13.570
+oftentimes it's
+
+00:49:13.570 --> 00:49:14.330
+overblown. And so I
+
+00:49:14.330 --> 00:49:14.970
+think it should take a
+
+00:49:14.970 --> 00:49:15.770
+little bit of risk, but
+
+00:49:15.770 --> 00:49:16.490
+not much. And just,
+
+00:49:17.240 --> 00:49:18.240
+the situation that I
+
+00:49:18.240 --> 00:49:20.240
+encounter is, is I do
+
+00:49:20.240 --> 00:49:21.920
+encounter that the teams
+
+00:49:21.920 --> 00:49:22.840
+that I know that lock
+
+00:49:22.840 --> 00:49:24.440
+their data, I would say
+
+00:49:24.440 --> 00:49:25.560
+the primary reason is
+
+00:49:25.560 --> 00:49:26.440
+because they know
+
+00:49:26.440 --> 00:49:27.000
+there's a lot of
+
+00:49:27.000 --> 00:49:28.200
+tribal knowledge baked in
+
+00:49:28.200 --> 00:49:28.920
+and how to use it
+
+00:49:28.920 --> 00:49:30.720
+correctly. And they
+
+00:49:30.720 --> 00:49:31.200
+don't want to be
+
+00:49:31.200 --> 00:49:32.320
+randomized by people
+
+00:49:32.320 --> 00:49:33.720
+doing it wrong. Right.
+
+00:49:34.960 --> 00:49:36.880
+Which is why I
+
+00:49:36.880 --> 00:49:38.880
+basically say what I
+
+00:49:38.880 --> 00:49:39.880
+told earlier in this,
+
+00:49:39.920 --> 00:49:42.480
+in this episode. I will
+
+00:49:42.480 --> 00:49:43.200
+say that if you're
+
+00:49:43.200 --> 00:49:44.240
+getting the data in
+
+00:49:44.240 --> 00:49:45.720
+this, in this space,
+
+00:49:45.760 --> 00:49:47.360
+you, you do want to,
+
+00:49:47.920 --> 00:49:49.280
+so Steve is right. The
+
+00:49:49.280 --> 00:49:50.880
+data is being gathered by
+
+00:49:50.880 --> 00:49:52.120
+the BI team from some
+
+00:49:52.120 --> 00:49:54.160
+place, but the BI team
+
+00:49:54.240 --> 00:49:55.960
+most likely has already
+
+00:49:55.960 --> 00:49:58.160
+done the work to clean
+
+00:49:58.160 --> 00:50:00.720
+and check that data. And
+
+00:50:01.040 --> 00:50:02.640
+to encode the tribe,
+
+00:50:02.640 --> 00:50:03.840
+the correct tribal
+
+00:50:03.840 --> 00:50:06.080
+knowledge, start there
+
+00:50:06.080 --> 00:50:08.040
+first, see if they will
+
+00:50:08.040 --> 00:50:09.240
+share it out. If they
+
+00:50:09.240 --> 00:50:10.400
+don't, then yeah, you
+
+00:50:10.400 --> 00:50:11.520
+may have to go back and
+
+00:50:11.520 --> 00:50:13.640
+reinvent the wheel, but
+
+00:50:13.640 --> 00:50:15.160
+you should figure out how
+
+00:50:15.160 --> 00:50:16.600
+to make sure you can
+
+00:50:16.600 --> 00:50:17.840
+bootstrap that domain
+
+00:50:17.840 --> 00:50:19.640
+knowledge and not
+
+00:50:19.920 --> 00:50:21.000
+reproduce it. Right. It
+
+00:50:21.000 --> 00:50:22.000
+is always difficult. Data
+
+00:50:22.000 --> 00:50:22.960
+democratization solves
+
+00:50:22.960 --> 00:50:23.800
+the access to the data,
+
+00:50:23.800 --> 00:50:24.480
+but doesn't solve the
+
+00:50:24.480 --> 00:50:25.160
+ability to use it
+
+00:50:25.160 --> 00:50:26.720
+correctly. Right. And so
+
+00:50:26.840 --> 00:50:27.800
+it still really
+
+00:50:27.800 --> 00:50:29.280
+requires a domain expert
+
+00:50:29.360 --> 00:50:30.000
+in order to be able to
+
+00:50:30.120 --> 00:50:32.050
+use it correctly. Agreed.
+
+00:50:32.450 --> 00:50:33.450
+Hey, we have two
+
+00:50:33.450 --> 00:50:34.530
+male bait questions. We
+
+00:50:34.530 --> 00:50:35.410
+do, but I only sing the
+
+00:50:35.410 --> 00:50:36.450
+song once. Henry
+
+00:50:36.450 --> 00:50:38.130
+Golding, who says, so
+
+00:50:38.130 --> 00:50:40.160
+chaps, how long do you
+
+00:50:40.160 --> 00:50:41.440
+think it will be before
+
+00:50:41.440 --> 00:50:43.360
+data science becomes just
+
+00:50:43.360 --> 00:50:44.440
+another tool in the
+
+00:50:44.440 --> 00:50:45.800
+specializing generalist
+
+00:50:45.800 --> 00:50:47.640
+box rather than a
+
+00:50:47.640 --> 00:50:48.640
+separate thing you need
+
+00:50:48.640 --> 00:50:50.000
+to spin up a big team of
+
+00:50:50.000 --> 00:50:51.680
+specialists for, which I
+
+00:50:51.680 --> 00:50:52.920
+think is a really
+
+00:50:53.000 --> 00:50:55.460
+interesting question. I
+
+00:50:55.460 --> 00:50:57.740
+will say, uh, my answer
+
+00:50:57.740 --> 00:50:58.500
+for that is actually
+
+00:50:58.500 --> 00:51:00.580
+pretty short. Um, it
+
+00:51:00.580 --> 00:51:01.620
+ran. You have never had
+
+00:51:01.620 --> 00:51:02.580
+a short answer for
+
+00:51:02.580 --> 00:51:04.540
+anything in 46 episodes
+
+00:51:04.540 --> 00:51:06.220
+of AB testing. I can't
+
+00:51:06.220 --> 00:51:09.300
+wait. It will be a very
+
+00:51:09.300 --> 00:51:11.290
+long time. The reason
+
+00:51:11.290 --> 00:51:14.440
+why is, uh, data
+
+00:51:14.440 --> 00:51:16.960
+scientists, uh, in the
+
+00:51:16.960 --> 00:51:19.360
+tooling is advancing, but
+
+00:51:19.360 --> 00:51:20.080
+the rate at which we're
+
+00:51:20.080 --> 00:51:21.480
+acquiring tooling and
+
+00:51:21.480 --> 00:51:22.840
+the rate at which we are
+
+00:51:22.840 --> 00:51:24.280
+acquiring data science
+
+00:51:24.400 --> 00:51:26.360
+is not keeping pace
+
+00:51:26.360 --> 00:51:27.840
+with the rate at which
+
+00:51:28.000 --> 00:51:29.280
+new data sources are
+
+00:51:29.280 --> 00:51:33.280
+coming in and not keeping
+
+00:51:33.280 --> 00:51:35.880
+pace with, with our need
+
+00:51:35.880 --> 00:51:37.480
+to go deeper on data
+
+00:51:37.480 --> 00:51:39.920
+science problems. So we
+
+00:51:39.920 --> 00:51:41.200
+are currently just
+
+00:51:41.200 --> 00:51:42.840
+scratching the surface and
+
+00:51:42.840 --> 00:51:43.480
+we have a lot of
+
+00:51:43.480 --> 00:51:45.680
+tooling. Um, but as more
+
+00:51:45.680 --> 00:51:46.840
+and more data comes in,
+
+00:51:46.880 --> 00:51:49.360
+we will have the need to
+
+00:51:49.840 --> 00:51:51.760
+improve data engineering.
+
+00:51:52.360 --> 00:51:54.440
+There's this sense that,
+
+00:51:54.720 --> 00:51:56.000
+uh, at least in my world,
+
+00:51:56.000 --> 00:51:58.040
+that there's a sense that
+
+00:51:58.040 --> 00:52:00.640
+we're always six inches
+
+00:52:00.640 --> 00:52:03.010
+just underneath the top
+
+00:52:03.010 --> 00:52:04.690
+of the water. Yeah. I
+
+00:52:04.690 --> 00:52:05.570
+think that you'll, it will
+
+00:52:05.570 --> 00:52:07.770
+not go away and just
+
+00:52:07.770 --> 00:52:08.930
+become a tool, but I
+
+00:52:08.930 --> 00:52:10.370
+think it will become, I
+
+00:52:10.370 --> 00:52:10.970
+think you'll always need
+
+00:52:10.970 --> 00:52:11.890
+data scientists be pushing
+
+00:52:11.890 --> 00:52:12.530
+the edge and to do the
+
+00:52:12.530 --> 00:52:13.530
+more complicated things.
+
+00:52:13.570 --> 00:52:15.050
+Um, for the primary
+
+00:52:15.050 --> 00:52:15.770
+reason that the thought
+
+00:52:15.770 --> 00:52:17.210
+processes of programming
+
+00:52:17.210 --> 00:52:18.170
+and doing data science
+
+00:52:18.170 --> 00:52:19.330
+are so different and the
+
+00:52:19.330 --> 00:52:20.330
+knowledge bases are so
+
+00:52:20.330 --> 00:52:21.650
+big that you can't keep
+
+00:52:21.650 --> 00:52:22.370
+both of them. You cannot
+
+00:52:22.370 --> 00:52:23.290
+be an expert in both at
+
+00:52:23.290 --> 00:52:24.650
+the same time. That
+
+00:52:24.650 --> 00:52:25.810
+said, I think that the
+
+00:52:25.810 --> 00:52:27.010
+pieces of data science
+
+00:52:27.010 --> 00:52:27.850
+will move more and more
+
+00:52:27.850 --> 00:52:29.410
+easily into the basic
+
+00:52:29.410 --> 00:52:30.010
+toolkit of your
+
+00:52:30.010 --> 00:52:30.890
+generalizing specialists
+
+00:52:30.890 --> 00:52:31.490
+and your specializing
+
+00:52:31.490 --> 00:52:32.810
+generalists. Um, and so
+
+00:52:32.810 --> 00:52:33.610
+they will be able to do
+
+00:52:33.610 --> 00:52:35.170
+more and more parts of it,
+
+00:52:35.370 --> 00:52:36.170
+but they won't be able to
+
+00:52:36.170 --> 00:52:37.170
+do some of the more
+
+00:52:37.170 --> 00:52:37.930
+advanced parts. And I
+
+00:52:37.930 --> 00:52:39.290
+think what it defines an
+
+00:52:39.290 --> 00:52:40.010
+advanced part and a
+
+00:52:40.010 --> 00:52:41.170
+basic part will over
+
+00:52:41.170 --> 00:52:41.850
+time, that boundary will
+
+00:52:41.890 --> 00:52:42.610
+continue to move
+
+00:52:42.610 --> 00:52:43.490
+forward. You know, it
+
+00:52:43.490 --> 00:52:45.640
+used to be five years
+
+00:52:45.640 --> 00:52:46.360
+ago, if you were data
+
+00:52:46.360 --> 00:52:47.480
+science, you had to be a
+
+00:52:47.480 --> 00:52:48.800
+PhD because you had to
+
+00:52:48.800 --> 00:52:49.520
+go invent all your own
+
+00:52:49.520 --> 00:52:50.200
+algorithms. If you
+
+00:52:50.200 --> 00:52:52.360
+wanted to go, um, do, uh,
+
+00:52:52.360 --> 00:52:53.720
+some deep learning, you
+
+00:52:53.720 --> 00:52:54.600
+had to go invent your own
+
+00:52:54.600 --> 00:52:55.200
+neural net and you had
+
+00:52:55.200 --> 00:52:56.400
+to go know how a back
+
+00:52:56.400 --> 00:52:57.200
+propagation worked and
+
+00:52:57.200 --> 00:52:57.840
+all that kind of stuff.
+
+00:52:57.840 --> 00:52:59.520
+Today, you just go and
+
+00:52:59.520 --> 00:53:00.560
+use the package in
+
+00:53:00.560 --> 00:53:02.000
+Python or a package in
+
+00:53:02.000 --> 00:53:03.360
+R or you go to Azure
+
+00:53:03.360 --> 00:53:03.960
+machine learning and
+
+00:53:03.960 --> 00:53:04.800
+you just say like, please
+
+00:53:04.800 --> 00:53:05.720
+train a neural net for me
+
+00:53:05.720 --> 00:53:06.680
+with, you know, 18
+
+00:53:06.680 --> 00:53:07.920
+levels go and it will
+
+00:53:07.920 --> 00:53:09.200
+just do it for you. Now,
+
+00:53:09.200 --> 00:53:10.000
+understanding what that
+
+00:53:10.000 --> 00:53:10.920
+is doing and how to
+
+00:53:10.920 --> 00:53:12.160
+tweak it is difficult,
+
+00:53:12.160 --> 00:53:13.600
+but it's easier to go
+
+00:53:13.600 --> 00:53:14.400
+do. And if I just want
+
+00:53:14.400 --> 00:53:15.640
+to go figure out the
+
+00:53:15.640 --> 00:53:17.240
+median for some values
+
+00:53:17.240 --> 00:53:17.840
+or I want to go and
+
+00:53:17.840 --> 00:53:18.560
+create like a simple
+
+00:53:18.560 --> 00:53:19.760
+regression, it is very
+
+00:53:19.760 --> 00:53:20.600
+easy to go do. And it
+
+00:53:20.600 --> 00:53:21.240
+doesn't take a lot of
+
+00:53:21.240 --> 00:53:22.200
+knowledge to be able to
+
+00:53:22.200 --> 00:53:23.400
+go do the basic versions
+
+00:53:23.400 --> 00:53:24.320
+of that. And that will
+
+00:53:24.320 --> 00:53:25.320
+move over time up the
+
+00:53:25.320 --> 00:53:27.280
+stack. Yes. And so what
+
+00:53:27.280 --> 00:53:28.480
+we'll find is a lot of
+
+00:53:29.480 --> 00:53:30.240
+that there'll be a
+
+00:53:30.240 --> 00:53:33.040
+broadening that a lot of
+
+00:53:33.040 --> 00:53:34.360
+the simple problems will
+
+00:53:34.360 --> 00:53:35.520
+be readily automated
+
+00:53:35.520 --> 00:53:38.200
+away. But to Henry's
+
+00:53:38.200 --> 00:53:39.320
+question, there probably
+
+00:53:39.320 --> 00:53:41.040
+will be, I don't know,
+
+00:53:41.080 --> 00:53:41.840
+I'll just make up a
+
+00:53:41.840 --> 00:53:42.960
+number five years from
+
+00:53:42.960 --> 00:53:44.720
+now that the tooling
+
+00:53:44.720 --> 00:53:46.520
+will exist that the
+
+00:53:46.600 --> 00:53:47.800
+generalizing specialists
+
+00:53:47.800 --> 00:53:48.560
+or specializing
+
+00:53:48.560 --> 00:53:49.400
+generalists will be
+
+00:53:49.400 --> 00:53:51.080
+able to solve 80% of
+
+00:53:51.080 --> 00:53:51.800
+the problems. And there
+
+00:53:51.800 --> 00:53:52.760
+will be environments
+
+00:53:52.760 --> 00:53:53.880
+where solving 80% of
+
+00:53:53.880 --> 00:53:55.000
+the problems is
+
+00:53:55.000 --> 00:53:56.160
+sufficient. I think all
+
+00:53:56.160 --> 00:53:57.000
+the years of today's
+
+00:53:57.000 --> 00:53:57.880
+problems. But I think,
+
+00:53:57.880 --> 00:53:59.160
+yeah, as always, you'll
+
+00:53:59.160 --> 00:54:00.080
+get to more and more
+
+00:54:00.080 --> 00:54:01.120
+complex problems as you
+
+00:54:01.120 --> 00:54:01.800
+can solve the easy
+
+00:54:01.800 --> 00:54:03.000
+problems. It will depend
+
+00:54:03.000 --> 00:54:04.360
+on on the competitive
+
+00:54:04.360 --> 00:54:05.760
+advantage like it. The
+
+00:54:05.760 --> 00:54:07.800
+as right now we're all
+
+00:54:07.800 --> 00:54:09.000
+competing on the basis
+
+00:54:09.000 --> 00:54:10.720
+of speed in the world.
+
+00:54:11.400 --> 00:54:12.520
+And I think once
+
+00:54:12.520 --> 00:54:13.640
+everyone is kind of
+
+00:54:13.640 --> 00:54:15.200
+going at the same pace,
+
+00:54:15.200 --> 00:54:15.720
+then there's going to
+
+00:54:15.720 --> 00:54:16.480
+be other things that
+
+00:54:16.720 --> 00:54:17.520
+that are the
+
+00:54:17.520 --> 00:54:18.640
+differentiator in the
+
+00:54:18.640 --> 00:54:19.880
+market. And I think
+
+00:54:20.640 --> 00:54:21.400
+that's where the deep
+
+00:54:21.400 --> 00:54:22.200
+data scientists will
+
+00:54:22.200 --> 00:54:23.640
+come into play. I think
+
+00:54:25.380 --> 00:54:26.860
+you're both wrong. Not
+
+00:54:26.860 --> 00:54:28.500
+totally wrong. I think
+
+00:54:28.500 --> 00:54:29.020
+I think there's another
+
+00:54:29.020 --> 00:54:29.900
+spin on it that I'll get
+
+00:54:29.900 --> 00:54:30.660
+to before I run out of
+
+00:54:30.660 --> 00:54:32.020
+time. I think both
+
+00:54:32.020 --> 00:54:34.300
+happen. You guys are
+
+00:54:34.300 --> 00:54:35.300
+talking right. I sit
+
+00:54:35.300 --> 00:54:36.300
+back and listen. It's
+
+00:54:36.300 --> 00:54:37.020
+like you're talking
+
+00:54:37.020 --> 00:54:37.940
+like Microsoft data
+
+00:54:37.940 --> 00:54:39.620
+scientists. But
+
+00:54:39.620 --> 00:54:40.540
+remember, if I'm on a
+
+00:54:40.540 --> 00:54:42.260
+team of 20 people
+
+00:54:42.260 --> 00:54:43.420
+making some cool app,
+
+00:54:43.700 --> 00:54:46.100
+absolutely. There's a
+
+00:54:46.100 --> 00:54:46.860
+twist on Henry's
+
+00:54:46.860 --> 00:54:48.140
+question. I need you're
+
+00:54:48.140 --> 00:54:48.940
+not going to have a
+
+00:54:48.940 --> 00:54:49.740
+data scientist on the
+
+00:54:49.740 --> 00:54:50.620
+team probably in 20
+
+00:54:50.620 --> 00:54:51.660
+people, maybe not even
+
+00:54:51.660 --> 00:54:53.220
+40 people. But you
+
+00:54:53.260 --> 00:54:54.700
+absolutely as part of
+
+00:54:54.860 --> 00:54:55.820
+a team of specializing
+
+00:54:55.820 --> 00:54:56.740
+judge generalizing
+
+00:54:56.740 --> 00:54:57.820
+specialists, you need
+
+00:54:57.820 --> 00:54:58.660
+someone with some data
+
+00:54:58.660 --> 00:54:59.540
+science chops, someone
+
+00:54:59.540 --> 00:55:00.140
+who's gone through a
+
+00:55:00.140 --> 00:55:00.860
+couple of course, not a
+
+00:55:00.860 --> 00:55:01.900
+man, an expert, not a
+
+00:55:01.900 --> 00:55:03.540
+PhD for sure, but gone
+
+00:55:03.540 --> 00:55:04.100
+through the course or
+
+00:55:04.100 --> 00:55:05.980
+classes, you know, read
+
+00:55:06.380 --> 00:55:08.020
+lean analytics. For
+
+00:55:08.020 --> 00:55:09.180
+example, they have some
+
+00:55:09.180 --> 00:55:11.500
+idea of what to do. This
+
+00:55:11.500 --> 00:55:12.100
+is the role I play a
+
+00:55:12.100 --> 00:55:12.980
+lot on my team. So I
+
+00:55:12.980 --> 00:55:13.740
+can advocate a little
+
+00:55:13.740 --> 00:55:16.140
+bit there is I am not a
+
+00:55:16.140 --> 00:55:17.500
+data scientist. I know
+
+00:55:17.500 --> 00:55:18.460
+enough about it that I
+
+00:55:18.460 --> 00:55:19.020
+can tell them we're
+
+00:55:19.020 --> 00:55:20.340
+doing stupid things or
+
+00:55:20.340 --> 00:55:20.860
+where there's things
+
+00:55:20.860 --> 00:55:21.700
+that were obviously
+
+00:55:21.700 --> 00:55:23.580
+needed to be doing. We
+
+00:55:23.580 --> 00:55:24.580
+are now ramping up with
+
+00:55:24.900 --> 00:55:26.460
+some data science people
+
+00:55:26.460 --> 00:55:27.620
+in the org to help cover
+
+00:55:27.620 --> 00:55:28.300
+some of the things that I
+
+00:55:28.300 --> 00:55:30.820
+can't get to. But I think
+
+00:55:30.820 --> 00:55:32.140
+you need both. At some
+
+00:55:32.140 --> 00:55:33.020
+point, you may need a
+
+00:55:33.020 --> 00:55:34.140
+team of data scientists
+
+00:55:34.180 --> 00:55:35.660
+we as you get bigger,
+
+00:55:35.820 --> 00:55:36.580
+and you're making more
+
+00:55:36.580 --> 00:55:37.180
+impact, you have more
+
+00:55:37.180 --> 00:55:38.540
+data coming in. But
+
+00:55:38.660 --> 00:55:40.380
+absolutely, I wouldn't
+
+00:55:40.380 --> 00:55:41.900
+say I wouldn't say
+
+00:55:41.900 --> 00:55:42.820
+there'll be a time when
+
+00:55:42.980 --> 00:55:44.300
+I think the time when
+
+00:55:44.300 --> 00:55:45.580
+data science needs to be
+
+00:55:45.580 --> 00:55:47.300
+a tool in your toolbox
+
+00:55:47.380 --> 00:55:47.980
+is now.
+
+00:55:48.340 --> 00:55:48.900
+Right. I think the
+
+00:55:48.900 --> 00:55:50.220
+time when it's only
+
+00:55:50.220 --> 00:55:51.100
+tool in your toolbox,
+
+00:55:51.100 --> 00:55:51.580
+and you don't have
+
+00:55:51.580 --> 00:55:52.700
+specialists is a long
+
+00:55:52.700 --> 00:55:53.140
+ways away.
+
+00:55:53.740 --> 00:55:54.940
+But I think it's
+
+00:55:55.100 --> 00:55:55.860
+becoming more and more
+
+00:55:55.860 --> 00:55:56.660
+democratized.
+
+00:55:56.940 --> 00:55:57.540
+There's a subtle
+
+00:55:57.540 --> 00:55:58.180
+every year.
+
+00:55:58.420 --> 00:55:59.340
+I think it becomes a
+
+00:55:59.340 --> 00:56:01.500
+tool now. It'll be. And
+
+00:56:01.700 --> 00:56:03.380
+so I want to make that
+
+00:56:03.850 --> 00:56:05.490
+point. But I think
+
+00:56:05.490 --> 00:56:07.170
+definitely it's probably
+
+00:56:07.250 --> 00:56:08.970
+never just that,
+
+00:56:09.050 --> 00:56:11.010
+especially, it'll
+
+00:56:11.010 --> 00:56:12.090
+always be with scale,
+
+00:56:12.130 --> 00:56:12.970
+but it'll always be
+
+00:56:12.970 --> 00:56:15.490
+moving on. So I'll
+
+00:56:15.490 --> 00:56:17.010
+invent another new term
+
+00:56:17.010 --> 00:56:17.530
+today.
+
+00:56:17.970 --> 00:56:18.970
+This is Brent's
+
+00:56:18.970 --> 00:56:20.090
+continuing short answer.
+
+00:56:20.970 --> 00:56:22.650
+Expert systems. So an
+
+00:56:22.650 --> 00:56:24.610
+expert system is a new
+
+00:56:25.250 --> 00:56:26.930
+newish asset in which
+
+00:56:27.650 --> 00:56:29.370
+you apply data science,
+
+00:56:29.490 --> 00:56:30.450
+automation, machine
+
+00:56:30.450 --> 00:56:32.010
+learning, and you apply
+
+00:56:32.450 --> 00:56:33.650
+in a rigorous fashion
+
+00:56:34.210 --> 00:56:35.090
+domain knowledge from
+
+00:56:35.370 --> 00:56:36.170
+particular teams.
+
+00:56:36.210 --> 00:56:37.810
+And I will say, for
+
+00:56:37.810 --> 00:56:40.530
+example, 60% of what I
+
+00:56:40.530 --> 00:56:42.530
+do is analyzing
+
+00:56:42.530 --> 00:56:44.210
+histograms. And there's
+
+00:56:44.210 --> 00:56:46.730
+a very succinct period
+
+00:56:46.730 --> 00:56:48.610
+or a rigor around how
+
+00:56:48.610 --> 00:56:49.410
+I do that, what I
+
+00:56:49.410 --> 00:56:51.610
+discover. And that's, I
+
+00:56:51.610 --> 00:56:52.690
+would say, readily
+
+00:56:52.690 --> 00:56:54.250
+automatable. Right.
+
+00:56:55.130 --> 00:56:56.330
+So once an expert
+
+00:56:56.330 --> 00:56:57.090
+system or something
+
+00:56:57.090 --> 00:56:58.250
+similar comes into play
+
+00:56:58.250 --> 00:56:59.170
+that can generate these
+
+00:56:59.170 --> 00:57:02.090
+things, do the
+
+00:57:02.090 --> 00:57:04.330
+if conditions determine
+
+00:57:04.370 --> 00:57:05.890
+what further analysis
+
+00:57:05.890 --> 00:57:06.730
+needs to be done and
+
+00:57:06.730 --> 00:57:08.930
+then output, go do
+
+00:57:08.930 --> 00:57:10.330
+this. This is what appears
+
+00:57:10.330 --> 00:57:11.210
+to be the problem.
+
+00:57:12.010 --> 00:57:14.050
+I think that's
+
+00:57:14.370 --> 00:57:15.490
+certainly doable in the
+
+00:57:15.490 --> 00:57:16.130
+next five years.
+
+00:57:16.610 --> 00:57:17.370
+And there's tools that
+
+00:57:17.370 --> 00:57:18.050
+are making it easier and
+
+00:57:18.050 --> 00:57:18.770
+easier all the time. Like
+
+00:57:18.770 --> 00:57:19.330
+the new version of
+
+00:57:19.330 --> 00:57:20.610
+Excel has histograms built
+
+00:57:20.610 --> 00:57:21.650
+in in a reasonable way,
+
+00:57:21.650 --> 00:57:22.490
+which it never has had
+
+00:57:22.490 --> 00:57:24.130
+before. Power BI is now
+
+00:57:24.130 --> 00:57:25.250
+fairly democratized.
+
+00:57:25.450 --> 00:57:25.930
+You know, there's other
+
+00:57:25.930 --> 00:57:26.650
+platforms out there that
+
+00:57:26.650 --> 00:57:28.050
+you can use to analyze
+
+00:57:28.050 --> 00:57:29.050
+your data and get a lot
+
+00:57:29.050 --> 00:57:30.570
+of sense for it just
+
+00:57:30.570 --> 00:57:31.170
+from the beginning with
+
+00:57:31.170 --> 00:57:32.370
+it with very easy tools
+
+00:57:32.370 --> 00:57:32.730
+to use.
+
+00:57:33.010 --> 00:57:33.970
+Very cool. Hey guys,
+
+00:57:33.970 --> 00:57:34.810
+we're out of time.
+
+00:57:35.330 --> 00:57:36.290
+Hey, thanks Steve, which
+
+00:57:36.290 --> 00:57:38.390
+means shut up. Thanks
+
+00:57:38.390 --> 00:57:39.110
+Steve for coming.
+
+00:57:39.150 --> 00:57:40.790
+Yeah. I guess you just
+
+00:57:40.790 --> 00:57:41.430
+showed up anyway.
+
+00:57:42.770 --> 00:57:45.290
+It does. If I didn't
+
+00:57:45.290 --> 00:57:46.530
+show up, you would
+
+00:57:46.530 --> 00:57:47.970
+have been what?
+
+00:57:48.010 --> 00:57:49.290
+As testing? What's that
+
+00:57:49.290 --> 00:57:50.090
+ass testing?
+
+00:57:50.770 --> 00:57:53.570
+You need me. All right,
+
+00:57:53.570 --> 00:57:55.130
+then. All right, I'm
+
+00:57:55.130 --> 00:57:56.330
+Alan. I'm Brent.
+
+00:57:56.730 --> 00:57:57.490
+And I am neither.
+
+00:57:58.400 --> 00:57:59.440
+Awesome. See you next
+
+00:57:59.440 --> 00:58:00.360
+time. Bye guys.
+

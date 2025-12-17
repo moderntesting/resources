@@ -1,0 +1,1310 @@
+WEBVTT
+
+00:00:10.130 --> 00:00:18.130
+Hey, Alan. It's Brent. And we're back for another episode of AB testing. Episode number 78. We've
+
+00:00:18.130 --> 00:00:24.290
+been doing this a long time and I don't think we're getting any better. Well, let me put it this way.
+
+00:00:24.290 --> 00:00:29.280
+We're, but we're, maybe we're not getting any worse either. There is that. Maybe. There's always a
+
+00:00:29.280 --> 00:00:36.160
+Silver Lane. Maybe, maybe we're getting better. AB testing is a podcast about a lot of things,
+
+00:00:37.120 --> 00:00:42.720
+including testing, software quality, agile. What we've been talking about a lot lately is
+
+00:00:43.600 --> 00:00:49.520
+our concept of the modern tester and what that means. Anything else I missed? Big topics?
+
+00:00:50.080 --> 00:00:56.560
+Organizational change, leadership, management, those all fall in here. Highly customer focused.
+
+00:00:56.560 --> 00:01:01.120
+The customers are you, the listeners. So we take feedback from you a lot, both in our topics that
+
+00:01:01.200 --> 00:01:08.720
+we're developing that we'll talk about today, as well as questions for listeners. Send those in via
+
+00:01:08.720 --> 00:01:17.820
+Twitter at Alan Page at Brent M. Jensen. Alan at angry weasel.com is fine. Anything else I missed?
+
+00:01:18.540 --> 00:01:22.700
+Brent's laughing while he goes, look, Alan makes a funny face when he's thinking.
+
+00:01:23.420 --> 00:01:34.000
+I'm thinking we should actually sit down and actually write this out and practice
+
+00:01:35.040 --> 00:01:42.160
+reading it as if we're not reading it. You don't understand. This is what I'm doing. I am
+
+00:01:42.160 --> 00:01:47.520
+prototyping intros until I find little bits and pieces I like. Just doing this
+
+00:01:48.160 --> 00:01:54.800
+cold, I would get the wrong value for the customer. I need to try some things that eventually
+
+00:01:54.800 --> 00:02:00.400
+will have something that's scripted for a while, then memorized, and then I'll change words and
+
+00:02:00.400 --> 00:02:06.610
+then we'll morph into something else. Everything I do in life is adaptive. Everything is a learning
+
+00:02:06.610 --> 00:02:12.050
+experience. I do it. I learn from it. I modify it as needed to make it better and better and
+
+00:02:12.050 --> 00:02:16.450
+better. That's why, actually, if that was true, I'd be a much better person.
+
+00:02:16.450 --> 00:02:22.850
+Yeah, I was going to say, that is a fantastic rationalization for the fact that you're freaking
+
+00:02:22.850 --> 00:02:28.500
+old and forgot what you said last week. I'll go with it, because I'm all about
+
+00:02:28.500 --> 00:02:32.660
+adapting. Didn't we agree that although I'm older chronologically, that you are much more the
+
+00:02:32.660 --> 00:02:37.700
+older fart? In certain contexts. All. In certain people.
+
+00:02:37.700 --> 00:02:45.220
+No, not all. For certainly not all. There is a lot of places where I'll tell people that I am.
+
+00:02:45.220 --> 00:02:51.710
+47, going on 10. All right. Don't tap the table.
+
+00:02:53.600 --> 00:02:58.640
+It's always something with you. Don't play with the microphone. Don't tap the table.
+
+00:02:58.640 --> 00:03:02.560
+Don't shake your leg. Don't pull your pants down during the recording.
+
+00:03:02.560 --> 00:03:10.160
+Fair enough. Okay. So, let's do a podcast. We've already, last episodes, we have gone all over
+
+00:03:10.320 --> 00:03:15.200
+where is the weasel just reminding people that I am heading off to test bash next week. Looking
+
+00:03:15.200 --> 00:03:20.640
+forward to it. Going to be fun. I'm giving a talk called Adventures in Modern Testing. In
+
+00:03:20.640 --> 00:03:25.520
+the program as experiences, I've changed the title. I don't think it matters that much.
+
+00:03:25.520 --> 00:03:30.080
+Adventures in Modern Testing, where we will talk about what modern testing is.
+
+00:03:30.080 --> 00:03:35.440
+And if you were caught up on your episodes last time, Brent and I talked about modern
+
+00:03:35.440 --> 00:03:41.920
+testing principles, which was a lot of fun. I had some sketched out ideas, some drafts.
+
+00:03:41.920 --> 00:03:49.760
+We vetted through them and changed them. In the week since we recorded on our Slack channel,
+
+00:03:49.760 --> 00:03:57.070
+one of the three.slack.com, contact us if you like an invitation. We vetted them a lot.
+
+00:03:57.390 --> 00:04:09.490
+We did. And there was a lot of activity on Twitter as well. That's the thing that actually really
+
+00:04:09.490 --> 00:04:17.090
+surprised me was the number of pictures we got and presentations we got of people already
+
+00:04:17.090 --> 00:04:22.450
+just incorporating them, which makes me feel a little guilty because in my view,
+
+00:04:22.450 --> 00:04:29.490
+I don't think they're fully born yet. They're not ready yet. They are in beta.
+
+00:04:30.130 --> 00:04:34.290
+I would say they're out of alpha. They're into beta. I think of it like a recipe.
+
+00:04:35.860 --> 00:04:43.780
+And I think it's like baking, right? And when you bake, you put all the liquid in one bowl
+
+00:04:43.780 --> 00:04:49.460
+and all the dry goods in another bowl. And in my view, I'm still kind of looking at the
+
+00:04:50.420 --> 00:04:53.940
+dry bowl. I'm like, am I missed? Did I put baking soda in there?
+
+00:04:56.100 --> 00:05:01.140
+Does it need a little bit more salt? Here's some insight that may tell you and some listeners
+
+00:05:01.140 --> 00:05:09.460
+much more about me. I love to cook. So do I. I do not love to bake. And the difference is,
+
+00:05:09.460 --> 00:05:16.740
+baking is chemistry and needs to be very exact. I'm an adaptive cooker tasting as I go,
+
+00:05:16.740 --> 00:05:21.860
+trying new combinations out. You can't do that baking or you have to have much more
+
+00:05:21.860 --> 00:05:28.100
+patients to retry and retry and retry and get it right. And also like chemistry track very closely
+
+00:05:28.100 --> 00:05:34.580
+your formulas and what you did. I like cooking because I can do two aspects of it. One,
+
+00:05:34.580 --> 00:05:38.980
+I love the experimentation. Well, what? Biggest three. I love eating. That's probably the biggest
+
+00:05:38.980 --> 00:05:45.380
+thing. As do I. I love the experimentation part of it. I love trying new things out.
+
+00:05:46.370 --> 00:05:52.130
+I also like this is sort of the leadership orchestration project management part of it.
+
+00:05:52.130 --> 00:05:59.170
+I also think it's fun to create a meal of several dishes and cook them so they're and plan ahead
+
+00:05:59.170 --> 00:06:03.250
+so they all complete about the same time. Oh, you like the timing aspect of it? The timing
+
+00:06:03.250 --> 00:06:10.370
+aspect of it I enjoy as well. It's a conductor of an orchestra. I completely agree. So I do
+
+00:06:10.450 --> 00:06:15.970
+Thanksgiving at my house and that is what is like I'll spend a half hour with a with a spreadsheet
+
+00:06:15.970 --> 00:06:20.770
+going, okay, I want to do this, this. I need to start this at that time. I may take some notes.
+
+00:06:20.770 --> 00:06:27.570
+I don't do a spreadsheet. Now I do because I'll be so when I do Thanksgiving, I generally do the
+
+00:06:27.570 --> 00:06:32.930
+whole thing and there's like 10 to 15 different things that I'm making all in that same day.
+
+00:06:33.870 --> 00:06:40.820
+Wow. Yeah, it's a lot of fun. Tangent. Oh my gosh, tangents are so rare on this show.
+
+00:06:42.500 --> 00:06:48.660
+I did not realize in all the years we have worked together that we share a love of cooking, although
+
+00:06:48.660 --> 00:06:57.780
+I am not afraid to go and tweak baking recipes. But I take some confidence and experience.
+
+00:06:57.780 --> 00:07:03.780
+Alton Brown. Do you know that name? I do not know that name. Oh, you need to learn that name. But
+
+00:07:03.780 --> 00:07:10.340
+pause for a second. If you tangent inception, you saw my technical testing talk where one of
+
+00:07:10.340 --> 00:07:14.340
+the slides I showed a picture of a kitchen and talked about how I liked cooking because I like
+
+00:07:14.340 --> 00:07:21.940
+the exploratory nature of it. Maybe you didn't realize that I actually meant it. No, no. So
+
+00:07:21.940 --> 00:07:29.060
+generally when I get get your slides, I get your slides. They don't come with audio. So I have seen
+
+00:07:29.060 --> 00:07:39.330
+your picture of your beautiful kitchen. It's not my kind. It's a stock photo. But anyway, Alton Brown,
+
+00:07:40.130 --> 00:07:47.890
+I am surprised that you do not know who this guy is. He no longer does the show. He did like 10
+
+00:07:47.890 --> 00:07:57.170
+seasons of a show called Good Eats. I don't watch much TV other than things that I would binge.
+
+00:07:57.730 --> 00:08:07.250
+But in the cooking world, he is absolutely my hero. And he's kind of like the Mr. Wizard of cooking.
+
+00:08:07.890 --> 00:08:15.570
+So his shows, he'll go through a recipe and he'll explain to you why the recipe works.
+
+00:08:16.530 --> 00:08:24.750
+And he is a massive hacker. So he like one of those key principles is he does not like single
+
+00:08:24.750 --> 00:08:33.280
+tasking tools in the kitchen. So he'll go through and say this particular tool, because this
+
+00:08:33.280 --> 00:08:39.020
+particular tool, you can use it for this, this and this other thing. Like Apple cores. I don't
+
+00:08:39.020 --> 00:08:42.940
+think he would be a supporter of Apple cores because that pretty much does one thing.
+
+00:08:43.580 --> 00:08:45.180
+He doesn't even do it that well. I don't have one.
+
+00:08:46.620 --> 00:08:51.340
+Melon ballers though, even though the called melon ballers can be used for so much more than that.
+
+00:08:52.780 --> 00:09:00.940
+Little mini ice cream scoop. Anyway, so there was this one episode and this actually might
+
+00:09:00.940 --> 00:09:10.380
+be relevant to you. There was this one episode where he smoked a salmon and he used a hot plate,
+
+00:09:11.020 --> 00:09:23.260
+a pie tin, a cardboard box that he then poked holes in it and put essentially a small little
+
+00:09:23.260 --> 00:09:31.170
+oven rack inside of it. And he created a little a temporary smoking oven outside
+
+00:09:32.930 --> 00:09:40.050
+with just like crap you have around the house. Like I love this guy. I'm so surprised you've
+
+00:09:40.050 --> 00:09:51.980
+never heard of him. There is, I have all of his books, one of them signed, I met him in person.
+
+00:09:52.540 --> 00:09:57.660
+Look at your little fanboy. Oh, I am totally like, I love this guy.
+
+00:09:59.580 --> 00:10:08.540
+There is one thing that we went and saw him in person. He came and he did a talk of,
+
+00:10:09.180 --> 00:10:16.460
+if you will, at third place books in Lake Forest Park. And one of the things he talked about is
+
+00:10:17.020 --> 00:10:24.690
+there is a lot of people who will go out and spend several hundred dollars on stoneware for
+
+00:10:24.690 --> 00:10:30.350
+the oven for like pizzas or things like that. He's like, don't do that. All you have to do
+
+00:10:30.350 --> 00:10:39.070
+is go to your local nursery. And you know those terracotta pots? Generally you will find
+
+00:10:39.070 --> 00:10:47.140
+a big, terracotta pots will also have a flat piece that you put the pot on top
+
+00:10:47.140 --> 00:10:55.250
+to hold overflow water. He's like, sure, that's what it can do. But if you grease it up,
+
+00:10:56.270 --> 00:11:05.730
+that's a $10 stoneware piece. And if you take a flower pot, turn it upside down
+
+00:11:06.690 --> 00:11:15.710
+on top of that piece, that becomes an itty bitty little stoneware oven. And I'll tell you,
+
+00:11:16.510 --> 00:11:23.570
+he taught me this, that little stoneware oven. This part you probably don't care. Nothing cooks
+
+00:11:24.370 --> 00:11:33.650
+roasted chicken better than that thing. I have done actually roasted garlic in that
+
+00:11:33.730 --> 00:11:40.690
+and it's fantastic. The difference because the stoneware creates a convection heat.
+
+00:11:42.540 --> 00:11:45.980
+When you just pop things in your ovens, you're going to have hot spots, cold spots. That's why
+
+00:11:45.980 --> 00:11:52.620
+you have to rotate the damn trays all the damn time. But when you do this, all the heat emanates
+
+00:11:52.620 --> 00:11:58.220
+all the time because ston- terracotta holds on the heat for a very long time. And so it
+
+00:11:58.220 --> 00:12:05.660
+evens it out on the inside. I like the idea of, I like the hacking aspect of it. I don't like
+
+00:12:05.660 --> 00:12:11.900
+following directions all the time. I never have. But he walks you through why it works. And once
+
+00:12:11.900 --> 00:12:22.940
+you know why it works, then hacking or rather innovating what you're doing is so much easier.
+
+00:12:22.940 --> 00:12:27.580
+Yeah. And that reminds me of, and then we'll get back to the show people care about in a bit,
+
+00:12:28.540 --> 00:12:37.410
+in music theory courses in college, we spent a year, a little over a year, a year and a half,
+
+00:12:38.130 --> 00:12:44.770
+just studying why music works the way it does. Isn't it true that all you need to know is the
+
+00:12:44.770 --> 00:12:53.440
+rule of fits? No, I'll go with yes. I'm going to go with no. So studying why music works
+
+00:12:53.440 --> 00:13:00.400
+through different areas and what and why chord progressions work and why things sound the way
+
+00:13:00.400 --> 00:13:09.040
+they do. And you really, a lot of, well, now useless, but at the time, very interesting data.
+
+00:13:09.040 --> 00:13:15.260
+And then finally, like in the last quarter, quarter and a half, you began to learn how to
+
+00:13:15.260 --> 00:13:20.140
+break the rules, but you have to kind of know the rules a little bit to break the rules. And
+
+00:13:20.140 --> 00:13:27.940
+I'm okay with that. I think I've told you before, I'm a martial artist and does that mean you're
+
+00:13:27.940 --> 00:13:34.160
+an artist? You draw pictures of Mars. What does that mean? It means I'm a black belt and take
+
+00:13:34.160 --> 00:13:39.440
+one dough and you keep talking. I will show you what that means. Okay. Great. Great.
+
+00:13:41.040 --> 00:13:47.040
+The, but it is really true, but you don't, you don't really understand it until you get there.
+
+00:13:47.040 --> 00:13:55.100
+It is really true that martial arts studies actually start when you get your black belt.
+
+00:13:55.100 --> 00:14:01.100
+That's not the destination, but you don't, uh, all the other color belt stuff is necessary
+
+00:14:01.820 --> 00:14:11.660
+so that you're ready to begin. That is a great way to look at it. So let's talk, just rewind a little
+
+00:14:11.660 --> 00:14:17.180
+bit. I wish I had a rewind sound effect. Uh, I may be, I'm probably not going to. If I did,
+
+00:14:17.260 --> 00:14:24.060
+it would sound better than the sound Brett just made. Okay. So modern testing principles.
+
+00:14:24.860 --> 00:14:28.060
+We listed some principles last week and we're not going to read through them again. They're
+
+00:14:28.060 --> 00:14:34.300
+in iteration. I can tell you if you thought they were in adaption, there we are iterating
+
+00:14:34.300 --> 00:14:39.100
+and adapting, but adaption is the goal. Uh, if you thought these aren't very good, they're
+
+00:14:39.100 --> 00:14:44.540
+better. Uh, not going to read them out again today and entirely because they're not done.
+
+00:14:44.540 --> 00:14:50.700
+Maybe next time, but they are getting much, much closer. I'm getting much, much happier.
+
+00:14:51.810 --> 00:14:56.370
+So that's cool. But first, and I want to talk about a couple in particular, a bit more
+
+00:14:56.370 --> 00:15:02.530
+controversial in a minute, but I think first, one thing we didn't talk about, I think it's
+
+00:15:02.530 --> 00:15:09.410
+actually better as a flashback is to back up a little bit and talk about why we have these
+
+00:15:09.410 --> 00:15:17.460
+principles and why we started working on these and, and sort of the background of the modern
+
+00:15:17.460 --> 00:15:22.980
+tester and why we believe there's a new way to describe a new way, a adapted way to describe
+
+00:15:22.980 --> 00:15:28.580
+testing, which it really is. I didn't say just to please you and to be a Dick. No, it's really,
+
+00:15:29.460 --> 00:15:33.540
+you might think, well, these sound a lot like you're just being a good agile tester. And
+
+00:15:33.540 --> 00:15:37.140
+that's true, but there's a little more to it. There's an, as an adaptation, iteration,
+
+00:15:37.220 --> 00:15:45.330
+evolution. There's some reasons to bring these points up. And so I want to start there and talk
+
+00:15:45.330 --> 00:15:50.690
+about those. Does that work? Yeah, that's fine. That's fine. Alan and I have been talking about
+
+00:15:50.690 --> 00:15:56.850
+this. Why offline? And I've, I've written it down. I've promised Alan that I will not be reading it
+
+00:15:56.850 --> 00:16:04.430
+on the show today, but it is, it is a work in progress and I'll release it, you know, soonish.
+
+00:16:05.580 --> 00:16:11.980
+So why, why do we think this, the modern principles are, or the modern testing principles are needed?
+
+00:16:12.700 --> 00:16:22.800
+I would say in a nutshell is because the world has changed and the world has changed in significant
+
+00:16:22.800 --> 00:16:30.720
+ways that we very firmly believe in. And I don't think it's actually just belief. I think
+
+00:16:30.720 --> 00:16:34.560
+there's evidence. The world, I'm going to be devil's advocate over here. The world is always
+
+00:16:34.560 --> 00:16:38.480
+changing. What's significant about the changes that you're talking about? Let me, let me, okay.
+
+00:16:40.930 --> 00:16:47.010
+So to finish the thought, I think the world has changed and the belief that I have is,
+
+00:16:48.100 --> 00:16:56.000
+is that what got tests to be an important role inside software industry
+
+00:16:57.650 --> 00:17:02.100
+isn't going to, you know, the phrase, what got us here, isn't going to get us there.
+
+00:17:02.860 --> 00:17:06.060
+I think most of the three have heard that before. Yeah, I think, I think
+
+00:17:06.940 --> 00:17:16.940
+so. What's different? Number, number one, most critically with software becoming easy to produce.
+
+00:17:18.060 --> 00:17:27.870
+We have so much stuff on soft our services. There are a lot of advancements and techniques around
+
+00:17:27.870 --> 00:17:37.730
+continuous delivery. Unlike any time in history before, customer, customers have a lot more choices.
+
+00:17:39.060 --> 00:17:46.740
+And whatever company you're in, it is a lot easier for another company to compete with you.
+
+00:17:47.940 --> 00:17:58.050
+I know of just a ton of stories of just single people, able to release something that takes a
+
+00:17:58.050 --> 00:18:07.360
+chunk out of, of systems or software that large industries have gone on. A better example,
+
+00:18:07.360 --> 00:18:14.750
+I think might be is Android, right? Ten years ago, I was having conversations with people going,
+
+00:18:15.310 --> 00:18:25.150
+what Google's trying to bone OS dude, windows has, but you know, 18 trillion lines of code.
+
+00:18:25.950 --> 00:18:31.060
+Android is never going to be able to do that. Yeah, wrong.
+
+00:18:32.320 --> 00:18:35.760
+So to paraphrase, I think the big points that I would take out of that is
+
+00:18:36.640 --> 00:18:43.620
+companies are shipping faster so fast that every day, I would say, is not backed up by fact,
+
+00:18:43.620 --> 00:18:48.500
+but I think is probably true. Every day, more and more companies are moving towards continuous
+
+00:18:48.500 --> 00:18:54.290
+deployment. It's not only companies are shipping faster, but they kind of have to. Because as
+
+00:18:54.290 --> 00:18:58.850
+companies ship faster, I was getting there. Go ahead. I was getting there. Stop banging the
+
+00:18:58.850 --> 00:19:06.320
+table. I apologize for my friend Thumper here. So I think in addition to people are shipping
+
+00:19:06.320 --> 00:19:13.340
+faster, continuous deployment coming more popular. Now that breeds competition because you're,
+
+00:19:13.340 --> 00:19:18.140
+I'm getting updates faster than you. And here's someone new, as you mentioned, coming to market.
+
+00:19:18.140 --> 00:19:22.460
+And again, just paraphrasing what you said. Yep. All these things are super important. So
+
+00:19:23.360 --> 00:19:28.080
+when Microsoft hired their first tester back in the eighties, there's an article about this in
+
+00:19:29.040 --> 00:19:31.520
+in the book that I wrote that I'm not going to mention the name of anymore.
+
+00:19:33.120 --> 00:19:39.570
+They hired a tester because the devs were spending, believe it or not, the devs were doing
+
+00:19:39.570 --> 00:19:42.690
+their coding, they're spending too much time running the test. They wanted someone to come
+
+00:19:42.690 --> 00:19:47.680
+help run all the tests for them. So they hired a high school intern just to come in and run the
+
+00:19:47.680 --> 00:19:52.000
+tests. And I thought, well, this is pretty convenient. Have someone do all my testing for
+
+00:19:52.000 --> 00:19:58.080
+me. And it grew and it grew and it grew. And the world of, and we lived in a world
+
+00:19:58.080 --> 00:20:02.400
+for a long time where we built something for a long time. Then we tested it. When I worked in
+
+00:20:02.400 --> 00:20:08.160
+the office org on, on office communicators later became link, which later became Skype for business.
+
+00:20:08.800 --> 00:20:13.600
+Uh, I was even at that time working, I had worked on windows before, but I was kind of
+
+00:20:13.600 --> 00:20:21.440
+blown away in office. Uh, this was early mid early two thousands, maybe mid two thousands.
+
+00:20:22.000 --> 00:20:28.420
+But the schedule was a coding milestone, which was fairly short, maybe two months,
+
+00:20:29.060 --> 00:20:35.250
+and then almost a year of stabilization. And even at that time, I thought this is
+
+00:20:35.250 --> 00:20:42.420
+massively inefficient. So I'm off on a tangent, but anyway, I fully agree that the points you
+
+00:20:42.420 --> 00:20:49.860
+made around, uh, what is changing significantly recently are very obvious. Uh, and which is
+
+00:20:49.860 --> 00:20:56.190
+why I think when we talk about these principles, we see head nods on most of them. Yeah. The, the
+
+00:20:56.190 --> 00:21:05.330
+only important thing I think that you missed out on, on your synopsis was again, um, as in, and
+
+00:21:05.330 --> 00:21:15.440
+it's hard for me to phrase this as a serial thing because these three items play off of each other.
+
+00:21:15.440 --> 00:21:19.680
+So it's, it's really hard to say which is the chicken, which is the egg. Okay. And that is,
+
+00:21:20.880 --> 00:21:31.060
+we're delivering faster at the same time. Um, that is breeding strong competition. And at the same time,
+
+00:21:32.900 --> 00:21:39.940
+I don't even know if it's because of the other two customer switching cost has gone way down.
+
+00:21:39.940 --> 00:21:44.020
+That's something I hear talked about a lot. The idea that, I mean, think about this on your app,
+
+00:21:44.020 --> 00:21:48.610
+on your phone, you go, I don't like this one. Let me try another one. And I do this all the
+
+00:21:48.610 --> 00:21:52.690
+time. I'm an app switcher and I go, I'm going to use this one to track this thing that I do.
+
+00:21:52.690 --> 00:21:57.970
+I don't like that. I'm going to go back. I'm going to try another one. It's a, it's amazing.
+
+00:21:57.970 --> 00:22:06.100
+It's amazing. Yeah. It is only getting better for the customer. So let me put it this way too.
+
+00:22:06.100 --> 00:22:12.990
+I think it's a loop things around is everything you talked about is we have this system of fast
+
+00:22:12.990 --> 00:22:23.710
+releases of competition, of customer fickleness, uh, which brings it all back to how important it is
+
+00:22:23.710 --> 00:22:31.410
+to have a team or someone on the team or a team with the goal of accelerating the achievement of
+
+00:22:31.410 --> 00:22:38.450
+shippable quality. Right. Cause those things all that mission statement feeds into the system you
+
+00:22:38.450 --> 00:22:46.560
+just described. Right. So what we described is a, is a, a business reality system. The other thing too,
+
+00:22:46.560 --> 00:22:53.040
+is, is, is, as I set it off saying the world has changed and for test, what got us here
+
+00:22:53.040 --> 00:23:01.340
+isn't going to get us there. And what we're attempting to do is number one, create a guidance,
+
+00:23:01.420 --> 00:23:10.260
+a vision, a North star, right. Um, document. And for you and me, it's not because we've gone through it.
+
+00:23:10.260 --> 00:23:16.260
+Yes and no, cause I don't think it's overly aspirational. It's not, but for a lot of folks
+
+00:23:16.260 --> 00:23:20.660
+who are reading it based off of the feedback I've seen this last week, right. There's still,
+
+00:23:20.660 --> 00:23:26.820
+there's still a lot of shock value in some of these. There are head nods on a lot of things
+
+00:23:26.820 --> 00:23:31.060
+and to the end of being controversial, which I want to, I want to get to those in a minute,
+
+00:23:31.060 --> 00:23:34.340
+but I want to finish this conversation first, this part of the conversation,
+
+00:23:35.060 --> 00:23:38.820
+the business is important. And one thing and going back to accelerating the achievement of
+
+00:23:38.820 --> 00:23:44.660
+chipable quality and something that isn't reflected yet in the principles, which is
+
+00:23:46.400 --> 00:23:50.880
+moving tests from a cost center to a cost benefit test is traditionally been a cost center. And I
+
+00:23:50.880 --> 00:23:56.960
+mentioned, you know, books on reducing cost of software articles, papers test is a tax paid at
+
+00:23:56.960 --> 00:24:03.600
+the end. The modern tester and modern testing, and in this system we talked about and accelerating
+
+00:24:03.600 --> 00:24:11.540
+the achievement of shipable quality, there's a force multiplier that comes from applying
+
+00:24:11.540 --> 00:24:20.060
+these modern testing principles that improve the business enough that the modern tester
+
+00:24:20.620 --> 00:24:25.100
+is no longer attacks by any means. And not only are they not attacked, they're the opposite.
+
+00:24:26.240 --> 00:24:31.890
+That is, that is exactly what I think we're trying to do here.
+
+00:24:31.890 --> 00:24:37.890
+That is the big pendulum shift. It's moving from being a tax and a cost at the end
+
+00:24:37.890 --> 00:24:44.530
+to something that makes the business more successful. And the other thing, and I think one
+
+00:24:44.530 --> 00:24:49.170
+of the issues that we're going to hit as we roll this out and solidify it is folks are going to
+
+00:24:49.170 --> 00:24:57.440
+view this as theoretical. I will say for me, I have done everything that I'm proposing in this.
+
+00:24:58.240 --> 00:25:01.200
+The talk I'm giving a test bash next week on adventures in modern testing.
+
+00:25:01.840 --> 00:25:07.440
+I gave a preview of it at a local special interest group and I've modified it reasonably
+
+00:25:07.440 --> 00:25:12.480
+well since then for test bash. And normally I don't like to give the same talk over and over.
+
+00:25:13.500 --> 00:25:17.340
+In this case, given where we're at and the importance of this,
+
+00:25:17.900 --> 00:25:25.180
+I have at least one other occasion where I am giving this talk. And that's going to be at PNSQC.
+
+00:25:26.060 --> 00:25:31.580
+I don't think that's announced yet, so sorry, in October. And then at the leadership conference in
+
+00:25:31.580 --> 00:25:39.340
+New York in June, I am giving a workshop on managing the modern tester to talk about a lot
+
+00:25:39.340 --> 00:25:42.700
+of these transitions, these organizational changes and how to get through them and what
+
+00:25:42.780 --> 00:25:49.580
+it means to manage someone in an org like this. So I'm speaking at more conferences this year
+
+00:25:49.580 --> 00:25:56.780
+than probably I ever have before, but more than I really want to. But I think it's,
+
+00:25:56.780 --> 00:26:01.420
+I feel like with what's going on with these modern testing ideas we're talking about,
+
+00:26:01.420 --> 00:26:06.860
+it's the right time to try and get this word out and keep the momentum going. Because
+
+00:26:06.860 --> 00:26:11.820
+what I love about this talk, and this is one of my goals I mentioned before when I give talks,
+
+00:26:11.820 --> 00:26:15.740
+I want to see some head nods, yeah I agree with you, and a few looks of shock.
+
+00:26:17.180 --> 00:26:21.340
+And I like being in that sweet spot because it gets people thinking.
+
+00:26:23.630 --> 00:26:27.390
+I don't disagree. Good.
+
+00:26:27.390 --> 00:26:33.310
+Right, when I went through this, like some of the feedback we've gotten is, hey, tone down
+
+00:26:33.310 --> 00:26:44.190
+the controversy. And I'll say in a lot of places I don't agree with that because what I kind of
+
+00:26:44.190 --> 00:26:53.390
+view it as, and I saw this at Microsoft when I went through this, is that right now is the
+
+00:26:53.390 --> 00:27:01.150
+opportunity. It was very clear in my head that what was going to get the traditional tester here
+
+00:27:01.150 --> 00:27:09.650
+isn't going to move forward anymore, but that there was still time to save some of these people's
+
+00:27:09.650 --> 00:27:20.530
+jobs. If I could get, convince them that there is a ticking time bomb, and if they acted now,
+
+00:27:20.530 --> 00:27:29.090
+they could shift themselves to a better place. And to be clear, I totally forgot the point I
+
+00:27:29.090 --> 00:27:32.290
+was going to originally make, so I'm talking about the talks, I want to come back to that.
+
+00:27:33.090 --> 00:27:37.890
+But I'm reminded first of a quote I use often from Ronald Heffetz in the book Leadership on the
+
+00:27:37.890 --> 00:27:45.170
+Line. It says, leadership is disappointing people at a level they can absorb. And the shocking
+
+00:27:45.170 --> 00:27:52.940
+things are just disappointing. My adventures in modern testing talk is of course filled with
+
+00:27:52.940 --> 00:27:59.420
+tangents because that's what I do, but it's a journey. It starts off with the reflection of
+
+00:27:59.740 --> 00:28:06.380
+the last few projects I've done and how what I've learned on those teams have led me towards a lot
+
+00:28:06.380 --> 00:28:11.900
+of these modern testing principles. And then I talk about what modern testing is, and then
+
+00:28:11.900 --> 00:28:18.380
+examples of how I'm walking the talk and doing those currently in my job and embracing change.
+
+00:28:18.380 --> 00:28:22.940
+In the very beginning, I have to give away the whole thing, basically say this is not a future
+
+00:28:22.940 --> 00:28:27.740
+of testing talk, which are all theoretical, and I've given one before and they're all wrong.
+
+00:28:28.460 --> 00:28:33.900
+This is a talk about embracing change. And then it's all just stories, adventures, stories.
+
+00:28:33.900 --> 00:28:39.840
+I like, I'm not touting my own talk much, but when I watch talks, I like it when it's real
+
+00:28:39.840 --> 00:28:45.280
+experiences. I hate talks that are all about theory. So I think it's really important that
+
+00:28:45.280 --> 00:28:53.460
+at this stage, we are able to take the theory away from this. And what I expect is once we get
+
+00:28:53.460 --> 00:28:56.580
+the principles sort of finalized, I think they will always be tweaked and edited,
+
+00:28:56.580 --> 00:29:02.370
+but they'll get pretty close after a while, is we should start, we'll start talking on podcasts
+
+00:29:02.370 --> 00:29:07.650
+about stories that support the principles and what they mean. I and or Brent or both of us
+
+00:29:08.450 --> 00:29:13.570
+kind of covered in that statement, we'll blog and write articles and give about individual
+
+00:29:13.570 --> 00:29:18.370
+principles to show background to move that theory into these are real life examples of
+
+00:29:18.450 --> 00:29:28.210
+what this means and what's different. Yeah. I don't like it. Again, I don't think what what
+
+00:29:29.740 --> 00:29:37.580
+we're writing down is theory, but I do acknowledge it will be for several folks interpreted as such.
+
+00:29:38.460 --> 00:29:46.100
+Right. Again, I've I've I've done these. And again, I've seen enough head nods, we can get
+
+00:29:46.100 --> 00:29:49.540
+stories from from the world as well. So I want to ask you a few questions for
+
+00:29:51.140 --> 00:29:58.800
+sort of the fact, develop the fact here online. So question number one, these principles,
+
+00:29:58.800 --> 00:30:02.240
+as you guys have been discussing, and if you need to go review what the original ones were,
+
+00:30:02.240 --> 00:30:09.070
+you can go look at the show notes for Episode 77. Pause your recording way, go get those. So
+
+00:30:10.620 --> 00:30:17.420
+Brent, a lot of these sound like agile things that agile teams do. So why,
+
+00:30:18.700 --> 00:30:24.220
+why are they called out separately in the principles of modern testing?
+
+00:30:28.700 --> 00:30:36.940
+That is one of the foundational pieces that are important in modern testing. I mean,
+
+00:30:36.940 --> 00:30:42.860
+as we just went through and talked, there's been a bunch of changes in the software world.
+
+00:30:43.660 --> 00:30:50.140
+I think agile and those agile principles are critical to it. In terms of the initial feedback,
+
+00:30:51.100 --> 00:31:01.600
+right, what we're trying to strike is we're trying to say, this is actually really important
+
+00:31:02.240 --> 00:31:10.560
+in the test, the modern test context. I will just freely admit that in my in my own head,
+
+00:31:10.560 --> 00:31:19.760
+some of the principles doesn't seem to have the recipe quite right yet. And it's more focused on
+
+00:31:19.760 --> 00:31:27.780
+anything you could read from, you know, how to do Kanban and not sort of the, what does it mean to
+
+00:31:27.780 --> 00:31:33.620
+the modern tester? Okay. So let me, let me lead that question into another. Yeah. So I agree.
+
+00:31:34.420 --> 00:31:39.220
+There are some of the principles which are like from the agile world, these are super important
+
+00:31:39.220 --> 00:31:44.260
+because they help you accelerate the achievement of shipable quality and help the team adapt and
+
+00:31:44.260 --> 00:31:52.340
+shift faster and better quality and more value to customers. Those things I think are worth calling
+
+00:31:52.340 --> 00:31:59.540
+out. But then there's also an alignment. Yes. But let me, let me ask the next question, which is,
+
+00:32:00.100 --> 00:32:08.350
+well, and then, so if you look at it that way, some of these sound more like a product or project
+
+00:32:08.350 --> 00:32:16.000
+project manager sort of principles than a modern tester principles. That's going to be,
+
+00:32:16.990 --> 00:32:26.990
+that's, I'll just say, one of the things that I'm, I'm thinking about is, is the question of
+
+00:32:28.260 --> 00:32:36.660
+how do I describe crisply the role of the modern tester versus some of these other common
+
+00:32:36.660 --> 00:32:43.540
+concepts, Scrum Master being one. Am I saying that modern tester is a Scrum Master? No. No.
+
+00:32:44.500 --> 00:32:49.620
+Am I saying a modern tester is a PM? No. Am I saying a modern tester is a dev?
+
+00:32:51.250 --> 00:32:55.810
+Well, actually in that case, there might be an argument because I do think another thing that
+
+00:32:55.810 --> 00:33:02.850
+we haven't fully talked about, but it kind of goes into the very last principle. And that is,
+
+00:33:02.850 --> 00:33:11.580
+as it comes to particularly code correctness, unified engineering team, in my view, is a vastly
+
+00:33:11.580 --> 00:33:17.580
+better way to go. Yes, I agree. Having a engineering team is a much more efficient way to make
+
+00:33:18.370 --> 00:33:24.530
+quality software and ship it quickly. And while we're talking about the noun modern tester,
+
+00:33:25.250 --> 00:33:31.250
+I don't know, I don't, it's not clear in my head if I have a modern tester specialist
+
+00:33:32.210 --> 00:33:42.560
+as a member of this unified engineering team. But it is absolutely clear that modern testing
+
+00:33:42.560 --> 00:33:51.760
+activities are an active part of that unified engineering team. Yes, yes. And therein lies some
+
+00:33:51.760 --> 00:33:58.240
+more confusion. So one thing I want to bring up on your last question is, as we've indirectly
+
+00:33:58.240 --> 00:34:06.060
+mentioned before, the modern tester is a specialized in generalist. And they may wear that
+
+00:34:06.060 --> 00:34:12.620
+PM hat sometimes. And that's, I think it's common for someone in what we're calling the modern tester
+
+00:34:12.620 --> 00:34:22.540
+role to take on some project management, management ish tasks and responsibilities from time to time.
+
+00:34:22.700 --> 00:34:32.510
+No, I think we're saying that the lot of software has been developed with three individual disciplines.
+
+00:34:33.310 --> 00:34:42.380
+And while we're not making a statement around whether or not it's good to continue to have
+
+00:34:42.940 --> 00:34:47.580
+three, I think one of the things that we're saying is we recognize that people operated in
+
+00:34:47.580 --> 00:34:52.460
+that world today, and we're trying to help shift the change. But just like what we're
+
+00:34:52.460 --> 00:35:00.270
+saying is testing moves to dev for a lot of the work, right? Yeah, things are, it's going to shift
+
+00:35:00.270 --> 00:35:06.110
+the interaction between a modern tester and the PM changes as well. And I'll just say one of the
+
+00:35:06.110 --> 00:35:17.250
+things that I think a modern tester focuses on, or versus a PM as an example, a modern tester is
+
+00:35:18.940 --> 00:35:31.040
+comparing and shrinking the hypotheses of the product, the assumptions, the guesses, aka
+
+00:35:32.800 --> 00:35:38.880
+what you see in a PM docket with a list under the word requirements. Okay, these are all assumptions.
+
+00:35:39.600 --> 00:35:48.140
+The modern tester is going, okay, I am not only testing on the product's ability to deliver those
+
+00:35:48.140 --> 00:35:56.530
+assumptions, but I'm testing on which of those assumptions are actually valid. So I do think
+
+00:35:57.700 --> 00:36:02.660
+modern tester in this regard is a bit of an optimizer. Hey, we have these guesses on the product.
+
+00:36:03.700 --> 00:36:10.900
+Which of those guesses are correct? Which ones should we go all in on? I think one of their
+
+00:36:10.900 --> 00:36:20.020
+roles is for an example is to inform the PM, who in this world is more of the intuitionist
+
+00:36:20.900 --> 00:36:28.900
+dreamer, the guy who's trying to build new markets. Okay, that's a more, and I do view,
+
+00:36:28.900 --> 00:36:33.540
+I may be downgrading the PM, but I do view that role is really important because I think the
+
+00:36:33.540 --> 00:36:40.670
+modern tester and developer are working on removing waste while producing value. I like that.
+
+00:36:40.670 --> 00:36:46.590
+I think the PM's forward thinking. I think the PM's going, okay, once we kill this job,
+
+00:36:46.590 --> 00:36:52.110
+once we kill this sort of product value, we can move into this other market that Dev and
+
+00:36:52.110 --> 00:36:59.460
+test may not be focused on. They're trying to go, how do I build the business? Where the modern
+
+00:36:59.460 --> 00:37:09.310
+tester is more around, how do I make the customers that are finding value with this stay? How do I
+
+00:37:09.310 --> 00:37:17.070
+get them delighted? And what things aren't actually contributing to? Could you say the PM
+
+00:37:17.070 --> 00:37:22.190
+role in that case is to build the business and the modern tester is to help or is to improve
+
+00:37:22.190 --> 00:37:31.790
+the business? Is that too much of a summary? I would say, I like how you did that, but then
+
+00:37:31.790 --> 00:37:37.710
+you made me think of architecture. And I'm actually thinking that the PM is sort of trying to design
+
+00:37:37.790 --> 00:37:46.880
+the business. It's the modern. If you go back to architecture, yeah, it's the design architect.
+
+00:37:48.080 --> 00:37:52.800
+And then the modern tester, maybe the craftsman is making sure that the
+
+00:37:53.520 --> 00:38:00.740
+building is, the design is efficiently implemented. I don't want to go too deep into the metaphor
+
+00:38:00.740 --> 00:38:07.810
+there because it breaks down pretty quickly. So I'm actually thinking of yet another one of
+
+00:38:07.810 --> 00:38:14.210
+my heroes, which is Christopher Alexander. Of course. I know that name. Yes. And he was an
+
+00:38:14.210 --> 00:38:22.050
+architect and he introduced to the world design patterns. Okay. And we've talked about it before
+
+00:38:22.050 --> 00:38:34.780
+not going to go into it now. But he did two things. Number one, he showed how design patterns
+
+00:38:34.780 --> 00:38:42.590
+improved the business, but his focus was around these things he called positive and negative forces.
+
+00:38:43.230 --> 00:38:49.150
+Because what he was trying to do was influence the happiness of the people who would live in his
+
+00:38:49.150 --> 00:38:55.550
+designs. An example I use all the time is you don't install a toilet in the middle of your
+
+00:38:55.550 --> 00:39:02.880
+kitchen because no one's going to use that toilet. I don't think you need to go into the because.
+
+00:39:03.440 --> 00:39:12.320
+Well, yeah, but I think I think PMs are business designers. I think keeping the Christopher
+
+00:39:12.320 --> 00:39:21.940
+Alexander example alive, like someone needs to notice which patterns are creating positive impact,
+
+00:39:21.940 --> 00:39:29.630
+which patterns are creating negative impact and drive the business to deal with those
+
+00:39:30.430 --> 00:39:37.870
+in near real time. Unlike in the old architecture days where you had to have a full design up front.
+
+00:39:37.870 --> 00:39:44.750
+And this is one of the things that there's a kind of key change. You don't do big design
+
+00:39:44.750 --> 00:39:53.390
+up front anymore. Right. You iterate. So there's the risk of being wrong is much smaller now.
+
+00:39:54.350 --> 00:40:07.970
+And I, but what that does is it creates a wide, a wide number of components. You have a lot more
+
+00:40:07.970 --> 00:40:15.870
+options. It's a full time job to go through and say, which of these things do we improve in?
+
+00:40:15.870 --> 00:40:20.750
+Okay. I want to fire off three more questions in the last 10 minutes here. If I can remember them
+
+00:40:20.750 --> 00:40:26.750
+all throughout the discussion, the first is, okay, Brent, I'm bought in on modern testing.
+
+00:40:26.750 --> 00:40:30.750
+I get how the evolution works. It takes some experience to be a modern tester,
+
+00:40:30.750 --> 00:40:37.950
+yep. To be able to apply these things. How, as more of our people move into these
+
+00:40:37.950 --> 00:40:44.560
+roles we're describing as a modern tester, what's the entry path then for new people in
+
+00:40:44.560 --> 00:40:49.520
+modern time? I have some answers to this as well, but how do you, how do we then find more
+
+00:40:49.520 --> 00:40:53.760
+people because modern testers grow from the test rank and they're growing into roles that are no
+
+00:40:53.760 --> 00:41:01.060
+longer test roles? Typically. How do we get new people into modern testing? What's the growth path
+
+00:41:02.660 --> 00:41:11.760
+for a fresher as they say? I'll just be quite honest. I have been thinking about this a lot.
+
+00:41:11.760 --> 00:41:17.780
+I don't think I have a really solid answer. Part of me goes, you know what? This is a change
+
+00:41:17.780 --> 00:41:22.660
+management role and this is a leadership role. I am not certain you can hire someone into this.
+
+00:41:24.020 --> 00:41:33.940
+And then another part is, you know what? One of the things that we're also saying is over time
+
+00:41:35.460 --> 00:41:44.820
+we don't, over time this just becomes an activity that is assigned to a specialist.
+
+00:41:45.620 --> 00:41:54.740
+Right. And in that regards, it's, then you can hire someone new. I would start with hiring
+
+00:41:54.740 --> 00:41:59.300
+dev or PM with traditional dev or PM skills. That's exactly where I was going to go. I think
+
+00:41:59.300 --> 00:42:05.060
+I would add statistics to their training and I would add customer behavior analysis. And
+
+00:42:06.660 --> 00:42:11.060
+yes, but I wouldn't be so prescriptive about that. You're not going to, they don't,
+
+00:42:11.060 --> 00:42:14.980
+you're not going to grow it and nurture it like a plant. You're not going to go, okay,
+
+00:42:14.980 --> 00:42:18.260
+you are going to be our modern tester. Here's how we're going to train you. And when you're done,
+
+00:42:18.260 --> 00:42:23.620
+you'll be able to do this. I think I have known many, I would look, I would look, I have known
+
+00:42:23.620 --> 00:42:30.020
+many developers who have, we hire them as a developer. They end up caring a lot about
+
+00:42:30.020 --> 00:42:36.260
+quality and craftsmanship. And those people, even though they've never been a tester,
+
+00:42:36.820 --> 00:42:43.780
+would follow these modern testing rule principles without ever having heard them before. They just,
+
+00:42:43.780 --> 00:42:48.660
+they're, those people will grow out of the existing people on our teams.
+
+00:42:48.660 --> 00:42:49.940
+Let me clarify.
+
+00:42:54.850 --> 00:43:00.990
+And I also think there's a, there doesn't need to be a modern tester on every team. In fact,
+
+00:43:01.630 --> 00:43:10.910
+all, I can definitely see roles even in my org where someone, me or others, could just be a coach
+
+00:43:10.910 --> 00:43:17.390
+of modern testing principles for multiple feature teams very easily, which is a different answer to
+
+00:43:17.390 --> 00:43:20.190
+the question we asked, but you wanted to clarify something. So go ahead.
+
+00:43:20.830 --> 00:43:27.650
+So I agree with everything you just said. Like it's a reason why we're calling it the modern
+
+00:43:27.650 --> 00:43:33.890
+testing principles, not the modern tester principles. Right. And if you look at our
+
+00:43:33.890 --> 00:43:40.210
+last principle, we're, we're actually saying specialists with the title tester, we expect to
+
+00:43:40.210 --> 00:43:46.610
+disappear. Yes. But what, so to clarify, I would not hire, include that line on, I know you're
+
+00:43:46.610 --> 00:43:50.050
+interrupted, but we should include that line in the introduction for principles. These are modern
+
+00:43:50.050 --> 00:43:56.050
+testing, not modern tester principles. Go on. Yeah. That clarity I think is noted.
+
+00:43:56.770 --> 00:44:04.780
+If I were hiring this person, I wouldn't be trying to hire this person directly. What I would do is I
+
+00:44:04.780 --> 00:44:14.930
+would go, okay, what I want is someone who has the skills to work in this type of domain.
+
+00:44:16.050 --> 00:44:22.800
+So I would be attracted to people who had customer behavior, experience on their resume,
+
+00:44:23.440 --> 00:44:36.240
+okay. Data stats, ML and dev. And I will say that one of the things that I've started having
+
+00:44:36.240 --> 00:44:41.600
+conversations with my own team, like you and I are talking about, Hey, test is on its way out.
+
+00:44:43.680 --> 00:44:51.790
+I'm starting to see the beginning of the end of people in my role. ML work is suddenly become a
+
+00:44:51.790 --> 00:44:59.710
+lot more commonplace. I think there's a generality there. The specialists, as we know, is a bottleneck.
+
+00:44:59.710 --> 00:45:04.910
+For sure. And we're starting to see with modern testing and with the democratization of data
+
+00:45:04.910 --> 00:45:11.070
+science. Yep. We're seeing the specializing generalist and as a manager building a team,
+
+00:45:11.070 --> 00:45:16.350
+you build the team of specializing generals with different areas of specialization within there
+
+00:45:16.350 --> 00:45:19.870
+to help build the jigsaw puzzle of a good team. And that's how you build a modern test
+
+00:45:20.030 --> 00:45:25.310
+100% agree. It may be one person with that big testing background, but it may be in the future,
+
+00:45:25.310 --> 00:45:29.710
+more likely, it's a few different people that bring the different principles to the table on
+
+00:45:29.710 --> 00:45:35.890
+the future team. Yeah, it is all about the team and it is all about what skills you have in the
+
+00:45:35.890 --> 00:45:41.730
+team and how well you get the team members leveraging each other's knowledge instead of
+
+00:45:41.730 --> 00:45:48.370
+trying to duplicate it. Right. So why call it modern testing? Why modern is next post modern
+
+00:45:48.370 --> 00:45:54.050
+testing? Why is this modern compared to traditional testing? What's your, what's in my view, it's,
+
+00:45:54.050 --> 00:46:01.330
+it's, and I know the answer is, is it the fact in my view, it's simply, um, to force that comparison
+
+00:46:02.420 --> 00:46:10.100
+between traditional someone else on a called it vintage. I, I kind of, I kind of liked that one
+
+00:46:10.100 --> 00:46:15.380
+because it, it kind of gives a nice turn, but makes it sound really old. I heard someone else
+
+00:46:15.380 --> 00:46:21.140
+call it Bass, Acre, 1990s testing. Yeah, that doesn't quite flow off the tongue. Not quite. Right.
+
+00:46:22.340 --> 00:46:29.460
+But the other thing I will, I fully realize we need to put this in, in our published documentation.
+
+00:46:30.260 --> 00:46:35.340
+Right. One of the key principles of modern testing is you constantly adapt.
+
+00:46:36.290 --> 00:46:47.330
+And as, uh, as new techniques and new software, uh, models come into play, we're going, uh,
+
+00:46:47.330 --> 00:46:54.290
+we would hope that modern testing would persist by learning these things and incorporating into it.
+
+00:46:54.290 --> 00:47:02.050
+So it, it is in some regards, it is a living document. But if ever one of these techniques
+
+00:47:02.130 --> 00:47:09.490
+comes into play that, that just essentially eliminates the need for, for, uh, testing in any
+
+00:47:09.490 --> 00:47:17.150
+regard. Um, I think rightfully so, just like we're proposing traditional testing should be abandoned.
+
+00:47:17.150 --> 00:47:23.810
+So should modern testing. Yeah. And what comes next, that's going to be up to
+
+00:47:24.850 --> 00:47:30.370
+whoever realizes this pattern and names it, I guess. Yeah. And like I mentioned earlier,
+
+00:47:30.370 --> 00:47:35.970
+talking about the talk that I'm giving, it's not about the future. It's about embracing change.
+
+00:47:35.970 --> 00:47:41.490
+We could say in a way, modern testing is very much about that as well. It's not about defining
+
+00:47:41.490 --> 00:47:46.050
+the future. It's about embracing the change that's going on and what it means to software quality and
+
+00:47:46.930 --> 00:47:52.580
+soft, the software testing activities. It's about, I think it's more than embracing change.
+
+00:47:52.580 --> 00:47:57.140
+It's about it embracing and acting on that change. You know, the phrase,
+
+00:47:58.020 --> 00:48:04.740
+when I embrace, I embrace deeply. So it acting is included. Anytime. Do you want a hug? Later.
+
+00:48:05.300 --> 00:48:13.150
+Anytime there is a change, it is also an opportunity. And what we're trying to do with modern testing,
+
+00:48:13.150 --> 00:48:21.410
+and I, I mean, there's a lot of things in here and there isn't a single one thing other than
+
+00:48:21.410 --> 00:48:27.330
+accelerating the achievement of ship of equality that binds it together. Um, but what we're
+
+00:48:27.330 --> 00:48:37.090
+trying to do is saying, Hey, this is happening. It's not a matter of, of if it's a matter of when
+
+00:48:37.090 --> 00:48:44.130
+it's happening, that the momentum is there. And when the universal tipping point happens,
+
+00:48:44.130 --> 00:48:52.420
+it's going to happen fast. Now we see an opportunity for people who start preparing
+
+00:48:52.420 --> 00:49:00.830
+themselves for that time. And you don't have to, it's, it's not like you're not going to gain value
+
+00:49:00.830 --> 00:49:08.750
+out of it immediately once you start doing this prep. But the people who I, I view it as the
+
+00:49:08.750 --> 00:49:14.350
+people who really see this light, see that this tipping point is in fact coming and starting to
+
+00:49:14.350 --> 00:49:23.700
+prepare for it. They're going to thrive when it hits. Yep. One of the controversial points,
+
+00:49:23.700 --> 00:49:27.060
+there's, there's one, there's two controversial points in the principles. And again, you can go
+
+00:49:27.060 --> 00:49:32.340
+read them on episode 77 show notes. There's one around where we may reduce or eliminate
+
+00:49:32.340 --> 00:49:37.540
+the need for modern for, for the testing, a specific testing role. Uh, that one's like,
+
+00:49:37.540 --> 00:49:41.780
+Oh, my job. But we'll talk about that and explain that about breaking change. That one was
+
+00:49:41.780 --> 00:49:46.180
+obvious, obviously controversial, meant to be controversial to get people thinking.
+
+00:49:46.180 --> 00:49:52.660
+There's another one around the customer. And we said that something close to is in constant
+
+00:49:52.660 --> 00:49:59.300
+evolution. The only, the customer is capable of evaluating the quality of the software.
+
+00:49:59.300 --> 00:50:03.860
+And traditionally testers have thought about like, I am the customer. I'm the protector of the
+
+00:50:03.860 --> 00:50:11.620
+customer. And, but both Brent and I believe very strongly in this one and we've had pushed to
+
+00:50:11.620 --> 00:50:16.420
+remove the word quality and call it value. And we both kind of feel like quality is the right word
+
+00:50:16.420 --> 00:50:22.480
+there. And I'm going to bounce this off some folks at test bash as well. We're going to get a bunch
+
+00:50:22.480 --> 00:50:29.040
+of feedback. And as a teaser, the first ever AB testing cliffhanger, we're going to dive deep
+
+00:50:29.040 --> 00:50:35.810
+into that next time on AB testing. I'm Alan. I'm Brett and we'll see you next time.
+

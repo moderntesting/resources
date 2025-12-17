@@ -1,0 +1,1625 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:08.080
+Will those big corporations that sit on 20 year old code bases change in parts?
+
+00:00:08.080 --> 00:00:10.080
+Maybe I have seen parts of them change.
+
+00:00:10.640 --> 00:00:13.440
+Will they always be entirely modern?
+
+00:00:13.440 --> 00:00:14.720
+I doubt it.
+
+00:00:14.720 --> 00:00:17.520
+The bigger the ship, the harder it is to change the course, right?
+
+00:00:17.520 --> 00:00:25.660
+Welcome to AVE Testing Podcast, your modern testing podcast.
+
+00:00:25.660 --> 00:00:31.260
+Your hosts, Alan and Brent, will be here to guide you through topics on testing,
+
+00:00:31.340 --> 00:00:34.620
+leadership, agile, and anything else that comes to mind.
+
+00:00:34.620 --> 00:00:36.060
+Now, on with the show.
+
+00:00:36.060 --> 00:00:39.020
+Hey everybody, welcome to AVE Testing Podcast.
+
+00:00:39.020 --> 00:00:39.580
+Brent's here.
+
+00:00:39.580 --> 00:00:40.140
+Say hi, Brent.
+
+00:00:40.140 --> 00:00:40.860
+Hi.
+
+00:00:40.860 --> 00:00:41.900
+Okay, our part's over.
+
+00:00:41.900 --> 00:00:46.940
+We have the wonderful Kat Obering here today on the podcast with us to share all kinds of
+
+00:00:46.940 --> 00:00:50.700
+wonderful testing knowledge and just sort of hang out with us and give Brent and I a
+
+00:00:50.700 --> 00:00:51.420
+chance to get to know you.
+
+00:00:51.420 --> 00:00:52.540
+So welcome, Kat.
+
+00:00:52.540 --> 00:00:54.060
+Can you introduce yourself?
+
+00:00:54.060 --> 00:00:54.940
+Yeah, sure.
+
+00:00:54.940 --> 00:00:55.580
+Hello.
+
+00:00:55.580 --> 00:00:56.380
+Thanks for having me.
+
+00:00:56.380 --> 00:00:59.660
+First up, I am extremely, I feel extremely honored to be here.
+
+00:00:59.660 --> 00:01:01.660
+I mean, you guys have been running for eight years.
+
+00:01:01.660 --> 00:01:02.620
+We're the honored ones.
+
+00:01:02.620 --> 00:01:03.500
+Let's be clear on that.
+
+00:01:04.220 --> 00:01:12.380
+I have been a tester slash QA engineer slash test architect slash head of delivery for
+
+00:01:13.340 --> 00:01:15.660
+about just shy of 20 years now.
+
+00:01:15.660 --> 00:01:17.820
+So I worked across the space.
+
+00:01:17.820 --> 00:01:20.700
+I kind of fell into testing like many people do, right?
+
+00:01:20.700 --> 00:01:22.780
+I worked in customer support.
+
+00:01:22.780 --> 00:01:26.540
+My manager got a little bit fed up with me complaining about all the bugs I found.
+
+00:01:26.540 --> 00:01:29.340
+We were hiring for QA engineers in the company.
+
+00:01:29.420 --> 00:01:31.020
+So he kind of encouraged me to apply.
+
+00:01:31.020 --> 00:01:32.140
+That's how I got into it.
+
+00:01:32.780 --> 00:01:34.140
+And things went from there.
+
+00:01:34.140 --> 00:01:37.500
+I have had the luck.
+
+00:01:38.460 --> 00:01:42.700
+You can't see I'm doing air quotes here of mainly working in agile teams or teams
+
+00:01:42.700 --> 00:01:44.700
+that call themselves agile.
+
+00:01:45.340 --> 00:01:49.580
+You know, I think there was a little bit of inflation to that term and it's not
+
+00:01:49.580 --> 00:01:52.060
+getting any better the longer it runs.
+
+00:01:52.060 --> 00:01:57.500
+But generally speaking, I worked as a tester or QA engineer that worked within the team.
+
+00:01:57.500 --> 00:01:59.340
+I've never been outside of the team.
+
+00:01:59.340 --> 00:02:03.020
+I've never done the kind of right automation suites after the fact thing.
+
+00:02:03.020 --> 00:02:07.260
+And that has obviously shaped my views on testing quite significantly.
+
+00:02:07.900 --> 00:02:10.620
+And yeah, these days I run my own company.
+
+00:02:10.620 --> 00:02:11.900
+And now I'm here.
+
+00:02:12.540 --> 00:02:15.100
+I want to maybe at the end, we'll do some plugs.
+
+00:02:15.100 --> 00:02:18.380
+I want to talk a lot about your company and your newsletter and what you're doing.
+
+00:02:18.380 --> 00:02:22.220
+But I didn't realize to you told that story because I've been watching you on
+
+00:02:22.220 --> 00:02:26.300
+LinkedIn for a while how we have a lot of parallels in our paths.
+
+00:02:26.300 --> 00:02:28.300
+I fell my way into testing.
+
+00:02:28.300 --> 00:02:31.900
+I had a job doing tech support at a company that made music software.
+
+00:02:31.900 --> 00:02:33.260
+They also had me do testing.
+
+00:02:33.260 --> 00:02:34.300
+They didn't tell me what it was.
+
+00:02:34.300 --> 00:02:35.260
+I was the only tester.
+
+00:02:35.260 --> 00:02:36.460
+I figured it out.
+
+00:02:36.460 --> 00:02:41.340
+Eventually, I was a test architect and I did more on the tools side and helping
+
+00:02:41.340 --> 00:02:43.100
+people test than I did testing.
+
+00:02:43.100 --> 00:02:46.620
+I also did a lot of testing and people thought I was good at it.
+
+00:02:46.620 --> 00:02:50.580
+But I'm moderately okay at it.
+
+00:02:50.580 --> 00:02:52.020
+I just know a lot about it.
+
+00:02:52.020 --> 00:02:55.300
+And then I got into, you mentioned release engineering.
+
+00:02:55.300 --> 00:02:56.740
+And I did some of that too.
+
+00:02:56.740 --> 00:03:01.140
+It's what I began to do work on DevOps and pipelines and release engineering.
+
+00:03:01.140 --> 00:03:05.860
+I began to realize that I knew I could have a lot more control over quality there.
+
+00:03:05.860 --> 00:03:10.500
+I also like and I want to call out, there's been a bunch of articles this last few
+
+00:03:10.500 --> 00:03:15.300
+weeks on Agile is dead, long live Agile, because the term has kind of been,
+
+00:03:15.300 --> 00:03:17.380
+it means different things to different people.
+
+00:03:17.380 --> 00:03:18.660
+It's been abused.
+
+00:03:18.660 --> 00:03:20.980
+So I love the path.
+
+00:03:20.980 --> 00:03:24.580
+And I think, Brant nodding his head, which our listeners can't see.
+
+00:03:24.660 --> 00:03:27.780
+So there's just a lot of similarities where we've come from.
+
+00:03:28.500 --> 00:03:33.120
+One thing that I know you have some opinions I want to talk about is,
+
+00:03:33.120 --> 00:03:36.160
+this is our modern testing principle number seven we talk about.
+
+00:03:36.160 --> 00:03:39.760
+We want to increase testing knowledge across the team.
+
+00:03:40.400 --> 00:03:43.920
+Not that specialists aren't necessarily needed, but they aren't the bottleneck.
+
+00:03:44.980 --> 00:03:49.620
+So can you talk a little bit like this idea that only a tester can do testing
+
+00:03:49.620 --> 00:03:52.980
+and whether that's true or not and sort of your experience there?
+
+00:03:53.060 --> 00:03:55.780
+Yeah, you hear me sigh or you saw me sigh, right?
+
+00:03:55.780 --> 00:03:57.940
+I think this is one of the myths.
+
+00:03:58.660 --> 00:04:03.780
+We completely understand every sigh that you might express.
+
+00:04:05.220 --> 00:04:08.340
+Well, yeah, this is a safe place.
+
+00:04:08.340 --> 00:04:08.980
+Go for it.
+
+00:04:08.980 --> 00:04:12.020
+It has to be the company of like-minded people, really,
+
+00:04:12.020 --> 00:04:14.980
+because there is, you know, a lot of hubbub and noise around this.
+
+00:04:15.620 --> 00:04:16.900
+How can I put this one?
+
+00:04:16.900 --> 00:04:25.460
+I think the idea, so the main argument I see is that developers are focused on building stuff
+
+00:04:25.460 --> 00:04:30.500
+and thus kind of prevents them from critically thinking about whether what they build actually
+
+00:04:30.500 --> 00:04:35.780
+works because they are so focused and they cannot, you know, A, biologically, exactly.
+
+00:04:35.780 --> 00:04:37.300
+Biologically, this is nonsense.
+
+00:04:37.300 --> 00:04:42.100
+If we weren't capable of test of switching our model mindset or mindset,
+
+00:04:42.100 --> 00:04:46.340
+you know, the mental model that we operate from, then we would be,
+
+00:04:46.340 --> 00:04:51.220
+I don't know, we would all be talking all day long to our bus driver or top wood or,
+
+00:04:51.220 --> 00:04:52.420
+you know, whatever.
+
+00:04:52.420 --> 00:04:57.380
+We would not be able to do different things with different people, with different attitudes.
+
+00:04:57.380 --> 00:05:02.180
+So I don't really know where people, so you can hear, I feel quite strongly about this.
+
+00:05:02.180 --> 00:05:05.300
+Yeah, so no, I don't think that only testers can test.
+
+00:05:05.300 --> 00:05:09.860
+I think everybody in a team can test and I think everybody should be encouraged to test.
+
+00:05:09.860 --> 00:05:14.420
+I think there is maybe a point to be made that you don't,
+
+00:05:14.420 --> 00:05:17.540
+you should not just build and test on your own.
+
+00:05:17.540 --> 00:05:21.300
+You always want to at least a second set of eyes,
+
+00:05:21.300 --> 00:05:25.380
+but that's just good practice for everything that you want to deliver to somebody else.
+
+00:05:25.380 --> 00:05:25.860
+Right.
+
+00:05:25.860 --> 00:05:29.060
+Whether it is a text or a piece of software doesn't really matter.
+
+00:05:29.940 --> 00:05:35.300
+It is good practice to run it by somebody else and to play ideas off with somebody else
+
+00:05:35.300 --> 00:05:40.500
+and to get another, you know, thought process run over what you have done there.
+
+00:05:40.500 --> 00:05:42.820
+But that is a completely different topic, I think.
+
+00:05:43.700 --> 00:05:46.340
+I think it is, I muted Brent because he was making a bunch of noise,
+
+00:05:46.340 --> 00:05:48.740
+but you unmute yourself if you want to jump in here.
+
+00:05:48.740 --> 00:05:53.460
+You hit on a couple things and we have video on for the recording because it is good for us to
+
+00:05:53.460 --> 00:05:55.940
+read each other and I made like my head was exploding.
+
+00:05:55.940 --> 00:05:59.300
+We are talking about this idea that we see written about a lot.
+
+00:05:59.300 --> 00:06:01.060
+I like you to talk a little bit more about this.
+
+00:06:01.860 --> 00:06:07.780
+Can you expand a little bit more on your thoughts of the developers having a builder mindset
+
+00:06:07.780 --> 00:06:09.860
+and they can't test their own stuff?
+
+00:06:10.580 --> 00:06:16.180
+I, by the way, I totally agree with the point, like work with a partner to help you test.
+
+00:06:16.180 --> 00:06:20.580
+And we had Brian Finster on like a month or two ago, like Brent and I have gone as far as to say,
+
+00:06:20.580 --> 00:06:24.420
+and I'm asking a horrible question here because we're horrible interviews, but I'll get there.
+
+00:06:24.420 --> 00:06:29.060
+Brent and I have gone as far to say that a lot of teams don't even need dedicated testers,
+
+00:06:29.700 --> 00:06:30.980
+which I still think is true.
+
+00:06:30.980 --> 00:06:33.780
+I don't think everything I think and Brent would say every team doesn't need it.
+
+00:06:33.780 --> 00:06:37.860
+I would say that most teams don't, but where the testers can really, really help.
+
+00:06:37.940 --> 00:06:41.940
+Where I don't want testers to go sit off in their silo and do a bunch of testing on their own.
+
+00:06:41.940 --> 00:06:43.300
+And I'm answering your question for you.
+
+00:06:43.300 --> 00:06:44.420
+I'm horrible at this job.
+
+00:06:46.260 --> 00:06:51.620
+I want the testers to accelerate the developer's ability to get quality software done.
+
+00:06:51.620 --> 00:06:54.180
+And I see that Brent also wants to say something.
+
+00:06:54.180 --> 00:06:57.620
+So I'll just be brief and then give you a chance to talk as well.
+
+00:06:57.620 --> 00:07:03.780
+However, I get into hot water about this.
+
+00:07:04.500 --> 00:07:05.140
+One second.
+
+00:07:05.620 --> 00:07:12.740
+I'm absolutely glad that our interviewing skills on this podcast have shown that we're absolutely
+
+00:07:12.740 --> 00:07:13.540
+flatlining.
+
+00:07:13.540 --> 00:07:14.820
+Maybe even going down.
+
+00:07:16.260 --> 00:07:17.620
+Maybe after this, you will be.
+
+00:07:18.660 --> 00:07:19.140
+Anyways.
+
+00:07:20.820 --> 00:07:26.260
+So I get into hot water with this all the time, but I tend to agree that teams don't
+
+00:07:26.260 --> 00:07:28.020
+necessarily need dedicated testers.
+
+00:07:28.020 --> 00:07:30.580
+What teams need though is testing knowledge.
+
+00:07:31.380 --> 00:07:38.100
+I think teams need somebody on the team that is interested enough, you know, to advocate
+
+00:07:38.100 --> 00:07:43.700
+for quality, to learn stuff, to keep on top of newer developments and so on and so forth.
+
+00:07:43.700 --> 00:07:44.340
+Right.
+
+00:07:44.340 --> 00:07:45.940
+That doesn't need to be a tester.
+
+00:07:45.940 --> 00:07:46.980
+I don't care who it is.
+
+00:07:47.790 --> 00:07:50.350
+So that was, I answer that question.
+
+00:07:50.990 --> 00:07:53.070
+I mean, we're going to be singing to the choir.
+
+00:07:53.070 --> 00:07:55.230
+I think a good portion of this podcast.
+
+00:07:55.230 --> 00:07:58.830
+When I think of, of, oh, the builder mindset.
+
+00:07:58.910 --> 00:08:03.230
+There's one thing, I mean, we've come up with all kinds of analogies on this topic, on
+
+00:08:03.230 --> 00:08:09.460
+the podcast over the years, but what I'm like, you know, if all of these people had,
+
+00:08:10.340 --> 00:08:15.860
+you know, had a fixed mindset that only succeeded, like one question I'm like, okay,
+
+00:08:15.860 --> 00:08:17.940
+what percentage of them went through college?
+
+00:08:17.940 --> 00:08:19.940
+What percent of them passed college?
+
+00:08:19.940 --> 00:08:22.180
+Because how, how does that possible?
+
+00:08:24.450 --> 00:08:26.130
+There's so many things.
+
+00:08:26.130 --> 00:08:29.490
+How did they, how did they go home and live their life?
+
+00:08:29.490 --> 00:08:38.690
+The reality is everyone has to acquire and use a diversity of knowledge.
+
+00:08:39.250 --> 00:08:43.810
+So when everyone, just quite honestly, when people say, oh, they're ever builder, I mean,
+
+00:08:45.010 --> 00:08:46.370
+they're using hyperbole.
+
+00:08:47.010 --> 00:08:51.330
+We could rephrase it and maybe have a different discussion around.
+
+00:08:51.330 --> 00:08:51.570
+Okay.
+
+00:08:52.610 --> 00:08:54.290
+Does that optimize?
+
+00:08:54.290 --> 00:08:59.810
+Like I'm honestly really tired of, uh, is it, that's the only way to do it.
+
+00:08:59.810 --> 00:09:03.970
+Like everyone on those call knows that that's complete and utter nonsense.
+
+00:09:04.850 --> 00:09:08.290
+But is it, is it, is it optimal?
+
+00:09:08.290 --> 00:09:10.210
+And even there, I would say no.
+
+00:09:10.210 --> 00:09:14.290
+Now, Alan quoted me earlier, uh, around that.
+
+00:09:14.290 --> 00:09:16.290
+I would say it's always the case.
+
+00:09:16.290 --> 00:09:16.930
+It's not.
+
+00:09:17.570 --> 00:09:23.250
+There are certain places where, uh, if your shipping model is,
+
+00:09:24.290 --> 00:09:29.730
+if you're doing a box product, you do want to have that extra risk control.
+
+00:09:29.730 --> 00:09:35.650
+If you have, if you're under government compliance, you do want to have a specialist
+
+00:09:35.650 --> 00:09:38.290
+under that in that arena.
+
+00:09:38.290 --> 00:09:40.770
+But the general stuff that we do on day to day.
+
+00:09:41.490 --> 00:09:49.520
+No, your, your, your investment in my humble opinion is, is better served by going and
+
+00:09:49.520 --> 00:09:57.180
+getting your, your staff, whatever their title is trained on this stuff.
+
+00:09:57.180 --> 00:09:57.660
+Exactly.
+
+00:09:58.620 --> 00:10:04.540
+Then hiring somebody that then becomes a, it then encourages the code dependency loop.
+
+00:10:04.540 --> 00:10:08.700
+We've talked about a million times on here where it essentially people can't live
+
+00:10:08.700 --> 00:10:13.420
+without this person, but if that person goes, then the sky falls, right?
+
+00:10:13.420 --> 00:10:15.580
+That's not a sustainable way to run a, uh,
+
+00:10:16.380 --> 00:10:18.540
+It's also not a good place to be in.
+
+00:10:19.540 --> 00:10:19.860
+Right.
+
+00:10:20.770 --> 00:10:25.890
+I mean, for both sides, for the team that depends on the test, but also not on the tester.
+
+00:10:25.890 --> 00:10:31.170
+I can't count the amount of times I have come into teams to help them,
+
+00:10:31.170 --> 00:10:33.970
+like modernize that their testing approaches.
+
+00:10:34.690 --> 00:10:40.290
+And the first thing that the testers tell me is that either they sit twiddling their thumbs
+
+00:10:40.290 --> 00:10:42.050
+because they're working agile, right?
+
+00:10:42.050 --> 00:10:46.130
+They twiddle their thumbs until the day before the sprint is over, and then they get all of
+
+00:10:46.130 --> 00:10:48.770
+the stories to test and know that you feel stressed.
+
+00:10:48.770 --> 00:10:51.470
+I'm like, yeah, sure.
+
+00:10:51.470 --> 00:10:53.230
+Because that's not how you should be doing this.
+
+00:10:53.230 --> 00:10:53.470
+Right.
+
+00:10:54.460 --> 00:10:58.220
+I, I haven't had those days in 15 years.
+
+00:10:59.180 --> 00:11:02.220
+And I am so grateful.
+
+00:11:02.940 --> 00:11:03.260
+They exist.
+
+00:11:03.260 --> 00:11:04.140
+Grateful they're gone.
+
+00:11:05.070 --> 00:11:05.390
+Yeah.
+
+00:11:05.390 --> 00:11:10.110
+So Brent and I are quite a bit removed from that type of thing, but I do know what goes on.
+
+00:11:10.110 --> 00:11:15.710
+And I imagine in your business, you see a lot of that even before Brent and I begin to podcast,
+
+00:11:15.710 --> 00:11:20.350
+I think, uh, and before we had principles kind of outlined, they're really delivery
+
+00:11:20.350 --> 00:11:24.110
+principles, but Brent came up with this, uh, when he was leading a test team,
+
+00:11:24.830 --> 00:11:29.310
+this mission statement was that we accelerate the achievement and a shippable quality.
+
+00:11:29.310 --> 00:11:34.110
+And I know that you've also talked about how testing, if it's well integrated,
+
+00:11:34.110 --> 00:11:35.790
+it will speed up delivery testing.
+
+00:11:35.790 --> 00:11:37.550
+It's on a bottleneck as an accelerant.
+
+00:11:37.550 --> 00:11:40.990
+And I wrote, and I've written about this a couple of times, but I know I want to hear
+
+00:11:40.990 --> 00:11:43.790
+your, I think we're going to nod our heads, but I want to hear it from you.
+
+00:11:43.790 --> 00:11:48.270
+Like, how do you view testing as speeding up the team versus slowing it down?
+
+00:11:48.270 --> 00:11:52.190
+Well, the way I see it, there are multiple ways, right?
+
+00:11:52.190 --> 00:11:56.670
+It begins, I mean, and when, when we say testing speeds up the team, then we talk
+
+00:11:56.750 --> 00:12:00.030
+about a specific kind of testing done in a specific way.
+
+00:12:00.030 --> 00:12:01.710
+I want to be clear about this, right?
+
+00:12:01.710 --> 00:12:09.490
+We talk about testing that is done in a mainly automated fashion, and that is done in a way
+
+00:12:09.490 --> 00:12:16.400
+where tests are committed with the code through an automated pipeline, and they run
+
+00:12:16.400 --> 00:12:19.520
+automatically every time you want to merge your code, right?
+
+00:12:19.520 --> 00:12:21.760
+So this is very specific, obviously.
+
+00:12:21.760 --> 00:12:26.560
+And the way this speeds you up is obviously any, any malfunction, any issue you've,
+
+00:12:26.560 --> 00:12:31.360
+you detect at the time you're writing the code is, we all know this, right?
+
+00:12:31.360 --> 00:12:32.400
+It's easier to fix.
+
+00:12:32.400 --> 00:12:35.840
+It's cheaper to fix because your mind is still in the code.
+
+00:12:35.840 --> 00:12:39.920
+You don't have to remember what you did three weeks ago or, and, you know,
+
+00:12:39.920 --> 00:12:44.080
+work through the additions that three other people may have made in the meantime and so on and so
+
+00:12:44.080 --> 00:12:48.160
+forth. So that is the first and most obvious benefit here.
+
+00:12:48.160 --> 00:12:53.680
+But also it means obviously that code will be written in a way that it is testable,
+
+00:12:53.680 --> 00:12:59.120
+which means later on, if you actually do release an issue into production and you will be releasing
+
+00:12:59.120 --> 00:13:04.480
+issues in production, because that, you know, that stuff happens, then debugging is going to be much,
+
+00:13:04.480 --> 00:13:06.480
+much easier and much more straightforward.
+
+00:13:07.120 --> 00:13:12.800
+You have tests that may not have caught everything, but those tests can also, because now you are
+
+00:13:12.800 --> 00:13:17.680
+maybe month, years down the line, but you have tests that also can serve as documentation.
+
+00:13:17.680 --> 00:13:21.760
+So you have, you know, a list of things that you expected your code to do.
+
+00:13:22.320 --> 00:13:24.400
+And you already know that that is covered.
+
+00:13:24.400 --> 00:13:29.760
+So these are the main, main benefits, I would say, where things just speed you up, right?
+
+00:13:29.760 --> 00:13:35.760
+And obviously you don't need to go through these cycles of the developer has done their work.
+
+00:13:35.760 --> 00:13:41.840
+They hand it over to a tester who then deploys it into an environment, maybe immediately,
+
+00:13:41.840 --> 00:13:46.800
+maybe a day later, then they test the stuff, you know, then they write their bug reports,
+
+00:13:46.800 --> 00:13:51.200
+they go back. So that, that process in itself usually takes a day or two,
+
+00:13:51.200 --> 00:13:55.040
+whereas a well configured pipeline with well written tests takes 15 minutes.
+
+00:13:55.680 --> 00:13:59.040
+Again, people can't see the video, but Brett and I aren't doing happy dances, because
+
+00:13:59.920 --> 00:14:06.800
+it is so refreshing to hear someone just like this is makes so much sense, yet so many people
+
+00:14:06.800 --> 00:14:11.280
+don't get it. And so I'm really curious, because I live in my little bubble here of
+
+00:14:11.280 --> 00:14:17.360
+edging towards continuous delivery. And my world is a lot like this. I imagine in your business,
+
+00:14:17.360 --> 00:14:21.600
+you encounter, like folks across the board, or where this seems impossible,
+
+00:14:22.160 --> 00:14:26.400
+where they think the right thing to do is have a separate team of testers writing automation
+
+00:14:26.400 --> 00:14:31.840
+isolated from development. Like what's that like for you and your business? How do you help teams
+
+00:14:31.840 --> 00:14:37.120
+see that light? And before let me ask one follow up to that question. Are you seeing a light at
+
+00:14:37.120 --> 00:14:44.830
+the end of the tunnel? Like it how much of your job is helping people transition? And are you
+
+00:14:44.830 --> 00:14:52.750
+seeing that person or that portion of your job actually trending either up down or staying the
+
+00:14:52.750 --> 00:14:59.310
+same? So the main majority I have seen of this started really when I was working in a consultancy
+
+00:14:59.310 --> 00:15:04.510
+just before I opened my own business, right? So that was a consultancy that was in the business
+
+00:15:04.510 --> 00:15:09.630
+of digital transformation. There were the air quotes again, that I would just call out because
+
+00:15:09.710 --> 00:15:15.710
+you can't see. And there it was, like you say, it was there, I usually went in with a team of
+
+00:15:15.710 --> 00:15:20.430
+developers. So the way we worked in that consultancy was generally we bring in a whole team
+
+00:15:20.990 --> 00:15:26.510
+that then blends or becomes a blended team with developers and testers from the client.
+
+00:15:26.510 --> 00:15:32.750
+And we work with them together and we show them how we develop stuff using DevOps principles in
+
+00:15:32.750 --> 00:15:40.590
+a nutshell. And quite often, part of my assignment was then work with a wider QA community in the
+
+00:15:40.590 --> 00:15:49.500
+client to teach them how to move towards these goals, how to educate their testers and train
+
+00:15:49.500 --> 00:15:53.420
+their testers up. Because quite often, if a tester has worked for 15 years on the job,
+
+00:15:53.420 --> 00:15:57.580
+but all they know is testing after the fact, then they will need a little bit of training
+
+00:15:57.580 --> 00:16:04.500
+to slot into a team like that. That was a lovely way. Do I see a light at the end of the tunnel?
+
+00:16:04.500 --> 00:16:13.860
+Yes and no. I would say yes and no. I think by and large, it is like many things. Older habits
+
+00:16:13.860 --> 00:16:19.140
+don't necessarily change. They got just replaced by a new generation. And I think the newer
+
+00:16:19.140 --> 00:16:25.780
+generation of companies tend to work in more modern ways, in more DevOps-y ways, in more
+
+00:16:25.780 --> 00:16:30.980
+continuous delivery, continuous improvement ways. So yes, I think there is a light at the end of the
+
+00:16:30.980 --> 00:16:40.980
+tunnel. Will those big corporations that sit on 20-year-old code bases change in parts? Maybe I have
+
+00:16:40.980 --> 00:16:49.010
+seen parts of them change. Will they always be entirely modern? I doubt it. The bigger the ship,
+
+00:16:49.010 --> 00:16:52.930
+the harder it is to change the course. Did I answer all the questions?
+
+00:16:53.730 --> 00:17:00.130
+Oh, you did. Yeah, I heard the yes part. I got excited that it was followed by yes and no.
+
+00:17:01.890 --> 00:17:10.050
+She's right. It's essentially, until these other VM myths realize that the smaller, more
+
+00:17:10.850 --> 00:17:22.210
+agile companies are able to destroy their business, it's essentially until the great software asteroid
+
+00:17:22.210 --> 00:17:29.090
+hits and knocks out these people with all of these ancient thought patterns, it's still going to
+
+00:17:29.090 --> 00:17:35.730
+persist. I wonder what it takes for them to see the light. These days, because I used to
+
+00:17:35.730 --> 00:17:42.130
+spend my time on Twitter, but I don't because for obvious reasons, Elon, thanks for wrecking my
+
+00:17:42.130 --> 00:17:47.410
+little home away from home. But my bro is linked in. There's definitely a bubble there of,
+
+00:17:48.320 --> 00:17:54.720
+like, I live in a different bubble and I don't know. Here's my dilemma. I would love your advice,
+
+00:17:54.720 --> 00:18:01.360
+Kat, your free consulting advice because I'm cheap. Brett and I started this podcast eight,
+
+00:18:01.360 --> 00:18:07.120
+nine, ten years, almost ten years ago because we were seeing these changes happening and we
+
+00:18:07.120 --> 00:18:12.000
+didn't want to invent anything. We wanted to talk about what we were seeing and see if we could
+
+00:18:12.000 --> 00:18:17.200
+just talk about it and help people understand the changes that were coming and how tests could
+
+00:18:17.200 --> 00:18:22.160
+accelerate the team and how handoffs were slowing down delivery versus helping delivery.
+
+00:18:24.000 --> 00:18:31.520
+I see posts on LinkedIn that say only testers have the testers mindset and all teams like to talk
+
+00:18:31.520 --> 00:18:36.320
+about the automation team and how they have a team of dozens of people writing Selenium all day,
+
+00:18:36.320 --> 00:18:44.290
+writing tests for the developers. What can I do? Should I ignore it and block those people so I can
+
+00:18:44.290 --> 00:18:50.130
+live in my echo chamber? Is there a way I can engage with them and try and help them or am
+
+00:18:50.130 --> 00:18:54.690
+I trying to be too much of a savior in that case? I should just stay out of the way. What can I
+
+00:18:54.690 --> 00:19:00.130
+do to help bring some of the industry to where we are today or should I just butt out?
+
+00:19:00.130 --> 00:19:04.850
+I was wondering if you would ask this question funny enough. I don't know why.
+
+00:19:05.090 --> 00:19:12.690
+I was thinking about this earlier. I definitely have incurred the wrath of some of the
+
+00:19:13.970 --> 00:19:18.290
+more old-fashioned camp occasionally and they still have a lot of friends on Facebook.
+
+00:19:19.490 --> 00:19:26.450
+I now have generally a couple of people who are dissent with what I say on my posts in
+
+00:19:26.450 --> 00:19:32.770
+more or less engaging ways. Personally, I can't tell you what you should be doing. What I do
+
+00:19:32.770 --> 00:19:38.770
+personally is if I feel that the person is asking a genuine question and quite happy to discuss,
+
+00:19:39.490 --> 00:19:44.210
+if I feel the person is asking a question just to start an argument with me, I will generally
+
+00:19:44.210 --> 00:19:50.930
+ignore it because I don't have time for that. Other than that, I think the best way to spread
+
+00:19:50.930 --> 00:19:55.250
+knowledge is to make it available to people who wants to engage with it, will engage with it,
+
+00:19:55.250 --> 00:20:00.850
+you know who wants to dissent, will dissent. Who just wants to go their way slightly blindfolded,
+
+00:20:00.850 --> 00:20:06.210
+they will do that as well. I can't make those decisions for other people. I just can't offer
+
+00:20:06.210 --> 00:20:11.890
+what I have. Take it out even. Without going into details, I think a lot of the dissent that comes
+
+00:20:11.890 --> 00:20:20.210
+to strong voices like yours, Kat, come out of fear. It's fear, digging. They don't want their
+
+00:20:20.210 --> 00:20:25.890
+world to change because they're comfortable and they are kings and queens in their world.
+
+00:20:26.530 --> 00:20:31.810
+So the idea of that world changing is very, very frightening to those folks. But I think we need
+
+00:20:31.810 --> 00:20:39.360
+new ideas. The one thing while you're talking, I think I can do is rather than me bring my savior
+
+00:20:39.360 --> 00:20:44.560
+into, I'm going to teach you how to not be wrong. Like I'm going to go to having done this for a
+
+00:20:44.560 --> 00:20:51.120
+gazillion years and being old as hell, amplify the voices who are saying the good things and
+
+00:20:51.920 --> 00:20:55.680
+let people see a different way from more than just my angle. I think people are tired of
+
+00:20:55.680 --> 00:20:59.440
+hearing from me. We need to hear from people like you and others in the industry who are doing
+
+00:20:59.440 --> 00:21:05.840
+really good things. Just support. Well, and I think she's right. We do need to broadcast the
+
+00:21:05.840 --> 00:21:13.820
+knowledge. Like I was, I think you're right. It is fear. I think not only that, at some point in
+
+00:21:13.820 --> 00:21:21.100
+time, you have to conclude is it's like the knowledge is out there, but these so-called
+
+00:21:21.100 --> 00:21:30.290
+experts, there seems to be a refusal to look at it. I'll just posit this. If you have been
+
+00:21:30.290 --> 00:21:37.180
+experienced in testing, and maybe I'm too far gone on this one. Like I don't know how to take the
+
+00:21:37.180 --> 00:21:43.180
+other side of my hypothetical, but if you have read Accelerate and if you have read Lean Startup and
+
+00:21:43.180 --> 00:21:51.420
+if you have read Phoenix Project, how can you responsibly continue doing things the way you have?
+
+00:21:51.980 --> 00:21:58.510
+Excellent question. I don't know. I mean, you know, and I fairly frequently have people
+
+00:21:59.790 --> 00:22:06.750
+question my posts on LinkedIn, for example, can you prove this with a study? And I'm like, yeah,
+
+00:22:06.750 --> 00:22:13.470
+I could, but really, should I show you how to Google this? Really? If you were interested
+
+00:22:13.470 --> 00:22:18.030
+in finding the facts about this, then you would have found the facts. Okay.
+
+00:22:18.750 --> 00:22:25.870
+Exactly. Exactly. Right. It's a strong man's argument when say, can you prove this? Right.
+
+00:22:25.870 --> 00:22:34.540
+It's a strong man's argument. I'm not, I am not trying to battle. I'm not playing testing King
+
+00:22:34.540 --> 00:22:40.540
+of the Hill. I don't want to be the high priest that everyone follows. What I'm trying to do is
+
+00:22:40.540 --> 00:22:47.260
+exactly what Kat's saying is it's, hey, here's a bunch of knowledge. If you want to learn the
+
+00:22:47.260 --> 00:22:52.780
+same knowledge I did, I just listed off, for example, three of the Magellian books on this.
+
+00:22:53.620 --> 00:23:00.820
+Go learn for yourself and make your own decisions. Really, like, Alan invented this term a long time
+
+00:23:00.820 --> 00:23:09.060
+ago, test zombies. And I've been rather fond of it. And I'm just like, we have talked about it
+
+00:23:09.060 --> 00:23:13.540
+for me. I'm sorry, Kat. Like, this is frustrating for me because I just like we have talked about
+
+00:23:13.540 --> 00:23:22.080
+this for so many years. We have absolutely lived and observed that testers in this space really
+
+00:23:22.080 --> 00:23:28.640
+don't have a reason to fear. If they if they go in the right direction, they're actually even more
+
+00:23:28.640 --> 00:23:36.400
+valuable. I have, I switched over to dev years ago. And we created a blending team. And guess what?
+
+00:23:37.200 --> 00:23:45.920
+My testers ended up being better developers than the dev did. Of course, because it's it. Because
+
+00:23:46.880 --> 00:23:57.070
+thinking about how do I make this work turns out to be a much better skill set, or much harder skill
+
+00:23:57.070 --> 00:24:04.700
+set to sort of adapting it in than it is on how to code. There's another sort of bubble that I think
+
+00:24:04.780 --> 00:24:12.140
+doesn't. It's just code. It's not magic. Yes. And I think it is. On that note, I think it is really
+
+00:24:12.140 --> 00:24:19.820
+ironic. These days, the most kind of influential developer advocates you see, you know, on social
+
+00:24:19.820 --> 00:24:26.460
+media, talk a lot about how coding or how knowing how to write code really is not what gets you ahead
+
+00:24:26.460 --> 00:24:32.220
+as a pro as a developer. Learning to code is fairly easy. What you need to learn is how to think
+
+00:24:32.220 --> 00:24:37.820
+about a problem, how to define a problem and how to define a solution to your problem. And then you
+
+00:24:37.820 --> 00:24:43.660
+need to learn how to talk to the people around you to understand what they really want and how what
+
+00:24:43.660 --> 00:24:49.660
+you are going to deliver is actually going to deliver value to a run range of different stakeholders.
+
+00:24:49.660 --> 00:24:56.700
+Right. So now we are suddenly in this space where developers claim the soft skills that testers have
+
+00:24:56.700 --> 00:25:02.860
+for years claimed they can only they can bring to the team. They need to be the translators between
+
+00:25:02.860 --> 00:25:07.420
+the people who write the code over there in the corner and the people of the great ideas over
+
+00:25:07.420 --> 00:25:12.610
+there in the other corner. Right? Sorry. Yeah. And neither of which are the customer.
+
+00:25:12.610 --> 00:25:14.690
+I'm gonna unmute so I can clap.
+
+00:25:14.690 --> 00:25:30.850
+It's very relevant. Like right now, I am staring at a website talking about a presentation that
+
+00:25:30.850 --> 00:25:39.970
+Kat did in Prague last December called delete that test column. Yes, I think it was it was actually in
+
+00:25:39.970 --> 00:25:46.690
+September not December, but yes. Okay. Very nice. That's true to Prague, by the way. Lovely city.
+
+00:25:46.690 --> 00:25:55.490
+I completely agree with that. But piggybacking on that, one of the things that I did is on my
+
+00:25:55.490 --> 00:26:04.900
+agile board, the columns go release. Then after that, which is typically done on my board,
+
+00:26:04.900 --> 00:26:14.320
+it says customer validate. I like that. And I expect, I expect actually the whoever owns that ticket
+
+00:26:15.310 --> 00:26:22.750
+to do that, whether they talk to the customer, whether they do something via telemetric means,
+
+00:26:22.750 --> 00:26:29.950
+I don't care, but it's not done until we have evidence of validation from the customer.
+
+00:26:29.950 --> 00:26:37.380
+I really like that. And that is super powerful. Because, well, anyway, you can guess it.
+
+00:26:37.380 --> 00:26:42.420
+Yeah, no, no, I really like that. I mean, so what I another thing that I really like is that part of
+
+00:26:42.420 --> 00:26:47.940
+our definition of done in the teams I work with generally is at least some sort of monitoring
+
+00:26:47.940 --> 00:26:54.180
+and setup, right? Because talking to the customers is one way to validate. But there's, of course,
+
+00:26:54.180 --> 00:26:59.060
+also the other side where if you just get good information back from your production environment,
+
+00:26:59.060 --> 00:27:04.820
+you have good monitoring in place, and that gives you another data set that is also important to have,
+
+00:27:04.820 --> 00:27:12.420
+right? I totally totally agree. Done doesn't stop with it's no, no released deployed. Again,
+
+00:27:12.420 --> 00:27:16.980
+also, we don't need to talk about, you know, separating deploy from release. I know we're
+
+00:27:16.980 --> 00:27:22.260
+singing the same song in that. I'm sure we were talking earlier. It's like, I was thinking I
+
+00:27:22.260 --> 00:27:26.580
+watched the State of the Union in the US last night, and watch the reactions from both sides.
+
+00:27:26.660 --> 00:27:35.040
+And I, there's a phenomenon where I think folks seek to like they're seeking their echo chambers.
+
+00:27:35.040 --> 00:27:39.920
+These are people that that tout their critical thinking abilities, but they're not actually like
+
+00:27:39.920 --> 00:27:43.600
+going back to the books, they're not actually looking to see why would people think the other
+
+00:27:43.600 --> 00:27:48.320
+way. And I do this looking at the right wing in America, I try and figure out why do they feel
+
+00:27:48.320 --> 00:27:51.840
+the way they do. And it's usually not for good reasons, but I'm not going to go into that on
+
+00:27:51.840 --> 00:27:57.600
+this this podcast. But I kind of see the same thing in the world of testing people there,
+
+00:27:57.600 --> 00:28:02.480
+they're comfortable in their echo chamber, they don't want to hear other ideas or consider them
+
+00:28:02.480 --> 00:28:08.880
+and testers tout themselves on critical thinking. So I want to just put that out there. You can
+
+00:28:08.880 --> 00:28:14.160
+comment on that if you want. But like the testers I read on LinkedIn, they're very like
+
+00:28:14.160 --> 00:28:19.200
+only we can test because we have the tester mindset because we have attention to detail. And
+
+00:28:19.200 --> 00:28:25.520
+we have critical thinking, whether they do or not, I don't know, apparently not. But what
+
+00:28:25.520 --> 00:28:31.440
+but also I think for years, air quote, technical skills for a testament, write code, but there's
+
+00:28:31.440 --> 00:28:35.520
+a lot more to that, of course, writing being able to write code to help not necessarily to
+
+00:28:35.520 --> 00:28:40.880
+automate tests, but to help accelerate your testing is a really good idea. So what's anyway,
+
+00:28:40.880 --> 00:28:44.000
+I'm going to stop there. I want to talk about the critical thinking thing and get your opinions
+
+00:28:44.000 --> 00:28:49.360
+on that and then talk about what technical skills do you think testers, people saying and testing
+
+00:28:49.360 --> 00:28:54.160
+need to be successful. Yes, on the critical thinking thing, right? I totally agree. I think
+
+00:28:54.160 --> 00:29:00.800
+it is highly ironic that the people who claim that they they are the experts in critical thinking
+
+00:29:00.800 --> 00:29:07.280
+are also the people who are most close to hearing any information outside of their echo chamber. Yes.
+
+00:29:07.280 --> 00:29:15.600
+And I think, you know, we all have a tendency to seek the company or of like minded people, you know,
+
+00:29:16.160 --> 00:29:24.830
+that that is human nature, that is fine. But I think if you want want to view yourself as somebody
+
+00:29:24.830 --> 00:29:30.670
+who operates on logic and critical thinking, then you need to allow a few uncomfortable facts into
+
+00:29:30.670 --> 00:29:36.030
+your life, whether you like them or not. Right. So that is the one bit, there is the other bit,
+
+00:29:36.030 --> 00:29:42.220
+however, where and this has been the case in my entire testing career, I always found it
+
+00:29:42.940 --> 00:29:49.820
+somewhat baffling that people think they can build a career purely on what is generally
+
+00:29:49.820 --> 00:29:57.180
+regarded as the softer skills that personally I would expect any professional in the field to have,
+
+00:29:57.180 --> 00:30:03.580
+because what do I do with a developer who can't ask questions? And that that is the basis of
+
+00:30:03.580 --> 00:30:08.780
+critical thinking. Right. What do I do with a developer who cannot communicate with people
+
+00:30:08.780 --> 00:30:13.820
+around them? Not very much. This may and I doubt it to be honest, this may have been a thing in the
+
+00:30:13.820 --> 00:30:19.180
+80s, but at least not in the 20 years I have been in the industry. So I really don't understand
+
+00:30:19.180 --> 00:30:25.740
+this. And from there going into what you already touched upon it on the technical side,
+
+00:30:25.740 --> 00:30:31.580
+if I find find an issue with my application, and obviously having the technical knowledge to be
+
+00:30:31.580 --> 00:30:39.660
+able to isolate where this stems from, and to have at least an idea what is going on under the hood,
+
+00:30:39.660 --> 00:30:46.540
+will make it much, much easier to write it up in a way that will mean something to other people
+
+00:30:46.540 --> 00:30:55.020
+and allow them to prioritize the level of criticalness of the issue. So that was a horrible
+
+00:30:55.020 --> 00:30:59.980
+sentence. However, and also it just makes it easier to have conversations around this, even
+
+00:30:59.980 --> 00:31:05.740
+if I'm not even even if I don't become a super proficient coder, or programmer or developer,
+
+00:31:05.740 --> 00:31:12.460
+or however you want to call it, right, at least having a fundamental understanding of what we work
+
+00:31:12.460 --> 00:31:20.400
+with is something that I would expect every tester to have. So at least learn to read code,
+
+00:31:20.400 --> 00:31:26.160
+at least be proficient enough to help people with code reviews, right? You may not be able to spot
+
+00:31:26.160 --> 00:31:33.920
+every gnarly bit, but you can start there by questioning tests, by looking at tests, helping
+
+00:31:33.920 --> 00:31:39.200
+developers think about tests, help them learn what kind of tests you want to write, you know,
+
+00:31:39.200 --> 00:31:43.920
+go away from the happy path. Yes, we want every path, but we also want edge cases, we want all
+
+00:31:43.920 --> 00:31:50.000
+sorts of things, right? So there are many ways I think into this without becoming the best coder
+
+00:31:50.000 --> 00:31:55.390
+on the planet. But yes, you need to at least be proficient enough to understand what you're
+
+00:31:55.390 --> 00:32:01.310
+working with. I want to emphasize one point in there, because I said in a prediction episode back
+
+00:32:01.310 --> 00:32:07.550
+in December that the ability to read code is going to become more and more critical as AI
+
+00:32:07.550 --> 00:32:13.390
+begins to write code for you, and both as developers, a tester, reading code is so critical.
+
+00:32:13.390 --> 00:32:19.390
+And I'm far better reader at code that I'm a writer, a reasonable writer. But I actually have
+
+00:32:19.390 --> 00:32:27.870
+a study on this that I did for P and SQC like 20 years ago, I did a study of testers reviewing
+
+00:32:27.870 --> 00:32:33.630
+code and and like we did I did extensive over a period of many months, probably not as you know,
+
+00:32:33.630 --> 00:32:38.430
+as researchy as Nicole for a screen of the PhDs. But I have a study on this, it makes a difference
+
+00:32:38.430 --> 00:32:43.150
+the ability to read code and ask questions and apply critical thinking, even when you don't
+
+00:32:43.150 --> 00:32:48.030
+understand like I have reviewed and found bugs in so much code that I could not have written
+
+00:32:48.030 --> 00:32:52.830
+myself, just because I'm not afraid to ask questions. What does this do this seems I found
+
+00:32:52.830 --> 00:32:56.510
+so many bugs like saying, Can you explain this to me? I don't quite get it. And they go, Oh, you're
+
+00:32:56.510 --> 00:33:02.240
+absolutely right. That's broken. I'm so pleased that you have a study on this. That's amazing.
+
+00:33:02.800 --> 00:33:07.360
+Somewhere buried. But but but that's the thing, right? I mean, even that's what I mean, even even
+
+00:33:07.360 --> 00:33:14.160
+if my, my knowledge about programming doesn't extend to understand extremely abstracted away
+
+00:33:14.160 --> 00:33:21.360
+functions, I can still spot badly named variables, for example, and in changing that I will already
+
+00:33:21.360 --> 00:33:27.760
+already have improved the quality of the code quite significantly. In fact, right, I can spot if
+
+00:33:27.760 --> 00:33:34.160
+something is far too long and nested, and maybe should be broken down in small into lots of smaller
+
+00:33:34.160 --> 00:33:42.560
+functions. I think what cat what you said is, is, is fine. I'll be honest, when people come to me
+
+00:33:42.560 --> 00:33:50.990
+and say this, I'm like, look, think about the short term, think about the long term. And I kind of
+
+00:33:50.990 --> 00:33:57.230
+try to encourage people to set a two to three year goal, literally to move it if they're in this
+
+00:33:57.230 --> 00:34:07.060
+position, move into depth. And it's quite literally that it's identified, like, don't lose your existing
+
+00:34:07.060 --> 00:34:13.780
+skills. Like the way you are able to understand variables, the way you are able to understand
+
+00:34:13.780 --> 00:34:23.860
+code, the way you're able to do critical thinking, right? Because that is the thing that is going to
+
+00:34:23.860 --> 00:34:30.340
+differentiate you from your peers and dev. And again, as we've already talked on the call,
+
+00:34:31.300 --> 00:34:39.040
+like the researchers are in my view, the research is kind of closed on that now. Right? If we look at
+
+00:34:40.080 --> 00:34:48.320
+and then here, I'm mostly citing accelerate on which did a very thorough research on this.
+
+00:34:48.320 --> 00:34:55.120
+But if you if you don't want to read the research, right, again, lean startup approaches this from a
+
+00:34:55.120 --> 00:35:00.880
+business point of view and Phoenix project points approaches this from a DevOps point of view, like
+
+00:35:02.240 --> 00:35:10.000
+shifting the dev and then help your team figure out how to do 10 deployments to production a day.
+
+00:35:10.830 --> 00:35:16.510
+Right. And those two things, those two things will bring so much goodness along with it.
+
+00:35:16.510 --> 00:35:22.830
+I agree. And I think in the middle long term, right, again, this, this, this is something a lot
+
+00:35:22.830 --> 00:35:30.190
+of testers hate, he says, I got to say it anyways. I think tester should really be a specialization
+
+00:35:30.190 --> 00:35:36.750
+within death, like front end, back end, whatever you have, right? Because I think it is absolutely
+
+00:35:36.750 --> 00:35:43.230
+preposterous, actually, to have somebody on a team who only does one thing, and none of the 50
+
+00:35:43.230 --> 00:35:48.670
+million other things that also need doing right. So even if you don't want to get get too deep
+
+00:35:48.670 --> 00:35:53.870
+into code, at least learn how to work with a pipeline, learn how to configure a delivery
+
+00:35:53.870 --> 00:35:58.750
+pipeline, right? Learn some of that stuff. If you don't know where to start,
+
+00:35:58.750 --> 00:36:02.460
+Brent and I have a sorry, I didn't mean to interrupt.
+
+00:36:02.460 --> 00:36:07.260
+No, I was done. I was just Brent and I have a long standing statement on here,
+
+00:36:07.260 --> 00:36:18.500
+Brent, what do we call a specialist? A bottleneck. Yep, exactly. Specialists slow your delivery
+
+00:36:18.500 --> 00:36:27.460
+cycle down. Yes. But again, if you if you go through and you set a goal, okay, our company is
+
+00:36:27.460 --> 00:36:36.690
+going to do 10 releases to production a day, okay, a day, like bottlenecks like, hey, you know what,
+
+00:36:36.690 --> 00:36:43.410
+we can't get everything we can't get anything out because they all have to be sent to Sally to do
+
+00:36:43.490 --> 00:36:52.050
+her test pass and validate, right? You're gonna go, you're gonna, well, like, I think about the
+
+00:36:52.050 --> 00:36:58.290
+Phoenix project and unfortunately, the anti hero in that book, his name is Brent, right? And Brent
+
+00:36:58.290 --> 00:37:02.290
+was the bottleneck. They couldn't get anything out because Brent was the only one that knew anything.
+
+00:37:02.930 --> 00:37:11.810
+And once they realized that they started doing the test code strategy, which, which Alan over
+
+00:37:11.810 --> 00:37:19.330
+the years has absolutely, in my view, mastered, it's around taking that knowledge. And we talked
+
+00:37:19.330 --> 00:37:24.130
+earlier around spreading the knowledge. But in some places, if you want to make these moves,
+
+00:37:24.130 --> 00:37:32.450
+you kind of have to force the knowledge. Right? No, I'm not going to just live in the world where
+
+00:37:32.450 --> 00:37:38.850
+devs are specialists, it's time to broaden, you two are going to start also taking responsibility
+
+00:37:38.850 --> 00:37:44.610
+for the build pipeline. And then you start creating that pattern. I found that actually,
+
+00:37:44.610 --> 00:37:50.900
+the right things then start happening. Yep. Yep. But I don't want to learn all of this. I just
+
+00:37:50.900 --> 00:37:55.300
+want to write code. It's Brent because you're lazy. And that's why you're obsolete. Right.
+
+00:37:55.300 --> 00:37:58.180
+You know, one thing I found, because you've brought in Mr. Talk about this, the best way
+
+00:37:58.180 --> 00:38:03.040
+to highlight your problems in your delivery process or to try and do can use delivery.
+
+00:38:03.600 --> 00:38:08.560
+And so a quick story that I want to get some some more thoughts from from Kat on this. But
+
+00:38:08.560 --> 00:38:12.880
+back when BDD was the thing, people got all excited about if we can write these given when
+
+00:38:12.880 --> 00:38:17.440
+then statements and then we'll write automation before we the start. And it's great. And
+
+00:38:17.440 --> 00:38:24.800
+but what I found this story is going somewhere, believe me. What I found is that just doing just
+
+00:38:24.800 --> 00:38:30.080
+having the discussion talking about the behaviors of the software, we're 90% of the value.
+
+00:38:30.800 --> 00:38:34.720
+Talking about the behaviors before you wrote it, the automation was like a little frosting thing.
+
+00:38:34.720 --> 00:38:39.760
+It was it was fun. But just talking about the behaviors is really good. I think it's I found
+
+00:38:40.640 --> 00:38:45.920
+the same thing true with CD, even if you don't want to do CD, even if it's not practical, ask a
+
+00:38:45.920 --> 00:38:51.360
+team to, hey, what would it take? What would you have to do in order to do continuous delivery
+
+00:38:51.360 --> 00:38:56.240
+and start listing through it? Even if you have no need? No, there's no business need to do CD.
+
+00:38:56.240 --> 00:39:00.720
+There's no business needs delivered 20 times a day. I would challenge any team just to
+
+00:39:00.720 --> 00:39:06.720
+enumerate what they'd have to do in order to have continuous delivery, because going to highlight
+
+00:39:06.720 --> 00:39:12.960
+all the problems that you should fix. So that was the cap there. So we got a couple of minutes left.
+
+00:39:12.960 --> 00:39:20.560
+But Kat, you do so much for you have a newsletter, you have your active on LinkedIn,
+
+00:39:20.560 --> 00:39:26.480
+you're giving talks, you have a business, can you take a little time and kind of talk about I
+
+00:39:26.480 --> 00:39:30.240
+want you to talk about your newsletter, your business, I want a little a little self promo
+
+00:39:30.240 --> 00:39:36.000
+here, not because I'm trying to sell your business, although I'm sure it's very good. But
+
+00:39:36.000 --> 00:39:39.520
+you do a lot for the community. I want to make sure we get that highlighted here.
+
+00:39:39.520 --> 00:39:44.240
+The business to start with that. And by the way, I do have a little bit of space right now. And
+
+00:39:44.240 --> 00:39:51.620
+unexpectedly, mainly I do. I do help teams to figure out tomorrow, tomorrow,
+
+00:39:52.420 --> 00:39:57.220
+that has strategy basically, right? So that that is it in a nutshell. If you have a team,
+
+00:39:57.220 --> 00:40:03.540
+and you want you wondering why you why you testing goes awry, why there was lots of frictions between
+
+00:40:03.540 --> 00:40:09.300
+developers and testers, how you can speed that up. So that is kind of the area in which I operate.
+
+00:40:09.940 --> 00:40:16.420
+The newsletter came about, I think because I've been thinking about newsletter for a while,
+
+00:40:16.500 --> 00:40:22.340
+but I couldn't really settle on anything that I thought would hold my interest enough. And I'm
+
+00:40:22.340 --> 00:40:26.820
+not going to embark on a weekly newsletter that was me to death, because words will want to read it.
+
+00:40:26.820 --> 00:40:32.900
+Right. However, one of the questions I often or one one of the misconceptions I quite often ran
+
+00:40:32.900 --> 00:40:38.500
+into was that improving quality in a team, especially in a team that is struggling in many
+
+00:40:38.500 --> 00:40:47.380
+ways, is this kind of massive thing that needs a five year commitment and a big 2020 page plan,
+
+00:40:47.380 --> 00:40:52.260
+and so on and so forth. And that is just not true. There are many, many, many small ways in which
+
+00:40:52.260 --> 00:40:57.060
+you can improve quality. And that is the way way to go. I mean, I don't know if you guys,
+
+00:40:57.060 --> 00:41:02.420
+I'm sure you have heard about atomic habits or tiny habits, and that concept. And that I think
+
+00:41:02.420 --> 00:41:07.140
+is exactly how you go about changing things, right? You change a small thing, you do it long
+
+00:41:07.140 --> 00:41:11.220
+enough until it becomes a habit, and then you change the next small thing, and so on and so forth.
+
+00:41:11.220 --> 00:41:15.940
+And that works for individuals and it works for teams, because teams are groups of individuals,
+
+00:41:15.940 --> 00:41:24.370
+right? So that is the newsletter. And I really enjoy public speaking. Funny enough, I consider
+
+00:41:24.370 --> 00:41:29.570
+myself to be a fairly introverted person, and everybody who knows me in my normal life,
+
+00:41:29.570 --> 00:41:37.090
+I am right. But I kind of enjoy public speaking, weirdly. And this all started when I was working
+
+00:41:37.090 --> 00:41:43.010
+in a consultancy, and that consultancy hired a public speaking trainer. Because if you are a
+
+00:41:43.010 --> 00:41:50.530
+consultant, you kind of have to be able to somewhat, you know, convincingly present something to clients.
+
+00:41:50.530 --> 00:41:56.930
+So you need some basic, basic skills in public speaking, at least. And so this guy worked with
+
+00:41:56.930 --> 00:42:03.410
+me, and he encouraged me to apply to some conferences I did. And much to my surprise,
+
+00:42:04.050 --> 00:42:08.690
+the first time I applied, I was accepted. I'm like, oh, okay, this is weird. So I went to New York
+
+00:42:08.690 --> 00:42:13.890
+City and spoke at a conference in New York City, which was great. However, it is a really good way
+
+00:42:13.890 --> 00:42:20.130
+I found to, A, to clear my own hand, because presenting something to explain it to some,
+
+00:42:20.130 --> 00:42:24.770
+to, you know, an audience of people is a really good way to get clarity on what you actually
+
+00:42:24.770 --> 00:42:31.250
+want to say. And I really enjoy having conversations that come out of this. So I always enjoy the
+
+00:42:31.250 --> 00:42:35.410
+question answers much more than my presentation, because I already know what I'm saying. I've
+
+00:42:35.410 --> 00:42:38.930
+thought about this for quite a while at that point, right? But people have good questions.
+
+00:42:38.930 --> 00:42:45.810
+So I really like that. Yeah, I agree completely. Brent and I are also introverts where INTPs on
+
+00:42:45.810 --> 00:42:50.450
+the Myers-Briggs, but it's exhaust. I also like public speaking. I'm very, and I like the
+
+00:42:50.450 --> 00:42:54.690
+questions afterwards. I always find it funny that nobody asks questions during the talk,
+
+00:42:54.690 --> 00:42:59.250
+but they all will line up to talk to you afterwards. But it's exhausting. I'm very
+
+00:42:59.250 --> 00:43:04.450
+tired afterwards, but also fulfilled. So I get it completely. James Clear is the author of
+
+00:43:04.450 --> 00:43:09.970
+Atomic Habits. He also has a nice newsletter. Big fan of that stuff. You also have a book,
+
+00:43:09.970 --> 00:43:16.050
+I think it's fairly recent, Testing in DevOps, which is out and available. I have a copy.
+
+00:43:16.050 --> 00:43:24.400
+Yeah, on Amazon. Indeed. All kinds of cool stuff. This is, I cannot, like you can't see
+
+00:43:25.360 --> 00:43:30.640
+from the podcast because we don't do video, but how much Brent and I have nodded our heads and
+
+00:43:30.640 --> 00:43:37.200
+smiled and celebrated listening to you talk. It's just a complete breath of fresh air. Love
+
+00:43:37.200 --> 00:43:42.640
+what you're doing. If people aren't following you on LinkedIn or getting your newsletter or reading
+
+00:43:42.640 --> 00:43:47.920
+your stuff, they absolutely should. When's your next conference talk? So the next one that is,
+
+00:43:47.920 --> 00:43:52.080
+instead of waiting on confirmation for a few that I have submitted for this year, but the first
+
+00:43:52.080 --> 00:43:58.080
+one that is confirmed is what I have a very small appearance in Leeds. So I live in the
+
+00:43:58.080 --> 00:44:04.240
+North of England and Leeds is fairly local to me. So there's a small meetup where I will be presenting.
+
+00:44:04.240 --> 00:44:11.840
+But the bigger one is a CTO CraftCon in London with, you know, big names like Charity Majors
+
+00:44:11.840 --> 00:44:16.640
+with whom by the way, I worked in my first job, which was quite funny because my first testing
+
+00:44:17.040 --> 00:44:23.040
+wow was at a company called Linlab. I don't know if you remember Second Life, the big virtual
+
+00:44:23.040 --> 00:44:27.840
+world that was going to take. Oh, I do. Oh my God. Well, yeah. So that was my first, first tech job.
+
+00:44:27.840 --> 00:44:34.240
+So now we have a whole other podcast. I wanted to review conversation entirely in Second Life.
+
+00:44:35.920 --> 00:44:40.560
+Well, I did my interview for that job in Second Life, which was, of course,
+
+00:44:40.560 --> 00:44:46.640
+that was actually before that before Second Life had voice. So I did an interview for a job in
+
+00:44:46.640 --> 00:44:53.280
+text chat. If you hated it, you probably wouldn't like working there. So CTO CraftCon 8 and 9th of
+
+00:44:53.280 --> 00:44:59.680
+March, May in London. If you want to come see me. Got it. So exciting. All that I thought of a
+
+00:44:59.680 --> 00:45:03.360
+question in the middle of my just complete admiration for you. But thank you so much
+
+00:45:03.360 --> 00:45:08.800
+for being here with us. Absolutely a pleasure. Absolutely exciting. Love what you're saying.
+
+00:45:09.680 --> 00:45:11.760
+Everyone should go check out everything you're doing.
+
+00:45:11.760 --> 00:45:14.640
+Well, thank you for inviting me. It was a pleasure talking to you.
+
+00:45:14.720 --> 00:45:16.880
+I mean, it was a joy. Thank you, Kevin.
+
+00:45:18.480 --> 00:45:23.250
+All right. Thank you, everyone. We'll see you next time.
+

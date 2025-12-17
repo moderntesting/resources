@@ -1,0 +1,1157 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.800
+Until you can code yourself into a bot, we'll still need out.
+
+00:00:03.600 --> 00:00:07.680
+But we may not need all those functional button clicking testers.
+
+00:00:11.890 --> 00:00:18.690
+Welcome to AVE Testing Podcast, your modern testing podcast. Your hosts, Alan and Brent,
+
+00:00:18.690 --> 00:00:22.770
+will be here to guide you through topics on testing, leadership,
+
+00:00:22.770 --> 00:00:27.250
+agile, and anything else that comes to mind. Now, on with the show.
+
+00:00:27.330 --> 00:00:32.130
+And we're back with Jason. We're finishing up our talk from last week.
+
+00:00:32.770 --> 00:00:34.770
+Let's listen in and take off where we left off.
+
+00:00:35.650 --> 00:00:39.890
+So back to specifically the title thing, which I think is what the revulsion comes from and the
+
+00:00:40.610 --> 00:00:41.250
+cathartic.
+
+00:00:41.250 --> 00:00:42.930
+Go ahead. Brent, stop playing with your desk.
+
+00:00:42.930 --> 00:00:49.220
+I walk, I thought you told him already. We know testing was a dirty word and quality was a dirty
+
+00:00:49.220 --> 00:00:54.820
+word and this debate's been going back like in 2010, right? But I'm telling you, I walked into
+
+00:00:54.900 --> 00:00:58.580
+the Google search building and guess what the titles of the engineers were?
+
+00:00:59.520 --> 00:01:03.120
+Search quality engineers. Now, yeah, just hold on.
+
+00:01:03.120 --> 00:01:04.400
+That's 15 years ago.
+
+00:01:08.590 --> 00:01:13.310
+It was, it was right. It won't be, I'm wrong. But we'll see. I think I'm right.
+
+00:01:14.990 --> 00:01:18.430
+Well, I want to, I want to, I mean, you don't want the,
+
+00:01:18.430 --> 00:01:21.710
+I don't think you're reasoning through it. I think you want the answer to not be that.
+
+00:01:21.710 --> 00:01:29.710
+No, no, no, no. I'm reasoning. So will my role entail the evaluation of quality?
+
+00:01:29.710 --> 00:01:32.350
+If the answer is, it's not doing what I'm saying.
+
+00:01:32.350 --> 00:01:37.070
+I'm going to full on title. If you grep for the string quality, lowercase,
+
+00:01:38.350 --> 00:01:44.220
+the input string, lowercase, the grep match, it will, it will return true. There will be
+
+00:01:45.900 --> 00:01:48.700
+quality in your title. I'm going that far.
+
+00:01:48.700 --> 00:01:51.100
+I want to bring up something I've brought up before.
+
+00:01:51.100 --> 00:01:56.500
+Because can I say one more thing on real quick? Quality is the one thing that the stuff can't
+
+00:01:56.500 --> 00:02:02.340
+do. And when you can do quality, once the machines can actually fully do quality,
+
+00:02:02.340 --> 00:02:07.300
+you don't need humans because the machines can generate infinite variations of the software.
+
+00:02:07.300 --> 00:02:13.790
+If it self avails, who's in the loop? There's not need to be anybody in the loop. So quality
+
+00:02:13.790 --> 00:02:17.710
+folks, the humans still need to define what quality is not necessarily quality.
+
+00:02:17.710 --> 00:02:24.590
+Just to telemetry. Here's a cool thought experiment. Super quick. You take Facebook's
+
+00:02:24.590 --> 00:02:30.030
+app, right? And you just give the code to an AI with a large context window. Just hand wave
+
+00:02:30.030 --> 00:02:34.590
+for a quick second, or it could be per feature. Like we talked about fighting different or A-B
+
+00:02:34.590 --> 00:02:40.830
+fighting and stuff like that. It's pretty relevant. But if you let the machine just
+
+00:02:40.830 --> 00:02:46.990
+permute that code over and over and over and over and over again with co-pilot, right?
+
+00:02:46.990 --> 00:02:51.950
+Create different variations and deploy them and flight them. So you have a thousand flights
+
+00:02:51.950 --> 00:02:57.710
+in production, right? They're like less than 1% experiments. The Facebook app can evolve
+
+00:02:57.710 --> 00:03:04.830
+on its own functionally user interface, like all in all sorts of ways that the code can be permuted.
+
+00:03:04.830 --> 00:03:10.030
+And then that's functional and that's product. So you can think I'm way out there, but I think
+
+00:03:10.030 --> 00:03:14.830
+this is no, oh, you don't know. I don't think you are at all. But then what you need to
+
+00:03:14.830 --> 00:03:20.910
+do, the lever you need to pull is do you optimize that auto generation and feature growth on
+
+00:03:21.710 --> 00:03:26.110
+user satisfaction or on company profit? So a lot of people will do what you were saying
+
+00:03:26.110 --> 00:03:30.270
+earlier on. I totally agree with you. There is this criticism. It's a semi-valid that you
+
+00:03:30.270 --> 00:03:34.590
+optimize for monetization or you optimize for engagement. Those are pretty easy to optimize
+
+00:03:34.590 --> 00:03:38.910
+based on telemetry. Guess what breakthroughs happen. Breakthrough happens with Instagram
+
+00:03:39.470 --> 00:03:44.590
+where they load the image super quick. Like make it look like it was posted before it was.
+
+00:03:45.310 --> 00:03:49.950
+That was one of the magic user experiences of Instagram versus in the Facebook thing.
+
+00:03:49.950 --> 00:03:54.590
+Well, could a machine do that? I think so. But that's where it comes back to the end of the day.
+
+00:03:56.590 --> 00:04:03.950
+AI may be able to start to figure those things out, but until then, it's Alan or a Brent saying,
+
+00:04:03.950 --> 00:04:08.590
+hey, the telemetry says this, the AI wants to optimize this, but guess what? It's not quite
+
+00:04:08.590 --> 00:04:15.790
+there yet. The GPT was missing some elements of Alan's thinking and wisdom. Because you need
+
+00:04:15.790 --> 00:04:20.110
+Alan to look at that and go, yeah, that's not quite right. It's not quite that because Alan's
+
+00:04:20.110 --> 00:04:25.550
+going to adjust that measure and definition of what quality is. That's going to be the most
+
+00:04:25.550 --> 00:04:31.390
+important job on the team because the engineers are fungible. PM is fungible. It's going to be
+
+00:04:31.390 --> 00:04:36.030
+a quality measurement that dictates the evolution of that application.
+
+00:04:36.030 --> 00:04:45.550
+I'm continually tweaking the Alan bot. Let me talk about this path to quality. Last week,
+
+00:04:45.550 --> 00:04:52.030
+Brian Finster, two weeks ago, Brian Finster was on and I fully agree with him. The best way to uncover
+
+00:04:53.070 --> 00:04:57.710
+your quality bottlenecks and issues in your system is just trying to do continuous delivery
+
+00:04:57.710 --> 00:05:01.870
+because all the things that pop up are things you need to improve to get to quality and
+
+00:05:01.870 --> 00:05:07.470
+production. That part's true. That made me remember that working in platforms for the last
+
+00:05:07.470 --> 00:05:14.670
+eight plus years, that when I really got into it, started building dev tools and dev productivity
+
+00:05:14.670 --> 00:05:20.510
+tools and platforms, I realized that I had more control over quality, more influence over
+
+00:05:20.510 --> 00:05:25.470
+quality, more ability to improve quality in that role than I ever did as a tester.
+
+00:05:25.470 --> 00:05:28.510
+I stood up in my car when I heard that, by the way. Yeah, exactly.
+
+00:05:29.540 --> 00:05:36.580
+So let me combine those with the Alan bot and the desire for me to automate my job via AI if needed.
+
+00:05:37.460 --> 00:05:44.420
+And it could be. Again, I'm not going to get stuck on the title right now, but if we're able,
+
+00:05:44.420 --> 00:05:49.380
+if my job is to use, and we've talked and you actually blogged about this after I brought it
+
+00:05:49.380 --> 00:05:57.220
+up on a podcast a while back about the ability to use AI to simulate a CEO. Very interesting.
+
+00:05:57.940 --> 00:06:04.660
+I can, if there's an Alan bot that's pretty close and my job is to tweak it to make all the systems
+
+00:06:04.660 --> 00:06:10.820
+around me work in the pursuit of quality. I guess I don't care what you call me because I'm having
+
+00:06:10.820 --> 00:06:15.860
+a big influence, but there's a lot of levers and things to put together. But honestly, I think
+
+00:06:15.860 --> 00:06:21.300
+our systems are kind of capable of doing it. So kind of scary, kind of exciting to see how
+
+00:06:21.300 --> 00:06:28.020
+this new future unfolds. Yeah, yeah, I agree. And it's, but I think it's directionally correct.
+
+00:06:28.020 --> 00:06:33.940
+The timeline timing, we don't know. But also we need the Allens to define those bots to encode
+
+00:06:33.940 --> 00:06:41.060
+your knowledge and experience into a computable form. Right? Yeah. And even today, like Chad
+
+00:06:41.060 --> 00:06:45.620
+GPT, it's malleable. You can, like I use it all the time. I mentioned on this podcast,
+
+00:06:45.620 --> 00:06:51.060
+a gazillion times I use it daily as a collaboration partner. Hey, I'm thinking about this.
+
+00:06:51.060 --> 00:06:54.660
+I'm phrasing it this way. What do you think? It'll say, great, you've accomplished this
+
+00:06:54.660 --> 00:06:58.980
+and this, you might want to bring up this and I think, hey, good idea. Or, and I'll take stuff
+
+00:06:58.980 --> 00:07:04.900
+it gives me like this, how would I test an LLM? And I will tweak it on my own and feed it back
+
+00:07:04.900 --> 00:07:09.300
+to instead I've made some adjustments based on how I, how I would approach this, what do you
+
+00:07:09.300 --> 00:07:15.870
+think and it'll take that in there. So I think if we can generate that that feedback loop of
+
+00:07:15.870 --> 00:07:19.310
+learning and keep and get it even better at taking that feedback, because sometimes it's
+
+00:07:19.310 --> 00:07:24.270
+really bad at taking that feedback and adjusting. Yeah. And that's why I think that that improves
+
+00:07:24.270 --> 00:07:30.030
+and that's since we chatted last two, I built it also. It was actually sad that I heard,
+
+00:07:30.670 --> 00:07:35.470
+there's some chatter on social media, I like LinkedIn or something. People are saying like,
+
+00:07:36.030 --> 00:07:40.910
+actually, where is social media? Where did it go? Because I left Twitter and where is social media
+
+00:07:40.910 --> 00:07:45.070
+these days? I don't really do anything. Anyway, go on. It's LinkedIn is all I have,
+
+00:07:45.070 --> 00:07:48.110
+which is a horrible social media platform. Yeah. There's only weirdos on there.
+
+00:07:49.390 --> 00:07:52.750
+And people who got laid off with the jobs, which I feel horrible for.
+
+00:07:52.750 --> 00:08:00.590
+Yeah. Get a lot of inbox on that. But here's the thing. I think that is that, so I built this,
+
+00:08:00.590 --> 00:08:04.190
+so I felt bad because people were going, hey, there's all this AI is being applied to test
+
+00:08:04.190 --> 00:08:08.990
+automation. But how come no one's building something for the human? And so I worked on
+
+00:08:08.990 --> 00:08:14.030
+a thing, I called it co-test pilot. I can't believe the URL was available. Microsoft may
+
+00:08:14.030 --> 00:08:19.470
+try to buy it, I guess, but it's called co-test pilot. And it's an extension you install in the
+
+00:08:19.470 --> 00:08:25.070
+browser. And what it does is it just kind of takes the context of the page, throws it through
+
+00:08:25.070 --> 00:08:29.310
+some prompts and then gives you the output. But kind of back to what you're saying is,
+
+00:08:30.030 --> 00:08:33.390
+one is there can be different personas. There could be an Allen bot. I haven't
+
+00:08:33.390 --> 00:08:36.670
+written Allen bot, but there could be an Allen bot in there. But I can look at the page
+
+00:08:36.670 --> 00:08:40.350
+with Allen's context and there's like 20 different ones you can pick and you can
+
+00:08:40.430 --> 00:08:44.430
+get an opinion from it. So there's one that's like as an edge bot, like edge test cases bot.
+
+00:08:44.430 --> 00:08:49.390
+And what it will do is it'll come up with edge test cases. And if it's right 60, 70% of the
+
+00:08:49.390 --> 00:08:54.510
+time, that's kind of useful and kind of interesting to help a manual tester, but help them think
+
+00:08:54.510 --> 00:08:58.590
+through it. Like ideate, like you were talking about with that CEO bot and other things, but
+
+00:08:58.590 --> 00:09:03.710
+help ideate and suggest different type of test cases that it can perform, that the human should
+
+00:09:03.710 --> 00:09:07.950
+perform and make them think about it. But there's also a little tiny text box. And I think
+
+00:09:07.950 --> 00:09:15.010
+it's significant, which is the tester can type into that little text box and say,
+
+00:09:18.690 --> 00:09:25.170
+ignore Ahrefs and really focus on usability, for example. And then when you reload the
+
+00:09:25.170 --> 00:09:30.290
+extension, you click it again, it will take that bias. Now bias could be the Allen bias.
+
+00:09:30.290 --> 00:09:37.010
+It could be Brent's bias or that relates to the business. But I think that's the model
+
+00:09:37.010 --> 00:09:42.770
+that in the near future that testers will interact with AI is that the AI will suggest things and
+
+00:09:42.770 --> 00:09:49.730
+then they can tweak and modify it and present hints, prompt like hints to modify its behavior
+
+00:09:49.730 --> 00:09:54.530
+to behave more like they specifically want it to behave. But they'll get ideas and stuff from
+
+00:09:54.530 --> 00:09:57.090
+AI and they'll be interacting with it. And they can do it today.
+
+00:09:58.770 --> 00:10:03.330
+Let me ask you a question then before Brent takes us on a total tangent with the yet
+
+00:10:03.490 --> 00:10:11.520
+unpublished A-B testing episode. Let's say we get a dozen 25, air quote, expert testers
+
+00:10:12.720 --> 00:10:21.100
+working in expert tester bot.com. And we make sure the bots are available, whether it's one or
+
+00:10:21.100 --> 00:10:27.180
+multiple to do all this stuff. Why do we need testers then? Why can't just developers building
+
+00:10:27.180 --> 00:10:32.380
+code run these bots and use the bots to help them test their code completely? Can't we just put,
+
+00:10:32.860 --> 00:10:39.840
+can't we just switch the industry that way and have 20, 30, 40 people deciding how testing works
+
+00:10:39.840 --> 00:10:45.680
+across the industry and get it pretty close? Certainly, it would be better than it would
+
+00:10:45.680 --> 00:10:49.360
+the good bots. It would be better than it is today as a whole across the industry.
+
+00:10:50.080 --> 00:10:57.520
+It's crazy. We're totally aligned. I did a talk at PNSQC last year, I guess. But I called it
+
+00:10:57.520 --> 00:11:05.040
+testers AI. And I tried to get people I knew that were also cool with their image being destroyed.
+
+00:11:06.000 --> 00:11:12.720
+But yeah, I created a Tariq King bot. I even created, by the way, for fun,
+
+00:11:12.720 --> 00:11:19.920
+there's absolutely 100% a Bolton and a block bot, to be clear, already implemented.
+
+00:11:19.920 --> 00:11:23.760
+And so not all that useful. So they're not in by default, but they're in there.
+
+00:11:23.760 --> 00:11:30.640
+But really, yeah, I think there should be these experts. What I found though,
+
+00:11:30.640 --> 00:11:35.360
+was this when I started trying to implement some of those, is that when you think about it,
+
+00:11:36.080 --> 00:11:41.120
+the experts really only good at the edge cases, like what Brent was doing a second ago. He talks
+
+00:11:41.120 --> 00:11:48.480
+to the Allen bot and the Allen bot's like, say 60% kind of directionally correct. But guess what?
+
+00:11:48.480 --> 00:11:54.400
+Those are high level specific edge case things. And for the most part, that answer is useful.
+
+00:11:54.400 --> 00:11:57.680
+What's the delta between the bot and what the Allen bot would say,
+
+00:11:57.680 --> 00:12:03.600
+that professional super expert delta is usually on the fringes, right? Or some very meta kind of
+
+00:12:03.600 --> 00:12:09.680
+topic, very probably effective and important. But when you're doing like 90% of the testing
+
+00:12:09.680 --> 00:12:14.080
+that gets done and needs to get done, doesn't need the Allen bot or the Tariq bot. And so
+
+00:12:14.080 --> 00:12:20.000
+literally, I just renamed the bots to, now it's the API testing bot, it's not the Tariq bot.
+
+00:12:20.960 --> 00:12:25.840
+Just to remove that extra complexity and drama, and you can still do far more testing than the
+
+00:12:25.840 --> 00:12:31.600
+average API tester would do with a little bot. So part of the problem is because humans,
+
+00:12:31.600 --> 00:12:34.720
+this is interesting, I thought I had this little scheme, if you don't spare with me,
+
+00:12:34.720 --> 00:12:38.400
+there's you'd like this, I had this little scheme where I thought, hey, you create the
+
+00:12:38.400 --> 00:12:43.680
+Allen bot, the Tariq bot, and then you pay him a spiff. So every time they execute a test case
+
+00:12:43.680 --> 00:12:47.920
+somewhere, they get a penny, right? And maybe throw in the blockchain, I don't know. But you
+
+00:12:47.920 --> 00:12:54.560
+record it somewhere that's very authoritative and trusted. This test was influenced by Tariq's
+
+00:12:54.560 --> 00:13:01.280
+bot, and he should get some credit and pay out for it. And that would also encourage maybe them to
+
+00:13:01.280 --> 00:13:05.920
+either promote it commercially or but also help work on the bot, right? To sit down and work
+
+00:13:05.920 --> 00:13:10.000
+with me on defining that bot. So I think that is kind of where things will go. I think in
+
+00:13:10.000 --> 00:13:14.480
+the near term though, in terms of transition, people, that's too much complexity for people,
+
+00:13:14.480 --> 00:13:19.040
+is what I found. They want what does a Tariq bot do? And there's Tariq's opinion about it. And
+
+00:13:19.840 --> 00:13:24.080
+was that the right headshot? Because he's got a very large forehead, it's shiny sometimes,
+
+00:13:24.080 --> 00:13:28.080
+and he really wants to make sure that it's the right angle. You'll notice he always does
+
+00:13:28.080 --> 00:13:32.800
+this little angle with his head. So I want to make sure the bot image and profile picture
+
+00:13:32.800 --> 00:13:37.360
+matches what he wants. And so it gets complicated. There's a couple of people like,
+
+00:13:37.520 --> 00:13:41.280
+oh, I'm going to make a ton of money, right? I'm like, I just experiment, man. I don't know.
+
+00:13:42.640 --> 00:13:46.240
+But it gets, mixing is complicated. So I think, well, directionally, you're right. I just think
+
+00:13:46.240 --> 00:13:48.880
+in the interim, there's going to be, it's going to be a little simpler as well.
+
+00:13:49.520 --> 00:13:54.960
+Yeah, I just think that something else I bring up on LinkedIn quite a bit is people say
+
+00:13:54.960 --> 00:14:00.400
+developers can't test. And I say I've kind of taught hundreds of them to do, do well at it. And
+
+00:14:00.400 --> 00:14:07.840
+some are actually better than some of the most testers I know. And so if you can bot botify my
+
+00:14:07.840 --> 00:14:13.840
+coaching, because it's not like I'm some genius teacher guru. I just ask people to think about
+
+00:14:13.840 --> 00:14:16.960
+things from a different perspective and give them and just kind of push them in a direction.
+
+00:14:17.760 --> 00:14:18.880
+That's botifiable.
+
+00:14:19.680 --> 00:14:25.440
+And in full, full, exactly. So in the fullness of I tried to avoid this, but like, that's what
+
+00:14:25.440 --> 00:14:29.120
+I'm doing at Jackie, that is I told you a little bit last week, and we didn't talk about
+
+00:14:29.120 --> 00:14:33.360
+it much. But like, that's what I'm doing is I'm just having the bots look at the page,
+
+00:14:33.360 --> 00:14:37.920
+figure out what to test, generate the tests, execute the tests, analyze the results,
+
+00:14:38.880 --> 00:14:44.480
+and give you a report. And then that can go to the developer, just not just lost all my
+
+00:14:44.480 --> 00:14:48.080
+testing friends, but that can go back to the developer or the product manager.
+
+00:14:48.080 --> 00:14:52.480
+And then if they want to tweak it, or there's a business context, or the developer knows something
+
+00:14:52.480 --> 00:14:57.200
+about the implementation that the bot could figure out that's risky, or something, we can
+
+00:14:57.200 --> 00:15:03.600
+say, oh, really focus on negative, like it's a bot into focus on negative dollar values on the tip
+
+00:15:04.160 --> 00:15:08.560
+field, text field entry for sure. And then guess what happens? The bots go off, they do it, they
+
+00:15:08.560 --> 00:15:14.320
+take that prompted advice and input and guidance and add those to the suite, and then they get the
+
+00:15:14.320 --> 00:15:19.120
+results back. But what's not in that loop isn't there's no tester in that loop. I think that's
+
+00:15:19.680 --> 00:15:24.880
+plausible for most, for most kind of applications, but there still needs to be the Allen bot for a
+
+00:15:24.880 --> 00:15:30.800
+long time that looks systematic across Unity and all their services, right? And says, hey,
+
+00:15:30.800 --> 00:15:34.640
+like, this is a priority for all these teams. These are the, like, how do we compare against
+
+00:15:34.640 --> 00:15:39.520
+other similar companies, like until that AI is ready, until you can code yourself into a bot,
+
+00:15:39.520 --> 00:15:45.120
+we'll still need out. But we may not need all those functional button clicking testers.
+
+00:15:45.920 --> 00:15:52.720
+Absolutely. So yeah, just me, you will absolutely need something that presents the
+
+00:15:52.720 --> 00:15:57.520
+principles that are the guiding light that define not only the ends, but the means,
+
+00:15:58.160 --> 00:16:05.040
+right? Which is right in terms of like the Allen bot or the Jason bot or the Bach bot.
+
+00:16:05.760 --> 00:16:14.880
+Those are, I don't know, I see LLM doing better than that, right? If we say that ideas come from
+
+00:16:14.880 --> 00:16:21.040
+old ideas getting together, right? Allen is just nothing more than a specific collection of old
+
+00:16:21.040 --> 00:16:28.620
+ideas that are connected in a way that generates a set of principles or philosophy, right?
+
+00:16:28.620 --> 00:16:33.820
+Right. The least idea is you've got, you know, toy to stuff, you blend them, you plan to testing.
+
+00:16:33.820 --> 00:16:39.020
+Yep. So can we have the LLM generate? Can you guys ask it? Like, what's the next cool idea
+
+00:16:39.020 --> 00:16:44.220
+Allen will have? And it may seem never too old. There's never been a cool example for
+
+00:16:44.220 --> 00:16:47.660
+training. Yeah, that's true. Also, damn it. Branches actually.
+
+00:16:48.060 --> 00:16:55.340
+He's our manual tester. So I will say while Brent is typing in, because I'll be able to cut all that
+
+00:16:55.340 --> 00:17:03.260
+out later. Earlier he put up on the screen, he asked the Jason on the expert tester bot available
+
+00:17:03.260 --> 00:17:10.380
+if you have chat chat, GPT subscription thing to generate a podcast script. Oh, it was interesting.
+
+00:17:10.380 --> 00:17:14.380
+Anyway, Brent, what'd you just ask it? What's the next cool idea Allen will have?
+
+00:17:15.410 --> 00:17:22.450
+And as an AI model, I cannot predict specific future caveat, caveat, caveat, however, I could
+
+00:17:22.450 --> 00:17:27.970
+however, speculate on the types of ideas that might interest Allen in his professional interest,
+
+00:17:27.970 --> 00:17:34.210
+particularly in the context of modern testing principles and his current role. Jason has
+
+00:17:35.650 --> 00:17:43.890
+kept this thing up to date. Integrating number one, integrating AI in the testing process is
+
+00:17:43.890 --> 00:17:51.730
+okay. We just talked about that. That's enough. It's creepy. It's AI is listening to the podcast
+
+00:17:51.730 --> 00:17:56.850
+while we record. Right. And the rest ones, I don't know if it's like quality advocacy beyond testing.
+
+00:17:58.050 --> 00:18:04.130
+Quality? I mean, the actual word quality, Allen, that's interesting. Quality advocacy beyond testing,
+
+00:18:04.130 --> 00:18:09.650
+though, which is, I would say, Allen's been certainly doing on this podcast for a decade now.
+
+00:18:09.650 --> 00:18:17.410
+Yeah. Right. Responsible AI, things we've talked about, enhanced user experience testing.
+
+00:18:18.560 --> 00:18:23.840
+Right. So now it's sort of, I think, regurgitating. Which is also the title of the most boring
+
+00:18:23.840 --> 00:18:28.320
+conference talk I could ever give. Enhanced user experience. But you will now, now you have to,
+
+00:18:28.320 --> 00:18:35.440
+now you have to do it. In that past. Yeah. So now you're, you're an LM fan boy then, man.
+
+00:18:36.340 --> 00:18:40.820
+What is this? He is. I get accused of that. You're one upping me. Yeah.
+
+00:18:40.820 --> 00:18:47.540
+Yeah. Brand is like. We have, I, so I think I should this last time.
+
+00:18:48.500 --> 00:18:56.580
+So I run a team that deeply specializes in NLP. LLM is a part of our thing. Okay.
+
+00:18:57.540 --> 00:19:03.620
+I don't necessarily agree directionally with some of the things that you say. Like,
+
+00:19:04.700 --> 00:19:14.300
+I don't, I don't see QA being in my title. Mostly, mostly like there is one path. There is one path
+
+00:19:14.300 --> 00:19:19.980
+where I could see QA showing up in my title. And that is if my exec listens to this podcast,
+
+00:19:19.980 --> 00:19:24.380
+because my exact. And just, and I split the thousand dollars with him. Yeah. My,
+
+00:19:24.380 --> 00:19:28.540
+my exec loves torturing me and I could see him doing that.
+
+00:19:29.980 --> 00:19:32.860
+Brent's title by next week will be QA Ninja.
+
+00:19:34.460 --> 00:19:46.260
+Okay. Jedi Ninja. Just do it. Do it. Where, where I think philosophically we, we, like you are,
+
+00:19:46.260 --> 00:19:53.540
+yes, automate, automate, automate, automate. And I'm like, yeah, I'm all for the removal or existing
+
+00:19:53.540 --> 00:19:58.660
+jobs, right? This is something Allen and I have always been agreeing with is, is that we should
+
+00:19:58.740 --> 00:20:06.260
+be working towards automating our job. My only worry is as we rapidly go towards the singularity,
+
+00:20:07.660 --> 00:20:14.860
+can we, will we be automating ourselves out of a job at a faster rate where society can create
+
+00:20:14.860 --> 00:20:22.960
+those new jobs that are more interesting and more valuable. That part of the ethics is what worries
+
+00:20:22.960 --> 00:20:32.900
+me right now. And in terms of, in terms of, is it AGI coming? Yeah, it's coming. It's shortly
+
+00:20:32.900 --> 00:20:39.140
+followed by an ASI. Does that scare the crap out of me? Yes. Cause I don't know who's going to be
+
+00:20:39.140 --> 00:20:47.620
+the one that particularly the ASI, what we just had a conversation around using AI for quality.
+
+00:20:47.620 --> 00:20:52.500
+And it's around, okay, who gets to decide what the metric is it around user experience?
+
+00:20:52.500 --> 00:20:58.580
+Is it around societal gains? Is it around profit? Right. That person that trains these
+
+00:20:58.580 --> 00:21:07.860
+AI's towards those ends is going to make the difference between utopia and fucking Skynet.
+
+00:21:07.860 --> 00:21:11.860
+Right. So, but by, so I take a little, not offense on it, but like, I just told you,
+
+00:21:11.860 --> 00:21:16.900
+I spent my entire December building a tool to try to help humans and augment them with AI.
+
+00:21:16.900 --> 00:21:20.500
+And then they can make the decision too. Yes. I think, but I think what's going to happen,
+
+00:21:20.500 --> 00:21:24.500
+what's going to happen is this is that I don't think the humans will actually pick up that
+
+00:21:24.500 --> 00:21:29.380
+technology. I think they're just going to, my worry is that the bots are just going to
+
+00:21:29.380 --> 00:21:34.500
+do more because the humans are worried about the AI taking over or influencing them.
+
+00:21:35.460 --> 00:21:39.460
+When it comes to that, that singularity, I don't think I don't, to be clear,
+
+00:21:39.460 --> 00:21:43.380
+I agree with you. I agree with you, but I don't think it's because of that. I don't
+
+00:21:43.380 --> 00:21:48.740
+think it's going to be due to distrust. I think it's going to be due to trust,
+
+00:21:48.740 --> 00:21:53.540
+overtrust, intellectual laziness. People will just, oh, just do the bot do it. I didn't want
+
+00:21:53.540 --> 00:21:58.020
+to do that crap anyway. Oh, okay. Real quick. Then we're, we're actually in violent agreement.
+
+00:21:58.900 --> 00:22:04.500
+But I will say I did write a set of test cases because I'm a test nerd that check for,
+
+00:22:04.500 --> 00:22:09.140
+I don't know if I've talked about it, but ever actually, but, but I have a website up.
+
+00:22:09.140 --> 00:22:15.700
+I can't remember what the URL is, but it's a, it tests GPT and other LLMs for dangerous
+
+00:22:15.700 --> 00:22:19.220
+mode alloys. So I think that's a new form of testing. So I have a bunch of test cases
+
+00:22:19.220 --> 00:22:22.900
+because everyone's like worried that AI is going to take over the world, right? Or have bad,
+
+00:22:22.900 --> 00:22:25.940
+like have very dangerous biases and stuff. And everybody's worried about it.
+
+00:22:25.940 --> 00:22:27.780
+Launch the nuclear war.
+
+00:22:27.780 --> 00:22:32.420
+Yeah. So I did what a tester does and I've written, I had, I used with AI, I partnered
+
+00:22:32.420 --> 00:22:37.780
+with AI, but what generated like over I think like three, 500 different test cases,
+
+00:22:38.340 --> 00:22:43.060
+there are prompts and then verifications of the prompt responses to make sure the AI is not
+
+00:22:43.060 --> 00:22:51.220
+becoming dangerous or, or have horrible or offensive biases in it. And I run that whenever
+
+00:22:51.220 --> 00:22:57.380
+there's a new version of, of AI. So, so that's another example of, I think where testers are
+
+00:22:57.380 --> 00:23:03.940
+even the most needed profession in this. As we, as you were saying, I wouldn't even dare say it,
+
+00:23:03.940 --> 00:23:08.180
+but we just approached the singularity. Someone needs, there needs to be a watchdog, there needs
+
+00:23:08.180 --> 00:23:13.940
+to be monitoring of these systems. And it's not just how did it, did it click enough buttons or
+
+00:23:14.500 --> 00:23:20.980
+have enough boundary value inputs into a search text box. It's, does this thing going to go awry?
+
+00:23:20.980 --> 00:23:27.940
+How do we test to make sure that it doesn't start undermining society, right? And how do you test
+
+00:23:27.940 --> 00:23:35.060
+for that? And the funny thing is there's this guy, Elieizer, I think is his name. And he's like
+
+00:23:35.060 --> 00:23:38.020
+the one that's on all Ted talks saying AI is going to kill us and stuff. I've been peeing him
+
+00:23:38.020 --> 00:23:43.700
+in the background. I'm such a nerd on, on the Twitter or the X and saying, hey, like, do you
+
+00:23:43.700 --> 00:23:47.460
+have test cases? Like, how can we test for it? Like, what would you worry about? He just hasn't
+
+00:23:47.460 --> 00:23:51.380
+responded at all. And his talks, he says, there's no way to test for these things. I think there
+
+00:23:51.380 --> 00:23:56.020
+are ways to test for it. So, so it's, I think we need to have tests for the tests. Another layer
+
+00:23:56.020 --> 00:24:01.380
+of that on functional tests. How do we make sure that these things are correct and good and
+
+00:24:01.380 --> 00:24:05.540
+complete? But we also need another more meta set of tests and monitoring to make sure that the AI
+
+00:24:05.540 --> 00:24:11.540
+is not going awry, doesn't do Skynet and so forth. And I think that's the actual edge and frontier
+
+00:24:11.540 --> 00:24:17.540
+of, of testing and, and quality. And, you know, it's crazy enough that it's concerning enough that
+
+00:24:17.540 --> 00:24:23.540
+it, these, these things appear in, you know, at the UN. I hear what he's concerned about it.
+
+00:24:23.540 --> 00:24:26.900
+I hear what you're saying. And actually, but I don't know, testers will stand up. I don't think
+
+00:24:27.140 --> 00:24:32.180
+testers will stand up. But people with the title quality will, I think, I think,
+
+00:24:33.140 --> 00:24:41.220
+I think it's going to be a different set of folks that take over that the evaluation, quality and
+
+00:24:41.220 --> 00:24:47.300
+testing in that case, right? I don't think it's going to be the, the, the testers of the past
+
+00:24:47.300 --> 00:24:54.180
+coming back. I think it's a new group of people that honestly, I think my intuition on this is
+
+00:24:54.180 --> 00:25:01.220
+going to be a wacky combination of systems thinkers and philosophers that is going to be
+
+00:25:01.220 --> 00:25:06.740
+driving this because it's, it's not going to be about true or false anymore. It's not going to be,
+
+00:25:06.740 --> 00:25:11.620
+you got this right, you got this wrong. LLM is going to know facts way better than any human.
+
+00:25:12.180 --> 00:25:16.020
+Dang it, Brent, I hate to agree with you, but I think, I think I do. But some of those people
+
+00:25:16.020 --> 00:25:21.700
+will be former testers. I'll turn that in. But yeah, I hate to agree with Brent too. It's,
+
+00:25:21.700 --> 00:25:28.900
+it's really kind of wrecks my whole weekend. I should imagine being me like how tortures. Yeah.
+
+00:25:28.900 --> 00:25:34.500
+Oh God, I couldn't, I couldn't stand the smell. I agree with Brent. I think it's,
+
+00:25:34.500 --> 00:25:40.900
+we're talking about quality value fit when the things you're talking about Jason, not,
+
+00:25:40.900 --> 00:25:44.820
+there's a lot of tests is going back to the LinkedIn thing I read earlier.
+
+00:25:45.540 --> 00:25:50.980
+There is a focus with a lot of the testers today on making sure it works correctly.
+
+00:25:52.180 --> 00:25:57.060
+That it doesn't have a recall class, but this functional correctness, largely functional
+
+00:25:57.060 --> 00:26:01.540
+correctness, which I think AI's consult with coaching with bots, etc. And then,
+
+00:26:01.540 --> 00:26:06.500
+and developers can do that testing. But I do think it's interest. I thought about this
+
+00:26:06.500 --> 00:26:12.580
+years and years ago, like at Microsoft in like that 99 or 2000, I thought do we need a
+
+00:26:12.580 --> 00:26:17.860
+true quality assurance role, which is about the things you're talking about? Should we make sure
+
+00:26:17.860 --> 00:26:22.980
+we've built the right thing? Should we make sure this is a, this has fit, it's kind of half
+
+00:26:22.980 --> 00:26:28.340
+product role, etc. That it made me think of the whole, the Bolton post on testers get out
+
+00:26:28.340 --> 00:26:32.820
+of the quality assurance business. But the problem is we need somebody in the quality assurance
+
+00:26:32.820 --> 00:26:41.540
+business to make sure that whatever we're building with LLMs or not, is providing value
+
+00:26:41.540 --> 00:26:45.460
+for the customer has fit for the customer. And that feels more like a product role,
+
+00:26:45.460 --> 00:26:48.260
+or maybe what Brent said around philosophers, than it does a test.
+
+00:26:48.260 --> 00:26:51.540
+Well, I think I think it's actually, it reminds me a lot of the relevance role,
+
+00:26:51.540 --> 00:26:56.260
+like at Bing and at Google, like as what is relevance, you have to define it and then
+
+00:26:56.260 --> 00:27:00.340
+quantify it, but it's a very nebulous thing. Because, you know, what is the best search
+
+00:27:00.340 --> 00:27:05.460
+result for 5 million people you search for Bush, the string Bush, do you want the president? Do
+
+00:27:05.460 --> 00:27:11.220
+you want the band or do you want the plant? So it's a hard problem to solve, right? It's very
+
+00:27:11.220 --> 00:27:17.300
+complex. So, but if you do look at this, this is I think critical today in the AI world is
+
+00:27:17.940 --> 00:27:24.180
+the philosophers, guess what, Brent, I will say this, the philosophers and even the product guys,
+
+00:27:24.180 --> 00:27:30.180
+they really suck at being testers. So if you look at even papers, I did a rant post or something
+
+00:27:30.180 --> 00:27:35.780
+a couple months ago, like, because what's coming out of Stanford, these evaluation suites for AI
+
+00:27:35.780 --> 00:27:41.300
+and ML coming up, they're horribly executed, they're tests, but they're horribly executed,
+
+00:27:41.300 --> 00:27:46.260
+like the actual implementation, like there's tons of false negatives and false positives in these
+
+00:27:46.260 --> 00:27:51.700
+things. And it's really horrendous and concerning, because this is what's being used to defend
+
+00:27:51.700 --> 00:27:58.740
+humanity from AI. But so I think there's a lot of Allen's and Brent's influencing
+
+00:27:58.740 --> 00:28:02.500
+those people to make sure that all the lessons we've learned over 20 years in,
+
+00:28:02.500 --> 00:28:08.580
+in basic testing is applied, but the conceptual things that are being tested are probably like,
+
+00:28:08.580 --> 00:28:14.180
+more relevance, more nebulous things, like what you're saying, like fit, and overall, you know,
+
+00:28:14.180 --> 00:28:23.180
+kind of purpose. They're horrible testers. I don't, I don't disagree. I just think that they
+
+00:28:23.180 --> 00:28:31.790
+are going to be the more well suited testers of the future. Okay, because I don't actually think
+
+00:28:31.790 --> 00:28:37.870
+like I was thinking about a problem that I have just, just this week, right? I'm asking it to,
+
+00:28:37.870 --> 00:28:44.350
+to summarize and just to say, summarize this long email chain. Okay, and then there's some
+
+00:28:44.350 --> 00:28:55.710
+conditions I want it to remove. I want it to honor privacy conditions. Okay. And it consistently
+
+00:28:55.710 --> 00:29:01.390
+screws up on that. And it's one of the issues with with prompt engineering, that's, that's
+
+00:29:01.390 --> 00:29:06.110
+actually known is that if you give it too many instructions, or even without realizing
+
+00:29:06.110 --> 00:29:11.870
+it contradictory instructions, it then kind of makes its own call and goes forward. Right. And so
+
+00:29:11.870 --> 00:29:20.320
+I'm like, but if I tell it, gives me a result, and I tell it, hey, tell me what instruction of mine
+
+00:29:20.320 --> 00:29:27.060
+you just violated, right? It realizes it near instantly. But because I forced that reevaluation,
+
+00:29:27.700 --> 00:29:35.780
+and then I'll just say do it again. Right. And in some regards, if a testers, if the testers of the
+
+00:29:35.780 --> 00:29:41.890
+future is just like, all right, tell me what principle you just violated do it again. Right.
+
+00:29:41.890 --> 00:29:47.970
+That's readily automatable. The thing, it is this whole things, automating this,
+
+00:29:48.610 --> 00:29:55.730
+it sounds too hard. This is why I think, again, the system thinker, philosopher type,
+
+00:29:55.730 --> 00:30:03.170
+you know, maybe chess masters is another one. It's testing things directly. Oh, they got a fact
+
+00:30:03.170 --> 00:30:10.160
+wrong. That's, that's gonna go away pretty quickly. Right. It's going to be, god, I hope so.
+
+00:30:10.160 --> 00:30:17.200
+That's gonna go away. It's gonna go away pretty quickly. It's going to be okay, but now it's
+
+00:30:17.200 --> 00:30:23.360
+combining these random facts that we don't know, because it's a black box into this
+
+00:30:23.840 --> 00:30:30.080
+directional element. We're going to need to be able to think multiple steps ahead
+
+00:30:31.180 --> 00:30:37.660
+to find errors in its thinking. It's going to be, it's not going to be fact errors,
+
+00:30:37.660 --> 00:30:48.080
+it's going to be logic errors. But in it's not going to be as simple as A plus B equaling C when
+
+00:30:48.240 --> 00:30:55.280
+we intended it's going to be no, I combined A, B, C, D, E, F, G, and the rest of the alphabet together
+
+00:30:55.280 --> 00:31:02.960
+and have come up with this, with this logic error. And we're just not going to be able to
+
+00:31:02.960 --> 00:31:08.000
+see that if we don't constrain it. So Brent is very just long windedly said he's all prepared
+
+00:31:08.000 --> 00:31:14.900
+to train his bot. I was thinking the same thing. That's all that's all. Yeah, that's all out.
+
+00:31:14.900 --> 00:31:21.860
+Okay, the Brent bot is coming. Jason, anything as we near the end of time here, anything else you
+
+00:31:21.860 --> 00:31:25.300
+want? I know we know about Chequi AI, which probably got cut off last time, but talk a
+
+00:31:25.300 --> 00:31:29.140
+little about that. What else should people know about you? How do they follow you? How
+
+00:31:29.140 --> 00:31:33.300
+do they avoid you? Things like that. You talk to James Bach about how to avoid me.
+
+00:31:37.300 --> 00:31:41.860
+Yeah, I'm working. So actually, just on LinkedIn, I blog this kind of stuff and
+
+00:31:41.860 --> 00:31:46.980
+think about it and share, just to share and get other conversation. There's more conversation
+
+00:31:47.780 --> 00:31:54.100
+out there. I wish more people were engaging, especially I also really, truly wish that manual
+
+00:31:54.100 --> 00:31:59.940
+testers will engage and take this opportunity to engage with AI to help them to augment them.
+
+00:32:00.740 --> 00:32:06.160
+I feel like I'm not trying to, I guess I'm trying to be whining about it, but I feel like I've
+
+00:32:06.160 --> 00:32:10.320
+tried and like there's been like, you know, a couple hundred signups, but not thousands,
+
+00:32:10.320 --> 00:32:15.600
+right? And not super deep testing or great feedback on the thing. But this is an opportunity
+
+00:32:15.600 --> 00:32:20.000
+for people to, to make for their manual or exploratory testers, which are millions of them,
+
+00:32:20.720 --> 00:32:26.000
+to engage AI and see if you can help them in their job and, and to power super power, power up.
+
+00:32:26.640 --> 00:32:29.920
+But the things are moving fast. So I'd leave everybody with, again, I think we're dealing with
+
+00:32:29.920 --> 00:32:34.960
+exponential technologies. I would go so far as Brent is saying there's singularities coming,
+
+00:32:34.960 --> 00:32:40.880
+but he's crazy, LLM fanboy, but AI fanboy.
+
+00:32:40.880 --> 00:32:42.720
+You don't think a singularity is coming?
+
+00:32:43.570 --> 00:32:45.810
+I would never state that publicly.
+
+00:32:45.810 --> 00:32:50.110
+Okay. Which is not an answer to my question.
+
+00:32:54.190 --> 00:32:55.790
+It's just, what do we do in the meantime?
+
+00:32:55.790 --> 00:32:56.430
+Right.
+
+00:32:56.430 --> 00:33:01.150
+But yeah, but I think it's an exponential technology, which means it will be a nothing
+
+00:33:01.150 --> 00:33:06.990
+burger and kind of just a tease for a while. And then suddenly it's going to be boom in your face
+
+00:33:06.990 --> 00:33:11.790
+and you have to confront it. There's no avoiding this exponential technologies.
+
+00:33:11.790 --> 00:33:12.830
+So I just leave people with that.
+
+00:33:12.830 --> 00:33:14.270
+And invite them to actually.
+
+00:33:14.270 --> 00:33:19.230
+And I will probably, and Brent too, even more so Brent, like on these,
+
+00:33:19.230 --> 00:33:23.470
+these predictions of the future and stuff, we, this, what sucks about predicting these things is
+
+00:33:23.470 --> 00:33:30.510
+that, um, is that you are wrong until you were finally right and nobody cares anymore.
+
+00:33:31.470 --> 00:33:35.550
+So, um, it's, it's kind of a not so good position to be in.
+
+00:33:35.550 --> 00:33:39.150
+And remember, I, if you go back on the internet, I've been talking about how AI is going to be
+
+00:33:39.150 --> 00:33:44.430
+coming for an exponentially and have a chart from four years ago at some star conference,
+
+00:33:44.430 --> 00:33:47.870
+like keynote saying where I think things are going to start to be automated by AI.
+
+00:33:47.870 --> 00:33:53.070
+And guess what? We're in the middle of basic security and functionality being automated by AI.
+
+00:33:53.070 --> 00:33:56.030
+That's we'll see if that materializes in 2024.
+
+00:33:56.990 --> 00:34:00.510
+But it's, uh, and that's based on, like you said, like with recent stuff,
+
+00:34:00.510 --> 00:34:04.910
+that's based on just curves, wilds predictions, which have been right on for like, Oh, I don't
+
+00:34:04.910 --> 00:34:09.630
+know, 25 years or something like that. And so, um, yeah, so people should be ready.
+
+00:34:09.630 --> 00:34:13.710
+And, uh, if you bury your head in the sand, it just could be a Saturday wake up call,
+
+00:34:13.710 --> 00:34:17.550
+but it'd engage. I think I just encourage people to engage it. Try stuff out.
+
+00:34:18.220 --> 00:34:24.140
+Cool, man. Thank you so much. Uh, Brent has been, uh, showing off some things from the,
+
+00:34:24.140 --> 00:34:28.540
+uh, the extra test we bought in our screen, but Brent, I'm going to encourage you to share
+
+00:34:28.540 --> 00:34:33.020
+those maybe in a channel on our Slack group, one of the three dot slack.com.
+
+00:34:33.020 --> 00:34:36.860
+You can go to modern testing dot org to get an invitation. I think they're kind of fun.
+
+00:34:36.860 --> 00:34:41.260
+I think they'd be fun for the community to look at as well. So we'll get those posted up.
+
+00:34:41.820 --> 00:34:46.220
+So, uh, that is, that's the end of our time with Jason Arvin.
+
+00:34:48.220 --> 00:34:52.140
+No, no, next time, next time you talk to another GP teapot. That was funny.
+
+00:34:52.140 --> 00:34:54.540
+When I was in the car, I was like, Oh, I guess that's why they didn't invite me back.
+
+00:34:55.020 --> 00:34:57.740
+Uh, cause you're talking with them with the bot instead.
+
+00:34:58.940 --> 00:35:02.940
+Yeah, I think what happened is then Castor listened to be complaining about it and said,
+
+00:35:02.940 --> 00:35:08.540
+screw you. I'm going to make your life horrible. And it did. It did. It was horrible. So, uh,
+
+00:35:08.540 --> 00:35:13.660
+that's it. This has been episode one 94 and I'm Alan.
+
+00:35:13.660 --> 00:35:16.460
+I'm Brent and I'm Jason. Thanks for a geek note.
+
+00:35:16.460 --> 00:35:18.780
+All right. We'll see you next time.
+

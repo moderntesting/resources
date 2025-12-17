@@ -1,0 +1,2512 @@
+1
+00:00:03,380 --> 00:00:11,620
+Welcome to AV testing podcast your modern testing podcast your hosts Alan and Brent will be here to guide you through
+
+2
+00:00:12,180 --> 00:00:18,580
+Topics on testing leadership agile and anything else that comes to mind now on with the show
+
+3
+00:00:19,020 --> 00:00:24,320
+Hey, Brent, how's it going? It's going super Alan. I think
+
+4
+00:00:26,550 --> 00:00:30,810
+So there's so much going on one we're still in the middle of a pandemic
+
+5
+00:00:31,860 --> 00:00:33,460
+to
+
+6
+00:00:33,460 --> 00:00:40,260
+first ever live stream of an a B testing podcast something I think we should do much more often
+
+7
+00:00:41,090 --> 00:00:42,290
+Yeah
+
+8
+00:00:42,290 --> 00:00:43,730
+Thank you
+
+9
+00:00:43,730 --> 00:00:48,710
+Alan and the three for for the spontaneous change
+
+10
+00:00:48,770 --> 00:00:56,210
+There was a suggestion less than 10 minutes ago on you guys or something like some other podcasts live streams and edits
+
+11
+00:00:56,210 --> 00:00:58,810
+And I thought and in that 10 minutes, I thought oh
+
+12
+00:00:59,650 --> 00:01:02,210
+There's an idea. We're gonna try this
+
+13
+00:01:02,850 --> 00:01:05,130
+so yeah, we're doing it and
+
+14
+00:01:06,090 --> 00:01:07,490
+pandemic and oh
+
+15
+00:01:07,490 --> 00:01:09,490
+I was thinking just a minute ago that I
+
+16
+00:01:09,650 --> 00:01:16,090
+like I'd like to think that there are people who discover our podcast and just binge our episodes one after the other and
+
+17
+00:01:16,850 --> 00:01:19,690
+Are going to be sad that we don't have a guest this time
+
+18
+00:01:20,130 --> 00:01:28,380
+We've had guests like the last three to know for for no, I think it's I think it's just fine
+
+19
+00:01:29,340 --> 00:01:34,640
+But because we're live streaming everyone's our guest be our guest be
+
+20
+00:01:35,420 --> 00:01:40,140
+See normally I edit the singing out but now it's all here for free
+
+21
+00:01:40,140 --> 00:01:41,820
+So well, right
+
+22
+00:01:41,820 --> 00:01:48,540
+So is this is this part of it is this now like a new form strategy to to edit out nothing?
+
+23
+00:01:48,540 --> 00:01:51,580
+I mean, thank God. I actually wore clothes today. I
+
+24
+00:01:52,970 --> 00:01:55,230
+I'm not wearing pants. But so here's
+
+25
+00:01:55,950 --> 00:01:58,010
+Also something interesting
+
+26
+00:01:58,370 --> 00:02:02,690
+because we've had guests we haven't had to come up with our agendas for a while and
+
+27
+00:02:03,610 --> 00:02:06,970
+Because we don't have a guest and we're not used to this and we don't have a whiteboard
+
+28
+00:02:06,970 --> 00:02:10,010
+I don't know that we have an agenda. So this should be fun
+
+29
+00:02:12,270 --> 00:02:14,970
+You know, well, yeah, I think I mean the guest thing
+
+30
+00:02:16,030 --> 00:02:18,990
+Certainly reduced the tax on us right?
+
+31
+00:02:19,990 --> 00:02:23,670
+Now we now we were able to be more efficient. We don't have to
+
+32
+00:02:24,270 --> 00:02:29,990
+You know, it's agile, right? As the principal say we we favored communication over
+
+33
+00:02:30,590 --> 00:02:35,390
+Documentation. So there's one, you know, five minutes of documentation work now eliminated
+
+34
+00:02:35,390 --> 00:02:42,470
+I'm lying here a little bit because I did post a couple things in our one of the three slack that I thought we could
+
+35
+00:02:42,470 --> 00:02:46,950
+Talk about today. No. No, I want to talk about I think the same one that you're thinking of
+
+36
+00:02:48,370 --> 00:02:51,690
+It's how to take over the world via the PM org
+
+37
+00:02:52,290 --> 00:02:55,530
+Well, it's not really a PM org, but I should talk about
+
+38
+00:02:56,490 --> 00:03:00,770
+None of this is official and I don't know who at Unity listens to my podcast
+
+39
+00:03:00,770 --> 00:03:05,250
+But I can talk about this abstractly and say that due to some org changes. I
+
+40
+00:03:06,120 --> 00:03:08,820
+Am going to end up. Well, I should probably talk about background
+
+41
+00:03:09,460 --> 00:03:14,780
+So many of you know me as the hardcore software tester
+
+42
+00:03:15,630 --> 00:03:19,110
+Alan Page the person who wrote how we test software at Microsoft
+
+43
+00:03:19,770 --> 00:03:21,430
+You do know me as that but you know
+
+44
+00:03:21,430 --> 00:03:26,330
+I have since moved on from that because unlike some people in the testing world
+
+45
+00:03:26,330 --> 00:03:31,130
+I do not live in the past. I try and live in the present moment and look towards the future
+
+46
+00:03:31,940 --> 00:03:37,020
+That is a passive of a dig as I can make on some folks, but
+
+47
+00:03:38,020 --> 00:03:40,760
+Yeah, oh no the three got it for sure
+
+48
+00:03:41,940 --> 00:03:43,020
+so
+
+49
+00:03:43,020 --> 00:03:47,660
+One thing and let me just say this when I began running
+
+50
+00:03:48,420 --> 00:03:50,780
+Infrastructure in DevOps orgs. I thought wow
+
+51
+00:03:50,780 --> 00:03:56,500
+I have never had so much more control over quality as I do running a DevOps
+
+52
+00:03:56,860 --> 00:04:02,980
+Org and helping the team accelerate the achievement shipable quality. So that's all good and then
+
+53
+00:04:03,580 --> 00:04:07,660
+When I started doing air quote, I can do we're live I can do air quotes
+
+54
+00:04:11,420 --> 00:04:13,420
+Yeah, I can like do show and tell
+
+55
+00:04:13,420 --> 00:04:21,640
+Yeah, like hey, here's a cool book I got no
+
+56
+00:04:22,460 --> 00:04:26,180
+Also, the cool thing is we're gonna have to make a live stream
+
+57
+00:04:26,540 --> 00:04:30,180
+Channel if we keep this because then people could ask us questions
+
+58
+00:04:30,900 --> 00:04:32,100
+during
+
+59
+00:04:32,100 --> 00:04:35,560
+The podcast I should look at the live stream and see if there are questions there
+
+60
+00:04:35,560 --> 00:04:38,100
+Oh my gosh, so many things to do I was in the middle of a story
+
+61
+00:04:38,260 --> 00:04:41,340
+So I DevOps lots control over quality
+
+62
+00:04:41,820 --> 00:04:47,780
+When I joined this role in my current org I began doing program management
+
+63
+00:04:47,780 --> 00:04:50,820
+Well, I can't say I've ever done program management
+
+64
+00:04:51,540 --> 00:04:55,740
+When I took the role when I was talking to my current boss about the role
+
+65
+00:04:56,260 --> 00:04:59,020
+he asked hey, can you do program management and
+
+66
+00:04:59,780 --> 00:05:06,600
+Every time in my career when I've been asked if I can do something Alan, can you code an assembly Alan?
+
+67
+00:05:06,600 --> 00:05:08,060
+Can you do whatever?
+
+68
+00:05:08,100 --> 00:05:13,960
+My answer is always yes. Why yes, I can and then I figure it out as I go
+
+69
+00:05:14,720 --> 00:05:18,240
+There's a sorry, I was gonna do tangent inception, but I'm gonna stop myself
+
+70
+00:05:18,840 --> 00:05:20,840
+so I
+
+71
+00:05:20,840 --> 00:05:22,660
+spent the first
+
+72
+00:05:22,660 --> 00:05:24,380
+chunk of my time
+
+73
+00:05:24,380 --> 00:05:28,780
+Figuring out what not what program management was because I could read things about that
+
+74
+00:05:28,780 --> 00:05:31,800
+but what my flavor on it was and finally after
+
+75
+00:05:32,260 --> 00:05:34,340
+Eight or nine months in the role. I
+
+76
+00:05:34,820 --> 00:05:39,820
+Told my boss I said I don't really know anything about program management. I'm I'm coming clean
+
+77
+00:05:39,900 --> 00:05:45,020
+They said oh no problem, you know how to run systems and you're doing it and you do that well
+
+78
+00:05:45,020 --> 00:05:49,580
+I go. Oh, yes, that's a that's a very lean and modern testing thing
+
+79
+00:05:49,580 --> 00:05:54,020
+I love systems thinking and that's what I do. I figure out how all the pieces fit together. So now I
+
+80
+00:05:54,940 --> 00:06:02,620
+Say I have never had so much control over quality and QA testing s deading for years
+
+81
+00:06:02,740 --> 00:06:10,620
+I have so much control over what we deliver predictability and quality and velocity running both DevOps and
+
+82
+00:06:11,940 --> 00:06:15,420
+Running systems the the program management part of my job
+
+83
+00:06:15,700 --> 00:06:22,300
+So what the change coming up for me is I'm on paper a director of program management
+
+84
+00:06:22,300 --> 00:06:25,740
+We're gonna change that to director of engineering because I do more engineering work than program management
+
+85
+00:06:25,740 --> 00:06:31,780
+But I'm still in charge of running all of our systems and making sure that pieces all fit together of all of our different
+
+86
+00:06:32,100 --> 00:06:34,100
+services and and projects in flight
+
+87
+00:06:34,700 --> 00:06:37,420
+Going back. This is like the longest intro ever
+
+88
+00:06:38,300 --> 00:06:41,980
+People and you can't watch a live stream on one and a half speed. Sorry folks
+
+89
+00:06:42,700 --> 00:06:44,700
+so
+
+90
+00:06:44,960 --> 00:06:48,640
+Short story is with all that context in mind. I
+
+91
+00:06:49,320 --> 00:06:55,840
+Will be adding a few real like I've talked to them and they're kind of textbook program managers to my org
+
+92
+00:06:56,240 --> 00:07:00,200
+not Microsoft program managers, but people who manage
+
+93
+00:07:00,880 --> 00:07:02,880
+programs of projects
+
+94
+00:07:03,240 --> 00:07:08,360
+Help the team as far as I can tell accelerate the achievement of book quality if any of you
+
+95
+00:07:08,360 --> 00:07:13,040
+I don't know if you've read this Brent. Do you I didn't know reason to it's probably not Johanna Rothman who just writes
+
+96
+00:07:13,560 --> 00:07:19,880
+Book after good book after good book wrote a book called agile and lean project management, which I read
+
+97
+00:07:20,600 --> 00:07:25,280
+So I could understand what I was supposed to do and then pick the parts of it that I liked and did those
+
+98
+00:07:25,440 --> 00:07:31,720
+But if I read that book and look at what the program managers who will be working for me are doing it's textbook right there
+
+99
+00:07:31,720 --> 00:07:35,590
+I think they're gonna fill in the gaps that I know I have
+
+100
+00:07:36,390 --> 00:07:40,150
+They're going to learn to do things in the modern testing way
+
+101
+00:07:40,150 --> 00:07:45,670
+But the one of the topics for today and Brent is like what it's Alan ever gonna shut up
+
+102
+00:07:45,670 --> 00:07:48,470
+So I can talk is what I want to have a discussion about is
+
+103
+00:07:49,350 --> 00:07:50,860
+how
+
+104
+00:07:50,860 --> 00:07:53,220
+Our mission remains the same how
+
+105
+00:07:53,860 --> 00:07:59,020
+What advice what ideas etc should we have for?
+
+106
+00:08:00,060 --> 00:08:07,940
+These folks in my org, how do I take the most advantage of them blah blah blah, etc. Okay. I'm done with the preamble Brent
+
+107
+00:08:08,180 --> 00:08:10,180
+What are your thoughts?
+
+108
+00:08:11,460 --> 00:08:14,420
+Well, the first thing I was thinking well actually a
+
+109
+00:08:15,440 --> 00:08:18,760
+Tangent we'll have to figure out how we do Q&A
+
+110
+00:08:19,320 --> 00:08:25,480
+Because the stream does seem to be lagging not by seconds, but like by minutes
+
+111
+00:08:26,600 --> 00:08:28,920
+Again thankful I work close today
+
+112
+00:08:29,800 --> 00:08:36,720
+The fun part also is going to see and and probably nothing here so far is going to be edited
+
+113
+00:08:36,720 --> 00:08:42,720
+But for those that watch this and listen to the podcast they're gonna go Wow the podcast is way better than the live stream
+
+114
+00:08:44,560 --> 00:08:46,240
+Yeah
+
+115
+00:08:48,240 --> 00:08:53,960
+Alright back to the topic at hand like the first thing come on this is a be testing
+
+116
+00:08:53,960 --> 00:08:59,760
+We don't get back to the topic at hand. Just keep going. Oh, okay on that front
+
+117
+00:09:00,240 --> 00:09:03,480
+Have you noticed anything new about my background today?
+
+118
+00:09:05,200 --> 00:09:11,440
+You're in your way you're that's that's not a virtual background you are in your office at Microsoft. I am
+
+119
+00:09:12,840 --> 00:09:16,880
+Dude, you are so gonna get COVID. I am
+
+120
+00:09:18,320 --> 00:09:24,850
+Though much at a point where I don't care as as I think I mentioned
+
+121
+00:09:25,890 --> 00:09:31,210
+It is having it has been having a not a non trivial and
+
+122
+00:09:32,050 --> 00:09:34,050
+extremely negative
+
+123
+00:09:34,210 --> 00:09:36,930
+impact on my mental health and
+
+124
+00:09:38,210 --> 00:09:40,210
+Right now
+
+125
+00:09:40,250 --> 00:09:43,530
+Have you ever gone on taking vacation time?
+
+126
+00:09:44,050 --> 00:09:48,440
+Just so that everyone would leave you alone so that you could get stuff done
+
+127
+00:09:49,000 --> 00:09:51,840
+Nope. Nope. Oh, well I have
+
+128
+00:09:52,880 --> 00:09:57,520
+Actually, I have taken like we had a four-day weekend for July 4th and
+
+129
+00:09:58,280 --> 00:10:01,520
+Because we get every time unity there's a Monday off we get the Friday off also
+
+130
+00:10:01,520 --> 00:10:07,000
+I worked both Friday and Monday for I did I just don't take the days off I'm given in order to catch up on stuff
+
+131
+00:10:07,600 --> 00:10:09,800
+The it's not even on catch up
+
+132
+00:10:10,520 --> 00:10:12,520
+from me
+
+133
+00:10:12,680 --> 00:10:14,680
+So
+
+134
+00:10:14,840 --> 00:10:20,040
+survey here and we'll get back to program management in a second they did a survey at Microsoft
+
+135
+00:10:20,320 --> 00:10:23,600
+Maybe we would they did a survey here at Microsoft and
+
+136
+00:10:24,400 --> 00:10:27,320
+around impact on COVID and
+
+137
+00:10:28,160 --> 00:10:29,840
+turns out
+
+138
+00:10:29,840 --> 00:10:35,680
+60 percent of the ICS individual contributors that responded to that said oh, yeah
+
+139
+00:10:35,680 --> 00:10:38,800
+They are having a satisfactory work-life balance
+
+140
+00:10:39,760 --> 00:10:47,450
+Forty four percent of the managers said the same thing and I was recently in a one-on-one with with
+
+141
+00:10:47,850 --> 00:10:50,170
+my VP and
+
+142
+00:10:50,170 --> 00:10:54,370
+I'm like, yeah, I am so far from that
+
+143
+00:10:55,010 --> 00:11:01,990
+44% I can't even see them from where I stand and I invented a turned in that conversation
+
+144
+00:11:02,790 --> 00:11:05,310
+And I said work-life balance. Yeah, that's
+
+145
+00:11:06,350 --> 00:11:08,710
+That's actually relatively easy to manage
+
+146
+00:11:09,270 --> 00:11:15,630
+What is completely out of whack for me is the talk doing balance?
+
+147
+00:11:16,310 --> 00:11:22,600
+Too much talking not enough doing I think the way you put that about four or five
+
+148
+00:11:22,760 --> 00:11:28,220
+Episodes was too much talky not enough Dewey. Oh, yeah, and yeah
+
+149
+00:11:29,120 --> 00:11:31,120
+I am now
+
+150
+00:11:31,200 --> 00:11:34,240
+In a in a in a broader space
+
+151
+00:11:34,240 --> 00:11:38,880
+This is a recent change from my team where we're going into more and more
+
+152
+00:11:40,040 --> 00:11:42,960
+higher scope customer oriented
+
+153
+00:11:43,560 --> 00:11:45,790
+investigations and work and
+
+154
+00:11:46,150 --> 00:11:48,960
+I don't know dude. I
+
+155
+00:11:50,130 --> 00:11:57,590
+Am having meetings with program managers. I have never met before from teams. I didn't even know
+
+156
+00:11:58,050 --> 00:11:59,050
+existed
+
+157
+00:11:59,050 --> 00:12:03,890
+Just right after the other. So anyway, one thing that's very nice is
+
+158
+00:12:05,190 --> 00:12:06,990
+right now
+
+159
+00:12:06,990 --> 00:12:09,040
+temporarily in
+
+160
+00:12:09,040 --> 00:12:11,040
+this entire building I
+
+161
+00:12:11,680 --> 00:12:19,450
+Am the only one here. So I guess I guess you can't catch kovat if but when that second person shows up you're screwed
+
+162
+00:12:19,890 --> 00:12:26,330
+Well, no, so then the other thing that's nice is the fact that I have an office if I were in open space
+
+163
+00:12:26,330 --> 00:12:28,330
+Then I would probably still be at home
+
+164
+00:12:28,570 --> 00:12:31,920
+If I leave my office, I got to put on my Darth Vader mask
+
+165
+00:12:32,640 --> 00:12:35,300
+But other than that I'm safe here
+
+166
+00:12:36,040 --> 00:12:41,300
+Tangent after tangent. I won't talk about program managers distrism reminder, but I'm going to the office on Monday
+
+167
+00:12:41,640 --> 00:12:47,130
+I'm just going for five minutes to grab all my stuff off my desk and then I'm never returning. But yes
+
+168
+00:12:49,050 --> 00:12:51,290
+Yeah, I actually I
+
+169
+00:12:52,090 --> 00:12:57,370
+Actually last week I went home to get stuff to bring to my office
+
+170
+00:12:58,410 --> 00:13:00,410
+No, it's
+
+171
+00:13:00,410 --> 00:13:04,250
+It this is net better. All right, so
+
+172
+00:13:05,680 --> 00:13:07,680
+segue back to
+
+173
+00:13:07,720 --> 00:13:10,880
+your prior topic right your manager said hey, do you know how to
+
+174
+00:13:11,600 --> 00:13:13,600
+manage a
+
+175
+00:13:13,760 --> 00:13:16,520
+Program management. Well, he didn't ask me that he asked me
+
+176
+00:13:16,520 --> 00:13:23,760
+I mean, he just assumes I can manage program managers, but well and the reason why is of course
+
+177
+00:13:24,760 --> 00:13:26,200
+You can
+
+178
+00:13:26,200 --> 00:13:29,760
+Of course, I mean there's also I mean my team is
+
+179
+00:13:31,040 --> 00:13:35,590
+Is glue and is glue?
+
+180
+00:13:36,150 --> 00:13:38,150
+Well, that's I mean it's between
+
+181
+00:13:38,510 --> 00:13:42,590
+Program management and DevOps and my quality coaches and even docks
+
+182
+00:13:42,590 --> 00:13:46,630
+It's like I provide the matrix org for all of the rest of the organization
+
+183
+00:13:48,550 --> 00:13:53,550
+Everybody else works on shipping stuff. I helped them ship stuff safely and successfully
+
+184
+00:13:54,710 --> 00:13:55,750
+Okay
+
+185
+00:13:56,400 --> 00:14:00,520
+Yeah, I was gonna say something snarky about program management, but I've again
+
+186
+00:14:00,520 --> 00:14:08,480
+I was my mind based on my experience with the bastardization of the role of Microsoft be very much welcomed
+
+187
+00:14:09,160 --> 00:14:14,280
+What snarkiness? Yeah. Yeah because what program managers do at Microsoft is different than
+
+188
+00:14:15,040 --> 00:14:18,760
+It's not program management. It's just the it's a name
+
+189
+00:14:19,360 --> 00:14:23,320
+They've given a bunch of people doing random stuff
+
+190
+00:14:24,320 --> 00:14:27,880
+That sometimes is program management very often is not
+
+191
+00:14:28,830 --> 00:14:30,830
+Yeah, no a lot of the times
+
+192
+00:14:31,510 --> 00:14:33,510
+right, it's
+
+193
+00:14:33,590 --> 00:14:41,310
+The snarky comment I was gonna say is is essentially of course you can write a brain dead monkey could manage some program management work
+
+194
+00:14:41,310 --> 00:14:49,710
+Oh, absolutely, right and and I have been compared have compared I have been compared to a brain dead monkey before so that's
+
+195
+00:14:50,390 --> 00:14:54,750
+My target by me on the podcast I'm certain of it
+
+196
+00:14:55,630 --> 00:14:57,630
+So let me let me share with you
+
+197
+00:14:58,470 --> 00:15:00,830
+what I'm about to do and
+
+198
+00:15:03,720 --> 00:15:08,560
+Well, we'll see what happens in terms of the podcast
+
+199
+00:15:09,720 --> 00:15:11,720
+Actually, this is fascinating
+
+200
+00:15:12,080 --> 00:15:19,880
+So one of these buttons right if I hit share screen, I would theoretically be sharing screen and that would show up. Oh
+
+201
+00:15:21,160 --> 00:15:26,000
+Yeah, so I'm over the whole surprise of hey, it's a video cast now
+
+202
+00:15:26,800 --> 00:15:29,080
+Now I'm all about Oh what new toys
+
+203
+00:15:29,920 --> 00:15:32,240
+You you have seen
+
+204
+00:15:34,010 --> 00:15:39,330
+We're primary a podcast. So I don't know how much I should focus on this is special
+
+205
+00:15:39,330 --> 00:15:41,850
+I'm people gonna listen to this on next week when it comes out
+
+206
+00:15:41,850 --> 00:15:46,490
+Who am I kidding everyone to everyone who downloads the podcast is already watching the livecast
+
+207
+00:15:46,610 --> 00:15:51,650
+But someone somewhere is going to listen to the some point going man. I'm missing out
+
+208
+00:15:52,370 --> 00:16:00,170
+Yeah, no, actually we should look at the stats on the podcast download and see and see if we took a hit cuz if everyone's
+
+209
+00:16:00,770 --> 00:16:05,370
+All of our listeners are watching right now. Why would they download it's gonna go from three to two
+
+210
+00:16:06,250 --> 00:16:10,050
+Oddly, there are 13 of the three watching. I think some people are logged in on multiple machines
+
+211
+00:16:10,810 --> 00:16:12,530
+You've seen this
+
+212
+00:16:12,530 --> 00:16:14,530
+right a
+
+213
+00:16:14,570 --> 00:16:21,930
+Million times. Well, what we are actually trying to do now is push this
+
+214
+00:16:22,490 --> 00:16:25,650
+Further I would say right now my organization
+
+215
+00:16:26,570 --> 00:16:33,370
+I don't know if my mouse is coming across but we're somewhere in between data affirmed and data driven
+
+216
+00:16:33,530 --> 00:16:37,450
+Let me just help take a moment here to pause and help the people who are
+
+217
+00:16:38,290 --> 00:16:44,530
+Actually listening to the podcast and not one of the three on the on the lately announced livestream
+
+218
+00:16:44,570 --> 00:16:49,470
+So this is the data maturity model that Brent I think Steve Rowe came up with this, right?
+
+219
+00:16:50,330 --> 00:16:56,050
+No, this was primarily mine, but Steve Rowe did add data affirmed
+
+220
+00:16:56,470 --> 00:17:02,850
+So the four levels of data oblivious when you just you're oblivious to data data affirmed
+
+221
+00:17:03,730 --> 00:17:07,850
+Decisions made mostly by intuition, but you you believe this is where a lot of teams
+
+222
+00:17:07,850 --> 00:17:12,090
+I work with are they only believe the data if it confirms intuition
+
+223
+00:17:12,730 --> 00:17:20,370
+Data driven where decisions are made by intuition and data and then data centric where data analysis is core to most decisions
+
+224
+00:17:20,370 --> 00:17:23,210
+So we've talked about this before on the podcast drink
+
+225
+00:17:23,890 --> 00:17:25,890
+Yeah, but it's a very nice
+
+226
+00:17:26,490 --> 00:17:28,250
+graphic with with
+
+227
+00:17:28,250 --> 00:17:32,030
+Colors and things it's very pretty so now Brent on to your
+
+228
+00:17:32,670 --> 00:17:38,450
+Remembering this is a podcast that happens to have a live stream and not a video cast. Please continue. Yeah
+
+229
+00:17:38,450 --> 00:17:41,910
+That's that's so much of an ask for me. And I know you're aware of that
+
+230
+00:17:42,470 --> 00:17:49,510
+Now we think about what is the well, I'm thinking about what is the problem we're facing here. Okay, so
+
+231
+00:17:50,030 --> 00:17:54,670
+first and foremost, there's a common thing within the the PM org where
+
+232
+00:17:55,470 --> 00:17:57,470
+They won't go after
+
+233
+00:17:57,790 --> 00:18:03,310
+The whales right and this is because they're trying to scale right you have you have
+
+234
+00:18:03,830 --> 00:18:09,010
+In a lot of businesses you have, you know, just a handful of customers that are bringing in
+
+235
+00:18:09,550 --> 00:18:16,750
+The the most of rather revenue and now that most amount of revenue is not something that you can that your business would survive
+
+236
+00:18:17,070 --> 00:18:19,060
+on if
+
+237
+00:18:19,060 --> 00:18:21,060
+You lost everybody else
+
+238
+00:18:21,300 --> 00:18:23,340
+Typically if you pull together a histogram
+
+239
+00:18:23,340 --> 00:18:27,980
+it'll come up and it'll show as a as a head tail curve and this is a
+
+240
+00:18:28,380 --> 00:18:32,300
+situation where it in order to scale the focus on the head and
+
+241
+00:18:33,820 --> 00:18:39,780
+More often than not you'll find that between three to five to seven times
+
+242
+00:18:40,620 --> 00:18:46,820
+The thingies whatever you're measuring with that histogram are in the body and the tail
+
+243
+00:18:47,700 --> 00:18:51,580
+Then in the head so you you you really
+
+244
+00:18:53,140 --> 00:18:55,140
+Cannot ignore that tail
+
+245
+00:18:55,730 --> 00:18:57,850
+But when you have so much
+
+246
+00:18:59,130 --> 00:19:01,100
+manual
+
+247
+00:19:01,100 --> 00:19:03,100
+work as
+
+248
+00:19:03,300 --> 00:19:05,420
+As a requirement for moving
+
+249
+00:19:06,220 --> 00:19:08,140
+needles forward
+
+250
+00:19:08,140 --> 00:19:11,020
+You really can't scale to go in and you know
+
+251
+00:19:11,260 --> 00:19:16,580
+Talk to every one of those customers you have you end up focusing on the head
+
+252
+00:19:16,580 --> 00:19:21,500
+So here's it's around. How do we scale? Okay, the the second problem?
+
+253
+00:19:22,580 --> 00:19:24,780
+that we're we're working through is
+
+254
+00:19:26,780 --> 00:19:29,060
+Essentially confirmation bias or or
+
+255
+00:19:30,260 --> 00:19:34,020
+It's closer to what what is known as the Texas sharpshooter bias
+
+256
+00:19:34,700 --> 00:19:39,020
+Which is essentially we see a behavior with PM's that have an intuition
+
+257
+00:19:40,510 --> 00:19:46,870
+And it might even be a variant of data affirmed, right? They have an intuition
+
+258
+00:19:47,670 --> 00:19:52,870
+and then they go and scan the data for the subset of
+
+259
+00:19:54,390 --> 00:19:56,670
+Of data that proves their intuition
+
+260
+00:19:57,310 --> 00:20:03,940
+Right. Are you familiar with the Texas sharpshooter bias? I am now though. Yes. Yes
+
+261
+00:20:04,260 --> 00:20:08,420
+It's you think of it. They call it that way you think of it as you know
+
+262
+00:20:08,420 --> 00:20:15,620
+A Texan shooting at a barn and he's got his eyes closed and hey, I could do this bang bang bang bang
+
+263
+00:20:15,620 --> 00:20:21,820
+He he shoots shoots at the bar. Okay, and then once all of his ammunition is gone
+
+264
+00:20:21,820 --> 00:20:25,900
+he goes and looks at the barn and then draws the target and
+
+265
+00:20:26,700 --> 00:20:33,100
+And explains to everybody how look how awesome of a shot he is that that behavior is happening
+
+266
+00:20:34,980 --> 00:20:38,100
+Where we're at is trying to figure out
+
+267
+00:20:38,700 --> 00:20:41,660
+how to use the data and
+
+268
+00:20:41,980 --> 00:20:45,900
+Convert it to benefits of customer. I mean that's rather generic
+
+269
+00:20:46,900 --> 00:20:50,780
+I think everyone's trying to do that to some degree
+
+270
+00:20:52,140 --> 00:20:56,700
+Here is a single most interesting problem that I will be facing the next six months
+
+271
+00:20:57,620 --> 00:21:00,660
+Microsoft Azure for example has a lot of
+
+272
+00:21:01,900 --> 00:21:07,420
+And again, just as a quick reminder for everyone. Azure is like AWS or GCP. Anyway, go on
+
+273
+00:21:11,760 --> 00:21:12,800
+Yeah
+
+274
+00:21:12,840 --> 00:21:19,320
+Except Azure continuously threatens to take over AWS and no one actually talks about GCP
+
+275
+00:21:19,800 --> 00:21:23,440
+And as a side note IBM has one as well
+
+276
+00:21:24,320 --> 00:21:28,400
+That just came out of nowhere. Oh, and there's a lot of smaller ones out there too
+
+277
+00:21:28,400 --> 00:21:35,790
+But anyway, I'm I don't want to go into a tangent because I'm unsure where this story is going now. So
+
+278
+00:21:36,430 --> 00:21:38,460
+it's essentially
+
+279
+00:21:38,500 --> 00:21:40,500
+my mission is
+
+280
+00:21:41,540 --> 00:21:43,580
+essentially to
+
+281
+00:21:43,700 --> 00:21:45,860
+guide the PM's on
+
+282
+00:21:47,180 --> 00:21:49,660
+effective usage of data
+
+283
+00:21:50,460 --> 00:21:52,030
+to
+
+284
+00:21:52,030 --> 00:21:54,390
+drive better more
+
+285
+00:21:55,390 --> 00:21:56,710
+valuable
+
+286
+00:21:56,710 --> 00:21:58,590
+backlogs
+
+287
+00:21:58,590 --> 00:22:05,070
+The thing is mine after I got get that rolling and I've already talked with my VP
+
+288
+00:22:05,070 --> 00:22:12,790
+Like one of the things that's gonna happen as a result is it's gonna force a requirement on the engineering teams to be
+
+289
+00:22:13,750 --> 00:22:15,750
+significantly more adaptable
+
+290
+00:22:17,460 --> 00:22:20,940
+And that will probably create a few headaches
+
+291
+00:22:21,540 --> 00:22:26,180
+We in Azure we we have we operate a service
+
+292
+00:22:27,420 --> 00:22:29,420
+We are fairly
+
+293
+00:22:30,740 --> 00:22:34,300
+Agile given our size right there's there's
+
+294
+00:22:35,560 --> 00:22:38,240
+easily 10,000 people working on Azure
+
+295
+00:22:38,990 --> 00:22:44,870
+The the next thing then is going to figure out. Okay, how can I remove the
+
+296
+00:22:45,870 --> 00:22:51,040
+remove or significantly cut back the PM role, right if if
+
+297
+00:22:51,680 --> 00:22:57,880
+PM's get talented at using the data to to evaluate the
+
+298
+00:22:58,680 --> 00:23:04,550
+The next steps and as well as more efficiently evaluate the opportunity of those next steps
+
+299
+00:23:04,550 --> 00:23:06,840
+That's the biggest problem is
+
+300
+00:23:07,480 --> 00:23:12,800
+The other behavior we see is they go talk to a single customer and that customer is
+
+301
+00:23:13,200 --> 00:23:16,080
+Is a member of what you would call the vocal minority?
+
+302
+00:23:17,040 --> 00:23:19,440
+you'll see them executing a huge amount of
+
+303
+00:23:20,000 --> 00:23:22,000
+engineering resources and
+
+304
+00:23:22,510 --> 00:23:29,910
+Then at the end of the day not see the big the big business needles move significantly, right?
+
+305
+00:23:29,910 --> 00:23:33,150
+It's because yeah, you just spent half of your engineering team
+
+306
+00:23:33,150 --> 00:23:37,030
+working on a one-off for three customers
+
+307
+00:23:38,070 --> 00:23:43,150
+anyway, so let me you know that Saturday Night Live skit where
+
+308
+00:23:44,390 --> 00:23:48,870
+Someone's talking about something but not really the thing they think they're talking about
+
+309
+00:23:49,470 --> 00:23:56,420
+So let me do that with you slightly. So that's so the problem is is the
+
+310
+00:23:56,940 --> 00:24:00,900
+Taintedness of Microsoft a little bit here. Let me explain why so we have
+
+311
+00:24:01,990 --> 00:24:05,390
+You know PM is an overloaded term
+
+312
+00:24:06,310 --> 00:24:10,910
+program managers at Microsoft typically are some hybrid combination of
+
+313
+00:24:12,310 --> 00:24:14,310
+typical program management
+
+314
+00:24:14,390 --> 00:24:20,640
+product management and project management and those are all you know project management is
+
+315
+00:24:21,720 --> 00:24:23,850
+Jira shepherding I
+
+316
+00:24:23,850 --> 00:24:30,050
+Call it that because we don't have we just don't have project managers in our org our dev leads are perfectly capable of doing that themselves
+
+317
+00:24:30,330 --> 00:24:34,570
+But we do have product managers who are responsible for
+
+318
+00:24:35,090 --> 00:24:39,450
+Talking to the customer defining the product figured out what we need to do for customers
+
+319
+00:24:39,450 --> 00:24:45,970
+And we could definitely help make them more data driven and then engineering deliver on the the development work for that
+
+320
+00:24:45,970 --> 00:24:48,370
+what program management does in
+
+321
+00:24:49,410 --> 00:24:51,970
+most of the real world and in my org is
+
+322
+00:24:53,460 --> 00:24:57,780
+One is to help the organization to understand progress as a whole
+
+323
+00:24:59,120 --> 00:25:03,440
+This is where you helped me with some stats a while back to help me get a better idea on how to
+
+324
+00:25:04,320 --> 00:25:07,720
+The big insight there was I was trying to track velocity
+
+325
+00:25:07,720 --> 00:25:11,280
+But I had like hundreds of projects and Brent just without thinking about it says well
+
+326
+00:25:11,280 --> 00:25:15,700
+We'll just use the week started as the as the cohort and it's like oh now it's easy
+
+327
+00:25:15,700 --> 00:25:23,000
+I just couldn't figure out where to start. So thank you again for that to figure out what systemic problems the organization is encountering
+
+328
+00:25:23,680 --> 00:25:29,400
+also to make sure and in that making sure that product managers those who talk to the customers to find the product and
+
+329
+00:25:30,280 --> 00:25:36,640
+delivery owners the engineering leadership across the org are working together cohesively and then
+
+330
+00:25:37,880 --> 00:25:45,140
+Once we identify those any problems or obstacles or agile word impediments in the way product and then during our working
+
+331
+00:25:45,800 --> 00:25:50,280
+By or my soon to be had program small program management team
+
+332
+00:25:50,760 --> 00:25:53,240
+Will dive in on on those
+
+333
+00:25:55,660 --> 00:25:57,660
+given that lens of
+
+334
+00:25:58,140 --> 00:26:04,940
+Program management the way I'm running it and I think it's more typical than the than the hybrid role at Microsoft
+
+335
+00:26:04,940 --> 00:26:08,540
+I intend to use my program managers
+
+336
+00:26:09,180 --> 00:26:12,300
+much like I use my quality coaches as
+
+337
+00:26:13,810 --> 00:26:15,530
+agile coaches
+
+338
+00:26:15,530 --> 00:26:20,010
+Helping teams figure out. I have another tangent to go in in there helping teams figure out
+
+339
+00:26:20,010 --> 00:26:25,090
+What is blocking them like like I can't scale enough to attend team retros
+
+340
+00:26:25,090 --> 00:26:28,370
+But I'm hoping my program managers and quality coaches for example can
+
+341
+00:26:28,890 --> 00:26:34,210
+Can attend those retros help people figure out how to find their?
+
+342
+00:26:34,850 --> 00:26:39,330
+Problems and obstacles and impediments and then make sure they have ideas and how to improve those
+
+343
+00:26:40,460 --> 00:26:44,580
+Yeah, actually as I'm thinking about it. I haven't thought about it until right now, but I will
+
+344
+00:26:45,580 --> 00:26:53,020
+Program managers on my team. Of course, I'll probably stick them on some of the larger hairy projects that I I don't get enough time
+
+345
+00:26:53,020 --> 00:26:56,860
+They'll help me scale because often for that part of my role
+
+346
+00:26:56,980 --> 00:27:01,540
+It's just a lot of coaching some tracking some some metrics on things that I care about
+
+347
+00:27:01,540 --> 00:27:04,700
+But mostly a lot of coaching and helping people figure things out
+
+348
+00:27:05,340 --> 00:27:09,380
+That'll help me scale that quite a bit. So I there's gonna be a lot of overlap in
+
+349
+00:27:10,260 --> 00:27:15,740
+Mission between them and the people who are in sort of a quality coach consultant role on my team
+
+350
+00:27:16,260 --> 00:27:21,640
+So that's one way. I think I can use them one quick tangent
+
+351
+00:27:21,640 --> 00:27:24,000
+I'm gonna shut up for a minute is I just did
+
+352
+00:27:24,600 --> 00:27:26,920
+It was stupidly easy to do
+
+353
+00:27:27,680 --> 00:27:34,000
+We had some questions on like how do we get teams to not get better estimates?
+
+354
+00:27:34,000 --> 00:27:36,000
+That's a fool's errand but to understand
+
+355
+00:27:36,840 --> 00:27:38,840
+Actually, it was how do we get teams to do better planning?
+
+356
+00:27:39,480 --> 00:27:46,080
+Because for me, I don't care about the estimate. I care that you actually did the right planning to to reduce risk and
+
+357
+00:27:46,800 --> 00:27:52,760
+I did an experiment where I got six different teams to begin using story points for about six weeks
+
+358
+00:27:52,760 --> 00:27:56,000
+check some data on capacity and plan to work etc and
+
+359
+00:27:56,640 --> 00:27:58,270
+as
+
+360
+00:27:58,270 --> 00:28:02,030
+expected things were better and and the and the feedback from the team on
+
+361
+00:28:02,750 --> 00:28:06,590
+How things went and change was like over the top good
+
+362
+00:28:06,630 --> 00:28:12,630
+But all that happened was because they had to do story points and the team had to agree on assigning a number is they got
+
+363
+00:28:12,630 --> 00:28:19,550
+better at planning and I couldn't say I'm gonna do an experiment where I track how well teams are doing on improving planning because
+
+364
+00:28:19,550 --> 00:28:21,070
+They that would be BS
+
+365
+00:28:21,070 --> 00:28:26,350
+But if I call it story points and then teams are super happy and they feel like they're doing better planning and the work shows
+
+366
+00:28:26,350 --> 00:28:28,830
+that then all of a sudden people are excited about it, but
+
+367
+00:28:29,230 --> 00:28:32,510
+Doing more things like that to help teams become more
+
+368
+00:28:33,350 --> 00:28:37,790
+I don't want to say predictable though to come out of it, but just help them, you know
+
+369
+00:28:37,790 --> 00:28:40,550
+Give them more tools to stumble towards success
+
+370
+00:28:41,150 --> 00:28:46,570
+So anyway that reframing relensing and an example there
+
+371
+00:28:47,570 --> 00:28:49,570
+curious on your thoughts on that
+
+372
+00:28:50,330 --> 00:28:53,370
+So a big portion of what you said
+
+373
+00:28:54,530 --> 00:28:56,530
+to me seems
+
+374
+00:28:56,530 --> 00:29:00,050
+They again an exact match to
+
+375
+00:29:01,050 --> 00:29:03,050
+To what I'm working through
+
+376
+00:29:03,250 --> 00:29:09,460
+Right. I heard you mentioned that you work you're gonna put them on sort of sticky problems
+
+377
+00:29:10,380 --> 00:29:12,380
+right and and and
+
+378
+00:29:12,500 --> 00:29:14,960
+smoke jumping
+
+379
+00:29:14,960 --> 00:29:18,660
+Yeah, I don't have enough coffee to follow that metaphor
+
+380
+00:29:18,680 --> 00:29:23,000
+So so they're gonna go in and put out a fire somewhere. So we have an org of three
+
+381
+00:29:23,000 --> 00:29:29,520
+It's not Azure 10,000 which I could look over at the listeners over here a little ridiculous, right? So
+
+382
+00:29:31,040 --> 00:29:34,600
+350 engineers and at any one time there are
+
+383
+00:29:35,320 --> 00:29:39,920
+Right now 70 probably go into about 80 different projects in flight at once
+
+384
+00:29:41,000 --> 00:29:46,400
+Some of those are bigger than others and some need a little bit more corralling than I have time to scale to do
+
+385
+00:29:46,600 --> 00:29:50,040
+So I would love to say hey person a it looks like
+
+386
+00:29:50,650 --> 00:29:55,490
+Team be delivering these five projects that all work together could use a little help
+
+387
+00:29:56,410 --> 00:29:59,290
+Making sure they're doing the right planning and delivery
+
+388
+00:29:59,290 --> 00:30:05,090
+I want to understand what their obstacles are see if there's systemic problems we can fix things like that
+
+389
+00:30:05,090 --> 00:30:09,810
+I can put them on projects that I just don't have time. I just don't have the time to scale what to right now
+
+390
+00:30:11,180 --> 00:30:13,180
+so you're the the
+
+391
+00:30:13,340 --> 00:30:19,180
+The org you're inheriting are are they closer to sort of DevOps live site type
+
+392
+00:30:20,270 --> 00:30:21,610
+problems
+
+393
+00:30:21,610 --> 00:30:23,610
+Not a not a feature
+
+394
+00:30:23,890 --> 00:30:25,890
+owners, it's how
+
+395
+00:30:26,400 --> 00:30:32,500
+No, so, of course, I will continue to run DevOps and my and docs and other stuff other matrix orgs
+
+396
+00:30:32,620 --> 00:30:38,420
+but program management again going back to what I want our organization to do is is
+
+397
+00:30:39,140 --> 00:30:47,220
+help the team understand progress find obstacles that to progress and then velocity slash predictability and quality and
+
+398
+00:30:48,020 --> 00:30:52,940
+Find solutions for those over time. Some of those are just measuring things broadly across the org
+
+399
+00:30:53,340 --> 00:30:57,060
+Sometimes it's diving deep into part of the org to help them solve something
+
+400
+00:30:57,700 --> 00:31:02,060
+To help them solve a problem local to a smaller part of the org
+
+401
+00:31:02,920 --> 00:31:07,560
+Okay, but it's about it's about software. It's software delivery everything from
+
+402
+00:31:08,400 --> 00:31:11,160
+services that we update multiple times a day to
+
+403
+00:31:11,840 --> 00:31:13,840
+websites and SDKs
+
+404
+00:31:14,610 --> 00:31:19,550
+So the the reason why I asked that question is because what I didn't hear you
+
+405
+00:31:20,370 --> 00:31:23,090
+say is anything I want the lines of
+
+406
+00:31:24,910 --> 00:31:26,910
+searching for
+
+407
+00:31:27,140 --> 00:31:31,340
+better more valuable opportunities. So what I hear you say is
+
+408
+00:31:32,500 --> 00:31:40,180
+problem searching for problems and putting out the fire which is a bit reactive. Yeah, actually that's a good call out
+
+409
+00:31:40,180 --> 00:31:42,220
+so something you're saying I
+
+410
+00:31:42,340 --> 00:31:48,020
+Think I interrupted before you finish saying what you're saying to say there should be a more proactive
+
+411
+00:31:48,740 --> 00:31:51,780
+Aspect to this role and I think you're right. Please continue. Oh
+
+412
+00:31:52,460 --> 00:31:53,860
+so
+
+413
+00:31:53,860 --> 00:31:56,060
+I'm not gonna load up the slide but
+
+414
+00:31:56,740 --> 00:32:00,940
+Again, but the the message that I try to get across there is that the power
+
+415
+00:32:01,780 --> 00:32:04,940
+Really comes from intuition plus
+
+416
+00:32:05,740 --> 00:32:08,100
+data
+
+417
+00:32:08,100 --> 00:32:11,420
+Unfortunately as with the tech that stands today
+
+418
+00:32:12,780 --> 00:32:14,780
+data AI
+
+419
+00:32:15,300 --> 00:32:16,380
+doesn't
+
+420
+00:32:16,380 --> 00:32:18,380
+have the ability to
+
+421
+00:32:18,740 --> 00:32:20,660
+to tell you
+
+422
+00:32:20,660 --> 00:32:24,580
+Doesn't have the ability to construct game changers. I
+
+423
+00:32:26,090 --> 00:32:28,090
+Can't come up with a great example
+
+424
+00:32:28,210 --> 00:32:34,850
+At the moment there have been times in the past and maybe it'll slowly page load as I tell the story
+
+425
+00:32:34,850 --> 00:32:40,690
+But in times in the past we look at the telemetry and the scenario we targeted and
+
+426
+00:32:41,320 --> 00:32:43,320
+the people who are
+
+427
+00:32:44,520 --> 00:32:46,520
+active users
+
+428
+00:32:47,460 --> 00:32:50,380
+Don't align. I
+
+429
+00:32:50,740 --> 00:32:57,900
+Shift something out and I have a particular customer segment in mind and I see that none of those customer segments are
+
+430
+00:32:59,100 --> 00:33:05,660
+Using the product, but there's this whole other customer segment that is you know, sending positive feedback
+
+431
+00:33:06,300 --> 00:33:10,260
+actively using it and we're like, oh wait a minute we actually
+
+432
+00:33:11,060 --> 00:33:14,480
+we failed at building a solution for segment a
+
+433
+00:33:15,480 --> 00:33:20,800
+but we accidentally succeeded in building a solution for segment B and
+
+434
+00:33:22,400 --> 00:33:23,600
+Actually
+
+435
+00:33:23,600 --> 00:33:24,960
+Given that I
+
+436
+00:33:24,960 --> 00:33:32,120
+I've been in one conversation. We're like, wait a minute. Are we in are we targeting the completely wrong business?
+
+437
+00:33:33,260 --> 00:33:39,140
+In turns out that in that scenario, I guess we were we repivoted and it's thriving
+
+438
+00:33:39,860 --> 00:33:45,480
+Anyway, so yeah, I again, I do think that we're on the the same page
+
+439
+00:33:46,440 --> 00:33:51,280
+So for in a lot of regards, I'm just coming at it from a data science aspect. I
+
+440
+00:33:52,260 --> 00:33:56,660
+Am partnering with throughout Azure. I am partnering with
+
+441
+00:33:58,660 --> 00:34:03,060
+It's probably closer to ten versions of your future role Alan
+
+442
+00:34:03,260 --> 00:34:10,340
+But at times it feels like thousands because they send their ICPMs to me too and we're all on the same page. I
+
+443
+00:34:11,740 --> 00:34:18,780
+That team brings sort of a wealth of history around customer problems customer engagements customer feedback
+
+444
+00:34:19,300 --> 00:34:21,500
+it's the
+
+445
+00:34:21,500 --> 00:34:23,500
+Here's the great way of saying it
+
+446
+00:34:24,390 --> 00:34:26,390
+EQ and IQ
+
+447
+00:34:26,870 --> 00:34:30,100
+Right. How how do we get EQ and IQ?
+
+448
+00:34:30,980 --> 00:34:38,460
+Working together towards common goals and I will say the the program management org is often chock full of EQ
+
+449
+00:34:39,390 --> 00:34:40,590
+Yes
+
+450
+00:34:40,590 --> 00:34:47,670
+Right. The the other problem is they're also often chock full of ego and I'm sure not actually your employees
+
+451
+00:34:47,790 --> 00:34:52,010
+Well again, you need to take your Microsoft skewed lens off there
+
+452
+00:34:52,010 --> 00:34:55,150
+So if you go back to the Weinberg quote eventually, it's always a people problem
+
+453
+00:34:55,950 --> 00:35:01,070
+Horribly paraphrased but that's what they when I wear the program management hat. That's what I do
+
+454
+00:35:01,070 --> 00:35:03,970
+it's about figuring out getting people to
+
+455
+00:35:04,990 --> 00:35:06,730
+reflect and
+
+456
+00:35:06,730 --> 00:35:09,610
+Discover what it is. They're missing and make changes. I
+
+457
+00:35:11,010 --> 00:35:13,090
+So to push back on your pushback
+
+458
+00:35:13,090 --> 00:35:21,210
+I don't think I'm in a bubble when I say it's a common phenomenon in the program management org that
+
+459
+00:35:22,860 --> 00:35:27,900
+Several of those folks believe themselves to be the second coming of Steve Jobs
+
+460
+00:35:28,700 --> 00:35:32,380
+Again, those people exist in product management not in program management
+
+461
+00:35:33,490 --> 00:35:39,490
+Okay. So one of the problems is yeah, no, no Microsoft doesn't have a product management role
+
+462
+00:35:40,130 --> 00:35:45,570
+Right. So you're taking over product management. No, no, that's a whole other org
+
+463
+00:35:45,570 --> 00:35:46,690
+Oh
+
+464
+00:35:46,690 --> 00:35:52,610
+So they work and my job is to make sure that and actually the big biggest part of my job as a program manager
+
+465
+00:35:52,610 --> 00:35:57,410
+Hat is to make sure product and engineering are aligned and in sync
+
+466
+00:35:58,880 --> 00:36:05,240
+So I make sure they work together actually, it's I mean it could be luckily it's not it's just
+
+467
+00:36:05,760 --> 00:36:13,680
+nudging them towards the proper reflection and figuring out the right ways to work together the right ways to recognize dependencies the right way to
+
+468
+00:36:13,680 --> 00:36:20,760
+plan their work another example is I help them and everybody uses the word MVP and
+
+469
+00:36:21,880 --> 00:36:24,520
+Most of them mean different things. I one of the things
+
+470
+00:36:25,240 --> 00:36:30,560
+Manager hat is I help I remind them what an MVP is and what it's for
+
+471
+00:36:31,280 --> 00:36:33,920
+Which in what is it for?
+
+472
+00:36:36,600 --> 00:36:47,890
+It's to learn it's to give every feature you can to to match your competitor because if you don't have all of your competitors features
+
+473
+00:36:47,890 --> 00:36:49,500
+It's not an MVP
+
+474
+00:36:49,500 --> 00:36:51,500
+Well, yeah
+
+475
+00:36:52,420 --> 00:36:59,540
+What is the minimum thing we have to do in order to learn if we're heading in the right direction or not or to
+
+476
+00:37:00,020 --> 00:37:04,200
+Or to validate or invalidate our smallest hypothesis
+
+477
+00:37:06,610 --> 00:37:08,720
+Smallest
+
+478
+00:37:08,720 --> 00:37:14,800
+In general. Yes, the smallest amount of work we have to do to validate or invalidate our hypothesis
+
+479
+00:37:14,800 --> 00:37:16,520
+Well, it's not a matter of work
+
+480
+00:37:16,520 --> 00:37:21,000
+We have to do to learn what we need to learn to pivot or persevere, right?
+
+481
+00:37:21,000 --> 00:37:27,680
+Is it that so and we've talked about the concierge MVP here before so sometimes it's like let's just munch this on the back
+
+482
+00:37:27,680 --> 00:37:29,680
+And see if they like this. Let's put out the button
+
+483
+00:37:30,240 --> 00:37:36,520
+We've we even got as far as like don't even do the button that says coming soon. Just let the button 404
+
+484
+00:37:36,520 --> 00:37:40,940
+That's less work. If if you put if I if I
+
+485
+00:37:41,810 --> 00:37:49,370
+So I will freely admit I will probably continue to struggle on what is the distinction between a product and a program management
+
+486
+00:37:49,930 --> 00:37:53,770
+Right. We have we call it all program management
+
+487
+00:37:54,700 --> 00:37:56,700
+Here I have no doubt
+
+488
+00:37:58,250 --> 00:38:04,330
+That the that the role is served here at Microsoft. It's just under the same mantra. So
+
+489
+00:38:05,970 --> 00:38:07,090
+However
+
+490
+00:38:07,090 --> 00:38:09,440
+the if if what you
+
+491
+00:38:10,320 --> 00:38:17,380
+Do with your team is say look I'm gonna hold you accountable
+
+492
+00:38:18,020 --> 00:38:20,640
+for the ROI of the engineering org
+
+493
+00:38:22,560 --> 00:38:28,560
+Your job is to provide the most bit bit the the most business value
+
+494
+00:38:29,900 --> 00:38:33,980
+using the least amount of engineering resources as possible and
+
+495
+00:38:35,040 --> 00:38:37,440
+Validated value. That's the print of the MVP
+
+496
+00:38:38,280 --> 00:38:40,840
+like if if you ship something and
+
+497
+00:38:42,030 --> 00:38:44,990
+I don't want to hear a bunch of pretty speeches around
+
+498
+00:38:45,710 --> 00:38:49,590
+This is this is one negative thing that happens at Microsoft
+
+499
+00:38:50,430 --> 00:38:52,910
+every year in May June is
+
+500
+00:38:53,750 --> 00:38:57,050
+Is all the ship announcements come out in?
+
+501
+00:38:57,170 --> 00:39:02,410
+In teams have no, you know managers often have to differentiate
+
+502
+00:39:03,540 --> 00:39:04,620
+on
+
+503
+00:39:04,620 --> 00:39:06,340
+BS
+
+504
+00:39:06,340 --> 00:39:08,340
+things it's
+
+505
+00:39:08,740 --> 00:39:10,740
+It's it's an old-school
+
+506
+00:39:11,510 --> 00:39:18,070
+culture that's still to some degree persists here it is we celebrate
+
+507
+00:39:18,950 --> 00:39:20,950
+shipping not
+
+508
+00:39:21,950 --> 00:39:23,950
+Celebrate moving
+
+509
+00:39:23,990 --> 00:39:30,380
+The needle and that's the big thing that can't you celebrate both?
+
+510
+00:39:31,210 --> 00:39:34,010
+You can and you probably should
+
+511
+00:39:36,950 --> 00:39:38,950
+But they in my mind
+
+512
+00:39:39,470 --> 00:39:46,350
+Should not be weighted anywhere close to the same and we don't load everything because I actually
+
+513
+00:39:47,470 --> 00:39:49,470
+one of the things I do
+
+514
+00:39:49,710 --> 00:39:51,390
+to support
+
+515
+00:39:51,390 --> 00:39:57,270
+My alignment of product and engineering is I have a 30 minute sync meeting each week
+
+516
+00:39:57,750 --> 00:39:59,750
+Where I go over products at risk
+
+517
+00:40:00,270 --> 00:40:04,870
+Talk about what why delays are in place. I offer a little bit of coaching in that meeting
+
+518
+00:40:05,880 --> 00:40:09,560
+It's a way to celebrate our culture of transparency and what's going on
+
+519
+00:40:10,200 --> 00:40:16,760
+And a way to accelerate learning. It's all it's really more about building the culture and celebrating the culture
+
+520
+00:40:17,640 --> 00:40:22,170
+Than a status meeting, but I use it to help create alignment
+
+521
+00:40:22,170 --> 00:40:28,290
+But I also send out notes every week and so at the top of that every week is projects completed
+
+522
+00:40:28,290 --> 00:40:30,090
+So we celebrate completion
+
+523
+00:40:30,090 --> 00:40:33,930
+Weekly and we ship between these are customer impacting things
+
+524
+00:40:33,930 --> 00:40:39,810
+So between five and ten things a week across the org, so we celebrate that frequently
+
+525
+00:40:39,810 --> 00:40:44,810
+But we also celebrate another means moving the needle in a variety of different ways
+
+526
+00:40:44,850 --> 00:40:49,410
+Well, so it's it's an end versus a means right?
+
+527
+00:40:50,250 --> 00:40:54,130
+One of the I have some the last couple of months I have
+
+528
+00:40:55,370 --> 00:40:59,060
+doubled the size of my team and so I have a bunch of
+
+529
+00:40:59,660 --> 00:41:04,820
+Brand new folks never worked at Microsoft before and one of them is is
+
+530
+00:41:05,460 --> 00:41:07,460
+very high level and
+
+531
+00:41:09,260 --> 00:41:14,180
+He's sort of struggling because I think he got hired into a level of
+
+532
+00:41:15,020 --> 00:41:17,570
+a band too high
+
+533
+00:41:17,810 --> 00:41:20,370
+and and I'm like look
+
+534
+00:41:21,580 --> 00:41:26,780
+He put in his connect or his review as part of it. We communicate
+
+535
+00:41:27,540 --> 00:41:33,580
+What we're gonna go after what is our personal mission in the unity context and what is our goal?
+
+536
+00:41:33,580 --> 00:41:39,100
+And he's like, you know what? I am going to be really proud if at the end of the next six months
+
+537
+00:41:39,100 --> 00:41:41,100
+I have built a tool and
+
+538
+00:41:41,600 --> 00:41:42,960
+And
+
+539
+00:41:42,960 --> 00:41:47,920
+It's generating insights like crazy. Okay, and I'm like, okay I get that
+
+540
+00:41:49,400 --> 00:41:56,080
+However, I need you to understand in the band that you're in the business does not care
+
+541
+00:41:57,280 --> 00:42:02,100
+What the care is that you're taking on and and moving the needle
+
+542
+00:42:02,920 --> 00:42:10,960
+Anything else is just the means to an ends if you were a lower level. Yeah, we care because it's part of you
+
+543
+00:42:11,920 --> 00:42:14,240
+Maturing and growing and being part of this
+
+544
+00:42:15,560 --> 00:42:22,640
+Learning how to get things done in this particular culture, but at the band that he's in it's it's
+
+545
+00:42:23,280 --> 00:42:28,360
+Yeah, a lot of those rules go out the window because it's already expected that you know
+
+546
+00:42:29,080 --> 00:42:31,180
+how to do
+
+547
+00:42:31,220 --> 00:42:32,860
+These things
+
+548
+00:42:32,860 --> 00:42:37,520
+You know how to build tools, you know how to to produce software, you know how?
+
+549
+00:42:38,280 --> 00:42:42,560
+I'm trying to get his bar set to the correct place
+
+550
+00:42:44,490 --> 00:42:51,760
+Likewise, like if you take your program management team, like I said if your team it is sort of the
+
+551
+00:42:52,480 --> 00:42:56,780
+The subjective voice of the customer and the qualitative feedback
+
+552
+00:42:57,500 --> 00:42:59,500
+How do we close that loop?
+
+553
+00:42:59,700 --> 00:43:05,260
+The the you need EQ and IQ to really master the scenario
+
+554
+00:43:05,820 --> 00:43:07,420
+Says this man
+
+555
+00:43:07,420 --> 00:43:13,690
+I don't know that there's science that validates what I just said, but it is certainly it is a
+
+556
+00:43:14,610 --> 00:43:20,250
+Set of beliefs that have been baked into my experience. I think this will be a continued
+
+557
+00:43:20,250 --> 00:43:23,290
+I want to move towards a wrap-up here. I think this will be a continued
+
+558
+00:43:24,450 --> 00:43:26,330
+discussion I
+
+559
+00:43:26,330 --> 00:43:31,170
+Again, I want to get it's we're about helping the team manage predictability
+
+560
+00:43:32,050 --> 00:43:34,050
+velocity and quality and
+
+561
+00:43:34,610 --> 00:43:39,250
+We do that by aligning product and engineering and finding problems and solving those
+
+562
+00:43:39,250 --> 00:43:44,010
+So I want to be able to get you out of the Microsoft PM
+
+563
+00:43:45,030 --> 00:43:48,350
+box and think about it's really much more of a
+
+564
+00:43:49,310 --> 00:43:51,150
+agile coach and
+
+565
+00:43:51,150 --> 00:43:54,590
+problem solver role so but I do want to talk about
+
+566
+00:43:55,510 --> 00:43:57,510
+coming up is
+
+567
+00:43:58,350 --> 00:44:00,350
+If we're responsible for delivery
+
+568
+00:44:01,480 --> 00:44:05,520
+Predictability and quality the metrics we track the metrics
+
+569
+00:44:05,520 --> 00:44:06,520
+I track
+
+570
+00:44:06,520 --> 00:44:12,040
+Around that and see what you think about those because I do I did put some metrics in place and they make sense to me
+
+571
+00:44:12,040 --> 00:44:14,540
+And they're not driving the wrong behavior. So I like them
+
+572
+00:44:15,040 --> 00:44:21,120
+What metrics I said I talk about him another time. That's a teaser and speaking of teasers
+
+573
+00:44:21,120 --> 00:44:24,680
+I had a meeting just before I tease this on the one of the three slack
+
+574
+00:44:25,120 --> 00:44:32,120
+Group which you can join the short answer is I was trying to get someone to move someone to my org not a PM different
+
+575
+00:44:32,120 --> 00:44:34,120
+different different role I managed and
+
+576
+00:44:34,680 --> 00:44:36,400
+they I
+
+577
+00:44:36,400 --> 00:44:39,840
+Did not agree they did not get them to agree to move them
+
+578
+00:44:40,480 --> 00:44:47,560
+But I did get them to agree to let the employee make the choice which actually is better in my experience
+
+579
+00:44:47,560 --> 00:44:52,960
+They're gonna they're gonna let the the person choose whether they want to stay in their current org or move to my org
+
+580
+00:44:53,200 --> 00:44:55,200
+So I'm actually
+
+581
+00:44:55,200 --> 00:45:00,220
+Even though we don't I don't have an answer. It's still up in the air. I'm I'm happy with that
+
+582
+00:45:01,440 --> 00:45:02,630
+Outcome
+
+583
+00:45:02,630 --> 00:45:07,710
+Yeah, one of the positive things that has changed here at Microsoft if you remember back in the day
+
+584
+00:45:07,710 --> 00:45:13,250
+There was the no pooching role. Yeah, that was gone before I left you saw a pooching
+
+585
+00:45:14,090 --> 00:45:15,130
+poaching
+
+586
+00:45:15,130 --> 00:45:17,690
+Poaching yeah, and now it's yeah
+
+587
+00:45:17,690 --> 00:45:22,570
+you can and I love and this is a you know, I rank on Microsoft a little bit because
+
+588
+00:45:22,650 --> 00:45:23,810
+and
+
+589
+00:45:23,810 --> 00:45:30,410
+Honestly JW's article on why he left. It's like the the old guard are slowing down Microsoft and
+
+590
+00:45:31,170 --> 00:45:35,370
+And I was working for a lot of the old guard and just drove me freakin baddie towards the end
+
+591
+00:45:35,890 --> 00:45:40,210
+but I love that HR had the kahanas to
+
+592
+00:45:40,690 --> 00:45:48,050
+On their site about management said poaching was okay. They didn't call a poaching. So what happens if all my employees leave and
+
+593
+00:45:48,530 --> 00:45:50,530
+And
+
+594
+00:45:50,530 --> 00:45:52,690
+You're not a manager anymore, are you?
+
+595
+00:45:54,690 --> 00:45:57,010
+Yeah, no the
+
+596
+00:45:57,010 --> 00:46:00,370
+Right it did that same call out on nature web
+
+597
+00:46:01,410 --> 00:46:08,210
+Says explicitly the only way to guarantee your employees stays is
+
+598
+00:46:08,730 --> 00:46:14,570
+For you to ensure your environment is better than alternatives. Yep
+
+599
+00:46:15,090 --> 00:46:17,590
+And I love that I do too
+
+600
+00:46:18,310 --> 00:46:23,870
+What happens if all your employees leave? Well Darwinism kicks in that's what happens
+
+601
+00:46:24,870 --> 00:46:26,190
+right and
+
+602
+00:46:26,190 --> 00:46:28,190
+net benefit to the business
+
+603
+00:46:28,990 --> 00:46:30,710
+CS love II
+
+604
+00:46:30,710 --> 00:46:31,950
+however
+
+605
+00:46:31,950 --> 00:46:39,470
+however, and one last dig before we go is there's not always a good motivation to do that because of
+
+606
+00:46:39,630 --> 00:46:43,670
+and although stack ranking is over the
+
+607
+00:46:44,110 --> 00:46:49,310
+Performance review process still says if you want more money and more options
+
+608
+00:46:49,750 --> 00:46:53,590
+You go be the best person on a crappy team
+
+609
+00:46:53,910 --> 00:46:58,590
+Then go join a good team where you can learn more and deliver more ish
+
+610
+00:46:59,350 --> 00:47:03,510
+That was well, I don't know. Let's change. It was a hundred percent true three years ago
+
+611
+00:47:04,700 --> 00:47:06,820
+And as I mentioned the old guard is still there
+
+612
+00:47:07,100 --> 00:47:11,700
+But so I'll just I'll just plant that seed you can add one rebuttal and then we're gonna say goodbye
+
+613
+00:47:13,020 --> 00:47:15,020
+We can use the rebuttal
+
+614
+00:47:16,710 --> 00:47:19,110
+wouldn't that be great for a debate someone says and
+
+615
+00:47:20,230 --> 00:47:23,470
+Furthermore article 2 states that and you go ish
+
+616
+00:47:24,590 --> 00:47:32,030
+Mike drop. Yeah, I like I like I like doing you know going back to third grade and just you know respond with nah
+
+617
+00:47:32,270 --> 00:47:35,320
+I know you are but what am I? No
+
+618
+00:47:36,360 --> 00:47:40,370
+All right, everyone. I hope the livestream was a success
+
+619
+00:47:40,370 --> 00:47:44,170
+We're gonna do this again next time if you want to see the livestream
+
+620
+00:47:44,170 --> 00:47:50,730
+You're gonna have to go join one of the three slack group. I can go to modern testing org and find a link there and
+
+621
+00:47:52,210 --> 00:47:55,850
+Thanks the ten or twelve you the of the three that watched
+
+622
+00:47:55,850 --> 00:48:01,410
+I hope you get a chance to see or hear the hear
+
+623
+00:48:01,770 --> 00:48:10,290
+What it's like after I edit the scrap. Yeah, I'm puzzled. Should we be thanking them or apologizing to them actually apologizing
+
+624
+00:48:10,290 --> 00:48:12,290
+Yes, we're sorry
+
+625
+00:48:12,290 --> 00:48:14,010
+Please sorry
+
+626
+00:48:14,010 --> 00:48:16,010
+Please go back to watching Terminator
+
+627
+00:48:17,190 --> 00:48:20,710
+Yeah, or the expanse. Oh, yes. It's dances awesome
+
+628
+00:48:21,660 --> 00:48:24,740
+Okay. All right. Hey, thanks, Brett. See you next time
+

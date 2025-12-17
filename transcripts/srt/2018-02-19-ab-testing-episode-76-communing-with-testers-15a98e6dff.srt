@@ -1,0 +1,2896 @@
+1
+00:00:09,650 --> 00:00:18,060
+Hey, everybody. Howdy. I'm Alan. I'm Brent. Still, huh? Welcome to AB Testing. Especially
+
+2
+00:00:18,060 --> 00:00:22,940
+welcome to our new listeners. I did a webinar last week and picked up a few new listeners.
+
+3
+00:00:22,940 --> 00:00:29,660
+AB Testing is your best podcast in the world for, oh well, actually nothing. AB Podcast.
+
+4
+00:00:29,660 --> 00:00:35,900
+Going gently to sleep at night. AB Podcast is a possibly interesting podcast for those
+
+5
+00:00:35,900 --> 00:00:41,400
+interested in software quality. Agile testing and what Brent and I call modern testing. We
+
+6
+00:00:41,400 --> 00:00:48,340
+talk about everything from test management, leadership, agile quite a bit, software engineering,
+
+7
+00:00:48,340 --> 00:00:56,380
+tools, favorite colors, squirrels. And data science. And data science. Look, Brent, someone's
+
+8
+00:00:56,380 --> 00:01:01,880
+talking about data science. We did pick up a few new listeners, as I mentioned a moment
+
+9
+00:01:01,880 --> 00:01:09,760
+ago from, I gave a webinar on Tuesday. Was it Tuesday? Yes. Okay, that correlates.
+
+10
+00:01:09,760 --> 00:01:14,600
+Because Webinar Wednesday rolls off the tongue where that alliteration did not happen. You
+
+11
+00:01:14,600 --> 00:01:20,080
+know what? It really should be. I mean, that works perfect. Well, interestingly enough,
+
+12
+00:01:20,080 --> 00:01:25,840
+I don't even know which direction to go. The tangents are going to start. I gave the
+
+13
+00:01:25,840 --> 00:01:34,440
+webinar on Tuesday for AST on the use and abuse, capital AB for AB testing, abuse. Test
+
+14
+00:01:34,440 --> 00:01:38,840
+automation, give a lot of my rants, got some good feedback on that. I was really happy
+
+15
+00:01:38,840 --> 00:01:43,080
+with the way that went. Webinars are always tough because you can't read the audience.
+
+16
+00:01:43,080 --> 00:01:49,640
+And just to challenge myself again, doing another webinar next Tuesday. Not the next
+
+17
+00:01:49,640 --> 00:01:54,480
+week I'm skiing, the following Tuesday, the 27th I'll be giving a webinar. I put
+
+18
+00:01:54,480 --> 00:01:58,720
+the link on Twitter, but I'll put it in the show notes today. It's on the future of test
+
+19
+00:01:58,720 --> 00:02:04,880
+automation. I'm doing it with Orin, whose name I can't remember, who is the CEO at
+
+20
+00:02:04,880 --> 00:02:11,120
+TestM, test.im, who make a tool for applying machine learning to testing.
+
+21
+00:02:11,220 --> 00:02:17,420
+Nice. Yeah, I need like that part. But yet we have some different ideas on where things
+
+22
+00:02:17,420 --> 00:02:21,100
+are going. My ideas are very much aligned with what you and I talk about with modern
+
+23
+00:02:21,100 --> 00:02:23,500
+testing. I was a little concerned when you mentioned
+
+24
+00:02:23,500 --> 00:02:28,740
+that you're doing two person panel for that one. And I'm like, okay, who's this guy?
+
+25
+00:02:28,740 --> 00:02:31,860
+But now I feel a lot better about what this panel could be.
+
+26
+00:02:31,860 --> 00:02:38,020
+And what's really cool if you want to watch it is there will be a demo of his tool at
+
+27
+00:02:38,020 --> 00:02:41,940
+the end, which normally I don't like, ah, marketing thing. But he and I, we've actually
+
+28
+00:02:41,940 --> 00:02:46,060
+prepped for this thing. We spent some time talking about questions that may come up
+
+29
+00:02:46,060 --> 00:02:50,700
+and actually preparing for this thing, which is a new thing for me.
+
+30
+00:02:50,700 --> 00:02:58,380
+Wow. There is crazy crap going down the diesel end. How does that work?
+
+31
+00:02:58,380 --> 00:03:05,820
+So it may actually be all right. Nice. We already have a lot of people signed up to
+
+32
+00:03:05,820 --> 00:03:10,020
+help more of the three listen. Brent, again, for the new listeners, I've mentioned
+
+33
+00:03:10,020 --> 00:03:14,740
+the three a few times. Can you tell our new listeners what that means?
+
+34
+00:03:14,740 --> 00:03:21,020
+Yes, it's very simple. We have three listeners and we affectionately refer to them as the
+
+35
+00:03:21,020 --> 00:03:25,420
+three. And if any one of you asks a question, we say, oh, you're one of the three.
+
+36
+00:03:25,420 --> 00:03:31,660
+Absolutely. It's kind of like, I don't know, Jimmy Buffett calls his guys the parrot
+
+37
+00:03:31,660 --> 00:03:39,460
+heads. And then Justin Bieber has one. Who is this Justin Bieber?
+
+38
+00:03:39,460 --> 00:03:42,060
+Some stupid kid from Canada. Yeah, that sort of thing.
+
+39
+00:03:42,060 --> 00:03:47,220
+I'm going to Canada next week. I can't say dumb things about Canadians, perhaps, are listening.
+
+40
+00:03:47,220 --> 00:03:50,420
+Or perhaps they'll just apologize for Justin Bieber.
+
+41
+00:03:50,420 --> 00:03:54,420
+Well, yeah, they have several people to apologize for.
+
+42
+00:03:54,420 --> 00:03:57,500
+Oh, like we don't? Like we don't?
+
+43
+00:03:57,500 --> 00:04:05,020
+No, no, for sure. For sure. I was thinking Celine Dion. Anyway.
+
+44
+00:04:05,020 --> 00:04:09,740
+Oh, Brent, Brent, Brent, we're going to make so many people mad. We're going to have
+
+45
+00:04:09,740 --> 00:04:15,600
+two listeners next week. We always have three.
+
+46
+00:04:15,600 --> 00:04:19,000
+Early on in our podcast, Brett and I would joke about our three listeners and then people
+
+47
+00:04:19,000 --> 00:04:21,000
+would. It was actually our first episode.
+
+48
+00:04:21,000 --> 00:04:22,360
+Was it really? It was.
+
+49
+00:04:22,360 --> 00:04:26,080
+Maybe we'll get three listeners. But then people, we kept on stuck and then people would
+
+50
+00:04:26,080 --> 00:04:31,680
+go, hey, I'm one of the three. And it kind of developed. So that's where that came from.
+
+51
+00:04:31,680 --> 00:04:35,960
+If there are other things you don't know about us, you want to know, you're welcome
+
+52
+00:04:35,960 --> 00:04:42,120
+to ask us questions for the and Brent trashed hands on this for the mailbag and some ways
+
+53
+00:04:42,120 --> 00:04:45,960
+to get mailbag questions to us. I know Brent's going to bring this up in a minute. So I'm
+
+54
+00:04:45,960 --> 00:04:49,280
+not going to leave even an ounce of silence in my talk.
+
+55
+00:04:49,280 --> 00:04:54,240
+So he cannot get any words in. But the way you get information to the mailbag and to
+
+56
+00:04:54,240 --> 00:04:59,000
+us to answer your question, to give us something intelligent for once to talk about is to
+
+57
+00:04:59,000 --> 00:05:05,040
+either ping us on Slack. I'm Alan Page, A-L-A-N-P-A-G-E. And Brent is Brent M Jensen, Jensen
+
+58
+00:05:05,040 --> 00:05:07,600
+with an E or you can...
+
+59
+00:05:07,600 --> 00:05:09,000
+You have to breathe sometime, Alan.
+
+60
+00:05:09,000 --> 00:05:14,920
+...email me at Alan, A-L-A-N-P-A-G-E. And I'll take it there. In fact, I had one question
+
+61
+00:05:14,920 --> 00:05:18,000
+there from the webinar I was going to answer today, but I'm not going to. I'm going to
+
+62
+00:05:18,000 --> 00:05:21,800
+save it for another mailbag and I'm really not going to give you a chance. And we're
+
+63
+00:05:21,800 --> 00:05:24,040
+going to go on. In fact, the rest of the show...
+
+64
+00:05:24,040 --> 00:05:28,830
+I'll just sit here in time.
+
+65
+00:05:28,830 --> 00:05:34,150
+We also have a Slack group, one of the three.slack.com. You will need to use one
+
+66
+00:05:34,150 --> 00:05:39,110
+of the aforementioned communication methods to get me your email address so I
+
+67
+00:05:39,110 --> 00:05:43,070
+can send you an invitation. Happy to have you there. All three of us discuss
+
+68
+00:05:43,070 --> 00:05:47,830
+things about the show, about things related to the show. It's a good little
+
+69
+00:05:47,830 --> 00:05:52,110
+micro discussion. And as I found out this week, some people join the Slack
+
+70
+00:05:52,110 --> 00:05:58,470
+channel just to get an A-B testing sticker. And yes, if you join the Slack
+
+71
+00:05:58,470 --> 00:06:02,190
+group and you find your way there and you join the channel called I Want a
+
+72
+00:06:02,190 --> 00:06:06,270
+Sticker and you post your address, eventually, usually fairly quickly, but
+
+73
+00:06:06,270 --> 00:06:10,510
+eventually I will send you A-B testing stickers. If you are listening and you
+
+74
+00:06:10,510 --> 00:06:14,070
+posted your... You didn't think I'd do it this long, did you, Brent? If you are
+
+75
+00:06:14,070 --> 00:06:19,430
+listening, I had three people post their addresses this week and those went out
+
+76
+00:06:19,430 --> 00:06:23,910
+in the mail yesterday, so look in your mailbox. Okay, Brent, I have to breathe.
+
+77
+00:06:23,910 --> 00:06:29,870
+And in the episode, this episode comes out... Oh, actually, I can't predict.
+
+78
+00:06:30,070 --> 00:06:35,550
+You gonna finish it today? Yeah, I'll get it out. It'll come out on Sunday, probably.
+
+79
+00:06:35,550 --> 00:06:39,510
+Okay, so... It may come out... If you're listening to this episode, you'll need to figure out
+
+80
+00:06:39,510 --> 00:06:44,430
+how to go back in time because Alan committed to shipping all the stickers
+
+81
+00:06:44,430 --> 00:06:48,190
+out today. Yeah, if there's any more posted today, I'll get them out tomorrow.
+
+82
+00:06:48,190 --> 00:06:52,190
+I'm driving to Canada on Sunday, possibly according to the weather
+
+83
+00:06:52,190 --> 00:06:55,950
+forecast in a snowstorm, but we'll see what happens. Whistler? Going to
+
+84
+00:06:55,950 --> 00:07:02,110
+Whistler. Nice. Favorite ski place. Last time I was there, my 19-year-old was three.
+
+85
+00:07:02,110 --> 00:07:09,690
+I've gone every year for about the last eight years. I really... Yeah, it's my
+
+86
+00:07:09,690 --> 00:07:14,530
+therapy. It's how I get through the winters. Okay, oh, is this episode 76?
+
+87
+00:07:14,530 --> 00:07:23,530
+Episode 76. Not that we're counting. So, what would, on your webinar, what was the key
+
+88
+00:07:23,650 --> 00:07:28,880
+things people were questioning about? I can post a link to the recording. I have
+
+89
+00:07:28,880 --> 00:07:33,880
+to remember now. So, the webinar was about all my grabs about test automation. In
+
+90
+00:07:33,880 --> 00:07:39,860
+fact, much of it was based on many of the things I rant about in the A word, free
+
+91
+00:07:39,860 --> 00:07:46,220
+on Lean Pub. Yep. You notice how, like, I had AB in the webinar, AB testing,
+
+92
+00:07:46,220 --> 00:07:51,940
+abuse and misuse of test automation. One thing I did on purpose that maybe was
+
+93
+00:07:51,940 --> 00:07:57,220
+too subtle is in the A word, that the A and the W kind of squished together a
+
+94
+00:07:57,220 --> 00:08:05,480
+little bit like angry weasel. Look at you. I'm all... Subliminal. I'm the
+
+95
+00:08:05,480 --> 00:08:14,670
+Illuminati. Questions were the typical things about what if management wants me
+
+96
+00:08:14,670 --> 00:08:20,920
+to write UI automation? Well, you can change your manager or you can change
+
+97
+00:08:20,920 --> 00:08:26,640
+your manager. Often, in the answer, of course, we talked about a lot is pilot,
+
+98
+00:08:26,640 --> 00:08:30,760
+use data, don't be complacent, don't be afraid to make change.
+
+99
+00:08:30,760 --> 00:08:38,140
+I... Branch? There's definitely... You asked. I know, I know. That one, if your
+
+100
+00:08:38,140 --> 00:08:45,640
+manager wants you to write UI automation in particular, right, then you as the
+
+101
+00:08:45,640 --> 00:08:50,640
+knowledge expert that he has hired, I think the onus is on you to correct
+
+102
+00:08:50,640 --> 00:08:54,680
+your manager's understanding on the ROI of this topic. Sure, sure. And I've told
+
+103
+00:08:54,680 --> 00:08:58,320
+the story, I think it was in How We Test Software at Microsoft. Remember that
+
+104
+00:08:58,320 --> 00:09:02,800
+book? Yeah. Yeah. And, but I've mentioned a lot of times, it's my very first day at
+
+105
+00:09:02,800 --> 00:09:06,800
+Microsoft, I was given a list of test cases and asked to run them every day.
+
+106
+00:09:06,800 --> 00:09:09,760
+I said, when do you need these automated? They said, oh no, we don't have time to
+
+107
+00:09:09,760 --> 00:09:12,640
+automate. But I automated them anyway, because it was the right thing to do.
+
+108
+00:09:12,640 --> 00:09:17,960
+And I just did it... There are things like that where I will automate it,
+
+109
+00:09:17,960 --> 00:09:26,020
+because I am not doing this again manually. Well, I think... Boy, we could go
+
+110
+00:09:26,020 --> 00:09:30,300
+way off into tangent, you want to get to the main topic of community, which we
+
+111
+00:09:30,300 --> 00:09:33,740
+started last time and didn't get as far as we wanted. So we want to go a little
+
+112
+00:09:33,740 --> 00:09:41,100
+bit farther there. Yep. But as far as... We've talked about command and control
+
+113
+00:09:41,100 --> 00:09:44,820
+and the spider and the starfish and empowered people and all these
+
+114
+00:09:44,820 --> 00:09:50,100
+different things. But I think in knowledge work in general, one, management
+
+115
+00:09:50,220 --> 00:09:53,060
+doesn't work if you just tell people what to do and just give them exact
+
+116
+00:09:53,060 --> 00:09:55,820
+destructor. Here's what you do all day today. We're not building widgets in
+
+117
+00:09:55,820 --> 00:09:59,260
+the factory. But that freedom, being able to take advantage of that freedom
+
+118
+00:09:59,260 --> 00:10:05,140
+properly and knowing when to push back, I think is part of being successful in
+
+119
+00:10:05,140 --> 00:10:10,700
+knowledge work. I don't think most... So management as a whole, right, is a
+
+120
+00:10:10,700 --> 00:10:15,550
+command and control structure. But I don't think most managers are really
+
+121
+00:10:15,550 --> 00:10:22,030
+wired that way. For example, every manager I've ever worked for, let's
+
+122
+00:10:22,030 --> 00:10:27,340
+imagine... I work for you, Alan. Let's imagine I come to you and say...
+
+123
+00:10:27,340 --> 00:10:29,860
+Oh, wait. I got this. Brent, you're fired.
+
+124
+00:10:29,860 --> 00:10:38,050
+All right, great. So I work for another Alan and I come to him and I
+
+125
+00:10:38,050 --> 00:10:43,630
+have two options for R101. One, I say, hey, Alan, I'm done with this. What
+
+126
+00:10:43,630 --> 00:10:49,150
+would you like me to do next? Or two, Alan, I'm done with this. I'm thinking
+
+127
+00:10:49,150 --> 00:10:55,580
+these next three things are the next things I should work on. Is there an
+
+128
+00:10:55,580 --> 00:11:00,600
+order that you think would best value the business? Right? It's one of those
+
+129
+00:11:00,600 --> 00:11:06,990
+things where I'm just like... A lot of the times, particularly I see it in tests,
+
+130
+00:11:06,990 --> 00:11:12,830
+I think a big part of it is the... Well, we talked about the enablement loop or
+
+131
+00:11:12,830 --> 00:11:19,210
+the disablement loop, where I think a lot of tests is just used to just getting
+
+132
+00:11:19,210 --> 00:11:24,690
+instructions and they've gotten to the point that that's how they operate.
+
+133
+00:11:24,690 --> 00:11:30,130
+I don't think... The optimist in me likes to think that's not as true as it used
+
+134
+00:11:30,130 --> 00:11:37,250
+to be. I know it's not as true as it used to be. So delving deeper into
+
+135
+00:11:37,250 --> 00:11:42,050
+Tangentville, I mentioned last time or time before, but anyway, sometime last
+
+136
+00:11:42,050 --> 00:11:47,410
+month I met with my leads and then again met with my peers to discuss just people
+
+137
+00:11:47,410 --> 00:11:52,260
+in the org and how they were doing. We're talking about levels and
+
+138
+00:11:52,260 --> 00:11:55,900
+internally Unity has some levels which we're figuring them out so we
+
+139
+00:11:55,900 --> 00:11:58,340
+don't really communicate them to people, but just helps us talk about
+
+140
+00:11:58,340 --> 00:12:02,570
+people the same way, which I think is fine. We're in that part of growth.
+
+141
+00:12:02,570 --> 00:12:05,930
+But what came out of that, and this is true of levels at Microsoft and
+
+142
+00:12:05,930 --> 00:12:08,450
+those are the only two I'm intimately familiar with, although I've
+
+143
+00:12:08,450 --> 00:12:12,930
+talked with people a lot about levels at Google and Facebook as well.
+
+144
+00:12:12,930 --> 00:12:19,280
+But the point is that the point I was eventually going to make sometime down
+
+145
+00:12:19,280 --> 00:12:24,600
+the road was that when someone's brand new, maybe out of college or
+
+146
+00:12:24,600 --> 00:12:30,200
+barely or changing disciplines, they need more instruction. They need
+
+147
+00:12:30,200 --> 00:12:35,120
+more hand-holding. They need to be sometimes like that first
+
+148
+00:12:35,120 --> 00:12:39,400
+person you described. And then there's a maturity where they start figuring out
+
+149
+00:12:39,400 --> 00:12:42,680
+what work to get done and they come to you to bounce them off you, get
+
+150
+00:12:42,680 --> 00:12:50,750
+prioritization. And then there's that maturity continues. I spent until my
+
+151
+00:12:50,750 --> 00:12:55,710
+last job, I spent where I was a little bit more of the micromanagy. Actually,
+
+152
+00:12:55,710 --> 00:13:00,950
+even there I still figured out what I did still define all my own work. It
+
+153
+00:13:00,950 --> 00:13:06,140
+was just a little more stressful environment. But I spent my last 10,
+
+154
+00:13:06,140 --> 00:13:10,500
+maybe more years, maybe 15 years at Microsoft, defining and prioritizing
+
+155
+00:13:10,500 --> 00:13:17,010
+all of my own work. And that was the expectation for someone at my level of
+
+156
+00:13:17,010 --> 00:13:20,850
+seniority and maturity is that I should figure out what's the most
+
+157
+00:13:20,850 --> 00:13:23,770
+important thing to do. And I was better suited for prioritization than my
+
+158
+00:13:23,770 --> 00:13:28,450
+manager was. I made balance ideas off of him for bigger scale things like
+
+159
+00:13:28,450 --> 00:13:34,090
+that may involve organizational change or affect a big number of people to
+
+160
+00:13:34,090 --> 00:13:39,330
+get some feedback. But it was more of a discussion and brainstorming than it
+
+161
+00:13:39,330 --> 00:13:44,300
+was a prioritization. So anyway, taking the subject away from me, because
+
+162
+00:13:44,300 --> 00:13:48,100
+that's not what it's all about today, at least, is that that maturation
+
+163
+00:13:48,100 --> 00:13:52,340
+happens. And I expect as people get more senior in their knowledge work and
+
+164
+00:13:52,340 --> 00:13:55,460
+more experience that not only do they seek out and figure out what the most
+
+165
+00:13:55,460 --> 00:14:00,300
+important work is to do, but they're able to prioritize it correctly most of
+
+166
+00:14:00,300 --> 00:14:04,740
+or all the time. There is, I don't know if they're still active, but one of the
+
+167
+00:14:04,740 --> 00:14:11,330
+best topics I've ever studied on this is, well, classes rather is situational
+
+168
+00:14:11,330 --> 00:14:16,970
+leadership, which walks through the manager employee relationship on a
+
+169
+00:14:16,970 --> 00:14:20,290
+particular task. And it's very similar to what you just talked about, right? A
+
+170
+00:14:20,290 --> 00:14:25,930
+manager's job is to direct initially and then try to shift it over to more of a
+
+171
+00:14:25,930 --> 00:14:31,890
+coaching style and then get the hell out of the person's way. But I don't think
+
+172
+00:14:31,890 --> 00:14:39,440
+it's a person level maturity, but rather a topic level maturity. People at any level
+
+173
+00:14:39,440 --> 00:14:48,850
+at any time are more than welcome and welcomed to with the tools that they
+
+174
+00:14:48,850 --> 00:14:54,010
+have in their tool bag, identify problems, try to connect it to something that the
+
+175
+00:14:54,010 --> 00:14:58,250
+business cares about, and then also bring forward with a solution. That's one of
+
+176
+00:14:58,250 --> 00:15:04,890
+the biggest things I push my people towards, like look, as you and I have
+
+177
+00:15:04,890 --> 00:15:14,600
+said on the podcast, ideas come from other ideas and good ideas can come
+
+178
+00:15:14,600 --> 00:15:22,000
+from anywhere. You have to create an environment in which you encourage
+
+179
+00:15:22,000 --> 00:15:27,930
+that to occur. So one of the things that I think is actually relevant to the topic
+
+180
+00:15:27,930 --> 00:15:32,810
+today. I thought you were just about to lead into it. If ever we bring it up. You're practically
+
+181
+00:15:32,810 --> 00:15:39,020
+segueing until now. So ideas can come from anywhere. The environmental
+
+182
+00:15:39,020 --> 00:15:49,560
+context can help suppress people coming up with the ideas or sharing them. And at
+
+183
+00:15:49,560 --> 00:15:54,200
+least I, and this is one of the issues with command and control, particularly with
+
+184
+00:15:54,200 --> 00:15:58,800
+new managers. I see this a lot with new managers. They go, I am accountable,
+
+185
+00:15:58,800 --> 00:16:05,860
+therefore I must make the decisions. Whereas my approach is I am
+
+186
+00:16:05,860 --> 00:16:13,250
+accountable, therefore I must make decisions that are correct. And I don't
+
+187
+00:16:13,250 --> 00:16:19,810
+necessarily presume that my decisions are. If there's a timeliness stuff, right, I
+
+188
+00:16:19,810 --> 00:16:25,520
+still hold veto power. One of my favorite phrases on my team. As you know,
+
+189
+00:16:25,520 --> 00:16:34,820
+I run a, I execute via a Kanban style. All the things we talk about around no
+
+190
+00:16:34,820 --> 00:16:38,620
+specialists, no generalists. I live and breathe that on every single day. So I've
+
+191
+00:16:38,620 --> 00:16:44,460
+created something. I don't know fully enough of how what Lisa talks about when
+
+192
+00:16:44,460 --> 00:16:51,980
+she says whole team. But I certainly know the concept. But nevertheless, at
+
+193
+00:16:51,980 --> 00:16:59,460
+times my team is reminded that I spend a lot of time and effort to make my
+
+194
+00:16:59,460 --> 00:17:07,960
+team feel like a democracy, but it's not. So it's interesting to bring that up. I
+
+195
+00:17:07,960 --> 00:17:11,440
+was just at a conversation yesterday as someone gave me actually a lot of
+
+196
+00:17:11,440 --> 00:17:17,040
+parallels here. The one of the people on my team was going over his suggestion or
+
+197
+00:17:17,040 --> 00:17:20,760
+he was working with the dev team and I'm, I'm hands on hands off. I'm hands
+
+198
+00:17:20,760 --> 00:17:25,530
+on as a coach hands off as far as I think the team makes the decisions. I
+
+199
+00:17:25,530 --> 00:17:33,650
+will give strong suggestions, but I won't very few if I can recall any, I'll
+
+200
+00:17:33,650 --> 00:17:37,370
+bring them up, but mandates like we're all gonna do this. Like let's go in this
+
+201
+00:17:37,370 --> 00:17:40,730
+direction. You're on board? Okay. I'll help you get there. So the question was
+
+202
+00:17:40,730 --> 00:17:47,390
+around setting up a Kanban board. Okay. And I had some suggestions on like if you
+
+203
+00:17:47,390 --> 00:17:51,690
+don't, I think if you don't do this, this will happen. But it goes, so it
+
+204
+00:17:51,690 --> 00:17:55,610
+sounds like you want to do this. I said my suggestion is you have a way to
+
+205
+00:17:55,610 --> 00:18:00,690
+handle this and here's one way to do it. The decisions yours. And I realized I do
+
+206
+00:18:00,690 --> 00:18:06,130
+that a lot. I try, I don't try and make decisions for people even if they ask me
+
+207
+00:18:06,130 --> 00:18:09,690
+to make it for them because I want them. One of the things I think helps people
+
+208
+00:18:09,690 --> 00:18:14,650
+grow in maturity and grow in leadership skills. I think when you're in modern
+
+209
+00:18:14,650 --> 00:18:17,850
+testing and you need to be influential over your team, having leadership skills
+
+210
+00:18:17,850 --> 00:18:21,970
+are important. And I found the only way to get good at decision-making is to
+
+211
+00:18:21,970 --> 00:18:27,780
+practice decision-making and practice making changes that people may not be
+
+212
+00:18:27,780 --> 00:18:31,980
+comfortable with. The Heffetz quote from leadership on the line, I use a lot. People
+
+213
+00:18:31,980 --> 00:18:35,860
+nod their head. They laugh and they nod their head. His leadership is disappointing
+
+214
+00:18:35,860 --> 00:18:40,880
+people at a level they can absorb. And Brett just nodded his head and laughed.
+
+215
+00:18:40,880 --> 00:18:45,080
+That's what I get every time someone hears that. And it really is. If you're
+
+216
+00:18:45,080 --> 00:18:51,040
+just complacent, not gonna get changed. If you're, I know leaders who say this
+
+217
+00:18:51,040 --> 00:18:54,880
+we're doing this, this is what we're doing, and people are, they're not
+
+218
+00:18:54,880 --> 00:19:00,640
+on board. It's too much disappointment at once. And the right things
+
+219
+00:19:00,640 --> 00:19:04,960
+don't happen there either. But you want to keep people, I mean, for organizational
+
+220
+00:19:04,960 --> 00:19:09,640
+change especially, there's a level of uncomfortableness where you actually get
+
+221
+00:19:09,640 --> 00:19:12,880
+the most productivity and the most change. Something to think about.
+
+222
+00:19:12,880 --> 00:19:19,900
+There's almost every book on the planet around business project management. We'll
+
+223
+00:19:19,900 --> 00:19:25,260
+talk about that. That you make them just a little uncomfortable. You get a lot
+
+224
+00:19:25,260 --> 00:19:31,620
+more productivity. I often change absorb to tolerate. I think leadership is
+
+225
+00:19:31,620 --> 00:19:35,300
+disappointing people at a level they can tolerate. I think it's, to me that one
+
+226
+00:19:35,300 --> 00:19:39,840
+works a little bit better, but it's the same thing. The issue though, like what
+
+227
+00:19:39,840 --> 00:19:46,080
+you brought up with your discussion. And I do think it, this is an
+
+228
+00:19:46,080 --> 00:19:52,040
+important one. Like if this individual had come to me, they would have
+
+229
+00:19:52,040 --> 00:20:03,350
+start getting my speech on leadership. Because there's, you cannot
+
+230
+00:20:03,350 --> 00:20:14,870
+come to me and ask for permission to be a leader. Right. It's no, like what
+
+231
+00:20:15,330 --> 00:20:19,370
+they're saying is really, can I be the decision maker and hold you still
+
+232
+00:20:19,370 --> 00:20:28,760
+accountable? No. That's not what leadership is. All right. Shall we start the episode?
+
+233
+00:20:28,760 --> 00:20:35,240
+Sure. Okay, I'm gonna hit record. Just kidding. We wanted to continue our discussion from
+
+234
+00:20:35,240 --> 00:20:40,560
+the last episode on community. A couple topics on the board, but I'll let you
+
+235
+00:20:40,560 --> 00:20:47,300
+kick it off. So, because you have some notes Brent. Well, it's just the agenda.
+
+236
+00:20:47,300 --> 00:20:52,900
+Last time we started talking about community and building community and
+
+237
+00:20:52,900 --> 00:20:59,940
+Alan shared a lot of his experiences. But the question that was asked of us
+
+238
+00:20:59,940 --> 00:21:07,740
+was rather deep. There's a lot of subtlety there and we felt it was
+
+239
+00:21:07,760 --> 00:21:16,990
+worthwhile bringing it up again. I don't have the question written down, but in
+
+240
+00:21:16,990 --> 00:21:24,560
+essence the question was, hey how do I create a community when my target
+
+241
+00:21:24,560 --> 00:21:30,640
+audience is essentially testers who the person has observed don't see the
+
+242
+00:21:30,640 --> 00:21:43,300
+need, aren't engaged, and want to be spoon fed. And I think the prior topic
+
+243
+00:21:43,300 --> 00:21:48,760
+that we just had, well, it's not as much of a tangent on this one. Did we
+
+244
+00:21:48,760 --> 00:21:53,280
+accidentally talk about something relevant? We did. That's so weird. Yeah. So,
+
+245
+00:21:53,280 --> 00:22:02,700
+Alan, what are the problems that you see in constructing a community from
+
+246
+00:22:02,960 --> 00:22:09,120
+ground up? Like we did spend a lot of time talking about the vision of how you
+
+247
+00:22:09,120 --> 00:22:15,670
+build a community, right? You need to, and we talked about your approach, which we
+
+248
+00:22:15,670 --> 00:22:21,370
+resolved as essentially we want to shift from a spider organization to a starfish
+
+249
+00:22:21,370 --> 00:22:26,230
+organization. That's the vision. Now, today let's talk about the specific
+
+250
+00:22:26,230 --> 00:22:32,270
+context, the test community that he's referring to here, and what would
+
+251
+00:22:32,270 --> 00:22:37,600
+be the first step. So, I've spun up, we talked about my communities in Microsoft.
+
+252
+00:22:37,600 --> 00:22:43,080
+I've spun up several, without realizing it, without intending to, I spun up
+
+253
+00:22:43,080 --> 00:22:51,230
+several communities at Microsoft and then probably the best, as far as the
+
+254
+00:22:51,230 --> 00:22:57,050
+most mature community, as far as any sort of community maturity model is my QA
+
+255
+00:22:57,050 --> 00:23:03,410
+slash test community at Unity. But starting from scratch, you need a little
+
+256
+00:23:03,430 --> 00:23:08,590
+bit of a shared, like what is the purpose of the community? First, we have a nice
+
+257
+00:23:08,590 --> 00:23:11,270
+little mission statement you may have heard of at Unity, accelerate the
+
+258
+00:23:11,270 --> 00:23:14,750
+achievement at Shipable Quality. I have heard this mission statement a couple
+
+259
+00:23:14,750 --> 00:23:20,670
+times before. And it gives you a thing to rally around. And then, but even beyond
+
+260
+00:23:20,670 --> 00:23:26,790
+there, one thing I've done at Unity, I probably do this by heart, but maybe
+
+261
+00:23:26,790 --> 00:23:30,270
+three months in, about the time I was realizing it was a community, about
+
+262
+00:23:30,270 --> 00:23:35,170
+the time I knew enough about the org to want to develop some rallying cries for
+
+263
+00:23:35,170 --> 00:23:41,940
+us, I realized a couple points I wanted us to rally around. One is moving
+
+264
+00:23:41,940 --> 00:23:46,980
+towards data-driven culture. We will use data to evaluate the quality of our
+
+265
+00:23:46,980 --> 00:23:50,420
+product in production and use that to make decisions, get us close to the
+
+266
+00:23:50,420 --> 00:23:53,820
+customer, etc. The paragraph follows that. But everyone knows that's very,
+
+267
+00:23:53,820 --> 00:23:58,420
+very important. And I'm going to come back to something in a second. We will
+
+268
+00:23:59,120 --> 00:24:03,000
+share our successes and failures with each other and use those to learn and get
+
+269
+00:24:03,000 --> 00:24:09,040
+better. And that's pretty much it. And then I use the community, it's
+
+270
+00:24:09,040 --> 00:24:11,800
+self-fulfilling, because the second one's about community, but I use the
+
+271
+00:24:11,800 --> 00:24:16,040
+community to make that happen. And then there's some tactical things I've done
+
+272
+00:24:16,040 --> 00:24:19,120
+to help build that community. And I want to go back and reflect on this
+
+273
+00:24:19,120 --> 00:24:21,800
+process with some of my Microsoft communities as well. I think it'll be
+
+274
+00:24:21,800 --> 00:24:22,560
+fairly similar.
+
+275
+00:24:22,780 --> 00:24:29,150
+Let me change the scenario briefly, right? Because you have an advantage in this
+
+276
+00:24:29,150 --> 00:24:35,420
+particular case, because you're the boss, right? If you need to...
+
+277
+00:24:35,580 --> 00:24:38,220
+I thought you were going to say you're incredibly good looking, but I'll be
+
+278
+00:24:38,220 --> 00:24:38,820
+the boss, okay.
+
+279
+00:24:39,860 --> 00:24:43,580
+The last check that you sent me hasn't cleared yet, so there'll be no
+
+280
+00:24:43,580 --> 00:24:54,240
+compliments today. And when you have a role of authority, there
+
+281
+00:24:54,240 --> 00:24:59,100
+is absolutely an advantage, particularly if you know that this is your vision.
+
+282
+00:24:59,100 --> 00:25:05,940
+My job is to create this community and then get it self-sustained and get out.
+
+283
+00:25:05,940 --> 00:25:09,340
+So let me finish the Unity story. Then I'll go back and reflect on my
+
+284
+00:25:09,340 --> 00:25:12,140
+Microsoft communities, which in no case was I the boss of.
+
+285
+00:25:13,030 --> 00:25:16,030
+But also a scenario I want you to think about, and maybe it's aligned
+
+286
+00:25:16,030 --> 00:25:21,230
+with that second one, is let's imagine that Tony, who asked this
+
+287
+00:25:21,230 --> 00:25:25,930
+question, hired you to be a community consultant.
+
+288
+00:25:26,290 --> 00:25:26,610
+Okay.
+
+289
+00:25:26,650 --> 00:25:31,740
+And you were going to go to his company, spend a week there, and create a
+
+290
+00:25:31,740 --> 00:25:33,660
+thriving community and then disappear.
+
+291
+00:25:34,220 --> 00:25:34,700
+A week.
+
+292
+00:25:36,260 --> 00:25:40,520
+So let me go through those scenarios in order. So let me finish the Unity
+
+293
+00:25:40,520 --> 00:25:44,340
+story. I found ways to reinforce community. And this is weird. I did not
+
+294
+00:25:44,340 --> 00:25:46,900
+come up with this idea myself, but the leads...
+
+295
+00:25:47,060 --> 00:25:47,620
+Beer.
+
+296
+00:25:48,140 --> 00:25:52,800
+My leads and I came up with this, mostly them. In fact, maybe all of them
+
+297
+00:25:53,700 --> 00:25:58,980
+at our offsite last August. We had talked a lot about community before them.
+
+298
+00:25:59,780 --> 00:26:04,620
+One of the things we've done, just sent out the 20th weekly newsletter yesterday.
+
+299
+00:26:05,580 --> 00:26:11,020
+And the newsletter is, in this case, it's sometimes, not always, it's
+
+300
+00:26:12,060 --> 00:26:15,680
+just something everyone needs to know. Like, or something about...
+
+301
+00:26:15,800 --> 00:26:16,240
+We ship your thing.
+
+302
+00:26:16,260 --> 00:26:20,020
+Here's our vision. Or no, because it's too many things going on. No.
+
+303
+00:26:20,540 --> 00:26:23,820
+I don't welcome new people. I don't say things shipped. A lot of the
+
+304
+00:26:23,820 --> 00:26:27,500
+initial newsletters were promoting something else we did for community,
+
+305
+00:26:27,620 --> 00:26:30,260
+was get everyone together from around the world in one spot for a
+
+306
+00:26:30,260 --> 00:26:34,010
+couple of days. That helped build community, helped get everybody on
+
+307
+00:26:34,010 --> 00:26:36,370
+the same page, get everybody in alignment on things.
+
+308
+00:26:37,210 --> 00:26:41,850
+A lot of times I just share articles, web articles about
+
+309
+00:26:42,810 --> 00:26:46,570
+software quality or about being data driven, about things that align
+
+310
+00:26:46,590 --> 00:26:50,630
+with our mission. And it adds some commentary and those are taking
+
+311
+00:26:50,630 --> 00:26:53,510
+off. I start getting replies like yesterday, I sent one out and today
+
+312
+00:26:53,510 --> 00:26:56,590
+I got, oh, you mentioned this. Have you seen these articles and some
+
+313
+00:26:56,590 --> 00:27:01,350
+really cool articles? So that was cool. What I try to do, I don't
+
+314
+00:27:01,350 --> 00:27:04,590
+do often enough yet, but remember my goal around sharing each other's
+
+315
+00:27:04,590 --> 00:27:07,830
+successes and failures. So I try to, and each one, I don't get
+
+316
+00:27:07,830 --> 00:27:11,310
+everyone, is to get someone to share something going on in their
+
+317
+00:27:11,310 --> 00:27:15,190
+team. Like, hey, I use this. The last one was last week, a guy on
+
+318
+00:27:15,210 --> 00:27:18,840
+my team put together, who's also occasionally one of the three.
+
+319
+00:27:19,440 --> 00:27:23,620
+He was playing with using Grafana to map out web errors,
+
+320
+00:27:23,960 --> 00:27:28,560
+50X errors from one of our websites and saw an interesting
+
+321
+00:27:29,940 --> 00:27:32,220
+number of 503s that shouldn't have been there. It's a static
+
+322
+00:27:32,220 --> 00:27:34,640
+web page. And he dug in and found out, oh, this is a bug.
+
+323
+00:27:34,780 --> 00:27:37,820
+And worse yet, it's a bug that could be exploited as a security
+
+324
+00:27:38,060 --> 00:27:40,820
+issue. So it was just a nice little issue of like, I'm going
+
+325
+00:27:40,820 --> 00:27:43,980
+to use this tool and I'm going to see what I discover. Ooh,
+
+326
+00:27:44,000 --> 00:27:46,960
+look, I discovered something bad. And then here I wrote this up
+
+327
+00:27:46,960 --> 00:27:50,600
+on this page in our wiki page on how you can do this yourself
+
+328
+00:27:50,600 --> 00:27:53,920
+and test your own stuff out. So it's really good for sharing
+
+329
+00:27:53,920 --> 00:27:56,200
+an experience of what you learned. And I like those things.
+
+330
+00:27:56,200 --> 00:28:00,220
+Those things help build community. So I do some things
+
+331
+00:28:00,220 --> 00:28:03,980
+like that. I make sure I celebrate in Slack, in our
+
+332
+00:28:03,980 --> 00:28:07,940
+company Slack, the things that people do that align with our
+
+333
+00:28:07,960 --> 00:28:11,660
+accelerate the achievement of a quality or moving towards
+
+334
+00:28:11,660 --> 00:28:12,620
+being more data driven.
+
+335
+00:28:13,160 --> 00:28:16,000
+Let me go back to Microsoft. I'll get to Tony eventually,
+
+336
+00:28:16,440 --> 00:28:21,190
+where I ran a couple of different communities. Some from
+
+337
+00:28:21,190 --> 00:28:24,150
+the beginning, some I joined and sort of took over. For some
+
+338
+00:28:24,150 --> 00:28:26,350
+reason, I've fallen back on writing newsletters because I
+
+339
+00:28:26,350 --> 00:28:30,030
+can do it very quickly. I enjoy writing. I can get
+
+340
+00:28:30,510 --> 00:28:33,810
+newsletters people like done. So when I was in engineering
+
+341
+00:28:33,810 --> 00:28:36,110
+excellence at Microsoft, I would send a monthly test
+
+342
+00:28:36,110 --> 00:28:38,310
+newsletter to all testers at Microsoft.
+
+343
+00:28:40,110 --> 00:28:41,470
+I don't remember a single one of those.
+
+344
+00:28:41,730 --> 00:28:46,890
+Yeah, thanks. And we started doing a newsletter with the
+
+345
+00:28:47,090 --> 00:28:49,950
+testing quality experts, quality and test experts
+
+346
+00:28:49,950 --> 00:28:55,480
+community. I would include like bug. It was just some
+
+347
+00:28:55,480 --> 00:28:58,520
+ways to get people interested as trying to grow, make
+
+348
+00:28:58,520 --> 00:29:00,560
+that community self-sustaining got partially there.
+
+349
+00:29:00,560 --> 00:29:02,800
+Eventually, someone took over the newsletter for me for
+
+350
+00:29:02,800 --> 00:29:07,080
+that community died when TCN died. And I also did that
+
+351
+00:29:07,640 --> 00:29:11,240
+much less frequently for the test architect group.
+
+352
+00:29:11,500 --> 00:29:18,220
+But an Xbox also had a weekly weekly every other week. We
+
+353
+00:29:18,220 --> 00:29:21,320
+did a frequent newsletter was that one was a lot of fun.
+
+354
+00:29:21,320 --> 00:29:23,820
+It worked. I had a lot of people contribute articles and
+
+355
+00:29:23,820 --> 00:29:28,100
+ideas for that. It was a way to share ideas, tools,
+
+356
+00:29:28,380 --> 00:29:32,380
+concepts across the org. I did one of my best April
+
+357
+00:29:32,380 --> 00:29:35,540
+Fool's newsletters was was in the Xbox org. I really
+
+358
+00:29:35,540 --> 00:29:38,580
+need to dig that up sometime. Really happy with that
+
+359
+00:29:38,600 --> 00:29:42,150
+problem. But it's just finding some ways to get people
+
+360
+00:29:42,150 --> 00:29:46,950
+together. It could be meetings. It could be events.
+
+361
+00:29:47,510 --> 00:29:51,190
+It could be beer. But finding a way to get to have
+
+362
+00:29:51,230 --> 00:29:53,910
+one you have a mission or vision, a thing you want to
+
+363
+00:29:53,910 --> 00:30:03,100
+accomplish together and a way to encourage people to be a
+
+364
+00:30:03,100 --> 00:30:05,420
+part of that community contribute to the community
+
+365
+00:30:05,420 --> 00:30:11,220
+and leverage leverage people leverage the community to
+
+366
+00:30:11,220 --> 00:30:15,420
+grow. I think a community is a means to discover what
+
+367
+00:30:15,420 --> 00:30:18,220
+you don't know. You don't know. You also get out what
+
+368
+00:30:18,220 --> 00:30:20,020
+you put into the community. If you contribute and
+
+369
+00:30:20,020 --> 00:30:21,980
+share your ideas, you're probably going to find more
+
+370
+00:30:21,980 --> 00:30:24,940
+ideas that inspire you and help you create new ideas.
+
+371
+00:30:25,540 --> 00:30:28,860
+So a bunch of things I want to. OK. And then I'll go
+
+372
+00:30:28,860 --> 00:30:30,860
+on to what I do if I'm I'm a consultant for Tony.
+
+373
+00:30:31,380 --> 00:30:34,580
+But go ahead and add your your stuff. Yeah. And
+
+374
+00:30:34,580 --> 00:30:38,340
+it'll be good because I think it'll help frame your
+
+375
+00:30:38,340 --> 00:30:43,500
+next topic. So a lot of the communities that Alan
+
+376
+00:30:43,500 --> 00:30:49,340
+just mentioned. I was a member of one in particular.
+
+377
+00:30:49,340 --> 00:30:51,940
+I'm thinking about the test architect group. There
+
+378
+00:30:51,940 --> 00:30:59,160
+was one phenomenon that that that I noticed in
+
+379
+00:30:59,160 --> 00:31:02,000
+that whenever it was the scheduled day for the
+
+380
+00:31:02,000 --> 00:31:05,980
+community and Alan couldn't make it it got canceled.
+
+381
+00:31:07,050 --> 00:31:10,190
+Right. So part of the problem in this particular case
+
+382
+00:31:10,190 --> 00:31:13,150
+is Alan loves this stuff. He's very effective at it.
+
+383
+00:31:13,950 --> 00:31:16,490
+But he ended up being the virtual leader. And when
+
+384
+00:31:16,490 --> 00:31:21,110
+the leader wasn't there it didn't happen. And so
+
+385
+00:31:21,110 --> 00:31:23,750
+one of the things why I say self sustaining right
+
+386
+00:31:23,750 --> 00:31:26,790
+often is the goal. It's also saying is and one
+
+387
+00:31:26,790 --> 00:31:29,990
+of the things I would I would actually. So a couple
+
+388
+00:31:29,990 --> 00:31:32,230
+suggestions I have for you based off of the
+
+389
+00:31:32,230 --> 00:31:34,750
+experience and what you just described for me. OK.
+
+390
+00:31:38,040 --> 00:31:43,930
+Create a community of the newsletter producers and
+
+391
+00:31:43,930 --> 00:31:46,890
+your first task is say hey I want the newsletter
+
+392
+00:31:46,890 --> 00:31:50,030
+to go out every month. I want us to first figure
+
+393
+00:31:50,030 --> 00:31:53,320
+out what is the principles around how it's going
+
+394
+00:31:53,320 --> 00:31:57,560
+to be built because I want people to look at
+
+395
+00:31:57,560 --> 00:32:00,440
+that and not tell not be able to tell that it
+
+396
+00:32:00,440 --> 00:32:02,480
+was a different person sending them each month.
+
+397
+00:32:03,480 --> 00:32:04,980
+And then the next thing we're going to do is
+
+398
+00:32:04,980 --> 00:32:08,760
+figure out a rotational model. I was I will do
+
+399
+00:32:08,760 --> 00:32:11,880
+the first few of them until we are happy with
+
+400
+00:32:11,880 --> 00:32:16,810
+the iteration. But by the end of summer each of
+
+401
+00:32:16,810 --> 00:32:19,330
+you guys is going to is going to take point
+
+402
+00:32:19,330 --> 00:32:20,850
+and we're going to rotate through and you're
+
+403
+00:32:20,850 --> 00:32:24,710
+going to own sending this. What you have to do
+
+404
+00:32:24,710 --> 00:32:27,870
+is then use that command and control to force
+
+405
+00:32:27,870 --> 00:32:32,870
+them to learn and to spread the next phase
+
+406
+00:32:32,870 --> 00:32:37,300
+after that is how do you get them to want to
+
+407
+00:32:37,300 --> 00:32:42,020
+maintain the rotational model. It would take
+
+408
+00:32:42,020 --> 00:32:44,740
+longer than two podcasts for me to go through
+
+409
+00:32:44,740 --> 00:32:47,420
+suggestions on that one. And I wouldn't even.
+
+410
+00:32:48,820 --> 00:32:52,420
+I'll build on that. The last thing I would suggest
+
+411
+00:32:52,420 --> 00:32:58,580
+to you is make a key section of your of your
+
+412
+00:32:58,580 --> 00:33:01,380
+newsletter. Are you sending out monthly weekly
+
+413
+00:33:01,380 --> 00:33:06,720
+weekly. OK. Make a key section of your weekly
+
+414
+00:33:06,720 --> 00:33:11,600
+newsletter. The most glorious fail that occurred
+
+415
+00:33:11,600 --> 00:33:17,690
+in your team and figure out a way to send that
+
+416
+00:33:17,690 --> 00:33:20,130
+person a gift card or some sort of little
+
+417
+00:33:20,130 --> 00:33:24,010
+incentive. Yeah I do agree that one thing we
+
+418
+00:33:24,010 --> 00:33:26,850
+could do more of is I mentioned in my my
+
+419
+00:33:26,850 --> 00:33:29,890
+principles is celebrate our successes and
+
+420
+00:33:29,890 --> 00:33:33,000
+failures. Actually both internally and publicly
+
+421
+00:33:33,000 --> 00:33:34,720
+I want to post more of what we're doing around
+
+422
+00:33:34,720 --> 00:33:38,120
+quality and. You know services on the unity
+
+423
+00:33:38,120 --> 00:33:41,440
+blog and we're getting there. But we don't
+
+424
+00:33:41,440 --> 00:33:43,240
+celebrate the failures enough and we I do
+
+425
+00:33:43,240 --> 00:33:44,920
+want to do more of that and it's harder to
+
+426
+00:33:44,920 --> 00:33:47,640
+get people of course to to recognize those
+
+427
+00:33:47,640 --> 00:33:49,920
+and thankfully we're not making very many epic
+
+428
+00:33:49,920 --> 00:33:52,720
+failures. So that's good but yes I agree
+
+429
+00:33:52,720 --> 00:33:54,960
+those things should be there. I agree that I
+
+430
+00:33:54,960 --> 00:33:58,000
+want to add. No it's my turn now. And I also
+
+431
+00:33:58,000 --> 00:34:03,320
+agree that. You do want a community of people
+
+432
+00:34:03,320 --> 00:34:06,190
+distributing the newsletter. And I do agree you
+
+433
+00:34:06,190 --> 00:34:08,630
+want to have a group of people that can send
+
+434
+00:34:08,630 --> 00:34:10,790
+the newsletter. Kicking it off here for the
+
+435
+00:34:10,790 --> 00:34:14,110
+first several months. I've been happy to do it
+
+436
+00:34:14,110 --> 00:34:15,470
+I think it's the right thing for me to do it
+
+437
+00:34:15,470 --> 00:34:17,150
+to establish a cadence to prove we can do it
+
+438
+00:34:17,150 --> 00:34:19,750
+weekly to prove that we can get value from that.
+
+439
+00:34:20,430 --> 00:34:22,790
+I'm stepping away next week and people are no
+
+440
+00:34:22,790 --> 00:34:25,990
+problem. Stepping in and making sure there's a
+
+441
+00:34:25,990 --> 00:34:28,590
+newsletter done while I'm gone and eventually
+
+442
+00:34:30,410 --> 00:34:32,210
+they will contribute more more. They actually
+
+443
+00:34:32,210 --> 00:34:34,770
+all contribute the article ideas. They they
+
+444
+00:34:35,450 --> 00:34:38,010
+they get ideas for articles from their team and
+
+445
+00:34:38,010 --> 00:34:41,320
+I play editor. A lot of times. And sometimes
+
+446
+00:34:41,320 --> 00:34:42,800
+for light on stuff I have no problem just
+
+447
+00:34:42,800 --> 00:34:45,080
+kind of writing a little mini blog post about
+
+448
+00:34:45,080 --> 00:34:47,280
+because I read a lot of articles on the
+
+449
+00:34:47,280 --> 00:34:49,200
+Internet that I find this to be interesting for
+
+450
+00:34:49,200 --> 00:34:51,040
+the team. Let me add a little commentary to
+
+451
+00:34:51,040 --> 00:34:53,400
+get them engaged in it and explain why it's
+
+452
+00:34:53,400 --> 00:34:55,800
+relevant to our mission. And then they are
+
+453
+00:34:55,800 --> 00:34:58,360
+pretty good about jumping in and getting some
+
+454
+00:34:58,360 --> 00:35:00,720
+new ideas. You want to say something I want to
+
+455
+00:35:00,720 --> 00:35:02,560
+talk about what I do for Tony's team. If I'm
+
+456
+00:35:02,560 --> 00:35:06,860
+his consultant. Go ahead. Talk about Tony. OK
+
+457
+00:35:06,900 --> 00:35:08,580
+Tony hires me to come in to help me build the
+
+458
+00:35:08,580 --> 00:35:10,860
+community. I don't come into Tony's team and
+
+459
+00:35:10,860 --> 00:35:12,820
+say OK I'm going to give you a newsletter.
+
+460
+00:35:13,800 --> 00:35:17,240
+That you only have a week. I have a week. So
+
+461
+00:35:17,240 --> 00:35:19,240
+the first thing I want to do is find out from
+
+462
+00:35:19,240 --> 00:35:20,800
+Tony what's the goal of your community. We
+
+463
+00:35:20,800 --> 00:35:23,840
+get paid six months later after they seem the
+
+464
+00:35:23,840 --> 00:35:26,160
+result. Fine fine. All right. Good fine. I want
+
+465
+00:35:26,160 --> 00:35:29,680
+to find out what. I would start with why. What
+
+466
+00:35:29,680 --> 00:35:31,800
+do you want to accomplish. What's the reason
+
+467
+00:35:31,800 --> 00:35:35,810
+for having a community. And I'm going to
+
+468
+00:35:35,810 --> 00:35:38,930
+hypothesize that it's we have a lot of silo
+
+469
+00:35:38,930 --> 00:35:41,290
+ism people aren't we have people working on
+
+470
+00:35:41,290 --> 00:35:42,650
+the same things because they don't know what
+
+471
+00:35:42,650 --> 00:35:45,530
+each other are working on. We're not people
+
+472
+00:35:45,530 --> 00:35:47,330
+aren't learning as much as they could if they
+
+473
+00:35:47,330 --> 00:35:49,650
+had a way to connect with each other. I say
+
+474
+00:35:49,650 --> 00:35:52,690
+OK great. So let's come up with a. What's
+
+475
+00:35:52,690 --> 00:35:55,010
+the mission of the goal for the community. And
+
+476
+00:35:55,370 --> 00:35:59,170
+maybe it's we want given that criteria. We
+
+477
+00:35:59,170 --> 00:36:01,290
+want to have a means of discovering what we
+
+478
+00:36:01,290 --> 00:36:02,890
+don't know we don't know. And maybe we'll work.
+
+479
+00:36:03,170 --> 00:36:04,730
+I'll work with Tony a little bit. This is all
+
+480
+00:36:04,730 --> 00:36:06,330
+like over coffee in the morning. We'll come up
+
+481
+00:36:06,330 --> 00:36:10,420
+with. As a test community of practice at
+
+482
+00:36:11,600 --> 00:36:16,160
+Rungco widget factory. We want to share ideas
+
+483
+00:36:16,160 --> 00:36:18,920
+with each other and use those ideas to develop
+
+484
+00:36:18,920 --> 00:36:22,600
+bigger ideas that help us accelerate the
+
+485
+00:36:22,600 --> 00:36:25,680
+achievement of quality or help us achieve our
+
+486
+00:36:25,680 --> 00:36:29,160
+quality goals or help us whatever have a purpose
+
+487
+00:36:29,160 --> 00:36:31,080
+for community have and something that's
+
+488
+00:36:31,080 --> 00:36:33,360
+compelling and you think if I told people that
+
+489
+00:36:33,520 --> 00:36:35,160
+the sum I think they go yeah that's something
+
+490
+00:36:35,160 --> 00:36:39,270
+that we should do. I would start with that. And
+
+491
+00:36:39,270 --> 00:36:42,660
+then I would meet maybe team by team depending
+
+492
+00:36:42,660 --> 00:36:44,620
+on the org how big the org is now structured
+
+493
+00:36:44,620 --> 00:36:47,220
+is I want to get some information from people
+
+494
+00:36:47,220 --> 00:36:49,740
+on what their biggest challenges are and are
+
+495
+00:36:49,740 --> 00:36:52,100
+their challenges being with their challenges be
+
+496
+00:36:52,100 --> 00:36:54,500
+addressed by this community or would some of
+
+497
+00:36:54,500 --> 00:36:56,260
+their challenges be addressed by this community
+
+498
+00:36:56,820 --> 00:37:01,460
+and find out if the community idea makes sense
+
+499
+00:37:01,460 --> 00:37:04,500
+for solving their problems. Chances are it will.
+
+500
+00:37:05,750 --> 00:37:07,870
+But I don't know that I don't want to. Last thing
+
+501
+00:37:07,870 --> 00:37:09,470
+you want to do is think OK we got to really
+
+502
+00:37:09,470 --> 00:37:11,470
+push this community thing when it's not the
+
+503
+00:37:11,470 --> 00:37:15,670
+biggest problem. Eventually community a
+
+504
+00:37:15,670 --> 00:37:18,910
+community of practice if you will at a small
+
+505
+00:37:18,910 --> 00:37:21,550
+scale. Someone pointed out an article this week
+
+506
+00:37:21,550 --> 00:37:23,470
+on communities of practice I was talking about
+
+507
+00:37:23,470 --> 00:37:25,910
+communities at a very very large scale which I
+
+508
+00:37:25,910 --> 00:37:28,070
+think is a different beast entirely. So within a
+
+509
+00:37:28,070 --> 00:37:31,470
+company that a small organization this community
+
+510
+00:37:31,470 --> 00:37:33,990
+of practice can help solve a lot of problems. So
+
+511
+00:37:33,990 --> 00:37:35,910
+anyway I've talked to people talk to some
+
+512
+00:37:36,030 --> 00:37:39,750
+people on maybe maybe people that aren't even
+
+513
+00:37:39,750 --> 00:37:41,350
+going to be in the community say what do you
+
+514
+00:37:41,350 --> 00:37:44,550
+expect if we had a community of the testers
+
+515
+00:37:44,550 --> 00:37:45,990
+in this or what would you expect that
+
+516
+00:37:45,990 --> 00:37:47,750
+community to accomplish that they're not
+
+517
+00:37:47,750 --> 00:37:50,470
+accomplished now and chances are if community is
+
+518
+00:37:50,470 --> 00:37:52,350
+an issue they've seen things like well I talked
+
+519
+00:37:52,350 --> 00:37:54,910
+to Joe and Cindy and they're both working on
+
+520
+00:37:54,910 --> 00:37:56,950
+the same thing but they don't know they've
+
+521
+00:37:57,920 --> 00:37:59,480
+there's no desire for them to connect and learn
+
+522
+00:37:59,480 --> 00:38:02,540
+from each other. So once I have all that. Can
+
+523
+00:38:02,540 --> 00:38:06,740
+you talk briefly. Because I think our listeners
+
+524
+00:38:06,740 --> 00:38:09,060
+know very well we we care very much about
+
+525
+00:38:09,060 --> 00:38:13,530
+learning organizations. But we've also spent a
+
+526
+00:38:13,530 --> 00:38:16,370
+lot of time this episode and the last episode
+
+527
+00:38:16,370 --> 00:38:19,810
+sort of framing community as something that is
+
+528
+00:38:20,290 --> 00:38:25,460
+inherently valuable and I don't think it is. I
+
+529
+00:38:25,460 --> 00:38:32,740
+think community is a means to an end. Sure. So why
+
+530
+00:38:32,740 --> 00:38:35,860
+would the business care about you building a
+
+531
+00:38:35,860 --> 00:38:39,620
+community. The business cares about continuous
+
+532
+00:38:39,620 --> 00:38:42,740
+improvement and I think the business cares
+
+533
+00:38:43,060 --> 00:38:44,900
+whether they know it's called this or not a
+
+534
+00:38:44,900 --> 00:38:48,970
+learning organization. I think the business cares
+
+535
+00:38:48,970 --> 00:38:54,420
+that about efficiency and I think the business
+
+536
+00:38:54,420 --> 00:39:00,020
+cares about results. The last one community
+
+537
+00:39:00,380 --> 00:39:03,300
+helps indirectly but everything else community
+
+538
+00:39:03,300 --> 00:39:06,670
+helps directly. The community helps. I think it
+
+539
+00:39:06,670 --> 00:39:10,850
+helps directly for results. Yeah. I think the
+
+540
+00:39:10,850 --> 00:39:17,380
+biggest reason to form a community is to create
+
+541
+00:39:17,380 --> 00:39:20,100
+a means by which people don't know what they
+
+542
+00:39:20,140 --> 00:39:24,260
+don't know. OK. So community solves a knowledge
+
+543
+00:39:24,260 --> 00:39:27,690
+sharing problem. If you if you're a bit you run a
+
+544
+00:39:27,690 --> 00:39:30,250
+business and you realize that there is rampant
+
+545
+00:39:30,250 --> 00:39:32,770
+duplication of effort you have two choices.
+
+546
+00:39:33,910 --> 00:39:37,150
+Generally allow it to continue and let your
+
+547
+00:39:37,150 --> 00:39:39,230
+leaders run their business as they see fit.
+
+548
+00:39:40,990 --> 00:39:45,390
+Build a central centralized organization that's
+
+549
+00:39:45,390 --> 00:39:47,750
+going to be responsible for this duplication of
+
+550
+00:39:47,750 --> 00:39:51,750
+effort and force everyone else. I call that the
+
+551
+00:39:51,750 --> 00:39:56,790
+WTF model. Windows test framework but a community
+
+552
+00:39:56,790 --> 00:40:00,230
+is no less. It's more of an in between when it
+
+553
+00:40:00,230 --> 00:40:04,270
+comes to business results. I realize as I we've
+
+554
+00:40:04,270 --> 00:40:08,400
+been talking that I wonder if this community
+
+555
+00:40:08,400 --> 00:40:12,960
+evolved for me over time and I wonder if
+
+556
+00:40:13,320 --> 00:40:15,480
+starting with the idea of I need to build the
+
+557
+00:40:15,480 --> 00:40:18,480
+community isn't what I in my consultant role at
+
+558
+00:40:18,480 --> 00:40:22,280
+Tony's org isn't what I do. I would actually focus
+
+559
+00:40:22,280 --> 00:40:27,680
+on. I would do everything I did before but I may
+
+560
+00:40:27,680 --> 00:40:31,160
+leave after I talked to everyone leave Tony a list
+
+561
+00:40:31,200 --> 00:40:33,520
+of here's some things you could do on your team
+
+562
+00:40:33,920 --> 00:40:36,960
+that would help grow community potentially. But
+
+563
+00:40:36,960 --> 00:40:39,920
+I maybe you have to plant a bunch of seeds to
+
+564
+00:40:39,920 --> 00:40:41,800
+get the nucleus of the community going versus
+
+565
+00:40:41,800 --> 00:40:43,920
+going. We're just going to start a community.
+
+566
+00:40:44,160 --> 00:40:46,080
+Let me give you an example going way back. You
+
+567
+00:40:46,080 --> 00:40:49,200
+reminded me that around the turn of the century
+
+568
+00:40:49,640 --> 00:40:52,920
+seriously when I was working on starting with
+
+569
+00:40:52,920 --> 00:40:54,600
+Windows Millennium and then moving on to Windows
+
+570
+00:40:54,600 --> 00:40:57,240
+CE when I again actually I was a lead back then.
+
+571
+00:40:57,240 --> 00:41:00,600
+So I had a fairly large org. One of the things I
+
+572
+00:41:00,600 --> 00:41:04,040
+did was a weekly it started off as a group code
+
+573
+00:41:04,040 --> 00:41:06,680
+review ended up being sort of show and tell and
+
+574
+00:41:06,800 --> 00:41:08,640
+it isn't the kind of code review where you'd
+
+575
+00:41:09,320 --> 00:41:11,920
+look at every single line and the kind we do
+
+576
+00:41:11,920 --> 00:41:14,720
+day to day pure code review. This was more of
+
+577
+00:41:14,720 --> 00:41:17,320
+a group show and tell where we'd sometimes
+
+578
+00:41:17,320 --> 00:41:20,440
+mostly walk through code like here's architecture
+
+579
+00:41:20,440 --> 00:41:22,000
+of how I built this thing or here's how it's
+
+580
+00:41:22,000 --> 00:41:25,520
+working. That knowledge sharing a lot of it was oh
+
+581
+00:41:25,800 --> 00:41:27,800
+there's a DLL that does this thing you're doing
+
+582
+00:41:27,840 --> 00:41:30,680
+or don't you find some more big sweeping things
+
+583
+00:41:30,680 --> 00:41:32,680
+those great opportunity for learning and
+
+584
+00:41:32,680 --> 00:41:35,680
+sharing. But sometimes I had PM's on my team at
+
+585
+00:41:35,680 --> 00:41:38,000
+the time program managers and they would go
+
+586
+00:41:38,000 --> 00:41:41,360
+over more conceptual things they're working on
+
+587
+00:41:41,360 --> 00:41:42,720
+like here's the way this framework is going
+
+588
+00:41:42,720 --> 00:41:45,280
+to work. We had a CE test kit we gave developers
+
+589
+00:41:45,280 --> 00:41:48,120
+and a PM on my team in charge of that and you
+
+590
+00:41:48,120 --> 00:41:50,120
+talk about the direction and what it was going to
+
+591
+00:41:50,120 --> 00:41:53,160
+do for our customers etc. But that show and tell
+
+592
+00:41:53,320 --> 00:41:57,280
+we had a community again I was in charge ish but
+
+593
+00:41:57,800 --> 00:42:00,680
+that even that was a form of community. So I'm
+
+594
+00:42:00,680 --> 00:42:03,840
+going to leave Tony with is based on the
+
+595
+00:42:03,840 --> 00:42:05,880
+problems there from his team. I'm going to
+
+596
+00:42:05,880 --> 00:42:07,920
+look for ways where knowledge sharing may
+
+597
+00:42:07,920 --> 00:42:09,520
+help and I might start right with knowledge
+
+598
+00:42:09,520 --> 00:42:11,120
+sharing. You should do this group code review
+
+599
+00:42:11,120 --> 00:42:13,360
+thing just get people doing it get it regular. I
+
+600
+00:42:13,360 --> 00:42:16,560
+think people will latch onto it. It could be
+
+601
+00:42:16,760 --> 00:42:19,440
+maybe we're going to do a test talk once a month
+
+602
+00:42:19,720 --> 00:42:22,160
+and some someone or maybe it's Tony starting at
+
+603
+00:42:22,160 --> 00:42:24,240
+first. We'll see if we get a few people signed up
+
+604
+00:42:24,240 --> 00:42:26,920
+that have some good ideas and we'll get them
+
+605
+00:42:26,920 --> 00:42:29,240
+to once a month talk for a half hour we'll
+
+606
+00:42:29,240 --> 00:42:32,400
+bring in some snacks get people connecting and
+
+607
+00:42:32,400 --> 00:42:34,480
+maybe a list of things that may help build
+
+608
+00:42:34,480 --> 00:42:36,640
+community but maybe not even start with the
+
+609
+00:42:36,640 --> 00:42:40,370
+goal of community because communities the means
+
+610
+00:42:40,370 --> 00:42:43,210
+to an end on becoming a learning organization
+
+611
+00:42:43,530 --> 00:42:46,490
+on getting ideas to mesh and learning new ideas.
+
+612
+00:42:46,850 --> 00:42:49,700
+But I think if I had a week to kind of get
+
+613
+00:42:49,700 --> 00:42:52,340
+things going I would and I'm going to be
+
+614
+00:42:52,340 --> 00:42:54,180
+evaluated on how things are going in six months.
+
+615
+00:42:54,540 --> 00:42:57,180
+I'm going to give Tony a fairly tactical list
+
+616
+00:42:57,180 --> 00:42:59,580
+of here do these things for the next six
+
+617
+00:42:59,580 --> 00:43:01,860
+months. It should take a fairly minimal amount
+
+618
+00:43:01,860 --> 00:43:03,780
+of effort. It's going to take some effort. And
+
+619
+00:43:03,780 --> 00:43:06,810
+let's see what's in the sea what builds over
+
+620
+00:43:06,810 --> 00:43:10,550
+that time. Sure. Sure. I mean the
+
+621
+00:43:11,800 --> 00:43:16,160
+value I would add to that I think I'll tell
+
+622
+00:43:16,160 --> 00:43:19,240
+you the one thing that I've learned from Google
+
+623
+00:43:19,240 --> 00:43:23,560
+and I've still not seen Microsoft do this. Tony
+
+624
+00:43:23,560 --> 00:43:26,920
+talks about testers aren't engaged because they
+
+625
+00:43:26,920 --> 00:43:30,920
+don't see the value and what you had to do is
+
+626
+00:43:30,920 --> 00:43:34,920
+boil the frog here and find ways to get
+
+627
+00:43:34,920 --> 00:43:37,960
+people to see the value on their own without
+
+628
+00:43:37,960 --> 00:43:39,600
+you telling them. And I didn't say that directly.
+
+629
+00:43:39,640 --> 00:43:40,640
+One of the reasons I want to talk to the
+
+630
+00:43:40,640 --> 00:43:42,760
+individuals on the team find out what they're
+
+631
+00:43:42,760 --> 00:43:46,800
+interested in what would engage them and make
+
+632
+00:43:46,800 --> 00:43:50,160
+sure we have. I think if you might see someone
+
+633
+00:43:50,160 --> 00:43:53,320
+is unengaged until you find the topic they
+
+634
+00:43:53,320 --> 00:43:55,400
+care about the topics they care about and all
+
+635
+00:43:55,400 --> 00:43:59,600
+of a sudden they have an opinion. Yes. Like the
+
+636
+00:43:59,600 --> 00:44:06,510
+biggest problem with siloism is since your
+
+637
+00:44:06,510 --> 00:44:09,670
+siloed you don't know what other people know.
+
+638
+00:44:10,640 --> 00:44:16,470
+And I can guarantee you in any organization of
+
+639
+00:44:16,470 --> 00:44:20,830
+sufficient size there are two people working on
+
+640
+00:44:20,830 --> 00:44:24,790
+similar things that would prefer to work
+
+641
+00:44:24,830 --> 00:44:29,420
+together to get it done faster. And the more you
+
+642
+00:44:29,420 --> 00:44:34,860
+can use find those folks and get them connected
+
+643
+00:44:34,860 --> 00:44:37,140
+and working together towards a common goal.
+
+644
+00:44:37,700 --> 00:44:41,120
+That's your seed. You just need two people.
+
+645
+00:44:42,150 --> 00:44:45,870
+Two people to use as an in-house case study and
+
+646
+00:44:45,870 --> 00:44:49,310
+motivate them to succeed. Google does this
+
+647
+00:44:49,310 --> 00:44:51,390
+practice. I don't know if they still do it but
+
+648
+00:44:51,390 --> 00:44:54,860
+the weekly status report as I understand it
+
+649
+00:44:54,860 --> 00:44:57,540
+everyone in Google every day or every Friday
+
+650
+00:44:58,220 --> 00:45:01,540
+writes a status report. You and it goes into a
+
+651
+00:45:01,540 --> 00:45:05,860
+public index. I love this idea. Which is then
+
+652
+00:45:05,860 --> 00:45:09,780
+searchable. It's searchable. I people can go
+
+653
+00:45:09,780 --> 00:45:12,180
+how many other people are working on a similar
+
+654
+00:45:12,180 --> 00:45:16,460
+concept. Now you don't use terms like duplication
+
+655
+00:45:16,460 --> 00:45:19,340
+of effort because that's jurisdiction and
+
+656
+00:45:19,340 --> 00:45:21,700
+command and control and gets people defensive.
+
+657
+00:45:22,340 --> 00:45:25,700
+You cannot build a community of defensive people.
+
+658
+00:45:26,540 --> 00:45:30,030
+It's just impossible. But you can encourage and
+
+659
+00:45:30,030 --> 00:45:31,870
+say hey maybe you guys can learn from each
+
+660
+00:45:31,870 --> 00:45:33,790
+other or maybe you guys could kill this
+
+661
+00:45:33,790 --> 00:45:40,810
+faster. One my particular team highly values
+
+662
+00:45:40,810 --> 00:45:45,250
+knowledge sharing because I started off with
+
+663
+00:45:45,450 --> 00:45:47,610
+pushing command and control. No you will write
+
+664
+00:45:47,610 --> 00:45:49,730
+this doc. You will put it in one note. You will
+
+665
+00:45:49,730 --> 00:45:53,290
+blah blah blah. And then they would discover
+
+666
+00:45:53,290 --> 00:45:56,450
+like oh crap I had to fix this bug. I didn't
+
+667
+00:45:56,450 --> 00:46:01,750
+write this code. Thank God. One note had
+
+668
+00:46:01,750 --> 00:46:05,950
+documented who did it. What their approach was
+
+669
+00:46:05,950 --> 00:46:08,070
+and what they're thinking. I could go and search
+
+670
+00:46:08,070 --> 00:46:10,070
+one note and I got the answer immediately and I
+
+671
+00:46:10,070 --> 00:46:13,670
+saw it and they knew it's that knowledge sharing
+
+672
+00:46:13,670 --> 00:46:16,190
+actually had just saved them five hours of
+
+673
+00:46:16,190 --> 00:46:20,760
+searching through get. So you start small and
+
+674
+00:46:20,760 --> 00:46:22,960
+you begin to break down those barriers and
+
+675
+00:46:22,960 --> 00:46:28,080
+that's how you get engagement going. I like
+
+676
+00:46:28,080 --> 00:46:30,600
+the status report idea because it's then it's
+
+677
+00:46:30,600 --> 00:46:35,380
+very easy to go. It's just scale and figure out
+
+678
+00:46:35,900 --> 00:46:40,860
+which people have sort of a similar bent on
+
+679
+00:46:40,940 --> 00:46:47,360
+topics of interest. The there is a great book on
+
+680
+00:46:47,360 --> 00:46:52,260
+this topic. It's called influencer how to
+
+681
+00:46:52,260 --> 00:46:56,420
+change anything. And it goes through and it
+
+682
+00:46:56,420 --> 00:47:00,060
+talks about a very tactical set of steps that
+
+683
+00:47:00,820 --> 00:47:03,780
+they've done studies on. And if you follow the
+
+684
+00:47:03,780 --> 00:47:09,020
+steps it's a complex framework once you've
+
+685
+00:47:09,020 --> 00:47:13,100
+practiced it a couple of times. I have deployed
+
+686
+00:47:13,100 --> 00:47:18,060
+it multiple times. It is extremely effective.
+
+687
+00:47:19,300 --> 00:47:24,420
+Their answers or rather their numbers show that
+
+688
+00:47:24,420 --> 00:47:27,580
+it's a greater than 90 percent success rate in
+
+689
+00:47:27,580 --> 00:47:32,410
+terms of executing a change. Influencer how to
+
+690
+00:47:32,410 --> 00:47:34,810
+change anything again is the title of the book.
+
+691
+00:47:36,000 --> 00:47:38,840
+If I'm fine good I'll put a link in but the rest
+
+692
+00:47:38,840 --> 00:47:42,550
+you know how to use a search engine. Yep. To build
+
+693
+00:47:42,550 --> 00:47:46,750
+a community you have to address simultaneously
+
+694
+00:47:47,270 --> 00:47:49,590
+the extrinsic value. Why you're building a
+
+695
+00:47:49,590 --> 00:47:52,350
+community. What what problem for the business is
+
+696
+00:47:52,350 --> 00:47:55,650
+going to always start with why. And you also have
+
+697
+00:47:55,650 --> 00:48:00,130
+to address the intrinsic value. Why is. All right.
+
+698
+00:48:00,210 --> 00:48:02,210
+I'm going to build the community because I think
+
+699
+00:48:02,250 --> 00:48:07,360
+Alan and Steve need to knowledge share and that
+
+700
+00:48:07,360 --> 00:48:09,640
+the business is going to benefit be more productive.
+
+701
+00:48:09,880 --> 00:48:14,040
+That's not a very good why. No. But you also have
+
+702
+00:48:14,040 --> 00:48:18,560
+to address why Alan and Steve care. How you're
+
+703
+00:48:18,560 --> 00:48:22,040
+going to get what's what's their motivation.
+
+704
+00:48:22,040 --> 00:48:27,460
+What are they going to get out of it. And if
+
+705
+00:48:27,460 --> 00:48:30,180
+you have a model and an approach that addresses
+
+706
+00:48:30,180 --> 00:48:31,980
+both of these concerns and it's going to be very
+
+707
+00:48:31,980 --> 00:48:35,540
+context sensitive. You can move forward. You know
+
+708
+00:48:35,540 --> 00:48:39,320
+that it's a test community. If I were going into
+
+709
+00:48:39,440 --> 00:48:42,000
+doing a test community I would start on something
+
+710
+00:48:42,000 --> 00:48:44,600
+very tactical probably on the topic of modern
+
+711
+00:48:44,600 --> 00:48:48,520
+testing like Alan's got this webinar. Hey check
+
+712
+00:48:48,520 --> 00:48:54,230
+out this cool machine learning test case. I just
+
+713
+00:48:54,230 --> 00:48:57,670
+spent last week and did your team's entire job
+
+714
+00:48:57,670 --> 00:49:01,990
+using this tool. Yes I agree. Yeah. Find a way
+
+715
+00:49:01,990 --> 00:49:04,390
+to get people engaged and think but first think
+
+716
+00:49:04,390 --> 00:49:05,830
+about the problem you really want to solve and
+
+717
+00:49:05,830 --> 00:49:08,670
+understand why building a community if that's your
+
+718
+00:49:08,670 --> 00:49:10,830
+goal or what are the ways that will solve that
+
+719
+00:49:10,830 --> 00:49:13,030
+problem. But always start with why. What are you
+
+720
+00:49:13,030 --> 00:49:15,830
+going to do with it. And then of course make
+
+721
+00:49:15,830 --> 00:49:17,670
+sure people are engaged understand why it's
+
+722
+00:49:17,670 --> 00:49:22,710
+important for them. We are out of time. I am
+
+723
+00:49:22,710 --> 00:49:27,740
+still Alan. And I am Brent. Thank you. We'll see
+
+724
+00:49:27,740 --> 00:49:28,820
+you next time. Bye.
+

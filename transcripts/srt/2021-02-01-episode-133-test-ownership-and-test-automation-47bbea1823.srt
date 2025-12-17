@@ -1,0 +1,2664 @@
+1
+00:00:03,380 --> 00:00:13,460
+Welcome to AV testing podcast your modern testing podcast your hosts Alan and Brent will be here to guide you through topics on testing
+
+2
+00:00:13,880 --> 00:00:18,580
+Leadership agile and anything else that comes to mind now on with the show
+
+3
+00:00:18,980 --> 00:00:22,080
+This is the AV testing podcast and I'm
+
+4
+00:00:22,780 --> 00:00:30,700
+Brent and yay is this episode 133 is that correct that is and by now everyone should be finding our podcast
+
+5
+00:00:30,700 --> 00:00:37,780
+I change hosts for a couple reasons and it didn't go as smoothly as I wanted because I realized that
+
+6
+00:00:38,500 --> 00:00:40,960
+One I thought it was bad that a lot of a lot of
+
+7
+00:00:42,060 --> 00:00:45,980
+Podcast hosts make their own feeds which actually I can see what they do that
+
+8
+00:00:45,980 --> 00:00:46,820
+So I'm not mad at them
+
+9
+00:00:46,820 --> 00:00:53,620
+But it turns out a lot of them base their feed purely on the iTunes feed which is weird versus the source feed
+
+10
+00:00:53,740 --> 00:01:00,020
+But that's okay, but it just took longer to get the Apple iTunes feed updated, but it looks like it's all set
+
+11
+00:01:00,020 --> 00:01:03,220
+So now you should be hearing this. This is our second podcast of 2020
+
+12
+00:01:03,260 --> 00:01:09,780
+We love all of you. And hey, do you know how you find out more about the podcast Brent you go to?
+
+13
+00:01:11,220 --> 00:01:14,940
+AB testing calm you do not go to a B testing calm
+
+14
+00:01:14,940 --> 00:01:19,400
+What are we talking about on here a thing that's not really modern and a thing that's not really testing
+
+15
+00:01:20,920 --> 00:01:23,800
+You know the answer to that question Brent. Yes
+
+16
+00:01:24,520 --> 00:01:27,320
+Yes, I do you can go to modern testing org
+
+17
+00:01:27,920 --> 00:01:32,560
+You oh, oh, I guess I didn't which is the site a domain
+
+18
+00:01:32,560 --> 00:01:36,480
+We got a couple years ago for start talking about this that used to direct to a B testing
+
+19
+00:01:37,120 --> 00:01:41,560
+On my angry weasel site, but now it goes to actual modern testing org
+
+20
+00:01:42,860 --> 00:01:45,380
+I've set it up as a real website
+
+21
+00:01:46,460 --> 00:01:48,260
+Nice. Yeah
+
+22
+00:01:48,260 --> 00:01:55,540
+It's not super pretty but happy to take volunteer web developers and the way to get involved with anything you want
+
+23
+00:01:55,540 --> 00:02:02,560
+Behind the scenes on the podcast is to go to modern testing org and in the sparse amount of text there
+
+24
+00:02:02,560 --> 00:02:07,260
+Find the link to join our slack group one of the three dot slack comm
+
+25
+00:02:07,740 --> 00:02:15,350
+How's that for an intro and get everybody hooked? I'll give you a minute to go find that website and log in and say hi
+
+26
+00:02:16,260 --> 00:02:20,860
+Right the clone the github repro and yeah, we got we got
+
+27
+00:02:22,860 --> 00:02:24,860
+Typing while he's talking again
+
+28
+00:02:25,740 --> 00:02:31,480
+Which I don't like well, I can't remember we were recording when I said that the hard time thing is I can't punch you
+
+29
+00:02:31,480 --> 00:02:33,400
+We were weren't me. Okay?
+
+30
+00:02:33,400 --> 00:02:40,520
+The first things first before we get starting with a couple topics today is Brent wanted to talk about balls. I did
+
+31
+00:02:41,530 --> 00:02:46,070
+And you can't see this on the podcast, but right behind me in my
+
+32
+00:02:46,810 --> 00:02:52,070
+luxurious office here in East Seattle otherwise known as Issaquah Washington is
+
+33
+00:02:52,070 --> 00:02:58,790
+some balls is a mighty fine stack of some big balls
+
+34
+00:02:59,790 --> 00:03:04,450
+soccer balls except for one rugby ball the rugby balls the outlier I got that on a trip to
+
+35
+00:03:05,330 --> 00:03:07,530
+New Zealand that Australia that's an Australian
+
+36
+00:03:08,270 --> 00:03:13,870
+Replica rug just a souvenir rugby ball. I got in Australia the rest are ever since
+
+37
+00:03:15,310 --> 00:03:19,090
+For many years. I don't have all of them up there, but for the past
+
+38
+00:03:19,170 --> 00:03:21,170
+But for the past
+
+39
+00:03:21,810 --> 00:03:23,810
+2024 years or so I
+
+40
+00:03:24,330 --> 00:03:28,970
+Have procured myself every year they design it every four years when there's a World Cup
+
+41
+00:03:29,480 --> 00:03:33,480
+That's a tournament for soccer or football. It's a game
+
+42
+00:03:33,480 --> 00:03:40,320
+It's the most populous one in the world but popular but anyway, Oh Super Bowl. That's like in two weeks. Oh god
+
+43
+00:03:40,320 --> 00:03:43,120
+I don't even know who I lost interest
+
+44
+00:03:43,360 --> 00:03:47,240
+Although the funny tangent is here, but I'll finish the story first
+
+45
+00:03:47,240 --> 00:03:50,440
+No tangent is I every World Cup
+
+46
+00:03:50,440 --> 00:03:55,200
+They make a specific ball and I get a ball from that World Cup and save it never play it
+
+47
+00:03:55,200 --> 00:03:57,200
+I just kind of I have brand new
+
+48
+00:03:57,880 --> 00:04:01,880
+soccer balls footballs from every World Cup back to
+
+49
+00:04:02,520 --> 00:04:07,600
+Before Korea so it must have been it maybe back to the US run the first US run anyway
+
+50
+00:04:08,200 --> 00:04:12,880
+What was I gonna tangent on I don't remember doesn't matter the Olympics?
+
+51
+00:04:13,240 --> 00:04:15,400
+the Olympics no
+
+52
+00:04:15,440 --> 00:04:17,120
+Wrong. Oh
+
+53
+00:04:17,120 --> 00:04:19,410
+guess again
+
+54
+00:04:20,450 --> 00:04:25,180
+All right, so okay one thing I'm curious though so one of the soccer balls
+
+55
+00:04:26,100 --> 00:04:28,940
+Looks like it's impaled by a frisbee
+
+56
+00:04:29,540 --> 00:04:35,900
+That is purely an optical illusion. There's actually some other crap laying up there. It's not a soccer ball
+
+57
+00:04:35,900 --> 00:04:37,940
+It's just balls and a couple of things they threw up there
+
+58
+00:04:38,590 --> 00:04:45,840
+Gotcha. All right, cuz I was wondering what the hell that was but it's an optical illusion it all right
+
+59
+00:04:46,360 --> 00:04:49,240
+Thanks for coming to our podcast everyone
+
+60
+00:04:49,840 --> 00:04:56,560
+We can skip the politics session for this week up. There's stuff happening and there's still idiots just like always they're just more prominent now
+
+61
+00:04:57,240 --> 00:05:01,520
+Don't you want to do the the podcast podcast or is it too early in the episode for that?
+
+62
+00:05:02,410 --> 00:05:06,330
+It I mean, it's uncharacteristic early. We're like five minutes in
+
+63
+00:05:06,330 --> 00:05:11,690
+I feel like we should just like wait for five minutes and then start but why don't maybe maybe ten minutes in
+
+64
+00:05:11,690 --> 00:05:12,130
+No
+
+65
+00:05:12,130 --> 00:05:13,170
+Why don't we do this?
+
+66
+00:05:13,170 --> 00:05:19,770
+Cuz this is because sometimes we talk about like what's been going on and and why don't we talk about the article?
+
+67
+00:05:19,770 --> 00:05:22,570
+I posted two weeks ago. Maybe it's
+
+68
+00:05:23,250 --> 00:05:25,250
+Tuesday of last week and
+
+69
+00:05:26,880 --> 00:05:31,720
+We talked let's talk about that so yeah last time on the podcast
+
+70
+00:05:32,800 --> 00:05:34,800
+Insert clip here. No, I'm too lazy
+
+71
+00:05:35,240 --> 00:05:41,880
+We were talking about this idea of mindsets and skill sets and how it never quite sat right and I was working on an article on it
+
+72
+00:05:41,880 --> 00:05:48,160
+And I went that weekend after the podcast and finished the article. I just needed to get some ideas going and
+
+73
+00:05:49,120 --> 00:05:51,120
+posted to
+
+74
+00:05:52,200 --> 00:05:56,680
+Exactly the reaction I expected and the gist of the article if you haven't read it you can
+
+75
+00:05:56,840 --> 00:06:03,640
+Find it in my five for Friday last week or in my Twitter feed. I don't have the URL memorized
+
+76
+00:06:03,680 --> 00:06:10,860
+But it's on the the blog test project IO and the gist of it was that I
+
+77
+00:06:11,780 --> 00:06:14,900
+argued the fact that folks like
+
+78
+00:06:15,140 --> 00:06:17,140
+Michael Bolton James Bock have posted that
+
+79
+00:06:17,540 --> 00:06:24,380
+Shifting from a creator's mindset to a testers mindset requires a massive and difficult mind shift. I I poo pooed that and
+
+80
+00:06:25,040 --> 00:06:28,240
+Gave some examples. I said those are really skill sets and
+
+81
+00:06:29,120 --> 00:06:34,720
+There's no block that developers can't do very very good testing and as expected
+
+82
+00:06:34,960 --> 00:06:40,880
+90% of the replies were duh. Yeah. Thank you. It's it's funny how I can get this happens a lot
+
+83
+00:06:41,720 --> 00:06:44,880
+because I'd like to try and tow the line a little bit is
+
+84
+00:06:46,600 --> 00:06:52,380
+For as many people as I get I get people agreeing, but I also get people saying this is old news
+
+85
+00:06:52,380 --> 00:06:58,480
+Why are people still talking about this? This is dumb and other people thinking like I'm killing a cat
+
+86
+00:06:58,840 --> 00:07:05,420
+I'm on the the old news camp, right? There's a reason why we call what we've done
+
+87
+00:07:06,080 --> 00:07:08,000
+modern testing
+
+88
+00:07:08,000 --> 00:07:13,800
+the other thing to point out that I always want to point out is you're probably gonna get to but I'm on a roll and
+
+89
+00:07:13,800 --> 00:07:16,040
+I'm riled up is that sorry go for it
+
+90
+00:07:16,760 --> 00:07:20,200
+Didn't invent anything with modern testing and we've been accused
+
+91
+00:07:20,440 --> 00:07:27,200
+I've been accused of inventing something that's harming the craft and Brent. Did we invent anything at all?
+
+92
+00:07:28,680 --> 00:07:32,320
+Um that answer is no we we invented a name
+
+93
+00:07:32,720 --> 00:07:39,200
+Yeah, we put a name to something that we were seeing if you go back to our very very first podcast
+
+94
+00:07:39,200 --> 00:07:43,460
+Don't listen to it. Trust me. We're much better now as bad as it is. We're better now
+
+95
+00:07:44,440 --> 00:07:50,920
+We would we just wanted to talk about what we were seeing to help people who may be going through the same thing not freak out
+
+96
+00:07:50,920 --> 00:07:51,680
+and
+
+97
+00:07:51,680 --> 00:07:57,840
+What we see is people putting their heads in the sand and freaking out if people want to give us
+
+98
+00:07:58,760 --> 00:08:03,240
+Credit for this obviously it's wrong and inappropriate
+
+99
+00:08:04,550 --> 00:08:07,430
+It's it's interesting because I actually
+
+100
+00:08:08,470 --> 00:08:09,990
+As you know
+
+101
+00:08:09,990 --> 00:08:13,190
+We are not harming the craft the craft
+
+102
+00:08:13,830 --> 00:08:14,870
+has
+
+103
+00:08:14,870 --> 00:08:17,390
+long since been under threat and
+
+104
+00:08:18,390 --> 00:08:20,390
+What we are doing
+
+105
+00:08:20,510 --> 00:08:22,510
+For those who listen are
+
+106
+00:08:23,390 --> 00:08:24,710
+protecting
+
+107
+00:08:24,710 --> 00:08:26,710
+the craftsmen
+
+108
+00:08:27,740 --> 00:08:29,740
+Right. It's essentially
+
+109
+00:08:30,700 --> 00:08:33,380
+God normally I can load a metaphor here
+
+110
+00:08:34,060 --> 00:08:38,180
+Right, but there's a long biscuit in a wood shredder
+
+111
+00:08:39,060 --> 00:08:41,780
+Right. No, no, I'm thinking of
+
+112
+00:08:42,980 --> 00:08:44,980
+Normally I go back to
+
+113
+00:08:45,980 --> 00:08:53,980
+Cobalt right or or cobalt not cobalt. That's cobalt is an element cobalt is a programming language
+
+114
+00:08:55,420 --> 00:08:59,540
+While I am chronologically older that you are a dimension old man go on
+
+115
+00:09:00,780 --> 00:09:07,900
+Yeah, I definitely resemble that fact like Alan to me in some regard like continuing this discussion on
+
+116
+00:09:08,260 --> 00:09:10,660
+Is test dying blah blah blah. I
+
+117
+00:09:11,340 --> 00:09:18,940
+Won't even play that game anymore. No, it's it's like I'm already starting conversations and starting to bring up
+
+118
+00:09:19,860 --> 00:09:23,160
+That my view we are right now
+
+119
+00:09:23,900 --> 00:09:27,750
+at the beginning of the end of the data science
+
+120
+00:09:29,710 --> 00:09:35,710
+Specialist there there will be people holding on to that specialty for decades as well. Yeah. Yeah. Yeah for sure
+
+121
+00:09:36,510 --> 00:09:41,630
+It's especially I went to school for this I studied this I've put a lot of heart and soul into it
+
+122
+00:09:41,630 --> 00:09:43,630
+Please don't take it away. I'm unwilling to adapt
+
+123
+00:09:45,900 --> 00:09:47,740
+There will be that
+
+124
+00:09:47,740 --> 00:09:50,660
+Maybe maybe the problem is right now
+
+125
+00:09:51,730 --> 00:09:54,890
+there's a glut of folks coming out of school with that and
+
+126
+00:09:55,610 --> 00:09:59,570
+They're not able to to sort of land the job in the career
+
+127
+00:10:00,570 --> 00:10:05,370
+And that would be true even if we weren't in a in the midst of a covid nightmare
+
+128
+00:10:05,730 --> 00:10:12,270
+So what one point I want to make and of course I I have Bolton and Bach muted
+
+129
+00:10:12,730 --> 00:10:18,490
+Not blocked but muted on Twitter. So sometimes they can show up. I don't sure how the meeting algorithm works actually
+
+130
+00:10:19,090 --> 00:10:21,730
+but it was pointed out to me that the response to
+
+131
+00:10:22,450 --> 00:10:28,290
+Bach on my article was that I thought it was interesting. I see exactly where he's coming from but I think it's bullshit as well
+
+132
+00:10:28,930 --> 00:10:30,930
+he said something to the effect of
+
+133
+00:10:31,890 --> 00:10:36,170
+Unless Alan you've studied social sciences, you really don't get testing
+
+134
+00:10:37,530 --> 00:10:42,650
+Which says two things to me one is for the testing
+
+135
+00:10:43,490 --> 00:10:44,610
+one
+
+136
+00:10:44,610 --> 00:10:46,610
+first answer, huh
+
+137
+00:10:46,810 --> 00:10:51,500
+to I don't know how I mean sure if you want to
+
+138
+00:10:52,140 --> 00:10:58,340
+I'm not gonna deny some applicability. Maybe and I'm giving in the benefit of the doubt on number two, but number three is
+
+139
+00:10:59,720 --> 00:11:05,040
+Huh again, so for number three, it's just I don't care
+
+140
+00:11:06,570 --> 00:11:09,370
+Repeat the quote it was I'm paraphrasing
+
+141
+00:11:09,370 --> 00:11:14,090
+It was people do is if they're not quite sure how to engage me on something
+
+142
+00:11:14,090 --> 00:11:18,290
+They know that Bolton and Bach will be pissed about they just tag him they tag him in a Twitter and
+
+143
+00:11:19,970 --> 00:11:25,570
+Apparently Bach came in I just glanced at it cuz again cuz how meat works but something to the effect of
+
+144
+00:11:26,210 --> 00:11:29,170
+Unless you've been studying social sciences is the art
+
+145
+00:11:29,170 --> 00:11:34,090
+This isn't really what they're doing isn't really testing and that's what I wanted to get to is
+
+146
+00:11:35,170 --> 00:11:36,530
+historically
+
+147
+00:11:36,530 --> 00:11:38,610
+historically, if you look what Bach has done to
+
+148
+00:11:39,650 --> 00:11:41,650
+Elizabeth Hendrickson and
+
+149
+00:11:41,890 --> 00:11:49,450
+Lisa Crispin where he's I've seen him say like because he hasn't seen them test. They're not good testers and
+
+150
+00:11:50,250 --> 00:11:52,250
+it's like he has the
+
+151
+00:11:52,890 --> 00:11:59,810
+Authority to decide what good testing is and what good testing isn't and he doesn't not in a million years, you know who gets to decide
+
+152
+00:12:01,010 --> 00:12:06,850
+Nobody actually cut customers closely. They get to value a quality and here's the trick. Here's the thing you and I
+
+153
+00:12:07,920 --> 00:12:13,000
+Agree on which comes out to be the crux of all these these people who get stuck in
+
+154
+00:12:13,480 --> 00:12:15,760
+Celebrating the craft is they care
+
+155
+00:12:17,400 --> 00:12:20,560
+1000% more about testing than they do about quality
+
+156
+00:12:21,200 --> 00:12:23,300
+Yes
+
+157
+00:12:25,460 --> 00:12:29,860
+Slaps me in the face. I suck. I just do not get how you can
+
+158
+00:12:30,100 --> 00:12:33,740
+So I love the craft and I was deep in the man. I'll learn a lot about testing
+
+159
+00:12:33,740 --> 00:12:35,380
+I know a lot about testing. I'm gonna talk about testing
+
+160
+00:12:35,380 --> 00:12:36,940
+I'm gonna write a book about testing
+
+161
+00:12:36,940 --> 00:12:42,740
+But which I did as you know, and I don't like it anymore because I care about now is quality customers
+
+162
+00:12:42,740 --> 00:12:49,100
+Don't care what testing we did. They don't care if I'm a skilled practitioner of the arts and social scientists and testing
+
+163
+00:12:49,100 --> 00:12:51,740
+They don't care if I could ask a hundred and one
+
+164
+00:12:52,260 --> 00:12:58,780
+Totally dumb straw man argument questions about testing. They care if the product solves their problem in a way that they enjoy
+
+165
+00:12:59,570 --> 00:13:02,410
+Just say true. Hallelujah. Amen
+
+166
+00:13:03,690 --> 00:13:05,690
+True. Hallelujah and
+
+167
+00:13:06,090 --> 00:13:07,460
+Amen
+
+168
+00:13:07,460 --> 00:13:14,260
+Part of the I mean, there's so many things that came out and what you were just saying like number one
+
+169
+00:13:14,260 --> 00:13:22,010
+I don't know what you're doing, but get to the point we talked about this last time. So let's let's get get to it, man
+
+170
+00:13:23,490 --> 00:13:25,490
+Number one
+
+171
+00:13:25,530 --> 00:13:28,290
+Yeah, there is a good deal of
+
+172
+00:13:30,570 --> 00:13:35,370
+Ivory Tower ism in his statement there, right? It's
+
+173
+00:13:36,490 --> 00:13:38,490
+Unless you have studied
+
+174
+00:13:39,170 --> 00:13:41,170
+Sociology
+
+175
+00:13:41,410 --> 00:13:45,810
+I'll find the quote and again coming from where he's coming from and again
+
+176
+00:13:46,730 --> 00:13:48,930
+Every behavior has a motivation. Oh
+
+177
+00:13:49,560 --> 00:13:52,340
+Sure, and I'll look up the tweets here a second
+
+178
+00:13:52,340 --> 00:13:55,480
+I'll stop trying to type while I or type on my phone while I talk but
+
+179
+00:13:56,060 --> 00:13:58,060
+from his view
+
+180
+00:13:58,180 --> 00:14:03,300
+Testing is the most important thing doing good testing his client
+
+181
+00:14:03,300 --> 00:14:06,940
+his only stakeholder is the person who's made that software and
+
+182
+00:14:07,420 --> 00:14:11,380
+First so for that angle. Yeah, he wants to do the very best job find the best report
+
+183
+00:14:11,380 --> 00:14:14,820
+give the give the stakeholder all the information because
+
+184
+00:14:15,260 --> 00:14:21,700
+From that school they're not decision makers or information providers and for a lot of people it's all about the customer
+
+185
+00:14:21,700 --> 00:14:28,760
+So the focus is different. So we think about things differently. I get where he's coming from. I vehemently disagree with it
+
+186
+00:14:28,860 --> 00:14:35,220
+But he's not spouting nonsense as much as I really kind of don't like the guy. I think he's smart
+
+187
+00:14:35,700 --> 00:14:41,640
+What he's essentially saying like you and I have talked about many a times
+
+188
+00:14:42,480 --> 00:14:48,680
+That the activity of testing is important. Number one, huh?
+
+189
+00:14:49,080 --> 00:14:55,160
+No argument. No argument number two and in the end
+
+190
+00:14:55,160 --> 00:15:01,160
+I guess number three the thing that so that's one place. I think we're in VM an agreement
+
+191
+00:15:01,720 --> 00:15:05,640
+The the thing that I guess continues to be fuddle me is
+
+192
+00:15:08,260 --> 00:15:11,540
+Given the this amounting evidence
+
+193
+00:15:12,500 --> 00:15:15,940
+On your side on on on the mindset discussion
+
+194
+00:15:16,580 --> 00:15:21,140
+All right, it being a skill set versus a might say let me let me give you the exact
+
+195
+00:15:21,460 --> 00:15:22,700
+exchange
+
+196
+00:15:22,700 --> 00:15:26,610
+When you're when you're ready, let me get I'm gonna give you the exact exchange. I don't want to go too deep into this
+
+197
+00:15:26,610 --> 00:15:28,530
+I don't feel it's fair regardless of my opinions
+
+198
+00:15:28,530 --> 00:15:32,690
+I don't want to go into rank on somebody on the podcast when I wouldn't engage him on Twitter
+
+199
+00:15:32,930 --> 00:15:35,010
+But I went and looked it up because I only glanced at it
+
+200
+00:15:35,840 --> 00:15:43,200
+Uh when it was pointed out to me responding to my post with my article someone replied and of course tagged in michael and james
+
+201
+00:15:44,000 --> 00:15:49,200
+And said oh they brought up the idea of the problem of critical distance
+
+202
+00:15:50,080 --> 00:15:57,680
+Which is a nice term that I could find very little information on to define it and try and rebut it but the idea is
+
+203
+00:15:58,560 --> 00:16:05,760
+That because I wrote it. I can't test it which again. My reply was I found this theory to be largely false in my experience
+
+204
+00:16:06,980 --> 00:16:09,540
+Which is absolutely true. I'm not not trying to be provoking
+
+205
+00:16:09,780 --> 00:16:15,300
+I have found people that I have found critical distance to be not just false but a flat out falsehood
+
+206
+00:16:16,070 --> 00:16:17,270
+Which is the same thing?
+
+207
+00:16:17,270 --> 00:16:19,910
+So then uh james jumped in and said in my experience
+
+208
+00:16:19,990 --> 00:16:26,710
+You've never studied this stuff or did you start reading the literature on cognitive biases boundary objects social forms of life and sense making
+
+209
+00:16:26,710 --> 00:16:30,390
+While we weren't looking which I thought was kind of a passive aggressive dick move
+
+210
+00:16:30,950 --> 00:16:34,550
+Oh, I didn't look at the replies, but there's more after that but the thing is
+
+211
+00:16:35,270 --> 00:16:40,790
+We're coming from different places and and I like to believe i'm coming from a place
+
+212
+00:16:40,790 --> 00:16:46,150
+That's going to help people who are in test rules be not just keep their jobs
+
+213
+00:16:46,230 --> 00:16:49,830
+Which some people are worried about and worried about the right testing happening
+
+214
+00:16:50,630 --> 00:16:56,630
+What we're talking about on the podcast. I want to help people freaking thrive as software changes in a day
+
+215
+00:16:56,710 --> 00:16:59,190
+And figure out how they can take all of this
+
+216
+00:16:59,830 --> 00:17:05,430
+I already closed the tweet cognitive social stuff and apply it to all this stuff if you do it, right?
+
+217
+00:17:05,510 --> 00:17:13,270
+It applies to building an entire learning organization like peter singe talks about which I that's a that's a what I try and strive for
+
+218
+00:17:13,670 --> 00:17:20,410
+I use everything I learned in the critical thinking and systems thinking that I used as a tester to build an organization
+
+219
+00:17:21,510 --> 00:17:23,510
+that is capable of
+
+220
+00:17:24,150 --> 00:17:30,630
+Delivering predictably and with high quality. I use the same skills. I just don't use them to do one aspect of software delivery
+
+221
+00:17:31,760 --> 00:17:33,040
+uh, agree
+
+222
+00:17:33,040 --> 00:17:34,340
+agreed
+
+223
+00:17:34,340 --> 00:17:39,220
+but the other thing I was going to say on this one because I have the thread loaded up and
+
+224
+00:17:39,860 --> 00:17:42,740
+And bach was coming in with all sorts of
+
+225
+00:17:43,940 --> 00:17:45,300
+You know
+
+226
+00:17:45,300 --> 00:17:47,300
+How social creatures work?
+
+227
+00:17:47,620 --> 00:17:53,960
+Right, and that's actually one of the things I think is brilliant around like we've talked about it repeatedly on on tvd
+
+228
+00:17:54,980 --> 00:17:57,220
+the one of the things that's brilliant about tdd
+
+229
+00:17:58,340 --> 00:17:59,620
+is
+
+230
+00:17:59,620 --> 00:18:06,100
+The the person's writing the test before the code. Yes. It does it does it solve cognitive bias? No
+
+231
+00:18:07,060 --> 00:18:11,060
+But damn alan, it sure helps mitigate it
+
+232
+00:18:12,150 --> 00:18:18,470
+Right it just just in the fact that it creates a much better code base for for testing
+
+233
+00:18:19,110 --> 00:18:25,270
+In general it it reduces the that risk and in terms of cognitive bias
+
+234
+00:18:26,150 --> 00:18:28,150
+Right, i'll just be quite honest
+
+235
+00:18:28,870 --> 00:18:30,870
+even if test were
+
+236
+00:18:31,990 --> 00:18:36,330
+That the assumption there is test is able to maintain objectivity
+
+237
+00:18:37,510 --> 00:18:40,470
+And and not be biased as they go through their testing
+
+238
+00:18:41,320 --> 00:18:42,880
+and
+
+239
+00:18:42,880 --> 00:18:45,600
+That that by itself is fundamentally false
+
+240
+00:18:46,400 --> 00:18:53,920
+Right, even if their statements were true, I would argue that that that it that occurs even amongst the craftsmen
+
+241
+00:18:54,620 --> 00:18:56,240
+today
+
+242
+00:18:56,240 --> 00:18:57,440
+so
+
+243
+00:18:57,440 --> 00:18:59,440
+in my mind that that that
+
+244
+00:19:00,790 --> 00:19:05,430
+That statement is true on both sides and therefore can be safely ignored
+
+245
+00:19:06,500 --> 00:19:14,020
+The one thing that puzzles me here, right and this is the thing and we can go on to another topic if you want. Um
+
+246
+00:19:14,740 --> 00:19:18,180
+After this but the one thing I just don't understand
+
+247
+00:19:19,220 --> 00:19:20,820
+If they view your
+
+248
+00:19:20,820 --> 00:19:22,820
+Article and we don't have evidence here
+
+249
+00:19:22,900 --> 00:19:27,540
+But if if your article is viewed as a as a direct threat to sort of, you know
+
+250
+00:19:27,700 --> 00:19:29,700
+the dogma that that they're talking
+
+251
+00:19:30,720 --> 00:19:32,720
+in the face of
+
+252
+00:19:35,810 --> 00:19:40,530
+Of the by not the bias in the face of the the evidence that we that we're seeing
+
+253
+00:19:41,330 --> 00:19:43,330
+that contradicts this
+
+254
+00:19:43,410 --> 00:19:45,410
+Contradicts their point of view
+
+255
+00:19:45,730 --> 00:19:50,210
+Like I I just don't understand like I I completely agree that that
+
+256
+00:19:50,930 --> 00:19:53,250
+testing is is important
+
+257
+00:19:53,970 --> 00:19:56,290
+But why are they so reluctant?
+
+258
+00:19:58,020 --> 00:19:59,140
+to
+
+259
+00:19:59,140 --> 00:20:02,740
+Encourage and invite and market amongst developers
+
+260
+00:20:03,620 --> 00:20:05,620
+Well, why are they so reluctant?
+
+261
+00:20:05,940 --> 00:20:10,580
+Why now why this you already stole my next topic, but yeah, and this is why maybe
+
+262
+00:20:11,300 --> 00:20:15,860
+I can't get in their heads. I don't want to actually insert myself into other feeds they've had
+
+263
+00:20:16,820 --> 00:20:18,820
+Many of our listeners have heard those but
+
+264
+00:20:19,330 --> 00:20:26,450
+I want to skip that but if you look at one of the things I love about elizabeth hendrickson's exploratory testing book
+
+265
+00:20:27,170 --> 00:20:31,810
+Is it specifically talks about teaching developers exploratory testing?
+
+266
+00:20:33,330 --> 00:20:38,210
+And what i've noticed in my everything, you know, I I don't just make this stuff up
+
+267
+00:20:38,290 --> 00:20:42,690
+We watch stuff. I read I read books and articles and try and put it all together
+
+268
+00:20:43,010 --> 00:20:45,650
+I want to look for a full system's view of what's happened
+
+269
+00:20:45,730 --> 00:20:48,050
+Not just what you and I are seeing what's happening across the industry
+
+270
+00:20:48,530 --> 00:20:53,810
+And I got to tell you what I find more and more and more is when we go to highlight stuff
+
+271
+00:20:54,530 --> 00:20:56,530
+Like think of everything we've highlighted
+
+272
+00:20:57,010 --> 00:21:02,450
+Chances are I can find an example of elizabeth hendrickson highlighting it eight to ten years before we did
+
+273
+00:21:03,480 --> 00:21:06,360
+Yeah, well, she is pretty awesome listening to
+
+274
+00:21:07,320 --> 00:21:13,160
+Uh the ideal cast by jean kim and i've tweeted a couple times about this so worth calling up here and I listened to her episodes
+
+275
+00:21:13,620 --> 00:21:19,580
+Specifically there's one that's an interview and one there's some outtakes of a conference talk she gave in 2014 and 2015
+
+276
+00:21:20,200 --> 00:21:23,880
+That kind of backed up the point. She was talking for a while around
+
+277
+00:21:24,440 --> 00:21:30,920
+This article that she wrote with some other folks and chem caner what they did. There's like 17 of these tests
+
+278
+00:21:31,000 --> 00:21:33,000
+This is like 2001
+
+279
+00:21:33,490 --> 00:21:36,770
+This is a ways back. This is when you and I still thought testing was the schnitzel
+
+280
+00:21:37,490 --> 00:21:44,050
+Yeah, and she was meeting with these folks and they're trying to answer the age-old question. What's the right ratio of developers to testers?
+
+281
+00:21:44,690 --> 00:21:49,730
+And as you know, microsoft used to be almost one to one and windows was almost two to one in some groups
+
+282
+00:21:50,050 --> 00:21:53,010
+And they want to answer when I started when I started it was two to one
+
+283
+00:21:53,330 --> 00:21:55,490
+So the way they did it yeah
+
+284
+00:21:55,490 --> 00:21:59,890
+And what my answer has always been even very early on I what I was in
+
+285
+00:22:00,710 --> 00:22:01,910
+I didn't really care about it
+
+286
+00:22:01,910 --> 00:22:06,630
+I was in ee and had to think about engineering excellence group at microsoft and I realized the only
+
+287
+00:22:06,790 --> 00:22:09,590
+When did I join that group about 2005? So i'm still behind
+
+288
+00:22:10,230 --> 00:22:13,030
+The only right answer for that question is it depends
+
+289
+00:22:13,750 --> 00:22:18,630
+Or as I learned to put it shortly after if you're asking about ratios you're asking the wrong question
+
+290
+00:22:19,650 --> 00:22:20,610
+so
+
+291
+00:22:20,610 --> 00:22:26,690
+What they did as a thought experiment a good little affinity exercise was they asked people to think of
+
+292
+00:22:27,250 --> 00:22:31,730
+What was the ratio on the team that had the best project ever as far as delivery and quality?
+
+293
+00:22:31,890 --> 00:22:35,010
+What was the ratio of devs to test and what was the worst quality?
+
+294
+00:22:35,010 --> 00:22:38,530
+What was the biggest on the biggest train wreck you ever worked on? What was the ratio?
+
+295
+00:22:39,250 --> 00:22:46,290
+And they didn't find a lot of correlation on the high quality products, but they found massive correlation on
+
+296
+00:22:47,010 --> 00:22:52,530
+The low quality train wreck products. They all had a very high tester to developer ratio
+
+297
+00:22:53,560 --> 00:22:55,560
+You and I are not surprised
+
+298
+00:22:55,640 --> 00:22:58,920
+2001 you and I may have been surprised. I gotta tell you that
+
+299
+00:22:59,480 --> 00:23:02,120
+So in passing there one of the things she said this is
+
+300
+00:23:02,920 --> 00:23:07,080
+She just gets it but she like you and I we try and stir the water. She just knows she's like the
+
+301
+00:23:07,480 --> 00:23:10,440
+She's like the obi-wan Kenobi waiting for us to learn this stuff. I think
+
+302
+00:23:11,080 --> 00:23:12,120
+she
+
+303
+00:23:12,120 --> 00:23:19,400
+Said just in passing was talking about a test team like I can't even fathom the idea of a dedicated test team
+
+304
+00:23:20,230 --> 00:23:23,270
+Like I don't even get why that would even be a thing anymore
+
+305
+00:23:23,750 --> 00:23:26,950
+And you know, it is a thing and people are proud of their dedicated test teams
+
+306
+00:23:28,210 --> 00:23:35,890
+Anyway, the point you got to on ownership is interesting and I want to use that or or actually the point you made that I just totally
+
+307
+00:23:36,450 --> 00:23:41,970
+Screwed the pooch on the point you made was why aren't they talking to developers about doing better testing?
+
+308
+00:23:42,920 --> 00:23:44,120
+And
+
+309
+00:23:44,120 --> 00:23:46,760
+I have an answer but it's flippant even though I think it's right
+
+310
+00:23:46,840 --> 00:23:48,120
+So i'm going to skip it
+
+311
+00:23:48,120 --> 00:23:53,320
+But I want to talk about developer testing and it's sort of a piggyback on that last article. I wrote
+
+312
+00:23:53,880 --> 00:23:58,680
+Let me go back to 2015 when I went to google test automation conference in kirkland
+
+313
+00:23:59,490 --> 00:24:05,090
+Uh, it was the second or third one. I went to and a whole bunch of talks. I wasn't presenting. I was just watching
+
+314
+00:24:05,170 --> 00:24:07,030
+It was in kirkland
+
+315
+00:24:07,030 --> 00:24:08,310
+You know
+
+316
+00:24:08,310 --> 00:24:10,310
+Humans are good at pattern matching
+
+317
+00:24:10,550 --> 00:24:16,070
+And very quickly I noticed a pattern that if I would have turned into a drinking contest would have killed me
+
+318
+00:24:17,220 --> 00:24:19,460
+This is how many times each talk
+
+319
+00:24:20,340 --> 00:24:22,340
+Said the two-word phrase
+
+320
+00:24:22,950 --> 00:24:25,090
+Flaky tests
+
+321
+00:24:25,090 --> 00:24:27,090
+I wanted to call it the flaky test conference
+
+322
+00:24:28,050 --> 00:24:30,690
+It's a problem that you and I have dealt with for years and years and years
+
+323
+00:24:31,330 --> 00:24:36,050
+Developers write about and this is especially true, especially true today in the world of selenium
+
+324
+00:24:37,190 --> 00:24:38,150
+and
+
+325
+00:24:38,150 --> 00:24:42,870
+Lots of automation teams not only is a dedicated team dedicated test automation team
+
+326
+00:24:45,640 --> 00:24:47,880
+And they write a bunch of tests and
+
+327
+00:24:48,600 --> 00:24:50,760
+They're proud of the fact they have a hundred thousand tests
+
+328
+00:24:51,000 --> 00:24:56,680
+But 5 000 of them are weird and flaky and they do things like run them again or run them 10 times or they pass once
+
+329
+00:24:56,680 --> 00:25:01,640
+That's good. I'll just delete them because they don't want to run the flaky test only ones. Don't tell us any information
+
+330
+00:25:02,520 --> 00:25:06,040
+And that bugged me and there's a solution for this. I want to get to
+
+331
+00:25:06,920 --> 00:25:08,550
+but
+
+332
+00:25:08,550 --> 00:25:11,670
+the other thing I was going to mention is
+
+333
+00:25:13,470 --> 00:25:14,900
+Accelerate
+
+334
+00:25:14,900 --> 00:25:20,020
+In you've heard us mention this book called accelerate written by nicole forest green and some other people
+
+335
+00:25:20,500 --> 00:25:22,100
+We love that book
+
+336
+00:25:22,100 --> 00:25:27,620
+People love the dora metrics. The um, the the four devops metrics that tell you if you're going to be high quality
+
+337
+00:25:28,260 --> 00:25:31,780
+Well a lot of reviews of the book leave out some other important
+
+338
+00:25:32,480 --> 00:25:36,180
+Indicators of quality and there's one you've highlighted on the podcast before
+
+339
+00:25:36,580 --> 00:25:41,380
+I want to highlight for you then i'm going to ask you a question and stop talking that you answer and ponder for me
+
+340
+00:25:41,860 --> 00:25:44,180
+Okay, she's talking about automated testing
+
+341
+00:25:44,900 --> 00:25:46,900
+In the book. Yes, and she says
+
+342
+00:25:48,080 --> 00:25:51,600
+First the code becomes more testable when developers write tests
+
+343
+00:25:52,160 --> 00:25:56,000
+Second when developers are responsible for the automated tests
+
+344
+00:25:56,320 --> 00:26:01,440
+They care more about them and will invest more effort into maintaining and fixing them
+
+345
+00:26:02,080 --> 00:26:04,880
+And what she's found here is the thing she's underlying is that
+
+346
+00:26:05,520 --> 00:26:13,520
+When developers own the automated testing those tests are higher quality in the products higher quality is a correlation between developers owning the tests
+
+347
+00:26:13,680 --> 00:26:15,600
+and product quality
+
+348
+00:26:15,600 --> 00:26:20,800
+So let me give you a rant with a setup statement and i've talked i've been on my soapbox almost long enough here
+
+349
+00:26:21,200 --> 00:26:24,880
+so given that there's scientific correlation proving this
+
+350
+00:26:25,520 --> 00:26:33,680
+And given that in my experience writing especially ui end-to-end automation is one of the most difficult programming tasks
+
+351
+00:26:33,680 --> 00:26:36,640
+you can do properly and non-flaky and
+
+352
+00:26:37,040 --> 00:26:41,780
+Given the fact that almost every time I talk to folks who write these sort of end-to-end
+
+353
+00:26:42,340 --> 00:26:47,220
+Ui automation tests they're doing it because it's the only level that the code is testable at
+
+354
+00:26:47,860 --> 00:26:49,860
+Given all this data
+
+355
+00:26:49,860 --> 00:26:51,620
+Why don't?
+
+356
+00:26:51,620 --> 00:26:55,620
+I see a given developers should write every single automated test
+
+357
+00:26:56,650 --> 00:26:58,740
+ever always
+
+358
+00:26:58,740 --> 00:27:00,660
+And that'll even piss off some of our listeners
+
+359
+00:27:00,660 --> 00:27:05,060
+I know we have avid listeners who love what we do who still spend a lot of their day writing test automation
+
+360
+00:27:05,380 --> 00:27:10,820
+I don't think it works. I think it's we've fallen into this weird rut where it's work that the developers don't want to do
+
+361
+00:27:11,060 --> 00:27:15,300
+But all according to studies here and according to everything i've seen it results in lower quality
+
+362
+00:27:15,620 --> 00:27:17,620
+If you want to raise the quality of your team
+
+363
+00:27:17,780 --> 00:27:21,540
+Everyone if you're not developing the code don't write automated tests for it
+
+364
+00:27:22,100 --> 00:27:28,660
+Number one, I mean do you want I mean I completely agree with everything that you're saying like what what well agree with it in
+
+365
+00:27:28,660 --> 00:27:33,780
+An elegant way that will allow our listeners to get a second point of view and be less mad at me and while I can ever
+
+366
+00:27:34,740 --> 00:27:36,100
+Yeah
+
+367
+00:27:36,100 --> 00:27:41,860
+Like I i'm still thinking around the prior conversation in the cognitive bias issue. Okay, um
+
+368
+00:27:42,860 --> 00:27:45,180
+one of the issues he even if
+
+369
+00:27:45,820 --> 00:27:48,420
+test had
+
+370
+00:27:48,660 --> 00:27:49,380
+uh
+
+371
+00:27:49,380 --> 00:27:51,380
+perfect ability to
+
+372
+00:27:51,380 --> 00:27:57,940
+To look at the code and be objective and and do the right thing which which again they don't
+
+373
+00:27:58,660 --> 00:28:03,140
+Uh, because they turned out to be just as human as the developers who wrote the code. Okay
+
+374
+00:28:03,700 --> 00:28:06,260
+It is very rare in my experience
+
+375
+00:28:07,880 --> 00:28:09,880
+that test has
+
+376
+00:28:10,340 --> 00:28:12,370
+sufficient power
+
+377
+00:28:12,390 --> 00:28:14,620
+For action to be taken
+
+378
+00:28:14,620 --> 00:28:16,140
+Okay, um
+
+379
+00:28:16,140 --> 00:28:23,260
+And of course the rst model will will address that because that's not their job. Their job is to provide information
+
+380
+00:28:23,900 --> 00:28:25,240
+okay
+
+381
+00:28:25,240 --> 00:28:28,440
+And information provided that no one takes action on
+
+382
+00:28:29,770 --> 00:28:31,690
+has um
+
+383
+00:28:31,690 --> 00:28:33,540
+I would imagine
+
+384
+00:28:33,620 --> 00:28:36,420
+a remarkably low impact to quality
+
+385
+00:28:37,290 --> 00:28:41,930
+Now even even further one of the things that that they called out
+
+386
+00:28:43,430 --> 00:28:50,710
+So that study that that that nicole did in in accelerate it calls out two things. It's essentially
+
+387
+00:28:51,830 --> 00:28:53,750
+they found
+
+388
+00:28:53,750 --> 00:28:55,170
+that
+
+389
+00:28:55,170 --> 00:28:57,110
+automation
+
+390
+00:28:57,110 --> 00:29:03,110
+Only correlated to a high functioning software. I forget their actual definition
+
+391
+00:29:03,190 --> 00:29:05,190
+But to good software
+
+392
+00:29:05,590 --> 00:29:08,070
+When the dev owned the automation
+
+393
+00:29:09,000 --> 00:29:10,710
+right
+
+394
+00:29:10,710 --> 00:29:16,550
+In other words when test owned it they found no correlation to that automation
+
+395
+00:29:17,250 --> 00:29:24,150
+Improving the software no and an anecdotal I can tell you why and there are only people that will dismiss this. Let me explain
+
+396
+00:29:25,030 --> 00:29:29,190
+I don't think this is going to be made up. Let me tell you why this works
+
+397
+00:29:30,230 --> 00:29:36,230
+I find it funny that the only I'm going to start with the test pyramid and I find it funny that the only people who
+
+398
+00:29:37,350 --> 00:29:42,790
+gripe about it and try and uh dismiss it as as useless are testers
+
+399
+00:29:43,670 --> 00:29:48,390
+So all the test automation pyramid says people get freaked out about the model
+
+400
+00:29:48,390 --> 00:29:53,110
+Of course, all models are useful and some are wrong. The reason why it works is today
+
+401
+00:29:53,970 --> 00:29:55,910
+Developers write code most developers
+
+402
+00:29:55,990 --> 00:30:02,230
+We're getting to a point where I think the vast majority of developers at least write unit tests and i'm on the record saying
+
+403
+00:30:02,230 --> 00:30:04,230
+That's a minimum job requirement
+
+404
+00:30:04,860 --> 00:30:08,540
+Which is great. They write nice little happy path test to make sure things work as expected
+
+405
+00:30:09,350 --> 00:30:11,030
+But then they throw stuff over the wall
+
+406
+00:30:11,030 --> 00:30:16,710
+So the the the shit they're throwing over the wall is just less smelly than it was 20 years ago in many cases
+
+407
+00:30:17,350 --> 00:30:19,350
+so what happens is
+
+408
+00:30:20,150 --> 00:30:21,030
+with
+
+409
+00:30:21,030 --> 00:30:28,310
+Poorly architected code we get these testers trying to test all these end-to-end scenarios almost black box like
+
+410
+00:30:29,030 --> 00:30:33,750
+I see questions all over the internet all over forums all over twitter on
+
+411
+00:30:34,870 --> 00:30:40,230
+What do I do to make selenium find this element? I it's really hard
+
+412
+00:30:40,310 --> 00:30:45,510
+I have to use an x-path and even though it's ugly sometimes it changes and my tests are really flaky
+
+413
+00:30:46,620 --> 00:30:48,380
+Yeah, absolutely true
+
+414
+00:30:48,380 --> 00:30:53,900
+The big answer to those is get your devs to add ids to your elements, which is great, but
+
+415
+00:30:54,780 --> 00:30:56,700
+They go how do I get my devs to do that?
+
+416
+00:30:56,700 --> 00:31:01,260
+If it doesn't help it's like a it just is a sad sad story to watch
+
+417
+00:31:02,060 --> 00:31:03,180
+so
+
+418
+00:31:03,180 --> 00:31:08,860
+Let's flip that around and watch what happens when a developer owns those tests because developers like
+
+419
+00:31:09,660 --> 00:31:13,260
+And maybe I think it's fair to say that most developers are lazy
+
+420
+00:31:13,740 --> 00:31:16,700
+The good ones are the best developers. I know are also lazy
+
+421
+00:31:17,340 --> 00:31:23,260
+And if they get to the point they have to write this this automated test in selenium and they go well, this sucks
+
+422
+00:31:23,340 --> 00:31:26,220
+I don't want to write this test. This is a stupid waste of my time
+
+423
+00:31:26,460 --> 00:31:29,500
+So then they go fix their code and they fix their architecture
+
+424
+00:31:29,740 --> 00:31:33,980
+So they can test for things that need to be tested at the lowest possible level
+
+425
+00:31:34,540 --> 00:31:41,820
+only in the environment where they don't have a tester because as you call out developers are lazy if they have a tester
+
+426
+00:31:42,300 --> 00:31:44,940
+And came with a with a five-word email
+
+427
+00:31:45,820 --> 00:31:53,020
+The second they own the automation they will fix their architecture to make the code more testable and
+
+428
+00:31:53,720 --> 00:31:55,100
+guaranteed
+
+429
+00:31:55,100 --> 00:32:01,020
+What they end up creating will look a lot more like the test pyramid because they're only going to write those big flaky ugly tests
+
+430
+00:32:01,020 --> 00:32:03,820
+For things that can absolutely only be tested there
+
+431
+00:32:04,540 --> 00:32:07,020
+and it doesn't mean there's not a role for people with
+
+432
+00:32:07,740 --> 00:32:14,060
+Critical thinking and actually that's a I don't like that because I think a lot of developers have those skills. They aren't like
+
+433
+00:32:14,860 --> 00:32:19,340
+Special things that only people who've been blessed with a special testers mindset can have
+
+434
+00:32:20,140 --> 00:32:23,740
+Nicole does go on to say it's the point I wanted to talk about in that same paragraph
+
+435
+00:32:24,140 --> 00:32:28,060
+She does say none of this means that we should be getting rid of testers
+
+436
+00:32:28,540 --> 00:32:33,580
+Testers serve an essential role in the software delivery cycle. I disagree with her slightly
+
+437
+00:32:34,380 --> 00:32:35,420
+I
+
+438
+00:32:35,420 --> 00:32:37,000
+in
+
+439
+00:32:37,000 --> 00:32:42,680
+There's a lot of caveats there. I think she's trying to I think she's weaseling out a little bit. Love you. Nicole. Sorry
+
+440
+00:32:43,240 --> 00:32:48,200
+I think she did wanted to avoid any backlash there, but you and I both know it can now
+
+441
+00:32:48,760 --> 00:32:54,440
+I think the point here she wants to avoid is the cult of oh, I've heard teams don't need testers
+
+442
+00:32:54,440 --> 00:32:58,760
+Let's get rid of them all it's ripping off the band-aid when it's a tourniquet
+
+443
+00:32:58,840 --> 00:33:02,040
+It's getting rid of the net without first lowering the rope
+
+444
+00:33:02,760 --> 00:33:04,280
+That's I think
+
+445
+00:33:04,280 --> 00:33:12,440
+There are caveats there, but uh, so I can see where she's coming from but yeah, you can absolutely make world-class high-quality software
+
+446
+00:33:12,920 --> 00:33:14,920
+Without any dedicated testers on the team
+
+447
+00:33:15,620 --> 00:33:17,640
+Conversely and as I tweeted
+
+448
+00:33:17,640 --> 00:33:23,320
+You can you and I won't pick will it some a self-proclaimed testing expert of their own choice pick
+
+449
+00:33:23,640 --> 00:33:28,520
+The top five testers in the world if you put them on a dysfunctional product team
+
+450
+00:33:29,080 --> 00:33:31,960
+There's no way they're ever going to ship anything that customers like
+
+451
+00:33:32,680 --> 00:33:35,320
+Well with the typical with the typical
+
+452
+00:33:36,490 --> 00:33:38,490
+Process to use that i'm used to
+
+453
+00:33:38,890 --> 00:33:40,890
+Right because when you have that then
+
+454
+00:33:41,450 --> 00:33:45,770
+The the dev team optimizes for hey, it's fun time. I get to write more code
+
+455
+00:33:46,650 --> 00:33:47,530
+and
+
+456
+00:33:47,530 --> 00:33:49,530
+When when we ship shit?
+
+457
+00:33:49,850 --> 00:33:51,850
+Uh, I get to be blameless
+
+458
+00:33:52,090 --> 00:33:55,210
+And that doesn't help the business. It doesn't help the customer
+
+459
+00:33:56,010 --> 00:34:01,930
+Right. Um, so we have data from nicole that says that developer owned automation is better for your product
+
+460
+00:34:02,650 --> 00:34:04,970
+Yeah, so given that
+
+461
+00:34:05,690 --> 00:34:06,650
+and
+
+462
+00:34:06,650 --> 00:34:08,090
+how much
+
+463
+00:34:08,090 --> 00:34:09,210
+There's this
+
+464
+00:34:09,210 --> 00:34:12,010
+I'll say it there is a industry
+
+465
+00:34:12,950 --> 00:34:16,730
+infatuation with end-to-end tests that's that's unhealthy
+
+466
+00:34:17,130 --> 00:34:23,770
+Agreed to me. The solution is obvious have the devs own it the right architecture will happen both in the testing test automation architecture
+
+467
+00:34:23,930 --> 00:34:30,010
+And in the dev architecture, it's it's it couldn't if it was painted in pink paint actually i'm red color blind
+
+468
+00:34:30,090 --> 00:34:32,090
+If it was painted in yellow paint
+
+469
+00:34:32,650 --> 00:34:34,650
+a thousand feet high
+
+470
+00:34:34,890 --> 00:34:36,890
+It couldn't be more clear to me
+
+471
+00:34:37,210 --> 00:34:39,430
+Why is it that?
+
+472
+00:34:39,750 --> 00:34:41,670
+industry wise we uh
+
+473
+00:34:41,670 --> 00:34:47,270
+We're not there. What am I seeing or what's wrong with my view because it's so obvious to me
+
+474
+00:34:47,350 --> 00:34:52,630
+How come as an industry we're still infatuated with having people who aren't the developers of the code
+
+475
+00:34:52,710 --> 00:34:57,190
+Try it and write end-to-end tests for it as the primary means of testing. Uh, please
+
+476
+00:34:57,190 --> 00:34:58,390
+Because
+
+477
+00:34:58,390 --> 00:34:59,830
+No
+
+478
+00:34:59,830 --> 00:35:03,190
+You know the answer to it. It's because it's seductive
+
+479
+00:35:04,150 --> 00:35:06,230
+Like you can get a really low trained
+
+480
+00:35:06,790 --> 00:35:08,790
+a low skilled person
+
+481
+00:35:09,800 --> 00:35:11,880
+Uh to try it out again
+
+482
+00:35:12,440 --> 00:35:20,200
+Why take the thing that look i've written shipping software in operating systems used by millions and millions of people and i'm telling you
+
+483
+00:35:20,600 --> 00:35:26,360
+Writing non flaky end-to-end automation is harder. I would rather go fix kernel bugs
+
+484
+00:35:27,080 --> 00:35:31,560
+I'd be more confident about changing the windows kernel or the xbox kernel same thing
+
+485
+00:35:31,880 --> 00:35:36,440
+Than I would about trying to write an end-to-end test. That was always going to be value and non flaky
+
+486
+00:35:37,000 --> 00:35:39,720
+Yeah, and we're going to put newbies on that here
+
+487
+00:35:40,760 --> 00:35:47,240
+Go for it. No, it it's again because well and you've seen it right? It's it's ui. It's newbies
+
+488
+00:35:47,800 --> 00:35:49,800
+Right. You just hook up
+
+489
+00:35:49,800 --> 00:35:54,680
+You just hook up to a recorder script and just click around and look you got a kick-ass
+
+490
+00:35:55,480 --> 00:35:58,600
+uh automation suite and actually I want to say because
+
+491
+00:35:59,160 --> 00:36:04,520
+Reproduces that continuously will reproduce the results until the next build. Here's the thing
+
+492
+00:36:04,600 --> 00:36:08,840
+I want to interrupt you because yeah, go ahead. I think these click and record things
+
+493
+00:36:09,160 --> 00:36:12,520
+I used to hate them and think they were stupid because I was thinking about them as a
+
+494
+00:36:13,160 --> 00:36:15,080
+Trying to create a test suite
+
+495
+00:36:15,080 --> 00:36:18,440
+But it gives me a way to do some exploratory automation
+
+496
+00:36:18,440 --> 00:36:23,240
+Like I just here I want to go do this set of actions a thousand times and I don't care if it fails
+
+497
+00:36:23,880 --> 00:36:28,360
+I'm just going to do the clicky clicky clicky record and then wrap it in a loop and go home for the night
+
+498
+00:36:28,520 --> 00:36:36,040
+That's valuable. It's not a test. I'm going to run on every build, but it gives me an opportunity to do what I call exploratory test automation
+
+499
+00:36:36,520 --> 00:36:39,160
+Let me link together some actions. Let me make a monkey test
+
+500
+00:36:39,880 --> 00:36:43,240
+The other thing right so because it's a monkey test
+
+501
+00:36:44,120 --> 00:36:50,680
+Right. That's what attracts the that's why it's attractive to assign these two sort of low-scale people
+
+502
+00:36:51,640 --> 00:36:56,680
+Right because because well, let's not let's hire a better monkey in some regards
+
+503
+00:36:57,240 --> 00:37:03,720
+Right, but the problem is these low-skilled people don't have the experience around what's going to take to maintain it
+
+504
+00:37:04,440 --> 00:37:08,120
+what it's going to take to actually get it to work and
+
+505
+00:37:08,840 --> 00:37:13,960
+I think in some regard like at the end of the day here is one place where I will say
+
+506
+00:37:14,680 --> 00:37:18,200
+I won't use our typical answer of it depends
+
+507
+00:37:18,840 --> 00:37:23,160
+Because here like I don't have an answer, but I know where the answer is
+
+508
+00:37:23,880 --> 00:37:26,760
+And the answer is going to be let's follow the incentive model
+
+509
+00:37:27,740 --> 00:37:29,740
+Let's let's go follow
+
+510
+00:37:29,900 --> 00:37:31,900
+How people are reviewed?
+
+511
+00:37:32,540 --> 00:37:34,220
+Let's go follow
+
+512
+00:37:34,220 --> 00:37:39,580
+That part of the process of developing a software and in there. I think we're going to discover
+
+513
+00:37:40,780 --> 00:37:41,900
+um
+
+514
+00:37:41,900 --> 00:37:43,460
+the cause
+
+515
+00:37:43,460 --> 00:37:48,180
+While you were talking I thought of something else because I thought about clicky clicky clicky monkey monkey monkey
+
+516
+00:37:48,740 --> 00:37:50,150
+and then
+
+517
+00:37:50,150 --> 00:37:53,990
+what I find in the reports from some of the folks who
+
+518
+00:37:55,030 --> 00:37:57,030
+Who love the craft and again?
+
+519
+00:37:57,110 --> 00:38:02,950
+I love I I don't mean to make fun of anybody just just just pointing out where I disagree and and not just that I disagree
+
+520
+00:38:02,950 --> 00:38:04,730
+But why?
+
+521
+00:38:04,730 --> 00:38:05,850
+uh
+
+522
+00:38:05,850 --> 00:38:09,690
+There was a time when we didn't know what customers did didn't know how they used our software
+
+523
+00:38:09,770 --> 00:38:13,770
+We tried to find what we thought were the bugs that they would find but we were just guessing
+
+524
+00:38:14,580 --> 00:38:17,700
+We heard things like no customer would ever do that. But then they did
+
+525
+00:38:18,260 --> 00:38:19,220
+and
+
+526
+00:38:19,220 --> 00:38:23,620
+I still think today with some of these folks. I have seen examples of them
+
+527
+00:38:24,780 --> 00:38:29,820
+I talked about infatuation with the end-to-end automation, but they're infatuated with the edge case bug
+
+528
+00:38:31,060 --> 00:38:36,900
+And the difference today is I think edge cases given millions and millions of requests for users
+
+529
+00:38:37,220 --> 00:38:39,220
+The edge cases are much more likely to happen
+
+530
+00:38:39,540 --> 00:38:44,420
+But the difference is today is we have the data to go see we see say I run this
+
+531
+00:38:44,900 --> 00:38:47,620
+Weird made-up test I make and it finds a crash
+
+532
+00:38:48,600 --> 00:38:53,160
+Yay, I found a crash go fix this bug and in the old days someone may say
+
+533
+00:38:54,360 --> 00:38:56,360
+No, this will never happen in the real world
+
+534
+00:38:56,760 --> 00:39:03,000
+But what we can do now is we can go to our data and see is it's actually the cool thing is maybe we found something that
+
+535
+00:39:03,960 --> 00:39:07,960
+A hundred two hundred a thousand users have seen never been able to never been able to reproduce
+
+536
+00:39:08,600 --> 00:39:12,920
+And now at least we have a path to reproduce it. So that's better. I'm off on a tangent
+
+537
+00:39:13,640 --> 00:39:15,640
+I just don't get it. I I
+
+538
+00:39:15,720 --> 00:39:19,560
+I'm not particularly smart. I'm not particularly dumb either
+
+539
+00:39:20,040 --> 00:39:25,560
+But to me, it's just so obvious that we shouldn't have people who aren't the developers of the code writing automation
+
+540
+00:39:25,640 --> 00:39:31,080
+I don't get it like I i'm again thinking back on the the cognitive bias discussion
+
+541
+00:39:32,020 --> 00:39:34,020
+right, I'm
+
+542
+00:39:34,020 --> 00:39:36,020
+I am
+
+543
+00:39:36,020 --> 00:39:38,020
+I'm trying to puzzle through
+
+544
+00:39:38,020 --> 00:39:40,020
+On this one. I have not
+
+545
+00:39:40,500 --> 00:39:45,940
+As you know, i'm a data scientist I have not seen I do not have access to nicole's data
+
+546
+00:39:47,000 --> 00:39:50,280
+But I have no reason to believe
+
+547
+00:39:51,000 --> 00:39:56,760
+That she and her team are anything other than highly competent in this craft
+
+548
+00:39:56,840 --> 00:40:02,120
+Yeah, I am I am competent. She's yeah, she's not only smarter than I am. She has done this stuff for you
+
+549
+00:40:02,120 --> 00:40:08,200
+She knows exactly what she's doing. In fact, the methods of their research are documented heavily in the second half of that book
+
+550
+00:40:08,680 --> 00:40:10,680
+Yes, and i've gone through that
+
+551
+00:40:11,000 --> 00:40:14,200
+Let's assert then that that fact is true
+
+552
+00:40:14,760 --> 00:40:17,960
+Right when devs own the automation
+
+553
+00:40:18,840 --> 00:40:20,890
+There is a correlation
+
+554
+00:40:20,890 --> 00:40:21,770
+Okay
+
+555
+00:40:21,770 --> 00:40:24,810
+Now she did not say causation. She said correlation
+
+556
+00:40:26,310 --> 00:40:28,470
+which then generally means
+
+557
+00:40:29,430 --> 00:40:31,430
+either a high quality product
+
+558
+00:40:32,730 --> 00:40:34,410
+is causing
+
+559
+00:40:34,410 --> 00:40:36,170
+devs to own it
+
+560
+00:40:36,170 --> 00:40:42,090
+Or that devs owning it is causing the high quality product and actually both could be true. Yeah, and i'd say
+
+561
+00:40:42,890 --> 00:40:46,090
+She focused on devops metrics and their correlation, which is good
+
+562
+00:40:46,570 --> 00:40:53,290
+But I would say on teams where developers own all of the automation. I'm guessing they probably have some other
+
+563
+00:40:53,850 --> 00:41:00,170
+Modern practices in place as well leading to that quality. I think my hunch is that practice
+
+564
+00:41:00,570 --> 00:41:04,890
+Is an indicator that they have a as we put in modern testing land a
+
+565
+00:41:05,290 --> 00:41:12,010
+Mature quality culture. Oh, I I completely agree, but let's talk about let's assume that they don't right? Let's say
+
+566
+00:41:12,890 --> 00:41:14,890
+You and I are going to start up a startup
+
+567
+00:41:15,530 --> 00:41:19,130
+Okay, and we're going to explicitly only hire
+
+568
+00:41:19,690 --> 00:41:25,530
+Like the old schooliest of the old school developers. Yeah, because they can't get jobs anywhere else. Sure
+
+569
+00:41:25,770 --> 00:41:28,250
+These these are ones that have been
+
+570
+00:41:29,290 --> 00:41:34,810
+For decades brainwashed that they are incapable of doing their own testing. Yep
+
+571
+00:41:34,890 --> 00:41:37,530
+And and they've been told that by their best friends the testers
+
+572
+00:41:38,170 --> 00:41:42,650
+And so when you're in my fictitious company, that's who we're gonna hire
+
+573
+00:41:42,650 --> 00:41:47,770
+We're gonna hire only those folks and we're gonna hire exactly zero testers
+
+574
+00:41:48,490 --> 00:41:52,650
+And we're gonna say you are accountable for for this automation
+
+575
+00:41:53,370 --> 00:41:55,930
+I do think we will eventually see
+
+576
+00:41:57,430 --> 00:42:02,950
+Uh, I can't predict the amount of time, but we will eventually see that quality dramatically improves
+
+577
+00:42:03,350 --> 00:42:07,190
+I believe so also and some of that via attrition when some of them just give up and quit
+
+578
+00:42:07,510 --> 00:42:13,590
+But but I get what you're talking about. They well, no, so I want to cover three cases here. Okay. Okay number one
+
+579
+00:42:14,490 --> 00:42:17,050
+Uh, they suddenly see the light and
+
+580
+00:42:18,330 --> 00:42:20,730
+And they build up a great test suite
+
+581
+00:42:22,220 --> 00:42:23,850
+two
+
+582
+00:42:23,850 --> 00:42:27,690
+Well, actually i'm just going to skip ahead to the thing I wanted to talk about so
+
+583
+00:42:28,090 --> 00:42:32,890
+Let's say these old schoolers, right? They they all gonna put in one or two unit tests
+
+584
+00:42:33,690 --> 00:42:36,730
+uh that are craptastic, okay, and
+
+585
+00:42:38,090 --> 00:42:39,610
+Uh
+
+586
+00:42:39,610 --> 00:42:44,650
+Then they have fulfilled the the our requirement on them. They own their automation suite
+
+587
+00:42:45,050 --> 00:42:51,370
+We we will put no requirements on the number of test cases. We will put no requirements on whether or not they pass or fail
+
+588
+00:42:52,010 --> 00:42:54,010
+We'll put no requirements
+
+589
+00:42:54,570 --> 00:43:00,970
+Uh other than they own it and it is run regularly, uh daily maybe I don't know
+
+590
+00:43:01,370 --> 00:43:03,370
+It's my metaphor i'm making things up
+
+591
+00:43:04,090 --> 00:43:05,610
+now
+
+592
+00:43:05,610 --> 00:43:08,970
+We though will make one strong stance
+
+593
+00:43:10,140 --> 00:43:12,600
+right
+
+594
+00:43:12,600 --> 00:43:13,880
+your
+
+595
+00:43:13,880 --> 00:43:15,880
+your review
+
+596
+00:43:15,880 --> 00:43:17,880
+will be heavily weighted
+
+597
+00:43:18,360 --> 00:43:19,400
+off of
+
+598
+00:43:19,400 --> 00:43:21,800
+uh the customer experience or
+
+599
+00:43:22,760 --> 00:43:27,800
+Customer retention actually, there we go. Your review is weighted off of customer retention
+
+600
+00:43:28,650 --> 00:43:29,930
+That's it
+
+601
+00:43:29,930 --> 00:43:36,730
+It's a microsoft review heavy for uh thing i'll i'll just say they get a bonus target based on customer retention
+
+602
+00:43:37,450 --> 00:43:43,770
+Um, which I think is separate from the review, but I I get I get where you're going. Sure. Sure. I mean we can modify it i'm just tying
+
+603
+00:43:44,170 --> 00:43:47,690
+Customer retention to their incentive model. All right
+
+604
+00:43:48,410 --> 00:43:51,450
+I predict that with that incentive model change
+
+605
+00:43:52,570 --> 00:43:54,810
+those oldest of the old school
+
+606
+00:43:55,770 --> 00:43:57,480
+people
+
+607
+00:43:57,480 --> 00:44:02,200
+Will either leave to a company with a incentive model that they understand
+
+608
+00:44:03,320 --> 00:44:07,240
+Or will suddenly become kick ass automation. Yeah writers
+
+609
+00:44:07,400 --> 00:44:14,920
+What all let me actually give you a different ground there because as you know from dan pink people are motivated by
+
+610
+00:44:16,360 --> 00:44:19,160
+Buy enough money where it's not an issue. So they might not be the thing
+
+611
+00:44:19,880 --> 00:44:21,880
+purpose mastery autonomy
+
+612
+00:44:21,880 --> 00:44:27,400
+Yes, and what i've seen actually supports that model because i've coached i've taught
+
+613
+00:44:27,960 --> 00:44:31,880
+old school never written a test developers to write tests and
+
+614
+00:44:32,440 --> 00:44:38,440
+They've been told so long that testing is this dark art and yes, i'm talking about real testing
+
+615
+00:44:38,440 --> 00:44:45,320
+I've seen developers find bugs that that my biggest biggest opponents would never find they're good, but
+
+616
+00:44:46,740 --> 00:44:48,150
+they
+
+617
+00:44:48,150 --> 00:44:52,710
+They can learn to test and once they get over that hump because they've been told for so long that they can't test they believe it
+
+618
+00:44:53,350 --> 00:44:57,670
+Great and once you get them over that hump and you stop
+
+619
+00:44:59,030 --> 00:45:00,550
+Lying to them
+
+620
+00:45:00,550 --> 00:45:06,790
+And show them what real testing is and how to do it and how to evaluate risk and how to not just test the happy path
+
+621
+00:45:07,190 --> 00:45:11,990
+And again, I got somebody replied and said you can have developers test but the only test the happy path
+
+622
+00:45:12,310 --> 00:45:18,710
+I said jesus help them. That's the whole point help them because they haven't done it before they're not stupid
+
+623
+00:45:19,610 --> 00:45:23,450
+It just drives me crazy back to the original topic. But anyway, what i've seen is
+
+624
+00:45:24,550 --> 00:45:27,290
+They actually don't need that money. They need expectations
+
+625
+00:45:28,150 --> 00:45:32,950
+They need autonomy and mastery and a little bit of coaching and purpose. They know it's important
+
+626
+00:45:34,180 --> 00:45:41,860
+What i've seen is they get motivated just by them figuring out. They know what to do as you were talking one last thing I wanted to say is
+
+627
+00:45:42,660 --> 00:45:46,500
+When I see folks harp on the test automation pyramid
+
+628
+00:45:47,220 --> 00:45:50,020
+They look at it as a model. They have to fit
+
+629
+00:45:50,820 --> 00:45:55,860
+And they don't like it because they well, it's contextual. It may be different from my product and of course
+
+630
+00:45:55,860 --> 00:45:58,260
+But really the way to think of the model is
+
+631
+00:45:59,220 --> 00:46:03,700
+If your software is well architected and well testable
+
+632
+00:46:04,260 --> 00:46:08,180
+It'll nat your test automation will naturally look like that
+
+633
+00:46:09,210 --> 00:46:10,490
+So that's my point
+
+634
+00:46:10,490 --> 00:46:13,610
+Hey, if you're a tester and you're writing a much automated test just stop it
+
+635
+00:46:14,520 --> 00:46:16,520
+If you have to do it to stay employed do that but
+
+636
+00:46:17,160 --> 00:46:21,320
+I believe higher quality software comes from developer-owned test automation
+
+637
+00:46:22,040 --> 00:46:24,040
+Well, it's and it's not a belief
+
+638
+00:46:24,440 --> 00:46:28,200
+Well the belief the belief is the cause you know
+
+639
+00:46:28,520 --> 00:46:31,960
+It's correlated and it goes right back to the point we made towards the beginning of the podcast
+
+640
+00:46:31,960 --> 00:46:36,920
+We're not trying to preach some new idea. I am telling you this is happening
+
+641
+00:46:37,480 --> 00:46:42,760
+People have been doing this and it's working arguing with me that i'm wrong
+
+642
+00:46:43,640 --> 00:46:45,960
+Doesn't make these facts go away
+
+643
+00:46:46,940 --> 00:46:50,860
+I'm just I'm just highlighting some things that are happening
+
+644
+00:46:51,900 --> 00:46:53,260
+the only
+
+645
+00:46:53,260 --> 00:46:55,500
+point of doing that argument
+
+646
+00:46:56,300 --> 00:46:58,300
+honestly is to
+
+647
+00:46:59,400 --> 00:47:01,400
+Is to make an emotional plea
+
+648
+00:47:02,120 --> 00:47:03,290
+Yeah
+
+649
+00:47:03,290 --> 00:47:08,810
+Right. That's all right. And again, I I get where they're coming from these opponents. So I I
+
+650
+00:47:09,900 --> 00:47:13,660
+Again largely largely positive response on
+
+651
+00:47:14,300 --> 00:47:18,140
+the the first article i'll write a follow-up soon and
+
+652
+00:47:19,020 --> 00:47:24,380
+See if I can anger a different crowd of people which again, I don't i'm not doing the stuff to be controversial
+
+653
+00:47:24,460 --> 00:47:27,020
+I want people to understand what's going on around them
+
+654
+00:47:27,740 --> 00:47:32,540
+That's my soapbox for the day. Anything else before we call it a call it an afternoon there brent?
+
+655
+00:47:33,320 --> 00:47:37,640
+Yeah, there was something else. I wanted to say but no, we're good. You can save it for
+
+656
+00:47:38,420 --> 00:47:40,740
+134
+
+657
+00:47:41,060 --> 00:47:42,440
+134
+
+658
+00:47:42,440 --> 00:47:45,800
+That's our next episode, right? Oh, yeah, i'm like, yeah
+
+659
+00:47:45,880 --> 00:47:52,040
+So the what that reminds me is I was watching a listening to a radio show. I for some reason I thought you added
+
+660
+00:47:52,440 --> 00:47:54,440
+three days to january
+
+661
+00:47:54,660 --> 00:47:55,720
+134
+
+662
+00:47:55,720 --> 00:48:01,480
+There's this new meme that I had to say I find appealing and and that is uh
+
+663
+00:48:02,200 --> 00:48:06,120
+to keep counting adding days to december such that
+
+664
+00:48:06,920 --> 00:48:13,800
+Uh, this is still considered part of 2020 because everyone wants 2020 to be over
+
+665
+00:48:14,120 --> 00:48:17,640
+Yep, i've seen that thank you everyone for listening for those who
+
+666
+00:48:18,760 --> 00:48:22,620
+Are you brent? I am I must be alan. We'll see you next time. Bye
+

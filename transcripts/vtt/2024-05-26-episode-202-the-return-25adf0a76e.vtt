@@ -1,0 +1,1451 @@
+WEBVTT
+
+00:00:03.470 --> 00:00:09.510
+Welcome to AV testing podcast your modern testing podcast your hosts Alan and
+
+00:00:09.510 --> 00:00:15.310
+Brent will be here to guide you through topics on testing leadership agile and
+
+00:00:15.310 --> 00:00:22.460
+anything else that comes to mind now on with the show hey we're back yeah
+
+00:00:22.460 --> 00:00:29.290
+mostly anything else that comes to mind yeah and today's gonna be extra bad
+
+00:00:29.290 --> 00:00:35.810
+extra bad extra yeah those of you that aren't in the I don't even know where to
+
+00:00:35.810 --> 00:00:39.730
+start those of you that aren't in one of the three dot slack comm you can get an
+
+00:00:39.730 --> 00:00:43.970
+invitation by going to modern testing org if you are there you will have seen my
+
+00:00:43.970 --> 00:00:49.530
+post from a few weeks ago where I said Brent and I recorded no Brent and I met
+
+00:00:49.530 --> 00:00:55.570
+and talked about what could have been perhaps the best podcast ever done by
+
+00:00:55.570 --> 00:01:02.590
+anyone of all time and I didn't record I absolutely believe it was yeah it was I
+
+00:01:02.590 --> 00:01:15.160
+mean so now now everyone welcome to episode 2-0 redo 202.2 could I do that so
+
+00:01:15.160 --> 00:01:20.080
+yeah if you could imagine imagine like you've just listened to the most amazing
+
+00:01:20.080 --> 00:01:27.400
+podcast episode in the world ever and then double it and then double it again
+
+00:01:27.400 --> 00:01:37.760
+and that's what we had all or so we thought or yeah I mean you never know I
+
+00:01:37.760 --> 00:01:42.760
+mean we'll never know and that's the whole thing yeah it's it's great big
+
+00:01:42.760 --> 00:01:49.080
+bucket in the sky all right we have a male we when you brought up when you
+
+00:01:49.080 --> 00:01:54.680
+brought up how to actually solve world hunger overnight I mean that was amazing
+
+00:01:54.680 --> 00:02:01.200
+I know and I can't quite recreate it so one thing we did I wanted to re-mention
+
+00:02:01.200 --> 00:02:04.580
+from the last so we're not gonna rehash it I did write about it on
+
+00:02:04.580 --> 00:02:10.520
+anger weasel that sub stack comm I think but one thing I wanted to mention is
+
+00:02:10.520 --> 00:02:16.250
+oh because I guess it's worth worth calling out in a podcast because didn't
+
+00:02:16.250 --> 00:02:23.290
+get published last time after 200 and I also did it in 201 rather than take and
+
+00:02:23.290 --> 00:02:29.610
+do a full edit of getting through all of our good blas and Brent's coughing and
+
+00:02:29.610 --> 00:02:35.930
+this and that I decided I'm gonna try for a while to do far less editing and
+
+00:02:35.930 --> 00:02:43.140
+just fix fix the levels add a little bit of EQ try and make a sound good and
+
+00:02:43.140 --> 00:02:47.020
+then go from there and see how it goes and listeners let us know what you think
+
+00:02:47.020 --> 00:02:51.180
+you can you have many ways to do that the easiest is John our slack group go
+
+00:02:51.180 --> 00:02:55.540
+to modern testing org blah blah blah and we're gonna see how that works and
+
+00:02:55.540 --> 00:02:59.900
+then I spend a lot of time taking the ums out and after 10 years and 200
+
+00:02:59.900 --> 00:03:04.860
+episodes maybe we can just stop saying that as much I don't know just a
+
+00:03:04.860 --> 00:03:09.380
+thought I died it's I'm old and in my habits I don't know if I can stop I
+
+00:03:09.380 --> 00:03:13.180
+put filler words in and today's worse and I'll tell you why in a minute but
+
+00:03:13.180 --> 00:03:16.100
+what do you think about that brain ready to go your cats here today the cat is
+
+00:03:16.100 --> 00:03:22.420
+dead Brent's cat is next to him in a little bed on the desk it's great but
+
+00:03:22.420 --> 00:03:27.510
+unfortunately the cat died I am NOT going to prove that she is not dead
+
+00:03:27.510 --> 00:03:35.590
+because if I do that or mention her name she will immediately start fine
+
+00:03:35.590 --> 00:03:42.950
+I can only and what I am seeing for listeners who don't not have video which
+
+00:03:42.950 --> 00:03:52.700
+is all of you what I am seeing is a cat that appears to be dead I'm still not I
+
+00:03:52.700 --> 00:04:00.620
+could either confirm or deny yeah she's been doing it all day I saw the cat move
+
+00:04:00.620 --> 00:04:04.860
+I saw the cat move the cat is no longer dead Schrodinger's cat is alive so hey
+
+00:04:04.860 --> 00:04:10.680
+man bread what's new what's going on oh my god oh what I did is it review season
+
+00:04:10.680 --> 00:04:16.710
+again what happened oh review season was was what's what's the Oh God this time
+
+00:04:16.710 --> 00:04:23.520
+you're stuck to the gajillion you're fine oh yeah if I could ever you know the
+
+00:04:23.520 --> 00:04:26.880
+problem with the stock being at a gajillion is you have to you know have
+
+00:04:26.880 --> 00:04:34.400
+time to go do something with it yeah so though it's review season and I'll just
+
+00:04:34.400 --> 00:04:51.210
+say in terms of this is the first time since Satya has taken over that I got an
+
+00:04:51.210 --> 00:05:00.460
+uncomfortable whiff of the bomber years and I'm like oh no those were the those
+
+00:05:00.460 --> 00:05:05.460
+and the aftermath of those were the death of me like I tell myself all the
+
+00:05:05.460 --> 00:05:09.540
+time look at the stock I go fast eat at Microsoft I'd be so much better off and
+
+00:05:09.540 --> 00:05:14.610
+I think oh yeah but I'd also be dead so it's hard so that's that's rough man who
+
+00:05:14.610 --> 00:05:20.850
+who did it and you want me to take him out so the latter part yes okay first
+
+00:05:20.850 --> 00:05:30.720
+first I don't know yet I'll make a phone call I got a guy the but it just to
+
+00:05:30.720 --> 00:05:35.700
+give you a hint like like the last two weeks on average been doing four to five
+
+00:05:35.700 --> 00:05:40.420
+hours of sleep because there's there's a there's a couple other things happening
+
+00:05:40.420 --> 00:05:48.120
+that have to happen at the same time as well and so thankfully the the the
+
+00:05:48.120 --> 00:05:55.080
+review season part of it is is over for now we got a three-day weekend and if my
+
+00:05:55.080 --> 00:06:03.000
+body clock lets me I am going to sleep all three FM days okay I will tell you a
+
+00:06:03.480 --> 00:06:09.620
+couple things I was gonna count them I couldn't I can't count past one one is I
+
+00:06:09.620 --> 00:06:16.360
+as I get older I have less and less tolerance for people who are jerks and
+
+00:06:16.360 --> 00:06:23.130
+people who I would say are people who act stupid your behavior comes from
+
+00:06:23.130 --> 00:06:26.730
+motivation when you act stupid because you're you're there's something about
+
+00:06:26.730 --> 00:06:32.940
+being a jerk in there but I I it there was a time of my life where I could
+
+00:06:32.940 --> 00:06:37.540
+let it roll off and for whatever I'm old get off my lawn whatever I just
+
+00:06:37.540 --> 00:06:44.890
+cannot handle when someone is a jerk with the exception of if someone has the
+
+00:06:44.890 --> 00:06:50.330
+jerk and they have some self-awareness about it but if they're just if that's
+
+00:06:50.330 --> 00:06:56.180
+who they that's who they think they need to be then fuck them the other thing is
+
+00:06:56.180 --> 00:07:01.280
+I was in New York the last as you know last couple weeks and I had a flight
+
+00:07:01.280 --> 00:07:06.620
+back last night supposed to get back and settle around 9 delay delay delay landed
+
+00:07:06.620 --> 00:07:12.920
+around 1 o'clock in the morning came home got four or five hours of sleep my
+
+00:07:12.920 --> 00:07:20.230
+body said get up Alan it's 10 a.m. on the East Coast so yeah lots of coffee
+
+00:07:20.230 --> 00:07:24.990
+lots of snarkiness throughout the day I have less patience when I'm tired and
+
+00:07:25.110 --> 00:07:32.750
+here we are and the thing is actually I'm going to careful listeners mark the date
+
+00:07:32.750 --> 00:07:40.140
+I'm going to say something nice about Brent oh boy shit it's I already feel weird
+
+00:07:40.140 --> 00:07:45.780
+never mind I'm not gonna do it no I I think we both can be the grumpy old men
+
+00:07:45.780 --> 00:07:52.440
+the stark you'll mean we can be pissed off but together we're better that for
+
+00:07:52.440 --> 00:07:59.060
+sure for sure yes because you know some good can come out of this you know it's
+
+00:07:59.060 --> 00:08:06.960
+it's the world is a crazy weird place and the and the world of work is full of
+
+00:08:06.960 --> 00:08:13.360
+people who do not actually understand how to get work done and you and I are
+
+00:08:13.360 --> 00:08:19.400
+gonna try and help people navigate through that hell I just thinking yeah
+
+00:08:19.400 --> 00:08:26.910
+grumpy old man is up is one of my better skills I mean it's it's up there with like
+
+00:08:26.910 --> 00:08:37.910
+occupying space all right we we got a thing we can I can kick off a
+
+00:08:37.910 --> 00:08:43.790
+conversation here if you're ready to get into the podcast proper yep and okay then
+
+00:08:43.790 --> 00:08:48.790
+well welcome back it's been a long break we were recovering from the episode the
+
+00:08:49.110 --> 00:09:00.560
+escapades of 200 but speaking of which we have a question so that that makes me so
+
+00:09:00.560 --> 00:09:08.750
+happy it does on one of the things we covered in the long lost episode from
+
+00:09:08.750 --> 00:09:14.790
+last time that we did not record was Brent noticing my joy in having all of
+
+00:09:14.790 --> 00:09:19.470
+my little audio toys to play with as we do the podcast and it's kind of do do
+
+00:09:19.470 --> 00:09:24.270
+stuff live every episodes live that's really what we're getting at really with
+
+00:09:24.270 --> 00:09:29.600
+me not editing as much everything's live everything's live coming soon to twitch
+
+00:09:29.600 --> 00:09:33.120
+you don't know what's happening you know what we could twitch we could we could
+
+00:09:33.120 --> 00:09:40.870
+the thing is if you look at the two of us we are made for podcasting for better
+
+00:09:40.870 --> 00:09:46.950
+for worse I mean yeah yeah like at times I think we should both just turn
+
+00:09:46.950 --> 00:09:53.670
+off our cameras oh yeah yeah but I wouldn't see the dead cat so on our slack
+
+00:09:53.670 --> 00:09:59.750
+group which I've already what's the word talked about a couple times there's
+
+00:09:59.750 --> 00:10:04.950
+another word there but I lost it Sean H has a question in our mailbag channel
+
+00:10:04.950 --> 00:10:09.510
+he says finally getting the episode 200 thank you for listening to episode 200
+
+00:10:09.510 --> 00:10:13.790
+hopefully you didn't start at one and Alan's calm I don't remember saying
+
+00:10:13.790 --> 00:10:17.550
+this here to help my I do know what I want to talk about but and sorry for the
+
+00:10:17.550 --> 00:10:21.630
+editorial here but I don't remember exactly what Sean is talking about but
+
+00:10:21.630 --> 00:10:26.230
+you may remember but I kind of got the gist of it says an Alan's comment
+
+00:10:26.230 --> 00:10:31.870
+intrigued me on enterprise change do you think you could discuss in more depth
+
+00:10:31.870 --> 00:10:36.590
+your experience on how you managed enterprise level changes without
+
+00:10:36.590 --> 00:10:41.420
+people knowing I work at a big enterprise trying to improve quality
+
+00:10:41.420 --> 00:10:46.220
+mindsets and feel overwhelmed level of effort and potential will of those
+
+00:10:46.220 --> 00:10:58.880
+resisting so so we've done that yeah I have no idea what we talked about no me
+
+00:10:58.880 --> 00:11:03.400
+neither but I can actually answer the question anyway the fact that the fact
+
+00:11:03.400 --> 00:11:10.440
+that I have the memory retention of a small ant makes no difference makes no
+
+00:11:10.440 --> 00:11:14.560
+difference I can talk about this and I can answer this question and I can answer
+
+00:11:14.560 --> 00:11:21.000
+the crap out of this question oh well and the thing is like I was about to you
+
+00:11:21.000 --> 00:11:27.650
+know say the initial question again do you think you could discuss in more depth
+
+00:11:27.650 --> 00:11:34.050
+stop stop okay that's it can you think you could discuss in more depth dot dot
+
+00:11:34.050 --> 00:11:45.350
+dot for Alan the answer is yes and I've seen him do it all right and and on things
+
+00:11:45.350 --> 00:11:52.860
+he knows nothing about and quite well like he could pass the I don't know what's
+
+00:11:52.860 --> 00:11:59.180
+the Turing test for intelligence or knowledge I don't know I'm a bot yeah by
+
+00:11:59.180 --> 00:12:03.060
+the way the the caps of things are getting worse I hate them so this one's
+
+00:12:03.060 --> 00:12:09.060
+interesting timing wise because I just put together a talk kind of about this
+
+00:12:09.060 --> 00:12:15.350
+and I'm not giving anywhere externally and doing it for a friend for an internal
+
+00:12:15.350 --> 00:12:19.990
+audience and I will do it for your company for you know $10,000 whatever you
+
+00:12:19.990 --> 00:12:30.350
+need I got a pay some bills all right so but the second part is I mean I want to
+
+00:12:30.350 --> 00:12:33.550
+put his context in there because absolutely true since I work at a big
+
+00:12:33.550 --> 00:12:38.510
+enterprise and feel overwhelmed level of effort potential will of those
+
+00:12:38.510 --> 00:12:45.160
+resisting is because people are lazy and don't want to change yeah in general I
+
+00:12:45.160 --> 00:12:51.710
+mean you know this is the hard part it's organizational change so let me let
+
+00:12:51.710 --> 00:12:57.510
+me go into depth because this is what I love doing I love trying to change
+
+00:12:57.510 --> 00:13:02.720
+people who don't want to change and because they don't want to change for a
+
+00:13:02.720 --> 00:13:07.650
+multitude of reasons what are some of those reasons Brent Brent was writing
+
+00:13:07.650 --> 00:13:13.680
+wasn't making attention you ready why do people resist change the number one
+
+00:13:13.680 --> 00:13:18.000
+thing is because it's scary think ding ding ding ding ding ding ding ding
+
+00:13:18.000 --> 00:13:24.330
+that's the absolute number one reason yeah it is and for and it's scary for
+
+00:13:24.330 --> 00:13:27.890
+different reasons they're fearful for different reasons maybe this change took
+
+00:13:27.890 --> 00:13:35.610
+my job away maybe this change will oh maybe this change will require me to
+
+00:13:35.610 --> 00:13:40.080
+learn new skills I'm afraid I won't be able to learn them which roughly is the
+
+00:13:40.080 --> 00:13:46.220
+equivalent of take my job away potentially it's just deferred maybe I
+
+00:13:46.220 --> 00:13:52.520
+won't be as important anymore I guess maybe there I'll take my job away or
+
+00:13:52.520 --> 00:13:57.240
+there's something a version of a version of that but keep going you're on
+
+00:13:57.400 --> 00:14:00.360
+yeah yeah so you can jump in here anytime you want I am extremely
+
+00:14:00.360 --> 00:14:05.760
+interruptible on this topic so there's a one of my books favorite books that I've
+
+00:14:05.760 --> 00:14:10.920
+mentioned a crap ton of times in general and on the podcast is a book called
+
+00:14:10.920 --> 00:14:15.080
+Leadership on the Line by Ronald Heffetz and some other authors whose names I
+
+00:14:15.080 --> 00:14:20.800
+forget and in that book he talks about the difference between adaptive versus
+
+00:14:20.800 --> 00:14:27.450
+technical challenges and technical challenges are the ones that are easy
+
+00:14:27.450 --> 00:14:34.240
+air quote easy they generally have pretty well-known solutions or like it's
+
+00:14:34.240 --> 00:14:39.160
+kind of stuff we encountered before if I need to go write a new menuing system and
+
+00:14:39.160 --> 00:14:43.200
+I've written a menuing system before I kind of have an idea I gotta fit it
+
+00:14:43.200 --> 00:14:50.560
+within the context or I want to write whatever oh I every once in all for fun
+
+00:14:50.560 --> 00:14:55.440
+so I can still feel irrelevant I go query some crap from github using their
+
+00:14:55.440 --> 00:15:02.600
+API I know how to do it I didn't know how to use GraphQL to reduce my request so I
+
+00:15:02.600 --> 00:15:07.240
+learned that but pretty pretty much a technical problem no can figure it out
+
+00:15:07.240 --> 00:15:12.360
+answers are on the internet I can piece of stuff together adaptive problems are
+
+00:15:12.360 --> 00:15:16.520
+where the fun stuff is this is the problems that you and I get to solve
+
+00:15:16.520 --> 00:15:21.880
+Brent it's it's complex and systemic issues they requires changes and attitudes
+
+00:15:21.880 --> 00:15:26.320
+behaviors and beliefs the solutions aren't clear we often have to start
+
+00:15:26.320 --> 00:15:30.240
+before we know what the solution looks like there are things like culture
+
+00:15:30.240 --> 00:15:39.200
+change you know adaptation and even just addressing resistance to change so in
+
+00:15:39.200 --> 00:15:43.440
+this book Heffetz I mean it's not like a blueprint and there are no blueprints
+
+00:15:43.440 --> 00:15:47.080
+but he gives some good ideas for helping people change stuff and what he
+
+00:15:47.080 --> 00:15:53.760
+says is that you will no matter what change you're trying to make you will be
+
+00:15:53.760 --> 00:15:59.060
+able to find allies but you have to look for no matter what change you're trying
+
+00:15:59.060 --> 00:16:04.670
+to make you will absolutely have resistors and you're gonna have some
+
+00:16:04.670 --> 00:16:08.550
+group in the middle who are kind of waiting to see what everybody else does
+
+00:16:08.550 --> 00:16:15.010
+and go along for the ride so how do you do that how do you how do you like
+
+00:16:15.010 --> 00:16:20.090
+let's say let's let's pick a modern testing principle give me a random number
+
+00:16:20.090 --> 00:16:29.040
+between one seven okay so oh we want to improve the quality culture of our team
+
+00:16:29.040 --> 00:16:33.360
+and this is actually well rolled because that's actually what the question was I
+
+00:16:33.360 --> 00:16:38.600
+should know I should I should have went directly to that one but oh well undone I
+
+00:16:38.600 --> 00:16:47.000
+basically basically when I quote unquote rolled I basically picked a number from
+
+00:16:47.000 --> 00:16:50.760
+what was remaining after I eliminated one five and seven because those are the
+
+00:16:50.760 --> 00:16:56.760
+only ones I still have memorized okay and and again there's no video but Brent
+
+00:16:56.760 --> 00:17:01.840
+actually made the hand motion of rolling a die which is pretty cool by the way when
+
+00:17:01.840 --> 00:17:05.960
+I was in New York I saw reason I couldn't record last week when my daughter
+
+00:17:05.960 --> 00:17:12.800
+and I went to a sort of a live D&D improv show oh fun it was hilarious it
+
+00:17:12.800 --> 00:17:18.040
+was hilarious lots of audience participation cool stuff going on was it
+
+00:17:18.040 --> 00:17:21.160
+was there like an audience was there like a DM and an audience member like
+
+00:17:21.160 --> 00:17:25.120
+actually rolling the dice or so there was a DM and it wasn't actually like a game
+
+00:17:25.120 --> 00:17:29.640
+it was a it was roleplay but there were points in the story where they had to
+
+00:17:29.640 --> 00:17:33.720
+we had to choose what they did or sometimes they had to roll and there
+
+00:17:33.720 --> 00:17:37.600
+were some great rules for critical feathers or successes they did a really
+
+00:17:37.600 --> 00:17:43.280
+good job having a scripted you know comedic show with some elements of
+
+00:17:43.280 --> 00:17:50.460
+improv in it so pretty pretty impressed nice so people with a problem heffetz
+
+00:17:50.460 --> 00:17:54.900
+find your allies yes good you know just just kind of walks through it you got to
+
+00:17:54.900 --> 00:18:00.180
+take a step back get to adapt assess you know just do a bunch of different
+
+00:18:00.180 --> 00:18:08.740
+crap lots of lots of listening you know and and communication anyway lots of
+
+00:18:08.740 --> 00:18:13.520
+tips in there what was it getting to no blueprint can't get there by yourself
+
+00:18:13.640 --> 00:18:19.950
+but you have to you know we talk about experimentation and software when you're
+
+00:18:19.950 --> 00:18:27.870
+trying to do organizational change you have to be even more experimentable
+
+00:18:27.870 --> 00:18:38.810
+more of an experimenter do you yeah so maybe let's say okay equality thing I
+
+00:18:38.810 --> 00:18:44.090
+want to get my devs to write all the automation if you're in a company you're
+
+00:18:44.090 --> 00:18:48.050
+trying to get devs to write unit tests I'm sorry hopefully they can get fired
+
+00:18:48.050 --> 00:18:51.810
+you can get better death let's say your let's say your devs are writing unit tests
+
+00:18:51.810 --> 00:18:56.530
+but you but as you're led by the research you want to get them to write all
+
+00:18:56.530 --> 00:19:03.530
+of the automation what we can say Brett before I go on well what I'm okay I'll
+
+00:19:03.530 --> 00:19:13.560
+just say it say it say it okay so number one this reminds me and I don't know if
+
+00:19:13.560 --> 00:19:23.800
+it'll end up being relevant this reminds me way back in the day you were
+
+00:19:23.800 --> 00:19:34.080
+still at Microsoft agile was struggling you you actually had you did a an event
+
+00:19:34.080 --> 00:19:40.660
+and you asked me to be one of the panelists yeah we have talked about this
+
+00:19:40.660 --> 00:19:46.860
+event before this was yeah this was a a monumental event in the evolution of
+
+00:19:46.860 --> 00:19:55.510
+Alan and Brent at Microsoft and in one of the questions because the so the panel
+
+00:19:55.510 --> 00:20:01.670
+that Alan had done was us was a small group of people who who claimed to
+
+00:20:01.670 --> 00:20:07.310
+successfully be using agile in in their business I want you to pause there I
+
+00:20:07.310 --> 00:20:12.990
+want to give some more context okay so I ran this community of quality leaders
+
+00:20:12.990 --> 00:20:18.200
+around the company and I got them together once a month I worked with these
+
+00:20:18.200 --> 00:20:21.480
+great TPMs I worked with it was a cross-company thing we got them
+
+00:20:21.480 --> 00:20:27.950
+together talking about a variety of subjects one of the things that's much
+
+00:20:27.950 --> 00:20:34.360
+better now at Microsoft even I'll admit that I found embarrassingly funny at the
+
+00:20:34.360 --> 00:20:41.130
+time was how maybe this is true at every company I don't know but then how a little
+
+00:20:41.130 --> 00:20:46.490
+Microsoft would pay attention or regard anything that happened outside the walls
+
+00:20:46.490 --> 00:20:51.690
+of Microsoft anything that wasn't happening at Microsoft may as well not
+
+00:20:51.690 --> 00:20:55.770
+have been happening so I tried to like bring things like here's the thing that
+
+00:20:55.770 --> 00:20:59.170
+maybe you've heard of that you want to know a little bit more about it
+
+00:20:59.170 --> 00:21:02.770
+because maybe you heard someone on the bus all excited about it things like
+
+00:21:02.770 --> 00:21:07.210
+that so agile was one of those so at that time which was years after agile
+
+00:21:07.210 --> 00:21:13.200
+had been around so I put together this panel as Brent had described right and I
+
+00:21:13.200 --> 00:21:26.410
+remember and so and this was this was a community of mostly testers and many of
+
+00:21:26.410 --> 00:21:35.530
+them knew me because I had been in the testing community for a while and when
+
+00:21:35.530 --> 00:21:41.090
+agile first came out I was on the same page as many of them had been at that
+
+00:21:41.090 --> 00:21:48.120
+point in time around oh my god agile is the most dysfunctional thing ever that
+
+00:21:48.120 --> 00:21:58.430
+has ever existed right and in some regards it was because a lot of dead
+
+00:21:58.430 --> 00:22:04.470
+teams took control and they just the other thing that you didn't mention is
+
+00:22:04.470 --> 00:22:08.990
+the dead teams that did go out and look at what other people were doing in this
+
+00:22:08.990 --> 00:22:18.700
+space had decided that agile was an a la carte menu right yeah let's just I
+
+00:22:18.780 --> 00:22:22.980
+think agile says don't do documentation we won't do that and we'll do whatever else
+
+00:22:22.980 --> 00:22:32.690
+we want it'll be great right right we are now agile god yeah right in to which
+
+00:22:32.690 --> 00:22:41.450
+Alan invented a whole new term fragile which to this day I still love and still
+
+00:22:41.450 --> 00:22:52.840
+yeah sadly observe fucking ridiculous agile the now going back to the one of
+
+00:22:52.840 --> 00:22:57.280
+the things that I remember for that to make it so that it's not a complete
+
+00:22:57.280 --> 00:23:03.440
+freaking tangent is too late one of the questions one of the questions is like
+
+00:23:03.440 --> 00:23:13.740
+okay how do we get people to do it and in essence I remember my answer which
+
+00:23:13.900 --> 00:23:23.120
+was look if you go to your executives right at that point in time agile was on
+
+00:23:23.120 --> 00:23:28.160
+the leading edge of the bubble but at least within Microsoft I mean it really
+
+00:23:28.160 --> 00:23:34.140
+wasn't but within Microsoft correct as a whole it was like in that in that phase
+
+00:23:34.140 --> 00:23:40.380
+where only you know people who aren't afraid of risk it was early adopterville
+
+00:23:40.380 --> 00:23:49.040
+at Microsoft and and and people were like going to their executive and say
+
+00:23:49.040 --> 00:23:55.440
+look internet says agile is the best thing we should do it and you look
+
+00:23:55.440 --> 00:24:01.320
+back and I'm like okay you went to your executive and I'm sure you're
+
+00:24:01.320 --> 00:24:05.600
+paraphrasing but you went to your executive and said we should do this
+
+00:24:05.600 --> 00:24:11.640
+because you found a web page that said it's wonderful and we should do it and
+
+00:24:11.640 --> 00:24:19.090
+you're surprised that they told you no shocked I'm shocked like well what's
+
+00:24:19.090 --> 00:24:23.410
+funny is this complete tangent has somehow wound its way back to the trail
+
+00:24:23.410 --> 00:24:29.450
+yeah I was taking the scenic route no that was great so if I hand you the
+
+00:24:29.450 --> 00:24:34.970
+quality culture quality transition culture guide yep English Alan whatever
+
+00:24:34.970 --> 00:24:39.450
+that thing is we made that shows like how to grow is a quality if I just hand
+
+00:24:39.450 --> 00:24:44.850
+that to you this is great go do it people look at that and go um yeah great
+
+00:24:44.850 --> 00:24:50.830
+thanks Alan and the foul it away making those things change is hard and and
+
+00:24:50.830 --> 00:24:58.390
+again going back to what Shawn said browser overwhelmed with the level of
+
+00:24:58.390 --> 00:25:02.750
+effort and potential will of those resisting and yeah it's a ton of
+
+00:25:02.750 --> 00:25:09.190
+effort which is why you do a little bit at a time that whole concept of 1% better
+
+00:25:09.190 --> 00:25:15.630
+every day works really well here so if it's getting devs to own more tests it's
+
+00:25:15.630 --> 00:25:21.310
+do it a little don't say like this week you do integration tests next week we do
+
+00:25:21.310 --> 00:25:26.830
+end-to-end after that you own it all no it's not gonna go that fast you have to
+
+00:25:26.830 --> 00:25:32.600
+this is a line from leadership on the line you have to disappoint people at a
+
+00:25:32.600 --> 00:25:41.640
+level they can absorb I have I have more I can add to that fire as well and
+
+00:25:41.640 --> 00:25:45.600
+men so what you have to do I mean and the problem is that level they can
+
+00:25:45.600 --> 00:25:50.880
+absorb is different for everyone those who are on like yeah let's do something
+
+00:25:50.880 --> 00:25:54.000
+different you can they're disappointed of a little higher you can give them a
+
+00:25:54.000 --> 00:25:59.720
+little bit more let's let's use you to walk the talk show me the example you're
+
+00:25:59.720 --> 00:26:04.800
+my pilot group you're gonna try new things I'm gonna give you end-to-end
+
+00:26:04.800 --> 00:26:07.920
+automation framework and you're gonna use that and we'll have that as an
+
+00:26:07.920 --> 00:26:12.560
+example for when the other folks catch up these guys at the other end said
+
+00:26:12.560 --> 00:26:16.960
+great it's okay your unit tests are great why don't we pair one day a week
+
+00:26:16.960 --> 00:26:21.920
+on writing some integration tests and and we can get a shared understanding of
+
+00:26:21.920 --> 00:26:26.840
+what those mean and get a little bit done you have to if you aim too high
+
+00:26:26.840 --> 00:26:30.080
+you're going to be disappointed here cuz it's gonna be that's what it gets hard
+
+00:26:30.080 --> 00:26:39.120
+it's it's never easy but it's easier if you target what you want to do based on
+
+00:26:39.120 --> 00:26:44.040
+the capabilities and willingness of those people you're trying to move but you
+
+00:26:44.040 --> 00:26:48.800
+have to go a little at a time brant you look very anxious to say something I
+
+00:26:48.800 --> 00:26:55.240
+have a long set of things to say so I will I will mute and let you go okay
+
+00:26:55.240 --> 00:27:05.480
+so number one so you mentioned this book for me the primary books that I learned
+
+00:27:05.480 --> 00:27:11.840
+from and then applied and then tweaked for this for those who care first and
+
+00:27:11.840 --> 00:27:21.340
+foremost is influencers influencers is is a whole series around how to think
+
+00:27:21.340 --> 00:27:27.700
+about how to execute the change and I'll go into some level of detail and explain
+
+00:27:27.700 --> 00:27:38.060
+how it fits in even with Alan's paradigm the next one is getting to yes which is
+
+00:27:38.060 --> 00:27:46.160
+a negotiation book because a lot of the times it's it's around when when Alan
+
+00:27:46.160 --> 00:27:51.860
+was talking about okay you're fighting against the jerk well there there are
+
+00:27:51.860 --> 00:28:01.100
+techniques you can do to to change their argument in a way that then opens
+
+00:28:01.100 --> 00:28:07.620
+the door and the third one is never split the difference which is another
+
+00:28:07.620 --> 00:28:13.280
+negotiation book but unlike getting to yes getting to yes is sort of an IQ
+
+00:28:13.280 --> 00:28:20.980
+version of negotiation where never split the difference brings in EQ which is
+
+00:28:20.980 --> 00:28:26.200
+often even more important right if you can have a pure logical conversation
+
+00:28:26.200 --> 00:28:32.720
+that's great you're probably negotiating with chat GPT which by the way is just
+
+00:28:32.720 --> 00:28:42.260
+an AI it's gonna be easy for you to win that battle now when I go through trying
+
+00:28:42.260 --> 00:28:48.610
+to institute a change one of the first things I will tell you is every
+
+00:28:48.610 --> 00:28:55.670
+successful change involves changing something slightly in all three of people
+
+00:28:55.670 --> 00:29:01.870
+process and technology people are gonna need to get trained technology is probably
+
+00:29:01.870 --> 00:29:07.870
+going to need to change or written and then a streamlined process that that
+
+00:29:07.870 --> 00:29:12.630
+bridges the two between these like if you create a whole new tech and no one
+
+00:29:12.630 --> 00:29:18.140
+knows how to use it guess what they're gonna fall back to the old stuff now
+
+00:29:18.140 --> 00:29:24.530
+the thing I like about the influencer stuff is they will break things down into
+
+00:29:24.530 --> 00:29:34.590
+a six quadrant problem space and for me I'm highly analytical time my mathematical
+
+00:29:34.590 --> 00:29:45.380
+brain got stuck six quadrants so imagine a two by three table with things that you
+
+00:29:45.720 --> 00:29:53.660
+quadrants are fours okay I get you two by three go on
+
+00:29:53.660 --> 00:30:06.960
+it's six except I don't know what that one is I don't know if it was 24 of them
+
+00:30:06.960 --> 00:30:18.260
+or I had to the math too many numbers it's now important so I'm typing so while
+
+00:30:18.260 --> 00:30:21.520
+you're typing Brent's books are a little more mainstream than mine.
+
+00:30:21.520 --> 00:30:26.260
+I go a little bit off the beaten road, but I made a little face on influencers.
+
+00:30:26.280 --> 00:30:28.400
+It's, it's, I, it's good.
+
+00:30:28.400 --> 00:30:32.200
+It's kind of, and not from my it's fine.
+
+00:30:33.040 --> 00:30:34.960
+Getting to yes is fine.
+
+00:30:34.980 --> 00:30:35.960
+Both valuable.
+
+00:30:36.770 --> 00:30:39.730
+It's kind of like reading for those of you that have read them.
+
+00:30:42.220 --> 00:30:46.400
+Those two books from Brent are like the DaVinci code, the mainstream
+
+00:30:46.400 --> 00:30:49.820
+serpii thing, if you want to read something a little deeper, a little more
+
+00:30:49.820 --> 00:30:51.800
+meaning out of it, you can read Focal Spindle.
+
+00:30:55.020 --> 00:30:55.460
+All right, bread.
+
+00:30:55.460 --> 00:30:56.060
+What'd you find out?
+
+00:30:57.760 --> 00:30:59.460
+I'm still waiting for,
+
+00:31:00.120 --> 00:31:01.800
+are you asking chat GPT?
+
+00:31:01.900 --> 00:31:02.440
+I am.
+
+00:31:02.480 --> 00:31:02.820
+Yeah.
+
+00:31:03.060 --> 00:31:04.400
+It can't count either, man.
+
+00:31:04.420 --> 00:31:05.400
+It's going to make something up.
+
+00:31:06.200 --> 00:31:11.240
+It's cause it a hexagon, but I'm like, no, it's not stupid.
+
+00:31:11.320 --> 00:31:12.980
+It's going to make, we know it's stupid.
+
+00:31:12.980 --> 00:31:14.520
+It can't, it's not a thing.
+
+00:31:14.520 --> 00:31:17.560
+It's good at when you know this, you know better, Brent.
+
+00:31:17.720 --> 00:31:20.000
+I'm just going to go with fuck you, Alan.
+
+00:31:20.020 --> 00:31:21.320
+It's six quadrants.
+
+00:31:21.680 --> 00:31:27.100
+Um, that answer is fair and we're going to take that answer.
+
+00:31:27.160 --> 00:31:27.960
+That answer is fair.
+
+00:31:27.960 --> 00:31:29.840
+I think, I think, I think, I think, I think, okay.
+
+00:31:30.080 --> 00:31:30.580
+All right.
+
+00:31:30.800 --> 00:31:41.430
+Now when I go and analyze this, like number one is yeah, it's convincing
+
+00:31:41.430 --> 00:31:45.300
+executives is absolutely possible.
+
+00:31:45.320 --> 00:31:49.820
+Like I, I now do it all the time because I have worked with them
+
+00:31:49.820 --> 00:31:55.730
+enough to know what it is that, that kind of drives them.
+
+00:31:55.730 --> 00:32:00.730
+What kind of the kind of decisions I think, you know, my experience a lot, maybe
+
+00:32:00.730 --> 00:32:04.610
+it's cause of I've grown as well, but my experience the last many years is
+
+00:32:05.110 --> 00:32:07.090
+executives aren't the hard sell.
+
+00:32:08.770 --> 00:32:10.690
+No, it's, it's, it's their directs.
+
+00:32:10.730 --> 00:32:18.610
+And, and, and then I do not believe, I do not believe change other than culture change.
+
+00:32:19.450 --> 00:32:26.820
+Change through executive mandate does not work or it works in a very bad way.
+
+00:32:27.220 --> 00:32:27.500
+No.
+
+00:32:27.500 --> 00:32:34.300
+So the executive, um, I know, I know that is where you were going, but I
+
+00:32:34.300 --> 00:32:40.190
+wanted to be clear on that you need to, it's a, it's a, it's a people thing.
+
+00:32:40.450 --> 00:32:44.490
+And, and you met, and as if you mentioned too, but most executives that I know
+
+00:32:44.490 --> 00:32:47.870
+of will not say yes, they'll defer.
+
+00:32:47.910 --> 00:32:48.590
+Yes.
+
+00:32:49.690 --> 00:32:52.130
+If executives say anything, they'll say no.
+
+00:32:53.200 --> 00:32:53.460
+Right.
+
+00:32:54.460 --> 00:32:56.420
+And if they say no, it's dead.
+
+00:32:56.540 --> 00:33:01.480
+So, um, now there's a bottoms up approach.
+
+00:33:01.520 --> 00:33:05.140
+A lot of people try to do the top down approach and that's
+
+00:33:05.140 --> 00:33:06.380
+kind of what you're talking about.
+
+00:33:06.400 --> 00:33:12.300
+Oh, if I can go to God and get him to add the 11th commandment, then
+
+00:33:12.300 --> 00:33:14.060
+my problem will just be solved.
+
+00:33:14.500 --> 00:33:19.130
+Um, it isn't now, uh, going back to the, the, the, the, the, the, the, the, the, the,
+
+00:33:19.650 --> 00:33:22.710
+the, the, uh, USC Research organs.
+
+00:33:22.750 --> 00:33:29.250
+The odd aspects of the . So it's a two by three that you can think about,
+
+00:33:29.250 --> 00:33:31.190
+and you can think about these separately.
+
+00:33:31.290 --> 00:33:37.020
+The first one I'm going to go with the to the very first set of problems is okay.
+
+00:33:37.480 --> 00:33:40.400
+What's stopping them from making this change?
+
+00:33:40.920 --> 00:33:46.600
+Is it motivation or ability, and that is an important thing, right?
+
+00:33:46.600 --> 00:33:55.000
+know how and that's why they're telling you know versus um or they even perceive it to be
+
+00:33:56.280 --> 00:34:04.970
+hard which is usually code language for I don't know how right versus motivation which is I don't
+
+00:34:04.970 --> 00:34:12.330
+want to if I go down this path then I'm testing my own code instead of having and sometimes it's
+
+00:34:12.330 --> 00:34:21.420
+a little of both or a lot of both right it is and it um and if you go through and think about them all
+
+00:34:21.420 --> 00:34:28.540
+and come up with a strategy that addresses all of them um you have a pretty good chance
+
+00:34:29.180 --> 00:34:36.540
+in here I mean all six quadrants um here you have a pretty good chance of succeeding in my experience
+
+00:34:37.420 --> 00:34:42.300
+the other thing that you want to do so now the three uh that I was talking to it's a two by three
+
+00:34:42.300 --> 00:34:52.510
+so motivation ability but now the the the cross grid thing rose right it's all right the person that
+
+00:34:52.510 --> 00:35:01.790
+you're trying to or persons that you're trying to to influence right what's their personal motivation
+
+00:35:01.790 --> 00:35:09.630
+or a bit of ability that blocks this right um there is science that shows that if you
+
+00:35:10.590 --> 00:35:19.480
+if you can propose something that that hits their personal intrinsic motivations
+
+00:35:20.700 --> 00:35:23.820
+you have a much greater chance of getting them to do it
+
+00:35:25.080 --> 00:35:33.640
+right or certainly you want to avoid their intrinsic um the allergies right then there's
+
+00:35:33.640 --> 00:35:40.810
+social pressure and then there's structural but in structural um social pressure is like
+
+00:35:41.450 --> 00:35:49.840
+use peer pressure to your advantage right um hey if you can let's say you're on a team with
+
+00:35:50.750 --> 00:35:57.580
+with three other sister teams and and your manager wants something done right but one team just
+
+00:35:57.580 --> 00:36:02.300
+doesn't want to do it well if you get the other three and then start changing the conversation
+
+00:36:02.300 --> 00:36:10.270
+around have we're all great except without mentioning names one whole team seems to be slowing
+
+00:36:10.270 --> 00:36:22.620
+us down right no one likes to be left out um structural is um structural changes or more things
+
+00:36:22.620 --> 00:36:29.820
+like just reminder notes sometimes that's how people need like a sticker that says place the boxes here
+
+00:36:29.820 --> 00:36:38.460
+or um or static analysis tools that say hey are you sure you want to maybe not static analysis
+
+00:36:38.460 --> 00:36:45.180
+i don't know what what it used to be called big red button is what office uses a tool that says hey
+
+00:36:46.270 --> 00:36:56.570
+um you're trying to push a pr and it doesn't look like your unit test ramp are you sure right um
+
+00:36:56.570 --> 00:37:06.080
+that sounds like clippy for ci yeah yeah yeah um so what i have found now when we're talking about
+
+00:37:06.080 --> 00:37:13.740
+social pressures and then you started hinting to this you do want to um i have found that if you
+
+00:37:13.740 --> 00:37:20.780
+if you start from the bottom for for things like mtp or in in this case we talked earlier about
+
+00:37:20.780 --> 00:37:27.580
+agile right you want to look around and say you want to gather allies is what allen said okay
+
+00:37:28.300 --> 00:37:38.140
+but in particular there's this just fantastic term for the type of ally you want okay and that is
+
+00:37:39.020 --> 00:37:46.960
+the opinion leader this is the person who if you could win them over they're going to
+
+00:37:48.160 --> 00:37:54.880
+they're going to be a public ally for you this is one of those people that when allen mentioned
+
+00:37:54.880 --> 00:38:01.200
+you know the one set of people are the ones that just doesn't care see who wins and they just follow
+
+00:38:01.200 --> 00:38:08.300
+that you know the the that shepherd you want to look for the shepherds and specifically target them
+
+00:38:09.470 --> 00:38:19.470
+and go and figure out what holds them back um how you can help uh and get them to a point
+
+00:38:19.470 --> 00:38:26.670
+where they're open-minded and might be and willing to try a few things out um now of course the trick
+
+00:38:26.670 --> 00:38:34.030
+is with that one is what you ask them to do you really got to set it up to succeed so that they
+
+00:38:34.030 --> 00:38:41.760
+have a continuous experience of something positive if you say oh go read the agile manifesto or go
+
+00:38:41.760 --> 00:38:49.770
+read i don't know what's the agile manifesto for mtp i don't think there is one there isn't well
+
+00:38:49.770 --> 00:38:55.290
+maybe it is mtp don't have a manifesto so um thank you for making most of the points i was going
+
+00:38:55.290 --> 00:39:00.250
+to make so this is good good everything it's right and the way i put some of those things just to
+
+00:39:00.250 --> 00:39:06.650
+reiterate is uh i talked about allies and the thing talked about i like the way you said
+
+00:39:07.530 --> 00:39:12.570
+let me say i even wrote it down so i could remember that's weird right it's weird on day
+
+00:39:13.130 --> 00:39:18.650
+uh it's people processing technology making sure it's one or a combination of those not
+
+00:39:18.650 --> 00:39:25.240
+what you said that's my takeaway and i focus a lot on the people side because that's the harder
+
+00:39:25.240 --> 00:39:31.560
+part but you do have to balance it and it reminds me of the times like what's the best way to get
+
+00:39:31.560 --> 00:39:37.960
+devs to make sure they're writing unit tests and putting them in ci or or sorry i'll what you
+
+00:39:37.960 --> 00:39:43.880
+just talking about what's the best way to make sure that fred the dev is running unit tests for
+
+00:39:43.960 --> 00:39:53.130
+hxn you make it automatic or so brain dead easy it's harder to not do it you make it brain dead easy
+
+00:39:54.490 --> 00:40:01.930
+um like from my experience there's two things that you do number one you make it brain dead easy for
+
+00:40:01.930 --> 00:40:10.170
+them to do it number two in the case they don't um you reduce the friction between
+
+00:40:11.130 --> 00:40:17.260
+what they did and it going to prod and you hold them accountable for what's in prod
+
+00:40:17.260 --> 00:40:26.700
+and again right and it happens all the time so we uh many many years ago many years ago 2001 or so
+
+00:40:27.870 --> 00:40:35.310
+uh i worked with our development team on windows ce to help them learn to write unit tests
+
+00:40:36.780 --> 00:40:42.620
+and they asked the questions you'd expect of a developer at microsoft in 2001 they asked me
+
+00:40:42.620 --> 00:40:48.380
+things like if we're going to write unit tests for all of our code what is the test team going to do
+
+00:40:49.680 --> 00:40:56.060
+oh you know what you know what that reminded me of what wait wait you know what that would
+
+00:40:56.060 --> 00:41:02.780
+hold your thought that just reminded me of i had i hadn't thought about this in years and we
+
+00:41:02.860 --> 00:41:09.660
+didn't bring it up at 200 what to date is still my view our second worst podcast ever
+
+00:41:12.300 --> 00:41:19.610
+i only know our first worst what's our second worst the one where we thought it would be a good idea
+
+00:41:20.880 --> 00:41:31.040
+to do a podcast and a presentation oh that didn't work yeah yeah yeah they didn't like us giving
+
+00:41:31.040 --> 00:41:35.360
+each other crap in the middle so whatever you know maybe now we can get away with that people
+
+00:41:35.360 --> 00:41:40.000
+know us better that was like in the 20s or 30s we couldn't get away with it but that was one of the
+
+00:41:40.000 --> 00:41:48.300
+questions that was asked okay if you remember i don't remember dude i don't remember what we
+
+00:41:48.300 --> 00:41:56.700
+talked about two weeks ago so anyway unit tests windows ce uh if i think you worked on windows ce
+
+00:41:56.700 --> 00:42:03.180
+a bit we didn't overlap but um doesn't it through windows phone it doesn't matter we had a
+
+00:42:03.980 --> 00:42:11.870
+the names don't matter all of our tests were contained in libraries dlls on windows and run
+
+00:42:11.870 --> 00:42:18.830
+by an executable that could go uh find the test cases inside the dll and run them uh pretty cool
+
+00:42:18.830 --> 00:42:29.310
+pretty common way of doing it what uh so what i did was i because i wrote a little wrapper
+
+00:42:29.310 --> 00:42:35.710
+application that could look it would go through the functions in your code and create stub unit
+
+00:42:35.710 --> 00:42:41.560
+tests for all of them and i just stumbled across the source code for a while back it's it's brute
+
+00:42:41.560 --> 00:42:46.200
+force dumb but it works so you want to write unit tests run this thing but all you have to do is
+
+00:42:46.200 --> 00:42:51.560
+fill in the crap make it easy to get started then they can expand from there you can pair with them
+
+00:42:51.560 --> 00:42:58.760
+coach etc etc find ways to make it easy to do i wrote a little bit ago about a ci system uh we
+
+00:42:58.760 --> 00:43:04.680
+wrote for that team before we knew what ci was just made it easy for people to do the things
+
+00:43:04.680 --> 00:43:10.920
+they were supposed to do i was on another product once where we wrote a test that would run in
+
+00:43:10.920 --> 00:43:17.150
+the background as you changed code and that's kind of what i mean if you look at what co-pilot
+
+00:43:17.150 --> 00:43:22.190
+does today it kind of looks at your code gives you some ideas you could see that expanding and
+
+00:43:22.190 --> 00:43:27.070
+doing static analysis and other things in the background helping you fix your code maybe even
+
+00:43:27.790 --> 00:43:30.990
+and this probably somebody's probably written this somewhere but i'm going to go ahead and
+
+00:43:30.990 --> 00:43:37.420
+imagine it hasn't for a minute so bear with me an a generative ai could as i'm writing code
+
+00:43:38.320 --> 00:43:44.000
+uh not only give me suggestions as co-pilot does uh search through a bunch of different static
+
+00:43:44.000 --> 00:43:50.560
+analysis tools and find potential errors for me and flag them and create unit tests for my code
+
+00:43:50.560 --> 00:43:56.080
+and run them in the background on my code and let me know if i was writing buggy code as i'm writing
+
+00:43:56.080 --> 00:44:02.080
+it probably somebody's probably already written that not a big deal it's free Jason probably has
+
+00:44:02.080 --> 00:44:07.280
+but anyway we talked about pilot uh i think a couple things you didn't mention is once you
+
+00:44:07.280 --> 00:44:13.200
+get those allies you collect that data you can tell a story you can you can you can use that
+
+00:44:13.200 --> 00:44:17.440
+because sometimes those people who are lagging they just want the data to show sometimes they'll
+
+00:44:17.440 --> 00:44:24.380
+ignore it what's really good is peer pressure so and and the way i do peer pressure is probably
+
+00:44:25.260 --> 00:44:29.260
+at least two ways i'm counting on my fingers you can't see them but one is just to celebrate
+
+00:44:29.260 --> 00:44:37.560
+the behavior you want to see um team x uh wrote a full suite of end-to-end tests they're running
+
+00:44:37.560 --> 00:44:41.960
+and monitoring they run within 20 minutes they're running on every build is great call it out for
+
+00:44:41.960 --> 00:44:50.300
+the team they go oh wow people often people people are going to tell me i'm wrong that just being
+
+00:44:51.020 --> 00:44:57.420
+recognized for doing something is a lot more than you know giving him a gift card or or
+
+00:44:57.420 --> 00:45:03.850
+sending him out to dinner giving him uh whatever people like recognition depending on culture you
+
+00:45:03.850 --> 00:45:11.130
+may not so use peer pressure there um gamify give people badges i'm i want i want to give people
+
+00:45:11.130 --> 00:45:18.520
+badges in github for for doing the right thing i'm just i'm just gonna ask like
+
+00:45:19.960 --> 00:45:26.010
+has my i was still at microsoft i would wonder can we get all of microsoft code into github
+
+00:45:26.640 --> 00:45:30.560
+because everything's so silent you're not telling me don't don't tell me any secrets or anything
+
+00:45:30.560 --> 00:45:39.770
+be kind of cool but i want badges so number one i don't think it all is but honestly the where it
+
+00:45:39.770 --> 00:45:45.530
+isn't i'm not certain anyone really cares yeah yeah because at the time when i left git was all
+
+00:45:45.530 --> 00:45:53.420
+in uh i'm gonna call it visual studio team system and not azure devops that's a dumbass name
+
+00:45:54.140 --> 00:46:01.180
+so anyway badges uh are a great way people go to somebody's report check out their code to see
+
+00:46:01.180 --> 00:46:09.100
+look at all the badges you guys you guys are the shit um yeah and i guess it was just two things so
+
+00:46:09.900 --> 00:46:15.580
+celebrate the behaviors you want to see gamify and or find any other way you can use peer pressure
+
+00:46:15.580 --> 00:46:20.540
+you can because that'll make it'll make a difference lots of little things you know you
+
+00:46:20.540 --> 00:46:28.760
+just inspired an idea i'm like oh hey no no because i was thinking you know if um
+
+00:46:29.980 --> 00:46:38.680
+i don't badges sure but to me badges are are honestly they feel childish
+
+00:46:39.900 --> 00:46:45.740
+but you know what that doesn't feel childish to me that's essentially the same thing is achievements
+
+00:46:47.150 --> 00:46:58.650
+yeah yeah yeah yeah and i'm like you know what it wouldn't take much like ado probably wouldn't
+
+00:46:59.370 --> 00:47:05.600
+wouldn't agree to integrate it but it wouldn't because all of their stuff um all of the ado
+
+00:47:06.940 --> 00:47:13.980
+stuff that we use at microsoft is available in in public databases i mean there's nothing stopping
+
+00:47:13.980 --> 00:47:22.410
+me from inventing my own shell and you can and you could allow people with your teams with
+
+00:47:22.410 --> 00:47:30.570
+a high gamer score they're allowed to check in on friday i i i mean putting their shit into an i-frame
+
+00:47:30.570 --> 00:47:36.490
+is like the easiest thing on the planet i'm like huh that's an idea now of course the problem is
+
+00:47:38.190 --> 00:47:50.430
+i have to have time to do things like that and exactly exactly hey um we have we have covered
+
+00:47:50.430 --> 00:47:56.910
+a lot of stuff and uh we could probably keep on talking for another hour on this but if you have
+
+00:47:56.910 --> 00:48:02.600
+more questions you can shove them in the mailbag channel but i i kind of think we should wrap it
+
+00:48:02.760 --> 00:48:09.480
+up there is everything you but after this one last code a bit that brent wants to mention we can we
+
+00:48:09.480 --> 00:48:17.640
+can no i was just thinking through okay so and uh what we really did is answered you know we answered
+
+00:48:17.640 --> 00:48:23.400
+their question at a strategic level like we listed off a number of strategies around doing this right
+
+00:48:24.120 --> 00:48:31.000
+um uh order of ignorance number four they didn't they didn't have one we gave them like a method
+
+00:48:31.480 --> 00:48:34.920
+we're giving them a means to discover what they don't know they don't know
+
+00:48:35.480 --> 00:48:44.670
+is there anything technical right in like the way they they said enterprise level change so that to me
+
+00:48:44.670 --> 00:48:50.110
+invokes i think they're talking about things like are in the quality culture transition guide so
+
+00:48:50.990 --> 00:48:59.370
+not really they may need a testing frame i mean no not really no okay it's people and knowledge
+
+00:48:59.370 --> 00:49:05.450
+people and knowledge it's not as good as the real 202 but i think we did a good job you know
+
+00:49:05.450 --> 00:49:11.820
+it's it's it's a start back it's a start and you know what if it's not if you hated the whole thing
+
+00:49:12.540 --> 00:49:16.780
+and you're still well one if you're still listening um it doesn't make any difference we
+
+00:49:16.780 --> 00:49:23.660
+don't have any ads yet at least so nobody got paid and you paid zero except for your time with
+
+00:49:23.660 --> 00:49:31.950
+this podcast if it sucks you know what your loss but given that let me pause and mention
+
+00:49:31.950 --> 00:49:39.630
+that we are on audible.com and if you really don't get we are but i i mean i don't i bet alan doesn't
+
+00:49:39.630 --> 00:49:47.150
+even remember the code brent you are you are a horrible at a bad joke so um all right so let's
+
+00:49:47.150 --> 00:49:55.230
+call that a day he is brent i am and i'm not we'll see you later bye
+

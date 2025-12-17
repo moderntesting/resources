@@ -1,0 +1,2128 @@
+1
+00:00:00,000 --> 00:00:04,480
+to have the same mindset that you need to be a tester because a software engineer
+
+2
+00:00:04,480 --> 00:00:10,560
+has to have that same what could go wrong. I've carried a pager for 20 years. I guarantee you,
+
+3
+00:00:10,560 --> 00:00:16,320
+I can think like a tester. There's nothing that gives you a quality mindset like not having to
+
+4
+00:00:16,320 --> 00:00:24,850
+wake up at three o'clock in the morning. Welcome to AVE Testing Podcast, your modern testing
+
+5
+00:00:24,850 --> 00:00:31,490
+podcast. Your hosts, Alan and Brent, will be here to guide you through topics on testing,
+
+6
+00:00:31,490 --> 00:00:37,170
+leadership, agile, and anything else that comes to mind. Now, on with the show. Hey everybody,
+
+7
+00:00:37,170 --> 00:00:43,410
+welcome back to the AVE Testing Podcast. Happy new year. I am here. I'm Alan. We have Brent.
+
+8
+00:00:43,410 --> 00:00:43,810
+Hello.
+
+9
+00:00:43,810 --> 00:00:44,530
+This is I.
+
+10
+00:00:44,530 --> 00:00:44,770
+Hello.
+
+11
+00:00:44,770 --> 00:00:47,730
+We also have Brian Finster. Brian, say hi.
+
+12
+00:00:47,730 --> 00:00:49,170
+Hi, I'm Brian.
+
+13
+00:00:49,170 --> 00:00:54,290
+I am excited to have you here for a bunch of reasons that will emerge. What I want to do
+
+14
+00:00:54,290 --> 00:00:59,730
+first is give a little context on why Brian's here. This is both for our listeners who may not
+
+15
+00:00:59,730 --> 00:01:04,050
+have seen. We talk about you on our Slack. If you want to go to join our Slack group,
+
+16
+00:01:04,050 --> 00:01:08,690
+you can go to moderntesting.org, click on the link, join right away. We've talked a little
+
+17
+00:01:08,690 --> 00:01:13,090
+bit about some of your LinkedIn posts. Good stuff. We're not talking dirty behind your back or
+
+18
+00:01:13,090 --> 00:01:19,810
+anything. But I imagine Brian being much more of an internet celebrity than Brent and our three
+
+19
+00:01:19,810 --> 00:01:25,250
+listeners. There's people coming to listen to our podcast going, why is Brian hanging out with these
+
+20
+00:01:25,250 --> 00:01:29,570
+two half-baked people trying to make a podcast for eight years?
+
+21
+00:01:29,570 --> 00:01:32,610
+Dude, I'm seriously half-baked. I don't understand.
+
+22
+00:01:32,610 --> 00:01:37,010
+Yeah, okay. Between all of us, we are one and a half-baked.
+
+23
+00:01:38,050 --> 00:01:42,850
+And this is also a context for you, Brian, to know why did these guys invite me here?
+
+24
+00:01:42,850 --> 00:01:51,170
+So once upon a time, about eight years ago, Brent and I were both in testing roles at Microsoft.
+
+25
+00:01:51,170 --> 00:01:57,410
+I led a few cross-company test-related groups, and Brent and I had such a good rapport in there.
+
+26
+00:01:57,410 --> 00:02:02,050
+And we've been giving each other crap like this now going on 10 years that someone,
+
+27
+00:02:02,050 --> 00:02:06,770
+I think it was Michael Hunter said, you can start a podcast. What was that, Brent?
+
+28
+00:02:06,770 --> 00:02:13,970
+It's been longer than 10 years. I met you when I joined the TLT, right? So it's been longer than
+
+29
+00:02:13,970 --> 00:02:18,450
+that. That was the test leadership team at Microsoft. And I'm going to assume it's the
+
+30
+00:02:18,450 --> 00:02:24,130
+same for all of you. I have now lost my ability to track how many years have gone by.
+
+31
+00:02:24,690 --> 00:02:29,090
+There was a blurry few years in there that are still blurry. But anyway, we started a podcast.
+
+32
+00:02:29,090 --> 00:02:32,290
+And we're going to figure this out as we go. And we talked about doing a podcast. But
+
+33
+00:02:32,850 --> 00:02:39,570
+one thing happened very early on as we very early on, the conversation shifted to something
+
+34
+00:02:40,210 --> 00:02:45,970
+prominent. And it was that Brent and I were both seeing that software delivery was changing.
+
+35
+00:02:45,970 --> 00:02:50,450
+It was changing definitely before then, but Microsoft is usually the last to know about
+
+36
+00:02:50,450 --> 00:02:54,050
+changes and how software is made. Dude, I came from Walmart, so.
+
+37
+00:02:58,210 --> 00:03:01,570
+There is the clip that goes on the beginning. Dude, I came from Walmart.
+
+38
+00:03:02,290 --> 00:03:09,090
+So we saw this world where fast feedback loops wouldn't need armies of testers because they would
+
+39
+00:03:09,090 --> 00:03:14,850
+get in the way. And we could reach higher quality by focusing on feedback loops, data,
+
+40
+00:03:14,930 --> 00:03:19,090
+and adaptability. So we talked about that because we were seeing it. We weren't trying to invent
+
+41
+00:03:19,090 --> 00:03:23,250
+anything. We were talking about what we were seeing. So we talked about that on the podcast
+
+42
+00:03:23,250 --> 00:03:29,330
+with the goal of helping testers navigate these changes that were going on because things are
+
+43
+00:03:29,330 --> 00:03:32,290
+changing. Things are still changing in some ways. Things are still the same. They're a
+
+44
+00:03:32,290 --> 00:03:36,610
+little bit different. Fast forward a bit. We came up with these modern testing principles,
+
+45
+00:03:36,610 --> 00:03:42,130
+which were the idea was to try and like, what are the principles behind what we've been
+
+46
+00:03:42,130 --> 00:03:47,410
+talking about for a few years now? And they're not modern and they're not about testing,
+
+47
+00:03:47,410 --> 00:03:55,650
+but we wrote them as sort of the, not the antidote, but the growth, like the traditional
+
+48
+00:03:56,450 --> 00:04:02,130
+test as a gatekeeper type of testing to modern testing where things are different.
+
+49
+00:04:02,130 --> 00:04:05,170
+They're really modern delivery, but we're keeping them. We still call them the modern testing
+
+50
+00:04:05,170 --> 00:04:13,170
+principles. We, if I may interject, we call them that mostly because to resonate with the audience,
+
+51
+00:04:13,170 --> 00:04:17,810
+we were trying to target. We saw two movements. It's super important. I mean, you have to do that.
+
+52
+00:04:19,330 --> 00:04:23,330
+In Alan's story, all of that is true. One of the things though,
+
+53
+00:04:24,130 --> 00:04:31,570
+that at least I experienced. So I spent a good amount of my career in middle management in QA.
+
+54
+00:04:32,530 --> 00:04:37,890
+And Alan very similarly, while he was at Microsoft, he avoided management, but
+
+55
+00:04:38,930 --> 00:04:47,570
+he still had very high scoped roles with large reach, large impact. And so when we both started
+
+56
+00:04:47,570 --> 00:04:53,890
+talking while he was still at Microsoft, and this was before Microsoft did his big switch,
+
+57
+00:04:54,610 --> 00:05:00,610
+when to sort of dramatically reduce the number of testers, we both had at that point in time
+
+58
+00:05:00,610 --> 00:05:11,410
+experienced around, Oh, this is what happens. This is why this works. Because back then Agile was,
+
+59
+00:05:11,410 --> 00:05:18,820
+was like crazy sauce, right? They're like, what do things without a hundred page document?
+
+60
+00:05:18,820 --> 00:05:25,860
+That's crazy. Alan and I were not only, not only did we see that it was coming,
+
+61
+00:05:26,880 --> 00:05:33,440
+but at that point in time, we were one of the few that wholeheartedly defended that that is the way
+
+62
+00:05:33,440 --> 00:05:40,400
+we should be going. Which I don't know about Alan, he's far more charismatic than I am, but it
+
+63
+00:05:42,240 --> 00:05:51,680
+did cause some sacrifice to some friendships on that front. What? You're deserting. How can you?
+
+64
+00:05:52,160 --> 00:06:02,000
+The creator. Exactly. And based on, based on LinkedIn comments, I'm guessing Brian, that that is a
+
+65
+00:06:02,000 --> 00:06:08,800
+phenomenon you're familiar with. I did give Brent some pre reading to kind of get familiar with it.
+
+66
+00:06:08,800 --> 00:06:12,960
+So this is interesting because I really want to talk to about the history about how I came
+
+67
+00:06:12,960 --> 00:06:19,760
+came to this. Yeah. Because I've been a software developer doing product development since 1996.
+
+68
+00:06:20,240 --> 00:06:27,310
+I've been doing it for awhile. Honestly, did it the way that I know a lot of people still do it,
+
+69
+00:06:27,310 --> 00:06:31,710
+which is I code something and then I go and manually test it and I go deploy it and hope
+
+70
+00:06:31,710 --> 00:06:37,980
+it doesn't blow up for years and years and years. You know, if you, and this before I,
+
+71
+00:06:37,980 --> 00:06:41,900
+before I worked at Walmart, but you know, Walmart, we went through a whole bunch of Agile
+
+72
+00:06:41,900 --> 00:06:47,180
+transformations as one does, which right after they sent us to PMI training, by the way,
+
+73
+00:06:47,180 --> 00:06:52,220
+which was really interesting. You know, I, I was one test away from being a project manager,
+
+74
+00:06:52,220 --> 00:06:58,540
+like fully certified by PMI. But we got to the point where we'd stabilized. I worked in
+
+75
+00:06:58,540 --> 00:07:02,780
+logistics at the time and I was working in warehouse management systems. And, you know,
+
+76
+00:07:02,780 --> 00:07:08,270
+the primary system I worked on was, I mean, oh my God, it made windows look small. I'm pretty sure.
+
+77
+00:07:08,270 --> 00:07:14,590
+I mean, it's, it's just a nightmare of old, it was like four different warehouse management
+
+78
+00:07:14,590 --> 00:07:21,150
+systems all banged together with a common database that we'd applied after this modernization effort.
+
+79
+00:07:23,340 --> 00:07:29,900
+But we were delivering that thing almost four times a year. Now this is also a period of time
+
+80
+00:07:29,900 --> 00:07:34,540
+when Walmart was going through a lot of acquisitions. So we're getting a lot of other markets,
+
+81
+00:07:34,540 --> 00:07:38,380
+you know, South Africa and Central America and all these, all these different markets.
+
+82
+00:07:39,100 --> 00:07:46,480
+And, you know, we need them to be on a common logistics system. We don't want to be integrating
+
+83
+00:07:46,480 --> 00:07:50,640
+all their legacy logistics systems. And, you know, we're delivering change every
+
+84
+00:07:51,460 --> 00:07:54,820
+three to four times a year. We did a value stream map one time and it was,
+
+85
+00:07:55,780 --> 00:08:00,800
+took us 12 months from a business request to deliver it to production. Right. I mean,
+
+86
+00:08:00,800 --> 00:08:07,760
+it was a nightmare. And every single time we did a deploy, so at the time, so I'm talking
+
+87
+00:08:07,760 --> 00:08:12,720
+about when we're just at the cusp of doing things correctly, they put me in charge of the team
+
+88
+00:08:12,720 --> 00:08:18,160
+responsible for integrating all of the feature branches every quarter for the quarterly release.
+
+89
+00:08:19,040 --> 00:08:24,240
+Right. I talked to, it sounds like a fun job. It was a fun job. Now they, it was very entertaining.
+
+90
+00:08:24,800 --> 00:08:31,040
+They, they gave me this job because I've been really looking into how other organizations
+
+91
+00:08:31,040 --> 00:08:36,080
+were doing source management. And I thought we could do it better. And they gave me the
+
+92
+00:08:36,080 --> 00:08:41,150
+mandate of making the team obsolete, making the team go away. Right. So it was an improvement
+
+93
+00:08:41,150 --> 00:08:46,510
+effort. And I was like, I'm all over that. I don't want to sit here. Let's make things better.
+
+94
+00:08:47,070 --> 00:08:51,710
+And I talked to Gene Kim about this after when he, he said we had drafted unicorn project and
+
+95
+00:08:51,710 --> 00:08:56,270
+he was talking about merge day for the Phoenix project. It was like 350 branches. I was like,
+
+96
+00:08:56,270 --> 00:09:03,570
+that's nothing. Hold my beer. Wait, wait, wait, wait, wait, wait, wait,
+
+97
+00:09:03,570 --> 00:09:15,380
+Brian, are you the real Brent? No, no, I'm not. But I am the sad that had to integrate 400 branches
+
+98
+00:09:15,380 --> 00:09:22,340
+every quarter, you know? And so you integrate 400 plus branches every quarter. And, you know,
+
+99
+00:09:22,340 --> 00:09:27,780
+then you deal with the merge conflicts and then you're six weeks late and then you go and deploy
+
+100
+00:09:27,780 --> 00:09:32,820
+and you've got scheduled war rooms for like scheduled here's the schedule for the next
+
+101
+00:09:32,820 --> 00:09:37,940
+week. Who's going to be working which part of the 24 hours seven day a week shift to support and
+
+102
+00:09:37,940 --> 00:09:43,780
+stabilize the system after this delivery for just the initial part of the stabilization. Okay.
+
+103
+00:09:45,120 --> 00:09:50,240
+So I mean, I did it's just a nightmare. And it was just normal, right? I mean,
+
+104
+00:09:50,240 --> 00:09:56,160
+it's not a nightmare because that's just how you work. And then SVP said, Hey, look,
+
+105
+00:09:57,790 --> 00:10:02,910
+we need to do this every two weeks because we can't meet our business goals by delivering
+
+106
+00:10:02,910 --> 00:10:08,370
+this slowly. And so what do they do? Of course, what they did was they hired McKinsey and Bain
+
+107
+00:10:08,370 --> 00:10:13,650
+and brought in no, no, no, no, no, actually, Randy, Randy, the SVP at the time, Randy Salley,
+
+108
+00:10:14,210 --> 00:10:19,010
+love that guy still have beer with him. Randy presented this as an engineering problem to us
+
+109
+00:10:19,010 --> 00:10:25,260
+senior engineers in logistics and said, Hey, I need you to fix this. Right? So one of my
+
+110
+00:10:25,260 --> 00:10:31,410
+teammates got a copy of continuous delivery. We read it. We knew about Conway's law.
+
+111
+00:10:32,420 --> 00:10:40,980
+We I read like the domain driven design for dummies. And we put together a plan for leadership
+
+112
+00:10:41,900 --> 00:10:49,090
+about how we can go to more frequent delivery. And in fact, when Patrick and I were working through
+
+113
+00:10:49,090 --> 00:10:55,120
+this, we had a, there was project manager assigned to this project. And Patrick and I said, okay,
+
+114
+00:10:55,120 --> 00:10:59,440
+look, we think there were two weeks isn't aggressive enough. We need to go for daily.
+
+115
+00:10:59,440 --> 00:11:02,880
+If we go for daily, we might go for weekly. If we go for over two weeks, we might be hit every month.
+
+116
+00:11:02,880 --> 00:11:07,600
+So let's go for daily. And the project manager said, well, they asked for over two weeks. We
+
+117
+00:11:07,600 --> 00:11:10,640
+don't care. We're going for daily. So will I quit? If you guys are going to do that,
+
+118
+00:11:10,640 --> 00:11:15,680
+like we don't need you because we're doing this for two decades. We're fine on our own things.
+
+119
+00:11:16,590 --> 00:11:24,220
+And we drove for daily, but just so, but imagine the situation we're in. We are a bunch
+
+120
+00:11:24,300 --> 00:11:30,700
+of developers who we have a QA area. Who's been doing all the testing for us, mostly manual.
+
+121
+00:11:31,260 --> 00:11:37,540
+None of the developers in the area actually know how to test at all. Okay. We're not going to go
+
+122
+00:11:37,540 --> 00:11:42,820
+for daily production delivery. So today's code goes to production today. That was our goal.
+
+123
+00:11:43,920 --> 00:11:49,040
+Now we had an ops area too, because they'd gone through the whole matrix organization fat and
+
+124
+00:11:49,040 --> 00:11:55,440
+split off support from product from development where we used to run what we brung. They pulled
+
+125
+00:11:55,440 --> 00:12:04,290
+that away for developer productivity, which just destroyed quality even further. But they, the ops
+
+126
+00:12:05,250 --> 00:12:11,090
+SLA was that you had to be stable for 90 days before they'd take it over, but we're delivering
+
+127
+00:12:11,090 --> 00:12:14,210
+every single day. So we'll never get it to them. So that means we're going to get ops back,
+
+128
+00:12:14,210 --> 00:12:19,790
+which made me incredibly happy. Honestly, I wanted ops back, but that also means we're going to be
+
+129
+00:12:19,790 --> 00:12:25,810
+delivering untested code every single day to production. None of the work. So we have to
+
+130
+00:12:25,810 --> 00:12:32,450
+dig into testing. And so I started taking testing very, very seriously. And I started working
+
+131
+00:12:32,450 --> 00:12:36,050
+through this problem, just going backwards from I need to deploy every single day.
+
+132
+00:12:37,140 --> 00:12:41,940
+It has to be validated that it's ready for production every single day. The way all this
+
+133
+00:12:41,940 --> 00:12:45,540
+testing is being done right now will not work. So we have to reinvent all of testing.
+
+134
+00:12:46,500 --> 00:12:53,840
+I had to get the QA lead that was assigned to us on board. We had to, as the pilot teams,
+
+135
+00:12:53,840 --> 00:13:00,300
+learn how to test from scratch. I've got a copy of XUnit test patterns. It was like 900 pages
+
+136
+00:13:00,300 --> 00:13:06,540
+long. I was pouring through that. I was pouring through everything I can find. I was interviewing
+
+137
+00:13:06,540 --> 00:13:09,900
+developers about why they were struggling with testing. It was like, Oh, well, because the
+
+138
+00:13:09,900 --> 00:13:16,140
+requirements are crap. So I discovered, I found the behavior driven development. We learned to do
+
+139
+00:13:16,140 --> 00:13:22,400
+that. So we could get clean requirements so that we would know what to test. And we were doing
+
+140
+00:13:22,960 --> 00:13:27,280
+all this upfront work so that we can write testing code, do real continuous integration,
+
+141
+00:13:27,280 --> 00:13:36,110
+and push testing code to production. And so what my takeaway from this journey was the continuous
+
+142
+00:13:36,190 --> 00:13:44,180
+delivery is a quality initiative that it stress-tested your quality process and that you must
+
+143
+00:13:44,180 --> 00:13:53,150
+focus on quality if you're going to be good at this. Later on, I went to the lady who used to be
+
+144
+00:13:53,150 --> 00:13:59,150
+my senior director. She moved to be the senior director of QE because I rebranded QA to QE and
+
+145
+00:13:59,150 --> 00:14:04,910
+told her she needed to hire me to drive CD across the organization because CD was a quality
+
+146
+00:14:04,910 --> 00:14:14,000
+initiative, not a development initiative. And every since then, test architecture,
+
+147
+00:14:15,820 --> 00:14:23,970
+how do I get from idea to production with fewer handoffs, fewer, less reworked,
+
+148
+00:14:24,770 --> 00:14:31,250
+faster feedback at every single step. There was a, early on in this process, QA put on this
+
+149
+00:14:31,250 --> 00:14:38,160
+whole quality conference. And I was one of the keynote speakers, not in QA, talking about how
+
+150
+00:14:38,160 --> 00:14:42,240
+testing, you test everything. You test meetings. You don't go to a meeting list. You have an agenda
+
+151
+00:14:42,880 --> 00:14:46,590
+that you can assert against. That's an interesting angle.
+
+152
+00:14:48,110 --> 00:14:50,750
+It's like if you don't have an agenda for a meeting, don't show up because you have nothing
+
+153
+00:14:50,750 --> 00:14:54,430
+to assert against to find out if you got value from the meeting. I said we're testing for value,
+
+154
+00:14:54,430 --> 00:15:00,990
+not for adherence to spec. Yes. So much yes.
+
+155
+00:15:03,790 --> 00:15:09,630
+And people say, well, how do you test the test? You ship it. The test is just prod.
+
+156
+00:15:10,350 --> 00:15:16,110
+You don't. That's how you test the test. You don't. I love that phrase. I'm writing it down.
+
+157
+00:15:16,110 --> 00:15:23,730
+You test for value. I wrote a blog post recently called the three wrongs. And this is something
+
+158
+00:15:24,770 --> 00:15:30,770
+I, you know, just like an epiphany I had several years ago that the whole, the reason for all this
+
+159
+00:15:30,770 --> 00:15:36,770
+agile nonsense is everything is wrong all the time. The problem with classic testing process where you
+
+160
+00:15:36,770 --> 00:15:41,970
+have product owner or BA or somebody creating requirements, handing them to the development
+
+161
+00:15:41,970 --> 00:15:45,970
+team and then handing them to a testing team to automate the tests or do manual testing
+
+162
+00:15:46,610 --> 00:15:50,530
+is that it's missing the foundational principle that the requirements probably wrong in the
+
+163
+00:15:50,530 --> 00:15:55,330
+first place. And on top of that, we're going to misunderstand them because of the handoff.
+
+164
+00:15:55,330 --> 00:15:58,690
+And then when you hand them to a development team and a testing team, you double the chance
+
+165
+00:15:58,690 --> 00:16:04,690
+misunderstanding. And I've measured this in real life on development teams with value stream maps
+
+166
+00:16:04,690 --> 00:16:10,350
+and interviews when we were, when I was running the dojo. I've seen this in reality where the
+
+167
+00:16:10,350 --> 00:16:16,000
+testing team misunderstood the requirements differently from the product team. And they
+
+168
+00:16:16,080 --> 00:16:20,800
+both misunderstood the requirements for what the product owner meant. And the product owner
+
+169
+00:16:20,800 --> 00:16:25,820
+actually misunderstood the need. And I have documented that in value stream maps.
+
+170
+00:16:26,780 --> 00:16:32,380
+I think it's Crosby. I think it's Crosby. Now I'm taking this myself who said,
+
+171
+00:16:32,380 --> 00:16:37,810
+quality is conformance to requirements. And I've modified that before you cringe and go,
+
+172
+00:16:39,170 --> 00:16:45,170
+I believe it. It's true. Quality is conformance to requirements, but only the customer can define
+
+173
+00:16:45,170 --> 00:16:53,490
+requirements. I gave it there was a talk. Oh, even further, the customers, customer themselves
+
+174
+00:16:53,490 --> 00:16:58,290
+may not actually know the requirements. No, they don't until they see it and then they can edit it.
+
+175
+00:16:58,850 --> 00:17:05,810
+Yeah. Right. Right. But the, there's a talk I used to give. So the last role I held at Walmart
+
+176
+00:17:05,810 --> 00:17:11,330
+was I led the DevOps Studio at Walmart. And our job was to, we were using continuous delivery
+
+177
+00:17:11,890 --> 00:17:18,050
+as a forcing function or to improve engineering excellence and business delivery across the
+
+178
+00:17:18,050 --> 00:17:23,520
+organization. We were building a platform that was optimized for that. If you weren't using a CD
+
+179
+00:17:23,520 --> 00:17:30,480
+workflow, the platform was hard. It fought you on purpose. Like we need Gitflow. Yeah. No,
+
+180
+00:17:30,480 --> 00:17:38,340
+we're Gitflows on our roadmap. And I was asked to create a dojo where you use immersive learning
+
+181
+00:17:38,340 --> 00:17:44,980
+to help teams learn continuous delivery. We're like hands on, we join your team as engineers,
+
+182
+00:17:44,980 --> 00:17:51,220
+not freaking agile coaches, and pair with you while you learn CD in your context with your work.
+
+183
+00:17:51,220 --> 00:17:57,330
+And I used to give these talks about testing and one of the talks I gave about testing,
+
+184
+00:17:57,330 --> 00:18:05,250
+I always started off with this definition of quality. And I had an image of the 2017 MacBook
+
+185
+00:18:05,250 --> 00:18:11,570
+Pro. Now do you guys remember the 2017 MacBook Pro? Oh, that's the one with the touch bar. They
+
+186
+00:18:11,570 --> 00:18:18,700
+added the touch bar. They removed the escape key. They removed MagSafe charging. They removed all
+
+187
+00:18:18,700 --> 00:18:25,180
+the ports and just use USB C. It was the highest quality piece of crap you could buy. And I had
+
+188
+00:18:25,180 --> 00:18:29,420
+a picture of this and I was talking about how I'm a photographer. They took away my SD card
+
+189
+00:18:29,420 --> 00:18:35,900
+reader. So now I have to go down over SD card reader. I have dogs, large dogs. So they run past
+
+190
+00:18:35,900 --> 00:18:41,580
+the coffee table, trip on the cord, right? When they ripped the computer off the coffee table
+
+191
+00:18:41,580 --> 00:18:47,820
+instead of just some MagSafe cable detaching. I'm a software developer who focuses on Unix.
+
+192
+00:18:47,820 --> 00:18:56,050
+I need my escape key. How am I going to get out of VI? And I'm like, when that computer came out,
+
+193
+00:18:56,130 --> 00:19:01,730
+I bought a refurbished of my personal machine. I needed a new one. I bought a refurbished 2016
+
+194
+00:19:01,730 --> 00:19:06,610
+instead of a new 2017 because it was garbage. And then I was starting to say, this is what
+
+195
+00:19:06,610 --> 00:19:12,210
+quality means. Quality means it meets the user's need. Not that it meets the spec.
+
+196
+00:19:15,710 --> 00:19:22,270
+I have a whole other thing about why I don't do that. But this is the core fundamental thing
+
+197
+00:19:23,150 --> 00:19:29,420
+is that everything we do is wrong until we can get it to the front of the end user
+
+198
+00:19:30,060 --> 00:19:37,260
+and find out what's wrong so that we can adjust. And that the reason I focus so hard on continuous
+
+199
+00:19:37,260 --> 00:19:44,140
+delivery is because of the joy that we felt when we were able to deliver multiple times a day
+
+200
+00:19:44,700 --> 00:19:51,820
+to the end user, get feedback directly from that end user, adjust, give them feedback the next day,
+
+201
+00:19:52,300 --> 00:19:58,780
+they were happy. We were happy. Morale was high. Quality was high. Everybody should work that way,
+
+202
+00:19:58,780 --> 00:20:03,100
+but it requires rethinking all the things that you think you know are true.
+
+203
+00:20:03,970 --> 00:20:09,970
+Yeah. A million percent. Yes. Every once in a while I joined a new team and somebody doesn't
+
+204
+00:20:09,970 --> 00:20:15,410
+get it. And I remember at my last company, I joined the new team or talking about delivery.
+
+205
+00:20:16,050 --> 00:20:24,290
+I said I would rather ship 10 times a day than once a week. And the SVP just, I don't get why
+
+206
+00:20:24,290 --> 00:20:31,170
+you would say that. It's fine. It's fine. We're not going to go into it. But I convinced him.
+
+207
+00:20:31,170 --> 00:20:36,610
+It took me a few years, but he was on board. It's just a different way of thinking.
+
+208
+00:20:38,130 --> 00:20:43,010
+Well, you get terrified of size, right? Once you do it, you get terrified. It's like,
+
+209
+00:20:43,010 --> 00:20:45,570
+what do you mean 500 lines of code? Are you kidding me?
+
+210
+00:20:47,170 --> 00:20:51,330
+No. Well, so part of it is like in the transformation. And I think you're right.
+
+211
+00:20:52,130 --> 00:20:59,230
+Right. In my own journey on shifting to agile, like for me,
+
+212
+00:21:00,990 --> 00:21:06,590
+I've told this multiple times on the podcast, but I'll do it. I'll do the short version for Brian.
+
+213
+00:21:06,590 --> 00:21:08,430
+Everyone else can press the skip 30 seconds.
+
+214
+00:21:08,430 --> 00:21:20,030
+I went to Scrum. We executed it poorly. A two week Scrum ended up taking three months for us to
+
+215
+00:21:20,750 --> 00:21:29,390
+unscrew up. And then we shifted to a Kanban model where basically a small little thing ships
+
+216
+00:21:29,390 --> 00:21:37,390
+independently. And in order to execute that, you had to make certain changes. You had to make smaller
+
+217
+00:21:37,390 --> 00:21:44,880
+changes. You had to cover the entire test suite, as you called out just a second ago.
+
+218
+00:21:44,880 --> 00:21:53,040
+But where the magic went in is one day, one of my people submitted something and everything was on
+
+219
+00:21:53,040 --> 00:22:00,660
+the floor. Now that sounds like a bad story. However, because it was just one change that went
+
+220
+00:22:00,660 --> 00:22:06,340
+in that put everything on the floor, it took seconds for us to back it out, took seconds for
+
+221
+00:22:06,420 --> 00:22:16,660
+us to repair it. The guy knew instantly what he did wrong and get it out. I had to multiple times
+
+222
+00:22:16,660 --> 00:22:21,140
+go forward and try to do the same conversations you did. And that Alan just talked about
+
+223
+00:22:21,140 --> 00:22:28,820
+convincing others to take the risk on my team, we're going to execute this way. And to your
+
+224
+00:22:28,820 --> 00:22:34,500
+point, this is the point I resonate with. When they think, oh, we're going to ship once a week,
+
+225
+00:22:34,500 --> 00:22:39,780
+they have the size in their head. And then when we say we're going to do it 10 times a day,
+
+226
+00:22:42,140 --> 00:22:46,780
+they don't automatically shift that size in their head. How are you going to do that 10 times a day?
+
+227
+00:22:47,580 --> 00:22:50,620
+Well, it's actually we're not we're shifting to small batch.
+
+228
+00:22:50,620 --> 00:22:56,620
+Yeah, it takes a lot of practice. And I've been having the last couple of days, I've been having
+
+229
+00:22:57,340 --> 00:23:01,660
+some really intense discussions with people who are trying to redefine continuous integration,
+
+230
+00:23:01,660 --> 00:23:09,870
+so they can feel better about not doing it. And but here's the thing, okay, is that that
+
+231
+00:23:09,870 --> 00:23:14,670
+driving down that batch size is not the goal, it's the forcing function to the goal.
+
+232
+00:23:15,310 --> 00:23:24,510
+Yes. Okay. And I'll give you another example that you reminded me of is that of something saving
+
+233
+00:23:24,510 --> 00:23:33,230
+our ass, because we took CD seriously. Okay, I had the when we've been going on for a while,
+
+234
+00:23:33,230 --> 00:23:37,790
+and one of the other teams have been focusing on working this way. And I had a direct dependency on
+
+235
+00:23:37,790 --> 00:23:42,430
+them. They were the they were my downstream service that I needed a lot of information from.
+
+236
+00:23:43,150 --> 00:23:47,550
+I worked very closely with the tech lead. We were doing contract driven development.
+
+237
+00:23:48,640 --> 00:23:52,400
+Anytime we needed a contract, anytime we needed to change between the two of us,
+
+238
+00:23:52,400 --> 00:23:55,600
+we were coordinating through our contracts, we can deploy independently, because that was the
+
+239
+00:23:55,600 --> 00:24:01,360
+other thing we put rules in place when we started this, every team delivers in any sequence,
+
+240
+00:24:01,360 --> 00:24:06,160
+asynchronously from anybody else, which meant we had to focus on really good API management.
+
+241
+00:24:07,150 --> 00:24:13,630
+Well, there was a test that we had to run, where we would, and this is logistics, we get a
+
+242
+00:24:13,630 --> 00:24:22,030
+purchase order come in, it would process through their system. And then we would do something
+
+243
+00:24:22,030 --> 00:24:28,350
+to validate that we were actually could receive freight, and create inventory. And that was the
+
+244
+00:24:28,350 --> 00:24:38,960
+test took four hours to run that test. I can't do CD that way. And so it's Walmart. We didn't
+
+245
+00:24:38,960 --> 00:24:44,720
+have a lot of external information, all works very inwardly facing, we independently invented
+
+246
+00:24:44,720 --> 00:24:55,070
+virtual services. We submitted a pull request to my colleague's team, to give them a contract mock
+
+247
+00:24:55,710 --> 00:25:02,370
+of their API. And then created a process where we would send a test, a test header.
+
+248
+00:25:03,700 --> 00:25:07,060
+And they would get they would serve the mock instead of actually hitting their actual
+
+249
+00:25:08,020 --> 00:25:14,080
+logic. And so now this integration test between the two teams went from four hours to microseconds.
+
+250
+00:25:15,680 --> 00:25:24,240
+So the way but but Brian, you're testing the mock. Yep. We also get contract tests to test the mock
+
+251
+00:25:24,240 --> 00:25:29,440
+against the actual response so that we can validate the mock. Anytime you're doing a contract test.
+
+252
+00:25:30,700 --> 00:25:34,540
+So when you're doing integration tests with mocks, you also have to have a contract test to validate
+
+253
+00:25:34,540 --> 00:25:42,620
+the mock. Sure. Right. So we did both. Okay. But the result of that, though, is that they
+
+254
+00:25:42,620 --> 00:25:47,500
+made it when we were going live in the distribution center, and they had us in a distribution center
+
+255
+00:25:47,500 --> 00:25:52,220
+with really terrible network latency and all sorts of other problems. Because of course they did.
+
+256
+00:25:52,780 --> 00:25:59,420
+We're we're going live. And we're making changes rapidly as because there's always the things that
+
+257
+00:25:59,420 --> 00:26:05,150
+you didn't know about until you actually try to use the system for real. They broke their contract.
+
+258
+00:26:06,720 --> 00:26:13,440
+And we discovered it instantly when we ran our test the next time before anything deployed.
+
+259
+00:26:14,850 --> 00:26:21,280
+And before anything could have broken anything in production. Because they're just just that broke
+
+260
+00:26:21,280 --> 00:26:30,000
+the test immediately. Right. But the only reason that that test existed that way is because you
+
+261
+00:26:30,000 --> 00:26:36,320
+can't do CD with the way we were doing integration testing before. Right. Right. It's the driving
+
+262
+00:26:36,400 --> 00:26:44,080
+down to focusing on speed of feedback. Driving down that batch size forces you to solve these problems.
+
+263
+00:26:45,820 --> 00:26:51,500
+And it makes you safer. It removes drama. It makes the work suck less.
+
+264
+00:26:54,350 --> 00:27:02,110
+You know, this is something that I've started to do with my junior. So years ago,
+
+265
+00:27:02,830 --> 00:27:12,190
+I shifted away from QA, went to dev. And now, and then little after that, I became a data scientist.
+
+266
+00:27:12,190 --> 00:27:18,030
+And now I actually run a sort of a dev team that's producing data science driven services.
+
+267
+00:27:21,700 --> 00:27:32,420
+One of the things that that energizes your ICs is closing the loop between the customer value
+
+268
+00:27:32,500 --> 00:27:41,540
+proposition and their actual work. Oh, dude, dude. So I gave a talk with my teammate in
+
+269
+00:27:41,540 --> 00:27:48,000
+2017 at DevOps Enterprise Summit. Because I'd gone to the conference the first time in 2015.
+
+270
+00:27:48,000 --> 00:27:52,640
+And I saw all these executives talking about all these things we're doing and how it impacts the
+
+271
+00:27:52,640 --> 00:27:56,560
+enterprise. Like bullshit. How's an enterprise? We need to tell everybody how it impacts the teams.
+
+272
+00:27:57,700 --> 00:28:02,020
+And we had a slide that talked about how it made us love developing it.
+
+273
+00:28:02,910 --> 00:28:07,550
+We were beating animated heart on the slide. And it just made us love development again because of
+
+274
+00:28:07,550 --> 00:28:15,890
+that. Because we got to see our work being used instantly. We got feedback. I talked to somebody
+
+275
+00:28:15,890 --> 00:28:21,680
+at the conference that year who was a platform developer for Exxon. And he said, it seems like
+
+276
+00:28:21,680 --> 00:28:26,860
+all the best developers get a platform because it can be closer to the customer. And I just moved
+
+277
+00:28:26,860 --> 00:28:31,100
+to Walmart platform and the people I worked with, I was like, oh yeah, I agree.
+
+278
+00:28:33,380 --> 00:28:37,700
+That makes sense. People are motivated by progress.
+
+279
+00:28:39,540 --> 00:28:44,980
+And Dan, you've gotten there. But one thing, if I can, I'm going to change just,
+
+280
+00:28:45,620 --> 00:28:52,580
+not even a change of gear, a little bit of a veer here. Your journey on discovering testing,
+
+281
+00:28:53,540 --> 00:29:00,100
+I think is pretty unique. But maybe not. I don't know. I see the pockets, everything we're talking
+
+282
+00:29:00,100 --> 00:29:03,540
+about, things we're seeing happen all over the place. But there's still a lot of people
+
+283
+00:29:03,540 --> 00:29:10,740
+doing the old way. When I spent a chunk of my career teaching developers how to test and having
+
+284
+00:29:10,740 --> 00:29:15,460
+very good luck with it and realizing that developers actually could be very good testers.
+
+285
+00:29:16,500 --> 00:29:21,940
+And I tried to accelerate that via, sometimes on one project, I did a lot of it just by doing a
+
+286
+00:29:21,940 --> 00:29:28,930
+whole lot of code reviews. And what I found is, one, developers can be very good testers.
+
+287
+00:29:28,930 --> 00:29:36,110
+And two, not surprisingly, when developers knew testing was part of what they were delivering,
+
+288
+00:29:36,110 --> 00:29:40,670
+they began to design better code in the first place because they started to think about testability
+
+289
+00:29:40,670 --> 00:29:45,390
+as they were creating the code. And they go, well, I'm going to test this. They would think
+
+290
+00:29:45,390 --> 00:29:53,070
+ahead. You discovered a lot of devs without, may not think of that contract testing solution.
+
+291
+00:29:53,630 --> 00:29:58,190
+Well, that's amazing how they didn't know this exists. So there's a curiosity. I'm curious,
+
+292
+00:29:59,470 --> 00:30:05,950
+one question is, how did you discover some of the nuance? And then the other end of that,
+
+293
+00:30:06,670 --> 00:30:09,230
+I know you've written on LinkedIn a little bit about this before. I want to talk about it a
+
+294
+00:30:09,230 --> 00:30:13,470
+little bit. But there's this whole developers can't test thing, which we know is bullshit.
+
+295
+00:30:14,350 --> 00:30:19,470
+And I'm just curious on why you think people think that as well. So first question,
+
+296
+00:30:20,430 --> 00:30:25,390
+how did you get so good at testing without a great coach like me? And two,
+
+297
+00:30:28,110 --> 00:30:34,270
+Brent, I'm muting himself just to laugh. And then two, what do you think it'll take to get
+
+298
+00:30:35,470 --> 00:30:39,550
+more people to figure out that devs can actually do really good testing?
+
+299
+00:30:39,550 --> 00:30:48,780
+So, you know, I found mentors. Liz Keo has no idea who I am. Okay, I have talked to her on
+
+300
+00:30:48,780 --> 00:30:56,660
+Twitter occasionally. If I ever meet her, she gets so much beer or whiskey or whatever her favorite
+
+301
+00:30:56,660 --> 00:31:03,060
+drink is, because she was my behavior driven development mentor. I consumed everything that
+
+302
+00:31:03,060 --> 00:31:08,900
+she had to say about that. I went out and found people. I'm spanking on the name, the guy who
+
+303
+00:31:08,900 --> 00:31:18,300
+wrote cucumber and cheese. I was finding these resources out there. I found the Xunip
+
+304
+00:31:20,060 --> 00:31:26,220
+webpage and I was pulling from that. It was my job to discover how we can do this. And then
+
+305
+00:31:26,220 --> 00:31:32,300
+to spread that knowledge, because we had to solve the problem of continuous delivery. Patrick,
+
+306
+00:31:32,300 --> 00:31:37,580
+my colleague, he was working on the automation. I was working on how to use the automation.
+
+307
+00:31:38,420 --> 00:31:48,500
+And so that was, I had to, it was my eval. And then also binding other people,
+
+308
+00:31:49,460 --> 00:31:55,180
+if you don't know how to test, we can't do CD. I needed everybody to do CD. Even before we,
+
+309
+00:31:56,300 --> 00:32:03,500
+this is why, even before we started using continuous delivery as an enterprise
+
+310
+00:32:03,580 --> 00:32:10,780
+improvement strategy, I knew that if we didn't spread the disease of continuous delivery to
+
+311
+00:32:10,780 --> 00:32:15,500
+other areas, it would be easy to kill. All we'd do is take one leadership change at a low level,
+
+312
+00:32:16,300 --> 00:32:21,140
+CD's dead, and we'd go back to the old terrible way of delivering the software. I didn't want that.
+
+313
+00:32:21,700 --> 00:32:26,900
+And so I was going out to the end. So if you understand at the time, I didn't talk to people.
+
+314
+00:32:26,900 --> 00:32:32,610
+I was, I'm an introvert, but I was an actively not talking to people introvert.
+
+315
+00:32:33,470 --> 00:32:43,420
+But I needed this to happen for my quality of life. Right. And so I was going out to other teams
+
+316
+00:32:43,420 --> 00:32:47,100
+and explaining to what we're doing in behavior driven development. It's the, I was giving
+
+317
+00:32:47,100 --> 00:32:51,020
+presentations about it. Just, Hey, you want to have a, what's your team to have a presentation
+
+318
+00:32:51,020 --> 00:32:55,740
+with BDD. I was finding other people who were coming in from other organizations and who had
+
+319
+00:32:55,740 --> 00:33:00,620
+a test collaborating with them. Hey, let's, how do we do this better? Later on, when I moved to
+
+320
+00:33:00,620 --> 00:33:07,900
+platform, we hired Villa Sverigraven in the platform, uh, as the he's, he was working at QA
+
+321
+00:33:07,900 --> 00:33:14,190
+at Netflix. And I said, village, you're not my testing mentor and bounced ideas hard and
+
+322
+00:33:14,190 --> 00:33:18,510
+passed off of him and challenged. You know, I was like, I have this idea and he'd come up and I was
+
+323
+00:33:18,510 --> 00:33:22,750
+like, that doesn't feel right to me. And I didn't just accept what Villa said, even though
+
+324
+00:33:22,750 --> 00:33:26,590
+it was my mentor, I would challenge him because it just didn't seem to align with continuous
+
+325
+00:33:26,590 --> 00:33:32,700
+delivery. And so it was steel on steel, trying to get better at this stuff. It all came down to how
+
+326
+00:33:32,700 --> 00:33:38,460
+do I deliver workable software every single day? Right. It's just, how do I solve this problem?
+
+327
+00:33:39,340 --> 00:33:43,580
+So there's a characteristic here that I've been going to sound briefly. Like I'm blowing
+
+328
+00:33:43,580 --> 00:33:49,740
+smoke up your ass, but as a manager, there's a correlation. You don't have someone study.
+
+329
+00:33:50,620 --> 00:33:57,820
+I'm, I'm, I'm, uh, well, let me just finish my thought because I think there's a correlation.
+
+330
+00:33:58,620 --> 00:34:03,900
+There's a curiosity and drive in you. Like you had, you could have gone to your manager and said,
+
+331
+00:34:03,900 --> 00:34:08,370
+we need to hire testers. We'll, we'll just make them move faster or whatever. Or you could have
+
+332
+00:34:08,370 --> 00:34:14,930
+said there are many ways you could have given up and gone a different path, but you didn't. And
+
+333
+00:34:14,930 --> 00:34:22,450
+that curiosity to go discover, I think it's any knowledge work, being curious and wanting to learn
+
+334
+00:34:22,450 --> 00:34:27,250
+more and continually trying to discover what you don't know and what you don't know, you don't know
+
+335
+00:34:27,810 --> 00:34:30,850
+is absolutely a key to success. So there's a story in there as well.
+
+336
+00:34:31,890 --> 00:34:38,610
+Full disclosure. When we were making the shift, we also changed tech stacks and the new tech stack.
+
+337
+00:34:38,610 --> 00:34:43,890
+I was not good at, and I was, uh, you know, it's very difficult to be a senior engineer
+
+338
+00:34:43,890 --> 00:34:48,130
+where the thing that this tech stack, your senior at no longer exists in your area.
+
+339
+00:34:48,690 --> 00:34:50,770
+You need to become an expert at something quick.
+
+340
+00:34:55,420 --> 00:35:00,060
+So I became an expert at how do we deliver better while I'm learning the new tech stack.
+
+341
+00:35:01,740 --> 00:35:04,700
+Way back when Brent and I were both in test and he was, I think,
+
+342
+00:35:05,900 --> 00:35:11,340
+I think we were still doing like kind of old school tile testing, but not the gatekeeper.
+
+343
+00:35:11,340 --> 00:35:14,940
+Brent came up with this mission. Like, you know, testing's role is to accelerate the
+
+344
+00:35:14,940 --> 00:35:19,580
+achievement of shippable quality. And there's something there too. Like you,
+
+345
+00:35:20,300 --> 00:35:26,500
+you wanted stuff to go faster for good reasons. And then, I don't know, I think there's,
+
+346
+00:35:26,500 --> 00:35:28,260
+I like the story there.
+
+347
+00:35:28,260 --> 00:35:34,580
+Yeah. I mean, and going back to some of the core motivations I have, I've always,
+
+348
+00:35:34,580 --> 00:35:38,260
+I've not been a developer who's number one software, something hobby.
+
+349
+00:35:38,900 --> 00:35:44,820
+Okay. I code because I need a tool. I have other hobbies, photographer, motorcycles,
+
+350
+00:35:44,820 --> 00:35:49,940
+I build models. I don't solve, I don't code for a hobby. I could solve business problems.
+
+351
+00:35:49,940 --> 00:35:54,740
+I care about the business problem. I push back really hard on developers who say our
+
+352
+00:35:54,740 --> 00:36:02,270
+job is algorithms and data structures. Our job is to be business experts solving business problems
+
+353
+00:36:02,270 --> 00:36:05,310
+with code. It's fascinating.
+
+354
+00:36:05,390 --> 00:36:09,230
+Modern testing principle number one, our priority is improving the business.
+
+355
+00:36:09,230 --> 00:36:13,710
+Yes. And everything, you know, I talked to people, how do you get people to buy into continuous
+
+356
+00:36:13,710 --> 00:36:19,390
+delivery? I don't. I get them to buy into how do we deliver better business value at lower
+
+357
+00:36:19,390 --> 00:36:24,030
+cost with less variability and less, you know, drama, right? You know, it's...
+
+358
+00:36:24,030 --> 00:36:30,990
+But Brian, I am a database expert and I don't care about all of that. I want to add the next
+
+359
+00:36:30,990 --> 00:36:32,510
+feature to my database.
+
+360
+00:36:32,510 --> 00:36:34,110
+Okay. Well, go work for a database company.
+
+361
+00:36:36,110 --> 00:36:36,750
+That is...
+
+362
+00:36:36,750 --> 00:36:41,390
+But, you know, and then that's a valuable attitude to have. But, you know, going back to your
+
+363
+00:36:41,390 --> 00:36:45,070
+question about why people think developers can't test. Well, it's because they can't,
+
+364
+00:36:45,070 --> 00:36:48,110
+right? It's not because that... Well, it's not because they can't, it's because they have no
+
+365
+00:36:48,110 --> 00:36:53,760
+idea how, because you... What's the main entry point for software development?
+
+366
+00:36:54,580 --> 00:36:59,200
+It's a computer science degree. We don't need freaking computer scientists.
+
+367
+00:36:59,840 --> 00:37:07,040
+We need software engineers and that's completely different thing. And so people go to
+
+368
+00:37:08,220 --> 00:37:14,700
+university, they get a CS degree, they might be taught the basics of how to structure code.
+
+369
+00:37:15,970 --> 00:37:22,050
+You know, they come into the workforce mostly illiterate and then we have to train them. And
+
+370
+00:37:22,050 --> 00:37:27,440
+if they wind up in the wrong organization, they won't get taught how to test. And then
+
+371
+00:37:27,440 --> 00:37:32,560
+they'll think that's just the right way to do it. And those organizations will have testing teams
+
+372
+00:37:32,560 --> 00:37:37,600
+and the testing teams will say, well, developers can't test. That's my job. Only I have the
+
+373
+00:37:37,600 --> 00:37:45,740
+mindset to think about what could go wrong. Right? It's like, apparently software is the
+
+374
+00:37:45,740 --> 00:37:52,980
+only discipline where only somebody other than the engineer of doing the work of designing the
+
+375
+00:37:52,980 --> 00:37:56,020
+thing can think about, you know, only somebody else can think about what can go wrong.
+
+376
+00:37:56,900 --> 00:38:02,660
+I mean, that's why we have QA teams looking at bridges to decide how that can go wrong
+
+377
+00:38:02,660 --> 00:38:06,820
+while you have bridge engineers, you know, civil engineers only doing happy paths, right?
+
+378
+00:38:10,820 --> 00:38:16,020
+But they're not taught how to test. And, you know, you'll see me on LinkedIn having
+
+379
+00:38:16,020 --> 00:38:21,140
+these heated discussions with people who I'm looking at a point, they're looking at
+
+380
+00:38:21,140 --> 00:38:25,300
+a developer, so I had to test only I have the skills, I need to be the one testing
+
+381
+00:38:25,300 --> 00:38:30,220
+and explaining to developers what they're doing wrong. And it has to be an adversarial
+
+382
+00:38:30,220 --> 00:38:34,780
+relationship because that's how quality is done. And I'm looking at going, I'm a value stream
+
+383
+00:38:34,780 --> 00:38:41,070
+architect. You are a constraint in the value stream. That constraint is driving it backsize.
+
+384
+00:38:41,070 --> 00:38:45,790
+The larger batch we deliver, the more wrong we are because the idea is fundamentally flawed in
+
+385
+00:38:45,790 --> 00:38:51,710
+the first place. That can't work. You need to teach the developers how to test and you need
+
+386
+00:38:51,710 --> 00:38:59,230
+to work on giving them better tools to get that done with. You need to don't grant, right? You
+
+387
+00:38:59,230 --> 00:39:05,390
+cannot be the person doing. If you're an expert, I value you for sharing your expertise and elevating
+
+388
+00:39:05,390 --> 00:39:12,350
+others. If you try to implement your expertise, I hate your guts because you're harming my quality
+
+389
+00:39:12,350 --> 00:39:21,200
+of life. We are on record. Absolutely in agreement. We view like, Alan, what is what's a synonym for
+
+390
+00:39:21,200 --> 00:39:31,040
+specialists on this podcast? Bottleneck. Yeah, you're gumming up the works. You are blocking
+
+391
+00:39:31,600 --> 00:39:38,800
+the business from achieving its value. Absolutely. In the dojo, the process we went through in the
+
+392
+00:39:38,800 --> 00:39:44,640
+dojo, like I said, it was immersive learning. And we would go and work with the team for six weeks.
+
+393
+00:39:45,360 --> 00:39:53,600
+It was not unusual for many of the teams to have either an external QA team testing their code
+
+394
+00:39:53,600 --> 00:40:00,720
+independently or to have test automators on the team whose job was to write end-to-end tests.
+
+395
+00:40:02,540 --> 00:40:09,790
+By the way, god damn it, BDD does not mean using cucumber to write end-to-end tests after the
+
+396
+00:40:09,870 --> 00:40:20,400
+coding is done. Okay, Jesus Christ. BDD, TDD does not mean anything tests after coding is done.
+
+397
+00:40:20,400 --> 00:40:25,840
+But what we would do is we go into the team. And so we have to change the entire way this team
+
+398
+00:40:25,840 --> 00:40:32,830
+works to go from the way they're working to continuous delivery. And we also could not have
+
+399
+00:40:32,830 --> 00:40:37,710
+those testers doing what they were doing. People always thought that I hated test that I hate
+
+400
+00:40:37,710 --> 00:40:44,270
+testers. I mean, I get accused of this all the time. I elevate testers when we did this.
+
+401
+00:40:44,270 --> 00:40:48,670
+We go into the team and say, look, what you're doing right now, not only is it constrained,
+
+402
+00:40:49,980 --> 00:40:55,710
+but it's a waste of your talent. And whether they had the skill or not, we always granted
+
+403
+00:40:55,710 --> 00:41:02,910
+the skill because we knew that if we challenged them that they would elevate or sort themselves
+
+404
+00:41:03,390 --> 00:41:09,760
+out. Okay. You're the quality expert on the team. The team doesn't have the muscle built.
+
+405
+00:41:10,400 --> 00:41:13,200
+You need to help them build the muscle. You need to be the coach for this
+
+406
+00:41:13,840 --> 00:41:18,990
+and stop doing what you're doing now. Stop testing, start being a quality engineer,
+
+407
+00:41:20,030 --> 00:41:26,500
+help these guys learn how to test better. Talk about test design, share your knowledge,
+
+408
+00:41:27,220 --> 00:41:36,690
+share the mindset, share how to think evil, evil ways. And we had so many
+
+409
+00:41:37,490 --> 00:41:46,350
+ex-test automators who were just massive fans of the dojo because we made their lives better
+
+410
+00:41:46,350 --> 00:41:53,300
+because we gave them more important jobs. Oh, when I mentioned when I first went to dev,
+
+411
+00:41:53,300 --> 00:41:58,180
+one of the things that Microsoft famously did is actually collapsed the test team.
+
+412
+00:41:58,900 --> 00:42:07,540
+And every new dev team was part dev part test. Okay. What I actually found was those old test
+
+413
+00:42:07,540 --> 00:42:14,610
+automators. It was a lot easier for them to start writing code, which felt like a reward to them,
+
+414
+00:42:15,170 --> 00:42:23,250
+but they still kept, they out delivered all of the old school dev experts.
+
+415
+00:42:24,910 --> 00:42:30,750
+I'm not surprised. We used to tell the, what we would tell this test automator is just like,
+
+416
+00:42:30,750 --> 00:42:35,550
+hey, and if you get bored, pick up a feature because that'll also give you a deeper insight
+
+417
+00:42:35,550 --> 00:42:41,790
+into the challenges that developers are having with testing. You know, pick up a feature.
+
+418
+00:42:42,850 --> 00:42:48,210
+Now, and so this is, this is the big problem though, what we have in the industry and why,
+
+419
+00:42:48,210 --> 00:42:54,370
+you know, one of the, they've, they've hardly released modern software engineering a few years ago.
+
+420
+00:42:55,470 --> 00:43:00,510
+And he sent me a pre-release of that book and I started reading it and I was like, oh my God,
+
+421
+00:43:00,510 --> 00:43:06,210
+that's this, this is the book because it explains to you what you're doing wrong as a
+
+422
+00:43:06,210 --> 00:43:12,720
+software developer. It challenge you to be a software engineer, to take the job seriously,
+
+423
+00:43:12,720 --> 00:43:18,960
+to apply engineering principles, to, to have the same mindset that you need to be a tester because
+
+424
+00:43:18,960 --> 00:43:24,080
+a software engineer has to have that same, what could go wrong? You know, I've carried a pager
+
+425
+00:43:24,080 --> 00:43:30,400
+for 20 years. I guarantee you, I can think like a tester. There's nothing that gives you a quality
+
+426
+00:43:30,400 --> 00:43:33,360
+mindset, like not having to wake up at three o'clock in the morning.
+
+427
+00:43:33,840 --> 00:43:38,080
+And well, once you realize it's in your control.
+
+428
+00:43:38,640 --> 00:43:44,960
+But, but here, this is the other thing, because having a, it's not enough to have a quality,
+
+429
+00:43:44,960 --> 00:43:49,440
+you know, a testing mindset and focus on quality if your feedback loops are truncated.
+
+430
+00:43:50,460 --> 00:43:57,180
+Unfortunately, so many organizations design the system of delivery to make quality very,
+
+431
+00:43:57,180 --> 00:44:02,620
+very hard to deliver. Okay. This, this concept of run what you've rung doesn't mean that,
+
+432
+00:44:02,700 --> 00:44:08,060
+that you own all of the infrastructure and everything to deliver your software. What it
+
+433
+00:44:08,060 --> 00:44:14,110
+does mean is that if you build something that when it breaks, you're the person responsible
+
+434
+00:44:14,110 --> 00:44:23,460
+for fixing it. Right. And that is a primary, very important quality feedback loop that
+
+435
+00:44:23,460 --> 00:44:29,300
+when, when we had an, you know, an ops team whose job it was to do level one, level two support,
+
+436
+00:44:30,100 --> 00:44:35,860
+so many defects were getting hidden until they became emergencies where it could have been,
+
+437
+00:44:35,860 --> 00:44:40,340
+if we'd found out about it early on, number one, we wouldn't have been keep building on top of
+
+438
+00:44:40,340 --> 00:44:45,060
+quicksand on top of something that's already unstable. They're patching together, not letting
+
+439
+00:44:45,060 --> 00:44:49,900
+us know about, but we could have killed it and nipped it in the bud before we got very,
+
+440
+00:44:49,900 --> 00:44:56,300
+very angry people yelling at us and, and, and, and gotten better at our quality process up front.
+
+441
+00:44:56,860 --> 00:45:02,380
+And so to anybody out there who's in leadership who thinks it's a great idea to have a support
+
+442
+00:45:02,380 --> 00:45:06,780
+team support, supporting software that a development team is writing, you're wrong.
+
+443
+00:45:06,780 --> 00:45:13,730
+You're harming your customer. Stop it. Move ops into the team, start a page, your rotation,
+
+444
+00:45:13,730 --> 00:45:19,010
+create an L one support team whose job it is, is to do triage, but not to fix anything
+
+445
+00:45:19,010 --> 00:45:23,970
+and wake people up. Your quality will improve. Yeah. That's exactly what did it. My last
+
+446
+00:45:23,970 --> 00:45:28,930
+company we had eventually we got to a place where we had the L one pagers and they took
+
+447
+00:45:28,930 --> 00:45:32,530
+care of everything that had run books like you need to bug anybody. We'll work around
+
+448
+00:45:32,530 --> 00:45:37,570
+the clock at distance and we'll make sure stuff gets filed. So it gets improved because
+
+449
+00:45:37,570 --> 00:45:41,570
+a lot of the run book stuff is stuff that's just going to go wrong. Yeah. And then,
+
+450
+00:45:42,210 --> 00:45:46,930
+yeah, but then people were, if something happened, they were brought in quickly and they owned it.
+
+451
+00:45:46,930 --> 00:45:50,770
+And I love that. That's the way it's, to me, it's the way it should work.
+
+452
+00:45:50,770 --> 00:45:54,130
+When, when they went through this maintenance, they called it project harvest, by the way,
+
+453
+00:45:54,130 --> 00:45:58,610
+this matrixing of the organization, we, we called it project Reaper because it just
+
+454
+00:45:58,610 --> 00:46:04,940
+absolutely destroyed our culture. But when they did that, you'd have, you know,
+
+455
+00:46:05,740 --> 00:46:10,060
+number one, we had no way to train new developers on support because it was only L three and it
+
+456
+00:46:10,060 --> 00:46:15,330
+was only in the middle of the night because we never got day calls at all ever. And number two,
+
+457
+00:46:15,330 --> 00:46:21,940
+by the time we got on, instead of having somebody who was mildly annoyed because their job was kind
+
+458
+00:46:21,940 --> 00:46:28,100
+of getting disrupted a little bit, we were an hour and a half into the problem. And now
+
+459
+00:46:28,980 --> 00:46:35,780
+we're waking up trying to orient to what the issue is, probably have a VP on the line.
+
+460
+00:46:36,670 --> 00:46:42,270
+Got a very angry person who, you know, in the UK or Mexico or someplace screaming at us.
+
+461
+00:46:42,350 --> 00:46:45,150
+That's the best way to try to resolve an issue.
+
+462
+00:46:46,750 --> 00:46:50,590
+Yeah, for sure. You know, I've been, you remind me in your talk there, I've been
+
+463
+00:46:50,590 --> 00:46:57,150
+about eight years ago or so, maybe nine years ago, sort of found myself into managing platform teams or
+
+464
+00:46:57,150 --> 00:47:01,070
+whatever you want to call them infrastructure teams. I don't like calling them DevOps teams,
+
+465
+00:47:01,070 --> 00:47:03,070
+but you know, I'm talking to you. Please don't call them DevOps.
+
+466
+00:47:03,070 --> 00:47:06,430
+Yeah, I'm not going to. I'm just trying to appeal to the wider audience. But
+
+467
+00:47:06,990 --> 00:47:10,990
+so what I found in doing that, like very early on, because I had spent
+
+468
+00:47:11,550 --> 00:47:16,510
+seven in the industry, 30 years, about 20 years in mostly in test related roles,
+
+469
+00:47:16,510 --> 00:47:21,070
+maybe the last year that sort of more of a test coach, a little bit of a dev in the middle.
+
+470
+00:47:21,070 --> 00:47:28,580
+Anyway, I realized six months into managing a platform team that, oh my God, I have more
+
+471
+00:47:28,580 --> 00:47:35,300
+control over quality in this role than I ever did at any time of my career, because I was building
+
+472
+00:47:35,300 --> 00:47:39,940
+tools to help make it easier for the developers to deliver as fast as they wanted.
+
+473
+00:47:41,220 --> 00:47:47,140
+Yeah, no, I work for a company that does platform work for the government right now,
+
+474
+00:47:47,140 --> 00:47:52,580
+and it's a really important job. I can't think of anything better for any developer to do
+
+475
+00:47:53,380 --> 00:47:57,700
+than to work on platform if they take it seriously, if their role, if their goal
+
+476
+00:47:58,740 --> 00:48:01,460
+is to help other developers live better lives.
+
+477
+00:48:02,100 --> 00:48:07,460
+Yeah, for sure. And one thing I want to talk more about, we're almost out of time, but one
+
+478
+00:48:07,460 --> 00:48:12,500
+thing I've noticed in being in this role and then talking to folks in similar teams and
+
+479
+00:48:12,500 --> 00:48:19,780
+other organizations is often this platform team is kind of treated like the ops team. Like they do
+
+480
+00:48:20,420 --> 00:48:27,860
+the, they do the CI for another team. It's like another pattern. Don't do that.
+
+481
+00:48:27,860 --> 00:48:30,980
+They get, you got to, you got to build what you run or what do you say?
+
+482
+00:48:30,980 --> 00:48:36,260
+Run what you run, run what you brung, run what you brung. Yeah, I love that. And that's,
+
+483
+00:48:36,340 --> 00:48:40,260
+I want to, that's it. I want to enable teams to do that. Should be the goal of that platform team.
+
+484
+00:48:40,260 --> 00:48:44,420
+Yeah. I mean, the platform at Walmart, we didn't build pipelines for anybody.
+
+485
+00:48:44,420 --> 00:48:44,980
+No, no.
+
+486
+00:48:44,980 --> 00:48:48,820
+Easy for people to build pipelines themselves. How can we build a, we don't know your quality
+
+487
+00:48:48,820 --> 00:48:49,940
+process. Exactly.
+
+488
+00:48:49,940 --> 00:48:54,340
+That pipeline defines your quality process. All we can do is give you tools to make
+
+489
+00:48:54,340 --> 00:48:56,420
+that as easy as possible. Absolutely.
+
+490
+00:48:56,420 --> 00:49:00,980
+And the whole concept of, oh, that's the DevOps team building pipelines for somebody else
+
+491
+00:49:00,980 --> 00:49:07,700
+is the most bankrupt version of, you know, misunderstood DevOps that I can think of.
+
+492
+00:49:08,660 --> 00:49:12,900
+Yep. It's like, if you can think of anything more diametrically opposed to DevOps.
+
+493
+00:49:12,900 --> 00:49:19,220
+It is. Yeah. Yeah. Especially DevOps is about everything the opposite of that.
+
+494
+00:49:19,220 --> 00:49:22,740
+I gave a talk at QCon where I talked about the journey we went on
+
+495
+00:49:24,260 --> 00:49:30,100
+and how we replaced a scale agile framework with engineering and logistics at Walmart.
+
+496
+00:49:30,100 --> 00:49:34,420
+And I talked about this concept of, you know, owning the pipeline. And then I asked if anybody
+
+497
+00:49:34,420 --> 00:49:39,220
+in the room was a DevOps engineer and built pipelines for people. And I had several people
+
+498
+00:49:39,220 --> 00:49:41,060
+raise their hands and say, please stop doing that.
+
+499
+00:49:41,060 --> 00:49:46,500
+Yeah. That's what I tell them. Knock it off. Knock it off.
+
+500
+00:49:47,360 --> 00:49:53,680
+We are just about out of time here. Man, it is so cool to get to hear these stories
+
+501
+00:49:53,680 --> 00:49:57,760
+and kind of your journey. It's just really impressive. People don't read the lighter
+
+502
+00:49:57,760 --> 00:50:03,600
+notes, the show notes. So if you want to, I know you have your blog.
+
+503
+00:50:03,600 --> 00:50:04,160
+Yeah.
+
+504
+00:50:04,160 --> 00:50:08,080
+Other, oh, and you have your DevOps podcast on YouTube.
+
+505
+00:50:08,080 --> 00:50:12,560
+Sort of give us the rundown how people can get deeper into the world of Brian Finster.
+
+506
+00:50:13,440 --> 00:50:19,360
+Well, I have a blog, the five minute DevOps blog on Medium. There's a reason why it's called that,
+
+507
+00:50:19,360 --> 00:50:28,320
+but we don't have enough time to go into it. If you go to blog.brianfinster.com,
+
+508
+00:50:28,480 --> 00:50:32,320
+you'll get there or rant.brianfinster.com will also get you there.
+
+509
+00:50:33,120 --> 00:50:38,240
+Also, there's an open source project that we started a DevOps enterprise summit
+
+510
+00:50:38,240 --> 00:50:45,600
+several years ago called minimumcd.org. And the goal of that is to create, number one,
+
+511
+00:50:45,600 --> 00:50:52,240
+a minimum set of if you are doing these behaviors, this is the minimums to be doing
+
+512
+00:50:52,240 --> 00:50:59,250
+continuous delivery. If you do that, you will see these benefits. You won't see these benefits,
+
+513
+00:50:59,250 --> 00:51:03,330
+unless you're doing at least these behaviors. And they're the minimum set of behaviors that exist
+
+514
+00:51:03,330 --> 00:51:11,410
+in any context, air gapped, cloud, cat videos, metal and distribution centers. I don't care.
+
+515
+00:51:12,770 --> 00:51:17,890
+We worked on these really hard. Dave Farley was one of the early signatories on that. He thought
+
+516
+00:51:17,890 --> 00:51:23,170
+it was good. We keep expanding on the knowledge base there, but it's just we learned a lot of
+
+517
+00:51:23,170 --> 00:51:29,250
+hard lessons and different, you know, the core team from multiple organizations, all of us have
+
+518
+00:51:29,250 --> 00:51:35,220
+learned hard lessons around CD. We're trying to make it easy for other people. And just,
+
+519
+00:51:35,220 --> 00:51:40,560
+I want to leave this with people again. You can't do continuous delivery unless you try.
+
+520
+00:51:41,790 --> 00:51:46,750
+Trying to do continuous delivery will uncover so much organizational dysfunction,
+
+521
+00:51:47,390 --> 00:51:53,630
+so many skill gaps that if you just try to do it and just relentlessly fix those things,
+
+522
+00:51:54,350 --> 00:51:57,630
+you will wind up better off, even if you never get to real CD.
+
+523
+00:51:58,270 --> 00:52:03,550
+That is also my experience. Brian, thank you very much. I do want to personally thank you.
+
+524
+00:52:03,550 --> 00:52:10,590
+Like it was great hearing the story. I had not ever heard sort of the journey.
+
+525
+00:52:11,310 --> 00:52:17,230
+So you sort of landed in the same place, Alan and I are. And when it comes to the
+
+526
+00:52:17,230 --> 00:52:25,790
+mentality around how to do development, lifecycle management. But coming up through dev and coming
+
+527
+00:52:26,830 --> 00:52:32,270
+to that place is a unique perspective that I had not heard before. So thank you for joining
+
+528
+00:52:32,270 --> 00:52:36,270
+the podcast. Thanks for telling your story. Really appreciate it. I appreciate the opportunity
+
+529
+00:52:36,350 --> 00:52:41,300
+to share. Hopefully it helps somebody. Yeah, that's all we can hope for.
+
+530
+00:52:41,300 --> 00:52:45,380
+Any one of our three listeners to grab a nugget and go, I can grow from that.
+
+531
+00:52:46,020 --> 00:52:51,060
+Yeah. All right. Well, thanks everyone for listening. I'm Alan. I'm Brian.
+
+532
+00:52:52,820 --> 00:53:03,140
+We'll see you next time.
+

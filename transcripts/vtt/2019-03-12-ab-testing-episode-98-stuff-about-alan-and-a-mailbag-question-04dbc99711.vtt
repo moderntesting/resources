@@ -1,0 +1,2753 @@
+WEBVTT
+
+00:00:11.660 --> 00:00:18.720
+A B Testing, the modern testing podcast. Join your hosts, Alan and Brent.
+
+00:00:18.920 --> 00:00:22.160
+I am mindless agile robot. I must iterate.
+
+00:00:23.790 --> 00:00:26.670
+As we talk about software engineering, software quality,
+
+00:00:26.830 --> 00:00:30.910
+leadership and whatever else comes to mind. Now on with the show.
+
+00:00:31.900 --> 00:00:37.200
+We're back. Howdy. It's another episode of A B testing. Yay.
+
+00:00:37.640 --> 00:00:42.600
+As we count down as Casey Kasem would have in the seventies and
+
+00:00:42.760 --> 00:00:45.880
+probably longer. I used to listen to Casey Kasem every Sunday night.
+
+00:00:46.780 --> 00:00:49.900
+I did America's top 40 countdown with those little
+
+00:00:49.900 --> 00:00:55.380
+and a mighty six 90 with those stories. I don't know what station it was on here.
+
+00:00:55.380 --> 00:00:59.100
+Anyway, we're counting down to episode 100, but we're not there yet.
+
+00:00:59.540 --> 00:01:02.780
+Yeah. We're a few away. I just made myself feel really old.
+
+00:01:03.420 --> 00:01:08.060
+I can the day the pop music channel was on at a.m.
+
+00:01:08.540 --> 00:01:12.220
+Wowzer. So we're back. We took an extra week off.
+
+00:01:13.220 --> 00:01:18.580
+Travel snow, life, work, etc.
+
+00:01:18.980 --> 00:01:23.450
+Yeah, you you have you've you've had your
+
+00:01:24.050 --> 00:01:27.890
+years worth of change in the last few weeks.
+
+00:01:28.330 --> 00:01:32.210
+Have I? I think so. Maybe we'll talk about that in a.
+
+00:01:32.810 --> 00:01:36.130
+Damn it, Alan. I deserve that. I deserve that.
+
+00:01:36.330 --> 00:01:39.090
+I totally deserve that.
+
+00:01:39.090 --> 00:01:42.650
+That was well, well placed. We couldn't have rehearsed that any better.
+
+00:01:43.210 --> 00:01:46.690
+Oh, my God. Yeah.
+
+00:01:48.060 --> 00:01:49.700
+It's been a hack of the first of the year.
+
+00:01:49.700 --> 00:01:51.060
+Mostly good stuff.
+
+00:01:51.060 --> 00:01:53.860
+Took a week off to go skiing, a bunch of work stuff.
+
+00:01:53.860 --> 00:01:54.580
+I'll talk about in a minute.
+
+00:01:54.580 --> 00:01:59.500
+Kind of hangs in limbo, but mostly I think all good.
+
+00:01:59.940 --> 00:02:04.580
+Hey, everyone. Alan breaking in before we get too far to talk about our sponsor
+
+00:02:04.580 --> 00:02:06.700
+on A.B. testing this week, PractiTest.
+
+00:02:06.980 --> 00:02:09.820
+You may have heard of PractiTest from Joel, who is one of the three
+
+00:02:10.020 --> 00:02:13.340
+or from the online test conference, which is sponsored by PractiTest.
+
+00:02:13.540 --> 00:02:17.060
+Joel himself gave Brent and I a walk through this week of PractiTest.
+
+00:02:17.060 --> 00:02:19.180
+And I have to say, we were both pretty darn
+
+00:02:19.180 --> 00:02:21.420
+impressed about what it is and what it does.
+
+00:02:21.660 --> 00:02:24.900
+As you're aware, there's no one size fits all in testing.
+
+00:02:25.260 --> 00:02:28.460
+That's why they built PractiTest to be a centralized solution
+
+00:02:28.780 --> 00:02:31.420
+that supports testing of different types and sizes,
+
+00:02:31.780 --> 00:02:33.940
+whether it's scripted, exploratory or automated,
+
+00:02:33.940 --> 00:02:36.700
+or whatever they work for you.
+
+00:02:37.100 --> 00:02:40.380
+They envision a place where all testing data will reside
+
+00:02:40.380 --> 00:02:43.940
+so that stakeholders can generate the information required for their needs.
+
+00:02:44.380 --> 00:02:47.100
+Another issue they're trying to solve is that you can create
+
+00:02:47.100 --> 00:02:49.380
+and run more tests and more type of tests,
+
+00:02:49.940 --> 00:02:53.340
+and you end up having a ton of data in the system.
+
+00:02:53.740 --> 00:02:57.260
+Having a lot of data can be harmful if you can't control it.
+
+00:02:57.620 --> 00:03:01.420
+This is why they introduced a revolutionary approach to data organization.
+
+00:03:01.740 --> 00:03:05.060
+Instead of burying the data in folders within folders,
+
+00:03:05.340 --> 00:03:08.860
+they allow users to work with a hierarchical filter trees
+
+00:03:08.860 --> 00:03:11.220
+that are based on the same data you're storing.
+
+00:03:11.420 --> 00:03:15.340
+This enables teams to organize information in more flexible or multiple ways,
+
+00:03:15.580 --> 00:03:19.660
+helping to generate better reports and visibility into product and process.
+
+00:03:20.500 --> 00:03:23.580
+At PractiTest, they believe that a tester's job is not to test
+
+00:03:23.580 --> 00:03:26.420
+for the sake of testing, which is true for A-B testing as well.
+
+00:03:26.780 --> 00:03:29.540
+But to create visibility and provide information
+
+00:03:29.540 --> 00:03:32.820
+that will help the team release better products and do it faster.
+
+00:03:33.140 --> 00:03:36.740
+For that reason, having a platform that supports testing is not enough.
+
+00:03:37.220 --> 00:03:40.420
+So they put a lot of effort into their dashboard and reporting modules
+
+00:03:40.740 --> 00:03:43.540
+to make sure anyone can get the relevant information they need
+
+00:03:43.540 --> 00:03:46.980
+in a format that works for them and when they need it.
+
+00:03:47.340 --> 00:03:50.740
+Overall, I was super impressed with PractiTest,
+
+00:03:50.780 --> 00:03:56.020
+not trying to be everything for everyone and being some huge, massive.
+
+00:03:56.020 --> 00:03:57.740
+I'm not going to throw any names under the bus here,
+
+00:03:57.740 --> 00:04:00.780
+but one of those solutions that tries to do way too much.
+
+00:04:00.980 --> 00:04:04.860
+PractiTest is straightforward, simple and very powerful.
+
+00:04:05.420 --> 00:04:09.460
+Of course, having access to the data and using that to form your reports
+
+00:04:09.460 --> 00:04:13.900
+and make your decisions is a great way to catalog your testing effort.
+
+00:04:14.260 --> 00:04:16.620
+So check them out at practice.com.
+
+00:04:16.620 --> 00:04:20.340
+That's P-R-A-C-T-I-T-E-S-T.com.
+
+00:04:21.140 --> 00:04:23.900
+Thanks. And now back to the show.
+
+00:04:23.900 --> 00:04:27.340
+My pact to not speak my policy,
+
+00:04:27.340 --> 00:04:32.820
+my something to not speak at conferences in 2019 was tried.
+
+00:04:34.340 --> 00:04:39.020
+A game company asked me to come speak at their internal conference in Barcelona.
+
+00:04:39.780 --> 00:04:41.780
+It's like, oh, K-boy-no.
+
+00:04:43.180 --> 00:04:47.060
+And the thing is, the thing is, it's like, oh, my God, I want to go to Barcelona.
+
+00:04:47.300 --> 00:04:49.420
+I'm honored. They want to talk about modern testing.
+
+00:04:49.420 --> 00:04:51.340
+I should go. I should go.
+
+00:04:51.340 --> 00:04:56.300
+And it's not like I just this random like I want to I'm not speaking at conferences
+
+00:04:56.300 --> 00:05:03.560
+and that's the way it's going to go is now, you know, months out from actually going.
+
+00:05:03.760 --> 00:05:05.880
+It's like, yeah, sounds great.
+
+00:05:06.120 --> 00:05:10.200
+But every time I do that, the week leading up to it, I think, why did I say,
+
+00:05:10.200 --> 00:05:12.720
+yes, I don't have time for this? I don't want to go.
+
+00:05:14.810 --> 00:05:19.770
+So I'm going to there's always more important things, too.
+
+00:05:19.770 --> 00:05:22.130
+And I like conferences and.
+
+00:05:23.310 --> 00:05:25.950
+So I had a little tangent in my brain that I wanted to reel it a little bit,
+
+00:05:25.950 --> 00:05:27.550
+but I just taken a break for a bit.
+
+00:05:27.550 --> 00:05:30.630
+I don't know if I'll make it all the way through the year without speaking,
+
+00:05:30.630 --> 00:05:32.310
+but I'm going to give it a shot.
+
+00:05:32.310 --> 00:05:35.030
+Someone. Well, you actually tweeted recently
+
+00:05:35.190 --> 00:05:39.790
+that you've handed the mantle of test conferences back to Whitaker.
+
+00:05:39.830 --> 00:05:41.910
+Yes. Would it? Oh, my God.
+
+00:05:41.910 --> 00:05:44.870
+So our dear friend, I mean that truthfully.
+
+00:05:44.870 --> 00:05:48.470
+James Whitaker posted a tweet how after leaving test conferences,
+
+00:05:48.790 --> 00:05:53.870
+seven, eight, whatever it was years ago, he's going to do some again
+
+00:05:53.870 --> 00:05:57.670
+this year and talk about AI machine learning and how they're applied to testing.
+
+00:05:58.070 --> 00:06:03.950
+And the test community, oddly, I thought a lot of them didn't
+
+00:06:05.120 --> 00:06:07.600
+didn't respond well to that. You watched the replies.
+
+00:06:07.760 --> 00:06:10.560
+I did. People were people are still
+
+00:06:10.560 --> 00:06:13.240
+and I'll get the phrase right here off of what I read on Reddit.
+
+00:06:13.240 --> 00:06:16.240
+But the phrase is people are butthurt.
+
+00:06:17.040 --> 00:06:20.440
+That that that James said testing was dead.
+
+00:06:20.680 --> 00:06:26.320
+And my God, you would think 12000 people were in the audience
+
+00:06:26.320 --> 00:06:28.360
+for his talk where he mentioned test was dead.
+
+00:06:28.480 --> 00:06:30.880
+But no, it was star. It was a couple hundred.
+
+00:06:31.360 --> 00:06:37.460
+And what was lost in that is the message that test.
+
+00:06:38.020 --> 00:06:40.740
+Testors aren't dead. Testing isn't dead.
+
+00:06:40.940 --> 00:06:44.540
+Test, as you know, it is changing enough for a lot of you consider it dead.
+
+00:06:44.780 --> 00:06:50.220
+But God, I just it's just I the king is dead.
+
+00:06:50.220 --> 00:06:52.620
+Long live the king. Test is dead. Long live test.
+
+00:06:53.540 --> 00:06:57.180
+Yeah, I think the way the accurate way you described it
+
+00:06:57.700 --> 00:07:01.500
+just a second ago is test as you know, it is dead.
+
+00:07:02.540 --> 00:07:04.100
+Sure. Yeah. Right.
+
+00:07:04.100 --> 00:07:08.580
+And we've been talking about that on this podcast for well over
+
+00:07:08.580 --> 00:07:10.420
+the last year, exclusively almost.
+
+00:07:10.660 --> 00:07:13.660
+Yeah, I mean, almost the whole time. Really. You're right. Right.
+
+00:07:15.970 --> 00:07:21.850
+One of the interesting I went back, I think in 2013,
+
+00:07:23.540 --> 00:07:29.940
+I commented on this after having a chat with Whitaker when he was still at Google.
+
+00:07:30.260 --> 00:07:33.380
+It's almost if it's not dead for you.
+
+00:07:34.420 --> 00:07:35.660
+What are you doing wrong?
+
+00:07:35.660 --> 00:07:39.740
+Yeah. And because you're still living in also we're preaching to the choir
+
+00:07:39.740 --> 00:07:43.620
+a little bit here because A.B. testing listeners kind of get it.
+
+00:07:44.020 --> 00:07:48.500
+They've they've many of them have come to accept what we mean by principle.
+
+00:07:48.500 --> 00:07:50.180
+Number seven, it's not about test being dead.
+
+00:07:50.180 --> 00:07:51.620
+It's just like you may mature enough.
+
+00:07:51.620 --> 00:07:53.940
+You may not need to dedicate someone to testing.
+
+00:07:54.860 --> 00:07:56.660
+Testing's an activity. Yes.
+
+00:07:57.580 --> 00:08:00.700
+Anyway, and consider the whole shipping system.
+
+00:08:02.330 --> 00:08:05.890
+One thing interesting, and I'm going to forget names here of the three.
+
+00:08:05.890 --> 00:08:09.010
+And by the way, one of the three dot slack dot com is
+
+00:08:09.410 --> 00:08:13.890
+one of the proudest things that has come out of this podcast.
+
+00:08:13.890 --> 00:08:17.410
+Yeah, I love it. And thank you, Percy.
+
+00:08:17.610 --> 00:08:18.930
+Yes. First, kicking that off.
+
+00:08:18.930 --> 00:08:23.850
+And thank you, everyone, all three of you who are in that channel daily
+
+00:08:23.970 --> 00:08:26.250
+asking questions, answering questions.
+
+00:08:26.250 --> 00:08:30.250
+It's fantastic. And just starting discussions that are interesting.
+
+00:08:30.250 --> 00:08:33.650
+Someone pointed out. Oh, oh, oh, oh, oh, yes. Oh, yes.
+
+00:08:35.240 --> 00:08:37.600
+Have you learned about super tacos?
+
+00:08:37.600 --> 00:08:39.520
+No. Yeah, I know.
+
+00:08:39.520 --> 00:08:41.880
+I gave one out. How do you give a super taco?
+
+00:08:41.880 --> 00:08:45.440
+So what I'm and wait, this is a joke here.
+
+00:08:45.680 --> 00:08:49.560
+Oh, to be clear, what we're talking about, if you use slack,
+
+00:08:49.560 --> 00:08:55.040
+there's a service called Hey Taco and Hey Taco gave us a sweet,
+
+00:08:55.040 --> 00:08:58.840
+sweet deal on using their service on one of the three dot slack dot com.
+
+00:08:59.120 --> 00:09:02.720
+And if your company uses slack, I highly recommend it.
+
+00:09:02.720 --> 00:09:05.280
+It's just a fun way to give other people recognition.
+
+00:09:05.400 --> 00:09:06.720
+It's freaking awesome.
+
+00:09:06.720 --> 00:09:08.760
+So we've been giving each other tacos.
+
+00:09:08.760 --> 00:09:12.560
+And then so that's the context of what we're talking about.
+
+00:09:12.560 --> 00:09:16.120
+But I've never heard of a super taco, but now I want to know when you get
+
+00:09:16.200 --> 00:09:24.420
+or give enough tacos, you have the ability to give out a super taco.
+
+00:09:25.220 --> 00:09:27.220
+I have not been tackling enough.
+
+00:09:27.540 --> 00:09:31.460
+I actually gave out the first official super taco.
+
+00:09:31.500 --> 00:09:32.620
+That is fantastic.
+
+00:09:32.620 --> 00:09:37.580
+To Chris Kent's for making the last weeks or two weeks
+
+00:09:38.380 --> 00:09:40.820
+a week before last webinar.
+
+00:09:41.420 --> 00:09:42.940
+So easy for me.
+
+00:09:42.940 --> 00:09:45.180
+That's awesome. Yeah, it was how the webinar go.
+
+00:09:45.220 --> 00:09:47.140
+I want to bounce back to conferences in a second.
+
+00:09:47.140 --> 00:09:49.500
+But now that we're on webinar, we're going to go down that road
+
+00:09:49.500 --> 00:09:51.860
+and then rewind back up to the top. Sounds good.
+
+00:09:53.440 --> 00:09:56.040
+Webinar went well.
+
+00:09:56.040 --> 00:10:02.840
+The thing that I so I have not unlike the podcast,
+
+00:10:03.640 --> 00:10:08.640
+I have not been able to re listen to my own the whole webinar.
+
+00:10:09.660 --> 00:10:19.180
+I'm very clear now on how much I'm editing you do for the podcast.
+
+00:10:19.220 --> 00:10:21.900
+And I greatly appreciate it.
+
+00:10:21.900 --> 00:10:25.140
+I thought I thought you didn't notice.
+
+00:10:25.580 --> 00:10:31.500
+No, this they're literally not exaggerating 50 minimum an episode.
+
+00:10:33.330 --> 00:10:36.290
+To be clear, I take a bunch of my own out as well,
+
+00:10:36.530 --> 00:10:39.010
+but not nearly as much as the Brit a master.
+
+00:10:39.610 --> 00:10:44.930
+Yeah, I need to find a way to fix that because I can only
+
+00:10:44.930 --> 00:10:47.290
+I've been listening to that webinar,
+
+00:10:47.290 --> 00:10:49.850
+re listen to it and sort of 10 minute chunks
+
+00:10:49.850 --> 00:10:53.140
+because that's as far as I can take it before I'm like, oh my God.
+
+00:10:53.860 --> 00:10:56.820
+That's the problem with video with your video.
+
+00:10:57.100 --> 00:11:02.120
+It's difficult to edit out the ums. Yes. Yes.
+
+00:11:03.040 --> 00:11:06.640
+Toastmasters, I did a couple of sessions of it a long time ago
+
+00:11:06.640 --> 00:11:08.120
+and that helped out a lot.
+
+00:11:08.120 --> 00:11:10.920
+They have an off counter and they just count filler words.
+
+00:11:12.130 --> 00:11:13.130
+What's the filler word?
+
+00:11:13.130 --> 00:11:19.450
+Um, uh, uh, uh, uh, uh, uh, uh, um,
+
+00:11:20.700 --> 00:11:22.460
+OK, those aren't getting edited out.
+
+00:11:22.460 --> 00:11:24.220
+So anyway, uh, cool.
+
+00:11:24.220 --> 00:11:29.060
+Yeah, recording available on it's up on YouTube or the AST website.
+
+00:11:29.060 --> 00:11:30.980
+We should probably give them a little plugs and say, uh, spot.
+
+00:11:30.980 --> 00:11:33.780
+You talk right now. Um, damn it.
+
+00:11:34.180 --> 00:11:38.510
+Do you just search for Brent Jensen? Um, no.
+
+00:11:40.350 --> 00:11:42.430
+Though that might work.
+
+00:11:42.430 --> 00:11:47.110
+There are three Brit Jensen's now up on YouTube or at least three.
+
+00:11:47.110 --> 00:11:51.150
+One's a jazz artist who I think is pretty good.
+
+00:11:51.150 --> 00:11:53.110
+And one's a painter.
+
+00:11:53.110 --> 00:11:58.350
+And now there's me with, uh, this webinar.
+
+00:11:58.470 --> 00:11:59.750
+If you search for Alan Page,
+
+00:11:59.750 --> 00:12:03.350
+you'll get a whole bunch of the Supreme Court Justice playing football.
+
+00:12:03.670 --> 00:12:05.750
+So webinar format.
+
+00:12:07.250 --> 00:12:09.610
+I was telling Chris beforehand.
+
+00:12:09.610 --> 00:12:17.240
+Webinar format just freaks me out because it is nowhere even
+
+00:12:17.240 --> 00:12:19.800
+remotely aligned with my style.
+
+00:12:20.780 --> 00:12:24.220
+When I'm doing a presentation, I need, I need a sense of,
+
+00:12:24.220 --> 00:12:26.340
+am I losing my audience or not?
+
+00:12:26.340 --> 00:12:28.100
+It is definitely hard.
+
+00:12:28.100 --> 00:12:32.540
+I've done a bunch of them and I'm a little better at them now
+
+00:12:32.540 --> 00:12:37.500
+and just not caring or imagining, but it is hard to not get.
+
+00:12:38.060 --> 00:12:43.740
+See, if you see confusion or I are nodding heads, those things help.
+
+00:12:44.930 --> 00:12:48.690
+I can, I can tell if they're pretending my jokes are funny.
+
+00:12:49.750 --> 00:12:51.950
+Most are. Yeah.
+
+00:12:51.950 --> 00:12:57.350
+The thing I was thinking, though, next time I do a webinar,
+
+00:12:57.350 --> 00:13:02.880
+what I could just do is I could just sit in my home, record it.
+
+00:13:02.880 --> 00:13:05.520
+There's plenty of apps for that.
+
+00:13:05.520 --> 00:13:08.080
+And then when it's time for the webinar, I just hit play.
+
+00:13:09.170 --> 00:13:12.410
+Then I can practice it 10, 15 times and get it right.
+
+00:13:13.400 --> 00:13:18.280
+Cool. Hey, speaking of webinars, the tangent road will return back to conferences.
+
+00:13:18.280 --> 00:13:21.920
+But speaking of conferences, the I don't know if the dates are announced yet,
+
+00:13:21.920 --> 00:13:26.640
+but Brent and I will be presenting something to be determined
+
+00:13:26.640 --> 00:13:29.960
+at the next online test conference for Joel sometime in the summer.
+
+00:13:30.400 --> 00:13:32.200
+I forget when it is, but we're going to do something
+
+00:13:32.200 --> 00:13:34.560
+and we're going to figure out what that is at a later date.
+
+00:13:35.340 --> 00:13:37.380
+Maybe episode 100. Maybe.
+
+00:13:37.380 --> 00:13:40.020
+By the way, episode I'm never going to get back to conferences,
+
+00:13:40.020 --> 00:13:41.060
+but it's something I want to talk about.
+
+00:13:41.060 --> 00:13:43.460
+So I'm going back to webinars. OK.
+
+00:13:44.260 --> 00:13:45.860
+And then I'll close on this very quickly.
+
+00:13:45.860 --> 00:13:48.620
+And that is if you're the type that tries to fast forward through the banter.
+
+00:13:48.620 --> 00:13:51.100
+I'm sorry that we're still talking and not on.
+
+00:13:51.100 --> 00:13:53.140
+This is important stuff, too. So you may like it.
+
+00:13:53.980 --> 00:13:56.100
+It's interesting on the webinar as well.
+
+00:13:56.500 --> 00:13:59.380
+So I don't know if you are how you deal with this.
+
+00:14:00.940 --> 00:14:04.420
+So that content, right, even when I presented it, it was
+
+00:14:05.020 --> 00:14:09.300
+it was heavily influenced by the Unity deck a year ago
+
+00:14:09.420 --> 00:14:11.260
+when I presented for your team.
+
+00:14:11.260 --> 00:14:17.660
+I modified it a great deal because of what I think the audience wants.
+
+00:14:17.660 --> 00:14:22.460
+But the other thing, too, is I can't tell if I'm too high level
+
+00:14:22.460 --> 00:14:24.980
+or too low level for the audience.
+
+00:14:25.620 --> 00:14:30.700
+I get this is a space where for me, I've been babbling about it.
+
+00:14:30.700 --> 00:14:32.780
+It seems like four years.
+
+00:14:33.460 --> 00:14:38.700
+And I don't know how much of the audience is still at phase zero.
+
+00:14:39.710 --> 00:14:44.310
+Right. I'm like, OK, do I go in deep on how to move data
+
+00:14:44.310 --> 00:14:46.750
+from place A to place B?
+
+00:14:46.750 --> 00:14:49.870
+Or do I just skip over that and say Google it?
+
+00:14:50.270 --> 00:14:52.430
+That's actually a really good point.
+
+00:14:52.430 --> 00:14:55.590
+One of the things one of the great takeaways from my time
+
+00:14:55.590 --> 00:14:59.070
+in engineering excellence, right, studied a lot on how people learn
+
+00:14:59.590 --> 00:15:04.190
+was you need to gauge the audience's level of experience.
+
+00:15:04.190 --> 00:15:06.990
+And speaking in person, like a lot of my talks to start off with,
+
+00:15:07.110 --> 00:15:11.560
+how many of you have blah, a little bit more information
+
+00:15:11.560 --> 00:15:14.320
+than how many of you have blah, blah, blah?
+
+00:15:14.720 --> 00:15:17.480
+And from a few of those questions at the beginning,
+
+00:15:17.480 --> 00:15:20.120
+near the beginning of the talk, you begin to get an idea
+
+00:15:20.120 --> 00:15:22.200
+of where you need to make tweaks later.
+
+00:15:22.800 --> 00:15:23.640
+Yes, that's what I do.
+
+00:15:23.640 --> 00:15:27.200
+So but without that, it's like, here's my wall of information.
+
+00:15:27.200 --> 00:15:29.800
+Maybe it works. Maybe it doesn't. Good luck.
+
+00:15:30.590 --> 00:15:32.510
+I'll see you on the other side.
+
+00:15:32.510 --> 00:15:35.830
+Yeah, one of the most common questions I'll ask, like when I do
+
+00:15:35.830 --> 00:15:39.750
+internal presentations, is how many of you have ever directly
+
+00:15:39.750 --> 00:15:42.060
+worked with a data scientist?
+
+00:15:42.060 --> 00:15:45.780
+Almost inevitably, every time someone raised their hand,
+
+00:15:46.580 --> 00:15:49.460
+I'm the data scientist, the reason their hand for.
+
+00:15:50.810 --> 00:15:53.210
+And so now I just turn it into a joke.
+
+00:15:53.210 --> 00:15:55.170
+I'm like, ah, fantastic.
+
+00:15:55.250 --> 00:15:58.730
+Then none of you are likely to know when I am lying to you.
+
+00:15:58.970 --> 00:16:01.730
+Yes. And I can I can vouch for that.
+
+00:16:01.770 --> 00:16:05.570
+I've heard I've heard Brent use that line. That happens.
+
+00:16:05.610 --> 00:16:08.890
+Yeah. So back up the stack.
+
+00:16:08.890 --> 00:16:10.450
+I think we're done with that. Conferences.
+
+00:16:10.450 --> 00:16:11.290
+Can I go back to conferences?
+
+00:16:11.290 --> 00:16:14.090
+So one thing on one of the three.slack.com
+
+00:16:14.090 --> 00:16:16.210
+you can get an you can get the invitation link at modern
+
+00:16:16.210 --> 00:16:19.890
+testing.org is someone who I've ever forgotten
+
+00:16:20.250 --> 00:16:24.650
+posted a talk, a video of a actually I watched
+
+00:16:24.650 --> 00:16:28.290
+a pretty good talk from JS conference, JavaScript conference.
+
+00:16:28.730 --> 00:16:31.650
+And then Tony, I remember Tony because I met Tony.
+
+00:16:31.650 --> 00:16:35.010
+If I met if I met you, I remember who when you say things, Tony
+
+00:16:36.050 --> 00:16:38.810
+pointed out that he heard me say a lot of those things
+
+00:16:38.810 --> 00:16:42.530
+in same things in Philadelphia at Test Bash a couple of years ago,
+
+00:16:43.130 --> 00:16:45.140
+two and a half years ago.
+
+00:16:45.140 --> 00:16:47.700
+Not that I'm not at all.
+
+00:16:47.700 --> 00:16:51.060
+I mean, nothing I say is so new that I like, oh, my gosh,
+
+00:16:51.060 --> 00:16:52.220
+somebody else is saying this.
+
+00:16:52.220 --> 00:16:56.220
+But the cool thing is that the point I wanted to make that is
+
+00:16:56.700 --> 00:17:00.060
+if there are dev conferences where people are saying
+
+00:17:00.060 --> 00:17:04.300
+a lot of the things I'm saying, that is my next venue.
+
+00:17:04.300 --> 00:17:06.740
+When I get back into speaking, I want to start speaking more
+
+00:17:06.740 --> 00:17:11.460
+at developer conferences about modern testing, about quality,
+
+00:17:11.460 --> 00:17:16.790
+about quality engineering teams and not do that as much
+
+00:17:16.790 --> 00:17:17.590
+at test conferences.
+
+00:17:17.590 --> 00:17:19.710
+Test Bash still has a place in my heart.
+
+00:17:19.710 --> 00:17:23.270
+And I will probably be the only the only test conference
+
+00:17:23.270 --> 00:17:27.630
+that I want to speak at again is Test Bash and online test conference
+
+00:17:27.870 --> 00:17:30.070
+online stuff I'll do till the cows come home
+
+00:17:30.910 --> 00:17:34.910
+because I can sit in my home where pants optional
+
+00:17:35.190 --> 00:17:37.310
+and talk about whatever.
+
+00:17:37.310 --> 00:17:41.510
+But as far as conferences to go to, I really like not just as a speaker,
+
+00:17:41.510 --> 00:17:43.830
+but as an attendee, big fan of Test Bash.
+
+00:17:44.070 --> 00:17:47.350
+But other than that, I'd like to.
+
+00:17:47.350 --> 00:17:50.470
+My future plans are to see if I can talk about some of the things
+
+00:17:50.470 --> 00:17:53.190
+I like to talk about and do it for a developer audience,
+
+00:17:53.190 --> 00:17:55.510
+because I think the world is ready for that.
+
+00:17:55.870 --> 00:17:58.070
+I think not the world is ready for me.
+
+00:17:58.150 --> 00:18:00.950
+The world that the software development world is ready
+
+00:18:00.950 --> 00:18:03.630
+for the things that I've been talking about because they're already
+
+00:18:03.630 --> 00:18:04.990
+talking about them.
+
+00:18:04.990 --> 00:18:09.270
+No, I think I think developer and or DevOps
+
+00:18:09.270 --> 00:18:13.550
+conferences are actually the right place for it to be.
+
+00:18:14.340 --> 00:18:16.660
+Yeah. Right.
+
+00:18:16.660 --> 00:18:19.780
+So we should talk a little bit about the cliffhanger in ninety seven.
+
+00:18:20.260 --> 00:18:25.160
+What happens after modern testing and postmodern testing?
+
+00:18:25.480 --> 00:18:27.320
+Postmodern testing is the answer.
+
+00:18:28.510 --> 00:18:30.750
+You are absolutely correct, Sir.
+
+00:18:30.750 --> 00:18:33.230
+Brian Jensen. Thanks.
+
+00:18:33.230 --> 00:18:36.590
+So I think it's in general, the answer is different for everyone.
+
+00:18:36.590 --> 00:18:40.990
+And people worry about like, what if I do work myself out of a job?
+
+00:18:41.750 --> 00:18:44.790
+My theory, my hypothesis is in my experience,
+
+00:18:44.790 --> 00:18:47.030
+which I'll share a little bit about in a moment, is that
+
+00:18:47.790 --> 00:18:52.110
+in the process of leading a team towards following modern testing principles,
+
+00:18:52.990 --> 00:18:56.170
+there will come a point when.
+
+00:18:56.170 --> 00:18:59.530
+Principle number seven, you may not need a dedicated testing specialist,
+
+00:19:00.850 --> 00:19:03.170
+but along that way, you've learned a lot of other skills.
+
+00:19:03.170 --> 00:19:06.210
+No skills are going to be different for every single person.
+
+00:19:06.210 --> 00:19:08.090
+Talk about the T-shaped persona and breadth.
+
+00:19:08.090 --> 00:19:09.770
+Well, hopefully, I mean,
+
+00:19:11.460 --> 00:19:15.060
+if you just this is why we had the principle
+
+00:19:15.820 --> 00:19:18.220
+or the not principle eight discussion.
+
+00:19:19.140 --> 00:19:22.740
+Right. Hopefully, as you've as you've gone through,
+
+00:19:23.180 --> 00:19:26.100
+you have also invested in in yourself
+
+00:19:26.780 --> 00:19:29.900
+so that you're ready for a postmodern transition.
+
+00:19:30.260 --> 00:19:32.580
+Yeah. And if you think about the things you need to do,
+
+00:19:32.580 --> 00:19:36.100
+there's a lot of leadership exercise, whether you're an individual contributor
+
+00:19:36.380 --> 00:19:39.860
+or in a management position, there's a lot of
+
+00:19:40.980 --> 00:19:44.710
+demonstratable assets from your work.
+
+00:19:44.710 --> 00:19:47.470
+People see if you're have led a team along that direction.
+
+00:19:47.830 --> 00:19:51.310
+I would think that people will be looking for you
+
+00:19:51.390 --> 00:19:53.710
+to do a bunch of different things.
+
+00:19:53.710 --> 00:19:58.350
+I was joking with one of the dev managers in Montreal
+
+00:19:58.710 --> 00:20:01.270
+this week, because I talk a little bit about what I'm doing,
+
+00:20:01.270 --> 00:20:04.390
+but what I'm actually doing hasn't been announced yet.
+
+00:20:04.390 --> 00:20:08.510
+So and it may or may not be by Monday when the podcast goes out.
+
+00:20:08.510 --> 00:20:10.670
+So I'm going to speak a little bit in broader terms.
+
+00:20:10.670 --> 00:20:13.190
+And we'll go into details in ninety nine.
+
+00:20:13.630 --> 00:20:16.270
+But I was joking with one of the dev managers.
+
+00:20:16.270 --> 00:20:17.870
+So do you know what you're doing next?
+
+00:20:17.870 --> 00:20:21.580
+And the reason he asked that is more context.
+
+00:20:21.580 --> 00:20:22.780
+We're doing a reorg.
+
+00:20:22.780 --> 00:20:26.300
+We have a new general manager for our vice president
+
+00:20:26.300 --> 00:20:30.380
+slash vice president for our cloud new cloud division.
+
+00:20:31.280 --> 00:20:34.520
+And we're doing some reorganization as part of that.
+
+00:20:34.520 --> 00:20:38.880
+As part of that, I am eliminating the remaining people on my team.
+
+00:20:39.120 --> 00:20:43.400
+My team, I have gone from a high of just below 50 people
+
+00:20:43.400 --> 00:20:45.480
+in my test organization.
+
+00:20:46.200 --> 00:20:50.760
+Right now I have I just moved my last lead reporting to me
+
+00:20:50.760 --> 00:20:57.160
+to another division and I have 10 IC reporting to me right now.
+
+00:20:57.440 --> 00:21:00.640
+But as part of this reorg, I am removing all of them
+
+00:21:00.640 --> 00:21:02.680
+from my org and dissolving my cost center.
+
+00:21:04.820 --> 00:21:05.620
+Bum bum.
+
+00:21:05.620 --> 00:21:08.780
+Some people may look at that and like I've had people go
+
+00:21:08.900 --> 00:21:12.060
+what the F is wrong with you?
+
+00:21:12.060 --> 00:21:13.220
+You're stupid.
+
+00:21:13.220 --> 00:21:14.420
+People are power.
+
+00:21:14.420 --> 00:21:15.740
+You need your organization.
+
+00:21:15.740 --> 00:21:19.740
+I said and it's tough for me because I yeah having getting
+
+00:21:19.740 --> 00:21:24.020
+rid of my organization is a scary thing.
+
+00:21:24.340 --> 00:21:28.300
+But business wise and my priority is improving the business.
+
+00:21:28.580 --> 00:21:31.660
+It is a more efficient way to run all of those orgs.
+
+00:21:32.180 --> 00:21:34.420
+I have made sure I've done a lot of work to make sure
+
+00:21:34.420 --> 00:21:35.660
+they're going to land well.
+
+00:21:35.660 --> 00:21:37.060
+They're in orgs I trust.
+
+00:21:37.260 --> 00:21:38.780
+I've done all kinds of handoff.
+
+00:21:39.100 --> 00:21:42.380
+It's the right thing to do and it's going to work out.
+
+00:21:42.380 --> 00:21:43.300
+So what does that mean for me?
+
+00:21:44.260 --> 00:21:45.540
+Because nothing's announced.
+
+00:21:45.540 --> 00:21:46.620
+Nobody really knows yet.
+
+00:21:46.620 --> 00:21:49.260
+I've had a lot of discussions with my new manager about
+
+00:21:49.260 --> 00:21:50.700
+kind of what the role looks like.
+
+00:21:51.950 --> 00:21:56.030
+And the joke with one of the development managers in
+
+00:21:56.030 --> 00:21:58.670
+Montreal was which was actually good to hear.
+
+00:21:59.030 --> 00:22:00.110
+He said so what are you going to do?
+
+00:22:00.830 --> 00:22:02.310
+And I said I don't know.
+
+00:22:02.950 --> 00:22:04.910
+I mean I have some ideas but nothing's announced so we're
+
+00:22:04.910 --> 00:22:05.790
+still working it out.
+
+00:22:06.790 --> 00:22:09.190
+I'm probably not going to get fired because if you're fired
+
+00:22:09.710 --> 00:22:10.870
+I will hire you right away.
+
+00:22:11.470 --> 00:22:13.630
+So it's good to hear.
+
+00:22:13.630 --> 00:22:16.390
+It's like it's like I've established that you establish
+
+00:22:16.390 --> 00:22:17.230
+that credibility.
+
+00:22:17.270 --> 00:22:20.110
+So I still defining what the role is.
+
+00:22:20.150 --> 00:22:21.230
+You wouldn't be fired though.
+
+00:22:21.590 --> 00:22:21.830
+Yeah.
+
+00:22:22.510 --> 00:22:23.350
+Well who knows.
+
+00:22:23.950 --> 00:22:24.550
+Laid off.
+
+00:22:24.950 --> 00:22:25.830
+Yeah it would be laid off.
+
+00:22:27.550 --> 00:22:28.230
+OK there we go.
+
+00:22:28.710 --> 00:22:30.350
+We'll talk more in details later.
+
+00:22:30.390 --> 00:22:32.710
+I'm sorry I thought when I made the cliffhanger three
+
+00:22:32.710 --> 00:22:35.390
+weeks ago that a lot more would have rolled through but
+
+00:22:35.390 --> 00:22:37.670
+a lot of things happening going on slowed things down a
+
+00:22:37.670 --> 00:22:42.430
+little bit. But definitely in a much broader scope role
+
+00:22:42.830 --> 00:22:46.190
+across the organization which is good not leading
+
+00:22:46.190 --> 00:22:49.540
+testers most likely leading another part of the
+
+00:22:49.540 --> 00:22:53.340
+organization and in a role where I can ensure that
+
+00:22:53.380 --> 00:22:56.140
+modern testing principles continue throughout the
+
+00:22:56.140 --> 00:23:00.140
+organization which is kind of fun to do from a non QA
+
+00:23:00.140 --> 00:23:02.620
+lead test lead position.
+
+00:23:04.110 --> 00:23:05.830
+I've gone through the stages.
+
+00:23:06.390 --> 00:23:07.830
+It's not the same as seven stages of grief.
+
+00:23:07.870 --> 00:23:09.270
+I went through nervous.
+
+00:23:09.390 --> 00:23:12.350
+Oh my God this sounds really hard to excited.
+
+00:23:12.470 --> 00:23:15.110
+Oh but I can do this too anxious.
+
+00:23:15.350 --> 00:23:16.230
+I want to get started.
+
+00:23:16.590 --> 00:23:18.550
+And then in limbo here for a while I kind of like like
+
+00:23:19.510 --> 00:23:22.870
+maybe anxious and frustrated a little bit on come on.
+
+00:23:23.590 --> 00:23:25.870
+Let's just move forward.
+
+00:23:26.230 --> 00:23:27.430
+But it's all the detail.
+
+00:23:27.470 --> 00:23:29.430
+So we kind of know what the role is as far as
+
+00:23:29.670 --> 00:23:31.270
+position in the organization.
+
+00:23:31.710 --> 00:23:35.230
+But as my manager and I have developed a bit of a
+
+00:23:35.230 --> 00:23:38.590
+relationship figuring out well what other is
+
+00:23:38.590 --> 00:23:39.390
+actually really good.
+
+00:23:39.430 --> 00:23:42.190
+I've never had a position where or a manager where
+
+00:23:42.470 --> 00:23:44.910
+we're not just looking at what do you what's the
+
+00:23:44.910 --> 00:23:45.870
+role you're going to do.
+
+00:23:46.030 --> 00:23:48.790
+But what does that role grow into and how do you
+
+00:23:49.710 --> 00:23:50.950
+and we've even had the conversation because I've
+
+00:23:50.950 --> 00:23:51.590
+done this with testing.
+
+00:23:51.630 --> 00:23:54.750
+It's like what would happen if you if in this
+
+00:23:54.750 --> 00:23:57.750
+role you worked yourself out of the out of the
+
+00:23:59.030 --> 00:24:01.710
+out of a role not a job out of a role and
+
+00:24:01.710 --> 00:24:02.470
+figure out what's next.
+
+00:24:02.630 --> 00:24:05.350
+Kind of making sure it's all set up for those
+
+00:24:05.350 --> 00:24:06.150
+things to work out.
+
+00:24:06.510 --> 00:24:08.630
+So that's kind of and I'm sorry to not have a
+
+00:24:08.630 --> 00:24:12.230
+great answer to the cliffhanger to kind of one
+
+00:24:12.230 --> 00:24:14.670
+of those like soap opera things where you get the
+
+00:24:14.670 --> 00:24:17.990
+cliffhanger then in the next episode you don't
+
+00:24:17.990 --> 00:24:19.910
+really get the answer but you just kind of get
+
+00:24:20.110 --> 00:24:21.630
+strong on a little bit more.
+
+00:24:21.870 --> 00:24:24.270
+That's kind of what we're doing here just so I
+
+00:24:24.270 --> 00:24:26.030
+don't because it would be awkward right.
+
+00:24:26.070 --> 00:24:29.270
+If I said I'm doing this job and then I put
+
+00:24:29.270 --> 00:24:31.350
+podcast on Monday people go people listen to the
+
+00:24:31.350 --> 00:24:33.310
+podcast is the weird thing I've mentioned
+
+00:24:33.310 --> 00:24:36.150
+before about unity is didn't happen at Microsoft.
+
+00:24:36.150 --> 00:24:39.030
+People in my organization people I know listen
+
+00:24:39.030 --> 00:24:42.670
+to the podcast in fact like not just testers the
+
+00:24:42.670 --> 00:24:46.510
+developers someone pointed out like it comes up.
+
+00:24:47.500 --> 00:24:51.580
+Odd it's kind of embarrassing for me because I'm
+
+00:24:51.580 --> 00:24:54.500
+used to having a podcast that nobody actually see
+
+00:24:54.500 --> 00:24:57.900
+often or or who has who whose opinion matters
+
+00:24:57.900 --> 00:24:58.380
+of me.
+
+00:24:58.780 --> 00:24:59.780
+Here's the podcast.
+
+00:24:59.780 --> 00:25:02.060
+Yeah nothing against the three your opinions do
+
+00:25:02.060 --> 00:25:04.660
+matter to me but I'll just see a random direct
+
+00:25:04.660 --> 00:25:07.780
+consequence like I'll be in a discussion talking
+
+00:25:07.780 --> 00:25:10.100
+about some things we're doing and then some
+
+00:25:10.100 --> 00:25:12.900
+random developer and another team will say oh
+
+00:25:12.900 --> 00:25:15.380
+yeah Alan talked about that on his podcast and
+
+00:25:15.380 --> 00:25:16.860
+it kind of freaks me out a little bit.
+
+00:25:18.660 --> 00:25:21.980
+It kind of it's kind of awkward not like it's I
+
+00:25:21.980 --> 00:25:24.860
+don't know why it's awkward anyway I've been
+
+00:25:24.860 --> 00:25:27.420
+talking for a while any thoughts or reactions or
+
+00:25:27.420 --> 00:25:27.940
+questions.
+
+00:25:27.940 --> 00:25:30.300
+First off first off I would like to know the
+
+00:25:30.300 --> 00:25:35.020
+name of the developer in unity that that in a
+
+00:25:35.020 --> 00:25:38.980
+public meeting tells you hey Alan Brent would
+
+00:25:38.980 --> 00:25:40.060
+not approve of that.
+
+00:25:40.780 --> 00:25:42.700
+I'd like to know their name I'll go take them to
+
+00:25:42.700 --> 00:25:43.180
+coffee.
+
+00:25:45.260 --> 00:25:46.300
+Yeah I haven't heard that yet.
+
+00:25:46.820 --> 00:25:49.420
+Not yet but now coffees on the line.
+
+00:25:50.250 --> 00:25:54.770
+Well it's good you broaden that to how do you
+
+00:25:54.770 --> 00:25:56.330
+get that guy Brent to shut up.
+
+00:25:57.350 --> 00:25:58.590
+Could that be a question that would earn them
+
+00:25:58.590 --> 00:26:03.310
+coffee. No OK no. So any any praise for what I
+
+00:26:03.310 --> 00:26:06.710
+am trying to do is figure out a way that I can
+
+00:26:06.710 --> 00:26:09.630
+use the podcast to continue to torture you in
+
+00:26:09.630 --> 00:26:12.390
+your day to day work like. Yeah yeah yeah.
+
+00:26:13.030 --> 00:26:17.200
+You can tell them secrets. I don't really have
+
+00:26:17.200 --> 00:26:22.260
+any though. Alan hates tequila. Whatever you do
+
+00:26:22.260 --> 00:26:25.580
+don't give him tequila. Right. No he does. He
+
+00:26:25.580 --> 00:26:27.380
+hates it tremendously.
+
+00:26:28.420 --> 00:26:30.540
+Yeah I get where Alan's coming from. You've got
+
+00:26:30.540 --> 00:26:34.740
+to think about the business. The thing is is
+
+00:26:34.740 --> 00:26:40.900
+while they're working through plans and I do
+
+00:26:40.900 --> 00:26:44.700
+have a little bit more of a sense than what
+
+00:26:44.700 --> 00:26:48.820
+Alan's describing of what is going to happen to
+
+00:26:48.820 --> 00:26:51.500
+him. I'll tell him I'll tell you guys what I
+
+00:26:51.500 --> 00:26:56.380
+told him which is dude that is sweet. I'm sure
+
+00:26:56.380 --> 00:26:59.220
+it is scaring the crap out of you right now.
+
+00:26:59.820 --> 00:27:03.780
+But once you get in it'll be awesome. It'll just
+
+00:27:03.780 --> 00:27:06.780
+be a matter of time. Yep I think so. That's
+
+00:27:06.980 --> 00:27:09.580
+exactly it. When I first got an idea the scope
+
+00:27:09.580 --> 00:27:13.500
+of the role I was quite scared. I said nervous
+
+00:27:13.500 --> 00:27:16.060
+but maybe scared is right. But I thought the
+
+00:27:16.060 --> 00:27:18.500
+more I thought through it the better I felt
+
+00:27:18.580 --> 00:27:24.300
+and the more I've I've talked to people in a
+
+00:27:24.300 --> 00:27:26.260
+little different way. We'll be able to talk
+
+00:27:26.260 --> 00:27:29.020
+about this a little bit more later but I'm
+
+00:27:29.020 --> 00:27:31.060
+settling into it even though it's not official.
+
+00:27:31.380 --> 00:27:36.560
+And what's really interesting is the reaction
+
+00:27:36.560 --> 00:27:39.080
+from my team as I move them out of their QA
+
+00:27:39.080 --> 00:27:43.880
+roles working for me and to working within
+
+00:27:43.880 --> 00:27:47.840
+their dev teams in a specialist role. And also
+
+00:27:47.840 --> 00:27:49.800
+keep in mind that these people aren't doing
+
+00:27:50.440 --> 00:27:52.960
+test things all day. And in fact we just had
+
+00:27:52.960 --> 00:27:56.360
+our we had these three times a year discussions
+
+00:27:56.360 --> 00:27:57.920
+at Unity called three keys three questions
+
+00:27:57.920 --> 00:28:00.760
+about what is your mission at Unity. What are
+
+00:28:00.760 --> 00:28:02.320
+you doing and how are you doing and just kind
+
+00:28:02.320 --> 00:28:04.400
+of talk about just a reflective discussion
+
+00:28:04.400 --> 00:28:06.640
+around career development what's going on. And
+
+00:28:06.640 --> 00:28:10.360
+as I talk to people the amount of leadership
+
+00:28:10.360 --> 00:28:13.840
+and influence and building and their focus on
+
+00:28:13.840 --> 00:28:17.480
+building a quality culture is like yeah we're
+
+00:28:17.480 --> 00:28:20.640
+fine. And I get from the development leads
+
+00:28:20.640 --> 00:28:23.160
+these guys work with I get nothing but praise
+
+00:28:23.160 --> 00:28:28.040
+and the fact that most of them are doing at
+
+00:28:28.040 --> 00:28:29.800
+the very least things that would be that would
+
+00:28:29.800 --> 00:28:32.520
+fall into the DevOps category and some full
+
+00:28:32.520 --> 00:28:34.320
+on writing features as well as their testing
+
+00:28:34.320 --> 00:28:40.680
+work. The confidence that the teams have with
+
+00:28:40.680 --> 00:28:42.840
+them. I feel really good. There's one person on
+
+00:28:42.840 --> 00:28:44.320
+my team. I'm going to have another talk with
+
+00:28:44.320 --> 00:28:45.920
+them today is a little nervous about the
+
+00:28:47.040 --> 00:28:51.370
+change. But the thing is I'm not leaving the
+
+00:28:51.370 --> 00:28:53.290
+org and the other part is nobody's nervous
+
+00:28:53.290 --> 00:28:56.010
+about oh my God is Alan leaving getting fired.
+
+00:28:56.010 --> 00:29:00.290
+They just they which is weird. I'd like a
+
+00:29:00.290 --> 00:29:01.890
+little bit more concerned over my career
+
+00:29:01.890 --> 00:29:05.850
+given all the turmoil but whatever. I think
+
+00:29:05.850 --> 00:29:08.890
+they feel like I'll land somewhere good and
+
+00:29:08.890 --> 00:29:12.910
+they're right. But really all those ICS on
+
+00:29:12.910 --> 00:29:15.470
+my team only one is a little nervous but I
+
+00:29:15.470 --> 00:29:18.870
+think once the change actually happens and
+
+00:29:19.550 --> 00:29:23.150
+they realize how little things are actually
+
+00:29:23.150 --> 00:29:24.950
+changing because my influence is still there.
+
+00:29:25.270 --> 00:29:29.110
+I will still meet with the dev managers
+
+00:29:29.110 --> 00:29:32.230
+around the org. In fact when we do hiring in
+
+00:29:32.230 --> 00:29:34.550
+these places for hiring more people as a test
+
+00:29:34.550 --> 00:29:38.150
+specialist or a primary test specialist they
+
+00:29:38.230 --> 00:29:40.190
+all be involved in hiring and job descriptions
+
+00:29:40.190 --> 00:29:44.150
+et cetera. So it will be it should be very
+
+00:29:44.190 --> 00:29:46.910
+should be noticeable very little that I'm in a
+
+00:29:46.910 --> 00:29:49.350
+different role and there's no more QA
+
+00:29:49.390 --> 00:29:52.190
+organization in the cloud org. I want to go
+
+00:29:52.190 --> 00:29:55.710
+to a mailbag question I totally forgot to
+
+00:29:55.710 --> 00:29:58.570
+do our last mailbag show. We can't fit them all
+
+00:29:58.570 --> 00:30:02.330
+in or I can I didn't just forget to put
+
+00:30:02.330 --> 00:30:10.020
+something we could. I can't tell that's an
+
+00:30:10.500 --> 00:30:12.620
+I don't have my glasses that Aiden Boyd
+
+00:30:12.820 --> 00:30:15.380
+could be all Aiden Aiden Boyd. Sorry.
+
+00:30:16.780 --> 00:30:19.500
+Question for you Brent. I'll answer to how
+
+00:30:19.500 --> 00:30:22.700
+much weight would you say clear leadership
+
+00:30:22.700 --> 00:30:25.580
+direction holds when it comes to growing a
+
+00:30:25.580 --> 00:30:28.060
+quality culture. Oh I'll probably have an
+
+00:30:28.060 --> 00:30:31.020
+answer for this too. I am fortunate enough
+
+00:30:31.020 --> 00:30:33.020
+to work in a delivery team where I am
+
+00:30:33.020 --> 00:30:35.620
+confident that with time and many robust
+
+00:30:35.620 --> 00:30:37.940
+but constructive conversations we can move
+
+00:30:37.940 --> 00:30:39.940
+ourselves up the scale for most of the
+
+00:30:39.940 --> 00:30:42.260
+quality culture capabilities. However
+
+00:30:43.000 --> 00:30:45.400
+despite the healthy relationships and
+
+00:30:45.400 --> 00:30:48.000
+generally positive attitude towards quality
+
+00:30:48.000 --> 00:30:50.240
+within the delivery team there are no
+
+00:30:50.240 --> 00:30:52.600
+clear company goals or metrics that we can
+
+00:30:52.600 --> 00:30:55.080
+evaluate ourselves against. Is this
+
+00:30:55.080 --> 00:30:56.880
+something we should seek out in order to
+
+00:30:56.880 --> 00:30:59.120
+give us a stronger drive for quality and a
+
+00:30:59.120 --> 00:31:06.220
+clearer sense of direction. Yes. No. It
+
+00:31:06.340 --> 00:31:10.740
+depends. No. This one does not depend.
+
+00:31:11.950 --> 00:31:15.820
+However despite. All right. So I'm reading
+
+00:31:15.820 --> 00:31:17.900
+at the same time I'm glad I loaded it up
+
+00:31:17.900 --> 00:31:20.590
+because I would have remembered three words
+
+00:31:20.590 --> 00:31:22.910
+from that. How much weight would you say
+
+00:31:22.910 --> 00:31:27.010
+clear leadership direction holds when it
+
+00:31:27.010 --> 00:31:31.650
+comes to growing a quality culture. How
+
+00:31:31.650 --> 00:31:34.950
+much. What do you think clear leadership
+
+00:31:34.950 --> 00:31:41.140
+direction means. I think a vision. As the
+
+00:31:41.220 --> 00:31:43.300
+question evolves its goals I think he's
+
+00:31:43.300 --> 00:31:46.460
+saying should leadership provide quality
+
+00:31:46.460 --> 00:31:48.660
+goals that the team tries to achieve.
+
+00:31:48.660 --> 00:31:51.970
+How much how important is that. Yeah I
+
+00:31:51.970 --> 00:31:55.350
+kind of interpret. However let me go to
+
+00:31:55.350 --> 00:31:56.750
+the next thing because I think I
+
+00:31:56.750 --> 00:31:58.310
+interpret this differently. However
+
+00:31:58.310 --> 00:32:00.110
+despite the healthy relationships and
+
+00:32:00.110 --> 00:32:01.750
+generally positive attitude towards
+
+00:32:01.750 --> 00:32:04.590
+quality within the delivery team there
+
+00:32:04.590 --> 00:32:07.350
+are no clear company goals or metrics
+
+00:32:07.350 --> 00:32:09.150
+that we can use to evaluate ourselves
+
+00:32:09.150 --> 00:32:12.350
+against. So that's the thing that
+
+00:32:12.350 --> 00:32:16.400
+bothers me because what I hear is it
+
+00:32:16.400 --> 00:32:18.200
+sounds like he's in a DevOps role. Did
+
+00:32:18.200 --> 00:32:21.920
+I do that right. Yeah I'm not certain
+
+00:32:21.920 --> 00:32:23.440
+what role he's in delivery team he
+
+00:32:23.440 --> 00:32:27.890
+delivers babies. Okay if you don't know
+
+00:32:27.890 --> 00:32:30.170
+where you're going any road will take
+
+00:32:30.170 --> 00:32:37.710
+you there. So yeah you need to have. I
+
+00:32:37.710 --> 00:32:40.230
+am a firm believer that you need to have
+
+00:32:40.230 --> 00:32:42.510
+both qualitative and quantitative
+
+00:32:42.510 --> 00:32:49.300
+definition of success. Right. If you're in
+
+00:32:49.300 --> 00:32:52.800
+a role or if you're in a team how do
+
+00:32:52.800 --> 00:32:57.400
+you define success. How do you how one
+
+00:32:57.400 --> 00:32:59.160
+of the things I believe as a business
+
+00:32:59.160 --> 00:33:02.480
+leader is I'm morally obligated to inform
+
+00:33:02.480 --> 00:33:06.850
+my management when they no longer need
+
+00:33:06.850 --> 00:33:10.210
+my team and should get rid of it. Right
+
+00:33:10.210 --> 00:33:16.300
+but to me it is it is a vision statement
+
+00:33:16.300 --> 00:33:18.620
+it is a goal that helps you to be
+
+00:33:18.620 --> 00:33:21.540
+well efficient lean understand success
+
+00:33:21.540 --> 00:33:24.340
+failure these are all important. Well
+
+00:33:24.340 --> 00:33:26.460
+let's go back to the leadership row of
+
+00:33:26.460 --> 00:33:30.250
+my quality culture transition guide
+
+00:33:30.250 --> 00:33:32.010
+where it starts off with there's no
+
+00:33:32.010 --> 00:33:35.320
+leadership support and then leadership
+
+00:33:35.320 --> 00:33:37.920
+drives quality via metrics and score
+
+00:33:37.920 --> 00:33:42.840
+cards right to leadership sets
+
+00:33:42.840 --> 00:33:45.520
+principles and a clear vision and
+
+00:33:45.520 --> 00:33:48.430
+then the most mature level is
+
+00:33:48.430 --> 00:33:50.190
+leadership can mostly stay the heck out
+
+00:33:50.190 --> 00:33:51.510
+of the way because the team has
+
+00:33:51.510 --> 00:33:54.950
+internalized all those things. Even
+
+00:33:54.950 --> 00:33:59.130
+further I think the final step is
+
+00:33:59.130 --> 00:34:03.370
+leadership agrees with the principles
+
+00:34:03.370 --> 00:34:07.530
+and visions set by the team. Yes so I
+
+00:34:07.530 --> 00:34:10.050
+think leadership needs to be involved I
+
+00:34:10.050 --> 00:34:12.210
+mean you can have some overarching goals
+
+00:34:12.210 --> 00:34:15.050
+it's easy to fall from that third level
+
+00:34:15.050 --> 00:34:16.370
+to that second level. And I want to be
+
+00:34:16.370 --> 00:34:18.490
+careful about talking about leadership
+
+00:34:18.490 --> 00:34:20.130
+versus management here. Yeah. I think
+
+00:34:20.130 --> 00:34:22.210
+we're talking about management. Well we're
+
+00:34:22.210 --> 00:34:24.090
+talking about whoever's sitting the
+
+00:34:24.090 --> 00:34:28.370
+vision for the team. Right. Having a set
+
+00:34:28.370 --> 00:34:30.850
+of specific goals defined for everyone
+
+00:34:30.850 --> 00:34:32.770
+in the company around quality everyone
+
+00:34:32.770 --> 00:34:34.290
+must have 80 percent code coverage.
+
+00:34:34.290 --> 00:34:36.850
+Those things those are more of the how
+
+00:34:36.850 --> 00:34:39.120
+having a high level of code coverage
+
+00:34:39.120 --> 00:34:41.080
+reduces some risk so that'd be a how
+
+00:34:41.080 --> 00:34:44.400
+I'd achieve a leadership goal of we want
+
+00:34:44.400 --> 00:34:48.310
+four nines of uptime this year. We want
+
+00:34:48.310 --> 00:34:51.150
+to lose less than ten thousand dollars
+
+00:34:51.150 --> 00:34:54.030
+on revenue due to site being down.
+
+00:34:54.030 --> 00:34:56.750
+Whatever right. Those are high level
+
+00:34:56.750 --> 00:34:58.990
+goals those things below those a lot of
+
+00:34:58.990 --> 00:35:00.710
+those quality culture bits are the how
+
+00:35:00.710 --> 00:35:02.830
+you achieve that. And that vision can
+
+00:35:02.830 --> 00:35:05.750
+just also help you determine how much
+
+00:35:05.750 --> 00:35:07.670
+weight to put into different aspects of
+
+00:35:07.670 --> 00:35:10.510
+the quality culture. When another thing
+
+00:35:10.510 --> 00:35:12.190
+I reading between the lines on Aidan's
+
+00:35:12.190 --> 00:35:14.470
+post is you know our team has a good
+
+00:35:14.470 --> 00:35:16.390
+quality culture. He doesn't say anything
+
+00:35:16.510 --> 00:35:18.630
+about other teams but I wonder if
+
+00:35:18.630 --> 00:35:20.270
+between the lines and Aidan you can chime
+
+00:35:20.270 --> 00:35:22.190
+in on slack if I'm kind of reading like
+
+00:35:22.190 --> 00:35:23.790
+our team has high quality culture
+
+00:35:23.790 --> 00:35:27.350
+principles but maybe other teams don't
+
+00:35:27.350 --> 00:35:28.710
+I think they don't because leadership
+
+00:35:28.710 --> 00:35:31.390
+doesn't have any goals in place. I
+
+00:35:31.390 --> 00:35:32.510
+don't know if that's the case or not
+
+00:35:32.510 --> 00:35:34.910
+but I kind of felt that a little bit
+
+00:35:34.910 --> 00:35:37.700
+and it can be painful if your team
+
+00:35:37.700 --> 00:35:41.410
+takes a lot of time on the how that
+
+00:35:41.410 --> 00:35:42.650
+quality culture putting a lot of
+
+00:35:42.650 --> 00:35:45.370
+effort into learning and improvement
+
+00:35:45.370 --> 00:35:47.290
+and trying to do everything much better
+
+00:35:47.290 --> 00:35:49.210
+all the time and you have some other
+
+00:35:49.210 --> 00:35:51.210
+teams that don't have those same values
+
+00:35:51.210 --> 00:35:54.490
+it's very easy in a lot of cases to say
+
+00:35:54.490 --> 00:35:55.770
+well this is a leadership needs to
+
+00:35:55.770 --> 00:35:56.970
+establish some goals so we're all on the
+
+00:35:56.970 --> 00:36:00.610
+same page which actually isn't a horrible
+
+00:36:00.610 --> 00:36:03.130
+idea but it's not the only way to get
+
+00:36:03.130 --> 00:36:04.930
+every team on the same page as far as
+
+00:36:04.930 --> 00:36:06.770
+quality culture goes. Can you from your
+
+00:36:06.770 --> 00:36:08.610
+experience can you generalize let's
+
+00:36:08.610 --> 00:36:10.970
+say you take two teams. Mm-hmm. Would
+
+00:36:10.970 --> 00:36:12.570
+you be how would you go about
+
+00:36:12.570 --> 00:36:16.790
+enumerating let's say team A in your
+
+00:36:16.790 --> 00:36:22.130
+opinion has a better quality culture than
+
+00:36:22.130 --> 00:36:27.420
+team B right. Okay. What might be things
+
+00:36:27.420 --> 00:36:29.900
+that you would enumerate like obviously
+
+00:36:29.900 --> 00:36:31.980
+that's going to be a multi scaler or
+
+00:36:31.980 --> 00:36:35.380
+multi valued thing. That's actually
+
+00:36:35.380 --> 00:36:37.740
+largely why I created that quality
+
+00:36:37.740 --> 00:36:40.060
+culture transition guide as a way to to
+
+00:36:40.060 --> 00:36:42.060
+have a conversation not to score a team
+
+00:36:42.060 --> 00:36:44.140
+because I hate score cards that I hate
+
+00:36:44.260 --> 00:36:45.860
+maturity models because they're used to
+
+00:36:45.860 --> 00:36:48.700
+score cards but I use that grid as a
+
+00:36:48.700 --> 00:36:50.740
+discussion point to talk with the team
+
+00:36:50.740 --> 00:36:54.400
+on how they approach quality and what
+
+00:36:54.400 --> 00:36:55.960
+are some areas they may need to improve
+
+00:36:55.960 --> 00:36:58.840
+and would and tied into areas of risk
+
+00:36:58.840 --> 00:37:01.480
+it I use that as a tool a lot in
+
+00:37:01.480 --> 00:37:04.120
+retrospectives as a place to discover
+
+00:37:04.120 --> 00:37:05.600
+places where a team may want to improve
+
+00:37:05.600 --> 00:37:07.200
+so that's I don't know if I answer
+
+00:37:07.200 --> 00:37:08.440
+your question directly but that's
+
+00:37:08.440 --> 00:37:11.360
+well ask ask me again in a different
+
+00:37:11.360 --> 00:37:14.480
+way. So what I read from Aidan's
+
+00:37:14.560 --> 00:37:18.760
+post is is hey there are no clear goals
+
+00:37:18.760 --> 00:37:21.710
+or metrics here right and it's it's
+
+00:37:21.710 --> 00:37:24.950
+because number one we're talking about
+
+00:37:24.950 --> 00:37:27.310
+culture which is hard to measure.
+
+00:37:27.830 --> 00:37:29.950
+Number two we're talking about quality
+
+00:37:29.950 --> 00:37:31.950
+culture which makes it even harder to
+
+00:37:31.950 --> 00:37:34.780
+measure when it comes to measurements
+
+00:37:34.780 --> 00:37:37.580
+though what what people generally do
+
+00:37:37.580 --> 00:37:40.960
+is they they want to get a sense if
+
+00:37:40.960 --> 00:37:42.640
+we can't measure it concretely can we
+
+00:37:42.640 --> 00:37:46.840
+measure it relativistically so that we
+
+00:37:46.840 --> 00:37:49.680
+can learn from others I do agree that I
+
+00:37:49.680 --> 00:37:52.600
+do not like scorecards of this sense if
+
+00:37:52.600 --> 00:37:56.520
+they're going to be used punitively but
+
+00:37:56.520 --> 00:38:01.170
+if they're going to be used as hey on
+
+00:38:01.690 --> 00:38:05.370
+lever number one team a is better on
+
+00:38:05.370 --> 00:38:08.450
+quality culture and lever number two
+
+00:38:08.450 --> 00:38:12.050
+team B right it then it helps to
+
+00:38:12.050 --> 00:38:14.810
+encourage knowledge sharing so that
+
+00:38:14.810 --> 00:38:16.930
+both teams can grow together that yeah
+
+00:38:16.930 --> 00:38:20.530
+trick is to measure it without creating
+
+00:38:20.970 --> 00:38:24.330
+competition or wrongly using Hawthorne's
+
+00:38:24.330 --> 00:38:29.330
+effect yeah I I would definitely solve
+
+00:38:29.330 --> 00:38:31.490
+the problem via sharing and celebrating
+
+00:38:31.490 --> 00:38:34.570
+success to be more concrete let's say
+
+00:38:34.570 --> 00:38:39.250
+team a is fantastic at retrospectives
+
+00:38:39.250 --> 00:38:42.650
+and every single sprint they pick one
+
+00:38:42.650 --> 00:38:44.170
+or two things they want to improve and
+
+00:38:44.170 --> 00:38:46.210
+they get better and I'm going to
+
+00:38:46.210 --> 00:38:47.650
+celebrate that because I want to team
+
+00:38:47.650 --> 00:38:49.410
+B is not doing that I want to see how
+
+00:38:49.410 --> 00:38:51.450
+much that's helping them even if team B
+
+00:38:51.450 --> 00:38:54.050
+is better overall and then team B may
+
+00:38:54.050 --> 00:38:56.130
+have they may have put together a
+
+00:38:56.130 --> 00:38:58.770
+fantastic suite of tools and checks
+
+00:38:58.770 --> 00:39:01.610
+and their CI system date of the art I
+
+00:39:01.610 --> 00:39:03.210
+want to share and celebrate that and
+
+00:39:03.210 --> 00:39:05.370
+get team team a may go oh we didn't
+
+00:39:05.370 --> 00:39:07.210
+know we had that problem but yeah if
+
+00:39:07.210 --> 00:39:08.730
+we borrow this we can do that so I
+
+00:39:08.730 --> 00:39:12.250
+want to actually leverage the strengths
+
+00:39:12.250 --> 00:39:13.970
+of each team to make the other team
+
+00:39:13.970 --> 00:39:17.610
+better I love celebrating success yeah I
+
+00:39:17.610 --> 00:39:20.250
+think it's very motivating I don't think
+
+00:39:20.250 --> 00:39:22.370
+to two agents questions I don't and I
+
+00:39:22.370 --> 00:39:24.170
+completely agree by the way I don't
+
+00:39:24.170 --> 00:39:26.050
+think this is something that you can
+
+00:39:26.050 --> 00:39:29.330
+you can really succeed with with a with
+
+00:39:29.330 --> 00:39:35.910
+a with a hard fast quantitative measure
+
+00:39:35.910 --> 00:39:39.270
+this is does not contradict the
+
+00:39:39.270 --> 00:39:40.910
+statement I would said just a few
+
+00:39:40.910 --> 00:39:45.810
+minutes ago though because you do need
+
+00:39:45.810 --> 00:39:48.490
+you do need that to help guide and
+
+00:39:48.490 --> 00:39:51.210
+measure and and show improvement in a
+
+00:39:51.210 --> 00:39:55.680
+in a in a real sense I'll tell you a
+
+00:39:55.680 --> 00:39:58.640
+problem that I have that's related to
+
+00:39:58.640 --> 00:39:59.760
+something that you just mentioned
+
+00:39:59.760 --> 00:40:02.320
+retrospective so here in Azure we have
+
+00:40:02.320 --> 00:40:07.540
+a big retrospective process not in the
+
+00:40:07.540 --> 00:40:09.140
+sense that we talk about with a small
+
+00:40:09.140 --> 00:40:11.300
+agile team you can think of it closer
+
+00:40:11.380 --> 00:40:13.740
+to like a old-school post-mortem process
+
+00:40:13.740 --> 00:40:16.620
+but that process says in certain
+
+00:40:16.620 --> 00:40:20.420
+instances you are required to file bugs
+
+00:40:20.420 --> 00:40:23.220
+to prevent this from occurring again
+
+00:40:23.220 --> 00:40:27.720
+okay whatever the this is I'm off you
+
+00:40:27.720 --> 00:40:30.160
+skating on purpose and I knee-deep in a
+
+00:40:30.160 --> 00:40:33.060
+lot of these conversations the issue I
+
+00:40:33.060 --> 00:40:36.980
+have though is from a data science
+
+00:40:36.980 --> 00:40:38.900
+point of view I am trying to figure out
+
+00:40:38.900 --> 00:40:42.540
+a way are we just telling people to do
+
+00:40:42.540 --> 00:40:46.770
+activity or is there any evidence that
+
+00:40:46.770 --> 00:40:50.860
+this activity is actually helping right
+
+00:40:50.860 --> 00:40:53.100
+because we don't have so let's say you
+
+00:40:53.100 --> 00:40:55.500
+have a monitor here's an example let's
+
+00:40:55.500 --> 00:40:59.590
+say you had an outage and and it took
+
+00:40:59.590 --> 00:41:03.470
+you three days to respond because you
+
+00:41:03.470 --> 00:41:06.230
+didn't have a monitor for it your
+
+00:41:06.230 --> 00:41:08.230
+customer actually got impacted and
+
+00:41:08.230 --> 00:41:13.520
+called in now you go you build that
+
+00:41:13.520 --> 00:41:19.180
+monitor but that three-day outage is a
+
+00:41:19.180 --> 00:41:23.840
+one-in-a-lifetime event sharks slam into
+
+00:41:23.840 --> 00:41:26.200
+something that caused power to go out
+
+00:41:26.200 --> 00:41:30.480
+right and we didn't detect it right that
+
+00:41:30.480 --> 00:41:32.720
+two months that they used to build that
+
+00:41:32.720 --> 00:41:36.360
+monitor yeah so a quick story that I
+
+00:41:36.360 --> 00:41:37.880
+want to get to the closing here is
+
+00:41:37.880 --> 00:41:41.540
+that's a common problem in engineering
+
+00:41:41.540 --> 00:41:44.740
+off often we will over optimize on the
+
+00:41:44.740 --> 00:41:47.180
+edge case not just for monitoring I saw
+
+00:41:47.180 --> 00:41:48.780
+it recently internally I'm not going to
+
+00:41:48.780 --> 00:41:51.820
+tell any details but a bunch of smart
+
+00:41:51.820 --> 00:41:54.340
+people got together to review how
+
+00:41:54.340 --> 00:41:56.340
+something was going and they started
+
+00:41:56.340 --> 00:41:58.260
+thinking of these bizarre edge cases
+
+00:41:58.260 --> 00:42:01.140
+next thing you know a team is like
+
+00:42:01.140 --> 00:42:04.300
+trying to write a bunch of code to
+
+00:42:04.300 --> 00:42:06.900
+solve these bizarre edge cases it's like
+
+00:42:06.900 --> 00:42:12.190
+stop stop stop stop stop no this is
+
+00:42:12.190 --> 00:42:13.790
+never going to happen it would be why
+
+00:42:13.790 --> 00:42:16.230
+don't we just prevent people from trying
+
+00:42:16.230 --> 00:42:18.190
+to do this stupid edge case versus
+
+00:42:18.190 --> 00:42:19.870
+trying to enable this thing that is
+
+00:42:19.870 --> 00:42:22.070
+theoretically possible but will likely
+
+00:42:22.070 --> 00:42:25.910
+very likely never happen in a million
+
+00:42:25.910 --> 00:42:28.830
+gazillion years the the thing is it's
+
+00:42:28.830 --> 00:42:31.230
+fascinating and to be fair I love
+
+00:42:31.230 --> 00:42:32.510
+their thinking of edge cases because
+
+00:42:32.510 --> 00:42:34.470
+that's that's that systems thinking you
+
+00:42:34.470 --> 00:42:36.750
+know but you have to actually
+
+00:42:37.470 --> 00:42:39.310
+think about it from a risk perspective
+
+00:42:39.310 --> 00:42:42.550
+as well and once you know the edge cases
+
+00:42:42.550 --> 00:42:45.590
+you got to think around okay how do we
+
+00:42:45.590 --> 00:42:47.950
+generalize these things into a different
+
+00:42:47.950 --> 00:42:49.950
+group like I like like the suggestion of
+
+00:42:49.950 --> 00:42:53.350
+oh turns out if we turn off this whole
+
+00:42:53.350 --> 00:42:56.620
+menu item all of these edge cases go
+
+00:42:56.620 --> 00:42:58.500
+away yes there's a couple of feature
+
+00:42:58.500 --> 00:43:01.460
+take backs but but you know no one uses
+
+00:43:01.460 --> 00:43:04.460
+those we need to help the move from
+
+00:43:04.460 --> 00:43:06.500
+testing specialist or risk specialist
+
+00:43:06.620 --> 00:43:08.420
+we need people that can look at the
+
+00:43:08.420 --> 00:43:10.740
+bigger picture that if I risk versus
+
+00:43:10.740 --> 00:43:13.900
+think of new test ideas yes and actually
+
+00:43:13.900 --> 00:43:17.620
+so multiple times on the podcast I've
+
+00:43:17.620 --> 00:43:19.580
+detailed a bunch of insights I've learned
+
+00:43:19.580 --> 00:43:23.740
+when I went to Bing okay there's when
+
+00:43:23.740 --> 00:43:25.940
+you're in that space it's a game
+
+00:43:25.940 --> 00:43:28.540
+changer testing does not make sense in
+
+00:43:28.540 --> 00:43:30.700
+the context we're used to and Bing
+
+00:43:30.700 --> 00:43:33.260
+everything changes every second oh my
+
+00:43:33.260 --> 00:43:34.340
+god are you saying testing is dead
+
+00:43:34.860 --> 00:43:39.480
+moving on oh my god here you here in
+
+00:43:39.480 --> 00:43:42.500
+Azure there is a different phenomenon
+
+00:43:42.500 --> 00:43:51.510
+edge cases suddenly impact thousands of
+
+00:43:51.510 --> 00:43:57.000
+people because things are we are so
+
+00:43:57.000 --> 00:44:00.440
+popular we have so many different
+
+00:44:00.440 --> 00:44:03.480
+widgets running in the cloud and the
+
+00:44:03.480 --> 00:44:07.110
+system is extremely flexible even the
+
+00:44:07.110 --> 00:44:10.430
+case it only happens point one percent
+
+00:44:10.430 --> 00:44:13.940
+of the time is a large number of
+
+00:44:13.940 --> 00:44:19.110
+important things impacted yeah there's a
+
+00:44:19.110 --> 00:44:22.220
+real problem there what I keep
+
+00:44:22.220 --> 00:44:26.220
+thinking through is okay on I always go
+
+00:44:26.220 --> 00:44:31.920
+back to ROI what is if we if we try
+
+00:44:31.920 --> 00:44:36.960
+to define quality or our quality culture
+
+00:44:37.080 --> 00:44:40.880
+we need to invest in terms of some sort
+
+00:44:40.880 --> 00:44:46.150
+of return on investment and so yeah if you
+
+00:44:46.150 --> 00:44:49.190
+can't measure return that at minimum
+
+00:44:49.190 --> 00:44:51.270
+needs to be fixed in terms of metrics
+
+00:44:51.270 --> 00:44:53.310
+and goals for a for a quality culture
+
+00:44:53.310 --> 00:44:56.590
+sure it can be anyway yeah yes I agree
+
+00:44:56.590 --> 00:44:58.990
+one last thing I want to talk about
+
+00:44:58.990 --> 00:45:03.870
+before we go is the upcoming episode 100
+
+00:45:03.870 --> 00:45:07.930
+of a be testing someday soon someday
+
+00:45:07.930 --> 00:45:10.770
+soon about a month which will as my if
+
+00:45:10.770 --> 00:45:12.450
+I look at my math correctly when I get
+
+00:45:12.450 --> 00:45:15.010
+the date exactly right but will also
+
+00:45:15.010 --> 00:45:18.410
+remarkably happen very very very close to
+
+00:45:18.410 --> 00:45:20.690
+the five-year anniversary of the AB
+
+00:45:20.690 --> 00:45:23.770
+testing podcast of episode one which if
+
+00:45:23.770 --> 00:45:25.690
+you go back and listen is a piece of
+
+00:45:25.690 --> 00:45:30.340
+junk it's awful some people want to go
+
+00:45:30.340 --> 00:45:32.100
+back and start at one for completion and
+
+00:45:32.100 --> 00:45:35.620
+I tell you stop starting the 40s or
+
+00:45:35.620 --> 00:45:38.500
+somewhere we could turn one into like a
+
+00:45:38.500 --> 00:45:41.220
+two-year prequel and just reset the
+
+00:45:41.220 --> 00:45:45.940
+nut up I am toying with the idea of a
+
+00:45:45.940 --> 00:45:49.660
+call-in show for episode 100 I am going
+
+00:45:49.660 --> 00:45:53.540
+to gauge interest among the three I'll
+
+00:45:53.540 --> 00:45:56.140
+also ask on Twitter will try and get a
+
+00:45:56.140 --> 00:45:59.380
+date set of definitely a few weeks in
+
+00:45:59.380 --> 00:46:00.940
+advance I'll work it out with Brent we
+
+00:46:00.940 --> 00:46:02.460
+do a little bit of a longer recording
+
+00:46:02.460 --> 00:46:05.420
+time I think I can pull it off I'm gonna
+
+00:46:05.420 --> 00:46:07.060
+do a little bit of technical work in
+
+00:46:07.060 --> 00:46:09.140
+between but if you're interested in
+
+00:46:09.140 --> 00:46:11.220
+being part of that show please ping me on
+
+00:46:11.220 --> 00:46:14.220
+Twitter ping me an email ping me on our
+
+00:46:14.220 --> 00:46:18.660
+slack team and we'll try and find some
+
+00:46:18.660 --> 00:46:20.980
+times that work it'll be awkward if
+
+00:46:20.980 --> 00:46:24.740
+like only one person dials in but I
+
+00:46:24.740 --> 00:46:26.300
+thought it'd be fun give it a shot I
+
+00:46:26.300 --> 00:46:27.900
+have no idea how it will work it's
+
+00:46:27.900 --> 00:46:29.780
+probably stupid to do such a big
+
+00:46:29.780 --> 00:46:31.820
+experiment for for such a milestone
+
+00:46:31.820 --> 00:46:34.660
+episode but then I could just call it if
+
+00:46:34.660 --> 00:46:37.540
+it fails I can call it 99 a if we're
+
+00:46:37.540 --> 00:46:40.780
+gonna fail let's fail glory you know I
+
+00:46:40.780 --> 00:46:42.380
+was talking to someone on my team
+
+00:46:42.380 --> 00:46:44.740
+recently and he said the team's being
+
+00:46:44.740 --> 00:46:49.540
+really paranoid very caught they're
+
+00:46:49.540 --> 00:46:51.380
+being says being overly cautious about
+
+00:46:51.380 --> 00:46:54.620
+releases and I said that team that
+
+00:46:54.620 --> 00:46:56.740
+product they need to screw up more
+
+00:46:56.740 --> 00:46:59.520
+and he nodded his head like is the the
+
+00:46:59.520 --> 00:47:01.280
+test room a team yeah so they need to
+
+00:47:01.280 --> 00:47:03.680
+the testing specialist who's actually
+
+00:47:03.680 --> 00:47:06.360
+doing mostly DevOps work said you're
+
+00:47:06.360 --> 00:47:08.200
+the team is just you're not learning if
+
+00:47:08.200 --> 00:47:10.240
+you're not screwing up mess some things
+
+00:47:10.240 --> 00:47:12.880
+up practice rollback don't be so darn
+
+00:47:12.880 --> 00:47:15.400
+paranoid just f things up a little bit
+
+00:47:15.400 --> 00:47:17.720
+and it got the message I mean it's
+
+00:47:17.720 --> 00:47:19.040
+probably a little bit over the top but
+
+00:47:19.040 --> 00:47:21.760
+but yeah we should screw it up just so
+
+00:47:21.760 --> 00:47:22.600
+we can learn what works and what
+
+00:47:22.600 --> 00:47:26.580
+doesn't yes all right man yes good
+
+00:47:26.580 --> 00:47:27.900
+hanging out with you again I look
+
+00:47:27.900 --> 00:47:30.900
+forward to doing 99 sometime soon couple
+
+00:47:30.900 --> 00:47:32.500
+weeks talk a little bit more about my
+
+00:47:32.500 --> 00:47:34.100
+new role if it's still not defined in
+
+00:47:34.100 --> 00:47:36.700
+two weeks then well we'll be par for the
+
+00:47:36.700 --> 00:47:38.180
+course I've been in limbo for a while
+
+00:47:38.180 --> 00:47:39.380
+trying to get things finalized but
+
+00:47:39.380 --> 00:47:41.140
+hopefully we get it worked out all
+
+00:47:41.140 --> 00:47:43.980
+right I'm still Alan I'm Brent and
+
+00:47:43.980 --> 00:47:46.340
+I'm not Brent and I'm not Alan all
+
+00:47:46.340 --> 00:47:48.620
+right bye
+

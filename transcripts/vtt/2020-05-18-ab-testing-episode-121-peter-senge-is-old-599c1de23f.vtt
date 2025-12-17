@@ -1,0 +1,2123 @@
+WEBVTT
+
+00:00:03.380 --> 00:00:10.580
+Welcome to AV testing podcast, your modern testing podcast. Your hosts, Alan and Brent
+
+00:00:10.580 --> 00:00:15.980
+will be here to guide you through topics on testing, leadership, agile, and anything else
+
+00:00:15.980 --> 00:00:24.340
+that comes to mind. Now on with the show. Hi everyone. Howdy. I'm Alan. He's Brit.
+
+00:00:24.340 --> 00:00:33.380
+Yeah. We are back. This is our third or fourth. I can't remember episode during COVID.
+
+00:00:34.620 --> 00:00:40.060
+Are the days all getting blurry for you? Yeah. Everything. Every day is a Tuesday right now.
+
+00:00:41.240 --> 00:00:46.600
+Luckily I have some recurring meetings that drive the business that keep me from,
+
+00:00:47.460 --> 00:00:54.060
+they keep me from forgetting what day it is completely. But yeah, it's a little blurry.
+
+00:00:54.060 --> 00:00:57.700
+I don't know how many of these we've done, but it's going well. It's going all right.
+
+00:00:58.500 --> 00:01:02.340
+I was pretty happy with how the last episode with our guest, David Bishop, went
+
+00:01:02.860 --> 00:01:07.660
+episode before that was retrospectives also on COVID. And then I think we had one or two,
+
+00:01:07.700 --> 00:01:12.820
+maybe just one. I don't know. We've been here a while. I have some skip level employees
+
+00:01:12.820 --> 00:01:18.550
+that I just do once a month, one on ones with. This is our fifth. All right.
+
+00:01:19.230 --> 00:01:25.710
+The data man, data man. I meet with them once every four weeks and we're getting around
+
+00:01:25.710 --> 00:01:29.790
+to our second round of meetings the last few weeks under quarantine. It's like, yeah, it's
+
+00:01:30.550 --> 00:01:35.050
+been a while. One interesting thing. And then we'll probably have a little bit of COVID
+
+00:01:35.050 --> 00:01:42.050
+talk is we did a survey internally and without going into all the details of what our
+
+00:01:42.050 --> 00:01:49.300
+return to office plan is, it's slow, which is good and voluntary, which is good.
+
+00:01:50.700 --> 00:01:56.100
+And people have a choice to come back in some of the early phases. We have three
+
+00:01:56.100 --> 00:01:58.860
+phases of coming back to the office, then a phase where everyone's welcome to come
+
+00:01:58.860 --> 00:02:05.180
+back and everyone on my team, except for one has said, sorry, none of my team and my
+
+00:02:05.180 --> 00:02:12.110
+whole organization has said, we'll come back when it's, you know, code green, when
+
+00:02:12.430 --> 00:02:17.150
+there is no more precautions, when everything's good in the world. And with a few of
+
+00:02:17.150 --> 00:02:21.720
+those people saying, I don't think I'm ever going back to the office. We have some
+
+00:02:21.720 --> 00:02:24.760
+people who are really embracing the work from home and liking it a lot.
+
+00:02:24.760 --> 00:02:32.420
+Oh, yeah. Not me. Not me. Yeah. There are there are those as well. How are you doing
+
+00:02:32.420 --> 00:02:41.160
+on the work from home burnout? Explain. Are you getting fried working from? Oh, I
+
+00:02:41.640 --> 00:02:49.650
+I passed fried like three weeks ago. Same. I have taken a couple half days on
+
+00:02:49.650 --> 00:02:54.130
+Fridays. I'm going to do another one today just to recover. I just saw
+
+00:02:54.130 --> 00:03:00.320
+something posted from Google. They have given their entire company May 22nd off
+
+00:03:00.320 --> 00:03:07.040
+a day, just an extra day off to rest. Yeah. Last. We actually unity has that day as
+
+00:03:07.040 --> 00:03:11.360
+a holiday. Anyway, we always get the when there's a U.S. three day weekend, we
+
+00:03:11.360 --> 00:03:15.000
+always get a four day weekend. So that's a holiday for us as well. What day is
+
+00:03:15.000 --> 00:03:21.190
+that? That's next Friday. So not this Monday, but the next Monday is a
+
+00:03:21.910 --> 00:03:28.470
+memorial day. Then I guess right. You're going camping. Yeah. Yeah. So last week,
+
+00:03:29.980 --> 00:03:37.550
+so I'm in a part of Azure known as Azure compute. And is that part of Azure
+
+00:03:37.550 --> 00:03:43.370
+Windows? I'm just joking with you because is it Windows part of Azure now? Yeah,
+
+00:03:43.370 --> 00:03:50.460
+it is. Okay. Anyway, go on. Azure compute. Is that like a W S compute? It's
+
+00:03:50.460 --> 00:03:56.300
+like a W S compute stuff better. I'm going to let you finish. But just so
+
+00:03:56.300 --> 00:04:01.240
+you know, are you a W S has a good computer? Yeah, I'm familiar with it.
+
+00:04:01.560 --> 00:04:09.230
+Um, anyway, so the executives we have two of them. One that runs the
+
+00:04:10.510 --> 00:04:15.780
+the engineering or the other one that runs the PM or gave us last Thursday
+
+00:04:15.780 --> 00:04:25.370
+and Friday off. This is actually last Thursday was was when I decided, hey,
+
+00:04:26.080 --> 00:04:32.480
+I'm going to attack the blackberry bushes in my neighbor's yard. I got his
+
+00:04:32.480 --> 00:04:37.170
+permission. So I'm just slaughtering them. Uh, ended up wounded myself in
+
+00:04:37.170 --> 00:04:43.810
+the process. Um, I have what's known as trigger finger. Can't really show it
+
+00:04:43.810 --> 00:04:52.100
+to those on the podcast. Um, and it's supposed to go away. Hasn't yet. Uh,
+
+00:04:52.100 --> 00:04:56.900
+it's it's annoying to type with anyway. We hold on those last two days off.
+
+00:04:56.900 --> 00:05:01.260
+It up again. Hold it up again. I want to get a picture. Uh, I gotta do it
+
+00:05:01.260 --> 00:05:07.370
+this way. Now stretching all of my fingers out except for the one that
+
+00:05:07.730 --> 00:05:10.930
+won't go. And it looks a little weird with looks a little weird with your
+
+00:05:10.930 --> 00:05:15.010
+virtual background, but I'll get it in there. I'll ask you in a minute. I'll
+
+00:05:15.010 --> 00:05:20.460
+tell you why I took that picture, but go on. I usually assume it's, uh, some
+
+00:05:20.460 --> 00:05:27.310
+version of you mocking me. Um, yeah, yeah, you gotta, you gotta, you gotta
+
+00:05:27.310 --> 00:05:34.110
+admit that 95% of the time that's that's right on. Um, anyway, so I
+
+00:05:34.470 --> 00:05:38.870
+spent last Thursday slaughtering blackberry bushes and then I spent
+
+00:05:39.230 --> 00:05:46.200
+Wednesday, uh, panicking around. Oh my God, I need my hands from my
+
+00:05:46.200 --> 00:05:51.720
+business. What has happened to my finger. Um, but other than that, uh, the
+
+00:05:51.720 --> 00:05:58.380
+only, the only difference was we weren't allowed to work in some regards.
+
+00:05:58.380 --> 00:06:04.520
+What I would have, what I would have preferred is that they had said, Hey,
+
+00:06:04.560 --> 00:06:09.800
+everyone, you can work, but we're banning meetings for the day. Now they
+
+00:06:09.800 --> 00:06:13.800
+wouldn't have done that because most of my ICs are like, Oh, well, that's
+
+00:06:13.800 --> 00:06:20.280
+nothing. I don't have any meetings anyway. Whereas I have back to back eight
+
+00:06:20.280 --> 00:06:25.520
+to six half hour. Yeah, that's been a killer. I'm, I'm five to three usually
+
+00:06:25.520 --> 00:06:30.000
+or six to three, but yeah, I would love that. That's fact. That's why I'm
+
+00:06:30.000 --> 00:06:34.160
+taking a kind of a half day off this afternoon. I don't have any meetings.
+
+00:06:36.160 --> 00:06:39.600
+I'm taking advantage of that to get some, to just do some housework to get
+
+00:06:39.600 --> 00:06:43.200
+away from my computer for a bit. Yeah. And then there's the other aspect
+
+00:06:43.200 --> 00:06:49.000
+because of, um, because of how long we've been in here. I, and I don't want
+
+00:06:49.000 --> 00:06:55.620
+to go into the full brain study here, but we've now been in this situation.
+
+00:06:56.140 --> 00:07:05.080
+Um, Oh God, I don't know. It's coming up on two months. And after, after 90 days
+
+00:07:05.160 --> 00:07:13.420
+of a consistent pattern, it becomes part of how you operate it. It's,
+
+00:07:13.740 --> 00:07:20.140
+for those who care, go look up how your subconscious learns and the hippocampus
+
+00:07:20.140 --> 00:07:24.470
+and blah, blah, blah, blah, blah. And one of the things that I've slowly
+
+00:07:24.470 --> 00:07:35.270
+seen happen with me is, uh, starting to hate my home office because going
+
+00:07:35.270 --> 00:07:39.030
+into it represents the oppression of meetings.
+
+00:07:39.590 --> 00:07:42.390
+That is fricking interesting.
+
+00:07:43.170 --> 00:07:51.910
+Yeah. The, any, yeah, it's anytime I can get out of this thing. And it's
+
+00:07:51.910 --> 00:07:55.510
+interesting because I, because I spent a lot of time making this some place
+
+00:07:55.630 --> 00:08:03.200
+that I enjoy, but it's right at that's, it's slowly dissipating Fridays.
+
+00:08:03.200 --> 00:08:09.880
+They're good. We do the podcast. That's fun. Uh, I have a couple of, of
+
+00:08:09.880 --> 00:08:17.160
+meetings with my PM partners and, and those have become sort of, um, a, a
+
+00:08:17.160 --> 00:08:22.160
+mutual back each other off of the edge of the cliff. Cause we're going crazy.
+
+00:08:22.160 --> 00:08:28.840
+Cause of this, this meeting games, um, a misery loves companies sort of one-on-one.
+
+00:08:29.590 --> 00:08:34.110
+Anyway, I want to follow up and it's not just mocking you that I love.
+
+00:08:34.110 --> 00:08:37.270
+It's in finding new ways and new venues to mock you, which really
+
+00:08:37.270 --> 00:08:40.830
+delights me and keeps me going strong in this world of code.
+
+00:08:40.830 --> 00:08:44.510
+Right. I do try to give you something new to work with.
+
+00:08:45.430 --> 00:08:49.350
+Yeah. Yeah. And the new avenue this week, it says things that could only
+
+00:08:49.350 --> 00:08:53.670
+happen in the boredom that comes with, uh, what do I do when I'm trying
+
+00:08:53.670 --> 00:08:58.110
+to keep myself away from my computer, but I'm still near my phone with COVID.
+
+00:08:58.430 --> 00:09:01.550
+I want to keep myself young at heart, despite the fact that I'm
+
+00:09:01.550 --> 00:09:04.470
+chronologically older than you, I do try to remain younger.
+
+00:09:04.870 --> 00:09:07.750
+There's this thing you may have heard of it's called Instagram.
+
+00:09:09.330 --> 00:09:12.770
+And I started an Instagram account for the AB testing podcast.
+
+00:09:13.770 --> 00:09:16.690
+And your picture of your finger will be there in about an hour.
+
+00:09:17.130 --> 00:09:18.250
+Why does it take an hour?
+
+00:09:18.730 --> 00:09:22.330
+Because I'm, I'm talking to you. I'm busy for a little while.
+
+00:09:22.850 --> 00:09:28.370
+I haven't posted it yet. I just took the picture by the time you hear this.
+
+00:09:29.010 --> 00:09:32.570
+You, you will understand what the picture is for. Gotcha.
+
+00:09:33.450 --> 00:09:38.130
+Right. Right. The picture will go out ahead of people hearing this.
+
+00:09:38.130 --> 00:09:42.250
+It's kind of like time travel, but it's really just because it takes me
+
+00:09:42.250 --> 00:09:45.250
+some time to make me sound better.
+
+00:09:45.250 --> 00:09:48.730
+And you sound worse before I released the podcast to the public.
+
+00:09:49.370 --> 00:09:50.170
+I understand.
+
+00:09:50.810 --> 00:09:55.370
+But if I remember, right, if I remember, right, if I remember, remember,
+
+00:09:55.370 --> 00:10:01.870
+I, if I will put our Instagram link in the show notes for the
+
+00:10:01.990 --> 00:10:06.930
+podcast release when it goes out on Monday.
+
+00:10:07.820 --> 00:10:12.540
+So today's the 15th Monday's the, that would make Monday the 18th.
+
+00:10:12.980 --> 00:10:18.070
+Yes. Math. So on Tuesday, the 19th, moving through my calendar,
+
+00:10:18.390 --> 00:10:25.150
+I am kicking off the spring 2020 online test conference,
+
+00:10:25.950 --> 00:10:29.110
+free virtual conference, three days.
+
+00:10:29.750 --> 00:10:35.230
+I'm going to be there talking about, Oh God, here he goes again.
+
+00:10:35.270 --> 00:10:42.300
+Modern testing. So what I'm finding is I do not like giving the same talk twice.
+
+00:10:42.900 --> 00:10:47.300
+And when I gave a talk at the test bash conference, which was,
+
+00:10:48.520 --> 00:10:51.520
+I don't know if you got to see any of that, but what a fantastic idea.
+
+00:10:51.520 --> 00:10:53.880
+They did a 24 hour marathon conference.
+
+00:10:55.040 --> 00:10:58.160
+Some people tried to stay up for all of it and watched it all live.
+
+00:10:59.000 --> 00:11:03.560
+They did. I cannot believe how well put together they were.
+
+00:11:03.640 --> 00:11:07.820
+It was really cool. But Tristan, who's awesome,
+
+00:11:07.820 --> 00:11:13.580
+who introduced me was very keen to keep repeating a brand new talk.
+
+00:11:13.580 --> 00:11:16.260
+And it was a brand new talk. Some repeated concepts, brand new talk.
+
+00:11:16.820 --> 00:11:21.980
+I am off on a tangent, but the point is is modern testing is getting less and
+
+00:11:21.980 --> 00:11:26.180
+less modern. Yes. When I first talked about it a couple of years ago,
+
+00:11:26.180 --> 00:11:28.740
+I was afraid that people were going to throw shit at me.
+
+00:11:29.180 --> 00:11:32.700
+And it turned out that they didn't. Some people thought I was weird.
+
+00:11:32.740 --> 00:11:35.660
+Some people said, yeah, we're already doing this. This is really cool.
+
+00:11:36.700 --> 00:11:40.340
+And it's kind of taken on a little bit of a life of its own, especially over,
+
+00:11:40.340 --> 00:11:42.140
+I mean, more and more and more and more.
+
+00:11:43.340 --> 00:11:46.380
+And so I'm not going to explain what it is and why it works,
+
+00:11:46.540 --> 00:11:48.100
+maybe for three minutes,
+
+00:11:48.700 --> 00:11:53.570
+but I just want to tell a lot of stories from what it's meant to
+
+00:11:53.570 --> 00:11:58.060
+me over the last, oh God, well,
+
+00:11:58.060 --> 00:11:59.620
+three years at Unity for sure.
+
+00:12:00.300 --> 00:12:02.940
+Some things I've heard from the three on how they're doing it,
+
+00:12:02.940 --> 00:12:04.780
+what Lisa Crispin is doing with it right now.
+
+00:12:05.060 --> 00:12:08.980
+Do you know Lisa and Janet are going to be giving a talk on modern testing?
+
+00:12:09.060 --> 00:12:12.980
+No. Awesome. So Lisa, Lisa, ping me about that.
+
+00:12:13.020 --> 00:12:16.260
+I don't have the details in front of me and maybe it's not announced.
+
+00:12:16.260 --> 00:12:17.980
+So maybe I shouldn't say that, but I will,
+
+00:12:18.060 --> 00:12:21.900
+but we'll definitely promote the heck out of that. I'm excited about that.
+
+00:12:21.900 --> 00:12:24.740
+There's all kinds of cool stuff going on.
+
+00:12:25.660 --> 00:12:28.340
+And so by the time you hear this on Monday,
+
+00:12:28.340 --> 00:12:33.060
+hopefully you listen to this the day it comes out because then you can set your
+
+00:12:33.060 --> 00:12:35.820
+alarm clock to for Tuesday,
+
+00:12:36.580 --> 00:12:39.940
+which is one day after Monday and Brent will never get a chance to talk.
+
+00:12:39.940 --> 00:12:42.780
+Cause I am full of saying stupid stuff. Anyway, Tuesday,
+
+00:12:42.780 --> 00:12:46.740
+online test conference, yada, yada, yada. Uh,
+
+00:12:46.780 --> 00:12:49.580
+that's it. So Instagram, that's it for my notes.
+
+00:12:49.580 --> 00:12:52.620
+So Lisa, Janet, are they doing that? It was part of what you see.
+
+00:12:53.690 --> 00:12:54.850
+Do you remember the, uh,
+
+00:12:55.050 --> 00:13:00.050
+the post they did on their take on the modern testing principles on their blog?
+
+00:13:00.690 --> 00:13:04.400
+They're doing a talk based on that. She didn't say which conference.
+
+00:13:04.400 --> 00:13:08.000
+They just said they're doing a talk based on that blog post. And they,
+
+00:13:08.040 --> 00:13:09.680
+she was asking for, uh,
+
+00:13:09.720 --> 00:13:11.920
+the short version of the principles that they could use those.
+
+00:13:12.600 --> 00:13:14.840
+Yeah. Which version of the short version?
+
+00:13:15.360 --> 00:13:19.560
+I think I used your, I think we're aligned on the short ones.
+
+00:13:20.600 --> 00:13:22.720
+I think we're darn close.
+
+00:13:23.760 --> 00:13:27.680
+So business first bottlenecks out, always learn and improve lead,
+
+00:13:27.680 --> 00:13:32.080
+equality culture, customer is King data, trumps, intuition. Everyone can test.
+
+00:13:33.530 --> 00:13:35.330
+I think my last one is different.
+
+00:13:36.480 --> 00:13:37.640
+That's all right. Yeah, it's all right.
+
+00:13:38.160 --> 00:13:42.040
+It's the gist and we're not trying to be prescriptive with these.
+
+00:13:42.440 --> 00:13:43.920
+We're just like, here's what we see.
+
+00:13:43.920 --> 00:13:47.160
+And to be fully clear for our own egos,
+
+00:13:47.520 --> 00:13:49.880
+this stuff that we're calling modern testing that is happening,
+
+00:13:50.120 --> 00:13:51.320
+it was going to happen anyway.
+
+00:13:52.420 --> 00:13:53.500
+Brit and I could not,
+
+00:13:53.540 --> 00:13:57.300
+it would not exist on the planet and the same things would be happening.
+
+00:13:58.140 --> 00:13:58.980
+We are two people.
+
+00:14:01.380 --> 00:14:06.300
+We are historians documenting the path of this thing across
+
+00:14:06.580 --> 00:14:08.910
+across the industry. So that's it.
+
+00:14:09.820 --> 00:14:11.700
+Yeah. I, I'm looking at that,
+
+00:14:11.860 --> 00:14:15.580
+looking at my penultimate or my ultimate, uh,
+
+00:14:15.620 --> 00:14:19.510
+my last blog post that was almost a year ago.
+
+00:14:19.510 --> 00:14:22.470
+And that's the one where I talk about the,
+
+00:14:22.750 --> 00:14:26.750
+where I do my final post on the, the modern testing principles.
+
+00:14:27.230 --> 00:14:32.180
+So my last one, the way I pivoted it, you said anyone can test.
+
+00:14:32.580 --> 00:14:35.860
+Yeah. But I pivoted is embrace the fear.
+
+00:14:36.620 --> 00:14:41.060
+Oh yeah. Yeah. That's a little, that's true. A little bit more abstract.
+
+00:14:41.700 --> 00:14:43.420
+Yeah. I see it. Either one.
+
+00:14:44.670 --> 00:14:48.910
+Did you see, uh, Abby, uh, tagged us this morning in a, in a post.
+
+00:14:49.620 --> 00:14:50.980
+Did you happen to see this?
+
+00:14:51.460 --> 00:14:55.060
+Uh, Abby bangs or was looking at a preview of a book on service,
+
+00:14:55.300 --> 00:14:56.340
+service level objectives,
+
+00:14:56.340 --> 00:15:00.540
+which is I'm looking forward to taking a look at it because it's something that,
+
+00:15:00.740 --> 00:15:05.580
+uh, we are prob I'm guessing I will be asked to put together in the near
+
+00:15:05.580 --> 00:15:09.020
+feature. So help is always appreciated.
+
+00:15:10.140 --> 00:15:14.020
+But there's a quote from the book says QA, this is your last stop.
+
+00:15:14.100 --> 00:15:17.500
+This is the one group that will be most concerned about what these changes
+
+00:15:17.500 --> 00:15:20.860
+mean for them. And I don't have the context of that,
+
+00:15:20.900 --> 00:15:25.380
+but she says that it implies testing hasn't evolved past the defensive stance of
+
+00:15:25.380 --> 00:15:28.300
+you can't automate my job away and we'll fight innovation.
+
+00:15:28.860 --> 00:15:33.060
+Wish I could properly disagree. And which is the stance that we take as well.
+
+00:15:33.340 --> 00:15:36.660
+It's a, one of the things I acknowledged in my,
+
+00:15:36.740 --> 00:15:40.060
+I bring up often is that we do live in a bubble as much as we see this
+
+00:15:40.060 --> 00:15:43.220
+happening, as much as it's common sense to what we're doing,
+
+00:15:43.820 --> 00:15:48.180
+there's a large part of the overall software industry that live in this world
+
+00:15:48.180 --> 00:15:53.540
+where test last testing quality in testers is purely
+
+00:15:53.580 --> 00:15:54.820
+an information provider.
+
+00:15:55.220 --> 00:15:58.740
+Testing is something you do if you're not good enough to do the other work in
+
+00:15:58.740 --> 00:16:01.810
+some cases exists a lot. And,
+
+00:16:01.850 --> 00:16:06.370
+and you and I have both seen numerous examples of people digging in their
+
+00:16:06.370 --> 00:16:10.310
+heels and say, no, this is dumb. My job,
+
+00:16:10.310 --> 00:16:12.810
+isn't going away. I'll always be necessary.
+
+00:16:13.730 --> 00:16:18.090
+I saw yet another Twitter feed last week that we explored together.
+
+00:16:18.090 --> 00:16:22.850
+I think it was last week. Oh look, so-and-so company had a quality problem.
+
+00:16:22.970 --> 00:16:27.560
+Their testers must be bad. It's like, that is the weirdest,
+
+00:16:28.080 --> 00:16:30.560
+it's such a ridiculous non sequitur for me to say that.
+
+00:16:30.960 --> 00:16:35.800
+I'm enjoying your snarky comments every now and again on Twitter.
+
+00:16:36.200 --> 00:16:38.560
+I've been trying to keep the snark.
+
+00:16:39.080 --> 00:16:42.560
+One I don't tweet as much anymore because I just don't feel like it.
+
+00:16:42.720 --> 00:16:47.600
+But when I do, I kind of tweet like three snarks against software for every one
+
+00:16:47.600 --> 00:16:52.380
+snark against Trump. That way people, you know, I don't want to be too political,
+
+00:16:53.420 --> 00:16:55.660
+but sometimes he's just so stupid. I have to point it out.
+
+00:16:55.700 --> 00:17:00.260
+We have no choice this year on that one, but no, what the,
+
+00:17:00.260 --> 00:17:05.140
+the thing I've been finding amusing is your sort of
+
+00:17:05.140 --> 00:17:09.740
+backhanded queries around, holy crap,
+
+00:17:09.740 --> 00:17:14.700
+did I just go into a time machine? Is it suddenly 1992?
+
+00:17:15.260 --> 00:17:19.420
+Yeah, I might've said something like that. Right. But that was to be fair,
+
+00:17:19.460 --> 00:17:23.540
+to be fair. I had not had my daily cap full of bleach by then.
+
+00:17:23.540 --> 00:17:27.700
+So I wasn't quite my full self. Yeah. Going back to Abby's comments,
+
+00:17:28.220 --> 00:17:31.340
+right? I have seen over and over and over again,
+
+00:17:31.340 --> 00:17:36.920
+people digging in their heels. However,
+
+00:17:37.560 --> 00:17:41.640
+when the bulldozer of modern change
+
+00:17:42.940 --> 00:17:46.220
+starts heading in their direction,
+
+00:17:47.700 --> 00:17:53.280
+I have not observed a single person who
+
+00:17:53.960 --> 00:17:57.740
+has successfully stopped it. Right.
+
+00:17:57.740 --> 00:18:01.100
+So the people who are digging in their heels, in my humble opinion,
+
+00:18:01.100 --> 00:18:06.100
+they're operating from a purely theoretical standpoint at this point in time.
+
+00:18:07.680 --> 00:18:10.960
+No, no, absolutely not.
+
+00:18:11.160 --> 00:18:16.700
+They're protecting the craft. Yeah. Hashtag sarcasm.
+
+00:18:17.420 --> 00:18:21.820
+Hashtag baloney. All right. Uh,
+
+00:18:21.860 --> 00:18:25.780
+was there anything else I wanted to talk about? Maybe one other,
+
+00:18:27.250 --> 00:18:28.290
+do I want to get in the mail bag?
+
+00:18:28.290 --> 00:18:30.490
+Do you want me to talk about one other thing and get your take on it?
+
+00:18:30.970 --> 00:18:35.900
+I have a random topic that wasn't on our list. So I can't remember.
+
+00:18:35.900 --> 00:18:41.480
+I'm pretty sure in our retrospective,
+
+00:18:42.970 --> 00:18:48.190
+wait, do we do retrospectives before David Bishop or after before my brain is
+
+00:18:48.270 --> 00:18:52.110
+completely food bar. And by the way,
+
+00:18:52.110 --> 00:18:54.430
+by the way I've got his book.
+
+00:18:55.290 --> 00:18:58.010
+I haven't gotten to the meaty stuff.
+
+00:18:58.010 --> 00:19:03.010
+I really want to understand how he measures what we call it vorticity,
+
+00:19:03.850 --> 00:19:05.370
+agile vorticity. Yeah.
+
+00:19:06.650 --> 00:19:11.450
+But it is, it is deeply research driven,
+
+00:19:11.450 --> 00:19:16.330
+which is great. Unlike say Nicole's book,
+
+00:19:16.490 --> 00:19:19.530
+which we also know is deeply research driven.
+
+00:19:20.530 --> 00:19:25.940
+His reads a bit like a doctoral thesis,
+
+00:19:28.220 --> 00:19:33.220
+which is a choice. I'm not placing judgment either way.
+
+00:19:34.060 --> 00:19:36.020
+Uh, but I haven't,
+
+00:19:36.380 --> 00:19:40.360
+haven't gotten to the interesting bits yet.
+
+00:19:42.060 --> 00:19:44.580
+All right. Well, keep us posted as you go along.
+
+00:19:44.580 --> 00:19:46.860
+I will do. I'm sure that's critical.
+
+00:19:50.150 --> 00:19:55.470
+So once, once I get to the section, if I'm able to, um,
+
+00:19:55.510 --> 00:19:58.790
+with, with my background in agile as it stands,
+
+00:19:58.790 --> 00:20:02.830
+if I'm able to sort of translate it to our, our listeners, I'll do so.
+
+00:20:03.690 --> 00:20:04.570
+Excellent. Excellent.
+
+00:20:04.650 --> 00:20:09.130
+I read the coaching habit this weekend. I read, I finished upstream,
+
+00:20:09.210 --> 00:20:13.210
+which is a book by chip and Dan Heath about very little about software,
+
+00:20:13.210 --> 00:20:16.610
+but about putting preventative techniques in early, the,
+
+00:20:16.610 --> 00:20:19.850
+the general upstream thing. Very good book. I like all their books.
+
+00:20:19.850 --> 00:20:24.670
+They did made the stick power of moments. So it was called anyway,
+
+00:20:24.710 --> 00:20:27.190
+I've read all their books. They're all very good. Lots of research in there,
+
+00:20:27.190 --> 00:20:30.710
+but they read pretty easy. Then I read the coaching habit this weekend,
+
+00:20:30.710 --> 00:20:34.830
+which I highly recommend for people interested in not just the test,
+
+00:20:34.830 --> 00:20:36.230
+coach or the test consultant.
+
+00:20:36.230 --> 00:20:40.630
+Cause I think more and more as I hear as I study like that book,
+
+00:20:41.510 --> 00:20:42.470
+uh, there is a difference.
+
+00:20:42.470 --> 00:20:45.500
+There is asking questions and growing people,
+
+00:20:45.500 --> 00:20:49.060
+trying to change your behavior and then giving people advice and pointers and
+
+00:20:49.060 --> 00:20:52.340
+tools. And those are coaching versus consulting respectively.
+
+00:20:52.380 --> 00:20:57.180
+So highly recommend that. And then I'm sure in the retrospective episode,
+
+00:20:57.180 --> 00:21:01.180
+we talked about the concept of psychological safety, right? Didn't me? Yes.
+
+00:21:01.300 --> 00:21:03.140
+It's like this blameless culture.
+
+00:21:04.360 --> 00:21:08.880
+And I wanted to share one thing I do in my job, which is, uh,
+
+00:21:08.920 --> 00:21:13.920
+and I should probably tell a story about this at online test conference is there's
+
+00:21:14.720 --> 00:21:19.200
+this little teeny part of my job where a half hour, twice a week,
+
+00:21:19.200 --> 00:21:21.040
+once for America's once for Europe,
+
+00:21:21.480 --> 00:21:24.440
+I run this thing called the product engineering sink.
+
+00:21:25.040 --> 00:21:28.440
+And all it is is anyone time across our organization,
+
+00:21:28.760 --> 00:21:33.760
+we have about 60 to 70 different customer impacting projects in flight.
+
+00:21:35.520 --> 00:21:37.760
+Things we think are worth tracking at a global level.
+
+00:21:39.210 --> 00:21:44.210
+What I do in this sink is certainly don't go through all 70 lines and talk about
+
+00:21:44.730 --> 00:21:46.450
+what's going on here. What's your status?
+
+00:21:46.730 --> 00:21:49.810
+That's uh, because that would be super boring and super ineffectual.
+
+00:21:50.520 --> 00:21:54.080
+What people do throughout the week is they add projects,
+
+00:21:54.080 --> 00:21:57.320
+they mark projects as either complete, they're done.
+
+00:21:58.400 --> 00:22:02.280
+New projects go into planning and then there's a status where projects could be
+
+00:22:02.280 --> 00:22:05.120
+green, yellow or red. Green means everything's good on track.
+
+00:22:05.120 --> 00:22:06.520
+We are on track for the target date.
+
+00:22:06.960 --> 00:22:10.640
+Yellow means we are on track for the target date,
+
+00:22:10.660 --> 00:22:14.000
+but there is some risk that's worth talking about. We want to share this.
+
+00:22:14.480 --> 00:22:18.120
+And red means, Hey, some stuff came up. The date's going to need to change.
+
+00:22:19.170 --> 00:22:23.210
+Before I used to use Google sheets and I used to go through all the history.
+
+00:22:23.210 --> 00:22:27.030
+It would take me another half hour before each meeting to gather all the
+
+00:22:27.030 --> 00:22:29.670
+things I want to talk about by looking at change history.
+
+00:22:29.990 --> 00:22:34.790
+We recently changed over to air table, which is, this is going to sound harsh.
+
+00:22:35.110 --> 00:22:38.430
+It's a relational database, but it's kind of like an online version of access.
+
+00:22:39.070 --> 00:22:43.830
+Okay. For better or for worse. Uh, and it,
+
+00:22:43.830 --> 00:22:47.190
+but it actually makes it a lot easier for me just to create queries that show
+
+00:22:47.190 --> 00:22:49.900
+all the things I want to talk about. But,
+
+00:22:49.940 --> 00:22:53.020
+and we have this meeting takes a half hour and we're unable to go through all
+
+00:22:53.020 --> 00:22:56.860
+of the delays and we encourage a no blame culture. We really,
+
+00:22:56.860 --> 00:23:01.860
+this meeting is more about reemphasizing our culture of psychological
+
+00:23:01.880 --> 00:23:05.140
+safety and it's okay to be late. We do.
+
+00:23:05.220 --> 00:23:10.130
+If we talked about our P 50 estimates before we have a rule in our org where only
+
+00:23:10.150 --> 00:23:11.770
+engineers can give dates.
+
+00:23:12.660 --> 00:23:16.220
+And so people have freaked out when I said this at the test bash,
+
+00:23:16.340 --> 00:23:21.060
+test bash home and only engineers can give dates. And so,
+
+00:23:21.060 --> 00:23:23.340
+but they're, and we require them to give a P 50 date,
+
+00:23:23.340 --> 00:23:26.100
+the date they believe has a 50% probability of being hit.
+
+00:23:26.500 --> 00:23:29.180
+And we're pretty accurate on that.
+
+00:23:29.940 --> 00:23:33.900
+Half of our projects finish on time or early half finish late.
+
+00:23:34.380 --> 00:23:36.980
+The things that finished late probably finished some of the fish little later
+
+00:23:36.980 --> 00:23:39.060
+than I want, but that's a different, different challenge.
+
+00:23:40.180 --> 00:23:45.920
+But the interesting thing is we've started to get a lot of people visiting this
+
+00:23:47.880 --> 00:23:52.880
+meeting from across the company because they're trying to figure out how they
+
+00:23:53.000 --> 00:23:56.040
+want to run engineering in their orgs.
+
+00:23:56.440 --> 00:24:01.820
+And the challenge I have is this is where I want to throw something out to you
+
+00:24:03.740 --> 00:24:08.740
+is I think the reason this meeting works the way it does and the reason it's
+
+00:24:08.940 --> 00:24:13.940
+effective is cause we already have a culture where it's okay to make mistakes
+
+00:24:15.860 --> 00:24:16.940
+and it's okay to be wrong.
+
+00:24:16.940 --> 00:24:19.640
+I think we don't embrace failure as much as we should,
+
+00:24:19.820 --> 00:24:23.100
+but people are happy to be transparent.
+
+00:24:23.100 --> 00:24:24.540
+They know it's okay to be transparent.
+
+00:24:24.540 --> 00:24:27.460
+They know it's okay to miss something and to report risk.
+
+00:24:27.740 --> 00:24:30.620
+They're very comfortable doing it. Uh, every week,
+
+00:24:30.660 --> 00:24:32.580
+there's probably of those 70 projects,
+
+00:24:32.600 --> 00:24:36.690
+there's 30 to 40 needs to talk about, you know,
+
+00:24:36.690 --> 00:24:38.410
+20 for each for America and Europe.
+
+00:24:38.930 --> 00:24:43.510
+And what I see is a lot more people marking things yellow because they want to
+
+00:24:43.530 --> 00:24:46.470
+talk about the risk and share what's going on, which I think is fantastic.
+
+00:24:47.230 --> 00:24:50.950
+My worry is, is why I'm not prescriptive about like, oh,
+
+00:24:50.950 --> 00:24:55.510
+here's the thing every company should do because while I said,
+
+00:24:55.510 --> 00:24:59.110
+and I'm on a long diatribe here, I should have written my notes out while it
+
+00:24:59.110 --> 00:25:04.240
+does become a place for us to emphasize our culture.
+
+00:25:05.790 --> 00:25:10.790
+I don't know how you start this meeting if you don't have that culture already.
+
+00:25:11.390 --> 00:25:12.750
+Have you had any,
+
+00:25:12.750 --> 00:25:15.750
+so my question for you finally is what do you think?
+
+00:25:15.790 --> 00:25:19.190
+Do you think you can use this meeting to drive culture or do you think you
+
+00:25:19.190 --> 00:25:22.350
+need the culture first in order for a meeting like this to work?
+
+00:25:22.710 --> 00:25:26.710
+You can do it either way. All right. Next question. All right. Yeah.
+
+00:25:27.350 --> 00:25:30.230
+Would you like to expand before we go on to our, our mailbag?
+
+00:25:30.270 --> 00:25:33.590
+Well, I get to pull out the mailbag sound effect this time. The, so hurry.
+
+00:25:34.430 --> 00:25:39.210
+But it depends on your leader, on your, your leadership there, right?
+
+00:25:39.250 --> 00:25:43.730
+If you, if you don't have the, this culture already in place,
+
+00:25:44.560 --> 00:25:49.560
+then what you end up having is everyone going,
+
+00:25:49.560 --> 00:25:54.710
+Oh, Oh, we have to tell the leader that we're green, even though we're not.
+
+00:25:55.800 --> 00:25:59.680
+And I've seen over and over and over and over and over again,
+
+00:25:59.680 --> 00:26:05.670
+that when the leaders step up and they over,
+
+00:26:09.320 --> 00:26:10.880
+they go over the top,
+
+00:26:11.080 --> 00:26:16.080
+when someone has the cajunas to come in and say,
+
+00:26:17.580 --> 00:26:22.640
+we are red and instead of pointing the finger and going,
+
+00:26:23.600 --> 00:26:29.210
+taking an approach of, well, that's why I hired you. It's your job,
+
+00:26:29.210 --> 00:26:31.490
+not mine. Figure out how to get on red.
+
+00:26:33.070 --> 00:26:38.100
+The, they instead go over the top and they show appreciation for being brave
+
+00:26:40.460 --> 00:26:42.140
+enough to tell them the truth.
+
+00:26:43.240 --> 00:26:47.240
+Yeah. And they do so explicitly reinforced the behavior you want to see.
+
+00:26:47.240 --> 00:26:51.360
+So that's something that I know my boss did before I got there,
+
+00:26:51.360 --> 00:26:54.800
+but like this week, for example, we had something off the rails.
+
+00:26:55.200 --> 00:26:57.880
+It was just a mess. And they're explaining, I said,
+
+00:26:57.920 --> 00:27:01.640
+and the answer was thanks for bringing that up. Sounds like a pretty big deal.
+
+00:27:01.720 --> 00:27:03.760
+Here's the worst criticism we get in there.
+
+00:27:04.600 --> 00:27:09.330
+Let's get the team together and do a retro on that one. That's it. That,
+
+00:27:09.370 --> 00:27:12.050
+that's the worst punishment you can have for, for being delayed.
+
+00:27:13.100 --> 00:27:15.420
+Having to add to your schedule,
+
+00:27:15.420 --> 00:27:17.220
+something that should already be on your schedule.
+
+00:27:19.580 --> 00:27:20.420
+Yeah. Okay.
+
+00:27:20.780 --> 00:27:24.220
+This sarcasm aside. Yeah. It's like, yeah. And it's, there's no argument.
+
+00:27:24.220 --> 00:27:28.580
+It's like, yeah, let's, because like production incidents, uh,
+
+00:27:28.620 --> 00:27:33.620
+errors in planning are things they're prime opportunities to learn.
+
+00:27:35.170 --> 00:27:38.890
+You know, my big thing is I just had a copy. I moved it so I could have a place
+
+00:27:38.890 --> 00:27:43.700
+for my coffee, but I've been rereading the fifth discipline by Peter Sengay.
+
+00:27:43.740 --> 00:27:47.160
+Did you ever read that? Brits turning around, looking at,
+
+00:27:47.520 --> 00:27:50.080
+he has a virtual background, so I can't tell what he's looking at.
+
+00:27:50.440 --> 00:27:54.280
+Now he's disappeared. He's wearing fricking pajama pants, everyone.
+
+00:27:55.650 --> 00:27:58.570
+Like a true, like a true work from home warrior.
+
+00:28:01.120 --> 00:28:04.440
+So yeah, I, the exact book I have, yeah, I have,
+
+00:28:04.480 --> 00:28:08.440
+I don't have the hard to cover. I have the paperback.
+
+00:28:08.480 --> 00:28:11.640
+Really? I would have thought you would have had the Kindle one.
+
+00:28:12.240 --> 00:28:15.520
+Yeah. It's one of the books I bought before cause that book is old now.
+
+00:28:15.840 --> 00:28:19.560
+I bought it before Kindles. Oh really? Yep.
+
+00:28:20.630 --> 00:28:23.670
+It emphasizes a lot about the fifth discipline or about the learning
+
+00:28:23.670 --> 00:28:27.750
+organization and building a learning organization. If I recall correctly,
+
+00:28:28.270 --> 00:28:33.470
+it's one of the first places I read about the five wise 1990 told you it was
+
+00:28:33.470 --> 00:28:37.920
+old. Wow. Still very irrelevant.
+
+00:28:37.960 --> 00:28:41.320
+I did not realize how old this is. I mean, it's interesting.
+
+00:28:42.400 --> 00:28:48.160
+I spent a lot of time thinking through right,
+
+00:28:48.480 --> 00:28:51.800
+how generations progress, right? The, the,
+
+00:28:52.920 --> 00:28:58.540
+in how knowledge progresses. I find it fascinating.
+
+00:28:59.600 --> 00:29:03.360
+Right. There's that concept that if you don't learn from history,
+
+00:29:03.360 --> 00:29:06.720
+you're doomed to repeat it. I'd absolutely think that that's true.
+
+00:29:06.720 --> 00:29:11.920
+But I do see things like, like the fifth discipline
+
+00:29:12.670 --> 00:29:18.190
+being somewhat timeless. And I don't know,
+
+00:29:18.630 --> 00:29:23.070
+should that be worrisome? Shouldn't, shouldn't learning organization,
+
+00:29:24.520 --> 00:29:29.960
+got 30 years after this book. I mean,
+
+00:29:30.160 --> 00:29:35.020
+interestingly enough, the book is,
+
+00:29:35.060 --> 00:29:38.580
+is greater than 50% of both of our ages.
+
+00:29:40.160 --> 00:29:43.240
+I didn't even, I was still in college when this thing came out.
+
+00:29:44.730 --> 00:29:45.250
+And we,
+
+00:29:45.250 --> 00:29:49.130
+we are talking about the dominance of learning organizations and the
+
+00:29:49.130 --> 00:29:54.730
+criticality of it now. And I, I am, yeah,
+
+00:29:54.770 --> 00:29:57.570
+I don't know. I mean, why isn't this second nature,
+
+00:29:57.570 --> 00:30:02.050
+particularly in, in our industry that pogles me. I find that fascinating.
+
+00:30:03.170 --> 00:30:08.210
+Because power trips and command and control still in many places
+
+00:30:08.210 --> 00:30:12.370
+rule. Yeah. But we've said over and over again, uh,
+
+00:30:12.890 --> 00:30:17.990
+right. This is knowledge work. Uh, in, in, in our industry,
+
+00:30:17.990 --> 00:30:24.450
+it is knowledge work and, and knowledge work and
+
+00:30:24.450 --> 00:30:27.930
+learning, uh, go hand to hand in,
+
+00:30:28.010 --> 00:30:33.390
+in why it is still so much of a struggle. Uh,
+
+00:30:33.470 --> 00:30:38.190
+yeah, you may be right. It may also be not invented here syndrome dominant,
+
+00:30:38.910 --> 00:30:42.510
+right? The things that we've, we've heard over and over again,
+
+00:30:42.670 --> 00:30:46.310
+the deadly combination of command and control and
+
+00:30:47.310 --> 00:30:50.590
+experience as a title, I call it. Uh, and that's,
+
+00:30:51.490 --> 00:30:56.050
+I've been here for 20,000 years. So I know.
+
+00:30:56.920 --> 00:30:59.720
+Yeah. Yeah. It's, uh, I didn't mean, I, it sounds like,
+
+00:30:59.760 --> 00:31:00.720
+I feel like I kind of, uh,
+
+00:31:01.360 --> 00:31:04.920
+blew your mind a little bit by reminding you how old that book was. Yeah.
+
+00:31:05.040 --> 00:31:05.760
+I mean, there's a couple.
+
+00:31:05.760 --> 00:31:09.080
+So between that and making funny your finger, I've had a pretty good Friday.
+
+00:31:09.400 --> 00:31:12.720
+I'm glad to, I'm glad to help. Uh, again,
+
+00:31:12.720 --> 00:31:16.360
+it's just another Tuesday to me. There is,
+
+00:31:16.360 --> 00:31:20.200
+there's a couple of books that I look at and I go,
+
+00:31:20.680 --> 00:31:24.720
+this is timeless and will remain timeless forever.
+
+00:31:25.820 --> 00:31:31.510
+That is because the concepts are so abstract.
+
+00:31:31.510 --> 00:31:31.750
+It's,
+
+00:31:31.750 --> 00:31:35.390
+it's really difficult to sort of make it part of muscle memory.
+
+00:31:35.390 --> 00:31:39.950
+And those would be things like, um, Christopher Alexander, uh,
+
+00:31:39.950 --> 00:31:44.870
+the timeless way of building that bad boy is going to be relevant
+
+00:31:45.190 --> 00:31:49.810
+forever. Um, I forget the author, but systematics,
+
+00:31:49.810 --> 00:31:54.170
+anything heavy to do with systems thinking systems thinking just does not come
+
+00:31:54.170 --> 00:31:58.440
+naturally being a learning organization. Yeah. I don't know.
+
+00:31:59.080 --> 00:32:02.680
+Yeah. Yeah. Should we whip through a couple of mailbag questions? And, uh,
+
+00:32:03.120 --> 00:32:07.280
+I need the dust off is a lot of dust piled up on the mailbag sound effect.
+
+00:32:07.440 --> 00:32:10.240
+Okay, go for it. So I'm going to need to polish it a little,
+
+00:32:10.480 --> 00:32:13.160
+but I'll plug it in later. It sounds like this.
+
+00:32:18.840 --> 00:32:23.040
+I don't recall it sounding quite like that. Yeah. Yeah. Cause that's because of the
+
+00:32:23.040 --> 00:32:27.240
+dust. Gotcha. But our listeners will hear a better version.
+
+00:32:28.080 --> 00:32:31.840
+All right. So what's the mailbag question? This first one,
+
+00:32:32.240 --> 00:32:36.240
+first one comes from little Johnny in Madison,
+
+00:32:36.240 --> 00:32:39.520
+Wisconsin. And he wants to make a request.
+
+00:32:40.000 --> 00:32:42.880
+This one goes out to his little sister who's no, uh,
+
+00:32:42.920 --> 00:32:47.040
+this is from already and it says more for Brent, I guess,
+
+00:32:47.040 --> 00:32:49.360
+but I'm going to jump in on this one as well. Okay.
+
+00:32:49.520 --> 00:32:53.960
+How does CD continuous delivery look like in machine learning?
+
+00:32:54.730 --> 00:32:58.210
+What are the fundamental differences with traditional CD?
+
+00:32:59.080 --> 00:33:04.070
+What traditional CD has CD been around long enough to
+
+00:33:04.350 --> 00:33:08.310
+have 10 years. Okay. So what's traditional CD?
+
+00:33:09.120 --> 00:33:13.120
+I think what's the difference if any
+
+00:33:13.480 --> 00:33:18.680
+between CD in a machine learning world versus CD and like a
+
+00:33:18.680 --> 00:33:19.680
+web service world?
+
+00:33:20.400 --> 00:33:24.070
+Um, I would say from my experience,
+
+00:33:24.070 --> 00:33:28.390
+the most critical difference is CD is required for
+
+00:33:28.390 --> 00:33:34.070
+ML. So the issue with ML is it's rarely the case.
+
+00:33:35.600 --> 00:33:39.760
+So here's an ML architecture in a nutshell. Okay.
+
+00:33:39.760 --> 00:33:44.720
+Usually there is a thing called a model, a model.
+
+00:33:44.720 --> 00:33:48.920
+You can think of it as a function that takes certain inputs and outputs,
+
+00:33:49.520 --> 00:33:53.920
+a prediction or a classification or whatever. It's a pure,
+
+00:33:54.400 --> 00:33:57.360
+in the old world, we would have called it, um,
+
+00:33:57.800 --> 00:34:00.760
+belonging to the business logic layer. Okay.
+
+00:34:01.360 --> 00:34:06.880
+But then you need a host. You need something that say a rest API
+
+00:34:06.920 --> 00:34:11.680
+or something that you can receive a call from the outside world,
+
+00:34:12.760 --> 00:34:17.560
+and then pass it to your model and return it back. Now,
+
+00:34:20.200 --> 00:34:24.240
+unless your model is self
+
+00:34:24.720 --> 00:34:29.880
+learning, meaning you can deploy it once and, uh,
+
+00:34:29.920 --> 00:34:32.720
+you've got the great feedback loop in,
+
+00:34:33.160 --> 00:34:36.480
+and it is constantly adjusting here.
+
+00:34:36.480 --> 00:34:40.880
+You could think of, you could think of say search engines, uh,
+
+00:34:40.920 --> 00:34:42.880
+kind of work this way, uh,
+
+00:34:42.880 --> 00:34:47.560
+where they get instant feedback from the customer, uh,
+
+00:34:47.680 --> 00:34:51.120
+a click through is considered positive.
+
+00:34:51.120 --> 00:34:54.440
+There's multiple things that are considered negative. And then that can be,
+
+00:34:54.640 --> 00:34:57.840
+that can inform the models, um,
+
+00:34:59.170 --> 00:35:03.610
+instant next round of behavior, even for that same query.
+
+00:35:04.250 --> 00:35:07.490
+I haven't done it in a while, uh, but when I last work in Bing,
+
+00:35:07.490 --> 00:35:12.490
+you could take a search term and hit refresh sort of
+
+00:35:12.490 --> 00:35:13.970
+10 times in a row.
+
+00:35:14.490 --> 00:35:18.050
+And at least three of those times would have been an entirely different
+
+00:35:18.050 --> 00:35:22.570
+experience. And that's entirely because it's constantly refreshing.
+
+00:35:23.550 --> 00:35:26.470
+The models that, that, for example,
+
+00:35:26.470 --> 00:35:29.110
+I'm owning right now today, uh,
+
+00:35:29.150 --> 00:35:31.110
+have to be rebuilt, uh,
+
+00:35:31.110 --> 00:35:33.510
+frequently because we have new,
+
+00:35:33.510 --> 00:35:40.640
+we have new data that would affect the
+
+00:35:40.640 --> 00:35:44.040
+performance of those models. Um,
+
+00:35:44.600 --> 00:35:48.520
+an example of the model that I'm working through right now is,
+
+00:35:49.000 --> 00:35:53.010
+is, um, taking, uh,
+
+00:35:53.050 --> 00:35:58.050
+verbatim from customers and trying to guide them to a place where they can,
+
+00:35:59.210 --> 00:36:03.880
+uh, succeed in finding solutions to problems. Um,
+
+00:36:05.090 --> 00:36:09.490
+it's not a search engine. It's more directed than that. However,
+
+00:36:09.490 --> 00:36:10.810
+when, when the,
+
+00:36:10.810 --> 00:36:16.040
+the say Azure has a major outage or a team releases a new product,
+
+00:36:18.360 --> 00:36:19.200
+uh,
+
+00:36:19.560 --> 00:36:24.200
+there isn't enough of that customer verbatim for the model to,
+
+00:36:25.360 --> 00:36:29.960
+to confidently direct the customer towards a new solution.
+
+00:36:30.840 --> 00:36:35.120
+And the solution to that is of course you rebuild the model on a continuous
+
+00:36:35.120 --> 00:36:39.840
+basis so that it relearns the current patterns that customers care about.
+
+00:36:41.730 --> 00:36:46.370
+Uh, the, the benefit of this is it automatically relearns the,
+
+00:36:46.450 --> 00:36:49.370
+often what I will describe it and think of, um,
+
+00:36:50.250 --> 00:36:54.410
+think of any business logic that you may have ever occurred or
+
+00:36:54.690 --> 00:36:55.970
+encountered from dev.
+
+00:36:56.330 --> 00:36:59.610
+That is just the world's most complicated rules engine.
+
+00:36:59.610 --> 00:37:03.760
+They'll call it that it's really just a, you know,
+
+00:37:04.080 --> 00:37:06.800
+50 times nested crappy if statement,
+
+00:37:08.200 --> 00:37:12.360
+if that was critical decision making process to your business,
+
+00:37:12.720 --> 00:37:16.640
+you would need to do CICD because a lot of that complexity would,
+
+00:37:16.720 --> 00:37:20.240
+would time out quickly. It's no different than,
+
+00:37:20.280 --> 00:37:21.600
+than with, with ML,
+
+00:37:21.600 --> 00:37:26.630
+except ML is much more efficient at automatically rewriting that,
+
+00:37:28.990 --> 00:37:33.520
+that deep nested if statement. Alan,
+
+00:37:33.520 --> 00:37:37.680
+time to wake up. I'm done talking. No, no, no, no. Cause I want to, again,
+
+00:37:37.880 --> 00:37:39.400
+I love that we have different,
+
+00:37:39.680 --> 00:37:41.320
+it's not really different opinion and perspective,
+
+00:37:41.320 --> 00:37:46.440
+but I can give a different example, more context, different context. I dunno,
+
+00:37:46.880 --> 00:37:49.760
+it's like retrospectives we had, we largely agree,
+
+00:37:49.760 --> 00:37:52.040
+but there's some different approaches we have. Uh,
+
+00:37:52.080 --> 00:37:57.150
+this isn't an approach difference, but I can talk about recently,
+
+00:37:57.630 --> 00:38:01.550
+this is going to be a larger story around culture as well. Uh,
+
+00:38:01.630 --> 00:38:05.310
+but recently our machine,
+
+00:38:05.310 --> 00:38:07.910
+someone in our machine learning team approached to me,
+
+00:38:07.910 --> 00:38:12.950
+I run our DevOps team and they said, actually pause that first thing is,
+
+00:38:13.950 --> 00:38:16.350
+the answer is they both should have a,
+
+00:38:16.590 --> 00:38:20.380
+the pipeline is going to be different, the CD pipeline,
+
+00:38:20.740 --> 00:38:25.500
+but because there's different tools involved in deploying models. Okay.
+
+00:38:25.740 --> 00:38:26.580
+That's the short answer.
+
+00:38:26.700 --> 00:38:30.140
+So recently someone from our machine learning team came to me and said, Hey,
+
+00:38:30.620 --> 00:38:33.660
+we need to have CD, uh,
+
+00:38:33.740 --> 00:38:35.580
+for our ML stuff.
+
+00:38:36.140 --> 00:38:39.580
+Can you please build that for us and,
+
+00:38:40.060 --> 00:38:44.960
+and own that. And just like with, but my,
+
+00:38:45.040 --> 00:38:47.640
+my DevOps team, just like a QA team, it's like, we don't,
+
+00:38:47.760 --> 00:38:51.100
+we don't like owning stuff. There's not enough of us.
+
+00:38:51.140 --> 00:38:54.740
+We'd be a bottleneck then and Brent, our bottlenecks good or bad.
+
+00:38:54.780 --> 00:38:58.410
+They're great. Yeah. Liar. Bottlenecks are bad.
+
+00:38:58.410 --> 00:39:03.290
+You really get security for your position. And if you play,
+
+00:39:03.290 --> 00:39:05.490
+bottlenecks are bad, play it right.
+
+00:39:05.490 --> 00:39:09.130
+You can totally triple your promotion velocity.
+
+00:39:09.970 --> 00:39:13.810
+They're fantastic. Oh, so anyway, what's fun is actually,
+
+00:39:13.810 --> 00:39:16.210
+we're actually are working with them and, uh,
+
+00:39:16.250 --> 00:39:20.490
+on building their own pipeline,
+
+00:39:20.490 --> 00:39:24.810
+their own deployments, their own stuff in a way that
+
+00:39:26.160 --> 00:39:30.760
+with abstraction and documentation and resiliency that they can maintain it
+
+00:39:30.760 --> 00:39:34.520
+themselves. Uh, so, which is the right thing to do, of course,
+
+00:39:34.520 --> 00:39:37.480
+but just some context around that. It's, they've seen it as essential.
+
+00:39:37.640 --> 00:39:40.600
+We think it's essential. We're going to invest time in it. Uh,
+
+00:39:40.640 --> 00:39:44.200
+it's kind of fun to see how we'll use,
+
+00:39:44.240 --> 00:39:46.800
+we use Jenkins for our CD, uh,
+
+00:39:46.840 --> 00:39:50.320
+but it'll be fun to see how they end up using it for, for their stuff.
+
+00:39:50.360 --> 00:39:52.840
+I'm pretty excited about that. It's going to be a cool project.
+
+00:39:53.480 --> 00:39:57.520
+And I will let you, if we find out really cool things in the interim,
+
+00:39:57.520 --> 00:39:59.720
+I'll let you know, but yeah, not a lot of difference,
+
+00:39:59.720 --> 00:40:02.840
+but probably worth bringing up. I think cause well, one,
+
+00:40:02.840 --> 00:40:07.980
+they don't have it now. So they survived without it, but it was painful. In fact,
+
+00:40:08.380 --> 00:40:12.020
+the fact that they don't have CD right now is a bottleneck for that team.
+
+00:40:12.830 --> 00:40:14.550
+Yeah. It slows them down.
+
+00:40:14.550 --> 00:40:18.830
+Can become very quickly a bottleneck, um,
+
+00:40:19.310 --> 00:40:22.750
+from right now for me, uh, it slows me down as well.
+
+00:40:23.310 --> 00:40:28.310
+Uh, there's, there's one of my projects where I am,
+
+00:40:30.570 --> 00:40:35.570
+one of my projects where we have the model going and there's a bit of a,
+
+00:40:36.010 --> 00:40:39.650
+of a manual deployment. Uh, so we have it all the way,
+
+00:40:39.650 --> 00:40:41.890
+automated up to staging and testing,
+
+00:40:42.640 --> 00:40:47.640
+but we need to make sure we don't deploy at craft models. So we don't,
+
+00:40:47.720 --> 00:40:53.000
+we don't have it automated. The final push. Totally fine. Oh yeah.
+
+00:40:54.190 --> 00:40:57.350
+Um, but the, the space that we're in,
+
+00:40:57.350 --> 00:41:02.350
+so we do manually push every week, uh, but the space that we're in,
+
+00:41:03.350 --> 00:41:05.740
+uh, that model or the,
+
+00:41:05.740 --> 00:41:10.010
+the customer experience would absolutely benefit, uh,
+
+00:41:10.050 --> 00:41:14.530
+if we could do just out of deploying new models daily,
+
+00:41:15.370 --> 00:41:20.250
+we've, we've gotten actually that's the one small bit of code I've been able to
+
+00:41:20.250 --> 00:41:22.980
+write over the last month. Uh,
+
+00:41:22.980 --> 00:41:26.980
+I took our build process for building these models.
+
+00:41:28.240 --> 00:41:31.600
+It was something that would take literally a week to do.
+
+00:41:31.680 --> 00:41:34.160
+That was main reason why we needed to,
+
+00:41:34.600 --> 00:41:36.680
+to do that a weekly basis,
+
+00:41:36.700 --> 00:41:41.800
+but now I've got it down to nine and a half hours and still have evil plans to,
+
+00:41:42.980 --> 00:41:47.320
+to, to do it more and more better anyway.
+
+00:41:48.300 --> 00:41:50.660
+Cool. Let's do the other question. Sure. Uh,
+
+00:41:50.700 --> 00:41:53.740
+just cause we have a few minutes here and I want to get to this one's from Patrick
+
+00:41:53.820 --> 00:41:58.340
+H. Uh, Hey Patrick, thanks for listening to the podcast. The question is,
+
+00:41:59.230 --> 00:42:04.230
+does the observer effect play any part in instrumentation and telemetry in
+
+00:42:04.310 --> 00:42:06.350
+software systems? For example,
+
+00:42:06.710 --> 00:42:09.070
+the telemetry services slow down my system.
+
+00:42:09.070 --> 00:42:12.390
+So I turn them off or try to compensate by adjusting some settings,
+
+00:42:12.410 --> 00:42:16.110
+changing those settings may falsely contribute to some metric on the business
+
+00:42:16.110 --> 00:42:19.950
+side and affect decision-making. So if I may,
+
+00:42:20.880 --> 00:42:24.400
+summarize that already short question, it's,
+
+00:42:24.440 --> 00:42:28.280
+what's the impact of telemetry on stuff being measured?
+
+00:42:28.840 --> 00:42:32.000
+And you and I both have worked with us a pretty complex systems around this,
+
+00:42:32.000 --> 00:42:35.920
+but I'm gonna let you start and I'll just add flavor. Um, yeah.
+
+00:42:36.400 --> 00:42:39.760
+So I think even, even in modern systems,
+
+00:42:39.760 --> 00:42:42.880
+it can be problematic. The,
+
+00:42:43.120 --> 00:42:48.120
+how ever brute force is so much easier now.
+
+00:42:48.640 --> 00:42:52.300
+Right. Uh, in, in the cloud, right?
+
+00:42:52.300 --> 00:42:56.300
+We can set up a separate networking path,
+
+00:42:56.980 --> 00:43:01.460
+uh, just for the, the, the telemetry, uh,
+
+00:43:01.460 --> 00:43:05.480
+in terms of CPU, um,
+
+00:43:06.120 --> 00:43:11.560
+if I think it's been a long time since I've observed that the CPU is,
+
+00:43:11.640 --> 00:43:16.640
+is, is really being taken up a great deal by the telemetry system.
+
+00:43:18.720 --> 00:43:23.440
+Um, there are obvious solutions around it. Uh,
+
+00:43:23.480 --> 00:43:28.480
+I don't see any of those commonly deployed nowadays in my life.
+
+00:43:29.400 --> 00:43:33.170
+Like it used to be a way where, right? You could,
+
+00:43:33.250 --> 00:43:37.850
+you could set up a config file or your instrumentation systems and be able to
+
+00:43:37.850 --> 00:43:42.290
+turn off or on and, uh, the, the depth level.
+
+00:43:42.370 --> 00:43:46.280
+So you would have a specific, uh,
+
+00:43:46.280 --> 00:43:48.760
+constant strain that was very lightweight.
+
+00:43:49.080 --> 00:43:52.840
+And then you would have a monitor hooked up to it that would fire and automatically
+
+00:43:52.840 --> 00:43:57.620
+turn on the, the, the really deep traces. Um,
+
+00:44:00.480 --> 00:44:05.270
+I don't, I don't see that as a big issue.
+
+00:44:05.750 --> 00:44:07.630
+Uh, now, nowadays,
+
+00:44:07.830 --> 00:44:10.910
+I'm not going to add to that because one, I think you covered it all.
+
+00:44:10.910 --> 00:44:14.830
+And two, I was only half paying attention because of work going on.
+
+00:44:16.040 --> 00:44:18.120
+We're such a professional podcast.
+
+00:44:19.760 --> 00:44:25.120
+Uh, and yeah, so poor little, you said Patrick H, right?
+
+00:44:27.400 --> 00:44:30.040
+He's probably, uh, yeah.
+
+00:44:30.960 --> 00:44:33.880
+It probably doesn't feel as important. We do appreciate the question.
+
+00:44:33.880 --> 00:44:36.640
+And Brent asked, Brent and I have worked with the similar systems, uh,
+
+00:44:36.680 --> 00:44:40.280
+and I will recap what he said based on the fact that I think we think the same
+
+00:44:40.280 --> 00:44:42.880
+on this is that the overhead of those,
+
+00:44:42.960 --> 00:44:46.080
+of that collection done correctly in a way where you just,
+
+00:44:46.160 --> 00:44:51.160
+you're just collecting bits and saving them on a non on the non-main thread.
+
+00:44:52.800 --> 00:44:57.800
+Uh, and then, and then uploading on uploading at opportune times is very,
+
+00:44:58.520 --> 00:45:02.120
+very little overhead. And maybe one thing to add, if you didn't say it,
+
+00:45:02.120 --> 00:45:06.560
+or to underscore, if you did say it is the one thing we used a lot,
+
+00:45:06.600 --> 00:45:11.000
+I remember a lot on when I was working on Xbox one was our ability to turn
+
+00:45:11.000 --> 00:45:15.160
+stuff on remotely. So we had a lot of stuff that turned the collection on
+
+00:45:15.160 --> 00:45:18.680
+remotely. So all the little ones and zeros, like here's a bit,
+
+00:45:19.120 --> 00:45:22.960
+this thing happened. We said a bit somewhere. We may not collect that,
+
+00:45:22.960 --> 00:45:26.920
+but again, the, with a modern CPU, well,
+
+00:45:26.960 --> 00:45:29.840
+we actually knew exactly which CPU was in there and how much overhead it would
+
+00:45:29.840 --> 00:45:32.200
+have. And it was negligible at best.
+
+00:45:32.600 --> 00:45:36.560
+But if we had something interesting, like, Hey, you know what?
+
+00:45:36.600 --> 00:45:40.440
+Only the people on this version that updated directly to this version,
+
+00:45:40.760 --> 00:45:45.200
+we think are having this problem. Let's go turn on extra metrics for
+
+00:45:45.200 --> 00:45:48.560
+that exact demographic. We could do that. And that was fun to do.
+
+00:45:48.560 --> 00:45:52.120
+And it really helped us. That's what I learned how to debug through telemetry,
+
+00:45:52.560 --> 00:45:54.880
+which was kind of fun. So, uh,
+
+00:45:54.920 --> 00:45:57.400
+you can actually collect a lot and not upload all of it,
+
+00:45:57.400 --> 00:45:59.680
+but be able to turn those things on. And that is,
+
+00:45:59.720 --> 00:46:01.800
+I think that's the key to being successful.
+
+00:46:01.920 --> 00:46:06.080
+I talk with a lot of teams on collecting metrics. They go, well,
+
+00:46:06.080 --> 00:46:09.120
+we don't want to log too much. So he's only going to log very,
+
+00:46:09.120 --> 00:46:13.240
+very specific things. I say, yeah, I see why you think that way,
+
+00:46:13.240 --> 00:46:13.760
+but let's talk.
+
+00:46:13.760 --> 00:46:18.890
+I mean, you do and you probably want to,
+
+00:46:19.210 --> 00:46:25.600
+you want to log all the things that you, I don't know,
+
+00:46:25.600 --> 00:46:28.950
+the nice to have. But like,
+
+00:46:28.950 --> 00:46:32.990
+if you take what you need to log and separate it into some of the P zero P one
+
+00:46:32.990 --> 00:46:34.790
+and P two, right?
+
+00:46:34.790 --> 00:46:39.790
+You probably want to want to do up to the P ones because that's going to be
+
+00:46:39.790 --> 00:46:43.030
+the stuff that you, you go, damn,
+
+00:46:43.780 --> 00:46:47.300
+we could totally answer the customer's question if we had actually logged this.
+
+00:46:48.080 --> 00:46:50.640
+Right. Right. The, the P two,
+
+00:46:52.490 --> 00:46:57.560
+there is an idea of going overboard, right? Uh, in terms of what you log,
+
+00:46:58.960 --> 00:47:01.720
+uh, it, I think that's a happy medium, right? Do you like,
+
+00:47:01.720 --> 00:47:04.240
+remember the old days when we would find a regression,
+
+00:47:04.240 --> 00:47:08.280
+find a customer would find some bug and we go write a test to make sure we,
+
+00:47:08.400 --> 00:47:11.360
+that bug would never get out there again. But these days, more often,
+
+00:47:11.360 --> 00:47:13.480
+it's what monitoring,
+
+00:47:13.480 --> 00:47:16.640
+what could we have collected that would help us debug this faster?
+
+00:47:16.880 --> 00:47:19.280
+And we'll go add that and add,
+
+00:47:19.640 --> 00:47:22.440
+start adding a few dozens or hundreds of those things over time.
+
+00:47:23.040 --> 00:47:26.720
+And you begin to build up that ability to debug these things remotely.
+
+00:47:27.240 --> 00:47:29.600
+Yeah. The, in terms of like the,
+
+00:47:30.600 --> 00:47:33.640
+the operational cost of a telemetry system,
+
+00:47:34.390 --> 00:47:38.910
+I don't think that is anywhere close to,
+
+00:47:40.160 --> 00:47:41.400
+uh, the storage costs.
+
+00:47:42.000 --> 00:47:44.120
+Even with storage dropping, right?
+
+00:47:44.280 --> 00:47:48.840
+There's a reason why a big part of the world is in,
+
+00:47:49.120 --> 00:47:53.320
+nowadays are, are described, um,
+
+00:47:53.920 --> 00:47:58.800
+in big data terms, right? Uh, the, uh,
+
+00:47:58.800 --> 00:48:03.640
+it's because we are storing a lot of stuff,
+
+00:48:04.040 --> 00:48:08.770
+like I, and, uh,
+
+00:48:08.850 --> 00:48:12.970
+certainly trending stuff. Uh, for example, one of the feeds I own,
+
+00:48:13.920 --> 00:48:19.120
+one of the most common complaints I get from my consumers is what do you mean?
+
+00:48:19.120 --> 00:48:23.820
+You don't have five years of data. I'm like, yeah,
+
+00:48:25.140 --> 00:48:30.140
+I only, I only keep a year. Sorry, but it's an ROI thing, right?
+
+00:48:30.140 --> 00:48:34.260
+It's it for sure. For sure. For sure. If, uh,
+
+00:48:35.540 --> 00:48:40.060
+I get an ask for going beyond a year
+
+00:48:40.100 --> 00:48:43.540
+once every year, my team,
+
+00:48:44.100 --> 00:48:47.250
+if we needed it, we would use it.
+
+00:48:48.360 --> 00:48:52.760
+We would have already implemented it right at the way I operate that particular
+
+00:48:52.760 --> 00:48:55.760
+data feed is, Hey, uh,
+
+00:48:55.800 --> 00:48:59.720
+this is primarily for my team's purpose. Um,
+
+00:49:00.160 --> 00:49:05.430
+but because carrying is sharing, everyone's welcome to use it.
+
+00:49:06.500 --> 00:49:09.380
+Uh, that gets me in trouble every now and again. Uh,
+
+00:49:09.420 --> 00:49:13.700
+I had an issue just a couple of weeks ago where some team had
+
+00:49:13.700 --> 00:49:17.860
+super BP visibility.
+
+00:49:18.840 --> 00:49:23.720
+Uh, I found out a month after they began that they had taken a
+
+00:49:23.720 --> 00:49:27.960
+dependency on this feed. Uh, and we're,
+
+00:49:28.040 --> 00:49:32.680
+we're, we're trying to use it in a way, uh,
+
+00:49:32.720 --> 00:49:36.880
+to answer questions in near real time. This feed cannot answer.
+
+00:49:37.730 --> 00:49:41.730
+And, and then after they had solidified after a month,
+
+00:49:41.810 --> 00:49:45.330
+they were doing the full court press, you know, uh,
+
+00:49:45.330 --> 00:49:48.570
+we're going to tell the VP on you type of BS.
+
+00:49:49.840 --> 00:49:51.320
+And I'm like, knock yourself out.
+
+00:49:51.360 --> 00:49:57.120
+I'm happy to go and explain to the executive how you wasted a
+
+00:49:57.120 --> 00:50:01.760
+month of your effort that you could have resolved by just asking me a goddamn
+
+00:50:01.760 --> 00:50:07.890
+question in the beginning. Yeah. Let's go have that conversation. Anyway.
+
+00:50:09.240 --> 00:50:13.640
+Anyway, Patrick H, I hope we did a good job answering your question.
+
+00:50:13.960 --> 00:50:17.000
+Uh, let us know if we didn't, you can ask more questions. Uh,
+
+00:50:17.000 --> 00:50:19.680
+you can go to the one, one of the three dot slack.com.
+
+00:50:19.680 --> 00:50:20.920
+There's an invitation link.
+
+00:50:20.920 --> 00:50:24.920
+If you're not a member of the community on the website.
+
+00:50:25.520 --> 00:50:30.740
+And I think that better be it for us today. What do you think?
+
+00:50:31.020 --> 00:50:34.900
+Yes. Brent says two thumbs up. I'm translating for him. Okay.
+
+00:50:34.940 --> 00:50:39.380
+Thank you again. Uh, happy May. I'm Alan. I'm great. Just as always.
+
+00:50:39.460 --> 00:50:39.940
+See you later.
+

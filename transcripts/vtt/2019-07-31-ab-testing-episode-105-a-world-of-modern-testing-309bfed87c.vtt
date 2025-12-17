@@ -1,0 +1,1616 @@
+WEBVTT
+
+00:00:11.630 --> 00:00:17.780
+The Modern Testing Podcast. Join your hosts, Alan and Brent.
+
+00:00:17.780 --> 00:00:23.680
+I am mindless agile robot. I must iterate.
+
+00:00:23.680 --> 00:00:28.680
+As we talk about software engineering, software quality, leadership, and whatever else comes to mind.
+
+00:00:28.680 --> 00:00:30.680
+Now on with the show.
+
+00:00:30.680 --> 00:00:33.680
+Hello again, Brent. Howdy, Alan. It's good to see you again.
+
+00:00:33.680 --> 00:00:35.680
+It's good to be seen by you.
+
+00:00:35.680 --> 00:00:42.680
+We're on the summer schedule of A-B testing recording where we don't record as often because crap is going on.
+
+00:00:42.680 --> 00:00:45.680
+Oh my god, speaking of crap. Oh, what episode are we running?
+
+00:00:45.680 --> 00:00:46.680
+105.
+
+00:00:46.680 --> 00:00:48.680
+105? That's a cool number.
+
+00:00:48.680 --> 00:00:50.680
+Speaking of numbers.
+
+00:00:50.680 --> 00:00:51.680
+Is it?
+
+00:00:51.680 --> 00:00:54.680
+The number of my house address is changing.
+
+00:00:54.680 --> 00:00:55.680
+I saw that on...
+
+00:00:55.680 --> 00:00:58.680
+I'm freaking moving. Oh my god.
+
+00:00:58.680 --> 00:01:00.680
+And you got a killer stove.
+
+00:01:00.680 --> 00:01:01.680
+Did you see that?
+
+00:01:01.680 --> 00:01:02.680
+I did.
+
+00:01:02.680 --> 00:01:04.680
+That's like a $3,000 stove top in this new place.
+
+00:01:04.680 --> 00:01:06.680
+So, wasn't planning to move.
+
+00:01:06.680 --> 00:01:07.680
+Wasn't looking to move.
+
+00:01:07.680 --> 00:01:10.680
+Had a company picnic a weekend before last.
+
+00:01:10.680 --> 00:01:11.680
+Driving back...
+
+00:01:11.680 --> 00:01:13.680
+I think there's some houses over here.
+
+00:01:13.680 --> 00:01:14.680
+Maybe there's some...
+
+00:01:14.680 --> 00:01:16.680
+Let's just drive over here by this neighborhood.
+
+00:01:16.680 --> 00:01:19.680
+My kids really wanted to live close to their high school.
+
+00:01:19.680 --> 00:01:21.680
+They're both in the same high school next year.
+
+00:01:21.680 --> 00:01:22.680
+And so we drove...
+
+00:01:22.680 --> 00:01:23.680
+Oh, hey look.
+
+00:01:23.680 --> 00:01:25.680
+This house is open house tomorrow.
+
+00:01:25.680 --> 00:01:26.680
+Maybe we'll come back.
+
+00:01:26.680 --> 00:01:27.680
+Oh look, there's a realtor there.
+
+00:01:27.680 --> 00:01:29.680
+Oh, she's going to let us in.
+
+00:01:29.680 --> 00:01:31.680
+Oh, we look around going, you know what?
+
+00:01:31.680 --> 00:01:32.680
+Let's move.
+
+00:01:32.680 --> 00:01:37.680
+So, over email, we negotiate an offer.
+
+00:01:37.680 --> 00:01:42.680
+And buying a house now versus 11 years ago about the last house.
+
+00:01:42.680 --> 00:01:43.680
+Only 11 years.
+
+00:01:43.680 --> 00:01:45.710
+It's like all of...
+
+00:01:45.710 --> 00:01:48.710
+Like the entire negotiation, email and texting.
+
+00:01:48.710 --> 00:01:51.030
+The loan application.
+
+00:01:51.030 --> 00:01:52.030
+I call my loan guy.
+
+00:01:52.030 --> 00:01:53.030
+He's forever.
+
+00:01:53.030 --> 00:01:54.030
+He's great.
+
+00:01:54.030 --> 00:01:59.030
+And get everything taken care of over email and maybe two phone calls.
+
+00:02:00.030 --> 00:02:03.030
+All the real estate documents, all online digital.
+
+00:02:03.030 --> 00:02:04.030
+It's fantastic.
+
+00:02:04.030 --> 00:02:05.030
+It goes super fast.
+
+00:02:05.030 --> 00:02:06.030
+The house is nice.
+
+00:02:06.030 --> 00:02:08.030
+We'll close probably early.
+
+00:02:08.030 --> 00:02:11.030
+We'll probably close in less than 30 days from we made the offer.
+
+00:02:11.030 --> 00:02:14.030
+But all that streamlined stuff.
+
+00:02:14.030 --> 00:02:16.030
+Title companies.
+
+00:02:16.030 --> 00:02:17.030
+The people that do like...
+
+00:02:17.030 --> 00:02:22.030
+The one where you go and you spend eight hours just putting your initials on hundreds of documents.
+
+00:02:22.030 --> 00:02:27.030
+They like traditional testing in many ways.
+
+00:02:27.030 --> 00:02:31.030
+They embraced 1990 like it's nobody's business.
+
+00:02:31.030 --> 00:02:37.640
+It's like one quick story and then we'll go on to even less random stories.
+
+00:02:37.640 --> 00:02:43.640
+They sent me a whole bunch of docs in a random order with weird names and they forgot the names.
+
+00:02:43.640 --> 00:02:45.640
+And I signed...
+
+00:02:45.640 --> 00:02:46.640
+One was a two page thing.
+
+00:02:46.640 --> 00:02:48.640
+Only need signatures on the second page.
+
+00:02:48.640 --> 00:02:52.640
+So, I printed out that page, signed it, sent it back.
+
+00:02:54.220 --> 00:02:58.220
+And they said, hey, I need both pages of that thing.
+
+00:02:58.220 --> 00:03:02.220
+I said, only one page needed signatures.
+
+00:03:02.220 --> 00:03:06.220
+Do you want me to send back the page you sent me as is?
+
+00:03:06.220 --> 00:03:07.630
+The answer?
+
+00:03:07.630 --> 00:03:08.630
+Yes, please.
+
+00:03:08.630 --> 00:03:13.800
+It's like, oh my...
+
+00:03:13.800 --> 00:03:14.800
+It's like I...
+
+00:03:14.800 --> 00:03:17.800
+My whole thing is I abhor inefficiency.
+
+00:03:17.800 --> 00:03:21.800
+I want things to be easy and streamlined and straightforward and that made me mad.
+
+00:03:21.800 --> 00:03:26.800
+But the bureaucrats, Alan, are protecting us from making mistakes.
+
+00:03:26.800 --> 00:03:27.800
+Oh, shush.
+
+00:03:27.800 --> 00:03:32.800
+If you hadn't sent back that first page, you were at risk.
+
+00:03:32.800 --> 00:03:39.800
+Ten years from now, someone would have done a challenge to your title and you'd be out on living in cardboard boxes.
+
+00:03:41.570 --> 00:03:48.570
+I'm curious to see when I edit this later how much thumping comes out from Brent fondling the microphone, but we'll see.
+
+00:03:48.570 --> 00:03:51.600
+So, I want to do a quick...
+
+00:03:52.600 --> 00:03:54.600
+And you get new sexy microphones today.
+
+00:03:54.600 --> 00:03:55.600
+Self-advertisements.
+
+00:03:55.600 --> 00:04:01.600
+I've been working on recording with this exact same microphones in our new recorder here.
+
+00:04:01.600 --> 00:04:02.600
+We'll see how it goes.
+
+00:04:02.600 --> 00:04:07.050
+We should make remote recording easier when we get back to that.
+
+00:04:07.050 --> 00:04:12.050
+I think I've mentioned on the podcast, if not, surprise.
+
+00:04:12.050 --> 00:04:18.050
+I'm working on a modern testing course for Ministry of Testing.
+
+00:04:18.050 --> 00:04:21.530
+I am very excited about it.
+
+00:04:21.530 --> 00:04:24.530
+I want to say I'm a third of the way done, but I'm way more than a third of the way done.
+
+00:04:24.530 --> 00:04:26.560
+I've done all the planning.
+
+00:04:26.560 --> 00:04:29.560
+Everything's all figured out what's in each session.
+
+00:04:29.560 --> 00:04:32.560
+I've recorded the first three.
+
+00:04:32.560 --> 00:04:39.560
+There's an intro, which is sort of the hook on why modern testing isn't as boring and stupid as you think it is.
+
+00:04:39.560 --> 00:04:41.660
+I phrase it much better in the video.
+
+00:04:41.660 --> 00:04:42.660
+I don't think it's boring or stupid.
+
+00:04:42.660 --> 00:04:43.660
+And then I know.
+
+00:04:43.660 --> 00:04:47.660
+And then I've recorded the first episode each on the first two principles.
+
+00:04:47.660 --> 00:04:52.660
+I'm going to do one episode, one course, whatever they're called, per principle, and then a wrap up at the end.
+
+00:04:52.660 --> 00:04:54.660
+So a total of nine episodes.
+
+00:04:54.660 --> 00:04:57.660
+They're all five to seven minutes.
+
+00:04:57.660 --> 00:05:02.660
+So it's enough to, which I guess would be a 45 minute talk if you watched them all at once,
+
+00:05:02.660 --> 00:05:06.660
+which is about right for kind of getting a good overview.
+
+00:05:06.660 --> 00:05:10.660
+But then we'll have lots of discussion with the people that take the course on the dojo.
+
+00:05:10.660 --> 00:05:13.660
+I think it's going to be pretty cool.
+
+00:05:13.660 --> 00:05:15.660
+I don't understand how it's a course.
+
+00:05:15.660 --> 00:05:16.660
+Can you explain those details?
+
+00:05:16.660 --> 00:05:19.660
+Like nine, seven minute things.
+
+00:05:19.660 --> 00:05:22.660
+Those feel more like YouTube nuggets.
+
+00:05:22.660 --> 00:05:25.660
+Remember, we're talking to the YouTube generation.
+
+00:05:25.660 --> 00:05:31.660
+So if you join the Ministry of Testing, if you join the Ministry of Testing, you join the dojo,
+
+00:05:31.660 --> 00:05:35.660
+you have access to all the courses they have online.
+
+00:05:35.660 --> 00:05:38.660
+And they are a whole bunch of these things.
+
+00:05:38.660 --> 00:05:46.690
+And the idea is within these courses, I have within each class, each section of the course,
+
+00:05:46.690 --> 00:05:54.690
+there are one or two or three places where I ask the viewer to pause and reflect or answer some questions
+
+00:05:54.690 --> 00:05:59.690
+or do a little bit of exercises to help reinforce what we're talking about.
+
+00:05:59.690 --> 00:06:03.690
+For example, in principle number two episode, accelerating the team,
+
+00:06:03.690 --> 00:06:07.690
+there's a reflection exercise where I ask them to list the things they're doing that help speed the team up.
+
+00:06:07.690 --> 00:06:11.690
+And the things they're doing that help that are slowing things on their team that are slowing them down.
+
+00:06:11.690 --> 00:06:14.690
+Just so they start thinking about those.
+
+00:06:14.690 --> 00:06:17.690
+So there's things like that.
+
+00:06:17.690 --> 00:06:26.690
+In the first course of this series, the intro, I give them your very first glance for some people at the modern testing principles.
+
+00:06:26.690 --> 00:06:32.690
+I'll just ask them to take some time before they go any farther to think about which ones are which ones like yeah,
+
+00:06:32.690 --> 00:06:34.690
+yeah, yeah, head nod, head nod, which ones they go.
+
+00:06:35.690 --> 00:06:37.690
+I'm going to skip to that right now.
+
+00:06:37.690 --> 00:06:39.690
+See if I want to go any farther.
+
+00:06:39.690 --> 00:06:41.100
+That kind of stuff.
+
+00:06:41.100 --> 00:06:43.100
+So I'm pretty excited.
+
+00:06:43.100 --> 00:06:44.100
+I will.
+
+00:06:44.100 --> 00:06:46.100
+So I'm trying to wrap up this course.
+
+00:06:46.100 --> 00:06:52.100
+The folks at Ministry of Test being very patient with me because I'm behind in getting them things and I'm moving at the same time.
+
+00:06:52.100 --> 00:07:00.100
+And the day job, which will be able to talk about a little bit later, is a bit on the busy side.
+
+00:07:00.100 --> 00:07:01.100
+Now I'll get into that later.
+
+00:07:01.100 --> 00:07:11.100
+But the cool thing is in modern testing, in this course, in doing this course and then watching what's going on,
+
+00:07:11.100 --> 00:07:22.520
+we are seeing and this is the very subtle transition to something more like a podcast than the previous 10 minutes is we're seeing,
+
+00:07:22.520 --> 00:07:31.610
+Brent and I are both seeing more and more people and teams doing things that are a lot more like modern testing.
+
+00:07:31.610 --> 00:07:42.750
+And it's what's the word I'm thinking of how it's awesome, exciting, a little scary, like what if we're wrong?
+
+00:07:42.750 --> 00:07:46.750
+We're not, but we've let the world astray.
+
+00:07:46.750 --> 00:07:47.750
+No, no, no.
+
+00:07:47.750 --> 00:07:49.750
+If we're wrong, then there's a whole bunch of.
+
+00:07:50.750 --> 00:07:51.750
+Then I don't want to be right.
+
+00:07:51.750 --> 00:07:59.750
+Then there's a whole bunch of giants whose shoulders we're standing on who are also wrong.
+
+00:07:59.750 --> 00:08:02.750
+So we won't be alone.
+
+00:08:02.750 --> 00:08:14.820
+But the thing is the chances of that are if this is something that we didn't have any direct experience on, I'd be worried.
+
+00:08:14.820 --> 00:08:17.460
+But we do.
+
+00:08:17.460 --> 00:08:19.460
+It works.
+
+00:08:19.460 --> 00:08:22.580
+And for now, it's right.
+
+00:08:22.580 --> 00:08:27.220
+Yeah, we had I won't name any names, but I want to.
+
+00:08:27.220 --> 00:08:34.220
+But one listener who I hope and I hope gets the job.
+
+00:08:34.220 --> 00:08:39.220
+But they in their interview, they had their interviewer pull up the modern testing principles.
+
+00:08:39.220 --> 00:08:43.760
+Yeah, which is which is awesome.
+
+00:08:43.760 --> 00:08:47.760
+I was going to say brave or I'll go with brave.
+
+00:08:49.400 --> 00:08:52.400
+I don't the way the way they describe the scenario.
+
+00:08:52.400 --> 00:08:53.400
+I'm not so certain.
+
+00:08:53.400 --> 00:08:54.400
+Right.
+
+00:08:54.400 --> 00:09:01.400
+I don't know that I don't remember the details of what they mentioned, but this is a company that didn't have a QA.
+
+00:09:01.400 --> 00:09:03.400
+They were apparently struggling.
+
+00:09:03.400 --> 00:09:05.400
+They looking to hire one person.
+
+00:09:05.400 --> 00:09:17.560
+They knew up front the company, the hiring manager knew up front that they were under heat because QA had a reputation already.
+
+00:09:17.560 --> 00:09:19.560
+That company of slowing things down.
+
+00:09:19.560 --> 00:09:21.560
+And that was something they didn't want.
+
+00:09:21.560 --> 00:09:31.910
+And this listener just immediately went and was like, oh, fantastic.
+
+00:09:31.910 --> 00:09:33.910
+We're aligned here.
+
+00:09:33.910 --> 00:09:35.910
+Let me show you modern testing principles.
+
+00:09:35.910 --> 00:09:39.910
+This is whether or not you hire me.
+
+00:09:39.910 --> 00:09:41.910
+This is what you need to do.
+
+00:09:41.910 --> 00:09:45.190
+Very cool.
+
+00:09:45.190 --> 00:09:47.190
+I was talking to someone.
+
+00:09:47.190 --> 00:09:50.290
+I think it was.
+
+00:09:50.290 --> 00:09:56.450
+I think it was Melissa Eden, who is one of the three for sure.
+
+00:09:56.450 --> 00:10:10.450
+Just gave a talk recently on modern testing, which is the which is kind of cool to see people besides us more and more also talking about this thing called modern testing and in turn taking some of the heat for us, which is pretty cool.
+
+00:10:10.450 --> 00:10:12.930
+Oh, I didn't hear that story.
+
+00:10:12.930 --> 00:10:17.410
+No, I mean, not about her taking heat.
+
+00:10:17.410 --> 00:10:20.410
+I haven't heard any stories about that, but she's talking about modern testing.
+
+00:10:20.410 --> 00:10:31.410
+And I mentioned to her that like when I first I didn't know what to make of the first talk ever on modern testing external, which was at test bash year before last in Brighton.
+
+00:10:31.410 --> 00:10:39.630
+Test bash Brighton because there's 18,000 test bashes a year and a couple of cool things about that talk.
+
+00:10:39.630 --> 00:10:48.660
+One, the coolest thing was afterwards how many people told me, thank you for giving a name to what we're already doing or I want to do that.
+
+00:10:48.660 --> 00:10:50.660
+We just we're not ready, but I want to do that.
+
+00:10:50.660 --> 00:10:53.660
+And I was expecting more, much more hate.
+
+00:10:53.660 --> 00:10:57.660
+I thought it would be much more controversial instead of inspiring.
+
+00:10:57.660 --> 00:11:05.660
+And if I can manage to inspire or lead or provide any sort of value, I feel pretty damn good about what I provided.
+
+00:11:05.660 --> 00:11:07.660
+So I'm excited there.
+
+00:11:07.660 --> 00:11:17.920
+But the other thing I'm excited about with the with that talk was when they scheduled it, they asked me if I do the after lunch slot.
+
+00:11:17.920 --> 00:11:21.920
+I said, you need to you need to we need some of your colorful language.
+
+00:11:21.920 --> 00:11:27.920
+Maybe they said I didn't want to wake up the crowd, wake up the crowd, which I do and did.
+
+00:11:27.920 --> 00:11:31.920
+And in doing so, apparently not the last now because people have taken my lead.
+
+00:11:31.920 --> 00:11:37.920
+But at the time I earned the first ever explicit tag for a Ministry of Test recording.
+
+00:11:37.920 --> 00:11:39.920
+I didn't plan it.
+
+00:11:39.920 --> 00:11:40.920
+It just kind of came out that way.
+
+00:11:40.920 --> 00:11:41.920
+I was excited.
+
+00:11:41.920 --> 00:11:45.950
+These things happen leading into and you can help me.
+
+00:11:45.950 --> 00:11:47.950
+Let's brainstorm on this a bit.
+
+00:11:47.950 --> 00:11:49.950
+Fact.
+
+00:11:49.950 --> 00:11:53.230
+I'm channeling Dwight Schrute from the office.
+
+00:11:53.230 --> 00:11:54.230
+Fact.
+
+00:11:54.230 --> 00:11:58.160
+We're seeing more people do things like modern testing.
+
+00:11:58.160 --> 00:11:59.380
+Fact.
+
+00:11:59.380 --> 00:12:03.420
+Many of them, including myself, are in roles that don't have testing in the title.
+
+00:12:03.420 --> 00:12:04.420
+Fact.
+
+00:12:04.420 --> 00:12:07.740
+I am speaking at Auradev in November.
+
+00:12:07.740 --> 00:12:14.740
+Haven't started working on the talk yet because they have to scrape the information because what I want to talk about the topic.
+
+00:12:14.740 --> 00:12:15.740
+Wait fact.
+
+00:12:15.740 --> 00:12:18.740
+My topic is talking about what people do.
+
+00:12:18.740 --> 00:12:21.740
+You don't watch the office going, Alan, what the.
+
+00:12:21.740 --> 00:12:25.740
+What the are you talking about?
+
+00:12:25.740 --> 00:12:32.220
+I want to tell stories of how people are living in this modern testing world.
+
+00:12:32.220 --> 00:12:41.220
+So I'll need to track some people down, probably via Zoom calls, potentially to be recorded.
+
+00:12:41.220 --> 00:12:42.220
+Guests on our podcast.
+
+00:12:42.220 --> 00:12:49.220
+But over the next few months, I want to start tracking down and talking to a lot of these people who are doing things that are modern test.
+
+00:12:49.220 --> 00:12:54.220
+We had a listener and Brent is never going to get a word in because I have all these ideas on my head.
+
+00:12:54.220 --> 00:12:57.220
+We haven't talked for a month and he gave me coffee.
+
+00:12:57.220 --> 00:13:00.220
+We had a listener who works at a bank on their mobile app.
+
+00:13:00.220 --> 00:13:07.220
+So it's not like oh, who is also got Brad all excited.
+
+00:13:07.220 --> 00:13:09.220
+Is this the one in Germany?
+
+00:13:09.220 --> 00:13:10.220
+Yes. Yes.
+
+00:13:10.220 --> 00:13:13.220
+This is fantastical, which is not German.
+
+00:13:13.220 --> 00:13:15.220
+No, it's not.
+
+00:13:15.220 --> 00:13:17.220
+And I'll let you talk about that in a minute.
+
+00:13:17.220 --> 00:13:19.220
+But the idea is I want to collect all these stories.
+
+00:13:19.220 --> 00:13:24.410
+No, this is really, really happening, which is amazing.
+
+00:13:24.410 --> 00:13:29.410
+And people were and to be clear, this is happening and would have happened without us.
+
+00:13:29.410 --> 00:13:39.410
+What we've provided is a framework to talk about it, some common language, a way to a place to point and say, yes, that's what I'm doing.
+
+00:13:39.410 --> 00:13:41.410
+And so that's the value we provide.
+
+00:13:41.410 --> 00:13:42.410
+We haven't.
+
+00:13:42.410 --> 00:13:45.410
+I don't think we've caused people to go.
+
+00:13:45.410 --> 00:13:47.410
+Well, in most cases, at least to go.
+
+00:13:47.410 --> 00:13:48.410
+This is the way I want to do it.
+
+00:13:48.410 --> 00:13:50.410
+People are going, oh, this is what I do.
+
+00:13:50.410 --> 00:13:51.410
+I have a way to talk about it.
+
+00:13:51.410 --> 00:13:58.410
+But I want to tell those stories to the folks at Oradev who may or may not get what this whole idea is about.
+
+00:13:58.410 --> 00:14:03.410
+So I've been thinking a great deal around what did we do.
+
+00:14:03.410 --> 00:14:09.410
+Right. Because we stole a lot of the modern testing principles from book here, book there, book everywhere.
+
+00:14:09.410 --> 00:14:16.410
+The lucky thing is we read all the same books between Flo and the lean startup and a few other things.
+
+00:14:16.410 --> 00:14:18.410
+The principles emerged fairly easily.
+
+00:14:18.410 --> 00:14:22.410
+And we both executed.
+
+00:14:22.410 --> 00:14:27.050
+But I've been thinking about what is our product.
+
+00:14:27.050 --> 00:14:31.300
+Right. And is it ours or not.
+
+00:14:31.300 --> 00:14:40.820
+Right. And what I realized is what we've done is we've constructed a rallying point.
+
+00:14:40.820 --> 00:14:51.820
+These thoughts were out there, but we gave them a place to converge and grow and be healthy.
+
+00:14:51.820 --> 00:14:59.670
+And that's what I think we've done.
+
+00:14:59.670 --> 00:15:03.670
+Yeah. I am a firm believer in the rallying cry.
+
+00:15:03.670 --> 00:15:09.670
+And that's which is a big thing of Palantioni's work is business novels.
+
+00:15:09.670 --> 00:15:15.670
+And I think, yeah, we provided that probably not just subconsciously.
+
+00:15:15.670 --> 00:15:26.630
+I'm looking forward to I think the next step is when it takes on a life of its own that we couldn't control even if we wanted to.
+
+00:15:26.630 --> 00:15:37.820
+And don't you think if with people pulling it out in interviews and people giving talks about it that aren't you and I that maybe it's on its way there?
+
+00:15:37.820 --> 00:16:01.390
+No. What I'm thinking is the next step is when someone does something like realizes we have a an open source license on it and they go create their own modern testing dot something reference it and start moving on their own.
+
+00:16:01.390 --> 00:16:04.650
+Now, I think just you by saying that that may happen.
+
+00:16:04.650 --> 00:16:09.650
+And to be clear, the modern testing principles are free to do whatever you want with attribution.
+
+00:16:09.650 --> 00:16:12.650
+You can you can make a whole product around them.
+
+00:16:12.650 --> 00:16:22.650
+Oh, that's when we know we've lost when some tool vendor talks about their ability to accelerate their team using modern testing tool.
+
+00:16:22.650 --> 00:16:25.650
+There is one thing we need to do though.
+
+00:16:25.650 --> 00:16:31.710
+And that is we need to modify that license to ensure certain things never happen.
+
+00:16:31.710 --> 00:16:36.710
+For example, I do not ever want to see a certification course for modern testing.
+
+00:16:36.710 --> 00:16:38.710
+Oh, yeah. Let's have this.
+
+00:16:38.710 --> 00:16:46.710
+Actually, spoiler alert coming out next year is the modern tester certification black belt.
+
+00:16:46.710 --> 00:16:48.710
+No, just kidding.
+
+00:16:48.710 --> 00:16:49.710
+Yeah.
+
+00:16:49.710 --> 00:16:52.710
+No.
+
+00:16:52.710 --> 00:16:56.030
+There's there's nothing right now.
+
+00:16:56.030 --> 00:16:58.130
+I mean, maybe you and I should talk off.
+
+00:16:58.130 --> 00:17:00.130
+Okay.
+
+00:17:00.130 --> 00:17:10.860
+There's a lot of risk with our current where we are with how it's going viral and and how open the licenses.
+
+00:17:10.860 --> 00:17:21.930
+Did you want to talk any more about some of the things that you've seen in our slack or elsewhere on people adopting things that are like our modern testing?
+
+00:17:21.930 --> 00:17:24.930
+Well, you brought up the earlier example.
+
+00:17:24.930 --> 00:17:40.600
+One of our listeners, I'm getting to a point where so one of the things I like to do on the select channel, as you know, is when a new person comes in, I like to give them a free taco.
+
+00:17:40.600 --> 00:17:43.600
+Okay. And you only these are these are virtual tacos.
+
+00:17:43.600 --> 00:17:44.600
+They're virtual tacos.
+
+00:17:44.600 --> 00:17:46.600
+But they're tacos and they're awesome.
+
+00:17:46.600 --> 00:17:51.820
+And every person only gets five per five per day to give away.
+
+00:17:51.820 --> 00:18:00.820
+And by the way, shout out the hey taco for helping us out with our hey taco license and keeping us going with tacos on one of the three dot slack dot com.
+
+00:18:00.820 --> 00:18:02.820
+Yeah, they were fantastic on that.
+
+00:18:02.820 --> 00:18:09.300
+And Alan was fantastic on getting them to agree to that.
+
+00:18:09.300 --> 00:18:17.300
+But I'm I do think perhaps even sometime this year that there will be time where I cannot give out.
+
+00:18:17.300 --> 00:18:21.370
+I only have five a day a day.
+
+00:18:21.370 --> 00:18:25.370
+Right. I can't give out all five or I need more than five.
+
+00:18:25.370 --> 00:18:30.530
+Sorry, I can because people are coming in.
+
+00:18:30.530 --> 00:18:34.530
+I love hearing when they when they join the community.
+
+00:18:34.530 --> 00:18:37.530
+I get it. If more than five people join in a day, you run out of tacos.
+
+00:18:37.530 --> 00:18:38.530
+Right.
+
+00:18:38.530 --> 00:18:39.530
+Just connecting the dots for everyone.
+
+00:18:39.530 --> 00:18:40.530
+Sorry.
+
+00:18:40.530 --> 00:18:41.530
+No, I'm good. I'm good.
+
+00:18:41.530 --> 00:18:42.530
+I'm good.
+
+00:18:42.530 --> 00:18:49.350
+Words working not in a love here in their stories.
+
+00:18:49.350 --> 00:18:51.350
+Yes. Yes.
+
+00:18:51.350 --> 00:18:54.350
+There was a there was a new listener that came in.
+
+00:18:54.350 --> 00:19:03.090
+They are applying again MTP like practices.
+
+00:19:03.090 --> 00:19:18.090
+But they they're a German company and they're a bank, which is a highly regulated industry in a country who adores regulations.
+
+00:19:18.090 --> 00:19:31.090
+And so seeing these companies break through what we've been told when we started doing modern testing is oh, you can't do that because of this bureaucracy or that issue.
+
+00:19:31.090 --> 00:19:36.090
+For example, we only do client products on prem.
+
+00:19:36.090 --> 00:19:39.410
+People are pushing the boundary.
+
+00:19:39.410 --> 00:19:51.720
+And I love that the Slack channel is a place where those who are interested are learning how to from each other now.
+
+00:19:51.720 --> 00:19:55.720
+Things are really picking up.
+
+00:19:55.720 --> 00:19:57.750
+Yeah, I think so.
+
+00:19:57.750 --> 00:20:06.750
+And including and we probably don't have enough time to go into it today, but including as things get pick up.
+
+00:20:06.750 --> 00:20:18.100
+Right. The the opinion leaders on the other side are going to start being more visible, more out there and more directly against these concepts.
+
+00:20:18.100 --> 00:20:20.810
+The 80 haters.
+
+00:20:20.810 --> 00:20:22.810
+Yeah.
+
+00:20:22.810 --> 00:20:23.810
+Probably worth mentioning.
+
+00:20:23.810 --> 00:20:25.810
+We'll go too deep into it.
+
+00:20:25.810 --> 00:20:26.810
+But we do.
+
+00:20:26.810 --> 00:20:36.810
+We aren't without our controversy with aren't without those who think what we're doing is harmful to the business or worse harmful to the craft.
+
+00:20:36.810 --> 00:20:41.160
+Remember, modern testing isn't about testing and it's not really that modern.
+
+00:20:41.160 --> 00:20:45.160
+That's our that's our tagline to add somewhere.
+
+00:20:45.160 --> 00:20:47.160
+It's about accelerating the team.
+
+00:20:47.160 --> 00:20:49.160
+It's about building software.
+
+00:20:49.160 --> 00:20:59.160
+It's about it's about helping the team build a sustainable and profitable business or successful business, I should say, because it modern testing works in nonprofits as well.
+
+00:21:00.380 --> 00:21:02.380
+In some regards, though, I'll just speak out.
+
+00:21:02.380 --> 00:21:08.380
+I do think depending on the context, I think in some regards, it is harmful to the craft.
+
+00:21:08.380 --> 00:21:09.830
+Right.
+
+00:21:09.830 --> 00:21:13.830
+Not the testing activity, but the tech testing discipline.
+
+00:21:13.830 --> 00:21:21.830
+And when I hear people say it's harmful to the craft, sometimes they're it's overlooked.
+
+00:21:21.830 --> 00:21:28.990
+Right. Sometimes they're saying, hey, you're going to encourage businesses to ship shit out in the wild.
+
+00:21:28.990 --> 00:21:38.990
+And sometimes they're saying, hey, you're adding adding fuel to the fire towards the direction of removing the discipline.
+
+00:21:38.990 --> 00:21:41.990
+That latter one, I absolutely could see.
+
+00:21:41.990 --> 00:21:57.470
+We're not telling people what to do or what not to do, but we are saying it is a whole team effort and you need to do the right thing regardless of fear.
+
+00:21:57.470 --> 00:22:03.260
+Yeah. Yeah. Let's transition to make this about me.
+
+00:22:03.260 --> 00:22:04.260
+OK.
+
+00:22:04.260 --> 00:22:10.260
+I want to talk a little bit about what I'm doing in the postmodern world, if we want to call it that or the modern world.
+
+00:22:10.260 --> 00:22:12.260
+I don't think it's a postmodern. I think you're post traditional.
+
+00:22:12.260 --> 00:22:19.260
+Post traditional. Post traditional world in my non test, but kind of quality role.
+
+00:22:19.260 --> 00:22:22.390
+I have a weekly meeting.
+
+00:22:22.390 --> 00:22:25.390
+There's a lot of all kinds of weekly meetings.
+
+00:22:25.390 --> 00:22:37.620
+One meeting in particular, I was meeting with marketing and a product manager and my boss and his boss to go over one of the projects a little bit more.
+
+00:22:37.620 --> 00:22:41.620
+One of the new things, a little more interesting, a little more risky.
+
+00:22:41.620 --> 00:22:43.620
+So just kind of a check in.
+
+00:22:43.620 --> 00:22:46.870
+We were talking about and I'm asking you about this.
+
+00:22:46.870 --> 00:22:56.940
+We had a good discussion on the difference between what's the difference in products, Brent, between testing and validation.
+
+00:22:56.940 --> 00:23:01.220
+And these could be terms that are that maybe I just use.
+
+00:23:01.220 --> 00:23:03.220
+So I want to ask you this before I go on.
+
+00:23:03.220 --> 00:23:06.740
+But do those terms mean anything different to you?
+
+00:23:06.740 --> 00:23:12.700
+In my text on me, testing is the super set.
+
+00:23:12.700 --> 00:23:20.530
+Testing is the if I were to break it down, testing is an activity.
+
+00:23:20.530 --> 00:23:24.530
+Validation is one key aspect that you're doing.
+
+00:23:24.530 --> 00:23:31.530
+Another key aspect would be ad hoc or exploratory testing.
+
+00:23:31.530 --> 00:23:40.460
+Validation in the vernacular I used to use is essentially, hey, we expect this to do certain things.
+
+00:23:40.460 --> 00:23:48.460
+Does it actually do those things in a tactical sense, not in the strategic like we're targeting with MT?
+
+00:23:48.460 --> 00:23:56.460
+So when we talk about principle number five, and I didn't phrase this very well, kind of on purpose because I wanted to get that answer before I rephrased it.
+
+00:23:56.460 --> 00:24:03.460
+When we talk about, when we say the customer is the only one able to evaluate, we use the word evaluate, the quality of our product.
+
+00:24:03.460 --> 00:24:04.460
+Yes.
+
+00:24:04.460 --> 00:24:16.900
+And then people freak the hell out because you're just asking customers to test your product because you're lazy and you're harming people and you're a jerk and I don't like you, I'm going to go in my corner.
+
+00:24:16.900 --> 00:24:19.900
+But I don't know about you, but all of those are true.
+
+00:24:19.900 --> 00:24:20.900
+They are.
+
+00:24:20.900 --> 00:24:23.900
+I am lazy.
+
+00:24:23.900 --> 00:24:26.940
+What are what are customers?
+
+00:24:26.940 --> 00:24:29.940
+What is it that we want from customers to do to the product?
+
+00:24:29.940 --> 00:24:31.060
+I am.
+
+00:24:31.060 --> 00:24:33.060
+I'm going to lead you along here.
+
+00:24:33.060 --> 00:24:36.060
+They're not testing it for they're not testing it.
+
+00:24:36.060 --> 00:24:49.060
+We're not trying to use customers to figure out this is the difference I'm driving towards is we don't use customers to test for functional correctness or to or to make sure it's working.
+
+00:24:49.060 --> 00:25:01.700
+We use it to validate that we're building the right thing or what or whether there's product market fit or or to learn more about what we are doing right and wrong with the product.
+
+00:25:01.700 --> 00:25:05.700
+So what I was I did I particularly left the word customer out.
+
+00:25:05.700 --> 00:25:18.960
+But the conversation in this meeting got to a point of like it was a little bit of they're worried like there's a little bit of worry from the exec that the customers were going in this early release.
+
+00:25:18.960 --> 00:25:24.960
+Customers were going to be finding quality issues and absolutely not the case.
+
+00:25:24.960 --> 00:25:28.960
+The quality of this product is very very good.
+
+00:25:28.960 --> 00:25:31.960
+It just is feature lean.
+
+00:25:31.960 --> 00:25:34.110
+OK.
+
+00:25:34.110 --> 00:25:39.110
+But enough it has enough functionality and this is what a minimum viable product is about.
+
+00:25:39.110 --> 00:25:41.110
+This one is actually bigger than that.
+
+00:25:41.110 --> 00:25:50.110
+Actually tangent tangent inception had a nice conversation with my boss yesterday about the concierge MVP.
+
+00:25:50.110 --> 00:25:54.110
+But anyway we it was a good conversation.
+
+00:25:54.110 --> 00:26:00.110
+I made the point that quality is something we build in and a little bit of collaboration how we do that.
+
+00:26:00.110 --> 00:26:10.110
+And one hundred percent what we expect from having a customer use this product is validation of whether we're building the right product not a validation of whether it's going to be a product.
+
+00:26:10.110 --> 00:26:14.110
+Validation of whether it's good enough quality for them to use.
+
+00:26:14.110 --> 00:26:17.420
+Yeah.
+
+00:26:17.420 --> 00:26:21.420
+I'll tell you I just use the language from Reese on this one.
+
+00:26:21.420 --> 00:26:24.420
+I talk about the pivot or persevere meeting. Yes.
+
+00:26:24.420 --> 00:26:28.420
+Yes. And I think that I'm actually driving a lot toward that.
+
+00:26:28.420 --> 00:26:31.420
+I think my hunch is I'm not going to leave this.
+
+00:26:31.420 --> 00:26:33.420
+I'm not. I'm going to wait and see.
+
+00:26:33.420 --> 00:26:37.420
+My hunch is that we will need to pivot that we're building a good product.
+
+00:26:37.420 --> 00:26:40.420
+But the product we're going to build is a subset of what we think we're building.
+
+00:26:40.420 --> 00:26:42.420
+But I'm going to wait and see what happens based on the customer.
+
+00:26:42.420 --> 00:26:44.420
+I think is going to be a nice pivot in there.
+
+00:26:44.420 --> 00:26:54.420
+But the cool point I brought up was I was able to bring up only the customer only the customer is able to evaluate the quality of software in the meeting without anybody freaking out or screaming.
+
+00:26:54.420 --> 00:26:56.970
+But the quality work gets a little over.
+
+00:26:56.970 --> 00:26:59.970
+No. And that's because you're the test guy.
+
+00:26:59.970 --> 00:27:01.970
+And I'm not the tough. No no no.
+
+00:27:01.970 --> 00:27:05.320
+You get number one.
+
+00:27:05.320 --> 00:27:07.320
+That's fantastic.
+
+00:27:07.320 --> 00:27:10.320
+That response number two.
+
+00:27:10.320 --> 00:27:17.440
+So I have as an aside I am formerly from test.
+
+00:27:17.440 --> 00:27:38.080
+My manager is formerly from test and recently my VP was getting heat from his boss around quality issues with respect to co correctness and old school PMs were going to my VP saying we need to get a testing back.
+
+00:27:38.080 --> 00:27:39.080
+Oh now's our opportunity.
+
+00:27:39.080 --> 00:27:41.080
+We need to get a testing back.
+
+00:27:42.340 --> 00:27:49.590
+The VP ran through the motions and was talking to some people around God.
+
+00:27:49.590 --> 00:27:50.590
+Yeah.
+
+00:27:50.590 --> 00:28:07.580
+So both myself and my manager were were in those informationals and my manager and I had multiple private conversations around.
+
+00:28:07.580 --> 00:28:08.580
+OK.
+
+00:28:08.580 --> 00:28:13.100
+First thing we got to do is stop this.
+
+00:28:13.100 --> 00:28:19.640
+We need to make sure that no test manager comes in here.
+
+00:28:19.640 --> 00:28:22.640
+Like we do not want that role here.
+
+00:28:22.640 --> 00:28:32.640
+If we can't succeed in that then we need to absolutely make sure this is not a role either one of us are asked to take on.
+
+00:28:32.640 --> 00:28:43.580
+I have a reputation in certain lights of I call it being punished for being good.
+
+00:28:43.580 --> 00:28:54.650
+I get assigned things that I don't want to sign to me because I have experience in credibility about closing that loop quick.
+
+00:28:54.650 --> 00:28:58.030
+I don't did not want this role.
+
+00:28:58.030 --> 00:29:00.030
+It was an interesting segue.
+
+00:29:00.030 --> 00:29:15.030
+It's funny because when I first joined the monetization team so it's been about 10 weeks now we had a couple of major incidents due to just developer error lack of testing lack of.
+
+00:29:15.030 --> 00:29:16.030
+We normally do very good testing.
+
+00:29:16.030 --> 00:29:26.030
+We just messed up two big ones expensive ones and my boss because I think because I was branded to the team and he knew my background he was threatening to hire a test team.
+
+00:29:26.030 --> 00:29:32.030
+So do I just need to hire a test team to help you and I'm going no no no no and it was an idle threat.
+
+00:29:32.030 --> 00:29:42.450
+It was just like get the team just as it was a conversation starter and through no work of mine through just a general the team does very well.
+
+00:29:42.450 --> 00:29:52.270
+In fact all of our incidents effect can I say this on air most of our incidents now are probably because of.
+
+00:29:52.270 --> 00:29:57.270
+Yes you can say that especially in the Microsoft.
+
+00:29:57.270 --> 00:30:06.270
+I shouldn't say most but a chunk of them so but there's no reason we shouldn't be resilient to the platform or under so that's another stage of maturity and growth for us.
+
+00:30:06.270 --> 00:30:16.690
+But my role is interesting in that I have the way my boss puts it.
+
+00:30:16.690 --> 00:30:19.690
+I have I.
+
+00:30:19.690 --> 00:30:21.880
+How does he put it.
+
+00:30:21.880 --> 00:30:26.170
+I'm the director of program management and this is different than Microsoft program management.
+
+00:30:26.170 --> 00:30:27.170
+I don't know what they do.
+
+00:30:27.170 --> 00:30:33.170
+This is making sure our larger scale projects are nothing actually good.
+
+00:30:33.170 --> 00:30:37.170
+Good describe it is I make sure there are no surprises.
+
+00:30:37.170 --> 00:30:49.260
+Making sure it's a lot of just asking we do I do a status reporting thing just a quick little week log every week to my manager rolls up to a org wide mail.
+
+00:30:49.260 --> 00:30:55.260
+But one of my summaries recently was mainly I just asked a lot of questions.
+
+00:30:55.260 --> 00:30:59.780
+Okay which is kind of like branded at the real estate class.
+
+00:30:59.780 --> 00:31:09.780
+So I just ask people questions and try and lead them in a direction and then I plug myself in and my boss will plug me in the places.
+
+00:31:09.780 --> 00:31:10.780
+Hey this is weird.
+
+00:31:10.780 --> 00:31:11.780
+Go take care of this.
+
+00:31:11.780 --> 00:31:14.780
+That's go figure out what's weird then go take care of it.
+
+00:31:14.780 --> 00:31:18.780
+So I'm at my fingers in just about every part of the org.
+
+00:31:18.780 --> 00:31:22.780
+I run a weekly meeting where I go over not quite a status meeting.
+
+00:31:22.780 --> 00:31:35.780
+It's really more for product management product marketing about release dates to make sure we understand where there's risk to what we're planning to deliver and an org of about 160 engineers to 50 ish overall.
+
+00:31:35.780 --> 00:31:36.780
+There's a lot going on.
+
+00:31:36.780 --> 00:31:41.780
+So keeping things organized making sure a lot of just making sure communications happening.
+
+00:31:41.780 --> 00:31:55.900
+Then I have this quality lever and I don't know if it's a if I don't know if my charter is quality with program management as a tool to get me there or if my role is program management with quality as a lever to get me there.
+
+00:31:55.900 --> 00:32:03.900
+It's been interesting to see how well those two work together.
+
+00:32:03.900 --> 00:32:17.860
+So if I'm looking at a program like how we can deliver this complex project it's getting I think the team's pretty good about most testing but it's like asking questions like so what's the developer experience here?
+
+00:32:17.860 --> 00:32:18.860
+How are they going to use this?
+
+00:32:18.860 --> 00:32:19.860
+What's what's that going to be like?
+
+00:32:19.860 --> 00:32:31.900
+Oh yes kind of crummy and or what are getting them think about load or for latency up front is part of what I do.
+
+00:32:31.900 --> 00:32:34.900
+And then sometimes I realize I get to the end of the week.
+
+00:32:34.900 --> 00:32:43.900
+I didn't think much about testing this week should have I I don't know. No no no no because what you're trying to do.
+
+00:32:43.900 --> 00:32:51.900
+So what you reminded me of is the acceptance review in in scrum.
+
+00:32:51.900 --> 00:32:52.900
+Are you familiar with this concept?
+
+00:32:52.900 --> 00:32:53.900
+Oh yes.
+
+00:32:53.900 --> 00:32:55.900
+So you have a product owner.
+
+00:32:55.900 --> 00:32:57.900
+They set out the requirements.
+
+00:32:57.900 --> 00:33:04.900
+And then an ideal acceptance review occurs after when the developer says it's done.
+
+00:33:04.900 --> 00:33:09.250
+The ideal acceptance review is an interview.
+
+00:33:09.250 --> 00:33:21.250
+The PM's who I know of who do acceptance reviews badly will load up the product and essentially be a test team for that developer and fine bucks.
+
+00:33:21.250 --> 00:33:23.250
+That is not what you want to do.
+
+00:33:23.250 --> 00:33:27.760
+What you want to do is you want to interview them.
+
+00:33:27.760 --> 00:33:33.760
+Don't load the product because that keeps you objective and say OK.
+
+00:33:33.760 --> 00:33:41.100
+So how did you assure that latency isn't going to be an issue for our customers.
+
+00:33:41.100 --> 00:33:48.100
+How did you assure that this is going to scale to an outage.
+
+00:33:48.100 --> 00:33:50.100
+Like for example there's a new end.
+
+00:33:50.100 --> 00:33:53.100
+And this is the PM interviewing the developer or the development team.
+
+00:33:53.100 --> 00:33:56.140
+This is whether or not right.
+
+00:33:56.140 --> 00:34:01.140
+So it's essentially you ask a bunch of questions very similar to what you're doing.
+
+00:34:01.140 --> 00:34:03.140
+You do not load the product.
+
+00:34:03.140 --> 00:34:11.220
+And what you are trying to do is gain confidence that they did the work necessary.
+
+00:34:11.220 --> 00:34:12.610
+Yeah.
+
+00:34:12.610 --> 00:34:13.610
+Right.
+
+00:34:13.610 --> 00:34:15.860
+Makes sense.
+
+00:34:15.860 --> 00:34:18.860
+I have a I have a service that I'm shipping.
+
+00:34:18.860 --> 00:34:27.900
+It's about to be customer facing matter of fact just two weeks ago I shipped my first customer facing model.
+
+00:34:27.900 --> 00:34:31.410
+I'm very excited about that.
+
+00:34:31.410 --> 00:34:38.410
+And but the particular scenario I'm doing only triggers during an outage.
+
+00:34:38.410 --> 00:34:47.440
+OK so there's an outage happening so then this scenario is is intended to ease the customer pain during an outage.
+
+00:34:48.790 --> 00:34:58.780
+And I'll tell you I don't have a good sense on the concurrency that my service is going to be called in the in terms of an outage.
+
+00:34:58.780 --> 00:35:00.780
+And I'm worried about that.
+
+00:35:00.780 --> 00:35:05.780
+So I'm like OK can we figure out how to fake an outage without pissing off customers.
+
+00:35:05.780 --> 00:35:08.780
+Is there a way to do that.
+
+00:35:08.780 --> 00:35:10.780
+Bring back staging environment.
+
+00:35:10.780 --> 00:35:11.780
+Bring back int.
+
+00:35:11.780 --> 00:35:18.330
+We have multiple staging environments and trying to get rid of at least two of them.
+
+00:35:18.330 --> 00:35:19.330
+Yeah.
+
+00:35:19.330 --> 00:35:27.900
+We can go back to another way to describe my job is I am simultaneously trying to accelerate the team and improve quality.
+
+00:35:27.900 --> 00:35:34.060
+And because when we have those outages I don't think you can do that mutually exclusive.
+
+00:35:34.060 --> 00:35:44.060
+I could make the team go super fast and break things or you can't accelerate quality or I could stop deployments that would that would slow down incidents.
+
+00:35:44.060 --> 00:35:57.540
+So ideally I find if I'm successful the quality of the services improve overall and there's tons of ways to measure that with downtime or incidents or whatever.
+
+00:35:57.540 --> 00:36:13.540
+And our ability to deploy quickly and we know from we both read accelerate with another good book from modern testing is there is correlation between deployment velocity and quality which seems weird.
+
+00:36:13.540 --> 00:36:21.540
+But it makes sense if you're if you deploy lots of small changes probably you have a system where you're you can recover from quality issues quality improve.
+
+00:36:21.540 --> 00:36:34.540
+So I another book we still from a lot is accelerate if you read between the lines if you haven't read accelerate we just had a book club on one of the three dot slack dot com where people talked about that.
+
+00:36:34.540 --> 00:36:45.540
+But the quality culture transition guide it was in my head for a long time you've heard this story and if you haven't seen that go to one of the three dot slack dot com it's pinned to the general channel.
+
+00:36:45.540 --> 00:36:50.540
+When I created that it didn't gel in my head until I read accelerate.
+
+00:36:50.540 --> 00:36:58.930
+So you'll find some of you should find you should be able to get to the point where they talk about maturity models and how they work and how they don't work.
+
+00:36:58.930 --> 00:37:08.930
+And they talk about some attributes you'll kind of see hopefully because it happened some influence of how accelerate led to that maturity grid.
+
+00:37:08.930 --> 00:37:19.930
+But let me make that I just finished I finished reading accelerate in the end.
+
+00:37:19.930 --> 00:37:26.440
+One of the things that I found super insightful.
+
+00:37:26.440 --> 00:37:32.440
+So I talk about co correctness and quality of separate things.
+
+00:37:32.440 --> 00:37:41.440
+And co correctness is the bug side and quality is the customer satisfaction side.
+
+00:37:41.440 --> 00:37:56.180
+What I realize where the dots are connected and you just brought it up co correctness is very important but it's very important especially for given.
+
+00:37:56.180 --> 00:38:09.840
+What accelerate is saying in today's modern society modern world is still very important but its purpose is to speed up cycle times.
+
+00:38:09.840 --> 00:38:19.510
+You cannot scale crap right so the purpose of quality is to be able to build things faster.
+
+00:38:19.510 --> 00:38:32.670
+Now building things faster is has never been a traditional testing role but it is all it has been a traditional additional crap job test gets assigned.
+
+00:38:32.670 --> 00:38:43.210
+Now in this world where you are responsible in the service world where speed wins.
+
+00:38:43.210 --> 00:38:50.460
+Yeah you need to make sure you're building a quality product and then you're getting it out there fast.
+
+00:38:50.460 --> 00:39:08.720
+Reading that book what it did for me is it reinvigorated my belief in principle seven because we need to get development understanding how to get their code correct.
+
+00:39:08.720 --> 00:39:18.700
+The first time once that happens testability concerns go out the door right.
+
+00:39:18.700 --> 00:39:31.700
+We've already mentioned it several times accelerate has shown that when test or when dev owns the test automation is correlated with positive business and outcomes.
+
+00:39:31.760 --> 00:39:40.760
+But you can't really focus on that right. A lot of the lot of the old school traditional testing they want us to focus continue to focus on bugs.
+
+00:39:40.760 --> 00:39:45.340
+Speed is important. I've said it over and over again the last several years.
+
+00:39:45.340 --> 00:39:58.620
+But going a hundred million miles an hour and building a product no one wants is perhaps worse than going two miles an hour.
+
+00:39:58.620 --> 00:40:01.620
+Building a product everyone wants. Absolutely.
+
+00:40:01.620 --> 00:40:17.190
+That second piece the customer quality point of view is where I think test is better suited than doing death job for them and helping them to slow down the product.
+
+00:40:17.190 --> 00:40:28.190
+I just yesterday I was reading going through Reddit and I'm subscribed to the software testing subreddit and I should just get off there because it's it's 1990s encapsulated.
+
+00:40:28.190 --> 00:40:37.190
+And there was a question just yesterday someone asked who does the who does the was just unit testing who does the testing on your team.
+
+00:40:37.190 --> 00:40:48.190
+I read an article said that developers do some of the testing and their apply is no on my team the QA is right the unit test the QA is right the unit test the QA is.
+
+00:40:48.190 --> 00:40:54.190
+Yeah. And yeah. There's a whole idea of QA testing bugs the crap out of me.
+
+00:40:54.190 --> 00:41:01.190
+That's a team that's throwing away money. I want to have my dream. I have a dream. I'm not sure how possible this would be given.
+
+00:41:01.190 --> 00:41:10.190
+I think I don't think we're worthy of it but it wouldn't be fun to see if we get Nicole Forsgren on a be testing.
+
+00:41:10.190 --> 00:41:19.190
+It would that would be fantastic. I'm going to work up to that. I got it. I got to work out my nerve get my get get something going to convince her.
+
+00:41:20.190 --> 00:41:27.190
+I have a hunch that she's super super busy. I suspect to maybe we can get her for a half hour.
+
+00:41:27.190 --> 00:41:34.350
+But that book actually has multiple authors so we don't have to just try for Nicole. Yeah but she did all the research.
+
+00:41:34.350 --> 00:41:40.350
+So I'm really interested. So definitely the lead author on that. I want to pick her brain. Yeah.
+
+00:41:41.350 --> 00:41:51.350
+All right. The other thing I was going to mention before we close is that I didn't get to earlier. It was how much coaching I do.
+
+00:41:51.350 --> 00:42:00.350
+And it's interesting. I thought when I joined this team I would be coaching the team on writing tests and on how to think about testing.
+
+00:42:00.350 --> 00:42:05.350
+And they actually understand it pretty well. Oh my God developers know how to test. Oh my God. What kind of crazy world is this.
+
+00:42:05.350 --> 00:42:09.350
+Yeah they do a pretty good job. There's some larger end to end or integration things that they need some help on.
+
+00:42:09.350 --> 00:42:20.350
+And I'm helping with that. But I end up doing most of my coaching although I'm not certified in just how to do something.
+
+00:42:20.350 --> 00:42:25.350
+I mean we call it agile how to do something that makes sense. Too late really bring this up.
+
+00:42:25.350 --> 00:42:32.350
+But things like no that's not a story. It's phrase like a story. So yes it's a story.
+
+00:42:32.350 --> 00:42:41.350
+But that would take three months to finish. So how can we break this down. So things like that just little bits of coaching like how can we.
+
+00:42:41.350 --> 00:42:47.350
+How can we. What if we wanted to ship every week. What would that look like. How could we do that.
+
+00:42:47.350 --> 00:42:55.350
+I don't know if we do. Let's go a little deeper. So lots and lots of things like that just getting people to think about.
+
+00:42:55.350 --> 00:43:05.350
+It's again I am not that smart but sometimes I'm good at coming up with the right questions. The Socratic method of the difference. Yes.
+
+00:43:05.350 --> 00:43:20.350
+The Socratic method is fantastic. Where it feels with me is a lot of times I know the answer and I'm impatient. So I'll go. That's true.
+
+00:43:21.350 --> 00:43:28.350
+Hey Alan have you thought about this. And actually that's a failure in the Socratic method never.
+
+00:43:28.350 --> 00:43:37.450
+You're using a Socratic method never ask a question that can be answered with yes or no. That's the first lesson I'll give on it.
+
+00:43:37.450 --> 00:43:47.450
+Yes. And then if you do use it and you know the answer then and you have a problem with patience as I do.
+
+00:43:47.450 --> 00:44:05.860
+Then I found a little trick and that is make it a game. And that is can you get them to say the correct answer before you lose your patience and say it yourself.
+
+00:44:05.860 --> 00:44:14.860
+So you know how some of those games have little timers. Yeah. Yeah. Another one I've used and we'll go. Well nobody's waiting kicks out of the room yet.
+
+00:44:14.860 --> 00:44:24.890
+Another one I've used is and this is again I don't. Maybe it helps that I have made a lot of mistakes in my life and in my career. It does for sure.
+
+00:44:24.890 --> 00:44:32.890
+Because the other one that works out really well is just asking them like things like if I help someone prep for a meeting yesterday.
+
+00:44:32.890 --> 00:44:39.210
+So let's think about what questions are going to be asked and what questions. What do you mean.
+
+00:44:39.210 --> 00:44:47.210
+Like there's another one of these exec reviews today of this product said. So what are they going to ask about. They're going to ask about how we're going to validate.
+
+00:44:47.210 --> 00:44:53.500
+So they're going to ask about probably going to ask about what customers are we bringing on board. What's your answer there.
+
+00:44:53.500 --> 00:44:59.500
+And just putting you know thinking about. I guess it's a lot like you and a prep for like an exact review.
+
+00:44:59.500 --> 00:45:11.500
+And I guess it's like thinking about the like put yourself in the other person's shoes whether it's the example I gave earlier like what's the developer experience or let's anticipate what questions are going to be asked.
+
+00:45:11.500 --> 00:45:19.070
+That's a better way to prepare and it's like laying out agenda and trying to overwhelm them with information. You know one thing you haven't talked about.
+
+00:45:19.070 --> 00:45:27.030
+And I'm surprised because I remember the last time you did it you came back and you communicated it's hugely successful.
+
+00:45:27.030 --> 00:45:36.030
+That's the hypothesis testing exercise I taught you back in 82. Have you done that yet. Yeah. I'm done a little bit a lot.
+
+00:45:36.030 --> 00:45:48.030
+OK. I even in fact I'm going to talk about the hypothesis testing exercise specifically in the Ministry of Test module course that covers principle five.
+
+00:45:48.030 --> 00:45:55.030
+Nice. All right. So yeah I use that a lot. I even did a workshop on that.
+
+00:45:55.030 --> 00:46:06.030
+I included that at our we had a quality team offsite in January that I attended and gave a presentation that. So yeah. Yeah. No it's a good thing. It's a good way to think about things.
+
+00:46:06.030 --> 00:46:13.800
+The team is. Yeah. They're pretty good at that sort of thing. So I haven't had to do it much in this or. But we talk about it from time to time.
+
+00:46:13.800 --> 00:46:21.800
+That's it in a nutshell. We'll have. We're going to go in two weeks again. Do you think maybe four weeks. Two weeks. All right. We'll figure it out.
+
+00:46:21.800 --> 00:46:31.800
+I have a vacation the third week of August. I think I'm going to England then anyway for work. OK. So we'll figure it out. All right.
+
+00:46:31.800 --> 00:46:39.800
+Thanks for sitting through our planning session. As always I am Alan and I'm Brent. We'll see you next time.
+

@@ -1,0 +1,1736 @@
+WEBVTT
+
+00:00:03.380 --> 00:00:09.420
+Welcome to AV testing podcast your modern testing podcast your hosts Alan and
+
+00:00:09.420 --> 00:00:15.220
+Brent will be here to guide you through topics on testing leadership agile and
+
+00:00:15.220 --> 00:00:20.700
+anything else that comes to mind now on with the show hey we're back for another
+
+00:00:20.700 --> 00:00:30.260
+episode of I forgot what's this podcast called something Bart Bart
+
+00:00:30.260 --> 00:00:39.260
+there's a thing ago when I first met Brent and I was sort of the chief of
+
+00:00:39.260 --> 00:00:44.300
+staff for this test leadership meeting and Brent would show up there and I would
+
+00:00:44.300 --> 00:00:48.220
+mess with his name just to see if he was paying attention he loved it he was
+
+00:00:48.220 --> 00:00:58.620
+Brett Brent Burt Bobby Sue I don't know yeah it's it is a challenge to come up
+
+00:00:58.620 --> 00:01:05.260
+with something uniquely insulted or insulting with with my first name well I
+
+00:01:05.260 --> 00:01:11.060
+had a colleague in college by the way this is the AB testing podcast and I'm Alan
+
+00:01:11.060 --> 00:01:16.380
+and he's some name starts with a B I went to college with a trumpet player named
+
+00:01:16.380 --> 00:01:22.940
+Doug Burt last name B-E-R-G-T and it was so easy to call him his name was Doug
+
+00:01:22.940 --> 00:01:28.850
+Burt little flippy flop bug dirt he did not like that name I don't think that's
+
+00:01:29.610 --> 00:01:36.790
+like there's a lot worse names to call someone right apparently Donald is one
+
+00:01:36.790 --> 00:01:41.870
+of them as an example yes that is a name that is like nobody's gonna be naming
+
+00:01:41.870 --> 00:01:47.750
+their kids Donald anymore that's for sure no or Karen Donald and Karen those
+
+00:01:47.750 --> 00:01:55.110
+names just aren't used anymore yeah yeah the the Karen meme whoo
+
+00:01:55.470 --> 00:02:00.390
+certainly not in the next six months are we gonna see too many Karen's being born
+
+00:02:00.390 --> 00:02:05.590
+I think yeah and I think if the Phoenix project takes off like it should no one
+
+00:02:05.590 --> 00:02:11.900
+will name their kid Brent either because Brent is synonymous with bottleneck which
+
+00:02:11.900 --> 00:02:16.500
+is weird because you're not but I'm afraid you're going to be overthrown by
+
+00:02:16.500 --> 00:02:24.660
+the by the power of media again you you're saying I'm not because you mostly
+
+00:02:24.660 --> 00:02:29.660
+talked to me right I mean if you should talk to my team I don't know that they
+
+00:02:29.660 --> 00:02:33.940
+would agree with that statement a matter of fact actually that's one of my biggest
+
+00:02:33.940 --> 00:02:39.860
+my team's grown in size and we got a bunch of new people on here and and
+
+00:02:39.860 --> 00:02:45.300
+these are like green horns straight out of college and one of the things I am I
+
+00:02:45.300 --> 00:02:51.740
+have a couple of them that really struggle with decision-making and
+
+00:02:51.980 --> 00:02:57.580
+they're like oh well I had this really myopic decision can I set up an hour
+
+00:02:57.580 --> 00:03:03.660
+meeting with you so we can go through it oh no no you can't no you cannot please
+
+00:03:03.660 --> 00:03:08.820
+send me please send me a message and I'll look at it yeah what was I gonna say
+
+00:03:08.820 --> 00:03:13.740
+oh a couple things that reminds me of the topic I wanted to talk about today
+
+00:03:13.740 --> 00:03:18.300
+but there's I need context so we are live-streaming once again and once
+
+00:03:18.300 --> 00:03:24.350
+again last-minute apologies I we were not going to live stream this one because we
+
+00:03:24.350 --> 00:03:28.230
+hit we're going until about 15 minutes ago going to have a guest on the show
+
+00:03:28.230 --> 00:03:34.990
+and I did not want to subject them to that madness however that changed I
+
+00:03:34.990 --> 00:03:39.230
+won't give away the guest it's gonna be fantastic but they had to reschedule at
+
+00:03:39.230 --> 00:03:42.350
+the last minutes just Brent and I and I think we came up with a pretty good
+
+00:03:42.350 --> 00:03:49.030
+agenda on the fly as we usually do I am super excited about the guests but we are
+
+00:03:49.030 --> 00:03:53.710
+live-streaming and it's last minute the next time we live stream I promise I
+
+00:03:53.710 --> 00:03:59.110
+will try I promise that I will try to get an announcement up in our slack
+
+00:03:59.110 --> 00:04:03.900
+group which you can join if it's called one of the three dot slack calm there's
+
+00:04:03.900 --> 00:04:08.460
+an invitation link on the podcast website and probably the easiest way to
+
+00:04:08.460 --> 00:04:11.700
+get there is to go to modern testing org where you can read the modern
+
+00:04:11.700 --> 00:04:20.580
+testing principles and yeah yeah yeah so all that intro to episode 126 I believe
+
+00:04:20.580 --> 00:04:28.560
+aside my calendar so the corona calendar bump as I call it was just beginning to
+
+00:04:28.560 --> 00:04:36.640
+subside and then as I mentioned last time on the podcast my org is growing adding
+
+00:04:36.640 --> 00:04:42.310
+some additional technical program managers not product managers Brent
+
+00:04:42.550 --> 00:04:49.790
+program managers to my org also I have added so we merged a big parts of two
+
+00:04:49.790 --> 00:04:54.390
+parts of unity together I have added additional DevOps engineers to my role
+
+00:04:54.390 --> 00:04:58.430
+essentially doubling the size of that team I have expanded the size of my
+
+00:04:58.430 --> 00:05:02.510
+documentation team that's about doubled as well and I've added a few other odds
+
+00:05:02.510 --> 00:05:09.630
+and ends to my org in fact longtime listeners of the podcast will know that
+
+00:05:09.630 --> 00:05:17.910
+four or five abt 343 ago I had Melissa Eden on the recording talking about what
+
+00:05:17.910 --> 00:05:24.030
+she's doing at unity I originally hired her to work for me on my team when I was
+
+00:05:24.030 --> 00:05:30.330
+director of QA for services and when I moved away she moved to another dev
+
+00:05:30.330 --> 00:05:33.990
+director did some really great things and part of this reorg is I get her
+
+00:05:33.990 --> 00:05:38.190
+back oh the long-term plan is there so Melissa so Melissa works for me again
+
+00:05:38.670 --> 00:05:43.190
+she is already kicking butt super excited so my org is a little bigger and then
+
+00:05:43.190 --> 00:05:49.550
+also because I manage the matrix and my boss came up with a good description for
+
+00:05:49.550 --> 00:05:54.550
+what I do that I don't think I've shared before but it stuck with me I run the
+
+00:05:54.550 --> 00:06:00.790
+engineering operating system so if you think of engineering as an OS that it's
+
+00:06:00.790 --> 00:06:07.680
+like all of the I make all the systems go Brent does not like that no no no no
+
+00:06:07.920 --> 00:06:11.920
+if you're on the podcast you won't know this but Brent doesn't like that but it
+
+00:06:11.920 --> 00:06:17.560
+but it actually makes sense what do you mean I don't like that you made a face
+
+00:06:17.560 --> 00:06:21.640
+like I can tell when you're making a face because normally you're like this
+
+00:06:21.640 --> 00:06:27.440
+level ugly and you were like a new level I go oh Brent taking it taking it
+
+00:06:27.440 --> 00:06:31.800
+to 11 so because I'll to comment on that in a minute but the point was
+
+00:06:31.800 --> 00:06:38.560
+because of that and going back to your schedule time with you so many meetings
+
+00:06:38.560 --> 00:06:43.120
+my calendar has because people want to go I need to touch me every single new
+
+00:06:43.120 --> 00:06:47.240
+lead in the org hey I need to know how things work can we have some time
+
+00:06:47.240 --> 00:06:51.960
+together and I go sigh yes here's some pre-reading because I've already
+
+00:06:51.960 --> 00:06:54.960
+documented everything you're gonna ask but the introduction and the face time
+
+00:06:54.960 --> 00:06:59.440
+is good so I am meeting with a lot of people across the org which is good I'm
+
+00:06:59.440 --> 00:07:02.720
+not complaining too much about it I'm not complaining about the people I love
+
+00:07:02.720 --> 00:07:07.120
+talking to the people it helps get things done what I'm complaining about is the
+
+00:07:07.120 --> 00:07:13.960
+45 hours of week 45 hours a week I have in meetings for the next three weeks yeah
+
+00:07:13.960 --> 00:07:19.660
+no tell me about your face it everything you just said said kind of
+
+00:07:19.660 --> 00:07:26.260
+aligns if you are you know director of the engineering OS you're essentially the
+
+00:07:26.260 --> 00:07:31.940
+chief cat herder actually yes I'm I'm sometimes I call myself chief nagging
+
+00:07:31.940 --> 00:07:41.120
+officer yeah I like that the CNO I just try and I try and help people make good
+
+00:07:41.120 --> 00:07:46.900
+yeah it's it's very much a process problem when a lot of those regards it's
+
+00:07:46.900 --> 00:07:53.580
+it's I actually think cat herder is a great how do you how do you enable the
+
+00:07:53.580 --> 00:07:59.020
+right amount of autonomy because as we know command and control sucks you are
+
+00:07:59.020 --> 00:08:06.060
+you are absolutely in a position to evoke all kinds of evil with respect to command
+
+00:08:06.060 --> 00:08:12.000
+and control absolutely I actually am one of the few people in the entire org me
+
+00:08:12.000 --> 00:08:17.360
+and the people that run our SRE business or SRE operations who actually can carry
+
+00:08:17.360 --> 00:08:23.200
+a process hammer and I am very careful in where I you find nails and hammer
+
+00:08:23.200 --> 00:08:30.720
+them yeah yeah the thing I the thing I mean the thing I like about you being in
+
+00:08:30.720 --> 00:08:40.000
+that role is is you know the responsibility and you know that if I if
+
+00:08:40.000 --> 00:08:47.180
+you could get business converged autonomy down at the root level you're gonna
+
+00:08:47.180 --> 00:08:53.980
+you're gonna create an environment of awesome however as you call out you can't
+
+00:08:53.980 --> 00:09:00.800
+be afraid to to use command and control not liberally what's the opposite
+
+00:09:00.800 --> 00:09:07.000
+carefully I wouldn't call a command and control it's adding just enough process
+
+00:09:07.000 --> 00:09:11.680
+it's putting up some bumper rails where he needed so teams can stumble towards
+
+00:09:11.680 --> 00:09:20.680
+success right and as long as you are kind of reminds me of a story so back in
+
+00:09:20.680 --> 00:09:25.720
+the day I was in Boy Scouts and I was trying to get the bicycling merit badge
+
+00:09:25.720 --> 00:09:33.660
+and in the bicycling merit badge you had to do a bunch of really long bicycle
+
+00:09:33.660 --> 00:09:44.450
+trips and the last one was a 50-mile trip my dad joined me on that trip and how
+
+00:09:44.450 --> 00:09:52.570
+he joined me is he followed 10 feet behind me in his car beeping every time I
+
+00:09:52.570 --> 00:10:04.130
+slowed down if the hill was to did that help help it it was motivational
+
+00:10:04.130 --> 00:10:11.930
+it did not inspire me to ever want to do another 50-mile trip as a as a teenager
+
+00:10:11.930 --> 00:10:19.410
+but I did get to the goal right so there's motivation is a is a careful
+
+00:10:19.410 --> 00:10:24.890
+thing yeah you can use it to get to a goal but how do you get it how do you
+
+00:10:24.890 --> 00:10:33.030
+use it so that the next goal achievement is easier it doesn't scale if
+
+00:10:33.110 --> 00:10:38.790
+the the virtual father has to follow behind in the car for every person
+
+00:10:38.790 --> 00:10:44.460
+taking a bike trip right I could talk about the New York the whole episode and
+
+00:10:44.460 --> 00:10:49.100
+we'll we won't we'll only talk about it for half or maybe I'll say five minutes
+
+00:10:49.100 --> 00:10:56.900
+and then I'll expand to 15 one thing is that up until now and we'll have this
+
+00:10:56.900 --> 00:11:02.220
+continually we've had these program managers embedded in the teams and I
+
+00:11:02.460 --> 00:11:07.020
+have all but one or two of those will actually stay there and help their teams
+
+00:11:07.020 --> 00:11:11.540
+but they haven't thought about how to scale that across the org so that's
+
+00:11:11.540 --> 00:11:17.060
+gonna be it'll be interesting to sort of dotted line manage that group so it's
+
+00:11:17.060 --> 00:11:21.300
+kind of it's a little bit like my old org where I will have some there are
+
+00:11:21.300 --> 00:11:25.940
+some PM's that will be embedded in the teams they work with which I think is
+
+00:11:25.940 --> 00:11:32.150
+the right thing for that for sort of a senior level technical glue role but
+
+00:11:32.150 --> 00:11:36.070
+I think it will also be good to use that group to begin to figure out what are
+
+00:11:36.070 --> 00:11:40.470
+those bumper rails those lightweight processes we need and what are the
+
+00:11:40.470 --> 00:11:43.750
+fewest we need to actually be most efficient so I'm looking forward to that
+
+00:11:43.750 --> 00:11:49.190
+but I will learn more about that as we go one of the PM is reporting to me is
+
+00:11:49.190 --> 00:11:55.150
+very much in the the data he loves data and analysis and knows all the cool
+
+00:11:55.150 --> 00:11:59.510
+Excel tools reminds me of you Brent a little bit and I gave him all of my
+
+00:11:59.510 --> 00:12:04.870
+project-level data on delivery rates and he did a bunch of analysis and came
+
+00:12:04.870 --> 00:12:09.430
+back with this gradient gradient color-coded chart showing me the projects
+
+00:12:09.430 --> 00:12:13.350
+that were more than two standard deviations away from the norm as far as
+
+00:12:13.350 --> 00:12:19.750
+delivery and I said yep those are our three problem projects so no surprise is
+
+00:12:19.750 --> 00:12:24.510
+there but instead of anecdotally observation observation based anecdotes it
+
+00:12:24.510 --> 00:12:31.810
+was data-based solution so I think while that one was not insightful I'm
+
+00:12:31.810 --> 00:12:35.810
+confident that he is going to help find insights in the way we deliver across
+
+00:12:35.810 --> 00:12:42.880
+the org because we're moving now to a stage where you know up until a week or
+
+00:12:42.880 --> 00:12:49.800
+two ago we have 60 60 ish projects in flight across the organization things that
+
+00:12:49.800 --> 00:12:54.800
+are actively being worked on that was a little customer value we are rapidly
+
+00:12:54.800 --> 00:12:59.280
+getting to a stage we're going to have nearly a hundred different projects in
+
+00:12:59.280 --> 00:13:03.160
+flight across the larger organization that can have customer value those things
+
+00:13:03.160 --> 00:13:09.560
+ranging from two-week experiments to sometimes three-month projects to deliver
+
+00:13:09.560 --> 00:13:15.400
+a whole new SDK or functionality to a customer so getting some consistency in
+
+00:13:15.400 --> 00:13:21.100
+how we track those things and how we how we improve based on how we deliver
+
+00:13:21.100 --> 00:13:24.220
+those things is going to be fun yeah it's gonna be interesting to hear that
+
+00:13:25.100 --> 00:13:35.340
+that journey right I don't know of any team that has tried to take the journey
+
+00:13:35.340 --> 00:13:46.800
+to that scope and has done so without heavily leveraging command and control
+
+00:13:46.800 --> 00:13:57.550
+and in shame of it and that that hopefully is just due to a culture at
+
+00:13:57.550 --> 00:14:04.340
+the company that is now dead yeah that's the opposite of our culture so I would
+
+00:14:04.340 --> 00:14:08.580
+be very surprised if we got there so the I think the bigger worry from our
+
+00:14:08.580 --> 00:14:13.780
+leadership is that we don't add enough process to keep things under control but
+
+00:14:13.780 --> 00:14:18.460
+that we but also that we retain autonomy I'm about to make a decision
+
+00:14:18.460 --> 00:14:24.500
+one of my few process hammers we have one part of the organization we can make
+
+00:14:24.500 --> 00:14:30.450
+it here right now on the podcast what are we making your decision oh no I've
+
+00:14:30.450 --> 00:14:35.330
+made it oh okay I've actually made the decision it's actually one of the few
+
+00:14:35.330 --> 00:14:44.050
+times I'm going to imagine a functional team that split across three team leads
+
+00:14:44.050 --> 00:14:49.050
+so imagine with the team being roughly two pizza size imagine that three of
+
+00:14:49.050 --> 00:14:54.050
+those teams together actually work on a big part of the project you with me so
+
+00:14:54.050 --> 00:15:00.050
+far so imagine three teams of six to eight dead who are all part of a larger
+
+00:15:00.050 --> 00:15:05.290
+team a larger okay delivering like say they're delivering they're delivering
+
+00:15:05.290 --> 00:15:09.130
+fruit their project is fruit and there's the banana team lead and the
+
+00:15:09.130 --> 00:15:13.210
+apple team lead and the orange team lead this is horrible metaphor but that's
+
+00:15:13.210 --> 00:15:18.550
+they're all part of delivering fruit now imagine that they all use completely
+
+00:15:18.550 --> 00:15:23.230
+different project management tools and completely different project management
+
+00:15:23.230 --> 00:15:29.890
+techniques okay so far not hard to imagine oh well now imagine me coming oh
+
+00:15:29.890 --> 00:15:36.180
+you know what I know I'm gonna piss all of you off at once in the in the sake
+
+00:15:36.180 --> 00:15:41.940
+of a greater good and have you all use the same project management tool so you
+
+00:15:41.940 --> 00:15:45.260
+can work better with product so you can't we have a better chance of doing
+
+00:15:45.260 --> 00:15:49.180
+what's going on so I can help you more and it's one that none of you are using
+
+00:15:49.180 --> 00:15:52.300
+right now so you are gonna feel the pain and I'm gonna help you through the
+
+00:15:52.300 --> 00:15:58.150
+pain and we just have to do it and they're gonna cry and they're gonna
+
+00:15:58.150 --> 00:16:01.750
+complain but we're gonna do it anyway and within a month they're gonna be
+
+00:16:01.750 --> 00:16:07.270
+happy yeah it's I've it reminds me of a similar strategy I've taken before
+
+00:16:07.270 --> 00:16:13.890
+right it's essentially instead of having them fight amongst themselves over
+
+00:16:13.890 --> 00:16:22.530
+who has the greater tool you basically come in you've defined it and now
+
+00:16:22.530 --> 00:16:30.210
+temporarily they are unified as a singular team on hating Alan in his
+
+00:16:30.210 --> 00:16:35.210
+dictatorial that's exactly and then right once once they align on hating me
+
+00:16:35.450 --> 00:16:41.210
+they'll have a better chance of aligning generally going forward I'm happy to be
+
+00:16:41.210 --> 00:16:45.970
+the first thing their hatred towards me in this case I'm happy to be if that's
+
+00:16:45.970 --> 00:16:49.610
+the first thing they align on great because that means they can align and
+
+00:16:49.610 --> 00:16:56.510
+they can rally around that a hundred percent on the same page that a hundred
+
+00:16:56.510 --> 00:17:03.790
+percent the the other thing too I mean I've shared this on a podcast right
+
+00:17:03.790 --> 00:17:09.870
+there is a there is a phrase I rarely use well I don't know if it's rare I
+
+00:17:09.870 --> 00:17:16.230
+probably pull it out of my back pocket now once a quarter and and the phrase is
+
+00:17:16.230 --> 00:17:23.270
+and I think you could imagine all sorts of places to use this but the phrase is
+
+00:17:23.270 --> 00:17:28.230
+hey guys here's one one place where I want to take an opportunity to remind
+
+00:17:28.230 --> 00:17:37.010
+everybody that I work really hard to make this team appear to be a democracy
+
+00:17:37.010 --> 00:17:46.530
+watching Alan Parse I'm gonna pull that one out I like that that that goes from
+
+00:17:46.530 --> 00:17:52.050
+your back pocket into my back pocket thank you for the love I think it's they
+
+00:17:52.050 --> 00:17:56.650
+they stop pause wait a minute he works really hard to make it appear but he's
+
+00:17:56.650 --> 00:18:02.570
+implying if you can hear you can you can almost hear the gears like oh right
+
+00:18:02.570 --> 00:18:10.600
+right so every now and again you I find that I have to reassert that ultimately
+
+00:18:10.600 --> 00:18:17.080
+I'm accountable in the way I've decided to to make decisions is to push decisions
+
+00:18:17.080 --> 00:18:28.050
+down as much as possible yeah however and and I do try to work hard to such that
+
+00:18:28.050 --> 00:18:33.780
+people forget that I have veto power but every now and again I need to pull it out
+
+00:18:33.780 --> 00:18:38.780
+because we're in the weeds it's not a sort of reminder of everybody that that
+
+00:18:38.780 --> 00:18:43.340
+I'm still the guy in charge I could give a shit about that it's just oh my
+
+00:18:43.340 --> 00:18:47.940
+god you are so much in the weeds it's gonna take three months for you guys to
+
+00:18:47.940 --> 00:18:54.020
+figure out how to get out of the weeds turns out I have a weed whacker we're
+
+00:18:54.020 --> 00:18:59.020
+going we're going in this direction so it's interesting you brought that up
+
+00:18:59.020 --> 00:19:03.740
+with whatever you said a moment ago about them being the decision makers as
+
+00:19:03.740 --> 00:19:10.920
+I've added 15 people to my org I've met with them all individually by now at
+
+00:19:10.920 --> 00:19:14.640
+least once as well as in some team settings and one of the things that I
+
+00:19:14.640 --> 00:19:18.640
+continue to iterate because anytime there's a move like this there's some
+
+00:19:18.640 --> 00:19:23.240
+thud some fear uncertainty and doubt that comes with it so I reiterate my
+
+00:19:23.240 --> 00:19:29.640
+style is I and one of the things I've said to everyone is I believe decisions
+
+00:19:29.640 --> 00:19:37.780
+are best made by the person closest to the work so I am rarely if ever probably
+
+00:19:37.780 --> 00:19:41.220
+never going to jump in and make a decision for you I can help you
+
+00:19:41.220 --> 00:19:47.500
+brainstorm that decision I can help facilitate a discussion around the
+
+00:19:47.500 --> 00:19:50.980
+decision those things I'm good at but I'm not gonna make those I was talking
+
+00:19:50.980 --> 00:19:56.060
+to one of the new DevOps engineers yesterday and just talking you I'm so
+
+00:19:56.060 --> 00:19:58.420
+glad you're not a micromanager and I'll work that way it sounds like you're a
+
+00:19:58.420 --> 00:20:03.060
+lot like my last manager say great I said and I want you to know just for full
+
+00:20:03.060 --> 00:20:09.790
+transparency we may have a discussion sometimes it gets into like a solution
+
+00:20:09.790 --> 00:20:16.150
+or a tool or how something we could do and it is not never going to me telling
+
+00:20:16.150 --> 00:20:19.910
+you what to do or telling you what decision to make it is purely me getting
+
+00:20:19.910 --> 00:20:23.310
+excited and living vicariously through your work since I don't get to do that
+
+00:20:23.310 --> 00:20:37.270
+anymore that moment where you've you've gone you're what is it the the seventh
+
+00:20:37.270 --> 00:20:42.910
+stage of of grief right where you're no longer in denial you're I have acceptance
+
+00:20:42.910 --> 00:20:53.750
+you're like yep I don't do things anymore but I still have this need okay let me
+
+00:20:53.750 --> 00:20:58.430
+try to do vicariously yeah that's all I can do at this point given the the
+
+00:20:58.430 --> 00:21:03.390
+variety of projects of functions of disciplines I'm managing across the team
+
+00:21:03.390 --> 00:21:07.670
+and by the way for the people in the livecast I changed the view from speaker
+
+00:21:07.670 --> 00:21:11.670
+view to showing both of us at once so you can see when Brent makes faces when I
+
+00:21:11.670 --> 00:21:18.160
+talk but if you prefer the other view let me know should we wait the 20
+
+00:21:18.160 --> 00:21:22.400
+seconds whatever I'll glance over it chat once in a while there was a really
+
+00:21:22.400 --> 00:21:26.280
+good comment someone said oh man I missed the first 15 minutes and then before I
+
+00:21:26.280 --> 00:21:29.560
+could type anything in perzy reminded them that nothing good happens in the
+
+00:21:29.560 --> 00:21:35.580
+first 15 minutes anyway it's it's the Brent and Alan BS show one other thing I
+
+00:21:35.580 --> 00:21:41.180
+was going to mention about the new org to see if I can remember one interesting
+
+00:21:41.180 --> 00:21:46.370
+thing happened is one of my oh actually this is something worth talking about
+
+00:21:46.370 --> 00:21:50.810
+because this isn't optimal but I think I'll make it work at least for the
+
+00:21:50.810 --> 00:21:55.290
+medium term in this merge I have gained a DevOps team and I've gained a
+
+00:21:55.290 --> 00:21:59.770
+documentation team which means I have two documentation leads with teams and
+
+00:21:59.770 --> 00:22:07.730
+two DevOps teams with leads and some various other ICs right now I have too
+
+00:22:07.730 --> 00:22:13.290
+many direct reports I want to flatten that a little bit but I've always been
+
+00:22:13.290 --> 00:22:20.200
+hesitant of having two you mean unflattened it right you have too many
+
+00:22:20.200 --> 00:22:25.520
+direct I want to unflatten it a little bit yes I knew what I meant damn it so
+
+00:22:25.520 --> 00:22:31.590
+the challenge for me is I want to get past the their org versus our org stuff
+
+00:22:31.590 --> 00:22:36.910
+even though right now functionally I have leads from my old org and leads for
+
+00:22:36.910 --> 00:22:42.860
+the new org coming in so I do have plans and everyone is on board on
+
+00:22:42.860 --> 00:22:46.540
+learning to on getting a stage where they can learn from each other and begin
+
+00:22:46.540 --> 00:22:53.060
+to share work across them but I need to consciously start to blend them into one
+
+00:22:53.060 --> 00:22:56.940
+kind of like the Brady Bunch I need to spend time making sure I can blend them
+
+00:22:56.940 --> 00:23:03.860
+into one team and I don't stay into the X org and the Y org over time so
+
+00:23:03.860 --> 00:23:07.140
+that's something I'm working on but probably something I'll come up that
+
+00:23:07.140 --> 00:23:11.300
+there's no immediate problem I just always avoided having it's not a great
+
+00:23:11.300 --> 00:23:14.540
+way to do a merger in this case I think it makes sense for the short term I have
+
+00:23:14.540 --> 00:23:19.220
+to figure out how to it's top of mind on my challenges as far as bringing the org
+
+00:23:19.220 --> 00:23:23.240
+together yeah I don't have enough business so it's like the way you've
+
+00:23:23.240 --> 00:23:28.710
+described it so far so far right unless there's a sort of a red thread that
+
+00:23:28.710 --> 00:23:35.790
+ties everyone together team identity is absolutely gonna be critical and is is
+
+00:23:35.790 --> 00:23:41.010
+the way you've described it's gonna be hard yes and there's another challenge
+
+00:23:41.010 --> 00:23:45.610
+that I'm gonna crowdsource to the three and to you but to the three indirectly
+
+00:23:45.610 --> 00:23:51.130
+through you is I didn't worry about having a team identity when I had my
+
+00:23:51.130 --> 00:23:56.050
+team of eight DevOps or yeah eight DevOps and three doc writers three or
+
+00:23:56.050 --> 00:23:59.900
+four doc writers sorry I should know one two three three doc three and a half
+
+00:23:59.900 --> 00:24:06.430
+doc writers ones on loan and a few other random ICs it's I never worried about
+
+00:24:06.430 --> 00:24:13.430
+describing what the identity or role of my team was it's very much in the even
+
+00:24:13.430 --> 00:24:18.310
+with DevOps is very much still been accelerating the achievable quality and
+
+00:24:18.310 --> 00:24:22.190
+also I have docs because they have a huge impact on the customer perception
+
+00:24:22.190 --> 00:24:26.150
+equality and stories there one of the things I want to crowdsource to the team
+
+00:24:26.150 --> 00:24:30.630
+especially now since I have you know eight people in Docs and 15 or 16
+
+00:24:30.630 --> 00:24:35.950
+people in DevOps and and six other ICs working on various quality and PM
+
+00:24:35.950 --> 00:24:40.710
+initiatives is what does my team do what should I call my team right now in
+
+00:24:40.710 --> 00:24:45.750
+Slack it's called Allen team and I don't like that I want to find a name for my
+
+00:24:45.750 --> 00:24:51.550
+team and the best I've come up with so far which is which is the wrong name but
+
+00:24:51.550 --> 00:24:55.870
+I'm hoping by being by it being so wrong that people will come up with better
+
+00:24:55.870 --> 00:25:06.300
+answers is org name dash glue yeah yeah I'm actually thinking of
+
+00:25:07.380 --> 00:25:12.260
+yeah I don't have I mean I have a name for you it's not a good name
+
+00:25:12.260 --> 00:25:19.620
+I don't think is gonna fly if you know it we can work through the acronym right
+
+00:25:19.620 --> 00:25:25.940
+and go if it were over here right the first letter would be Azure so that you
+
+00:25:25.940 --> 00:25:32.020
+mean yes yes right Azure oh are they oh wait wait wait can I help with this so
+
+00:25:32.020 --> 00:25:39.230
+can the next version of Windows be Azure operating system for business net Azure
+
+00:25:39.230 --> 00:25:45.940
+Azure operating system Azure operate as your OS for business is the new name
+
+00:25:45.940 --> 00:25:50.660
+for Windows you heard it here first announcement yeah so you forgot power
+
+00:25:50.660 --> 00:25:55.740
+right would need to be the power of your operating system for business as your
+
+00:25:55.740 --> 00:26:03.740
+powered OS for business no power the power of Azure OS for business net got it
+
+00:26:03.980 --> 00:26:14.480
+anyway yeah it's not it's not a functional name but essentially I'm thinking about
+
+00:26:14.480 --> 00:26:21.260
+our friends comment so many years ago and have you put yourself into another
+
+00:26:21.260 --> 00:26:31.360
+position where you run the everything else org have I lost you no no no cuz is
+
+00:26:31.360 --> 00:26:38.840
+this thing on while true I can actually say that no one sees it that way okay well
+
+00:26:38.840 --> 00:26:43.840
+that's good that's good but on you know for better or for worse people still see
+
+00:26:43.840 --> 00:26:48.520
+because of title only and the way I run projects and the engineering operating
+
+00:26:48.520 --> 00:26:54.960
+system it's Alan's program management org which is not right at all either so my
+
+00:26:54.960 --> 00:27:00.490
+org is the majority of our org is DevOps our customer for DevOps and for
+
+00:27:00.490 --> 00:27:05.610
+all the rest of my org except for documentation is to enable our internal
+
+00:27:05.610 --> 00:27:12.250
+teams to kick ass and deliver quickly and safely to customers when I add
+
+00:27:12.250 --> 00:27:18.210
+documentation to the mix and again I fully believe it fits because we've made
+
+00:27:18.210 --> 00:27:23.290
+so many improvements in the customer perception of quality by improving and
+
+00:27:23.290 --> 00:27:27.410
+adding documentation even in the eight months I've been running that org that
+
+00:27:27.410 --> 00:27:32.280
+it really fits a lot with quality and there are some people that remember that
+
+00:27:32.280 --> 00:27:36.440
+I have an extensive quality background and so they say oh Alan's quality team
+
+00:27:36.440 --> 00:27:40.480
+but I really don't really have one of those either but I'm still like what
+
+00:27:40.480 --> 00:27:45.060
+do you got what do you got how would we and then so I got one versus the
+
+00:27:45.060 --> 00:27:50.200
+remainder yeah the actually yeah the remainder is what I was trying to do I
+
+00:27:50.200 --> 00:27:56.140
+know but I couldn't page load it the way you just described like first off
+
+00:27:56.140 --> 00:28:02.030
+I'm like you know what injury engineering operating system you know EOS
+
+00:28:02.030 --> 00:28:08.510
+sounds would be kind of cool you run the EOS team right because no one's heard of
+
+00:28:08.510 --> 00:28:13.030
+that before but then it's probably not inclusive enough of everyone in your
+
+00:28:13.030 --> 00:28:18.790
+organization right if your documentation team is their output is is intended to
+
+00:28:18.790 --> 00:28:23.950
+go straight to the customer right not not to both directions we do have some
+
+00:28:23.950 --> 00:28:29.950
+internal docs they work on as well that helps out marketing sales etc but yeah
+
+00:28:29.950 --> 00:28:37.110
+largely to the customer but what about the quality operating system right the
+
+00:28:37.110 --> 00:28:42.190
+problem is is that acronym is QOS yeah that's already taken and the the Q word
+
+00:28:42.190 --> 00:28:48.100
+what I think they may get it in this org I yeah that would be internal yeah
+
+00:28:48.100 --> 00:28:52.860
+the Q word I worry a little bit about about pigeonholing I gotta tell you
+
+00:28:52.860 --> 00:28:58.660
+yesterday on Twitter I thought it was funny someone mentioned and this is fine
+
+00:28:58.660 --> 00:29:03.380
+I wrote this in an article 15 years ago as well but that you shouldn't blame bugs
+
+00:29:03.380 --> 00:29:07.420
+on testing literally 15 years ago I go dig out the article where I talked about
+
+00:29:07.420 --> 00:29:11.780
+the one that got away article for sticky minds and you know blaming bugs on
+
+00:29:11.780 --> 00:29:15.540
+testing is does it work it's a whole team thing someone was commenting about
+
+00:29:15.540 --> 00:29:20.060
+that yet again very adamant about it lots of threads on yes tough this is
+
+00:29:20.060 --> 00:29:24.060
+ridiculous it's hurtful and yeah I totally agree but what it made me think
+
+00:29:24.060 --> 00:29:31.090
+of wasn't and of course the tangents are here is I actually ask that all the time
+
+00:29:31.090 --> 00:29:36.020
+now why did why did we miss this in testing but I'm not blaming it I'm not
+
+00:29:36.020 --> 00:29:41.500
+blaming anyone I'm trying to get to the root cause of why we let a failure get
+
+00:29:41.500 --> 00:29:47.060
+to production so what I'm digging in with a team on who developed and tested
+
+00:29:47.060 --> 00:29:52.500
+their own code and I made some comments that said I still say this but you know
+
+00:29:52.500 --> 00:29:56.740
+I say it's all the time the difference in context is that my the team I'm talking
+
+00:29:56.740 --> 00:30:00.380
+to is a team that developed the code as well as tested it and people which I
+
+00:30:00.380 --> 00:30:04.100
+thought was interesting and insightful it talks about how things are changing
+
+00:30:04.100 --> 00:30:09.420
+and boy did I got busy because of my 45 hours of meetings a week and came back
+
+00:30:09.420 --> 00:30:14.420
+and people were all up in arms like the author's the author the original
+
+00:30:14.420 --> 00:30:18.820
+people like you don't know my context it's like that's great and and it's an
+
+00:30:18.820 --> 00:30:23.060
+anti-nice guy I know him and I like him but apparently I triggered the hell out
+
+00:30:23.060 --> 00:30:27.940
+of him and then people jumped on the the whole we were getting rid of testers
+
+00:30:27.940 --> 00:30:32.060
+thing and I thought oh god I did not mean to trigger this I just wanted to
+
+00:30:32.060 --> 00:30:36.940
+talk about this is interesting is this thing that I used to be just as adamant
+
+00:30:36.940 --> 00:30:40.620
+about I have a different view on because the way I run engineering
+
+00:30:40.620 --> 00:30:47.890
+systems now and people just it was a I didn't realize it was a massively
+
+00:30:47.890 --> 00:30:52.570
+triggering tweet for a lot of people and I apologized to everyone I offended I
+
+00:30:52.570 --> 00:30:56.970
+stand behind my words this stuff works for me it doesn't mean it works for you
+
+00:30:56.970 --> 00:31:01.490
+because I never said that I'll edit that out but just pisses me off anyway
+
+00:31:01.490 --> 00:31:08.290
+what were we talking about yeah I'm ignoring you know I'm trying to find it
+
+00:31:08.290 --> 00:31:14.770
+the Twitter's right the so already proposes I could just be release
+
+00:31:14.770 --> 00:31:20.780
+management but I think that's there's something to that it is there's
+
+00:31:20.780 --> 00:31:27.260
+something around how we release I think release management has some other
+
+00:31:27.260 --> 00:31:34.340
+connotations yeah I don't like the word management in there right it I don't
+
+00:31:34.340 --> 00:31:41.780
+like that right it's essentially it evokes essentially Alan is the the chief
+
+00:31:41.780 --> 00:31:45.980
+bureaucrat in charge well in a way I am it could be release and engineering
+
+00:31:45.980 --> 00:31:52.650
+operations speed wagon so you could be a real speed wagon I'm just throwing shit
+
+00:31:52.650 --> 00:31:57.780
+out there yeah you know you get a good idea Brent right you know a lot of ideas
+
+00:31:57.780 --> 00:32:01.460
+and throw the bad ones away but a very good idea on a different tangent is the
+
+00:32:01.460 --> 00:32:11.980
+idea of calling the operating system Azure warp speed or AWS for short because
+
+00:32:11.980 --> 00:32:15.460
+that one's a winner what were you talking about after you were going me I
+
+00:32:15.460 --> 00:32:20.980
+was making random comments after I was ignoring you I started making random
+
+00:32:20.980 --> 00:32:24.780
+comments around release management I mean that was like 30 seconds ago though I
+
+00:32:24.780 --> 00:32:31.940
+don't think your memory has gotten that bad no it hasn't Bert the base off of
+
+00:32:31.940 --> 00:32:38.060
+this I mean I like I current I mean it's not entirely inclusive right what you
+
+00:32:38.060 --> 00:32:42.740
+could do is just throw together a bunch of ideas get your leaders in a room and
+
+00:32:42.740 --> 00:32:49.060
+say hey I want something I want like I wouldn't crowdsource this with me in the
+
+00:32:49.060 --> 00:32:52.780
+three I would crowdsource this yeah that meetings already on the calendar for
+
+00:32:52.780 --> 00:32:56.380
+next week but I want to try and get some of the and again one of my
+
+00:32:56.380 --> 00:33:01.060
+techniques for getting ideas out of people is to give them all of the bad
+
+00:33:01.060 --> 00:33:04.260
+ideas to start with because then they will try and improve on those and
+
+00:33:04.260 --> 00:33:07.700
+actually get somewhere so I'm what I'm looking for from the three is here are
+
+00:33:07.700 --> 00:33:12.060
+all the things that won't work perzy asked like how is different from SRE or
+
+00:33:12.060 --> 00:33:17.020
+site reliability engineering and they are on the tail end for us at least and
+
+00:33:17.020 --> 00:33:21.780
+I think generally SRE are looking at things after they're deployed and I am
+
+00:33:21.780 --> 00:33:26.180
+trying to make sure like if I do my job really well SRE's job is easier
+
+00:33:26.180 --> 00:33:30.860
+because there's fewer incidents and fewer oddities or operational surprises
+
+00:33:30.860 --> 00:33:37.300
+coming their way anyway yeah I definitely have a leads meeting next week to go
+
+00:33:37.300 --> 00:33:43.820
+over this where we'll come to a conclusion and present that to the team
+
+00:33:43.820 --> 00:33:50.770
+the following week that's my so I put a deadline in place it makes sense anyway
+
+00:33:50.770 --> 00:33:54.970
+do you want to that's my org we'll hear more about that in the Alan talks about
+
+00:33:54.970 --> 00:34:00.890
+unity section of the podcast which will continue but we also oh we're out of
+
+00:34:00.890 --> 00:34:05.730
+time no we got the time go we have a mailbag question which is definitely
+
+00:34:05.730 --> 00:34:11.860
+worth unpacking and talking about can you wait do you know how to read I do you
+
+00:34:11.860 --> 00:34:15.660
+read the question so I could listen to it again because I ignored you last time
+
+00:34:15.660 --> 00:34:19.780
+you're at a chimney except for the one part I liked
+
+00:34:21.390 --> 00:34:34.740
+folks this is from who and who I whose name I presume is not Kristoff had us
+
+00:34:34.740 --> 00:34:41.590
+right he's got an accent mark over the s I have no clue what that means in any
+
+00:34:41.590 --> 00:34:48.350
+language let alone his so I apologize for that no that's yeah I think I think
+
+00:34:48.350 --> 00:34:54.060
+that's legit I'm sure it's legit I just don't know what it means in terms of how
+
+00:34:54.060 --> 00:34:59.780
+I'm supposed to think it's a change or a something like that anyway Kristoff we
+
+00:34:59.780 --> 00:35:04.670
+apologize but we're gonna go over your question yes hey folks I have a question
+
+00:35:04.670 --> 00:35:08.870
+about deployments and creating an adaptive culture I hope it's the right
+
+00:35:08.870 --> 00:35:15.590
+place to ask yes it is it absolutely is having pre-read it we have a mobile app
+
+00:35:15.590 --> 00:35:21.590
+and are doing loads of experiments we're also a seasonal business so of course it's
+
+00:35:21.590 --> 00:35:28.070
+essential that we release fast and often currently we do weekly releases
+
+00:35:28.070 --> 00:35:34.350
+regressions take a day multiple teams contribute to that repo and if we release
+
+00:35:34.350 --> 00:35:42.110
+a bug our rollback time is also crap due to review time on stores I assume app
+
+00:35:42.110 --> 00:35:48.550
+stores in that case we have got some automation working on doing less manually
+
+00:35:48.550 --> 00:35:53.990
+but because of how long it takes to restore the previous version we won't be
+
+00:35:53.990 --> 00:35:59.830
+able to be more adaptive and move really fast we moved away from agile
+
+00:35:59.830 --> 00:36:07.330
+testing framework and doing a variation of modern testing it's and seems like not
+
+00:36:07.330 --> 00:36:12.330
+having continuous deployment is holding us back and keeps us working in a
+
+00:36:12.330 --> 00:36:19.230
+predictive manner any tips on what to try out so let me try and paraphrase for
+
+00:36:19.230 --> 00:36:24.750
+understanding so for clarification it's how do we do the lean things that you
+
+00:36:24.750 --> 00:36:30.070
+and I preach so much in a mobile app where your release process is limited by
+
+00:36:30.070 --> 00:36:35.830
+the time it takes to get to submit and get feedback and get approved from the
+
+00:36:35.830 --> 00:36:41.780
+the app stores for Apple and Android that that inherently that's a bottleneck
+
+00:36:41.900 --> 00:36:47.790
+how do you work around that bottleneck in the system yeah I think that's a good
+
+00:36:47.790 --> 00:36:51.710
+summation I mean there's a couple one thing that I think is an interesting
+
+00:36:51.710 --> 00:36:57.430
+question is or statement rather is we moved away from the agile testing
+
+00:36:57.430 --> 00:37:03.260
+framework and doing a variation of modern testing that let's dive into that
+
+00:37:03.260 --> 00:37:09.020
+first before we go into solution mode so I'd actually like to understand more
+
+00:37:09.020 --> 00:37:15.180
+what that means because I consider you know the the modern testing principles to
+
+00:37:15.180 --> 00:37:21.380
+be you know maybe an evolution or maybe an adjunct to agile testing it's you know
+
+00:37:21.380 --> 00:37:26.860
+we care more we I guess the only differences are we have a an emphasis on
+
+00:37:26.860 --> 00:37:31.060
+data which is not in agile testing is defined by defined by Lisa and Janet
+
+00:37:31.060 --> 00:37:38.930
+and that may be it we may emphasize coaching and consulting a little bit more
+
+00:37:39.130 --> 00:37:44.090
+but I don't I don't think that much but it's not that much different so maybe
+
+00:37:44.090 --> 00:37:48.970
+it's just more lean than agile because you and I talk about lean so much and so
+
+00:37:48.970 --> 00:37:53.730
+much of our modern testing principles are stolen many more of those are stolen
+
+00:37:53.730 --> 00:37:57.130
+from the lean startup than they are from the agile testing book but both are
+
+00:37:57.130 --> 00:38:01.480
+influences no so one of the things that's interesting and we've talked
+
+00:38:01.480 --> 00:38:11.100
+about this in the past when we were forming up modern or MTP right the like
+
+00:38:11.100 --> 00:38:15.980
+they moved away from the agile testing framework and doing a variation of
+
+00:38:15.980 --> 00:38:24.860
+modern testing the implication there is Christoph has a a feeling that that
+
+00:38:24.860 --> 00:38:33.330
+modern testing is a replacement framework right it like implies sort of tactics
+
+00:38:33.330 --> 00:38:39.170
+and steps and you know a criteria by which you can evaluate whether or not you
+
+00:38:39.170 --> 00:38:46.970
+are successfully deployed modern testing and I have no doubt that right I do
+
+00:38:46.970 --> 00:38:50.890
+think modern testing has gotten to the point where it's absolutely bigger than
+
+00:38:50.890 --> 00:38:58.290
+us and not not controllable by us anymore so I have no doubt that there
+
+00:38:58.290 --> 00:39:04.730
+may be a belief around hey there's a tactical framework and a progression you
+
+00:39:04.730 --> 00:39:09.450
+can take you know when I think about it you're right data coaching the other one
+
+00:39:09.450 --> 00:39:16.250
+though principle seven right principle seven could easily be interpreted as
+
+00:39:16.250 --> 00:39:23.140
+moving towards unified engineering oh yes there's that one too I forget about
+
+00:39:23.140 --> 00:39:27.340
+that because it just happened so naturally for me yeah I would say if
+
+00:39:27.340 --> 00:39:36.330
+there's anything that's a modern testing framework call is sort of a be
+
+00:39:36.330 --> 00:39:43.930
+hyper cynical hyper that's cynical critical hyper critical on your need for
+
+00:39:43.930 --> 00:39:52.900
+test specialists right you probably don't need them the way you think you do that
+
+00:39:52.900 --> 00:39:58.100
+is to loop back to our previous topic quickly and jump back on this is not
+
+00:39:58.100 --> 00:40:03.860
+reporting to me but we do have some dedicated QA in my overall new
+
+00:40:03.860 --> 00:40:08.780
+organization and I met with the dev lead in charge of that organization and they
+
+00:40:08.780 --> 00:40:13.380
+not in so many words asked me if I was going to get rid of their QA team and
+
+00:40:13.380 --> 00:40:19.060
+that answer is basically what I gave them I said there's no my charter is
+
+00:40:19.060 --> 00:40:23.980
+never to get rid of QA my charter is to make sure teams are as efficient as
+
+00:40:23.980 --> 00:40:29.260
+they can be in delivering quality software to our customers and sometimes
+
+00:40:29.260 --> 00:40:36.420
+maybe frequently or very often in my past sometimes that means QA move into
+
+00:40:36.420 --> 00:40:40.660
+different roles that help optimize and accelerate the achievement of quality
+
+00:40:40.660 --> 00:40:43.860
+better so interesting you brought that up because that conversation came up as
+
+00:40:43.860 --> 00:40:49.570
+well this week in my so so what's the real answer the real answer is probably
+
+00:40:49.570 --> 00:40:54.170
+god I hope they don't listen to this podcast but they do the real answer is I
+
+00:40:54.170 --> 00:40:59.450
+expect at some point that team again I have dissolved so many test teams without
+
+00:40:59.450 --> 00:41:04.810
+laying off a single person I want to be that clear I don't know testers I work
+
+00:41:04.810 --> 00:41:09.330
+to make sure you find a role where you can be most effective in what you're best
+
+00:41:09.330 --> 00:41:13.370
+at so I imagine that will probably happen with those people in the org
+
+00:41:13.370 --> 00:41:19.250
+they'll move into various DevOps and development and maybe quality consulting
+
+00:41:19.250 --> 00:41:24.970
+roles yeah that that's I can't imagine that not happening in an org that I'm
+
+00:41:24.970 --> 00:41:30.530
+in charge of so I know the thing is but you have to disappoint people at a level
+
+00:41:30.530 --> 00:41:35.290
+they can absorb and I can't it whatever you do a reorg you have to let things
+
+00:41:35.290 --> 00:41:40.010
+keep going more or less as they're going for a little while and then boil
+
+00:41:40.010 --> 00:41:43.810
+the frog in the direction you want to go in but again going back to principle
+
+00:41:43.810 --> 00:41:49.090
+seven is and we're way off tangent on this on this topic but it isn't that
+
+00:41:49.090 --> 00:41:52.370
+you get rid of the testers and like this Yahoo article and just taking away
+
+00:41:52.370 --> 00:41:56.610
+the safety net it's you may get to a point where you realize you don't need
+
+00:41:56.610 --> 00:42:02.150
+dedicated testers anymore and I like to try and help teams get there yeah it was
+
+00:42:02.150 --> 00:42:07.950
+interesting because so the reason why I asked that question is as you laid it
+
+00:42:07.950 --> 00:42:14.550
+out I'm like okay let's imagine I'm in Alan shoes and this question came to me
+
+00:42:14.790 --> 00:42:21.490
+and I realized I don't know that I would have been as smooth as you were in terms
+
+00:42:21.490 --> 00:42:28.280
+of responding but I knew the answer almost instantly right it like the way
+
+00:42:28.280 --> 00:42:35.360
+the question was posed the fact that it's a concern says to me there is an
+
+00:42:35.360 --> 00:42:41.040
+extremely high chance that there is now an in-place safety net that needs to
+
+00:42:41.040 --> 00:42:47.910
+be worked through yeah but but my role requires a high level of emotional
+
+00:42:47.910 --> 00:42:54.380
+quotient and leading people on a journey to get where I want them to go agreed
+
+00:42:54.380 --> 00:43:01.740
+agreed so back to the question back to the question so tips to try out what
+
+00:43:01.740 --> 00:43:11.220
+what's what's your tips so what I would do have done would do is one way to get
+
+00:43:11.220 --> 00:43:16.460
+around because this this app store turnaround is real especially when when
+
+00:43:16.460 --> 00:43:22.300
+one or more of the app stores sort of have moving goalposts I shouldn't say
+
+00:43:22.300 --> 00:43:26.820
+sort of the goalposts on what it takes to have your app approved and deployed are
+
+00:43:26.820 --> 00:43:31.860
+moving so sometimes almost the identical app that was approved last week cannot
+
+00:43:31.860 --> 00:43:39.940
+get approved this week so the way around that of course is to do have
+
+00:43:39.940 --> 00:43:45.660
+remote configuration and fig fig your flags feature flags in your app so you
+
+00:43:45.660 --> 00:43:50.860
+can take a bug fix or a new feature that you think is correct and you can even
+
+00:43:50.860 --> 00:43:55.060
+deploy with the feature flag turned on and the app at startup of course it
+
+00:43:55.060 --> 00:43:59.460
+would require again you're stuck if your app doesn't is an offline app and
+
+00:43:59.460 --> 00:44:03.500
+doesn't require network access you can't do this but ideally when your app
+
+00:44:03.500 --> 00:44:07.580
+starts up it can look at a server see what flags should be turned on or off
+
+00:44:07.660 --> 00:44:15.060
+and do its thing and then if you need to roll back all you do is flip a flag on the
+
+00:44:15.060 --> 00:44:20.140
+server that feature is turned off and you can continue you can you know tweak
+
+00:44:20.140 --> 00:44:23.580
+it for the next release but you're not breaking anybody in the in the short term
+
+00:44:23.580 --> 00:44:30.260
+you have I think you have likely far more experience with dealing with app
+
+00:44:30.260 --> 00:44:35.820
+stores than I do I have a question for you yeah maybe there's a lingo so
+
+00:44:35.820 --> 00:44:40.460
+there's two kind of deployment models or update models I see with app stores right
+
+00:44:40.460 --> 00:44:49.020
+there's the one where an app detects the local version of the app detects that
+
+00:44:49.020 --> 00:44:54.020
+there's a bit of update in the app store and redirects you to the app store to do
+
+00:44:54.020 --> 00:45:02.220
+that update right that process obviously requires you to go through the the app
+
+00:45:02.220 --> 00:45:10.280
+store gauntlet to get an update rolled out right but then there's the other
+
+00:45:10.280 --> 00:45:16.910
+model where I see sort of a an app deploys and it's sort of a Chrome around
+
+00:45:16.910 --> 00:45:26.540
+the app but doing say business logic updates or you know UI changes where the
+
+00:45:26.540 --> 00:45:36.140
+Chrome is is consistent but the app itself updates from within itself yeah yeah
+
+00:45:36.140 --> 00:45:39.980
+I could see that I don't know how I haven't done that before and that's a
+
+00:45:39.980 --> 00:45:45.940
+great way to do it but it kind of seems the the app store owners want so much
+
+00:45:45.940 --> 00:45:50.900
+control over their apps like a massive amount of control of what gets approved
+
+00:45:50.900 --> 00:45:55.740
+I can't imagine them approving an app that works like that in the first place
+
+00:45:55.740 --> 00:46:00.860
+without some wheel greasing somewhere so I actually haven't used that model but
+
+00:46:00.860 --> 00:46:06.740
+it is another great way you could do this and I'm I've seen a lot of apps I
+
+00:46:06.740 --> 00:46:10.860
+don't know how they get those approved and what the agreement is with the app
+
+00:46:10.860 --> 00:46:14.620
+stores where they can do that but that's a that's a really an ingenious idea and
+
+00:46:14.620 --> 00:46:18.980
+I've idea and of course you can download definitely download additional
+
+00:46:18.980 --> 00:46:26.460
+assets or or some updates outside of the app store so I guess my advice is
+
+00:46:26.460 --> 00:46:32.420
+look into ways you can work around the app store requirements because what you
+
+00:46:32.420 --> 00:46:36.460
+want to do in the theory of constraints is identify your biggest bottleneck hey
+
+00:46:36.460 --> 00:46:40.180
+our biggest bottleneck is the turnaround time and submitting to the app store and
+
+00:46:40.180 --> 00:46:46.020
+figure out how we mitigate that that bottleneck and one is feature flags but
+
+00:46:46.020 --> 00:46:51.940
+there may be a deployment option that's actually approvable where you can do some
+
+00:46:51.940 --> 00:46:56.100
+classification at least of updates outside of the app store process which
+
+00:46:56.100 --> 00:47:00.580
+would be great but you're right as I think about it a lot more apps should
+
+00:47:00.580 --> 00:47:05.380
+do this so and for context you know we don't deliver apps we deliver tools with
+
+00:47:05.380 --> 00:47:10.420
+multiple SDKs people can use to make apps but we have to test that process so
+
+00:47:10.420 --> 00:47:14.580
+we test it by submitting apps and seeing what Apple and Android's policies are
+
+00:47:14.580 --> 00:47:17.860
+so we can anticipate those for our customers and give them the right advice
+
+00:47:17.860 --> 00:47:24.650
+and things to do so my experience there is limited from that perspective but I
+
+00:47:24.650 --> 00:47:30.850
+am familiar with at least at least of course a feature flags but anyway
+
+00:47:30.850 --> 00:47:33.410
+there's got to be a couple ways to mitigate that bottleneck that have been
+
+00:47:33.410 --> 00:47:38.810
+actually tried and proven from an app store perspective look into those like
+
+00:47:38.810 --> 00:47:45.370
+when I read this and I'm actually reading his responses on the three have
+
+00:47:45.370 --> 00:47:50.250
+come in this this question came from the select channel and by the way before you
+
+00:47:50.250 --> 00:47:53.850
+get there the three are awesome because one of the things I look for in a
+
+00:47:53.850 --> 00:47:58.250
+community is self-sustaining and people ask questions all the time and Brent or
+
+00:47:58.250 --> 00:48:04.470
+I not only don't need to answer them but rarely if ever is there a case where
+
+00:48:04.630 --> 00:48:10.950
+the three don't respond better than we could have in the first place so love the
+
+00:48:10.950 --> 00:48:15.820
+three thank you for being there all three of you go on absolutely love the
+
+00:48:15.820 --> 00:48:22.660
+three that is just a strong self-supporting community like if you're not
+
+00:48:22.660 --> 00:48:27.300
+on it get on it it is worth your time and then the other thing I wanted to call
+
+00:48:27.300 --> 00:48:37.630
+out I haven't listened to the latest 343 but Danny fought damn that dude is
+
+00:48:37.630 --> 00:48:48.200
+awesome yeah I am so jealous that he's working through the the the wine bird
+
+00:48:48.200 --> 00:48:54.360
+biography like I mean actually writing the book and all that that's probably
+
+00:48:54.360 --> 00:48:59.560
+not the thing but the fact that he had enough exposure and talking that he's
+
+00:48:59.560 --> 00:49:05.280
+he's actually capable of doing that like that historical context I'm absolutely
+
+00:49:05.280 --> 00:49:10.000
+jealous of Danny on that's just fantastic now going back to Chris
+
+00:49:10.000 --> 00:49:15.790
+offspring like when I look at this like the very first thing I would want to try
+
+00:49:15.790 --> 00:49:23.910
+to balance he calls out like they have a problem with rollbacks he has a CICD
+
+00:49:23.910 --> 00:49:30.370
+right if they don't have CACD because of app store bureaucracy they can still have
+
+00:49:30.370 --> 00:49:38.820
+CI they can have CI and then deliver to to to some version of a master branch
+
+00:49:38.820 --> 00:49:48.060
+that's just ready to to roll out the the thing is is the limitation is okay it
+
+00:49:48.060 --> 00:49:55.140
+rolls out oops we screwed up now he also mentioned it rollbacks are our
+
+00:49:55.340 --> 00:50:02.520
+painful and so to me this says okay you need to do something to protect master
+
+00:50:02.520 --> 00:50:12.950
+branch you need to do something to make it a bit more preventative model but the
+
+00:50:12.950 --> 00:50:20.710
+inability to just sort of do rollbacks which is why feature flags came to mind
+
+00:50:20.710 --> 00:50:24.230
+right away you need a way to write if you could just that's the fastest way
+
+00:50:24.230 --> 00:50:27.990
+because if there's a problem and simply restarting the app and getting it to
+
+00:50:27.990 --> 00:50:36.530
+reread from the remote config it's fixed rollback is is that fast right it what I
+
+00:50:36.530 --> 00:50:44.490
+would I would look at is how can we make architectural changes to support these
+
+00:50:44.490 --> 00:50:50.970
+capabilities right a config rollback a like what we just talked about a
+
+00:50:50.970 --> 00:50:55.770
+business logic like in my mind I've already sort of designed if I were
+
+00:50:55.770 --> 00:50:58.730
+building an app like this how would I make it such that I could update it
+
+00:50:58.730 --> 00:51:02.210
+with and a rollback from with it right again we're gonna look at the biggest
+
+00:51:02.210 --> 00:51:05.290
+pain point which right now is the ability to roll back or handle a
+
+00:51:05.290 --> 00:51:10.730
+regression in a timely manner for our customers and brainstorm on what are the
+
+00:51:10.730 --> 00:51:15.560
+ways we can work around these bottlenecks and it's all the things we
+
+00:51:15.560 --> 00:51:18.120
+just talked about it's like but it needs the team to brainstorm what's
+
+00:51:18.120 --> 00:51:22.400
+feasible it could be architectural it could be adding a feature flag which is
+
+00:51:22.400 --> 00:51:26.600
+semi architectural and definitely architectural for changing the nature of
+
+00:51:26.600 --> 00:51:31.200
+the app where the guts of the app are actually separate from the Chrome that
+
+00:51:31.200 --> 00:51:34.360
+goes through the app store but then there may be other options as well I'm
+
+00:51:34.360 --> 00:51:38.440
+sure the internet and Stack Overflow and center are full of ideas but the
+
+00:51:38.440 --> 00:51:42.360
+team needs to really brainstorm on how to work around the bottlenecks that are
+
+00:51:42.360 --> 00:51:49.580
+out of there especially when they're out of their control yeah that's you
+
+00:51:49.580 --> 00:51:55.940
+said it correctly I know what I'm doing I don't everyone knows is that on this
+
+00:51:55.940 --> 00:52:04.300
+podcast Brent is a smart one but I'm the pretty and entertaining one agreed on
+
+00:52:04.300 --> 00:52:08.820
+all points all right I hope that that was a good discussion that I hope
+
+00:52:08.820 --> 00:52:13.020
+continues and I hope and again probably the three answered that better than you
+
+00:52:13.020 --> 00:52:18.060
+and I did but I did want to call out the transition from agile to modern
+
+00:52:18.060 --> 00:52:21.260
+testing because that's something we hadn't heard before and worth talking
+
+00:52:21.260 --> 00:52:24.660
+about then just a sort of and we're not the right people to help brainstorm the
+
+00:52:24.660 --> 00:52:29.100
+solution for this but we're the right people to through our wrong answers for
+
+00:52:29.100 --> 00:52:33.260
+you to realize that brainstorming how to work around those bottlenecks is what
+
+00:52:33.260 --> 00:52:39.110
+should be done the one last thing I'll call out before we sign off is if if
+
+00:52:39.110 --> 00:52:44.270
+we were wrong and and actually app store isn't the primary cause of the
+
+00:52:44.270 --> 00:52:50.230
+bottleneck then then one of the things that I have found is that actually
+
+00:52:50.230 --> 00:52:56.050
+doing a shift to Kanban is really helpful here right because even though
+
+00:52:56.050 --> 00:53:04.990
+you may not have a CD system Kanban's kind of kid gets that muscle going yeah
+
+00:53:04.990 --> 00:53:08.310
+well Kanban the best thing about Kanban if you use it right it helps you find
+
+00:53:08.310 --> 00:53:13.550
+where the bottlenecks are on your system it does but I'm thinking in in
+
+00:53:13.550 --> 00:53:20.030
+terms of the benefit I gained from it right you essentially if you if you
+
+00:53:20.030 --> 00:53:25.870
+singly release one ticket you don't have the this sort of this the scrub
+
+00:53:25.870 --> 00:53:30.190
+impact where all of the bugs get introduced to the product at 11 p.m.
+
+00:53:30.190 --> 00:53:38.970
+the night before and if you roll out one small batch chunk and everything's on
+
+00:53:38.970 --> 00:53:44.770
+the floor right it should be easy to roll that back then to build on that yeah
+
+00:53:44.770 --> 00:53:49.890
+one thing is that I think because of the bottleneck and deployment the team
+
+00:53:49.890 --> 00:53:54.890
+could very well likely be encouraged to bundle up a bunch of changes so they only
+
+00:53:54.890 --> 00:53:59.400
+have to submit it once to the app store so you're really as a mobile developer
+
+00:53:59.400 --> 00:54:03.940
+you really got to find a way to work around that stuff all right all right we
+
+00:54:03.940 --> 00:54:07.460
+got we got meetings to go to man I got a this is Friday's usually my light day
+
+00:54:07.460 --> 00:54:11.740
+and it is today I only have six hours of meetings but counting this one this one's
+
+00:54:11.740 --> 00:54:14.780
+fun though this one doesn't count yeah this one doesn't exhaust me like the rest
+
+00:54:14.780 --> 00:54:19.570
+of them do all right hey thanks for you guys turning in as and again and and gals
+
+00:54:19.570 --> 00:54:24.370
+folks y'all once again I promised next time we do a livecast to advertise it
+
+00:54:24.370 --> 00:54:28.130
+in our slack group a little bit more ahead of time so that people can plan
+
+00:54:28.130 --> 00:54:35.170
+around it but thanks for listening yeah I know I know and it's been fun
+
+00:54:35.290 --> 00:54:39.520
+chatting with you burnt I got the name right see you next time
+
+00:54:39.520 --> 00:54:43.890
+bye all right bye bye
+

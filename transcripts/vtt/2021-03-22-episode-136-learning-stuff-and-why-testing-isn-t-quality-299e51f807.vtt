@@ -1,0 +1,1622 @@
+WEBVTT
+
+00:00:03.380 --> 00:00:09.420
+Welcome to AB testing podcast your modern testing podcast your hosts Alan and
+
+00:00:09.420 --> 00:00:15.260
+Brent will be here to guide you through topics on testing leadership agile and
+
+00:00:15.260 --> 00:00:20.700
+anything else that comes to mind now on with the show so this is the AB testing
+
+00:00:20.700 --> 00:00:27.180
+podcast how's it going Brent super so excited you should be excited because
+
+00:00:27.180 --> 00:00:38.570
+this is our 136 episode and Brent types to figure it out because you can't 100 and 30 something
+
+00:00:38.570 --> 00:00:45.570
+through drive is just 39 or 16 so we're here on another Friday afternoon a
+
+00:00:45.570 --> 00:00:51.730
+beautiful spring is coming sort of time in the Northwest yeah and we're gonna do
+
+00:00:51.730 --> 00:00:55.530
+a podcast and then we're going to I'm going to edit it and then through the
+
+00:00:55.530 --> 00:01:00.570
+magic of the internet you will hear this these words being spoken time shifted by
+
+00:01:00.570 --> 00:01:06.290
+about two and a half days on Monday or later depending on when you listen or
+
+00:01:06.290 --> 00:01:13.520
+it's magical right or earlier if you're part of the secret club oh how does one
+
+00:01:13.520 --> 00:01:22.200
+get into the secret club Brent it's really hard it's really hard you have to
+
+00:01:22.200 --> 00:01:29.560
+magically navigate Google to find the AB testing you don't even need Google you
+
+00:01:29.560 --> 00:01:35.420
+can just go to modern testing org oh come on I want them it's a secret club
+
+00:01:35.420 --> 00:01:41.440
+don't work hard for it no that's the work you're being dumb and then they
+
+00:01:41.440 --> 00:01:46.920
+have to click the link to join the one of the three slack channel yeah and
+
+00:01:46.920 --> 00:01:49.800
+that's it and then you could ask questions there and I always post it
+
+00:01:49.800 --> 00:01:53.480
+again a lot of people stay away from slack over the weekend so there's no
+
+00:01:53.480 --> 00:01:58.160
+requirement to listen to it early but I always post it on our slack group for
+
+00:01:58.160 --> 00:02:03.080
+preview of people that hang out with us the weekend before just or two days
+
+00:02:03.080 --> 00:02:06.720
+before when I get it whatever I get done editing actually as soon as I get done
+
+00:02:06.720 --> 00:02:11.750
+editing and which is also a good chance for me to get feedback on hey Alan you
+
+00:02:11.750 --> 00:02:16.710
+accidentally posted audio from a kid's birthday party I said oops wrong video
+
+00:02:16.710 --> 00:02:19.870
+wrong audio but yeah you get a chance to listen ahead of time if you'd like
+
+00:02:19.870 --> 00:02:23.070
+doesn't show up in RSS feed just download it of course if you'd rather
+
+00:02:23.070 --> 00:02:26.550
+just have life be simple you can be in the slack group take part in
+
+00:02:26.550 --> 00:02:31.990
+conversations and wait until the podcast shows up in your feed on Monday
+
+00:02:31.990 --> 00:02:37.380
+whatever makes your life easier yeah whatever you want that as long as it
+
+00:02:37.380 --> 00:02:42.180
+also makes our life easier we're super supportive yeah we're pretty easy going
+
+00:02:42.180 --> 00:02:45.380
+here for a bunch of old guys or a couple old guys at least two old guys
+
+00:02:45.380 --> 00:02:50.460
+a couple weeks ago I did a webinar next week I'm doing another webinar nice
+
+00:02:50.460 --> 00:02:58.290
+Thursday night which is gonna be really crappy time for those you in Europe but
+
+00:02:58.290 --> 00:03:02.250
+for the Americas I think it's like starts at 6 o'clock I'll try and put a
+
+00:03:02.250 --> 00:03:06.490
+link in it in the show notes but you can look at my both my LinkedIn feed and
+
+00:03:06.490 --> 00:03:13.050
+my Twitter feed and probably find it I'm doing a a webinar on just learning
+
+00:03:13.050 --> 00:03:17.500
+stuff and I'm putting together a presentation I'm gonna tell you what's
+
+00:03:17.500 --> 00:03:24.580
+in it but was really cool the people organizing it at PNSQC said you don't
+
+00:03:24.580 --> 00:03:27.700
+even have to give a presentation you can just facilitate some conversation
+
+00:03:27.700 --> 00:03:32.220
+which I love so what I'm gonna do is I'm gonna kick it off with a little I'll
+
+00:03:32.220 --> 00:03:34.940
+kick it off I'll do a little bit of both I'll kick it off with a little bit
+
+00:03:34.940 --> 00:03:40.460
+of stuff around learning I want to talk about probably largely a little recap of
+
+00:03:40.460 --> 00:03:45.300
+Steven Johnson because the reason they contacted me one is they know me because
+
+00:03:45.300 --> 00:03:49.980
+I've spoken at their regular in-person conference a couple times right you're a
+
+00:03:49.980 --> 00:03:54.340
+favorite of theirs if I don't know if I'm a favorite but you know I'm on the
+
+00:03:54.340 --> 00:03:59.220
+list they're also curious like we're like how do you find these five for
+
+00:03:59.220 --> 00:04:03.020
+Friday things what motivates you to learn which is really good question of
+
+00:04:03.020 --> 00:04:08.460
+course five for Friday comes from a brief infatuation I had with what's his
+
+00:04:08.460 --> 00:04:12.500
+face Tim Ferriss and he does a five bullet Friday thing I thought you know
+
+00:04:12.500 --> 00:04:15.300
+I'm gonna do something like that for the stuff that I care about but really it
+
+00:04:15.300 --> 00:04:20.340
+comes back to a book I read that I don't remember the name and I don't know
+
+00:04:20.340 --> 00:04:24.180
+how it is for you but I recollect what year it was by what product I was
+
+00:04:24.180 --> 00:04:29.420
+working on at the time so sometime around 2001 2002 I read some book and
+
+00:04:29.420 --> 00:04:35.020
+in the book it said hey if you want to get new ideas you should probably
+
+00:04:35.020 --> 00:04:41.780
+read some stuff that's outside of your area because as I learned from Steven
+
+00:04:41.780 --> 00:04:48.860
+Johnson years and years later ideas come from other ideas oh yeah let me can I
+
+00:04:48.860 --> 00:04:55.160
+good no let me shit up all right no I'm sorry go ahead just like yeah go ahead
+
+00:04:55.160 --> 00:05:04.120
+right I actually use this a great deal so as you and the three know I manage
+
+00:05:04.120 --> 00:05:13.280
+the data science team and as you and the three may not know data science is an
+
+00:05:13.280 --> 00:05:22.100
+extremely broad term right and there are hundreds of specialization somebody who
+
+00:05:22.100 --> 00:05:29.420
+who for example is working on face recognition certainly he or she are gonna
+
+00:05:29.420 --> 00:05:33.620
+know all about the basics you know what's clustering what's classification
+
+00:05:33.700 --> 00:05:42.140
+etc but in terms of words yeah in terms of specific techniques there's a deep
+
+00:05:42.140 --> 00:05:50.340
+specialization and in that context okay and so even though I have my unfair share
+
+00:05:50.340 --> 00:05:56.380
+of PhDs reporting to me they do not in fact know everything about that is like
+
+00:05:56.380 --> 00:06:02.380
+so one of the things that I do papers we spent a lot of time on on research
+
+00:06:02.380 --> 00:06:06.580
+papers you go to Google Scholar use look up stuff and you can see sort of
+
+00:06:06.580 --> 00:06:14.420
+people's prior published ideas okay but in terms of the concept of ideas always
+
+00:06:14.420 --> 00:06:19.900
+come on the on the old ideas coming together a research paper is exactly
+
+00:06:19.900 --> 00:06:26.540
+that I will call out you go to the references section and the references
+
+00:06:26.540 --> 00:06:31.060
+section is not only the old ideas that are being brought together but it is a
+
+00:06:31.060 --> 00:06:38.820
+very clean follow-up a bowl enumeration of that list and and so when I when I have
+
+00:06:38.820 --> 00:06:44.260
+one of my data scientists come to me and and say hey I'm stuck I cannot figure
+
+00:06:44.260 --> 00:06:51.140
+out how to move around this I give them the following exercise okay all I want
+
+00:06:51.140 --> 00:06:56.700
+you to do is every day I want you to start off and and go to Google Scholar
+
+00:06:56.700 --> 00:07:03.020
+and just do a search for something that you see as you know do a keyword search
+
+00:07:03.020 --> 00:07:07.020
+for something you think is relevant that's it and then I want you to pick
+
+00:07:07.020 --> 00:07:13.660
+one of those articles there and read it and then next day and don't do anything
+
+00:07:13.660 --> 00:07:19.740
+with it just read it next day based off of that either do a different keyword
+
+00:07:19.740 --> 00:07:24.940
+search and and read something or go to the references of that one and pick one
+
+00:07:24.940 --> 00:07:29.460
+of those to do it yes and I'm gonna add that to my presentation something I've
+
+00:07:29.460 --> 00:07:36.940
+done before but I forgot about is read a in short read a research document but go
+
+00:07:36.940 --> 00:07:43.580
+look where they got their ideas from right and I just basically say do that
+
+00:07:43.580 --> 00:07:49.740
+do that just reading that algorithm reading one paper a day for 14 days and
+
+00:07:49.740 --> 00:07:57.660
+I promise you you will you will find the answer you're seeking yes and even
+
+00:07:57.660 --> 00:08:04.030
+further than that you won't get the 14 days yes I'm gonna go in that's good
+
+00:08:04.030 --> 00:08:07.870
+we're gonna get more anecdotes to share I do want to do an AB test here on the
+
+00:08:07.870 --> 00:08:12.630
+AB testing so I'd technically be at a slash B test on the AB testing podcast could you
+
+00:08:12.630 --> 00:08:16.390
+take your microphone maybe lower it three inches just keep it above nose
+
+00:08:16.390 --> 00:08:21.630
+level but a little bit there try it right there now Brent on a scale of one
+
+00:08:21.630 --> 00:08:28.590
+to ten how much of an idiot do you think I am seven oh what one to ten no four
+
+00:08:28.590 --> 00:08:34.510
+five okay half an idiot that's that's fair that's so I'm gonna you know I gave
+
+00:08:34.510 --> 00:08:38.190
+a presentation years ago leveraging Stephen Johnson's material and there's a
+
+00:08:38.190 --> 00:08:42.750
+slide in there that's probably worth going over in our tangent weave here so
+
+00:08:42.750 --> 00:08:47.110
+oh back to the presentation it is hard to keep track of all the tangent
+
+00:08:47.110 --> 00:08:52.470
+sometimes isn't it what the bill I don't bother anymore what the book suggested
+
+00:08:52.470 --> 00:08:57.870
+which was something became a part of my life for about five years and I kind of
+
+00:08:57.870 --> 00:09:02.710
+lost track and it went away once I had children but it's suggested I subscribed
+
+00:09:02.710 --> 00:09:06.110
+to this thing called you know just one of the ideas was science news and
+
+00:09:06.110 --> 00:09:12.920
+science news was a print magazine tiny it was like it arrived every week but
+
+00:09:12.920 --> 00:09:17.200
+it was maybe 12 pages and I could read through the whole thing and not
+
+00:09:17.200 --> 00:09:22.060
+understand most of it but for some reason just like looking at these
+
+00:09:22.060 --> 00:09:25.140
+research ideas you're for you're looking at something different every day it
+
+00:09:25.140 --> 00:09:29.740
+planted seeds that made me think about some things differently and it may not
+
+00:09:29.740 --> 00:09:33.460
+say oh I'm gonna apply this thing from science to this thing I was doing in
+
+00:09:33.460 --> 00:09:37.940
+testing it was more of oh here's another way to think about stuff and I
+
+00:09:37.940 --> 00:09:43.140
+would just maybe even subconsciously think about not applauding the thing from
+
+00:09:43.140 --> 00:09:46.500
+science news but oh here's when it is experiment they thought about this thing
+
+00:09:46.500 --> 00:09:49.500
+in two different ways can I think about this particular problem in two different
+
+00:09:49.500 --> 00:09:54.010
+ways but a lot of really subtle things so definitely suggestion there I don't
+
+00:09:54.010 --> 00:09:57.570
+know if they make the magazine anymore it might have gone from weekly to every
+
+00:09:57.570 --> 00:10:00.530
+other week and a little thicker but at some point I stopped subscribing but
+
+00:10:00.530 --> 00:10:04.170
+just fascinating I felt really smart after I read it and I've been
+
+00:10:04.170 --> 00:10:09.490
+progressively dumber ever since so as part of that presentation I looked for
+
+00:10:09.490 --> 00:10:14.330
+some titles of some of the best conference talks that were happening on
+
+00:10:14.330 --> 00:10:17.810
+the test circle for various reasons I go over in a minute I want to share some of
+
+00:10:17.810 --> 00:10:21.130
+these with you and gonna get your thoughts the art and science of load
+
+00:10:21.130 --> 00:10:25.090
+testing internet applications that's applicable to developers as well as
+
+00:10:25.090 --> 00:10:30.250
+testers model-based testing for data centric products also interesting could
+
+00:10:30.250 --> 00:10:35.700
+be applicable managing user exceptions tests and large projects it's that could
+
+00:10:35.700 --> 00:10:42.980
+be again it's a little businessy title but in the when we care about like we're
+
+00:10:42.980 --> 00:10:47.220
+trying to outcome based testing those user acceptance tests can be important yes
+
+00:10:47.220 --> 00:10:51.060
+architectures of test automation I'm much more comfortable having a
+
+00:10:51.060 --> 00:10:54.940
+development team own that but I like to hear the ideas there habits of highly
+
+00:10:54.940 --> 00:10:59.020
+effective testers very generic one but you know good so what do you think
+
+00:10:59.020 --> 00:11:03.580
+about those talks I just described I don't like the last two the last two
+
+00:11:03.580 --> 00:11:09.900
+kind of feel you know 1996 ish to me but the other one actually you're very close
+
+00:11:09.900 --> 00:11:14.580
+because these are all titles from conferences given in 1999 and 2000 mmm
+
+00:11:14.580 --> 00:11:21.100
+yeah so the point is could we please have some new ideas I'll take new ideas
+
+00:11:21.100 --> 00:11:28.980
+and test for $500 Alex what is blank the problem one problem in the industry
+
+00:11:28.980 --> 00:11:32.140
+and something we've talked about before directly and indirectly I'll just gloss
+
+00:11:32.140 --> 00:11:36.580
+over is that a lot of people get their information on how to improve whatever
+
+00:11:36.580 --> 00:11:41.660
+craft or knowledge work they're doing from one or two places or one or two
+
+00:11:41.660 --> 00:11:48.500
+places or people that is not a way to get new ideas you regurgitating for
+
+00:11:48.500 --> 00:11:52.140
+example I was reading and I'll name drop Michael Bolton here I was reading an
+
+00:11:52.140 --> 00:11:56.740
+article he wrote on LinkedIn and someone tagged me in it and for good
+
+00:11:56.740 --> 00:12:01.060
+reasons someone who is not not trying to stir anything up they had actually a
+
+00:12:01.060 --> 00:12:05.300
+reason for tagging me in and since I was there I asked about this concept of
+
+00:12:05.300 --> 00:12:10.260
+someone else mentioned oh I found that critical distances blah blah blah and so
+
+00:12:10.260 --> 00:12:15.060
+I spent a bunch of time searching on what critical distance was and I asked
+
+00:12:15.060 --> 00:12:19.540
+the person not very much to find Bolton later told me later later to look for a
+
+00:12:19.540 --> 00:12:22.860
+different term called psychological distance or something but a little bit
+
+00:12:22.860 --> 00:12:27.660
+better but I'm glad again they've done a lot of thinking on this stuff and they
+
+00:12:27.660 --> 00:12:31.900
+get it I think this particular thing is in a little bit in a vacuum because yeah
+
+00:12:31.900 --> 00:12:36.980
+if it is one person doing all of the work some of those things do exist but we
+
+00:12:36.980 --> 00:12:40.980
+work collaboratively but the main thing was the main disappointment was this
+
+00:12:40.980 --> 00:12:46.620
+person had no idea what the term they were using meant they just regurgitated
+
+00:12:46.620 --> 00:12:51.100
+they did no like my reaction is to go figure out okay I want to see why I
+
+00:12:51.100 --> 00:12:56.180
+have some cognitive dissonance with this term because I can't I want to know
+
+00:12:56.180 --> 00:12:59.300
+more about it so I can understand where to apply it so I did the research try
+
+00:12:59.300 --> 00:13:03.020
+and figure it out and it turns out that the person making the argument this was
+
+00:13:03.020 --> 00:13:07.180
+the reason in this case why developers can't test they're using a term that
+
+00:13:07.180 --> 00:13:12.220
+they had heard but never researched and to me I find that again for a
+
+00:13:12.220 --> 00:13:17.900
+knowledge worker I find it some word I can't I don't remember the English word
+
+00:13:18.420 --> 00:13:28.570
+for it bullshit stupid I mean idiotic I mean I mean you're old but I mean I came
+
+00:13:28.570 --> 00:13:36.040
+up with three right there yeah whatever but I mean if you if you want to be good
+
+00:13:36.040 --> 00:13:42.750
+at anything in knowledge work I don't care if it's testing specialty or software
+
+00:13:42.750 --> 00:13:49.470
+development or data science or Jesus architecture anything that requires the
+
+00:13:49.470 --> 00:13:55.110
+creative mind and the balance of adaptive learning work that I mean the
+
+00:13:55.110 --> 00:13:59.430
+definition of knowledge work is that you are often learning as you go along you
+
+00:13:59.430 --> 00:14:03.830
+have to take the learning part seriously so I could go I could for the
+
+00:14:03.830 --> 00:14:08.630
+rest of this podcast talk about the different methods of where new ideas
+
+00:14:08.630 --> 00:14:15.670
+come from Stephen Johnson and I won't know I won't but you have to seek out
+
+00:14:15.670 --> 00:14:21.030
+places to expand your repertoire of ideas it can't be from one or two places
+
+00:14:21.030 --> 00:14:25.070
+it can't be from 10 or 12 it needs to be from dozens or hundreds and you have to
+
+00:14:25.070 --> 00:14:28.910
+be hungry to define those things I'm it's frustrating to me to see people
+
+00:14:28.910 --> 00:14:34.990
+who their thoughts on tests are based purely on what they've seen one or two
+
+00:14:34.990 --> 00:14:40.110
+or three people say about testing I don't get how you can I don't get it I'm
+
+00:14:40.110 --> 00:14:44.590
+up on a soapbox I'd not intend to go on but the point that I want to go over in
+
+00:14:44.590 --> 00:14:51.390
+this talk is you have to find ways to get new ideas into your head especially
+
+00:14:51.390 --> 00:14:54.430
+in the last 12 months where you can't go meet with other people the the
+
+00:14:54.430 --> 00:14:58.630
+Enlightenment and one thing from maybe Stephen Johnson's book is the idea of
+
+00:14:58.630 --> 00:15:04.970
+coffee shops and getting people together finding a meeting place a community for
+
+00:15:04.970 --> 00:15:11.410
+people to exchange ideas that helps innovation and ideas thrive the one line
+
+00:15:11.410 --> 00:15:16.060
+from the book is chance favors the connected mind yes like being in the
+
+00:15:16.060 --> 00:15:19.620
+right place at the right time to figure out how stuff works he talks about the
+
+00:15:19.620 --> 00:15:23.220
+adjacent possible which is taking something that's and just and just
+
+00:15:23.220 --> 00:15:26.940
+making that one little extra step to make to figure out that peanut butter and
+
+00:15:26.940 --> 00:15:32.480
+chocolate go pretty good together but you have to constantly seek out ideas
+
+00:15:32.480 --> 00:15:38.640
+and you have to not be afraid to do new stuff maybe this ties into a chapter for
+
+00:15:38.640 --> 00:15:41.640
+a book I wrote that I I'm really proud of and I don't have a pulled up here to
+
+00:15:41.640 --> 00:15:45.840
+read from but there's this e-book put together called around the world around
+
+00:15:45.840 --> 00:15:49.520
+the testing world in 80 days or something where I was given free reign
+
+00:15:49.520 --> 00:15:54.480
+to write about anything I wanted and I'm gonna tell a story which is a
+
+00:15:54.480 --> 00:15:59.520
+paraphrase of my article it starts off with me saying oh hey I'll take that
+
+00:15:59.520 --> 00:16:03.730
+on and it was me approaching a conversation back when I worked on that
+
+00:16:03.730 --> 00:16:09.010
+stupid science project and I was bored and I happened to walk by on a
+
+00:16:09.010 --> 00:16:13.250
+conversation of someone wanting to set up a bunch of static analysis tools and
+
+00:16:13.250 --> 00:16:18.490
+sonar cube and some other tools for our product which built on Linux I joined
+
+00:16:18.490 --> 00:16:22.810
+that team so I could get my Linux skills and my Java skills up to stuff
+
+00:16:22.810 --> 00:16:28.760
+it was very early in the product I had no idea how to do the thing that I
+
+00:16:28.760 --> 00:16:35.800
+just said I would love to take on because for me if I'm not in a position
+
+00:16:35.800 --> 00:16:40.600
+where I have to learn in order to be successful I'm kind of bored and not
+
+00:16:40.600 --> 00:16:47.440
+happy yeah and that's actually one thing that you and I have in common is going
+
+00:16:47.440 --> 00:16:54.270
+back to the orders of ignorance we're pretty confident in our ability to
+
+00:16:54.270 --> 00:17:01.810
+construct a means by which the one thing that I'm totally mind-blinking on right
+
+00:17:01.810 --> 00:17:07.290
+the fourth order that doesn't exist any means by which you don't have a suitable
+
+00:17:07.290 --> 00:17:12.810
+means to discover what you don't know you don't know right you and I both have
+
+00:17:12.810 --> 00:17:18.610
+a process by which we go well I'll say like for me I just go most of the time
+
+00:17:18.610 --> 00:17:24.450
+it's like it's just code it's not magic I'll figure it out it's really not that
+
+00:17:24.450 --> 00:17:30.280
+hard but I do know that a large number of people and I think some of our
+
+00:17:30.280 --> 00:17:38.710
+listeners don't don't sort of have that same sort of sense the so I've always
+
+00:17:38.710 --> 00:17:44.510
+been attracted it up until the team I'm on right now like you one thing you and
+
+00:17:44.510 --> 00:17:49.990
+I had in common is we get bored and change teams for me I got more
+
+00:17:49.990 --> 00:17:56.590
+interested in looking for and whenever it was on the team hunt is go okay what
+
+00:17:56.590 --> 00:18:01.030
+is the team that I think would most be able to leverage my strengths but at the
+
+00:18:01.030 --> 00:18:07.640
+same time is working in the space I know little to nothing about right and if I
+
+00:18:07.640 --> 00:18:13.520
+can go and find that the people culture there is great then I'm in done it's
+
+00:18:13.520 --> 00:18:17.720
+over yeah but we could add another topic I want to get to but I want to stay
+
+00:18:17.720 --> 00:18:23.120
+here a little bit because yes this is absolutely true and what I've sort of
+
+00:18:23.120 --> 00:18:26.720
+inadvertently done as I've grown into managing a larger team which we've
+
+00:18:26.720 --> 00:18:32.000
+talked about before drink is I've developed a little bit of a pattern and
+
+00:18:32.000 --> 00:18:38.280
+reputation for taking on taking a hard problem on figuring out the details on
+
+00:18:38.280 --> 00:18:41.840
+my own and then delegating it away to part of my team to continue to maintain
+
+00:18:41.840 --> 00:18:45.760
+and grow it helps me learn a lot and then it gives me opportunities to give
+
+00:18:45.760 --> 00:18:49.080
+people things to do you know when I joined my current org it was program
+
+00:18:49.080 --> 00:18:54.360
+management and again I said the same thing my the by hiring manager who did
+
+00:18:54.360 --> 00:18:57.400
+not have an engineering role for me to go into said hey can you do program
+
+00:18:57.400 --> 00:19:02.820
+management because you wanted to have me on his team I said sure and I had
+
+00:19:02.820 --> 00:19:06.620
+never done that before and and again to remind you Brent program management in
+
+00:19:06.620 --> 00:19:09.240
+the rest of the world is much different than the hybrid thing at
+
+00:19:09.240 --> 00:19:13.500
+Microsoft it's it's reducing complexity and understanding and what it turned out
+
+00:19:13.500 --> 00:19:18.110
+to me in the end once I figured it out really what my role ended up being was
+
+00:19:18.110 --> 00:19:23.670
+running the what he calls the what we both called the engineering system
+
+00:19:23.670 --> 00:19:27.350
+engineering operating system that's just like running an engineering team
+
+00:19:27.350 --> 00:19:33.270
+it's the same thing I did for what I was the senior or quality architect or
+
+00:19:33.270 --> 00:19:36.910
+some high-level senior tester reporting to test directors way back in the day
+
+00:19:36.910 --> 00:19:41.750
+so and because it involves coaching teams on agile practices and coaching
+
+00:19:41.750 --> 00:19:46.730
+teams on quality that was great but anyway I did that I was not intend to
+
+00:19:46.730 --> 00:19:50.390
+talk about what I did but really I took that on figured it out and now delegated
+
+00:19:50.390 --> 00:19:54.110
+as someone better than me running that portion of the org which is good because
+
+00:19:54.110 --> 00:19:57.430
+our projects are getting more complex in some cases same thing with quality I
+
+00:19:57.430 --> 00:20:02.930
+have a super great quality leader on my team who I've I don't have to of
+
+00:20:02.930 --> 00:20:08.830
+course I'm involved and I'm curious and I'm I try and remain a highly
+
+00:20:08.830 --> 00:20:13.630
+opinionated about quality but really my whole org is quality but I have a part of
+
+00:20:13.630 --> 00:20:16.550
+my org who are dedicated to quality coaching and someone very capable
+
+00:20:16.550 --> 00:20:20.270
+they're all delegated away most recently as I believe we discussed I've
+
+00:20:20.270 --> 00:20:26.910
+been diving deeply into cutting our again don't know how to do it sure I'll
+
+00:20:26.910 --> 00:20:31.710
+figure it out but figuring out what we can do to cut our spend on cloud hosting
+
+00:20:31.710 --> 00:20:35.430
+I learned a lot of things got it all figured out made a lot of dashboards
+
+00:20:35.430 --> 00:20:40.170
+I'm delegating that work away I'll take on something new when we talk about
+
+00:20:40.170 --> 00:20:46.330
+knowledge work I've found that people again I'd have to be just like me I'm
+
+00:20:46.330 --> 00:20:52.930
+like you and I we're happy we're most happy when people can keep on giving us
+
+00:20:52.930 --> 00:20:56.950
+more and more things we haven't done before I'm most happy when I get to be in
+
+00:20:56.950 --> 00:21:04.290
+over my head at work and I see folks who pride themselves on the craft of
+
+00:21:04.290 --> 00:21:09.730
+blah but they just want to do the same thing over and over and it just baffles
+
+00:21:09.730 --> 00:21:18.410
+me I mean everyone at some point in time is you got pink's principles memorized
+
+00:21:18.410 --> 00:21:23.410
+better than I do but mash mastery is important but it's like you and I we're
+
+00:21:23.410 --> 00:21:27.810
+sort of mastering the meta like we're more we're more interested in mastering
+
+00:21:27.810 --> 00:21:33.330
+the I don't know the journey versus any specific destination but other people
+
+00:21:33.330 --> 00:21:39.730
+are wired differently but mastery comes from not being able to do it but being
+
+00:21:39.730 --> 00:21:44.290
+able to have the right resources to be able to do it the first time this
+
+00:21:44.290 --> 00:21:47.170
+happened to me I thought I was gonna get fired I was three years into
+
+00:21:47.170 --> 00:21:51.930
+Microsoft remember I'm a self-taught programmer but I figure stuff out well
+
+00:21:51.930 --> 00:21:56.950
+enough people gave me more credit than I was worth and I was maybe I've told
+
+00:21:56.950 --> 00:22:02.230
+you this story I was paired with one of the original Microsoft OS guys to work
+
+00:22:02.230 --> 00:22:06.270
+on the debug version of Windows because it had been neglected for a while and to
+
+00:22:06.270 --> 00:22:11.550
+get it running from the Win9x platform and debugger development and I thought
+
+00:22:11.550 --> 00:22:14.030
+great I'm gonna learn a lot from this guy hopefully he doesn't call it how
+
+00:22:14.030 --> 00:22:17.630
+stupid I am but then he retired like a week in they said it's okay Alan you
+
+00:22:17.630 --> 00:22:24.870
+could own it by yourself so I am scared to death but I got a book on assembly
+
+00:22:24.870 --> 00:22:28.150
+language because I had to learn assembly language in order to do this because the
+
+00:22:28.150 --> 00:22:32.350
+kernel and the debugger are largely an assembly and I slowly poked my way
+
+00:22:32.350 --> 00:22:36.290
+through the same way you would you make a bug fix here a bug fix there you
+
+00:22:36.290 --> 00:22:41.530
+tweak another thing and and eventually it was almost like I knew what I was doing
+
+00:22:41.530 --> 00:22:44.990
+I knew enough what I was doing people assumed I knew what I was doing and I
+
+00:22:44.990 --> 00:22:51.290
+went from I'm gonna get fired to you know what I love figuring stuff out
+
+00:22:51.290 --> 00:22:55.470
+that's really hard it's what motivates me and since then I seek that out I
+
+00:22:55.470 --> 00:22:59.430
+seek that steep learning curve and it sounds too much like I'm bragging but I
+
+00:22:59.430 --> 00:23:04.950
+guess the point is a lot of in addition to being a white male a lot of my success
+
+00:23:04.950 --> 00:23:10.350
+comes from just chance favoring the connected mind being available to try new
+
+00:23:10.350 --> 00:23:18.090
+things out being just being open to new ideas and accepted them yeah well you
+
+00:23:18.090 --> 00:23:25.130
+and I've talked about it before right in in knowledge work is essentially ideal
+
+00:23:25.130 --> 00:23:35.750
+work and so for me to sort of lock into this is the best idea ever like and I
+
+00:23:35.750 --> 00:23:41.710
+think you agree with me but I'll just ask what's what's your thought on the
+
+00:23:41.710 --> 00:23:51.540
+term best practice I'm pausing because it's a loaded term on one hand taken
+
+00:23:51.540 --> 00:23:56.040
+semantically correct as written it's stupid because there is no it's all
+
+00:23:56.040 --> 00:24:01.460
+contextual there's no best practice generally not always but generally when
+
+00:24:01.460 --> 00:24:05.460
+people use best practice they're not looking for that but not it's it's
+
+00:24:05.460 --> 00:24:10.760
+similar to using literally to say Brent I'm literally on fire right now I'm not
+
+00:24:10.760 --> 00:24:16.400
+so for best practice it depends on the for a phrase it depends on context it
+
+00:24:16.400 --> 00:24:20.120
+depends on the context of how it's being used if by best practice do you mean the
+
+00:24:20.120 --> 00:24:24.140
+thing I absolutely have to do all the time then I don't like it if I best
+
+00:24:24.140 --> 00:24:27.080
+practice do you mean a thing that generally works most of the time which
+
+00:24:27.080 --> 00:24:32.040
+is the typical use of that then I don't mind it what was the answer you
+
+00:24:32.040 --> 00:24:41.330
+were fishing for the term by itself without a context is in my view just
+
+00:24:41.330 --> 00:24:47.790
+blatantly offensive the point is it's not used that way in general and you know
+
+00:24:47.790 --> 00:24:54.870
+you're right the well I don't know like the places where I seen it used is in
+
+00:24:54.870 --> 00:25:03.710
+terms of weaponizing an idea during a negotiation hey this is known to be a
+
+00:25:03.710 --> 00:25:09.650
+best practice for the last 10 years of course I would then argue if this is a
+
+00:25:09.650 --> 00:25:14.390
+best practice for the last 10 years you're wasting my time yeah it would be
+
+00:25:14.390 --> 00:25:18.650
+easier if we got rid of the term because it yeah it can be abused so I'm not sure
+
+00:25:18.650 --> 00:25:20.910
+where you're going with that you asked me a question about it but what was the
+
+00:25:20.910 --> 00:25:28.310
+intent behind of that question it was essentially in terms of knowledge work
+
+00:25:28.310 --> 00:25:36.290
+and idea work yeah there is a best known way to move forward today however
+
+00:25:36.410 --> 00:25:41.570
+knowledge work will continue we will continue to learn new things in this
+
+00:25:41.570 --> 00:25:46.930
+sort of stay locked into sort of a mindset that the things that I've
+
+00:25:46.930 --> 00:25:55.050
+learned for the last 20 years and I have now mastered this in our space I think is
+
+00:25:55.050 --> 00:26:04.810
+at best mistaken idea at worst just abject foolish hey I want to change the
+
+00:26:04.810 --> 00:26:09.290
+subject slightly slightly and get your this is something we've talked about
+
+00:26:09.290 --> 00:26:14.330
+before but I want to frame it a little bit differently so I could almost ask you
+
+00:26:14.330 --> 00:26:18.330
+a similar question back but I thought I haven't thought about how to put this
+
+00:26:18.330 --> 00:26:23.730
+but I'll put it like this inevitably you know I've written these articles highly
+
+00:26:23.730 --> 00:26:28.290
+opinionated somewhat controversial there is there are a few people who've come
+
+00:26:28.290 --> 00:26:32.650
+back on both articles and say oh you do you wrote testing but you meant checking
+
+00:26:32.650 --> 00:26:39.640
+which I think is a big load of crap what but whatever you do you but I do see
+
+00:26:39.640 --> 00:26:46.120
+from even those folks and a few others there is among the internet a high like
+
+00:26:46.120 --> 00:26:49.870
+you and I have both said I'll put it this way the readers are all going Alan
+
+00:26:49.870 --> 00:26:57.720
+get to the point and the point is a lot of testers focus on testing as
+
+00:26:57.720 --> 00:27:03.480
+almost as the end all of what they're doing and you and I have both stated we
+
+00:27:03.480 --> 00:27:07.120
+don't really care about testing we care about quality yeah our goal is
+
+00:27:07.120 --> 00:27:12.120
+different it's weather is for and this is I think the crux of it I don't know
+
+00:27:12.120 --> 00:27:17.820
+where your question is but the crux of it when you say the word testing do you
+
+00:27:17.820 --> 00:27:22.660
+view it as the ends or the means well you know the answer it's definitely the
+
+00:27:22.660 --> 00:27:27.220
+means well for you and me it's definitely the means but it's not for a
+
+00:27:27.220 --> 00:27:33.960
+large portion like is that what what what led people to believe that customers
+
+00:27:33.960 --> 00:27:38.440
+care about testing because they don't heads up customers don't give one little
+
+00:27:38.440 --> 00:27:44.640
+bit of their red freckle on their nose about how many tests you run and how
+
+00:27:44.640 --> 00:27:49.760
+many which tests you ran on this build they don't they don't and matter of fact
+
+00:27:49.760 --> 00:27:54.880
+the only places where I've ever seen testing by a customer being communicated
+
+00:27:54.880 --> 00:28:02.360
+it was an expression of lack of quality hey Apple didn't test their shit right
+
+00:28:02.360 --> 00:28:09.160
+it's just the only useful term from a customer in terms of testing turns out in
+
+00:28:09.160 --> 00:28:14.200
+my mind and this is a hypothesis of generating on the fly is to scapegoat
+
+00:28:14.200 --> 00:28:21.310
+right it's the same shit Deb does no longer have the conversations I'm out of
+
+00:28:21.310 --> 00:28:26.470
+now at a point I'm like oh my god if I haven't heard it in years but when people
+
+00:28:26.470 --> 00:28:31.670
+come to me well why wasn't this tested before I'm like is that hypothetical like
+
+00:28:31.670 --> 00:28:35.750
+are you just asking yourself this out loud like what is actually the answer to
+
+00:28:35.750 --> 00:28:39.430
+that question and what are you gonna do to fix it let me interrupt you I'm gonna
+
+00:28:39.430 --> 00:28:44.070
+weave you through some thoughts I've had about this and get your thoughts on how
+
+00:28:44.070 --> 00:28:49.950
+they relate to this topic where we can go back to Weinberg who says
+
+00:28:49.950 --> 00:28:55.550
+quality is value to some person quality doesn't say about testing so what value
+
+00:28:55.550 --> 00:28:59.430
+it brings we've had discussions about that if 10,000 people are using a thing
+
+00:28:59.430 --> 00:29:02.950
+that has 20 known bugs and only five people are using a thing that has no
+
+00:29:02.950 --> 00:29:07.630
+known bugs which one has higher quality it's the one with more people right you
+
+00:29:07.630 --> 00:29:11.510
+know a long time ago did you ever read quality is free the Philip Crosby book
+
+00:29:11.510 --> 00:29:18.660
+no it's about manufacturing and and and people read it and poopoo it and
+
+00:29:19.020 --> 00:29:23.180
+there are some it's about prevention which you and I both would actually
+
+00:29:23.180 --> 00:29:26.580
+prefer fast detection over prevention because it's more efficient and we like
+
+00:29:26.580 --> 00:29:31.620
+to be efficient go INTPs by the way we were gonna talk about personality types
+
+00:29:31.620 --> 00:29:34.580
+this time we're gonna do it next time instead because we've already used all
+
+00:29:34.580 --> 00:29:38.420
+this time on this topic I don't want to end it so another thing he said that
+
+00:29:38.420 --> 00:29:41.820
+I've been thinking about recently I want to plant this on you is this is
+
+00:29:41.820 --> 00:29:46.500
+a book where he says quality is conformance to requirements I have a
+
+00:29:46.660 --> 00:29:49.980
+twist on that but first I want to know I'm sure you've heard that definition
+
+00:29:49.980 --> 00:29:53.060
+before but what do you think about that definition of quality of conformance to
+
+00:29:53.060 --> 00:30:04.530
+requirements I'll do it this way I'm okay with it under the condition that those
+
+00:30:04.530 --> 00:30:11.720
+requirements don't necessarily have to be communicated my statement is what
+
+00:30:11.720 --> 00:30:16.280
+every customer wants is actually a solution to their problem yes and that
+
+00:30:16.400 --> 00:30:21.360
+that's the twist I just got I read that and it didn't it didn't sit well with me
+
+00:30:21.360 --> 00:30:26.600
+when I read it 15 years ago but it's principle number five I would say
+
+00:30:26.600 --> 00:30:30.960
+quality is conformance to requirements when the customer defines the
+
+00:30:30.960 --> 00:30:36.840
+requirements their requirements are defined implicitly yes explicitly yeah
+
+00:30:36.840 --> 00:30:41.240
+now now you and I are in the same page I mean the problem is this is the
+
+00:30:41.240 --> 00:30:45.120
+problem with this podcast is eventually we're always on the same page because
+
+00:30:45.120 --> 00:30:53.280
+we yeah reasons yeah exactly it's conformist to the requirements sure but
+
+00:30:53.280 --> 00:30:56.880
+it's a requirements around what the customer needs not necessarily what they
+
+00:30:56.880 --> 00:31:03.650
+are asking for that's it now would I ever if I were writing a book would I
+
+00:31:03.650 --> 00:31:07.810
+ever use that statement no because I know there's a lot of people that will
+
+00:31:07.810 --> 00:31:13.730
+take that literally and then go off and do the wrong thing so let me build
+
+00:31:13.730 --> 00:31:19.050
+on my last statement make a statement made by me not by anybody else so based on
+
+00:31:19.050 --> 00:31:23.930
+the Weinberg definition that quality is value to some person that that would be
+
+00:31:23.930 --> 00:31:30.730
+a customer and then my modified Crosby definition that quality is conformance
+
+00:31:30.730 --> 00:31:34.970
+to the requirements as defined implicitly by the customer I would make
+
+00:31:34.970 --> 00:31:39.340
+this statement and I want your reaction on it if you don't know who your
+
+00:31:39.340 --> 00:31:44.640
+customer is and what problem you're solving for them you cannot define what
+
+00:31:44.640 --> 00:31:50.200
+quality is you don't know what quality is yeah but isn't aren't you just
+
+00:31:50.200 --> 00:31:55.880
+restating principle 5 I am in a different way okay so it made me think
+
+00:31:55.880 --> 00:32:00.280
+that this when we talk about quality and testing not being the same thing and
+
+00:32:00.280 --> 00:32:03.360
+people will say oh of course they aren't but then they talk about how they
+
+00:32:03.360 --> 00:32:07.880
+improve quality all they talk about is the testing they do and principle 5 says
+
+00:32:07.880 --> 00:32:13.040
+that we can't do that we need the customer we can't build a quality
+
+00:32:13.040 --> 00:32:16.850
+product without a customer even if it was quality we won't know it's like it's
+
+00:32:16.850 --> 00:32:21.090
+like the tree that fell on the forest we can't measure it right right I've been
+
+00:32:21.090 --> 00:32:25.130
+thinking through since you brought it up earlier the the checking versus testing
+
+00:32:25.130 --> 00:32:31.960
+argument there's no argument system yeah no no I get it hold hold back hold
+
+00:32:31.960 --> 00:32:39.200
+back the soapbox ramp for a moment and they hold it off and in and honestly part
+
+00:32:39.200 --> 00:32:46.440
+of me wants to go and say okay guys let's sit down let's have an objective and
+
+00:32:46.440 --> 00:32:53.480
+real conversation in today's world what is the value of testing that you are
+
+00:32:53.480 --> 00:32:59.200
+holding up and then trying to drive and improve a specialization and
+
+00:32:59.200 --> 00:33:05.800
+craftsmanship around because to me from where I sit honestly Alan I kind of think
+
+00:33:05.800 --> 00:33:15.760
+of testing as a specialization very similar to blacksmithing right it's in a
+
+00:33:15.760 --> 00:33:20.400
+back in a certain time in a certain context it was extremely valuable it
+
+00:33:20.400 --> 00:33:27.040
+still exists today and if if I had a choice between let's say a pocket knife
+
+00:33:27.040 --> 00:33:34.140
+built by a master craftsman and and one built by a factory in China that were
+
+00:33:34.140 --> 00:33:38.980
+the same price tag obviously I'm gonna pick the master craftsman yes those but
+
+00:33:38.980 --> 00:33:48.980
+if if what I need is something that's going to last my expected a lifetime use
+
+00:33:48.980 --> 00:33:53.900
+of it I'm probably gonna go towards the the cheaper option which is gonna be
+
+00:33:53.900 --> 00:33:58.980
+the factory in me and you know what so it's the majority of right it may be
+
+00:33:58.980 --> 00:34:05.620
+easier just to buy a new one every six months or cheaper right right so I want to
+
+00:34:05.620 --> 00:34:10.820
+keep on going I know we're getting to our last 10 or 15 minutes here so there
+
+00:34:10.820 --> 00:34:16.620
+are more pieces to this and this is why again going back to our first topic is
+
+00:34:16.620 --> 00:34:20.990
+maybe I'll repeat another statement when I read my first book on test software
+
+00:34:20.990 --> 00:34:25.630
+testing I thought I knew a lot then I read another book and I thought now I
+
+00:34:25.630 --> 00:34:30.820
+know a lot then I read a third book and I got confused and realized how little I
+
+00:34:30.820 --> 00:34:34.380
+knew and the more I've read about software engineering software quality
+
+00:34:34.380 --> 00:34:38.500
+software testing I realized how much there is I don't know and how much I
+
+00:34:38.500 --> 00:34:42.540
+need to learn there's is that done in Kruger effect right I knew a little
+
+00:34:42.540 --> 00:34:45.580
+bit enough to think I knew a lot and then as I knew more I realized I
+
+00:34:45.580 --> 00:34:49.690
+didn't know anything it could be something different yep there's some
+
+00:34:49.690 --> 00:34:53.290
+other things that feed into this so the question the context of this is so if
+
+00:34:53.290 --> 00:34:56.970
+quality is value to some person or performance requirements and testing does
+
+00:34:56.970 --> 00:35:04.530
+not equal quality how do we build a quality product and then one other flavor
+
+00:35:04.530 --> 00:35:10.290
+is it's been 15 years now since Ed Keys gave that keynote at a Google test
+
+00:35:10.290 --> 00:35:13.890
+automation conference where he said sufficiently advanced monitoring is
+
+00:35:13.890 --> 00:35:18.740
+equivalent to testing so there's something in there too and I would say
+
+00:35:18.740 --> 00:35:25.250
+monitoring is testing well I'll I mean I feel safer with what Ed said okay
+
+00:35:25.250 --> 00:35:30.930
+fair right so because there's with there's a lot of crap monitors out
+
+00:35:30.930 --> 00:35:37.460
+there so if testing is not quality what do you need to do to build a quality
+
+00:35:37.460 --> 00:35:42.050
+product I can't just write code then test it then ship it you told me Alan
+
+00:35:42.050 --> 00:35:46.360
+that's not quality so what are the steps to build a quality product are
+
+00:35:46.480 --> 00:35:52.040
+we redoing episode 83 all of a sudden there whatever it was principle 5 like
+
+00:35:52.040 --> 00:36:01.560
+the you we do principle 5 is prevalent in this theme but right so then no it's
+
+00:36:01.560 --> 00:36:06.520
+coming together in a different way it's a experiment there's two things you have
+
+00:36:06.520 --> 00:36:12.240
+to know to determine if you have a quality product number one what the
+
+00:36:12.240 --> 00:36:19.600
+hell problem it actually solves right there's a hypothesis hypothesized
+
+00:36:19.600 --> 00:36:24.640
+problem but it's a lot of the times the problem it actually solves is actually
+
+00:36:24.640 --> 00:36:31.600
+not the one that you intended right and that that goes to your early example
+
+00:36:31.600 --> 00:36:37.360
+from Stephen Johnson I actually think of his air conditioner story what
+
+00:36:37.360 --> 00:36:41.820
+problem does it solve then once you're firm on what problem it solves to what
+
+00:36:41.820 --> 00:36:50.660
+degree it actually does so you have to have a you have to have a technique to
+
+00:36:50.660 --> 00:36:54.020
+evaluate quality you have to have some sort of technique where you are
+
+00:36:54.020 --> 00:37:00.740
+continuously evaluating those two spaces simultaneously and you cannot do that
+
+00:37:00.740 --> 00:37:09.730
+without here I'll use double quote customer data I'll call it that right
+
+00:37:09.730 --> 00:37:15.450
+and here I because I don't want to get into the the semantic quagmire around
+
+00:37:15.450 --> 00:37:19.290
+the term customer but I think the majority of our listeners probably
+
+00:37:19.290 --> 00:37:22.530
+understand where I'm coming from well our listeners do and sometimes are
+
+00:37:22.530 --> 00:37:25.290
+preaching to the choir but it's good to think about I like to think about it
+
+00:37:25.290 --> 00:37:30.580
+this way because I this massive I've noticed because I'm getting you know I
+
+00:37:30.580 --> 00:37:36.220
+get lots of Twitter DMS and LinkedIn messages and comments on my post because
+
+00:37:36.220 --> 00:37:41.380
+I've been talking about things that make people feel uncomfortable but the
+
+00:37:41.380 --> 00:37:47.100
+point is for everyone who thinks I'm a quack and who I've made feel uncomfortable
+
+00:37:47.100 --> 00:37:52.180
+there are at least as many people that that think well again I'm not
+
+00:37:52.180 --> 00:37:55.780
+describing this new panacea we're describing what we're seeing if you
+
+00:37:55.780 --> 00:38:00.420
+disagree with it you disagreeing what's happening in reality so the
+
+00:38:00.420 --> 00:38:07.420
+feedback I've gotten is more I would classify it more sort of name-calling hey
+
+00:38:07.420 --> 00:38:13.780
+you're disrespecting the discipline that you grew up in and honestly I don't know
+
+00:38:13.780 --> 00:38:17.860
+I don't I don't have a whole lot of empathy for that and I don't care about
+
+00:38:17.860 --> 00:38:22.540
+the feedback right I'm trying to figure out how to I don't say educate but I
+
+00:38:22.540 --> 00:38:28.140
+want to justify what we're seeing and put it into perspective so let's do
+
+00:38:28.140 --> 00:38:31.060
+a quick thought if we have five minutes left just do a quick experiment I have
+
+00:38:31.060 --> 00:38:35.100
+some fingernail clippers you can't see him friend can see him barely again yeah
+
+00:38:35.100 --> 00:38:41.780
+on my desk I'm uses inspiration I am I have a customer hypothesis a problem
+
+00:38:41.780 --> 00:38:47.050
+statement I don't believe I don't believe people in a across around the
+
+00:38:47.050 --> 00:38:52.770
+world are able to to solve their nail clipping problems efficiently enough I am
+
+00:38:52.770 --> 00:38:57.490
+going to launch fingernail clippers calm it's gonna be great I have a
+
+00:38:57.490 --> 00:39:02.010
+great designer and time goes by and we have the site as we've tested
+
+00:39:02.010 --> 00:39:07.890
+extensively the shopping cart and and orders and shipping it's all set it's
+
+00:39:07.890 --> 00:39:13.530
+good to go we've done a hard launch with lots of marketing big marketing
+
+00:39:13.530 --> 00:39:17.850
+budget we want to be the premier place to get fingernail clippers on the
+
+00:39:17.850 --> 00:39:22.410
+internet we tested the crap out of it so on one hand I'm thinking it's high
+
+00:39:22.410 --> 00:39:27.810
+quality because we can't find any bugs we ran a hundred thousand tests and our
+
+00:39:27.810 --> 00:39:35.410
+my little website is live and then very little happens we're not getting orders
+
+00:39:35.410 --> 00:39:42.820
+or getting very few orders what happened obviously ours is our site is failing
+
+00:39:42.820 --> 00:39:47.020
+you could say it has quality issues because it's not providing value to any
+
+00:39:47.020 --> 00:39:51.460
+people or very very few people what did we do wrong how do I fix it how do I
+
+00:39:51.460 --> 00:39:56.860
+do who Brent I've hired you to help me get out of my quag Mars reminds me like
+
+00:39:56.860 --> 00:40:00.180
+Elizabeth Hendrickson talks a lot about she was hired to fix quality problems
+
+00:40:00.180 --> 00:40:06.100
+and they were never with the test team so anyway help me fix it what do I do
+
+00:40:06.100 --> 00:40:14.700
+it did this one this one is I would take the role that I know venture
+
+00:40:14.700 --> 00:40:20.140
+capitalists do and I would just simply say okay Alan who did your market
+
+00:40:20.140 --> 00:40:23.820
+analysis like what made you believe this was a problem that needed to be
+
+00:40:23.820 --> 00:40:30.700
+solved and if you came back and said you know one day I had inspiration and I was
+
+00:40:30.700 --> 00:40:38.020
+staring at my shiny black nail clippers on my desk and and I moved mountains to
+
+00:40:38.020 --> 00:40:44.140
+make this website happen then the solution is easy is okay who's your
+
+00:40:44.140 --> 00:40:48.100
+target customer all right so go on let's say I did market analysis and I
+
+00:40:48.100 --> 00:40:53.540
+assumed I had a million customers any one time across the US just pretend so then
+
+00:40:53.540 --> 00:40:57.940
+where do you go so you look at that you basically look at that data and it's
+
+00:40:57.940 --> 00:41:03.580
+rock-solid and you're thinking wow well you should be doing better now what do
+
+00:41:03.580 --> 00:41:07.570
+we do wrong did we not test it well enough no testing has nothing to do with
+
+00:41:07.570 --> 00:41:15.010
+this one so I'm leading the witness right no no it's like the solution
+
+00:41:15.010 --> 00:41:22.500
+therein is the problem here is why did you ship it right given that the data that
+
+00:41:22.500 --> 00:41:27.020
+you mentioned why did you invest in it why did you ship it right it's a clear
+
+00:41:27.020 --> 00:41:33.060
+thing that you showing it is that it is it is not providing an interesting enough
+
+00:41:33.060 --> 00:41:41.300
+solution to a problem humans have and the fix would be Alan to send you out to
+
+00:41:41.300 --> 00:41:47.460
+physically talk to not your marketing team you to talk to the customers and
+
+00:41:47.460 --> 00:41:53.820
+find out why and you didn't want I mean you're exactly right I was leading you a
+
+00:41:53.820 --> 00:41:58.740
+little bit deeper into it you absolutely need to make sure you're solving a
+
+00:41:58.740 --> 00:42:03.060
+relevant problem you're really trying to do your hypothesizing you're developing a
+
+00:42:03.060 --> 00:42:06.460
+hypothesis to determine if you're actually going to provide value for some
+
+00:42:06.460 --> 00:42:14.000
+person you could because tests of omission might occur so what often we do
+
+00:42:14.000 --> 00:42:17.280
+as you know may have been a while since work on a commerce site but there's the
+
+00:42:17.280 --> 00:42:21.440
+whole acquisition funnel people have to know about the site they have to come
+
+00:42:21.440 --> 00:42:24.840
+to this site they have to put stuff into their cart then they have to check
+
+00:42:24.840 --> 00:42:29.120
+out I'm just making this up on the fly so it's not great but if you're
+
+00:42:29.120 --> 00:42:33.040
+actually so there's do you have an audience and maybe we're getting 10,000
+
+00:42:33.040 --> 00:42:36.640
+visitors a day and that seems obvious like you know well then why aren't we
+
+00:42:36.640 --> 00:42:40.960
+getting more sales we can go one more step down the acquisition funnel and I
+
+00:42:40.960 --> 00:42:45.640
+think you'd be better suited than writing a whole big automated test suite
+
+00:42:45.640 --> 00:42:48.920
+of course you want to test the happy path to make sure people can put stuff
+
+00:42:48.920 --> 00:42:52.720
+in their cart and enter credit carding and get it checked out and get added to
+
+00:42:52.720 --> 00:42:57.840
+a shipping queue but monitoring it every stage of your of your funnel every
+
+00:42:57.840 --> 00:43:02.520
+decision point they can make from this is where you can do your experiments
+
+00:43:02.520 --> 00:43:06.080
+and your A.B. testing and your monitoring sorry experiments and A.B.
+
+00:43:06.080 --> 00:43:09.560
+testing are the same thing but you want to look at every decision point from when
+
+00:43:09.560 --> 00:43:12.560
+they enter the site to where do they find because they have to go through a
+
+00:43:12.560 --> 00:43:16.800
+half a dozen decisions or more until they check out and they put money in your
+
+00:43:16.800 --> 00:43:21.160
+in your bank account to see where they may be failing where they may be
+
+00:43:21.160 --> 00:43:27.040
+falling off maybe anyone with a maybe you have a bad regex weirdness and
+
+00:43:27.040 --> 00:43:32.800
+anybody with a two digit two digits for the first part of their IP address can't
+
+00:43:32.800 --> 00:43:36.600
+check out or something stupid like that you maybe you discover that there but
+
+00:43:36.600 --> 00:43:41.760
+there could be all kinds of things that go wrong where monitoring is and focusing
+
+00:43:41.760 --> 00:43:46.000
+on customer value and that acquisition funnel is the right thing to do user
+
+00:43:46.000 --> 00:43:50.560
+journey funnels I like that name I like that name of user journey funnel
+
+00:43:50.560 --> 00:43:58.360
+is that a real thing can I look that up it user journey user funnels there I've
+
+00:43:58.360 --> 00:44:02.520
+heard user journey and I call it the acquisition funnel but a user funnel or
+
+00:44:02.520 --> 00:44:06.960
+journey funnels so there's there there's acquisition funnels there's there are
+
+00:44:06.960 --> 00:44:13.760
+retention funnels or their churn churn they call funnels but they're really
+
+00:44:13.760 --> 00:44:17.960
+anti funnels because you're trying to prevent people getting to the bottom of
+
+00:44:17.960 --> 00:44:22.200
+those funnels I thought at the bottom they check out and make money not with a
+
+00:44:22.200 --> 00:44:28.040
+churn funnel a churn funnel right it depends on yeah okay fine whatever or
+
+00:44:28.040 --> 00:44:34.040
+for example support a support thing you would you would look at sort of key
+
+00:44:34.040 --> 00:44:38.440
+sequences and you're trying to get them to not go to the next level right it's
+
+00:44:38.440 --> 00:44:43.760
+I frame it normally as an anti funnel because I think it's clear but yeah if
+
+00:44:43.760 --> 00:44:50.120
+the top of your funnel is has a higher rate and let's say you know your
+
+00:44:50.120 --> 00:44:54.080
+favorite host of deities were the ones responsible for the testing like their
+
+00:44:54.080 --> 00:45:00.960
+codes bug-free then you you still have you have something worse you have you
+
+00:45:00.960 --> 00:45:06.760
+have a problem solution mismatch some place in your system that you need to go
+
+00:45:06.760 --> 00:45:11.360
+fine I think the meta point before we close on this is you have to go and
+
+00:45:11.360 --> 00:45:14.200
+go back to what you said earlier focus on the problem you're solving for the
+
+00:45:14.200 --> 00:45:18.960
+customer and then determine what you need to do in order to know if you're
+
+00:45:18.960 --> 00:45:25.500
+solving that problem correctly right right testing again I'm not saying don't
+
+00:45:25.500 --> 00:45:28.860
+do testing testing is great for regressions mitigating risks there's
+
+00:45:28.860 --> 00:45:32.780
+lots of reasons for it please please please please please don't think of it
+
+00:45:32.780 --> 00:45:39.900
+as the end goal of your quality efforts it actually just agreed and sorry I'm
+
+00:45:39.900 --> 00:45:43.660
+gonna go back to one last thing I just thought of it a perfect example for your
+
+00:45:43.660 --> 00:45:47.540
+scenario where you could have a situation bug-free and a high attraction
+
+00:45:47.540 --> 00:45:52.540
+rate okay when you sign up people for a trial ask them for a credit card number
+
+00:45:52.540 --> 00:45:57.910
+right that just pisses people off asking them for a credit card number for a
+
+00:45:57.910 --> 00:46:01.950
+free trial oh I could do fingernail subscriptions fingernail clipper
+
+00:46:01.950 --> 00:46:05.550
+subscriptions yeah I get the credit card yeah no I know but this is again
+
+00:46:05.550 --> 00:46:11.030
+why you will get much higher quality if you get to that culture of experimentation
+
+00:46:11.030 --> 00:46:14.350
+and hypothesis around what you're delivering to see if it's providing if
+
+00:46:14.350 --> 00:46:19.110
+it's solving the problem you intended to solve the fact that you ran 10,000
+
+00:46:19.110 --> 00:46:23.990
+testament mean you well there was the Eric Ries quote if you show me a product
+
+00:46:23.990 --> 00:46:27.860
+that's bug-free I'll show you a product that shipped three months too late yeah
+
+00:46:27.860 --> 00:46:33.180
+I don't know if it's three months but it certainly should play so yeah that
+
+00:46:33.340 --> 00:46:36.380
+all comes into play there too so I want to bring all that together into that
+
+00:46:36.380 --> 00:46:43.020
+conversation we are out of time but this was fun yeah we will come back in a
+
+00:46:43.020 --> 00:46:46.220
+couple weeks and talk about personality types a little bit more but that'll be
+
+00:46:46.220 --> 00:46:52.470
+fun and was there anything else I was gonna say see ya okay then see ya
+
+00:46:52.470 --> 00:46:57.380
+Brent says see ya bye bye everybody
+

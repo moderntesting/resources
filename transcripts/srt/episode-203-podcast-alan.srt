@@ -1,0 +1,2076 @@
+1
+00:00:03,340 --> 00:00:09,380
+Welcome to AV testing podcast your modern testing podcast your hosts Alan and
+
+2
+00:00:09,380 --> 00:00:15,220
+Brent will be here to guide you through topics on testing leadership agile and
+
+3
+00:00:15,220 --> 00:00:21,460
+anything else that comes to mind now on with the show hello Brent hey Alan hey
+
+4
+00:00:21,460 --> 00:00:28,710
+it's podcast Alan more on that later okay it's kind of like Microsoft Alan
+
+5
+00:00:28,710 --> 00:00:37,290
+yes so I you know so many things to talk about and as usual Brent has no idea
+
+6
+00:00:37,290 --> 00:00:41,250
+what we're going to talk about but yet he is going to find a way to contribute
+
+7
+00:00:41,250 --> 00:00:47,730
+because that's what we do it is on my bucket list to master improv so let's go
+
+8
+00:00:47,730 --> 00:00:57,940
+yes and okay yes and I gotta address one thing this is the AV testing podcast where
+
+9
+00:00:57,940 --> 00:01:04,180
+we talk about a lot of things and occasionally we say something insightful
+
+10
+00:01:04,180 --> 00:01:09,220
+and interesting and we discover things about ourselves and we're gonna come
+
+11
+00:01:09,220 --> 00:01:12,460
+back to that more later because first I wanted to talk about one other thing and
+
+12
+00:01:12,460 --> 00:01:17,510
+that's the other thing we do is have tangents on the podcast right it is
+
+13
+00:01:17,510 --> 00:01:23,110
+since episode one I believe you know and tangent within a tangent tangent
+
+14
+00:01:23,110 --> 00:01:26,870
+inception which is also common on a be testing podcast when we went back and
+
+15
+00:01:26,870 --> 00:01:33,190
+listened to episode one I was surprised I forgot at that point how much we like
+
+16
+00:01:33,190 --> 00:01:38,190
+we're setting up canvas of what we were going to do and I think we may have
+
+17
+00:01:38,190 --> 00:01:46,500
+even had tangents then it's been part of the soul of the podcast from it is
+
+18
+00:01:46,500 --> 00:01:52,050
+minute I bet you we haven't tested this but I bet you it's within five
+
+19
+00:01:52,050 --> 00:01:58,730
+minutes of episode one yes and it is sometimes we discover the most
+
+20
+00:01:58,730 --> 00:02:03,170
+interesting things within the tangents they're not just they're not a non
+
+21
+00:02:03,170 --> 00:02:08,810
+sequitur they're a tangent it's we think of something you know what I don't know
+
+22
+00:02:08,810 --> 00:02:15,410
+if this is important I need to explore it exploratory testing podcast maybe I
+
+23
+00:02:15,410 --> 00:02:21,210
+don't know so one of the things that Spotify provides Spotify is technically
+
+24
+00:02:21,210 --> 00:02:28,010
+our podcast provider although it's RSS feed it everywhere your podcast live
+
+25
+00:02:28,010 --> 00:02:32,850
+originally through anchor it's actually a really good platform I like it I'll stick
+
+26
+00:02:32,850 --> 00:02:36,850
+with it but Spotify gives you the opportunity every week I have a little I
+
+27
+00:02:36,850 --> 00:02:41,170
+just take the default question that if you go to Spotify it'll say tell me what
+
+28
+00:02:41,170 --> 00:02:46,610
+you thought of the podcast and I've had like three replies ever and if so if
+
+29
+00:02:46,610 --> 00:02:51,650
+you guys want to reply there and drive up some interest tangent I've always
+
+30
+00:02:51,650 --> 00:02:55,050
+wanted more people who weren't we have a lot of people that came up through
+
+31
+00:02:55,050 --> 00:02:58,450
+testing and are now doing other things I'm still in testing listening but I
+
+32
+00:02:58,450 --> 00:03:01,930
+believe that our content is applicable to a lot lot people in software company
+
+33
+00:03:01,930 --> 00:03:06,050
+anyway one thing we're good at because we're good at switching the stack we
+
+34
+00:03:06,050 --> 00:03:14,490
+come back to the topic so I got a we found a listener who won thank you Simon
+
+35
+00:03:14,490 --> 00:03:19,410
+for taking the time to actually reply I appreciate that so much and thank you
+
+36
+00:03:19,410 --> 00:03:23,410
+for being part of the discussion I love all people don't agree with us I hope
+
+37
+00:03:23,410 --> 00:03:27,050
+that people that don't like us come back and try and find out more but I want to
+
+38
+00:03:27,050 --> 00:03:30,650
+I want to share this with the listeners for transparency this is not to pick on
+
+39
+00:03:30,650 --> 00:03:34,650
+Simon this is just this is good feedback but you know when you get that
+
+40
+00:03:34,650 --> 00:03:41,980
+feedback and it's like yeah that's who I am and this is what he says after all
+
+41
+00:03:41,980 --> 00:03:47,540
+that built up this is so hard to listen to for every minute of content that's
+
+42
+00:03:47,540 --> 00:03:53,870
+actually useful there's five of boring anecdotes and digressions so the first
+
+43
+00:03:53,870 --> 00:03:58,670
+thing I do is go oh well yeah that's right but then if I do the math that
+
+44
+00:03:58,670 --> 00:04:07,040
+means if we do a 45 minute podcast we actually have nine minutes of useful
+
+45
+00:04:07,040 --> 00:04:11,840
+content and for that I am truly grateful and happy and excited nine minutes of
+
+46
+00:04:12,360 --> 00:04:19,360
+yeah cuz that seems like too high right right right now so you know boring
+
+47
+00:04:19,360 --> 00:04:26,660
+anecdotes and useless those are subjective terms yeah and again the only
+
+48
+00:04:26,660 --> 00:04:30,420
+the customer can judge quality that's true of our customers find more quality
+
+49
+00:04:30,420 --> 00:04:36,700
+and other things and that's cool this is absolutely I can't I can't be mad at
+
+50
+00:04:36,700 --> 00:04:43,900
+this cuz it's true and I think for some people getting more I don't know we're
+
+51
+00:04:43,900 --> 00:04:47,860
+never gonna be a scripted podcast I thought about it before I thought about
+
+52
+00:04:47,860 --> 00:04:51,860
+like I'm gonna have a topic and we kind of started that way a little bit but even
+
+53
+00:04:51,860 --> 00:04:58,050
+in the beginning when we had an outline it wasn't really us no no I mean the
+
+54
+00:04:58,050 --> 00:05:03,810
+con but the compound thing we did in the beginning right was was an attempt to
+
+55
+00:05:03,810 --> 00:05:11,520
+constrain ADHD in some regards yeah but you know I think what really in my mind
+
+56
+00:05:11,520 --> 00:05:22,930
+what really kind of doomed the the idea of of ever even considering it is
+
+57
+00:05:22,930 --> 00:05:28,970
+something Alan and I have literally never talked about we have literally never
+
+58
+00:05:28,970 --> 00:05:36,850
+talked about constraining tangents and I have asked Brett to stop doing about
+
+59
+00:05:36,850 --> 00:05:43,210
+50,000 things on the podcast tangents is not one of them no no we have not and
+
+60
+00:05:43,210 --> 00:05:49,370
+I don't know a 50,000 seems high but hmm think about it might be 100 episodes it
+
+61
+00:05:49,370 --> 00:05:57,820
+might be at least 10,000 about about but you know big number the we have never
+
+62
+00:05:57,820 --> 00:06:03,820
+talked about ten just and in my mind what really doomed it was one of the
+
+63
+00:06:03,820 --> 00:06:10,580
+first pieces of feedback we got which was the vibe of the podcast is two guys
+
+64
+00:06:10,580 --> 00:06:16,620
+bullshitting over beer yeah and then you know what that's we accidentally hit a
+
+65
+00:06:16,620 --> 00:06:23,660
+vibe we wanted from get go and yeah and today I'm drinking sometimes I have
+
+66
+00:06:23,660 --> 00:06:27,020
+coffee in the podcast it's always coffee when we used to record in the
+
+67
+00:06:27,020 --> 00:06:30,460
+morning we're in the afternoon here so I'm drinking some water Brent has some
+
+68
+00:06:30,460 --> 00:06:35,700
+coffee Brent's cat staring at me it's awesome yeah so look at that face she's
+
+69
+00:06:35,700 --> 00:06:39,940
+sad she's like no one's better me anymore I gotta tell you the thing my
+
+70
+00:06:39,940 --> 00:06:43,460
+dog's doing and then I got a whole bunch of podcast topic to get into yeah
+
+71
+00:06:43,460 --> 00:06:48,460
+so we got some patio furniture and the weather's been getting better my dog now
+
+72
+00:06:48,460 --> 00:06:54,500
+insists not on going outside but taking a human outside with her because
+
+73
+00:06:54,500 --> 00:06:59,180
+she wants to be outside but she needs company so I was working outside this
+
+74
+00:06:59,180 --> 00:07:03,580
+afternoon and she's crashed on a little outdoor couch on the patio it's it's a
+
+75
+00:07:03,580 --> 00:07:07,740
+nice 70 degrees and breezy in Seattle anyway I come to go in to go to the
+
+76
+00:07:07,740 --> 00:07:11,580
+podcast and she looks at me says I'm not going back inside I'm staying here I
+
+77
+00:07:11,580 --> 00:07:17,180
+said fine stay out here don't cry when you can't get in the door and she's
+
+78
+00:07:17,180 --> 00:07:22,660
+still out there it's great okay animals are great okay I got um I got an order
+
+79
+00:07:22,660 --> 00:07:28,340
+for things in my head you don't know what it is but I think I want to tie up
+
+80
+00:07:28,340 --> 00:07:32,060
+some loose ends and talk about stuff I haven't talked about in 15 months okay
+
+81
+00:07:32,060 --> 00:07:37,460
+let's do it so you've mentioned this a couple times and I got it I got a figure
+
+82
+00:07:37,460 --> 00:07:41,100
+well I'm gonna go this way here's what I'm going to do and by the way I am
+
+83
+00:07:41,100 --> 00:07:45,260
+doing the thing where I'm not gonna go back and edit all my bull crap stupid
+
+84
+00:07:45,260 --> 00:07:49,460
+comments and mumbling and Brent's coughing out of the podcast just frickin
+
+85
+00:07:49,460 --> 00:07:55,700
+deal with it we're gonna go go go I am trying to hit mute whenever I need to
+
+86
+00:07:55,700 --> 00:07:59,340
+cough no you're really you're doing great and we're gonna make this work we're
+
+87
+00:07:59,340 --> 00:08:03,460
+gonna be live in fact if we get good at this one of the things I was looking at
+
+88
+00:08:03,460 --> 00:08:07,420
+was waiting for you to get here yet this is another tangent just shut up is
+
+89
+00:08:07,420 --> 00:08:11,940
+our platform gives us the ability to live stream to like four different
+
+90
+00:08:11,940 --> 00:08:15,620
+platforms so we should we used to do that a long time ago maybe we can
+
+91
+00:08:15,620 --> 00:08:19,980
+live-stream again listeners let us know what you think we record usually at 3
+
+92
+00:08:19,980 --> 00:08:25,500
+30 p.m. that's like 11 30 that's like late in Europe but let us know cuz I'm into
+
+93
+00:08:25,500 --> 00:08:30,540
+doing that again should be once but no promises I may change my mind because I
+
+94
+00:08:30,540 --> 00:08:34,300
+don't remember the last time I shower but it definitely wasn't today and
+
+95
+00:08:34,300 --> 00:08:42,770
+before you continue with the the random acts of randomness yes I will share with
+
+96
+00:08:42,770 --> 00:08:51,810
+you that there was a couple of cool events for me yesterday was my eighth
+
+97
+00:08:51,810 --> 00:08:57,290
+graders last day of school she doesn't graduate for another week but the eighth
+
+98
+00:08:57,290 --> 00:09:01,450
+graders get to get off school a whole week earlier than the rest of the class
+
+99
+00:09:01,450 --> 00:09:07,220
+is it so they can all go to Cancun and party I don't know like right right now
+
+100
+00:09:07,220 --> 00:09:12,260
+for the last two hours my daughter has been wandering the neighborhood playing
+
+101
+00:09:12,700 --> 00:09:18,980
+Pikmin Bloom which is the new the new fad app in the house yeah some some weirdo
+
+102
+00:09:18,980 --> 00:09:22,500
+just sent me an invite that I'm probably going to ignore okay cool well
+
+103
+00:09:22,500 --> 00:09:30,620
+congratulations but that was yesterday but the day before I got called in to to
+
+104
+00:09:30,620 --> 00:09:37,340
+answer the I presented to three different classes in in middle school on the
+
+105
+00:09:37,340 --> 00:09:48,500
+answer of the way the teacher presented it is I often get the question why are we
+
+106
+00:09:48,500 --> 00:10:00,010
+learning this I'm never going to use it when I'm older so true not true true not
+
+107
+00:10:00,010 --> 00:10:05,170
+in middle school it's algebra you still use everybody that I know just I'm just
+
+108
+00:10:05,170 --> 00:10:09,090
+giving you a bad time finish it finish it so I got called in to sort of
+
+109
+00:10:09,090 --> 00:10:15,330
+address that question nice did you pass out a B testing stickers oh I should
+
+110
+00:10:15,330 --> 00:10:22,450
+have dude blowing it I should have I don't I brought them home I don't even
+
+111
+00:10:22,450 --> 00:10:27,110
+know where they are right now it's been a hot minute since I've passed out of
+
+112
+00:10:27,110 --> 00:10:32,950
+an A B testing sticker I think the last one was my daughter she's like oh
+
+113
+00:10:32,950 --> 00:10:43,120
+I got a new laptop I need a sticker here heaven but obviously it to the kids it
+
+114
+00:10:43,120 --> 00:10:48,920
+was like a career fair but I actually walked them through a very lightweight
+
+115
+00:10:48,920 --> 00:10:57,960
+data science exercise where I discovered it so this is a tangent ish I
+
+116
+00:10:57,960 --> 00:11:03,000
+discovered one thing that's worth sharing that I did not know until I
+
+117
+00:11:03,000 --> 00:11:09,520
+started this M&M's they are made they are made out of two factories one of them is
+
+118
+00:11:09,520 --> 00:11:15,080
+in Tennessee in the end of the one is in New Jersey okay now that isn't so much
+
+119
+00:11:15,080 --> 00:11:20,160
+interesting because lots of places do things like that but what is interesting
+
+120
+00:11:20,160 --> 00:11:28,800
+is that each factory has a signature distribution of the colors for and it's
+
+121
+00:11:28,800 --> 00:11:35,150
+fundamentally different and so what I walked them through I had brought bags
+
+122
+00:11:35,150 --> 00:11:40,710
+of snack size M&M's which was and I had to break up into in the groups of six
+
+123
+00:11:40,710 --> 00:11:45,270
+because there's six colors of M&M's and so the smallest color would be roughly
+
+124
+00:11:45,270 --> 00:11:51,150
+50 M&M's so that everybody has a sense of the scope on the podcast but I
+
+125
+00:11:51,150 --> 00:11:55,790
+walked them through a data science exercise where we use data science to
+
+126
+00:11:55,790 --> 00:12:05,420
+figure out based on the signature which factory these bags came from and I don't
+
+127
+00:12:05,420 --> 00:12:10,340
+know that they learned anything from that but man I generated energy but you
+
+128
+00:12:10,340 --> 00:12:14,620
+know I knew that could have been from the sugar I knew my audience I knew that
+
+129
+00:12:14,620 --> 00:12:23,540
+you know the potential of free candy would generate energy and it succeeded it
+
+130
+00:12:23,540 --> 00:12:29,040
+was a lot of fun I did have a couple of kids come back and go wow that was
+
+131
+00:12:29,040 --> 00:12:33,600
+really like I got their attention and they were paying attention to what we had
+
+132
+00:12:33,600 --> 00:12:43,740
+done and and and then I went on and talked about chat GPT and AI and AGI for
+
+133
+00:12:43,740 --> 00:12:49,860
+us it's boring for them they're like what what and yeah it got a lot more
+
+134
+00:12:49,860 --> 00:12:55,700
+interactive when I was when I was essentially a local expert on the topic
+
+135
+00:12:55,700 --> 00:13:00,100
+anyway nice just sharing that we can go back to did they ask if you knew Bill
+
+136
+00:13:00,100 --> 00:13:04,860
+Gates no one I didn't even know Bill Gates has anybody I don't think so no
+
+137
+00:13:04,860 --> 00:13:12,500
+yeah yeah yeah okay so so many questions but I want to go over this because I
+
+138
+00:13:12,500 --> 00:13:18,100
+think I'm gonna do this order do you remember no you do you do and our
+
+139
+00:13:18,300 --> 00:13:27,060
+listeners do when I joined unity back in 2017 we did a segment for like every
+
+140
+00:13:27,060 --> 00:13:32,020
+almost every episode every other was a common segment for a long time of talk
+
+141
+00:13:32,020 --> 00:13:39,570
+about what Alan's doing at Unity and because what's interesting is when I
+
+142
+00:13:39,570 --> 00:13:48,470
+joined unity I told my boss at the time I said hey I have this podcast I do I
+
+143
+00:13:48,470 --> 00:13:53,390
+do a lot of blogging goes I know your Europeans are great I love Europeans I
+
+144
+00:13:53,390 --> 00:13:58,980
+said do I need to do I need to be careful or sign anything about what goes
+
+145
+00:13:58,980 --> 00:14:04,460
+you know I want you to talk about unity all the time we need publicity that's
+
+146
+00:14:04,460 --> 00:14:09,220
+why you're freaking here Alan people know who you are I said okay I'll do my
+
+147
+00:14:09,220 --> 00:14:14,820
+thing so if that wasn't why I did it but but the job stuff is constantly my
+
+148
+00:14:14,820 --> 00:14:23,100
+fodder for this podcast for my weekly blog posts for all kinds of things for a
+
+149
+00:14:23,100 --> 00:14:29,700
+lot of fodder comes from so it's interesting because I joined NBC
+
+150
+00:14:29,700 --> 00:14:36,740
+Universal for those of you that don't know yeah I think anytime you say NBC I
+
+151
+00:14:36,740 --> 00:14:39,980
+think you have to say it that way I don't think I do I do I don't think I do
+
+152
+00:14:39,980 --> 00:14:50,700
+I'm pretty sure I don't let me check our contract it says no so anyway when I
+
+153
+00:14:50,700 --> 00:14:54,660
+started here I didn't ask I was kind of like it was kind of on the down low I
+
+154
+00:14:54,660 --> 00:15:01,060
+was kind of checking things out and I never I was told once that HR would
+
+155
+00:15:01,060 --> 00:15:07,500
+contact me about like it I did have to fill out an NDA for not an NDA and not
+
+156
+00:15:07,500 --> 00:15:12,860
+something for because I'm on the board for another software company not important
+
+157
+00:15:12,860 --> 00:15:15,860
+all I have to do is promise I'm never gonna make the company by their software
+
+158
+00:15:15,860 --> 00:15:23,300
+that's fine but I was told that HR would give me a form at some point so I'd
+
+159
+00:15:23,300 --> 00:15:30,540
+make sure I wasn't talking about what we're doing and so I didn't and also
+
+160
+00:15:30,540 --> 00:15:35,660
+they never gave me the form so I haven't signed anything but kind of you
+
+161
+00:15:35,660 --> 00:15:42,380
+know trotting the thin line between should I talk about shouldn't but then
+
+162
+00:15:42,380 --> 00:15:47,710
+it's funny my boss who listens to the podcast gave me an interesting bit of
+
+163
+00:15:47,710 --> 00:15:52,070
+feedback I'll get into why in a minute which boss that boss or current boss
+
+164
+00:15:52,070 --> 00:15:58,150
+the old boss at unity he's living in Portugal doing he's like he got himself
+
+165
+00:15:58,150 --> 00:16:03,070
+he is in the perfect position he was legacy enough and smart enough they
+
+166
+00:16:03,070 --> 00:16:07,430
+didn't fire him but not good enough to actually do anything important so he has
+
+167
+00:16:07,430 --> 00:16:12,430
+this fellow job where he kind of sits at his house in Portugal and tries not to
+
+168
+00:16:12,430 --> 00:16:16,790
+cause trouble while his stock vests but it doesn't matter because the unity
+
+169
+00:16:16,790 --> 00:16:20,990
+stock is worth about three cents a share but anyway back to our story my current
+
+170
+00:16:20,990 --> 00:16:27,430
+boss tells me hi Steve Steve says what is not that is a paraphrase he goes I
+
+171
+00:16:27,550 --> 00:16:37,050
+want podcast Alan to show up to work more and I thought well this this is new
+
+172
+00:16:37,050 --> 00:16:44,010
+territory so let me but it's but I'm turning now to my microphone which is I
+
+173
+00:16:44,010 --> 00:16:47,530
+and you know what I don't disagree with him I'll get to that in a minute but it's
+
+174
+00:16:47,530 --> 00:16:54,510
+kind of like do I bring do I bring podcast Alan to work or do I bring
+
+175
+00:16:54,510 --> 00:16:59,790
+work Alan to podcast it's different so and I think what he's coming at here is
+
+176
+00:16:59,790 --> 00:17:09,110
+here I have an energy a curiosity a a drive to discussion a charisma a Riz as
+
+177
+00:17:09,110 --> 00:17:12,870
+the kids call it and it's not that I don't have that at work and I think I
+
+178
+00:17:12,870 --> 00:17:18,030
+have a lot of that my team would tell you they get podcast Alan a solid 90% of
+
+179
+00:17:18,030 --> 00:17:22,350
+the time but let me tell you without going into you know being too career
+
+180
+00:17:22,350 --> 00:17:29,390
+limiting it is I can probably say this without getting myself in trouble it is
+
+181
+00:17:29,390 --> 00:17:36,460
+weird working at a non software company so one of my employees jokes were it
+
+182
+00:17:36,460 --> 00:17:44,500
+for a media company first and a technology company fourth and and you know
+
+183
+00:17:44,500 --> 00:17:51,540
+it's a big part of my job is to try and raise the level of of engineering okay
+
+184
+00:17:51,540 --> 00:17:57,190
+the company but both through consolidating tools and practices and they
+
+185
+00:17:57,190 --> 00:18:02,270
+don't know what good looks like there's not a high bar so that I have an
+
+186
+00:18:02,270 --> 00:18:07,150
+existential crisis on how good is good enough when the bulk of your software is
+
+187
+00:18:07,150 --> 00:18:12,230
+internal facing and the answer is at the very least the min bar is good
+
+188
+00:18:12,230 --> 00:18:15,870
+enough people don't get frustrated and quit you have to work on velocity
+
+189
+00:18:15,870 --> 00:18:24,030
+productivity etc etc so what's weird for me and this is where not pod this is
+
+190
+00:18:24,030 --> 00:18:32,590
+where the opposite of podcast Alan shows his head is this is going somewhere is so
+
+191
+00:18:32,590 --> 00:18:40,830
+me there's like beer you cannot imagine the bureaucracy I the quote the quote
+
+192
+00:18:40,830 --> 00:18:46,270
+guardrails like I can't do that I've done this for I'm not even gonna pick on
+
+193
+00:18:46,270 --> 00:18:49,910
+specific things save myself but there are things that I could do in my first
+
+194
+00:18:49,910 --> 00:18:55,660
+day of Microsoft as a contractor that I do not have access to do at NBC you
+
+195
+00:18:55,660 --> 00:19:01,900
+because someone is deemed it's not it's private or can't be done so I get it I
+
+196
+00:19:01,900 --> 00:19:07,220
+wrote just so I get frustrated because it's so hard to get some things done but
+
+197
+00:19:07,220 --> 00:19:12,420
+things like that now it's interesting because one of the things that you and
+
+198
+00:19:12,420 --> 00:19:17,020
+I have in common is we're both change agents and we're INTPs and we're
+
+199
+00:19:17,020 --> 00:19:26,300
+frustrated by inefficiency and like someone every single time someone in my
+
+200
+00:19:26,300 --> 00:19:36,950
+career has told me this can't be done it is correlated to my next promotion
+
+201
+00:19:36,950 --> 00:19:45,900
+because I like for me can't is a four-letter word I just like what do you
+
+202
+00:19:45,900 --> 00:19:51,140
+mean it can't it's just freaking code yeah and well it's not even just coded
+
+203
+00:19:51,140 --> 00:19:55,380
+it's policy stuff so I don't want to go super deep into it but what he's getting
+
+204
+00:19:55,380 --> 00:20:01,940
+at is and I go into this talk I gave last week as well is it has been a huge
+
+205
+00:20:01,940 --> 00:20:08,540
+learning experience for me I think within my little panacea utopia of an
+
+206
+00:20:08,540 --> 00:20:13,500
+org that a bunch of hiring we've made some good progress it's I think I get
+
+207
+00:20:13,500 --> 00:20:19,700
+frustrated with myself a lot because in any other tech job I've been in the last
+
+208
+00:20:19,700 --> 00:20:26,460
+30 years a lot more would have been done so podcast Alan comes into Mopi
+
+209
+00:20:26,460 --> 00:20:36,340
+like you know I just some days it's just frickin hard so I don't want to go into
+
+210
+00:20:36,340 --> 00:20:42,620
+specific examples not worth it but you know what he said the thing I've been
+
+211
+00:20:42,620 --> 00:20:47,570
+thinking about don't go back don't don't change something do you know is
+
+212
+00:20:47,570 --> 00:20:59,010
+transitioning go ahead what podcast Alan is is there a behavior or an approach to
+
+213
+00:20:59,010 --> 00:21:03,650
+the add any sort of specificity no no and and you know it's it's kind of like
+
+214
+00:21:03,650 --> 00:21:09,210
+when you recognize Microsoft Alan weird different right and it's a little bit of
+
+215
+00:21:09,210 --> 00:21:13,490
+the riz and getting stuff done a lot of times I run into where things don't
+
+216
+00:21:13,490 --> 00:21:18,130
+want to get done so what I've done it's interesting he brought this up after I
+
+217
+00:21:18,130 --> 00:21:22,330
+was I think it was after I went away to give this talk that I'm gonna talk I'm
+
+218
+00:21:22,330 --> 00:21:28,350
+gonna walk through in just a second is like anything else is like where I think
+
+219
+00:21:28,350 --> 00:21:33,910
+I beat myself against the wall was trying to fix things that maybe just
+
+220
+00:21:33,910 --> 00:21:38,750
+can't be fixed right now and focusing on what I can fix and we do it there's some
+
+221
+00:21:38,750 --> 00:21:43,790
+stuff going on my ass more opportunity for that but interestingly just I think
+
+222
+00:21:43,790 --> 00:21:46,950
+I can't was that last I can't remember what I talked to maybe last Friday but
+
+223
+00:21:46,950 --> 00:21:51,520
+interestingly right before that last week I went to Montreal and I think I
+
+224
+00:21:51,520 --> 00:21:56,400
+mentioned this before on the podcast but I was asked way back in 2019 to give
+
+225
+00:21:56,400 --> 00:22:01,880
+a talk at this company called Genetec that makes security software and I could
+
+226
+00:22:01,880 --> 00:22:06,440
+not go because of this little thing called a global pandemic I was asked to
+
+227
+00:22:06,440 --> 00:22:10,760
+go again last year the year before they could do it every two years and I could
+
+228
+00:22:10,760 --> 00:22:15,640
+not go for other reasons but finally this year I said you know what I do want
+
+229
+00:22:15,640 --> 00:22:21,300
+to go because I know a bunch of people there and I've been the the person who
+
+230
+00:22:21,300 --> 00:22:25,480
+invited me is good friends with a colleague I had at Unity and I thought
+
+231
+00:22:25,600 --> 00:22:29,400
+and and and and and and there's now a direct flight from Seattle to Montreal
+
+232
+00:22:29,400 --> 00:22:33,520
+so I went out and talked to them specifically on the talk was called
+
+233
+00:22:33,520 --> 00:22:38,120
+quality catalyst transforming engineering teams for excellence so this
+
+234
+00:22:38,120 --> 00:22:42,240
+was a remember at Microsoft we used to have our internal or they called
+
+235
+00:22:42,240 --> 00:22:46,900
+engineering days or the little internal software conference at njex Easter
+
+236
+00:22:46,900 --> 00:22:54,970
+run when I was there yeah it's been replaced by em was so anyway yeah that's
+
+237
+00:22:54,970 --> 00:22:57,530
+what they're doing it's just a little internal software conference there they're
+
+238
+00:22:57,530 --> 00:23:01,090
+like a thousand engineers so I was talking to them about how do you get
+
+239
+00:23:01,090 --> 00:23:07,810
+changed to happen because Melissa was there hi Melissa I know you listen she
+
+240
+00:23:07,810 --> 00:23:11,850
+walked through the quality culture transition guide last time she was there
+
+241
+00:23:11,850 --> 00:23:15,410
+camera was last year at the year before time flies this is this is a
+
+242
+00:23:15,410 --> 00:23:22,010
+conference internal to internal to the company to NBC okay no no no no no no
+
+243
+00:23:22,630 --> 00:23:27,690
+to Genetek I was invited by another company got a got a got a come like I've
+
+244
+00:23:27,690 --> 00:23:32,850
+done forever like my favorite by the way I don't know if shmuel he was even around
+
+245
+00:23:32,850 --> 00:23:36,750
+the new more of sold in the industry but I was invited to speak at Intel
+
+246
+00:23:36,750 --> 00:23:41,830
+and Tel Aviv once and that was probably my favorite invited conference talk ever
+
+247
+00:23:41,830 --> 00:23:46,280
+but anyway back on this subject I go talk I'm being a quality catalyst so
+
+248
+00:23:46,280 --> 00:23:49,580
+Melissa was there last time she talked about the quality culture transition
+
+249
+00:23:49,580 --> 00:23:53,740
+guide but instead of going over the guide I hinted at it gave him a link but
+
+250
+00:23:53,740 --> 00:23:57,780
+I talked a lot about how and and this was in the last podcast not gonna recap at
+
+251
+00:23:57,780 --> 00:24:02,020
+all those of you that have seen me give talks before know that right before I
+
+252
+00:24:02,020 --> 00:24:05,620
+give a talk or write a talk I vetted on the podcast that you knowing so some
+
+253
+00:24:05,620 --> 00:24:09,020
+of that's been done I gave a little bit of history about modern testing came
+
+254
+00:24:09,020 --> 00:24:14,220
+to came to to be but the bulk of the talk was talking about the problem which
+
+255
+00:24:14,220 --> 00:24:18,580
+is the how how do you get people to change and it's all my favorite stuff
+
+256
+00:24:18,580 --> 00:24:23,100
+disappointing people at a level they can absorb a couple models around change
+
+257
+00:24:23,100 --> 00:24:27,380
+management focusing and prioritizing you know balancing the different you know
+
+258
+00:24:27,380 --> 00:24:33,820
+balancing the work all those things and and also learning to for testers
+
+259
+00:24:33,820 --> 00:24:38,280
+because they had some testers there emphasizing and they're they're a
+
+260
+00:24:38,280 --> 00:24:42,460
+pretty mature functional software organization so they were already doing
+
+261
+00:24:42,460 --> 00:24:45,500
+a lot of this so giving them some tips on coaching developers to do better
+
+262
+00:24:45,500 --> 00:24:51,260
+testing and increasing velocity all that kind of stuff so it's interesting I gave
+
+263
+00:24:51,260 --> 00:24:58,620
+all that stuff which is kind of what I do day to day but I don't know it's been
+
+264
+00:24:58,620 --> 00:25:03,140
+interesting so just a little more context for you Brent before I let you you know
+
+265
+00:25:03,140 --> 00:25:10,460
+talk about my job for a while is one media company totally weird totally
+
+266
+00:25:10,460 --> 00:25:14,900
+interesting the people are generally good there are a few that don't that
+
+267
+00:25:14,900 --> 00:25:21,950
+that are I'll be nice here there are a few that have interpersonal issues but in
+
+268
+00:25:21,950 --> 00:25:29,750
+other orgs not mine and yeah but that's everywhere you know no one million
+
+269
+00:25:29,750 --> 00:25:36,310
+percent yes in fact if like my last podcast sorry this is this is the last
+
+270
+00:25:36,310 --> 00:25:39,470
+podcast actual thing my last blog post last week I don't know if you read it
+
+271
+00:25:39,470 --> 00:25:42,870
+talked about I've been pondering this like when I was giving this talk I was
+
+272
+00:25:42,870 --> 00:25:49,920
+thinking about the difference between dysfunctional teams and toxic teams and
+
+273
+00:25:49,920 --> 00:25:54,960
+if you read that post when I worked on teams at Microsoft by the time I left
+
+274
+00:25:54,960 --> 00:26:00,680
+teams was a toxic team everybody sucked up to Brian it was just this weird it was
+
+275
+00:26:00,680 --> 00:26:06,240
+just weird we had all kinds of highly toxic behavior I wasn't gonna deal with
+
+276
+00:26:06,240 --> 00:26:17,300
+it anymore there is zero to almost zero virtually zero percent toxicity I had to
+
+277
+00:26:17,300 --> 00:26:22,590
+let my daughter in I'll be right back it was too hard I'm gonna have to edit yeah
+
+278
+00:26:22,590 --> 00:26:28,890
+that was a very good point Alan thank you could you add more clarity to that
+
+279
+00:26:28,890 --> 00:26:34,850
+for our listeners yeah all right yeah just in case I forget to cut I'm not
+
+280
+00:26:34,850 --> 00:26:42,250
+gonna say what I wanted to say so the point was that not toxic at all
+
+281
+00:26:42,250 --> 00:26:50,030
+dysfunctional yes stuff to fix but yeah I you know transparency I get frustrated
+
+282
+00:26:50,030 --> 00:26:56,610
+because there is in a little like I'm used to be able to be that to go out and
+
+283
+00:26:56,610 --> 00:27:01,650
+make whatever change I want I can't I haven't been able to find that niche
+
+284
+00:27:01,650 --> 00:27:07,540
+here everything you know any significant change is blocked because you know the
+
+285
+00:27:07,540 --> 00:27:10,660
+answer is things are slow so it's been hard for me so I'm learning to deal with
+
+286
+00:27:10,660 --> 00:27:17,580
+it people here's my question for you yeah ask away give me give me some Brent
+
+287
+00:27:17,580 --> 00:27:26,670
+therapy what are you doing to start chiseling like again I don't like can't
+
+288
+00:27:27,100 --> 00:27:34,620
+certainly swallowing can't vicariously is a lot easier but it's still bugs me so
+
+289
+00:27:34,620 --> 00:27:44,410
+I'm like okay fine I can't yet that's how I want you to phrase it I can't yet
+
+290
+00:27:44,410 --> 00:27:50,250
+right because it I think it's different I think it's I can't hear god damn it
+
+291
+00:27:50,250 --> 00:27:55,850
+Alan you're a change agent I am but I'm a change agent that's sprinting into
+
+292
+00:27:55,850 --> 00:28:02,250
+brick walls and I'm a little bloody well so stop sprinting into brick walls maybe
+
+293
+00:28:02,250 --> 00:28:10,160
+change it to a jog and and start figuring out why that wall is there like
+
+294
+00:28:10,160 --> 00:28:14,320
+million percent yes and and the walls they I'll tell you two things one is
+
+295
+00:28:14,320 --> 00:28:18,080
+that's what I've been doing is jogging instead of sprinting so I can look
+
+296
+00:28:18,080 --> 00:28:23,080
+around what's going out a little better and the wall is there you know why the
+
+297
+00:28:23,080 --> 00:28:29,100
+wall is there because the walls always been right and so this is where I was
+
+298
+00:28:29,100 --> 00:28:34,860
+gonna go next is I talked about this before and whether or not it was actually
+
+299
+00:28:34,860 --> 00:28:40,660
+done it doesn't matter the story is true true like what is the moral of the
+
+300
+00:28:40,660 --> 00:28:51,370
+monkey's experiment people will always do what's been done before and continue
+
+301
+00:28:51,370 --> 00:28:58,810
+to doing it they'll know that they can't change but you ask any of them well how
+
+302
+00:28:58,810 --> 00:29:05,460
+did this start why is it there they have forgotten it they don't know and even
+
+303
+00:29:05,460 --> 00:29:10,020
+that the ones that do know because they've been there long enough right
+
+304
+00:29:10,020 --> 00:29:16,940
+when you say okay well why is it so relevant today right you need to start
+
+305
+00:29:16,940 --> 00:29:21,220
+having the conversations and in a polite diplomatic way yeah and that's
+
+306
+00:29:21,220 --> 00:29:27,970
+absolutely doing you know me I'm absolutely doing that but what happens is
+
+307
+00:29:27,970 --> 00:29:33,250
+I jog and again this is not an unsolvable problem I was letting you know it's
+
+308
+00:29:33,250 --> 00:29:37,640
+weird working in it like in a software company where tech was first these
+
+309
+00:29:37,640 --> 00:29:40,360
+things wouldn't exist because we focus on we're focusing on building software
+
+310
+00:29:40,360 --> 00:29:45,280
+for customers that's not our number one priority so I get I get a little
+
+311
+00:29:45,280 --> 00:29:49,680
+momentum I get excited and try and move faster and then I get my soul
+
+312
+00:29:49,680 --> 00:29:54,640
+crushed no I just run into a wall after a member focus on what I can do don't
+
+313
+00:29:54,640 --> 00:29:59,640
+try and move too fast disappoint people it's disappointing people a level they
+
+314
+00:29:59,640 --> 00:30:04,200
+can absorb that level is lower than I'm used to I'm getting used to it still
+
+315
+00:30:04,200 --> 00:30:10,760
+yeah that's that's the right thing to do but I would also be specifically
+
+316
+00:30:10,760 --> 00:30:16,600
+targeting the part of the wall that seems to have the loosest bricks so
+
+317
+00:30:16,600 --> 00:30:24,510
+that you can break through like yeah we have some up with a fun thing be the
+
+318
+00:30:24,510 --> 00:30:30,750
+osh be the tide slamming against the wall sure yeah sure but there's a lot of
+
+319
+00:30:30,750 --> 00:30:35,710
+what I can do by walking the talk in the orgs that I do have control over or
+
+320
+00:30:35,710 --> 00:30:40,870
+influence over and that's that's kind of my focus now so it is the cool
+
+321
+00:30:40,870 --> 00:30:45,510
+thing is I've told you about this is I can get when I go down to the LA office
+
+322
+00:30:45,510 --> 00:30:48,950
+I can get a little golf cart and drive around the Universal Studios backlot to
+
+323
+00:30:48,950 --> 00:30:55,680
+have a self-guided tour things like that are kind of fun does NBC on Universal
+
+324
+00:30:55,680 --> 00:31:03,790
+yeah it's called NBC Universal oh okay the literal light bulb just when I know
+
+325
+00:31:03,790 --> 00:31:09,830
+it's completely self-serving light bulb I'm heading to in August I'm going to
+
+326
+00:31:09,830 --> 00:31:17,550
+Orlando oh you know we get a whopping four tickets a year for Universal Studios
+
+327
+00:31:17,550 --> 00:31:22,390
+but I can't give them away I have to be there to use them with three people so
+
+328
+00:31:22,390 --> 00:31:29,220
+so I can't otherwise I would just give you tickets okay Steve I'm talking to you
+
+329
+00:31:29,220 --> 00:31:39,020
+Steve I don't I don't know why this executive you've hired has so little
+
+330
+00:31:39,020 --> 00:31:51,870
+power but you know let me ask you so like he's a listener he seems to be
+
+331
+00:31:51,870 --> 00:31:56,990
+supportive of you as a podcast I'm curious what does Steve say when you
+
+332
+00:31:56,990 --> 00:32:01,230
+bring this up obviously if you're willing to talk about it on air you're
+
+333
+00:32:01,230 --> 00:32:04,670
+going yeah yeah you know well he's already here and this is yeah no
+
+334
+00:32:04,670 --> 00:32:08,270
+conversation I don't think we've had in pieces but he reminds me the same
+
+335
+00:32:08,270 --> 00:32:13,310
+things I remind myself of which it is what it is focus on what you can change
+
+336
+00:32:13,310 --> 00:32:17,630
+it's the same stuff I've been telling myself for the last 15 months but I
+
+337
+00:32:17,630 --> 00:32:23,820
+think he probably sees I have to think about this I think he because I'm pretty
+
+338
+00:32:23,820 --> 00:32:30,060
+sure my team sees podcast Alan almost all the time we have you know one of
+
+339
+00:32:30,060 --> 00:32:35,650
+you know one of the things I do is I work on building a team and and sorry
+
+340
+00:32:35,650 --> 00:32:40,650
+it's just up there work on building trust and and communication and all the
+
+341
+00:32:40,650 --> 00:32:44,090
+good things that help a team execute versus just crack the whip and get the
+
+342
+00:32:44,090 --> 00:32:52,230
+work done so to them I with my with my team I'm 100% podcast Alan 99 99%
+
+343
+00:32:52,230 --> 00:32:59,620
+podcast Alan but what he reminded me of is I don't think he sees podcast on the
+
+344
+00:32:59,620 --> 00:33:05,000
+time I talked to him I'm letting him know all the things that that all the
+
+345
+00:33:05,000 --> 00:33:09,720
+walls I've run into or all the weird things going on and he hears as many as
+
+346
+00:33:09,720 --> 00:33:13,760
+I do I won't give you the details just texted me one about a half hour ago it's
+
+347
+00:33:13,760 --> 00:33:20,420
+like face face palm weird but well yeah so I think it's so I think it's yeah so
+
+348
+00:33:20,420 --> 00:33:27,700
+yeah anyway these things come up I do I do think EQ right I'm putting on I'm
+
+349
+00:33:27,700 --> 00:33:32,140
+putting on my manager hat and going okay Alan's a little frustrated doing a
+
+350
+00:33:32,140 --> 00:33:38,780
+little EQ to to not get into the depressive stage I mainly want to talk
+
+351
+00:33:38,780 --> 00:33:42,220
+about kind of what I do my challenges at work of course I'm doing platform
+
+352
+00:33:42,220 --> 00:33:46,540
+engineering stuff that involves getting other people to learn how to run what
+
+353
+00:33:46,540 --> 00:33:50,820
+they build and things like that which they're not used to because it's it's new
+
+354
+00:33:50,820 --> 00:33:57,620
+to them see I like doing like crazy things that move the needles faster like
+
+355
+00:33:57,620 --> 00:34:03,260
+I would say I would do things like you know what we're taking the day off every
+
+356
+00:34:03,260 --> 00:34:09,460
+one of us all 250 of us and bring your lunch because we're all just going to
+
+357
+00:34:09,460 --> 00:34:14,940
+listen to the Phoenix project end-to-end for the first half and then after that
+
+358
+00:34:14,940 --> 00:34:18,860
+we're going to have a conversation around what does this mean for our team
+
+359
+00:34:18,860 --> 00:34:24,000
+what things can we do what things can we not do yeah my team is doing but
+
+360
+00:34:24,000 --> 00:34:27,560
+not Phoenix project but my team is doing a book club on accelerator right now
+
+361
+00:34:27,560 --> 00:34:36,460
+maybe we do Phoenix project next yeah I would just do well yeah I don't know if
+
+362
+00:34:36,460 --> 00:34:41,380
+one day would do it if you could get that many people to stay silent listen
+
+363
+00:34:41,380 --> 00:34:46,940
+to what audiobook right now I couldn't do it and remember we're all remote all
+
+364
+00:34:46,940 --> 00:34:50,500
+over the place at least in the US so at least we're in a reasonable number of
+
+365
+00:34:50,500 --> 00:34:56,400
+time zones but it could get weird not a blocker just not the right approach
+
+366
+00:34:56,400 --> 00:35:03,360
+right perhaps not I did I have tested it out individually with a couple of my
+
+367
+00:35:03,360 --> 00:35:08,840
+people and that had never even heard of it and I just said do the audio book oh
+
+368
+00:35:08,840 --> 00:35:16,590
+my god do the audiobook and it literally a hundred a hundred percent of
+
+369
+00:35:16,590 --> 00:35:22,150
+the time even at a company as sophisticated as Microsoft hundred
+
+370
+00:35:22,150 --> 00:35:28,150
+percent of the time came back with oh my god there are so many things we should
+
+371
+00:35:28,150 --> 00:35:34,910
+be doing differently yeah and there is a lot of and I remember at Microsoft when
+
+372
+00:35:34,910 --> 00:35:40,570
+we did those those engineering days I talked about earlier Josh Williams and I
+
+373
+00:35:40,570 --> 00:35:45,400
+gave a talk on just kind of what was happening outside the walls Microsoft had
+
+374
+00:35:45,400 --> 00:35:51,480
+a huge non invented here issue in the 2000s I know you I know you remember
+
+375
+00:35:51,480 --> 00:35:56,360
+there was such little knowledge into anything happening in the outside world
+
+376
+00:35:56,360 --> 00:36:00,400
+whether it was tools or processes or anything that's why even though agile
+
+377
+00:36:00,400 --> 00:36:04,880
+have been around for years before Bing moved to it it was just this new magic
+
+378
+00:36:04,880 --> 00:36:11,150
+thing that nobody had ever heard of right so but that's it turns out you
+
+379
+00:36:11,150 --> 00:36:14,750
+know that wasn't true at a startup at Unity people were pretty aware of what
+
+380
+00:36:14,750 --> 00:36:20,430
+was going on but I think I think maybe it happens with tenure because we have a
+
+381
+00:36:20,430 --> 00:36:25,070
+lot of folks at NBC you have been there quite a few years like Microsoft and I'm
+
+382
+00:36:25,070 --> 00:36:29,350
+not sure what the correlation is but we have a lot of people who don't who I
+
+383
+00:36:29,350 --> 00:36:35,330
+don't know if it's a variation of Dunning Kruger where you but it's a
+
+384
+00:36:35,330 --> 00:36:40,050
+level of knowledge where you think you know all you need to know but if you
+
+385
+00:36:40,050 --> 00:36:44,290
+learn just a little bit more you would realize how much you don't know
+
+386
+00:36:44,650 --> 00:36:49,570
+and I think we have a lot of folks that kind of because they've been doing the
+
+387
+00:36:49,570 --> 00:36:55,010
+same things for a long time working in the same ways they don't know there's a
+
+388
+00:36:55,010 --> 00:37:01,380
+better way you you don't know what you don't know the other thing that I would
+
+389
+00:37:01,380 --> 00:37:12,190
+say is based off my base on my experience right there are I don't think
+
+390
+00:37:12,190 --> 00:37:17,290
+people want to be in a fixed mindset I've been talking about this a lot so
+
+391
+00:37:17,290 --> 00:37:20,410
+this is a conversation I have with my team when we run into people because
+
+392
+00:37:20,410 --> 00:37:25,850
+there is some of that around and then the question is how do you teach curiosity
+
+393
+00:37:25,850 --> 00:37:29,570
+and you just mentioned a minute ago that was rhetorical for now but a real
+
+394
+00:37:29,570 --> 00:37:32,850
+question and the answer is you can but you just mentioned you don't know what
+
+395
+00:37:32,850 --> 00:37:37,610
+you don't know but then when you have to provide according to armor is what a
+
+396
+00:37:37,610 --> 00:37:43,340
+suitable means to discover what you don't know you don't know right right
+
+397
+00:37:43,340 --> 00:37:51,300
+and I think a lot of the people who were when the tenure right being old doesn't
+
+398
+00:37:51,300 --> 00:38:00,580
+mean you're locked in your ways no I'm super old and and I I cannot stand to be
+
+399
+00:38:00,580 --> 00:38:05,500
+to stand as is I have to look for new ways to do things you know how much I
+
+400
+00:38:05,500 --> 00:38:09,940
+read it's all because I know that I don't know enough to do what I need to do
+
+401
+00:38:09,940 --> 00:38:13,580
+so I need to get more information in my head so I can figure it out it's it's
+
+402
+00:38:13,660 --> 00:38:17,900
+sickness but it helps me be successful I don't think it's a sickness at all it's a
+
+403
+00:38:17,900 --> 00:38:25,000
+little bit I actually think it's it's I honestly think it's the example that
+
+404
+00:38:25,000 --> 00:38:31,000
+others need to to to learn from it's well yeah there there there is my approach
+
+405
+00:38:31,000 --> 00:38:37,200
+that won't run into a brick wall I want you all to be like me no I would
+
+406
+00:38:37,200 --> 00:38:42,280
+propose selling it that way would would not be a good idea I don't think
+
+407
+00:38:42,280 --> 00:38:52,000
+it would work just a hunch it's this I was telling you off air beef no I just
+
+408
+00:38:52,000 --> 00:38:57,960
+said just at the beginning of the podcast Wow memory going right one of the last
+
+409
+00:38:57,960 --> 00:39:05,400
+things I shared with the kids around around AI right is don't avoid it be
+
+410
+00:39:05,400 --> 00:39:12,610
+cautious right don't there's certain things like don't be very explicit around
+
+411
+00:39:12,610 --> 00:39:17,410
+what data you're willing to share I'm like we have the tech today with three
+
+412
+00:39:17,410 --> 00:39:22,890
+seconds of audio we can completely phone your voice that tech exists but very
+
+413
+00:39:22,890 --> 00:39:29,850
+scary but that said you can't run away there's no way to run away what you what
+
+414
+00:39:29,850 --> 00:39:34,610
+you need to do is be very cautious about your data that part you can
+
+415
+00:39:34,610 --> 00:39:42,490
+protect to some degree right but the future is going to be those people
+
+416
+00:39:42,490 --> 00:39:49,730
+who have mastered how to work with AI not against it or yeah avoid it right and
+
+417
+00:39:49,730 --> 00:39:53,370
+we've yes and that's what we've we've preached that on the podcast many times
+
+418
+00:39:53,370 --> 00:39:57,930
+and I also told them one of my last statements which is more relevant to what
+
+419
+00:39:57,930 --> 00:40:02,970
+we're talking about is that I actually believe that the number one skill of
+
+420
+00:40:02,970 --> 00:40:11,050
+the future is the ability to quickly learn and apply something new yes and
+
+421
+00:40:11,050 --> 00:40:16,490
+you won't know what that new is absolutely that's why I think and I'm
+
+422
+00:40:16,490 --> 00:40:20,450
+gonna get on the soapbox again I've been on the podcast and this is if it's a
+
+423
+00:40:20,450 --> 00:40:24,690
+tangent or logical direction but you know as you know I'm on the board for the
+
+424
+00:40:24,690 --> 00:40:27,450
+School of Arts and Humanities at my alma mater I'm sure I've mentioned it
+
+425
+00:40:27,450 --> 00:40:31,570
+before you have for like many years and the reason is is they like me
+
+426
+00:40:31,570 --> 00:40:35,650
+because you were a you got one of these useless arts degrees and here you
+
+427
+00:40:35,650 --> 00:40:39,670
+are kind of doing okay in tech and the thing I learned and the thing I took
+
+428
+00:40:39,670 --> 00:40:44,550
+away from college was like not a skill if you want to get a skill go to a
+
+429
+00:40:44,550 --> 00:40:50,780
+frickin vocational school or a boot camp I learned how to learn and a lot of
+
+430
+00:40:50,780 --> 00:40:54,180
+college students don't get that and I think you know my experience where I
+
+431
+00:40:54,180 --> 00:40:58,620
+went to school the art students got that a lot more but I learned how to
+
+432
+00:40:58,620 --> 00:41:02,060
+learn and I learned to love learning I learned how to break down problems I
+
+433
+00:41:02,060 --> 00:41:07,180
+learned critical thinking and those things all lead to that you know that
+
+434
+00:41:07,180 --> 00:41:10,260
+growth mindset that was talking about before where I have to keep on looking
+
+435
+00:41:10,260 --> 00:41:16,220
+for information randomly in a hope that I may be able to figure the next thing
+
+436
+00:41:16,220 --> 00:41:24,520
+out that comes to me but I think that's I think that's missing and I wonder if
+
+437
+00:41:24,520 --> 00:41:29,520
+like my son I think I told the story he went to he started off as a computer
+
+438
+00:41:29,520 --> 00:41:36,980
+science degree and was and unfortunately or fortunately I think it's okay but
+
+439
+00:41:36,980 --> 00:41:41,020
+not for him the computer science program he was in was a really good program if
+
+440
+00:41:41,020 --> 00:41:44,020
+you're actually going to be a computer scientist and not a software developer
+
+441
+00:41:44,020 --> 00:41:53,320
+oh okay like organic chemistry and advanced physics were required and so
+
+442
+00:41:53,320 --> 00:41:57,960
+he did poorly in those and very good in the programming classes and honestly I
+
+443
+00:41:57,960 --> 00:42:01,920
+don't think and maybe that's true for the computer scientists of the future
+
+444
+00:42:01,920 --> 00:42:07,520
+but for I would say for and that's knowledge work too so it's weird so
+
+445
+00:42:07,520 --> 00:42:11,440
+anyway I think for any knowledge work and Dan pink talked about this in a whole
+
+446
+00:42:11,440 --> 00:42:16,960
+new mind knowledge workers are the future and it's it comes from exactly what you
+
+447
+00:42:16,960 --> 00:42:22,310
+talked about the ability to adapt and learn quickly right that's that that's the
+
+448
+00:42:22,310 --> 00:42:28,650
+superpower to be successful for the next 20 years completely or at least how do
+
+449
+00:42:28,650 --> 00:42:32,850
+we prepare people for that how do we get people who aren't doing that to do
+
+450
+00:42:32,850 --> 00:42:38,740
+that so I was thinking around you know the folks that have been there for a
+
+451
+00:42:38,740 --> 00:42:47,620
+long time and like to me and I don't know if this wait to me I think of okay
+
+452
+00:42:47,620 --> 00:42:53,860
+Alan is probably facing some form of monkeys experiment problem some form of
+
+453
+00:42:53,860 --> 00:43:03,190
+I I have been here forever I know how everything works I heard that a couple
+
+454
+00:43:03,190 --> 00:43:10,210
+weeks ago I'll tell you the story offline yeah the I think I think to
+
+455
+00:43:10,210 --> 00:43:16,090
+start breaking down those walls as number one right you asked the precision
+
+456
+00:43:16,090 --> 00:43:19,850
+question well that's interesting tell me the history why was that put in place
+
+457
+00:43:19,850 --> 00:43:27,050
+right and I have a tendency to do that very informally that's right out of the
+
+458
+00:43:27,050 --> 00:43:32,490
+coaching the coaching habit right but then what I will do is once I'm doing
+
+459
+00:43:32,490 --> 00:43:36,010
+information gathering intelligence gathering I'm like why is this here
+
+460
+00:43:36,090 --> 00:43:42,890
+like before I go and knock down this wall I better make sure it's not load-bearing
+
+461
+00:43:42,890 --> 00:43:48,650
+right for sure if it's load-bearing then I need to come up with a different
+
+462
+00:43:48,650 --> 00:43:56,570
+strategy but right this one a lot of the walls I've been knocking down around
+
+463
+00:43:56,570 --> 00:44:03,450
+and like in my career it's like no it's been put in place and and everyone's
+
+464
+00:44:03,450 --> 00:44:11,110
+just accustomed that's the way to do it right and I'm like okay and I've told
+
+465
+00:44:11,110 --> 00:44:16,110
+on this podcast and no one understands BBT's in them anymore but I remember I
+
+466
+00:44:16,110 --> 00:44:22,430
+remember those I was on a team that had shipped three products and it's been in
+
+467
+00:44:22,430 --> 00:44:34,850
+six years never got their BBT's to pass okay and and I I volunteered proactively
+
+468
+00:44:34,850 --> 00:44:40,370
+to take that project because I was fascinated by that because to me it felt
+
+469
+00:44:40,370 --> 00:44:45,170
+like like every team I had ever been on had successfully done that it's the
+
+470
+00:44:45,170 --> 00:44:50,370
+easiest BBT suite and yet this team which I already knew was filled with
+
+471
+00:44:50,370 --> 00:44:57,100
+smart people could not get it to happen I would I was like I'm just curious as
+
+472
+00:44:57,100 --> 00:45:03,120
+to what the hell you guys did to even achieve that result like this is this
+
+473
+00:45:03,120 --> 00:45:12,760
+is hard to have that stat right and turns out it stems I just went around
+
+474
+00:45:12,760 --> 00:45:18,480
+interviewed people and it probed probed and probed and it turns out it stemmed
+
+475
+00:45:18,480 --> 00:45:26,320
+from a belief that if we have our in the end tests be our BBT's that our quality
+
+476
+00:45:26,320 --> 00:45:32,340
+will never go down so it started off with the principle of I'm gonna have the
+
+477
+00:45:32,340 --> 00:45:37,780
+highest quality bar for a BBT suite so let me let me redefine what a BBT is
+
+478
+00:45:37,780 --> 00:45:49,660
+right yeah and and when I saw that I'm like oh yeah we're changing that yeah and
+
+479
+00:45:49,660 --> 00:45:56,260
+and it was one of the things that I did is I went into the room and I was a new
+
+480
+00:45:56,260 --> 00:46:02,940
+I don't know if you can use this I you I've used this in my career multiple
+
+481
+00:46:02,940 --> 00:46:10,980
+times okay if you proactively assert in the right audience if you proactively
+
+482
+00:46:10,980 --> 00:46:17,380
+assert I have the singular power and authority to make this decision and I am
+
+483
+00:46:17,380 --> 00:46:24,160
+making it okay if you do that carefully in the right context no one pushes back
+
+484
+00:46:24,160 --> 00:46:32,700
+and it because no one pushed back guess what just happened you do yeah I went in
+
+485
+00:46:32,700 --> 00:46:38,420
+I was a metal manager there and I said yeah I'm making this change this is
+
+486
+00:46:38,420 --> 00:46:43,210
+what's going to happen we're gonna actually have a BBT suite and other
+
+487
+00:46:43,210 --> 00:46:46,890
+people came to me and we're like but we got it I'm like I hear what you're
+
+488
+00:46:46,890 --> 00:46:52,800
+saying and we will get there but we are moving forward with this direction
+
+489
+00:46:52,800 --> 00:46:57,620
+right and I'm thinking about your situation I'm like huh I wonder how many
+
+490
+00:46:57,620 --> 00:47:04,410
+places like if you were to go in and say look I am the VP of super awesome sauce
+
+491
+00:47:04,410 --> 00:47:13,750
+and as part of my responsibilities that's a title change request even as and as part
+
+492
+00:47:13,750 --> 00:47:17,030
+of that role I in fact have the authority to make this decision you
+
+493
+00:47:17,030 --> 00:47:24,300
+cannot tell me no and then see what happens like literally see what happens
+
+494
+00:47:25,020 --> 00:47:30,780
+I'm sure someone would call a meeting to discuss some might some might but if you
+
+495
+00:47:30,780 --> 00:47:37,380
+say yeah no I'm not having a meeting to discuss a power that I have sorry like
+
+496
+00:47:37,380 --> 00:47:44,850
+you are now wasting my time sorry I'm not doing I don't know I don't know to
+
+497
+00:47:44,850 --> 00:47:49,290
+what degree that would succeed but I'm willing to bet at least one of the
+
+498
+00:47:49,290 --> 00:47:52,650
+things that you're doing that trick well I don't know if I can do that but
+
+499
+00:47:52,650 --> 00:47:57,810
+the way I look at it is this this has been you know I you know me I can do a
+
+500
+00:47:57,810 --> 00:48:03,570
+lot of things this has been hard but I still look at it is like if I can do
+
+501
+00:48:03,570 --> 00:48:11,170
+this I can do just about anything so it's been you know it's been super fun
+
+502
+00:48:11,170 --> 00:48:16,890
+challenging and frustrating at times but super fun and the progress is happening
+
+503
+00:48:16,890 --> 00:48:21,730
+like I won't even talk about where we were versus where we are there's
+
+504
+00:48:21,730 --> 00:48:28,370
+definitely definitely you look back a lot of things that were careful with my
+
+505
+00:48:28,370 --> 00:48:34,890
+words here Alan there are things that weren't as good before that are better now
+
+506
+00:48:34,890 --> 00:48:42,210
+that are noticeable and especially when you consider how not good they were
+
+507
+00:48:42,210 --> 00:48:44,690
+before
+
+508
+00:48:44,690 --> 00:48:54,050
+like a politician I don't think you cracked a single eggshell in that walk
+
+509
+00:48:54,050 --> 00:48:59,890
+yeah it was a long walk so anyway I want to give a little bit because of that
+
+510
+00:48:59,890 --> 00:49:05,870
+comment from you know podcast down I will work on bringing I don't know if I
+
+511
+00:49:05,870 --> 00:49:13,780
+can do podcast Alan all the time but I can do it here and you know what and the
+
+512
+00:49:13,780 --> 00:49:18,020
+main thing was I had wanted to talk a little bit about where I was and what I
+
+513
+00:49:18,020 --> 00:49:22,300
+was doing is just platform engineering stuff you know fairly small team
+
+514
+00:49:22,300 --> 00:49:28,300
+compared to what I've done before but lots of you know lots of room to try and
+
+515
+00:49:28,300 --> 00:49:33,700
+drive change and just figuring out where I can disappoint people at a level they
+
+516
+00:49:33,700 --> 00:49:37,980
+can absorb all right that's kind of what I'm doing all right okay let's call
+
+517
+00:49:37,980 --> 00:49:45,740
+it there all right once again I am podcast Alan and I'm just Brent today all
+
+518
+00:49:45,740 --> 00:50:01,990
+right yeah see you later no you don't play the intro there Alan I'm leaving that
+
+519
+00:50:01,990 --> 00:50:07,840
+gefal in the podcast along with this voiceover
+

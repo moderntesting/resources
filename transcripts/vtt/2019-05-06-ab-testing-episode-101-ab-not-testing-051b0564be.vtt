@@ -1,0 +1,659 @@
+WEBVTT
+
+00:00:11.660 --> 00:00:17.910
+The modern testing podcast. Join your hosts, Alan and Brent.
+
+00:00:18.910 --> 00:00:21.910
+I am mindless agile robot. I must iterate.
+
+00:00:23.170 --> 00:00:26.170
+As we talk about software engineering, software quality,
+
+00:00:26.170 --> 00:00:30.170
+leadership and whatever else comes to mind now on with the show.
+
+00:00:31.170 --> 00:00:33.170
+Boom. You know what time it is, Brent.
+
+00:00:34.360 --> 00:00:35.360
+Eight eleven.
+
+00:00:36.360 --> 00:00:39.360
+It's time for the one after one hundred except for you.
+
+00:00:39.360 --> 00:00:40.360
+You're welcome to your one.
+
+00:00:40.360 --> 00:00:44.360
+Congratulations, I mean, on your one hundredth episode of A.B. testing.
+
+00:00:45.360 --> 00:00:51.360
+Yes, me and the rest of the people celebrating their one hundred are going to go have beers tonight.
+
+00:00:51.360 --> 00:00:52.360
+That would be just you.
+
+00:00:53.360 --> 00:00:56.870
+Right. I drank your beers last time.
+
+00:00:56.870 --> 00:00:59.870
+Yeah. Welcome to our hundred and first episode of A.B. testing.
+
+00:01:00.870 --> 00:01:02.870
+I can't believe it's been that long at some point.
+
+00:01:03.870 --> 00:01:06.870
+We're never going to start counting because it...
+
+00:01:06.870 --> 00:01:09.870
+Wait. Episode numbers is a vanity metric.
+
+00:01:10.870 --> 00:01:12.030
+But it's all right.
+
+00:01:12.030 --> 00:01:15.190
+If you... We're not using it as a metric. It's more of a title.
+
+00:01:15.190 --> 00:01:19.380
+No, it's a... Yeah, it's not a metric.
+
+00:01:19.380 --> 00:01:21.380
+Cool, man. So how you been?
+
+00:01:21.380 --> 00:01:23.380
+Like what celebrates success on it?
+
+00:01:23.380 --> 00:01:31.610
+I don't know. We need milestones in life so that we can have reasons to drink.
+
+00:01:31.610 --> 00:01:32.610
+Really?
+
+00:01:32.610 --> 00:01:35.610
+Well, yes. Speaking of milestones and reasons to drink.
+
+00:01:36.610 --> 00:01:38.610
+Guess what season it is, Alan?
+
+00:01:38.610 --> 00:01:39.610
+Alan?
+
+00:01:39.610 --> 00:01:42.610
+I knew it when I came to Microsoft. Wait a minute. It's May.
+
+00:01:42.610 --> 00:01:47.610
+It's the one month of the year when all Microsoft employees work as hard as they can.
+
+00:01:47.610 --> 00:01:53.610
+It's review. It's... Well, managers will begin meeting in early June usually.
+
+00:01:53.610 --> 00:01:55.700
+Even earlier?
+
+00:01:55.700 --> 00:01:57.700
+So, yes.
+
+00:01:57.700 --> 00:02:00.700
+How times have changed. But let me finish my story. You can adjust the timeline.
+
+00:02:00.700 --> 00:02:01.700
+Fair enough.
+
+00:02:01.700 --> 00:02:05.700
+Managers usually, when I used to work at this place, would start meeting in early June
+
+00:02:05.700 --> 00:02:09.700
+to talk about employees. And while Microsoft doesn't stack rank,
+
+00:02:09.700 --> 00:02:15.700
+they fit people into stacked buckets using sliders and other tools that don't...
+
+00:02:15.700 --> 00:02:19.700
+You say the word stack rank, but you can stack rank if I remember correctly.
+
+00:02:19.700 --> 00:02:23.700
+And you decide how much money people are going to get.
+
+00:02:23.700 --> 00:02:27.700
+And recency bias is highly prevalent.
+
+00:02:27.700 --> 00:02:31.700
+If you caused an outage this week, sorry.
+
+00:02:31.700 --> 00:02:37.700
+But if you did nothing all year and came in like a hero and kicked butt this month,
+
+00:02:37.700 --> 00:02:41.700
+congratulations. Welcome to a big, big fat bonus.
+
+00:02:41.700 --> 00:02:45.700
+So those meetings will happen in June and then nothing will happen in July
+
+00:02:45.700 --> 00:02:50.700
+and nothing will happen in August and nothing will happen for the first half of September
+
+00:02:50.700 --> 00:02:56.700
+until on September 14th, your manager in a panic tells you how good or bad your pay raise
+
+00:02:56.700 --> 00:03:03.700
+and bonus is for the year. And then people do nothing for the next 10 months.
+
+00:03:03.700 --> 00:03:05.220
+Nine.
+
+00:03:05.220 --> 00:03:06.220
+Ish.
+
+00:03:06.220 --> 00:03:07.220
+Ish.
+
+00:03:07.220 --> 00:03:10.220
+Ish. So that's sort of my summary.
+
+00:03:10.220 --> 00:03:15.220
+There's some nuance in there and apparently now the discussions start earlier,
+
+00:03:15.220 --> 00:03:17.220
+Brent is hinting through his facial expressions.
+
+00:03:17.220 --> 00:03:24.340
+Well, so part of the big difference between what you just stated
+
+00:03:24.340 --> 00:03:36.340
+and how Microsoft operates today is because so much we're all in on Azure and on sort of even AI.
+
+00:03:36.340 --> 00:03:42.370
+So do you get more of a bonus if you use those words in your in your connect?
+
+00:03:42.370 --> 00:03:47.370
+Not I wouldn't know because my manager is using the same words he's insulated from it.
+
+00:03:47.370 --> 00:03:53.460
+Right. If I were reported to somebody who didn't understand the space, maybe.
+
+00:03:53.460 --> 00:03:59.460
+PMs might might. I mean, I'll have to talk to a couple of PMs and see if they could try out that.
+
+00:03:59.460 --> 00:04:08.500
+No. So because we're a service and because we're a popular service, have you seen the stock price lately?
+
+00:04:08.500 --> 00:04:09.850
+Nope.
+
+00:04:09.850 --> 00:04:14.850
+We hit a new 52 week high last week.
+
+00:04:14.850 --> 00:04:24.010
+I think we were at 131 and analysts are estimating 140 within the next 12 months.
+
+00:04:24.010 --> 00:04:28.420
+Cool. Are you a gazillionaire yet?
+
+00:04:28.420 --> 00:04:38.730
+No. We're still when I become a half gazillionaire, we will no longer have this conference room available for the podcast.
+
+00:04:38.730 --> 00:04:42.780
+Oh, yeah. Got it.
+
+00:04:42.780 --> 00:04:58.780
+So the whole point of that story is is because we're a service, because we're cloud at a macro level, we do an agile type model or at I mean, however, you can define the agile at a macro level.
+
+00:04:58.780 --> 00:05:08.780
+But every six months currently, everyone has to go and tell the senior executives what they're going to do the next six months.
+
+00:05:08.780 --> 00:05:11.780
+Everyone is an individual or as a team planning.
+
+00:05:11.780 --> 00:05:20.350
+So in the typical context, I wouldn't be going to Scott Guthrie and saying every six months, this is what I said I did.
+
+00:05:20.350 --> 00:05:26.350
+This is what I'm this is what I've actually did. And this is what I say I'm going to do.
+
+00:05:26.350 --> 00:05:28.350
+Right. That isn't scale.
+
+00:05:28.350 --> 00:05:33.350
+But everyone has to do it because then it gets bubbled up and then bubbled up again and then bubbled up again.
+
+00:05:33.350 --> 00:05:41.580
+And then at some point in time, the final grain of who has to present does to go in and present that.
+
+00:05:43.700 --> 00:05:49.340
+So the next one is is also may.
+
+00:05:49.340 --> 00:06:09.340
+So, yeah, my life sucks right now because right now we have a whole army of PMs trying to do two things simultaneously, trying to walk and chew gum, trying to get the last few things for features that they can claim they shipped out of me.
+
+00:06:09.340 --> 00:06:17.340
+Plus go through planning to figure out what they're going to say they're going to commit to by November of this year.
+
+00:06:17.340 --> 00:06:20.160
+Does that make sense?
+
+00:06:20.160 --> 00:06:22.160
+It does. I don't like it.
+
+00:06:22.160 --> 00:06:27.350
+I mean, it's better than the old ways.
+
+00:06:27.350 --> 00:06:29.350
+It's still dysfunctional.
+
+00:06:29.350 --> 00:06:43.800
+And also it's all and this has been true as long as I was at Microsoft where the PMs focus on getting features out the door and they use features as a proxy for their success.
+
+00:06:43.800 --> 00:06:48.800
+And at the very least, let's talk about what customer problems we've solved versus features.
+
+00:06:48.800 --> 00:06:50.800
+There's other ways. There's better ways to do that.
+
+00:06:50.800 --> 00:06:52.800
+So it kind of bugs me.
+
+00:06:52.800 --> 00:07:02.900
+But anyway, whatever. If I was at Microsoft, apparently I'd be much richer, but I may also be dead. So my head exploding.
+
+00:07:02.900 --> 00:07:07.120
+Yeah. So there's there's promise.
+
+00:07:07.120 --> 00:07:17.570
+It's still a long ways to go. So I've taken a direct hand, for example, in the CSS of the customer support space, not cascading style sheets.
+
+00:07:18.570 --> 00:07:26.880
+Not typically no, which have probably been around longer than the acronym at Microsoft, which is just weird. But go on.
+
+00:07:26.880 --> 00:07:31.880
+And this from the company that gave you X.T. for exploratory testing. Just saying. Go on.
+
+00:07:31.880 --> 00:07:36.940
+Well, CSS got renamed out of PSS. And I like CSS.
+
+00:07:36.940 --> 00:07:44.940
+I get it. I get it. I get it. But one of my gripes when I worked at Microsoft, which remains, I'll let you finish them, which probably want something more exciting,
+
+00:07:44.940 --> 00:07:55.200
+is pure and blatant disregard and or ignorance for anything that happens outside the walls of Microsoft.
+
+00:07:55.200 --> 00:08:05.200
+And I realize that's gotten better. But when you look at things like X.T. Grant, that was 10 years ago and CSS, which could be confusing,
+
+00:08:05.200 --> 00:08:13.200
+but I get the name better than PSS, which it reminds me of the multitude of times I saw that I'm done with my rant.
+
+00:08:13.200 --> 00:08:16.200
+Glad the company is doing well. Finish your story.
+
+00:08:16.200 --> 00:08:23.900
+Yeah, it's that's not. It's interesting. You've been gone for two and a half years now. Yeah.
+
+00:08:23.900 --> 00:08:32.130
+Yeah, it's fascinating how much the world has changed during that time. Or has it?
+
+00:08:33.700 --> 00:08:48.570
+No, I'll say that there's a lot still a large bit of the things that smell like the causal reasons why you left for sure.
+
+00:08:48.570 --> 00:08:54.570
+I mean, it's going to take I think the old guard has to turn over the reasons I left. I mean, all those things.
+
+00:08:54.570 --> 00:08:58.570
+I mean, you're going to have a large corporation, going to have corporate bureaucracy. It's going to have some dumb things.
+
+00:08:58.570 --> 00:09:08.570
+The reasons I left were that the old guard, the people that had been at Microsoft for a long time, got into those senior executive roles,
+
+00:09:08.570 --> 00:09:14.570
+were unwilling to learn and adapt to what the industry was doing around them. And it was increasingly frustrating for me,
+
+00:09:14.570 --> 00:09:22.570
+both in both in technology and in how teams were run and managed. It is. It was archaic.
+
+00:09:22.570 --> 00:09:26.570
+And it just it. And I've mentioned this before on the podcast. I'll bring it up again.
+
+00:09:26.570 --> 00:09:37.570
+When I went to the doctor for my physical checkup, you know, three or four months after I started, my blood pressure was down almost 15 points back to what it was when I was in my 20s.
+
+00:09:37.570 --> 00:09:43.050
+Sure. No, I am. Yeah. I'm just going to throw that out there. No, no, I completely get that.
+
+00:09:43.050 --> 00:09:55.210
+Satya, though, is a different leader than the last one. The last one was all about defensive sales. Satya is about how do we grow.
+
+00:09:55.210 --> 00:10:04.880
+You and I are more aligned with the growth mentality than with the defense mentality.
+
+00:10:04.880 --> 00:10:21.810
+So I do think I do think it would this would not yet be a place where you would be happy coming back because there's still some of that in my space.
+
+00:10:21.810 --> 00:10:38.870
+It's it's a different problem. It's what we what we haven't learned yet is a lot of the old school techniques that allowed us to execute on getting stuff out don't work in this in this in this world.
+
+00:10:38.870 --> 00:10:52.130
+We can't be planned for. But when we realize that we're really not very capable of being planned for let that scale, it turns into very interrupt driven plans.
+
+00:10:52.130 --> 00:11:03.160
+So we will get stuff done. This company is well motivated to apply resources to to move needles.
+
+00:11:03.160 --> 00:11:11.800
+But until we've come up with sort of a better friction freeway, it's going to be a lot of interrupts.
+
+00:11:11.800 --> 00:11:28.660
+And unfortunately, in my case, because I have proven myself useful to multiple people, I get on slotted with all sorts of people saying this is a P zero.
+
+00:11:28.660 --> 00:11:36.660
+This is a P zero. So I'm now actually at a point where I'm just turning away P zero. So I'm like, yeah, P negative one negative one.
+
+00:11:36.660 --> 00:11:46.890
+Like Scott got three directly asked for this. I'm like, yeah, there's nothing on my freaking plate that isn't coming from Scott. So pick. So no.
+
+00:11:46.890 --> 00:11:55.890
+All right. Good luck with your May and June and the months that follow. Let's talk about something our listeners care about now.
+
+00:11:55.890 --> 00:12:12.890
+You of course. No, let's talk about let's talk about testing and quality. And we're at a point now, officially now where neither one of us are in a dedicated testing or quality role.
+
+00:12:12.890 --> 00:12:19.890
+Yeah, that's going to be interesting to the podcast and see how that moves forward. I don't think that's a bad thing.
+
+00:12:19.890 --> 00:12:33.880
+I think I think it's a good thing and especially because I think my role, which I'll talk about in a minute here so you can pick apart and tell me everything I'm doing wrong and mentioned safe one more time.
+
+00:12:33.880 --> 00:12:48.070
+I roll. Where was I going? I don't know. I decided to dig in on Brent there and I got totally lost on a tangent. Imagine that. So actually, so before you go on, are you actually seriously mocking safe?
+
+00:12:48.070 --> 00:13:04.070
+No, I. Are you mocking me? I am. I am mocking safe slightly. Okay. I actually read through all the release train engineer stuff to go off on a tangent here and I like it and I'll steal some things from it.
+
+00:13:04.070 --> 00:13:15.490
+It's not that revolutionary. It's very much what's been written about scrum of scrums and other frameworks like less with a few more maybe overly confusing diagrams.
+
+00:13:15.490 --> 00:13:22.490
+What I don't like about safe is the same thing I don't like about agile certification, which is the same thing I don't like about it.
+
+00:13:22.490 --> 00:13:37.710
+As QB just besides that being totally stupid is it comes across as a money making money making program more than a help the world make better software program and those things that they leave a bad taste in my mouth.
+
+00:13:37.710 --> 00:13:52.710
+So that's my mocking of safe. I think the program it makes sense. I will steal some things from what's available on the web. But when I read about it, everything is it reads like a honestly it reads like a Scientology brochure.
+
+00:13:52.710 --> 00:14:06.940
+Everything is a link to some program that you can buy and pay for it. It drives me crazy to read between the lines. I can find good stuff. But going through their stuff also leaves a very bad taste in my mouth.
+
+00:14:06.940 --> 00:14:27.940
+So that's where my mocking comes from. And I will say that their business model. I'm right there with you in terms of what they're doing there. I know you're you've gone through it and you see oh my God this work. There's value here. I get how to use this and I get that. That's totally cool. But I support something that is more about.
+
+00:14:27.940 --> 00:14:45.940
+I mean they made money because they were doing great things. That'd be maybe a little bit different. But they are purely focused on how can we monetize this program that we've felt when I started into it. They were a lot smaller. Do I have a problem with someone trying to monetize their IP.
+
+00:14:45.940 --> 00:15:09.770
+Not at all. Do I have a problem with allowing supply and demand to come in and fix if they start going overboard. Not at all. And then to that point actually maybe I should middleman. This might be something useful. So Al Shalloway is actually writing a new book.
+
+00:15:09.770 --> 00:15:31.780
+And he's come up with a variant that reduces several flaws he's observed in safe. Maybe if you are possibly open to reviewing a few of his chapters. I would love love love to. OK.
+
+00:15:31.780 --> 00:16:00.100
+So yeah I will. And then maybe to get back on the original subject that will actually come back to this subject. We don't plan our tangent inception in advance. It just happens because it's that fantastic air quotes of the podcast. So I started my new job Monday before last. So today is day 10 work day day 12 whatever since I actually started.
+
+00:16:00.100 --> 00:16:29.360
+So you are almost nearly complete with your first two work weeks. That's that's what I meant to say. Yes I went down to San Francisco for the first day to hang out with my new boss to get a couple things kick started. My plate is massively full. I've had a lot of meetings which I don't think will continue to be that that heavy of a schedule for a while. A lot of them are just me ramping up meeting a little extra with a few people like there's a couple of things I do every day right now that will end up being.
+
+00:16:29.360 --> 00:16:59.350
+Much less than that down the line. But it kind of peaked. I thought Monday was bad. I had six hours of meetings or something. I managed to write one of my newsletters in the little five minute breaks between. But yesterday was the the killer day. I do a meeting with the Helsinki team at 530 in the morning our time. And I wrapped up my day of meetings at 430. I did have some breaks in between. I counted it out. It was seven and a half hours of meetings over an 11 hours.
+
+00:16:59.350 --> 00:17:28.350
+And that is something I won't want to do every Thursday. I got to pace myself. I don't look at and go oh my God these meetings are awful. They're actually given where I am. They're all relevant. A lot of them are one on one meetings which I find the most valuable type of meeting and the most efficient cost effective etc. For a lot of different things. So anyway my job isn't to go to meetings. My job really. And again I'm not an investor quality role but my job is not in so many ways.
+
+00:17:29.350 --> 00:17:59.020
+And one of the funny words is to accelerate the achievement of a shipable quality. Imagine that. But I'm doing it from a different angle which is fun. These are things that I haven't done formally before. But I realize that I kind of have one part of my job is. And I hate to even use this word after talking about the your PM's your program managers. Part of my job is helping them with program management. And what that means is not your feature management.
+
+00:18:00.020 --> 00:18:16.020
+Features come from product management. I do nothing with features. I don't give a shit what features go in the product. What I care is asking questions about what problem are we solving for the customer which I've asked like a broken record already. And they get it now. They go OK. We should have a solution here. We get it. We get it.
+
+00:18:16.020 --> 00:18:41.020
+My job is to make sure that one the various engineering teams that are working on some of these large scale product projects I don't even get involved if it's like a small one scrum team or working on working on a feature I don't even get involved. But when multiple teams start getting together and product management is involved or it's a brand new feature. My job is to get involved and make sure they are aligned on.
+
+00:18:41.020 --> 00:19:06.060
+I even hate to use the word milestones in a Microsoft building but aligned on some dates or some targets where they can get customer validation or what success criteria they have to make sure they're going in the right direction bringing in sales and marketing. This is this is an ads business and monetization business. So bringing in sales and marketing and documentation and support at the right times to make sure the new features ready to launch.
+
+00:19:06.060 --> 00:19:29.060
+So just coordination. As far as engineering goes we'll probably start off with something like scrum of scrums using some using some nuance and subtleties that I've lifted from frameworks like safe and less Africa with less stands for but it's another large scale scrum framework. It's really not rocket science.
+
+00:19:29.060 --> 00:19:30.060
+Large enterprise scrum.
+
+00:19:30.060 --> 00:19:54.060
+I don't know what it is. It doesn't matter. What it is is just making sure people are aligned and the communication is clear. It's battling everything Brooks talked about in the mythical man month where you have these large projects that get much more complex, they get much slower. It's getting people to deliver things on a cadence that works. So that's part of my job which is really accelerating the achievement of simple quality.
+
+00:19:54.060 --> 00:20:11.060
+Without me doing that role they would and what they've done in the past is those projects struggle and get a little delayed as they try and get things to line up on their own. I'm there to be goat herder cool. I've done that job before lots.
+
+00:20:11.060 --> 00:20:40.200
+Another job another role is although I'm not in a dedicated testing role is kind of quality but it's really just maybe a little bit similar to how I functioned least in the beginning on Microsoft Teams where it's making sure that the dev team is writing not just writing good tests but thinking about testing and really thinking about risk management in a very holistic way.
+
+00:20:40.200 --> 00:21:06.900
+They're pretty good at that but there's always room to improve. It turns out when I dig in they have a pretty good pull request checklist. Does everybody use it? No. That's cool because part of the hard work is already done now she's getting people to get used to using it. That's again getting people to get used to doing things making making a process so simple to use and so straightforward that you can't not do it. That's stuff I've done before as well.
+
+00:21:06.900 --> 00:21:28.350
+And then a lot of small things have already popped up just half corralling half finding people throwing small little initiatives on me all in the first two weeks. So that's kind of what I do. So do you have enough of a sense of the job yet. Well no fine where you want to take it.
+
+00:21:28.350 --> 00:21:58.950
+No. I'm getting there. I was about to say yes but no. No. The answer is no but not quite but I'm even before I took it much to probably the hate of my future self I realized yes this is another job I can work myself out of. I think it'll take at least a year but it's also a job where I've called it an iceberg job and I might have called that on the last podcast where I know what the top 20 percent is.
+
+00:21:58.950 --> 00:22:26.080
+But when I dig in and as I dig in I realize there's a whole bunch of stuff below the surface. The fun part organizationally for me is there are and again this is something I've done before there are a thousand things I could be doing right now. I've been in many jobs like that before and what I try and do is from those thousand things figure out which are the most important and from an ROI perspective a bang for the buck perspective and I've usually done a pretty good job at that.
+
+00:22:27.080 --> 00:22:42.660
+Again this is a team I've worked with so I know a bunch of people on the team not everyone but even within those people are already allies of mine they're happy to jump on ideas that I have. I have to be careful.
+
+00:22:43.660 --> 00:22:59.690
+So the new people also that haven't met me yet they've become they've already developed great relationships or it's so surprising me it even after two and a half years here and going back to my slight bash on Microsoft is everyone really wants to help each other.
+
+00:23:00.690 --> 00:23:05.690
+This competition just between employees doesn't exist. I know you probably tell me it's a lot better now which is great.
+
+00:23:05.690 --> 00:23:34.820
+But the but I found how I'll put it. Okay. The competition between employees is much much less. Okay excellent. But it hasn't been filled with cooperation. Oh okay we're getting there. Yeah. And also I found and this is weird for me and again I'm in a senior leadership position so I guess it shouldn't be but I've borrowed a lot from both Len Chione's writing and.
+
+00:23:35.820 --> 00:23:53.820
+And Weinberg's writing on treating leadership as consulting and being the humble consultant to not being afraid to ask stupid questions and just kind of not trying to say do things my way just talk about trying to spark some ideas and conversation and get people to change that way which it's my style and it works very well in this org.
+
+00:23:54.820 --> 00:24:02.820
+It sticks so much better than to think it was their idea. But what I found is and I don't want to be the please take me idea and this is what we're going to do.
+
+00:24:02.820 --> 00:24:18.390
+But sometimes in a slack message I will say something and you listened to too strictly to me and not not in a bad way but it just makes me like I'll give you an example and my reaction.
+
+00:24:18.390 --> 00:24:29.900
+I was having a chat with one of the engineering leads and we were talking about scrum of scrums. That's probably what we'll do to coordinate some of the engineering across the different teams.
+
+00:24:29.900 --> 00:24:36.900
+That's a new concept they haven't they haven't had some people know about it but something I don't think something they've done much before at least not well.
+
+00:24:36.900 --> 00:24:41.900
+So I mentioned it and I said the main thing I want to get out of this is the same thing as a scrum planning meeting.
+
+00:24:41.900 --> 00:24:48.900
+They want to make sure we have a sprint goal and semi prioritize list of tasks that we're going to work on in the next sprint.
+
+00:24:48.900 --> 00:24:58.940
+And there's probably a bunch of other things. I just kind of threw that out there and then like 10 minutes later I had the meeting request for the for the planning meeting and I said goals of this meeting.
+
+00:24:58.940 --> 00:25:08.940
+We need to walk out of this meeting with a sprint goal and a prioritize list of tasks. I thought well shoot if I knew it was going to go at a meeting request I would have thought more about what I wanted to get out of it.
+
+00:25:08.940 --> 00:25:16.940
+But it's cool. I'm super happy the job super hard which I love there's so much ambiguity which I also love.
+
+00:25:16.940 --> 00:25:25.940
+But to tie this back to modern testing remember that the modern testing principles aren't particularly modern.
+
+00:25:25.940 --> 00:25:36.940
+We've stolen most of them in a paraphrase way from the work of Eric Reese and Reinertsen and Flo and probably a few other books and some based our experiences.
+
+00:25:36.940 --> 00:25:49.190
+And it's not really about testing either. It's about how an engineering team a software team can make quality software and what how they need to approach it in order to make software customers love.
+
+00:25:49.190 --> 00:26:00.190
+So I think the fact that I'm not in a testing role has no effect on my print me following modern testing principles.
+
+00:26:00.190 --> 00:26:14.740
+No actually. Principle seven might be harder for you. But number one is clear. I mean number one no matter what role you're in number one is always going to be a thing.
+
+00:26:14.740 --> 00:26:18.740
+Let me talk about seven for a second because I think you're wrong.
+
+00:26:18.740 --> 00:26:30.250
+I said harder. Oh harder. But no I mean it's harder from a scale perspective because definitely my job is to spread testing knowledge throughout the org.
+
+00:26:30.250 --> 00:26:40.440
+What I'm if I had to do it across all 150 160 engineers that would be very difficult for me. But it has to scale.
+
+00:26:40.440 --> 00:26:51.790
+It will scale. And what I found is two things I have. I when you want to make a big change you need allies because you will have resistance in some places and you just can't scale.
+
+00:26:51.790 --> 00:27:03.790
+I already had those. There's people that there are very test minded quality focused engineers in the org who get that. And I've already connected with them and I found them and they're all on my side which is great.
+
+00:27:03.790 --> 00:27:13.790
+And use them. But the technique I used on teams will be the same thing that I'll probably use here where I consider the engineering managers the directors.
+
+00:27:13.790 --> 00:27:31.270
+Those are my directors of test the test leads on the teams. Those are their test leads. I will. I will. In a little bit of my fantasy XR world will be the director of tests of these huge group of 160 testers.
+
+00:27:31.270 --> 00:27:49.270
+But they're also developers because we know I'm like oh man because testing is an activity not a role. I am the I am the test manager to help them get better at planning and executing their testing at that they do as developers of the code.
+
+00:27:49.270 --> 00:28:05.780
+No. So this this goes back in my mind this goes back to somewhat what I think is the dirty little secret of M.T. And that is it's got nothing to do with testing.
+
+00:28:05.780 --> 00:28:12.190
+I don't think it's a dirty little secret. I try. I try and point that out to everyone. It's a secret.
+
+00:28:13.190 --> 00:28:26.190
+As France wearing a shirt that has testing written on it with the A.B. testing logo above it. Right. Which is technically the A.B. testing logo. But anyway. I mean technically. Well yeah. I mean it is.
+
+00:28:26.190 --> 00:28:40.540
+Do you remember this process we went through. You caught in a person. We talked. Three got involved. We released it. Anyway. You did most of the work there. I'm surprised you've repressed it already.
+
+00:28:41.540 --> 00:28:51.100
+No I'm I'm I loaded up the principles just make sure and I'm like you know what. Say it. I'm right. I'm right. I'm right. I'm right. No.
+
+00:28:51.100 --> 00:29:01.200
+The the reason why we call that modern testing principles. At least the reason why I liked it that way.
+
+00:29:02.260 --> 00:29:25.500
+Is because we wanted to attract the people who needed to hear this message. And so that they could start realizing no there is a better way to go. But these things. Our priority is improving the business. Right. That's still you're going to be your number one priority. Yes. Right.
+
+00:29:26.500 --> 00:29:55.270
+Accelerate the team. You're going to be all about that. Yeah. Right. You're in a the way you describe it. I think you're going to be in a process architect role. Maybe more so than I think you've ever been. And to be clear on that. And my charter is this is a org that has thrived on being self organizing and and actually functioning very much very much in an agile method.
+
+00:29:55.270 --> 00:30:26.060
+So when you when you add process to an org like that you don't process architect sounds heavy handed. My goal is to add just enough process to accelerate the team process surgeon. Right. I said sniper. No no. I mean it. Principal. I didn't want anybody to run away when they heard the word process. Like oh my God. You know. Anyway go on. I'm sorry. I don't remember who I heard this from. It might have even been you. It's not mine but I do pass it on to you.
+
+00:30:27.060 --> 00:30:58.050
+I want to talk to my team about that. What makes what's what's the difference between a good and a great developer. I don't know. Right. What great developer removes code. That all they do in this story. Yes. OK. All right. Right. So it's all continuous refactoring. You're like wow I have copy paste code here. Let's move that over there. Change this line. Right. They make the code.
+
+00:30:59.050 --> 00:31:29.040
+Better continuously and to make it easier to maintain. It's more of the Boy Scout approach when they when they get code they leave when they edit code or work on code. They leave it better than when they got there. OK. Maybe not. All right. You were going to talk about as I hit. OK. I'm going to be course. So like principal to I think the I the key thing a lot of times people focus on the first three words we accelerate the team.
+
+00:31:30.040 --> 00:31:59.070
+But this is also the bottleneck principle. Yes. Right. And not just making him faster. You want to get faster at making bad software. You want to figure out where are the problems and address those. Right. Continuous improvement team adaptation. If you turn into a command and control structure as you process architect. Then you're going to violate this one and I don't think I don't say that that will not happen. I would get fired if I try.
+
+00:32:01.140 --> 00:32:12.060
+The quality culture in your role. Right. Quality will probably broaden. I think about PM's that I'm working with today.
+
+00:32:13.100 --> 00:32:27.100
+They are trying to bridge the gap between the customer and the developer. They want a more. They want to enable vicarious experiences for the developer to help boost empathy.
+
+00:32:27.100 --> 00:32:41.100
+It's harder in my team space in being it was very easy. A developer within 15 minutes could check in and they knew almost instantaneously how many customers they did or did not screw over.
+
+00:32:41.100 --> 00:32:55.770
+Principle five. I don't. Once you've gotten there and you follow principle five I really struggled to find any way you would ever regress.
+
+00:32:55.770 --> 00:33:21.770
+It's funny how many times in my two weeks I have reframed. I've been in a lot of planning meetings. I have reframed some goals around solving customer problems and those meetings. Some of them drift back into what features we're going to build. How are we going to implement them. And I and it costly bringing them back. And they know it now. They know if I open my mouth I'm probably going to talk about the customer again.
+
+00:33:22.770 --> 00:33:40.950
+So that was well underway. No but what I'm actually saying is I don't see like in this particular thing that drives my crew my job my day to day today. And I don't see it ever shaking.
+
+00:33:40.950 --> 00:34:00.820
+I just read and coincidentally maybe recently I read Kathy Sierra's shoe was it called now Badass customers. She wrote a book about about creating software for people which is just fantastic. Badass users. I'll look it up while you talk.
+
+00:34:02.260 --> 00:34:19.260
+OK but you said creating software for people. Yeah. Yeah. But it's customer focused software development. Oh yeah. Yeah. It's really good. Lots of pictures and drawings. It's easy to read. It's your PM can make those pictures. I think it makes perfect sense. Right.
+
+00:34:20.260 --> 00:34:44.340
+I think the number one thing that will if we can get the QA community to stop over pivoting on craftsmanship is the primary goal for the definition of quality. We've done our job. Everything else will. It's a tipping point.
+
+00:34:44.340 --> 00:35:05.860
+Sure. Right. Sure. The biggest problem is the test community. The strong and I don't know not the listeners but the test community. I'm talking about the test community like large. Right. There's a strong belief I think overall the test community that quality comes from testing. And I fundamentally do not believe that.
+
+00:35:07.430 --> 00:35:28.430
+I think that's a naive approach. And I am used to that from from newer testers and hell I've even back in my traditional test manager days I've even encouraged it because a lot of the times in those days the tester was synonymous with failed to pass the dev interview.
+
+00:35:28.430 --> 00:35:59.100
+Right. And so they needed to have a sense of purpose and a sense of identity for what's valuable in their job above being dev safety net. Now thankfully that was super rare. I've also been very successful and being able to get people to who weren't qualified to not join dev and stay in the community.
+
+00:36:00.100 --> 00:36:29.380
+And I've always been very interested in testing because tests in general has been a much more in my opinion much more creative reason I stayed in test and I was a developer for a while. I probably told this story but I won't do it again. But the one of the reasons I went back to test was one of the things I said earlier about why I love this new job. I love being I love drowning and ambiguity. And a lot of times test is doing that. And I've I've I like to seek out roles like that even when I was in test.
+
+00:36:30.380 --> 00:36:56.480
+I would seek out roles within the test organization that allowed me to do that. Let me figure out what's going on and figure out what to do. And those those roles while they may occur in development that probably the fact they probably do. There's far fewer paths to get there. I want you to get you and I resonate similar there. Like I don't I wouldn't say I I like drowning in ambiguity.
+
+00:36:56.480 --> 00:37:17.860
+What I'm attracted to when I'm making job decisions number one I love broken systems. I am attracted to broken systems. I know it's almost too easy. One of the reasons I like this job is it's not broken. It just needs it's not it needs a tune up.
+
+00:37:17.860 --> 00:37:19.860
+Broken is relative.
+
+00:37:19.860 --> 00:37:37.220
+Okay I get it. I get it. By the way before I forget you need to go to principle number six and figure out how I'm doing that. But Kathy Sierra's book is just called Badass subtitle. Yeah. Making users awesome. It's fantastic highly recommended. It is very supportive of principle number five.
+
+00:37:37.220 --> 00:37:59.590
+So principle number six the data principle right. No I am visualizing your role. There's multiple ways of I have no doubt you'll incorporate this. There'll be multiple ways of doing it after you get done torturing people around making sure they're considering the customer problem.
+
+00:37:59.590 --> 00:38:26.780
+What you might shift to is OK. Now prove you solved it. To what degree have you solved it. Actually that's a better. That's sounds less come in and controlling. Hey so have we finished solving the customer's problem on that space. Should we continue to evolve. Can we see the data. Do we need to pivot or persevere. Do we need to keep going in that direction.
+
+00:38:26.780 --> 00:38:57.540
+Or have we done a good enough job or should we actually know we completely failed. We should stop investing. All of those things have also been in my conversations in the last two weeks. You've asked for you've asked for the data. That's the thing I would say because what I'm actually trying to do when I've asked how are you. How are you going to use data to know if you're successful in this goal. Oh that's better. Yeah that's better. And then I'm a professional. Go on.
+
+00:38:57.540 --> 00:39:32.900
+Go on. Number seven we talked about. I'm uncertain what I said that triggered that. No I don't know either. OK. Number seven. Quite honestly. I think the best way you can support number seven is by never addressing it. And what I mean by that. Yeah please. Is essentially what I mean by that is. Guys. You're strong.
+
+00:39:32.900 --> 00:40:00.210
+You're strong and self organization. Now we're getting you to measure success and fail on a more appropriate thing. Now figure out what needs to be done proactively versus reactively to to minimize the customer pain. But as you call out testing is an activity.
+
+00:40:00.210 --> 00:40:24.910
+What you need to do now is get the engineering teams to self adjust. And the team is. And here's actually the. I think maybe I get what you're saying. So you're partially right. But what I've noticed so far is we have a team that religiously writes really good unit tests and the end their code at the unit level is basically flawless.
+
+00:40:24.910 --> 00:40:46.930
+However a bunch of unit tests passing does not make a quality product regardless of that. That's very common. It isn't that they they thought that that's all the testing needed to be done. But I think there is a little bit of coaching involved test coaching involved which was number seven is about.
+
+00:40:46.930 --> 00:41:04.280
+From the risk assessment what are the other ways this may fail. What other components could cause me to stop me being a component to stop working. And just in thinking about those and asking the question how you going to make sure it doesn't happen. And then the answer is I would write a test for that. It's like great great. Go do that.
+
+00:41:04.280 --> 00:41:20.600
+I would change the way you have that conversation. I would I would not bring up testing. I would not bring up the 80s. What I would do from here on out is express the same question but in terms of customer impact.
+
+00:41:20.600 --> 00:41:34.010
+I would argue and get them to say the test word. In other words. I was saying risk but that may be too open. I could I could phrase that as what would be the worst thing that happened to customer.
+
+00:41:34.010 --> 00:41:58.220
+How could yes I get that. My challenge to you is when you when you do you have principal seven conversations. But my challenge to you is never use the word test. I'm going to try that. I'm going to try and do my job without using the using the word. I'm not going to get away from it. Using the word test as infrequently as possible. I'll do that. How about I'll make that commitment to you. Right. OK.
+
+00:41:58.220 --> 00:42:24.220
+I still get across the same goal you're trying. Yeah. Yeah. Yeah. I get it. I have a plan. And it's funny because I haven't to be clear. I haven't walked into this job going OK. I'm going to apply the modern testing principles. But obviously as they are with some of our listeners. But they're very ingrained in the hat and they came from us. So it's very much how I like to work. So it's it makes no surprise. But to me. But anyway it's cool.
+
+00:42:24.220 --> 00:42:55.050
+Principle seven. I'll just close on this one or I'll give you the final word after the principle seven is essentially testing is an activity. That's that's the summation of principle seven testing is an activity. OK. Just like you wouldn't talk about coding as an activity with the dev. It's now part of their job. Yeah. And that honestly that I have brought that point up. Checking versus testing. Shut up. Checking is part of testing.
+
+00:42:55.050 --> 00:43:25.390
+Testing versus development. Shut up. Testing is part of development. And my answer is don't care. Sometimes I let the pundits some people. I mean I swear this trend about business but there's there. Yeah there's some. There's some thick rhetoric. Luckily I've been too busy the last few weeks to pay attention to Twitter very much. That's been good. So anyway that's how things are going. All right. Thank you everyone. This has been the AB 2.
+
+00:43:25.390 --> 00:43:28.550
+Testing podcast. I'm Alan. I'm Brent. Bye.
+

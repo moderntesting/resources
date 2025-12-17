@@ -1,0 +1,1592 @@
+WEBVTT
+
+00:00:09.010 --> 00:00:17.370
+Hey everyone, I'm Alan. I'm Brit. And we are here for episode 75 of AB testing. Quite possibly
+
+00:00:17.370 --> 00:00:26.730
+the first and only ADHD free podcast we've ever done. When we started recording five
+
+00:00:26.730 --> 00:00:33.730
+minutes ago, I said we had technical difficulties and indeed we did because we are starting over.
+
+00:00:33.730 --> 00:00:39.690
+It was only five minutes ago we started and we said that. We are starting a little late,
+
+00:00:39.690 --> 00:00:43.370
+might be a little on the short side today. And right now people are cheering going, oh
+
+00:00:43.370 --> 00:00:49.370
+thank God I don't need to sit through an hour of this crap. AB testing is your podcast for
+
+00:00:49.370 --> 00:00:55.170
+information about software testing, software quality, much more of a software quality podcast,
+
+00:00:55.170 --> 00:01:01.370
+agile testing and what we call modern testing and lots of listener input to give us ideas
+
+00:01:01.370 --> 00:01:09.410
+to focus because we need ideas to focus, right, Brit? No, it's part of the charm of the podcast.
+
+00:01:09.410 --> 00:01:18.190
+I will say that as well, right, Alan corrected himself. I think that we are not necessarily
+
+00:01:18.190 --> 00:01:23.850
+while testing is a part of it. I think we're far more a podcast of on quality than around
+
+00:01:23.850 --> 00:01:33.740
+testing. But we spent a lot of time talking about better ways to deliver quality, including
+
+00:01:33.740 --> 00:01:40.860
+those places where testing is not it. Absolutely. Yep. Quick little pitter patter here, chatter,
+
+00:01:40.860 --> 00:01:46.980
+pitter patter chatter. I was in Montreal right after we, right before we recorded our last
+
+00:01:46.980 --> 00:01:51.420
+podcast. I mentioned that and in between I went to Heathrow, didn't make it all the way to London,
+
+00:01:51.420 --> 00:01:57.660
+maybe to dinner for some moderately okay meals, but hung out at an airport and Heathrow for two
+
+00:01:57.660 --> 00:02:04.200
+days with my peers and my manager. And one of the three were there. Marcus is a Marcus is a peer of
+
+00:02:04.200 --> 00:02:09.780
+mine hanging out with us talking about teams and strategy and people and stuff and very good
+
+00:02:09.780 --> 00:02:15.270
+discussions. So good. In fact, we decided we need to do it twice a year and we're getting together
+
+00:02:15.270 --> 00:02:22.690
+again in six months in Reykjavik, Iceland, because we try to pick places that everyone can have a
+
+00:02:22.690 --> 00:02:29.080
+direct flight. Yeah, I'm a little jealous of your travel schedule. Like I was just telling a story
+
+00:02:29.080 --> 00:02:37.480
+last night to one of my PM's that except for the Bahamas, I have never been out of North America.
+
+00:02:37.480 --> 00:02:44.800
+Wow. Yeah. And it is part of the time. I mean, there's been many opportunities for me to go do
+
+00:02:44.800 --> 00:02:52.880
+business trips, but I at times I am too clever for my own self-interest. So I figured out ways
+
+00:02:52.880 --> 00:02:59.610
+where we can solve the problem. I'd prefer to solve the problem, including the trip, but I've
+
+00:02:59.610 --> 00:03:04.130
+now come up with a way where I don't have to do that. I'm like, damn it. You are too clever.
+
+00:03:04.130 --> 00:03:12.420
+Stop fixing this problem. I think there's a problem with data piped through Hawaii. I need
+
+00:03:12.420 --> 00:03:18.020
+to go debug. That's not really leaving North America. I guess it. No, I mean, I don't know.
+
+00:03:18.020 --> 00:03:20.580
+It's not leaving the States. Technically, leaving the North America.
+
+00:03:20.580 --> 00:03:25.780
+What continent is Hawaii considered part of? It's an island. Good trivia question.
+
+00:03:25.780 --> 00:03:31.860
+I know that. Okay. I just call it an island. So one way you can not travel is to give webinars
+
+00:03:31.860 --> 00:03:35.940
+from the comfort of your own home with or without pants. And I'm going to be giving two
+
+00:03:35.940 --> 00:03:41.140
+of those coming up in Feb. Next Tuesday, I'm giving one for AST on the use and abusive
+
+00:03:41.140 --> 00:03:46.740
+test automation. Then I go skiing for a week, and then I come back and give a webinar, webinar
+
+00:03:46.740 --> 00:03:51.540
+slash panel discussion on the feature of test automation. If it's not officially announced
+
+00:03:51.540 --> 00:03:54.860
+yet, but as soon as it is, I'll put a plug out there on Twitter and the A-B testing
+
+00:03:54.860 --> 00:04:00.580
+site and go from there. And what is the future?
+
+00:04:00.580 --> 00:04:03.380
+A lot of what we talk about in modern technology.
+
+00:04:03.380 --> 00:04:10.500
+All right. So I'm guessing no surprises for me on this one.
+
+00:04:10.500 --> 00:04:13.300
+Surprises for you. So why don't we just ...
+
+00:04:13.300 --> 00:04:15.780
+What's the contradictory future? I'm wondering about that.
+
+00:04:15.780 --> 00:04:21.380
+Is it really contradictory? I think it's what we've talked about with moving to modern testing.
+
+00:04:22.340 --> 00:04:28.020
+I keep on visualizing the diffusion of innovation curve, and I see modern testing is out towards
+
+00:04:28.020 --> 00:04:32.500
+the end, maybe not all the way on the end. I think there's still a lot of the world
+
+00:04:33.220 --> 00:04:37.460
+with people in that big part of the curve with separate teams doing test automation.
+
+00:04:37.460 --> 00:04:42.740
+And for them, the future is an embedded tester who does all the testing for the team as part of an
+
+00:04:42.740 --> 00:04:47.700
+agile team. On that topic, I should look this up, but when does the survey close?
+
+00:04:48.500 --> 00:04:52.500
+The survey is closed, I believe. The state of testing survey ended last week.
+
+00:04:52.500 --> 00:05:00.180
+Okay. Good. I'm looking forward to the results on that one and seeing if I can help determine
+
+00:05:01.780 --> 00:05:05.300
+what I'm really interested in, and maybe that will be an important source of data for that.
+
+00:05:05.300 --> 00:05:12.660
+I'm really interested in trying to observe how close to the tipping point the world is on this topic.
+
+00:05:13.620 --> 00:05:17.620
+I would love to get some data-driven insight around that. I can see anecdotally, and
+
+00:05:17.620 --> 00:05:22.500
+I've mentioned this before. It's worth mentioning again. I am getting to a spot in my
+
+00:05:23.700 --> 00:05:30.500
+idea generation, and typically that comes out in talks I give. But I love it that when I start
+
+00:05:30.500 --> 00:05:34.660
+talking about modern testing or aspects of modern testing or where I want to go,
+
+00:05:35.300 --> 00:05:41.300
+I see head nods. Yeah, I could see that happening, or I'm doing that, I'm living that,
+
+00:05:41.300 --> 00:05:46.020
+and then looks of horror from others. And I love being in that pocket because it feels
+
+00:05:46.020 --> 00:05:48.500
+like it's the right place to push things forward.
+
+00:05:48.500 --> 00:05:50.180
+Test Bash is coming up soon for you.
+
+00:05:50.180 --> 00:05:54.100
+Test Bash is in March. I'm sure I'll mention that again, but I'm excited about that,
+
+00:05:54.100 --> 00:05:58.500
+where I will talk about the adventures in modern testing.
+
+00:05:58.500 --> 00:06:06.680
+I'm wondering if there's a heuristic here where you can just start recording after you do a
+
+00:06:06.680 --> 00:06:12.280
+conference on this topic. You start recording so that the rough percentage of head nods versus
+
+00:06:13.160 --> 00:06:16.840
+shocks looking you get from the audience, obviously you got to do your presentations,
+
+00:06:16.840 --> 00:06:18.520
+so you got to do this fast.
+
+00:06:18.520 --> 00:06:22.840
+I should work something in. I don't like presentations that go,
+
+00:06:22.840 --> 00:06:26.120
+how many of you agree with this? How many of you don't? So I have to kind of gauge it,
+
+00:06:26.120 --> 00:06:35.320
+but I will give you a ratio where I see of head nods versus looks of horror from the crowd.
+
+00:06:36.160 --> 00:06:37.680
+I will try and figure that out.
+
+00:06:38.320 --> 00:06:47.910
+I presented last Friday internally, and yeah, so I guess this is not going to be an ADHD-free
+
+00:06:47.910 --> 00:06:48.790
+podcast today.
+
+00:06:48.790 --> 00:06:49.190
+Never is.
+
+00:06:49.190 --> 00:06:50.710
+Even though we're limited in time.
+
+00:06:50.710 --> 00:06:51.510
+Not with Brent.
+
+00:06:52.950 --> 00:06:56.150
+I, on the other hand, am laser focused.
+
+00:06:57.090 --> 00:07:03.970
+I got to say, so like a robot, all of us sort of have this, uh, a laser focused robot.
+
+00:07:04.870 --> 00:07:05.430
+Go on, Brent.
+
+00:07:06.720 --> 00:07:12.880
+Yeah, now I'm pulling up episode 60s metaphor with the squirrel on the bus with the hat and
+
+00:07:12.880 --> 00:07:13.840
+the elephant thing.
+
+00:07:14.720 --> 00:07:20.960
+So did a presentation on a very similar one to the one I did for Unity.
+
+00:07:21.760 --> 00:07:24.000
+I had to generalize the context.
+
+00:07:24.000 --> 00:07:26.000
+This time it was a lot more around,
+
+00:07:26.960 --> 00:07:30.000
+Hey, we're, we're a data team just starting up.
+
+00:07:30.790 --> 00:07:35.570
+You know, what have you learned in terms of how to create a data driven culture?
+
+00:07:36.580 --> 00:07:39.860
+They had invited other talks to there.
+
+00:07:39.860 --> 00:07:42.180
+And I know you admit to this.
+
+00:07:43.300 --> 00:07:49.220
+I think it's a human condition, but a lot of the time that I go through when I do these
+
+00:07:49.220 --> 00:07:54.660
+presentations is just pushing down and rejecting and ignoring
+
+00:07:54.660 --> 00:07:56.420
+everything.
+
+00:07:56.420 --> 00:07:59.700
+My gut is saying, uh, around imposter syndrome.
+
+00:08:00.680 --> 00:08:06.520
+Like, Oh my God, there are actual people here who just did another presentation.
+
+00:08:07.160 --> 00:08:08.520
+They know what they're talking about.
+
+00:08:08.520 --> 00:08:12.920
+And then, and then it, uh, but this last presentation, it got me.
+
+00:08:13.480 --> 00:08:14.120
+It got me.
+
+00:08:14.120 --> 00:08:16.600
+I like, I was like, wait a minute.
+
+00:08:16.600 --> 00:08:19.320
+No, I've actually done everything I'm saying in here.
+
+00:08:19.320 --> 00:08:21.320
+I started losing confidence in there.
+
+00:08:21.320 --> 00:08:24.440
+Just the worst freaking presentation.
+
+00:08:24.920 --> 00:08:26.760
+I have done in recent past.
+
+00:08:27.970 --> 00:08:28.690
+Bummer.
+
+00:08:28.690 --> 00:08:29.010
+Yeah.
+
+00:08:29.010 --> 00:08:34.610
+So the good thing for me is like to 30 people is that I literally know nothing.
+
+00:08:35.410 --> 00:08:41.570
+I am the pure imposter, but I also believe in the fake it till you make it, uh, statement.
+
+00:08:41.570 --> 00:08:44.770
+So that's, that is really how I do things.
+
+00:08:45.570 --> 00:08:48.610
+I look at stuff and there's a man tangent exception.
+
+00:08:49.570 --> 00:08:52.610
+I was having a conversation with someone recently about how
+
+00:08:53.570 --> 00:08:58.080
+LinkedIn skills are bizarre.
+
+00:08:58.800 --> 00:09:01.440
+Like I'm endorsed for things I've never done before.
+
+00:09:02.640 --> 00:09:04.690
+Oh, it's like, Oh wow.
+
+00:09:04.690 --> 00:09:10.370
+I wonder if I should be an expert in that, but I'm just, I hate it.
+
+00:09:10.370 --> 00:09:10.770
+All right.
+
+00:09:10.770 --> 00:09:16.960
+I'm going to rewind and get us onto the topic of the day, which is what Alan?
+
+00:09:16.960 --> 00:09:19.280
+Which is, which is a mailbag question.
+
+00:09:19.280 --> 00:09:19.840
+It's a what?
+
+00:09:21.030 --> 00:09:27.110
+I think I did mention that I've retired, uh, due to a pending lawsuit from Nickelodeon
+
+00:09:27.110 --> 00:09:30.790
+over use of the blues clues, mailbag theme.
+
+00:09:31.590 --> 00:09:36.070
+And my, am I, am I miss desire to sing the mailbag song anymore?
+
+00:09:36.070 --> 00:09:36.710
+What?
+
+00:09:36.710 --> 00:09:38.950
+I am, I am, I am done.
+
+00:09:39.590 --> 00:09:41.830
+I have moved on from the mail.
+
+00:09:41.830 --> 00:09:47.910
+If someone wants to send in a great sound bite thing, I'll use it, but I'm not singing
+
+00:09:47.910 --> 00:09:49.190
+mailbag anymore.
+
+00:09:49.270 --> 00:09:53.200
+Oh, we're not doing a damn mailbag.
+
+00:09:55.590 --> 00:09:59.270
+I've just ruined the 75.
+
+00:10:00.310 --> 00:10:01.990
+I mean, that's fantastic.
+
+00:10:01.990 --> 00:10:05.670
+I mean, it's, this clearly signals the beginning of the end of the podcast.
+
+00:10:05.670 --> 00:10:07.590
+For a new step in maturity.
+
+00:10:09.220 --> 00:10:09.540
+Yeah.
+
+00:10:09.540 --> 00:10:16.020
+So we're quickly moving into now we're going to be news anchors sort of reporting out and reading
+
+00:10:16.260 --> 00:10:16.740
+scripts.
+
+00:10:17.620 --> 00:10:19.060
+Oh my God.
+
+00:10:19.060 --> 00:10:25.140
+I totally, I totally disagree and I don't understand why I wasn't called in.
+
+00:10:25.140 --> 00:10:25.620
+Okay.
+
+00:10:25.620 --> 00:10:26.020
+On this.
+
+00:10:26.020 --> 00:10:29.140
+We'll, we'll take a vote from the three.
+
+00:10:30.740 --> 00:10:34.660
+Maybe I don't know what to do here today.
+
+00:10:34.660 --> 00:10:35.460
+I'm not singing it.
+
+00:10:35.460 --> 00:10:39.300
+I'm making a stand and I will, I'm, I'm happy to experiment.
+
+00:10:39.300 --> 00:10:40.340
+This is an experiment.
+
+00:10:40.340 --> 00:10:42.020
+They pro Nickelodeon stand.
+
+00:10:42.020 --> 00:10:44.420
+I am going to do an AB test.
+
+00:10:44.420 --> 00:10:47.380
+Wait, are they, are they a hidden sponsor that you haven't told me about?
+
+00:10:47.380 --> 00:10:48.260
+They're not.
+
+00:10:48.260 --> 00:10:53.380
+I am doing an AB test in two different as an experiment and for the AB testing audience.
+
+00:10:54.020 --> 00:10:55.940
+There's no mailbag song today.
+
+00:10:55.940 --> 00:10:58.980
+I can't believe you spent three minutes talking about this.
+
+00:10:58.980 --> 00:11:04.420
+This is important and I'm positive the three will echo my opinion.
+
+00:11:04.420 --> 00:11:11.060
+I'm positive the three will say that this segment is just as valuable without
+
+00:11:11.140 --> 00:11:15.380
+a little reverb up mailbag things stolen directly from blues clues.
+
+00:11:17.990 --> 00:11:21.030
+So Tony Gutierrez asks,
+
+00:11:23.110 --> 00:11:27.270
+there's been a lot of talk on the podcast about starting a community for testers and
+
+00:11:27.270 --> 00:11:31.670
+testers not having to report to a tester for a manager.
+
+00:11:32.230 --> 00:11:35.350
+The issue I see is lots of stuff will go dissect here.
+
+00:11:35.350 --> 00:11:39.510
+The issue I see at my current job is that many of the testers do not see the need
+
+00:11:39.510 --> 00:11:44.310
+for a community or aren't engaged and seem to want to be spoon fed.
+
+00:11:45.030 --> 00:11:50.070
+Any tips on how to get the testers more engaged or starting a community from scratch.
+
+00:11:50.070 --> 00:11:55.110
+And in rereading this question, I realize that we don't have enough time to cover
+
+00:11:55.110 --> 00:11:56.070
+everything.
+
+00:11:56.070 --> 00:11:57.590
+All the nuance in here.
+
+00:11:57.590 --> 00:12:02.950
+There's a lot of nuance in here and so what I want to do, you take point.
+
+00:12:02.950 --> 00:12:03.510
+I'll follow you.
+
+00:12:03.510 --> 00:12:08.070
+What I want to do is I want to talk about community a little bit and then I'm going
+
+00:12:08.070 --> 00:12:12.710
+to go back because there's more to Tony's question than just community.
+
+00:12:14.160 --> 00:12:18.800
+So the part I thought I thought I thought I got to take point, but go ahead.
+
+00:12:18.800 --> 00:12:19.360
+No, you did.
+
+00:12:19.920 --> 00:12:27.760
+I'll just add in here the part of this that I have experienced and I have just found a challenge
+
+00:12:27.760 --> 00:12:31.360
+is sort of the phrase you can lead a horse to water, but you can't make them drink.
+
+00:12:32.610 --> 00:12:39.190
+There's getting getting testers engaged is the hard problem.
+
+00:12:40.150 --> 00:12:46.920
+And I would say in a nutshell, I have not found a great solution for driving.
+
+00:12:46.920 --> 00:12:51.880
+And I have not found a better solution for driving engagement from I'll call the
+
+00:12:51.880 --> 00:12:58.680
+resistant than creating a logical argument that constructs fear.
+
+00:12:58.680 --> 00:12:59.320
+Great.
+
+00:12:59.480 --> 00:13:03.720
+So let's put a pin in that because that's the part I wanted to come back to after we
+
+00:13:03.720 --> 00:13:05.160
+talked about community.
+
+00:13:05.160 --> 00:13:05.560
+Done.
+
+00:13:05.560 --> 00:13:07.640
+I want to talk about community first.
+
+00:13:07.640 --> 00:13:08.040
+Go ahead.
+
+00:13:08.660 --> 00:13:09.380
+This commune.
+
+00:13:11.220 --> 00:13:12.500
+God, why do we do this?
+
+00:13:14.400 --> 00:13:21.600
+So we have talked in the podcast about community and early on in my it's interesting when I give
+
+00:13:21.600 --> 00:13:25.680
+this talk on adventures in modern testing and this is tangent deception because I'm going back.
+
+00:13:26.560 --> 00:13:30.080
+I talk about the last projects I've worked on and what I've learned from them.
+
+00:13:30.560 --> 00:13:35.640
+And there was a time that largely overlap with my time in Xbox.
+
+00:13:35.640 --> 00:13:39.960
+It kind of began before that where actually it began way back in engineering excellence
+
+00:13:40.520 --> 00:13:47.680
+where I began to leverage community across Microsoft for my own growth.
+
+00:13:47.680 --> 00:13:50.720
+I again, I fake it till I make it.
+
+00:13:50.720 --> 00:13:56.560
+I didn't know much, but I knew people who knew a lot and the community became across
+
+00:13:56.560 --> 00:13:58.800
+the company became very important for my growth.
+
+00:13:59.360 --> 00:14:05.760
+So in that I ended up at one point like the orange one in the US owning the house,
+
+00:14:05.760 --> 00:14:07.760
+the Senate and the executive branch.
+
+00:14:07.760 --> 00:14:11.440
+I was the chair of the Microsoft test leadership team.
+
+00:14:12.240 --> 00:14:18.000
+I ran Microsoft test architect group senior individual contributors and I also ran our
+
+00:14:18.720 --> 00:14:23.040
+cross company quality and testing experts community run out of our TC or technical
+
+00:14:23.040 --> 00:14:24.800
+community network organization.
+
+00:14:24.800 --> 00:14:29.360
+So I had all kinds of community and they overlap and I figured out how they how they
+
+00:14:29.360 --> 00:14:34.480
+fed each other and I put a lot not a lot all three of those things you were.
+
+00:14:34.480 --> 00:14:38.600
+Yeah, you were my wow you I see a way you left the role.
+
+00:14:38.600 --> 00:14:42.760
+I mean, that's a clear sign of technical errors on your part.
+
+00:14:44.520 --> 00:14:45.640
+Yeah, what else?
+
+00:14:46.280 --> 00:14:50.520
+But so that was that was value for my career.
+
+00:14:50.520 --> 00:14:55.910
+But then when I was on Xbox, I learned the value of mostly in hindsight,
+
+00:14:55.910 --> 00:14:59.110
+the value of community of different kinds of communities.
+
+00:14:59.110 --> 00:15:04.470
+And one was, as I've mentioned before, and I like this example, I ran.
+
+00:15:05.270 --> 00:15:07.910
+I was asked to run a tools organization in Xbox.
+
+00:15:07.910 --> 00:15:10.390
+I said, I don't want to run a tools org for lots of reasons.
+
+00:15:10.390 --> 00:15:14.710
+Why mainly focused around Microsoft's competitive stack ranking and how tools
+
+00:15:14.710 --> 00:15:16.150
+teams often were left out of those things.
+
+00:15:16.150 --> 00:15:20.710
+I didn't want to be part of that, but I did run our Xbox tools
+
+00:15:20.790 --> 00:15:22.470
+like an open source project.
+
+00:15:22.470 --> 00:15:25.430
+Two of us contributing the most one contributing much more than me, but
+
+00:15:26.070 --> 00:15:31.430
+looping in as many as 20 or 30 different people around the org to contribute tools
+
+00:15:31.430 --> 00:15:35.030
+that we used org wise many of many of those tools still being used today.
+
+00:15:35.750 --> 00:15:42.630
+It's exciting to hear and then also starting to build a community of I had no one reporting to me,
+
+00:15:42.630 --> 00:15:47.270
+but I sort of ran the community of the test organization for my manager.
+
+00:15:48.280 --> 00:15:52.760
+So we had in Xbox the typical of a separate functional test organization.
+
+00:15:53.480 --> 00:16:00.600
+And my manager's job was to run the run the business of that group and attend meetings and
+
+00:16:00.600 --> 00:16:03.000
+all the things that typical test director does.
+
+00:16:03.000 --> 00:16:05.800
+And I ran the community pretty much.
+
+00:16:05.800 --> 00:16:06.920
+I made sure people were connected.
+
+00:16:06.920 --> 00:16:08.120
+I sent out newsletters.
+
+00:16:08.120 --> 00:16:10.520
+I made sure they made sure people were connected.
+
+00:16:10.520 --> 00:16:15.560
+People who needed it had mentors, spun up sub communities as needed.
+
+00:16:15.640 --> 00:16:20.600
+And it made me realize again in hindsight that a functional test organization that the typical
+
+00:16:20.600 --> 00:16:27.650
+test organization is kind of a community, but it can be a community.
+
+00:16:29.170 --> 00:16:36.370
+So when I came to Unity, I as my test team, my team were all embedded
+
+00:16:36.370 --> 00:16:38.850
+everywhere across the org around the world.
+
+00:16:38.850 --> 00:16:46.130
+I will actually just interrupt you and say there is a lot of value in the communities
+
+00:16:46.930 --> 00:16:47.490
+period.
+
+00:16:47.490 --> 00:16:48.610
+I can go on examples.
+
+00:16:48.610 --> 00:16:50.130
+I have a great one just yesterday.
+
+00:16:51.170 --> 00:16:54.530
+I don't think there's anything special about test.
+
+00:16:54.530 --> 00:16:57.330
+No, that test gains a benefit from form of the community.
+
+00:16:57.330 --> 00:17:00.050
+And I hope I did not imply that.
+
+00:17:00.050 --> 00:17:00.290
+Okay.
+
+00:17:01.330 --> 00:17:08.290
+I think as the three know, I am a huge fan of Philip Armour's orders of ignorance.
+
+00:17:08.290 --> 00:17:08.610
+Yep.
+
+00:17:08.610 --> 00:17:13.570
+And without recapping those, I think communities are a wonderful method to discover what you don't
+
+00:17:13.570 --> 00:17:13.810
+know.
+
+00:17:13.810 --> 00:17:14.850
+You don't know.
+
+00:17:14.850 --> 00:17:17.090
+They facilitate learning and discovery.
+
+00:17:17.090 --> 00:17:17.330
+Yep.
+
+00:17:17.330 --> 00:17:18.690
+And I'm really happy about that.
+
+00:17:19.250 --> 00:17:23.570
+As I got to Unity and discovered that what I really did was a community leader, I started
+
+00:17:23.570 --> 00:17:24.690
+thinking more about it.
+
+00:17:24.690 --> 00:17:30.530
+And then for some reasons, probably thinking about what the overlap was between Agile testing
+
+00:17:30.530 --> 00:17:35.810
+and modern testing, I reread the Crispin Gregory book on Agile testing.
+
+00:17:35.810 --> 00:17:39.090
+And I came across this paragraph.
+
+00:17:39.940 --> 00:17:43.540
+There are reasons for having a QA manager and an independent test team.
+
+00:17:43.540 --> 00:17:47.620
+However, we suggest changing the reasons as well as the structure.
+
+00:17:48.260 --> 00:17:52.660
+Rather than keeping the testers separate as an independent team to test the application
+
+00:17:52.660 --> 00:17:56.820
+after coding, which we hate, which we hate with my part.
+
+00:17:56.820 --> 00:17:59.780
+Think about the team as a community of testers.
+
+00:18:01.300 --> 00:18:03.060
+Provide a learning organization.
+
+00:18:03.060 --> 00:18:05.060
+I'm going, yes, I could have written this line.
+
+00:18:05.060 --> 00:18:09.220
+Provide a learning organization to help your testers with career development and a place
+
+00:18:09.220 --> 00:18:11.300
+to share ideas and help each other.
+
+00:18:11.300 --> 00:18:16.180
+If the QA manager becomes a practice leader in the organization, that person will be able
+
+00:18:16.180 --> 00:18:20.100
+to teach the skills that testers need to become stronger and better able to cope with
+
+00:18:20.100 --> 00:18:26.340
+the ever changing environment, which very much describes what I do to an extent.
+
+00:18:26.980 --> 00:18:29.860
+But I think there's more than just being the practice leader.
+
+00:18:29.860 --> 00:18:32.740
+I take other skills of community and try and get people to
+
+00:18:33.620 --> 00:18:35.540
+connect and share ideas with each other.
+
+00:18:35.540 --> 00:18:36.900
+We do a weekly newsletter.
+
+00:18:37.700 --> 00:18:41.140
+My job, I feel like a big part of my job is to help everyone on my team.
+
+00:18:41.700 --> 00:18:45.540
+Discover what they don't know, they don't know, and make it become something they know
+
+00:18:45.540 --> 00:18:47.860
+and share those practices with each other.
+
+00:18:47.860 --> 00:18:53.380
+So I got off track a little bit talking about my history of community, but there's a maturity there.
+
+00:18:53.380 --> 00:18:58.100
+A community, I don't want to call this a maturity model because I haven't thought it through yet,
+
+00:18:58.100 --> 00:19:03.600
+but I think a community starts with, like right now, I am needed to keep it going.
+
+00:19:03.600 --> 00:19:06.800
+If I left, the community would maybe continue.
+
+00:19:06.800 --> 00:19:13.280
+We're a little, sometimes if a leader leaves a community, the community just stops.
+
+00:19:14.160 --> 00:19:18.440
+And I've seen that happen with all those communities.
+
+00:19:18.440 --> 00:19:19.560
+Some end it for other reasons.
+
+00:19:19.560 --> 00:19:25.400
+Have I shared with you the metaphor around the difference between the spider and the starfish?
+
+00:19:26.280 --> 00:19:29.400
+Yes, I'm very much aware of the spider and the starfish.
+
+00:19:29.400 --> 00:19:32.200
+There's a book, I think, called The Spider and the Starfish.
+
+00:19:32.200 --> 00:19:33.560
+And if you have, there is.
+
+00:19:33.560 --> 00:19:34.520
+Which I've read.
+
+00:19:34.600 --> 00:19:38.440
+And it's fantastic, and it's relevant.
+
+00:19:38.440 --> 00:19:38.840
+It is.
+
+00:19:39.880 --> 00:19:42.200
+Do you want to expand on it so I can stop talking for a minute?
+
+00:19:42.200 --> 00:19:43.240
+The spider and the starfish?
+
+00:19:43.240 --> 00:19:44.120
+It's worth it.
+
+00:19:44.120 --> 00:19:44.760
+Sure.
+
+00:19:44.760 --> 00:19:46.360
+I think we may have talked about it before.
+
+00:19:46.360 --> 00:19:47.880
+I know I've blogged about it before.
+
+00:19:47.880 --> 00:19:49.240
+We have new listeners.
+
+00:19:49.240 --> 00:19:50.360
+Yeah, that's a good point.
+
+00:19:50.360 --> 00:19:51.320
+We can dive in.
+
+00:19:51.320 --> 00:19:54.040
+This is worthwhile and relevant to the conversation.
+
+00:19:54.040 --> 00:19:55.480
+Is this the year?
+
+00:19:55.480 --> 00:19:56.600
+Yeah, there's a strategy.
+
+00:19:56.600 --> 00:19:59.720
+When we say we've talked about it before, it was earlier in the same episode,
+
+00:19:59.720 --> 00:20:00.520
+then we're in trouble.
+
+00:20:01.320 --> 00:20:03.000
+Yeah, no, there's a strategy.
+
+00:20:03.000 --> 00:20:07.240
+I once talked with James Whittaker on this, and I'm like,
+
+00:20:08.120 --> 00:20:10.920
+I don't know how pissed he'll be for me sharing this.
+
+00:20:12.020 --> 00:20:17.140
+But essentially, one of his later test books, I'm like,
+
+00:20:17.140 --> 00:20:23.570
+dude, except for the certain way you skin this content,
+
+00:20:24.450 --> 00:20:29.170
+this is exactly the same book as the one you wrote five years ago.
+
+00:20:29.970 --> 00:20:31.890
+And he looked at me, he smiled, he was like,
+
+00:20:32.880 --> 00:20:34.480
+the problems haven't changed.
+
+00:20:37.720 --> 00:20:39.400
+You scam artist.
+
+00:20:39.400 --> 00:20:39.880
+Anyway.
+
+00:20:39.880 --> 00:20:41.080
+Spider and the Starfish, Brent.
+
+00:20:41.080 --> 00:20:41.560
+Oh, sorry.
+
+00:20:41.560 --> 00:20:42.040
+Please recap.
+
+00:20:42.040 --> 00:20:42.760
+Yep.
+
+00:20:42.760 --> 00:20:43.880
+Spider and Starfish.
+
+00:20:44.760 --> 00:20:46.040
+Think of it as a metaphor.
+
+00:20:48.440 --> 00:20:53.720
+Primarily, the difference between a spider and a starfish,
+
+00:20:53.720 --> 00:20:59.320
+if you kind of squint your eyes and look at a third-year-old's drawing,
+
+00:21:00.040 --> 00:21:01.720
+is a spider has a head.
+
+00:21:01.720 --> 00:21:02.920
+Starfish doesn't.
+
+00:21:04.040 --> 00:21:12.390
+Fun fact, the current science on starfish is that they actually believe
+
+00:21:12.390 --> 00:21:18.200
+that each leg of a starfish has its own brain.
+
+00:21:18.840 --> 00:21:21.640
+And that's actually for things like how the starfish moves.
+
+00:21:24.280 --> 00:21:27.320
+One leg convinces the other legs to move this way.
+
+00:21:28.420 --> 00:21:33.300
+So when you have the sense that you know that the community will die once you leave,
+
+00:21:33.380 --> 00:21:35.460
+I mean, it's a clear spider.
+
+00:21:36.100 --> 00:21:37.700
+It's a great book, Spider and Starfish.
+
+00:21:38.900 --> 00:21:40.580
+I usually go into a longer metaphor.
+
+00:21:40.580 --> 00:21:42.980
+We don't have time for today on this.
+
+00:21:43.860 --> 00:21:51.620
+But I will say, in my time in Xbox, I created a community model
+
+00:21:52.420 --> 00:21:59.540
+that leveraged the principles of spider and starfish.
+
+00:21:59.700 --> 00:22:08.950
+And after about three months of me as the head of the spider encouraging it to go,
+
+00:22:09.750 --> 00:22:11.430
+I got it to self-sustain.
+
+00:22:12.070 --> 00:22:13.670
+The reason why it died?
+
+00:22:14.550 --> 00:22:15.350
+A reorg.
+
+00:22:17.030 --> 00:22:19.490
+So, one, and I'll recap that.
+
+00:22:19.490 --> 00:22:23.970
+I think you can think of the spider as the leader-led organization
+
+00:22:23.970 --> 00:22:26.930
+and the starfish as the leaderless organization.
+
+00:22:27.410 --> 00:22:28.610
+More of an independent.
+
+00:22:29.810 --> 00:22:30.420
+Yeah.
+
+00:22:30.420 --> 00:22:34.000
+Well, I mean, in the subtitle of the book, they call it, I just double-checked.
+
+00:22:34.000 --> 00:22:38.000
+It's like the starfish and the spider, blah, blah, blah, leaderless organization.
+
+00:22:38.000 --> 00:22:39.760
+It is absolutely not leaderless.
+
+00:22:40.480 --> 00:22:41.520
+But yeah, I get that.
+
+00:22:41.520 --> 00:22:42.000
+Yeah.
+
+00:22:42.000 --> 00:22:44.400
+So, it's managerless.
+
+00:22:45.280 --> 00:22:46.080
+Community.
+
+00:22:46.960 --> 00:22:53.440
+I think the problem with a leader, a spider, or a leader-led,
+
+00:22:53.440 --> 00:22:56.960
+a spider, or a leader-led, a functional test organization,
+
+00:22:57.520 --> 00:23:03.620
+if the leader leaves, it's gone, right?
+
+00:23:03.620 --> 00:23:04.580
+Like I said with the reorg.
+
+00:23:04.580 --> 00:23:05.060
+That's it.
+
+00:23:05.060 --> 00:23:10.420
+I lost my train of thought there for a second, but a leader-filled,
+
+00:23:10.420 --> 00:23:12.020
+a spider can never be self-sustaining.
+
+00:23:13.750 --> 00:23:15.510
+A spider organization.
+
+00:23:16.150 --> 00:23:17.270
+It can't self-sustain.
+
+00:23:17.270 --> 00:23:18.790
+It can't keep going on its own.
+
+00:23:18.790 --> 00:23:18.950
+No.
+
+00:23:19.830 --> 00:23:20.550
+It needs the head.
+
+00:23:21.440 --> 00:23:23.760
+Anyway, so Unity, everybody everywhere,
+
+00:23:24.400 --> 00:23:32.280
+community, I think some parts of my organization are either self-sustaining now or could be.
+
+00:23:33.320 --> 00:23:35.640
+Some are not even close, and that's okay.
+
+00:23:36.850 --> 00:23:40.050
+I think I still feel like a large part of my goal is to get there.
+
+00:23:40.050 --> 00:23:45.730
+So, now I want to, so that's sort of lost track here with Brant's hyperactive leg.
+
+00:23:46.610 --> 00:23:47.330
+Now, it stopped.
+
+00:23:47.330 --> 00:23:47.730
+Good.
+
+00:23:47.730 --> 00:23:49.730
+I thought it was like a dog.
+
+00:23:49.730 --> 00:23:51.090
+Something is tail on the floor.
+
+00:23:51.730 --> 00:23:55.730
+I am actively not fidgeting with the microphone.
+
+00:23:55.730 --> 00:23:59.170
+If you would just get your crap together, where did my notes go?
+
+00:24:00.130 --> 00:24:06.050
+I want to go back to Tony's question, and then maybe in the last 15, 20 minutes we have here
+
+00:24:06.050 --> 00:24:13.010
+at the most, I want to go through his point sentence by sentence and talk a little bit more
+
+00:24:13.010 --> 00:24:13.410
+about those.
+
+00:24:13.410 --> 00:24:17.410
+And I think some of this stuff is going to have to bleed over to another episode.
+
+00:24:18.130 --> 00:24:21.730
+Ping us with your questions on Twitter or in the Slack group, because I do want to dive into a lot.
+
+00:24:21.730 --> 00:24:23.490
+I think this is an important discussion.
+
+00:24:25.890 --> 00:24:34.850
+Take a pause, and without reading Tony's thing, what do you think is the primary theme that he's
+
+00:24:34.850 --> 00:24:36.050
+trying to look for a solution?
+
+00:24:37.640 --> 00:24:38.920
+Is it community building?
+
+00:24:38.920 --> 00:24:39.800
+No, it's not.
+
+00:24:40.360 --> 00:24:41.720
+I wanted to start with that.
+
+00:24:41.720 --> 00:24:49.400
+I think Tony has a disengaged test team, or he's talking about one, who are not, they don't
+
+00:24:49.400 --> 00:24:55.080
+have the growth and hunger and seeking that you and I look for in people we want in these
+
+00:24:55.080 --> 00:24:55.880
+organizations.
+
+00:24:56.520 --> 00:25:01.640
+I think my hunch is he's talking about how do you take people who really aren't into this,
+
+00:25:01.640 --> 00:25:08.120
+they just want to do their thing, and make them people who want to engage in a community.
+
+00:25:08.120 --> 00:25:15.280
+There's a lot of jumps here, because I feel like Tony could be over analyzing or Tony
+
+00:25:15.280 --> 00:25:22.230
+could be over dramatizing, but what do you do with people who just aren't right for the job?
+
+00:25:23.270 --> 00:25:26.550
+I don't even know if that's part of the problem, but we can, I agree.
+
+00:25:26.550 --> 00:25:30.150
+And maybe that could be a little bit too deep there, but I'll put it a different way.
+
+00:25:31.460 --> 00:25:36.260
+One of the things I look for, people I hire and people I want to grow and promote or keep
+
+00:25:36.260 --> 00:25:38.580
+in my organization, is a hunger to learn.
+
+00:25:39.300 --> 00:25:44.100
+People who want to learn new things and are interested and think that it's important for
+
+00:25:44.100 --> 00:25:49.620
+their own growth and self-sustainment, they actively seek out things like communities in
+
+00:25:49.620 --> 00:25:56.080
+order to learn, and when they don't, when they shun the community, when they think they
+
+00:25:56.080 --> 00:26:01.120
+can figure it out by themselves versus leverage others to get their work done, then I think
+
+00:26:01.120 --> 00:26:06.720
+they have growth problems or other issues that I want to nip in the bud.
+
+00:26:06.720 --> 00:26:18.740
+You know what? I'm going to invent a poll for you. What is more important? You solving
+
+00:26:19.380 --> 00:26:24.710
+the problem or you solving the problem?
+
+00:26:27.750 --> 00:26:32.850
+If I interpret correctly, what's more important to me is the problem is solved.
+
+00:26:33.830 --> 00:26:34.550
+Okay.
+
+00:26:34.550 --> 00:26:36.550
+So the first one in your emphasis.
+
+00:26:37.410 --> 00:26:44.480
+Right. Now, you may have noticed that those words were exactly the same.
+
+00:26:46.150 --> 00:26:46.310
+Yes.
+
+00:26:46.310 --> 00:26:50.950
+Right? It's an ambiguous statement around what is the important principle.
+
+00:26:51.590 --> 00:26:54.790
+And so I think one of the things that leaders in this space need to do
+
+00:26:56.020 --> 00:27:04.900
+is don't leave it up to interpretation as to from that statement what is the order
+
+00:27:05.620 --> 00:27:09.940
+of importance of the principles. One of the problems when I, for example, one of the
+
+00:27:09.940 --> 00:27:16.900
+problems I have with people who come aboard and join my team, my team operates as a mini
+
+00:27:16.900 --> 00:27:25.200
+community. And what is a community? Community is what I think of community. It is a vehicle
+
+00:27:25.200 --> 00:27:31.440
+to scale knowledge sharing. I don't care. Like some people may think, hey, a community is
+
+00:27:31.440 --> 00:27:37.410
+getting people together. Let's talk stuff. But if you're doing that and it's not a
+
+00:27:37.410 --> 00:27:43.270
+vehicle for knowledge sharing, I did. Sure. By the definition, it may be a community, but
+
+00:27:43.270 --> 00:27:51.700
+it's useless to me. And there's a new kid that's been on my team for about six months.
+
+00:27:52.260 --> 00:27:58.580
+And he's got signs that what I've been trying to get him to do and what I'm trying to get
+
+00:27:58.580 --> 00:28:05.540
+him to understand has finally clicked. And now shit's happening and it's love it.
+
+00:28:06.340 --> 00:28:12.720
+But I'm like, look, dude, you need to have faith in the rest of your teammates. They're not here
+
+00:28:12.720 --> 00:28:19.800
+to compete with you. They're here to help you succeed. Trust me. Try it out. Because there's the
+
+00:28:19.800 --> 00:28:21.640
+That sounds so un-Microsoft.
+
+00:28:21.640 --> 00:28:28.900
+I know. It's actually one of my success, sadly, successful strategies to keep people on my team.
+
+00:28:30.340 --> 00:28:34.420
+Because we operate a different way and they know that they give it up if they leave.
+
+00:28:35.250 --> 00:28:42.050
+But he repeatedly would show up in retrospective. And one of the things that we talk about in
+
+00:28:42.050 --> 00:28:47.890
+retrospective, we will go, what was the latest ticket? What ticket took the most calendar time?
+
+00:28:47.890 --> 00:28:52.390
+And that's the one we always talk about. And for like two months in a row, it was him.
+
+00:28:53.220 --> 00:28:57.620
+He got tired of it. And then in retrospective, we were like, yeah, you could have cut this
+
+00:28:57.620 --> 00:29:01.060
+ticket in half if you just went over and asked that person, how do you do this?
+
+00:29:02.600 --> 00:29:08.440
+Yeah, I even have a without naming any names. One of the one of my teams as a little bit of
+
+00:29:08.440 --> 00:29:15.170
+all by myself syndrome. That's what the problem was when you started. So I can do it.
+
+00:29:15.170 --> 00:29:23.250
+So it's a critical. It's a it's a everything's critical. It's an important component that the
+
+00:29:23.250 --> 00:29:30.930
+whole company will use. And the team, for some legitimate reasons, and many non legitimate reasons,
+
+00:29:31.730 --> 00:29:36.530
+did a lot of things by themselves instead of leveraging the community of the company around
+
+00:29:36.530 --> 00:29:42.930
+them to help them. And it slowed them down. Things are back on track. Wasn't a horrible leap in the
+
+00:29:42.930 --> 00:29:48.550
+wrong direction. But you have to leverage those around you. They got a little stuck in a. It's
+
+00:29:48.550 --> 00:29:51.670
+a long story. I thought I won't share any details, but I'll just let that out.
+
+00:29:52.550 --> 00:29:56.950
+I like the definition of community and I want to touch on your so a feeling of fellowship with
+
+00:29:56.950 --> 00:30:03.030
+others as a result of sharing common attitudes, interests and goals. That's off of Webster. And
+
+00:30:03.030 --> 00:30:08.790
+what I think you want from the community, which is I want to is we want people who leverage the
+
+00:30:08.790 --> 00:30:15.350
+power of that. Yes. And many people are and what Tony talks about people that are there's
+
+00:30:15.350 --> 00:30:20.150
+that community is there that that textbook definition there, but they don't really care
+
+00:30:20.150 --> 00:30:27.110
+about leveraging the power of that community. And I think in knowledge work, you have to leverage
+
+00:30:27.110 --> 00:30:35.700
+the power of your community. If you are not learning constantly in your role, perhaps you are
+
+00:30:35.700 --> 00:30:42.180
+doing the wrong thing. Yeah, I'm going to just say just two points quick and then I'll let you
+
+00:30:42.180 --> 00:30:49.080
+have the final word. Sure, you will. All right. Number one, and when you start with this, it's
+
+00:30:49.080 --> 00:30:53.880
+going to be a spider thing for sure. Right? Because what you have to do is change people's
+
+00:30:53.880 --> 00:30:59.640
+behavior and they're not going to do it naturally. You have to gently guide the expected behavior,
+
+00:30:59.640 --> 00:31:04.280
+which means you be proactive and clear on the principles and what you're looking to see.
+
+00:31:05.240 --> 00:31:11.160
+And you incentivize it. Now, incentivization doesn't mean you give bonuses for people who
+
+00:31:11.160 --> 00:31:17.320
+share because you're going to get the wrong behavior then. But praise goes a long way.
+
+00:31:18.420 --> 00:31:26.440
+The second thing, as a leader, so I've been doing this for a long time. So I know how to
+
+00:31:27.780 --> 00:31:37.990
+get new ideas, right? We've quoted Johnson repeatedly. New ideas come from old ideas
+
+00:31:37.990 --> 00:31:44.950
+getting together. This is, in addition to knowledge sharing, this is a huge value out
+
+00:31:44.950 --> 00:31:54.710
+in community. But brainstorming of this sort in a community fashion is not second nature to most
+
+00:31:54.710 --> 00:32:00.790
+people. While we're on Johnson, there's a relevant quote here from the same book. Chance favors
+
+00:32:00.790 --> 00:32:08.610
+the connected mind. For sure. And just like shivers and that's like I want to make a poster.
+
+00:32:09.170 --> 00:32:14.130
+This is why community is important. Chance favors the connected mind. So one of the things
+
+00:32:14.850 --> 00:32:23.030
+there's one of my very favorite techniques on this that I've blogged on
+
+00:32:24.710 --> 00:32:31.190
+was the speed dating process. Right? You basically look in and this helps the
+
+00:32:31.190 --> 00:32:34.870
+introverts. Like you like, okay, you got two problems. I'm not going to describe it here.
+
+00:32:34.870 --> 00:32:40.390
+We're almost out of time. Find my blog post. Maybe Alan will remember and link to it.
+
+00:32:40.390 --> 00:32:48.610
+Probably not. But here's an example that I went through just yesterday, two days ago.
+
+00:32:48.610 --> 00:32:56.420
+I have a problem. I know how to solve it. But I went and had lunch with a peer of mine
+
+00:32:57.400 --> 00:33:03.080
+who I know is somewhat connected to it. And I said, hey, how would you solve it?
+
+00:33:07.090 --> 00:33:15.700
+Now, one of the things, there's a lot of talent in all of these companies. But there's this
+
+00:33:15.700 --> 00:33:21.540
+phenomenon that's true for everybody. If the only tool you know how to use is a hammer,
+
+00:33:21.540 --> 00:33:28.040
+every problem is going to look like a nail. Now, another way of saying that, that's probably
+
+00:33:28.040 --> 00:33:36.790
+more positive, is you're going to solve the problems with the tools you know how to use.
+
+00:33:37.940 --> 00:33:45.520
+That doesn't mean it's the only way to solve the problem. So I asked him his solution and he said,
+
+00:33:45.520 --> 00:33:52.400
+oh, I would do this, this, and that, and this. And I look back and I'm like, oh my god, your
+
+00:33:52.400 --> 00:33:58.610
+solution not only would solve my problem in about half the time, I would be able to add
+
+00:33:58.610 --> 00:34:06.070
+these additional experiences. That's way better. A simple community kick starting type of thing
+
+00:34:06.070 --> 00:34:12.530
+on this front would be get people together, form them into the roundtables, and say, I want you
+
+00:34:12.530 --> 00:34:18.900
+guys, here's a big problem. How would you guys solve the problem? How would you guys solve the
+
+00:34:18.900 --> 00:34:24.370
+problem? How would you guys solve this problem? Force them to work together towards a common
+
+00:34:24.370 --> 00:34:28.130
+goal. And they're going to connect the dots within that little table. And then when you
+
+00:34:28.130 --> 00:34:33.940
+tell them to present outwards, a bigger, better solution is going to become clear.
+
+00:34:34.960 --> 00:34:40.720
+Which is interesting. You mentioned that because one thing I saw at Microsoft frequently was the
+
+00:34:40.720 --> 00:34:45.600
+opposite of that. They would charter three different teams with solving the same problem
+
+00:34:45.600 --> 00:34:48.800
+and have them compete against each other to see which one could solve it better.
+
+00:34:49.360 --> 00:34:55.360
+And I believe that this solution you just described would, in hindsight for many of us,
+
+00:34:55.920 --> 00:35:01.760
+been a much better solution. I do want to cover at least one sentence. I think it's very important
+
+00:35:01.760 --> 00:35:07.520
+from Tony's question. It's really not even the question part. A lot of talk on the podcast about
+
+00:35:07.520 --> 00:35:13.040
+starting a community for testers and testers not having to report to a tester for a manager.
+
+00:35:14.000 --> 00:35:19.600
+While I do have people in my, I have leads in my org who currently work for,
+
+00:35:20.080 --> 00:35:26.640
+directly for development directors. Very shortly I will have some individual contributors on my team
+
+00:35:26.640 --> 00:35:36.000
+move to work directly for development leads. But you and I both watched at Microsoft. Most teams,
+
+00:35:36.560 --> 00:35:44.420
+most teams did this combined engineering thing, not unified combined. And it didn't go smoothly.
+
+00:35:44.420 --> 00:35:49.620
+Eventually it ironed out. But they didn't go smoothly because the support and infrastructure
+
+00:35:50.340 --> 00:35:56.340
+and community wasn't there to support this. What I think is really important is I fully believe that
+
+00:35:56.340 --> 00:35:59.620
+Well, not only that, even in-house leadership wasn't there to support it.
+
+00:35:59.620 --> 00:36:06.500
+So I fully believe that the most efficient way to make software is to not only not have an
+
+00:36:06.500 --> 00:36:12.500
+independent test team, but to not have a specific person assigned to doing only testing. That person
+
+00:36:12.500 --> 00:36:18.340
+ends up being a bottleneck. I fully subscribe to the theory of constraints. And I believe in the
+
+00:36:19.140 --> 00:36:23.460
+test and quality specialist on the team, just as you'd have any other sort of specialist,
+
+00:36:23.460 --> 00:36:27.220
+they're going to pick up more of those tasks, but they're also going to make everyone around
+
+00:36:27.220 --> 00:36:31.860
+them better testers just as a perf expert or a database expert would do for their feature team.
+
+00:36:32.820 --> 00:36:38.420
+That requires building a community that not only includes a supportive and self-sustaining
+
+00:36:38.420 --> 00:36:44.260
+community that not only includes or largely self-sustaining, not only includes the testing
+
+00:36:44.340 --> 00:36:49.220
+and quality experts, but the development team and the management and the leadership of that team.
+
+00:36:49.220 --> 00:36:52.900
+You know what the key difference actually, the key difference between a combined
+
+00:36:52.900 --> 00:37:00.360
+engineering and unified engineering. What is it? Is it a team of specialists or is it a team of
+
+00:37:00.360 --> 00:37:06.560
+T-shaped? Very much could be. I like that. So the T-shaped persona, you can look it up.
+
+00:37:06.560 --> 00:37:13.830
+We've talked about it before. Lost track of where I was, but you only, I will only move
+
+00:37:13.830 --> 00:37:20.390
+people to move to work for directly for dev leads when the community, the community leadership,
+
+00:37:20.390 --> 00:37:26.290
+the whole infrastructure, the community of community supports it. Even so, I would expect
+
+00:37:26.290 --> 00:37:35.010
+me at some point to get to a place in my career at unity when I have nobody reporting directly to
+
+00:37:35.010 --> 00:37:42.690
+me as far as the HR solid line show, but I will still run that community for some time.
+
+00:37:42.770 --> 00:37:48.050
+It's a very gradual process. Like right now it's a process in transition. It will take me
+
+00:37:48.930 --> 00:37:53.730
+a shorter time in some groups and a longer time in some groups, but I can definitely see a place
+
+00:37:53.730 --> 00:37:59.010
+somewhere down the line, not even going to put a time limit on it, when I could have people
+
+00:37:59.010 --> 00:38:04.450
+work, everyone working for the dev leads. And even at that point, I think there's still some
+
+00:38:04.450 --> 00:38:12.440
+work for me to do to slowly back off on my involvement in making that community run.
+
+00:38:12.440 --> 00:38:18.100
+I think I love a line from Brent. Sometimes he's going to rip off the band-aid, but be careful
+
+00:38:18.100 --> 00:38:24.660
+because sometimes it's a tourniquet. And I think a gradual withdrawal as I watch and make sure
+
+00:38:25.970 --> 00:38:30.130
+the community is going to self-sustain and when it's not dive back in and make sure it is and
+
+00:38:30.130 --> 00:38:34.930
+do a little bit of that bouncing, a little yo-yoing in until I'm positive that community
+
+00:38:34.930 --> 00:38:39.650
+is self-sustaining. And at that point, maybe I'm also transitioning and doing something else
+
+00:38:39.650 --> 00:38:44.610
+at Unity. Things change so fast, I'm sure there will be, if my boss is listening, a role for me.
+
+00:38:47.170 --> 00:38:54.180
+There's another great quote on that in that, hire the people that automate their job away
+
+00:38:55.410 --> 00:39:03.840
+and then give them another job. It's well known. And just connecting the dots from the podcast,
+
+00:39:04.720 --> 00:39:09.680
+I now actually realize with greater clarity, we've always agreed that this is what you're doing
+
+00:39:09.680 --> 00:39:14.800
+and we don't know the timeline. But now with greater clarity, I understand what you're doing.
+
+00:39:16.100 --> 00:39:22.340
+You are using your position as the head of the spider to turn this organ into a starfish.
+
+00:39:22.900 --> 00:39:27.380
+Sure. That's 100% what you're doing. It is crystal clear in my mind now.
+
+00:39:27.940 --> 00:39:34.880
+I'm doing a biology experiment. So the point I want to make clear to Tony and anyone else
+
+00:39:34.880 --> 00:39:41.360
+listening, thinking about, oh, A, B testing says, and modern testing says we should have all of our
+
+00:39:42.240 --> 00:39:53.670
+testers report to development leads. While true, kind of, only make that change when the community
+
+00:39:53.670 --> 00:39:59.350
+and the leadership and when the organization is ready for that. And your job as a leader
+
+00:39:59.350 --> 00:40:04.470
+is to help make the team ready for that and be successful in doing that.
+
+00:40:04.470 --> 00:40:10.630
+I love this metaphor. I'm sorry, because I now actually realize the problem with even greater
+
+00:40:10.630 --> 00:40:17.440
+clarity, because if you're busy trying to remove the head and transform into a starfish,
+
+00:40:17.440 --> 00:40:25.600
+it does not help your, your, we'll call it legs. If they move from you to a new spider.
+
+00:40:26.690 --> 00:40:30.900
+Yes. So I think we're going to dive into this a little bit more.
+
+00:40:30.900 --> 00:40:38.420
+Send us some questions on Twitter, Alan Page or Brent M Jensen, or comment to on the blog post
+
+00:40:38.420 --> 00:40:46.180
+website or join our Slack channel, one of the three dot slack.com and we'll answer your questions.
+
+00:40:46.180 --> 00:40:49.540
+We got to wrap it up. Thank you for listening. Once again, I'm Alan.
+
+00:40:49.540 --> 00:40:50.900
+I'm Brett and we'll see you next time.
+

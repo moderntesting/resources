@@ -1,0 +1,2825 @@
+WEBVTT
+
+00:00:03.380 --> 00:00:08.460
+Welcome to A.B.E. testing podcast, your modern testing podcast.
+
+00:00:08.460 --> 00:00:14.580
+Your hosts, Alan and Brent, will be here to guide you through topics on testing, leadership,
+
+00:00:14.580 --> 00:00:17.220
+agile, and anything else that comes to mind.
+
+00:00:17.220 --> 00:00:20.030
+Now, on with the show.
+
+00:00:20.030 --> 00:00:21.190
+Hello everybody.
+
+00:00:21.190 --> 00:00:22.190
+We are back.
+
+00:00:22.190 --> 00:00:25.300
+Uh, Brent, say hi.
+
+00:00:25.300 --> 00:00:30.860
+And those of you that listened to episode 173, which seems like forever ago, probably two
+
+00:00:30.860 --> 00:00:34.460
+years ago, we have the return of D'igna.
+
+00:00:34.460 --> 00:00:36.060
+Oh my gosh.
+
+00:00:36.060 --> 00:00:38.100
+I didn't ask her to repeat her first.
+
+00:00:38.100 --> 00:00:39.100
+D'igna Bieda?
+
+00:00:39.100 --> 00:00:40.100
+How close am I?
+
+00:00:40.100 --> 00:00:42.320
+Yes, you are on point, Alan.
+
+00:00:42.320 --> 00:00:43.320
+All right.
+
+00:00:43.320 --> 00:00:45.320
+D'igna, there you go.
+
+00:00:45.320 --> 00:00:47.680
+Well, welcome back to A.B. testing.
+
+00:00:47.680 --> 00:00:49.760
+We are honored to have you here.
+
+00:00:49.760 --> 00:00:53.240
+It's like you never left, but a lot has happened since then.
+
+00:00:53.240 --> 00:00:54.240
+I know.
+
+00:00:54.240 --> 00:00:56.560
+I'm stuck to be here today with y'all.
+
+00:00:56.560 --> 00:00:57.560
+We're excited.
+
+00:00:58.360 --> 00:01:01.520
+We're going to get right into it.
+
+00:01:01.520 --> 00:01:05.570
+One, just super honored to have you here.
+
+00:01:05.570 --> 00:01:10.690
+You know, we have, as you know, we have only three listeners and when we get someone actually
+
+00:01:10.690 --> 00:01:17.210
+requesting to be on our podcast, it's especially someone who actually is smart and knows what
+
+00:01:17.210 --> 00:01:18.210
+they're doing.
+
+00:01:18.210 --> 00:01:19.210
+I feel very honored.
+
+00:01:19.210 --> 00:01:20.210
+So it's great to have you here.
+
+00:01:20.210 --> 00:01:23.210
+I mean, I feel confused, right?
+
+00:01:24.340 --> 00:01:29.340
+Our podcast, smart person, I'm like, ow, what's going on?
+
+00:01:29.340 --> 00:01:34.340
+Hey, we can fix that with how we're about to talk in a moment.
+
+00:01:34.340 --> 00:01:35.340
+We are.
+
+00:01:35.340 --> 00:01:36.340
+We are.
+
+00:01:36.340 --> 00:01:41.420
+And just as an aside for our listeners, Brett sounds a little distorted now.
+
+00:01:41.420 --> 00:01:43.340
+I think that should be fixed when we get the audio.
+
+00:01:43.340 --> 00:01:46.820
+So I'm not going to worry too much about it, but we're going to get started.
+
+00:01:46.820 --> 00:01:49.620
+So D'igna was just holding up a book.
+
+00:01:50.160 --> 00:01:51.160
+Dun dun dun.
+
+00:01:51.320 --> 00:01:59.000
+It's a book called Brain Refactor with a very long, a very long subtitle that I did not
+
+00:01:59.000 --> 00:02:01.200
+memorize and nor can I read on the screen.
+
+00:02:01.200 --> 00:02:03.400
+But OK, let me read it for you.
+
+00:02:03.400 --> 00:02:04.280
+Let me read it for you.
+
+00:02:04.280 --> 00:02:05.280
+Yes, please.
+
+00:02:05.280 --> 00:02:12.640
+It says optimize your internal code to thrive in tech and engineering and get more success,
+
+00:02:12.640 --> 00:02:17.120
+fulfillment, money, opportunities, impact and growth.
+
+00:02:17.120 --> 00:02:19.800
+Because that's what you get when you refactor your brain.
+
+00:02:19.800 --> 00:02:25.520
+And we talked about this concept a little bit last time when we talked, but now you've
+
+00:02:25.520 --> 00:02:28.320
+refined it and expanded or written a whole book about it.
+
+00:02:28.320 --> 00:02:31.320
+But I'm just going to ask a question.
+
+00:02:31.320 --> 00:02:33.240
+I think I know the answer to it, but I want you to answer it.
+
+00:02:33.240 --> 00:02:38.520
+So what inspired you to draw these parallels between maybe we didn't talk about this
+
+00:02:38.520 --> 00:02:47.850
+last time, the parallels between programming and the brain?
+
+00:02:47.850 --> 00:02:51.280
+It seems so obvious to me now.
+
+00:02:51.280 --> 00:02:58.000
+And I felt like it's not really a common perspective that people have.
+
+00:02:58.000 --> 00:03:03.760
+But by having this perspective of your brain being essentially kind of like a product that
+
+00:03:03.760 --> 00:03:08.760
+has software that you can just update whenever things are not working the way you'd want
+
+00:03:08.760 --> 00:03:16.820
+them to be makes it so easy and fast to refactor and deploy changes, right?
+
+00:03:16.820 --> 00:03:19.580
+And then see better outcomes.
+
+00:03:19.580 --> 00:03:25.870
+So in my career, when I think about what I always wanted to do, for some reason I was
+
+00:03:25.870 --> 00:03:27.470
+always chasing impact.
+
+00:03:27.470 --> 00:03:31.670
+And at first I thought if I started robotics and build robots, I'm going to make impact.
+
+00:03:31.670 --> 00:03:34.160
+I'm going to build the future.
+
+00:03:34.160 --> 00:03:40.680
+Then I moved to software engineering because I had programming classes in my robotics curriculum
+
+00:03:40.680 --> 00:03:42.800
+and it paid better.
+
+00:03:42.800 --> 00:03:47.440
+And I thought if I deploy an app and millions of people have it in their hand, I'm going
+
+00:03:47.440 --> 00:03:49.930
+to have an impact.
+
+00:03:49.930 --> 00:03:53.690
+And that felt fun for a moment, for a few years.
+
+00:03:53.690 --> 00:03:54.930
+But then I burned myself out.
+
+00:03:54.930 --> 00:04:00.610
+And then I realized as I was going through therapy sessions to get help with burnout
+
+00:04:00.610 --> 00:04:08.130
+and some other things, I realized that having a conversation with someone who gets what
+
+00:04:08.130 --> 00:04:15.980
+it is that I was going through and could help me change my perspective, that was the
+
+00:04:15.980 --> 00:04:18.020
+impact I was chasing all along.
+
+00:04:18.020 --> 00:04:23.660
+So the therapist had a massive impact on my life and perspective and it quickly improved
+
+00:04:23.660 --> 00:04:25.180
+after just several sessions.
+
+00:04:25.180 --> 00:04:28.340
+And now this is what I do with my coaching clients as a coach, right?
+
+00:04:28.340 --> 00:04:31.900
+Because I moved from programming computers to reprogramming human minds.
+
+00:04:31.900 --> 00:04:34.700
+So essentially, this is a very long answer.
+
+00:04:34.700 --> 00:04:43.940
+No, no, it's a great answer for context because Brent and I also are both fans of getting
+
+00:04:43.940 --> 00:04:45.500
+feedback through therapy.
+
+00:04:45.500 --> 00:04:51.540
+And I have learned indirectly a lot of leadership technique by doing the things my therapist
+
+00:04:51.540 --> 00:04:52.540
+does.
+
+00:04:52.540 --> 00:05:01.780
+Like, I've learned how to get past managing the work and managing the person by using
+
+00:05:01.780 --> 00:05:04.100
+some of the skills I've observed myself.
+
+00:05:04.100 --> 00:05:10.830
+So one of the things I talk about a lot is just it's so important to reflect and think
+
+00:05:10.830 --> 00:05:11.830
+about what you've done.
+
+00:05:11.830 --> 00:05:16.270
+A lot of head nodding as I was reading through some of this stuff, just thinking about, and
+
+00:05:16.270 --> 00:05:17.590
+I'm going to get into a whole bunch of it.
+
+00:05:17.590 --> 00:05:21.910
+I don't want to jump around too much, but just a whole bunch of thinking about what you're
+
+00:05:21.910 --> 00:05:28.430
+doing and being purposeful about how you're approaching the work and not just doing the
+
+00:05:28.430 --> 00:05:29.430
+work.
+
+00:05:29.430 --> 00:05:30.430
+And I love that you brought up burnout.
+
+00:05:30.430 --> 00:05:32.140
+Again, I'm going to bring that up again in a minute.
+
+00:05:32.140 --> 00:05:35.540
+Brent, did you want to add on that before I go on to the hard stuff?
+
+00:05:35.540 --> 00:05:41.620
+Yeah, no, there's a couple of things that what D'Agna said reminds me of, right?
+
+00:05:43.420 --> 00:05:52.150
+Yes, years ago when I was a metal manager, I'm a frontline manager now, but years ago,
+
+00:05:52.150 --> 00:05:58.910
+one of my leads came to me and she said, I never met someone that was as good with technical
+
+00:05:58.910 --> 00:06:00.710
+problems as with people problems.
+
+00:06:00.710 --> 00:06:06.270
+Because normally your manager, they're either a people person or they're a tech person.
+
+00:06:06.270 --> 00:06:11.090
+And I said, thank you, that is actually something I strive for.
+
+00:06:11.090 --> 00:06:13.330
+And I said, would you like to know my secret?
+
+00:06:13.330 --> 00:06:15.970
+And of course, she said yes.
+
+00:06:15.970 --> 00:06:20.570
+And I said, I don't see them as separate problems.
+
+00:06:20.570 --> 00:06:25.410
+The only difference between the problems is just one thing.
+
+00:06:25.410 --> 00:06:30.600
+If it's a code problem, I can put any programmer on it to fix it.
+
+00:06:30.600 --> 00:06:37.160
+If it's a people problem, there's only one programmer that I can assign to fix it.
+
+00:06:37.160 --> 00:06:40.440
+And that person has to be motivated to do so.
+
+00:06:40.440 --> 00:06:44.910
+So I spend my job trying to convince that programmer to fix it.
+
+00:06:44.910 --> 00:06:52.990
+And for those who aren't following along, the programmer is whoever is having, it's
+
+00:06:52.990 --> 00:06:57.750
+the brain of the person who is having difficulties moving forward.
+
+00:06:57.750 --> 00:07:05.260
+And then on impact, I thought this is where D'Agna was going to go, but on impact, right?
+
+00:07:05.260 --> 00:07:17.290
+I learned many years ago that I will never provide even medium to long term impact on
+
+00:07:17.290 --> 00:07:20.180
+any of the engineering tasks that I do.
+
+00:07:20.180 --> 00:07:24.510
+My impact is going to be through the people I train.
+
+00:07:24.510 --> 00:07:35.900
+Now, just as an aside, I did do an automation years ago and that thing lasted close to 15
+
+00:07:35.900 --> 00:07:36.900
+years.
+
+00:07:36.900 --> 00:07:40.020
+But now that's dead.
+
+00:07:40.020 --> 00:07:47.010
+And that type of automation, it usually gets rotated through every three to five years.
+
+00:07:47.010 --> 00:07:50.370
+So the fact that it survived that long was fantastic.
+
+00:07:50.370 --> 00:07:56.250
+But 10 years from now, no one's going to remember the data science or the code that
+
+00:07:56.250 --> 00:07:59.810
+I wrote today because we're changing things too fast.
+
+00:07:59.810 --> 00:08:05.050
+But the people I pissed off or the people who view me as their favorite manager ever,
+
+00:08:05.050 --> 00:08:08.470
+they are going to remember me.
+
+00:08:08.470 --> 00:08:13.890
+That's who I'm impacting.
+
+00:08:13.890 --> 00:08:14.890
+Yeah.
+
+00:08:14.890 --> 00:08:22.330
+So it's funny, just today for my Five for Friday series on angerweasel.com, I read
+
+00:08:22.330 --> 00:08:31.310
+an article, I posted about an article, talked about how we should pay our engineers to stay,
+
+00:08:31.310 --> 00:08:32.310
+don't let them leave.
+
+00:08:32.310 --> 00:08:37.050
+And they brought up a point that people who have been at a company a long time know a
+
+00:08:37.050 --> 00:08:40.530
+lot about execution at that company should pay to recruit them.
+
+00:08:40.530 --> 00:08:47.490
+But while I agree with that part mostly, I think a lot of people equate years in the
+
+00:08:47.490 --> 00:08:49.690
+field to how much they should be getting paid.
+
+00:08:49.690 --> 00:08:50.770
+I've been doing this for 20 years.
+
+00:08:50.770 --> 00:08:53.370
+I should make the same as other people making 20 years, but it's not.
+
+00:08:53.370 --> 00:08:55.050
+People progress differently.
+
+00:08:55.050 --> 00:08:57.730
+And one of the things you talk about, you brought it up in the introduction a little
+
+00:08:57.730 --> 00:09:03.170
+bit too, is people get stuck in their career despite being deeply technical and being
+
+00:09:03.170 --> 00:09:06.690
+able to be a great coder.
+
+00:09:06.690 --> 00:09:11.330
+What are some of the common mental bugs you've seen in engineers that hold them back?
+
+00:09:11.330 --> 00:09:12.650
+Yeah.
+
+00:09:12.650 --> 00:09:16.330
+I like to call them either bugs or inefficiencies.
+
+00:09:16.330 --> 00:09:20.330
+And again, therapy kind of works like a debugging session, right?
+
+00:09:20.330 --> 00:09:26.250
+You jump into that mental code and you start understanding, except it's not line after line,
+
+00:09:26.250 --> 00:09:27.250
+file after file.
+
+00:09:27.250 --> 00:09:30.650
+It's more like memory after memory, belief after belief.
+
+00:09:30.650 --> 00:09:33.290
+And that's what you're debugging there, right?
+
+00:09:33.290 --> 00:09:40.000
+So Brent, just piggybacking on what you said, having impact through people rather than products,
+
+00:09:40.000 --> 00:09:45.400
+in the way that I see things, you had put some programming in their minds and that's
+
+00:09:45.400 --> 00:09:47.040
+why it's lasting.
+
+00:09:47.040 --> 00:09:51.040
+Those lines of code that were probably not going to be refactored anytime soon in their
+
+00:09:51.040 --> 00:09:53.040
+mental legacy code base.
+
+00:09:53.040 --> 00:09:58.840
+But what I've seen over and over and over again in my own career as an engineer, as
+
+00:09:58.840 --> 00:10:04.120
+well as the clients that I currently coach, a lot of the time there are four common obstacles
+
+00:10:04.120 --> 00:10:09.320
+that stop you from getting that impact, getting that promotion, getting that success, however
+
+00:10:09.320 --> 00:10:13.040
+you want to frame it, that you're chasing.
+
+00:10:13.040 --> 00:10:19.380
+And that's imposter syndrome, burnout, trouble dealing with other people, and self-marketing
+
+00:10:19.380 --> 00:10:20.380
+struggles.
+
+00:10:20.380 --> 00:10:26.980
+So in my book, I essentially dive into how brain works similar to code and how you can
+
+00:10:26.980 --> 00:10:31.300
+apply your programming skills to refactor whatever is not working.
+
+00:10:31.300 --> 00:10:36.620
+And then there are remaining chapters that talk specifically about those obstacles and
+
+00:10:36.620 --> 00:10:39.860
+case studies of my clients who had overcome them.
+
+00:10:39.860 --> 00:10:45.100
+So again, it's imposter syndrome, burnout, trouble dealing with other people, and self-marketing
+
+00:10:45.100 --> 00:10:46.100
+struggles.
+
+00:10:46.100 --> 00:10:49.180
+And when it comes to trouble dealing with other people, because we were just talking
+
+00:10:49.180 --> 00:10:55.460
+about that too, how sometimes you need the person who has the issue just upscale,
+
+00:10:55.460 --> 00:11:00.380
+like update something in their programming so that they can get past their problem.
+
+00:11:00.380 --> 00:11:09.300
+I see a lot of the time that in our engineering education, we tend to overvalue technical skills.
+
+00:11:09.300 --> 00:11:12.460
+And then the people skills are completely dismissed.
+
+00:11:12.460 --> 00:11:20.060
+Like, people, but I mean, as engineers, we create products for other people and with
+
+00:11:20.060 --> 00:11:23.900
+other people, like even if you're the only developer on the team.
+
+00:11:23.900 --> 00:11:26.860
+So like the people aspect is just inescapable.
+
+00:11:26.860 --> 00:11:33.380
+And that kind of foundational piece of knowledge is missing from engineering agenda.
+
+00:11:33.380 --> 00:11:34.380
+Right?
+
+00:11:34.380 --> 00:11:35.380
+Wouldn't you agree?
+
+00:11:35.380 --> 00:11:36.380
+I would.
+
+00:11:36.380 --> 00:11:47.510
+I actually even take it further because I have a hypothesis around people who are introverted
+
+00:11:47.510 --> 00:11:51.430
+or have a preference to sort of avoid people.
+
+00:11:51.430 --> 00:12:01.670
+I think it stems from personal issues that they are attracted to engineering type aspects.
+
+00:12:01.670 --> 00:12:08.630
+And then when they try to grow, right, they do hit that wall that you're talking about
+
+00:12:08.630 --> 00:12:15.710
+because they've spent their whole life probably successfully minimizing people in it.
+
+00:12:15.710 --> 00:12:22.660
+And then in order to grow, I mean, you just can't avoid it.
+
+00:12:22.660 --> 00:12:29.260
+So I have a question I didn't plan to ask, but I totally believe, I totally agree with
+
+00:12:29.260 --> 00:12:32.940
+everything you said, D'Agna.
+
+00:12:32.940 --> 00:12:33.940
+I do a lot of interviewing.
+
+00:12:33.940 --> 00:12:35.420
+I always, I threw out my whole career.
+
+00:12:35.420 --> 00:12:38.900
+I've probably interviewed thousands of people and I always like to look for the people
+
+00:12:38.900 --> 00:12:40.260
+who are hungry.
+
+00:12:40.260 --> 00:12:46.860
+And these days, especially human, those human skills, those abilities to deal with people,
+
+00:12:46.860 --> 00:12:52.380
+because especially now compared to early in my career, the tech changes so fast, you're
+
+00:12:52.380 --> 00:12:55.290
+always going to have to learn new tech.
+
+00:12:55.290 --> 00:12:58.850
+And I wonder if it's like, are we hiring the wrong people?
+
+00:12:58.850 --> 00:13:04.730
+Like, I'm going to go off on a tangent here because I have been referring to Daniel Pink's
+
+00:13:04.730 --> 00:13:08.450
+A Whole New Mind, the book he wrote, but what are the books he wrote before drive and
+
+00:13:08.450 --> 00:13:09.450
+drive is fantastic.
+
+00:13:09.450 --> 00:13:10.450
+A whole new mind is great.
+
+00:13:10.450 --> 00:13:15.690
+But he talks about the fact that the right brain thinker, the creative thinker, the people
+
+00:13:15.690 --> 00:13:20.610
+that and those people have some people skills, but the right brain thinkers are going to
+
+00:13:20.610 --> 00:13:23.250
+be the leaders in knowledge work of the future.
+
+00:13:23.250 --> 00:13:27.970
+And at the time it was like, eh, nice idea, nice little story here, but I'm kind of seeing
+
+00:13:27.970 --> 00:13:29.930
+it become more true.
+
+00:13:29.930 --> 00:13:37.030
+So should we, uh, I'm going to ask a weird question because the, the answer is maybe
+
+00:13:37.030 --> 00:13:39.410
+not as obvious as I want it to be.
+
+00:13:39.410 --> 00:13:44.890
+Should we stop, should we hire people on their ability to work successfully and influence
+
+00:13:44.890 --> 00:13:46.610
+others?
+
+00:13:46.610 --> 00:13:54.290
+But most of our emphasis on that and just rely on the fact we can teach them tech because
+
+00:13:54.290 --> 00:13:59.850
+to me, that feels a little easier than trying to take these tech people and teach them people
+
+00:13:59.850 --> 00:14:04.910
+skills like which, which do you think is harder?
+
+00:14:04.910 --> 00:14:05.910
+That's a difficult question.
+
+00:14:05.910 --> 00:14:08.430
+I'm not going to lie, Alan, there's like so many layers.
+
+00:14:08.430 --> 00:14:12.550
+I knew it was when I asked, but I couldn't help but think it.
+
+00:14:12.550 --> 00:14:15.630
+So let me answer indirectly.
+
+00:14:15.630 --> 00:14:20.790
+And let me tell you this, a lot of bootcamp graduates who have former careers that are
+
+00:14:20.790 --> 00:14:26.950
+not very analytical as I work with them, I see them progress very quickly because they're
+
+00:14:26.950 --> 00:14:32.190
+smart enough and dangerous enough to know what they're doing in their technical skillset,
+
+00:14:32.190 --> 00:14:39.350
+but they have this balance of valuing technical and the non-technical, the soft, the people
+
+00:14:39.350 --> 00:14:42.070
+skills kind of on the same level.
+
+00:14:42.070 --> 00:14:47.310
+And that happened to me in my career too, believe it or not, when I was this subject
+
+00:14:47.310 --> 00:14:53.210
+matter expert, having years of experience, being really technical, praised for the quality
+
+00:14:53.210 --> 00:14:55.270
+of my engineering work.
+
+00:14:55.270 --> 00:14:59.270
+And I got passed over for a promotion for someone who wasn't even a bootcamp grab.
+
+00:14:59.270 --> 00:15:01.310
+He was a self-taught dev.
+
+00:15:01.310 --> 00:15:04.790
+And the reason he got the promotion that I wanted to a team league position, because
+
+00:15:04.790 --> 00:15:06.290
+again, he was a fast learner.
+
+00:15:06.290 --> 00:15:13.030
+He could figure out how to solve problems, but he had this master collaborators mindset.
+
+00:15:13.030 --> 00:15:17.570
+And I was more leaning towards like being a lone wolf, you know?
+
+00:15:17.570 --> 00:15:23.290
+And he's like, okay, you can be great at solving engineering problems.
+
+00:15:23.290 --> 00:15:28.090
+And if that's all you ever want to do, that's fine, but that doesn't help your
+
+00:15:28.090 --> 00:15:29.410
+career.
+
+00:15:29.410 --> 00:15:37.410
+So to answer your question, I feel like what's important is to bring that balance in perspective
+
+00:15:37.410 --> 00:15:39.600
+in.
+
+00:15:39.600 --> 00:15:41.720
+And I don't know where does it start.
+
+00:15:41.720 --> 00:15:43.200
+Does it start with college?
+
+00:15:43.200 --> 00:15:47.400
+Does it start with hiring more bootcamp and self-taught devs?
+
+00:15:47.400 --> 00:15:50.080
+And with AI right now that can create code for you.
+
+00:15:50.080 --> 00:15:54.520
+I mean, who knows where the future is going to take us, right?
+
+00:15:54.520 --> 00:16:04.080
+But the reality is, again, we're circling back to the fact that people need people skills,
+
+00:16:04.080 --> 00:16:07.520
+even if they work on hard technical problems.
+
+00:16:07.520 --> 00:16:11.480
+Even if you have to do a presentation and explain what it is that you just deployed
+
+00:16:11.480 --> 00:16:16.560
+in this amazing new feature, or onboard a new person, or help them understand the
+
+00:16:16.560 --> 00:16:21.920
+code base that you created so they can take over your work and carry on and probably
+
+00:16:21.920 --> 00:16:25.140
+refactor every line of code that you ever written.
+
+00:16:25.140 --> 00:16:29.340
+You have to be able to have those people skills in order to pass all that knowledge that's
+
+00:16:29.340 --> 00:16:33.280
+in your head to theirs.
+
+00:16:33.280 --> 00:16:39.930
+So I would say that we have to figure out a way to bring that balance back.
+
+00:16:39.930 --> 00:16:43.690
+And that's kind of what my book talks about too.
+
+00:16:43.690 --> 00:16:48.990
+So I'm hoping to have impact throughout my book now, because I feel like it can change
+
+00:16:48.990 --> 00:16:54.270
+people's perspective in a way that could potentially shape the future of the tech
+
+00:16:54.270 --> 00:16:57.420
+environment of the tech industry.
+
+00:16:57.420 --> 00:16:58.660
+I agree.
+
+00:16:58.660 --> 00:17:02.620
+I think there's so many questions to ask.
+
+00:17:02.620 --> 00:17:07.260
+I do want to mention that I've hired a bunch of bootcamp grads.
+
+00:17:07.260 --> 00:17:12.220
+I have one on my team now, former physical therapist, crushing it as a developer.
+
+00:17:12.220 --> 00:17:13.220
+Right?
+
+00:17:13.220 --> 00:17:14.220
+I know.
+
+00:17:14.220 --> 00:17:15.220
+I know.
+
+00:17:15.220 --> 00:17:22.860
+Yeah, I really like it because they have such a different perspective is so great.
+
+00:17:23.860 --> 00:17:26.820
+And at Microsoft when I was there, I was called an as appropriate interviewer.
+
+00:17:26.820 --> 00:17:32.140
+It's a story I've told a couple of times on the show.
+
+00:17:32.140 --> 00:17:34.220
+I was the last interviewer in the group.
+
+00:17:34.220 --> 00:17:40.050
+So many programmers, like pedigrees that I couldn't even approach, schools I could not
+
+00:17:40.050 --> 00:17:41.550
+get into.
+
+00:17:41.550 --> 00:17:47.150
+I talked to them and they know everything about regurgitating algorithms, but they can't
+
+00:17:47.150 --> 00:17:52.550
+communicate or hold a conversation or think even.
+
+00:17:52.550 --> 00:17:53.590
+So it's just weird.
+
+00:17:53.590 --> 00:17:56.910
+So I like the idea of looking at the brain.
+
+00:17:56.910 --> 00:18:01.430
+Brent, I have lots more questions, but you want to say something.
+
+00:18:01.430 --> 00:18:08.260
+Yeah, they like, I think we're kind of talking about street smart versus book smart.
+
+00:18:08.260 --> 00:18:09.260
+Right.
+
+00:18:09.260 --> 00:18:11.940
+And like we absolutely need to balance.
+
+00:18:11.940 --> 00:18:15.620
+Like I was thinking about the other angle, right?
+
+00:18:15.620 --> 00:18:19.660
+People who have really strong people skills, right?
+
+00:18:19.660 --> 00:18:23.060
+The, there is a problem with them as well.
+
+00:18:23.060 --> 00:18:26.980
+They don't want to be in their office writing code.
+
+00:18:26.980 --> 00:18:29.460
+They hate that isolation.
+
+00:18:29.460 --> 00:18:32.940
+Like they would, they would prefer to be with others.
+
+00:18:32.940 --> 00:18:39.020
+And so to me, I think, yeah, some balance is necessary.
+
+00:18:39.020 --> 00:18:47.840
+And quite honestly, like I do think that if you are at either the extreme, the way the
+
+00:18:47.840 --> 00:18:52.920
+industry is going, like, I don't know where, Dagman will fall on this one, but I'll say
+
+00:18:52.920 --> 00:19:00.030
+like the way the industry is going, if you're at either of the extreme, it's probably not
+
+00:19:00.030 --> 00:19:06.300
+an environment where you're going to thrive because you do have to balance, right?
+
+00:19:06.300 --> 00:19:12.480
+It's it's, you're a great person, but it'll be like a fish trying to live in the desert.
+
+00:19:12.480 --> 00:19:13.540
+Yeah.
+
+00:19:13.540 --> 00:19:21.060
+I don't know where you're going next, but I, I, I quickly wrote down in Dagman, I appreciate
+
+00:19:21.060 --> 00:19:24.820
+you repeating it twice because I did not write it down fast enough.
+
+00:19:24.820 --> 00:19:31.420
+On your list of four imposter syndrome, self-marketing struggles, burnout, and trouble dealing with
+
+00:19:31.420 --> 00:19:32.420
+other people.
+
+00:19:32.420 --> 00:19:38.570
+Um, I know which one blocks me.
+
+00:19:38.570 --> 00:19:44.770
+I'm curious about you before I share which one blocks me.
+
+00:19:44.770 --> 00:19:46.530
+Well, that's a good question.
+
+00:19:46.530 --> 00:19:48.770
+You are jumping ahead a little bit, but I want to go into that.
+
+00:19:48.770 --> 00:19:50.930
+Let me think about that for just a second.
+
+00:19:50.930 --> 00:19:51.930
+Okay.
+
+00:19:52.010 --> 00:19:57.250
+I have experienced burnout before and I kind of learned how to deal with that.
+
+00:19:57.250 --> 00:20:02.090
+And it was, there was a bunch of factors there and, and, um, I know how to recognize it when
+
+00:20:02.090 --> 00:20:03.090
+it's happening.
+
+00:20:03.090 --> 00:20:07.860
+Um, I've dealt with all four.
+
+00:20:07.860 --> 00:20:12.420
+I think I have dealt with all four, probably the one I struggle with the most is self-marketing
+
+00:20:12.420 --> 00:20:13.420
+struggles.
+
+00:20:13.420 --> 00:20:15.980
+And that's the same with me.
+
+00:20:15.980 --> 00:20:21.580
+Cause I, I just, I feel like I'm just going to do a good job.
+
+00:20:21.580 --> 00:20:23.140
+My work should speak for itself.
+
+00:20:23.140 --> 00:20:25.140
+If you don't recognize it, I don't care.
+
+00:20:25.140 --> 00:20:26.140
+100%, 100%.
+
+00:20:26.140 --> 00:20:31.500
+If I do my job right, it speaks for itself.
+
+00:20:31.500 --> 00:20:35.140
+And if it doesn't speak for itself, I'm not doing my job right.
+
+00:20:35.140 --> 00:20:39.160
+Dad, no, where do I have it wrong?
+
+00:20:39.160 --> 00:20:40.880
+That's such a huge balloony.
+
+00:20:40.880 --> 00:20:49.140
+I mean, let me tell you if that was the case, I would have had that team lead job
+
+00:20:49.140 --> 00:20:57.540
+I wanted like that, you know, because, uh, no, no, sorry, you wouldn't because what you
+
+00:20:57.540 --> 00:21:02.340
+told us is that the other guy was better with people and you were good with tech.
+
+00:21:02.340 --> 00:21:03.340
+Right.
+
+00:21:03.340 --> 00:21:05.780
+And a manager is going to look at both things.
+
+00:21:05.780 --> 00:21:06.870
+Yes.
+
+00:21:06.870 --> 00:21:07.870
+Okay.
+
+00:21:07.870 --> 00:21:09.160
+All right.
+
+00:21:09.160 --> 00:21:10.160
+All right.
+
+00:21:10.160 --> 00:21:11.160
+Go ahead.
+
+00:21:11.160 --> 00:21:12.160
+To baloney.
+
+00:21:12.160 --> 00:21:13.160
+Yes.
+
+00:21:13.160 --> 00:21:14.160
+Baloney.
+
+00:21:14.280 --> 00:21:20.360
+So in the book, I give this a fun example of like, imagine if you were a painter instead
+
+00:21:20.360 --> 00:21:27.970
+of an engineer, and instead of creating a piece of code, you're creating a painting, a piece
+
+00:21:27.970 --> 00:21:30.210
+of a painting, right?
+
+00:21:30.210 --> 00:21:34.610
+And say that the tools that you have are new tools because you haven't played with them
+
+00:21:34.610 --> 00:21:35.610
+before.
+
+00:21:35.610 --> 00:21:39.850
+So like the brush is not comfortable to hold and maybe the paint dries too fast.
+
+00:21:39.850 --> 00:21:41.970
+So you're not able to paint as fast.
+
+00:21:41.970 --> 00:21:46.970
+And then there are some meetings that you haven't seen foreseen in your company and
+
+00:21:46.970 --> 00:21:50.570
+they just blow up your deadlines and timelines and everything seems to be moving.
+
+00:21:50.570 --> 00:21:53.090
+And then sprint comes to an end.
+
+00:21:53.090 --> 00:22:02.900
+And whenever you deliver what you were meant to deliver, um, I'm trying to figure out
+
+00:22:02.900 --> 00:22:06.500
+how to explain, cause I just realized that I'm not going to, like not everyone will
+
+00:22:06.500 --> 00:22:10.020
+see the visual of the two paintings.
+
+00:22:10.020 --> 00:22:17.340
+So basically I put in the book, Van Gogh's painting of sunflowers and a kids created
+
+00:22:17.340 --> 00:22:22.420
+version of that exact same painting, right?
+
+00:22:22.420 --> 00:22:29.000
+With the technical skills, whether you create the Van Gogh's version or the five year old's
+
+00:22:29.000 --> 00:22:36.440
+version of that same painting, nobody's going to know unless they dive into the code,
+
+00:22:36.440 --> 00:22:39.820
+unless it causes business issues.
+
+00:22:39.820 --> 00:22:45.900
+So as long as that work that you're delivering is staying somewhat undetected and nobody's
+
+00:22:45.900 --> 00:22:50.420
+like paying attention and looking at your hands in peer programming, for example, people
+
+00:22:50.420 --> 00:22:52.460
+are just not going to be aware.
+
+00:22:52.460 --> 00:22:58.340
+And then even if people are going to be aware, they are most likely to be the ones who code
+
+00:22:58.340 --> 00:23:05.040
+with you and don't necessarily have an impact or say over you getting that promotion,
+
+00:23:05.040 --> 00:23:06.440
+getting that salary increase.
+
+00:23:06.440 --> 00:23:08.120
+So they are not the decision makers.
+
+00:23:08.120 --> 00:23:12.560
+If you want to make sure that the decision makers know, you have to be able to talk about
+
+00:23:12.560 --> 00:23:18.440
+it because code is not paintings and people don't look at them, don't dive into code most
+
+00:23:18.440 --> 00:23:20.720
+of the time and they just don't understand.
+
+00:23:20.720 --> 00:23:22.200
+So your work is not a painting.
+
+00:23:22.200 --> 00:23:25.900
+It does not speak for itself.
+
+00:23:25.900 --> 00:23:31.060
+Yeah, I'm a little offended about code isn't painting.
+
+00:23:31.060 --> 00:23:35.060
+I kind of reject that notion.
+
+00:23:35.060 --> 00:23:36.940
+My code is art.
+
+00:23:37.700 --> 00:23:40.460
+But no, I'm kidding aside.
+
+00:23:40.460 --> 00:23:44.090
+Ask a salesperson if they see the beauty.
+
+00:23:44.090 --> 00:23:51.330
+No, you've put me into an objective mode, which I find is best for me.
+
+00:23:51.330 --> 00:23:59.050
+Like if I can view myself objectively, then I'm able to talk to myself as if I would
+
+00:23:59.050 --> 00:24:01.050
+have mentee.
+
+00:24:01.810 --> 00:24:09.020
+Yeah, it's like the impact for me, like I haven't cared about a promotion for a long
+
+00:24:09.020 --> 00:24:10.020
+time.
+
+00:24:10.020 --> 00:24:21.460
+What drives me is the opportunities to have larger and larger impact.
+
+00:24:21.460 --> 00:24:27.740
+I am currently a front line manager on more than one occasion.
+
+00:24:27.740 --> 00:24:30.900
+I have VP level scope.
+
+00:24:30.900 --> 00:24:33.620
+I love my job.
+
+00:24:33.620 --> 00:24:42.280
+But that said, I would love to find ways to get more people coming to me with their interesting
+
+00:24:42.280 --> 00:24:45.470
+problems.
+
+00:24:45.470 --> 00:24:51.010
+That's where I view self-marketing struggles because I hate writing.
+
+00:24:51.010 --> 00:24:54.130
+I hate tooting my own horn.
+
+00:24:54.130 --> 00:24:56.370
+I hate all of that.
+
+00:24:56.370 --> 00:25:00.850
+Like for me, the perfect solution would be to hire a PM and go like, hey, this is what
+
+00:25:00.850 --> 00:25:01.850
+my team did.
+
+00:25:01.850 --> 00:25:03.490
+Go write up something nice.
+
+00:25:03.490 --> 00:25:04.940
+Anyway.
+
+00:25:04.940 --> 00:25:07.770
+And that makes sense.
+
+00:25:07.770 --> 00:25:10.930
+Many of us think that way, right?
+
+00:25:10.930 --> 00:25:13.440
+Self-marketing is not natural.
+
+00:25:13.440 --> 00:25:21.950
+I would say it's not, what's the word I'm looking for?
+
+00:25:21.950 --> 00:25:26.130
+I would say it's not fun.
+
+00:25:26.130 --> 00:25:28.050
+Not the way that we're brought up.
+
+00:25:28.050 --> 00:25:33.690
+And not because here, like in my book, I explored this idea of having a merge conflict,
+
+00:25:33.850 --> 00:25:37.450
+right? And it's perfect because it talks about self-marketing struggles in that particular
+
+00:25:37.450 --> 00:25:39.360
+example.
+
+00:25:39.360 --> 00:25:47.470
+Let's say you do want to market yourself better, but in your mind, marketing equates to cheating
+
+00:25:47.470 --> 00:25:51.870
+or lying to people or selling them things they don't even need.
+
+00:25:51.870 --> 00:25:58.910
+So your marketing model, as long as it is close to dishonesty and you believe yourself to
+
+00:25:58.910 --> 00:26:04.830
+be an honest person and you want to work in integrity until you update that marketing
+
+00:26:04.830 --> 00:26:10.630
+model in your own legacy mental code base, you're going to avoid self-marketing.
+
+00:26:10.630 --> 00:26:11.630
+But guess what?
+
+00:26:11.630 --> 00:26:18.010
+Whenever you're able to update the marketing model in your own mind, that will allow you
+
+00:26:18.010 --> 00:26:23.630
+to talk good about yourself in front of other people with integrity of what you believe
+
+00:26:23.630 --> 00:26:24.630
+to be true.
+
+00:26:24.630 --> 00:26:30.030
+And that could potentially increase your impact because if people know the value that you're
+
+00:26:30.030 --> 00:26:35.260
+able to bring to the table brand, they might be like, oh, Brent's my guy.
+
+00:26:35.260 --> 00:26:38.380
+I'm going to go to him because I know he's going to solve my problem, but they're not
+
+00:26:38.380 --> 00:26:44.660
+going to know unless you help educate them about what it is that you bring to the table
+
+00:26:44.660 --> 00:26:47.260
+as a professional.
+
+00:26:47.260 --> 00:26:50.380
+I feel like there's an overlap.
+
+00:26:50.380 --> 00:26:57.460
+I'm curious in your perspective on this, Dagnah, between imposter syndrome and the self-marketing
+
+00:26:57.460 --> 00:27:01.900
+because maybe I don't self-market because I have imposter syndrome.
+
+00:27:01.900 --> 00:27:02.900
+Absolutely.
+
+00:27:02.900 --> 00:27:06.890
+So how does that work together?
+
+00:27:06.890 --> 00:27:13.110
+So the imposter syndrome, the way I see it, it's essentially because I want to differentiate
+
+00:27:13.110 --> 00:27:14.110
+it.
+
+00:27:14.110 --> 00:27:18.120
+I think that sometimes in the tech industry, it's being overused.
+
+00:27:18.120 --> 00:27:23.640
+Other doubts and worry and feeling like you don't know what you're doing is normal, right?
+
+00:27:23.640 --> 00:27:31.720
+As long as it doesn't spiral down and make you stuck or make you not take opportunities
+
+00:27:31.720 --> 00:27:38.570
+or make you step down from a newly acquired position.
+
+00:27:38.570 --> 00:27:46.220
+So the question here is, what do you do when that worry comes up in your own mind?
+
+00:27:46.220 --> 00:27:50.940
+If we were to compare it to a log message, how do you debug it?
+
+00:27:50.940 --> 00:27:54.060
+Do you just let it sit there and bother you?
+
+00:27:54.060 --> 00:28:01.060
+Does it make some routines spiral down and you feel like you're not worthy, like you
+
+00:28:01.060 --> 00:28:06.780
+shouldn't be there, like everybody will know you're a fraud and you lose your job and you
+
+00:28:06.780 --> 00:28:08.500
+shouldn't be doing what it is that you're doing?
+
+00:28:08.500 --> 00:28:10.420
+That's imposter syndrome, right?
+
+00:28:10.420 --> 00:28:15.860
+It's getting to the point that it's preventing you from growth.
+
+00:28:15.860 --> 00:28:21.540
+The alternative to imposter syndrome is just understanding that growth is uncomfortable
+
+00:28:21.540 --> 00:28:24.580
+and you have to go through growing pains.
+
+00:28:24.580 --> 00:28:29.060
+And I have young kids and my four-year-old came to me the other day, he's like, mom,
+
+00:28:29.060 --> 00:28:30.060
+my legs are hurting.
+
+00:28:30.060 --> 00:28:32.290
+I'm like, buddy, you're growing.
+
+00:28:32.290 --> 00:28:33.290
+It's normal.
+
+00:28:33.290 --> 00:28:38.690
+I'm sorry you feel that way, but that's just part of growing, part of growth.
+
+00:28:38.690 --> 00:28:45.850
+Growing pains are natural, but we like to avoid discomfort and pain as a society, right?
+
+00:28:46.810 --> 00:28:49.490
+And does imposter syndrome impact how you market yourself?
+
+00:28:49.490 --> 00:28:55.840
+Of course, but it affects it more from the perspective of what is the model of yourself
+
+00:28:55.840 --> 00:29:02.480
+that you have in your own mind rather than the model of marketing that I was talking about
+
+00:29:02.480 --> 00:29:03.480
+a moment ago.
+
+00:29:03.480 --> 00:29:04.480
+Yeah, yeah.
+
+00:29:04.480 --> 00:29:05.480
+Now I can see that.
+
+00:29:05.480 --> 00:29:09.640
+I think my, and you're absolutely right to bring up the fact that imposter syndrome is
+
+00:29:09.640 --> 00:29:14.760
+overused and really what I was talking, it's just this self-doubt that comes from
+
+00:29:14.760 --> 00:29:18.480
+trying something new or doing something in a different way.
+
+00:29:18.480 --> 00:29:24.600
+I have definitely had those moments of imposter syndrome in my career, but certainly, yeah,
+
+00:29:24.600 --> 00:29:30.400
+certainly the self-marketing is the biggest thing I need to work on.
+
+00:29:30.400 --> 00:29:33.200
+I'm going to reread that chapter.
+
+00:29:33.200 --> 00:29:40.560
+I would like to dive into the brain refactor algorithm.
+
+00:29:41.850 --> 00:29:46.010
+I think it's really fascinating and a really good take on how to approach this.
+
+00:29:46.010 --> 00:29:52.090
+Again, I'm sure about self-reflection, but can you walk through how you came up with that
+
+00:29:52.090 --> 00:29:55.170
+and walk through the different steps of that brain refactor algorithm?
+
+00:29:55.170 --> 00:29:57.040
+Yeah.
+
+00:29:57.040 --> 00:30:03.440
+So, you know, the funny thing about the steps is that I kept doing them with my clients
+
+00:30:03.440 --> 00:30:08.010
+as I was coaching them, but I didn't know that this is what we were doing at the
+
+00:30:08.010 --> 00:30:09.600
+time.
+
+00:30:09.600 --> 00:30:15.230
+So when I sat down to actually write the book and tried to figure out basically reverse
+
+00:30:15.230 --> 00:30:24.260
+engineer my process to then be able to share it in a book content with other people, that's
+
+00:30:24.260 --> 00:30:28.540
+when I was able to kind of name the steps.
+
+00:30:28.540 --> 00:30:34.020
+For the first two steps, well, let me probably, it would be smart to say what the steps
+
+00:30:34.020 --> 00:30:37.880
+are and then dive into the explanation.
+
+00:30:37.880 --> 00:30:42.040
+But essentially, step number one is identifying root causes.
+
+00:30:42.040 --> 00:30:43.720
+And we know that from programming, right?
+
+00:30:43.720 --> 00:30:45.480
+Whenever there's a bug, we do it all the time.
+
+00:30:45.480 --> 00:30:47.320
+That's the first thing that we do.
+
+00:30:47.320 --> 00:30:50.600
+The second step is planning out the refactor.
+
+00:30:50.600 --> 00:30:54.360
+So once you know what's not working, then you want to figure out what kind of code
+
+00:30:54.360 --> 00:30:56.800
+you want to put in that place instead.
+
+00:30:56.800 --> 00:30:57.800
+What is it?
+
+00:30:57.800 --> 00:31:00.210
+How are you trying to fix the issue?
+
+00:31:00.210 --> 00:31:04.370
+In this third step, we want to script new responses.
+
+00:31:04.370 --> 00:31:10.290
+In the fourth step, we build libraries of evidence that support our refactor.
+
+00:31:10.290 --> 00:31:12.970
+And the fifth step is continuously execute.
+
+00:31:12.970 --> 00:31:19.250
+I was really tempted to call it something similar to CICD, but it just didn't feel right.
+
+00:31:19.250 --> 00:31:21.250
+Yeah.
+
+00:31:21.250 --> 00:31:22.250
+I like it.
+
+00:31:22.250 --> 00:31:27.810
+And that first step is something maybe not enough programmers do, just stop and reflect
+
+00:31:27.810 --> 00:31:30.770
+on what went wrong.
+
+00:31:30.770 --> 00:31:35.490
+But as Brian Merrick used to say, maybe an example would be good here.
+
+00:31:35.490 --> 00:31:41.180
+Can you walk through an example of what it would be like to walk through these five steps?
+
+00:31:41.180 --> 00:31:42.580
+Absolutely.
+
+00:31:42.580 --> 00:31:50.120
+So let's say that you have trouble with self-marketing yourself, right?
+
+00:31:50.120 --> 00:31:53.360
+So the first thing you want to identify root causes.
+
+00:31:53.360 --> 00:31:58.000
+You want to figure out, OK, why do I have trouble marketing myself?
+
+00:31:58.000 --> 00:32:00.640
+Is it something that I believe about myself?
+
+00:32:00.640 --> 00:32:03.730
+Or is it something that I believe about marketing?
+
+00:32:03.730 --> 00:32:09.010
+Are there any models in the past that I've observed that led me to act that way?
+
+00:32:09.010 --> 00:32:12.130
+Maybe my parents were really honest and humble.
+
+00:32:12.130 --> 00:32:14.050
+And now I'm trying to just model that behavior.
+
+00:32:14.050 --> 00:32:18.410
+And I'm not even conscious that I'm trying to do that, that I'm just repeating a pattern
+
+00:32:18.410 --> 00:32:22.680
+I've observed over and over and over and over again growing up.
+
+00:32:22.680 --> 00:32:27.720
+Or maybe it's a cultural thing where you grew up in a certain culture that expected
+
+00:32:27.720 --> 00:32:30.440
+you to behave a certain way.
+
+00:32:31.200 --> 00:32:39.320
+You just did because that's what we do as humans who live in tribes and communities and societies.
+
+00:32:39.320 --> 00:32:44.080
+We just try to adhere to those standards so that we can feel like we belong
+
+00:32:44.080 --> 00:32:46.440
+because that's good for our survival.
+
+00:32:46.440 --> 00:32:50.720
+And that's how you would really dive into identifying the root causes.
+
+00:32:50.720 --> 00:32:57.350
+You want to do the debugging of your thinking processes, of your beliefs.
+
+00:32:57.350 --> 00:33:00.550
+Because here's something that most of us never hear.
+
+00:33:00.550 --> 00:33:03.130
+And it's like Psychology 101.
+
+00:33:03.130 --> 00:33:06.480
+Our thoughts are not true.
+
+00:33:06.480 --> 00:33:08.760
+Or at least not all of them are.
+
+00:33:08.760 --> 00:33:13.930
+Although we do assume that they are and we barely ever question them.
+
+00:33:13.930 --> 00:33:19.850
+But the reality is they are artifacts of our lived experiences
+
+00:33:19.850 --> 00:33:25.520
+and those models that we've inherited in our mental legacy code.
+
+00:33:25.520 --> 00:33:28.080
+So as we're going to identify the root causes,
+
+00:33:28.080 --> 00:33:33.160
+we have to first debug and understand where is this all coming from.
+
+00:33:33.160 --> 00:33:37.600
+That's really the step number one.
+
+00:33:37.600 --> 00:33:40.320
+Nice.
+
+00:33:40.320 --> 00:33:45.720
+And then, so if I'm working through this, and this is,
+
+00:33:45.720 --> 00:33:49.040
+I'm just using the podcast for free coaching.
+
+00:33:49.040 --> 00:33:51.240
+Sorry, I'm going to find my root causes.
+
+00:33:51.240 --> 00:33:52.720
+Smart.
+
+00:33:52.720 --> 00:33:54.480
+I do want to say it.
+
+00:33:54.480 --> 00:33:59.120
+It is smart, but I'm part of the podcast too.
+
+00:33:59.120 --> 00:34:03.520
+And I would like Dagnah to come back again sometime.
+
+00:34:03.520 --> 00:34:08.480
+So let's not do her whole book on the podcast.
+
+00:34:08.480 --> 00:34:10.680
+It is really good.
+
+00:34:10.680 --> 00:34:12.280
+It's a missing link.
+
+00:34:12.280 --> 00:34:16.120
+As Jerry Weinberg says in software and technology,
+
+00:34:16.120 --> 00:34:20.140
+and technology eventually it's always a people problem.
+
+00:34:20.140 --> 00:34:22.460
+And it's just so important.
+
+00:34:22.460 --> 00:34:26.420
+And I think, I feel like either in a blog post recently of mine
+
+00:34:26.420 --> 00:34:30.730
+or one of the podcasts, we've talked about just the need
+
+00:34:30.730 --> 00:34:33.170
+to reflect and how important it is.
+
+00:34:33.170 --> 00:34:35.290
+That's really how I got.
+
+00:34:35.290 --> 00:34:38.370
+Here's a story I've told a bunch of times.
+
+00:34:38.370 --> 00:34:42.370
+I had been at Microsoft for about five years.
+
+00:34:42.370 --> 00:34:45.210
+I was in this leadership program.
+
+00:34:45.210 --> 00:34:49.210
+And one of the things they did was a thing called the MS360,
+
+00:34:49.210 --> 00:34:54.250
+where they got an extensively long survey sent
+
+00:34:54.250 --> 00:34:56.290
+to your manager, to your employees,
+
+00:34:56.290 --> 00:34:58.570
+to people you work with in your team,
+
+00:34:58.570 --> 00:35:00.570
+people you work with across the company.
+
+00:35:00.570 --> 00:35:02.170
+And they all fill out this survey.
+
+00:35:02.170 --> 00:35:02.890
+It's extensive.
+
+00:35:02.890 --> 00:35:04.090
+It takes a lot of time.
+
+00:35:04.090 --> 00:35:06.450
+They stopped doing it because it took too long.
+
+00:35:06.450 --> 00:35:10.570
+And afterwards, I met with an HR business partner
+
+00:35:10.570 --> 00:35:12.610
+to go over my results.
+
+00:35:12.610 --> 00:35:17.170
+And they said, Alan, everyone you work with
+
+00:35:17.170 --> 00:35:20.970
+thinks you do great work and get a lot done,
+
+00:35:20.970 --> 00:35:23.050
+but they also think you're a bit of an asshole.
+
+00:35:24.760 --> 00:35:28.560
+And it wasn't until that time I worked with them.
+
+00:35:28.560 --> 00:35:33.250
+And I just worked on it because that was sort of the way
+
+00:35:33.250 --> 00:35:34.090
+people behave.
+
+00:35:34.090 --> 00:35:37.130
+My role models were that at Microsoft.
+
+00:35:37.130 --> 00:35:39.490
+But that's when I began to take the time
+
+00:35:39.490 --> 00:35:41.970
+to reflect on how I was coming across.
+
+00:35:41.970 --> 00:35:45.170
+And there's just a big leap to say
+
+00:35:45.170 --> 00:35:50.690
+I can debug and reprogram the way I approach other people
+
+00:35:50.690 --> 00:35:53.650
+in my work in order to be more effective.
+
+00:35:53.650 --> 00:35:57.130
+And then, of course, since then, I've
+
+00:35:57.130 --> 00:36:02.690
+become infatuated with debugging people, including myself.
+
+00:36:02.690 --> 00:36:05.970
+And that's where you got to start, really, with yourself.
+
+00:36:05.970 --> 00:36:06.610
+Yeah.
+
+00:36:06.610 --> 00:36:08.170
+And it's helped a lot.
+
+00:36:08.170 --> 00:36:10.970
+And I don't think enough people realize.
+
+00:36:10.970 --> 00:36:12.330
+And maybe that's my next question.
+
+00:36:12.330 --> 00:36:15.490
+Enough people realize that they need
+
+00:36:15.490 --> 00:36:17.650
+to reflect and address themselves.
+
+00:36:17.650 --> 00:36:20.330
+And maybe their work just won't automatically
+
+00:36:20.330 --> 00:36:21.330
+speak for themselves.
+
+00:36:21.330 --> 00:36:23.810
+So why do you think it is that people
+
+00:36:23.810 --> 00:36:29.130
+don't realize that they need to debug their brain?
+
+00:36:29.130 --> 00:36:30.010
+OK.
+
+00:36:30.010 --> 00:36:32.290
+Can I read a piece from my book?
+
+00:36:32.290 --> 00:36:36.970
+Because I feel like I found one that perfectly
+
+00:36:36.970 --> 00:36:38.250
+answers your question.
+
+00:36:38.250 --> 00:36:39.130
+OK.
+
+00:36:39.130 --> 00:36:44.010
+So there are two paragraphs across a few pages.
+
+00:36:44.010 --> 00:36:46.440
+So let me dive into the first one.
+
+00:36:46.440 --> 00:36:49.600
+Everything you do or don't do follows
+
+00:36:49.600 --> 00:36:52.080
+your internal mental code.
+
+00:36:52.080 --> 00:36:55.720
+Your life experiences program you to be who you are,
+
+00:36:55.720 --> 00:36:58.720
+think the way you think, and act the way you act.
+
+00:36:58.720 --> 00:37:03.160
+There's a perfectly valid reason behind everything you do.
+
+00:37:03.160 --> 00:37:06.240
+I mean, everything, even the stupid stuff.
+
+00:37:06.240 --> 00:37:08.840
+That reason always falls in line
+
+00:37:08.840 --> 00:37:11.440
+with the source code of your mind.
+
+00:37:11.440 --> 00:37:15.450
+Now, how is that related to self-marketing?
+
+00:37:15.450 --> 00:37:19.490
+Perhaps you've received endless cultural messages
+
+00:37:19.490 --> 00:37:21.450
+about being humble, staying in your lane,
+
+00:37:21.450 --> 00:37:24.450
+not ruffling feathers, or perhaps you
+
+00:37:24.450 --> 00:37:26.450
+decided to become invisible because that
+
+00:37:26.450 --> 00:37:28.410
+felt safer in the past.
+
+00:37:28.410 --> 00:37:32.330
+It could have been critical for your physical or psychological
+
+00:37:32.330 --> 00:37:33.610
+safety.
+
+00:37:33.610 --> 00:37:35.610
+Being invisible may have kept you
+
+00:37:35.610 --> 00:37:38.210
+from the attention of someone who scared you.
+
+00:37:38.210 --> 00:37:41.690
+It was a great feature back then because it
+
+00:37:41.690 --> 00:37:44.650
+shielded you from the potential negative consequences
+
+00:37:44.650 --> 00:37:46.560
+of being seen.
+
+00:37:46.560 --> 00:37:49.040
+But the problem, as you may notice,
+
+00:37:49.040 --> 00:37:53.640
+is that it might bring your talents to people's attention.
+
+00:37:53.640 --> 00:37:56.160
+So here I talk about receiving compliments
+
+00:37:56.160 --> 00:37:58.120
+and getting at ease with receiving compliments
+
+00:37:58.120 --> 00:38:02.900
+because that helps with self-marketing.
+
+00:38:02.900 --> 00:38:07.140
+So you realize that you might have wanted to be invisible,
+
+00:38:07.140 --> 00:38:09.340
+and then you check in with your mental models
+
+00:38:09.340 --> 00:38:11.780
+on vulnerability.
+
+00:38:11.780 --> 00:38:13.940
+And it turns out there are no good models
+
+00:38:13.940 --> 00:38:18.300
+for how to be vulnerable and feel safe at the same time.
+
+00:38:18.300 --> 00:38:20.780
+In your mind, you'd rather die than put yourself
+
+00:38:20.780 --> 00:38:22.820
+in a situation where you're either exposed
+
+00:38:22.820 --> 00:38:26.580
+and can be criticized, where overwhelming emotions might
+
+00:38:26.580 --> 00:38:29.580
+surface, or where you might get into a conflict situation.
+
+00:38:29.580 --> 00:38:32.820
+And that's why you opted into not speaking up
+
+00:38:32.820 --> 00:38:34.980
+and staying quiet, to avoid conflict,
+
+00:38:34.980 --> 00:38:38.380
+to avoid criticism, to avoid strong emotions.
+
+00:38:38.380 --> 00:38:41.420
+In that set of mental models, being invisible,
+
+00:38:41.420 --> 00:38:44.380
+playing down your achievements, brushing off compliments,
+
+00:38:44.380 --> 00:38:48.520
+are all behaviors that make perfect sense.
+
+00:38:48.520 --> 00:38:50.720
+Those models played an important role
+
+00:38:50.720 --> 00:38:53.760
+in your mental programming, optimizing for your survival
+
+00:38:53.760 --> 00:38:56.360
+and keeping you safe.
+
+00:38:56.360 --> 00:39:00.320
+And the thing is, those models are no longer working for you.
+
+00:39:00.320 --> 00:39:03.360
+They used to back when they were put into place.
+
+00:39:03.360 --> 00:39:05.200
+And we see it with code all the time,
+
+00:39:05.200 --> 00:39:07.680
+when we put a dirty hack to really quickly solve
+
+00:39:07.680 --> 00:39:12.560
+a problem that then blows up months later
+
+00:39:12.560 --> 00:39:14.520
+because the code has evolved.
+
+00:39:14.560 --> 00:39:17.360
+But that piece of programming that was beneficial
+
+00:39:17.360 --> 00:39:21.120
+at one point in time is now causing harm.
+
+00:39:21.120 --> 00:39:22.120
+Yeah, yeah.
+
+00:39:22.120 --> 00:39:24.720
+What I realized while you were reading that is,
+
+00:39:27.320 --> 00:39:32.100
+your brain programming is always happening
+
+00:39:33.470 --> 00:39:36.670
+because five years at Microsoft taught me
+
+00:39:36.670 --> 00:39:39.070
+that getting work done was more important
+
+00:39:39.070 --> 00:39:41.430
+than leaving bodies in the wake.
+
+00:39:41.430 --> 00:39:44.670
+And that programming happened because of the way I worked,
+
+00:39:44.670 --> 00:39:47.510
+the way I worked with people I looked up to,
+
+00:39:47.510 --> 00:39:49.350
+and then it changed again.
+
+00:39:49.350 --> 00:39:52.630
+It changed from there once I took control
+
+00:39:52.630 --> 00:39:54.150
+of who I wanted to be.
+
+00:39:55.550 --> 00:39:58.070
+But what I was missing to get better at it
+
+00:39:58.070 --> 00:40:01.750
+was this framework, which I really, really like
+
+00:40:01.750 --> 00:40:03.550
+for looking at yourself.
+
+00:40:03.550 --> 00:40:05.310
+It makes a lot of sense.
+
+00:40:05.310 --> 00:40:06.510
+As we've been talking,
+
+00:40:06.510 --> 00:40:08.390
+I mentioned I went through the book very quickly,
+
+00:40:08.390 --> 00:40:09.230
+but as I've been talking,
+
+00:40:09.230 --> 00:40:13.230
+I realized that way back at the beginning of the podcast,
+
+00:40:13.230 --> 00:40:16.640
+you said, it's just so obvious to me now
+
+00:40:16.640 --> 00:40:20.440
+how programming the brain and programming code are the same.
+
+00:40:20.440 --> 00:40:24.040
+And even in 45, 50 minutes of talking here today,
+
+00:40:24.040 --> 00:40:25.480
+I'm beginning to see the same.
+
+00:40:25.480 --> 00:40:28.360
+I'm not beginning, I am seeing the exact same thing.
+
+00:40:28.360 --> 00:40:31.000
+It becomes so obvious.
+
+00:40:31.000 --> 00:40:33.920
+And you cannot see it once you see it, right?
+
+00:40:33.920 --> 00:40:36.520
+No, and I will say a similar thing.
+
+00:40:36.520 --> 00:40:37.600
+Just having you,
+
+00:40:37.600 --> 00:40:41.490
+like talking about the self-marketing struggles
+
+00:40:41.490 --> 00:40:46.050
+and then having you read those paragraphs.
+
+00:40:49.600 --> 00:40:52.400
+Alan knows a little bit about this.
+
+00:40:52.400 --> 00:40:55.720
+I'm definitely not comfortable sharing with it on the podcast,
+
+00:40:55.720 --> 00:40:57.760
+but I will absolutely say
+
+00:40:58.870 --> 00:41:03.420
+I was immediately able to connect the dots, right?
+
+00:41:03.420 --> 00:41:05.260
+In terms of step one, RCA,
+
+00:41:05.260 --> 00:41:07.780
+in terms of my own particular thing.
+
+00:41:07.780 --> 00:41:10.900
+And I'm like, okay, right?
+
+00:41:10.900 --> 00:41:15.500
+And here, we talked about it last time,
+
+00:41:15.500 --> 00:41:19.580
+like, and maybe there's a good opportunity here
+
+00:41:19.580 --> 00:41:24.900
+to go ahead and do the,
+
+00:41:26.890 --> 00:41:29.160
+God, what is the word?
+
+00:41:29.160 --> 00:41:34.000
+You go ahead and self-market your other business as well,
+
+00:41:34.000 --> 00:41:36.200
+because, right?
+
+00:41:36.200 --> 00:41:38.520
+So when we last talked, and I still,
+
+00:41:38.520 --> 00:41:39.880
+like you already mentioned on the podcast,
+
+00:41:39.880 --> 00:41:41.360
+sorry, I don't even need to ask,
+
+00:41:41.680 --> 00:41:43.440
+you still have clients, right?
+
+00:41:43.440 --> 00:41:47.880
+You have room for more, I assume, yes, no?
+
+00:41:47.880 --> 00:41:49.080
+Yes, I do.
+
+00:41:49.080 --> 00:41:50.400
+Okay.
+
+00:41:50.400 --> 00:41:55.070
+I will happily get new clients, absolutely, yes.
+
+00:41:55.070 --> 00:41:59.550
+So I already have a therapist,
+
+00:41:59.550 --> 00:42:01.910
+but I'm just gonna now advertise,
+
+00:42:01.910 --> 00:42:04.710
+I'm just in those couple of paragraphs, right?
+
+00:42:04.710 --> 00:42:07.430
+The fact that she's taking these problems
+
+00:42:07.430 --> 00:42:11.750
+and communicating them in a taxonomy of language
+
+00:42:11.750 --> 00:42:15.310
+that most, certainly every one of our listeners
+
+00:42:15.310 --> 00:42:17.640
+will understand, right?
+
+00:42:17.640 --> 00:42:19.400
+It's gonna help connect the dots.
+
+00:42:19.400 --> 00:42:21.400
+And if you feel like that is something
+
+00:42:21.400 --> 00:42:24.480
+that could be even more tangibly helpful to you
+
+00:42:24.480 --> 00:42:26.200
+in a one-on-one, right?
+
+00:42:26.200 --> 00:42:28.600
+Reach out to themindfuldev.com,
+
+00:42:28.600 --> 00:42:31.120
+reach out to DAGNA,
+
+00:42:31.120 --> 00:42:35.320
+and try to make a connection there.
+
+00:42:35.440 --> 00:42:39.690
+Like, I've already, like just in the span
+
+00:42:39.690 --> 00:42:42.970
+of this conversation, like your book is on order,
+
+00:42:42.970 --> 00:42:45.950
+I haven't read it yet, but it's on its way to my house.
+
+00:42:47.090 --> 00:42:50.410
+And I'll say, yeah, like those connect.
+
+00:42:50.410 --> 00:42:55.860
+Now, I'm absolutely certain I understand the cause of their,
+
+00:42:57.380 --> 00:42:59.620
+like I'm not a newbie in this industry
+
+00:42:59.620 --> 00:43:00.740
+in any way, shape, or form.
+
+00:43:00.740 --> 00:43:03.860
+I have learned to manage many of the things
+
+00:43:03.900 --> 00:43:07.180
+that a lot of newbies will do in this space, okay?
+
+00:43:08.500 --> 00:43:11.460
+But I still absolutely hate self-marketing.
+
+00:43:11.460 --> 00:43:14.400
+I still absolutely hate doing it.
+
+00:43:15.560 --> 00:43:19.220
+I do still very strongly believe
+
+00:43:19.220 --> 00:43:20.900
+that my work should speak for itself,
+
+00:43:20.900 --> 00:43:25.300
+but what you have convinced me to do further
+
+00:43:25.300 --> 00:43:30.640
+is that, yeah, that's good, but it's not enough, right?
+
+00:43:30.640 --> 00:43:33.280
+And so, does that even the refactor,
+
+00:43:33.320 --> 00:43:35.600
+like I don't wanna take up the rest of our time on this one,
+
+00:43:35.600 --> 00:43:40.610
+but now I'm like, okay, so what would be the refactor?
+
+00:43:40.610 --> 00:43:42.410
+What would I want instead?
+
+00:43:42.410 --> 00:43:45.040
+What is a better behavior?
+
+00:43:45.040 --> 00:43:46.440
+And then there was one thing,
+
+00:43:46.440 --> 00:43:47.760
+particularly to our audience,
+
+00:43:47.760 --> 00:43:50.060
+I didn't hear in your steps,
+
+00:43:50.060 --> 00:43:54.940
+and that is, how do you test the refactor?
+
+00:43:54.940 --> 00:43:56.580
+Like, we're a testing podcast,
+
+00:43:56.580 --> 00:43:58.950
+how do you test the refactor?
+
+00:43:58.950 --> 00:44:03.920
+Is that part of your steps?
+
+00:44:03.920 --> 00:44:08.080
+So, let's look at the reality of creating apps.
+
+00:44:08.080 --> 00:44:13.340
+Not everybody has a great way to test things, right?
+
+00:44:15.500 --> 00:44:16.560
+Or even writing tests,
+
+00:44:16.560 --> 00:44:21.160
+but everybody will end up getting feedback
+
+00:44:21.160 --> 00:44:24.160
+from the end users eventually.
+
+00:44:24.160 --> 00:44:26.460
+Everybody, if you create an app
+
+00:44:26.460 --> 00:44:30.140
+and you never listened to this phenomenal podcast
+
+00:44:30.140 --> 00:44:32.560
+and you never cared about writing tests,
+
+00:44:32.560 --> 00:44:33.400
+at the end of the day,
+
+00:44:33.480 --> 00:44:36.960
+someone is going to use your app or program
+
+00:44:36.960 --> 00:44:39.830
+and they're going to give you feedback.
+
+00:44:39.830 --> 00:44:44.200
+That's how you know when things start working.
+
+00:44:44.200 --> 00:44:48.960
+Or if there's more stuff that needs to be refactored,
+
+00:44:48.960 --> 00:44:50.920
+because maybe there are some other things
+
+00:44:50.920 --> 00:44:52.840
+that are coming up, right?
+
+00:44:52.840 --> 00:44:56.320
+In the end of explaining all the five steps
+
+00:44:56.320 --> 00:44:58.560
+of the brain refactoring algorithm,
+
+00:44:58.560 --> 00:45:00.460
+I talk about the merge conflicts.
+
+00:45:00.460 --> 00:45:03.080
+That's another thing to be on the lookout for, right?
+
+00:45:03.080 --> 00:45:06.360
+Merge conflicts, similarly to code in our brain,
+
+00:45:06.360 --> 00:45:11.070
+what happens is if you hold two conflicting views,
+
+00:45:11.070 --> 00:45:18.050
+you will still see yourself being stuck
+
+00:45:18.050 --> 00:45:22.860
+with the old behaviors or self-sabotaging yourself
+
+00:45:22.860 --> 00:45:25.740
+or procrastinating on the things that you really think
+
+00:45:25.740 --> 00:45:26.920
+that you want to be doing now
+
+00:45:26.920 --> 00:45:30.280
+because you've updated the models, the relevant models,
+
+00:45:30.280 --> 00:45:31.760
+and things are still not working.
+
+00:45:31.760 --> 00:45:35.380
+For some people, merge conflicts
+
+00:45:35.380 --> 00:45:38.720
+come up as physical sensations in their body,
+
+00:45:38.720 --> 00:45:42.150
+more tense neck and shoulders,
+
+00:45:44.640 --> 00:45:47.280
+their stomach twisting and hurling,
+
+00:45:47.280 --> 00:45:52.280
+or just feeling kind of antsy and not at ease.
+
+00:45:52.580 --> 00:45:53.760
+So...
+
+00:45:53.760 --> 00:45:56.500
+How would you differentiate between merge conflicts
+
+00:45:56.500 --> 00:46:00.190
+and let's say work-related stress?
+
+00:46:00.190 --> 00:46:01.310
+Would you?
+
+00:46:01.310 --> 00:46:05.510
+Or would you say it's essentially the same...
+
+00:46:06.930 --> 00:46:09.850
+If you feel stress, it might be indicative
+
+00:46:09.850 --> 00:46:12.730
+of what you're calling a merge conflict.
+
+00:46:12.730 --> 00:46:14.950
+So if you're in the process of implementing
+
+00:46:14.950 --> 00:46:19.710
+the brain refactor algorithm and you notice more stress,
+
+00:46:19.710 --> 00:46:21.750
+that's probably related, right?
+
+00:46:21.750 --> 00:46:24.470
+It's all about awareness and observation
+
+00:46:24.470 --> 00:46:28.110
+and understanding kind of how things ebb and flow
+
+00:46:28.110 --> 00:46:30.910
+and what might be connected and not.
+
+00:46:30.910 --> 00:46:32.710
+And it's not really about judgment,
+
+00:46:32.710 --> 00:46:36.340
+it's more about just doing the debugging
+
+00:46:36.340 --> 00:46:40.380
+and understanding what might be coming into play.
+
+00:46:42.610 --> 00:46:44.750
+I wanna add an observation on testing,
+
+00:46:44.750 --> 00:46:46.890
+going back to my story.
+
+00:46:46.890 --> 00:46:50.030
+That feedback doesn't necessarily have to be
+
+00:46:50.030 --> 00:46:51.850
+someone giving me feedback.
+
+00:46:51.850 --> 00:46:52.890
+What I learned to do,
+
+00:46:52.890 --> 00:46:56.010
+and I really began to focus on active listening,
+
+00:46:56.010 --> 00:46:57.410
+it's become a passion of mine,
+
+00:46:57.410 --> 00:47:02.480
+like just paying attention to how people are reacting
+
+00:47:02.480 --> 00:47:05.320
+to what I'm saying and then in trying in real time
+
+00:47:05.320 --> 00:47:09.220
+to match that to how I'm expecting them to react.
+
+00:47:09.220 --> 00:47:11.440
+Knowing when I need to change the message
+
+00:47:11.440 --> 00:47:12.880
+because of the way people are,
+
+00:47:12.880 --> 00:47:15.440
+because body language reacting much harder
+
+00:47:15.440 --> 00:47:18.420
+in the flat virtual world than 3D world.
+
+00:47:19.560 --> 00:47:21.880
+I remember I would have people in meetings with me,
+
+00:47:21.880 --> 00:47:23.200
+I would ask them afterwards,
+
+00:47:23.200 --> 00:47:24.920
+I would do that reflection and ask them like,
+
+00:47:24.920 --> 00:47:27.440
+my intent in this meeting was to do this,
+
+00:47:27.440 --> 00:47:29.280
+how do you think I did and get some feedback there?
+
+00:47:29.280 --> 00:47:32.280
+But a lot of it is just learning to read people.
+
+00:47:33.000 --> 00:47:36.800
+If I make a change in my brain programming
+
+00:47:36.800 --> 00:47:38.840
+that's supposed to affect the way I deal with other people,
+
+00:47:38.840 --> 00:47:41.400
+for example, or even the way I do self marketing,
+
+00:47:42.800 --> 00:47:44.720
+I'm testing that constantly
+
+00:47:44.720 --> 00:47:47.280
+because I can look at how other people
+
+00:47:47.280 --> 00:47:50.420
+are receiving what I'm doing.
+
+00:47:50.420 --> 00:47:52.900
+So we talk a lot about feedback loops on this podcast
+
+00:47:52.900 --> 00:47:57.900
+and I think we can use the other humans we're around
+
+00:47:59.620 --> 00:48:00.500
+as we do these things,
+
+00:48:00.900 --> 00:48:05.100
+all involve reason people get blocked
+
+00:48:05.100 --> 00:48:10.190
+is they're human interconnections
+
+00:48:10.630 --> 00:48:12.430
+and we can use those to,
+
+00:48:13.270 --> 00:48:16.310
+anyway, I'm just repeating myself now,
+
+00:48:16.310 --> 00:48:21.470
+but lots of observations coming together here, very cool.
+
+00:48:21.750 --> 00:48:23.710
+Awesome, I'm glad you guys are getting value
+
+00:48:23.710 --> 00:48:25.630
+just from us having this conversation
+
+00:48:25.630 --> 00:48:28.670
+and I'm super stoked that Brent has ordered my book,
+
+00:48:28.670 --> 00:48:30.710
+it's available on Amazon.
+
+00:48:31.550 --> 00:48:32.910
+So that's amazing, thanks so much.
+
+00:48:32.910 --> 00:48:35.230
+I have a question, is it out?
+
+00:48:35.230 --> 00:48:38.630
+Because I thought it said like it comes out October 1st.
+
+00:48:38.630 --> 00:48:42.030
+So this is like a launch strategy, Alan.
+
+00:48:42.030 --> 00:48:45.790
+Basically, the Kindle comes out on October 1st
+
+00:48:45.790 --> 00:48:49.670
+and I have released the paperback version on Amazon
+
+00:48:49.670 --> 00:48:54.070
+at literally a price that just covers printing and hosting.
+
+00:48:54.070 --> 00:48:55.990
+I'm not making any money off of the book.
+
+00:48:55.990 --> 00:48:59.750
+Basically, I released it in paperback cover
+
+00:48:59.750 --> 00:49:02.990
+so that people who want to read it
+
+00:49:02.990 --> 00:49:05.390
+and could leave me reviews could do that
+
+00:49:05.390 --> 00:49:08.030
+and I've been working on it to gain reviews
+
+00:49:08.030 --> 00:49:10.830
+before the Kindle launches
+
+00:49:10.830 --> 00:49:14.070
+because that will help me get some love
+
+00:49:14.070 --> 00:49:17.670
+from the Amazon algorithm when the Kindle launches.
+
+00:49:17.670 --> 00:49:19.790
+The reviews are great, the book is great.
+
+00:49:19.790 --> 00:49:22.430
+I think I ordered a Kindle version,
+
+00:49:22.430 --> 00:49:24.390
+but I'm gonna get, now that I know more,
+
+00:49:24.390 --> 00:49:26.670
+now that I've read it, it's kind of one of those books
+
+00:49:26.670 --> 00:49:28.750
+I wanna put some little tags in
+
+00:49:28.750 --> 00:49:30.030
+and do some highlighting on.
+
+00:49:30.030 --> 00:49:34.870
+So I'm gonna order a paperback copy as well.
+
+00:49:34.870 --> 00:49:36.630
+It is, now my worry is-
+
+00:49:36.630 --> 00:49:38.710
+I, wait, wait, wait, no.
+
+00:49:38.710 --> 00:49:39.550
+Brent, Brent.
+
+00:49:39.550 --> 00:49:40.390
+No, no, no.
+
+00:49:40.390 --> 00:49:42.710
+Stop sharing your Amazon purchases.
+
+00:49:42.710 --> 00:49:45.430
+No, no, so I have this, right?
+
+00:49:45.430 --> 00:49:50.100
+I just bought it, right, and it's Arriving Thursday.
+
+00:49:50.100 --> 00:49:52.460
+So are you telling me it's not Arriving Thursday?
+
+00:49:52.460 --> 00:49:54.980
+No, it is, the paperback book, pay attention, Brent.
+
+00:49:54.980 --> 00:49:56.660
+I ordered hardcover.
+
+00:49:56.660 --> 00:49:57.900
+Yeah, it's coming in the mail.
+
+00:49:57.980 --> 00:50:00.070
+The Kindle book comes out later.
+
+00:50:00.070 --> 00:50:00.910
+Oh, all right.
+
+00:50:00.910 --> 00:50:03.110
+Yeah, you're not listening, you're too busy
+
+00:50:03.110 --> 00:50:05.990
+getting your wallet case for your Samsung phone.
+
+00:50:05.990 --> 00:50:07.830
+No, that was for my daughter's phone.
+
+00:50:07.830 --> 00:50:09.510
+Sure, sure, sure.
+
+00:50:09.510 --> 00:50:12.310
+Is there, so I had a lot of questions about the book
+
+00:50:12.310 --> 00:50:13.470
+and I got to almost all of them.
+
+00:50:13.470 --> 00:50:14.550
+I think I have a good idea what's going on
+
+00:50:14.550 --> 00:50:17.190
+and I learned so much about it just from diving in.
+
+00:50:17.190 --> 00:50:20.270
+Is there anything I should have asked
+
+00:50:20.270 --> 00:50:22.070
+that I didn't about the book?
+
+00:50:22.070 --> 00:50:24.030
+Yes, so there's one aspect
+
+00:50:24.030 --> 00:50:25.990
+that I just briefly mentioned in the book
+
+00:50:25.990 --> 00:50:28.870
+and it's this concept of
+
+00:50:28.870 --> 00:50:31.750
+whenever you're updating your brain,
+
+00:50:31.750 --> 00:50:33.990
+it's good to think about the software updates,
+
+00:50:33.990 --> 00:50:36.190
+which is basically what we were covering here, right?
+
+00:50:36.190 --> 00:50:38.110
+Going to therapy, having a coach,
+
+00:50:38.110 --> 00:50:42.870
+this is phenomenal for updating the software of your brain.
+
+00:50:42.870 --> 00:50:46.750
+So I'm referring here to, to be just exactly clear
+
+00:50:46.750 --> 00:50:49.070
+to your thoughts, to your beliefs,
+
+00:50:49.070 --> 00:50:51.990
+to what it is that's kind of running through your head,
+
+00:50:51.990 --> 00:50:54.150
+the mental legacy code.
+
+00:50:54.150 --> 00:50:59.150
+But there's also this second aspect, the hardware, right?
+
+00:50:59.870 --> 00:51:02.070
+Because you could have the best software
+
+00:51:02.070 --> 00:51:04.950
+and I'm sure you had experienced that in the past
+
+00:51:04.950 --> 00:51:07.110
+where let's say you're trying to test
+
+00:51:07.110 --> 00:51:11.550
+your newest Android app with the flashiest of features
+
+00:51:11.550 --> 00:51:14.190
+on an older testing device.
+
+00:51:14.190 --> 00:51:15.830
+And it just doesn't work, right?
+
+00:51:15.830 --> 00:51:18.910
+Because the device does not have the hardware
+
+00:51:18.910 --> 00:51:22.150
+that is able to support a new software.
+
+00:51:22.150 --> 00:51:26.030
+And so one thing that I'm really passionate to talk about
+
+00:51:26.030 --> 00:51:28.350
+is this neurofeedback training that I did,
+
+00:51:28.350 --> 00:51:31.950
+which is essentially a hardware update for your brain.
+
+00:51:31.950 --> 00:51:35.470
+And it's something that is a cutting edge,
+
+00:51:35.470 --> 00:51:37.710
+new thing in medicine,
+
+00:51:37.710 --> 00:51:41.710
+doesn't require you to really take any pills
+
+00:51:41.710 --> 00:51:46.550
+or medicine or plants, you're not consuming anything.
+
+00:51:46.550 --> 00:51:49.430
+You're literally showing up to your sessions,
+
+00:51:49.430 --> 00:51:53.270
+watching TV in your brain improves itself.
+
+00:51:53.270 --> 00:51:58.860
+And it's just phenomenal tune up of hardware of your brain.
+
+00:51:58.860 --> 00:52:00.050
+Wow.
+
+00:52:00.050 --> 00:52:03.530
+I have never heard of this and as you were talking,
+
+00:52:03.530 --> 00:52:06.850
+I'm like, oh, Dagnah, no.
+
+00:52:06.850 --> 00:52:10.410
+Don't tell me I have to lose weight or exercise.
+
+00:52:10.410 --> 00:52:11.250
+Gross.
+
+00:52:13.010 --> 00:52:15.050
+I was reaching to tell me.
+
+00:52:15.050 --> 00:52:18.810
+Showing up every week and watching TV, yeah.
+
+00:52:20.170 --> 00:52:22.930
+My brain space is one of my better skills.
+
+00:52:22.930 --> 00:52:24.690
+Boom, Brent is solid, perfect.
+
+00:52:26.620 --> 00:52:27.460
+Awesome.
+
+00:52:27.460 --> 00:52:31.260
+I was afraid it was gonna go to that my hardware
+
+00:52:31.260 --> 00:52:33.980
+because I'm old, maybe too old to reprogram,
+
+00:52:33.980 --> 00:52:35.580
+but I'm glad that's not it.
+
+00:52:35.580 --> 00:52:37.140
+Oh no, absolutely not.
+
+00:52:37.140 --> 00:52:40.980
+So we now know that our brains, thanks to neuroplasticity,
+
+00:52:40.980 --> 00:52:43.540
+they change throughout our entire lifetime.
+
+00:52:43.540 --> 00:52:46.420
+So you could be 99 and your brain
+
+00:52:46.420 --> 00:52:47.980
+could still improve itself.
+
+00:52:47.980 --> 00:52:48.980
+Yes, yes.
+
+00:52:49.780 --> 00:52:51.100
+At one point in my life,
+
+00:52:51.100 --> 00:52:53.060
+I read a lot about neuroplasticity
+
+00:52:53.060 --> 00:52:55.820
+and the brain's an amazing thing.
+
+00:52:55.820 --> 00:52:58.100
+So I am excited about this.
+
+00:52:58.100 --> 00:52:59.580
+I'm gonna post the link to the book.
+
+00:52:59.580 --> 00:53:01.020
+I just bought a copy.
+
+00:53:01.020 --> 00:53:04.620
+Mine's coming on Monday because I'm a prime member, Brent.
+
+00:53:07.100 --> 00:53:09.060
+I'm a prime member as well.
+
+00:53:11.060 --> 00:53:15.300
+Your eyes work better than mine
+
+00:53:15.300 --> 00:53:17.700
+and you can still read those stupid paperbacks.
+
+00:53:17.700 --> 00:53:18.660
+I can't.
+
+00:53:19.020 --> 00:53:20.380
+Okay, fine, fine, fine.
+
+00:53:20.380 --> 00:53:24.420
+Anyway, absolutely wonderful having you here.
+
+00:53:26.790 --> 00:53:28.230
+I was excited, like one,
+
+00:53:28.230 --> 00:53:30.030
+I went through three stages of excitement.
+
+00:53:30.030 --> 00:53:33.110
+One, just having you contact me to say,
+
+00:53:33.110 --> 00:53:34.470
+hey, can I be on the podcast?
+
+00:53:34.470 --> 00:53:35.910
+It's like, oh my God, you're so good.
+
+00:53:35.910 --> 00:53:37.350
+Yes.
+
+00:53:37.350 --> 00:53:39.310
+Two, reading the book and going,
+
+00:53:39.310 --> 00:53:41.430
+oh my God, this is good.
+
+00:53:41.430 --> 00:53:42.670
+We need this.
+
+00:53:42.670 --> 00:53:44.310
+Technology needs this.
+
+00:53:44.310 --> 00:53:46.310
+And then even another level of excitement,
+
+00:53:46.310 --> 00:53:47.630
+having you here, walking us through it,
+
+00:53:47.630 --> 00:53:51.230
+getting more insight, absolutely amazing.
+
+00:53:51.230 --> 00:53:54.030
+Thank you for spending some time with us today.
+
+00:53:55.630 --> 00:53:57.350
+Any last words?
+
+00:53:57.350 --> 00:53:58.630
+It's been my pleasure.
+
+00:53:58.630 --> 00:54:02.150
+And the reason I really wanted to contact you guys
+
+00:54:02.150 --> 00:54:04.030
+and get on podcast, number one,
+
+00:54:04.030 --> 00:54:06.230
+I remember how much fun we had in that
+
+00:54:06.230 --> 00:54:09.910
+175th episode back in the day.
+
+00:54:09.910 --> 00:54:12.990
+It was a lot of fun, so I knew I wanted to do it again.
+
+00:54:12.990 --> 00:54:15.230
+And the second thing is, at the end of the day,
+
+00:54:15.230 --> 00:54:18.030
+your brain isn't involved in every single thing
+
+00:54:18.030 --> 00:54:20.270
+that you do, everything.
+
+00:54:20.270 --> 00:54:23.350
+So if you can improve your brain just a little bit,
+
+00:54:23.350 --> 00:54:25.550
+everything else will improve too.
+
+00:54:25.550 --> 00:54:26.660
+Yep.
+
+00:54:26.660 --> 00:54:29.260
+And those are the things I just have to say.
+
+00:54:29.260 --> 00:54:31.100
+I've been wanting to find a way to say it in,
+
+00:54:31.100 --> 00:54:32.940
+but we're about to end.
+
+00:54:32.940 --> 00:54:37.580
+Dagnah, I love your energy and your passion on this topic.
+
+00:54:37.580 --> 00:54:42.580
+Like, right, it doesn't play out well in the podcast,
+
+00:54:43.380 --> 00:54:48.380
+but Dagnah has been smiling this entire time.
+
+00:54:48.380 --> 00:54:50.820
+She loves this topic.
+
+00:54:50.820 --> 00:54:55.670
+And I gotta say, like, you find someone
+
+00:54:55.670 --> 00:54:57.390
+who's passionate around it.
+
+00:54:57.390 --> 00:55:00.550
+If it helps, if it's something that you're interested in,
+
+00:55:00.550 --> 00:55:05.220
+engage, these are the people you wanna interact with.
+
+00:55:05.220 --> 00:55:06.700
+Thank you for coming on, Dagnah.
+
+00:55:06.700 --> 00:55:07.540
+It's been fantastic.
+
+00:55:07.540 --> 00:55:09.820
+Thank you so much for having me here.
+
+00:55:09.820 --> 00:55:12.260
+All right, that's been episode 200 and something.
+
+00:55:12.340 --> 00:55:15.060
+I'll figure it out later of the AAB testing podcast.
+
+00:55:15.060 --> 00:55:15.900
+Yeah.
+

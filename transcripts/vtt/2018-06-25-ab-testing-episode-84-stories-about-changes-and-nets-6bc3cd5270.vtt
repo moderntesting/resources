@@ -1,0 +1,3065 @@
+WEBVTT
+
+00:00:09.390 --> 00:00:10.390
+Hello again.
+
+00:00:10.390 --> 00:00:11.390
+Howdy, I'm Alan.
+
+00:00:11.390 --> 00:00:12.390
+I'm Brent.
+
+00:00:12.390 --> 00:00:15.430
+Another episode of AB testing.
+
+00:00:15.430 --> 00:00:20.990
+Another principle being knocked off, episode number 84, principle number 83.
+
+00:00:20.990 --> 00:00:23.710
+No, no.
+
+00:00:23.710 --> 00:00:29.970
+Yeah, we greatly expanded the principles between last time and this time.
+
+00:00:29.970 --> 00:00:32.590
+There are now 83 principles.
+
+00:00:32.590 --> 00:00:37.670
+No, principle number three, as those of you who are just catching up, maybe it's your
+
+00:00:37.670 --> 00:00:41.630
+first episode, AB testing is a podcast.
+
+00:00:41.630 --> 00:00:46.510
+If it is your first episode, please stop and go back to episode number 60.
+
+00:00:46.510 --> 00:00:49.010
+You've missed a lot.
+
+00:00:49.010 --> 00:00:51.710
+But if it is your first, thank you.
+
+00:00:51.710 --> 00:00:54.510
+The context of previous episodes will help.
+
+00:00:54.510 --> 00:01:03.430
+But we are a podcast about software testing, software quality, agile, process improvement,
+
+00:01:03.430 --> 00:01:09.350
+leadership, random topics including squirrels with hats and things like that.
+
+00:01:09.350 --> 00:01:15.390
+And most recently, over the past over a year now, maybe longer, I don't know when we first
+
+00:01:15.390 --> 00:01:16.950
+started talking about modern testing.
+
+00:01:16.950 --> 00:01:20.950
+We've mentioned the word for a while, but we've been talking in depth about something
+
+00:01:20.950 --> 00:01:24.270
+we've been calling modern testing for quite a while now.
+
+00:01:24.270 --> 00:01:27.030
+Yeah, we've been talking about it for a long time.
+
+00:01:27.030 --> 00:01:30.110
+I think it is about a year where we capitalized the letters.
+
+00:01:30.790 --> 00:01:37.910
+We were talking about it for a while when I submitted a talk on modern testing to Test
+
+00:01:37.910 --> 00:01:38.910
+Bash Brighton.
+
+00:01:38.910 --> 00:01:40.040
+Anyway.
+
+00:01:40.040 --> 00:01:41.480
+Yeah, I think in terms of the numbers.
+
+00:01:41.480 --> 00:01:46.000
+I'm so prepared with my facts.
+
+00:01:46.000 --> 00:01:47.000
+As usual, I'm sure.
+
+00:01:47.000 --> 00:01:51.820
+I could be a speechwriter for Donald Trump, where facts don't matter.
+
+00:01:51.820 --> 00:01:58.820
+So back on track, we've been talking recently about modern testing principles.
+
+00:01:58.820 --> 00:02:00.300
+We wrote seven of them.
+
+00:02:00.300 --> 00:02:05.980
+They're still a work in progress, but they've actually remained static for the last several
+
+00:02:05.980 --> 00:02:06.980
+months.
+
+00:02:06.980 --> 00:02:08.460
+It's a pretty good sign.
+
+00:02:08.460 --> 00:02:12.330
+You can read them on moderntesting.org.
+
+00:02:12.330 --> 00:02:16.490
+And today we're going to talk about the third modern testing principle.
+
+00:02:16.490 --> 00:02:22.010
+But before that, let's take a moment to see what's going on in the world of Alan and
+
+00:02:22.010 --> 00:02:23.290
+Brent.
+
+00:02:23.290 --> 00:02:26.490
+It's part of our pitter patter fast forward like five minutes if you don't like this
+
+00:02:26.490 --> 00:02:27.490
+part.
+
+00:02:27.490 --> 00:02:28.490
+What's new, Brent?
+
+00:02:28.490 --> 00:02:31.400
+Are you surviving review season at Microsoft?
+
+00:02:31.400 --> 00:02:34.300
+It's almost over.
+
+00:02:34.300 --> 00:02:36.860
+But yeah, I'm surviving.
+
+00:02:36.860 --> 00:02:42.420
+I will probably be sacrificing another weekend to close it out.
+
+00:02:42.420 --> 00:02:50.940
+So at Unity, of course, we don't have that heavyweight blood pressure inducing ego driven
+
+00:02:50.940 --> 00:02:52.660
+review process.
+
+00:02:52.660 --> 00:02:57.060
+Three times a year, we have a discussion where we have we asked three questions.
+
+00:02:57.060 --> 00:02:59.700
+Why is your mission at Unity important?
+
+00:02:59.700 --> 00:03:01.380
+What are you doing to accomplish that mission?
+
+00:03:01.380 --> 00:03:02.380
+And how are you doing?
+
+00:03:02.380 --> 00:03:03.410
+And you told me.
+
+00:03:03.410 --> 00:03:05.530
+About a quarter of the way through.
+
+00:03:05.530 --> 00:03:14.260
+It is such good conversations and little prep involved, a little prep, but just a little
+
+00:03:14.260 --> 00:03:18.860
+prep and nobody on either side has their blood pressure go up.
+
+00:03:18.860 --> 00:03:19.860
+It's great.
+
+00:03:19.860 --> 00:03:20.860
+I love it.
+
+00:03:21.220 --> 00:03:28.380
+You've mentioned this before, but the one thing that you shared with me off air was that there's
+
+00:03:28.380 --> 00:03:30.780
+no written component to this.
+
+00:03:30.780 --> 00:03:31.780
+Yeah, we don't.
+
+00:03:31.780 --> 00:03:32.780
+Yeah.
+
+00:03:32.780 --> 00:03:36.940
+Oh, so literally when you say conversation, it literally is a conversation.
+
+00:03:36.940 --> 00:03:38.940
+It's a focused reflective conversation.
+
+00:03:38.940 --> 00:03:43.190
+I love it.
+
+00:03:43.190 --> 00:03:46.270
+Yeah, it's pretty great.
+
+00:03:46.270 --> 00:03:47.590
+But I take notes.
+
+00:03:47.590 --> 00:03:49.790
+So I mean, they're just for me.
+
+00:03:50.310 --> 00:03:53.510
+Because my job as a manager, of course, is to help them be successful.
+
+00:03:53.510 --> 00:03:58.190
+In fact, after those three questions, the question I always ask is, what can I do as
+
+00:03:58.190 --> 00:04:01.030
+a manager to help you be successful in your mission?
+
+00:04:01.030 --> 00:04:03.950
+What can I start doing, stop doing, continue doing those sorts of things.
+
+00:04:03.950 --> 00:04:05.190
+And I'll take lots of notes there.
+
+00:04:05.190 --> 00:04:08.260
+And that helps me throughout the year.
+
+00:04:08.260 --> 00:04:10.780
+Until we have that conversation again.
+
+00:04:10.780 --> 00:04:15.340
+And things change direction, mission can change, but it helps me do a better job.
+
+00:04:15.340 --> 00:04:18.500
+I really like that aspect.
+
+00:04:18.500 --> 00:04:22.700
+So there's a language that rolls around with my team.
+
+00:04:22.700 --> 00:04:25.540
+I'm not, I'm pretty sure I've shared this before.
+
+00:04:25.540 --> 00:04:27.380
+I am not their manager.
+
+00:04:27.380 --> 00:04:29.460
+I am their MSP.
+
+00:04:29.460 --> 00:04:32.460
+I am their management service provider.
+
+00:04:32.460 --> 00:04:38.060
+Which means they are my customer more than they are my employees.
+
+00:04:38.060 --> 00:04:40.220
+And so, yeah, I'm really interested.
+
+00:04:40.220 --> 00:04:41.220
+How can I help you succeed?
+
+00:04:41.220 --> 00:04:43.020
+How do I support that?
+
+00:04:43.020 --> 00:04:45.460
+So are you aware of the concept of servant leadership?
+
+00:04:45.460 --> 00:04:46.460
+Yep.
+
+00:04:46.460 --> 00:04:47.460
+So tell us very much like that.
+
+00:04:47.460 --> 00:04:48.900
+I'm a big fan of that.
+
+00:04:48.900 --> 00:04:54.260
+And Simon Sinek for a plug has a great book called Leaders Eat Last, which talks a lot
+
+00:04:54.260 --> 00:04:55.260
+about that.
+
+00:04:55.260 --> 00:04:57.620
+That's very much my view.
+
+00:04:57.620 --> 00:04:58.620
+Yeah.
+
+00:04:58.620 --> 00:05:02.700
+Yesterday, as an example, we had a, my team had a morale event.
+
+00:05:02.700 --> 00:05:04.420
+It's one of those escape room things.
+
+00:05:04.420 --> 00:05:05.660
+Have you ever done that?
+
+00:05:05.660 --> 00:05:06.660
+Oh yeah.
+
+00:05:06.660 --> 00:05:07.660
+I've done a couple of them.
+
+00:05:07.660 --> 00:05:08.660
+Yep.
+
+00:05:08.660 --> 00:05:18.090
+I still have not because there was a logistic error and we thought we had three rooms scheduled
+
+00:05:18.650 --> 00:05:20.650
+we only had two.
+
+00:05:20.650 --> 00:05:23.090
+And I'm like, yeah, I want the ICs to go.
+
+00:05:23.090 --> 00:05:28.810
+My manager was like, but I'm like, no, there's only eight people.
+
+00:05:28.810 --> 00:05:29.810
+They go.
+
+00:05:29.810 --> 00:05:30.890
+Did you go to the one right down here?
+
+00:05:30.890 --> 00:05:31.890
+In Redmond.
+
+00:05:31.890 --> 00:05:32.890
+Okay.
+
+00:05:32.890 --> 00:05:34.450
+There's one, there's literally one walking distance from here.
+
+00:05:34.450 --> 00:05:35.690
+No, we didn't go to that one.
+
+00:05:35.690 --> 00:05:36.690
+I've been to that one.
+
+00:05:36.690 --> 00:05:40.180
+Of course, people listening going walking distance.
+
+00:05:40.180 --> 00:05:41.180
+What?
+
+00:05:41.180 --> 00:05:42.180
+Shut up.
+
+00:05:42.180 --> 00:05:43.180
+Tell me the damn principle.
+
+00:05:43.180 --> 00:05:44.180
+Yeah.
+
+00:05:44.180 --> 00:05:46.180
+I did one in San Francisco.
+
+00:05:46.180 --> 00:05:49.340
+The one in San Francisco was elaborate.
+
+00:05:49.340 --> 00:05:55.260
+We did it as almost my whole ads quality team.
+
+00:05:55.260 --> 00:05:57.660
+So it was, it's made for a big group.
+
+00:05:57.660 --> 00:06:01.420
+There were a lot of puzzles that could be solved independently and they, and they require
+
+00:06:01.420 --> 00:06:04.900
+like people solving two different puzzles to share information.
+
+00:06:04.900 --> 00:06:12.340
+It was, it was like two, two plus hours with 12 or maybe 12 or more of us.
+
+00:06:12.340 --> 00:06:14.940
+It was pretty, it was, it was a ton of fun.
+
+00:06:14.940 --> 00:06:18.020
+They, we didn't, they gave us a little extra time, but we got it done.
+
+00:06:18.020 --> 00:06:19.020
+Yeah.
+
+00:06:19.020 --> 00:06:20.020
+No.
+
+00:06:20.020 --> 00:06:21.020
+So I was actually really looking forward to it.
+
+00:06:21.020 --> 00:06:24.660
+I mean, I knew it was going to be something that I would have to wait for a more relevant
+
+00:06:24.660 --> 00:06:27.460
+to be able to go to it.
+
+00:06:27.460 --> 00:06:31.780
+And now it seems like I'm probably going to have to change teams if I ever wanted.
+
+00:06:31.780 --> 00:06:33.950
+Well, you and I can go.
+
+00:06:33.950 --> 00:06:34.950
+Sure.
+
+00:06:34.950 --> 00:06:37.950
+If you're going to do something with unity in your team, invite me along.
+
+00:06:37.950 --> 00:06:39.390
+I'll be happy to join.
+
+00:06:39.390 --> 00:06:40.390
+Okay.
+
+00:06:40.390 --> 00:06:42.830
+And so the other thing, uh, what about you?
+
+00:06:42.830 --> 00:06:43.830
+What's new?
+
+00:06:43.830 --> 00:06:45.430
+I'm a little tired.
+
+00:06:45.510 --> 00:06:48.190
+I woke up at two 45 this morning.
+
+00:06:48.190 --> 00:06:49.190
+Okay.
+
+00:06:49.190 --> 00:06:53.310
+To take my kid to the airport, uh, for like a five 30 flight.
+
+00:06:53.310 --> 00:06:58.990
+He is going with his eighth grade class, just finished two days ago to DC in New York for
+
+00:06:58.990 --> 00:06:59.990
+a week.
+
+00:06:59.990 --> 00:07:00.990
+Nice.
+
+00:07:00.990 --> 00:07:04.230
+And then I came home, slept a little bit, went to the gym, came home, showered, came
+
+00:07:04.230 --> 00:07:05.230
+here.
+
+00:07:05.230 --> 00:07:10.150
+So I'm, I'm a little bit of fumes here, but, uh, everything else is going great.
+
+00:07:10.150 --> 00:07:11.150
+What's the occasion?
+
+00:07:11.150 --> 00:07:14.720
+Um, eighth grade trip.
+
+00:07:14.720 --> 00:07:15.720
+Is there no point to it?
+
+00:07:15.720 --> 00:07:17.360
+Just, Hey, eighth grade, let's go to DC.
+
+00:07:17.360 --> 00:07:18.360
+No, no, no.
+
+00:07:18.360 --> 00:07:20.040
+It's a massively educational trip.
+
+00:07:20.040 --> 00:07:25.320
+They are packed from morning to night with, uh, all over DC for two days, then all over
+
+00:07:25.320 --> 00:07:26.560
+New York for three days.
+
+00:07:26.560 --> 00:07:29.240
+And then, uh, New York city, New York city.
+
+00:07:29.240 --> 00:07:30.240
+Cool.
+
+00:07:30.240 --> 00:07:31.800
+So they're going to have a good time.
+
+00:07:31.800 --> 00:07:34.280
+He's looking forward to the view from the top of the empire state building, which I've
+
+00:07:34.280 --> 00:07:35.280
+done before.
+
+00:07:35.280 --> 00:07:36.630
+It's a long way down.
+
+00:07:36.630 --> 00:07:37.630
+It's pretty cool.
+
+00:07:37.630 --> 00:07:38.630
+Yeah.
+
+00:07:38.630 --> 00:07:40.150
+I've done the view from the bottom of it.
+
+00:07:40.150 --> 00:07:41.150
+Oh, great.
+
+00:07:41.150 --> 00:07:42.700
+That's a long way up.
+
+00:07:42.700 --> 00:07:43.700
+Yeah.
+
+00:07:43.700 --> 00:07:44.700
+All right.
+
+00:07:44.700 --> 00:07:47.460
+Well, uh, anything else before we get started?
+
+00:07:47.460 --> 00:07:48.820
+Where in the world is the weasel?
+
+00:07:48.820 --> 00:07:52.860
+Like we both, we both did the, uh, Oh yeah.
+
+00:07:52.860 --> 00:07:55.780
+I am doing a virtual weasel now.
+
+00:07:55.780 --> 00:08:00.380
+I'm as I've mentioned many times before, I'm trying to cut way down on the, at least
+
+00:08:00.380 --> 00:08:01.980
+the travel I do for conferences.
+
+00:08:01.980 --> 00:08:04.170
+I'm still doing star.
+
+00:08:04.170 --> 00:08:05.530
+I have some gripes about that.
+
+00:08:05.530 --> 00:08:09.930
+I'll share offline, but I'm doing star and at very beginning of October and then PNSQC,
+
+00:08:09.930 --> 00:08:15.090
+which I'm really looking forward to, uh, doing an invited talk there on modern testing.
+
+00:08:15.090 --> 00:08:16.090
+Nice.
+
+00:08:16.090 --> 00:08:21.490
+It'll be a definite huge evolution or a large evolution from what I gave it.
+
+00:08:21.490 --> 00:08:24.650
+Test Bash Brighton, but something along those lines.
+
+00:08:24.650 --> 00:08:26.410
+And then I'm doing virtual world.
+
+00:08:26.410 --> 00:08:31.810
+I did two, uh, webinars Wednesday, one for the online test conference, one for the test
+
+00:08:31.810 --> 00:08:32.810
+automation guild.
+
+00:08:32.810 --> 00:08:36.530
+I'll be doing another webinar with perfecto mobile on Monday, which you'll probably
+
+00:08:36.530 --> 00:08:42.480
+hear about, which probably over by the time this episode comes out, uh, on continuous testing,
+
+00:08:42.480 --> 00:08:46.120
+which overlaps with our pro with our, our discussion today.
+
+00:08:46.120 --> 00:08:48.440
+And then I just, uh, got booked this week.
+
+00:08:48.440 --> 00:08:52.720
+I'm way, way, way excited, especially relevant to AB testing listeners.
+
+00:08:52.720 --> 00:08:57.520
+Uh, administrative test has invited me to give an AMA and ask me anything about modern
+
+00:08:57.520 --> 00:09:00.920
+testing eight o'clock UK time.
+
+00:09:00.920 --> 00:09:04.400
+That's noon here on the, uh, on the West coast.
+
+00:09:04.400 --> 00:09:11.720
+So at a time when most of our listeners can probably check it out live and ask questions
+
+00:09:11.720 --> 00:09:17.550
+and it is on July 10th, just like I said, I'll put a link to it in the show notes.
+
+00:09:17.550 --> 00:09:19.350
+There'll be a link to it on my blog.
+
+00:09:19.350 --> 00:09:23.630
+You can find that on Twitter, all kinds of ways to discover it should be a ton of fun.
+
+00:09:23.630 --> 00:09:25.070
+Here's what we should do.
+
+00:09:25.070 --> 00:09:31.430
+I will do the AMA and what happens on these things is a ton of questions come in that
+
+00:09:31.430 --> 00:09:34.000
+you can't get to.
+
+00:09:34.000 --> 00:09:39.280
+We could probably shove a couple of mail bag episodes full of those overflow questions.
+
+00:09:39.280 --> 00:09:41.280
+Uh, yeah.
+
+00:09:41.280 --> 00:09:45.760
+Why don't you just, Hey, we can continue the conversation, blah, blah, blah.
+
+00:09:45.760 --> 00:09:48.400
+Join the slack channel mail bag channel.
+
+00:09:48.400 --> 00:09:49.400
+Yeah.
+
+00:09:49.400 --> 00:09:50.400
+Right.
+
+00:09:50.400 --> 00:09:53.480
+Or I'll just, yeah, just, or listen to the podcast and I will, and I will just take
+
+00:09:53.480 --> 00:09:58.280
+all of those, anything we don't get to, I will take as a mail bag fodder.
+
+00:09:58.280 --> 00:10:01.280
+We have right now we have a queue on the mail bag.
+
+00:10:01.280 --> 00:10:05.830
+I think we're like 10, 15 questions behind.
+
+00:10:05.830 --> 00:10:08.980
+We are not, we are not that many behind.
+
+00:10:08.980 --> 00:10:11.300
+We have a question around ethics.
+
+00:10:11.300 --> 00:10:13.740
+We have like, well, I thought we'll have like one other question.
+
+00:10:13.740 --> 00:10:14.740
+No, I don't know.
+
+00:10:14.740 --> 00:10:20.070
+Well, then there's one in my email inbox that I haven't bothered to bring out yet.
+
+00:10:20.070 --> 00:10:24.350
+So maybe, maybe next episode, we should, we should catch up on the, yeah, at some
+
+00:10:24.350 --> 00:10:29.710
+point we should do a mail bag episode and then we can continue trucking on the principles.
+
+00:10:29.710 --> 00:10:32.710
+Oh, and I've recorded a new mail bag sound.
+
+00:10:32.710 --> 00:10:37.910
+One of the things people didn't realize is when I do the mail bag thing, it's
+
+00:10:37.910 --> 00:10:43.150
+live every time that I go add some reverb while I'm editing and I got tired of doing
+
+00:10:43.150 --> 00:10:44.150
+that.
+
+00:10:44.150 --> 00:10:47.430
+So I just made one mail bag sound, a little bit of harmony, just a tiny bit of
+
+00:10:47.430 --> 00:10:51.150
+reverb, not as obnoxious, but I will never have to sing that in front of Brent
+
+00:10:51.150 --> 00:10:52.150
+again.
+
+00:10:52.150 --> 00:10:54.030
+So that's the good part.
+
+00:10:54.030 --> 00:10:55.990
+And that's, we should probably get going.
+
+00:10:55.990 --> 00:10:56.990
+It's caught up on the news.
+
+00:10:56.990 --> 00:11:00.310
+I'm sorry if you fast forward to five minutes and I'm still talking about BSC don't
+
+00:11:00.310 --> 00:11:02.690
+care about, but let's dive into modern test
+
+00:11:02.690 --> 00:11:04.090
+testing principle number three.
+
+00:11:04.090 --> 00:11:06.050
+If that's okay, Brent says not yet.
+
+00:11:06.050 --> 00:11:07.050
+Not yet.
+
+00:11:07.050 --> 00:11:08.130
+So there's one thing.
+
+00:11:08.130 --> 00:11:13.130
+So earlier this week, earlier this week, Alan and I were on a panel for the online
+
+00:11:13.130 --> 00:11:14.130
+test conference.
+
+00:11:14.130 --> 00:11:15.130
+Right.
+
+00:11:15.130 --> 00:11:16.130
+I mentioned that a minute ago.
+
+00:11:16.130 --> 00:11:17.130
+Yeah.
+
+00:11:17.130 --> 00:11:20.630
+And so the one thing that I found fascinating.
+
+00:11:20.630 --> 00:11:25.170
+So Joel gave me the data beforehand and there's one.
+
+00:11:25.170 --> 00:11:28.890
+That's Joel from practice test, the host of the online test conference.
+
+00:11:28.890 --> 00:11:31.690
+There's one thing that I actually found interesting.
+
+00:11:33.330 --> 00:11:38.490
+Where, so I did some, some very lightweight data science.
+
+00:11:38.490 --> 00:11:43.050
+I looked at the, one of the questions were, are you concerned about your job
+
+00:11:43.050 --> 00:11:44.050
+stability?
+
+00:11:45.030 --> 00:11:50.690
+And one of the things that I found very fascinating was essentially there's
+
+00:11:50.690 --> 00:11:58.310
+evidence in the data that, that those folks that are sort of snapping to, I
+
+00:11:58.310 --> 00:12:00.290
+won't say necessarily modern testing.
+
+00:12:00.690 --> 00:12:03.450
+We don't actually care if you follow modern testing.
+
+00:12:04.090 --> 00:12:07.650
+If you, if you pick up the same principle and you think you're following lean,
+
+00:12:07.650 --> 00:12:08.850
+great. That's fine.
+
+00:12:09.570 --> 00:12:15.290
+But those POVs or those point of views that were more aligned with modern
+
+00:12:15.290 --> 00:12:18.290
+testing, they weren't concerned about the job security.
+
+00:12:19.170 --> 00:12:24.330
+Those that were more traditionalist were very concerned about the job
+
+00:12:24.330 --> 00:12:30.090
+security. So one thing I take away from that is our work here that we're
+
+00:12:30.090 --> 00:12:36.800
+trying to do, the more that we can get people to see that there is this other
+
+00:12:36.800 --> 00:12:41.520
+way forward, the less anxious potentially they become.
+
+00:12:42.160 --> 00:12:47.400
+I think so. And one of the reasons I'll continue our tangent here, maybe it's not
+
+00:12:47.400 --> 00:12:52.170
+a tangent. I am really enjoying talking about modern testing at these
+
+00:12:52.170 --> 00:12:56.450
+conferences and bringing it up because there are people who are scared.
+
+00:12:57.170 --> 00:12:58.610
+We can't, I don't want to do that.
+
+00:12:59.050 --> 00:13:00.850
+And there are people that go, I want to do that.
+
+00:13:01.130 --> 00:13:05.490
+And a surprising number of people who are saying, yeah, I'm doing that.
+
+00:13:05.810 --> 00:13:08.290
+And it's like, whoa, this is really cool.
+
+00:13:08.450 --> 00:13:12.410
+I wanted to share something, a private conversation that I had on Slack on our
+
+00:13:12.410 --> 00:13:14.930
+one of the three dot slack dot com channel.
+
+00:13:14.930 --> 00:13:19.450
+If you go to anger weasel dot com, whack AB testing, you can find a link to
+
+00:13:19.450 --> 00:13:23.370
+join yourself, but I'm going to abbreviate and Michael, I apologize.
+
+00:13:23.370 --> 00:13:27.050
+I didn't ask for permission, but I'm probably violating all of GDPR.
+
+00:13:27.410 --> 00:13:28.730
+I will paraphrase here.
+
+00:13:29.490 --> 00:13:32.530
+It says their engineering team is adapting to work in a way that is aligned
+
+00:13:32.530 --> 00:13:34.010
+with the modern testing principles.
+
+00:13:34.490 --> 00:13:37.050
+We're doing some of it already, just kind of naturally, but the head of
+
+00:13:37.050 --> 00:13:41.450
+engineering has told the department to get on with it now as testers.
+
+00:13:41.450 --> 00:13:43.970
+We've been pushing it since your talk at test bash this year and a few
+
+00:13:43.970 --> 00:13:46.410
+minutes I'm showing your talk to the whole department.
+
+00:13:47.230 --> 00:13:49.230
+So that I, wow, it's pretty cool.
+
+00:13:49.230 --> 00:13:51.070
+I said exactly that font.
+
+00:13:51.590 --> 00:13:53.310
+It says the video went down pretty well.
+
+00:13:53.710 --> 00:13:56.870
+One of the leaders just said, this just sounds like common sense.
+
+00:13:58.470 --> 00:14:01.510
+It should just be engineering principles, which we should probably address.
+
+00:14:02.030 --> 00:14:03.030
+But I think that's great.
+
+00:14:05.430 --> 00:14:06.030
+You know what?
+
+00:14:06.030 --> 00:14:07.030
+It should be.
+
+00:14:07.030 --> 00:14:10.270
+They're going to monitor the uptake of things, do some more pairing and
+
+00:14:10.270 --> 00:14:12.910
+told them to stay in touch and we'll, uh, and we'll see what happens.
+
+00:14:12.910 --> 00:14:14.910
+But that's, that's so exciting to hear.
+
+00:14:15.150 --> 00:14:15.510
+Yeah.
+
+00:14:15.790 --> 00:14:25.190
+No, uh, uh, hey, if, if, if we're somehow being the last spark of
+
+00:14:25.310 --> 00:14:30.630
+credibility, that it's getting leaders to, you know, flip the switch.
+
+00:14:31.110 --> 00:14:32.190
+Fantastic.
+
+00:14:33.780 --> 00:14:35.420
+That yeah.
+
+00:14:36.060 --> 00:14:37.340
+Anyway, yeah, let's go.
+
+00:14:37.380 --> 00:14:41.380
+Shall we go modern testing principle number three, if you haven't
+
+00:14:41.380 --> 00:14:43.860
+memorized it already, it says this.
+
+00:14:45.130 --> 00:14:49.690
+We are a force for continuous improvement, helping the team adapt and
+
+00:14:49.690 --> 00:14:55.210
+optimize in order to succeed rather than providing a safety net to catch failures.
+
+00:14:56.130 --> 00:14:56.970
+There's a lot in there.
+
+00:14:57.170 --> 00:14:57.810
+There is.
+
+00:14:57.850 --> 00:14:58.770
+Where do you want to start brand?
+
+00:14:58.770 --> 00:14:59.730
+What does that mean?
+
+00:15:00.330 --> 00:15:04.090
+So we're going to talk about not the what, but also the why and the
+
+00:15:04.090 --> 00:15:05.690
+how, if we are, if we're lucky.
+
+00:15:06.170 --> 00:15:07.130
+If we do, if we do it.
+
+00:15:07.130 --> 00:15:07.690
+All right.
+
+00:15:08.970 --> 00:15:09.370
+All right.
+
+00:15:09.730 --> 00:15:14.330
+So I am going to take it on from the reverse of the principles.
+
+00:15:14.930 --> 00:15:25.110
+Well, so what this says is to me, we are going to favor continuously, uh,
+
+00:15:25.110 --> 00:15:31.790
+improving and adapting above a safety net prevention model.
+
+00:15:33.420 --> 00:15:38.770
+And, and actually I realized I said that very agile manifestly.
+
+00:15:39.210 --> 00:15:40.890
+I don't actually think it's even a favor.
+
+00:15:40.930 --> 00:15:46.130
+Like my preference would be thou shalt kill thine safety net.
+
+00:15:47.330 --> 00:15:47.570
+Right.
+
+00:15:47.610 --> 00:15:48.930
+That that's how I simplify it.
+
+00:15:48.970 --> 00:15:52.850
+The way I put it, we talked a little bit about this, uh, before we, uh,
+
+00:15:53.090 --> 00:15:56.090
+press the record button, but this ties to the last principle.
+
+00:15:56.210 --> 00:15:58.970
+A safety net is a great example of a bottleneck.
+
+00:15:59.050 --> 00:15:59.530
+For sure.
+
+00:16:00.440 --> 00:16:05.800
+Uh, and it also doesn't allow it's, it talks, it builds that co-dependency.
+
+00:16:05.800 --> 00:16:08.600
+We've talked about where like, please, here's my code.
+
+00:16:08.600 --> 00:16:09.720
+Please find my bugs.
+
+00:16:10.120 --> 00:16:11.640
+Oh, here's, here are some bugs.
+
+00:16:11.640 --> 00:16:13.040
+So thank you for finding my bugs.
+
+00:16:13.320 --> 00:16:14.480
+Everybody feels validated.
+
+00:16:14.760 --> 00:16:17.560
+But in the meantime, the customer is going, where's my damn software?
+
+00:16:18.300 --> 00:16:20.220
+There was something I was reading.
+
+00:16:20.380 --> 00:16:25.360
+It was a comment chain around something we've done in modern testing.
+
+00:16:25.360 --> 00:16:26.440
+I don't remember what it was.
+
+00:16:26.440 --> 00:16:31.840
+Maybe it was Twitter, maybe it was Slack, but the comment that I'm just sick of is.
+
+00:16:32.670 --> 00:16:36.310
+Well, you know, Dev doesn't want to do test.
+
+00:16:36.430 --> 00:16:37.310
+Yeah.
+
+00:16:37.670 --> 00:16:38.590
+Oh yeah.
+
+00:16:38.630 --> 00:16:45.150
+And I'm just like, and, and right.
+
+00:16:45.190 --> 00:16:49.550
+It's it's, um, Oh, I remember, I remember where it was now.
+
+00:16:49.830 --> 00:16:54.230
+And one of the things I found, I, I did like one thing that's unique about
+
+00:16:54.230 --> 00:16:58.830
+tests, like, and we shouldn't go too far into this, the safety net here.
+
+00:16:58.830 --> 00:17:06.320
+But one of the things that's unique about tests is, is, uh, how many other
+
+00:17:06.320 --> 00:17:12.960
+software engineering roles are you aware of where leaders in the discipline
+
+00:17:12.960 --> 00:17:18.280
+stand up and say, Oh, we're validated because another discipline doesn't
+
+00:17:18.280 --> 00:17:19.520
+want to do this job.
+
+00:17:20.880 --> 00:17:22.800
+What the hell is that?
+
+00:17:23.240 --> 00:17:23.480
+Right.
+
+00:17:23.480 --> 00:17:26.680
+That's that's, that's, that's not a declaration of value.
+
+00:17:26.680 --> 00:17:31.240
+It's not a declaration of, uh, return.
+
+00:17:32.290 --> 00:17:39.930
+It's it's, um, I, again, I think of your, your, uh, elephant slides or the parade
+
+00:17:39.930 --> 00:17:42.810
+slides, it's not a good way to go.
+
+00:17:42.930 --> 00:17:47.530
+It doesn't define the discipline in a positive way.
+
+00:17:48.130 --> 00:18:01.330
+The safety net aspect, um, in the, the dysfunctional enablement loop, um, is
+
+00:18:01.940 --> 00:18:03.740
+bad for multiple reasons.
+
+00:18:03.740 --> 00:18:06.740
+Uh, as, as Alan called out, it's, it creates a bottleneck.
+
+00:18:06.740 --> 00:18:08.500
+We want to be against bottlenecks.
+
+00:18:09.060 --> 00:18:13.620
+The second thing is there's, there's a lot of new techniques out.
+
+00:18:14.550 --> 00:18:19.520
+And if we're trying to finally move quality upstream, right?
+
+00:18:19.600 --> 00:18:24.720
+We're not in the coaching principle, but you know, um, like all good set of
+
+00:18:24.720 --> 00:18:26.840
+principles, they build off of each other.
+
+00:18:27.600 --> 00:18:35.520
+Um, if we're going to get quality upstream, we have to retrain our developers to
+
+00:18:35.520 --> 00:18:37.360
+succeed without the safety net.
+
+00:18:37.920 --> 00:18:41.200
+And that is in essence, what I view this principle.
+
+00:18:42.200 --> 00:18:46.140
+It's, it's not about getting it right the first time.
+
+00:18:47.220 --> 00:18:51.380
+It's about getting the learnings right on the first mistake.
+
+00:18:51.500 --> 00:18:52.340
+Yes.
+
+00:18:52.620 --> 00:18:53.380
+Yes.
+
+00:18:53.460 --> 00:18:55.340
+Don't be so afraid of making mistakes.
+
+00:18:55.340 --> 00:18:56.500
+Don't yeah, I get that.
+
+00:18:56.820 --> 00:19:00.540
+Um, I've been thinking about this principle and then overall, something
+
+00:19:00.540 --> 00:19:04.020
+I shared with you, I've been thinking a lot about what it means to improve
+
+00:19:04.020 --> 00:19:08.540
+a quality culture, which we'll get to in a, in a later, uh, principle, but
+
+00:19:08.540 --> 00:19:10.420
+something that aligns here, I was thinking about that.
+
+00:19:10.420 --> 00:19:15.980
+And then I, I, I tweeted this, this week, which was sadly too many people
+
+00:19:15.980 --> 00:19:18.780
+in teams think quality is limited to testing.
+
+00:19:19.660 --> 00:19:26.140
+And that ties in here, I think pretty well, because we need to train and help
+
+00:19:26.140 --> 00:19:27.820
+our developers do better testing.
+
+00:19:28.060 --> 00:19:32.380
+That doesn't eliminate our job because there's a lot more to quality, uh,
+
+00:19:32.420 --> 00:19:35.020
+then simple functional verification.
+
+00:19:35.840 --> 00:19:46.060
+Uh, internally, uh, one of the things that I have found very helpful is,
+
+00:19:46.060 --> 00:19:50.420
+um, is the language around code correctness versus quality.
+
+00:19:51.340 --> 00:19:59.200
+And so when I, when I talk to devs, I mean, it it's look dude, code correctness.
+
+00:20:00.380 --> 00:20:05.260
+Uh, I'm, I'm here to help coach you through it, but you own code correctness.
+
+00:20:06.060 --> 00:20:08.990
+You own it a hundred percent, right?
+
+00:20:09.030 --> 00:20:10.870
+I'll, I'll, I'll help you brainstorm.
+
+00:20:10.870 --> 00:20:11.910
+I'll help you think through it.
+
+00:20:11.910 --> 00:20:12.350
+I'll help.
+
+00:20:12.390 --> 00:20:13.670
+I'll introduce you to tools.
+
+00:20:13.670 --> 00:20:16.670
+I may even bootstrap you in a certain direction, but
+
+00:20:16.670 --> 00:20:19.950
+code correctness is what you own.
+
+00:20:20.890 --> 00:20:24.290
+And, um, we all own quality.
+
+00:20:25.330 --> 00:20:30.250
+And so I try to weave a conversation in a way that makes it very clear that in
+
+00:20:30.250 --> 00:20:35.090
+this man's humble opinion, code correctness and quality are entirely different things.
+
+00:20:35.570 --> 00:20:36.890
+And that generally works well.
+
+00:20:36.890 --> 00:20:38.330
+And it feeds into the conversation.
+
+00:20:38.330 --> 00:20:38.970
+Well, wait a minute.
+
+00:20:39.490 --> 00:20:40.450
+What's quality then?
+
+00:20:41.250 --> 00:20:43.170
+Subject to point of view of the customer rate.
+
+00:20:43.170 --> 00:20:43.810
+We've had this.
+
+00:20:44.770 --> 00:20:52.080
+I have found that taking, taking that belief and taking it on and decom, uh, what
+
+00:20:52.080 --> 00:20:59.380
+would be the de-overloading, the overloading the term helps the conversation move forward.
+
+00:20:59.820 --> 00:21:01.780
+Let me do a one last comment on that.
+
+00:21:01.780 --> 00:21:04.500
+I want to dig into a few more details on continuous improvement.
+
+00:21:04.500 --> 00:21:10.160
+We're a little bit in by design, the principles compliment and overlap each other.
+
+00:21:10.200 --> 00:21:10.640
+For sure.
+
+00:21:10.760 --> 00:21:14.080
+Uh, this one's a little bit more in how we coach the team, but I want to share a
+
+00:21:14.160 --> 00:21:19.040
+conversation I had just recently around training developers or helping developers
+
+00:21:19.040 --> 00:21:20.000
+become better testers.
+
+00:21:20.480 --> 00:21:26.680
+I was talking to a dev lead who is very much new to unity, new to, uh, new to, new
+
+00:21:26.680 --> 00:21:30.600
+to Alan is subtle, modern testing pushes, uh, subtle.
+
+00:21:30.880 --> 00:21:32.880
+Uh, I can be subtle.
+
+00:21:36.500 --> 00:21:41.470
+Uh, he was very much in the camp that developers can't test their own code.
+
+00:21:42.320 --> 00:21:43.080
+Oh my God.
+
+00:21:44.320 --> 00:21:46.040
+So they're, they're, they're too biased.
+
+00:21:46.720 --> 00:21:53.880
+And my, my answer was my initial answer was, eh, yeah, probably initially goes, well,
+
+00:21:53.880 --> 00:21:55.040
+they can only make sure it works.
+
+00:21:55.080 --> 00:21:55.240
+I can.
+
+00:21:55.240 --> 00:21:59.320
+Yeah, initially, but you know, I've probably taught 50 developers, probably
+
+00:21:59.320 --> 00:22:03.440
+closer to a hundred, uh, who started off that way.
+
+00:22:03.560 --> 00:22:07.520
+I asked him a few questions I paired with them or, or whatever, and they could
+
+00:22:07.520 --> 00:22:09.080
+learn that pretty quickly.
+
+00:22:09.080 --> 00:22:11.560
+They could learn to think about the ways the code doesn't work.
+
+00:22:11.800 --> 00:22:13.880
+They could learn to think about edge cases.
+
+00:22:14.080 --> 00:22:19.950
+It's not that hard to train as typically happens.
+
+00:22:19.950 --> 00:22:25.950
+I won, uh, because I think developers can do a very good job testing the, you need
+
+00:22:25.950 --> 00:22:28.150
+to give them, this is going to tie back to what you're saying.
+
+00:22:28.750 --> 00:22:32.390
+Let them, they have to try it and learn from their mistakes.
+
+00:22:32.430 --> 00:22:32.750
+Yeah.
+
+00:22:33.110 --> 00:22:37.760
+And continuous improvement is about not being afraid to make mistakes, but
+
+00:22:37.760 --> 00:22:40.120
+embracing mistakes as a learning opportunity.
+
+00:22:41.130 --> 00:22:41.570
+Yes.
+
+00:22:42.490 --> 00:22:43.010
+Um,
+
+00:22:43.930 --> 00:22:45.130
+and we don't do that enough.
+
+00:22:45.170 --> 00:22:49.170
+Uh, and that's getting over that hump is so huge and going, yeah, let's,
+
+00:22:49.210 --> 00:22:50.490
+let's get better at this.
+
+00:22:51.130 --> 00:22:53.650
+So we talk about the safety net, right?
+
+00:22:53.650 --> 00:23:00.950
+And, and literally when I, when I bring this up, um, right there, that here,
+
+00:23:00.950 --> 00:23:02.630
+there's definitely a fear.
+
+00:23:02.990 --> 00:23:07.710
+And this is where I think, uh, tests plays a good role.
+
+00:23:07.710 --> 00:23:12.870
+They are the knowledge experts on testing generally in these type of teams.
+
+00:23:13.230 --> 00:23:13.510
+Right.
+
+00:23:13.510 --> 00:23:20.380
+What, what you just shared is that your, your dev expert, uh, your dev lead
+
+00:23:20.540 --> 00:23:27.540
+or whatever this guy was, um, he expressed a belief that, you know, devs
+
+00:23:27.540 --> 00:23:28.700
+can't test their own code.
+
+00:23:28.700 --> 00:23:30.140
+They're not objective, blah, blah, blah.
+
+00:23:30.620 --> 00:23:30.940
+Right.
+
+00:23:30.980 --> 00:23:35.540
+That, um, that to me says first and foremost, this is the guy who
+
+00:23:35.540 --> 00:23:37.020
+doesn't know TDD BDD.
+
+00:23:37.660 --> 00:23:39.900
+And that would be the first place where I would start.
+
+00:23:40.380 --> 00:23:42.340
+So safety net, right?
+
+00:23:42.340 --> 00:23:43.900
+Where else do you see safety nets?
+
+00:23:44.260 --> 00:23:48.640
+Circus and the circus and the tight, uh, the, uh, for example, the tight
+
+00:23:48.640 --> 00:23:49.960
+rope walkers, okay.
+
+00:23:50.680 --> 00:23:55.040
+Now, and so when I talk about a metaphor, you got to think about devs.
+
+00:23:55.200 --> 00:23:59.200
+Uh, when you're going through this transition, devs are used to having a safety
+
+00:23:59.200 --> 00:24:02.960
+net, you know, they're up on the tight rope walker, they're doing cart wheels
+
+00:24:03.480 --> 00:24:04.920
+and they're falling down all the time.
+
+00:24:05.680 --> 00:24:05.920
+Right.
+
+00:24:05.920 --> 00:24:11.400
+And what test has been doing is, is just building and building and building,
+
+00:24:11.840 --> 00:24:14.520
+uh, even better, uh, safety net.
+
+00:24:15.200 --> 00:24:21.960
+Um, and in, you know, every now and again, a tight rope walker falls, falls off,
+
+00:24:22.000 --> 00:24:27.680
+injures themselves and it's not the tight rope walker, but it's blamed.
+
+00:24:27.680 --> 00:24:30.600
+It's generally the, Hey, we had the safety net.
+
+00:24:30.600 --> 00:24:32.320
+Why wasn't the safety net good enough?
+
+00:24:32.640 --> 00:24:32.840
+Okay.
+
+00:24:33.680 --> 00:24:38.600
+Now, what we're proposing is get rid of the safety net because really what's
+
+00:24:38.600 --> 00:24:43.640
+happening is they're not gathering the skills.
+
+00:24:44.390 --> 00:24:48.030
+So I have a patent for a, um, a test harness.
+
+00:24:48.110 --> 00:24:51.150
+I did, uh, I built back in 1998.
+
+00:24:51.870 --> 00:24:53.590
+I also have a useless patent.
+
+00:24:54.270 --> 00:24:56.350
+My thing is actually still an operation.
+
+00:24:56.590 --> 00:25:00.470
+Mine has probably been infringed upon a thousand times, but nobody cares.
+
+00:25:00.950 --> 00:25:04.030
+Yeah, but I think mine too, but it doesn't matter.
+
+00:25:05.260 --> 00:25:11.460
+But the, this, this automation framework, the way we designed it really made it
+
+00:25:11.820 --> 00:25:15.850
+easy for automation to run and execute.
+
+00:25:15.850 --> 00:25:19.570
+One of the key things about it is it's a harness that can execute any test case.
+
+00:25:19.570 --> 00:25:24.930
+So if you are a dev team and you had, or back then it was a test team.
+
+00:25:24.930 --> 00:25:28.050
+If you had a particular way you did your automation and another team did it a
+
+00:25:28.050 --> 00:25:32.010
+particular way that they did their automation, this one could run them all
+
+00:25:32.210 --> 00:25:33.690
+together as a singular suite.
+
+00:25:34.400 --> 00:25:36.000
+It was also very componentized.
+
+00:25:36.000 --> 00:25:41.120
+So it made it very friction free to do automation fast forward about, uh, 10
+
+00:25:41.120 --> 00:25:41.920
+years.
+
+00:25:42.400 --> 00:25:46.880
+And what we find is dev stopped using design patterns.
+
+00:25:46.880 --> 00:25:49.680
+Dev stopped even doing code reviews.
+
+00:25:49.680 --> 00:25:56.000
+What dev would do because the automation suite was so robust, they would
+
+00:25:56.000 --> 00:26:00.200
+actually just check it in, let the automation suite run.
+
+00:26:00.520 --> 00:26:05.040
+They would get a result back in like 30 minutes and then they would go and
+
+00:26:05.040 --> 00:26:05.880
+figure out what they're trying to do.
+
+00:26:05.880 --> 00:26:07.360
+Sounds like you built a safety net.
+
+00:26:08.040 --> 00:26:09.840
+I built an automated safety net.
+
+00:26:09.880 --> 00:26:10.120
+Yeah.
+
+00:26:10.280 --> 00:26:10.600
+Right.
+
+00:26:10.600 --> 00:26:15.880
+And so I didn't actually succeed in moving quality upstream and, and
+
+00:26:15.880 --> 00:26:18.680
+making stronger code.
+
+00:26:19.280 --> 00:26:25.440
+What I did is I made a system that allowed them to do whatever stupid
+
+00:26:25.440 --> 00:26:28.720
+behaviors in your architecture that they wanted.
+
+00:26:28.960 --> 00:26:34.720
+Now this is bad, uh, because sloppy architectures can't scale.
+
+00:26:35.440 --> 00:26:41.920
+You can't add new features to code like this with an efficient timeline.
+
+00:26:43.080 --> 00:26:49.600
+So what I'm suggesting when we get rid of the safety net, what keeping
+
+00:26:49.600 --> 00:26:54.000
+the metaphor alive, if you get rid of the safety net, realize that part of
+
+00:26:54.000 --> 00:27:00.320
+your job is to help influence and motivate folks to get better at
+
+00:27:00.520 --> 00:27:01.840
+walking the tight rope.
+
+00:27:02.200 --> 00:27:03.480
+Now they're going to be anxious.
+
+00:27:04.080 --> 00:27:08.360
+So we're going to have to do the equivalent of, well, we're going to
+
+00:27:08.360 --> 00:27:10.400
+have to retrain them how to walk this thing.
+
+00:27:11.250 --> 00:27:15.090
+So to make sure that they have a minimal risk of getting harm, let's
+
+00:27:15.090 --> 00:27:19.010
+lower the tight rope such that when they fall off, because eventually
+
+00:27:19.250 --> 00:27:22.130
+they're going to, there's less consequence.
+
+00:27:22.610 --> 00:27:27.170
+This is where the continuous improvement, stepping out of the metaphor,
+
+00:27:27.170 --> 00:27:32.410
+this is where continuous improvement and adaptation, uh, come into play.
+
+00:27:33.900 --> 00:27:34.140
+Right.
+
+00:27:34.380 --> 00:27:34.620
+Yep.
+
+00:27:35.180 --> 00:27:35.740
+A little bit.
+
+00:27:35.740 --> 00:27:37.220
+I want to talk a little bit more about the safety net.
+
+00:27:37.260 --> 00:27:41.180
+I do want to dive into just really dive deeply into what continuous
+
+00:27:41.180 --> 00:27:43.700
+improvement is and why it's important.
+
+00:27:44.380 --> 00:27:49.620
+Uh, and, and how we drive that, how we're a force, but your talk reminded
+
+00:27:49.620 --> 00:27:55.700
+me of the headline that came out when Yahoo got rid of all their testers.
+
+00:27:56.560 --> 00:27:59.400
+Uh, we talked about ways to move to unified engineering, both Brent and I
+
+00:27:59.400 --> 00:28:03.280
+believe that a unified engineering team is by far the most optimal way to ship
+
+00:28:03.680 --> 00:28:06.520
+almost all software made today, maybe all software made today.
+
+00:28:06.880 --> 00:28:10.880
+Uh, but you can make that transition in a way that does not enable
+
+00:28:10.880 --> 00:28:11.920
+your team for success.
+
+00:28:12.640 --> 00:28:16.240
+Uh, this is a classic example of be careful ripping off the band-aid
+
+00:28:16.240 --> 00:28:19.640
+because it may be a turn again, but the headline from that came out.
+
+00:28:19.640 --> 00:28:24.440
+I, I've saved it and I use it in presentations once in a while is Yahoo's
+
+00:28:24.440 --> 00:28:28.360
+engineers move to coding without a net subtitle.
+
+00:28:28.720 --> 00:28:33.080
+What happens when you eliminate test and QA fewer errors and faster
+
+00:28:33.080 --> 00:28:35.000
+developments, say Yahoo's tech leaders.
+
+00:28:36.180 --> 00:28:37.940
+There's devil in the details, of course.
+
+00:28:37.980 --> 00:28:38.380
+Right.
+
+00:28:38.540 --> 00:28:41.700
+Uh, so what you're saying is they ripped the band-aid on that one.
+
+00:28:41.740 --> 00:28:42.740
+They ripped the tourniquet.
+
+00:28:43.840 --> 00:28:44.840
+They ripped the tourniquet.
+
+00:28:46.080 --> 00:28:49.100
+Um, yeah.
+
+00:28:49.700 --> 00:28:53.620
+The article goes on to say by, um, by just getting rid of the safety net
+
+00:28:53.620 --> 00:28:56.580
+completely devs automatically decided how to be more careful.
+
+00:28:56.940 --> 00:28:58.980
+Uh, they need some shocking.
+
+00:28:59.860 --> 00:29:00.100
+Right.
+
+00:29:00.140 --> 00:29:04.540
+And this is again, again, much like the safety net and the type rope, right.
+
+00:29:05.260 --> 00:29:10.850
+If, if they know that they've been goofing off on the type rope and
+
+00:29:10.850 --> 00:29:14.050
+so you take away the safety net, they go, whoa, whoa, whoa.
+
+00:29:14.960 --> 00:29:15.320
+Right.
+
+00:29:15.360 --> 00:29:19.360
+Now when I do a cartwheel, you know, nine times out of 10, I fall this time
+
+00:29:19.480 --> 00:29:22.640
+on the, I'm going to severely injure myself.
+
+00:29:22.680 --> 00:29:26.920
+And the challenge is continuing the metaphor is maybe they've either
+
+00:29:26.920 --> 00:29:30.480
+forgotten or never learned the proper technique that would enable them not to
+
+00:29:30.480 --> 00:29:35.080
+fall, they're going to need a tightrope walking coach, probably some extra
+
+00:29:35.080 --> 00:29:39.120
+training just to help them at first to make sure that they can succeed
+
+00:29:39.120 --> 00:29:40.760
+and not splat on the floor.
+
+00:29:41.450 --> 00:29:41.810
+Right.
+
+00:29:41.810 --> 00:29:45.850
+And then, um, on the continuous improvement, right.
+
+00:29:45.850 --> 00:29:49.090
+It's, it's, it's not around.
+
+00:29:50.230 --> 00:29:53.790
+We got to escape out of the metaphor, but this, this will be the last one I try.
+
+00:29:54.630 --> 00:29:54.950
+Right.
+
+00:29:54.950 --> 00:29:56.750
+How do we lower the rope?
+
+00:29:57.680 --> 00:30:06.840
+Then how do we, how, so that the risk is lower and get them improving one step at
+
+00:30:06.840 --> 00:30:11.800
+a time, like the way you get across the wire is one step at a time.
+
+00:30:13.730 --> 00:30:13.930
+Right.
+
+00:30:13.930 --> 00:30:17.290
+And that in my view is kind of how this continuous improvement is.
+
+00:30:17.930 --> 00:30:19.210
+We're, we're down there.
+
+00:30:19.210 --> 00:30:20.290
+The net's gone.
+
+00:30:21.010 --> 00:30:26.090
+They take a step and we're like, Hey, your foot's not quite the right place.
+
+00:30:26.130 --> 00:30:28.210
+Adjust that before you take your next step.
+
+00:30:28.890 --> 00:30:35.650
+And as this, as this gets accustomed, as they are used to this becomes a new
+
+00:30:35.650 --> 00:30:40.200
+muscle memory, they're not going to need you to do this right.
+
+00:30:40.240 --> 00:30:43.840
+And now escaping out of the metaphor, continuous improvement.
+
+00:30:44.750 --> 00:30:47.750
+To me, I think of, of, of Kaizen here.
+
+00:30:48.190 --> 00:30:48.430
+Yeah.
+
+00:30:49.150 --> 00:30:51.110
+And we're going to get into that in a minute.
+
+00:30:51.230 --> 00:30:51.430
+All right.
+
+00:30:51.470 --> 00:30:54.870
+But I just had a thought like I'm so sick of the word that the phrase shift left.
+
+00:30:54.870 --> 00:30:56.190
+I think it's stupid.
+
+00:30:56.190 --> 00:30:56.710
+I hate it.
+
+00:30:57.230 --> 00:30:57.350
+Yeah.
+
+00:30:57.350 --> 00:30:57.950
+Why left?
+
+00:30:57.990 --> 00:30:58.550
+Why not right?
+
+00:30:58.830 --> 00:31:00.190
+Why not up or down?
+
+00:31:00.230 --> 00:31:01.830
+Could you quit fondling the microphone stand please?
+
+00:31:02.270 --> 00:31:03.030
+Probably not.
+
+00:31:03.150 --> 00:31:03.470
+Okay.
+
+00:31:03.470 --> 00:31:04.230
+That's going to be great.
+
+00:31:04.470 --> 00:31:05.030
+Sorry for that.
+
+00:31:05.030 --> 00:31:05.870
+Good junk, good junk junk.
+
+00:31:06.470 --> 00:31:09.350
+I'm waiting for the new, like, I see articles a year from now.
+
+00:31:09.870 --> 00:31:11.910
+Help your dev team lower the rope.
+
+00:31:12.880 --> 00:31:14.240
+Hashtag lower the rope.
+
+00:31:15.120 --> 00:31:15.480
+Yeah.
+
+00:31:15.480 --> 00:31:15.760
+Okay.
+
+00:31:15.880 --> 00:31:17.280
+I will do, I'll talk about Kaizen.
+
+00:31:17.280 --> 00:31:19.360
+Self-fulfilling hashtag there.
+
+00:31:19.400 --> 00:31:22.960
+I think Kaizen is a topic we need to discuss today.
+
+00:31:23.000 --> 00:31:23.200
+Yep.
+
+00:31:23.240 --> 00:31:30.120
+But in the context of this question, sir, Brent, what is continuous improvement?
+
+00:31:32.920 --> 00:31:37.840
+Um, I'll read you a definition.
+
+00:31:37.920 --> 00:31:41.760
+No, it's like, it's improving continuously.
+
+00:31:42.440 --> 00:31:42.720
+Yeah.
+
+00:31:42.720 --> 00:31:43.640
+Read the definition.
+
+00:31:43.760 --> 00:31:44.720
+I think you'll like it.
+
+00:31:44.720 --> 00:31:48.520
+This is from the Institute of Quality Assurance news flash.
+
+00:31:48.560 --> 00:31:53.240
+There's a thing called the Institute of Quality Insurance, which is probably like
+
+00:31:53.240 --> 00:31:55.000
+two guys in a garage somewhere, but whatever.
+
+00:31:55.480 --> 00:32:00.660
+Uh, they define continuous improvement as a gradual, never ending change, which is
+
+00:32:00.660 --> 00:32:04.860
+focused on increasing the effectiveness and or efficiency of an organization to
+
+00:32:04.860 --> 00:32:06.980
+fulfill its policy and objectives.
+
+00:32:07.340 --> 00:32:12.060
+It is not limited to quality initiatives, improvement in business strategy, business
+
+00:32:12.060 --> 00:32:16.700
+results, customer, employee, and supplier relationships can be subject to continual
+
+00:32:16.700 --> 00:32:17.260
+improvement.
+
+00:32:17.340 --> 00:32:18.740
+Then the, my favorite part is the last part.
+
+00:32:18.740 --> 00:32:19.900
+I should just skip this right away.
+
+00:32:20.140 --> 00:32:23.140
+Put simply, it means getting better all the time.
+
+00:32:24.310 --> 00:32:24.590
+Yeah.
+
+00:32:25.520 --> 00:32:26.440
+It's not a bad definition.
+
+00:32:26.680 --> 00:32:29.790
+No, but all of the time, right?
+
+00:32:30.070 --> 00:32:36.750
+This, this, this, this is, this is not every six months when we do the
+
+00:32:36.750 --> 00:32:38.470
+two day post-mortem offsite.
+
+00:32:38.510 --> 00:32:38.670
+Yeah.
+
+00:32:38.670 --> 00:32:41.790
+Let's do a post-mortem and we'll make a big list of things that we're
+
+00:32:41.790 --> 00:32:42.710
+probably not going to do.
+
+00:32:42.870 --> 00:32:44.550
+That is not continuous improvement.
+
+00:32:45.030 --> 00:32:46.110
+That's not even improvement.
+
+00:32:46.860 --> 00:32:51.660
+Uh, there's some argument that there's an element of, uh, catharsis.
+
+00:32:51.700 --> 00:32:58.260
+What I found in the old days, when we do those half day, full day, two day, uh,
+
+00:32:58.300 --> 00:33:03.740
+post-mortems after a product, it was really just a nice venting session.
+
+00:33:03.900 --> 00:33:04.340
+Yes.
+
+00:33:05.260 --> 00:33:06.540
+And it was a nice venting.
+
+00:33:06.540 --> 00:33:09.060
+People feel better, not get better.
+
+00:33:09.420 --> 00:33:09.700
+Right.
+
+00:33:09.700 --> 00:33:12.340
+Did we already talk about actionable versus vanity?
+
+00:33:13.100 --> 00:33:15.340
+Uh, I'm sure we hit that last time.
+
+00:33:15.700 --> 00:33:15.940
+Yeah.
+
+00:33:15.940 --> 00:33:19.660
+Or, or in the deep dive on Brent talks to Alan about data.
+
+00:33:20.180 --> 00:33:20.540
+Right.
+
+00:33:20.780 --> 00:33:22.220
+That actually, that is when we did it.
+
+00:33:22.740 --> 00:33:24.780
+So a continuous improvement.
+
+00:33:25.180 --> 00:33:29.440
+Um, I'll tell a story here.
+
+00:33:31.600 --> 00:33:35.080
+So when I first shifted to dev, I was a unified engineer.
+
+00:33:35.480 --> 00:33:35.720
+Okay.
+
+00:33:36.400 --> 00:33:37.480
+We started with scrum.
+
+00:33:38.160 --> 00:33:44.860
+Um, this was at a time where I was not actually very familiar with, with agile.
+
+00:33:45.570 --> 00:33:51.570
+Um, but we started with scrum and we made a tactical error.
+
+00:33:52.500 --> 00:33:58.940
+We had come up with a scenario, um, that actually required us to pretty much
+
+00:33:59.100 --> 00:34:01.980
+change pieces in our entire architecture stack.
+
+00:34:02.930 --> 00:34:07.930
+And, uh, of course, just like with any scrum team, all the bugs got
+
+00:34:07.930 --> 00:34:13.270
+introduced in the 11th hour and we came in the next day and found out.
+
+00:34:14.130 --> 00:34:20.090
+Nothing integrated because we had person a working on one piece of the
+
+00:34:20.090 --> 00:34:23.010
+refactor person B working on another piece of refactor.
+
+00:34:23.450 --> 00:34:29.240
+So we had done this in a two week sprint and it literally took us two
+
+00:34:29.240 --> 00:34:32.780
+months to unscrew ourselves.
+
+00:34:34.240 --> 00:34:39.760
+And after we successfully did that, um, my team was like, Hey, uh, can we do
+
+00:34:39.760 --> 00:34:42.400
+this Kanban thing you keep saying that we're going to do?
+
+00:34:42.440 --> 00:34:46.440
+Cause I introduced scrum to them, uh, because I didn't think that they
+
+00:34:46.440 --> 00:34:48.480
+were quite ready to go the Kanban.
+
+00:34:49.040 --> 00:34:51.800
+But after that, they were like, all right, let's do Kanban.
+
+00:34:51.840 --> 00:34:52.560
+This is stupid.
+
+00:34:53.760 --> 00:34:57.280
+And most teams have a much larger transition to get there.
+
+00:34:57.280 --> 00:34:57.720
+That's great.
+
+00:34:59.220 --> 00:34:59.460
+Yeah.
+
+00:34:59.460 --> 00:35:03.940
+So maybe that's it, you know, just completely abjectly fail, you know,
+
+00:35:03.940 --> 00:35:05.900
+your first two sprints and scrum.
+
+00:35:05.980 --> 00:35:08.100
+But isn't that improvement?
+
+00:35:08.780 --> 00:35:13.360
+Uh, it was, uh, I kinda, you know, hindsight, 2020, I kind of wish it
+
+00:35:13.400 --> 00:35:16.920
+hadn't cost me that two months of unscrewing myself.
+
+00:35:17.520 --> 00:35:20.160
+That's a, that was a high price to pay.
+
+00:35:20.840 --> 00:35:25.340
+But one of the things that we did once we started doing continuous flow,
+
+00:35:25.340 --> 00:35:34.460
+got rid of, got, got rid of, um, the scrum model, one thing ended up happening.
+
+00:35:34.580 --> 00:35:41.900
+So I had a team of seven at that time, uh, with enough, um, tickets on the board.
+
+00:35:42.580 --> 00:35:46.940
+What I found is that every day someone on my team was releasing something.
+
+00:35:48.160 --> 00:35:48.360
+Okay.
+
+00:35:48.360 --> 00:35:53.000
+Cause here it's not, it's not major releases once every two weeks.
+
+00:35:53.360 --> 00:35:58.080
+It's no minor release, uh, every single day.
+
+00:35:58.930 --> 00:36:06.990
+And guess what happened when we found that the whole, we came in the next day
+
+00:36:07.070 --> 00:36:11.670
+and it happened, came in the next day and we found our whole system was on the floor.
+
+00:36:12.310 --> 00:36:12.910
+Guess what happened?
+
+00:36:13.830 --> 00:36:14.990
+You had to undo one change.
+
+00:36:15.880 --> 00:36:16.160
+Yeah.
+
+00:36:17.060 --> 00:36:18.300
+Took like 15 minutes.
+
+00:36:19.860 --> 00:36:23.900
+We, we knew exactly the cause cause there was only one thing that went in yesterday,
+
+00:36:24.700 --> 00:36:27.060
+which we could just readily revert.
+
+00:36:27.380 --> 00:36:31.460
+Whereas the big integration story, we couldn't readily revert that.
+
+00:36:32.710 --> 00:36:32.950
+Right.
+
+00:36:32.990 --> 00:36:36.810
+Um, it was too many different changes all at once.
+
+00:36:37.760 --> 00:36:39.360
+Um, it would be harder.
+
+00:36:39.560 --> 00:36:39.760
+Yeah.
+
+00:36:39.760 --> 00:36:40.120
+Yeah.
+
+00:36:40.440 --> 00:36:41.920
+I think that that's clear to everyone.
+
+00:36:41.960 --> 00:36:48.040
+And one of the things that I realized is our role as testers.
+
+00:36:48.560 --> 00:36:52.580
+So remember this is, this was like the first few months of me being in a dev
+
+00:36:52.580 --> 00:36:54.560
+role, having left test.
+
+00:36:55.240 --> 00:37:00.740
+So I was still very focused on, on, um, my heart was still in test.
+
+00:37:01.420 --> 00:37:05.660
+Um, and I'm like, Oh my God, check that out.
+
+00:37:08.060 --> 00:37:17.720
+I way more efficiently reduce the risk by just moving to a continuous, uh,
+
+00:37:17.760 --> 00:37:20.490
+integration model, right?
+
+00:37:20.490 --> 00:37:23.810
+I didn't have to spend old school ways.
+
+00:37:24.490 --> 00:37:30.410
+I wouldn't, I would have done, um, like in the scrum example here, I did, I
+
+00:37:30.410 --> 00:37:33.410
+released it and everything was on the floor and it took me two months to fix it.
+
+00:37:33.970 --> 00:37:34.210
+Okay.
+
+00:37:34.610 --> 00:37:37.050
+The old school model, I would have still spent that two months,
+
+00:37:37.050 --> 00:37:39.970
+perhaps even longer before the release.
+
+00:37:40.820 --> 00:37:40.980
+Okay.
+
+00:37:40.980 --> 00:37:45.760
+So even then the scrum model in my view was better because I knew exactly what
+
+00:37:45.760 --> 00:37:47.420
+I needed to fix instantly.
+
+00:37:47.420 --> 00:37:51.980
+I didn't have to deal with uncertainty, but then moving to a continuous
+
+00:37:51.980 --> 00:37:58.420
+deployment model, I could do one small change at a time, make sure that
+
+00:37:58.460 --> 00:37:59.880
+the system handles it.
+
+00:37:59.880 --> 00:38:06.620
+And if it doesn't, the, I can revert it very rapidly from a test point of view.
+
+00:38:06.620 --> 00:38:11.430
+Again, if our job is to reduce risks of the business, getting this
+
+00:38:11.430 --> 00:38:14.710
+continuous improvement thing, uh, rolling is a key one.
+
+00:38:14.950 --> 00:38:15.150
+Yep.
+
+00:38:15.150 --> 00:38:15.350
+Yep.
+
+00:38:15.750 --> 00:38:18.430
+You already went into a little bit of why, which is good.
+
+00:38:18.430 --> 00:38:21.230
+I want to dive more of that in a minute, but I do want to talk about Kaizen
+
+00:38:21.230 --> 00:38:22.010
+while we're on the subject.
+
+00:38:22.010 --> 00:38:27.070
+I think you, I think as, uh, Embracers of the modern testing principles,
+
+00:38:27.070 --> 00:38:30.190
+Embracers of continuous improvement, I think it's important to be at least
+
+00:38:30.190 --> 00:38:33.690
+aware of the Japanese concept of Kaizen, which is one of the things
+
+00:38:33.690 --> 00:38:38.530
+that comes out of lean, which is literally, I guess literally like make
+
+00:38:38.530 --> 00:38:41.690
+better, but it, it, it's the Japanese word for improvement.
+
+00:38:42.390 --> 00:38:45.350
+One of the things I like about Kaizen, which is probably important to mention
+
+00:38:45.750 --> 00:38:49.770
+is it is not just about how do we improve the pipelines?
+
+00:38:49.770 --> 00:38:50.990
+How do we improve everything?
+
+00:38:50.990 --> 00:38:54.350
+It could be the way the, everything from the way people are treated to
+
+00:38:54.350 --> 00:38:58.350
+the processes that go through, just looking for those every day, all the
+
+00:38:58.350 --> 00:39:01.150
+time, looking for those small things that can be improved.
+
+00:39:01.470 --> 00:39:04.990
+And because it's from lean, it's a big focus on reducing waste.
+
+00:39:06.430 --> 00:39:10.710
+Waste can be, waste can be resources, waste could be time, waste can be, um,
+
+00:39:10.910 --> 00:39:13.230
+actually overlaps a little bit with bottlenecks.
+
+00:39:13.670 --> 00:39:16.470
+The continuous improvement has a lot to do with reducing bottlenecks.
+
+00:39:17.110 --> 00:39:17.350
+Yeah.
+
+00:39:17.350 --> 00:39:23.590
+But, um, so whenever I get in a conversation, when I'm, when I'm
+
+00:39:23.590 --> 00:39:27.290
+onboarding a new set of people to an agile process and we start talking
+
+00:39:27.290 --> 00:39:29.750
+about Kaizen, we start talking about waste.
+
+00:39:30.630 --> 00:39:30.910
+Right.
+
+00:39:30.910 --> 00:39:35.670
+Um, it's inevitable that I'll have a efficiency versus productivity conversation.
+
+00:39:36.110 --> 00:39:41.950
+So for example, when, when, uh, one of the key principles in Kanban is limit whip.
+
+00:39:42.250 --> 00:39:42.550
+Mm-hmm.
+
+00:39:43.380 --> 00:39:45.680
+And that seems like you're encouraging waste.
+
+00:39:46.760 --> 00:39:47.000
+Right.
+
+00:39:47.000 --> 00:39:51.760
+If I say, Hey, you know what, there can only be one ticket out on a board.
+
+00:39:52.040 --> 00:39:54.080
+That means Alan, you're idle.
+
+00:39:55.310 --> 00:39:55.590
+Right.
+
+00:39:55.590 --> 00:39:59.070
+There's this belief that, wait, I'm not being efficiently utilized.
+
+00:39:59.070 --> 00:40:00.450
+Therefore there is waste.
+
+00:40:01.130 --> 00:40:04.610
+And so when you sit, continuous improvement, right?
+
+00:40:04.610 --> 00:40:07.850
+The other thing to keep in mind is that there's a goal.
+
+00:40:08.820 --> 00:40:11.460
+And then the goal is going to be different based on the context.
+
+00:40:12.140 --> 00:40:12.420
+Right.
+
+00:40:12.460 --> 00:40:18.460
+But in order to improve, you have to have something that you measure and you're
+
+00:40:18.460 --> 00:40:20.500
+going, did that work better or not?
+
+00:40:21.820 --> 00:40:26.880
+In this particular case, it's, uh, it's probably going to be for most of our
+
+00:40:26.880 --> 00:40:31.000
+listeners, it's going to be an element of productivity, uh, because it is our
+
+00:40:31.000 --> 00:40:35.800
+job to accelerate and, you know, productivity is a better measure of that
+
+00:40:35.800 --> 00:40:40.420
+than efficiency, and it's going to be about quality, right?
+
+00:40:40.480 --> 00:40:42.640
+Not co-correctness, but quality.
+
+00:40:42.760 --> 00:40:47.560
+Uh, are, are we helping to attract and hit the customers that we're going after?
+
+00:40:47.640 --> 00:40:47.840
+Yeah.
+
+00:40:47.880 --> 00:40:51.400
+This ties directly back to accelerate the achievement of shippable quality.
+
+00:40:51.480 --> 00:40:51.840
+Amen.
+
+00:40:53.600 --> 00:40:54.320
+Amen, brother.
+
+00:40:55.040 --> 00:41:00.980
+We spent a lot of time trying to figure out what, where do we improve next?
+
+00:41:00.980 --> 00:41:02.020
+What's the next thing we improve?
+
+00:41:02.020 --> 00:41:02.780
+How much do we improve it?
+
+00:41:02.780 --> 00:41:07.190
+How much, you know, what boy really ties back into that bottleneck one from last
+
+00:41:07.190 --> 00:41:14.570
+time, but before we go any farther, this is very DevOpsy, leanish agile.
+
+00:41:14.910 --> 00:41:19.010
+Why is this, why is it important to call this out as a modern testing principle and
+
+00:41:19.010 --> 00:41:22.710
+not just common sense engineering principle or agile principle?
+
+00:41:22.750 --> 00:41:25.110
+What, why is it part of the modern testing principles?
+
+00:41:26.460 --> 00:41:28.740
+There are several agile principles.
+
+00:41:29.420 --> 00:41:31.380
+Um, I think this is important.
+
+00:41:31.700 --> 00:41:34.540
+There's several agile principles that just make sense.
+
+00:41:34.540 --> 00:41:38.740
+Like, um, what you were saying earlier, they, this is just a common
+
+00:41:38.740 --> 00:41:40.940
+sense engineering principle.
+
+00:41:42.940 --> 00:41:50.250
+This one, I would say we call out because, uh, it's a critical process
+
+00:41:50.250 --> 00:41:57.890
+change in, in, in our opinion, that's directly related to the goal of testing.
+
+00:41:59.520 --> 00:42:00.280
+The goal of quality.
+
+00:42:00.680 --> 00:42:01.360
+They, right.
+
+00:42:01.560 --> 00:42:06.950
+There, there are this principle while it sounds like an engineering principle.
+
+00:42:07.760 --> 00:42:09.280
+Uh, and it's because it is.
+
+00:42:10.060 --> 00:42:17.680
+Um, if, if you, if you are helping to lead and push and drive towards, uh,
+
+00:42:17.720 --> 00:42:22.080
+a modern testing environment in your workplace, this one's important.
+
+00:42:22.640 --> 00:42:31.040
+Getting this lit up improves quality and reduces risk for almost no cost.
+
+00:42:32.130 --> 00:42:36.370
+I have a, yes, I agree with everything, but I have a slightly different take
+
+00:42:36.450 --> 00:42:38.290
+on why this is a modern testing.
+
+00:42:39.330 --> 00:42:40.690
+I think it ties back to it.
+
+00:42:40.730 --> 00:42:44.370
+Although we've said before worth mentioning again, that, uh, there
+
+00:42:44.610 --> 00:42:47.170
+isn't really a modern tester role.
+
+00:42:47.850 --> 00:42:53.340
+Uh, there can be a, uh, someone driving these modern testing principles on the
+
+00:42:53.340 --> 00:42:57.940
+team, because probably most of the people listening to this podcast are in or
+
+00:42:57.940 --> 00:43:00.260
+have been in test roles.
+
+00:43:00.700 --> 00:43:01.620
+Uh, you can relate.
+
+00:43:01.620 --> 00:43:09.240
+But I, I, uh, I think this one's important and it's been so, it's been so long.
+
+00:43:09.240 --> 00:43:13.560
+I think if I remember right, I drafted these and then we iterated the crap out of
+
+00:43:13.560 --> 00:43:15.200
+it, or this was part of the original or not.
+
+00:43:15.240 --> 00:43:22.640
+But anyway, getting to my point testers, I think are not uniquely, but well
+
+00:43:22.640 --> 00:43:27.480
+suited, very well suited to drive continuous improvement for a couple of reasons.
+
+00:43:27.880 --> 00:43:29.000
+Uh, two main reasons.
+
+00:43:29.000 --> 00:43:31.560
+One here, you mean from a leadership standpoint.
+
+00:43:31.600 --> 00:43:35.640
+So one is that our job is to see the system as a whole.
+
+00:43:35.880 --> 00:43:36.120
+Yes.
+
+00:43:36.160 --> 00:43:40.520
+That system thinking that because we do that, we can often find where
+
+00:43:40.520 --> 00:43:43.880
+improvement needs to happen faster than anyone else on the team.
+
+00:43:44.120 --> 00:43:47.600
+I think we're, because of our background, because of what we've done,
+
+00:43:47.640 --> 00:43:49.200
+we're very good at doing that.
+
+00:43:49.680 --> 00:43:54.360
+One of the things I ask my team to do, it's worth mentioning, uh, is that I
+
+00:43:54.360 --> 00:43:58.560
+have not like plastered my team with the modern testing principles and said,
+
+00:43:58.560 --> 00:43:59.960
+we're going to do these.
+
+00:44:00.080 --> 00:44:05.520
+Uh, some of my, some of my team listens to this podcast and they, you know,
+
+00:44:05.520 --> 00:44:11.660
+they follow along, uh, but I mainly just try and drive improvement.
+
+00:44:11.700 --> 00:44:14.620
+And of course, uh, I follow modern testing principles as part of what I
+
+00:44:14.620 --> 00:44:16.060
+do, so some of these things come out.
+
+00:44:16.940 --> 00:44:20.110
+Uh, so rewinding the stack.
+
+00:44:20.150 --> 00:44:22.510
+So I Brent's distracted me with his hyper legs.
+
+00:44:23.030 --> 00:44:24.510
+Um, maybe he has to go to the bathroom.
+
+00:44:24.510 --> 00:44:25.390
+I'm not sure.
+
+00:44:27.230 --> 00:44:27.790
+Uh, one.
+
+00:44:27.790 --> 00:44:30.550
+So we see, we're very good at seeing the big picture of the
+
+00:44:30.910 --> 00:44:32.110
+things, how things fit together.
+
+00:44:32.350 --> 00:44:37.430
+We're also very good at asking questions and often implying critical thinking.
+
+00:44:37.430 --> 00:44:42.230
+So we can often figure out what it is we need to do to improve or what the
+
+00:44:42.230 --> 00:44:47.110
+root cause is that we need to improve in order to make things happen.
+
+00:44:47.550 --> 00:44:49.430
+So I think those things drive it very well.
+
+00:44:49.670 --> 00:44:53.310
+And then you might want to add to that, but that's going to tie into the
+
+00:44:53.310 --> 00:44:57.710
+how I want to get into, uh, how do we drive continuous improvement?
+
+00:44:57.950 --> 00:45:01.350
+And I've found my experiences and I'm curious to hear yours as well, Brent,
+
+00:45:01.590 --> 00:45:08.510
+that testers are very well suited often, even above a product or program or a
+
+00:45:08.510 --> 00:45:12.510
+project manager role to drive things like the retrospective that I think are
+
+00:45:12.510 --> 00:45:15.150
+one of the key things that drive continuous improvement.
+
+00:45:16.090 --> 00:45:22.890
+My experience on this front is again, from, um, a unified engineering model.
+
+00:45:23.330 --> 00:45:31.240
+Um, uh, since becoming a believer in this, I have not actually been
+
+00:45:31.240 --> 00:45:33.960
+a part of separate disciplines.
+
+00:45:35.420 --> 00:45:42.340
+I will say that, uh, when I did unified engineering, right again, uh,
+
+00:45:42.380 --> 00:45:43.740
+I've mentioned this before.
+
+00:45:43.740 --> 00:45:49.580
+I had a good split people who came from dev people who came from test.
+
+00:45:50.420 --> 00:45:56.860
+Um, and over time, uh, it was my, my former testers that ended up being
+
+00:45:56.860 --> 00:46:07.740
+the better developers because they, they had the training to think about how
+
+00:46:07.780 --> 00:46:08.940
+do I write the code?
+
+00:46:09.060 --> 00:46:11.260
+How do I validate it?
+
+00:46:11.700 --> 00:46:15.340
+And most importantly, how do I make sure I'm not wasting my time?
+
+00:46:15.780 --> 00:46:19.100
+This is where the customer validation part comes into play.
+
+00:46:19.860 --> 00:46:23.640
+No one, no one wants to spend their time.
+
+00:46:23.680 --> 00:46:25.960
+We've talked about the pink principles.
+
+00:46:26.280 --> 00:46:30.680
+Um, no one wants to spend their time doing activity.
+
+00:46:31.040 --> 00:46:35.000
+They want their effort, their time to contribute to something larger.
+
+00:46:35.780 --> 00:46:36.060
+Right.
+
+00:46:36.100 --> 00:46:40.740
+So one of the biggest things that continuous improvement as an example,
+
+00:46:41.180 --> 00:46:46.980
+a retrospective going with a Kanban board, um, it creates visibility where
+
+00:46:46.980 --> 00:46:49.340
+visibility wasn't there before.
+
+00:46:49.980 --> 00:46:55.180
+And visibility is coming in and small enough chunks where it makes everyone
+
+00:46:55.180 --> 00:47:02.260
+have a non theoretical, um, concrete conversation about, Hey, this is
+
+00:47:02.260 --> 00:47:03.940
+something that's actually hurting us.
+
+00:47:04.580 --> 00:47:07.140
+God, does anyone disagree?
+
+00:47:07.180 --> 00:47:09.500
+Now, how do we go about fixing it?
+
+00:47:10.280 --> 00:47:14.770
+Um, to address your prior question.
+
+00:47:14.810 --> 00:47:19.660
+Um, yeah, I would say from my experience, people in the test
+
+00:47:19.660 --> 00:47:27.290
+world do pick up, you know, answering the end end questions better, uh, at, at
+
+00:47:27.290 --> 00:47:31.170
+retrospectives and really retrospectives about asking the right questions.
+
+00:47:31.170 --> 00:47:34.570
+And that's something that's very well suited for, for someone in this role.
+
+00:47:34.610 --> 00:47:37.930
+Um, but even then it's ephemeral, right?
+
+00:47:37.930 --> 00:47:43.450
+Because eventually, so when I did the unified engineering, yeah, I got a
+
+00:47:43.450 --> 00:47:45.930
+lot from my ex, oh, I'm a specialist.
+
+00:47:45.930 --> 00:47:47.850
+Oh, I can't test my own stuff.
+
+00:47:47.890 --> 00:47:49.690
+I'm like, well, here's the deal.
+
+00:47:50.250 --> 00:47:57.160
+Um, you're welcome to not test your stuff, I guess, and let's, let's see what happens.
+
+00:47:57.160 --> 00:47:59.800
+But I'm, you know, no one's going to test it for you.
+
+00:48:01.490 --> 00:48:02.570
+And you know what?
+
+00:48:03.090 --> 00:48:07.330
+Just takes a couple of mistakes and they realize, you know what?
+
+00:48:07.330 --> 00:48:08.210
+I need to learn this.
+
+00:48:08.450 --> 00:48:12.170
+It didn't, it actually didn't take very long to get those other guys
+
+00:48:12.170 --> 00:48:18.970
+aboard and realizing, so test has this problem of, you know, uh, we have this
+
+00:48:19.090 --> 00:48:21.850
+fanciful, we're the defenders of the customer.
+
+00:48:22.730 --> 00:48:24.410
+Dev has their own thing, right?
+
+00:48:24.410 --> 00:48:26.090
+I'm a specialist.
+
+00:48:26.130 --> 00:48:32.010
+Who is, um, and it doesn't take long where, where things are so visible that
+
+00:48:32.010 --> 00:48:35.370
+that's just like, you can't hold onto that belief anymore.
+
+00:48:36.090 --> 00:48:40.280
+And one thing, uh, worth bringing up here, it's got about five minutes left,
+
+00:48:40.280 --> 00:48:47.440
+but, uh, as a force for continuous improvement, I've seen people fall into
+
+00:48:47.440 --> 00:48:52.880
+the trap of trying to build a large, like test harness weeks of effort, maybe
+
+00:48:52.880 --> 00:48:57.440
+months of effort to try and be a stopgap solution for something or to try and, you
+
+00:48:57.440 --> 00:49:01.760
+know, really things to try and build a safety net versus help the team adapt
+
+00:49:01.760 --> 00:49:10.000
+and optimize, uh, to me, adaptation, uh, works better when it's a shit ton of
+
+00:49:10.000 --> 00:49:13.320
+tiny changes versus one big ass change.
+
+00:49:13.320 --> 00:49:14.720
+You can get a boiled frogs.
+
+00:49:14.720 --> 00:49:16.120
+There's lots of metaphors about this.
+
+00:49:16.560 --> 00:49:23.050
+And also in a culture of experimentation, applying that to improvement where, uh,
+
+00:49:23.090 --> 00:49:27.850
+do frequent retrospectives try and, and actually I'll talk about retrospectives
+
+00:49:27.850 --> 00:49:28.610
+for just a minute.
+
+00:49:28.650 --> 00:49:34.170
+I think, uh, many teams do retrospectives and they're, and they're a event session.
+
+00:49:34.890 --> 00:49:38.290
+Some teams do them and make a big list of things they want to improve.
+
+00:49:38.490 --> 00:49:39.610
+And none of them ever happened.
+
+00:49:40.430 --> 00:49:47.600
+Uh, what I prefer and what I drive teams to do is do retrospectives as frequently
+
+00:49:47.600 --> 00:49:53.360
+as you can handle, uh, minimum of once a week is what I, yeah, I, some of them
+
+00:49:53.360 --> 00:49:54.920
+do too, I prefer once a week.
+
+00:49:54.920 --> 00:49:55.160
+Yeah.
+
+00:49:56.090 --> 00:50:00.730
+Prioritize the top one, maybe two, three at the most things you want to
+
+00:50:00.730 --> 00:50:07.560
+improve and assign an owner, assign someone to be responsible for, for figuring out
+
+00:50:07.560 --> 00:50:10.280
+what the micro improvement is and implementing it and coming back to
+
+00:50:10.280 --> 00:50:11.360
+report to see what happens.
+
+00:50:11.560 --> 00:50:12.400
+Well, that didn't work.
+
+00:50:12.560 --> 00:50:13.600
+We can, we can learn from that.
+
+00:50:13.600 --> 00:50:14.400
+Try something else.
+
+00:50:15.120 --> 00:50:18.080
+Um, I do something similar.
+
+00:50:18.680 --> 00:50:21.840
+So every retrospective we do.
+
+00:50:21.880 --> 00:50:24.120
+So I do two styles of retrospective.
+
+00:50:24.160 --> 00:50:28.080
+One is, um, sort of a weekly retrospective.
+
+00:50:28.080 --> 00:50:33.160
+And we have another one known as the starfish model that we do once a quarter.
+
+00:50:33.800 --> 00:50:37.800
+The starfish model allows you to see sort of the long-term patterns, whereas
+
+00:50:37.800 --> 00:50:40.880
+the weekly retrospective generally is very tactical.
+
+00:50:40.920 --> 00:50:41.240
+Right.
+
+00:50:42.440 --> 00:50:49.260
+But every retrospective ends with four bullets at minimum under two categories.
+
+00:50:50.880 --> 00:50:53.400
+What are two things that we're going to celebrate?
+
+00:50:54.210 --> 00:50:55.970
+Hey, this really worked well.
+
+00:50:57.000 --> 00:50:59.440
+We very happy about this.
+
+00:51:00.200 --> 00:51:04.320
+And what are two things we're going to change and change starting tomorrow?
+
+00:51:05.620 --> 00:51:06.260
+Yeah, I like that.
+
+00:51:06.260 --> 00:51:10.540
+And one thing I do, but didn't mention is you do celebrate, do you think about
+
+00:51:10.540 --> 00:51:14.380
+the things you do well in addition to the improvements?
+
+00:51:14.420 --> 00:51:17.540
+Well, it's important because you want to think about the whole system, right?
+
+00:51:17.540 --> 00:51:20.940
+You don't want to change something because you see a negative impact and then,
+
+00:51:21.620 --> 00:51:23.140
+and then neglect to think about it.
+
+00:51:23.140 --> 00:51:25.260
+You don't want something to go away because you've neglected it.
+
+00:51:25.260 --> 00:51:27.660
+You want to recognize that it's a good thing and keep it happening.
+
+00:51:28.100 --> 00:51:28.420
+Right.
+
+00:51:28.780 --> 00:51:32.980
+Besides retrospectives, what are some things, uh, we can do to some activities?
+
+00:51:33.020 --> 00:51:34.940
+How else can we drive continuous improvement?
+
+00:51:35.460 --> 00:51:39.620
+So you mentioned one thing that I'll, that I'll state, uh, continuous and
+
+00:51:39.740 --> 00:51:44.860
+adaptive improvement is we haven't hit adaptation, I think enough in this
+
+00:51:44.860 --> 00:51:49.580
+conversation, but, um, as you were talking about doing these small minor
+
+00:51:49.580 --> 00:51:56.140
+changes, I actually even further recommend that you do it as vertical slices
+
+00:51:56.140 --> 00:51:57.340
+through the whole architecture.
+
+00:51:58.180 --> 00:51:58.500
+Right.
+
+00:51:58.500 --> 00:52:04.580
+So a small vertical change through the whole architecture is better than, oh,
+
+00:52:04.580 --> 00:52:07.660
+we're going to do one small release of this bit of the architecture.
+
+00:52:07.660 --> 00:52:11.660
+One small piece of this bit of the architecture, because it's as essentially
+
+00:52:11.660 --> 00:52:20.050
+whatever is the experiential component of your system, that often is where the
+
+00:52:20.050 --> 00:52:23.330
+money is in terms of understanding, are you delivering quality?
+
+00:52:23.490 --> 00:52:24.690
+Do you need to adapt?
+
+00:52:24.730 --> 00:52:30.610
+So the, so there is this tendency a lot of the times to overspend on
+
+00:52:30.610 --> 00:52:31.290
+architecture.
+
+00:52:31.290 --> 00:52:36.250
+When I go through planning, I do planning in two month milestones and I
+
+00:52:36.370 --> 00:52:44.250
+very specifically limit, I will spend no more than 30% of my funding on
+
+00:52:44.250 --> 00:52:50.660
+architecture on just pure, we're going to, we're going to make the database faster.
+
+00:52:50.660 --> 00:52:52.420
+We're going to refactor this thing.
+
+00:52:52.940 --> 00:52:54.380
+Cause that doesn't help you adapt.
+
+00:52:55.480 --> 00:52:55.720
+Right.
+
+00:52:55.760 --> 00:52:56.000
+Sure.
+
+00:52:56.000 --> 00:53:00.760
+You can argue, Oh, well, you know, two milliseconds is better than 10 milliseconds.
+
+00:53:01.160 --> 00:53:01.640
+Sure.
+
+00:53:01.920 --> 00:53:02.120
+Right.
+
+00:53:02.120 --> 00:53:03.320
+But right.
+
+00:53:03.640 --> 00:53:04.600
+But you know what?
+
+00:53:05.320 --> 00:53:08.520
+Humans can't perceive less than a hundred milliseconds.
+
+00:53:08.560 --> 00:53:10.120
+So why do I care?
+
+00:53:10.160 --> 00:53:12.120
+Well, maybe mere mortals like you.
+
+00:53:13.000 --> 00:53:13.280
+Sure.
+
+00:53:13.760 --> 00:53:17.880
+So I think chunking in vertical slices is also a good way of
+
+00:53:17.880 --> 00:53:22.040
+doing, uh, continuous, uh, integration.
+
+00:53:22.440 --> 00:53:22.640
+Right.
+
+00:53:22.640 --> 00:53:26.040
+We probably could do half an episode just diving into applying
+
+00:53:26.040 --> 00:53:29.240
+vertical slices in different ways, but we're not, yeah, we're not even
+
+00:53:29.240 --> 00:53:33.440
+talking about like how you set up your, your, your GitHub instance.
+
+00:53:33.440 --> 00:53:38.600
+Cause there's another, you know, how you set up your project pipelines
+
+00:53:39.000 --> 00:53:40.160
+also helps a great deal.
+
+00:53:40.320 --> 00:53:40.600
+Yeah.
+
+00:53:40.840 --> 00:53:41.320
+For sure.
+
+00:53:41.360 --> 00:53:41.800
+For sure.
+
+00:53:42.040 --> 00:53:45.880
+Oh, oh, here's one of my favorite ones on, on that particular one.
+
+00:53:46.920 --> 00:53:49.240
+You create a, your master tree.
+
+00:53:50.350 --> 00:53:56.270
+You let the business team, Hey, business team from here on out.
+
+00:53:56.910 --> 00:53:58.070
+Do you have PMs at unity?
+
+00:53:58.590 --> 00:53:58.790
+Yeah.
+
+00:53:59.230 --> 00:53:59.510
+Yeah.
+
+00:53:59.590 --> 00:53:59.870
+Okay.
+
+00:54:00.820 --> 00:54:07.400
+So the PMs own telling the business team, what's the latest thing in master.
+
+00:54:08.140 --> 00:54:08.420
+Okay.
+
+00:54:09.440 --> 00:54:16.840
+And engineering has no say in when any build from master releases.
+
+00:54:17.400 --> 00:54:19.440
+It's it's a pure business decision.
+
+00:54:20.470 --> 00:54:27.520
+So what that means is if engineering pushes to master, it better be good
+
+00:54:27.600 --> 00:54:29.760
+because business can release it whenever they want.
+
+00:54:31.720 --> 00:54:36.400
+What that, and what that does is it, is it kind of forces on engineering.
+
+00:54:36.680 --> 00:54:39.000
+Hey, I don't know when they're going to release this thing.
+
+00:54:39.040 --> 00:54:40.800
+They can do anytime they want to.
+
+00:54:41.120 --> 00:54:43.640
+I better make sure master is always clean.
+
+00:54:43.760 --> 00:54:45.160
+Master is always RTM.
+
+00:54:45.280 --> 00:54:47.760
+That sounds like the example of taking away a safety net.
+
+00:54:48.890 --> 00:54:50.770
+It's taking away a safety net.
+
+00:54:51.050 --> 00:54:52.690
+It's continuous improvement.
+
+00:54:52.690 --> 00:54:56.690
+It's adaptation, but mostly taking away the safety net.
+
+00:54:56.970 --> 00:54:57.210
+Yeah.
+
+00:54:57.210 --> 00:54:59.370
+And the thing we're not going to be able to get into all the examples that
+
+00:54:59.370 --> 00:55:02.970
+we're going to wrap up here, but there are literally hundreds, probably
+
+00:55:02.970 --> 00:55:07.570
+thousands of ways they're all going to depend on context of ways to improve
+
+00:55:07.570 --> 00:55:10.770
+the business as small, small, moving to smaller batch changes versus big
+
+00:55:10.770 --> 00:55:15.010
+integration points, moving to trunk based development, moving, which is
+
+00:55:15.010 --> 00:55:16.450
+similar to a model you're talking about.
+
+00:55:17.210 --> 00:55:23.420
+Those are all changes that will optimize your, your team.
+
+00:55:24.060 --> 00:55:26.460
+And like I said before, you can't just go, okay, we're, we've been
+
+00:55:26.460 --> 00:55:27.660
+doing big branches tomorrow.
+
+00:55:27.660 --> 00:55:28.860
+We're doing trunk based development.
+
+00:55:29.220 --> 00:55:32.580
+One of the things we need to be able to do is figure out where we're going.
+
+00:55:32.580 --> 00:55:33.540
+I want to go here.
+
+00:55:33.900 --> 00:55:38.340
+What's what are the series of small steps I need to take to get there?
+
+00:55:39.600 --> 00:55:43.880
+And that's super important and something probably worth elaborating on in the
+
+00:55:43.880 --> 00:55:46.680
+future, but we're running close on time.
+
+00:55:47.160 --> 00:55:49.520
+Do you have any final words for the day, Brent?
+
+00:55:49.880 --> 00:55:50.640
+None for the day.
+
+00:55:51.400 --> 00:55:52.200
+None for today.
+
+00:55:52.200 --> 00:55:54.880
+We'll catch the rest tomorrow or in two weeks when the next
+
+00:55:54.880 --> 00:55:56.360
+episode of AB testing comes out.
+
+00:55:56.760 --> 00:55:57.800
+Uh, one sec.
+
+00:55:57.800 --> 00:55:59.080
+Thank you for listening this far.
+
+00:55:59.080 --> 00:55:59.880
+We appreciate it.
+
+00:55:59.920 --> 00:56:04.360
+I hope we, uh, were able to answer some questions and not answer more
+
+00:56:04.360 --> 00:56:06.960
+questions than we created regarding principle number three.
+
+00:56:07.040 --> 00:56:09.800
+That's always the goal of ours, but I don't know.
+
+00:56:09.800 --> 00:56:10.720
+I like the bag.
+
+00:56:10.720 --> 00:56:11.720
+I like to think it is.
+
+00:56:11.720 --> 00:56:14.880
+Yeah, we're gonna, we're gonna have some serious mail baggage coming up.
+
+00:56:15.360 --> 00:56:16.040
+That's it.
+
+00:56:16.680 --> 00:56:20.240
+Brent has just like wave, like cut what?
+
+00:56:20.280 --> 00:56:21.240
+Oh, we're at a time.
+
+00:56:21.440 --> 00:56:25.960
+This is the longest like end of episode monologue you have ever done.
+
+00:56:26.320 --> 00:56:28.240
+I told you I was tired.
+
+00:56:28.480 --> 00:56:28.880
+Okay.
+
+00:56:28.960 --> 00:56:31.480
+Um, I'm still not Brent and I am.
+
+00:56:31.760 --> 00:56:32.120
+Bye.
+
+00:56:32.160 --> 00:56:32.440
+Bye.
+

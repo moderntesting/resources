@@ -1,0 +1,1964 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.560
+for any testers listening. People who are change agents are always going to have a job,
+
+00:00:04.560 --> 00:00:07.760
+right? But they might just have to be open to what they do exactly.
+
+00:00:11.660 --> 00:00:18.460
+Welcome to A.B. Testing Podcast, your modern testing podcast. Your hosts, Alan and Brent,
+
+00:00:18.460 --> 00:00:22.540
+will be here to guide you through topics on testing, leadership,
+
+00:00:22.540 --> 00:00:26.940
+agile, and anything else that comes to mind. Now, on with the show.
+
+00:00:26.940 --> 00:00:28.960
+Hey, everybody. Howdy.
+
+00:00:29.920 --> 00:00:34.320
+Guess what? It's not just me and Brent again. Someone came with us.
+
+00:00:35.380 --> 00:00:39.860
+It's me. Hey, me. Welcome to the podcast.
+
+00:00:42.850 --> 00:00:48.930
+At least I pre-warned my guests. Oh, my God.
+
+00:00:51.250 --> 00:00:54.770
+Oh, that I'm obnoxious? Is that what you're pre-warned about?
+
+00:00:54.770 --> 00:00:57.570
+What are you pre-warned? I don't even want to know what's going on here.
+
+00:00:57.570 --> 00:00:59.250
+Yeah, that's all right. Go for it.
+
+00:00:59.250 --> 00:01:02.690
+I can tell you what's really funny is because I've realized that I
+
+00:01:02.690 --> 00:01:08.930
+start every podcast saying, Hey, everyone. And then, like, we're coming back from break
+
+00:01:08.930 --> 00:01:14.450
+and I have a meeting with my whole team. I go, Hey, everyone. And there are a few of the three
+
+00:01:14.450 --> 00:01:20.130
+in my org. And they go, that sounds familiar. I go, I got to change my opening line.
+
+00:01:21.250 --> 00:01:30.370
+Oh, Joe, amazing me. I just got through half of the introduction to your latest webinar,
+
+00:01:30.370 --> 00:01:38.450
+which I'm sure we'll plug shortly. Oh, yeah. And the host said literally exactly the same thing.
+
+00:01:39.170 --> 00:01:45.570
+Yeah, Joel, you know, he just said he says, Alan, say hi. And then awkward silence.
+
+00:01:46.530 --> 00:01:52.690
+And then he says again, Alan, say hi. And then Alan comes in and goes, Oh, hello, everyone.
+
+00:01:54.160 --> 00:01:59.120
+And then Joel goes off and says, that sounds awfully like your podcast.
+
+00:01:59.120 --> 00:02:04.320
+This happens a lot. So you actually observed my postmodern talk.
+
+00:02:05.360 --> 00:02:08.400
+I am 30 seconds into it.
+
+00:02:08.400 --> 00:02:16.240
+Okay. So let me, this is segueable into why we have this mystery man, Henry, on our podcast.
+
+00:02:16.240 --> 00:02:20.960
+And Henry, I'll let Henry introduce, Henry, Henry, you're new. Hey, just like Burton,
+
+00:02:20.960 --> 00:02:26.800
+Henry in the talk. So postmodern, of course, there's no modern testing isn't modern. It's
+
+00:02:26.800 --> 00:02:34.240
+not about testing. So there's no comparison to be made between modern and postmodern testing,
+
+00:02:34.240 --> 00:02:39.280
+as there is with modern and postmodern art. It's not a rejection of the principles that
+
+00:02:39.280 --> 00:02:44.880
+took us to modern art to become something even more different for human entertainment.
+
+00:02:44.880 --> 00:02:50.240
+Modern testing, of course, was simply our reaction or our way to describe the thing that
+
+00:02:50.240 --> 00:02:55.920
+wasn't the traditional testing, the air quote, traditional, the test last, big test teams,
+
+00:02:55.920 --> 00:02:58.960
+testing quality in testers, owning all of the testing, that kind of stuff.
+
+00:02:59.920 --> 00:03:06.320
+In this talk, I wanted to talk about like the fact that Brent and I did not invent modern
+
+00:03:06.320 --> 00:03:12.000
+testing. We just talked about things we were seeing that were already going on.
+
+00:03:12.000 --> 00:03:15.520
+And what's happened in the years since we began talk about modern testing. So,
+
+00:03:16.640 --> 00:03:21.600
+you know, I remember, I don't remember exactly the date, but many, many years ago,
+
+00:03:23.170 --> 00:03:29.970
+I started talking about the roles that I had had on quality coach. And it was sort of a, you know,
+
+00:03:29.970 --> 00:03:36.290
+almost a placeholder role of like, what do I call it when I'm helping a team or somebody on my team
+
+00:03:36.290 --> 00:03:41.090
+is helping a team do better testing, but doing very little to no testing themselves. And what's
+
+00:03:41.090 --> 00:03:46.690
+kind of blown me away is this rise of the quality coach and all of the people who have
+
+00:03:46.690 --> 00:03:51.010
+quality coach in their profiles on LinkedIn and Twitter and all the people, you know,
+
+00:03:51.010 --> 00:03:55.570
+doing quality coaching, you know, Ann Marie Chard has a blog about it, Kim Engel, both which
+
+00:03:55.570 --> 00:04:00.370
+probably have on the show someday. But we put out a call a couple episodes ago. Hey,
+
+00:04:00.370 --> 00:04:04.930
+if you're a quality coach, you should come be on the, because I don't do it anymore. And
+
+00:04:04.930 --> 00:04:10.290
+Brent's never done it. Come beyond the podcast and tell us more about what quality coaches do
+
+00:04:10.290 --> 00:04:17.410
+and can do. And Henry picked up the phone, literally a landline he's had since 1943
+
+00:04:17.410 --> 00:04:22.450
+and plugged it into the wall. No, he, he pinged me on Slack, like a, like a human being real,
+
+00:04:22.450 --> 00:04:25.330
+real, you know, for the 21st century, people don't make phone calls anymore.
+
+00:04:25.890 --> 00:04:30.530
+But anyway, uh, Henry's going to talk about with us about quality coaching today, including a talk
+
+00:04:30.530 --> 00:04:36.370
+he's given recently on project he's done at Microsoft. And, uh, I'm just going to shut up
+
+00:04:36.370 --> 00:04:42.370
+and let Henry introduce himself, give a little context and talk a little bit about test. I don't
+
+00:04:42.370 --> 00:04:49.410
+know, Henry talk for a while. I will. Thanks. First off, welcome, Henry. Welcome. I'm happy to
+
+00:04:49.410 --> 00:04:55.170
+have you here. Thank you. Yeah. Thanks. Yeah. So, um, so my name is Henry Golding and, uh,
+
+00:04:55.970 --> 00:05:01.730
+I did indeed answer that call, although I don't call myself a quality coach, but I think what I
+
+00:05:01.730 --> 00:05:07.790
+do aligns with what you were talking about. I know this is, I know there are no tangents on this show,
+
+00:05:07.790 --> 00:05:13.470
+so I'll try and keep it on topic. Um, but, uh, so yeah, I consider myself a developer.
+
+00:05:14.190 --> 00:05:20.590
+I've never considered myself a tester, although I do listen to your podcast. Um, and, uh, I, I,
+
+00:05:20.590 --> 00:05:25.550
+I'm a game developer, a game play developer specifically. I started out, um, and I was
+
+00:05:25.550 --> 00:05:29.630
+working at a company, um, and it was clear that that company was about to go bankrupt
+
+00:05:30.190 --> 00:05:36.830
+and I needed a new job quite fast. And I thought, well, here's this Estet thing that I haven't heard
+
+00:05:36.830 --> 00:05:42.910
+of. Um, that's a six month contract at rare, which is a Microsoft subsidiary game studio in the UK.
+
+00:05:43.710 --> 00:05:49.710
+So I thought, well, how bad could that be? I'll do that for six months. Um, and so I did it and
+
+00:05:49.710 --> 00:05:55.790
+I found that it was actually, um, quite for me, quite a nice combination of, um, helping an audience
+
+00:05:55.870 --> 00:06:02.750
+that I care about, ie developers, uh, do better at the work they were doing. Um, and I ended up doing
+
+00:06:02.750 --> 00:06:08.340
+it for quite a while. Um, and I can, I can talk more about, um, the journey that we went on there,
+
+00:06:08.340 --> 00:06:11.460
+which is kind of interesting cause we, you know, we went from, like, I was hired to
+
+00:06:12.500 --> 00:06:18.980
+integrate a like over the network automation driver system and write tests in C sharp for things.
+
+00:06:19.540 --> 00:06:25.700
+Um, and I fairly quickly decided that that was like a dumb thing to do. Um,
+
+00:06:25.780 --> 00:06:32.480
+and was trying to, well, I fairly quickly decided it was a dumb thing to do to write tests for other
+
+00:06:32.480 --> 00:06:38.080
+people's code. Um, so I was trying to kind of figure out how can we help the developers like
+
+00:06:38.080 --> 00:06:44.320
+write tests. Um, and the talk that I alluded to is a talk that I did at GDC, uh, the game
+
+00:06:44.320 --> 00:06:50.850
+developers conference, um, last year now, cause it's 2022, um, in which I talk in a lot more
+
+00:06:50.850 --> 00:06:55.730
+detail about how all that happened. Um, but in the talk, I talk about a mistake that I made,
+
+00:06:55.970 --> 00:07:02.050
+when I tried to, um, like I wrote a really nice automation framework that was ever so decoupled
+
+00:07:02.050 --> 00:07:06.690
+from the game and it talked to the game over the network and I hooked it up with spec flow
+
+00:07:06.690 --> 00:07:12.210
+on the front end. So you could write like Gherkin style tests. And I was like, this is great.
+
+00:07:12.210 --> 00:07:17.650
+Everyone will write tests. And no one did, uh, except one manual tester who it turned out
+
+00:07:17.650 --> 00:07:22.850
+was actually a programmer. And so we hired him as a programmer. Um, so then we had another big
+
+00:07:22.930 --> 00:07:30.420
+project come up, uh, see if thieves, uh, you may have heard of it and it was very important to us
+
+00:07:30.420 --> 00:07:36.020
+that we were able to release it on a regular basis. So we were aiming for continuous delivery. Um,
+
+00:07:36.020 --> 00:07:40.500
+and we, we had a goal which we met of shipping it every week. Um, so we started out shipping a
+
+00:07:40.500 --> 00:07:47.300
+black screen, um, to the Xbox preview program, um, and then kind of went from there. Um, and so on
+
+00:07:47.300 --> 00:07:53.860
+that I, I was at this point running the team that was like helping out with the sort of test framework
+
+00:07:53.860 --> 00:07:57.940
+side of things. Uh, and we, we basically worked with the team to put a test framework that was
+
+00:07:57.940 --> 00:08:03.140
+embedded in the game. Long story short, I learned some lessons, wrote framework that worked for
+
+00:08:03.140 --> 00:08:06.740
+developers. They didn't have to come out of their environment to write tests. They just wrote tests
+
+00:08:06.740 --> 00:08:09.540
+in the environment they were in. Actually, I was listening to your episode where you talk about,
+
+00:08:09.540 --> 00:08:13.860
+um, test cafe that kind of struck struck me that there were some similarities in there,
+
+00:08:14.180 --> 00:08:21.220
+in terms of embedding the test code into the product, um, for ease of authoring. Um, and then
+
+00:08:21.220 --> 00:08:25.940
+yeah, that's, that's probably a long ramble. You guys may have thoughts already.
+
+00:08:26.500 --> 00:08:31.700
+I, I, I do have one thing. I'm sure Brent wants to jump on this too, but I jumped in first. So
+
+00:08:32.500 --> 00:08:36.980
+this idea of shipping, you know, shipping every week and the first thing you ship is a black
+
+00:08:36.980 --> 00:08:46.460
+screen. I am so frustrated by how bastardized the term MVP has been used as I love that. It's
+
+00:08:46.460 --> 00:08:51.500
+fantastic. It's, it gives you value. It lets you learn something from your customers. And Brent,
+
+00:08:51.500 --> 00:08:56.620
+I know loves this as well. So I'm stealing all of his thunder. No, no, yeah, we also have a
+
+00:08:56.620 --> 00:09:02.620
+certification process to go through. So one of the, one of the goals of shipping every week
+
+00:09:02.620 --> 00:09:06.220
+was that like no one else was doing that. And so we were like, well, we better start doing it.
+
+00:09:06.220 --> 00:09:11.260
+So they get used to like receiving so many certification requests from us.
+
+00:09:11.260 --> 00:09:13.580
+And then they eventually decided that they give us an exception.
+
+00:09:18.380 --> 00:09:25.180
+Actually, yeah. Uh, right. You keep hitting the wall until the wall breaks and the river flows
+
+00:09:25.180 --> 00:09:32.140
+again, right? Um, yeah, there's, there's a lot of things on, on that. So did you struggle
+
+00:09:32.140 --> 00:09:40.620
+to get certified to ship a black screen? Right. I'm looking at, see what it wasn't to paying
+
+00:09:40.620 --> 00:09:45.700
+customers, you know, it was just to the preview program. But still, but still that's, that's the
+
+00:09:45.700 --> 00:09:50.740
+example. People try and try and put too much into what they think needs to be their first release.
+
+00:09:50.740 --> 00:09:57.300
+And what you want to do is, is ship, deliver customer value often. And when you start with
+
+00:09:57.380 --> 00:10:02.900
+a black screen, it doesn't crash at least you have nothing to do, but improve on that. But you're
+
+00:10:02.900 --> 00:10:10.450
+actually practicing the art of getting that through all the hoops and ladders that needs to go through
+
+00:10:10.450 --> 00:10:17.010
+to get done. So you've, and I imagine that got easier and easier until the certification
+
+00:10:17.010 --> 00:10:22.210
+folks said this, you know, until they even made it even easier. Yeah. But as a studio,
+
+00:10:22.210 --> 00:10:27.010
+we were very into continuous delivery and that mantra of if it's painful, do it more often.
+
+00:10:28.480 --> 00:10:35.600
+So that kind of drove a lot of thinking. So what happened the first time you
+
+00:10:36.400 --> 00:10:40.640
+shipped something through that mantra and you clearly shipped a bug?
+
+00:10:42.180 --> 00:10:46.180
+You know, I'm just, I'm going to be honest to say, I don't remember. It's quite a while ago.
+
+00:10:47.540 --> 00:10:52.260
+Yeah. And then actually my focus on that project was more on the, like, how do we,
+
+00:10:53.300 --> 00:10:58.340
+well, see, you, you may or may not know that the games industry tends to lag behind the rest
+
+00:10:58.420 --> 00:11:02.980
+of the software industry in terms of adoption of technical practices, but very bleeding edge
+
+00:11:02.980 --> 00:11:09.780
+in some respects, but kind of culturally as a bit of a lag. And so, you know, it's very rare to find
+
+00:11:09.780 --> 00:11:14.500
+a gameplay programmer who has written tests or knows how to write tests or, you know,
+
+00:11:14.500 --> 00:11:17.860
+doesn't expect a manual person, a manual processor to test their work for them.
+
+00:11:18.740 --> 00:11:26.770
+So that was kind of like the main thrust of my work on that project. And we kind of ended up
+
+00:11:26.770 --> 00:11:32.530
+with this formula, which I've since applied on, on Minecraft, where I work now, which is kind of,
+
+00:11:34.000 --> 00:11:38.080
+I guess, you know, I assume that people want to do good quality work. You know, no one gets out of
+
+00:11:38.080 --> 00:11:42.560
+bed in the morning saying, can't wait to write bugs and crash everything. You know, and, but
+
+00:11:42.560 --> 00:11:45.680
+so there's some reason about the system that they're in that is inhibiting that.
+
+00:11:46.800 --> 00:11:54.220
+So by giving them tools that fit in their workflow and are easy to use frictionless,
+
+00:11:55.020 --> 00:12:01.980
+as well as a bunch of education, you know, lots of training, coaching, pairing, and mod programming,
+
+00:12:01.980 --> 00:12:07.420
+actually. Well, I didn't know about mod programming at the time. It was more recently adopted. And then
+
+00:12:07.420 --> 00:12:12.860
+kind of the support, kind of the organizational support to spend time doing that stuff. So that's
+
+00:12:12.860 --> 00:12:19.820
+kind of like the sort of three prong attack that has seen some success. Yeah, I think the thing,
+
+00:12:19.820 --> 00:12:27.020
+one thing from my past to underscore there is just make it so easy to use that it's,
+
+00:12:27.740 --> 00:12:30.700
+it's just dumb not to. And I've done that before with,
+
+00:12:31.660 --> 00:12:39.490
+hey, Frank, do you remember the test harness on Windows CE called Tux? Yes. So I ended up,
+
+00:12:39.490 --> 00:12:44.290
+as I always end up owning, no matter what company or team I go to, I end up owning all the tools.
+
+00:12:44.850 --> 00:12:49.010
+And so Tux was on my team, but we just wrote, in fact, I think I wrote it.
+
+00:12:49.600 --> 00:12:52.160
+Maybe someone fixed it for me because if I did, it would have sucked. But
+
+00:12:52.720 --> 00:12:58.160
+a little wrappers, like I can't remember what the command line was, but it would create
+
+00:12:58.160 --> 00:13:02.480
+the entire skeleton, you know, based on the code that was in that and put it in the right
+
+00:13:02.480 --> 00:13:06.960
+directory and basically do everything, but actually code the test for you. So all the,
+
+00:13:06.960 --> 00:13:09.760
+all that stuff was taken care of that made it easier for people to write tests. And then I'm
+
+00:13:09.760 --> 00:13:14.960
+thinking analysis tools. People would be too lazy. They wouldn't run them locally and they couldn't.
+
+00:13:14.960 --> 00:13:19.120
+So we just make it not only make it easy to run, but make them part of the build.
+
+00:13:19.120 --> 00:13:23.840
+Same thing like getting code coverage data, just make it so easy to use. They'd be much
+
+00:13:23.840 --> 00:13:28.960
+more likely to do it on their own desktop. Reducing friction certainly is an important
+
+00:13:28.960 --> 00:13:35.120
+aspect to like here. That's the right word. I am thinking, I'm thinking back to, to my
+
+00:13:35.120 --> 00:13:43.360
+Perseus days. Perseus is a fantastic little test harness last probably maintained in,
+
+00:13:43.360 --> 00:13:48.320
+I mean, maybe recently, I don't know, but invented by someone we all know, the man named
+
+00:13:48.320 --> 00:13:54.910
+Brad Jensen. Yeah. Somewhere. Oh, you can't see it right there is the patent for it right there.
+
+00:13:54.910 --> 00:13:58.830
+Oh, by the way, I'm speaking of paths, by the way, I was going to ask based on what you're
+
+00:13:58.830 --> 00:14:05.870
+doing. Are you doing any, are you doing any remote, remote testing of performance graphics
+
+00:14:06.430 --> 00:14:14.210
+in your testing? Is that for me or Brad? I think that's either one of you. I will confidently say
+
+00:14:14.210 --> 00:14:23.100
+no. Okay. Because if you are, I have a patent on that shit. Nice. Which is me highlighting the
+
+00:14:23.100 --> 00:14:28.300
+uselessness of patents. But anyway, go on to a more meaningful conversation. Yeah. No,
+
+00:14:28.300 --> 00:14:35.790
+I was thinking through. So reducing the friction is, is absolutely important, but it's, you, you,
+
+00:14:37.360 --> 00:14:45.360
+you need to, to make it easy for them to construct it. You need to make it easy for them to run it.
+
+00:14:45.360 --> 00:14:53.120
+You need to make it easy for them to get the results back. That's all important,
+
+00:14:54.660 --> 00:15:01.700
+but insufficient to get them to use it from my experience. Right. And I think,
+
+00:15:03.700 --> 00:15:11.860
+so my story with Perseus, which I've blogged about it led a different direction. It's probably
+
+00:15:11.860 --> 00:15:20.420
+because I was 20 years away from even hearing the term quality culture, let alone implementing it.
+
+00:15:21.380 --> 00:15:31.090
+But in my story, it increased intellectual laziness. It just became a place where testers added more
+
+00:15:31.090 --> 00:15:39.250
+and more and more tests and, and devs actually stopped testing because they're like, Oh yeah,
+
+00:15:39.250 --> 00:15:47.010
+the whole Perseus infrastructure is fantastic. I can just barf code, then submit it to the system,
+
+00:15:47.010 --> 00:15:53.490
+go get a coffee, come back and then do stuff. In other words, you admitting you built a big fat,
+
+00:15:53.490 --> 00:16:04.300
+ugly monster. I did. And, and yeah, well, I wrote that blog. You probably read it years ago. It's
+
+00:16:04.300 --> 00:16:11.220
+problematic. However, what I'm wondering, cause the thing I did learn when I went to the Bing team
+
+00:16:11.220 --> 00:16:22.370
+that fixed it is number one, CICD is fantastic. You get things fast out to the public so that
+
+00:16:22.370 --> 00:16:30.050
+you can get the feedback. Of course, if you're not wiring up feedback, I just have to, you know,
+
+00:16:30.050 --> 00:16:40.450
+head slap and ask WTF, right? The, so reduce small batches, get it out fast and have a good
+
+00:16:40.450 --> 00:16:46.750
+system where you can get the feedback. Number two, get rid of the safety net. Cause getting
+
+00:16:46.750 --> 00:16:53.390
+rid of the safety net then puts the, puts sufficient accountability while reducing friction
+
+00:16:53.390 --> 00:17:01.630
+in the risk of, cause the other thing is developers are scared, right? They, they, I've learned that
+
+00:17:01.630 --> 00:17:07.070
+the main reason why they get tensed and blame testers as, you know, as we've talked on the
+
+00:17:07.070 --> 00:17:13.230
+podcast before, like in the traditional world, the testers, number one service they provide is
+
+00:17:13.230 --> 00:17:21.230
+scapegoating. The, the reason why devs get all hot to trot on that is because they're afraid.
+
+00:17:21.950 --> 00:17:26.190
+They're absolutely afraid, but if you do smaller batches and get it out there,
+
+00:17:26.190 --> 00:17:34.800
+the risk goes down way, way lower. So I'm interested, Henry, tying back to you.
+
+00:17:34.960 --> 00:17:42.720
+Are you finding agreement on that front? Like are there still, so your title is architect and
+
+00:17:42.720 --> 00:17:52.400
+previously software engineer. Have you found a way to sort of shift that accountability or did you find
+
+00:17:52.400 --> 00:17:57.840
+shifting the accountability even important? Do you find developers, did you, did you come up with a
+
+00:17:57.840 --> 00:18:04.400
+magic equation that, that made developers love writing test cases? It's a good question.
+
+00:18:04.880 --> 00:18:11.920
+It's a good question. I mean, one thing that was on my mind is when we were talking a second ago is,
+
+00:18:11.920 --> 00:18:17.200
+so when I was working at rare, we had a tech director there who was, who was very behind the program.
+
+00:18:17.200 --> 00:18:21.600
+And he had this mantra of it should be easier to write a test than not to write a test.
+
+00:18:22.590 --> 00:18:27.070
+And I was like, Oh, this is great. You know, I sure. Okay. But like surely always it will be
+
+00:18:27.070 --> 00:18:31.630
+not easier not to write the test, right? Cause you don't have to do it. It wasn't until like
+
+00:18:31.630 --> 00:18:36.110
+a few years later after we had kind of done it, that I realized that that is a, it is a real thing.
+
+00:18:36.110 --> 00:18:40.910
+Right? Like when, when the culture has changed such that like, if you don't write a test,
+
+00:18:40.910 --> 00:18:45.310
+then you're going to introduce bugs and break the bill and the lights are going to go red and
+
+00:18:45.310 --> 00:18:48.830
+the lungs will go off and people will be like, Hey, why'd you break the bill? And you'd be like,
+
+00:18:48.830 --> 00:18:53.630
+Oh, I'm embarrassed. You know, but there's like cultural pressure and it's actually easier to
+
+00:18:53.630 --> 00:18:58.670
+sort of like follow what everyone else does. But getting there is, is a real challenge,
+
+00:18:58.670 --> 00:19:05.230
+of course. So like on, on CFTs, we, we were starting from scratch. So we had, we had
+
+00:19:05.230 --> 00:19:10.750
+considerable advantages in being able to like, you know, build the team out of people who were on
+
+00:19:10.750 --> 00:19:17.150
+board and that kind of thing. For Minecraft is a much bigger team and we didn't have that advantage.
+
+00:19:17.150 --> 00:19:22.670
+It's already, you know, a decade old. It's among the list. And, you know, we had a lot of quality
+
+00:19:22.670 --> 00:19:27.950
+problems as you would expect, right? Like it was pretty much impossible to change anything without
+
+00:19:27.950 --> 00:19:34.430
+breaking something. And we have a lot of backwards, like back impact issues and partner content that
+
+00:19:34.430 --> 00:19:41.630
+we mustn't break. So there's considerable challenges and considerable pain for, I don't know if I'll
+
+00:19:41.630 --> 00:19:49.630
+say developers, but considerable pain for the organization in shipping bugs to players and
+
+00:19:49.630 --> 00:19:56.770
+heavy reliance on manual tests, as is common in our industry. As to exactly how it happened, I,
+
+00:19:56.770 --> 00:20:04.770
+I'm not entirely sure. We applied the same kind of formula. Well, I guess some, some brief history
+
+00:20:04.770 --> 00:20:10.610
+about how I ended up there. So one way that Alan and I know each other is that Alan hired me onto
+
+00:20:10.610 --> 00:20:17.890
+the team's team. And that's how I left before he even started one day. It was gone by the time
+
+00:20:17.890 --> 00:20:24.210
+I got there. He knew I was coming as that's why he had to clear that out. Yeah, I ran away. Sorry.
+
+00:20:24.210 --> 00:20:30.770
+Yeah, definitely. Which is, which is fair and reasonable. I understand. I know. Anyway, so I
+
+00:20:30.770 --> 00:20:37.490
+ended up on the team's team because I was like, you know, I had done this and I kind of, my approach
+
+00:20:37.490 --> 00:20:41.010
+is to try and work myself out of a job, right? I think if you're a quality coach, your goal should
+
+00:20:41.010 --> 00:20:46.450
+be not to have a job because like if someone, if you, why would a team need a quality coach on a
+
+00:20:46.450 --> 00:20:50.690
+continuous basis, right? That would mean you're not doing your job. Yeah. And I, and just to
+
+00:20:50.690 --> 00:20:55.010
+interrupt, I think, and that's something I've done a lot in my career. I've done it at Unity
+
+00:20:55.010 --> 00:20:59.970
+twice where I've worked myself out of a job. Unfortunately, a lot of people in the industry
+
+00:21:01.920 --> 00:21:07.760
+hold on to their traditional test role because it ensures they have a job if they do it right,
+
+00:21:07.760 --> 00:21:13.200
+because they can put themselves in a position to be that dependency. But as I think through it,
+
+00:21:13.200 --> 00:21:18.960
+I think all the quality cultures, I'm sure there are exceptions, but all of the quality coaches
+
+00:21:18.960 --> 00:21:24.480
+that I can think of work as consultants. They do jump into a team, do the work, and then work
+
+00:21:24.480 --> 00:21:27.760
+themselves out of a job and move on. But just wanted to add that. But anyway, go on, Henry.
+
+00:21:28.400 --> 00:21:33.120
+Yeah. And so that had happened on CFPs. I was like, well, you know, the culture is there,
+
+00:21:33.120 --> 00:21:37.200
+the processes are there. They don't really need me. Like the developers are earning this process,
+
+00:21:37.200 --> 00:21:41.120
+right? So I think like you're, as a quality coach, you're successful if, you know, you're
+
+00:21:41.120 --> 00:21:44.480
+not needed and the team is now earning that process. And if you go away, then they'll keep
+
+00:21:44.480 --> 00:21:50.160
+that process because they see value in it. They understand it. And so I joined the team as a
+
+00:21:50.160 --> 00:21:58.110
+programmer, back as a gameplay programmer. And then I didn't enjoy the lack of autonomy. I got used to
+
+00:21:58.110 --> 00:22:03.230
+the autonomy that came from kind of running a team and trying to have a goal to solve. And I didn't
+
+00:22:03.230 --> 00:22:10.110
+really appreciate going back to like being told, develop this feature, monkey. So then I was like,
+
+00:22:10.350 --> 00:22:15.870
+you know, I know I'll go to Alan's team and learn how the real pros do it.
+
+00:22:20.670 --> 00:22:25.630
+Through twists and turns, I ended up working on the thing that didn't really work for me. I ended
+
+00:22:25.630 --> 00:22:29.310
+up kind of working on like open source compliance and build stuff. I was like, what am I doing?
+
+00:22:30.110 --> 00:22:33.790
+I knew people on the Minecraft team. I joined the Minecraft team as a gameplay developer.
+
+00:22:34.190 --> 00:22:40.830
+And while I as a gameplay developer, I was trying to write tests and they had a test framework.
+
+00:22:42.270 --> 00:22:46.830
+And I was like, okay, you know, no one is more highly motivated than me to write tests for my
+
+00:22:46.830 --> 00:22:53.630
+work here. Right. But I couldn't make it work. The friction was too high. There were terrible
+
+00:22:53.630 --> 00:22:59.230
+systems that when they had like created these systems on the build and infrastructure side
+
+00:22:59.390 --> 00:23:03.870
+that treated tests as hostile entities and quarantined them and put them through a gauntlet.
+
+00:23:03.870 --> 00:23:09.790
+And I wrote a test and I didn't get feedback for two weeks that actually had never passed on iOS.
+
+00:23:11.070 --> 00:23:14.430
+And there was no way for me to find that out before I submitted it. So I was like, well,
+
+00:23:14.430 --> 00:23:18.670
+this obviously isn't working. And yet, like you say, they were kind of like, we have
+
+00:23:18.670 --> 00:23:22.990
+quality problems. We want tests. We want developers to write tests. But they were like, we just don't
+
+00:23:22.990 --> 00:23:27.310
+understand why developers aren't writing tests. They have the frameworks. So I was like, well,
+
+00:23:27.310 --> 00:23:30.750
+hey, you have the frameworks, but they don't work. Will you let me take a look at that?
+
+00:23:30.750 --> 00:23:33.950
+And they said yes. And so then I started a team that did the same thing that I did at REN.
+
+00:23:34.590 --> 00:23:38.190
+Because that's kind of the long roundabout way of how I ended up doing that work there
+
+00:23:39.630 --> 00:23:43.870
+to try and answer Brent's question about how do you get the developers on board.
+
+00:23:43.870 --> 00:23:52.980
+And then I don't know, I guess I feel like you have to be very pragmatic about it. Like I've seen,
+
+00:23:53.540 --> 00:23:56.980
+you know, colleagues come in and try and make the same kind of cultural change.
+
+00:23:57.540 --> 00:24:00.660
+And sometimes they'll come in and they'll be like, you know, I have this idea of how you're going to
+
+00:24:00.660 --> 00:24:05.380
+do it. You know, like you're going to write C sharp tests. Oh, and you know, oh, you won't write
+
+00:24:05.380 --> 00:24:11.060
+those. I'm going to hire a set to write them for you. And that was a giant failure. You know, or
+
+00:24:11.060 --> 00:24:15.940
+like, you know what, like high level tests, total waste of time. Only unit tests are going
+
+00:24:15.940 --> 00:24:19.460
+to work for you. What's that? Your architecture doesn't support them. Well, you should change
+
+00:24:19.460 --> 00:24:24.100
+your architecture entirely. So like, I mean, you know, then they'll spend like years fighting
+
+00:24:24.100 --> 00:24:29.300
+with the senior engineering leadership kind of trying to say, you know, as a prerequisite to
+
+00:24:29.300 --> 00:24:33.700
+writing any tests, you have to completely rearchitecture your system, which of course
+
+00:24:33.700 --> 00:24:38.660
+doesn't go down very well. And so but that's kind of common, I think, especially with people
+
+00:24:38.660 --> 00:24:45.840
+like from outside the industry coming in anyway. So I guess what I'm getting to is that I feel
+
+00:24:45.840 --> 00:24:50.800
+like the answer is maybe just having empathy for the developer, kind of like I was saying,
+
+00:24:50.800 --> 00:24:55.680
+right, like they want to do a good job, you know, but there's no one who's like, sitting there
+
+00:24:55.680 --> 00:25:03.120
+trying to break stuff. Right. And I'll quote from my GDC talk, I think I said, in the context of
+
+00:25:03.120 --> 00:25:06.880
+developers, the ones who need to write the tests, but when given the right tool and training,
+
+00:25:06.880 --> 00:25:15.490
+we're actually really good at it. Yes. And that is wait, wait, no, no, no, no. I mean, that's
+
+00:25:15.810 --> 00:25:22.850
+heresy. Because so so Alan will best teach you this, like there's this thing called the developer
+
+00:25:22.850 --> 00:25:30.770
+mindset. And now now Brent's using the sarcasm thing. How cool. Because there are people in the
+
+00:25:30.770 --> 00:25:37.330
+industry that aren't on this call that believe that developers are not capable of doing testing
+
+00:25:37.330 --> 00:25:43.090
+because they lack the mindset to do it. And I have I have course have learned as Henry has, and
+
+00:25:43.090 --> 00:25:49.250
+maybe Brian has that that's a bunch of B.S. I have. I've run a dev team without testers.
+
+00:25:49.250 --> 00:25:57.300
+Good for you. Yeah, it's yeah, they can write tests, but often it's just it's often permission
+
+00:25:58.100 --> 00:26:03.620
+or they've been a lot of developers have been told for so long that they that they're unable
+
+00:26:03.620 --> 00:26:08.420
+to write tests because they have the wrong mindset that often all you have to do is tell
+
+00:26:08.420 --> 00:26:13.570
+them it's okay. And they may not be perfect at first, you'll get better, which, you know,
+
+00:26:13.570 --> 00:26:17.970
+hopefully they figure that on their own. But in the coaching aspect, a lot of it is empathy.
+
+00:26:17.970 --> 00:26:23.170
+A lot of coaching is empathy. And while you were talking, I'm thinking of all the people I've
+
+00:26:23.170 --> 00:26:29.490
+interacted with throughout the years, many of them at Microsoft who were frustrated because they
+
+00:26:29.490 --> 00:26:35.090
+had a great idea to do something. And just like you described, I said, I wrote a framework for you,
+
+00:26:35.090 --> 00:26:43.820
+why don't you use it? Something's wrong with you. You you obviously don't care about quality. No,
+
+00:26:43.820 --> 00:26:48.540
+I don't know how to use it. It's not easy. It's not intuitive. I don't have the coaching. I need
+
+00:26:48.540 --> 00:26:55.820
+to do it. Please the build it and they will come mentality, I think is especially prevalent
+
+00:26:55.820 --> 00:27:01.100
+from testers writing tools. I think it looks like standard agility applies as well. Right?
+
+00:27:01.100 --> 00:27:04.380
+Like so you when you when you roll out a test framework, then you want to put something out
+
+00:27:04.380 --> 00:27:08.780
+there and you want to see what happens who uses it, why they're not using it, talk to them,
+
+00:27:08.780 --> 00:27:12.140
+try something else and just iterate until you get to the point where it works for them.
+
+00:27:13.100 --> 00:27:19.100
+And I showed this in my talk, but, you know, we kind of tracked basically for reasons coverage
+
+00:27:19.100 --> 00:27:22.220
+is hard to collect for us. Not that I would recommend coverage as a metric, obviously,
+
+00:27:22.220 --> 00:27:26.940
+but I like to think it's informative. Coverage is a wonderful tool and a horrible metric.
+
+00:27:26.940 --> 00:27:30.540
+Indeed, indeed. And a wonderful tool for people who are trying to like,
+
+00:27:30.540 --> 00:27:36.220
+get a development team to adopt testing. And so, but I just fell back to like number of tests.
+
+00:27:37.660 --> 00:27:44.300
+We actually we introduced a framework that was I feel like there's probably a proper name for it,
+
+00:27:44.300 --> 00:27:49.180
+like a proper testing name for it. I doubt that we've invented it. But it's basically like
+
+00:27:49.180 --> 00:27:53.100
+imagine if your architecture was such that you couldn't write unit tests without
+
+00:27:53.100 --> 00:27:57.580
+extensive changes, but you wanted to write unit tests. So you kind of, you know,
+
+00:27:57.580 --> 00:28:02.300
+you spin up the game and all the dependencies, and then you like take the little piece that
+
+00:28:02.300 --> 00:28:05.500
+you care about and you kind of like write what looks like a unit test, even though there's all
+
+00:28:05.500 --> 00:28:11.900
+sorts of stuff going on in the background. So that I've been calling it like a middle ground test
+
+00:28:11.900 --> 00:28:17.900
+or whatever. But that was the bridge they needed, because it gave them something that
+
+00:28:17.900 --> 00:28:23.660
+worked in their workflow. It's like, okay, now I don't have to wait for the specific example
+
+00:28:23.660 --> 00:28:29.420
+would be I want to test a component. But in order to instantiate a component, I need an actor. To
+
+00:28:29.420 --> 00:28:32.620
+instantiate an actor, I need a level. To instantiate a level, I need the whole game.
+
+00:28:33.740 --> 00:28:37.820
+And so it's like this incredible this chain of dependencies is very hard to break. So what we do
+
+00:28:37.820 --> 00:28:43.500
+is we spin up a level. And we say, okay, you're going to write a single one shot function that
+
+00:28:43.500 --> 00:28:48.300
+looks like a unit test. You can spawn an actor in it if you want. But you're going to like
+
+00:28:48.300 --> 00:28:54.380
+take the component and poke a couple of functions on it. And just that kind of unblocked then that
+
+00:28:54.380 --> 00:29:01.980
+sort of latent desire to do unit like testing. And actually what we now see is that our actual
+
+00:29:01.980 --> 00:29:07.100
+unit tests are starting to grow at a faster rate than those tests. So initially, there wasn't much
+
+00:29:07.100 --> 00:29:13.180
+adoption. And then we suddenly get this uptick, which was like we've been, you know, I think it's
+
+00:29:13.180 --> 00:29:17.900
+about sort of two or three months or so where we were kind of iterating very closely with the team
+
+00:29:17.900 --> 00:29:23.580
+figuring out like what would work for them. And then there's this moment where they suddenly have
+
+00:29:23.580 --> 00:29:28.380
+what they need. And then it just explodes. And then that kind of gets them addicted to testing,
+
+00:29:28.380 --> 00:29:33.180
+test-insected. And then they start realizing, oh, you know what? If I did a little bit of
+
+00:29:33.180 --> 00:29:36.380
+refactoring, I could make this an actual unit test. And so then they start writing,
+
+00:29:36.380 --> 00:29:40.860
+they start doing that and they're writing unit tests. Lastly, these make theory of what we see.
+
+00:29:42.590 --> 00:29:44.270
+I feel like I'm kind of off topic. I'm not sure.
+
+00:29:44.270 --> 00:29:48.270
+No, no, there is no such thing as off topic on the A B testing podcast. Don't be
+
+00:29:48.270 --> 00:29:55.150
+Yeah, I'm currently trying to find a name for your thing. I'm thinking, I'm thinking
+
+00:29:55.150 --> 00:29:57.310
+pseudo mock maybe. Yeah.
+
+00:29:58.590 --> 00:30:02.750
+Ultimately, I don't really care what the name is, you know, like, as long as we can, you know,
+
+00:30:03.310 --> 00:30:05.870
+use it as a tool to move people in the right direction.
+
+00:30:06.830 --> 00:30:09.390
+Hanks, Hanks special environment.
+
+00:30:13.230 --> 00:30:17.470
+Oh, you know, it's, it's, it's, of course, Brent's special sauce.
+
+00:30:18.610 --> 00:30:23.420
+Uh, yeah, let's move it on to the next question.
+
+00:30:24.460 --> 00:30:32.940
+Let's just do with that. Winding back. So what you did is you, you treated test culture shift.
+
+00:30:32.940 --> 00:30:38.450
+And I, here's something that I think is very interesting, right? As, as you were talking,
+
+00:30:38.450 --> 00:30:43.650
+every time you need, need to make a major change, I've come to learn that you need to look at three
+
+00:30:43.650 --> 00:30:50.290
+separate things, the people, the process and the technology. Far too often people
+
+00:30:50.290 --> 00:30:52.930
+just think of it as a technology solution.
+
+00:30:52.930 --> 00:30:54.850
+We just need the right tool and then we're done.
+
+00:30:55.410 --> 00:30:59.490
+Right. And, and Hey, I built the tool, but why is no one using it? It's because
+
+00:31:00.530 --> 00:31:04.050
+you're requiring people to use it and you haven't invented the correct
+
+00:31:04.690 --> 00:31:12.050
+friction free process to make it easy for them to do it. Now, what I, what I hear from Henry's story
+
+00:31:13.010 --> 00:31:21.730
+is what they did is they viewed quality coaching or, or the change of the culture as a product.
+
+00:31:22.770 --> 00:31:29.470
+And they, they sort of a process and BP, right? They viewed it as a product
+
+00:31:30.510 --> 00:31:37.230
+and they viewed it as a sign that there was an error in either their design, um,
+
+00:31:37.790 --> 00:31:43.710
+or in their process, if they weren't getting adopted. I think that's fantastic. I, I,
+
+00:31:43.710 --> 00:31:49.310
+I don't know that I've ever mentioned it. I may just be projecting in, in this conversation, but
+
+00:31:50.030 --> 00:31:57.870
+whenever I roll out something new, I try, what I'm looking for is how do I get people to
+
+00:31:57.870 --> 00:32:04.270
+love this? Not how do I get people to use it? How do I get people to love it? And if I only
+
+00:32:04.270 --> 00:32:12.450
+get 50% the way there, guess what? I'm getting people to use it. Well, I used to say it rare, but,
+
+00:32:14.050 --> 00:32:20.060
+it's like 98% of people problem, uh, this kind of thing. And then I realized pretty recently
+
+00:32:20.060 --> 00:32:22.940
+that I was actually wrong. It's actually a hundred percent of your problem.
+
+00:32:25.300 --> 00:32:30.420
+That's a, that's a Weinberg quote, um, you know, paraphrased in, in software, eventually it's
+
+00:32:30.420 --> 00:32:35.200
+always a people problem. And as a tangent, just because something I've been sharing with my team
+
+00:32:35.200 --> 00:32:40.800
+recently is, you know, I think one thing we've done pretty poorly during the pandemic, we as an
+
+00:32:40.800 --> 00:32:46.000
+industry is learning how to work asynchronously and have, and get work done without the need for
+
+00:32:46.000 --> 00:32:51.600
+a meeting to discuss stuff. But then I also realized that I'm noticing this a lot in managers
+
+00:32:51.600 --> 00:32:56.800
+and leads in my organization who often have to solve people problems and not technology problems.
+
+00:32:56.800 --> 00:33:04.080
+So I think there's a people problem and those people problems as an aside, I have, I am noticing
+
+00:33:04.960 --> 00:33:08.560
+have been getting tougher and tougher over the last almost two years now.
+
+00:33:11.090 --> 00:33:17.520
+Stupid pandemic. Yeah. I mean, I'll, I'll, this is, this is a tangent, but, um,
+
+00:33:17.520 --> 00:33:22.000
+that's what we're famous for. Well, indeed. Yeah. I'm so glad to be here and contribute to the,
+
+00:33:22.000 --> 00:33:27.360
+the proud tradition of tangents on the show. Uh, but yet more programming is something that we
+
+00:33:27.360 --> 00:33:33.360
+have found super effective, um, for all of those pandemic woes and it's not asynchronous.
+
+00:33:33.440 --> 00:33:39.680
+It's very synchronous. Um, but you can do it remotely quite effectively. Um, and I, yeah,
+
+00:33:39.680 --> 00:33:44.640
+I'm, I'm encouraging it as much as I can, because I think especially for early in career folks,
+
+00:33:44.640 --> 00:33:48.640
+it's just really hard in the, in the work from home environment, because you don't get that
+
+00:33:48.640 --> 00:33:52.080
+coaching that you would get if you were sitting next to someone, you know, you could just turn
+
+00:33:52.080 --> 00:33:58.400
+around and ask. Um, whereas when you, when you marble ensemble on a problem together, you know,
+
+00:33:58.400 --> 00:34:03.840
+that all comes in and it's, it's supercharged. So, you know, like we started doing it.
+
+00:34:03.840 --> 00:34:09.280
+We just started experimenting, uh, with an hour here and there. Um, and we're at the point where
+
+00:34:09.840 --> 00:34:18.050
+my team is, is it has decided that they are going to, um, I think like one, one week a month,
+
+00:34:18.050 --> 00:34:24.690
+they, they do an investments week, um, where they mob as a whole team on something that helps us,
+
+00:34:24.690 --> 00:34:28.450
+you know, get better. So like the last thing they did was they put a piece of the test framework
+
+00:34:28.690 --> 00:34:33.650
+under test under, under unit tests, which I was also going to say another big mistake. I think a lot of,
+
+00:34:34.290 --> 00:34:38.690
+um, people who are in that kind of quality coach or test framework writing role make
+
+00:34:38.690 --> 00:34:45.570
+is not testing their work. Right. So like every single framework that I've seen for the most part,
+
+00:34:45.570 --> 00:34:49.090
+you know, I'll be like, oh, where are the tests? And they're like, oh, well, we don't have tests.
+
+00:34:49.090 --> 00:34:55.090
+Where are the test framework? I'm like, what are you doing? You know, like it's so when I,
+
+00:34:55.170 --> 00:34:58.050
+when I took that S that role, I was like, Oh, I guess I didn't know anything about testing.
+
+00:34:58.050 --> 00:35:00.690
+Actually that's how I came across the podcast. Cause I was like, well,
+
+00:35:00.690 --> 00:35:04.210
+I guess I better read this book. How they, how they test software at Microsoft.
+
+00:35:04.210 --> 00:35:11.170
+Cause that's relevant. Uh, that's time you'll never get back.
+
+00:35:13.090 --> 00:35:16.930
+Well, that's a really good book. That's how I learned how to be an S that
+
+00:35:18.450 --> 00:35:21.810
+and write good bug reports. It actually was what I was hired for. Right. Um,
+
+00:35:22.770 --> 00:35:27.890
+to, to be an S debt, even though I didn't ever really do it. Um, cause I thought it was done.
+
+00:35:33.410 --> 00:35:38.850
+That was a great, that's great. Uh, yeah. So what advice do you have for someone who wants to become
+
+00:35:38.850 --> 00:35:45.680
+an S debt? Um, become like you're a programmer program things. If you're interested in test stuff,
+
+00:35:45.680 --> 00:35:50.240
+like help people write tests, write tests for your own work. Um, you know, learn to teach
+
+00:35:50.320 --> 00:35:56.320
+yourself. You could just said don't, but, um, I was actually gonna ask, uh, the question I was going
+
+00:35:56.320 --> 00:36:01.920
+to ask for you said that and changed it was what advice would you have for someone who wants to
+
+00:36:02.640 --> 00:36:09.820
+do more test coaching or become a test coach? Um, I guess I would be curious why, um,
+
+00:36:09.820 --> 00:36:16.610
+like what, what's the motivation because you know, it's, it's kind of a weird role, right?
+
+00:36:16.610 --> 00:36:21.650
+Like we were saying, you have to be willing to work yourself out of a job. Um, so for me,
+
+00:36:22.290 --> 00:36:28.530
+the games entry is, is well known for, for crunch, um, where we work in St hours. And, you know,
+
+00:36:28.530 --> 00:36:32.690
+so a big part of my motivation is I don't want people to have to experience that. Right. And so,
+
+00:36:32.690 --> 00:36:37.490
+so I kind of empathize a lot with like my customer as the, as the developers on our team.
+
+00:36:38.290 --> 00:36:44.850
+Um, so that's a lot of like my personal motivation, but I guess if like, for example,
+
+00:36:44.850 --> 00:36:48.210
+I, depending, I don't know what parts people tend to have, but like if you were a tester,
+
+00:36:49.010 --> 00:36:55.410
+um, and you're like, Oh, I want to become a quality coach. Um, I don't know. I think increasingly it's
+
+00:36:55.410 --> 00:36:58.770
+going to be tough to do it without being a programmer, you know, like all the, all the
+
+00:36:58.770 --> 00:37:03.490
+good stuff is in the programming side, right? Uh, if you, if you can't dig into the code,
+
+00:37:04.210 --> 00:37:08.610
+uh, and dig into the technical practices of how that code is created, then I don't know how you
+
+00:37:08.610 --> 00:37:15.890
+can be effective longterm. Um, so yeah, I know what I did when I took the Sestet role was I was
+
+00:37:15.890 --> 00:37:21.650
+like, well, I know nothing about this. I had a really bad experience with TDD at, um, college.
+
+00:37:21.650 --> 00:37:25.090
+I had this class where they made us try it and I was like, this was dumb and terrible.
+
+00:37:25.090 --> 00:37:30.930
+I had a bad experience. I didn't like the person that I was pairing with. Uh, so I didn't do it
+
+00:37:30.930 --> 00:37:35.090
+again, but though I made an effort to teach myself, um, and it's hard, right? That's why
+
+00:37:35.090 --> 00:37:38.610
+I don't recommend people to just like, just say, Hey team, you should start doing TDD,
+
+00:37:38.610 --> 00:37:42.530
+right? Because it's hard. It gets worse for it gets better. Uh, it's hard. It takes,
+
+00:37:42.530 --> 00:37:45.890
+it took me like sort of three to six months, I would say, to kind of rocket that from like,
+
+00:37:45.890 --> 00:37:51.090
+just doing it every day. Um, but I think you have to kind of teach yourself those technical practices.
+
+00:37:51.090 --> 00:37:56.130
+So if you're curious yourself about those technical practices and how you can write better
+
+00:37:56.130 --> 00:38:02.130
+code, how you can write code with zero bugs, um, then that probably makes you a good
+
+00:38:02.130 --> 00:38:08.210
+quality coach. Let me throw out an idea here for discussion. Just thought of this and someone's
+
+00:38:08.210 --> 00:38:11.410
+going to get mad at me and yell at me about this, which is the best sort of thing to bring
+
+00:38:11.410 --> 00:38:21.890
+up. I wonder if, uh, there really is that big of a difference between a good agile coach,
+
+00:38:21.890 --> 00:38:27.970
+which there are a lot more of and a good quality coach. And if the reason we have quality coaches
+
+00:38:27.970 --> 00:38:34.290
+is because a lot of teams implemented agile, which typically textbook wise would have everybody
+
+00:38:34.290 --> 00:38:39.890
+writing tests and whole team quality is in a lot of agile teams, the way they, the way they
+
+00:38:39.890 --> 00:38:48.350
+adopted air quote agile was to have a air quote agile tester on the team who did all the testing
+
+00:38:48.350 --> 00:38:54.190
+for the team. And I wonder if like those folks eventually, as they, if they again want to work
+
+00:38:54.190 --> 00:38:58.030
+themselves out of a job, they end up teaching the rest of the team to actually own their testing.
+
+00:38:58.030 --> 00:39:02.430
+And that's where quality coach could come from. I just kind of wondering like, what is the
+
+00:39:02.430 --> 00:39:09.710
+difference between like, cause agile is delivering, you know, frequent quality to your customers.
+
+00:39:10.430 --> 00:39:15.950
+What's really the big difference between an agile coach and a quality coach is just a little bit of
+
+00:39:15.950 --> 00:39:23.630
+expertise on testing. No, no. Cause I'm going to add a new coach. Oh God. Because I think,
+
+00:39:23.630 --> 00:39:34.110
+I think, so I was thinking about, about what Henry just said, and I'm, I'm going to invent a new term.
+
+00:39:34.110 --> 00:39:42.830
+It's something that we've used on the cast before. And I think, I think we may be conflating
+
+00:39:42.830 --> 00:39:51.890
+quality coach with code correctness coach. Right. And, and when I, when I think about
+
+00:39:52.850 --> 00:39:59.330
+if you're trying to coach to Henry's point, too, if you're, if you're coaching quality in a more of a
+
+00:39:59.330 --> 00:40:04.770
+traditional means, like, okay, create more test cases and things like that. I think it's going to
+
+00:40:04.770 --> 00:40:14.370
+be hard to coach a team on that. If, if you do not have empathy for their problems, and I think
+
+00:40:14.450 --> 00:40:24.030
+it's going to be hard, much harder to, to have that empathy. If you haven't experienced yourself,
+
+00:40:24.030 --> 00:40:27.710
+I think the more challenge the code correctness part of that, I'm like, I want to let you finish,
+
+00:40:27.710 --> 00:40:31.390
+but just as a twist on here, like something I know, Brent, you've heard me share before,
+
+00:40:31.390 --> 00:40:35.950
+but just in Henry, maybe on the podcast, I've said this, but when my old, but now isn't a
+
+00:40:35.950 --> 00:40:41.150
+quality coach role, I had a boss ask me, how's the team doing at testing? And I said, they do
+
+00:40:41.150 --> 00:40:47.170
+all the testing they know how to do, which meant that it was good. They, they had full ownership
+
+00:40:47.170 --> 00:40:53.970
+of testing job done. Not really, because there was a lot of test approaches and ways to think about
+
+00:40:53.970 --> 00:40:58.770
+the, in which the way in which the code may fail, they hadn't thought about, but I did, I mean,
+
+00:40:58.770 --> 00:41:03.570
+code correctness, they always knew how to do that. That's kind of at the beginning where it stopped.
+
+00:41:04.210 --> 00:41:09.570
+So what I did as a quality coach took them, took them from code correctness to quality.
+
+00:41:09.570 --> 00:41:14.370
+I think there's probably, you know, I think there's probably no real difference between
+
+00:41:14.370 --> 00:41:18.940
+a good agile coach and a good quality coach. I feel like there's probably lots of, there's
+
+00:41:18.940 --> 00:41:23.820
+lots of pitfalls, I think, coming from a like traditional testing background. You know,
+
+00:41:23.820 --> 00:41:31.940
+I have many colleagues who are in that space. I also see a particular, I don't know how to call
+
+00:41:31.940 --> 00:41:38.580
+it, like a, like a trample pitfall where people, people burn out, you know, they get really
+
+00:41:38.580 --> 00:41:42.900
+frustrated because people aren't doing what they told them to, goddamn it. You know, they're like,
+
+00:41:42.900 --> 00:41:46.180
+I came in and I told you that TDD was the thing you should do and you didn't do it.
+
+00:41:47.300 --> 00:41:52.500
+And I think that's, that's kind of, that's not going to be effective. But you're not going to be
+
+00:41:52.500 --> 00:41:57.380
+effective and you're going to burn out and be really mad and upset. So I think it's,
+
+00:41:57.380 --> 00:42:03.700
+it is much more like an agile coach in that you're there to help the team see what they
+
+00:42:03.700 --> 00:42:08.260
+could do better. You know, so if someone on the team is like, oh, you know, I just wish there was
+
+00:42:08.260 --> 00:42:13.300
+a way we could test this and be like, oh, how, how, how might you go about that? You know,
+
+00:42:13.300 --> 00:42:17.620
+maybe we could try a bar and kind of give them like, like you were saying, Alan permission.
+
+00:42:18.260 --> 00:42:21.780
+Yeah. So I think it's quite similar. Yeah. And then, and just to throw out there,
+
+00:42:21.780 --> 00:42:25.780
+I've done a lot of pairing in my past as well, super helpful. So mobbing definitely,
+
+00:42:25.780 --> 00:42:30.340
+especially if you have some folks with some test experience in that mob can be a great way to
+
+00:42:30.340 --> 00:42:36.260
+coach and teach and, you know, osmosis phi is made up that way. There's, there's a new term
+
+00:42:36.260 --> 00:42:41.300
+for you. Brent osmosis phi that testing knowledge into them. But anyway, I promised to let Brent
+
+00:42:41.300 --> 00:42:46.500
+finished, but now that we've told him he's wrong and telling me I'm wrong. Go ahead and finish.
+
+00:42:46.500 --> 00:42:52.820
+Brett. I don't think you've, I, I going to assume your arguments underneath my own.
+
+00:42:54.020 --> 00:43:00.340
+If I take it literally like the point of agile, right? The point of agile is
+
+00:43:00.340 --> 00:43:11.140
+essentially to successful or iteratively to adapt. Adaptively. Yeah. Adaptively. Thank you.
+
+00:43:11.140 --> 00:43:22.660
+Adaptively improve the value stream over the cost. Right. So it's an ROI function that you're
+
+00:43:22.660 --> 00:43:29.860
+optimizing. How do we get the most value in the least amount of time? And then put it in that
+
+00:43:29.940 --> 00:43:37.220
+light, right? Then a quality coaches is probably a subset of an agile coach. A quality coach
+
+00:43:39.540 --> 00:43:48.160
+is potentially focused on the numerator of that equation. How do we increase the value?
+
+00:43:48.720 --> 00:43:54.640
+Whereas an agile coach is focusing on value over time. I would say a good agile coach can do both,
+
+00:43:55.200 --> 00:43:59.760
+but many. No, no, I think, I think an agile coach's responsibility is both.
+
+00:44:00.160 --> 00:44:04.560
+Absolutely. I think today, probably 90% of them don't do both. The good ones do both.
+
+00:44:05.120 --> 00:44:11.950
+No, I think 90% of them just do scrum or fall. I'm going to barf and record it on the podcast.
+
+00:44:14.030 --> 00:44:17.260
+Right. He's turn off your camera first. Nope.
+
+00:44:20.190 --> 00:44:27.740
+Yeah. I think, I think that's right on that. The, the one thing though, like going back to your
+
+00:44:27.820 --> 00:44:35.140
+question, right? It's all right. There's two kinds of camps that we've, we've kind of been addressing
+
+00:44:35.140 --> 00:44:41.780
+and a lot of the podcasts has been our target audience as people was traditionally people doing
+
+00:44:41.780 --> 00:44:50.660
+the old, the old world way of testing. And how do we, how do we help them move into the new world
+
+00:44:50.660 --> 00:44:56.340
+and do so in a delighted fashion? Because well, that one and I went into the new world and like,
+
+00:44:56.340 --> 00:45:03.140
+oh my God, why we're jealous of all the new kids starting in the industry at this point in time,
+
+00:45:03.140 --> 00:45:08.420
+because we now look back on it and go all the bullshit we did was just wrong.
+
+00:45:09.940 --> 00:45:16.050
+That's how I've concluded it now, but it does create new problems. A lot of the old tricks,
+
+00:45:16.050 --> 00:45:22.050
+like if we want to do go and recruit a test expert, how do we do that? Do we do that?
+
+00:45:22.210 --> 00:45:29.630
+How do we get code with the right balance of preventative protection,
+
+00:45:29.630 --> 00:45:36.830
+AKA test suites and things like that, with, with leveraging monitoring and leveraging reactivity,
+
+00:45:36.830 --> 00:45:43.870
+or reactive strategies to get, if we did something wrong, get a, a fix out quickly.
+
+00:45:44.750 --> 00:45:52.130
+Right. I, I kind of more of a, I'm kind of a more of a mix on using monitoring
+
+00:45:52.130 --> 00:45:54.690
+and preventative efforts.
+
+00:45:54.690 --> 00:46:03.230
+I feel like, you know, if you, you as the team get to decide that, you know, like the thinking about,
+
+00:46:03.230 --> 00:46:08.130
+you know, what, what, what does it all put one? And I agree about having credibility, by the way.
+
+00:46:08.130 --> 00:46:14.530
+I think a reason, something that helped me a lot at, at Rare was I was talking to gameplay programmers
+
+00:46:14.530 --> 00:46:18.050
+and they had not been used to talking to another gameplay programmer, right? They were used to talking
+
+00:46:18.850 --> 00:46:23.490
+to people coming in from a central test team and being like, oh, and they don't quite talk the same
+
+00:46:23.490 --> 00:46:28.610
+language. And you don't quite have the same credibility to get them to, to trust you that
+
+00:46:28.610 --> 00:46:33.920
+you might know what you're doing. But then like, if you can talk to developer, like that, you'll say
+
+00:46:35.360 --> 00:46:39.380
+they'll have, they'll want to test something, right? There's a latent desire. You know,
+
+00:46:39.380 --> 00:46:43.460
+they know that they, that they need to test, that this needs to get tested. And they might be in
+
+00:46:43.940 --> 00:46:48.100
+a mindset of like, well, up until now, I have been able to just throw this over the wall to someone.
+
+00:46:48.100 --> 00:46:51.140
+But once you get rid of that, then they become curious and they're like, well, how, you know,
+
+00:46:51.140 --> 00:46:54.420
+how would I test this? And then as a coach, you can kind of help them answer that question.
+
+00:46:54.420 --> 00:47:00.740
+Right? So like, they'll be like, you know, I want to test this. What I could do is I could,
+
+00:47:00.740 --> 00:47:07.140
+you know, simulate the controller being pressed forward and then you press A to jump and then
+
+00:47:07.140 --> 00:47:10.420
+you do this, you know, and it's like, okay, well, but what are you actually trying to test,
+
+00:47:10.420 --> 00:47:13.540
+and it's like, okay, well, what are you actually trying to test, right? So you can, and you just
+
+00:47:13.540 --> 00:47:18.740
+keep asking them that until I tell you, you know, I'm trying to, I'm trying to test that if I, you
+
+00:47:18.740 --> 00:47:25.460
+know, that when, when, when I call hit by pickaxe on this block, the block disappears or whatever,
+
+00:47:25.460 --> 00:47:28.900
+you know, it's like, okay, we'll write that test. So to your point, right, I think
+
+00:47:29.460 --> 00:47:33.460
+that what you're talking about is kind of an implementation detail, right? That the team gets
+
+00:47:33.460 --> 00:47:40.100
+to decide because, you know, I'm into the whole team quality thing and it being everyone's
+
+00:47:40.100 --> 00:47:46.180
+responsibility, which is kind of like a lean thing anyway, right? It's like, we want to look at the
+
+00:47:46.180 --> 00:47:53.300
+whole system and say like, you know, if, if the bottleneck in the system is release or, you know,
+
+00:47:53.300 --> 00:47:57.940
+bugs coming back or whatever, then why is anyone working on anything else, right? Like we should be
+
+00:47:57.940 --> 00:48:03.380
+fixing the bottleneck as a top priority. But very often we, you know, that games entry is renowned
+
+00:48:03.380 --> 00:48:08.820
+for, you know, what to scrum fall or match a hell or whatever. And so you end up with like these,
+
+00:48:08.820 --> 00:48:12.100
+you know, these little assembly lines going and they distribute all the pieces and bring them back
+
+00:48:12.100 --> 00:48:20.660
+in. I was reminded of a really great talk by Henrik Nyberg called Confessions of a Change Agent.
+
+00:48:21.460 --> 00:48:27.140
+It's on YouTube. That sounds familiar to me. Yeah, it's really, it's really good at talking
+
+00:48:27.140 --> 00:48:33.060
+about like, you know, because a quality coach is a change agent, right? Like you're the kind of
+
+00:48:33.060 --> 00:48:36.900
+person who is a change agent. You want to make things better. You're not satisfied with the status
+
+00:48:36.900 --> 00:48:42.580
+quo. You're the kind of person who is frustrated by some process and you write a tool on your lunch
+
+00:48:42.580 --> 00:48:48.500
+break to automate it, you know? Yes. Right. So like, if I was looking for to hire people,
+
+00:48:48.500 --> 00:48:51.140
+which I might well be actually, I would be looking for people like that,
+
+00:48:51.780 --> 00:48:54.100
+who have that mentality, if they just want to improve things.
+
+00:48:55.310 --> 00:49:00.110
+Uh, yeah, actually I was in a conversation. I forgot about the term change agent. I've
+
+00:49:00.110 --> 00:49:10.420
+been called that many times in my career. It's, it's, I am allergic to the word can't. I can't
+
+00:49:10.420 --> 00:49:15.860
+stand it. When someone tells me I can't do something. You just said the word can't twice.
+
+00:49:15.860 --> 00:49:22.670
+Are you breaking out in hives? Uh, yes, it's a podcast. Uh, yes, absolutely.
+
+00:49:22.670 --> 00:49:27.150
+Look at Brent. He's blowing up like a balloon. I bet he can't stop.
+
+00:49:28.140 --> 00:49:36.940
+Um, yeah, so much of my career has been, uh, we have this big problem and then I start investigating
+
+00:49:36.940 --> 00:49:43.340
+and people like, Oh, we can't change that. And it's this sort of prevailing. That's the way it's
+
+00:49:43.340 --> 00:49:49.100
+always been though, Brent. That's right. And I just look at them and like, yeah,
+
+00:49:49.580 --> 00:49:56.780
+it's not going to be that way. Give me three weeks. Uh, those things really, particularly when it, when
+
+00:49:57.500 --> 00:50:03.710
+the word can't is in the way of something that is just really harmful. You can just clearly see
+
+00:50:05.070 --> 00:50:13.040
+that this is a bottleneck and, and, or a big wall in the way, the whole team knows it.
+
+00:50:13.040 --> 00:50:18.320
+They all have sticking with the Minecraft paradigm. They all have pickaxes,
+
+00:50:19.040 --> 00:50:25.200
+but they're like, Oh yeah, you know, you need a, you need a diamond axe to, to get through this one.
+
+00:50:27.090 --> 00:50:39.550
+Then go make a goddamn diamond axe. It's, it's, it's, um, change agents are really important
+
+00:50:39.550 --> 00:50:45.900
+because they don't, it's a, it's an attitude, right? It's not, it's not a, it's not a role.
+
+00:50:45.900 --> 00:50:51.420
+It's not something that you can hire into. It's an attitude. It's, it's no, this is wrong. And I,
+
+00:50:51.420 --> 00:50:56.540
+it needs to be repaired. They, they, they don't like to hear it's not my problem.
+
+00:50:57.790 --> 00:51:01.150
+Wait, change agents like to hear that. No, they don't like to hear that. Oh,
+
+00:51:02.590 --> 00:51:07.150
+they're not the kind of people who would say that. Um, I would say as well, like, you know,
+
+00:51:07.150 --> 00:51:11.710
+for any testers listening, like people who are change agents are always going to have a job,
+
+00:51:11.710 --> 00:51:16.030
+right? They might just have to be open to what they do exactly. Yeah. And that's,
+
+00:51:16.350 --> 00:51:22.430
+that's, you know, as a tester, I was a change agent. And I think some of this comes from our,
+
+00:51:22.430 --> 00:51:29.410
+you know, I, I, most personality types have a little bit of horoscope to them, but both Brent and I
+
+00:51:29.410 --> 00:51:33.650
+are INTPs. And I don't know what you are. If you've ever done that, Henry, same. Yeah.
+
+00:51:36.130 --> 00:51:40.370
+Well, that makes sense. Then, well, there is a pattern there because one of the things about
+
+00:51:40.370 --> 00:51:46.850
+INTPs that I love for my little green book is we abhor inefficiency. So those things just,
+
+00:51:46.850 --> 00:51:51.090
+things that are inefficient bug us and we want to fix them. Yeah. There was a podcast,
+
+00:51:51.090 --> 00:51:55.090
+there was an episode and it was, this was eight years ago. This is when I was at rare. So I don't
+
+00:51:55.090 --> 00:52:00.130
+know when I would have been, it was before you guys had invented modern testing or, or we didn't invent
+
+00:52:00.130 --> 00:52:07.010
+it. We just labeled the thing we saw. But anyway, go on. The label to it. Um, but you, you said
+
+00:52:07.010 --> 00:52:12.210
+something very similar. You said, um, waste burns. Well, maybe it was when we met and we were
+
+00:52:12.210 --> 00:52:15.810
+chatting. I can't remember if it was on the podcast, but I know it really, really resonated
+
+00:52:15.810 --> 00:52:21.410
+for me. I was like, yeah, that's, that's how I feel. It's just like, oh, this is so inefficient.
+
+00:52:22.300 --> 00:52:24.140
+Yeah. I burned.
+
+00:52:24.140 --> 00:52:30.300
+Especially waste of humans. Time really pisses me off. Oh, that one wasting a human's time.
+
+00:52:30.300 --> 00:52:33.740
+I am much more mad than if you're just like, you know, some other kind of waste.
+
+00:52:34.620 --> 00:52:45.020
+I actually, my order is now calendar time, human time, uh, then, um, you know, business
+
+00:52:45.660 --> 00:52:52.860
+issues like calendar time. If you think about like CICD, right? The longer we take for calendar,
+
+00:52:52.860 --> 00:52:58.460
+the longer we're going to get the feedback that we need to, in order to improve. Right.
+
+00:52:58.460 --> 00:53:03.500
+This is something that maybe one last thing to talk about in our, our, our weaving path through
+
+00:53:03.500 --> 00:53:09.740
+here. So I am big on making sure cycle times are very, very tiny on the services side of our,
+
+00:53:09.740 --> 00:53:15.070
+or we're pretty successful there. The time from coding up a change to having that customers use
+
+00:53:15.310 --> 00:53:20.830
+is as fast as you'd expect in a company that makes services. We also have a big, uh, at Unity,
+
+00:53:20.830 --> 00:53:28.830
+a big monolithic product, as most people know, and I am tracking and I probably should share too
+
+00:53:28.830 --> 00:53:34.670
+many details in the exact times, but I can now see, um, median P 75 times, et cetera, from the time
+
+00:53:35.470 --> 00:53:40.670
+a check-in is made until it shows up in a customer available build. And it's a nice little
+
+00:53:40.670 --> 00:53:45.390
+start up my, my value stream for that. So, and we'll work on reducing that, but the fact,
+
+00:53:45.390 --> 00:53:51.600
+I'll let you know there, they aren't numbers that I'm happy with. I'll say that it reminds me of how
+
+00:53:51.600 --> 00:53:56.720
+much work I have to do. Yeah. Well, and I think, you know, it's like, but as a change agent,
+
+00:53:56.720 --> 00:54:01.040
+you're like, well, obviously we can make this better. Right. Whereas I had a conversation with
+
+00:54:01.040 --> 00:54:06.320
+someone about a, a certain game title, not one that I've worked on, but it was someone on the
+
+00:54:06.560 --> 00:54:12.030
+services team. Um, and they, they said to me, oh yeah, the client is a lost cause. And I was like,
+
+00:54:12.030 --> 00:54:17.310
+I don't accept that. That's as good as it's going to get. It really can't get much better than that.
+
+00:54:17.310 --> 00:54:24.350
+I said, that's a challenge. Challenge accepted. Yeah. Uh, I've, I've been in those shoes. Uh,
+
+00:54:24.350 --> 00:54:30.830
+I may have even said it, but I'm, I was thinking, I'm thinking now of the, uh, the zoom client.
+
+00:54:31.810 --> 00:54:36.130
+Works better. If there are no people working on the client, if there are no humans being
+
+00:54:36.130 --> 00:54:39.970
+impacted by, by the client being a lost cause then, okay, maybe, but like, well, there are,
+
+00:54:39.970 --> 00:54:44.210
+well, there are dev teams toiling and, uh, you know, in these terrible environments,
+
+00:54:44.210 --> 00:54:53.570
+then I think, you know, if it's a lost cause and it's a critical component that, that cannot be
+
+00:54:53.570 --> 00:55:01.540
+permitted to be a lost cause. Right. Yeah. That's that's, that's problematic and people are just
+
+00:55:01.540 --> 00:55:06.180
+accepting problematic and that has to change. Yeah. And the thing is like, if you are, if you
+
+00:55:06.180 --> 00:55:09.460
+take that view of it's the last cause and you're kind of saying, then we're going to continue
+
+00:55:09.460 --> 00:55:13.540
+testing it the way we've always tested it. But increasingly that's untenable for games.
+
+00:55:13.540 --> 00:55:19.060
+Like we, we, many games are already at the point where it costs more to test them
+
+00:55:19.060 --> 00:55:27.600
+than them is economical. Like we actually get rare, a big, um, uh, a big factor in
+
+00:55:27.600 --> 00:55:31.680
+why we committed so heavily to canoes delivery was on the previous title,
+
+00:55:31.680 --> 00:55:37.440
+which was fully manually tested. We had wanted to release some DLC. Um, and we had not been able to,
+
+00:55:37.440 --> 00:55:40.400
+we had to cancel it because it would have cost more to test than we could have earned.
+
+00:55:42.080 --> 00:55:48.720
+That's good. In the context of INTPs and waste burns and talk about, you know, teams as an
+
+00:55:48.720 --> 00:55:54.400
+example, not because I want to riff on teams today, but I think it is an example of something
+
+00:55:54.400 --> 00:56:00.320
+I've seen, not just a Microsoft, but other companies in the industry do is to me. And this
+
+00:56:00.320 --> 00:56:04.480
+is probably, it's probably a paradigm for this. Maybe even in the mythical man month,
+
+00:56:04.480 --> 00:56:10.400
+or maybe in right now since flow book, but the team's client got progressively worse as
+
+00:56:10.400 --> 00:56:15.520
+they added more people to it. And I've struck that away from teams and it's not like I rip it on
+
+00:56:15.520 --> 00:56:22.300
+them, but often you'll a software project will be going well. So they'll fund it more and put
+
+00:56:22.780 --> 00:56:27.660
+more people on it. But I think it's probably mythical man month because eventually it gets
+
+00:56:27.660 --> 00:56:33.260
+to the point where there's so many people working on it and complexity that it ends up grinding to
+
+00:56:33.260 --> 00:56:40.380
+a halt as far as innovation and quality goes. I think a lot of times higher quality products
+
+00:56:40.380 --> 00:56:46.460
+are worked on by a bare minimum team delivering iteratively and adaptively versus a whole bunch
+
+00:56:46.460 --> 00:56:50.780
+of people trying to get a big bang for the buck faster. It occurred to me as you were talking
+
+00:56:50.780 --> 00:56:56.220
+through like adding more resources. Sometimes call people.
+
+00:56:56.860 --> 00:57:04.940
+Yeah. Well, sometimes it's machines, sometimes because something else, right? But adding more
+
+00:57:04.940 --> 00:57:12.380
+resources, right? If you think about the switch statement, adding more resources is the default
+
+00:57:12.380 --> 00:57:22.450
+action plan. Sometimes people get in such a bad state that the sky is falling. It has to be fixed
+
+00:57:24.050 --> 00:57:32.450
+by yesterday and everything you come up with is going to extend it much further or be outside
+
+00:57:32.450 --> 00:57:40.450
+of your means. And so, and a lot of the times when you're drowning, it's really difficult to
+
+00:57:40.450 --> 00:57:47.680
+think through very calmly and go, okay, how do I swim? Right? If you haven't learned how to swim,
+
+00:57:47.680 --> 00:57:56.960
+it's like you need, someone has to have their head above the water and guiding the panic to the
+
+00:57:56.960 --> 00:58:03.840
+shore. Now, if the whole organization is in the panic stage, then it often ends up being the
+
+00:58:03.840 --> 00:58:09.440
+case that adding more resources, of course, as you call out potentially thoughtlessly,
+
+00:58:09.440 --> 00:58:14.240
+because the more resources you add, whether it be human or otherwise, is going to add additional
+
+00:58:14.240 --> 00:58:19.840
+complexity and runs the risk of actually adding more problems, not solving them.
+
+00:58:19.840 --> 00:58:22.000
+Yeah. And there's a lesson. Go ahead, Henry.
+
+00:58:22.000 --> 00:58:28.640
+I like the model from the Repennin and Sternum paper, like the one that's called,
+
+00:58:28.640 --> 00:58:30.320
+no one ever gets credit for fixing problems.
+
+00:58:30.320 --> 00:58:32.560
+Oh, I remember that one. It's like 20 years old by now.
+
+00:58:32.560 --> 00:58:37.120
+Yeah. But I like it as a model of like, you know, you have a certain amount of resource and
+
+00:58:37.120 --> 00:58:43.200
+you can choose the slider you have is how much am I investing in improvements, improving the system
+
+00:58:43.200 --> 00:58:49.840
+versus how much am I investing in delivering work? And the problem is that you can push the slider
+
+00:58:49.840 --> 00:58:53.600
+over and invest it all in producing work, but then your system degrades and over time, things
+
+00:58:53.600 --> 00:58:58.640
+become terrible, but you get that short term boost. Whereas the other way is harder to stomach
+
+00:58:58.640 --> 00:59:03.280
+because you get a short term decrease when you stop producing, when you invest more in improving
+
+00:59:03.360 --> 00:59:08.000
+the system. But then over time you become better. I think that's like the kind of number one,
+
+00:59:08.800 --> 00:59:12.240
+you know, you go to people and they're like, Oh, I just can't do this. We don't have time.
+
+00:59:12.240 --> 00:59:15.920
+You know, management won't let me, you know, it kind of comes from all that kind of thing.
+
+00:59:15.920 --> 00:59:16.880
+Always management.
+
+00:59:16.880 --> 00:59:20.480
+So what I like the kind of teams that I've led, they've kind of been,
+
+00:59:21.280 --> 00:59:25.680
+well, certainly the Minecraft one, it was kind of a skunkworks thing, you know, and I think
+
+00:59:25.680 --> 00:59:31.520
+you can be quite effective by taking just a couple of people, like two or three people off
+
+00:59:31.520 --> 00:59:36.000
+to the side and saying, Hey, you people help other people get better. It doesn't solve the
+
+00:59:36.000 --> 00:59:42.400
+whole problem, but it can be effective. Well, a few people whose role is force multiplier
+
+00:59:42.400 --> 00:59:46.480
+or change agent is good to have throughout the org. But I wanted to build off real quickly
+
+00:59:46.480 --> 00:59:50.400
+before we end here, the thing that Brent said earlier, and I think maybe I've mentioned this
+
+00:59:50.400 --> 00:59:53.920
+on the podcast, but I, I, something I reiterate to my team, especially as we're looking at
+
+00:59:55.040 --> 00:59:59.680
+our growth for 2022 is I will, and my team knows this now to their
+
+01:00:00.480 --> 01:00:05.760
+initial frustration, but now understanding is that if your team has a whole bunch of work and can't
+
+01:00:05.760 --> 01:00:11.060
+keep up, I'm not going to give you head count to help solve that problem. You need to solve that
+
+01:00:11.060 --> 01:00:16.020
+problem first. You need to figure out how to prioritize and get the work done that you can
+
+01:00:16.020 --> 01:00:20.180
+and choose what you can't do. And once you show me as a lead, you know how to run a team that can
+
+01:00:20.180 --> 01:00:24.580
+actually deliver and not be underwater. And then I'll add head count to your team so you can grow
+
+01:00:24.580 --> 01:00:29.680
+and take on more stuff. And it's a hard lesson for people. They're just, I mean, a lot of times
+
+01:00:30.640 --> 01:00:34.560
+managers will do the opposite. Oh, your team's not keeping up. Okay. We'll give you some more heads.
+
+01:00:34.560 --> 01:00:38.240
+And that was very much, you know, I add that experience at the old place.
+
+01:00:38.960 --> 01:00:47.150
+So actually, I learned this a long time ago, your Reese, and it was through a mentor. And,
+
+01:00:47.150 --> 01:00:53.230
+and I've applied it to multiple things, new, new resources, whether, again, whether it be compute,
+
+01:00:53.950 --> 01:01:03.150
+people, money, whatever, new resource, way more successful to allocate those to your strengths,
+
+01:01:03.150 --> 01:01:09.790
+not to your weaknesses, right? Much, much very similar to what Alan's saying, like, no, no, no.
+
+01:01:10.830 --> 01:01:17.630
+I have, I have five additional heads I can assign to a project, right? I'm going to assign it to the,
+
+01:01:17.630 --> 01:01:22.430
+to the projects that are showing strength, not the ones showing weakness.
+
+01:01:23.230 --> 01:01:31.390
+Those type of resources are not there to add a safety net. Root out your problem, get back on
+
+01:01:31.390 --> 01:01:39.870
+track on an ROI, show your, establish a strength, whatever that may be in the context, then the
+
+01:01:40.750 --> 01:01:46.670
+veritable candy will start flowing again. And I guess it's kind of, it's sort of related, but
+
+01:01:46.670 --> 01:01:51.470
+it makes me think of when you're trying to change a culture, you're trying to be a change agent,
+
+01:01:51.470 --> 01:01:54.750
+then you're going to find your allies, you know, you're going to find your bright spots
+
+01:01:55.630 --> 01:02:00.350
+and help support them more. You're not going to find the people who like disagree with you the
+
+01:02:00.350 --> 01:02:04.830
+most and try and help them, right? You're going to help the strong people first.
+
+01:02:04.830 --> 01:02:08.910
+We should probably close for the day, but I want to thank you, Henry, for joining us on the
+
+01:02:08.910 --> 01:02:14.110
+podcast and sharing your stories and helping me give Brent a bad time. Could it a little bit
+
+01:02:14.110 --> 01:02:19.390
+better there as your feedback, but it's okay. Brent, Brent relieves today relatively unscathed.
+
+01:02:19.390 --> 01:02:23.150
+So any final words from you, Henry, before we go?
+
+01:02:24.140 --> 01:02:25.180
+No, thanks for having me.
+
+01:02:26.060 --> 01:02:33.820
+Thanks for joining. And as always, you can find out more about us and on moderntesting.org is where
+
+01:02:33.820 --> 01:02:38.300
+you can go. Also, if you want to join our Slack group at one of the three, I think that's kind of
+
+01:02:38.300 --> 01:02:44.940
+it. So Brent, anything to say? No, thank you. Thank you for joining Henry. And I assume,
+
+01:02:44.940 --> 01:02:47.900
+Alan, you're going to post a link to his latest talk.
+
+01:02:48.780 --> 01:02:52.270
+I will try and remember. All right, everybody. I'm not Henry.
+
+01:02:53.520 --> 01:02:54.240
+Nor am I.
+
+01:02:54.240 --> 01:02:56.240
+All right. See you next time.
+

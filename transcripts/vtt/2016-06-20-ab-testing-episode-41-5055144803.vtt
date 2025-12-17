@@ -1,0 +1,2348 @@
+WEBVTT
+
+00:00:11.790 --> 00:00:13.230
+Good morning everybody.
+
+00:00:13.230 --> 00:00:14.230
+Howdy.
+
+00:00:14.230 --> 00:00:15.230
+Hey, I'm Alan.
+
+00:00:15.230 --> 00:00:16.230
+I'm Brent.
+
+00:00:16.230 --> 00:00:18.430
+And we're here for episode 41 of AB testing.
+
+00:00:18.430 --> 00:00:19.430
+Woo hoo!
+
+00:00:19.430 --> 00:00:21.670
+AB stands for Alan and Brent.
+
+00:00:21.670 --> 00:00:29.310
+It's also the name of a popular experimentation method of comparing two versions or treatments
+
+00:00:29.310 --> 00:00:31.760
+of a product, website, etc.
+
+00:00:31.760 --> 00:00:40.890
+Yes, and it occurs to me for the first time since we had this new drinking game, here's
+
+00:00:40.890 --> 00:00:44.010
+something I think we haven't talked about previously.
+
+00:00:44.010 --> 00:00:47.730
+We haven't talked about the fact that I just got back from not just but last week, I gave
+
+00:00:47.730 --> 00:00:51.090
+my talk on experimentation and AB testing at Better Software.
+
+00:00:51.090 --> 00:00:52.610
+I feel like it went pretty well.
+
+00:00:52.610 --> 00:00:54.170
+I promoted the podcast.
+
+00:00:54.170 --> 00:00:56.530
+Hopefully we have a new member of the three.
+
+00:00:56.530 --> 00:00:57.530
+Hopefully.
+
+00:00:57.530 --> 00:00:58.530
+Yeah.
+
+00:00:58.530 --> 00:00:59.770
+Wasn't this one the workshop model?
+
+00:00:59.770 --> 00:01:00.770
+Yeah, it was.
+
+00:01:00.770 --> 00:01:01.930
+So tell me how it goes.
+
+00:01:01.930 --> 00:01:03.660
+I'm interested.
+
+00:01:03.660 --> 00:01:09.260
+We talked about what it was, who was doing it, nobody, what they knew about it, nothing.
+
+00:01:09.260 --> 00:01:14.700
+We played one of the games that I graciously was able to borrow from Ronnie Guevara, who's
+
+00:01:14.700 --> 00:01:21.030
+done a lot of experimentation at Microsoft on how your intuition on which treatment is
+
+00:01:21.030 --> 00:01:23.150
+better is probably wrong.
+
+00:01:23.150 --> 00:01:28.620
+And then we emphasized a lot that data trumps intuition, so how to get that data, things
+
+00:01:28.620 --> 00:01:31.180
+to do, ways to do experiments.
+
+00:01:31.180 --> 00:01:34.740
+We talked a little bit about statistical significance and the math that goes into it.
+
+00:01:34.740 --> 00:01:37.140
+We talked about designing experiments.
+
+00:01:37.140 --> 00:01:42.220
+I even went and used Google Analytics to set up an AB experiment on angryweasel.com of
+
+00:01:42.220 --> 00:01:47.380
+just two different web pages and show how, if you want to do very low scale AB testing,
+
+00:01:47.380 --> 00:01:50.220
+it's how simple it is to set up.
+
+00:01:50.220 --> 00:01:54.940
+And then we also talked about the architecture on how you would do sort of a flighting system
+
+00:01:54.940 --> 00:01:59.580
+to do, not sort of, a flighting system or something to do experimentation on a much
+
+00:01:59.580 --> 00:02:00.580
+larger scale.
+
+00:02:00.580 --> 00:02:02.860
+Examples, we tried some things out.
+
+00:02:02.860 --> 00:02:05.180
+We had a lot of discussion back and forth.
+
+00:02:05.180 --> 00:02:08.460
+And believe it or not, there was enough details and nuance and all that.
+
+00:02:08.460 --> 00:02:13.260
+We talked a lot about the caveats of how to look at the data coming in and different
+
+00:02:13.260 --> 00:02:14.860
+things you can get from this, et cetera, et cetera.
+
+00:02:14.860 --> 00:02:15.860
+That was kind of it.
+
+00:02:15.860 --> 00:02:20.600
+That's one of my favorite discussions, the caveats.
+
+00:02:20.600 --> 00:02:26.400
+Like Wikipedia has this fantastic link.
+
+00:02:26.400 --> 00:02:34.710
+If you look up cognitive biases, it's like seven pages of individual biases.
+
+00:02:34.710 --> 00:02:44.030
+And I go back and I look at that frequently and judge which of these am I committing today?
+
+00:02:44.030 --> 00:02:47.030
+Have you seen whichtestone.com?
+
+00:02:47.030 --> 00:02:51.110
+Treatment A, treatment B, guess which one's better, and nobody can get more than two in
+
+00:02:51.110 --> 00:02:52.870
+a row right ever.
+
+00:02:52.870 --> 00:02:58.420
+Whichtestone has pretty much one of those every day for around the industry.
+
+00:02:58.420 --> 00:02:59.420
+Whichtestone.com?
+
+00:02:59.420 --> 00:03:01.340
+Whichtestone.com.
+
+00:03:01.340 --> 00:03:02.340
+Very cool.
+
+00:03:02.340 --> 00:03:03.340
+I'll be looking at that.
+
+00:03:03.340 --> 00:03:04.340
+Yeah, it's a pretty cool site.
+
+00:03:04.340 --> 00:03:09.620
+I get to my feed list and maybe it's not once a day, but it's multiple times a week.
+
+00:03:09.620 --> 00:03:10.620
+Super interesting.
+
+00:03:10.620 --> 00:03:14.940
+What I find is more fascinating or more not fascinating, where I get my most learning
+
+00:03:14.940 --> 00:03:17.700
+from that, I go, huh, I wouldn't have guessed that.
+
+00:03:17.700 --> 00:03:22.740
+But the comment section below has people that don't know what they're doing.
+
+00:03:22.740 --> 00:03:27.100
+A lot of people who actually do know what they're doing who kind of helped me get some
+
+00:03:27.100 --> 00:03:29.060
+insights I wouldn't have been able to get without them.
+
+00:03:29.060 --> 00:03:30.060
+So it's kind of fun.
+
+00:03:30.060 --> 00:03:37.820
+Something I find fascinating with, particularly Ronnie's explanation of the game.
+
+00:03:37.820 --> 00:03:40.820
+Last time I saw it was a couple years ago.
+
+00:03:40.820 --> 00:03:46.660
+And he does a really good job for the ones that he's able to address explaining why so
+
+00:03:46.660 --> 00:03:50.140
+that you can learn where your intuition went into the weeds.
+
+00:03:50.140 --> 00:03:51.140
+But that's very difficult.
+
+00:03:51.140 --> 00:03:57.580
+One of the things I brought up is that experimentation and the framework behind, the framework you
+
+00:03:57.580 --> 00:04:02.340
+use behind it will tell you which test won, but it doesn't really tell you why.
+
+00:04:02.340 --> 00:04:06.700
+You can use data to get a good idea of what's why, but you don't know why.
+
+00:04:06.700 --> 00:04:07.700
+Not initially, no.
+
+00:04:07.700 --> 00:04:10.180
+You'll have to do a lot of extra digging.
+
+00:04:10.180 --> 00:04:13.980
+But Ronnie has been using that deck for a long time.
+
+00:04:13.980 --> 00:04:15.420
+Yeah, and he's modified it a lot.
+
+00:04:15.420 --> 00:04:16.940
+He's some other experimenters.
+
+00:04:16.940 --> 00:04:20.500
+I like the which test won because now I can get some non-Microsoft experiments.
+
+00:04:20.500 --> 00:04:23.420
+They're more relevant, or at least more recent.
+
+00:04:23.780 --> 00:04:30.820
+The final thing I got into, and I didn't mention in my previous shortened synopsis, is the idea
+
+00:04:30.820 --> 00:04:34.100
+of building an experimentation culture where everything's an experiment.
+
+00:04:34.100 --> 00:04:37.820
+It's a journey to get there, but when you get a team that has this idea of everything's
+
+00:04:37.820 --> 00:04:44.020
+an experiment, it's a pretty fascinating place, a pretty fun place to be as far as software
+
+00:04:44.020 --> 00:04:45.580
+development goes.
+
+00:04:45.620 --> 00:04:55.070
+Yes, it aligns with Patrick's, Tess Pappy's presentation, where he was talking about ignorance
+
+00:04:55.070 --> 00:04:56.070
+and knowledge.
+
+00:04:56.070 --> 00:04:57.070
+Yeah.
+
+00:04:57.070 --> 00:05:04.630
+And when you are able to create a culture of experimentation where you essentially only
+
+00:05:04.630 --> 00:05:08.640
+value knowledge that is validated.
+
+00:05:08.640 --> 00:05:09.740
+Yeah.
+
+00:05:09.740 --> 00:05:11.740
+It is pretty cool.
+
+00:05:11.740 --> 00:05:12.740
+It is cool.
+
+00:05:12.740 --> 00:05:13.740
+It's really fun.
+
+00:05:13.740 --> 00:05:18.100
+I always like talking about, with you, when I actually do stuff in the data side of the
+
+00:05:18.100 --> 00:05:21.020
+world, just to show you I can dip my foot over there.
+
+00:05:21.020 --> 00:05:22.180
+Y'all know that's ...
+
+00:05:22.180 --> 00:05:27.340
+I try and prove to you that I really am a generalist.
+
+00:05:27.340 --> 00:05:28.340
+Specializing generalist.
+
+00:05:28.340 --> 00:05:33.140
+I have my specialties, but I don't mind dipping in deep in areas that I find.
+
+00:05:33.140 --> 00:05:38.500
+Not only that I find interesting, but I think are critical to making good software.
+
+00:05:38.500 --> 00:05:46.410
+So now you have successfully impressed me enough on this front.
+
+00:05:46.410 --> 00:05:55.070
+Now what I'd like to see you get to, it is review time, so here's your next priority.
+
+00:05:55.070 --> 00:05:57.140
+And that's use it.
+
+00:05:57.140 --> 00:05:58.700
+All right.
+
+00:05:58.700 --> 00:06:00.260
+Thanks, Brent.
+
+00:06:00.260 --> 00:06:02.580
+And we can start with once a quarter.
+
+00:06:02.580 --> 00:06:04.220
+There's a lot more.
+
+00:06:04.220 --> 00:06:06.820
+We could go a lot deeper there, but I don't want to go too far off the books.
+
+00:06:06.820 --> 00:06:10.060
+Hey, you mentioned I'm going to go back to ... Actually, I'll do a brief announcement,
+
+00:06:10.060 --> 00:06:13.700
+and then we'll actually talk about the fact that it is review season.
+
+00:06:13.700 --> 00:06:19.400
+I looked up my calendar, and just like, sometime in the last year, I put a date on my calendar,
+
+00:06:19.400 --> 00:06:24.100
+so I would remember to mention it on the AB testing show, and maybe in a tweet.
+
+00:06:24.100 --> 00:06:31.640
+But tomorrow, June 18th, which may be yesterday by the time you hear this, is the 12-year
+
+00:06:31.640 --> 00:06:35.420
+anniversary of my very first blog post.
+
+00:06:35.420 --> 00:06:36.420
+Congratulations.
+
+00:06:37.020 --> 00:06:41.780
+I don't know if it's an anniversary we're celebrating, just more of a milestone, but
+
+00:06:41.780 --> 00:06:44.020
+it was on the old MSDN blog site.
+
+00:06:44.020 --> 00:06:45.020
+Actually it still exists.
+
+00:06:45.020 --> 00:06:47.620
+What was the title?
+
+00:06:47.620 --> 00:06:48.620
+The title of my ...
+
+00:06:48.620 --> 00:06:50.740
+Hi, I'm Alan.
+
+00:06:50.740 --> 00:06:51.740
+You know what?
+
+00:06:51.740 --> 00:06:52.740
+I don't know.
+
+00:06:52.740 --> 00:06:57.500
+I think the title was I'm Not a Blogger.
+
+00:06:57.500 --> 00:07:00.700
+That was the title of one of my very first few blog posts.
+
+00:07:00.700 --> 00:07:07.330
+The context was I was about to present at a embedded developers conference on how to use
+
+00:07:07.330 --> 00:07:12.890
+the tools that we had written, the test framework we had written in Windows CE, so that ISVs
+
+00:07:12.890 --> 00:07:19.210
+or IHVs, independent hardware vendors, could write tests for their drivers and their firmware
+
+00:07:19.210 --> 00:07:21.730
+for Windows CE devices.
+
+00:07:21.730 --> 00:07:24.850
+So, Wnts was still alive 12 years ago?
+
+00:07:24.850 --> 00:07:28.530
+It feels like much longer than it was killed.
+
+00:07:28.530 --> 00:07:30.290
+It was around for a while.
+
+00:07:30.290 --> 00:07:34.490
+I ended up doing a bunch of those over a couple years.
+
+00:07:34.490 --> 00:07:40.490
+So I wanted a place to be able to answer post conference questions and to post slides and
+
+00:07:40.490 --> 00:07:42.110
+samples, et cetera.
+
+00:07:42.110 --> 00:07:45.450
+So I started it for that and then eventually I said, I'm going to use this to actually
+
+00:07:45.450 --> 00:07:49.250
+practice writing, learn how to write and be careful because then you end up writing books
+
+00:07:49.250 --> 00:07:51.890
+and shit and life goes crazy.
+
+00:07:51.890 --> 00:07:55.210
+But anyway, 12 years since my very first blog post, which was weird because it was
+
+00:07:55.210 --> 00:08:00.480
+almost ... It was like a week after my nine year anniversary at Microsoft.
+
+00:08:00.480 --> 00:08:04.460
+June, a time of many milestones.
+
+00:08:04.460 --> 00:08:15.310
+I started blogging for exactly the same reason, improved writing, improved communication.
+
+00:08:15.310 --> 00:08:19.870
+I would say having gone back recently and looked through some of my old stuff, I would
+
+00:08:19.870 --> 00:08:24.190
+say I've achieved that but my pace is slow.
+
+00:08:24.190 --> 00:08:30.750
+If you go to ... If you want a real treat, you can go to blogs.msdn.com, Wack Alum
+
+00:08:30.750 --> 00:08:37.840
+P-A and the A-L-A-N-P-A. I think the actual URL has changed as they've gone through different
+
+00:08:37.840 --> 00:08:44.960
+formats but my old posts are still there and it's like a child wrote them.
+
+00:08:44.960 --> 00:08:45.960
+Yeah.
+
+00:08:45.960 --> 00:08:46.960
+All right.
+
+00:08:46.960 --> 00:08:52.440
+And the other thing, first off, it feels like it's been 12 years since I've written
+
+00:08:52.440 --> 00:08:53.960
+my last blog.
+
+00:08:53.960 --> 00:09:00.620
+I've been working on one off and on for the last month.
+
+00:09:00.620 --> 00:09:06.820
+It's hard to do all this writing and go to school and do work.
+
+00:09:06.820 --> 00:09:07.820
+And stay employed.
+
+00:09:07.820 --> 00:09:09.780
+And still know what my children look like.
+
+00:09:09.780 --> 00:09:14.820
+Hey, speaking of staying employed, what do we call it now?
+
+00:09:14.820 --> 00:09:18.660
+It's sort of reward, performance, feedback.
+
+00:09:18.660 --> 00:09:25.180
+We separated at Microsoft the individual discussion on how you're doing with the rewards, although
+
+00:09:25.180 --> 00:09:28.980
+they're still kind of tied just unofficially.
+
+00:09:28.980 --> 00:09:31.700
+But it's time for rewards and I want to talk a little bit about how ...
+
+00:09:31.700 --> 00:09:34.780
+I don't even know if it's unofficial.
+
+00:09:34.780 --> 00:09:39.260
+Really what the thing is is that we're not allowed to talk ... Essentially, we're not
+
+00:09:39.260 --> 00:09:45.580
+supposed to or allowed to talk about performance during the reward discussion.
+
+00:09:45.580 --> 00:09:46.580
+Blah, blah, blah.
+
+00:09:46.580 --> 00:09:47.580
+Exactly.
+
+00:09:47.580 --> 00:09:54.340
+So, I'm on my fourth or so different way we review people at Microsoft and I want to
+
+00:09:54.340 --> 00:09:59.220
+talk a little bit about it and the games people play and the tools I use to get around
+
+00:09:59.220 --> 00:10:00.220
+that.
+
+00:10:00.220 --> 00:10:02.220
+It's always an interesting time.
+
+00:10:02.220 --> 00:10:06.860
+I'm a manager now of just a few people, but even when I wasn't a manager, I was always
+
+00:10:06.860 --> 00:10:12.180
+invited to be part of these review discussions because generally my role is someone that works
+
+00:10:12.180 --> 00:10:13.180
+across the org.
+
+00:10:13.180 --> 00:10:18.460
+I have a good insight, I have a sort of an objective insight across the org on how
+
+00:10:18.460 --> 00:10:19.540
+I know more people.
+
+00:10:19.540 --> 00:10:28.340
+Given the job I do, I tend to know what more people do in the org than any of my peers.
+
+00:10:28.340 --> 00:10:34.900
+We had our discussion last week and like every other discussion we've had about people and
+
+00:10:34.900 --> 00:10:41.470
+any team at Microsoft over the last 10 or 12 years I've been doing this was ... It was
+
+00:10:41.470 --> 00:10:44.830
+interesting and people played games.
+
+00:10:44.830 --> 00:10:46.870
+For the most part, the right things happened.
+
+00:10:46.870 --> 00:10:50.150
+But I want to talk about some of the games they play.
+
+00:10:50.230 --> 00:10:52.430
+What games have you seen people play during these discussions?
+
+00:10:52.430 --> 00:10:56.100
+Oh, I see all sorts of games.
+
+00:10:56.100 --> 00:11:00.030
+You tell me one or I'll tell you one.
+
+00:11:00.030 --> 00:11:10.950
+I will tell you the game I use most often and that is ... First and foremost, before
+
+00:11:10.950 --> 00:11:15.910
+I go into that, you ever study the prisoner's dilemma?
+
+00:11:15.910 --> 00:11:18.510
+Yeah.
+
+00:11:18.510 --> 00:11:25.460
+It's the prisoner's dilemma that's being played out where there is really no
+
+00:11:25.460 --> 00:11:28.930
+benefit to collaboration.
+
+00:11:28.930 --> 00:11:38.700
+I'll say the best review discussion I've ever had was the last time I was a middle
+
+00:11:38.700 --> 00:11:46.260
+manager and I was able to successfully convince my leads that for the review
+
+00:11:46.260 --> 00:11:54.620
+discussion they are not to defend their people.
+
+00:11:54.620 --> 00:12:01.300
+What they are to do is to put themselves in my shoes and assume that their people
+
+00:12:01.300 --> 00:12:08.340
+are part of our business team and we're going to focus on what needs to be done
+
+00:12:08.340 --> 00:12:10.490
+going forward.
+
+00:12:10.490 --> 00:12:13.210
+And I'm simplifying here.
+
+00:12:13.210 --> 00:12:16.130
+You're sure and you're being very philosophical about it.
+
+00:12:16.130 --> 00:12:18.050
+But it worked very well.
+
+00:12:18.050 --> 00:12:25.890
+The people started ... I remember one lead was like, hey, that person really needs
+
+00:12:25.890 --> 00:12:30.410
+consistency on this, this and this in order to really get to the next level.
+
+00:12:30.410 --> 00:12:31.530
+I have that work.
+
+00:12:31.530 --> 00:12:35.170
+How about we talk about me moving that work to your team and you have that guy
+
+00:12:35.170 --> 00:12:35.810
+do it.
+
+00:12:35.810 --> 00:12:37.010
+It was very productive.
+
+00:12:37.010 --> 00:12:40.010
+Okay, so let me ... I'm going to take over because you're not getting where I
+
+00:12:40.010 --> 00:12:40.690
+want you to get to.
+
+00:12:40.690 --> 00:12:41.570
+I'm about to go there.
+
+00:12:41.570 --> 00:12:43.010
+Let me ... it took too long.
+
+00:12:43.010 --> 00:12:43.650
+Okay.
+
+00:12:43.650 --> 00:12:47.730
+I'll tie this into something else I brought up in my workshop.
+
+00:12:47.730 --> 00:12:53.930
+I've read most of the Dan Ariale books on irrational ... why people do irrational
+
+00:12:53.930 --> 00:12:54.530
+things.
+
+00:12:54.530 --> 00:12:55.210
+I forget the names.
+
+00:12:55.210 --> 00:12:56.930
+Irrational yours or something.
+
+00:12:56.930 --> 00:12:58.850
+Predictably irrational is the first book.
+
+00:12:58.850 --> 00:12:59.010
+Yes.
+
+00:12:59.010 --> 00:13:02.210
+So there's a story in one of those books, I believe.
+
+00:13:02.210 --> 00:13:07.010
+I didn't fact check, but I'm sure I read it there, where they did a study where
+
+00:13:07.010 --> 00:13:10.850
+people went to a movie theater and they had two sizes of popcorn available,
+
+00:13:10.850 --> 00:13:14.290
+a small for $3 and a large for $7.
+
+00:13:14.290 --> 00:13:20.050
+Most people bought the $3 popcorn and when asked why, they all said the $7 seems
+
+00:13:20.050 --> 00:13:22.890
+pretty expensive for popcorn.
+
+00:13:22.890 --> 00:13:25.970
+It's too much.
+
+00:13:25.970 --> 00:13:28.410
+Different movie theater or same movie theater, different night.
+
+00:13:28.410 --> 00:13:33.810
+They had three sizes of popcorn, a small for $3, a medium for $6.50 and a large
+
+00:13:33.810 --> 00:13:36.090
+for $7.
+
+00:13:36.090 --> 00:13:40.770
+Most people bought the large and when asked why, they said because it's such
+
+00:13:40.770 --> 00:13:44.130
+a good deal, it's only $0.50 more than the medium.
+
+00:13:44.130 --> 00:13:45.680
+Yep.
+
+00:13:45.680 --> 00:13:47.520
+Interesting the way the brain works.
+
+00:13:47.520 --> 00:13:54.200
+So let me tell you a game I saw and two ways I know to break this game, but I
+
+00:13:54.200 --> 00:13:55.280
+want to kind of hear what you thought.
+
+00:13:55.280 --> 00:13:59.480
+So the game I saw played is very similar to that game where you take, as a
+
+00:13:59.480 --> 00:14:03.880
+manager, you bring in the employee that you ... we have this rating scale that
+
+00:14:03.880 --> 00:14:08.160
+goes from $100 is the middle and it goes down from there and up from there
+
+00:14:08.160 --> 00:14:09.360
+from $0 to $200.
+
+00:14:09.360 --> 00:14:14.640
+That's sort of your scale where we put people on for rewards.
+
+00:14:14.640 --> 00:14:16.040
+Okay.
+
+00:14:16.040 --> 00:14:20.970
+There is a person from one manager who is above average but not way above
+
+00:14:20.970 --> 00:14:21.730
+average.
+
+00:14:21.730 --> 00:14:25.250
+My ratings are usually right in line with where they come in.
+
+00:14:25.250 --> 00:14:26.810
+So that's where they're seeing my peers as well.
+
+00:14:26.810 --> 00:14:29.130
+In other words, you bully your peers into ...
+
+00:14:29.130 --> 00:14:29.730
+No, no, no.
+
+00:14:29.730 --> 00:14:32.290
+I hardly say anything.
+
+00:14:32.290 --> 00:14:35.710
+But anyway, this person came in at $200.
+
+00:14:35.710 --> 00:14:38.870
+This guy is a rock star, walks on water.
+
+00:14:38.870 --> 00:14:39.870
+$200 is ...
+
+00:14:39.870 --> 00:14:41.950
+Jesus looks up to him.
+
+00:14:41.950 --> 00:14:42.950
+Something like that.
+
+00:14:42.950 --> 00:14:43.950
+Got it.
+
+00:14:43.950 --> 00:14:46.990
+And I immediately recognized it as the game.
+
+00:14:46.990 --> 00:14:49.270
+Because what happens there is ... generally ...
+
+00:14:49.270 --> 00:14:50.270
+It's the ... talk me ...
+
+00:14:50.270 --> 00:14:52.230
+He's not a $200.
+
+00:14:52.230 --> 00:14:54.350
+You'll talk me down to the value I want.
+
+00:14:54.350 --> 00:14:59.070
+And I think he got talked down to a value above where perhaps he should
+
+00:14:59.070 --> 00:15:00.070
+have been.
+
+00:15:00.070 --> 00:15:01.070
+And then everybody just happens.
+
+00:15:01.070 --> 00:15:02.790
+Like, okay, I feel better about this.
+
+00:15:02.790 --> 00:15:04.230
+Same game, interesting way.
+
+00:15:04.230 --> 00:15:05.390
+I have two ways.
+
+00:15:05.390 --> 00:15:08.830
+One very good way I've done this in the past.
+
+00:15:08.830 --> 00:15:10.510
+But I'm curious what you've done.
+
+00:15:10.510 --> 00:15:14.560
+What do you do when you see someone playing that game?
+
+00:15:14.560 --> 00:15:21.140
+So the last time I really had to deal with that particular game, the best solution that
+
+00:15:21.140 --> 00:15:26.140
+I've had for that is ... you know what?
+
+00:15:26.140 --> 00:15:28.570
+We're going to reschedule this meeting.
+
+00:15:28.570 --> 00:15:33.340
+Each manager needs to come in balanced.
+
+00:15:33.340 --> 00:15:34.340
+It's not a great one.
+
+00:15:34.340 --> 00:15:35.340
+No.
+
+00:15:35.340 --> 00:15:39.860
+It's a horrible thing because I do not believe that every team has to be balanced.
+
+00:15:39.860 --> 00:15:42.420
+I think there can be better teams than other teams.
+
+00:15:42.420 --> 00:15:44.980
+Oh, and I completely agree.
+
+00:15:44.980 --> 00:15:51.540
+But what we do ... so once they come in balanced, then we have a discussion around who moves
+
+00:15:51.540 --> 00:15:52.540
+up.
+
+00:15:52.540 --> 00:15:58.540
+So this exercise works exactly the same or very similar to the previous bucket systems
+
+00:15:58.540 --> 00:16:01.580
+I've had at Microsoft, no matter which bucket system it was.
+
+00:16:01.580 --> 00:16:06.060
+You want to put, as far as rewards go, like who are they like.
+
+00:16:06.060 --> 00:16:07.420
+So two ways I've fought this in the past.
+
+00:16:07.420 --> 00:16:13.760
+I'll give you the actual one that works 100% of the time in this case.
+
+00:16:13.760 --> 00:16:19.790
+One way to stop this game is that anywhere where there's a discussion or a discrepancy,
+
+00:16:19.790 --> 00:16:24.350
+anywhere, whether it's by 20% or 60%, if there's a discussion in the room for even
+
+00:16:24.350 --> 00:16:27.770
+a minute on ... I don't think that's right for that person.
+
+00:16:27.770 --> 00:16:33.000
+That person drops to zero, not permanently, but they get dropped to zero and they're
+
+00:16:33.000 --> 00:16:35.720
+left there until the rest of the discussion's done.
+
+00:16:35.720 --> 00:16:39.300
+So what happens is ... this is another game too, but played a different way.
+
+00:16:39.300 --> 00:16:44.960
+What happens is managers come into that room, putting people into the spot, into their
+
+00:16:44.960 --> 00:16:49.960
+bucket where they don't expect to have any controversy.
+
+00:16:49.960 --> 00:16:53.560
+Where there's controversy, those things go to zero, and then at the end of the
+
+00:16:53.560 --> 00:16:59.040
+discussion where you decided where everybody else go, then you can play the is like a game
+
+00:16:59.040 --> 00:17:02.120
+and put them in the right spot where they belong, not where they were put in.
+
+00:17:02.120 --> 00:17:06.880
+So if you put someone in an obviously bad place, you force a hard discussion around
+
+00:17:06.880 --> 00:17:10.960
+that person at the end of the conversation, everybody else has been agreed on.
+
+00:17:10.960 --> 00:17:13.200
+That one works very, very well.
+
+00:17:13.200 --> 00:17:15.040
+I have never heard that one.
+
+00:17:15.040 --> 00:17:16.040
+That's really good.
+
+00:17:16.040 --> 00:17:19.720
+You got to play it for managers, play that game.
+
+00:17:19.720 --> 00:17:20.720
+That's an anti-game.
+
+00:17:21.730 --> 00:17:23.170
+And you can even argue it.
+
+00:17:23.170 --> 00:17:28.330
+You can say, hey, look, what we want to do is go quickly through the ones we agree on
+
+00:17:28.330 --> 00:17:30.690
+and cue up all the discussion at the end.
+
+00:17:30.690 --> 00:17:33.370
+Let me tell you about another game people play.
+
+00:17:33.370 --> 00:17:34.730
+I'm going to talk about the fallacy.
+
+00:17:34.730 --> 00:17:36.520
+Peak in May.
+
+00:17:36.520 --> 00:17:42.000
+The peak in May game means, is because we do reward discussions in June, that what
+
+00:17:42.000 --> 00:17:47.120
+you do in July, August, September, pretty much all the way to March or April, doesn't
+
+00:17:47.120 --> 00:17:50.240
+matter as much as what you do in May.
+
+00:17:50.320 --> 00:17:51.560
+Yes.
+
+00:17:51.560 --> 00:17:52.680
+Oh, peak in May.
+
+00:17:52.680 --> 00:17:53.840
+Peak in May.
+
+00:17:53.840 --> 00:17:58.320
+I was thinking peak is in like, no, peak in on someone.
+
+00:17:58.320 --> 00:18:04.230
+So how do you fight the peak in May game?
+
+00:18:04.230 --> 00:18:07.140
+I take that one head on.
+
+00:18:07.140 --> 00:18:09.260
+I go, OK, great.
+
+00:18:09.260 --> 00:18:11.770
+He did a great job in May.
+
+00:18:11.770 --> 00:18:15.010
+So remind us all what he did in the prior quarters.
+
+00:18:15.010 --> 00:18:18.330
+I always ask, what were the results in the first half of the year?
+
+00:18:18.330 --> 00:18:20.050
+That discussion comes up a lot.
+
+00:18:20.050 --> 00:18:21.970
+When there's discussion around people, in time
+
+00:18:21.970 --> 00:18:24.530
+there's like controversy, what did they do in the first half of the year?
+
+00:18:24.530 --> 00:18:27.050
+Well, they had a really rough first half and blah, blah, blah.
+
+00:18:27.050 --> 00:18:28.850
+I said, then they're not.
+
+00:18:28.850 --> 00:18:29.370
+That's fine.
+
+00:18:29.370 --> 00:18:32.850
+They had a great second half, but they're not 180 or whatever.
+
+00:18:32.850 --> 00:18:34.850
+You have to take the whole year into account.
+
+00:18:34.850 --> 00:18:36.570
+And that's more of a management issue.
+
+00:18:36.570 --> 00:18:41.650
+And I tend to, I'm not like, I have the smallest team in our org.
+
+00:18:41.650 --> 00:18:45.690
+But I've sat in, I probably sat in on more review discussions because I used
+
+00:18:45.690 --> 00:18:47.770
+to sit in on other teams review discussions.
+
+00:18:47.770 --> 00:18:50.290
+I probably sat in on more of those than any person in our org.
+
+00:18:50.290 --> 00:18:54.010
+So I can tend to say the right things to make the right things happen.
+
+00:18:54.010 --> 00:19:00.140
+The other thing I think that is wise in terms of how you are presenting that question.
+
+00:19:00.140 --> 00:19:02.660
+You said, what were the results?
+
+00:19:02.660 --> 00:19:09.670
+Because I have seen over and over again, and it's part of the discussions generally
+
+00:19:09.670 --> 00:19:11.270
+do around Agile.
+
+00:19:11.270 --> 00:19:17.330
+Humans are built for relative, not concrete results.
+
+00:19:17.330 --> 00:19:23.250
+So you could actually really get yourself a rock star review by tanking,
+
+00:19:23.250 --> 00:19:32.090
+purposefully tanking the first half of the year so that, and then take your manager's
+
+00:19:32.090 --> 00:19:38.130
+feedback to heart and rocket it up back to say normal.
+
+00:19:38.130 --> 00:19:43.090
+And the manager is going to basically say, number one, wow, I really helped this guy
+
+00:19:43.090 --> 00:19:44.410
+improve.
+
+00:19:44.410 --> 00:19:49.130
+And look at the differential, even though the raw results at the end of the day was
+
+00:19:49.130 --> 00:19:51.110
+nothing special.
+
+00:19:51.110 --> 00:19:52.190
+Cool.
+
+00:19:52.190 --> 00:19:56.110
+One final challenge to bring up in there here is the Microsoft, I think probably
+
+00:19:56.110 --> 00:20:01.750
+any company who has some Agile values in them, values collaboration and helping
+
+00:20:01.750 --> 00:20:06.150
+others as being very important, especially at more senior levels.
+
+00:20:06.150 --> 00:20:07.150
+So say I work for you, Brent.
+
+00:20:07.150 --> 00:20:08.150
+Okay.
+
+00:20:08.150 --> 00:20:11.870
+And I'm going to come to you and I'm going to give you, again, peaking in May,
+
+00:20:11.870 --> 00:20:14.590
+I'm going to give you a bunch of information about how I've helped other people on the
+
+00:20:14.590 --> 00:20:18.430
+team in hopes that you see that as a way to boost me up.
+
+00:20:18.430 --> 00:20:24.200
+How do you know how much I've helped versus my peers?
+
+00:20:24.200 --> 00:20:30.790
+Like say there's a group of 10 of us in my level band and you're trying to figure
+
+00:20:30.790 --> 00:20:35.550
+out you have, results are more tangible and measurable, but what's intangible and
+
+00:20:35.550 --> 00:20:42.550
+more difficult to measure is how well my influence or how much my influence has
+
+00:20:42.550 --> 00:20:48.630
+helped the team get better, either through general leadership, coaching, diving
+
+00:20:48.630 --> 00:20:50.030
+in and helping others, et cetera.
+
+00:20:50.030 --> 00:20:55.510
+How do you compare what I've done in that intangible area versus my peers?
+
+00:20:55.510 --> 00:21:00.430
+How do you know if I help more than someone else or as much or less?
+
+00:21:00.430 --> 00:21:06.450
+The only way to really do that is a sucky way.
+
+00:21:06.450 --> 00:21:09.610
+And that's peer feedback.
+
+00:21:09.610 --> 00:21:11.850
+Our peer feedback system at Microsoft currently sucks.
+
+00:21:11.850 --> 00:21:16.010
+Just to clarify that for the listeners.
+
+00:21:16.010 --> 00:21:21.690
+The system is, I'm going to send out a list of, I'm going to send out an invitation to
+
+00:21:21.690 --> 00:21:25.520
+give feedback to all the people I know who will say good things about me.
+
+00:21:25.520 --> 00:21:33.330
+Oh, and yeah, because in addition, even if someone had something not good to say about
+
+00:21:33.330 --> 00:21:35.770
+you, they're not motivated.
+
+00:21:35.770 --> 00:21:44.880
+The last two review cycles, my entire team has gotten 100% strongly agrees in all their
+
+00:21:44.880 --> 00:21:47.010
+peer feedback.
+
+00:21:47.010 --> 00:21:49.690
+And I think people are like, well, I don't want to have a discussion with this guy's
+
+00:21:49.690 --> 00:21:55.400
+manager, so I'll just do five, five, five, five, five.
+
+00:21:55.400 --> 00:21:56.960
+What was the question I was asking?
+
+00:21:56.960 --> 00:21:59.890
+Oh, how to deal with this.
+
+00:21:59.890 --> 00:22:06.760
+The other general strategy that I see is it's the lifeboat game.
+
+00:22:06.760 --> 00:22:14.510
+So when you're talking about collaboration against your peers, it's more about sorting
+
+00:22:14.510 --> 00:22:20.350
+it by who pissed off others the most, because that's clearly visible versus who's
+
+00:22:20.350 --> 00:22:22.550
+not always.
+
+00:22:22.550 --> 00:22:23.550
+Not always.
+
+00:22:23.550 --> 00:22:29.110
+I think there are many ways, plenty of ways for me to sabotage your career for the benefit
+
+00:22:29.110 --> 00:22:30.870
+of mine without you knowing.
+
+00:22:30.870 --> 00:22:32.030
+Oh, for sure.
+
+00:22:32.030 --> 00:22:34.270
+Oh, the game of throwing people under the bus.
+
+00:22:34.270 --> 00:22:35.830
+Oh, yeah.
+
+00:22:35.830 --> 00:22:40.710
+Let me tell you what I've done to combat this in the past and in the end on this team.
+
+00:22:40.710 --> 00:22:47.160
+But if I stick around, perhaps we will.
+
+00:22:47.160 --> 00:22:48.680
+We don't stack rank anymore at Microsoft.
+
+00:22:48.680 --> 00:22:50.840
+I should clarify this.
+
+00:22:50.840 --> 00:22:54.400
+Managers don't stack rank their teams as part of the review process.
+
+00:22:54.400 --> 00:23:01.800
+One thing, say I have, I'm the leader of a team and I have like 15 people or 20 people
+
+00:23:01.800 --> 00:23:05.040
+or some manageable number of people in some level band.
+
+00:23:05.600 --> 00:23:11.430
+I have a good idea of their output, but all the intangibles, as much as I pay attention
+
+00:23:11.430 --> 00:23:14.710
+to them day to day, I want to get an idea of how much they help each other.
+
+00:23:14.710 --> 00:23:22.180
+What I do is I have every single one of you stack rank that your peers and you.
+
+00:23:22.180 --> 00:23:24.700
+So I'll do 10 for an even number.
+
+00:23:24.700 --> 00:23:30.460
+I ask each of you to stack rank the 10 of you along with your peers.
+
+00:23:30.460 --> 00:23:35.420
+So I get an idea of where you think you fit in and I get an idea of where you think
+
+00:23:35.420 --> 00:23:38.920
+others are contributing to the team.
+
+00:23:38.920 --> 00:23:42.200
+When I can, and this is a heuristic, I'm going to pull these things together and
+
+00:23:42.200 --> 00:23:43.720
+look for surprises.
+
+00:23:43.720 --> 00:23:49.200
+If I see one person consistently at the top, I go, and I thought they were pretty good.
+
+00:23:49.200 --> 00:23:51.320
+I'm now, yeah, they are awesome.
+
+00:23:51.320 --> 00:23:53.480
+And the rest of the team thinks they're awesome.
+
+00:23:53.480 --> 00:23:56.200
+And that's actually very, very important to me.
+
+00:23:56.200 --> 00:23:58.360
+The same, and I'll say anything at the bottom.
+
+00:23:58.360 --> 00:24:00.160
+And then surprises are interesting.
+
+00:24:00.160 --> 00:24:02.760
+That tells you where someone's playing the game.
+
+00:24:02.880 --> 00:24:06.960
+Like if I think like Brent, I think you are the best person on my team.
+
+00:24:06.960 --> 00:24:11.160
+And then I do this little exercise where I have you and all your peers rank you one
+
+00:24:11.160 --> 00:24:13.920
+through 10 and you end up at the bottom of everyone's list.
+
+00:24:13.920 --> 00:24:15.200
+I go, wait a minute.
+
+00:24:15.200 --> 00:24:17.400
+Brent's nice to me, but I think he's an asshole.
+
+00:24:20.000 --> 00:24:24.040
+And the opposite can happen too, because managers, again, through the same
+
+00:24:25.040 --> 00:24:29.720
+irrational behavior, I can think I could have flipped the bit on you.
+
+00:24:29.720 --> 00:24:30.200
+I thought, you know what?
+
+00:24:30.200 --> 00:24:31.720
+I don't know that Brent's contributing.
+
+00:24:31.720 --> 00:24:36.680
+He gets work gets done, but he says he's helping others, but I don't believe him.
+
+00:24:36.680 --> 00:24:38.920
+And to get past that, it's anecdotal.
+
+00:24:38.920 --> 00:24:40.920
+It's subjective data.
+
+00:24:40.920 --> 00:24:45.440
+But when I see you show up at the top of everyone's list, it forces me to think,
+
+00:24:45.440 --> 00:24:46.760
+you know what? Maybe I was wrong.
+
+00:24:46.760 --> 00:24:50.720
+I got to I got to figure out what I'm doing wrong here.
+
+00:24:50.720 --> 00:24:53.080
+There's a ton of value in that exercise.
+
+00:24:53.080 --> 00:24:56.680
+And it tells you who's playing the game versus who is truly valuable.
+
+00:24:56.680 --> 00:24:58.680
+I don't know about playing the game, right?
+
+00:24:58.680 --> 00:25:08.660
+It's essentially what you've essentially done is is kind of created a source of
+
+00:25:08.660 --> 00:25:13.150
+of data to help battle intuition.
+
+00:25:13.150 --> 00:25:17.590
+It's a cheap way to handle the fact that our peer feedback system is pretty much
+
+00:25:17.590 --> 00:25:18.470
+non-existent.
+
+00:25:18.470 --> 00:25:24.710
+I have used that technique and the surprise situation where where you think
+
+00:25:24.710 --> 00:25:30.110
+I was your rock star, but the rest of the group thinks I'm sucktastic.
+
+00:25:30.110 --> 00:25:36.620
+I have found seven times out of 10 that that is an indication of a hero in the
+
+00:25:36.620 --> 00:25:43.500
+org because heroes generally damn the torpedoes.
+
+00:25:43.500 --> 00:25:44.590
+Yep.
+
+00:25:44.590 --> 00:25:48.270
+Nope. I'm here to get things done.
+
+00:25:48.270 --> 00:25:51.390
+The rest of you get out of my way or I'll stomp on you all on my way there.
+
+00:25:51.390 --> 00:25:53.650
+Yeah.
+
+00:25:53.650 --> 00:25:58.250
+So the thing I don't like is just to close on this a little bit is with a
+
+00:25:58.250 --> 00:26:03.450
+lack of a peer feedback system, there's a little bit too much weight and
+
+00:26:03.450 --> 00:26:11.510
+responsibility and error proneness of having the manager of a large team just
+
+00:26:11.510 --> 00:26:16.070
+figure out without much data where everybody belongs, not just on output,
+
+00:26:16.070 --> 00:26:21.100
+but output and collaboration and growth.
+
+00:26:21.100 --> 00:26:31.980
+The people discussion that I went through for my team was much simpler.
+
+00:26:32.940 --> 00:26:45.490
+We have a team of about 30 people and the goal was each manager went in with three
+
+00:26:45.490 --> 00:26:46.490
+impact.
+
+00:26:46.490 --> 00:26:49.170
+So you said zero to 200, I believe.
+
+00:26:49.170 --> 00:26:50.170
+Yeah.
+
+00:26:50.170 --> 00:26:53.100
+You can think of us as having zero to two.
+
+00:26:53.100 --> 00:26:54.100
+Okay.
+
+00:26:54.100 --> 00:26:55.100
+Okay.
+
+00:26:55.100 --> 00:27:02.940
+And we were encouraged to discuss business results and just simply listen.
+
+00:27:02.940 --> 00:27:06.220
+So the decision is mine.
+
+00:27:06.220 --> 00:27:14.660
+But the listening part is my peers tell me what they observe with that individual
+
+00:27:14.660 --> 00:27:16.340
+that I'm not observing.
+
+00:27:16.340 --> 00:27:17.860
+I don't have to change my score.
+
+00:27:17.860 --> 00:27:21.380
+I can keep it the way it is.
+
+00:27:21.380 --> 00:27:25.860
+But we go in with those three values and even our rewards were at those
+
+00:27:25.860 --> 00:27:33.710
+at three distinct setting of the values and it will bubble up to my manager to
+
+00:27:33.710 --> 00:27:38.830
+do the differentiation and then to his manager to do the differentiation.
+
+00:27:38.830 --> 00:27:40.430
+Too complicated.
+
+00:27:40.430 --> 00:27:43.830
+It's simpler than the system you've been going through.
+
+00:27:43.830 --> 00:27:44.990
+It really is.
+
+00:27:44.990 --> 00:27:47.270
+I just sit there and I talk about my guys.
+
+00:27:47.270 --> 00:27:53.150
+So it's better for me to work for someone who can speak better of me
+
+00:27:53.150 --> 00:27:55.460
+regardless of the work I do.
+
+00:27:55.460 --> 00:27:56.460
+Yes.
+
+00:27:56.460 --> 00:27:58.300
+That's the lead I should gravitate towards.
+
+00:27:58.300 --> 00:27:59.300
+Absolutely.
+
+00:27:59.300 --> 00:28:01.300
+The one who likes me the most.
+
+00:28:01.300 --> 00:28:02.300
+Alright.
+
+00:28:02.300 --> 00:28:03.330
+Career tips from Brit.
+
+00:28:03.570 --> 00:28:05.250
+No but that's a true technique.
+
+00:28:05.250 --> 00:28:06.250
+It is.
+
+00:28:06.250 --> 00:28:07.250
+Right.
+
+00:28:07.250 --> 00:28:17.180
+The in these models right you have to be able to defend against if you're not the
+
+00:28:17.180 --> 00:28:21.740
+most charismatic guy in the room you better have techniques to defend against
+
+00:28:21.740 --> 00:28:24.870
+that guy.
+
+00:28:24.870 --> 00:28:29.510
+So here's one gaming system that I would love to see how you've dealt with.
+
+00:28:29.510 --> 00:28:32.020
+Yeah.
+
+00:28:32.020 --> 00:28:39.580
+People say it the adjective only manager which is doesn't communicate results just
+
+00:28:39.580 --> 00:28:43.860
+communicates spews out a chain of adjectives.
+
+00:28:43.860 --> 00:28:45.860
+My guy is a rock star.
+
+00:28:45.860 --> 00:28:49.500
+The developer says this is the best dude ever.
+
+00:28:49.500 --> 00:28:50.500
+That sort of thing.
+
+00:28:50.500 --> 00:28:52.180
+I know you've had you've experienced that guy.
+
+00:28:52.180 --> 00:28:56.420
+I was reminded of our drinking game.
+
+00:28:56.420 --> 00:28:59.780
+We've talked about this before drinking game because for a while at our people
+
+00:28:59.780 --> 00:29:04.140
+discussion the description of everyone started off with he's a great guy or
+
+00:29:04.140 --> 00:29:06.460
+she's a great she's a great woman.
+
+00:29:06.460 --> 00:29:07.460
+Great.
+
+00:29:07.460 --> 00:29:12.580
+And it would HR rep stepped up to band that phrase from the discussion.
+
+00:29:12.580 --> 00:29:18.310
+Alright I think we have time for a little bit of answering of questions.
+
+00:29:18.310 --> 00:29:26.730
+So let me reach deep into the mailbag.
+
+00:29:26.730 --> 00:29:28.650
+Always good to have a mailbag.
+
+00:29:28.650 --> 00:29:30.570
+Steve Rowe.
+
+00:29:30.570 --> 00:29:31.730
+Thornken.
+
+00:29:31.730 --> 00:29:32.730
+Thornken.
+
+00:29:32.810 --> 00:29:34.210
+What is Thornken?
+
+00:29:34.210 --> 00:29:43.670
+I actually asked him of course he did and he said that was his handle when he started way
+
+00:29:43.670 --> 00:29:46.270
+back in the day on BBS's.
+
+00:29:46.270 --> 00:29:47.270
+That is hilarious.
+
+00:29:47.270 --> 00:29:51.550
+And when he told me that because I spent a lot of time on BBS's.
+
+00:29:51.550 --> 00:29:52.550
+Oh me too.
+
+00:29:52.550 --> 00:29:56.190
+And I'm like I'm wondering how many of the three don't even know what the hell that
+
+00:29:56.190 --> 00:29:58.670
+is.
+
+00:29:58.670 --> 00:30:03.390
+But I was like is Steve old enough to have spent time on BBS's?
+
+00:30:03.390 --> 00:30:05.390
+He looks young.
+
+00:30:05.390 --> 00:30:11.350
+There used to be a paper a free newspaper called computer user or something in the
+
+00:30:11.350 --> 00:30:12.350
+Northwest.
+
+00:30:12.350 --> 00:30:16.990
+I used to pick it up and there were articles in there lots of ads for computers.
+
+00:30:16.990 --> 00:30:22.270
+But in the back was a whole list of phone numbers of all kinds of different BBS's.
+
+00:30:22.270 --> 00:30:26.070
+And I used to kind of go through there and try some out.
+
+00:30:26.070 --> 00:30:27.510
+Some were really lame and some had stuff.
+
+00:30:27.950 --> 00:30:31.230
+Then I found the friend of mine at Mittysoft.
+
+00:30:31.230 --> 00:30:37.550
+My company before I worked at Microsoft found me I forget the name of the BBS but in
+
+00:30:37.550 --> 00:30:42.470
+this BBS I could actually get to a thing called the Internet.
+
+00:30:43.650 --> 00:30:48.130
+But this is this was I guess Mosaic was just coming around but I could go to Gofer and
+
+00:30:48.130 --> 00:30:49.130
+search for things.
+
+00:30:49.970 --> 00:30:53.170
+And search was so slow.
+
+00:30:53.170 --> 00:30:57.610
+It was really bad.
+
+00:30:57.610 --> 00:30:58.610
+But a memory.
+
+00:30:58.610 --> 00:31:03.290
+So the reason I brought up Thornkin is Thornkin is Steve Rose's name on our Slack
+
+00:31:03.290 --> 00:31:04.290
+channel.
+
+00:31:04.410 --> 00:31:10.430
+One of the three O N E O F T H R E E at slack.com.
+
+00:31:11.900 --> 00:31:13.460
+So anyway Steve asked a question.
+
+00:31:13.500 --> 00:31:16.660
+You might you might think that gee I thought this was the mailbag thing and
+
+00:31:16.660 --> 00:31:18.580
+they're just randomly talking about BBS's.
+
+00:31:18.980 --> 00:31:20.620
+That's the way we roll.
+
+00:31:20.620 --> 00:31:26.980
+Steve asked about what the role of program management is in unified engineering.
+
+00:31:28.500 --> 00:31:34.260
+What functions do they serve and what what shifts to development.
+
+00:31:34.500 --> 00:31:34.700
+Right.
+
+00:31:34.700 --> 00:31:35.100
+It's part of that.
+
+00:31:35.500 --> 00:31:40.940
+What what work that is currently on a program manager's plate that moves to
+
+00:31:40.940 --> 00:31:41.980
+dev tangent time.
+
+00:31:42.260 --> 00:31:44.260
+Yeah totally forgot this at the beginning.
+
+00:31:44.380 --> 00:31:45.460
+I'm very very sorry.
+
+00:31:45.660 --> 00:31:46.980
+But speaking of unified engineering.
+
+00:31:47.100 --> 00:31:49.820
+Yes I cheated on you.
+
+00:31:50.620 --> 00:31:54.390
+Again it happened.
+
+00:31:54.430 --> 00:31:56.110
+Sorry.
+
+00:31:56.190 --> 00:31:57.790
+No I'm fine.
+
+00:31:58.430 --> 00:32:00.430
+Yeah I I strayed.
+
+00:32:00.990 --> 00:32:01.270
+OK.
+
+00:32:01.350 --> 00:32:03.230
+But I had a good time and I do it again.
+
+00:32:04.960 --> 00:32:06.000
+As well you should.
+
+00:32:06.360 --> 00:32:10.600
+I was a guest on the testing show this week for their podcast unreleased at this
+
+00:32:10.600 --> 00:32:10.880
+point.
+
+00:32:10.920 --> 00:32:12.440
+So I'll mention it again when it comes out.
+
+00:32:12.800 --> 00:32:16.800
+Talking about I wasn't sure what it was about at first because Matt Heuser
+
+00:32:17.080 --> 00:32:19.880
+referred to as concurrent engineering but he meant like combined engineering
+
+00:32:19.880 --> 00:32:23.560
+unified engineering you know the phrase works it's doing the activities are all
+
+00:32:23.560 --> 00:32:24.680
+happening concurrently.
+
+00:32:25.120 --> 00:32:26.720
+And we talked about a little bit about that.
+
+00:32:27.730 --> 00:32:31.530
+So unified engineering reminded me that I forgot to mention it earlier.
+
+00:32:31.570 --> 00:32:37.650
+So shout out Michael Larson Justin Norman perzy is on the testing show.
+
+00:32:39.130 --> 00:32:42.970
+And Matt Heuser we had a good little talk about as good a talk as you can
+
+00:32:42.970 --> 00:32:45.130
+have at an even earlier hour than this.
+
+00:32:46.520 --> 00:32:52.680
+Yeah if they record at eight their time that's five you know I did a 5 a.m.
+
+00:32:52.960 --> 00:32:53.280
+Talk.
+
+00:32:54.040 --> 00:32:58.360
+So answering Steve's question as if you thought we'd never get there.
+
+00:32:59.150 --> 00:33:01.730
+Brent on a unified engineering team.
+
+00:33:01.930 --> 00:33:03.330
+What the hell do program managers do.
+
+00:33:04.170 --> 00:33:16.790
+The role of a of a PM should be essentially get more customers identify the
+
+00:33:16.790 --> 00:33:25.370
+features the requirements the opportunities that will acquire more happy customers for the
+
+00:33:25.370 --> 00:33:26.450
+feature set of that team.
+
+00:33:27.090 --> 00:33:28.050
+That's it in a nutshell.
+
+00:33:29.000 --> 00:33:34.730
+They they should not not be doing schedule management.
+
+00:33:37.240 --> 00:33:44.960
+They may have a role in certain design functions but even then if you have a designer I
+
+00:33:45.000 --> 00:33:51.770
+would prefer to go talk to those guys then to program management in a nutshell.
+
+00:33:51.810 --> 00:34:00.360
+They're there to take on the customer focus wing of software development.
+
+00:34:01.040 --> 00:34:05.120
+I like the idea you brought up they don't own the schedule from an agile point of view.
+
+00:34:05.360 --> 00:34:09.970
+Those familiar with the role of a P.O. product owner.
+
+00:34:10.090 --> 00:34:19.370
+I think the there on a unified engineering team you could pretty much just look up any
+
+00:34:19.370 --> 00:34:25.250
+definition of a product owner and be pretty well so that's you jumped way ahead.
+
+00:34:25.250 --> 00:34:27.530
+I was going to talk about and it's good thing.
+
+00:34:27.850 --> 00:34:33.250
+I was going to talk about schedule a little bit and what happened there and then I was going to
+
+00:34:33.250 --> 00:34:37.730
+make a profound statement and say a profound question and ask Brent.
+
+00:34:38.610 --> 00:34:43.490
+Do you think the P.M. role is moving to much more of an agile project owner role.
+
+00:34:44.380 --> 00:34:47.620
+Yes product owner role and I think you're right.
+
+00:34:47.660 --> 00:34:50.700
+I do my best to push it there.
+
+00:34:50.740 --> 00:34:54.020
+I don't think it's moving there at least in my world it's not moving there.
+
+00:34:54.460 --> 00:34:57.700
+So let me tell you in the Skype consumer org that's the role of the P.M.
+
+00:34:57.700 --> 00:34:58.180
+It's a P.O.
+
+00:34:58.700 --> 00:34:59.540
+We have product owners.
+
+00:34:59.660 --> 00:34:59.860
+Yep.
+
+00:35:01.180 --> 00:35:03.100
+Like it like it.
+
+00:35:03.260 --> 00:35:09.500
+My team is still a little bit in the old world of project management which is
+
+00:35:09.540 --> 00:35:13.500
+interesting because I will tell you I don't have any problems putting laundry on the
+
+00:35:13.500 --> 00:35:13.900
+table.
+
+00:35:14.260 --> 00:35:15.300
+Love the product.
+
+00:35:15.540 --> 00:35:16.540
+Love the team.
+
+00:35:16.780 --> 00:35:20.940
+There comes a point when you're moving as we're moving where P.M.
+
+00:35:20.980 --> 00:35:23.540
+in the old role tends to get in the way a little bit.
+
+00:35:24.020 --> 00:35:24.540
+It does.
+
+00:35:25.100 --> 00:35:25.540
+It does.
+
+00:35:25.620 --> 00:35:27.900
+And and they should be enabling.
+
+00:35:29.850 --> 00:35:31.170
+They are.
+
+00:35:33.060 --> 00:35:33.460
+P.M.
+
+00:35:33.460 --> 00:35:42.700
+is another function that of command and control that's still trying to keep itself
+
+00:35:42.700 --> 00:35:43.220
+alive.
+
+00:35:43.380 --> 00:35:43.660
+It is.
+
+00:35:43.660 --> 00:35:49.340
+So I think our good friend Jim Moore once described the role of test or often
+
+00:35:49.340 --> 00:35:51.740
+described the role of test as the remainder.
+
+00:35:51.900 --> 00:35:54.180
+Dev do the implementation and coding P.M.
+
+00:35:54.180 --> 00:35:57.260
+do the design and scheduling and the remainder is done by test.
+
+00:35:57.460 --> 00:35:59.980
+Whatever and other you know Dev and P.M.
+
+00:35:59.980 --> 00:36:02.860
+may pick up more of that but test does the remainder.
+
+00:36:03.220 --> 00:36:08.890
+Unified engineering team the engineering team owns scheduling and
+
+00:36:08.890 --> 00:36:12.370
+implementation and testing and quality and deployment etcetera.
+
+00:36:13.210 --> 00:36:14.050
+The P.O.
+
+00:36:14.900 --> 00:36:17.620
+you could think of as the new owner of the remainder.
+
+00:36:21.030 --> 00:36:22.830
+No the P.O.
+
+00:36:22.950 --> 00:36:24.190
+I like I like the idea of the P.M.
+
+00:36:24.190 --> 00:36:24.990
+moving to the P.O.
+
+00:36:25.030 --> 00:36:27.710
+Yes it's a distinct set of stuff that a P.O.
+
+00:36:27.710 --> 00:36:28.150
+does.
+
+00:36:28.310 --> 00:36:29.350
+It's not the remainder.
+
+00:36:29.430 --> 00:36:29.750
+Right.
+
+00:36:30.750 --> 00:36:36.030
+The pro the transitional problem is as bluntly we have too many P.M.s.
+
+00:36:36.350 --> 00:36:36.790
+Yes.
+
+00:36:37.550 --> 00:36:40.630
+So in and the we don't need as many P.M.
+
+00:36:40.630 --> 00:36:42.350
+as we have for the P.O.
+
+00:36:42.350 --> 00:36:42.790
+role.
+
+00:36:43.820 --> 00:36:48.140
+So I want to have them pick up the remainder purely as job security for my
+
+00:36:48.140 --> 00:36:49.500
+friends still stuck in that role.
+
+00:36:50.900 --> 00:36:52.260
+Yeah and I'm going to say screw that.
+
+00:36:53.980 --> 00:36:57.260
+I'm going to say screw that in the long run but that's that the reason I brought
+
+00:36:57.260 --> 00:37:02.100
+up as the remainder is because there's a transitional period in similar to how
+
+00:37:02.100 --> 00:37:05.100
+there's been in test where testers have figured out former testers have
+
+00:37:05.100 --> 00:37:09.780
+figured out where to sort of belong in the new world and most of them have.
+
+00:37:10.180 --> 00:37:12.580
+And I guess in the same way we had to go through it.
+
+00:37:13.420 --> 00:37:13.980
+P.M.
+
+00:37:13.980 --> 00:37:15.700
+should figure out where they belong in that world too.
+
+00:37:16.790 --> 00:37:17.670
+I completely agree.
+
+00:37:17.750 --> 00:37:19.950
+The I'll walk through.
+
+00:37:20.310 --> 00:37:26.910
+So I first encountered this this this P.M.
+
+00:37:26.910 --> 00:37:37.780
+drama about five years ago when when I went to Bing and as as I wrote on my blog post at
+
+00:37:37.780 --> 00:37:39.140
+Microsoft the U.E.
+
+00:37:39.140 --> 00:37:50.720
+trans transformation started in Bing literally just a month before I joined in one of the I'd be
+
+00:37:50.720 --> 00:37:51.960
+funded several P.M.
+
+00:37:51.960 --> 00:37:58.160
+is there and there was a period where they were confused in terms of what value they had
+
+00:37:58.160 --> 00:38:05.920
+and then some started focusing on customer stuff and started succeeding on this but even
+
+00:38:05.920 --> 00:38:12.740
+those guys felt that it wasn't going to persist right.
+
+00:38:12.780 --> 00:38:18.900
+The because a lot of the data they were looking at so Bing's rich in data and a lot of the
+
+00:38:18.900 --> 00:38:23.340
+data they were looking at was essentially which customers are were pissing off.
+
+00:38:23.380 --> 00:38:28.960
+They were focusing on D sat not C sat and they're like I don't know what I'm to do
+
+00:38:28.960 --> 00:38:35.600
+because we're busily building up all of these great data tools and shortly the dev will be
+
+00:38:35.600 --> 00:38:38.640
+able to figure out what's pissing off customers readily without me.
+
+00:38:39.620 --> 00:38:40.860
+And I'm like right.
+
+00:38:40.940 --> 00:38:42.300
+And that's the way it should be.
+
+00:38:42.860 --> 00:38:50.340
+But dev can't focus on what are the new opportunities that we have no code for.
+
+00:38:51.330 --> 00:38:51.530
+Right.
+
+00:38:51.570 --> 00:38:52.970
+That's what you should be doing.
+
+00:38:53.010 --> 00:38:55.930
+That's you should be designing a B experiments.
+
+00:38:55.970 --> 00:39:01.930
+You should be thinking through what are opportunities that we can either grow our market or
+
+00:39:01.930 --> 00:39:14.600
+increase revenue from our existing market and use your quality intuition skills to
+
+00:39:14.600 --> 00:39:19.760
+generate a list of opportunities that we can run through and test very quickly.
+
+00:39:22.040 --> 00:39:22.480
+I agree.
+
+00:39:22.800 --> 00:39:23.200
+I agree.
+
+00:39:23.440 --> 00:39:28.000
+And so what that means it goes into Steve's third question about shifts to development or
+
+00:39:28.000 --> 00:39:35.760
+shifts to the members of the unified engineering team is that there are some old some
+
+00:39:35.800 --> 00:39:44.300
+skills some tasks activities some activities previously done by PM belong on the dev team.
+
+00:39:44.620 --> 00:39:49.820
+And like you thought the devs didn't want to do testing they don't want to do PM crap.
+
+00:39:50.820 --> 00:39:52.500
+It's more efficient for it to be there.
+
+00:39:52.780 --> 00:39:59.020
+And it further to me it further emphasizes the need for generalizing specialists and
+
+00:39:59.020 --> 00:40:01.740
+specializing generalists on your unified engineering team.
+
+00:40:02.300 --> 00:40:04.100
+Some people are going to be good at different things.
+
+00:40:04.100 --> 00:40:06.900
+Some people just want to be told what to do.
+
+00:40:06.900 --> 00:40:08.900
+Some people want to help figure out what to do.
+
+00:40:09.180 --> 00:40:10.620
+There is room for all of those.
+
+00:40:10.620 --> 00:40:12.140
+In fact you need all of those.
+
+00:40:12.140 --> 00:40:19.100
+You need a mix of skills and a mix of interests to have a successful unified
+
+00:40:19.100 --> 00:40:19.660
+engineering team.
+
+00:40:19.700 --> 00:40:24.660
+I think it's much more efficient when you start moving a chunk of that previously owned
+
+00:40:24.900 --> 00:40:30.320
+of the activities when you move a chunk of the previously owned activities from PM
+
+00:40:30.680 --> 00:40:32.080
+to a unified engineering team.
+
+00:40:32.080 --> 00:40:33.800
+So I'm full behind that.
+
+00:40:34.320 --> 00:40:38.840
+I don't know exactly how that transition happens because right now the unfortunately
+
+00:40:38.840 --> 00:40:44.080
+in most parts of Microsoft the PM role is much about wanting to get their thumbs in a
+
+00:40:44.080 --> 00:40:46.440
+lot of different areas and having that wide exposure.
+
+00:40:46.440 --> 00:40:52.960
+The program management role is a lot about I coordinate I schedule I know you don't.
+
+00:40:53.400 --> 00:40:56.560
+You know I think I think it's the next step.
+
+00:40:56.560 --> 00:41:02.280
+I think it's in a team like Microsoft or organization like Microsoft or in a team
+
+00:41:02.480 --> 00:41:07.360
+structure like these Microsoft orgs with it's not like we have like a one to one
+
+00:41:07.360 --> 00:41:14.080
+PM to dev ratio but we I would say in general we have far more than we need.
+
+00:41:15.280 --> 00:41:22.680
+I would and we need to think are far more and I think that's the next step in our evolution as a
+
+00:41:22.680 --> 00:41:23.120
+company.
+
+00:41:23.120 --> 00:41:26.440
+We made a lot of strides in evolution how we make software.
+
+00:41:27.120 --> 00:41:30.260
+I'm across most orgs at Microsoft.
+
+00:41:30.780 --> 00:41:31.940
+I'm very proud.
+
+00:41:31.940 --> 00:41:34.340
+I talked to no assessment shout out.
+
+00:41:34.340 --> 00:41:34.940
+Thank you.
+
+00:41:34.940 --> 00:41:35.420
+Thank you.
+
+00:41:35.420 --> 00:41:36.540
+Thank you again Noah.
+
+00:41:36.980 --> 00:41:38.500
+Noah was at Etsy.
+
+00:41:38.540 --> 00:41:39.140
+He helped.
+
+00:41:40.100 --> 00:41:45.540
+He helped take Etsy from the sort of the shipping weekly monthly to continuous deployment.
+
+00:41:46.340 --> 00:41:49.900
+He knows what he's doing and I talked to him about what we're doing wanted to get his feedback and
+
+00:41:50.260 --> 00:41:54.860
+and I feel like we're actually making software like a real company on my team.
+
+00:41:54.860 --> 00:41:55.980
+I'm very excited about that.
+
+00:41:56.380 --> 00:41:58.700
+I like Oh my God we're doing it right.
+
+00:41:58.820 --> 00:41:59.580
+We're getting there.
+
+00:42:00.060 --> 00:42:00.900
+Very exciting for me.
+
+00:42:01.100 --> 00:42:07.980
+And I think despite despite I don't want to throw all PMs under the bus they mean well but I think the
+
+00:42:07.980 --> 00:42:13.900
+next stage in the evolution of engineering at Microsoft at least is to evolve that PM role into
+
+00:42:13.900 --> 00:42:18.500
+something more supportive of a efficient unified engineering team.
+
+00:42:18.700 --> 00:42:28.710
+One of the one of the PM's that I worked with a lot in being left teams four years ago and he asked me
+
+00:42:28.710 --> 00:42:38.740
+to come in and help train up his current team on agile practices in particular Kanban and I met him
+
+00:42:39.060 --> 00:42:40.700
+couple of months ago.
+
+00:42:41.460 --> 00:42:44.660
+I happened to do a presentation for H.R.
+
+00:42:46.380 --> 00:42:50.340
+And he was in the room and he's like dude we need to sync up.
+
+00:42:50.860 --> 00:42:57.500
+I've gotten my whole 300 person org executing using Kanban.
+
+00:42:58.420 --> 00:43:01.100
+And it's the happiest I've seen him.
+
+00:43:01.900 --> 00:43:02.100
+Right.
+
+00:43:03.100 --> 00:43:11.800
+It's the PM role when when they simultaneously do things let go of command and control and stay
+
+00:43:11.800 --> 00:43:18.760
+consistent on maximize business value and customer value.
+
+00:43:19.480 --> 00:43:22.200
+It ends up being a lot of work for them.
+
+00:43:22.360 --> 00:43:24.240
+They keep themselves busy.
+
+00:43:24.880 --> 00:43:31.040
+You're able to prune off the crappy folks and when we get rid of command and control right.
+
+00:43:31.520 --> 00:43:36.410
+They become so in P.O. you know the role of acceptance testing.
+
+00:43:37.630 --> 00:43:42.190
+So what is an acceptance test in a scrum model.
+
+00:43:43.370 --> 00:43:45.210
+The P.O. does the acceptance test.
+
+00:43:46.000 --> 00:43:46.240
+Okay.
+
+00:43:47.100 --> 00:43:48.260
+Do they do any testing.
+
+00:43:50.270 --> 00:43:50.710
+Sure.
+
+00:43:50.830 --> 00:43:51.190
+No.
+
+00:43:51.430 --> 00:43:51.830
+None.
+
+00:43:52.150 --> 00:43:52.750
+None.
+
+00:43:52.870 --> 00:43:53.590
+None.
+
+00:43:53.670 --> 00:43:59.590
+This is something that is very the best acceptance test.
+
+00:44:00.930 --> 00:44:02.610
+The product isn't even there.
+
+00:44:03.380 --> 00:44:07.460
+So the role of the P.O. right when when you're doing agile the P.O.
+
+00:44:07.900 --> 00:44:20.260
+Sets down and says these are the outcomes these are the use cases I want solved and then we'll generate a definition of done that is not the ideally not framed in.
+
+00:44:20.660 --> 00:44:21.860
+No I get that.
+
+00:44:22.020 --> 00:44:22.260
+Right.
+
+00:44:22.900 --> 00:44:33.820
+Well so then the dev team wants to claim that they're done and so they do they sit with the P.O.
+
+00:44:34.860 --> 00:44:46.330
+The best P.O.s will do a bunch of precision questioning around how did you assure that this fulfilled that requirement.
+
+00:44:48.560 --> 00:44:52.640
+The worst P.O.s will open up the product and retested themselves.
+
+00:44:54.260 --> 00:44:59.220
+The Intel has gone through that acceptance review and it's more of a precision.
+
+00:44:59.580 --> 00:45:10.820
+Alan explained to me so this this particular situation the outcome was it needed to scale out very high.
+
+00:45:11.380 --> 00:45:11.580
+Right.
+
+00:45:11.620 --> 00:45:18.180
+And then let's say I mad it needs to scale out to end instances of whatever is important to your team.
+
+00:45:18.540 --> 00:45:18.940
+Okay.
+
+00:45:19.900 --> 00:45:21.180
+How did you prove it did that.
+
+00:45:22.490 --> 00:45:26.050
+I launched a bunch of VMs and VMs and deployed and it was fun.
+
+00:45:27.180 --> 00:45:27.820
+For how long.
+
+00:45:29.580 --> 00:45:30.260
+Just like a minute.
+
+00:45:30.580 --> 00:45:31.540
+What's right.
+
+00:45:32.980 --> 00:45:36.820
+And so and so that is an end.
+
+00:45:37.750 --> 00:45:42.150
+I don't struggle with that from the idea of like that's the right thing to do.
+
+00:45:42.870 --> 00:45:44.510
+I struggle with that is those.
+
+00:45:45.790 --> 00:45:49.230
+I was talking before about the transition from P.M. to P.O.
+
+00:45:49.550 --> 00:45:53.230
+Most the P.M. I know can't become that P.O. it's a different person.
+
+00:45:53.750 --> 00:45:54.590
+They can't.
+
+00:45:55.810 --> 00:46:02.050
+There are there are several that that I am aware of that are working in most several others are.
+
+00:46:02.250 --> 00:46:02.890
+Let me put it this way.
+
+00:46:02.890 --> 00:46:05.130
+I think it's a difficult transition.
+
+00:46:06.110 --> 00:46:14.630
+The thing I'm addressing because the one pattern that I saw in my last team when when P.M. started going through this thing.
+
+00:46:16.840 --> 00:46:20.160
+That it literally was P.M. becoming the remainder.
+
+00:46:21.250 --> 00:46:24.050
+And I I saw it from day one.
+
+00:46:24.410 --> 00:46:28.130
+The the codependency loop being reconstructed.
+
+00:46:28.770 --> 00:46:35.220
+Yeah I could see that and I would go to P.M. and say when you are signing off on this thing.
+
+00:46:36.670 --> 00:46:39.830
+You should not even have the product in the room.
+
+00:46:40.910 --> 00:46:44.230
+I see where you're coming from and there is an interesting parallel here.
+
+00:46:44.550 --> 00:46:45.910
+A lot of teams at Microsoft.
+
+00:46:46.910 --> 00:46:52.710
+When moving to the unified engineering they decided that OK most you testers are now data scientists.
+
+00:46:53.570 --> 00:47:01.890
+And some of them embraced it and and figured it out and became really good data scientists and a bunch of others just waving their hands around trying to figure out what it means.
+
+00:47:02.370 --> 00:47:11.410
+I see the same thing happening in the P.M. to P.O. some will get it and embrace it and be excellent at it and there'll be a bunch more kind of way of their hands and figure it out what it means.
+
+00:47:12.210 --> 00:47:16.370
+On my current team the majority of the P.M.s.
+
+00:47:18.020 --> 00:47:28.750
+There are I would say it's 75 25 25 percent are still holding on with white knuckles to the old world but the majority of the P.M.s that I'm I'm working with.
+
+00:47:31.600 --> 00:47:40.320
+They're coming to me and say hey Brent I want to I want to sit with you and see if we have the data because I have this idea for a business opportunity.
+
+00:47:40.880 --> 00:47:45.900
+And I want to see if the data sort of aligns with this intuition.
+
+00:47:46.960 --> 00:48:01.770
+And for example there's there's one new feature that we're going to fund in Azure that directly came from me and this one P.M. working together and realizing that yeah it does look fine.
+
+00:48:01.770 --> 00:48:17.180
+So he then I then pulled in a list of internal customers on Azure and he's now going through and doing a road show and testing out whether or not the internals.
+
+00:48:17.460 --> 00:48:18.460
+I just said he was testing.
+
+00:48:19.470 --> 00:48:26.390
+He's testing out whether or not this would be a valuable thing to those guys.
+
+00:48:26.590 --> 00:48:28.070
+Remember Brent words have meaning.
+
+00:48:29.230 --> 00:48:29.590
+They do.
+
+00:48:30.510 --> 00:48:31.550
+They run a time.
+
+00:48:32.030 --> 00:48:34.670
+Fun episode 41.
+
+00:48:34.830 --> 00:48:35.950
+It was a fun 41.
+
+00:48:36.750 --> 00:48:38.270
+Next one's up is 42.
+
+00:48:39.030 --> 00:48:40.230
+All right. I'm Alan. I'm Brett.
+

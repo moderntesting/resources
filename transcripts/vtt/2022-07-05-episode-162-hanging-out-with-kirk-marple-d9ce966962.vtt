@@ -1,0 +1,3605 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:01.640
+We know Skynet is coming.
+
+00:00:01.680 --> 00:00:04.720
+It's just a matter of when and we see clues all the time.
+
+00:00:04.920 --> 00:00:09.200
+A joke aside, that's why I say I went to data science so that that machines
+
+00:00:09.200 --> 00:00:13.080
+when the machines tick over the world, they look back upon me with fondness.
+
+00:00:16.640 --> 00:00:20.800
+Welcome to A.B. Testing Podcast, your modern testing podcast.
+
+00:00:21.120 --> 00:00:25.680
+Your hosts, Alan and Brent will be here to guide you through topics
+
+00:00:25.680 --> 00:00:29.760
+on testing, leadership, agile and everything else that comes to mind.
+
+00:00:30.040 --> 00:00:31.520
+Now, on with the show.
+
+00:00:31.520 --> 00:00:33.440
+I guess to your Kirk, introduce yourself.
+
+00:00:33.800 --> 00:00:35.400
+Hey, yeah, Kirk, my book on this.
+
+00:00:35.400 --> 00:00:37.800
+Yeah, I'm very cool.
+
+00:00:37.800 --> 00:00:38.760
+Thanks for coming on the A.B.
+
+00:00:38.760 --> 00:00:41.080
+Testing Podcast and hanging out with Brent and I.
+
+00:00:41.400 --> 00:00:42.840
+I didn't bring a beer.
+
+00:00:42.840 --> 00:00:45.360
+I had a bottle of wine here.
+
+00:00:45.360 --> 00:00:46.600
+And there's a reference there.
+
+00:00:46.600 --> 00:00:51.040
+Someone once told us that our podcast sounded like a couple of guys
+
+00:00:51.040 --> 00:00:53.880
+sitting around having a beer, talking about software.
+
+00:00:54.440 --> 00:00:58.640
+And I think we've only had a drink like once.
+
+00:00:58.640 --> 00:01:00.800
+That's when I left Microsoft.
+
+00:01:00.800 --> 00:01:02.680
+We did my last episode when I was there.
+
+00:01:02.680 --> 00:01:04.320
+So it's all right.
+
+00:01:04.320 --> 00:01:05.040
+We kind of hang out.
+
+00:01:05.040 --> 00:01:09.360
+And also we got some feedback when we did our last maybe was our last
+
+00:01:09.360 --> 00:01:12.480
+guest on the show, somebody said the interviewers talk too much,
+
+00:01:12.480 --> 00:01:13.960
+but we're not really interviewers.
+
+00:01:13.960 --> 00:01:15.920
+We're just going to hang out here for a while.
+
+00:01:16.320 --> 00:01:17.520
+That's our plan for today.
+
+00:01:17.520 --> 00:01:20.760
+Yeah, Kirk, Kirk, you weren't expecting an interview, were you?
+
+00:01:21.120 --> 00:01:21.680
+I can go.
+
+00:01:21.680 --> 00:01:25.320
+No, he he's it's Friday.
+
+00:01:25.320 --> 00:01:28.480
+So he's he's listened to a few episodes of the podcast.
+
+00:01:28.480 --> 00:01:29.720
+He know he is getting into it.
+
+00:01:30.040 --> 00:01:30.440
+Yeah.
+
+00:01:30.800 --> 00:01:31.800
+So fair enough.
+
+00:01:32.800 --> 00:01:38.880
+So if you were a color, no, I threatened to ask our last guest that too,
+
+00:01:38.880 --> 00:01:40.200
+because I don't have an answer for that.
+
+00:01:40.200 --> 00:01:45.200
+So not only Kirk is I want to talk about what data and what unstructured
+
+00:01:45.200 --> 00:01:47.920
+data is a little bit, what unstruct does will give you, we'll give you
+
+00:01:47.920 --> 00:01:51.560
+some plug time, but you've also had quite a varied career going back.
+
+00:01:51.800 --> 00:01:55.240
+I think you may have started at Microsoft even before I did.
+
+00:01:55.600 --> 00:01:55.800
+Yeah.
+
+00:01:55.800 --> 00:01:56.080
+What was it?
+
+00:01:56.080 --> 00:01:57.400
+In 94.
+
+00:01:57.600 --> 00:01:58.000
+Yeah.
+
+00:01:58.200 --> 00:02:01.600
+He beat me by a year and worked on some things I heard of.
+
+00:02:02.000 --> 00:02:02.600
+So go ahead.
+
+00:02:02.640 --> 00:02:05.360
+I don't know if Brent did the LinkedIn stalking that I did.
+
+00:02:05.360 --> 00:02:08.920
+So I, in addition to Blackbird, which was some fire, remember, it was
+
+00:02:08.920 --> 00:02:14.080
+some multimedia stuff for MSN way back in the early days of the internet.
+
+00:02:14.520 --> 00:02:15.040
+It was, yeah.
+
+00:02:15.040 --> 00:02:19.960
+Pre HTML, pre pre web, which is like, I mean, pretty interesting.
+
+00:02:19.960 --> 00:02:22.320
+So I mean, those days were pretty crazy.
+
+00:02:22.360 --> 00:02:23.480
+Do you remember?
+
+00:02:23.480 --> 00:02:25.600
+And I think Brent started in 96.
+
+00:02:25.600 --> 00:02:27.480
+So it was like 94, 95, 96.
+
+00:02:27.760 --> 00:02:30.600
+I started January 94.
+
+00:02:31.000 --> 00:02:31.680
+Oh, nevermind.
+
+00:02:31.720 --> 00:02:32.360
+I'm wrong.
+
+00:02:32.760 --> 00:02:34.160
+For some reason I thought I was there.
+
+00:02:34.160 --> 00:02:34.920
+I started before you.
+
+00:02:34.920 --> 00:02:35.920
+I am, I'm dumb.
+
+00:02:36.240 --> 00:02:42.520
+So I remember when we had to get special permission to have internet
+
+00:02:42.520 --> 00:02:44.560
+access from our desktop computers.
+
+00:02:45.200 --> 00:02:45.640
+Oh yeah.
+
+00:02:46.640 --> 00:02:50.360
+I still remember when the first guy in the office got wifi and it was like,
+
+00:02:50.360 --> 00:02:54.440
+he had wifi and the one in the offices, it was like a whole big deal.
+
+00:02:54.880 --> 00:02:58.000
+Like, and I don't remember why he got access to it, but it was, yeah,
+
+00:02:58.000 --> 00:02:59.440
+he had, it was like the first thing.
+
+00:02:59.440 --> 00:03:00.240
+So yeah.
+
+00:03:00.240 --> 00:03:03.720
+And I had, uh, oh, if you remember, we didn't even have TCP, IP.
+
+00:03:03.720 --> 00:03:07.480
+We had, what was our internal protocol we used?
+
+00:03:08.080 --> 00:03:09.920
+Oh, uh, net bias.
+
+00:03:10.640 --> 00:03:13.800
+Or was that, Oh God, you know what I'm talking about, right?
+
+00:03:13.800 --> 00:03:14.840
+But it's not, no, not yet.
+
+00:03:15.520 --> 00:03:17.600
+No, it was, it was net something.
+
+00:03:17.600 --> 00:03:19.480
+He's, he's absolutely right on that one.
+
+00:03:19.520 --> 00:03:23.560
+We had our own very noisy protocol we used ahead of.
+
+00:03:24.320 --> 00:03:27.240
+That we had, you know, net buoy was what was, oh yeah.
+
+00:03:27.520 --> 00:03:29.000
+Then it was, was it land man?
+
+00:03:29.040 --> 00:03:29.840
+Was that part of that?
+
+00:03:29.840 --> 00:03:33.600
+It could have been land man was the thing that Mike, I, you know what I'm talking
+
+00:03:33.600 --> 00:03:35.200
+about, there was a, we had our own protocol.
+
+00:03:35.400 --> 00:03:39.280
+Like when you installed windows, you had to go install this extra protocol off
+
+00:03:39.280 --> 00:03:42.320
+this server somewhere so you could communicate, I can't remember what it
+
+00:03:42.320 --> 00:03:47.320
+was called just, I forgot about it till now, uh, lost cause, but speaking of wifi,
+
+00:03:47.360 --> 00:03:52.440
+I remember also having a window CE device, like in two year, 2000, and
+
+00:03:52.560 --> 00:03:57.440
+having the huge battery pack on the back where he could also put a PCMCIA
+
+00:03:57.760 --> 00:03:59.440
+wifi card in, oh my God.
+
+00:04:00.200 --> 00:04:00.320
+Yeah.
+
+00:04:00.320 --> 00:04:05.020
+I did some contracting for wind CE at like when I came back for a bit, but I was
+
+00:04:05.020 --> 00:04:07.680
+trying to get a startup going and just did some contract on that team.
+
+00:04:07.680 --> 00:04:10.360
+And yeah, it was a, it was a crazy code base.
+
+00:04:10.840 --> 00:04:11.080
+Yeah.
+
+00:04:11.080 --> 00:04:11.360
+Yeah.
+
+00:04:11.400 --> 00:04:12.520
+That was, it was fun.
+
+00:04:12.560 --> 00:04:13.120
+It was fun.
+
+00:04:13.120 --> 00:04:17.040
+I think in some ways that product just couldn't find its niche ahead of,
+
+00:04:17.040 --> 00:04:17.960
+you know, the head of its time.
+
+00:04:17.960 --> 00:04:21.400
+Now there's embedded software everywhere and everything has embedded software.
+
+00:04:21.440 --> 00:04:23.320
+But oh well, we made some stuff.
+
+00:04:23.840 --> 00:04:30.440
+So, uh, go ahead and going crazy trying to remember now, cause I remember
+
+00:04:30.440 --> 00:04:35.120
+losing weeks of my life, trying to like literally weeks of my life, trying
+
+00:04:35.120 --> 00:04:38.680
+to get my damn new computer to get on the frigging network.
+
+00:04:39.800 --> 00:04:42.440
+And I started off at Microsoft network testing.
+
+00:04:42.440 --> 00:04:43.320
+I went 95.
+
+00:04:43.320 --> 00:04:47.280
+So I, I remember it and, uh, but I, I can't remember it.
+
+00:04:48.420 --> 00:04:48.700
+Yeah.
+
+00:04:49.300 --> 00:04:49.500
+Yeah.
+
+00:04:49.500 --> 00:04:49.740
+Yeah.
+
+00:04:49.740 --> 00:04:51.620
+I don't, I don't miss those days.
+
+00:04:51.700 --> 00:04:52.700
+I honestly don't.
+
+00:04:52.980 --> 00:04:53.260
+Right.
+
+00:04:53.300 --> 00:04:58.260
+It trying to figure out how to install OS warp.
+
+00:04:59.420 --> 00:05:04.340
+What the first version of NT came out 50 frigging floppies.
+
+00:05:04.340 --> 00:05:08.900
+And then if you got one that had a bad sector, you had to hunt the rent.
+
+00:05:09.260 --> 00:05:10.220
+I hated those days.
+
+00:05:10.260 --> 00:05:10.580
+All right.
+
+00:05:10.780 --> 00:05:12.100
+So here we are so slow.
+
+00:05:12.260 --> 00:05:14.580
+Here we are in the 21st century.
+
+00:05:14.620 --> 00:05:19.540
+And, uh, so, uh, Kirk, you've done a whole bunch of stuff, um, sort of found
+
+00:05:19.540 --> 00:05:24.260
+your way into, you know, not only unstruct today, but through some
+
+00:05:24.260 --> 00:05:25.540
+jobs with data and analytics.
+
+00:05:25.540 --> 00:05:28.300
+So what was your shift from, and also some product ownership.
+
+00:05:28.300 --> 00:05:32.460
+So you've been, uh, like, yeah, how, how has that been?
+
+00:05:32.460 --> 00:05:36.620
+Is it, is it been interests opportunities, a little bit of both?
+
+00:05:36.620 --> 00:05:40.260
+Like, what's the, what's the story of your, like, I don't want to give you
+
+00:05:40.260 --> 00:05:44.780
+the whole full biography here, but like, how did you get from A to B to C to D?
+
+00:05:45.760 --> 00:05:47.200
+Well, I think it's, it's actually interesting.
+
+00:05:47.280 --> 00:05:51.960
+I mean, so when I was, gosh, 14 or something like that, I was like, okay, I
+
+00:05:51.960 --> 00:05:53.400
+want to go to school for computer graphics.
+
+00:05:53.720 --> 00:05:56.240
+It was like right when that, I mean, it was all coming out and I actually
+
+00:05:56.240 --> 00:05:58.000
+started college really early at 16.
+
+00:05:58.480 --> 00:06:01.960
+And so, but I remember looking and I thought I was like, oh, who has a
+
+00:06:01.960 --> 00:06:03.200
+computer graphics major?
+
+00:06:03.480 --> 00:06:05.480
+Cause that was starting to be the thing and nobody really did.
+
+00:06:05.880 --> 00:06:09.480
+And I started to like looking at computer science and things like that.
+
+00:06:09.480 --> 00:06:13.000
+And so I guess I always, I mean, thinking of that in the media sense, I
+
+00:06:13.000 --> 00:06:15.840
+always kind of started there kind of even, even when I was starting to think
+
+00:06:15.840 --> 00:06:20.440
+about computer science and in undergrad I did, I did a bit of computer
+
+00:06:20.440 --> 00:06:25.080
+graphics, but then when I got out, I ended up doing a, like a surprising
+
+00:06:25.080 --> 00:06:27.480
+number of almost things that are related to today.
+
+00:06:27.480 --> 00:06:32.080
+Like my, one of my first jobs was, it was, I was working for the
+
+00:06:32.080 --> 00:06:38.520
+army Corps of engineers for the basically like doing, oh no, I was
+
+00:06:38.520 --> 00:06:43.640
+like, no, it was the, it was a Marine Corps contractor in DC and doing
+
+00:06:43.640 --> 00:06:48.880
+laser discs of maps for, for the Marines and doing basically plotting
+
+00:06:48.880 --> 00:06:52.080
+graphics on top of laser disc based maps.
+
+00:06:52.520 --> 00:06:54.280
+And so it's like crazy.
+
+00:06:54.280 --> 00:06:55.960
+I think that's almost kind of what we're doing today.
+
+00:06:55.960 --> 00:06:59.480
+Like our app that we have is using the map box and putting graphics on
+
+00:06:59.480 --> 00:07:00.320
+top of map box.
+
+00:07:00.320 --> 00:07:04.800
+And so it's, if you look 30 years ago, I kind of, it kind of started there.
+
+00:07:04.800 --> 00:07:07.640
+So a zigzag path to get back to it, huh?
+
+00:07:08.000 --> 00:07:08.200
+Yeah.
+
+00:07:08.200 --> 00:07:12.230
+I mean, I ended up doing, I was at a really interesting company.
+
+00:07:12.230 --> 00:07:15.510
+I was, I was living in DC for like five years and a company that did all
+
+00:07:15.510 --> 00:07:16.750
+image processing software.
+
+00:07:17.190 --> 00:07:20.470
+And so they were, I mean, there's still around, which is interesting.
+
+00:07:20.910 --> 00:07:23.510
+Really like for a lot of medical use and different things that do
+
+00:07:23.510 --> 00:07:27.110
+some really cool stuff, but I worked on a lot of file format parsers.
+
+00:07:27.630 --> 00:07:33.430
+And that, that kind of common thread of like reading the header of a TIFF file.
+
+00:07:33.710 --> 00:07:35.750
+Like I was doing that when I was 21.
+
+00:07:35.870 --> 00:07:39.550
+And so those are the kind of weird threads that are like still there.
+
+00:07:39.550 --> 00:07:44.110
+Like I'm still writing file parsers and dealing with like that kind of stuff.
+
+00:07:44.110 --> 00:07:49.870
+And when I did my masters before Microsoft, I actually did, it was kind of, it was
+
+00:07:49.870 --> 00:07:52.190
+originally, I was going to go from computer graphics and I kind of pivoted
+
+00:07:52.190 --> 00:07:57.030
+more to multimedia and my thesis is like basically this survey paper of like
+
+00:07:57.030 --> 00:08:01.070
+multimedia technologies, which is like really related to exactly what I'm still
+
+00:08:01.070 --> 00:08:01.630
+doing today.
+
+00:08:01.990 --> 00:08:05.510
+So that's why I think it's always been an interest, but then I always bounced
+
+00:08:05.510 --> 00:08:07.830
+into these jobs, like even at Microsoft.
+
+00:08:08.190 --> 00:08:11.430
+I built the streaming audio control for, for Blackbird, which
+
+00:08:11.430 --> 00:08:12.710
+competed with real audio.
+
+00:08:13.230 --> 00:08:15.910
+And so that, that was kind of what I was working on.
+
+00:08:16.810 --> 00:08:18.490
+Uh, bringing back the memories.
+
+00:08:18.490 --> 00:08:21.130
+I remember real audio, but they're still around, right?
+
+00:08:21.210 --> 00:08:22.490
+Or maybe they finally went out of business.
+
+00:08:24.250 --> 00:08:25.650
+I can't, I can't keep track.
+
+00:08:25.650 --> 00:08:26.930
+Something's there's something there.
+
+00:08:27.250 --> 00:08:30.370
+They bought somebody, lots of memory ticklers today from the old days.
+
+00:08:31.290 --> 00:08:31.570
+Yeah.
+
+00:08:31.570 --> 00:08:37.770
+I was looking at the time and, and, and, uh, in a prior life, I
+
+00:08:37.810 --> 00:08:46.890
+was the QA middle manager for a media center and particularly the AV stack.
+
+00:08:46.890 --> 00:08:53.570
+And I'm, and I'm now wondering if we had a dependency on anything that you coded.
+
+00:08:54.450 --> 00:08:58.450
+Cause we, so I was in, I moved over to, uh, Microsoft research for like
+
+00:08:58.450 --> 00:08:59.250
+three and a half years.
+
+00:08:59.290 --> 00:09:04.210
+And so I was doing 3d virtual worlds for, for like, it was called the virtual
+
+00:09:04.210 --> 00:09:04.730
+worlds group.
+
+00:09:05.170 --> 00:09:07.450
+Um, and that, that was an incredible job.
+
+00:09:07.490 --> 00:09:10.330
+I mean, every, the people in that team were just rock stars.
+
+00:09:10.330 --> 00:09:14.650
+Like summer now, VPs at Microsoft and like almost every, the devs and is
+
+00:09:14.650 --> 00:09:17.250
+now like a CTO somewhere that started a company.
+
+00:09:17.250 --> 00:09:19.210
+And so it was just one of those incredible teams.
+
+00:09:19.650 --> 00:09:23.890
+And the, uh, that was, I mean, just so ahead of its time.
+
+00:09:23.930 --> 00:09:28.090
+I mean, that was like around 96, 90, 96, 98 ish.
+
+00:09:28.450 --> 00:09:32.290
+And you, I mean, that technology is like this whole metaverse
+
+00:09:32.290 --> 00:09:33.250
+concept and all that.
+
+00:09:33.250 --> 00:09:37.010
+Like we were doing that 20 years ago and it was direct, a lot of direct
+
+00:09:37.010 --> 00:09:42.170
+3d, it was, I mean, network kind of multiplayer technologies and across
+
+00:09:42.170 --> 00:09:45.370
+the network and, um, but that was, I mean, that was honestly one of the
+
+00:09:45.370 --> 00:09:46.610
+best projects I've ever worked on.
+
+00:09:46.610 --> 00:09:52.530
+So, yeah, I was in, I was a dev manager of windows media player at the,
+
+00:09:52.570 --> 00:09:54.690
+like after that, or yeah, I guess when did yeah, we didn't this media
+
+00:09:54.690 --> 00:09:56.850
+player, um, right before I left.
+
+00:09:57.010 --> 00:09:58.690
+And so that was, uh, that was pretty fun too.
+
+00:09:59.010 --> 00:09:59.170
+Yeah.
+
+00:09:59.170 --> 00:10:02.490
+I think we had a dependency on windows media player.
+
+00:10:02.770 --> 00:10:06.970
+And then this other thing that I'm forgetting, oh, the media framework.
+
+00:10:07.210 --> 00:10:09.650
+Uh, which, which cracked me up.
+
+00:10:09.650 --> 00:10:13.850
+Cause it was, uh, the acronym of course was shortened to MF.
+
+00:10:14.810 --> 00:10:15.490
+Uh, yeah.
+
+00:10:15.570 --> 00:10:17.250
+Anyway, good times, old times.
+
+00:10:17.370 --> 00:10:20.930
+I liked the current times, um, much better.
+
+00:10:21.370 --> 00:10:25.210
+So you had to focus on multimedia.
+
+00:10:25.850 --> 00:10:26.050
+All right.
+
+00:10:26.050 --> 00:10:31.110
+And that if, if I go through your LinkedIn stock, then I go, all right.
+
+00:10:31.430 --> 00:10:32.790
+Both to media.
+
+00:10:32.790 --> 00:10:36.590
+Then he went to another multimedia company, like in a reading
+
+00:10:36.630 --> 00:10:38.070
+codex and things like that.
+
+00:10:38.070 --> 00:10:41.990
+And that brings back painful memories streaming.
+
+00:10:41.990 --> 00:10:51.510
+And then suddenly, suddenly VP of product development for stats LLC.
+
+00:10:51.550 --> 00:10:55.710
+Now I started to get, uh, getting really excited.
+
+00:10:56.350 --> 00:11:01.870
+Then that seemed to be like your pivot towards more of, um, more of a,
+
+00:11:01.870 --> 00:11:05.630
+a data as a value product by itself.
+
+00:11:06.190 --> 00:11:10.520
+Why, um, what it was, so I had a video transcoding company for about 10 years.
+
+00:11:10.840 --> 00:11:15.480
+And so that kind of sucked up all of my, like a lot of, a lot of my, my
+
+00:11:15.480 --> 00:11:17.440
+career and then I sold it.
+
+00:11:17.640 --> 00:11:21.200
+And then that's where I kind of had to reinvent a little bit of like, okay,
+
+00:11:21.360 --> 00:11:22.720
+I want to get out of broadcast.
+
+00:11:22.720 --> 00:11:27.560
+I mean, I was in a media entertainment for so long and I ended up at general
+
+00:11:27.560 --> 00:11:30.560
+motors, I mean, that's where they actually wanted somebody that had some
+
+00:11:31.000 --> 00:11:35.640
+video background and they just bought crews and they wanted to build a data
+
+00:11:35.640 --> 00:11:40.480
+pipeline from the data, the LiDAR data, the video data, all that kind of stuff
+
+00:11:40.480 --> 00:11:44.760
+off that they were using, basically recording it, um, for testing and get it
+
+00:11:44.760 --> 00:11:46.080
+in the hands of their data scientists.
+
+00:11:46.120 --> 00:11:49.480
+And that was, it just pulled together like all this, like a little bit of
+
+00:11:49.480 --> 00:11:52.560
+3d that I'd done and the time series data and all this kind of stuff.
+
+00:11:52.560 --> 00:11:56.920
+And, um, then I, I mean, but the problem is GM is like working for the
+
+00:11:56.920 --> 00:11:59.280
+government and how quickly you can get stuff done.
+
+00:11:59.600 --> 00:12:04.600
+So I got a little bored and then got recruited up to Chicago for that job.
+
+00:12:04.640 --> 00:12:06.520
+And, uh, but I'm a, I'm a big baseball guy.
+
+00:12:06.520 --> 00:12:09.960
+So it was a cool, like working at a sports data company was, uh,
+
+00:12:10.160 --> 00:12:11.240
+was kind of a cool thing.
+
+00:12:11.240 --> 00:12:15.920
+And we're doing like a lot of, um, computer vision, um, doing like media
+
+00:12:16.120 --> 00:12:17.880
+search and stuff like that.
+
+00:12:17.880 --> 00:12:21.600
+So yeah, then I, I did like some drone analytics after that.
+
+00:12:22.040 --> 00:12:25.680
+Um, there was like an IOT digital signage job in the middle there.
+
+00:12:26.080 --> 00:12:28.880
+And so, yeah, I kind of had another sort of five, six years of just
+
+00:12:29.640 --> 00:12:33.040
+finding my way through VPC, T O and CTO jobs at a bunch of places.
+
+00:12:33.040 --> 00:12:34.040
+And then I started another company.
+
+00:12:34.920 --> 00:12:39.280
+So one, one thing just as an aside, do you, you want to hear a question
+
+00:12:39.280 --> 00:12:42.360
+that will make, uh, Alan instantly pass out.
+
+00:12:44.640 --> 00:12:49.760
+So do you think the Mariners are going to get to fit 500 by all star.
+
+00:12:50.440 --> 00:12:51.280
+I all star.
+
+00:12:52.400 --> 00:12:54.000
+Oh, it's going to be close.
+
+00:12:54.080 --> 00:12:55.480
+This has been a painful year.
+
+00:12:55.720 --> 00:12:58.920
+So we, we, we Seattleites say that a lot.
+
+00:13:00.440 --> 00:13:06.280
+Man, I remember I went to like 30 games the year they won a hundred and
+
+00:13:06.320 --> 00:13:11.960
+was it 118 games, 115, a lot of games in the steroid years, maybe who knows.
+
+00:13:12.360 --> 00:13:12.840
+Yeah.
+
+00:13:12.840 --> 00:13:16.440
+And then have them that was post that was, was Johnson still there then?
+
+00:13:16.440 --> 00:13:17.160
+I don't think so.
+
+00:13:17.480 --> 00:13:22.720
+But in our member, like, I remember, gosh, going back to 95, like, yeah, we
+
+00:13:22.720 --> 00:13:26.760
+were in my office with the radio on listening to those games at the end of
+
+00:13:26.760 --> 00:13:28.240
+the year, it was just, it was just.
+
+00:13:28.800 --> 00:13:30.280
+I got sucked into it.
+
+00:13:30.320 --> 00:13:31.680
+And it's, it's tough.
+
+00:13:31.720 --> 00:13:34.960
+It's tough to be a long time baseball fan in Seattle.
+
+00:13:35.320 --> 00:13:36.160
+It is tough.
+
+00:13:37.080 --> 00:13:39.880
+No, I mean, I've, I was a Philly fan growing up because I grew up in
+
+00:13:39.880 --> 00:13:44.120
+Pennsylvania and then the, I got, I'd been in Canada for a couple of years
+
+00:13:44.120 --> 00:13:49.720
+and then came down and then just, I kind of got into that whirlwind of 95.
+
+00:13:49.720 --> 00:13:53.040
+And I'd just been here about a year and I've been America's friend ever since,
+
+00:13:53.040 --> 00:13:54.600
+but it's, yeah, it's a painful life.
+
+00:13:55.600 --> 00:13:55.960
+It is.
+
+00:13:56.840 --> 00:14:03.320
+So for me, so I'm more active, more active, actively watching the Mariners.
+
+00:14:04.120 --> 00:14:04.320
+Right.
+
+00:14:04.320 --> 00:14:06.040
+It was actually for father's day.
+
+00:14:06.040 --> 00:14:10.920
+My, me and my son went out and he genetically picked up his
+
+00:14:10.920 --> 00:14:13.880
+favorite baseball team, being the Dodgers.
+
+00:14:14.480 --> 00:14:20.040
+And we were there and he's like, dad, you know, everything about
+
+00:14:20.040 --> 00:14:21.920
+every one of these players you have it.
+
+00:14:22.320 --> 00:14:24.120
+Dodger's still your favorite team, right?
+
+00:14:24.120 --> 00:14:24.520
+Dad.
+
+00:14:25.400 --> 00:14:31.760
+And I'm like, uh, yes, I just, uh, I just don't get to watch them as much as I do them.
+
+00:14:31.760 --> 00:14:32.160
+Yep.
+
+00:14:32.480 --> 00:14:35.440
+So let me add a quick rant before we go on.
+
+00:14:35.440 --> 00:14:39.720
+So, um, I stopped paying for cable television.
+
+00:14:40.080 --> 00:14:44.040
+Three years ago, I just got tired of Comcast still using for their internet,
+
+00:14:44.040 --> 00:14:45.440
+which is actually getting better.
+
+00:14:45.440 --> 00:14:49.000
+I'm probably not so angry about it, but I don't watch a lot of live TV.
+
+00:14:49.280 --> 00:14:50.320
+Um, so I'm okay.
+
+00:14:50.320 --> 00:14:51.600
+I'm Amazon has standards.
+
+00:14:51.600 --> 00:14:52.600
+I'm big soccer fans.
+
+00:14:52.600 --> 00:14:53.600
+So I can get what I want.
+
+00:14:53.600 --> 00:14:58.480
+Like T-Mobile gives me like free Apple TV plus, uh, which is going to have the MLS
+
+00:14:58.480 --> 00:14:59.840
+next year, so I'm excited about that.
+
+00:15:00.320 --> 00:15:04.440
+But there's not even a streaming, like root sports, which has a
+
+00:15:04.440 --> 00:15:07.600
+monopoly on Kraken and Mariners.
+
+00:15:07.840 --> 00:15:09.520
+There is no streaming option.
+
+00:15:09.520 --> 00:15:12.360
+You can only get it if you have Comcast cable.
+
+00:15:12.360 --> 00:15:14.880
+And I think obviously there's a partnership there.
+
+00:15:14.880 --> 00:15:20.380
+Like there, there's some, there's deals that I don't know about, but man, I
+
+00:15:20.380 --> 00:15:24.020
+would pay, I would, I would pay dollars, like a good chunk.
+
+00:15:24.100 --> 00:15:27.020
+Just to have a streaming root sports team seems reckless is not there.
+
+00:15:27.260 --> 00:15:27.340
+Yeah.
+
+00:15:27.340 --> 00:15:28.860
+Because I lived in LA for a bit.
+
+00:15:28.900 --> 00:15:31.660
+I was in Austin and I was in Chicago and it was great because
+
+00:15:31.660 --> 00:15:32.900
+I wasn't getting blackout.
+
+00:15:33.260 --> 00:15:35.380
+So I could, I could watch MLB TV.
+
+00:15:35.860 --> 00:15:39.220
+And then I come back here and I'm like, I'm like cut the cord too.
+
+00:15:39.220 --> 00:15:41.180
+And I'm like, how the hell am I supposed to watch games?
+
+00:15:41.540 --> 00:15:43.780
+Like I don't want to have to just get TV just for the Mariner.
+
+00:15:43.980 --> 00:15:47.540
+I hear people use VPNs to solve that problem, but I wouldn't know personally.
+
+00:15:47.900 --> 00:15:48.380
+Of course not.
+
+00:15:48.380 --> 00:15:48.860
+Of course not.
+
+00:15:48.860 --> 00:15:53.740
+And that's your answer.
+
+00:15:53.740 --> 00:15:54.780
+I'm sure you're sticking to.
+
+00:15:55.020 --> 00:15:56.780
+That is exactly the answer.
+
+00:15:58.260 --> 00:16:00.380
+You, you had a follow up question that I want to change the subject.
+
+00:16:00.380 --> 00:16:02.020
+Cause I'm curious about something, but go ahead, man.
+
+00:16:02.460 --> 00:16:03.060
+It's all you, Brett.
+
+00:16:03.540 --> 00:16:04.060
+Unless you forgot.
+
+00:16:04.060 --> 00:16:05.980
+No, no, no, I'm ready to back.
+
+00:16:06.020 --> 00:16:08.900
+I could go in and talk about the Mariners baseball.
+
+00:16:08.940 --> 00:16:11.340
+I can talk about the Mariners for the whole rest of the podcast.
+
+00:16:11.420 --> 00:16:17.940
+And the three listeners we have are slowly nodding their,
+
+00:16:18.820 --> 00:16:22.940
+though I would, I'll just say one thing that I will, would love to talk about,
+
+00:16:22.980 --> 00:16:24.020
+but will not.
+
+00:16:24.540 --> 00:16:29.020
+And that is what the hell was that last angels Mariners game?
+
+00:16:29.500 --> 00:16:31.540
+Oh, the brawl, the brawl.
+
+00:16:31.900 --> 00:16:32.220
+Yeah.
+
+00:16:32.260 --> 00:16:37.180
+A I'll just say, I'll just say, I think the angels did that on purpose.
+
+00:16:37.220 --> 00:16:37.820
+Oh, hell yeah.
+
+00:16:38.580 --> 00:16:41.180
+And they were being all whiny.
+
+00:16:41.500 --> 00:16:45.620
+And, and it won because they like their,
+
+00:16:45.620 --> 00:16:47.980
+their manager's out for 10 weeks.
+
+00:16:48.700 --> 00:16:53.980
+Uh, you know, some secondhand starter pitcher is out, who cares?
+
+00:16:54.420 --> 00:17:01.220
+But they basically took out, uh, three of our major players.
+
+00:17:01.220 --> 00:17:05.860
+If I'm being Crawford, Jayrod, and I guess winker, I mean, but he's been doing
+
+00:17:05.860 --> 00:17:09.340
+better, I mean, but yeah, it's, I mean, but honestly, I've seen this happen in
+
+00:17:09.340 --> 00:17:13.660
+other seasons that sometimes this kind of thing fires up the team and it can
+
+00:17:13.660 --> 00:17:17.940
+change the season because we've been playing so poorly that lately that like
+
+00:17:17.980 --> 00:17:23.820
+this may actually set, they, I think I'm hoping the angels like screwed up that
+
+00:17:23.820 --> 00:17:25.220
+now they're going to light a fire under us.
+
+00:17:25.220 --> 00:17:27.900
+And we have kind of a reason to like be pissed and actually do well.
+
+00:17:27.940 --> 00:17:33.860
+And I think the Mariners are just like capable, but they have like just weird
+
+00:17:33.860 --> 00:17:37.620
+problems where they get in their own head and they just underperformed classically.
+
+00:17:38.220 --> 00:17:38.740
+Yeah.
+
+00:17:38.740 --> 00:17:44.100
+It's like the fact that, that we're leading the league in, in, um,
+
+00:17:44.180 --> 00:17:46.340
+players abandoned on base.
+
+00:17:46.940 --> 00:17:47.220
+Yeah.
+
+00:17:48.380 --> 00:17:53.460
+Something about our, our, um, percentage, the average with, uh, bases loaded
+
+00:17:53.980 --> 00:17:56.420
+is like historically low or something like that.
+
+00:17:56.420 --> 00:17:57.140
+It's like hard.
+
+00:17:57.140 --> 00:18:00.660
+And so it's stuff like that is just such a Mariner's thing to do.
+
+00:18:00.980 --> 00:18:03.100
+Oh, so then there's software.
+
+00:18:03.980 --> 00:18:08.220
+Let me, um, let me attempt to put words in your mouth.
+
+00:18:08.220 --> 00:18:11.420
+Maybe I also, you know, you talked about crack and file formats and
+
+00:18:11.420 --> 00:18:12.460
+looking at headers and things.
+
+00:18:12.460 --> 00:18:15.780
+And I worked on, uh, the windows debugger for a while and I got really
+
+00:18:15.780 --> 00:18:17.500
+into cracking the PE looking inside there.
+
+00:18:17.580 --> 00:18:18.900
+I worked on GDI also.
+
+00:18:18.900 --> 00:18:22.260
+So I'm one of the few people that actually in the, maybe not in the
+
+00:18:22.260 --> 00:18:25.700
+world, that's, that's a little bit too pompous, but I know what's inside of
+
+00:18:25.700 --> 00:18:26.420
+a font file.
+
+00:18:27.300 --> 00:18:27.580
+Yeah.
+
+00:18:27.820 --> 00:18:31.900
+So, and I, and I know, you know, I know too much about that and too much
+
+00:18:31.940 --> 00:18:34.820
+about how true type works, et cetera, et cetera.
+
+00:18:35.340 --> 00:18:40.380
+But kind of what you're doing today is you're taking, I mean, if we can, I,
+
+00:18:40.660 --> 00:18:42.340
+let's go ahead and talk about unstruct a little bit.
+
+00:18:42.380 --> 00:18:46.300
+It's just, uh, I did watch some of the videos and things like you are looking,
+
+00:18:46.300 --> 00:18:50.660
+you're grabbing data of any format and often, and what I saw in that, in
+
+00:18:50.660 --> 00:18:56.740
+the videos was videos or pictures, which have a known format where some
+
+00:18:56.740 --> 00:19:01.660
+metadata is there and then adding some more, you know, enhancing
+
+00:19:01.740 --> 00:19:04.860
+that metadata so you can get more information and find more stuff.
+
+00:19:04.860 --> 00:19:08.980
+Is that, is, am I, am I assuming too much or is that kind of what you're doing?
+
+00:19:08.980 --> 00:19:09.700
+You're dead on.
+
+00:19:09.700 --> 00:19:13.460
+I mean, and I think it's, there's always been this classic layer of, there's
+
+00:19:13.460 --> 00:19:15.620
+always technical metadata as we call it in the files.
+
+00:19:15.940 --> 00:19:19.340
+I mean, it's, it's whatever's in the header of the file, the GPS
+
+00:19:19.340 --> 00:19:22.460
+location and your EXIF information from your iPhone and stuff like that.
+
+00:19:22.540 --> 00:19:27.300
+And so, I mean, this isn't that dissimilar than like, um, Adobe
+
+00:19:27.300 --> 00:19:29.940
+Lightroom or your iPhone or things like that.
+
+00:19:29.940 --> 00:19:31.420
+I mean, they're all, they're all doing that today.
+
+00:19:31.780 --> 00:19:34.940
+So what we're doing there isn't unique, but that's where you start from.
+
+00:19:35.420 --> 00:19:39.100
+And then, but the, the next part is we basically are building
+
+00:19:39.100 --> 00:19:40.620
+a knowledge graph from that data.
+
+00:19:41.020 --> 00:19:46.820
+And so from the time, from the geo, the geolocation from maybe author
+
+00:19:46.820 --> 00:19:48.780
+metadata or other metadata that's in the file.
+
+00:19:49.060 --> 00:19:53.100
+Um, but then the second order of what we're doing is running ML on that data.
+
+00:19:53.220 --> 00:19:55.300
+And so we're starting with that technical metadata.
+
+00:19:55.340 --> 00:19:57.980
+We're then doing NLP on documents.
+
+00:19:57.980 --> 00:20:00.180
+We're doing object detection on images.
+
+00:20:00.180 --> 00:20:02.140
+We're doing audio transcription.
+
+00:20:02.620 --> 00:20:07.700
+And then we're kind of recursively like trying to do figure out what the data
+
+00:20:07.700 --> 00:20:10.900
+is perceiving and then kind of keep spidering down from there.
+
+00:20:10.980 --> 00:20:14.180
+So that to me is, I mean, the first order is kind of what
+
+00:20:14.500 --> 00:20:15.700
+used to be called like media management.
+
+00:20:15.780 --> 00:20:18.500
+I mean, it's essentially what I, I thought it was or that kind of thing.
+
+00:20:18.900 --> 00:20:21.340
+But for us, we're kind of taking that to the next step where it's like,
+
+00:20:21.340 --> 00:20:22.900
+okay, what's the data perceiving?
+
+00:20:23.460 --> 00:20:27.020
+And then start to be able to search across that and do analytics on it.
+
+00:20:27.460 --> 00:20:30.020
+Um, and then the third order is what we want to get to is really
+
+00:20:30.380 --> 00:20:34.620
+um, creating inferences between entities and start looking at, oh, you have a
+
+00:20:34.620 --> 00:20:39.380
+cluster of this kind of thing over here, or we can audit, do auto suggestion of,
+
+00:20:39.380 --> 00:20:43.300
+Hey, well these other images look similar and they had all these tags.
+
+00:20:43.540 --> 00:20:46.900
+Here's a bunch of images over here that probably might be tagged with this.
+
+00:20:47.140 --> 00:20:48.500
+And so we could do those kinds of things.
+
+00:20:48.500 --> 00:20:50.820
+So it's, it kind of comes back to you.
+
+00:20:51.260 --> 00:20:54.980
+I mean, data discovery is kind of the best term that's out there right
+
+00:20:54.980 --> 00:20:56.700
+now for a lot of what we're doing.
+
+00:20:56.740 --> 00:21:00.140
+Um, but it's really, I mean, it's, it's semantic search in a way.
+
+00:21:00.620 --> 00:21:04.780
+And the hard part for us is we do, we're kind of full stack because we do ingestion.
+
+00:21:04.780 --> 00:21:06.020
+We do this data management.
+
+00:21:06.020 --> 00:21:08.020
+We do storage management and analytics.
+
+00:21:08.340 --> 00:21:11.940
+Um, so we kind of cover a lot of the different areas and terms that are out
+
+00:21:11.940 --> 00:21:15.180
+there, um, and that's going to be more of a marketing challenge for us.
+
+00:21:15.180 --> 00:21:17.900
+It's like, like, what are we when we do like so much?
+
+00:21:17.940 --> 00:21:23.500
+So I wonder if in something like this, you're, you're really providing a
+
+00:21:23.500 --> 00:21:27.580
+platform for people to understand in your words, unstructured data,
+
+00:21:27.580 --> 00:21:28.820
+which is a good name for that.
+
+00:21:29.540 --> 00:21:34.500
+But I wonder if, if the problems companies or teams or organizations
+
+00:21:34.500 --> 00:21:39.100
+may solve with that are unknown or surprising.
+
+00:21:39.100 --> 00:21:43.180
+I think it's, it's almost like the platform you're giving people.
+
+00:21:43.660 --> 00:21:47.220
+It's, uh, I would think it would enable additional innovation, which
+
+00:21:47.220 --> 00:21:48.260
+would be kind of cool to see.
+
+00:21:48.420 --> 00:21:50.980
+And that's really where I want to go with this is, I mean, it's going
+
+00:21:50.980 --> 00:21:52.260
+to open up a lot of greenfield.
+
+00:21:52.700 --> 00:21:56.980
+I mean, once you can access the data in that way, you can do really
+
+00:21:56.980 --> 00:22:00.740
+innovative analytics and process automation and all this kind of stuff.
+
+00:22:00.740 --> 00:22:06.060
+And what we're finding is it's a lot of people like don't know what
+
+00:22:06.060 --> 00:22:07.020
+they can do with their data.
+
+00:22:07.500 --> 00:22:11.140
+And so now we're having to get over that hump of, Hey, did you know you
+
+00:22:11.140 --> 00:22:15.940
+can search like geospatially over the last three years and find objects?
+
+00:22:15.940 --> 00:22:19.220
+And they're like, we just have this data sitting in SharePoint.
+
+00:22:19.260 --> 00:22:20.980
+Like we can search on file names.
+
+00:22:21.340 --> 00:22:25.700
+And I think we're that, like, we're trying to get, like we're, we
+
+00:22:25.700 --> 00:22:28.380
+know we're a little early, but we're really trying to make a new thing.
+
+00:22:28.900 --> 00:22:31.220
+Uh, is, is hopefully going to unlock some stuff.
+
+00:22:31.540 --> 00:22:36.650
+Well, I'm going to repeat a comment and just a, uh, random thing.
+
+00:22:36.770 --> 00:22:39.490
+That's something I said before, Google makes a wonderful search
+
+00:22:39.490 --> 00:22:42.450
+engine for the internet, but somehow they can't get searched
+
+00:22:42.450 --> 00:22:44.090
+to work well for Google docs.
+
+00:22:44.290 --> 00:22:46.410
+I don't know if the teams just won't talk to each other, but
+
+00:22:46.730 --> 00:22:48.210
+something like this.
+
+00:22:48.490 --> 00:22:52.650
+And again, um, I everything I see is around multi-media multimedia on your site.
+
+00:22:52.650 --> 00:22:57.050
+But when I think actually I can, a couple of public stories I can tell, uh,
+
+00:22:57.090 --> 00:22:59.730
+Microsoft, one cool thing, they build a search engine as well.
+
+00:22:59.730 --> 00:23:00.570
+I forget what it's called.
+
+00:23:00.890 --> 00:23:03.450
+Um, do they still make that Brent is being still a thing.
+
+00:23:04.940 --> 00:23:07.980
+Oh, Brett, Brett's giving me two fingers to say, yes, I'm not sure.
+
+00:23:07.980 --> 00:23:08.300
+I don't know.
+
+00:23:08.300 --> 00:23:08.340
+I don't know.
+
+00:23:09.380 --> 00:23:10.940
+I mean, who would know who would know?
+
+00:23:10.940 --> 00:23:12.660
+I have to ask someone at Microsoft to know.
+
+00:23:12.860 --> 00:23:17.220
+So, so being the thing, but one thing cool at Microsoft was because we have
+
+00:23:17.500 --> 00:23:18.700
+the search technology is there.
+
+00:23:18.980 --> 00:23:24.180
+They index their entire internet, which makes at least discovery possible for a
+
+00:23:24.180 --> 00:23:28.180
+lot of other companies and a Google probably does the same thing for a lot of us.
+
+00:23:28.740 --> 00:23:29.100
+Hmm.
+
+00:23:29.540 --> 00:23:29.700
+Yeah.
+
+00:23:29.700 --> 00:23:34.620
+I'm absolutely I, I, I would bet money on it, even though I don't know their system
+
+00:23:35.140 --> 00:23:41.580
+for a lot of companies, maybe like my company, the places to search are like
+
+00:23:41.580 --> 00:23:45.020
+the data is not only the data is unstructured and separated.
+
+00:23:45.620 --> 00:23:45.940
+Yep.
+
+00:23:46.140 --> 00:23:46.300
+Yeah.
+
+00:23:46.300 --> 00:23:50.260
+So when you want to find out about something, um, you may have to search
+
+00:23:50.260 --> 00:23:54.500
+in multiple places to get to see, see if you can find answers that match
+
+00:23:54.500 --> 00:23:57.260
+your answers in one place and it's, it's interesting.
+
+00:23:57.260 --> 00:24:01.100
+So there, there is some opportunity there as well.
+
+00:24:01.100 --> 00:24:01.780
+I would think.
+
+00:24:02.180 --> 00:24:05.260
+Well, I heard, um, Microsoft did this thing called project cortex that they
+
+00:24:05.260 --> 00:24:09.660
+were talking about for awhile and it was sounded sort of related to what we're
+
+00:24:09.660 --> 00:24:13.140
+doing, but it was probably more like SharePoint SharePoint oriented or
+
+00:24:13.140 --> 00:24:15.420
+something like that, but I mean, just the layer of.
+
+00:24:15.980 --> 00:24:16.180
+Yeah.
+
+00:24:16.180 --> 00:24:18.860
+I mean, we're still, we're not building the ML algorithms to do it.
+
+00:24:18.940 --> 00:24:22.180
+I mean, we're using cognitive services or other vendors or things like that.
+
+00:24:22.180 --> 00:24:26.420
+And so we're not competing in that sense, but we're competing in the, a semantic
+
+00:24:26.420 --> 00:24:30.500
+layer for that data and just providing a really good, I mean, essentially
+
+00:24:30.500 --> 00:24:33.220
+middleware platform, like a pass, um, for that.
+
+00:24:33.260 --> 00:24:33.420
+Yeah.
+
+00:24:33.420 --> 00:24:38.220
+I think as teams, as companies collect more and more data and go through
+
+00:24:38.220 --> 00:24:40.700
+this, this growth of data maturity, okay, data is good.
+
+00:24:40.700 --> 00:24:41.420
+We need to collect it.
+
+00:24:41.580 --> 00:24:44.620
+Then they collect so much and they don't know what to do with it.
+
+00:24:44.620 --> 00:24:48.500
+And Brent has a highly technical term to describe this phenomenon.
+
+00:24:48.900 --> 00:24:52.580
+When there's a massive amount of data, but you have no idea what to do with it.
+
+00:24:52.580 --> 00:24:53.940
+I believe it's called data puke.
+
+00:24:55.180 --> 00:24:55.900
+No, no, no.
+
+00:24:55.900 --> 00:25:00.700
+So data puke is when you have a massive amount of data and you build a dashboard
+
+00:25:01.140 --> 00:25:05.860
+to, to try to, to manually communicate every aspect of it.
+
+00:25:09.180 --> 00:25:14.380
+And so, so imagine, so imagine your worst nightmare of a power BI
+
+00:25:14.380 --> 00:25:19.940
+dashboard with, with like 50 different pie charts and graphs.
+
+00:25:19.940 --> 00:25:23.540
+And you look at it and I look at it and it makes me want to puke.
+
+00:25:24.060 --> 00:25:26.980
+It's essentially, they don't know what they're looking for.
+
+00:25:27.260 --> 00:25:31.660
+So they show up and so they're, they're literally throwing all of the data
+
+00:25:31.900 --> 00:25:34.140
+up on the screen and hope they see something.
+
+00:25:34.500 --> 00:25:37.340
+And honestly, they don't know how to, I mean, they don't know what they're
+
+00:25:37.340 --> 00:25:40.220
+looking for, but they don't know how to figure out what they're looking for.
+
+00:25:40.380 --> 00:25:42.540
+So often they kind of stall there.
+
+00:25:43.480 --> 00:25:43.760
+Yeah.
+
+00:25:44.000 --> 00:25:47.760
+And I would think that Kirk, what you're building, uh, maybe could
+
+00:25:47.760 --> 00:25:49.040
+help with that for some companies.
+
+00:25:49.040 --> 00:25:50.080
+Like we have all this data.
+
+00:25:50.360 --> 00:25:51.920
+We don't know how to look at it.
+
+00:25:51.920 --> 00:25:53.960
+Maybe you can get them over a hump.
+
+00:25:55.050 --> 00:25:57.650
+And that's what we're hoping to do is, I mean, there's, there's that first level
+
+00:25:57.650 --> 00:26:01.330
+of, Hey, we can visualize it and they can search, then it's how do you
+
+00:26:01.330 --> 00:26:06.130
+glean one little thread that actually they could like end up in a trouble ticket?
+
+00:26:06.210 --> 00:26:06.970
+I mean, or something like that.
+
+00:26:06.970 --> 00:26:09.450
+I mean, it's like something that's actionable from that.
+
+00:26:09.490 --> 00:26:12.490
+And so we're, I mean, that's what we want to get to is where hopefully we
+
+00:26:12.490 --> 00:26:16.650
+can, I mean, really in first started furring some information that they can,
+
+00:26:16.690 --> 00:26:18.650
+they can really find material use of.
+
+00:26:18.650 --> 00:26:22.810
+But what the initial use cases, I mean, there, the value is honestly
+
+00:26:22.810 --> 00:26:24.890
+just time and resources.
+
+00:26:24.890 --> 00:26:29.170
+I mean, they spend so much time manually dealing with these files, even if
+
+00:26:29.170 --> 00:26:32.650
+they're just like taking pictures of a maintenance yard on their iPhone.
+
+00:26:32.650 --> 00:26:36.170
+Like if we can save an hour a day, I'm just screwed around with these files,
+
+00:26:36.170 --> 00:26:38.890
+trying to find things like there's immediate ROI.
+
+00:26:39.490 --> 00:26:47.690
+Now, I, in terms of, so, so I'm now a data scientist and within the,
+
+00:26:48.410 --> 00:26:55.030
+within the culture of the team, I'll say like the PM culture hasn't really
+
+00:26:55.030 --> 00:26:58.350
+advanced sufficiently enough to deal with, with data.
+
+00:26:59.310 --> 00:26:59.830
+Right.
+
+00:27:01.230 --> 00:27:07.270
+I'll tell you, look at a PM came to me a few months ago and they said,
+
+00:27:07.270 --> 00:27:09.550
+Brent, I have some exciting news.
+
+00:27:10.340 --> 00:27:13.020
+And I've, I of course like exciting news.
+
+00:27:13.540 --> 00:27:15.420
+And I said, what?
+
+00:27:15.420 --> 00:27:22.660
+He's like, I am going to be able to argue for another 10 heads for your team.
+
+00:27:24.020 --> 00:27:34.520
+And I, I guess everyone at Microsoft is either in a developer or data
+
+00:27:34.520 --> 00:27:38.440
+science role where all empire builders, apparently, right?
+
+00:27:38.440 --> 00:27:43.060
+Because I'm just like, okay, that, what do you want?
+
+00:27:43.060 --> 00:27:46.740
+I immediately went to Spidey, Spidey says tingly.
+
+00:27:47.540 --> 00:27:52.700
+And, and what he asked for is like, okay, but if, if you, if you accept that
+
+00:27:52.940 --> 00:27:57.140
+these 10 heads, this is what you're setting them up for.
+
+00:27:57.500 --> 00:28:05.340
+I want you to build an old school curated primary key, you know, you can
+
+00:28:05.340 --> 00:28:10.340
+think of it as a type one data warehouse for all the customer data for
+
+00:28:10.340 --> 00:28:17.620
+the entire PM org, maintain our ETL pipelines and our Power BI's.
+
+00:28:18.100 --> 00:28:21.580
+This, this was only the second time I had interacted with this PM.
+
+00:28:22.220 --> 00:28:29.940
+So I, I, I definitely informed them in a diplomatic way that no, I was
+
+00:28:29.940 --> 00:28:32.900
+not interested in this wonderful opportunity.
+
+00:28:34.500 --> 00:28:34.780
+Right.
+
+00:28:34.860 --> 00:28:37.580
+Well, I mean, it's a classic, it's a, it brings up a big thing of, I mean,
+
+00:28:37.580 --> 00:28:41.420
+data engineering versus data science and how, I mean, there's such a, I
+
+00:28:41.420 --> 00:28:44.820
+mean, so much of what is just data engineering gets dumped on data
+
+00:28:44.820 --> 00:28:47.980
+scientists or you don't have what you need.
+
+00:28:48.340 --> 00:28:51.940
+And so it's, I mean, you're always waiting on the data and it's such a,
+
+00:28:51.940 --> 00:28:53.780
+I mean, it's such a classic problem these days.
+
+00:28:53.780 --> 00:28:55.540
+And that's why, I mean, there are a lot of companies that are trying to
+
+00:28:55.540 --> 00:28:58.260
+help the data engineering side to let you do your work.
+
+00:28:59.180 --> 00:29:04.660
+So, so I now, so I left QA, went to Devin Bing and in my time in
+
+00:29:04.660 --> 00:29:07.340
+Bing, that's what the search engine is called.
+
+00:29:07.340 --> 00:29:07.740
+Shoot.
+
+00:29:07.780 --> 00:29:08.100
+Thanks.
+
+00:29:09.530 --> 00:29:12.210
+You're number one, Alan, you're number one.
+
+00:29:12.610 --> 00:29:17.330
+Uh, but my time in Bing completely blew my mind in terms of like the
+
+00:29:17.330 --> 00:29:19.330
+types of things that can do with data.
+
+00:29:19.330 --> 00:29:22.410
+And in, I went back to school, pursued the data science spree.
+
+00:29:23.090 --> 00:29:27.250
+Now I honestly believe, and I've, I've shared this with my team.
+
+00:29:27.250 --> 00:29:31.730
+I believe we're at the beginning of the end of the, the, the, the
+
+00:29:31.730 --> 00:29:35.930
+era of the data science sorcerer, right?
+
+00:29:36.050 --> 00:29:41.010
+Where, where data science is really becoming more and more API driven.
+
+00:29:41.570 --> 00:29:41.810
+Right.
+
+00:29:41.810 --> 00:29:48.490
+If, if I can point unstruct at a bunch of reference storage locations and say,
+
+00:29:48.770 --> 00:29:54.530
+no, and it gets 90% the way there, then you know what?
+
+00:29:55.360 --> 00:29:57.560
+That saved me a crap ton of time.
+
+00:29:58.080 --> 00:30:01.400
+It's, I mean, and that's kind of what we're, I mean, we're building on top of
+
+00:30:01.400 --> 00:30:03.880
+the commoditization of a lot of the ML.
+
+00:30:04.320 --> 00:30:07.920
+And that's really what, I mean, our big assumption is, look, I mean, there's
+
+00:30:07.920 --> 00:30:09.520
+going to be a million models out there.
+
+00:30:09.560 --> 00:30:12.240
+There's going to be low code, no code tools to build them.
+
+00:30:12.600 --> 00:30:14.400
+Other great partners we can work with.
+
+00:30:14.840 --> 00:30:19.120
+Um, I mean, it's like, even on just personal, I'm like, we had a data
+
+00:30:19.120 --> 00:30:24.520
+science and start realizing like, we kind of didn't need that role because
+
+00:30:24.600 --> 00:30:30.160
+the partners that we had really filled in a lot of what was needed for, for us.
+
+00:30:30.480 --> 00:30:33.640
+And so we were, I mean, and so it was kind of a, it was a hard thing to do,
+
+00:30:33.640 --> 00:30:38.800
+but we basically decided just to sunset that role and the, where we're heading
+
+00:30:38.800 --> 00:30:40.640
+is now it's more just ML integrations.
+
+00:30:41.040 --> 00:30:45.560
+We are adding in like a auto ML, some auto ML capabilities to like, okay,
+
+00:30:45.560 --> 00:30:48.800
+here you go in and fit your data and our UI, we'll do all the easy
+
+00:30:48.800 --> 00:30:52.880
+button stuff, like, I'll augment it, train it, deploy it, just using Azure
+
+00:30:52.880 --> 00:30:54.720
+auto ML and give it back to you.
+
+00:30:54.880 --> 00:30:59.600
+And just for like identifying things in pictures, but that's just an API thing.
+
+00:30:59.840 --> 00:31:01.880
+I mean, and for me, I'm not a data science at all.
+
+00:31:02.200 --> 00:31:04.560
+And I mean, I don't even know how to code Python hardly at all.
+
+00:31:04.600 --> 00:31:08.920
+So it's like, I'm, I'm still like doing all this stuff in C sharp and able to do
+
+00:31:08.920 --> 00:31:13.280
+like real leading edge ML just with all these tools and platforms.
+
+00:31:14.120 --> 00:31:14.360
+Yeah.
+
+00:31:14.360 --> 00:31:20.040
+No, the, the, the only, the only challenge right now, I would say in today's
+
+00:31:20.040 --> 00:31:25.200
+world on, on the integration, most of it is API calls it, but in today's
+
+00:31:25.200 --> 00:31:29.920
+world, it's, it's analyzing the output where it needs, where it needs
+
+00:31:29.920 --> 00:31:32.240
+some, some data whispering.
+
+00:31:32.680 --> 00:31:39.720
+But I think one of the key things that I think you're tapping into, and I
+
+00:31:39.720 --> 00:31:44.840
+suspect you'll continue to tap into when I go and look at Unstruct, right?
+
+00:31:44.840 --> 00:31:50.600
+I see you pivoting around, Hey, we're going to make a big portion of your
+
+00:31:50.680 --> 00:31:54.560
+data engineering problems go away, which is, which is fantastic.
+
+00:31:54.680 --> 00:31:59.200
+I have many of them and I would love for someone to come in and say, we will
+
+00:31:59.200 --> 00:32:02.960
+make them go away and you won't have to wait 18,000 months in order for it
+
+00:32:02.960 --> 00:32:05.280
+to land and we'll adapt and things like that.
+
+00:32:06.480 --> 00:32:12.600
+But really the industry, as I see it is, is in, is in a space called
+
+00:32:13.520 --> 00:32:15.160
+knowledge management.
+
+00:32:15.880 --> 00:32:17.800
+Data is not really what's important.
+
+00:32:17.800 --> 00:32:22.840
+Transforming that data into actionable knowledge is where it's at and
+
+00:32:22.840 --> 00:32:28.240
+simplifying it in a way that the, like the human beings can consume.
+
+00:32:29.240 --> 00:32:30.840
+That's where I see it's happening.
+
+00:32:30.840 --> 00:32:31.560
+You're dead on.
+
+00:32:31.600 --> 00:32:31.720
+Yeah.
+
+00:32:31.720 --> 00:32:36.290
+I mean, I mean, that's, it's really funny you say that because that, I
+
+00:32:36.290 --> 00:32:37.930
+mean, and this is all marketing problems.
+
+00:32:37.930 --> 00:32:41.410
+It's, I mean, if we say that as a company, like a lot of people think,
+
+00:32:41.410 --> 00:32:43.970
+Oh, you're just doing document management, you're, you're documenting,
+
+00:32:44.010 --> 00:32:45.090
+you're somebody like that.
+
+00:32:45.090 --> 00:32:49.410
+And, um, but we're trying to basically build a holistic knowledge
+
+00:32:49.410 --> 00:32:51.690
+management system that's multimedia.
+
+00:32:52.370 --> 00:32:55.130
+And that's really where, I mean, so we started with this unstructured
+
+00:32:55.130 --> 00:32:58.690
+data term that we've kind of leaned into, but the knowledge management's
+
+00:32:58.690 --> 00:32:59.650
+really where the future is.
+
+00:32:59.690 --> 00:33:02.490
+And we actually, we just added document and email support.
+
+00:33:02.850 --> 00:33:05.810
+Um, or at least we had documents, we added email support and we added
+
+00:33:05.810 --> 00:33:10.490
+like PI detection and a lot more NLP because we're, we're finding is
+
+00:33:10.490 --> 00:33:14.050
+as customers, I thought more document management was more of a solved
+
+00:33:14.050 --> 00:33:16.850
+solution, but they are, what people were talking to actually have a lot
+
+00:33:16.850 --> 00:33:20.810
+of issues that they have a Google-ish kind of search they can do, but
+
+00:33:20.810 --> 00:33:24.130
+they don't have that semantic search for a lot of these folks, but they
+
+00:33:24.130 --> 00:33:27.690
+also wouldn't be like, well, how do I correlate that to a CAD drawing or
+
+00:33:27.690 --> 00:33:29.370
+an image or something like that?
+
+00:33:29.410 --> 00:33:32.730
+And I think it's, yeah, I mean, knowledge management, I've heard, um,
+
+00:33:33.250 --> 00:33:38.930
+Bob Muggly, an ex Microsoft and snowflake guy, um, who I think I
+
+00:33:38.930 --> 00:33:40.970
+actually used to work under his org when I was there, but
+
+00:33:43.250 --> 00:33:48.050
+so did I, he was up, up until the current executive I worked for,
+
+00:33:48.050 --> 00:33:50.970
+he was my favorite executive to ever work for.
+
+00:33:51.170 --> 00:33:51.530
+Yeah.
+
+00:33:51.850 --> 00:33:51.970
+Yeah.
+
+00:33:52.010 --> 00:33:55.330
+But I mean, I, I didn't know him well, but I knew, I knew, I
+
+00:33:55.330 --> 00:33:58.570
+made a decent fit there and I've heard him on a podcast and he is now
+
+00:33:58.570 --> 00:34:01.410
+starting to really talk this knowledge management solution.
+
+00:34:01.650 --> 00:34:06.850
+And it's, um, it's, I think he really gets it and sees like, kind of
+
+00:34:06.850 --> 00:34:08.250
+where the next generation is.
+
+00:34:08.250 --> 00:34:11.530
+And that's, I mean, literally what we're trying to do is tackle that
+
+00:34:11.530 --> 00:34:13.850
+kind of problem that I hear him kind of banging the drum on now.
+
+00:34:14.760 --> 00:34:15.080
+Yeah.
+
+00:34:15.080 --> 00:34:20.160
+I haven't, so you spent five years at, and he's at rational AI.
+
+00:34:20.240 --> 00:34:20.880
+Interesting.
+
+00:34:21.000 --> 00:34:24.920
+Rational tangent, but I just was at a conference and met some of the
+
+00:34:24.920 --> 00:34:27.800
+rational people and they're doing some really interesting knowledge
+
+00:34:27.800 --> 00:34:31.280
+graph stuff for, um, I think like the United nations and stuff like that.
+
+00:34:31.760 --> 00:34:35.120
+Um, but they're not doing at least from what they said quickly is they're
+
+00:34:35.120 --> 00:34:37.160
+not doing a lot of unstructured data, like media data.
+
+00:34:37.760 --> 00:34:41.400
+And so I'm actually meeting with them next week to like, I think there's
+
+00:34:41.400 --> 00:34:43.120
+some really cool stuff that we can do with them.
+
+00:34:43.600 --> 00:34:43.840
+Right.
+
+00:34:43.840 --> 00:34:49.120
+If you're able to, to, to with high confidence, the only, the only thing
+
+00:34:49.120 --> 00:34:54.200
+I'd be concerned, so I do a lot of NLP, I do a lot of time series stuff.
+
+00:34:54.840 --> 00:34:59.720
+And the only thing would be concerned around is the places where you might.
+
+00:35:00.740 --> 00:35:07.980
+Say it do, do a semantic auto tagging, making sure that that is stable over
+
+00:35:07.980 --> 00:35:14.060
+time and that the NLP doesn't suddenly, uh, later on decide, Oh, this is
+
+00:35:14.060 --> 00:35:15.780
+now a different tag.
+
+00:35:16.460 --> 00:35:16.780
+Right.
+
+00:35:17.260 --> 00:35:18.180
+That's a really important thing.
+
+00:35:18.180 --> 00:35:21.900
+I mean, like we're sort of have built in kind of ensembling, or we can pull
+
+00:35:21.900 --> 00:35:25.780
+in models from different like primer and cognitive services and a bunch of
+
+00:35:25.780 --> 00:35:27.300
+different ones and sort of roll them up.
+
+00:35:27.780 --> 00:35:32.180
+And then one of the big things we're looking at is like, how do people,
+
+00:35:32.220 --> 00:35:34.940
+how are people want to can, um, going to handle disambiguation?
+
+00:35:35.460 --> 00:35:37.500
+Like, because that's going to really be one of the things of like,
+
+00:35:37.500 --> 00:35:42.860
+Oh, is this an asset that they've seen in their SAP database or is this some
+
+00:35:42.860 --> 00:35:45.420
+other random term that looks like it or is pretty similar?
+
+00:35:45.460 --> 00:35:48.460
+And so those are the, I think those are going to be a lot of the other pain
+
+00:35:48.460 --> 00:35:52.460
+points we're going to have to start leading into more is to make that
+
+00:35:52.460 --> 00:35:56.900
+tagging work really well is to figure out like how we can offer disambiguation
+
+00:35:56.900 --> 00:35:58.020
+to the users in an easy way.
+
+00:35:58.460 --> 00:36:03.500
+So Alan, I could completely start totally data science geeking out now.
+
+00:36:03.500 --> 00:36:04.500
+No, go for it, man.
+
+00:36:04.740 --> 00:36:05.060
+Yeah.
+
+00:36:05.260 --> 00:36:06.740
+No, I like it.
+
+00:36:07.140 --> 00:36:08.740
+What Kirk's talking about.
+
+00:36:09.140 --> 00:36:09.380
+All right.
+
+00:36:09.420 --> 00:36:15.260
+I am deep in the weeds in some really hard topic modeling problems.
+
+00:36:16.620 --> 00:36:18.180
+We're doing topic modeling.
+
+00:36:18.340 --> 00:36:21.180
+Oh, wait, is topic modeling, are those the models that model
+
+00:36:21.180 --> 00:36:22.420
+clothes for hot topic?
+
+00:36:22.820 --> 00:36:25.020
+Is that I'm not yet, not hot topic.
+
+00:36:25.420 --> 00:36:26.220
+Oh, okay.
+
+00:36:26.260 --> 00:36:26.580
+Sorry.
+
+00:36:26.580 --> 00:36:27.180
+I was confused.
+
+00:36:27.180 --> 00:36:27.500
+Go on.
+
+00:36:30.020 --> 00:36:30.420
+Yeah.
+
+00:36:30.420 --> 00:36:35.660
+And certainly hot topic would not be coming to me for any modeling gig.
+
+00:36:36.380 --> 00:36:40.980
+Damn, Alan, you're talking about topic modeling, topic modeling,
+
+00:36:40.980 --> 00:36:43.300
+your neck deep in topic modeling.
+
+00:36:43.300 --> 00:36:45.820
+He's like visualizing a mall with hot topic in it right now.
+
+00:36:45.820 --> 00:36:46.580
+And he can't get out of it.
+
+00:36:46.820 --> 00:36:47.140
+Yeah.
+
+00:36:47.140 --> 00:36:51.340
+And he and he's in the glass in front trying to figure out how
+
+00:36:51.340 --> 00:36:56.260
+much is myself in the mirror and like, uh, Alan, why don't you put me here?
+
+00:36:56.740 --> 00:37:02.940
+And we're doing it against short texts, which is extremely hard and really
+
+00:37:02.940 --> 00:37:09.020
+relies on sort of probabilistic semantic, uh, understanding.
+
+00:37:10.260 --> 00:37:13.380
+It's a fun, I mean, if it were easy, it wouldn't be fun.
+
+00:37:13.580 --> 00:37:19.260
+Uh, but yeah, I definitely see kind of where you're going and then mixing
+
+00:37:19.260 --> 00:37:22.780
+multimedia types and kind of bringing it together.
+
+00:37:23.140 --> 00:37:23.420
+Yeah.
+
+00:37:23.420 --> 00:37:26.820
+I suspect you in rational.
+
+00:37:27.340 --> 00:37:28.460
+Um, I don't know.
+
+00:37:28.740 --> 00:37:31.540
+I mean, I don't know what your goal is and you're the CEO here.
+
+00:37:32.060 --> 00:37:32.300
+Right.
+
+00:37:32.300 --> 00:37:37.980
+And, but it, it, it almost seems like a, a match made in heaven in some regards.
+
+00:37:37.980 --> 00:37:42.140
+Cause if you can clean up the data, such that it's structured and then
+
+00:37:42.140 --> 00:37:45.900
+to hand it off to them, then there's an end to end story that would.
+
+00:37:47.140 --> 00:37:50.300
+I think, yeah, I mean, I actually have a meeting with, um, I think next week
+
+00:37:50.300 --> 00:37:53.660
+or the week after really did kind of talk because I listened to a talk they
+
+00:37:53.660 --> 00:37:55.380
+gave and I was like, this is super cool.
+
+00:37:55.420 --> 00:37:56.940
+Like, and it looks really complimentary.
+
+00:37:57.380 --> 00:38:02.460
+And so I, I just like, they're one of the few, um, that kind of talk about
+
+00:38:02.460 --> 00:38:03.860
+knowledge management in that way.
+
+00:38:04.220 --> 00:38:06.100
+Um, data.world is another one.
+
+00:38:06.220 --> 00:38:09.740
+Um, it's out there that they're kind of in this knowledge data catalog space.
+
+00:38:10.140 --> 00:38:14.380
+Um, but it's, I think it's good because I'm starting to see more of these
+
+00:38:14.380 --> 00:38:17.540
+companies pop up and people are talking to talk like Muggly and I was talking
+
+00:38:18.260 --> 00:38:22.100
+about the global pandemic and we're talking, like, we're talking, we're
+
+00:38:22.100 --> 00:38:24.340
+talking, like, we're talking, so I think we're positioned, right?
+
+00:38:24.380 --> 00:38:28.600
+But it's just the classic, like, it's going to take a little time for
+
+00:38:28.600 --> 00:38:39.560
+this market to come to bear.
+
+00:38:39.560 --> 00:38:40.080
+So.
+
+00:38:40.160 --> 00:38:41.800
+No, I, I, and I agree.
+
+00:38:41.800 --> 00:38:42.600
+I think, right.
+
+00:38:42.600 --> 00:38:46.680
+You said you, you mentioned you listened to, uh, the podcast.
+
+00:38:46.680 --> 00:38:48.970
+One and a half.
+
+00:38:48.970 --> 00:38:50.970
+And the half is my son.
+
+00:38:50.970 --> 00:38:51.970
+He is 21.
+
+00:38:51.970 --> 00:38:56.970
+And it's his first job, but he's actually doing QA automation right now.
+
+00:38:56.970 --> 00:38:59.970
+So I call him that half.
+
+00:38:59.970 --> 00:39:03.970
+And somehow your company has survived.
+
+00:39:03.970 --> 00:39:08.970
+We actually affirm believers in that sort of transformation.
+
+00:39:08.970 --> 00:39:09.970
+Right?
+
+00:39:09.970 --> 00:39:12.970
+And we now kind of observe that that's kind of the standard practice,
+
+00:39:12.970 --> 00:39:20.970
+that if you realize how to ship software in the current world,
+
+00:39:20.970 --> 00:39:27.970
+you kind of don't need to have specialists to do this.
+
+00:39:27.970 --> 00:39:30.970
+Right? Now, mapping over to the data space, right?
+
+00:39:30.970 --> 00:39:36.970
+There's going to be the leading edge, which I think you're on.
+
+00:39:36.970 --> 00:39:45.450
+But the question is going to be is how quickly does the main group
+
+00:39:45.450 --> 00:39:50.540
+really realize, suddenly click and realize, oh my God,
+
+00:39:50.540 --> 00:39:55.540
+those companies that are doing excellent knowledge management
+
+00:39:55.540 --> 00:40:01.540
+are actually much faster at being able to target what's critical
+
+00:40:01.540 --> 00:40:03.540
+to move their business forward.
+
+00:40:03.540 --> 00:40:08.540
+I spent a lot of my time on customer retention and churn problems.
+
+00:40:08.540 --> 00:40:18.540
+And having clean, crisp data would rapidly accelerate that.
+
+00:40:18.540 --> 00:40:19.540
+Rapidly.
+
+00:40:19.540 --> 00:40:21.540
+It would be a competitive edge.
+
+00:40:21.540 --> 00:40:22.540
+Absolutely.
+
+00:40:22.540 --> 00:40:25.540
+And I see when we've done some of the ML projects,
+
+00:40:25.540 --> 00:40:29.540
+I mean, one of the hardest problems is getting good data to train on.
+
+00:40:29.540 --> 00:40:32.540
+I mean, because we're trying to like, we have drone imagery.
+
+00:40:32.540 --> 00:40:33.540
+We have this.
+
+00:40:33.540 --> 00:40:34.540
+We're like, I bought a drone.
+
+00:40:34.540 --> 00:40:36.540
+And I'm like, oh, man, but like, where in Seattle can I fly a drone
+
+00:40:36.540 --> 00:40:39.540
+and actually fly over something interesting that we would want to detect?
+
+00:40:39.540 --> 00:40:43.540
+And it's just that mundane stuff of like, how do I even get like the,
+
+00:40:43.540 --> 00:40:47.540
+I can run AutoML in an hour, but how do I get a good set of data
+
+00:40:47.540 --> 00:40:49.540
+to even start with?
+
+00:40:49.540 --> 00:40:52.540
+And so there are just all these upstream problems that, I mean,
+
+00:40:52.540 --> 00:40:57.540
+in the data world that are just, I mean, way harder than writing tests
+
+00:40:57.540 --> 00:40:59.540
+to test your UI and react.
+
+00:40:59.540 --> 00:41:01.540
+I mean, it's just a totally different beast.
+
+00:41:02.540 --> 00:41:04.540
+I have a question for, I'm Alan.
+
+00:41:04.540 --> 00:41:05.540
+I come to you.
+
+00:41:05.540 --> 00:41:09.540
+You're talking about this.
+
+00:41:09.540 --> 00:41:11.540
+It brought something to mind.
+
+00:41:11.540 --> 00:41:14.540
+One of the things I've seen happen, fortunately, not a lot,
+
+00:41:14.540 --> 00:41:18.540
+but sometimes when you have a complex ML system looking over a large amount
+
+00:41:18.540 --> 00:41:25.670
+of data, a bug can bug in the ML or in the data can be pretty disastrous
+
+00:41:25.670 --> 00:41:30.670
+and create poisoned data and just screw up a bunch of your stuff.
+
+00:41:30.670 --> 00:41:34.670
+One, I'm curious for both of you, because I just know observationally,
+
+00:41:34.670 --> 00:41:38.670
+I don't work in, although I do like to say that I actually managed one
+
+00:41:38.670 --> 00:41:41.670
+of the first data science teams at Microsoft just long enough for me
+
+00:41:41.670 --> 00:41:43.670
+to hire someone who knew what the hell they were doing.
+
+00:41:43.670 --> 00:41:45.670
+So that's my claim to fame.
+
+00:41:45.670 --> 00:41:49.670
+When I observed this data poisoning phenomena in the industry,
+
+00:41:49.670 --> 00:41:53.670
+like these little, maybe not little, but these bugs that screw up
+
+00:41:53.670 --> 00:41:56.670
+all your good, hard work in practice,
+
+00:41:56.670 --> 00:41:59.670
+because you guys work with stuff a lot more, how often does that happen
+
+00:41:59.670 --> 00:42:01.670
+and how recoverable is it?
+
+00:42:01.670 --> 00:42:05.670
+This is a little bit off the blue, but it piqued my curiosity,
+
+00:42:05.670 --> 00:42:08.670
+because I don't know the answer and I don't know how to Google for that.
+
+00:42:08.670 --> 00:42:10.670
+You start to see, there's these companies doing,
+
+00:42:10.670 --> 00:42:13.670
+they call it data quality, data observability.
+
+00:42:13.670 --> 00:42:14.670
+Yeah, yeah.
+
+00:42:14.670 --> 00:42:17.670
+Then what is data, the QA, the testing thing,
+
+00:42:17.670 --> 00:42:19.670
+they think like, what is data quality?
+
+00:42:19.670 --> 00:42:21.700
+I'm going to shut up. Go on.
+
+00:42:21.700 --> 00:42:25.700
+I think I've been listening to some podcasts and stuff where it's like,
+
+00:42:25.700 --> 00:42:29.700
+hey, we get this report and it's supposed to be updated every 15 minutes.
+
+00:42:29.700 --> 00:42:32.700
+The system realizes it hasn't been updated in three hours or whatever.
+
+00:42:32.700 --> 00:42:36.700
+And so they want to auto trigger and kind of then track the lineage
+
+00:42:36.700 --> 00:42:39.700
+of that upstream to figure that out.
+
+00:42:39.700 --> 00:42:42.700
+And for us, it could be, I mean, we're using a lot of third party models.
+
+00:42:42.700 --> 00:42:44.700
+I mean, some, I mean, and we don't even own them.
+
+00:42:44.700 --> 00:42:45.700
+I mean, we're not even building them.
+
+00:42:45.700 --> 00:42:49.700
+It's like, what if like cognitive services releases a bad model
+
+00:42:49.700 --> 00:42:52.700
+that stops identifying vehicles or something.
+
+00:42:52.700 --> 00:42:56.700
+And so for those two weeks that we, our customers ingest data,
+
+00:42:56.700 --> 00:42:59.700
+there's no vehicles. Like right now, I mean,
+
+00:42:59.700 --> 00:43:04.700
+we would have really difficult time of knowing that other than ad hoc testing.
+
+00:43:04.700 --> 00:43:07.700
+But I think that's something we want to get better about automating is
+
+00:43:07.700 --> 00:43:10.700
+like we, for the same data,
+
+00:43:10.700 --> 00:43:15.700
+to look at what the output is and have basically the anomaly
+
+00:43:15.700 --> 00:43:19.700
+detection, almost like pixels moved on the screen.
+
+00:43:19.700 --> 00:43:21.700
+We should, I mean, right now we don't have this and it's more ad hoc.
+
+00:43:21.700 --> 00:43:24.700
+But we, I mean, once we grow, I really want to do this where every
+
+00:43:24.700 --> 00:43:26.700
+dependency we have,
+
+00:43:26.700 --> 00:43:29.700
+we should have a way to track the input and the output of the model and
+
+00:43:29.700 --> 00:43:31.700
+make sure that that's not changing. Just like you're saying,
+
+00:43:31.700 --> 00:43:33.700
+that's so important.
+
+00:43:33.700 --> 00:43:38.700
+If you, if you figure out how to do that at scale,
+
+00:43:38.700 --> 00:43:41.700
+then right.
+
+00:43:41.700 --> 00:43:47.700
+You earn every penny and a half that you will get from selling
+
+00:43:48.700 --> 00:43:51.700
+this company, if ever that's your plan, right?
+
+00:43:51.700 --> 00:43:54.700
+The, the, so,
+
+00:43:54.700 --> 00:43:58.060
+so not only do,
+
+00:43:58.060 --> 00:44:02.060
+is it important to do anomaly detection against the streams and,
+
+00:44:02.060 --> 00:44:06.060
+and Alan, this is how I prevent it. Right.
+
+00:44:06.060 --> 00:44:09.060
+Because one of the things that happens is if,
+
+00:44:09.060 --> 00:44:14.060
+if you find that your data is poisoned in the way you described,
+
+00:44:15.060 --> 00:44:21.420
+in terms of how to react to it, it's actually,
+
+00:44:21.420 --> 00:44:25.420
+Alan's it's your favorite answer. The answer is it depends.
+
+00:44:25.420 --> 00:44:28.420
+The answer to any sufficiently complex question is it depends,
+
+00:44:28.420 --> 00:44:30.420
+which means my question was good.
+
+00:44:30.420 --> 00:44:31.420
+Yes.
+
+00:44:31.420 --> 00:44:34.420
+So it, it, you have to,
+
+00:44:34.420 --> 00:44:37.420
+you have to then make a decision. Okay.
+
+00:44:37.420 --> 00:44:41.460
+Do I fill in the blanks? Do I cut it off after,
+
+00:44:41.460 --> 00:44:43.460
+after the data is recovered?
+
+00:44:43.460 --> 00:44:46.460
+Yeah. Do, do I do a backfill? A lot of the times backfill,
+
+00:44:46.460 --> 00:44:49.460
+it's not even possible. Like if you're, if you,
+
+00:44:49.460 --> 00:44:53.460
+if you're streaming data at like a 10 minute cadence and there's a data
+
+00:44:53.460 --> 00:44:57.460
+retention policy on the store for maybe two days and you don't detect it
+
+00:44:57.460 --> 00:45:00.460
+for a week later, it's a lost cause. Right.
+
+00:45:00.460 --> 00:45:04.460
+We were literally just talking about backfill today with product team of
+
+00:45:04.460 --> 00:45:07.460
+like, how do we want to handle this? Like, is it time-based backfill?
+
+00:45:07.460 --> 00:45:09.460
+Like, is it a, is it a, is it a,
+
+00:45:09.460 --> 00:45:12.460
+is it a backfill of like, how do we want to handle this?
+
+00:45:12.460 --> 00:45:16.460
+Like, is it time-based backfill? Is it, I mean, different things.
+
+00:45:16.460 --> 00:45:18.460
+I mean, do you want to backfill?
+
+00:45:18.460 --> 00:45:20.460
+Like what if you have your backfilling via different kind of views,
+
+00:45:20.460 --> 00:45:21.460
+do you want to overlap,
+
+00:45:21.460 --> 00:45:24.460
+and then you're kind of double backfilling data and like it's,
+
+00:45:24.460 --> 00:45:26.460
+it gets complicated. But I mean, it's something we're actually going to
+
+00:45:26.460 --> 00:45:29.460
+release probably, I mean, definitely this quarter, but, because it's,
+
+00:45:29.460 --> 00:45:32.460
+I mean, we have to have that. I mean, if somebody updates a model,
+
+00:45:32.460 --> 00:45:35.460
+I mean we have to have some way to go back and do it, but,
+
+00:45:35.460 --> 00:45:38.460
+but the other half of that is how do you avoid poison data?
+
+00:45:38.460 --> 00:45:43.340
+release a crap model that's put in some stupid tag that they don't want anymore.
+
+00:45:43.700 --> 00:45:48.780
+Like we were just talking about like the tag muting and tag disqualification and
+
+00:45:49.140 --> 00:45:51.620
+things like that. Because I think all of that is kind of mixed in.
+
+00:45:52.220 --> 00:45:54.060
+Because it's tied into the ML quality.
+
+00:45:54.340 --> 00:45:58.620
+Even then, so yeah, garbage in garbage out. Right.
+
+00:45:58.620 --> 00:46:03.100
+What I'm more referring to is on the garbage inside is essentially,
+
+00:46:03.500 --> 00:46:05.220
+so for example, let's say,
+
+00:46:05.220 --> 00:46:11.490
+let's say there's this column that normally has five different options.
+
+00:46:11.490 --> 00:46:14.290
+Imagine it's a column that expresses an enum. Right.
+
+00:46:14.290 --> 00:46:20.610
+And then suddenly out of the blue, option four is uncommon.
+
+00:46:21.370 --> 00:46:24.770
+Right. Because not only do you have to do anomaly detection against the data set
+
+00:46:24.770 --> 00:46:35.170
+itself, but then potentially against every column and every value within the column.
+
+00:46:35.370 --> 00:46:43.640
+Yeah. Right. So anomaly detection goes just gets crazy really fast.
+
+00:46:44.240 --> 00:46:50.320
+And what drives so there's one feed that I operate today where my team merges in.
+
+00:46:52.270 --> 00:46:56.110
+I don't know, 50 different data sources all owned by different teams.
+
+00:46:56.110 --> 00:47:01.230
+And then then some random PM out of the blue says, hey, I did this
+
+00:47:01.590 --> 00:47:05.070
+this random query that's important to me and no one else.
+
+00:47:05.230 --> 00:47:07.830
+And then I notice there's this huge spike.
+
+00:47:08.270 --> 00:47:10.510
+What's the cause?
+
+00:47:10.510 --> 00:47:16.990
+And the number of times during the day or during the week where I have to think
+
+00:47:16.990 --> 00:47:20.910
+through, look, my job is to host the data.
+
+00:47:21.830 --> 00:47:25.150
+I do not provide any data quality off of this thing.
+
+00:47:25.190 --> 00:47:28.790
+You're welcome. Like if you want to use it, the risk is blah, blah, blah, blah,
+
+00:47:28.790 --> 00:47:34.710
+blah, blah, because I'm like if I open that door where I kind of go through
+
+00:47:34.710 --> 00:47:38.390
+and answer every one of these questions, that is all I'm going to do.
+
+00:47:38.590 --> 00:47:41.590
+Yeah, you kind of are ending up taking implicit ownership of it at that point.
+
+00:47:41.590 --> 00:47:45.270
+And then people are going to come to you to guarantee the quality. Right.
+
+00:47:46.150 --> 00:47:49.350
+Well, no, no. So I mean, that one's that one's easy for me.
+
+00:47:49.630 --> 00:47:52.510
+You can come to me. The answer is no. Yeah.
+
+00:47:53.190 --> 00:47:56.350
+If if you don't like my data feed, then go.
+
+00:47:56.750 --> 00:48:02.830
+Then you are welcome to take it over or or build your own like.
+
+00:48:03.270 --> 00:48:05.430
+And that's one team.
+
+00:48:05.430 --> 00:48:09.790
+So one team wanted me to treat it like a 24 seven service.
+
+00:48:10.590 --> 00:48:16.310
+And I'm like, I'm like, hey, so one of the feeds I operate is really important
+
+00:48:16.310 --> 00:48:21.150
+to the to the business, but the commitment that I've shared out with the business is
+
+00:48:21.790 --> 00:48:25.670
+is relative correctness, directionally correct.
+
+00:48:26.510 --> 00:48:29.990
+Right. I'm like, yeah, I am not going to go through
+
+00:48:29.990 --> 00:48:35.710
+and and and try to denoise and make sure all my dependencies
+
+00:48:36.030 --> 00:48:38.390
+are trying to denoise themselves.
+
+00:48:38.950 --> 00:48:43.590
+Right. It's that's that's not my it's not my primary job.
+
+00:48:43.830 --> 00:48:47.750
+My primary job is is building data science assets and
+
+00:48:48.350 --> 00:48:52.030
+in any place where this feed where I rely on and it's broken
+
+00:48:52.070 --> 00:48:54.470
+as it relates to the data science. Yeah, I'll fix that.
+
+00:48:55.230 --> 00:48:57.390
+Right. Or if you can make an ROI statement.
+
+00:48:57.750 --> 00:49:01.270
+But the whole point there is it's so burdensome.
+
+00:49:01.270 --> 00:49:04.950
+And if anything like unstruct can come out
+
+00:49:05.630 --> 00:49:09.990
+and and even if they only take take a 20 percent
+
+00:49:10.630 --> 00:49:14.310
+reduction of sort of the manual intervention that I have to pay,
+
+00:49:14.750 --> 00:49:17.790
+then it's then it's going to be it's going to be worth it.
+
+00:49:18.110 --> 00:49:21.270
+Well, that's that's one of the big areas that I'm I see
+
+00:49:21.470 --> 00:49:24.070
+happening in the structure data world, and I'm assuming it's going to happen
+
+00:49:24.070 --> 00:49:27.870
+in kind of our unstructured world of the data quality and observability.
+
+00:49:27.870 --> 00:49:31.510
+Because like, what if what if somebody is putting in 100000 drone images
+
+00:49:31.870 --> 00:49:35.430
+and one percent of them don't have a proper lat long in the metadata
+
+00:49:35.750 --> 00:49:38.710
+because somehow that drone had a firmware glitch
+
+00:49:38.710 --> 00:49:40.870
+and wasn't writing that data in the metadata.
+
+00:49:40.870 --> 00:49:45.150
+Like literally, there's zero chance of them finding it unless you can run
+
+00:49:45.150 --> 00:49:49.430
+like parse that data, show it on a map or show reports or something like that.
+
+00:49:49.870 --> 00:49:53.870
+Or I have I have a set of like 10000 test images that I got from some drones.
+
+00:49:54.510 --> 00:49:59.290
+Like points are one percent of them are black and you would never know.
+
+00:49:59.450 --> 00:50:02.410
+It's a valid file, the file size like you could sort of I mean.
+
+00:50:02.730 --> 00:50:05.210
+And so that's the kind of layer I think there's a ton of value
+
+00:50:05.210 --> 00:50:08.850
+in what we're doing as a data quality platform as well.
+
+00:50:09.210 --> 00:50:14.170
+Even just looking not at it's sort of a flip side of search
+
+00:50:14.570 --> 00:50:15.890
+where it's like, hey, here's all this stuff.
+
+00:50:15.890 --> 00:50:19.570
+But what's all the weird edge stuff around the edges that like is almost
+
+00:50:19.570 --> 00:50:23.490
+not searchable just because it's all clustered together as like black or in
+
+00:50:23.490 --> 00:50:28.050
+zero zero zero lat long or something like that or time is all at the minimum time
+
+00:50:28.170 --> 00:50:32.890
+time value. And and so I've been I don't I mean, not to slag them,
+
+00:50:32.890 --> 00:50:35.450
+but I don't think my PM team gets that part of it yet.
+
+00:50:35.450 --> 00:50:38.810
+I'm trying to teach them about like, look here, I'm seeing this
+
+00:50:38.810 --> 00:50:40.250
+in the other part of the industry.
+
+00:50:40.250 --> 00:50:42.330
+I feel like this is going to be a big thing for us
+
+00:50:42.610 --> 00:50:44.530
+that we need to start thinking about this.
+
+00:50:44.530 --> 00:50:47.210
+And so I'm trying to like warm them up to the idea of like
+
+00:50:47.210 --> 00:50:50.490
+anomaly detection and data quality and and stuff like that.
+
+00:50:50.490 --> 00:50:52.170
+But it's more of a gut feel for me.
+
+00:50:52.170 --> 00:50:54.370
+We don't have data on it.
+
+00:50:54.370 --> 00:50:55.650
+No, no, no.
+
+00:50:55.650 --> 00:50:57.090
+So I'll validate it.
+
+00:50:57.090 --> 00:50:59.250
+It's absolutely absolutely critical.
+
+00:51:00.530 --> 00:51:05.290
+The the so, for example, one of the things that I'm doing is every data point
+
+00:51:05.330 --> 00:51:10.170
+I've taken to creating a new kind of metadata structure.
+
+00:51:10.530 --> 00:51:15.490
+And in terms of your language, imagine imagine tagging it.
+
+00:51:16.050 --> 00:51:21.210
+But with a data quality tag or in a data quality namespace
+
+00:51:21.690 --> 00:51:23.770
+where where you're highlighting.
+
+00:51:25.490 --> 00:51:27.970
+So, for example, I still produce a stream.
+
+00:51:27.970 --> 00:51:32.770
+But if I know if if I know deep down in the bowels that there is a
+
+00:51:33.250 --> 00:51:35.890
+there is a table where a record is missing.
+
+00:51:37.010 --> 00:51:40.730
+Right. I'm going to I'm going to highlight in in this in this.
+
+00:51:40.770 --> 00:51:44.690
+It's basically in my in my implementation to JSON payload.
+
+00:51:45.330 --> 00:51:49.370
+I'm going to highlight that this is a sort of a warning,
+
+00:51:49.610 --> 00:51:52.730
+like the metadata may not be complete on this one.
+
+00:51:53.410 --> 00:51:56.530
+And it's important because certain data science projects
+
+00:51:56.530 --> 00:51:58.890
+I'm working on can deal with noisy data.
+
+00:51:59.450 --> 00:52:00.690
+Others can't.
+
+00:52:00.690 --> 00:52:05.530
+And then this allows me to to sort of pre filter these things.
+
+00:52:05.850 --> 00:52:07.610
+I think you're absolutely right.
+
+00:52:07.610 --> 00:52:11.450
+Now tagging it in terms of a context around how it's used.
+
+00:52:12.450 --> 00:52:14.090
+That's going to be a hard problem.
+
+00:52:15.770 --> 00:52:16.730
+We we map.
+
+00:52:16.730 --> 00:52:19.210
+I mean, so we're actually we're using Cosmos DB today.
+
+00:52:19.370 --> 00:52:22.690
+Gremlin and the sequel, the JSON document store.
+
+00:52:22.690 --> 00:52:24.890
+And so everything's kind of in this entity graph.
+
+00:52:24.890 --> 00:52:27.010
+And we have this concept of observations.
+
+00:52:27.010 --> 00:52:30.410
+And so we can the observations could be a generic tag
+
+00:52:30.530 --> 00:52:33.090
+or it could be a person, place or thing kind of kind of entity.
+
+00:52:33.450 --> 00:52:35.490
+And so we it's fully extensible in that way.
+
+00:52:35.490 --> 00:52:39.690
+That's an interesting we can have like a quality observation on that data
+
+00:52:39.970 --> 00:52:43.450
+that says like, oh, yeah, here, like this is a way to then pivot on that
+
+00:52:43.450 --> 00:52:44.970
+and search for anomalies.
+
+00:52:44.970 --> 00:52:46.730
+I see that as something I want to get.
+
+00:52:46.730 --> 00:52:50.290
+We're too early to like probably a quarter early to deal with it yet.
+
+00:52:50.290 --> 00:52:53.970
+But I think it's something I have a feeling that that's going to be pretty interesting.
+
+00:52:54.450 --> 00:52:56.290
+I would tend to agree.
+
+00:52:56.290 --> 00:53:00.410
+Right. In terms of so here you're providing the way I think of it.
+
+00:53:00.410 --> 00:53:04.730
+If you're doing knowledge management and you're helping people to clean up their
+
+00:53:04.730 --> 00:53:10.410
+minute, their their knowledge, I think it's probably just as important as
+
+00:53:11.370 --> 00:53:15.610
+this is knowledge that may be risky to use or
+
+00:53:15.610 --> 00:53:18.050
+or you shouldn't use at all.
+
+00:53:18.690 --> 00:53:21.850
+Or like it's like almost orphaned or unlinked at some point.
+
+00:53:21.850 --> 00:53:25.330
+And it's funny, like I had a bug where so we have a graph view
+
+00:53:25.330 --> 00:53:27.850
+that we're using this great company, Cambridge Intelligence.
+
+00:53:27.850 --> 00:53:30.370
+It's this really nice graph react component.
+
+00:53:30.770 --> 00:53:33.130
+And I put like a bunch of data into it.
+
+00:53:33.450 --> 00:53:34.410
+And I was like, weird.
+
+00:53:34.410 --> 00:53:37.370
+What are all these satellites around the edges that aren't linked to everything else?
+
+00:53:37.770 --> 00:53:40.610
+And I realized that those are files that didn't get tagged.
+
+00:53:41.090 --> 00:53:43.730
+And so because it was like essentially created this tag cluster.
+
+00:53:43.730 --> 00:53:48.650
+And it's weird because like I didn't realize like if something doesn't get tagged,
+
+00:53:48.650 --> 00:53:52.250
+it's not really a bug, like it's not going to throw an exception anywhere.
+
+00:53:52.250 --> 00:53:54.170
+It's just going to be missing data.
+
+00:53:54.170 --> 00:53:59.170
+And so I was only able to even notice that I'd introduced this bug by seeing it
+
+00:53:59.570 --> 00:54:01.170
+visualized in the in the UI.
+
+00:54:01.170 --> 00:54:05.090
+You know, and so by seeing all that sort of satellite data that was unlinked,
+
+00:54:05.090 --> 00:54:06.250
+I was like, oh, man, that's weird.
+
+00:54:06.250 --> 00:54:07.890
+And then I could like go back and debug it.
+
+00:54:07.890 --> 00:54:11.130
+But those are the kind of I mean, that's essentially data quality visual
+
+00:54:11.130 --> 00:54:13.410
+like visualization of data quality right there.
+
+00:54:13.730 --> 00:54:17.890
+To look for it like everything should be essentially linked to something else
+
+00:54:17.890 --> 00:54:19.690
+or at least a tag per se.
+
+00:54:19.690 --> 00:54:23.090
+Right. If it's if it's just orphan with nothing connected to it, that's a bug.
+
+00:54:23.330 --> 00:54:27.330
+That that's actually the principle that I do.
+
+00:54:27.770 --> 00:54:30.290
+Like this is a lot of times you'll see data entry.
+
+00:54:30.810 --> 00:54:33.010
+Let's say a data column will be empty.
+
+00:54:33.410 --> 00:54:38.290
+Yeah. And I'm like, look, I don't want empties or I want empty to mean one thing.
+
+00:54:38.930 --> 00:54:44.090
+If it's empty because the underlying source is empty.
+
+00:54:45.350 --> 00:54:49.430
+Otherwise, if it's empty because we couldn't find it like
+
+00:54:51.420 --> 00:54:55.420
+we did a left a left out or join or something on those lines.
+
+00:54:55.860 --> 00:55:01.140
+If it's empty in that case, then this thing better say missing or not found
+
+00:55:01.140 --> 00:55:03.180
+or something along those lines.
+
+00:55:03.180 --> 00:55:06.620
+Well, in that area of just that context is I mean,
+
+00:55:06.620 --> 00:55:10.620
+if we're running five ML models on something and each one maybe
+
+00:55:11.060 --> 00:55:14.780
+reports back like a different thing or why it I mean, we store like confidence
+
+00:55:14.780 --> 00:55:17.300
+score and stuff like that, but maybe we had an error.
+
+00:55:17.420 --> 00:55:19.660
+I mean, we couldn't run the model because of some reason.
+
+00:55:20.300 --> 00:55:22.500
+Right now it's in the logs, but it's not in the graph.
+
+00:55:23.020 --> 00:55:27.500
+And so that that information of the why we could or couldn't do something
+
+00:55:27.500 --> 00:55:31.660
+might be something we want to track in our actual graph and start to be like,
+
+00:55:31.660 --> 00:55:35.300
+oh, here's a cluster of issues of oh, we couldn't run this model
+
+00:55:35.300 --> 00:55:38.380
+because it didn't have this a lot long field or something like that
+
+00:55:38.380 --> 00:55:41.580
+or whatever it was, or it was an image of a black image.
+
+00:55:41.580 --> 00:55:43.700
+And so the model just rejected it or something.
+
+00:55:43.700 --> 00:55:46.180
+So there's there's a ton of ideas that I have.
+
+00:55:46.180 --> 00:55:48.700
+Now, once we kind of get we're just at the point now
+
+00:55:48.700 --> 00:55:51.660
+where we're building the graph system, the app, we just launched
+
+00:55:51.660 --> 00:55:55.540
+an Azure marketplace a month ago, but there's just a million ideas
+
+00:55:55.540 --> 00:55:56.940
+for where we can take this.
+
+00:55:56.940 --> 00:55:58.860
+It's that's as it grows.
+
+00:55:59.540 --> 00:56:01.460
+You're in the Azure marketplace.
+
+00:56:01.460 --> 00:56:01.860
+Yeah.
+
+00:56:03.140 --> 00:56:04.180
+Brand has to go look.
+
+00:56:04.180 --> 00:56:07.900
+Oh, Azure, for those of you who don't know, that's like AWS for GCP.
+
+00:56:07.900 --> 00:56:09.940
+They do cloud stuff, but cooler.
+
+00:56:09.940 --> 00:56:12.900
+Yeah, I'm yeah, I have to pick on bread.
+
+00:56:14.940 --> 00:56:17.980
+It's funny, my my dev team, they're all AWS guys.
+
+00:56:17.980 --> 00:56:21.020
+So we were always like picking on each other about like, which is better.
+
+00:56:21.020 --> 00:56:25.140
+So but then I spent all night the other night dealing with I am rules
+
+00:56:25.140 --> 00:56:27.580
+in like Azure AD and all that.
+
+00:56:27.580 --> 00:56:30.460
+And now I'm like, I was kind of pissed at it for like about 24 hours.
+
+00:56:31.220 --> 00:56:32.740
+Yeah, I can.
+
+00:56:32.740 --> 00:56:39.140
+As a current employee of Microsoft, I am just going to respond with no, no comment.
+
+00:56:40.460 --> 00:56:44.460
+I know if you click it, I'll get a I'll get a slack message that somebody subscribes.
+
+00:56:44.980 --> 00:56:46.260
+Oh, OK.
+
+00:56:48.060 --> 00:56:50.620
+Yeah, then our marketing people freak out.
+
+00:56:55.740 --> 00:57:00.540
+Hey, all listeners go to Azure Marketplace and subscribe and let's
+
+00:57:00.540 --> 00:57:02.500
+freak out Kirk's marketing department.
+
+00:57:02.500 --> 00:57:04.860
+Only if you're actually going to use it.
+
+00:57:04.860 --> 00:57:06.260
+Yes, please.
+
+00:57:06.260 --> 00:57:08.980
+Yeah, we did. We're doing like a starter plan through the rest of the year.
+
+00:57:09.300 --> 00:57:12.900
+I mean, it's for us, it's there's just a lot of work consumption based.
+
+00:57:12.900 --> 00:57:16.140
+So it's more data you throw into us, pay more.
+
+00:57:16.260 --> 00:57:19.340
+And then we're just kind of doing like a flat rate for the rest of the year
+
+00:57:19.340 --> 00:57:22.620
+as a starter. Yeah, I think the cool thing and being kind of where you are
+
+00:57:22.620 --> 00:57:26.660
+is you're solving a problem that you're solving an important problem.
+
+00:57:26.700 --> 00:57:31.300
+Looks like well, that companies don't quite yet know they have.
+
+00:57:31.500 --> 00:57:33.740
+Yeah, which is kind of cool.
+
+00:57:33.740 --> 00:57:37.860
+It's I mean, it's like I do a lot of investor discussions right now and it's
+
+00:57:37.860 --> 00:57:41.660
+like it's hard, like some of them just get it.
+
+00:57:41.660 --> 00:57:42.860
+They're like, oh, hell yeah.
+
+00:57:42.860 --> 00:57:45.060
+Like this is like the vision of the future.
+
+00:57:45.060 --> 00:57:47.060
+And other ones are like,
+
+00:57:47.060 --> 00:57:49.500
+call me when you have more customers, more revenue.
+
+00:57:49.500 --> 00:57:53.300
+And I'm like, it really has to be a vision thing where like somebody
+
+00:57:53.300 --> 00:57:55.180
+really has to see where the market's going.
+
+00:57:55.180 --> 00:57:59.260
+And and there's a subset of them that totally do and are super jazzy about it.
+
+00:57:59.620 --> 00:58:03.380
+But it's I mean, I'd give it a year or two and now it's going to be, I mean,
+
+00:58:03.620 --> 00:58:05.780
+even literally just the last six months or something,
+
+00:58:05.780 --> 00:58:08.260
+I've been seeing it talked about a lot more.
+
+00:58:08.260 --> 00:58:11.900
+So I think the wave is starting to happen with this whole knowledge management play.
+
+00:58:11.900 --> 00:58:14.380
+Yeah, I believe it. Definitely. Definitely.
+
+00:58:14.740 --> 00:58:18.700
+I worked on Microsoft Teams, my last org at Microsoft.
+
+00:58:18.700 --> 00:58:23.300
+And one of the things I would say, like our our VP really wanted to like,
+
+00:58:23.300 --> 00:58:24.860
+we're going to go against Slack.
+
+00:58:24.860 --> 00:58:28.860
+And like I said, no, what you but it's all right. It's all right.
+
+00:58:29.260 --> 00:58:34.860
+Because Teams is the collaboration tool for teams that don't know yet
+
+00:58:34.860 --> 00:58:38.500
+that they need a collaboration tool because it's just part because so many
+
+00:58:38.500 --> 00:58:40.500
+companies have offices 365.
+
+00:58:41.500 --> 00:58:45.620
+Slack is a tough learning curve for a lot of these non-tech companies to to get
+
+00:58:45.620 --> 00:58:49.300
+into. But if you can just take this thing that there's a couple of great
+
+00:58:49.300 --> 00:58:54.820
+things Teams does is it brings this collaboration and communication
+
+00:58:54.820 --> 00:58:58.300
+software to people that just, hey, you already have office.
+
+00:58:58.300 --> 00:59:02.500
+You use this stuff. But here's the, it's going to sound a little bit like a jab,
+
+00:59:02.500 --> 00:59:07.090
+but it's true. The back end, like file storage for teams,
+
+00:59:07.090 --> 00:59:10.290
+this may have changed completely, but at the time it was SharePoint on the back
+
+00:59:10.290 --> 00:59:12.010
+end. And I said, I'm not sure.
+
+00:59:12.010 --> 00:59:16.050
+I just listened to a podcast literally about that topic and they said it was,
+
+00:59:16.050 --> 00:59:20.770
+I think it's still so what's happened after, you know, a decade or more of
+
+00:59:20.770 --> 00:59:25.900
+SharePoint is Teams has made SharePoint usable and useful.
+
+00:59:26.060 --> 00:59:27.020
+So kind of cool.
+
+00:59:27.020 --> 00:59:29.420
+One of the areas we're going to look at is do, I mean,
+
+00:59:29.420 --> 00:59:33.260
+because I was so surprised that still I was hearing from like aerial survey
+
+00:59:33.260 --> 00:59:35.260
+companies storing their data in SharePoint.
+
+00:59:35.940 --> 00:59:37.660
+And I was like, really?
+
+00:59:37.740 --> 00:59:40.780
+Like you're not even using an S3 bucket or something like that.
+
+00:59:40.780 --> 00:59:42.820
+Or like it was just like, and I was,
+
+00:59:42.860 --> 00:59:46.380
+I was kind of surprised how prevalent it still was.
+
+00:59:46.500 --> 00:59:50.020
+And we're actually looking at doing a more direct Microsoft Graph API
+
+00:59:50.020 --> 00:59:54.420
+integration that we can start indexing all of that data better from
+
+00:59:54.620 --> 00:59:55.740
+directly from SharePoint.
+
+00:59:56.100 --> 00:59:59.580
+And I think that could end up being a, I mean, a really interesting direction.
+
+00:59:59.620 --> 01:00:01.140
+You know, another thing I thought of,
+
+01:00:01.140 --> 01:00:04.100
+and I know we're over time here and I have to get going, but, but,
+
+01:00:04.100 --> 01:00:07.060
+but it reminds me like before Teams,
+
+01:00:07.060 --> 01:00:12.100
+I worked on a science project and Xbox. And before that I worked on a link,
+
+01:00:12.100 --> 01:00:13.460
+which became Skype for Business.
+
+01:00:13.460 --> 01:00:18.460
+And I remember a conversation way back then saying we really want to do is,
+
+01:00:19.980 --> 01:00:22.700
+I don't think we even knew what ML was. You know, we said,
+
+01:00:23.220 --> 01:00:28.220
+great if we had a way to analyze the text in a recorded meeting and make it
+
+01:00:29.940 --> 01:00:34.940
+searchable. And now though, yeah,
+
+01:00:34.940 --> 01:00:38.820
+but it could get with, you know, show me, you know, got it.
+
+01:00:39.820 --> 01:00:42.460
+You want to go back and revisit how a decision was made.
+
+01:00:42.660 --> 01:00:46.900
+Imagine being able to structure that data from a hundred,
+
+01:00:46.900 --> 01:00:50.500
+like let's do find the evolution of this and see how we got from there to
+
+01:00:50.500 --> 01:00:55.660
+here. And it's actually possible today, which is kind of cool.
+
+01:00:55.940 --> 01:00:59.540
+It's, I mean, I had somebody asked me, like, it was an investor like, Hey,
+
+01:00:59.620 --> 01:01:04.620
+could I dump my zoom meetings into Unstruck and correlate back the companies
+
+01:01:04.700 --> 01:01:08.500
+that were discussed back to my CRM and make sure they're synced.
+
+01:01:08.500 --> 01:01:13.300
+Like I've linked to the time I spoke about them and maybe link to Crunchface
+
+01:01:13.300 --> 01:01:15.660
+or link to whatever, like in those sort of things. And I was like,
+
+01:01:16.180 --> 01:01:19.380
+we almost could do that. Like we're really damn close. Like we are,
+
+01:01:19.380 --> 01:01:24.300
+I mean, if we have the right NLP to make sure we can get the right terms and
+
+01:01:24.540 --> 01:01:27.700
+we, I mean, we, we can already import zoom meetings today and we're already,
+
+01:01:27.700 --> 01:01:28.580
+we can run that stuff.
+
+01:01:29.100 --> 01:01:32.380
+And then it's the data enrichment that's actually this next quarter is really
+
+01:01:32.380 --> 01:01:35.420
+focused on. Like it's like, we're pretty much there.
+
+01:01:35.540 --> 01:01:38.540
+And almost too, if I look at, like most companies,
+
+01:01:38.540 --> 01:01:40.660
+we do an engagement survey twice a year,
+
+01:01:40.980 --> 01:01:42.860
+you can almost get a better view of like,
+
+01:01:42.900 --> 01:01:45.900
+you never know how it's going in between. You work on stuff,
+
+01:01:45.900 --> 01:01:47.580
+you hope it's better. You get the little report, you go, okay,
+
+01:01:47.580 --> 01:01:48.780
+we got better here. It works here.
+
+01:01:49.260 --> 01:01:51.220
+But there's even for like an HR perspective,
+
+01:01:51.220 --> 01:01:55.980
+there's things like sentiment analysis or engagement that you could
+
+01:01:56.220 --> 01:01:59.740
+actually derive from engagement in meetings, how people,
+
+01:02:00.100 --> 01:02:02.380
+the words they're using, the inflection.
+
+01:02:02.900 --> 01:02:05.860
+I was talking with somebody recently who used to work for a comp,
+
+01:02:05.980 --> 01:02:09.580
+a support company and they had ML in real time,
+
+01:02:09.980 --> 01:02:12.140
+listening to their calls and like telling them, okay,
+
+01:02:12.140 --> 01:02:13.540
+you need to provide empathy now.
+
+01:02:14.520 --> 01:02:18.120
+Wow. Yeah. That's sick. That's cool.
+
+01:02:18.560 --> 01:02:21.640
+Like we're on the edge of some really cool,
+
+01:02:21.880 --> 01:02:24.760
+almost weird sci-fi stuff happening, which is kind of exciting.
+
+01:02:25.080 --> 01:02:29.360
+Well, yeah, I, I, that takes to me,
+
+01:02:29.440 --> 01:02:35.160
+I mean your story there takes me to a, a, a ethics place.
+
+01:02:35.520 --> 01:02:40.240
+Yeah. Don the edge, right? It's the uncanny valley of ML.
+
+01:02:40.760 --> 01:02:44.600
+Well, then when you could start having avatars say the words instead,
+
+01:02:44.920 --> 01:02:47.280
+because their conversations are driven by ML.
+
+01:02:47.360 --> 01:02:48.960
+Like that's where they probably want to go with it.
+
+01:02:49.480 --> 01:02:52.560
+Oh my gosh. I realized when I talked to my daughter about it,
+
+01:02:52.560 --> 01:02:53.360
+says, what do you do all day?
+
+01:02:53.360 --> 01:02:56.880
+I mainly talk to people and try and help them make better decisions.
+
+01:02:57.800 --> 01:03:01.420
+AI could totally do that for me. Right.
+
+01:03:01.420 --> 01:03:02.300
+Brent.
+
+01:03:04.580 --> 01:03:08.940
+That is actually how I pitch what my team's job is.
+
+01:03:09.740 --> 01:03:12.260
+Right. It wouldn't do it for you, Alan.
+
+01:03:12.660 --> 01:03:16.380
+The problem is it would do it instead of you. Right.
+
+01:03:16.700 --> 01:03:20.580
+That's, that's where it potentially becomes an ethics thing.
+
+01:03:20.900 --> 01:03:25.220
+Well, again, we've all seen, we know Skynet is coming.
+
+01:03:25.300 --> 01:03:28.340
+It's just a matter of when, and we see clues all the time.
+
+01:03:28.580 --> 01:03:31.620
+A joke aside, that's why I say I went to data science so that,
+
+01:03:31.820 --> 01:03:34.500
+that machines, when the machines stick over the world,
+
+01:03:34.500 --> 01:03:36.820
+they look back upon me with fondness.
+
+01:03:37.940 --> 01:03:40.860
+All right. Well, Kirk, this has been a wonderful conversation.
+
+01:03:41.100 --> 01:03:43.340
+I even picked up on most of the data stuff. I know,
+
+01:03:43.340 --> 01:03:45.620
+I have enough data knowledge to at least know what you're talking about.
+
+01:03:45.860 --> 01:03:50.540
+And I am super excited to see Brent on the cover of the new hot topic catalog.
+
+01:03:50.900 --> 01:03:56.300
+That's going to be fantastic. That's one of my great takeaways. But, um, any,
+
+01:03:56.300 --> 01:03:59.100
+uh, any final words from you, Kirk, anything else you want to share?
+
+01:03:59.100 --> 01:04:02.300
+Shout outs, uh, contact information, et cetera.
+
+01:04:02.860 --> 01:04:03.660
+Yeah. I mean, if,
+
+01:04:03.700 --> 01:04:06.900
+if anybody's interested in just chatting about this kind of data or a company or
+
+01:04:06.900 --> 01:04:09.740
+whatever, um, LinkedIn, great way to get ahold of me. Um,
+
+01:04:09.780 --> 01:04:12.020
+probably the best way to, uh, to learn about world.
+
+01:04:13.070 --> 01:04:15.510
+Cool. All right then. Uh, Brent, anything from you?
+
+01:04:16.070 --> 01:04:20.430
+Hey, uh, Kirk, it's, it's been fantastic. Thanks for joining today.
+
+01:04:20.950 --> 01:04:24.550
+Didn't know what, uh, yeah, I'll just be quite honest. Like when, when,
+
+01:04:24.590 --> 01:04:25.590
+when I saw that I'm like,
+
+01:04:26.030 --> 01:04:29.750
+are we really going to be spending time talking about data engineering really?
+
+01:04:29.790 --> 01:04:34.110
+And then, and then I dove into it. I'm like, Oh no, this guy.
+
+01:04:34.630 --> 01:04:38.030
+And I get it. You're starting with a data engineering thing,
+
+01:04:38.030 --> 01:04:40.790
+but that's not really the space that you're in. You're in knowledge,
+
+01:04:40.790 --> 01:04:41.310
+management.
+
+01:04:41.310 --> 01:04:44.350
+I like pleasantly surprising, Brent, sometimes.
+
+01:04:44.670 --> 01:04:49.110
+But I, but I get it because a lot of people like the companies,
+
+01:04:49.110 --> 01:04:52.350
+they know they have a data engineering problem and they really have a
+
+01:04:52.350 --> 01:04:56.070
+knowledge management problem, but they don't really know it in those terms.
+
+01:04:56.110 --> 01:04:59.350
+Yeah. Yeah. And that, I mean, I think the hardest thing right now is like,
+
+01:04:59.350 --> 01:05:02.430
+I know the product, the product we need to build over the next like 18 months,
+
+01:05:02.430 --> 01:05:06.230
+but it's how to market it and make it click from a terminology standpoint.
+
+01:05:06.230 --> 01:05:07.390
+It's like the hardest part right now.
+
+01:05:07.750 --> 01:05:10.190
+Because I think getting, because people aren't thinking these words,
+
+01:05:10.190 --> 01:05:11.030
+these terms,
+
+01:05:11.390 --> 01:05:14.110
+when we can have a discussion with people and talk like this,
+
+01:05:14.190 --> 01:05:16.310
+they get, they're like, Oh shit, this is like really useful.
+
+01:05:16.310 --> 01:05:20.550
+But I think for technologists and trying to get the marketing speak is,
+
+01:05:21.190 --> 01:05:24.110
+is the hard part right now. But it's, I think, I think we're the,
+
+01:05:24.470 --> 01:05:27.470
+it's not even just us. I think just the market generally is moving this way.
+
+01:05:27.870 --> 01:05:29.750
+And I think it'll be interesting to see other, I mean,
+
+01:05:29.750 --> 01:05:33.470
+hopefully other companies just kind of make the visibility better. Like relation.
+
+01:05:33.510 --> 01:05:34.950
+I mean, I think it's, it's great to see if,
+
+01:05:35.030 --> 01:05:38.270
+if we get more of those types of companies, it just makes the market for
+
+01:05:38.270 --> 01:05:39.110
+everybody. So.
+
+01:05:39.310 --> 01:05:40.830
+All right. Well, thanks again for being here.
+
+01:05:40.870 --> 01:05:43.350
+Thanks Brent for being a pleasant co-host.
+
+01:05:43.990 --> 01:05:46.590
+I'll try not to, I'll try not to cut too much of what you say out of this
+
+01:05:46.590 --> 01:05:48.950
+podcast, Brent. All right. And go Mariners.
+
+01:05:48.950 --> 01:05:51.950
+You need all the, all the thoughts and prayers we can send.
+
+01:05:53.270 --> 01:05:56.670
+All right. See everyone. Take care. Thank you. Bye. Bye.
+

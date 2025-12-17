@@ -1,0 +1,720 @@
+1
+00:00:00,000 --> 00:00:10,590
+This is the AB Testing 343 podcast, a podcast where we ask one of the three listeners of
+
+2
+00:00:10,590 --> 00:00:17,510
+the AB Testing podcast, three questions about almost anything. ABT 343 is a fun slice of
+
+3
+00:00:17,510 --> 00:00:23,250
+what's going on in the world of modern testing. Let's get started.
+
+4
+00:00:23,250 --> 00:00:30,930
+Welcome to episode one of the AB Testing 343 podcast, a new podcast from AB Testing, where
+
+5
+00:00:30,930 --> 00:00:37,490
+we take one of our three listeners and we ask them three questions. And today I'm joined
+
+6
+00:00:37,490 --> 00:00:43,070
+by the testing chef, Andrew Morton. Andrew, say hello to everybody.
+
+7
+00:00:43,070 --> 00:00:44,750
+Hello everybody.
+
+8
+00:00:44,750 --> 00:00:51,150
+Thanks for being the guinea pig on this inaugural episode. Glad to have you here and give our
+
+9
+00:00:51,150 --> 00:00:55,350
+listeners and myself a chance to get to know you and your work a little bit better.
+
+10
+00:00:55,350 --> 00:00:58,430
+Yeah, I'm very much looking forward to it.
+
+11
+00:00:58,430 --> 00:01:06,400
+So before we start, maybe there's a pre-question. I know we're going to dive a lot into what
+
+12
+00:01:06,400 --> 00:01:11,700
+you do, but tell us a little bit about the work you're doing.
+
+13
+00:01:11,700 --> 00:01:17,340
+So for anyone who doesn't know, I work at the Ministry of Testing. I am their Dev Boss.
+
+14
+00:01:17,340 --> 00:01:24,920
+So I essentially do their development for them on the website. That's at www.ministryoftesting.com.
+
+15
+00:01:24,920 --> 00:01:29,800
+Please feel free to go and check it out. Obviously, there's a few good things on there. Alan's
+
+16
+00:01:29,800 --> 00:01:34,520
+made a couple of appearances and we'll be having his own course on there soon about modern
+
+17
+00:01:34,520 --> 00:01:41,300
+testing. So one of the advantages of being staff at Ministry of Testing is I'm going
+
+18
+00:01:41,300 --> 00:01:46,260
+to get to see that before it goes live. So looking forward to checking that one out
+
+19
+00:01:46,260 --> 00:01:47,490
+as well.
+
+20
+00:01:47,490 --> 00:01:52,570
+Yeah, we run Ruby on Rails. I've always been a bit of a Rubyist at heart since I
+
+21
+00:01:52,570 --> 00:02:03,140
+started really picking up coding, doing web UI automation a few years ago. So now I'm
+
+22
+00:02:03,140 --> 00:02:07,140
+a tester-turned-developer, which will also come up later as to why.
+
+23
+00:02:07,140 --> 00:02:11,980
+Super neat. Yeah, I'm just going to pause and say I'm really excited about that modern
+
+24
+00:02:11,980 --> 00:02:17,900
+testing course coming out. And I hope everyone gets a Dojo membership and checks it out.
+
+25
+00:02:18,550 --> 00:02:26,220
+All right, let's get into a question, a real question. You were someone, so when I first
+
+26
+00:02:26,220 --> 00:02:32,620
+spoke about modern testing principles at Test Bash Brighton, you may have been in the audience.
+
+27
+00:02:32,620 --> 00:02:39,630
+In fact, because I had a few people and you may have said, thanks for putting a name to something
+
+28
+00:02:39,630 --> 00:02:44,990
+I've kind of already been doing. And I've heard that many, many times throughout the years.
+
+29
+00:02:44,990 --> 00:02:48,510
+And like I said, you could have been one of the people that told me that because I know now
+
+30
+00:02:49,310 --> 00:02:53,870
+that you were living at least some of the principles before they were codified.
+
+31
+00:02:54,670 --> 00:03:00,300
+So I'm curious, as someone who has been moving towards those principles before
+
+32
+00:03:00,300 --> 00:03:04,620
+they were before Brett and I stated them and made a proclamation,
+
+33
+00:03:05,740 --> 00:03:09,820
+which ones were you living already? And which, if any, came as a revelation?
+
+34
+00:03:13,620 --> 00:03:18,500
+So probably worth just going back a little bit in my history before I started with an
+
+35
+00:03:18,500 --> 00:03:24,980
+initiative testing. I was working a company there beforehand and was one of the testing team there.
+
+36
+00:03:25,780 --> 00:03:32,900
+And what I was finding was we obviously were moving to try and get developers
+
+37
+00:03:33,540 --> 00:03:40,260
+testing better, getting more robust unit tests, testing in the correct places,
+
+38
+00:03:40,980 --> 00:03:45,060
+rather than just passing it all over to the testing to a new automation.
+
+39
+00:03:45,060 --> 00:03:48,980
+So that kind of part of the idea, the shifting left type thinking.
+
+40
+00:03:50,450 --> 00:03:55,010
+We were doing the job there. And then it occurred to me at one point that
+
+41
+00:03:56,910 --> 00:04:00,750
+I don't know how much of this was in my own head, but I always had the thought that it's all
+
+42
+00:04:00,750 --> 00:04:06,510
+fine me being a tester trying to teach developers how to test. But it kind of occurred to me that
+
+43
+00:04:06,510 --> 00:04:11,870
+they probably will listen to me more if I was a developer showing them how to test instead.
+
+44
+00:04:11,870 --> 00:04:17,980
+So if I was actually practicing what I preached and living it. So I made the move there to move
+
+45
+00:04:17,980 --> 00:04:28,640
+from testing role specifically to a development role. And that was a to basically build how I felt
+
+46
+00:04:30,270 --> 00:04:37,620
+software should be built, which is your developer there will test stuff. And we'll talk through
+
+47
+00:04:37,620 --> 00:04:45,500
+requirements. We'll make sure that our code is tested as much as we possibly can ourselves.
+
+48
+00:04:45,500 --> 00:04:51,260
+And I always try to not fall into the trap that annoyed me when I used to be a tester of
+
+49
+00:04:52,220 --> 00:04:57,100
+how could you even give this to over to testing when it clearly has never been done.
+
+50
+00:04:57,740 --> 00:05:03,420
+So I was always not only testing through code, but I was still using my testing and
+
+51
+00:05:03,420 --> 00:05:09,710
+exploratory testing skills to try and do stuff before, you know, before it got passed to other
+
+52
+00:05:09,710 --> 00:05:16,980
+eyes. And obviously, the main reason for doing that is that we believe that or the company
+
+53
+00:05:16,980 --> 00:05:23,360
+that believes and I certainly agreed with them that the faster feedback would be what would
+
+54
+00:05:23,360 --> 00:05:29,660
+improve the business. So that that part of the principle number one, our priority is improving the
+
+55
+00:05:29,660 --> 00:05:38,510
+business, we believe the business would be improved by developers testing better. And by testing better,
+
+56
+00:05:38,510 --> 00:05:46,980
+we get faster feedback, we'd be able to react to changes quicker, and be able to put good
+
+57
+00:05:46,980 --> 00:05:51,380
+quality software that our customers value in front of them as quickly as possible.
+
+58
+00:05:52,420 --> 00:05:55,620
+What about a revelation? Did you have any revelations when you saw the principles?
+
+59
+00:05:56,900 --> 00:06:02,980
+The main one that came as a bit of a revelation to me, and it will sound odd because it makes perfect
+
+60
+00:06:02,980 --> 00:06:12,820
+sense, is the, it's obviously Brent's favorite phrase of data science. It's the idea of, yes,
+
+61
+00:06:13,380 --> 00:06:21,140
+we should use, you know, we need to capture stuff for our customers to get the feedback to know what
+
+62
+00:06:21,140 --> 00:06:29,220
+they're going to value. But it was never kind of, I never kind of realized that that could be scientific.
+
+63
+00:06:30,430 --> 00:06:34,670
+It is always kind of expected to go through a product donut to do stuff. It never kind of
+
+64
+00:06:34,670 --> 00:06:40,270
+occurred to me that, well, if you've got questions, you know, you're, as a developer, you kind of got
+
+65
+00:06:40,270 --> 00:06:46,220
+control of the system. So you can put things in there to get those answers. So that was one of
+
+66
+00:06:46,220 --> 00:06:51,250
+the things that just never occurred to me. It makes perfect sense as soon as you say it.
+
+67
+00:06:52,130 --> 00:06:57,570
+I wish we could say that about all of the principles. As listeners know, some are a little bit more
+
+68
+00:06:57,570 --> 00:07:05,250
+controversial, but I like to hear they make sense. Well, it's one of the interesting things because
+
+69
+00:07:05,970 --> 00:07:10,530
+my view of principle seven and the reason why I'm seeing no longer a tester
+
+70
+00:07:11,810 --> 00:07:18,530
+as a role, although I still identify as a tester rather than a developer, is because
+
+71
+00:07:18,930 --> 00:07:25,440
+I'm not sure that the testing role as it was being performed was needed and I was giving better value
+
+72
+00:07:25,440 --> 00:07:32,800
+by being able to develop. So, and that is the right revelation with that one.
+
+73
+00:07:35,120 --> 00:07:39,200
+You can let me know later, but I'm pretty happy with the way I explained that in the upcoming
+
+74
+00:07:39,200 --> 00:07:43,760
+modern testing course. And I did not make this podcast as a way to plug that course. I'm just
+
+75
+00:07:44,640 --> 00:07:51,490
+excited about it. When you get to a point where you may not need dedicated testers on the team,
+
+76
+00:07:52,290 --> 00:08:00,510
+it won't be anything less than completely obvious. Like in your case, I'll be more
+
+77
+00:08:00,510 --> 00:08:06,270
+effective if I'm a developer. It's inefficient to have me focused just on testing. That's what
+
+78
+00:08:06,270 --> 00:08:12,770
+happens in, if you're executing on the principles and that's what principle seven means. It means
+
+79
+00:08:14,050 --> 00:08:19,490
+if you get to a point where you realize you don't need to have dedicated testers on the team,
+
+80
+00:08:20,450 --> 00:08:25,420
+it's not a bad thing. It's just an evolution that may or may not happen.
+
+81
+00:08:26,750 --> 00:08:31,550
+Well, a funny story that I like to tell people is that obviously at Ministry of Testing,
+
+82
+00:08:32,030 --> 00:08:38,030
+we have probably the highest ratio of testers to developers or anyone because if you think about
+
+83
+00:08:38,030 --> 00:08:42,350
+it, a lot of our staff came from testing backgrounds. On the flip side, we also have
+
+84
+00:08:42,510 --> 00:08:48,910
+no testers, at least certainly not anyone whose job it is to come in day-to-day and test software
+
+85
+00:08:49,860 --> 00:08:55,300
+in the sense you think about of a testing role. Whereas obviously I'm testing as part of
+
+86
+00:08:55,300 --> 00:09:03,540
+development. Our CEO Richard does a lot of user testing for confirmation of what I built is
+
+87
+00:09:03,540 --> 00:09:11,340
+actually what he asked for. So he does that. So yeah, it's just morally iconic in some ways.
+
+88
+00:09:11,900 --> 00:09:19,500
+But on the other hand, that's not unfair because we're living that principle of testing needs to
+
+89
+00:09:19,500 --> 00:09:25,580
+be done as soon as possible by the person best place to do it, not by farming out to a role just because.
+
+90
+00:09:27,470 --> 00:09:35,440
+Yes, a million percent agree. My role is currently a director of program management
+
+91
+00:09:36,240 --> 00:09:41,920
+and I still do a lot of testing. I do a lot of test coaching. Your story reminded me
+
+92
+00:09:42,800 --> 00:09:52,980
+vaguely. It's a stand up for a feature being ready to be released and I took one of my many
+
+93
+00:09:52,980 --> 00:09:58,980
+questions out of my quiver and I asked the team what's the worst. This is the way I was doing
+
+94
+00:09:58,980 --> 00:10:03,700
+testing. I said, so let's say we release tomorrow. What's the worst? What are the worst things that
+
+95
+00:10:03,700 --> 00:10:11,280
+could happen? And they did a nice job brainstorming and too nice of a job because 15 minutes later
+
+96
+00:10:11,360 --> 00:10:15,840
+they had brainstormed a bullet list of things on the board and had assigned them to people to go
+
+97
+00:10:15,840 --> 00:10:20,800
+investigate, which I think is a good thing. I was a little disappointed they haven't thought of
+
+98
+00:10:20,800 --> 00:10:28,910
+those things earlier, but often it's the way we can scale testing across our team and teach the
+
+99
+00:10:28,910 --> 00:10:34,430
+team the test is just ask questions about testing and it's not like they're unable to do it. You
+
+100
+00:10:34,430 --> 00:10:42,190
+need to plant some seeds and get people thinking a little broader about how they're making their
+
+101
+00:10:42,190 --> 00:10:49,070
+software. Yeah. So you're at the Ministry of Test, which is fascinating and very, very cool.
+
+102
+00:10:49,790 --> 00:10:56,290
+How do you apply modern testing principles in your current role? So as I say, one of the
+
+103
+00:10:56,290 --> 00:11:03,920
+way, basically how I like to work is test driven development. Start with, so I very much building
+
+104
+00:11:04,000 --> 00:11:10,960
+testing from the start by having a hypothesis or trying to codify in a test how I want something to
+
+105
+00:11:10,960 --> 00:11:18,140
+work and then running a test, having it fail, failing in the production side code and then
+
+106
+00:11:18,140 --> 00:11:24,620
+refactoring as necessary. So TDD does seem to me to fall quite nicely into the modern testing
+
+107
+00:11:24,620 --> 00:11:33,220
+principles from that perspective. Coming back to that data thing, we have a lot of things in there
+
+108
+00:11:33,220 --> 00:11:39,380
+that we try to capture from the pages being visited, what lessons people are viewing.
+
+109
+00:11:41,060 --> 00:11:51,220
+And the interesting problem with data is how do we get data that is useful without getting data that
+
+110
+00:11:51,220 --> 00:11:59,020
+is not private, but not stuff that people want to share. So we have to think very carefully about
+
+111
+00:11:59,020 --> 00:12:06,460
+what data we capture and when. So that we're not trying to just pull in everything that's either
+
+112
+00:12:06,460 --> 00:12:12,700
+A, not useful and B, that people don't want to tell us about, but also having stuff that we can
+
+113
+00:12:12,700 --> 00:12:18,940
+then act upon to improve the site so that the testers who use Ministry of Testing get more out
+
+114
+00:12:18,940 --> 00:12:29,140
+of it. Any others? I think it's fair to say that because as I mentioned earlier, a lot of us come
+
+115
+00:12:29,140 --> 00:12:35,860
+from testing backgrounds, so we quite often have conversations around things of how we can improve.
+
+116
+00:12:35,860 --> 00:12:41,940
+We've all been in jobs where you have retrospectives and then nothing would happen as an example.
+
+117
+00:12:41,940 --> 00:12:47,460
+So we make sure that we action stuff that we say we're going to action. So that's all kind of
+
+118
+00:12:47,460 --> 00:12:53,060
+around principle four. So we do care about the quality culture. We want to make it better.
+
+119
+00:12:53,620 --> 00:12:59,780
+We listen to feedback from users, testers, and ourselves and try and implement it. And not only
+
+120
+00:12:59,780 --> 00:13:07,620
+when we try to implement it, make sure we fed back on whether it's worked or not. So constantly
+
+121
+00:13:07,620 --> 00:13:13,790
+experimenting, constantly trying to improve. I can't see you, but I'm smiling. That's fantastic.
+
+122
+00:13:14,830 --> 00:13:18,990
+I've probably already asked three questions, but two official questions. Let me ask one more.
+
+123
+00:13:18,990 --> 00:13:28,900
+How did you discover the A.B. testing podcast? I came into it, I think it must have been about
+
+124
+00:13:28,900 --> 00:13:38,930
+the early 20s. I know that I'd discovered it after it had been going for a bit. And I went back to
+
+125
+00:13:38,930 --> 00:13:43,410
+episode one and listened all the way through. But then it was still early enough where that was
+
+126
+00:13:43,410 --> 00:13:49,330
+actually not completely not insane thing to do, but not a difficult thing to do.
+
+127
+00:13:50,690 --> 00:13:55,090
+Yeah, that's a brave endeavor. We tell most people...
+
+128
+00:13:55,090 --> 00:13:56,610
+Yeah, that's right. We're doing it now, certainly.
+
+129
+00:13:56,610 --> 00:14:01,570
+Now that's the famous traditional versus modern testing manager conversation.
+
+130
+00:14:02,980 --> 00:14:03,940
+Yeah, which was good fun.
+
+131
+00:14:05,620 --> 00:14:12,260
+Someone brought that up on the Slack group this week. And I thought, Brent was so convincing
+
+132
+00:14:12,260 --> 00:14:17,380
+because he had did that job for a long time. I thought I totally lost and had the wrong points,
+
+133
+00:14:17,380 --> 00:14:21,780
+but he played me right where we want. We played each other right where we wanted each other.
+
+134
+00:14:21,780 --> 00:14:24,580
+So it was a lot of fun. Maybe we'll do it again.
+
+135
+00:14:24,580 --> 00:14:32,020
+Yeah, it was all very good. There was one of those early episodes that I did particularly
+
+136
+00:14:32,020 --> 00:14:35,460
+like, because when I first joined the Slack group, they asked, what was your favorite episode and
+
+137
+00:14:35,460 --> 00:14:40,020
+why? And I definitely had an answer. Unfortunately, that answer was about four years ago. So
+
+138
+00:14:41,620 --> 00:14:46,020
+I can't remember what I gave. But certainly if I was going to answer it now,
+
+139
+00:14:46,660 --> 00:14:51,940
+one of my favorite episodes was the one that you did with... Well, it's actually a pair of episodes.
+
+140
+00:14:51,940 --> 00:14:57,140
+So it was the one around Slany and Webdriver and then the follow up with Hugs.
+
+141
+00:14:57,140 --> 00:15:02,260
+Yes. Yeah. It was really cool. He reached out on Twitter and asked if he could be on the podcast,
+
+142
+00:15:02,260 --> 00:15:06,980
+said, heck yeah, let's do this. And it was fun. A lot of good fun. Yeah.
+
+143
+00:15:08,080 --> 00:15:11,840
+It's one of those classic conversations where you end up going, yeah, we agree on that.
+
+144
+00:15:11,920 --> 00:15:17,440
+We agree on that. We agree on that. And it turns out the Slack disagreement was
+
+145
+00:15:19,330 --> 00:15:23,010
+not really that massive in the end. Right. And the main point there, and people should really
+
+146
+00:15:23,010 --> 00:15:29,090
+go back and listen to that. But he tried to, it was a good, he tried to draw us in by asking,
+
+147
+00:15:29,810 --> 00:15:35,410
+so should Selenium stop using selectors? Because that's my gripe because people use some really
+
+148
+00:15:35,410 --> 00:15:42,260
+convoluted code to try and manipulate a webpage by doing these wild selectors. And of course,
+
+149
+00:15:42,260 --> 00:15:48,830
+we said no, because we have millions of Selenium tests that need selectors. He can't go break them
+
+150
+00:15:48,830 --> 00:15:56,910
+all. And he kind of agreed that things that I didn't like were ugly. So he built a heap,
+
+151
+00:15:56,910 --> 00:16:02,350
+he finally grew into a bit of a monster. And I think in his soul, he realizes that a little bit.
+
+152
+00:16:03,420 --> 00:16:06,940
+Yeah, I can slightly laugh at it because being in the position that I'm in,
+
+153
+00:16:07,420 --> 00:16:15,680
+I pretty much get to create the selectors. I am in the thing. So I was doing automation and testing
+
+154
+00:16:15,680 --> 00:16:22,560
+course earlier this week, again, with Richard and Mark, who are also MOT people. I'm not entirely
+
+155
+00:16:22,560 --> 00:16:26,240
+certain why they sent me on that course, but my boss wants me to do it. That's what I did.
+
+156
+00:16:26,240 --> 00:16:32,480
+Anyway, but in there, one of the things they say is like, you know, if you're having troubles,
+
+157
+00:16:32,480 --> 00:16:37,220
+talk to developers, get stuff changed, or even better, learn to do it.
+
+158
+00:16:38,020 --> 00:16:39,060
+That's great advice.
+
+159
+00:16:39,060 --> 00:16:43,460
+And I'm lucky enough in that not only can I do it, I literally have control over it,
+
+160
+00:16:43,460 --> 00:16:50,300
+being the developer. So I hopefully, fairly certain, think about my code base. I don't have any horrible
+
+161
+00:16:50,300 --> 00:16:54,300
+selectors in there at the moment. But I have known some stuff in the past where
+
+162
+00:16:54,300 --> 00:17:02,110
+only thing I could do was something, either rather whole BX path or that is the exception.
+
+163
+00:17:02,830 --> 00:17:10,110
+Yes. Yes, I understand. All right. Well, that's kind of all there is to it.
+
+164
+00:17:10,110 --> 00:17:18,270
+Be about a 20 minute podcast. I am so happy to have you as the first one. I will do an episode zero.
+
+165
+00:17:19,630 --> 00:17:23,950
+By the time you hear this as a listener, there'll be an episode one. So maybe I shouldn't have said
+
+166
+00:17:23,950 --> 00:17:28,510
+that, but there'll be episodes coming out of this where we talk to a lot of different listeners
+
+167
+00:17:28,510 --> 00:17:33,950
+and practitioners of modern testing and kind of get an idea of how they operate in their worlds.
+
+168
+00:17:35,230 --> 00:17:40,830
+Chance to plug anything. Anything else you want to plug? Anything other than the cool stuff you're
+
+169
+00:17:40,830 --> 00:17:47,150
+doing in the ministry of testing? Unfortunately, outside of the cool stuff I do at ministry of
+
+170
+00:17:47,150 --> 00:17:54,750
+testing, I'm rather boring, but I am at Testing Chef on Twitter. I'm also there on the ministry
+
+171
+00:17:54,750 --> 00:17:59,550
+of testing Slack channel and the testers.chat slappers. So if anyone wants, oh, and of course,
+
+172
+00:18:00,110 --> 00:18:05,150
+I am on the, one of the three Slack channels as well for the other three listeners, but
+
+173
+00:18:05,870 --> 00:18:08,830
+most of those three know where to get hold of me. I was with two of them the other day.
+
+174
+00:18:08,830 --> 00:18:10,910
+That's all the picture. That's fantastic.
+
+175
+00:18:10,910 --> 00:18:11,870
+So I might have attested.
+
+176
+00:18:13,070 --> 00:18:17,630
+Cool. Well, but yeah, that's pretty much it. Talk to me. I'm perfectly happy to talk testing
+
+177
+00:18:17,630 --> 00:18:22,590
+whenever. So yeah, thanks for doing what you do. I'm, Brent and I are both huge fans of
+
+178
+00:18:22,590 --> 00:18:27,230
+ministry of test. It's awesome to have you there and awesome to have you on this podcast.
+
+179
+00:18:27,870 --> 00:18:32,830
+So yes, thank you very much. We'll cross paths again soon. I'm sure.
+
+180
+00:18:33,780 --> 00:18:36,100
+Yeah, I hope so. Thank you very much.
+

@@ -1,0 +1,2968 @@
+1
+00:00:03,380 --> 00:00:09,420
+Welcome to AV testing podcast your modern testing podcast your hosts Alan and
+
+2
+00:00:09,420 --> 00:00:15,220
+Brent will be here to guide you through topics on testing leadership agile and
+
+3
+00:00:15,220 --> 00:00:23,540
+anything else that comes to mind now on with the show. Hey Brent! Howdy Alan! We're back it's been a while. It has.
+
+4
+00:00:23,540 --> 00:00:31,340
+I traveled and then I was so tired from traveling I forgot to show up for a podcast.
+
+5
+00:00:31,340 --> 00:00:40,820
+And I traveled first somewhere in there right? We're back and we're glad to be back for episode 7.
+
+6
+00:00:40,820 --> 00:00:41,820
+Yes 7.
+
+7
+00:00:41,820 --> 00:00:48,500
+Episode 1900. You know there's a thing in podcast now sort of inspired by all the
+
+8
+00:00:48,500 --> 00:01:01,390
+NBR podcasts podcast in seasons. Season 4 of the HSC podcast which is way too hard for me because I don't know if we were like really had our act together had a theme
+
+9
+00:01:02,070 --> 00:01:06,670
+on season 7 of AV testing we'll be talking about UI automation.
+
+10
+00:01:06,670 --> 00:01:19,870
+It just doesn't work out that way. We are pretty certain season 7 we will be talking about UI automation. We fail to have that level of organization.
+
+11
+00:01:19,870 --> 00:01:22,150
+So we're like a hundred and you know.
+
+12
+00:01:22,150 --> 00:01:23,310
+A hundred and seven. Yes.
+
+13
+00:01:23,310 --> 00:01:27,310
+It's on the board. The board is behind me because Brent is in charge of the show.
+
+14
+00:01:28,430 --> 00:01:29,630
+Oh wow. OK.
+
+15
+00:01:30,110 --> 00:01:43,780
+I went to London. I caught not even a cold. I started coughing and now I've been coughing this like this cough since forever.
+
+16
+00:01:43,780 --> 00:01:51,640
+How long ago were you. You've been out of London two weeks. Yeah.
+
+17
+00:01:51,640 --> 00:02:03,400
+Yeah it's been. I'm going to San Francisco next week for work back for a month going to Montreal Montreal for a couple of days in October November.
+
+18
+00:02:04,320 --> 00:02:10,560
+It's all leading somewhere. I'm doing my one and only conference speaking parents of 2019.
+
+19
+00:02:11,260 --> 00:02:18,260
+If you want to come here we talk about something related to modern testing. I haven't done my slides yet and I don't quite remember my abstract.
+
+20
+00:02:19,140 --> 00:02:24,250
+I'll be in Malmo Sweden for or dev in November.
+
+21
+00:02:25,650 --> 00:02:26,570
+What is or dev.
+
+22
+00:02:27,980 --> 00:02:31,560
+It's a conference software conference.
+
+23
+00:02:31,560 --> 00:02:33,320
+Is that a DevOps type of conference.
+
+24
+00:02:33,400 --> 00:02:38,120
+It's more of a dev. There's a testing track. They're going to regret putting me on.
+
+25
+00:02:42,860 --> 00:02:50,060
+Yeah well we'll just say you wanted to get into the dev conferences. So I think that's the right way to sort of maybe.
+
+26
+00:02:50,060 --> 00:02:53,740
+And I said why in one of the first conferences that said no to last year.
+
+27
+00:02:53,740 --> 00:02:57,540
+What am I hated. So I promise I might come back to following here. So I'm doing it.
+
+28
+00:03:05,700 --> 00:03:06,340
+I'm sure they will.
+
+29
+00:03:07,630 --> 00:03:09,350
+Do you have if you stock it with.
+
+30
+00:03:12,260 --> 00:03:13,820
+M.O.T. folks and.
+
+31
+00:03:16,170 --> 00:03:22,750
+There's a large number of people in Europe that are fans.
+
+32
+00:03:23,350 --> 00:03:26,510
+Yep. We got some M.O.T. years in Europe Ministry of Test fans.
+
+33
+00:03:26,510 --> 00:03:30,270
+Oh speaking of which and then I'll shut up. You can get on the show or whatever you want to talk about.
+
+34
+00:03:31,110 --> 00:03:38,070
+I am putting the finishing touches that all the main recordings in the first round of edits for minutes.
+
+35
+00:03:39,460 --> 00:03:46,750
+Modern testing course on that will be available only to club members in their club.
+
+36
+00:03:50,190 --> 00:03:54,790
+They yell at me all the time about confusing ministry testing the dojo and the club.
+
+37
+00:03:54,790 --> 00:03:56,670
+And I'm sorry because I'm never going to get them right.
+
+38
+00:03:56,670 --> 00:04:02,950
+But I managed to edit in the proper names for the. Yeah.
+
+39
+00:04:03,700 --> 00:04:14,980
+OK. A couple of days ago you and I received a tweet.
+
+40
+00:04:16,230 --> 00:04:26,680
+So there's two gentlemen Aaron Hodder and Luke Liu who sat down and.
+
+41
+00:04:26,680 --> 00:04:33,230
+You sure they were sitting. I am not sure that that that may in fact be.
+
+42
+00:04:33,230 --> 00:04:35,670
+particular for details correct.
+
+43
+00:04:36,390 --> 00:04:42,550
+That in fact may be an exaggeration but in my imagining they were sitting but they were together.
+
+44
+00:04:43,530 --> 00:04:52,690
+That is a true fact and they sat and stared at three sets of principles and came up with their own.
+
+45
+00:04:52,690 --> 00:05:03,400
+And on Twitter they asked a whole bunch of people if we could provide some feedback.
+
+46
+00:05:03,400 --> 00:05:07,600
+They generated. So the title of the blog is software testing principles.
+
+47
+00:05:07,600 --> 00:05:11,800
+It's on Alan or Aaron. Sorry. Hodder's blog.
+
+48
+00:05:14,050 --> 00:05:22,210
+But in the section down below they referred to it as Aaron and Luke's software beliefs.
+
+49
+00:05:22,330 --> 00:05:24,930
+And what they did is they took the I.S.T. Q.B.
+
+50
+00:05:25,970 --> 00:05:29,730
+principles the CDT principles and the M.T.P.
+
+51
+00:05:31,420 --> 00:05:37,500
+I think Aaron titled it software testing principles because he collected three sets of software testing
+
+52
+00:05:37,500 --> 00:05:45,890
+principles and then they in their own words since they're synthesized them add it and added their own
+
+53
+00:05:45,890 --> 00:05:49,570
+beliefs and experiences and came up with a set of beliefs.
+
+54
+00:05:50,370 --> 00:05:58,250
+Where they're referencing where possible they're referencing principles from the other three sets.
+
+55
+00:05:59,460 --> 00:06:00,540
+They asked for our feedback.
+
+56
+00:06:00,580 --> 00:06:02,460
+One set of principles to rule them off.
+
+57
+00:06:03,460 --> 00:06:04,780
+I don't think it's a set of principles.
+
+58
+00:06:04,780 --> 00:06:05,900
+It's our set of beliefs.
+
+59
+00:06:07,000 --> 00:06:13,800
+They asked for our feedback and what a better form feedback than a podcast that goes to three people.
+
+60
+00:06:14,320 --> 00:06:24,560
+Absolutely. And not only that because we care deeply about the quality culture of our team and we coach lead and nurture
+
+61
+00:06:24,560 --> 00:06:27,320
+the team towards a more mature quality culture.
+
+62
+00:06:27,400 --> 00:06:29,680
+That sounds like principle number four of the modern.
+
+63
+00:06:30,080 --> 00:06:32,440
+It's almost exactly verbatim.
+
+64
+00:06:32,600 --> 00:06:39,980
+I thought you know what let's do that and let's knock off an episode as well.
+
+65
+00:06:40,750 --> 00:06:41,950
+How about that two for one.
+
+66
+00:06:42,750 --> 00:06:43,950
+So what do you want.
+
+67
+00:06:43,990 --> 00:06:46,070
+You want to look at their go through their principles.
+
+68
+00:06:46,150 --> 00:06:47,390
+I'll go through their principles.
+
+69
+00:06:47,390 --> 00:06:48,710
+They have one by one.
+
+70
+00:06:48,990 --> 00:06:51,910
+Let's do one by if we can.
+
+71
+00:06:52,390 --> 00:06:53,430
+We'll probably have to go quick.
+
+72
+00:06:53,430 --> 00:06:56,510
+They have 12 beliefs and they're not they're not principles.
+
+73
+00:06:56,510 --> 00:06:57,310
+They're beliefs.
+
+74
+00:06:58,190 --> 00:07:01,590
+OK. And I guess number one.
+
+75
+00:07:02,760 --> 00:07:07,040
+All right. Number one is testing is information gathering and reporting.
+
+76
+00:07:09,330 --> 00:07:11,010
+Thoughts. Have you read these yet.
+
+77
+00:07:11,250 --> 00:07:11,970
+Yes I read them.
+
+78
+00:07:12,050 --> 00:07:12,930
+I read them a couple times.
+
+79
+00:07:13,010 --> 00:07:13,290
+OK.
+
+80
+00:07:18,140 --> 00:07:23,260
+I don't I know this comes from I think the context driven testing.
+
+81
+00:07:23,700 --> 00:07:25,820
+They do not reference any principle.
+
+82
+00:07:25,900 --> 00:07:27,660
+I thought I read one which they referenced.
+
+83
+00:07:28,100 --> 00:07:34,300
+So yeah I have to think about the reporting.
+
+84
+00:07:35,140 --> 00:07:37,700
+Of course testing is your gathering information.
+
+85
+00:07:38,020 --> 00:07:40,220
+Your order to mitigate risk.
+
+86
+00:07:40,260 --> 00:07:41,580
+Understand more about the product.
+
+87
+00:07:42,360 --> 00:07:46,400
+But I haven't I haven't thought about not totally against it but I haven't
+
+88
+00:07:46,400 --> 00:07:54,210
+thought about how or why reporting is nothing could be part.
+
+89
+00:07:54,810 --> 00:07:56,810
+I think they're part of the six out there.
+
+90
+00:07:56,850 --> 00:07:58,890
+But other than that I don't have really a problem with it.
+
+91
+00:07:59,250 --> 00:08:00,250
+So I do.
+
+92
+00:08:00,650 --> 00:08:05,260
+Information gathering and reporting.
+
+93
+00:08:07,150 --> 00:08:09,230
+They're important for a large number of things.
+
+94
+00:08:09,390 --> 00:08:11,830
+I was going to say that's a very general thing.
+
+95
+00:08:11,870 --> 00:08:14,470
+Reading a book is information gathering report.
+
+96
+00:08:15,220 --> 00:08:23,900
+Right. I just did a quick search on Google and I think this is closer.
+
+97
+00:08:24,300 --> 00:08:27,300
+Right. There's a couple of definitions here of testing.
+
+98
+00:08:27,700 --> 00:08:32,500
+First off I think the thing I think that they're calling out is testing is an
+
+99
+00:08:32,500 --> 00:08:40,840
+activity and certainly information gathering and reporting is a key output.
+
+100
+00:08:41,480 --> 00:08:45,880
+But like here's an example definition testing is the process of evaluating a
+
+101
+00:08:45,880 --> 00:08:49,920
+system or its components with the intent to find whether it satisfies the
+
+102
+00:08:49,920 --> 00:08:52,160
+specified requirements or not.
+
+103
+00:08:52,200 --> 00:08:53,560
+I think we've all heard that one.
+
+104
+00:08:53,560 --> 00:08:53,960
+We can.
+
+105
+00:08:54,800 --> 00:08:56,040
+Let's do that one a little bit.
+
+106
+00:08:56,160 --> 00:08:59,920
+Or testing is executing a system in order to identify any gaps errors or
+
+107
+00:08:59,920 --> 00:09:01,040
+missing requirements.
+
+108
+00:09:02,610 --> 00:09:10,460
+So I don't it tells me where they're coming from which I think is a fine set of
+
+109
+00:09:10,460 --> 00:09:11,180
+beliefs.
+
+110
+00:09:11,820 --> 00:09:17,660
+But from a modern testing I actually think that set of beliefs is what if we
+
+111
+00:09:17,660 --> 00:09:21,260
+rephrased it instead of testing is information gathering and reporting.
+
+112
+00:09:21,860 --> 00:09:26,740
+What if we said we perform the testing activity in order to gather information
+
+113
+00:09:26,900 --> 00:09:28,060
+and report on it.
+
+114
+00:09:28,900 --> 00:09:29,420
+That's better.
+
+115
+00:09:30,420 --> 00:09:32,300
+I think it turns more into a principle.
+
+116
+00:09:32,900 --> 00:09:34,340
+It I think that's better.
+
+117
+00:09:36,750 --> 00:09:37,750
+Testing.
+
+118
+00:09:38,780 --> 00:09:40,580
+Yeah anyway I think that's enough on.
+
+119
+00:09:40,940 --> 00:09:41,180
+OK.
+
+120
+00:09:41,820 --> 00:09:42,260
+One.
+
+121
+00:09:42,540 --> 00:09:42,780
+OK.
+
+122
+00:09:43,860 --> 00:09:44,620
+Not triggered.
+
+123
+00:09:45,340 --> 00:09:47,740
+Kind of like I get where they're coming from.
+
+124
+00:09:48,180 --> 00:09:49,300
+I get where they're coming from.
+
+125
+00:09:49,420 --> 00:09:53,140
+The only issue again from from a belief system.
+
+126
+00:09:53,900 --> 00:10:00,590
+The only issue I have is is I do think people who view information
+
+127
+00:10:01,510 --> 00:10:05,430
+gathering and reporting as the actual goal of testing.
+
+128
+00:10:06,940 --> 00:10:09,900
+That's kind of one of the reasons why we built empty in my humble.
+
+129
+00:10:09,940 --> 00:10:10,380
+Yeah.
+
+130
+00:10:10,420 --> 00:10:11,260
+Yeah it's kind of.
+
+131
+00:10:11,340 --> 00:10:14,780
+Yeah I agree because I think that point of view is actually going to harm.
+
+132
+00:10:14,820 --> 00:10:22,860
+And even my statement that says we do testing in order to do X and Y X and Y are two of the
+
+133
+00:10:23,960 --> 00:10:28,920
+twenty six other things you do as part of that you can do as part of testing.
+
+134
+00:10:29,830 --> 00:10:36,630
+Our principle number one is business value is critical and that's actually why you do testing.
+
+135
+00:10:37,070 --> 00:10:37,390
+Yeah.
+
+136
+00:10:37,430 --> 00:10:47,110
+And the thing I like about of course I'm I hurt my arm patting myself on the back about the modern testing principles is I joke about they're not being about testing and not being all that modern.
+
+137
+00:10:47,470 --> 00:10:55,070
+But the you do you perform the testing activity in many cases to help promote those principles.
+
+138
+00:10:55,110 --> 00:10:55,430
+Anyway.
+
+139
+00:10:56,230 --> 00:10:56,430
+All right.
+
+140
+00:10:56,430 --> 00:10:56,790
+Next one.
+
+141
+00:10:56,870 --> 00:10:57,310
+Yes please.
+
+142
+00:10:58,030 --> 00:11:04,900
+Test coverage is always relative to some model and then they refer to I.
+
+143
+00:11:04,900 --> 00:11:07,900
+ST QB principle number two.
+
+144
+00:11:08,420 --> 00:11:11,540
+I have to which is exhaustive testing is not possible.
+
+145
+00:11:11,580 --> 00:11:12,380
+The nice thing about the I.
+
+146
+00:11:12,380 --> 00:11:21,940
+ST QB principle is not a single like they're the longest one has looks like nine words.
+
+147
+00:11:24,730 --> 00:11:25,210
+Sure.
+
+148
+00:11:25,770 --> 00:11:32,730
+So their their belief is test coverage is always relative to some model.
+
+149
+00:11:33,010 --> 00:11:35,290
+So that's a true statement.
+
+150
+00:11:38,270 --> 00:11:42,620
+It's also not that profound or interesting to me.
+
+151
+00:11:43,300 --> 00:11:48,450
+Now the interesting part of that statement would be model.
+
+152
+00:11:49,010 --> 00:11:58,140
+So if it's relative to some some model how do you select that model that's going to be the thing you compare against.
+
+153
+00:11:59,700 --> 00:11:59,980
+Right.
+
+154
+00:12:00,100 --> 00:12:03,820
+You could abstract this to a larger form of testing and say testing.
+
+155
+00:12:05,580 --> 00:12:07,500
+But it says test coverage is related to some model.
+
+156
+00:12:09,060 --> 00:12:10,940
+Testing is related to some model.
+
+157
+00:12:12,740 --> 00:12:12,980
+Sure.
+
+158
+00:12:14,160 --> 00:12:14,360
+Sure.
+
+159
+00:12:15,360 --> 00:12:26,480
+So but I know where I again I know where they're coming from because there is a lot of emphasis from the traditional world on coverage not just code coverage but feature coverage requirement coverage other kinds of coverage.
+
+160
+00:12:26,760 --> 00:12:30,120
+It's important to a lot of pointy haired bean counters.
+
+161
+00:12:30,120 --> 00:12:38,280
+So it isn't I see why they're calling that out because test coverage by itself is dumb.
+
+162
+00:12:38,840 --> 00:12:47,000
+But but in the context of a model where you can communicate use it to communicate risk or or progress or something then it becomes more viable.
+
+163
+00:12:47,600 --> 00:12:51,400
+And I think the point that they're trying to state is the relativity right.
+
+164
+00:12:51,560 --> 00:13:00,100
+You you are there is always more testing that can be done no matter how far you've gotten.
+
+165
+00:13:00,220 --> 00:13:02,020
+There's always more that can be done.
+
+166
+00:13:03,060 --> 00:13:03,300
+Right.
+
+167
+00:13:03,700 --> 00:13:06,900
+So you you can never claim completeness.
+
+168
+00:13:07,500 --> 00:13:16,700
+May May I tangent as size briefly just on a conversation I had yesterday and I have to abstract this out because I pushed back on my boss and and he didn't get what I was saying.
+
+169
+00:13:16,700 --> 00:13:18,700
+But I'm big on models.
+
+170
+00:13:18,700 --> 00:13:35,860
+So there's we're having a not going to say heated a passionate discussion about some model one model we're building and someone brought up a model that I had suggested a while back which I just got from the Internet.
+
+171
+00:13:36,720 --> 00:13:40,040
+And and they said what about a model like this.
+
+172
+00:13:40,320 --> 00:13:48,020
+And my manager said I agree with what's in that model but we won't use that model.
+
+173
+00:13:48,970 --> 00:13:53,050
+And then my again my semantic asshole ism.
+
+174
+00:13:55,760 --> 00:14:06,250
+I said if we do what's in the model just because we refuse to acknowledge we're using that model doesn't mean we're not using the model.
+
+175
+00:14:07,510 --> 00:14:08,870
+You follow me probably not.
+
+176
+00:14:10,140 --> 00:14:10,660
+I do.
+
+177
+00:14:11,180 --> 00:14:15,380
+The model is more than the drawing on paper or the diagram or the word.
+
+178
+00:14:15,620 --> 00:14:23,940
+The model is the is the framework and even if you're not following the framework directly if you're doing the things in the framework you're sort of following the model anyway.
+
+179
+00:14:24,140 --> 00:14:33,420
+It would like be saying no we don't do scrum scrum stupid but then everything that you actually do.
+
+180
+00:14:34,300 --> 00:14:38,100
+Just because you don't call it scrum doesn't mean you're not following the scrum model.
+
+181
+00:14:38,580 --> 00:14:38,740
+Right.
+
+182
+00:14:39,020 --> 00:14:50,260
+And and by putting your foot in the stand saying no we're not doing that we're not following that model but doing it anyway is a little weird but anyway not not not a point to lose my job over anything but.
+
+183
+00:14:51,140 --> 00:14:55,340
+But anyway now you have a little bit of insight in the way I work and I will never be employed again.
+
+184
+00:14:55,380 --> 00:14:57,700
+And so going on how about the next one.
+
+185
+00:14:58,340 --> 00:14:58,620
+Okay.
+
+186
+00:15:00,940 --> 00:15:03,940
+Thank you for riding along on our tangent for down to two listeners.
+
+187
+00:15:03,940 --> 00:15:04,180
+Yeah.
+
+188
+00:15:04,260 --> 00:15:06,220
+Now I'm thinking about vanilla ice right.
+
+189
+00:15:06,260 --> 00:15:09,220
+And don't think about ice.
+
+190
+00:15:11,310 --> 00:15:13,350
+No he added another beat.
+
+191
+00:15:13,390 --> 00:15:17,290
+It has nothing to do with the Bowie queen.
+
+192
+00:15:18,170 --> 00:15:26,660
+Yeah anyway what we test and how much we test should be based on models of risk.
+
+193
+00:15:27,180 --> 00:15:32,770
+Now this one's interesting because they refer to empty number seven.
+
+194
+00:15:35,380 --> 00:15:35,660
+Huh.
+
+195
+00:15:35,980 --> 00:15:41,220
+What we test how much we test should be based on models of risk.
+
+196
+00:15:42,890 --> 00:16:03,280
+And just for listeners who may be joining soon that's Alan am I's principle and it is we expand the testing abilities and know how across the team understanding that this may reduce or eliminate the need for a dedicated testing specialist.
+
+197
+00:16:04,760 --> 00:16:09,440
+Now I can tie a connection there but I am fine.
+
+198
+00:16:09,440 --> 00:16:11,680
+I failed to see the connection.
+
+199
+00:16:11,920 --> 00:16:16,360
+I have to go through a very convoluted process to get there.
+
+200
+00:16:16,400 --> 00:16:17,800
+So let's let's not worry about that.
+
+201
+00:16:17,800 --> 00:16:22,760
+We can disagree that it that we don't we can agree we don't see the connection.
+
+202
+00:16:23,120 --> 00:16:27,440
+Maybe the intended to refer to number five.
+
+203
+00:16:27,960 --> 00:16:38,440
+So we don't talk about which which modern testing principle if any do you think talks about risk based testing or risk based approach software development.
+
+204
+00:16:42,340 --> 00:16:43,020
+Quality culture.
+
+205
+00:16:45,700 --> 00:16:50,820
+I would if it I would do number one and five for that.
+
+206
+00:16:50,980 --> 00:16:53,380
+Oh actually yeah I would do one.
+
+207
+00:16:54,980 --> 00:16:57,260
+The quality culture.
+
+208
+00:16:57,740 --> 00:16:58,300
+No it's one.
+
+209
+00:16:58,500 --> 00:16:59,140
+It's definitely one.
+
+210
+00:16:59,220 --> 00:17:00,100
+It's improving the business.
+
+211
+00:17:02,120 --> 00:17:05,080
+Well again one of five is where I'm going to go with on that one.
+
+212
+00:17:05,760 --> 00:17:06,680
+So we agree.
+
+213
+00:17:06,960 --> 00:17:07,160
+Yeah.
+
+214
+00:17:08,600 --> 00:17:11,640
+But we test and how much we test should be based on models of risk.
+
+215
+00:17:12,740 --> 00:17:14,420
+Yeah that I don't disagree with.
+
+216
+00:17:14,860 --> 00:17:22,750
+Now here what I think the where they may go to number seven is number one what we test and how much we test.
+
+217
+00:17:23,780 --> 00:17:23,980
+Right.
+
+218
+00:17:24,140 --> 00:17:28,870
+Because a lot of people interpret number seven wrongly.
+
+219
+00:17:29,270 --> 00:17:32,790
+Yes as the second sentence not the first.
+
+220
+00:17:33,070 --> 00:17:33,470
+Yeah.
+
+221
+00:17:33,510 --> 00:17:40,710
+And I I think and we'll wait and see when it comes out and what the what the observations are.
+
+222
+00:17:40,990 --> 00:17:54,430
+I think I did a really I'm going to pat myself on the back again of all of the things that I walk through and I I hope people get through the whole modern testing course on history testing because I get better at explaining as I go along.
+
+223
+00:17:54,870 --> 00:18:07,730
+I think I did a really nice job explaining how principal seven works and put some exercises in that got people thinking about what it would how how that looks in execution.
+
+224
+00:18:07,770 --> 00:18:13,290
+So again get your club membership for that course because that's going to be hot hot hot.
+
+225
+00:18:13,810 --> 00:18:16,810
+I'd like to see that before it releases.
+
+226
+00:18:17,290 --> 00:18:18,290
+You're not changing anything.
+
+227
+00:18:18,690 --> 00:18:19,330
+It's perfect.
+
+228
+00:18:19,690 --> 00:18:22,290
+I'm sure it is but I'd like to see it before it releases.
+
+229
+00:18:22,610 --> 00:18:26,780
+But have your people talk to my people.
+
+230
+00:18:28,010 --> 00:18:34,170
+Every time we've re explained like the the blog post that I did on modern testing principles.
+
+231
+00:18:36,810 --> 00:18:41,730
+Yeah that that I felt was the clearest I've ever explained it right.
+
+232
+00:18:41,770 --> 00:18:45,650
+It is around me number seven and is around.
+
+233
+00:18:46,450 --> 00:18:47,130
+I should read that.
+
+234
+00:18:47,570 --> 00:18:51,010
+Do the right thing even though it's scary.
+
+235
+00:18:51,860 --> 00:18:53,140
+Well yeah yeah.
+
+236
+00:18:53,260 --> 00:18:54,700
+That's true as well going on.
+
+237
+00:18:54,900 --> 00:18:55,180
+All right.
+
+238
+00:18:55,420 --> 00:18:57,180
+Number four.
+
+239
+00:18:59,260 --> 00:19:02,260
+So again for number three what we test and how much we test.
+
+240
+00:19:03,740 --> 00:19:05,620
+I don't think there's a lot of disagreement there.
+
+241
+00:19:05,700 --> 00:19:08,660
+None except for we don't get why it's empty seven.
+
+242
+00:19:08,900 --> 00:19:09,420
+Correct.
+
+243
+00:19:09,860 --> 00:19:16,780
+And that number four it is often better to perform a variety of tests than repeat tests.
+
+244
+00:19:17,420 --> 00:19:22,140
+True often nearly always.
+
+245
+00:19:22,620 --> 00:19:25,660
+And they're not to IST QB number five.
+
+246
+00:19:26,100 --> 00:19:29,900
+Breath breath over depth in most cases.
+
+247
+00:19:30,620 --> 00:19:32,700
+Beware the pesticide paradox.
+
+248
+00:19:32,740 --> 00:19:33,780
+Oh Borthweiser.
+
+249
+00:19:35,480 --> 00:19:35,840
+True.
+
+250
+00:19:37,020 --> 00:19:38,740
+And the difference is now we talk about.
+
+251
+00:19:38,780 --> 00:19:40,420
+No I think it's true.
+
+252
+00:19:40,460 --> 00:19:40,820
+What I.
+
+253
+00:19:42,940 --> 00:19:43,460
+Isn't that it.
+
+254
+00:19:45,340 --> 00:19:47,220
+Is that an insider is that a tautology.
+
+255
+00:19:48,020 --> 00:19:49,300
+That's what I'm trying to judge in my head.
+
+256
+00:19:50,810 --> 00:19:55,050
+It's neither it's a principle about the testing activity.
+
+257
+00:19:55,930 --> 00:20:00,730
+The reason it's sitting wrong with you is because our principles and our beliefs do
+
+258
+00:20:00,730 --> 00:20:04,650
+not focus on the testing activity they focus on delivering quality software.
+
+259
+00:20:05,010 --> 00:20:07,930
+The testing activity falls out of that if you're doing it right.
+
+260
+00:20:08,650 --> 00:20:12,090
+So I'm going to wholly agree with it because one of the things that drives me
+
+261
+00:20:12,090 --> 00:20:18,370
+nuts and this is not a modern testing principle but certainly influence a great
+
+262
+00:20:18,370 --> 00:20:23,290
+deal of my part is that I cannot stand the test zombies.
+
+263
+00:20:24,600 --> 00:20:29,360
+My job is to run the same suite over and over and over and over and over and over
+
+264
+00:20:29,360 --> 00:20:30,520
+and over and over and over.
+
+265
+00:20:31,040 --> 00:20:32,840
+And also let me.
+
+266
+00:20:34,520 --> 00:20:37,560
+I'm going to chuck someone under the bus here but I'll do it vaguely.
+
+267
+00:20:37,560 --> 00:20:38,800
+So you want to know who I'm talking about.
+
+268
+00:20:38,840 --> 00:20:43,300
+I had a I'll just say I was talking to some.
+
+269
+00:20:44,090 --> 00:20:49,580
+People recently and we were talking about.
+
+270
+00:20:50,460 --> 00:20:57,580
+Doing a deeper breath or broader set of tests do broader types of testing
+
+271
+00:20:58,340 --> 00:21:02,460
+and they made a statement roughly equivalent to well we already do all the
+
+272
+00:21:02,460 --> 00:21:02,980
+testing.
+
+273
+00:21:03,180 --> 00:21:04,300
+There's no more testing to do.
+
+274
+00:21:06,180 --> 00:21:11,020
+I think another way I may phrase this principle from Aaron and who do you
+
+275
+00:21:11,020 --> 00:21:11,420
+run them with.
+
+276
+00:21:11,460 --> 00:21:11,860
+I'm sorry.
+
+277
+00:21:12,020 --> 00:21:20,190
+Luke for Aaron and Luke is always there's always there's always more testing
+
+278
+00:21:20,190 --> 00:21:22,430
+to do and it's not the same testing you did before.
+
+279
+00:21:23,030 --> 00:21:28,630
+Meaning always strive for different ways to test things and get that broader
+
+280
+00:21:28,630 --> 00:21:31,870
+sense of that broader approach or scope to your testing.
+
+281
+00:21:33,380 --> 00:21:35,380
+That's that's my takeaway from that.
+
+282
+00:21:35,900 --> 00:21:39,020
+I think there's always there's always testing you haven't thought of yet.
+
+283
+00:21:41,440 --> 00:21:42,920
+Well it says it's often better.
+
+284
+00:21:43,200 --> 00:21:49,060
+And so when I think of better like to me when it comes to testing I always
+
+285
+00:21:49,100 --> 00:21:51,860
+judge better by the business value.
+
+286
+00:21:53,480 --> 00:21:53,680
+Right.
+
+287
+00:21:53,680 --> 00:22:00,200
+Hey I can I can spend a week doing an exhaustive performance test or we can
+
+288
+00:22:00,200 --> 00:22:02,120
+ship this thing and start making money on it tomorrow.
+
+289
+00:22:02,870 --> 00:22:03,150
+Right.
+
+290
+00:22:04,600 --> 00:22:04,880
+Right.
+
+291
+00:22:05,000 --> 00:22:09,320
+Or if it's or we can ship this thing and make our customers super happy and
+
+292
+00:22:09,360 --> 00:22:10,640
+and love us tomorrow.
+
+293
+00:22:11,680 --> 00:22:12,080
+Right.
+
+294
+00:22:12,320 --> 00:22:12,800
+Exactly.
+
+295
+00:22:12,960 --> 00:22:15,200
+Business value doesn't have to be about money.
+
+296
+00:22:16,710 --> 00:22:17,110
+It doesn't.
+
+297
+00:22:17,710 --> 00:22:18,110
+It doesn't.
+
+298
+00:22:18,350 --> 00:22:23,040
+It is generally about money or growth though.
+
+299
+00:22:24,530 --> 00:22:28,530
+The one thing people people will go it's not all about money man.
+
+300
+00:22:28,610 --> 00:22:33,530
+And I'm like look a business's job is to serve its customers and a business
+
+301
+00:22:33,530 --> 00:22:35,890
+needs money to continue to do that.
+
+302
+00:22:36,780 --> 00:22:37,100
+Yes.
+
+303
+00:22:37,620 --> 00:22:37,820
+Okay.
+
+304
+00:22:37,860 --> 00:22:44,020
+So while it could be in a lot of times people will do money is the
+
+305
+00:22:44,020 --> 00:22:45,380
+root of all evil blah blah blah.
+
+306
+00:22:45,940 --> 00:22:46,660
+No money.
+
+307
+00:22:48,230 --> 00:22:52,470
+It is how it is used that defines if it's evil or good.
+
+308
+00:22:52,510 --> 00:22:52,790
+Sure.
+
+309
+00:22:52,870 --> 00:22:56,830
+And I'd like to know how many of our listeners and maybe one of the three
+
+310
+00:22:56,830 --> 00:23:03,090
+does this but if you do your testing activities for free in the company
+
+311
+00:23:03,090 --> 00:23:05,330
+asked me I don't need to pay you but but I want to make the point is
+
+312
+00:23:05,330 --> 00:23:09,090
+when it isn't always a direct line between improving the business between
+
+313
+00:23:11,260 --> 00:23:13,540
+making money like the customer is giving me cash.
+
+314
+00:23:13,820 --> 00:23:15,860
+It could be that customers love you.
+
+315
+00:23:15,860 --> 00:23:20,180
+So because you're adapt to their needs so that investors love the
+
+316
+00:23:20,180 --> 00:23:23,780
+company and then put money into the company that way.
+
+317
+00:23:24,220 --> 00:23:24,500
+Anyway.
+
+318
+00:23:25,340 --> 00:23:26,300
+Again another tangent.
+
+319
+00:23:26,740 --> 00:23:27,380
+Are we back on track.
+
+320
+00:23:28,020 --> 00:23:28,660
+How many are to go.
+
+321
+00:23:29,560 --> 00:23:31,960
+We're we're on number five now.
+
+322
+00:23:32,080 --> 00:23:32,560
+OK cool.
+
+323
+00:23:32,840 --> 00:23:33,280
+Out of twelve.
+
+324
+00:23:34,390 --> 00:23:35,030
+We'll get there.
+
+325
+00:23:35,190 --> 00:23:35,750
+Hold on time.
+
+326
+00:23:35,870 --> 00:23:36,590
+We got plenty of time.
+
+327
+00:23:37,590 --> 00:23:41,710
+We can't ever be certain that there are no problems.
+
+328
+00:23:44,110 --> 00:23:44,310
+OK.
+
+329
+00:23:44,910 --> 00:23:45,110
+Yep.
+
+330
+00:23:46,770 --> 00:23:47,210
+True.
+
+331
+00:23:48,050 --> 00:23:48,410
+Yeah.
+
+332
+00:23:49,770 --> 00:23:51,250
+Amor's order of ignorance.
+
+333
+00:23:53,940 --> 00:23:54,100
+Yeah.
+
+334
+00:23:54,220 --> 00:23:54,620
+We don't know.
+
+335
+00:23:54,620 --> 00:23:55,060
+We don't know.
+
+336
+00:23:55,860 --> 00:23:57,220
+His name is his name is just armor.
+
+337
+00:23:58,620 --> 00:23:59,220
+I like Amor.
+
+338
+00:23:59,460 --> 00:24:00,180
+Philip armor.
+
+339
+00:24:00,460 --> 00:24:00,980
+OK fine.
+
+340
+00:24:02,180 --> 00:24:08,910
+If he's one of our three lists a product can meet all its stated requirements
+
+341
+00:24:08,990 --> 00:24:14,110
+and still be useless true product can fail to meet all of its stated
+
+342
+00:24:14,110 --> 00:24:16,470
+requirements and still be useful.
+
+343
+00:24:17,300 --> 00:24:17,700
+True.
+
+344
+00:24:17,940 --> 00:24:18,180
+True.
+
+345
+00:24:19,110 --> 00:24:24,420
+And to me that is the difference between quality and testing.
+
+346
+00:24:27,960 --> 00:24:30,880
+It's also principle number one if you focus just on making sure the
+
+347
+00:24:30,880 --> 00:24:34,320
+requirements are met but it doesn't improve the business value you have
+
+348
+00:24:34,320 --> 00:24:37,040
+failed right.
+
+349
+00:24:37,280 --> 00:24:38,480
+You have not improved the business.
+
+350
+00:24:39,410 --> 00:24:45,690
+No I mean if we go back to the definition I read earlier where testing is
+
+351
+00:24:45,690 --> 00:24:51,450
+essentially the the activity to validate the stated requirements as well
+
+352
+00:24:51,450 --> 00:24:53,250
+as look for gaps in the requirements.
+
+353
+00:24:54,010 --> 00:24:54,210
+Right.
+
+354
+00:24:55,210 --> 00:25:01,650
+Then the act of testing as as Whitaker said so long ago all that testing is
+
+355
+00:25:01,650 --> 00:25:02,930
+getting in the way of quality.
+
+356
+00:25:03,490 --> 00:25:07,050
+Oh you know you piss more people off down to no listeners.
+
+357
+00:25:08,170 --> 00:25:09,090
+We'll get them back.
+
+358
+00:25:10,370 --> 00:25:10,770
+Seven.
+
+359
+00:25:12,420 --> 00:25:17,460
+Oh and by the way the references for that was CDT 5 and MT 5 testing can
+
+360
+00:25:17,460 --> 00:25:23,300
+happen at any stage of any software development lifecycle and it is
+
+361
+00:25:23,300 --> 00:25:27,380
+usually better to begin testing early rather than later.
+
+362
+00:25:27,500 --> 00:25:30,180
+I STQB number three.
+
+363
+00:25:30,260 --> 00:25:34,420
+I I would even get rid of the word can testing must happen or testing
+
+364
+00:25:34,420 --> 00:25:36,460
+happens at all stages of software development.
+
+365
+00:25:36,780 --> 00:25:38,420
+Yes completely agree with that.
+
+366
+00:25:39,870 --> 00:25:41,390
+How do you feel about the second sentence.
+
+367
+00:25:41,590 --> 00:25:45,230
+It is usually better to begin testing early rather than later.
+
+368
+00:25:49,580 --> 00:25:50,220
+Usually sure.
+
+369
+00:25:50,580 --> 00:25:51,060
+I'm okay with that.
+
+370
+00:25:53,560 --> 00:25:57,840
+Yeah that to me is some words in here that makes the least I mean
+
+371
+00:25:58,440 --> 00:25:59,480
+difficult to disagree with.
+
+372
+00:26:02,420 --> 00:26:13,810
+I am going to say I can add certain weaselly words but I'm not certain
+
+373
+00:26:13,810 --> 00:26:14,450
+I agree with that.
+
+374
+00:26:16,160 --> 00:26:21,240
+Do you think is it because I think there's certain tests I think there's
+
+375
+00:26:21,240 --> 00:26:26,640
+a lot of tests that must be done in an early and preventative manner.
+
+376
+00:26:26,760 --> 00:26:27,200
+I agree.
+
+377
+00:26:28,120 --> 00:26:33,000
+I think a large number of tests can be done post ship.
+
+378
+00:26:33,720 --> 00:26:34,560
+I agree there as well.
+
+379
+00:26:35,080 --> 00:26:38,720
+And I think it's the word it's the word usually that I can't that makes it
+
+380
+00:26:38,760 --> 00:26:39,400
+inarguable.
+
+381
+00:26:42,690 --> 00:26:42,930
+Yeah.
+
+382
+00:26:43,290 --> 00:26:46,390
+See that's that's the one I want to argue with.
+
+383
+00:26:50,540 --> 00:26:53,820
+Principle and I would have site I would cite principle number six.
+
+384
+00:26:54,960 --> 00:26:55,720
+Yeah right.
+
+385
+00:26:56,280 --> 00:26:57,760
+As as no.
+
+386
+00:26:59,740 --> 00:27:01,580
+Well if we talk about testing right.
+
+387
+00:27:01,580 --> 00:27:03,460
+MT is not about testing is about quality.
+
+388
+00:27:04,660 --> 00:27:04,900
+All right.
+
+389
+00:27:05,020 --> 00:27:09,860
+Next one shorter periods of testing that happen more often are better than
+
+390
+00:27:09,860 --> 00:27:12,740
+longer periods of testing that happen less often.
+
+391
+00:27:13,620 --> 00:27:15,780
+No disagreement there.
+
+392
+00:27:16,020 --> 00:27:20,780
+They did not cite a principle but I would have cited modern testing
+
+393
+00:27:20,780 --> 00:27:26,060
+principle number two or number three.
+
+394
+00:27:26,580 --> 00:27:30,740
+Are they sort of saying that it's sort of a roundabout way that testing
+
+395
+00:27:30,740 --> 00:27:32,660
+continuously is better than testing at the end.
+
+396
+00:27:32,980 --> 00:27:33,420
+Yes.
+
+397
+00:27:33,660 --> 00:27:33,900
+OK.
+
+398
+00:27:35,150 --> 00:27:37,150
+I would have said it that way.
+
+399
+00:27:37,590 --> 00:27:37,830
+Right.
+
+400
+00:27:37,950 --> 00:27:41,710
+And so I think we have a modern testing principle that covers that or at least
+
+401
+00:27:41,710 --> 00:27:43,390
+two of them right.
+
+402
+00:27:43,430 --> 00:27:50,220
+What did this is basically saying doing things continuously getting continuous
+
+403
+00:27:50,220 --> 00:27:53,120
+feedback is more valuable.
+
+404
+00:27:55,540 --> 00:28:00,420
+Alan has just given me a thumbs up as he was gently chugging coffee.
+
+405
+00:28:00,660 --> 00:28:02,380
+I was chugging coffee.
+
+406
+00:28:03,900 --> 00:28:09,700
+There are no best practices only good practices in context.
+
+407
+00:28:10,340 --> 00:28:19,680
+CDT number two as someone who just made some semantic arguments earlier in
+
+408
+00:28:19,680 --> 00:28:20,360
+the episode.
+
+409
+00:28:20,400 --> 00:28:23,720
+Now I'm having a hard time semantically arguing this.
+
+410
+00:28:23,720 --> 00:28:28,240
+This has been number one from the CDT world forever is that best practices
+
+411
+00:28:28,240 --> 00:28:30,120
+the horrible term because there is no very best.
+
+412
+00:28:30,560 --> 00:28:32,760
+There's only there dependent on context.
+
+413
+00:28:33,440 --> 00:28:35,120
+I totally agree with that.
+
+414
+00:28:36,220 --> 00:28:45,570
+So I'm a little tainted because of the of the massive amount of emphasis on getting
+
+415
+00:28:45,570 --> 00:28:47,290
+rid of the phrase best practices.
+
+416
+00:28:47,770 --> 00:28:50,250
+I am from it's a model.
+
+417
+00:28:50,970 --> 00:28:52,330
+Anyway I get it.
+
+418
+00:28:52,370 --> 00:28:58,170
+Yes true practices all practices are good in context calling something best is just
+
+419
+00:28:58,170 --> 00:29:01,410
+something someone invented a while back and stuck and now pisses people off.
+
+420
+00:29:01,450 --> 00:29:03,450
+But I get both sides.
+
+421
+00:29:05,470 --> 00:29:11,220
+My version my version of this statement and I do agree with it is that there is no
+
+422
+00:29:11,220 --> 00:29:14,380
+such thing as the best way to do anything.
+
+423
+00:29:14,900 --> 00:29:19,700
+Once we have established the best way it's just a matter of time before a new best
+
+424
+00:29:19,700 --> 00:29:20,900
+way pops up.
+
+425
+00:29:21,100 --> 00:29:22,260
+You're absolutely right.
+
+426
+00:29:22,300 --> 00:29:29,620
+But there is such a thing as the best thing to do right now with the currently
+
+427
+00:29:29,620 --> 00:29:36,100
+known information which is another way of saying practice for context.
+
+428
+00:29:36,580 --> 00:29:38,540
+Let me let me ask you a question.
+
+429
+00:29:39,260 --> 00:29:39,740
+OK.
+
+430
+00:29:40,180 --> 00:29:45,770
+Is trying to think of a good example here is you are using tools to compile your
+
+431
+00:29:45,770 --> 00:29:51,170
+code to best practice or should you compile it by hand with an assembler with
+
+432
+00:29:51,170 --> 00:29:51,930
+an assembler.
+
+433
+00:29:52,250 --> 00:29:52,530
+Sure.
+
+434
+00:29:56,240 --> 00:30:01,680
+So the best the best current best current practice that you use a a compiler to
+
+435
+00:30:01,680 --> 00:30:02,520
+compile your code.
+
+436
+00:30:02,600 --> 00:30:05,520
+Who the hell would be compiling with an assembler.
+
+437
+00:30:07,200 --> 00:30:07,480
+All right.
+
+438
+00:30:07,720 --> 00:30:11,920
+Anyway that was a horrible example which may get edited out or I'll see how drunk I
+
+439
+00:30:11,920 --> 00:30:12,760
+am when I edit this.
+
+440
+00:30:12,760 --> 00:30:13,960
+But let's try it.
+
+441
+00:30:14,240 --> 00:30:15,160
+But you know so.
+
+442
+00:30:15,520 --> 00:30:17,080
+So I have a con.
+
+443
+00:30:17,520 --> 00:30:22,060
+I mean that without the assembler bit that's a problem I have in my team
+
+444
+00:30:22,060 --> 00:30:22,860
+right now.
+
+445
+00:30:23,690 --> 00:30:31,000
+So we're we're producing a bunch of awesome models initially did not make
+
+446
+00:30:31,000 --> 00:30:36,200
+sense to build up a CDC pipeline to produce the models right.
+
+447
+00:30:36,880 --> 00:30:39,540
+Turns out we did some search.
+
+448
+00:30:39,620 --> 00:30:40,740
+It's not exhaustive.
+
+449
+00:30:42,660 --> 00:30:49,860
+We don't see much around how to do pipelines for producing Python models.
+
+450
+00:30:50,980 --> 00:30:56,990
+If anyone anyone's a listener and they know of one please tweet me that tool.
+
+451
+00:30:57,030 --> 00:30:57,630
+Pie pipeline.
+
+452
+00:31:00,500 --> 00:31:01,100
+I just made that up.
+
+453
+00:31:01,540 --> 00:31:02,060
+Don't write it down.
+
+454
+00:31:02,540 --> 00:31:12,660
+It if if it exists it might be called pie pipeline that the the Python community
+
+455
+00:31:12,660 --> 00:31:17,420
+likes putting PY in front of everything or just pipeline with Bell PY PE L.A.
+
+456
+00:31:17,420 --> 00:31:21,830
+Any you know what if that one doesn't exist I will build that one.
+
+457
+00:31:23,630 --> 00:31:24,150
+Here to help.
+
+458
+00:31:24,550 --> 00:31:29,350
+There's three things difficult in computer software naming things and off
+
+459
+00:31:29,350 --> 00:31:29,950
+by one errors.
+
+460
+00:31:30,790 --> 00:31:36,620
+But it's expensive to put together the pipeline.
+
+461
+00:31:37,220 --> 00:31:42,580
+It only makes sense if we know that we have enough of a value proposition to
+
+462
+00:31:42,580 --> 00:31:50,230
+continue to do this and continue to provide updates to our models which we
+
+463
+00:31:50,230 --> 00:31:52,670
+have gotten past but initially there's no way.
+
+464
+00:31:52,710 --> 00:31:52,950
+Yeah.
+
+465
+00:31:52,990 --> 00:31:56,910
+Because if someone said the best practice you have to have a CICD pipeline
+
+466
+00:31:57,150 --> 00:32:01,780
+and you would but you don't have a system that needs that yet it'd be stupid to do
+
+467
+00:32:01,780 --> 00:32:03,860
+it and it is a best practice.
+
+468
+00:32:03,900 --> 00:32:11,370
+It's an accelerate our favorite book on the podcast accelerate by Nicole
+
+469
+00:32:11,370 --> 00:32:11,930
+Forres-Gren.
+
+470
+00:32:11,930 --> 00:32:14,290
+Just humbled you just called it a celebrate.
+
+471
+00:32:14,530 --> 00:32:15,090
+It's all great.
+
+472
+00:32:16,810 --> 00:32:18,330
+Which is what it is.
+
+473
+00:32:18,570 --> 00:32:21,210
+Absolutely accelerate is accelerate.
+
+474
+00:32:21,610 --> 00:32:21,970
+Okay.
+
+475
+00:32:22,610 --> 00:32:23,650
+It's a hell of great.
+
+476
+00:32:24,930 --> 00:32:25,250
+Come on man.
+
+477
+00:32:25,250 --> 00:32:25,690
+You're stalling.
+
+478
+00:32:25,730 --> 00:32:26,090
+Let's go on.
+
+479
+00:32:27,010 --> 00:32:28,010
+Did I already do 10.
+
+480
+00:32:28,610 --> 00:32:29,090
+No I don't think we.
+
+481
+00:32:29,690 --> 00:32:30,530
+Wait wait wait.
+
+482
+00:32:30,730 --> 00:32:31,650
+Yeah we just did nine.
+
+483
+00:32:32,050 --> 00:32:33,170
+Do I thought we just did seven.
+
+484
+00:32:33,410 --> 00:32:33,730
+Nine.
+
+485
+00:32:34,850 --> 00:32:36,090
+There are no practices.
+
+486
+00:32:36,450 --> 00:32:36,730
+OK.
+
+487
+00:32:36,770 --> 00:32:37,210
+Did we skip it.
+
+488
+00:32:37,250 --> 00:32:37,690
+Number 10.
+
+489
+00:32:38,290 --> 00:32:38,650
+Eight.
+
+490
+00:32:39,720 --> 00:32:40,640
+No we didn't skip eight.
+
+491
+00:32:40,800 --> 00:32:41,200
+OK good.
+
+492
+00:32:41,240 --> 00:32:41,440
+All right.
+
+493
+00:32:41,480 --> 00:32:41,680
+Let's go.
+
+494
+00:32:41,720 --> 00:32:44,640
+Ten change happens and that's a good thing.
+
+495
+00:32:45,040 --> 00:32:49,360
+Therefore our practices should be as responsible as possible.
+
+496
+00:32:49,560 --> 00:32:51,760
+Here they referred to empty number two.
+
+497
+00:32:54,090 --> 00:32:56,170
+Could you read empty two for the for the readers.
+
+498
+00:32:56,330 --> 00:32:57,410
+Yes listeners.
+
+499
+00:32:58,130 --> 00:33:00,290
+Are those reading the transcript that doesn't exist.
+
+500
+00:33:02,020 --> 00:33:06,100
+Empty two we accelerate the team and use models like theme thinking and theory of
+
+501
+00:33:06,100 --> 00:33:11,020
+constraints to identify prioritize and mitigate bottlenecks from the system.
+
+502
+00:33:11,820 --> 00:33:13,860
+Which I guess yeah that does align.
+
+503
+00:33:13,900 --> 00:33:16,780
+It's about being adaptive which we fully agree with.
+
+504
+00:33:18,750 --> 00:33:19,950
+But not modernism.
+
+505
+00:33:19,990 --> 00:33:23,110
+Crystal number two Aaron and Luke principal number 10.
+
+506
+00:33:23,670 --> 00:33:26,910
+We should we should change as needed in order to support the business.
+
+507
+00:33:29,440 --> 00:33:29,960
+Yeah.
+
+508
+00:33:33,100 --> 00:33:36,460
+I guess the only feedback I would say is sort of I would I would tweak their
+
+509
+00:33:36,460 --> 00:33:39,500
+language like change happens and that's a good thing.
+
+510
+00:33:40,850 --> 00:33:45,580
+Still has an element of being punitive.
+
+511
+00:33:46,420 --> 00:33:50,860
+I think I think what they're getting at is the thing we've talked about.
+
+512
+00:33:50,900 --> 00:33:53,940
+I care about it for sure on air or off or people are resistant to change.
+
+513
+00:33:53,980 --> 00:33:57,620
+People are afraid of change that we talked about on there as well.
+
+514
+00:33:57,660 --> 00:33:58,500
+Principle number seven.
+
+515
+00:33:58,940 --> 00:34:00,900
+If change happens it's a good thing.
+
+516
+00:34:01,060 --> 00:34:05,180
+Figure out why it's happening and how you write like oh wait you can be the
+
+517
+00:34:05,180 --> 00:34:07,180
+butterfly or you can be the wind.
+
+518
+00:34:07,220 --> 00:34:07,980
+I like that one.
+
+519
+00:34:08,140 --> 00:34:08,500
+Yeah.
+
+520
+00:34:09,740 --> 00:34:14,300
+I think of it as the discussions we've had around software development.
+
+521
+00:34:15,330 --> 00:34:19,160
+Models prescriptive iterative or adaptive.
+
+522
+00:34:20,760 --> 00:34:27,890
+I would say a little bit stronger insane adaptive development models are known
+
+523
+00:34:27,890 --> 00:34:33,610
+today to be not only more successful but significantly so quit fearing it.
+
+524
+00:34:35,330 --> 00:34:38,530
+It it boosts everything good.
+
+525
+00:34:38,810 --> 00:34:39,010
+All right.
+
+526
+00:34:39,050 --> 00:34:39,890
+Anyway yep.
+
+527
+00:34:40,720 --> 00:34:49,060
+Number 11 testing is a testing is a performance not a procedure and
+
+528
+00:34:49,260 --> 00:34:52,220
+certainly not an artifact.
+
+529
+00:34:53,840 --> 00:34:56,840
+So I think it was Chris McMahon who was the first person I heard
+
+530
+00:34:56,840 --> 00:34:58,320
+called testing a performance.
+
+531
+00:34:58,400 --> 00:35:03,600
+No he called and actually Chris is going to yell at me now because it was he said
+
+532
+00:35:03,640 --> 00:35:06,200
+this is interesting because he gave a talk on this that was really good.
+
+533
+00:35:06,560 --> 00:35:14,320
+He said a agile team making software is a performance and Chris being a very good
+
+534
+00:35:14,320 --> 00:35:19,560
+musician made some really good parallels to a performance because you're adapting
+
+535
+00:35:19,560 --> 00:35:23,360
+on stage to each other and delivering software.
+
+536
+00:35:23,600 --> 00:35:27,960
+But I haven't heard testing is a performance before by itself.
+
+537
+00:35:27,960 --> 00:35:30,440
+So is that based on somebody's principle.
+
+538
+00:35:30,720 --> 00:35:31,000
+Yeah.
+
+539
+00:35:31,720 --> 00:35:32,560
+Where does that come from.
+
+540
+00:35:33,280 --> 00:35:42,130
+Uh it's CDT six and seven and CDT six and seven.
+
+541
+00:35:43,400 --> 00:35:47,080
+Good software testing is a challenging intellectual process.
+
+542
+00:35:47,120 --> 00:35:47,600
+True.
+
+543
+00:35:47,840 --> 00:35:48,200
+True.
+
+544
+00:35:48,440 --> 00:35:49,720
+So is good software development.
+
+545
+00:35:49,760 --> 00:35:53,960
+Actually any knowledge work is a challenging intellectual process.
+
+546
+00:35:54,360 --> 00:35:55,280
+It should be.
+
+547
+00:35:55,560 --> 00:35:55,840
+Yep.
+
+548
+00:35:56,160 --> 00:35:58,600
+If it isn't you're doing it wrong.
+
+549
+00:35:58,960 --> 00:35:59,680
+Yes.
+
+550
+00:36:00,950 --> 00:36:03,830
+Uh C prior comment around test zombies.
+
+551
+00:36:04,630 --> 00:36:08,910
+Uh only in number seven is only through judgment of skill exercise cooperatively
+
+552
+00:36:08,910 --> 00:36:10,750
+throughout the entire project.
+
+553
+00:36:10,750 --> 00:36:14,190
+Are we able to do the right things at the right time to effectively test our
+
+554
+00:36:14,670 --> 00:36:15,390
+products.
+
+555
+00:36:15,950 --> 00:36:19,950
+So I would re I brief rates went a little bit in the Chris McMahon frame
+
+556
+00:36:19,950 --> 00:36:23,630
+and I would say delivering quality software as a performance and with the
+
+557
+00:36:23,630 --> 00:36:28,990
+parallel being it is a team and not an individual effort to do so.
+
+558
+00:36:29,390 --> 00:36:29,670
+Yeah.
+
+559
+00:36:29,670 --> 00:36:34,910
+So when it says testing is a performance I don't have the music theory
+
+560
+00:36:34,910 --> 00:36:37,940
+background that you do.
+
+561
+00:36:37,940 --> 00:36:43,500
+So I was thinking of this as not the way you interpreted it.
+
+562
+00:36:43,700 --> 00:36:47,940
+I was like, Oh, this is a grammatical error and they're talking about
+
+563
+00:36:47,940 --> 00:36:49,620
+performance testing, but still weird.
+
+564
+00:36:49,660 --> 00:36:53,380
+Maybe I'm talking, no, I don't have a clue what the hell they're saying here.
+
+565
+00:36:54,060 --> 00:36:56,500
+Um, that's almost literally how it happened.
+
+566
+00:36:57,060 --> 00:36:58,500
+It is certainly not a procedure.
+
+567
+00:36:58,500 --> 00:37:04,980
+It is certainly not an artifact, but you, they don't reference empty seven
+
+568
+00:37:04,980 --> 00:37:07,570
+here, right?
+
+569
+00:37:07,570 --> 00:37:13,340
+Cause the closest thing to sort of testing is a whole team problem in
+
+570
+00:37:13,340 --> 00:37:14,940
+empty is number seven.
+
+571
+00:37:15,660 --> 00:37:15,900
+Right.
+
+572
+00:37:16,420 --> 00:37:18,900
+And if, if that's how you interpret it, I agree.
+
+573
+00:37:18,940 --> 00:37:21,500
+I don't understand what they're saying here.
+
+574
+00:37:21,660 --> 00:37:28,460
+And then their last principle, I value healthy teams of people building useful
+
+575
+00:37:28,460 --> 00:37:32,580
+products for people consistent with my ethical beliefs in a way that
+
+576
+00:37:32,580 --> 00:37:34,180
+minimizes waste.
+
+577
+00:37:34,940 --> 00:37:40,740
+My focus is on reporting threats to that value and the values of my stakeholders.
+
+578
+00:37:41,760 --> 00:37:44,520
+And they refer to empty number one.
+
+579
+00:37:50,480 --> 00:37:56,560
+And their last sentence, their last sentence.
+
+580
+00:37:58,880 --> 00:38:04,560
+Their last sentence came across to me as the opposite or, or at least in
+
+581
+00:38:04,560 --> 00:38:07,120
+conflict with our first principle.
+
+582
+00:38:07,560 --> 00:38:18,640
+Uh, the way when you and I were wordsmithing principle number one, I was
+
+583
+00:38:18,640 --> 00:38:24,360
+thinking around how do I get people to stop thinking of testing as reporting.
+
+584
+00:38:25,080 --> 00:38:25,800
+Activity.
+
+585
+00:38:26,040 --> 00:38:26,520
+Yes.
+
+586
+00:38:26,960 --> 00:38:36,640
+And here is an example of someone who's actually using empty one to, to justify
+
+587
+00:38:36,640 --> 00:38:36,840
+it.
+
+588
+00:38:37,480 --> 00:38:41,220
+Um, now, could you read that second sentence again?
+
+589
+00:38:41,380 --> 00:38:43,300
+My focus is triggered me a little bit.
+
+590
+00:38:43,300 --> 00:38:48,690
+So my focus is on reporting threats to that value and the values of my
+
+591
+00:38:48,690 --> 00:38:49,650
+stakeholders.
+
+592
+00:38:49,650 --> 00:38:58,160
+So reporting, but this is the first one where I see testing referred to as a
+
+593
+00:38:58,160 --> 00:39:04,650
+community of people, not a practice or an activity, right?
+
+594
+00:39:04,770 --> 00:39:11,070
+My focus, I, yeah, it, my focus is on reporting threats.
+
+595
+00:39:13,100 --> 00:39:13,300
+Right.
+
+596
+00:39:14,890 --> 00:39:18,970
+My focus and, and, and the reason it triggered me is the focus is
+
+597
+00:39:18,970 --> 00:39:20,530
+on improving the business.
+
+598
+00:39:20,850 --> 00:39:26,970
+One thing you may do as part of improving the business is highlighting
+
+599
+00:39:26,970 --> 00:39:31,560
+threats for the team, highlighting routing, call it threats, highlighting
+
+600
+00:39:31,560 --> 00:39:31,960
+risk.
+
+601
+00:39:32,720 --> 00:39:37,320
+Uh, we shine the spotlight as needed in order to improve the business.
+
+602
+00:39:38,180 --> 00:39:43,940
+Uh, the focus here is I think opposite is too strong.
+
+603
+00:39:44,420 --> 00:39:45,900
+To me, it conflicts.
+
+604
+00:39:45,940 --> 00:39:51,260
+Uh, I would say strongly with our, our intention of our first principle.
+
+605
+00:39:52,400 --> 00:39:53,160
+Uh, for sure.
+
+606
+00:39:53,760 --> 00:39:59,760
+The way I'm, I'm, I'm trying to talk and read at the same time.
+
+607
+00:39:59,760 --> 00:40:02,360
+I probably should not do that.
+
+608
+00:40:03,510 --> 00:40:14,250
+Just so that everyone is aware, uh, if you're a new listener, I do think if
+
+609
+00:40:14,250 --> 00:40:21,820
+you're in a test role, I do think you improve your career by moving more to
+
+610
+00:40:21,820 --> 00:40:31,060
+a position of defining the actions based off of, uh, the decisions that your
+
+611
+00:40:31,060 --> 00:40:37,740
+information is informing, meaning a lot of testers go, our job is to just
+
+612
+00:40:37,740 --> 00:40:42,260
+inform the decision makers and I'm saying, why aren't you the decision maker?
+
+613
+00:40:42,300 --> 00:40:47,780
+That's even well, years before we thought of formalizing, at least modern testing.
+
+614
+00:40:48,060 --> 00:40:50,900
+I've heard that statement and it's again triggered me.
+
+615
+00:40:50,900 --> 00:40:52,380
+It's like, that's ridiculous.
+
+616
+00:40:52,420 --> 00:40:54,340
+It's, it's very passive.
+
+617
+00:40:55,260 --> 00:40:58,500
+Uh, this is, this came out of the context driven testing book is the
+
+618
+00:40:58,500 --> 00:41:00,380
+role of testing is to provide information period.
+
+619
+00:41:00,820 --> 00:41:03,620
+Um, I'm probably paraphrasing and someone can come yell at me.
+
+620
+00:41:04,020 --> 00:41:05,940
+And I thought that's a very passive approach.
+
+621
+00:41:05,940 --> 00:41:09,660
+I think our role is like, get that information and then go
+
+622
+00:41:09,660 --> 00:41:11,100
+make something happen with it.
+
+623
+00:41:11,380 --> 00:41:12,980
+And that's what I've always done.
+
+624
+00:41:12,980 --> 00:41:19,980
+And probably, uh, why I'm still employed and paid too much, uh, is because it
+
+625
+00:41:19,980 --> 00:41:21,620
+isn't just about providing information.
+
+626
+00:41:22,020 --> 00:41:25,820
+It's about figuring out what's the best way.
+
+627
+00:41:26,540 --> 00:41:27,900
+So I kind of see, can I use best?
+
+628
+00:41:28,020 --> 00:41:28,860
+I'll use best there.
+
+629
+00:41:29,180 --> 00:41:35,100
+Uh, by using principle number two, what's the best known way to mitigate that
+
+630
+00:41:35,100 --> 00:41:43,180
+risk bottleneck or that risk, uh, and often do it myself or make sure it gets done.
+
+631
+00:41:43,220 --> 00:41:48,620
+Part of principle number seven is bringing that leadership aspect and attribute out
+
+632
+00:41:48,660 --> 00:41:51,980
+of whoever is driving modern testing principles on the team.
+
+633
+00:41:52,840 --> 00:41:58,000
+And, and I want to pause for a second because some of these I've, I've
+
+634
+00:41:58,200 --> 00:42:01,240
+pushed back on a lot and, and said, uh, wrong.
+
+635
+00:42:01,240 --> 00:42:02,520
+And I don't like it that way.
+
+636
+00:42:02,880 --> 00:42:07,720
+Uh, I do want to commend, uh, Aaron and Luke for their, their work on this and
+
+637
+00:42:07,720 --> 00:42:11,640
+looking at one of the things I love about testers is we like to look at
+
+638
+00:42:11,640 --> 00:42:13,520
+systems and systems of systems.
+
+639
+00:42:13,960 --> 00:42:18,840
+And they took these three sets of principles that exist in the internet
+
+640
+00:42:18,880 --> 00:42:24,920
+and, and figured out what they meant to them as individuals and their work and
+
+641
+00:42:24,920 --> 00:42:29,720
+made a nice summary of things that they believe in that drive the way they work.
+
+642
+00:42:29,960 --> 00:42:31,080
+That's a hard thing to do.
+
+643
+00:42:31,080 --> 00:42:38,880
+And overall it's, it's not like it doesn't make my blood boil or, or, or make me
+
+644
+00:42:38,880 --> 00:42:40,120
+think, oh, these are stupid.
+
+645
+00:42:40,120 --> 00:42:42,680
+You should use modern testing principles instead.
+
+646
+00:42:43,080 --> 00:42:44,160
+I don't feel that way at all.
+
+647
+00:42:44,160 --> 00:42:46,160
+I think they, that would be dumb too.
+
+648
+00:42:46,600 --> 00:42:46,880
+Yeah.
+
+649
+00:42:49,080 --> 00:42:51,840
+Again, I, I encourage all of our listeners to go read these and
+
+650
+00:42:51,840 --> 00:42:54,560
+form your own opinions, but they asked for ours.
+
+651
+00:42:54,560 --> 00:42:58,760
+And, uh, and if, if either one are listening and joining, if we have
+
+652
+00:42:58,760 --> 00:43:03,560
+five listeners this month, uh, please take this, uh, this, any critique
+
+653
+00:43:03,560 --> 00:43:08,560
+we've given as just our opinions and their opinions about the principles
+
+654
+00:43:08,560 --> 00:43:12,960
+and in our practices and what we believe, uh, and what we feel drives
+
+655
+00:43:13,000 --> 00:43:14,440
+us, what our principles are.
+
+656
+00:43:14,960 --> 00:43:16,840
+And if there's conflict conflict is good.
+
+657
+00:43:16,840 --> 00:43:21,640
+If they're not, I mean, you would, I think a lot worse feedback for us
+
+658
+00:43:21,640 --> 00:43:24,680
+or anyone to give is yeah, these look good.
+
+659
+00:43:25,160 --> 00:43:27,000
+Keep on doing what you do.
+
+660
+00:43:27,160 --> 00:43:28,280
+LGTM.
+
+661
+00:43:29,360 --> 00:43:30,760
+I hate LGTM.
+
+662
+00:43:31,320 --> 00:43:42,390
+Now the, and likewise, um, Alan and I on an MT, like we're not married to it.
+
+663
+00:43:42,390 --> 00:43:46,510
+When something better comes along, we'll, we'll be the first to drop kick it.
+
+664
+00:43:47,230 --> 00:43:51,830
+We haven't, we haven't found something that resonates as well.
+
+665
+00:43:52,030 --> 00:43:55,910
+Um, yet, but it's just a matter of time.
+
+666
+00:43:56,150 --> 00:44:02,630
+Uh, I firmly believe that it is, it, it is a best practice now, but it will
+
+667
+00:44:02,630 --> 00:44:04,470
+not be the best practice in the future.
+
+668
+00:44:04,510 --> 00:44:06,870
+Like we said, they're not particularly modern.
+
+669
+00:44:06,950 --> 00:44:09,950
+We just, we just grasp the things that were already there.
+
+670
+00:44:09,950 --> 00:44:11,230
+These aren't forward looking.
+
+671
+00:44:11,710 --> 00:44:14,630
+Uh, we just took some things that we saw that we're working and tried to
+
+672
+00:44:14,630 --> 00:44:16,150
+formalize them into some principles.
+
+673
+00:44:16,510 --> 00:44:21,180
+And again, I've seen this on the podcast before, but when I first
+
+674
+00:44:21,220 --> 00:44:25,460
+started talking about modern testing principles in public, I got so many
+
+675
+00:44:25,460 --> 00:44:30,340
+comments to the flavor of thank you for putting a label on something I'm already doing.
+
+676
+00:44:31,020 --> 00:44:34,500
+So we're not like inventing some North star people are migrating towards.
+
+677
+00:44:34,540 --> 00:44:36,940
+No, it's like, Oh yeah, this describes what we do.
+
+678
+00:44:36,980 --> 00:44:37,260
+Cool.
+
+679
+00:44:37,260 --> 00:44:37,620
+Thanks.
+
+680
+00:44:37,940 --> 00:44:40,460
+You know what the single most important thing that we're doing is.
+
+681
+00:44:41,180 --> 00:44:44,540
+Um, breathing, forcing the conversation.
+
+682
+00:44:44,820 --> 00:44:47,300
+Yes, we are forcing a conversation.
+
+683
+00:44:47,300 --> 00:44:52,940
+And, and Aaron and Luke, they've, they've joined the conversation.
+
+684
+00:44:53,020 --> 00:44:53,860
+Yes, they have.
+
+685
+00:44:53,860 --> 00:44:55,140
+Welcome to our conversation.
+
+686
+00:44:55,220 --> 00:44:58,140
+And I, I think it's fantastic.
+
+687
+00:44:58,220 --> 00:45:03,100
+Uh, I hope that their conversation inspires other.
+
+688
+00:45:03,220 --> 00:45:03,620
+Yeah.
+
+689
+00:45:03,860 --> 00:45:07,460
+And we have seen, we haven't talked about it directly on the podcast, but there
+
+690
+00:45:07,460 --> 00:45:10,980
+are people speaking out sort of passive aggressively against modern testing
+
+691
+00:45:10,980 --> 00:45:12,100
+principles in a few cases.
+
+692
+00:45:12,260 --> 00:45:13,020
+And I like that too.
+
+693
+00:45:13,020 --> 00:45:14,340
+Welcome to the conversation.
+
+694
+00:45:14,620 --> 00:45:16,460
+It makes us think it makes others think.
+
+695
+00:45:16,820 --> 00:45:21,020
+Uh, I, I am thrilled when anyone even mentioned them.
+
+696
+00:45:21,020 --> 00:45:24,260
+So there've been a few conference talks, not by us on modern testing, which is
+
+697
+00:45:24,260 --> 00:45:24,660
+great.
+
+698
+00:45:25,020 --> 00:45:30,620
+Uh, they come up in blog posts, uh, other forums online, which I think is great.
+
+699
+00:45:30,660 --> 00:45:33,140
+So let's keep the conversation going.
+
+700
+00:45:33,140 --> 00:45:38,340
+We're, we're not here to say follow our principles or you're wrong.
+
+701
+00:45:38,620 --> 00:45:40,700
+That's not who we are or why we believe in them.
+
+702
+00:45:40,700 --> 00:45:42,200
+We believe in our context.
+
+703
+00:45:42,200 --> 00:45:46,480
+But we've, but everything we've done over the last couple of years, these
+
+704
+00:45:46,520 --> 00:45:49,280
+principles guide our decisions the way we work.
+
+705
+00:45:49,280 --> 00:45:51,560
+I want to actually say it even stronger.
+
+706
+00:45:52,160 --> 00:45:52,680
+Go for it.
+
+707
+00:45:52,760 --> 00:45:56,880
+Don't follow any set of principles.
+
+708
+00:45:57,740 --> 00:46:06,000
+Use them, think on them, be critical, come up with your own and act in that
+
+709
+00:46:06,000 --> 00:46:11,760
+direction until you find a better sets of principles to guide you, your
+
+710
+00:46:11,800 --> 00:46:14,560
+career, whatever you define success.
+
+711
+00:46:14,560 --> 00:46:20,760
+Even stronger, blind faith in anything will wreck you.
+
+712
+00:46:23,960 --> 00:46:24,960
+I can't go stronger.
+
+713
+00:46:25,080 --> 00:46:25,360
+Sorry.
+
+714
+00:46:25,400 --> 00:46:25,680
+All right.
+
+715
+00:46:25,680 --> 00:46:30,630
+I would internet points are showering down on me.
+
+716
+00:46:30,630 --> 00:46:33,510
+Hi, can you see like the, uh, the things floating down?
+
+717
+00:46:33,950 --> 00:46:34,230
+No.
+
+718
+00:46:34,990 --> 00:46:35,310
+Okay.
+
+719
+00:46:35,710 --> 00:46:37,310
+If Brent, I'm closing my eyes.
+
+720
+00:46:37,390 --> 00:46:38,350
+I'll be like a listener.
+
+721
+00:46:38,350 --> 00:46:39,950
+Then nobody else can see them.
+
+722
+00:46:40,870 --> 00:46:43,720
+Uh, all right.
+
+723
+00:46:43,760 --> 00:46:45,840
+So thanks.
+
+724
+00:46:45,880 --> 00:46:50,760
+Uh, thank you very much, Aaron and Luke for giving us that, uh, conversation
+
+725
+00:46:50,760 --> 00:46:51,640
+topic for the podcast.
+
+726
+00:46:51,640 --> 00:46:54,480
+Hope it was helpful, not just to you if you're listening, but to any
+
+727
+00:46:54,480 --> 00:46:57,000
+other listeners as well.
+
+728
+00:46:57,600 --> 00:47:01,600
+Uh, anything else that you want to talk about before we close today, Brent?
+
+729
+00:47:01,840 --> 00:47:02,680
+No, we're over time.
+
+730
+00:47:03,730 --> 00:47:06,010
+You don't have to tell them that they don't know.
+
+731
+00:47:06,290 --> 00:47:10,250
+Cause when I edit this 50 minutes down, it's going to be like 12 minutes.
+
+732
+00:47:12,170 --> 00:47:15,010
+Hey, it's good to be back.
+
+733
+00:47:15,250 --> 00:47:15,690
+It is.
+
+734
+00:47:15,690 --> 00:47:16,010
+It is.
+
+735
+00:47:16,010 --> 00:47:16,330
+It is.
+
+736
+00:47:16,330 --> 00:47:16,610
+It is.
+
+737
+00:47:16,610 --> 00:47:17,010
+All right.
+
+738
+00:47:17,050 --> 00:47:19,930
+Hopefully we'll be back again for one Oh eight and two weeks.
+
+739
+00:47:20,250 --> 00:47:21,770
+That is the plan.
+
+740
+00:47:21,810 --> 00:47:22,290
+All right.
+
+741
+00:47:22,290 --> 00:47:23,370
+I am Alan.
+
+742
+00:47:23,370 --> 00:47:24,570
+I'm Brent and we'll see you next time.
+

@@ -1,0 +1,968 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.320
+Hey everyone, it's Alan jumping in to let you know that I screwed up. We have a guest today
+
+00:00:06.320 --> 00:00:12.000
+and we ran out of disk space with about five minutes left in the interview so we don't quite
+
+00:00:12.000 --> 00:00:16.640
+get to the end and say goodbye. Well the good news is is our guest has invited us to be
+
+00:00:17.200 --> 00:00:21.360
+a guest on his podcast so we'll pick it up then some other day but today
+
+00:00:22.000 --> 00:00:32.140
+great conversation. Hope you enjoy. Welcome to AV testing podcast your modern testing podcast
+
+00:00:32.140 --> 00:00:39.100
+your hosts Alan and Brent will be here to guide you through topics on testing, leadership, agile,
+
+00:00:39.100 --> 00:00:45.820
+and anything else that comes to mind. Now on with the show. Hey everyone. Howdy. Hey we have a guest
+
+00:00:45.820 --> 00:00:53.900
+here we have Darko. Darko say hi. Hi guys. We have Darko Fabian he is the co-founder of
+
+00:00:54.620 --> 00:01:00.300
+Semaphore CI and he is gonna he has his own podcast we can talk about that later. Yeah sure.
+
+00:01:01.260 --> 00:01:07.820
+But we can talk about all kinds of stuff so let's we've literally literally just met seconds before
+
+00:01:07.820 --> 00:01:13.260
+I press the record button so tell us a little about a little about yourself. Yeah I agree
+
+00:01:13.260 --> 00:01:19.100
+we couldn't be less prepared. Don't give away it's okay our listeners know that know this.
+
+00:01:19.100 --> 00:01:27.780
+That is absolutely not true. We have proven on the podcast repeatedly we can be even less
+
+00:01:27.780 --> 00:01:35.940
+prepared than we were last time. So so Darko tell us about yourself. Yeah sure. So yeah I have been
+
+00:01:35.940 --> 00:01:42.340
+with my partner running this you know CI CD business for last 10 years prior to starting like
+
+00:01:43.620 --> 00:01:52.030
+back then like a purely hosted CI CD company we were like a rails consultancy and in those
+
+00:01:52.030 --> 00:01:59.070
+waters it was like 2008 2009 we were very exposed to the community to the general the culture of
+
+00:01:59.070 --> 00:02:07.340
+testing TDD BDD all that came with that community and yeah eventually we figured out that we
+
+00:02:07.340 --> 00:02:15.420
+wanted to have better tools that are than were available back then and yeah frankly we also
+
+00:02:15.420 --> 00:02:21.500
+wanted to get away from the consulting business we want something with a pricing page to be honest
+
+00:02:22.620 --> 00:02:30.700
+and that's how we got into you know SaaS business which is a hosted CI CD platform and as I said we
+
+00:02:30.700 --> 00:02:34.460
+have been doing that for the last 10 years and it's getting more interesting and more interesting
+
+00:02:34.460 --> 00:02:41.420
+as we are working with you know bigger companies that have bigger teams more challenges in the area
+
+00:02:41.420 --> 00:02:49.340
+of like testing CI CD so yeah in a couple of words that's that's what I'm doing day to day
+
+00:02:49.900 --> 00:02:56.780
+and I will be glad to you know elaborate and expand on these topics which also seem to be
+
+00:02:56.780 --> 00:03:00.860
+interesting for you guys so yeah I'd like Brent's already smiling you want to go first Brent
+
+00:03:01.580 --> 00:03:10.220
+well so I went to I'm on their page and I love their tagline CI CD for teams that don't like
+
+00:03:10.220 --> 00:03:18.220
+bottlenecks we hate bottlenecks too absolutely hate bottlenecks in all forms it's a period of
+
+00:03:18.220 --> 00:03:24.300
+time I don't want to tangentize on this one but it's it's it's the period of time it's review
+
+00:03:24.300 --> 00:03:30.300
+season at Microsoft oh that's what they say peak in May peak in May that's the Microsoft tagline
+
+00:03:30.300 --> 00:03:38.860
+no so it's it's so I consider myself a responsible and caring manager and so it's the also the time
+
+00:03:38.860 --> 00:03:47.420
+of the year where I retrospect and go oh I am such a bottleneck for my team anyway so yeah
+
+00:03:48.300 --> 00:03:55.820
+doing a lot of self-deprecation for the next couple of weeks around how horrible is it that my poor
+
+00:03:55.820 --> 00:04:02.540
+team reports to me anyway I don't know that I don't know this I can't imagine a worse scenario
+
+00:04:02.540 --> 00:04:09.740
+but whatever I don't know that that's that's part of the scenario that you're working to address with
+
+00:04:09.740 --> 00:04:18.060
+some of four but maybe it is go ahead oh yeah um I again we're not a product advertisement podcast
+
+00:04:18.060 --> 00:04:24.460
+however I'm very curious I'm gonna ask questions anyway CD is a lot of different things like your
+
+00:04:24.460 --> 00:04:29.820
+page all it says I'm intensely curious because CD is like my team solves a lot of it for teams
+
+00:04:29.900 --> 00:04:35.980
+at Unity but CD is a lot of things teams don't want CD they want to be able to maybe they just
+
+00:04:35.980 --> 00:04:40.300
+want to be able to automatically deploy in every change but often they want to be able to roll back
+
+00:04:40.300 --> 00:04:45.340
+or they want to know under what conditions should I roll back or can I do blue green deployments or
+
+00:04:46.380 --> 00:04:53.180
+staged rollouts of things what are I'm just very curious what are the advanced CD features that
+
+00:04:53.180 --> 00:05:00.620
+semaphore has let me maybe start with a bit of history so CI is the part which is
+
+00:05:01.980 --> 00:05:05.020
+which is kind of the first thing that you know people want to solve
+
+00:05:06.660 --> 00:05:14.260
+and that we also saw solved initially then for you know maybe two or three years people were
+
+00:05:14.260 --> 00:05:21.380
+bothering us can you also help us you know to deploy and frankly speaking we we haven't figured
+
+00:05:21.380 --> 00:05:26.500
+out that that's also the thing that we should be doing we were in that mindset we should be
+
+00:05:26.500 --> 00:05:33.140
+doing one thing then doing that thing very well over time we just figured out that you know the
+
+00:05:33.140 --> 00:05:41.620
+number of needs that people have and you just you know explained or you know listed a couple of
+
+00:05:41.620 --> 00:05:50.180
+those is enormous so what we did is in a pretty agnostic way we made a way to connect different
+
+00:05:50.260 --> 00:05:57.780
+pipelines together and those pipelines can model like any automate any process
+
+00:05:59.730 --> 00:06:04.930
+so you have your initial pipeline which is your build and test pipeline then you have a promotion
+
+00:06:04.930 --> 00:06:09.890
+which is a concept which is can be triggered manually or automatically which is just going
+
+00:06:09.890 --> 00:06:16.690
+to trigger a second pipeline and with that pipeline you can do your blue green or
+
+00:06:16.850 --> 00:06:27.760
+something you know any of the deployment patterns that else that you would want to do and on top of
+
+00:06:27.760 --> 00:06:33.840
+that you can chain another pipeline which can then again automate some other process that you
+
+00:06:33.840 --> 00:06:41.760
+that you would like to do for instance a rollback or you know very very very different things
+
+00:06:42.480 --> 00:06:49.520
+so I hopefully answered your question to some extent but I would be happy to expand
+
+00:06:51.700 --> 00:07:02.420
+so it does all of it yes well so so just to make sure I heard correctly it's so you've created
+
+00:07:02.420 --> 00:07:10.210
+sort of a generic reusable pipeline infrastructure is kind of what I've heard there
+
+00:07:11.170 --> 00:07:21.500
+but for things like let's say flight control are there do you have any any features within semaphore
+
+00:07:21.500 --> 00:07:27.740
+that helps you directly manage that or are you at the phase right now that you have the platform
+
+00:07:27.740 --> 00:07:34.540
+to support that but the the management of it is not yet a not yet an integrated feature
+
+00:07:36.370 --> 00:07:47.890
+um well it's probably the first one okay uh yeah yeah no and and and and that's that's fine how long
+
+00:07:47.890 --> 00:07:56.220
+have you been in business uh 10 years 10 years okay interesting and specifically in semaphore for 10
+
+00:07:56.220 --> 00:08:12.380
+years yeah yeah oh wow okay um the so I looked at your podcast I see it's a who's who oh yeah
+
+00:08:12.380 --> 00:08:21.260
+absolutely like I see I see many friends of ours there like uh two times ago I guess two
+
+00:08:21.260 --> 00:08:27.820
+instances ago Lisa was up um I'm surprised you having hi Lisa because Lisa listens to the podcast
+
+00:08:27.820 --> 00:08:36.940
+hi Lisa yeah hi Lisa hi um I don't know why I do a podcast I have absolutely no podcast presence
+
+00:08:37.500 --> 00:08:41.420
+uh but I'm I am surprised that Alan's not yet on this list
+
+00:08:43.020 --> 00:08:47.260
+Brent's trying to be my agent yeah he might be
+
+00:08:48.220 --> 00:08:56.030
+yeah um Alan definitely gets what he pays for in terms of his agency so
+
+00:08:56.830 --> 00:09:02.510
+just glancing through I do see a lot of our friends on here and and I do see a lot of
+
+00:09:03.310 --> 00:09:13.790
+uh test representation here so are you targeting do you specifically target the the test market
+
+00:09:14.670 --> 00:09:24.380
+or the dev market like can you can you are you open to sharing to what degree you view your solution
+
+00:09:25.100 --> 00:09:30.300
+is test or dev and then how might that have changed in the last 10 years
+
+00:09:31.380 --> 00:09:39.220
+I I can maybe explain what our most interesting customers are and what we are very focusing on
+
+00:09:39.220 --> 00:09:46.420
+and that should you know answer a lot of a lot of your questions so I mean for instance
+
+00:09:48.620 --> 00:09:55.420
+companies coming their team of 20 people they have developed application in whatever tool they're in
+
+00:09:56.980 --> 00:10:02.420
+large percentage of the customers are just you know product companies that want to move as fast as
+
+00:10:02.420 --> 00:10:12.850
+possible and they come into our platform they are hiring aggressively and let's say two years later
+
+00:10:12.850 --> 00:10:18.770
+they're actually a team of 200 people our mission is that they don't have to worry about their CI and
+
+00:10:18.770 --> 00:10:26.830
+CD process at all so we scale automatically we have a number of features that help them you
+
+00:10:26.830 --> 00:10:35.340
+know to support their teams and they don't have to worry about CI CD at all and they also have
+
+00:10:35.340 --> 00:10:43.630
+to be passionate about having a fast fast feedback loop for a lot of years now we have been advocating
+
+00:10:43.630 --> 00:10:51.390
+that you know a feedback on the CI loop should be under 10 minutes you guys probably know for
+
+00:10:51.390 --> 00:11:01.860
+instance Dave Farley he likes to keep that at five and we are helping teams to achieve that
+
+00:11:01.860 --> 00:11:07.860
+and maintain that as applications are growing and complexity is growing that's not trivial
+
+00:11:08.980 --> 00:11:14.900
+and we want to be that you know extended part of their team that is going to help them to to
+
+00:11:14.900 --> 00:11:26.160
+achieve that customer like 99% of our customer all of our customers are you know very technically
+
+00:11:26.160 --> 00:11:34.560
+mature teams that you know practice TDD BDD other you know good testing methodologies and they pretty
+
+00:11:34.560 --> 00:11:40.720
+much once everything is green on master they automatically you know deploy to production or
+
+00:11:40.720 --> 00:11:47.040
+they click and then deploy happens but usually there is nothing you know nothing more that that's
+
+00:11:47.040 --> 00:11:55.680
+really that's really that's really blocking them from from deploying so fast feedback loop no bottlenecks
+
+00:11:57.600 --> 00:12:03.520
+and various elements of testing are parts of our organizations with customers i can expand on that
+
+00:12:04.430 --> 00:12:11.790
+uh but yeah hopefully i answered your your initial question at least let me talk a bit about that and
+
+00:12:12.830 --> 00:12:19.790
+one thing i've seen a lot of teams moving to CI is a challenge they face we saw this at microsoft a
+
+00:12:19.790 --> 00:12:27.810
+lot back in the day brent when tests that the team thought we had to run to make sure things
+
+00:12:27.810 --> 00:12:34.130
+were good take four hours eight hours brent and i both been on teams like that right brent
+
+00:12:35.360 --> 00:12:42.240
+brent's nodding his head for those not not on the video feed of our non-live podcast so what what's
+
+00:12:42.240 --> 00:12:47.040
+the path there is my question like and i i have my own answers but i think you might have an
+
+00:12:47.040 --> 00:12:53.440
+opinion here too like how do you take a team that has an eight hour test pass i'll say four hours
+
+00:12:53.520 --> 00:13:01.140
+a long test pass how do you get them do you just call CI and a eight and a half hour process or do
+
+00:13:01.140 --> 00:13:07.920
+you still try and crank that down to 10 minutes and if so how well a lot of fit in practice you know
+
+00:13:07.920 --> 00:13:16.460
+is just you know brute force horizontal scaling uh depending on the technologies because as you
+
+00:13:16.460 --> 00:13:22.300
+might guess you know i already said a lot of our customers are SaaS companies that involves some
+
+00:13:22.860 --> 00:13:30.800
+um some flavor of web stack uh where a lot of it can be paralyzed and just horizontally scaled
+
+00:13:31.600 --> 00:13:36.640
+and if someone comes in through the door and has something like that you know couple of hours
+
+00:13:36.640 --> 00:13:45.570
+long test suit uh if you would uh run that you know sequentially what what we would offer is like
+
+00:13:45.570 --> 00:13:51.890
+okay let's massively parallelize that let's let's 100 150 jobs in parallel our orchestrator and
+
+00:13:51.890 --> 00:13:59.650
+schedulers are optimized uh to run those jobs like you know in a window of like under five seconds
+
+00:13:59.650 --> 00:14:05.790
+all of those jobs will start and tests will be distributed across across all of those
+
+00:14:07.470 --> 00:14:15.410
+across all of those jobs however um that's never the the end um there are
+
+00:14:15.890 --> 00:14:22.580
+uh depending on the team and um and what their values are and what their culture is
+
+00:14:23.700 --> 00:14:30.740
+um they should really work on um figuring out their testing strategies that will hold for the long term
+
+00:14:31.380 --> 00:14:38.260
+was the testing pyramid a vast majority of of people that i i talk to and we talk to
+
+00:14:38.420 --> 00:14:44.980
+and we talk to um are struggling with having a very expensive integration acceptance tests
+
+00:14:46.660 --> 00:14:54.980
+and really not investing a lot in unit tests and in you know um just cultivating that test suit
+
+00:14:54.980 --> 00:14:59.700
+and how it will work five years from now or ten years from now and then there are like a
+
+00:14:59.780 --> 00:15:09.940
+brittleness of tests and flakiness and and and all of that uh so yeah so i'm gonna i you have a very
+
+00:15:09.940 --> 00:15:14.260
+pragmatic approach here which i love so um i have thought about the
+
+00:15:15.220 --> 00:15:20.820
+a lot of it's the pyramid in a second but also there's a lot of teams focused on writing these
+
+00:15:20.820 --> 00:15:29.330
+brittle i can say writing these brittle web tests in selenium and they take a while to run
+
+00:15:29.330 --> 00:15:35.490
+they're generally flaky they don't last a long time and they write too many of them in general
+
+00:15:35.490 --> 00:15:40.930
+exactly in general exactly so and that's that's kind of the problem with the industry no okay
+
+00:15:40.930 --> 00:15:48.130
+you are you are our kind of people darko it's like it it blows me away to no end and one thing i've
+
+00:15:48.130 --> 00:15:52.530
+stated before i'm curious on your thoughts because you seem to be um smarter than me
+
+00:15:53.170 --> 00:16:02.750
+is that the test pyramid isn't something you strive towards as a model for how you write your tests
+
+00:16:02.750 --> 00:16:08.750
+it's the outcome of what happens when you have a well architected and designed product and suite
+
+00:16:08.750 --> 00:16:15.200
+of tests to test it that's true that's true i got something right check it out listeners
+
+00:16:17.810 --> 00:16:22.530
+that's true um because i think what i've heard and i just want something i'd love to hear your
+
+00:16:22.530 --> 00:16:27.650
+thoughts on this when i hear from teams that say they tell me we have to write all these selenium
+
+00:16:27.650 --> 00:16:36.000
+tests because there's no way to test our software not at the web level and i look at them and i say
+
+00:16:36.000 --> 00:16:49.300
+don't you see the problem of what you just said sadly they don't the yeah so okay so so allen
+
+00:16:49.300 --> 00:16:56.850
+past test number one i do i'm curious i'm curious based on how you told the story so i'm thinking
+
+00:16:56.850 --> 00:17:04.050
+around so some of four started around 10 years ago thinking about what allen and i were doing
+
+00:17:04.050 --> 00:17:11.790
+around 10 years ago allen was 10 years ago that's that's when darko said he started some of war
+
+00:17:11.790 --> 00:17:16.590
+no i don't i'm trying to think what year it is now because i've forgotten i can't figure out
+
+00:17:16.590 --> 00:17:21.790
+what year 10 years ago was if i don't know when it is now brent i just need a moment to figure
+
+00:17:21.790 --> 00:17:32.350
+out my reality it's uh 2022 i figured that up by now okay so um 10 years ago allen was still at
+
+00:17:32.350 --> 00:17:41.780
+microsoft and we were knee deep in actually i know exactly where that was that was the year i
+
+00:17:41.780 --> 00:17:49.380
+actually moved to dev and into bing uh so that was right in the agile transformation period of
+
+00:17:49.380 --> 00:17:57.390
+microsoft so um and i don't think i i don't think anyone on this long on this call today is going
+
+00:17:57.390 --> 00:18:05.550
+to be confused on on the importance of cicb as it relates to agile um but darko before before
+
+00:18:05.630 --> 00:18:14.210
+you co-founded summa four what was your history were you were you a developer were you
+
+00:18:15.090 --> 00:18:20.610
+oh no you mentioned you were a consultant you you were consulting on on what sort of things
+
+00:18:20.610 --> 00:18:28.930
+just uh development test pm all of the above but but what exactly my suspicion i'll let you
+
+00:18:28.930 --> 00:18:35.100
+answer but my suspicion is that you were primary developer is that correct yes yes would say so
+
+00:18:35.580 --> 00:18:44.620
+okay when you started this company did you guess that in order to make it thrive you would essentially
+
+00:18:44.620 --> 00:18:52.800
+need to become a test architect um i'm not sure if i'm a test architect he's a job he's running jobs
+
+00:18:52.800 --> 00:18:59.760
+that do testing because one of the challenges with cicd in order to make that role you have
+
+00:19:00.320 --> 00:19:09.970
+to make that really go right the tests the tests need to be rethought the tests need to be like
+
+00:19:09.970 --> 00:19:16.620
+when you first start off a new team and they have their uh so back in those days you know
+
+00:19:16.620 --> 00:19:27.330
+in my world uh you know month-long test passes right there was no cicd there was no no no we have
+
+00:19:27.330 --> 00:19:33.650
+a code complete date and then we we kick off a month-long test pass in containing i mean
+
+00:19:35.090 --> 00:19:42.850
+i had test cases back in those days so i was a test manager at that time and within my organization
+
+00:19:42.850 --> 00:19:49.890
+we had test cases that take not only multiple hours but multiple days right it was just very
+
+00:19:49.890 --> 00:19:57.380
+poorly designed up front right and in order to make your product succeed it seems like you've
+
+00:19:57.380 --> 00:20:04.500
+learned okay let's go and we we're going to have to advise our customers on how to rethink the test
+
+00:20:04.500 --> 00:20:13.550
+architectures right did that occur that's what i thought i heard well we do that we'll do that but
+
+00:20:15.310 --> 00:20:23.120
+maybe i would add something here of course we want to you know the more successful
+
+00:20:23.200 --> 00:20:27.040
+our customers are the more we are happy with that you know for obvious reasons
+
+00:20:29.470 --> 00:20:34.910
+they have bigger teams and at the end of the month they also have bigger invoices and all of that
+
+00:20:37.230 --> 00:20:45.230
+but a lot of teams and what alan was talking about is they have that huge test suite of those
+
+00:20:45.230 --> 00:20:52.700
+brittle tests and so on there is that part to success that you know starts to start to go through
+
+00:20:53.570 --> 00:21:01.010
+you know they are just throwing the code in and feature with shovel you know in and that that
+
+00:21:01.010 --> 00:21:09.330
+initial team is probably not very good technical team not composed of the best people they are the
+
+00:21:09.330 --> 00:21:14.850
+people that will bring the company to the next i don't know not next financing round next validation
+
+00:21:14.850 --> 00:21:23.920
+of the product and so on and in a lot of cases that for our test suite that needs to be spread
+
+00:21:23.920 --> 00:21:37.070
+across country jobs is is product of success which intersects with you know some poor architecture
+
+00:21:37.950 --> 00:21:45.310
+that was you know just inherited you know and they had to move along fast so i hope that i'm
+
+00:21:46.990 --> 00:21:55.390
+i'm to some extent also continuing to what brad started explaining as the situation that you just
+
+00:21:55.390 --> 00:22:08.380
+end up being in um so and and that test architecture so we we do try to help people you know
+
+00:22:09.020 --> 00:22:23.730
+uh but um i'm not sure to to which extent um we really do uh because that's um we can give like some
+
+00:22:23.730 --> 00:22:30.290
+recipes but in a lot of cases there has to be a some of the cultural shifts you know and the
+
+00:22:31.250 --> 00:22:38.770
+organization of the architecture and the approach and it's kind of a lot of social engineering work
+
+00:22:39.570 --> 00:22:47.250
+though make that happen and we we are with them for a really relatively brief periods of times even
+
+00:22:47.250 --> 00:22:52.770
+if you are meeting every every month you know or so to help them you know steer they're both in the
+
+00:22:52.770 --> 00:22:58.290
+right direction they will still have so many many more hours with themselves and with their
+
+00:22:58.290 --> 00:23:06.370
+old practices that they're pulling them back you know and holding them back um yeah the
+
+00:23:07.250 --> 00:23:17.250
+what you just said really resonated with me so in the last 10 years and i know allen's on this as well
+
+00:23:18.290 --> 00:23:27.980
+we we've had to go go through a lot of period of agile coaching right a lot of the people that
+
+00:23:28.700 --> 00:23:36.060
+have engaged with me in that time period right they kind of approach and they're like oh right
+
+00:23:36.060 --> 00:23:43.660
+well we want to go to agile because we hear agile is the next big thing right and they they're at a
+
+00:23:43.660 --> 00:23:51.740
+phase where at least they're interested but they are not at a phase where where they understand
+
+00:23:53.360 --> 00:24:02.000
+sort of the the price tag uh for that and it's not just money but in terms of like cultural changes
+
+00:24:02.080 --> 00:24:08.240
+and and things of those sorts do you find that people coming to you are already
+
+00:24:10.210 --> 00:24:16.850
+they are already uh you know given your company's tagline that they that they're already sort of
+
+00:24:16.850 --> 00:24:27.490
+understand agile they understand how to execute and now they realize that they absolutely need cicd
+
+00:24:28.700 --> 00:24:37.440
+uh that that's a bottleneck to their process um or and they understand it's probably going to be
+
+00:24:37.440 --> 00:24:44.960
+painful or do you do you find that even with cicd that they're coming to you and say oh well we we
+
+00:24:44.960 --> 00:24:50.880
+you know we heard that we got to be cicd and we want to talk to you like to what degree of
+
+00:24:50.880 --> 00:25:03.230
+ignorance around the end to end are you encountering well i would say that you know i am i'm super happy
+
+00:25:03.230 --> 00:25:11.550
+where they are so they are very uh in a lot of cases they are very lean they are they are very
+
+00:25:11.550 --> 00:25:20.750
+agile and they know they know where they need to go uh just getting there is is a journey that
+
+00:25:21.390 --> 00:25:28.700
+takes a lot of time and as you said a lot of coaching a lot of coaching is needed is needed
+
+00:25:30.620 --> 00:25:38.340
+wanting crossed my mind as you as you were saying this um to jump somewhere else you know
+
+00:25:39.380 --> 00:25:45.780
+um a lot of people want to get that kind of a magic pill that will you know take their
+
+00:25:45.780 --> 00:25:53.040
+cross or down and it's they they don't want to you know walk every day and do this and change you
+
+00:25:53.040 --> 00:26:00.000
+know 10 of their habits but they would like to get that get that pill so that that's one of the
+
+00:26:00.000 --> 00:26:08.240
+things that um is um i mean not really frustrating but yeah cannot come with a better word that a lot
+
+00:26:08.240 --> 00:26:14.160
+of a lot of teams are looking for something like that that there is something that will offer like
+
+00:26:14.160 --> 00:26:24.240
+a quick and easy fix uh however there isn't and the latest thing uh out there are micro services
+
+00:26:25.040 --> 00:26:32.160
+right as as alan explained because there is that test you that takes four hours so what we are going
+
+00:26:32.160 --> 00:26:37.680
+to do well we are going to take the hammer we are going to break that into a hundred pieces
+
+00:26:38.640 --> 00:26:44.640
+and uh you know all our problems will go away because we'll have no longer that embarrassing
+
+00:26:44.640 --> 00:26:52.780
+long test yet but we are going to have a lot of small ones journey to get there is very is uh
+
+00:26:53.820 --> 00:27:02.900
+years long journey and it's also very questionable is that a solution so that's um part of my answer
+
+00:27:02.900 --> 00:27:12.930
+what what they're what they're looking for and um every like five years ago it was containers
+
+00:27:14.270 --> 00:27:20.430
+and um you know there is just so much of that in the air that people cannot not cannot not
+
+00:27:20.430 --> 00:27:29.150
+talk about that and you know seek that is a solution for all their problems and um now five
+
+00:27:29.390 --> 00:27:38.030
+years later it's microservices and it was also like uh lambdas and uh those kind of things so
+
+00:27:38.590 --> 00:27:46.610
+um yeah that that's what i'm seeing that's my my view of the world uh how people would want to
+
+00:27:46.610 --> 00:27:56.400
+solve solve their problems i find it interesting you're saying so from your view the shiny thing
+
+00:27:56.400 --> 00:28:03.200
+that everybody uh thought was the magic pill that would make everything go away five years ago was
+
+00:28:03.200 --> 00:28:09.440
+was containers and it's now microservices it's interesting because for me i would say
+
+00:28:10.000 --> 00:28:20.770
+my experience is kind of the reverse um but it's neither here or there the the absolute tendency
+
+00:28:20.770 --> 00:28:30.620
+so i'm a data scientist now and uh it seems like i keep changing roles into places where there's a new
+
+00:28:30.620 --> 00:28:41.040
+prevailing belief that uh a magic pill will will make the problem go away but um clearly AI can
+
+00:28:41.040 --> 00:28:47.650
+just solve all problems of course right right it gets right it's indistinguishable from magic
+
+00:28:48.450 --> 00:28:58.590
+and then i guess um so do you find day-to-day so you you to what degree have you actually managed to escape
+
+00:28:58.590 --> 00:29:06.560
+uh the consulting business or fully fully but you could you could say that
+
+00:29:06.560 --> 00:29:16.000
+uh i'm still doing it i'm just not aware that's actually my day-to-day job you know to me it feels
+
+00:29:16.000 --> 00:29:20.960
+like that's the case it feels like that you're still doing it but now focused on okay i have to
+
+00:29:20.960 --> 00:29:27.280
+do a consulting business in order to help this customer succeed on some of four okay alan did
+
+00:29:27.280 --> 00:29:33.200
+you have something yeah i want to dive into um we talked we touched on this and uh earlier but
+
+00:29:33.920 --> 00:29:39.440
+i know it's uh from reading the glancing earlier at the ebook on your site that you have some
+
+00:29:40.460 --> 00:29:46.060
+pretty excellent advice on optimizing tests we talked about the slow selenium tests and
+
+00:29:46.060 --> 00:29:49.420
+oh one thing i wanted to mention when you get that when someone has that four hour test pass
+
+00:29:50.460 --> 00:29:53.820
+sorry i should organize my thoughts well they have that long test pass
+
+00:29:54.930 --> 00:29:59.970
+i would say 99 times out of 100 it also includes tests that they do not need to run anymore
+
+00:30:00.820 --> 00:30:07.460
+there is there is a it's a weird uh bias and brent to tell me which one it is like
+
+00:30:08.100 --> 00:30:12.180
+it's been it's been around since i've been in testing once i create an automated test
+
+00:30:13.150 --> 00:30:19.070
+that test will run forever i will never stop running it because if i do the moment i stop
+
+00:30:19.070 --> 00:30:25.550
+the underlying code will break which is all crap but people it's a general belief whether it's uh
+
+00:30:25.550 --> 00:30:32.990
+set out loud or not so often the way to optimize a test pass is to remove tests that are redundant
+
+00:30:32.990 --> 00:30:42.290
+or flaky etc but i know you also have a lot of um uh pretty advanced idea not advanced but
+
+00:30:42.290 --> 00:30:47.810
+you've thought through this problem on optimizing how long tests take to run i just want to just
+
+00:30:47.810 --> 00:30:53.810
+wanted to expand on that a little bit because i think it's it's uh it's pretty sound and accurate
+
+00:30:53.810 --> 00:31:00.100
+advice and it's worth our listeners hearing about um to be honest i'm not sure to which exact you're
+
+00:31:00.100 --> 00:31:05.540
+referring to they are like um well i'll just i'll just say like how do you what's your approach to
+
+00:31:05.540 --> 00:31:09.620
+optimizing a test say you have a bunch of tests that take you think take too long to run
+
+00:31:10.180 --> 00:31:16.420
+what do you do what what's your again you're is that making you asking the consultant question
+
+00:31:16.420 --> 00:31:23.550
+when you're in the business but yeah but how do you go about that well in my particular situation
+
+00:31:23.550 --> 00:31:29.470
+i i rarely think about one isolated test that might take you know three minutes to run
+
+00:31:29.470 --> 00:31:35.790
+and can it be written can it be you know changed and then it can be completed under you know 30
+
+00:31:35.790 --> 00:31:46.030
+seconds or something like that i usually think as a test you as a whole um to me i i sometimes wonder
+
+00:31:46.030 --> 00:31:52.770
+if i'm doing something wrong but um essentially i need to sort your test by the duration and
+
+00:31:52.770 --> 00:32:01.010
+uh pick those you know couple of percent that they just take a lot of time uh then go each through
+
+00:32:01.010 --> 00:32:09.180
+each of them and first verify um what's the level of confidence that they're bringing and consider
+
+00:32:09.180 --> 00:32:14.860
+you know removing them or rewriting them or is there a test which is you know already already testing that
+
+00:32:15.940 --> 00:32:23.780
+and um that exactly as you explained brings a lot of anxiety you know to remove a test
+
+00:32:25.810 --> 00:32:35.780
+and then also that element of flakiness that's actually huge and um a lot of people you know
+
+00:32:35.780 --> 00:32:43.460
+are kind of okay are we that team that has so many flaky tests and are other people better than us
+
+00:32:44.340 --> 00:32:51.300
+and where are we in that regard so i would say that potentially those flaky tests are the number
+
+00:32:51.300 --> 00:32:59.010
+one thing which is holding the people back and i would say that the the best advice there is just
+
+00:32:59.010 --> 00:33:07.090
+go ahead and delete that test and see what happens and usually everything will be just fine
+
+00:33:07.090 --> 00:33:13.170
+because the level of confidence that that test is bringing you is actually nothing or it's even
+
+00:33:13.170 --> 00:33:20.690
+poisonous you know yeah one thing i did back in the day to and i realized encourage this behavior
+
+00:33:20.690 --> 00:33:26.210
+backward is a simple test selection algorithm we had one way to cut down your test time
+
+00:33:26.210 --> 00:33:33.280
+is to not run all your tests and uh we assigned some we collected some metadata about tests and
+
+00:33:33.280 --> 00:33:38.640
+i won't go through the full list but things like the test length uh last time i found a bug um
+
+00:33:38.640 --> 00:33:44.000
+whether it ever had a flaky result or not and we used that we did those things come up with the
+
+00:33:44.000 --> 00:33:48.560
+tests that would run like maybe we had two hours of tests we were going to do a 15-minute test
+
+00:33:48.560 --> 00:33:55.230
+pass so i picked the best 15 minutes and people would say why didn't your algorithm select my
+
+00:33:55.230 --> 00:34:00.030
+test and we tell them why and they want their tests to be selected so they go optimize our
+
+00:34:00.030 --> 00:34:04.430
+tests to run faster or to fix the flakiness etc and then it would show up and they'd be happy
+
+00:34:04.990 --> 00:34:12.780
+exactly exactly there is also a situation that there is a test from 2014 that has never failed
+
+00:34:12.780 --> 00:34:17.340
+right exactly exactly we don't talk enough about that we've been talking about that internally
+
+00:34:18.140 --> 00:34:22.940
+maybe maybe that test isn't actually bringing us value another thing we measured in that metadata
+
+00:34:22.940 --> 00:34:29.420
+was the time since the test last ran because we choose not to run tests so it's fine that test
+
+00:34:29.500 --> 00:34:34.940
+from 2014 we're going to choose not to run it but every test pass we go or we don't run it
+
+00:34:34.940 --> 00:34:39.900
+that test gets a little bit of its value back until a time when it reaches a point where we
+
+00:34:39.900 --> 00:34:45.740
+run it again it passes it drops back out so that's one way to cut it down but yeah that we i've just
+
+00:34:45.740 --> 00:34:50.460
+had a conversation this week about what do we do with these group of tests that have never ever
+
+00:34:50.460 --> 00:35:00.380
+failed that that's a great question that's a great question and i i don't have an answer to that but
+
+00:35:05.550 --> 00:35:10.190
+it's a discussion topic for teams to have it's one of those things they don't discuss enough
+
+00:35:11.490 --> 00:35:19.250
+now i i'm actually well actually so with with simultaneous tests and data sciences had on
+
+00:35:20.050 --> 00:35:27.250
+and then looking at so i'm currently on some of our site and going through what the reports are
+
+00:35:27.250 --> 00:35:34.690
+and they call out fail tests they call out slowest tests right and in front for their business that
+
+00:35:34.690 --> 00:35:42.450
+makes sense right their their mission is to remove bottlenecks and help power people like i would say
+
+00:35:42.450 --> 00:35:50.690
+that the metric that matters in in from my point of view darko the metric that matters is is time to
+
+00:35:50.690 --> 00:35:56.450
+deployment exactly you're trying to shrink through how long does it take from a check-in to get this
+
+00:35:57.090 --> 00:36:05.650
+new feature in production right so absolutely speed is of the essence what i am not seeing
+
+00:36:06.290 --> 00:36:18.270
+uh on your website which i do think seems like a an opportunity is time to deployment divided by
+
+00:36:19.310 --> 00:36:26.590
+costs in some fashion right if you can identify using historic if you can if you can automatically
+
+00:36:26.670 --> 00:36:39.550
+identify hey this test is not adding any value to your cicd process says um our analytics right um
+
+00:36:41.230 --> 00:36:48.060
+then you could start adding recommendations to people say hey maybe you should you should reduce
+
+00:36:48.940 --> 00:36:58.540
+it basically are you it's sort of a risk to cost evaluation right is this test really
+
+00:36:59.100 --> 00:37:03.900
+you're you're paying for this test right you're paying in terms of time as well as
+
+00:37:04.540 --> 00:37:13.950
+as whatever my team my company charges you um but is it really helping to mitigate risk now
+
+00:37:14.910 --> 00:37:21.950
+now on the on the podcast obviously in some regards the more bad tests they have the i assume you pay
+
+00:37:22.510 --> 00:37:27.630
+or you your your pricing model charges people for the length of time on the cicd
+
+00:37:28.430 --> 00:37:38.910
+so in some regards right long-running tests likely um benefits you but uh in terms of the
+
+00:37:38.910 --> 00:37:44.670
+overall credibility you need mission right it seems like it's actually good motivation you want
+
+00:37:44.670 --> 00:37:51.340
+to get your bill down fix your damn tests um yes but they're parallelizing too yeah yeah
+
+00:37:52.940 --> 00:37:58.620
+yeah yeah well yeah that's one way you can also buy sam for a running to you know like on prem
+
+00:37:58.620 --> 00:38:03.500
+and then you don't pay you know you run it on your infrastructure and then we don't you know
+
+00:38:03.500 --> 00:38:12.700
+but but um what uh what brand explained is exactly uh the main topic of organization that we have with
+
+00:38:12.700 --> 00:38:18.720
+couple of our like largest and most valuable customers uh which is exactly that that they have
+
+00:38:18.720 --> 00:38:24.640
+been you know so successful that they have managed to acquire a test you that literally needs 100
+
+00:38:24.640 --> 00:38:30.080
+plus jobs in parallel to run so that they get their feedback loop under under 10 minutes you know
+
+00:38:30.080 --> 00:38:36.130
+and they keep adding more people and they are worried about their costs
+
+00:38:38.670 --> 00:38:41.470
+they are worried about that cost and where is that going to go
+
+00:38:43.950 --> 00:38:51.230
+and at this point in time that's uh there is no feature that really helps them with that
+
+00:38:51.230 --> 00:38:56.510
+you know and that kind of analysis that would point out that you know you have this test
+
+00:38:56.590 --> 00:39:02.530
+but what value does it bring and we literally we're having very you know open and honest
+
+00:39:02.530 --> 00:39:10.940
+conversations you know um what's the value that this test run brings you uh because it costs a lot
+
+00:39:11.780 --> 00:39:17.760
+you know and it can you know easily cost you know a couple of dollars for a single test run
+
+00:39:18.580 --> 00:39:25.620
+and developers can make many of them and that can you know be significant cost per uh per
+
+00:39:25.620 --> 00:39:32.380
+developer per month to run to run all those tests so we are working on a couple of things
+
+00:39:32.380 --> 00:39:38.220
+that are related to this and flakiness is the main thing where we want to help people you
+
+00:39:38.220 --> 00:39:45.060
+know track that because people have like excellent spreadsheets with you know uh thousands of lines
+
+00:39:45.060 --> 00:39:54.690
+of flaky tests and they are figuring out how to battle them and um yeah so on flaky tests so i
+
+00:39:54.770 --> 00:40:05.090
+don't see i don't see again on your on your your pr material i don't see any any report around flaky
+
+00:40:05.090 --> 00:40:12.930
+tests do you do you identify those as of today that feature is not is not around but we are we
+
+00:40:12.930 --> 00:40:20.880
+are working on that okay yeah that has been i can say most requested feature i went to so
+
+00:40:20.880 --> 00:40:25.680
+talking about what we're doing 10 years ago this is maybe nine years ago but the conversation
+
+00:40:25.680 --> 00:40:30.560
+reminds me i went to the google test automation conference uh one of the last ones i had in
+
+00:40:30.560 --> 00:40:36.800
+kirkland and i jokingly referred to it as the flaky test conference because every talk talking
+
+00:40:36.800 --> 00:40:44.100
+about test automation either was about or mentioned flaky tests and here we are 10 years
+
+00:40:44.100 --> 00:40:48.900
+later it's still a thing why do you think
+

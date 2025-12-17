@@ -1,0 +1,1448 @@
+WEBVTT
+
+00:00:07.500 --> 00:00:13.380
+Welcome to AVE testing podcast your modern testing podcast. Your hosts Alan
+
+00:00:13.380 --> 00:00:18.500
+and Brent will be here to guide you through topics on testing, leadership,
+
+00:00:18.500 --> 00:00:24.100
+Agile, and anything else that comes to mind. Now on with the show. Hello Brent, I
+
+00:00:24.100 --> 00:00:30.440
+am the human that used to be Alan Page. How are you? I am also the human that
+
+00:00:30.440 --> 00:00:37.240
+used to be Alan. Well I want to know your name. My name
+
+00:00:37.360 --> 00:00:46.290
+According to the session here, the label is Weasel, but I'm Alan, but I like all
+
+00:00:46.290 --> 00:00:53.310
+good sheep. After a couple years of pandemic and stired non grooming, I cut
+
+00:00:53.310 --> 00:00:59.980
+off six inches of my hair and six inches of my beard and I look, you know, normal.
+
+00:00:59.980 --> 00:01:05.270
+No, no, I'm gonna go with that. You just keep on going. So Brent is Satya Nadella
+
+00:01:05.270 --> 00:01:11.230
+is calling Brent right now and it's a question about whether or not Microsoft
+
+00:01:11.230 --> 00:01:18.590
+should do anything with LLMs and Gen AI. And the answer for Satya is maybe, maybe,
+
+00:01:18.590 --> 00:01:24.950
+but it should probably make sure he's doing things to stop people from being
+
+00:01:24.950 --> 00:01:30.510
+dumb, etc, etc. Okay, so once he gets done with Satya, I have a quick phone
+
+00:01:30.510 --> 00:01:34.590
+call I have with Kamala Harris talked to her a little bit about technical
+
+00:01:34.590 --> 00:01:39.110
+advisory for upcoming White House stint. And then after that, we're gonna do the
+
+00:01:39.110 --> 00:01:45.610
+podcast. So we're on the podcast here and I am joined by Brent Jensen. Hey, Brent,
+
+00:01:45.610 --> 00:01:50.950
+say hi. Hello. It's really cool because unless you listen to the podcast, you'll
+
+00:01:50.950 --> 00:01:57.590
+never know what I said. So I hope you told Satya I said hi. We had, you know,
+
+00:01:57.590 --> 00:02:02.750
+we've talked about this before. Well, before we get into the topic, how are
+
+00:02:02.750 --> 00:02:09.710
+things squeaky chair Brent? How's life? What's new? Do anything cool lately?
+
+00:02:09.710 --> 00:02:24.150
+Sounds like a no. No. So drama's coming up this weekend. My eldest who is about to
+
+00:02:24.150 --> 00:02:29.950
+turn, my eldest is about to turn 26. So we're gonna be celebrating his birthday.
+
+00:02:29.950 --> 00:02:40.370
+He's home with us. But what makes it dramatic is at 26. Do you know the
+
+00:02:40.370 --> 00:02:44.850
+magic thing that happens? You're not in your parents insurance anymore. Yeah.
+
+00:02:44.850 --> 00:02:54.900
+Yeah. He is just about to finish his second week at his new job. He was
+
+00:02:54.900 --> 00:03:00.620
+looking for something different and I'm like, dude, you're about to turn 26.
+
+00:03:01.220 --> 00:03:05.540
+Go for something different, but you need something different with insurance.
+
+00:03:05.540 --> 00:03:16.100
+Yep. Yep. America for healthcare is a privilege, not a right. He did go with,
+
+00:03:16.100 --> 00:03:20.660
+he did get something with insurance, but it's not something different.
+
+00:03:20.660 --> 00:03:25.980
+Oh, well, that's insurance. So, you know, at one point, don't listen if you work
+
+00:03:25.980 --> 00:03:28.860
+with you. I thought, you know what, I want to, what's the easiest decision
+
+00:03:28.860 --> 00:03:34.180
+for my retirement? Don't worry. What's the easiest job I can do that as health
+
+00:03:34.180 --> 00:03:38.860
+benefits? And of course the barista came up. That's a lot of weird customers. One
+
+00:03:38.860 --> 00:03:45.540
+in their double half calf frappe whip Oreo mint pumpkin scream green thing.
+
+00:03:45.540 --> 00:03:54.410
+And so, but my retire, the job I'm moving toward my career goal is assistant
+
+00:03:54.410 --> 00:04:05.060
+librarian. Interesting. It's quiet. I don't have to talk a lot. It's a, yeah,
+
+00:04:05.060 --> 00:04:10.900
+don't look at him. That's my thing. Now. So the thing is actually, I'm wondering,
+
+00:04:10.900 --> 00:04:16.580
+is that one of the few jobs that AI won't take away? Maybe not. Maybe not.
+
+00:04:16.580 --> 00:04:20.660
+Because well, you know what? AI has not taken away any jobs because you know what?
+
+00:04:20.660 --> 00:04:26.340
+Well, I shouldn't say that AI today, as we know it is far too stupid to take away a job.
+
+00:04:26.340 --> 00:04:32.100
+It doesn't know what it's doing. And I can't even go to LinkedIn anymore because people
+
+00:04:32.100 --> 00:04:36.100
+keep on telling me AI won't do this. I say, thanks for you. Thank you for the
+
+00:04:36.100 --> 00:04:41.480
+straw man argument. Of course it won't, you stupid freaking idiot. All right. So
+
+00:04:42.810 --> 00:04:48.250
+topics today, speaking of AI, there was a time earlier in the life of this podcast.
+
+00:04:48.250 --> 00:04:55.050
+Are we episode two 10 this week? We are. It's welcome to episode 210 of the
+
+00:04:55.050 --> 00:04:59.930
+AB testing podcast. We bring you valuable and relevant, well thought out,
+
+00:05:00.490 --> 00:05:06.250
+practically scripted information. I'm kidding. We used to make a Kanban, like little lists of
+
+00:05:06.250 --> 00:05:10.490
+things to go through. It was great. We had topics to talk about and they rolled through them.
+
+00:05:10.490 --> 00:05:14.490
+And maybe you liked that and maybe you didn't, but now you get this version of the AB podcast
+
+00:05:14.490 --> 00:05:22.090
+testing podcast where Brent types while I'm talking, which I may or may not go through
+
+00:05:22.090 --> 00:05:28.410
+and, uh, and, and remove later. It's horrible because we both have mechanical keyboards
+
+00:05:28.410 --> 00:05:35.210
+and Brent is redoing an exercise that we've already done, but he's doing it now in order to get me to
+
+00:05:35.210 --> 00:05:42.490
+continue to share just nothing, nothing at all while he does his thing. So what we've done
+
+00:05:42.490 --> 00:05:46.970
+for today's topic on the fly, like sometimes I'll come in and go, Hey, I don't want to talk about
+
+00:05:46.970 --> 00:05:50.490
+this and Brent won't know what it is, but we'll get there and we'll roll with something.
+
+00:05:50.490 --> 00:05:56.570
+And occasionally, occasionally a little teeny nugget of something good comes out and someone
+
+00:05:56.570 --> 00:06:04.010
+says great podcast. And I say, man, drugs are good where you live. But today I asked Brent for a topic
+
+00:06:04.010 --> 00:06:12.650
+and Brent said, oh no. And I looked through my like five for five. I got a topic on her about
+
+00:06:12.650 --> 00:06:18.490
+tomorrow, my blog post, and that's not a topic for today. It's a rare situation where Alan too
+
+00:06:18.570 --> 00:06:24.810
+like, I don't know. It's been a day. Usually, usually I will take, because as the producer
+
+00:06:24.810 --> 00:06:29.370
+of this podcast, Brent just shows up. I spend time thinking about topics ahead of time.
+
+00:06:29.370 --> 00:06:33.690
+I do some Googling, please bring your screen back up. Cause I need to see it and I will
+
+00:06:33.690 --> 00:06:37.610
+be prepared. I go, here's what we're going to talk about. I don't worry about the details.
+
+00:06:37.610 --> 00:06:45.050
+No scripts, no special effects. But what we did today is you may have heard on this podcast or
+
+00:06:45.050 --> 00:06:51.690
+maybe, maybe even on the internet about a thing called chat GPT and my chat for those of you that
+
+00:06:51.690 --> 00:06:59.850
+don't know chat GPT is a tool based on generative AI. There's indexed on a whole basically the
+
+00:06:59.850 --> 00:07:06.170
+internet. We have a special one that's, uh, I don't know. Did you use, you did use a special one
+
+00:07:06.730 --> 00:07:12.090
+that knows more about us and what we do a little bit more, which could be a good thing or a bad
+
+00:07:12.090 --> 00:07:19.000
+thing. And then Brent, if you can scroll up for a second, Brent asked this thing, uh, as advocate,
+
+00:07:19.000 --> 00:07:24.520
+the way that let's go up. Hey, Hey, he starts off with, Hey, I left out Brent is you can tell
+
+00:07:24.520 --> 00:07:28.920
+something about someone's personality by the way they interact with the chat bot. It's like,
+
+00:07:28.920 --> 00:07:34.520
+good morning, dear sir. He says, Hey, give Alan Page and Brent Jensen a good mailbag question
+
+00:07:34.520 --> 00:07:39.080
+that talked about on their podcast. So we have three ideas, but before we start on any of them,
+
+00:07:39.080 --> 00:07:46.790
+let's do this. Okay. And Brent, I'm going to let you pick. We're going to, but we're going to,
+
+00:07:46.790 --> 00:07:50.070
+but no, I'm not going to let you pick. We're going to kind of vote here. Would you stop
+
+00:07:50.710 --> 00:07:57.110
+moving the page? I'm trying to read. Oh, this is the new one. No, wait. Now I got two questions.
+
+00:07:57.110 --> 00:08:04.870
+Oh my God. All of this crap is it just defined why we would care. Imagine giving a presentation
+
+00:08:04.950 --> 00:08:10.710
+and someone keeps on changing the slide randomly on you. So, um, one of it, one of the questions is,
+
+00:08:11.980 --> 00:08:16.060
+Hey, Brent, no says, Hey, no, it doesn't say that either. It says as advocates of modern
+
+00:08:16.060 --> 00:08:20.460
+testing principles, how do you see the role of testers evolving in AI heavy environments?
+
+00:08:20.460 --> 00:08:24.700
+That depends on what that means with AI systems handling more decision-making.
+
+00:08:24.700 --> 00:08:29.180
+Don't want that to happen, including testing. How do you ensure teams are still responsible
+
+00:08:29.180 --> 00:08:33.500
+for quality, especially when AI outputs can be unpredictable or biased? I am happy to talk
+
+00:08:33.500 --> 00:08:39.260
+about this one. This is actually, cause there's a lot of kind of hints at straw men here. And it
+
+00:08:39.260 --> 00:08:43.980
+goes back to my comment earlier. People, they're, they're straw men arguments on LinkedIn. Like
+
+00:08:43.980 --> 00:08:48.060
+they would see us and they would go off on some tangent around how test cases aren't testing. And
+
+00:08:48.060 --> 00:08:53.340
+I would blow my brains out and life would move on. So is there another question we want to look
+
+00:08:53.340 --> 00:08:57.980
+at? Another one. The other question is you've discussed the importance of shifting quality
+
+00:08:57.980 --> 00:09:02.620
+responsibilities across the team and modern testing. However, with the increase in AI driven
+
+00:09:02.620 --> 00:09:06.860
+development automation tools, how do you see the role of traditional testers evolving further?
+
+00:09:06.860 --> 00:09:12.220
+Should they focus on new skills like understanding AI biases or models? Yes. Or is there still value
+
+00:09:12.220 --> 00:09:16.780
+in deep exploratory testing for human centered validation? The interesting thing here is we're
+
+00:09:16.780 --> 00:09:23.020
+going to answer that question. Because no, the question, no, no, the question, because no matter
+
+00:09:23.020 --> 00:09:30.090
+which one we pick, the answer is going to be kind of the same. There's a little bit of new
+
+00:09:30.090 --> 00:09:34.090
+ones. Well, if you're going to give a three second answer, they'd be different. If we give
+
+00:09:34.170 --> 00:09:40.330
+the answer of any depth or substance, it'll be kind of the same answer. So I want to leave this one.
+
+00:09:40.330 --> 00:09:43.050
+Let's go back to the other one. We're going to come back and touch on this one to
+
+00:09:44.570 --> 00:09:51.770
+make sure we, my prediction here. Oh, what if I'm Gen AI and I just have a bunch of words that
+
+00:09:51.770 --> 00:10:00.420
+I'm trying to throw out in an order that makes sense based on context? Are we all living in a
+
+00:10:00.420 --> 00:10:08.100
+simulation? That is 100% the definition of Gen AI. I know. Fuck. Oh, wait. Sorry, kids.
+
+00:10:08.100 --> 00:10:14.740
+That I didn't, I'll forget that at that, but my brain is spinning. Okay. Let's talk about
+
+00:10:15.860 --> 00:10:20.660
+role of testers in evolving AI. And you're going to have to, okay, the question's gone now,
+
+00:10:20.660 --> 00:10:24.500
+because now Brant's asking new questions because Brant is off script as usual.
+
+00:10:25.660 --> 00:10:33.100
+Wait, is there a script now? When did that happen? The script? No, dude, dude, it's in here.
+
+00:10:33.100 --> 00:10:40.700
+You just haven't prompted it out of me yet. Ah, okay. Got it. Holy cow. Maybe, maybe Gen AI.
+
+00:10:40.700 --> 00:10:46.860
+I got tired of your, of your beautiful voice preamble. So I just went ahead and asked.
+
+00:10:46.860 --> 00:10:55.740
+To answer it. Okay. I asked open chat GPT to answer the question.
+
+00:10:55.740 --> 00:11:03.030
+Oh my God. No, because it won't have the, it's probably right. Honestly. And I'm going to read
+
+00:11:03.030 --> 00:11:07.350
+one thing on here because first off is from the second paragraph. Stop scrolling. First off,
+
+00:11:07.350 --> 00:11:11.350
+testers need to stop thinking about testing is finding bugs and more about accelerating teams
+
+00:11:11.430 --> 00:11:16.790
+learning and decision making. Let's talk about how AI is helping teams accelerate the achievement
+
+00:11:16.790 --> 00:11:25.420
+of simple quality. Yeah. No, it's actually, this is not bad in terms of what you would say.
+
+00:11:25.420 --> 00:11:33.050
+I'm sorry. I would, I would add flair. So I think it's a question that gets asked all
+
+00:11:33.050 --> 00:11:36.330
+over the place. And I feel like maybe we've talked about it before, but we can dive in
+
+00:11:37.130 --> 00:11:44.340
+is one to repeat the thing we've said 10 million times. And now I find
+
+00:11:44.340 --> 00:11:50.500
+a thousand other people are saying the same thing. Gen AI AI is not taking your job away.
+
+00:11:52.490 --> 00:12:00.010
+People who are adept at understanding how LLMs and Gen AI work may. And
+
+00:12:02.920 --> 00:12:08.540
+okay. I'm gonna, I'm gonna end up repeating myself and I've been talking for a long time.
+
+00:12:08.540 --> 00:12:14.810
+I'm gonna let you start with this and I'll roll in in a bit. Okay. Because it's interesting
+
+00:12:14.810 --> 00:12:20.920
+because it's not taking your job away yet, but it does absolutely having an impact.
+
+00:12:22.740 --> 00:12:29.910
+There was a report I saw this morning from a professor at University of Berkeley. And
+
+00:12:31.030 --> 00:12:39.270
+he's already observing that a lot of graduate students are finding it difficult in the CS
+
+00:12:39.270 --> 00:12:51.670
+degree, finding it difficult to land new jobs. So yeah, it's not gonna take your, my job away
+
+00:12:52.470 --> 00:13:00.600
+yet, but it's gonna start, it's already starting to not take anyone's jobs away, but
+
+00:13:01.320 --> 00:13:06.840
+not open them either. Speaking of which, and here's a different take on this question that
+
+00:13:08.230 --> 00:13:14.070
+I'm gonna, this is where chat GPT can't find the patterns. There was an article this week,
+
+00:13:14.070 --> 00:13:21.670
+last week at the latest, no surprise at all, talking about the rise in bug rates due to in,
+
+00:13:22.310 --> 00:13:26.470
+I don't remember the details where they got the applications from, but due to people more
+
+00:13:26.470 --> 00:13:33.030
+or less blindly accepting co-pilot suggestions. Yep. Not surprising at all. We knew that it's
+
+00:13:33.110 --> 00:13:40.840
+gonna happen. So if we're putting more bugs in the code, Brent, does that mean we need testers
+
+00:13:40.840 --> 00:13:53.880
+even more now? No, no, we have a different problem. Yeah. Right. Because the, and it's in alignment
+
+00:13:53.880 --> 00:14:02.300
+with actually GPT's fake response for you. Right. If you read this last one, in short, testers in
+
+00:14:02.300 --> 00:14:07.660
+the AI driven world aren't trying to catch everything before it happens. They're accelerating
+
+00:14:07.660 --> 00:14:13.350
+learning. Okay. And, and, and here it italicized and I'm not going to read the rest of it.
+
+00:14:13.350 --> 00:14:20.620
+It's all about, so we can respond faster. But here is the thing that's problematic with AI
+
+00:14:20.620 --> 00:14:26.780
+systems and it's in alignment with what you just said. These AI systems, are they accelerating
+
+00:14:26.780 --> 00:14:37.450
+learning or are they accelerating laziness? Because if they accelerate laziness in ways that
+
+00:14:37.450 --> 00:14:44.300
+are important, then it's going to be problematic. I don't think, I don't think bringing back,
+
+00:14:44.300 --> 00:14:51.180
+you know, dedicated testers are going to be the solution. Right. It's going to be, how do we
+
+00:14:51.180 --> 00:14:58.060
+battle laziness? And in quite honestly, if it comes down to that, we're going to have a big
+
+00:14:58.060 --> 00:15:08.550
+problem, a big problem. Cause laziness is like, um, uh, a key principle of the software development.
+
+00:15:11.000 --> 00:15:16.950
+You know, it's, uh, it's interesting. Sorry. I have a bunch of different threads going on at once,
+
+00:15:16.950 --> 00:15:23.020
+but where I think AI can, so let me go, let me back up a step. There's a lot of testers out
+
+00:15:23.020 --> 00:15:27.100
+there who feel their job is to find, I mean, if you don't want to go back 30 years is to find books.
+
+00:15:27.100 --> 00:15:32.060
+Right. And we know, we know most, I think most testers who have paid attention realize that's
+
+00:15:32.060 --> 00:15:39.020
+not their job. It's a byproduct of doing their job at best. Uh, there is a school out there
+
+00:15:39.020 --> 00:15:44.140
+that says to all testers do is provide information to stakeholders, which I, which we've talked about
+
+00:15:44.140 --> 00:15:50.220
+before. I don't want to go deeply into that. Um, sure, but that's not going to really help
+
+00:15:50.220 --> 00:15:56.460
+here. So again, fast feedback loops. When we talk about, when we've talked about teams not having
+
+00:15:56.460 --> 00:16:01.180
+dedicated testers, it isn't because we don't like testers isn't because we don't think they're
+
+00:16:01.180 --> 00:16:06.940
+valuable, but what's more valuable is getting fast feedback loops on the work produced by
+
+00:16:06.940 --> 00:16:12.620
+the teams or trying to accelerate the team. So if we're trying to accelerate the team and the
+
+00:16:12.620 --> 00:16:21.190
+team has potentially more bugs, more functional correctness bugs, because they're being lazy with,
+
+00:16:21.190 --> 00:16:27.210
+uh, with, uh, code prompts, uh, what can testers do to help?
+
+00:16:27.930 --> 00:16:31.130
+Because that's going to slow you down because now you have bugs and you have rework
+
+00:16:31.130 --> 00:16:36.650
+and that, and your, and your cycles are slower while you get stuff fixed. Potentially. Uh,
+
+00:16:37.210 --> 00:16:41.050
+what does, and I have an answer for this, but I'm curious on yours first.
+
+00:16:42.040 --> 00:16:46.920
+What do, what do testers do in this environment? Do they just report the bugs and perform
+
+00:16:46.920 --> 00:16:50.120
+information, report information on the bugs to the stakeholders and call it good?
+
+00:16:50.760 --> 00:17:01.820
+No, no, it's right. It's, it's this, it's the same pattern, right? If we go, if we go to
+
+00:17:02.860 --> 00:17:09.500
+what's the definition of quality and what's the goal of a test, the definition, uh, as we call
+
+00:17:09.500 --> 00:17:14.380
+out, we don't know the definition of quality. It's based on the customer. But customer is the one
+
+00:17:14.380 --> 00:17:24.280
+that judges it. Um, and the testers job is, is to, to understand and help drive towards
+
+00:17:24.280 --> 00:17:31.000
+business impact, having them go back to sort of a traditional model, uh, finding bugs and all of
+
+00:17:31.000 --> 00:17:39.180
+that. No, that all still needs to fall into the role of, um, the developer in this. Yes.
+
+00:17:39.820 --> 00:17:52.900
+But that, that does not change ever. Correct. But the definition of quality does to some degree,
+
+00:17:52.900 --> 00:18:03.720
+because now we have the system in between, um, essentially making shit up and sometimes it's
+
+00:18:03.720 --> 00:18:08.840
+going to make shit up in a good way. And sometimes it's going to do it in a way we can't expect.
+
+00:18:10.010 --> 00:18:22.900
+Um, and so I think testers need to start training around how to identify the patterns around these
+
+00:18:22.900 --> 00:18:30.260
+problems. And the way, the way I see it is still on the quality coach, the quality coach angle,
+
+00:18:30.260 --> 00:18:35.060
+but now they're going to have to be a quality coach in a space that a lot of these folks
+
+00:18:35.700 --> 00:18:43.130
+may not have learned before. Right. And so that's where they need to be, uh, aggressively learning.
+
+00:18:43.130 --> 00:18:50.810
+Or as, as the, the fake Allen page bot said accelerate that learning, but then tie it to back
+
+00:18:50.810 --> 00:18:59.050
+to quality and then tie it back to the developer in a way that, that adds friction to the, the
+
+00:18:59.050 --> 00:19:05.130
+laziness concern. Let me build on that because you took my slow pitch and you, you get a nice,
+
+00:19:05.850 --> 00:19:13.610
+soft over the wall home run with it. So nice work. Uh, when we talk about a lot of the testers we see
+
+00:19:13.610 --> 00:19:20.330
+on LinkedIn, again, we have folks living in a world we're not in that much anymore. And they are a,
+
+00:19:21.370 --> 00:19:27.930
+in a role that's specialized to doing part of the development role. And that's, you're absolutely
+
+00:19:27.930 --> 00:19:33.450
+right to say that doesn't work. That doesn't help. Doesn't change. We need folks who, and again,
+
+00:19:33.450 --> 00:19:38.810
+it may not be considered a test role anymore is the issue. I think testers are exceptionally good
+
+00:19:38.810 --> 00:19:45.770
+at this quality coach testers are exceptionally good at in general at systems thinking and critical
+
+00:19:45.770 --> 00:19:50.090
+thinking. Although sometimes if I'll sign LinkedIn, maybe question that thought, but I'm going to,
+
+00:19:50.090 --> 00:19:55.130
+I'm going to stick on optimist Allen optimus, optimus Allen optimist, not optimus prime.
+
+00:19:55.690 --> 00:19:59.850
+Wow. I wonder if optimus prime was an optimist, but it doesn't seem like it,
+
+00:19:59.930 --> 00:20:05.720
+but that's a, that's a thread we don't have to go into. So here's where I think they can help.
+
+00:20:05.720 --> 00:20:12.580
+So again, going back to the AI angle, cause things are changing. So if I said they're good
+
+00:20:12.580 --> 00:20:17.860
+at systems thinking to a tester who is good at system thinking is going to be even better
+
+00:20:17.860 --> 00:20:27.270
+when assisted by jet AI, let me feed our entire code base into an LLM and ask and
+
+00:20:28.150 --> 00:20:35.110
+take some time asking the, I'm going to call it chat GPT, the, the, the LLM via whatever
+
+00:20:35.110 --> 00:20:41.030
+interface you want some questions about the code and how it works and, and areas of concern or
+
+00:20:41.030 --> 00:20:45.030
+impact. It's actually pretty good at code reviews, even if it can get some things wrong
+
+00:20:45.030 --> 00:20:49.590
+because it's just, it's doing some copying and pasting. If you will recall, and this is going
+
+00:20:49.590 --> 00:20:54.230
+to come up again at the very least in our end of year show, which is not that far away.
+
+00:20:54.790 --> 00:20:59.990
+Uh, but last year in my prediction episode, I predicted, and maybe I'm a year or two off on
+
+00:20:59.990 --> 00:21:05.910
+this. It hasn't quite made that turn yet that the ability to read code would be more important
+
+00:21:05.910 --> 00:21:10.870
+than the ability to write code. It's probably not going to happen this year, but you can see
+
+00:21:11.860 --> 00:21:19.140
+with what's happening with code pilot and co-pilot and pro and even asking chest GPT to write code,
+
+00:21:19.140 --> 00:21:23.620
+the ability to read it, understand it and critique it is more important than the ability
+
+00:21:23.620 --> 00:21:28.840
+to write it in the first place. Won't be true in every case. There's some things that, that
+
+00:21:28.840 --> 00:21:34.440
+the LLMs won't be able to help you with for now, but the ability to read that, understand,
+
+00:21:34.440 --> 00:21:40.680
+fit it into a system is great. I may have told the story before, but I'm going to tell it again.
+
+00:21:40.680 --> 00:21:47.000
+There is actually, this is, uh, I can mention it here. Uh, I think a lot of folks know I am on
+
+00:21:47.000 --> 00:21:54.330
+the board for a, uh, uh, not the board board, just an advisory board for a testing tool called
+
+00:21:54.330 --> 00:22:01.290
+autify. Autify started off as just another, yet another, uh, machine learning assisted you
+
+00:22:01.290 --> 00:22:05.450
+animation tool. Uh, we had some folks off from another company a while back. There's a bunch of
+
+00:22:05.450 --> 00:22:10.810
+these. They're all pretty good. And I think they're, if I was a developer today, I would
+
+00:22:10.810 --> 00:22:16.250
+10 times out of 10 use one of these tools over selenium. If I had to, if I had to have UI tests,
+
+00:22:16.250 --> 00:22:22.490
+I will, I will fight you on that and I'll win every time. Now, what a cool thing that
+
+00:22:22.490 --> 00:22:27.290
+autify showed me, and maybe it's not announced yet. Maybe I can't mess it. I'm going to say it anyway
+
+00:22:27.290 --> 00:22:37.020
+is the demo demo, demo where the demo where right now, but they took a design doc, a spec, fed it
+
+00:22:37.020 --> 00:22:44.810
+to an LLM, the LLM gave with an eye LLM. It gave them a list of test cases, which were editable
+
+00:22:44.810 --> 00:22:48.730
+case. They were wrong. And you know, for a model based testing, a lot of times we found
+
+00:22:48.730 --> 00:22:54.810
+if we created test cases based on the spec, which we did, uh, it was because the spec was wrong. So
+
+00:22:55.450 --> 00:23:02.250
+it's and specs are always wrong to some extent. Um, but all editable, so you could fix it. And
+
+00:23:02.250 --> 00:23:08.730
+from there it would could generate the playwright code for those tests. Super cool. I think it
+
+00:23:08.730 --> 00:23:14.470
+works backward and forward. It's the nugget of something cool, but God, why would you spend a
+
+00:23:14.550 --> 00:23:20.890
+bunch of time reviewing a big in test cases? Aren't testing. I agree with that part,
+
+00:23:20.890 --> 00:23:26.360
+but why would you spend a bunch of time, uh, looking at a spec, reading his back,
+
+00:23:26.360 --> 00:23:29.480
+vetting his bed, ask questions about a spec, writing some tests, you know,
+
+00:23:29.480 --> 00:23:35.640
+figuring out what tests are going to write automated or not. Um, and it just seems slow.
+
+00:23:36.440 --> 00:23:42.280
+So yeah. Uh, I think what it does to what tools like this will do, looping it back to
+
+00:23:42.280 --> 00:23:47.320
+the quality coach person and the role that like a lot of, you know, today's testers should be in
+
+00:23:47.320 --> 00:23:55.060
+in the future is figuring out how the team can use and not just cause their AI tools,
+
+00:23:55.060 --> 00:24:01.060
+but help the team use tools that help speed up their feedback loops. If I can write code
+
+00:24:01.060 --> 00:24:05.780
+and get the test for that code super fast and run those and get the results from those tests all in
+
+00:24:06.420 --> 00:24:13.620
+seconds for brand new code, that's pretty good. And as, as a quality coach, and that's how I'm
+
+00:24:13.620 --> 00:24:17.860
+going to help the people use these tools, understand when they should and shouldn't use them.
+
+00:24:17.860 --> 00:24:23.940
+I may even like, if it was me today, 30 years of software programming and, you know,
+
+00:24:23.940 --> 00:24:31.060
+a half a minute of working with LLMs, I would pair program with someone who was taking
+
+00:24:31.060 --> 00:24:36.980
+co-pilot prompts to help get a second set of eyes and code review on those things are blindly
+
+00:24:36.980 --> 00:24:42.820
+accepting because, you know, with, with, uh, uh, sorry for, I forgot to work for a second
+
+00:24:42.820 --> 00:24:47.940
+with pair programming, uh, one person at that 10,000 foot leo or one, that one person is deep
+
+00:24:47.940 --> 00:24:51.780
+into it. If that person deep into it was like, yep, looks good. But if I'm out there going,
+
+00:24:51.780 --> 00:24:57.860
+um, that's not going to work because of a B and C that's kind of cool. And that's going to help
+
+00:24:57.860 --> 00:25:02.740
+solve this problem. So why aren't we, my question to the survey that I don't have a link for
+
+00:25:02.740 --> 00:25:07.700
+this, this story I read about bugs coming. People are blindly accepting their co-pilot,
+
+00:25:08.340 --> 00:25:15.260
+uh, suggestions is why aren't they pair programming to that with that? Huh? Why not? Why not?
+
+00:25:15.820 --> 00:25:20.980
+Brent Brent's too busy asking you the scenario. Um,
+
+00:25:26.710 --> 00:25:29.590
+you know, we're working hard when you hear the keys clicking.
+
+00:25:29.590 --> 00:25:35.180
+Right. I didn't see, I didn't. All right. The.
+
+00:25:40.360 --> 00:25:53.020
+Yeah, that's a good idea. Yeah, I know. The, the thing that I was, I was listening to you for.
+
+00:25:53.820 --> 00:26:06.600
+Okay. And here's where I see, I, I'm trying to see it not as a sort of like, don't do that.
+
+00:26:07.450 --> 00:26:11.530
+Sorry. I was disciplining my cat who was trying to eat my mule near.
+
+00:26:11.610 --> 00:26:14.010
+Yep. Just punched him in the face. Her.
+
+00:26:19.240 --> 00:26:25.240
+So in your story, right? Hey, if you can do the code and you can do the tests and,
+
+00:26:25.960 --> 00:26:35.750
+and read them really quickly and, um, get code out in production in seconds, why wouldn't you do that?
+
+00:26:36.460 --> 00:26:41.740
+And the short answer is you would, you absolutely would. But here's the thing.
+
+00:26:44.710 --> 00:26:51.770
+How does that accelerate learning? To me, I'm like, that is not a, that's not accelerating learning.
+
+00:26:52.490 --> 00:26:57.960
+That's, that's you being a monkey now. It accelerates laziness.
+
+00:26:57.960 --> 00:27:01.880
+I forgot that in my gen AI, uh, generated response, but yeah,
+
+00:27:02.440 --> 00:27:07.480
+we should accelerate learning pair program and gets to that, but that's, um, I'm, I'm,
+
+00:27:07.480 --> 00:27:12.420
+I'm retro answering now. Right. But the pair programming. So here's the thing that I'm
+
+00:27:12.420 --> 00:27:18.300
+seeing it right now is that pair programming, why is that valuable? Right. Well, it's not valuable
+
+00:27:18.300 --> 00:27:24.220
+right now because you and me are old geezers and we know stuff and we know common ways that the
+
+00:27:24.220 --> 00:27:33.160
+GPT could be screwing it up right now. Right. But the thing is that's temporary. I don't know
+
+00:27:33.160 --> 00:27:37.960
+if you've seen that. It was, that was what I was just trying to type out the new version, um,
+
+00:27:38.520 --> 00:27:45.960
+uh, GPT, one of the new models. Um, you know, the, the, the chain of thought model.
+
+00:27:46.810 --> 00:27:52.170
+I do not. Okay. I mean, I know, actually, I know it completely, but it would be good to explain
+
+00:27:52.170 --> 00:27:58.170
+it to our listener. Chain of thought is essentially when you, when you do a chain of thought prompt,
+
+00:27:58.170 --> 00:28:06.340
+what you're doing is you're, you're giving it a clue around how to work the problem,
+
+00:28:06.340 --> 00:28:13.460
+how to break it, how to decompose it into smaller parts. Okay. It does that now. It doesn't
+
+00:28:13.460 --> 00:28:23.430
+automatically. I'll see if I can find, um, why is it not letting me scroll? Where the hell is this
+
+00:28:23.430 --> 00:28:36.390
+roll bar? Okay. It's cause you're using edge and edge sucks. Okay. You see right here. Yeah.
+
+00:28:36.470 --> 00:28:46.660
+Okay. So on the chat GPT, oh one dash mini model. Okay. I asked it a prompt, uh, to create, uh, three
+
+00:28:46.660 --> 00:28:54.740
+pieces of PowerShell code, a code that will reproduce the problem test code that validates it.
+
+00:28:54.740 --> 00:29:02.360
+And then code that fixes it. Okay. Interesting. Interesting. Okay. Um, but right here, what I'm
+
+00:29:02.360 --> 00:29:08.680
+showing Alan right now is a new prompt version that says thought for four seconds. That should,
+
+00:29:08.680 --> 00:29:15.910
+that thought should be an air quotes, but go on. Yeah. And now I expanded it and showed Alan what
+
+00:29:15.910 --> 00:29:25.500
+it's doing. Okay. And what it did is this thinking for four seconds is it generating its
+
+00:29:25.500 --> 00:29:31.100
+own chain of thought prompt. I see that. Yeah. It's, it's solving it. It's taking a problem.
+
+00:29:31.100 --> 00:29:35.980
+Like here's what I tell my team to do all the time. Take the big problem, break it into solvable
+
+00:29:35.980 --> 00:29:45.140
+steps. And Chad GPT is showing that's exactly what it did. But it's, it's, it's not what it did.
+
+00:29:46.180 --> 00:29:52.740
+It basically created that plan and then it executed that plan. Yeah. Okay. And I'm going
+
+00:29:52.740 --> 00:30:01.610
+to tell you in terms of what I said in terms of what I asked it to do, um, it did it really
+
+00:30:01.610 --> 00:30:07.500
+goddamn well. Okay. And here's the thing, cause I've been in this AI business now for 10 years.
+
+00:30:08.460 --> 00:30:15.340
+The first thing you do is you make your AI transparent because everyone is suspicious and
+
+00:30:15.340 --> 00:30:20.700
+they learn about, right. And then eventually people are like, yeah, it's good enough. Like,
+
+00:30:20.700 --> 00:30:26.380
+yeah, that's some bugs, but no one complained or we worked through them when they did complain.
+
+00:30:27.100 --> 00:30:38.420
+And then it's just, it's just this, right? My coding then becomes me writing, what do you think?
+
+00:30:39.140 --> 00:30:45.540
+50 word instruction. Yeah. Yeah. So what, what's, I'm going to interrupt for a second. I do want to
+
+00:30:45.540 --> 00:30:53.380
+go in and see the answer, but going back to the answer, our original question is it's interesting
+
+00:30:53.380 --> 00:30:58.860
+because what I am, and this is something you've talked about a lot on the podcast. This is where
+
+00:30:58.860 --> 00:31:05.900
+I think we can help accelerate learning on dev teams is one of my big gripes with gen AI is like
+
+00:31:06.540 --> 00:31:10.780
+all the people who they just don't understand how it can help them solve the problem.
+
+00:31:11.510 --> 00:31:17.350
+Like, like you, like the credit to you is you inherently knew this is probably a question
+
+00:31:17.910 --> 00:31:22.470
+that gen AI can help me solve. And it did it, it didn't know where that delighted you,
+
+00:31:22.470 --> 00:31:29.530
+which is great. I think a lot of folks, to be clear, delighted part of me scared the crap out
+
+00:31:29.530 --> 00:31:34.810
+of the other side. All right. Fair enough. Fair enough. But what I see from the internet,
+
+00:31:34.810 --> 00:31:39.930
+you saw the thread two weeks ago, three weeks ago on the people all freaked out how bad LLMs were
+
+00:31:39.930 --> 00:31:45.850
+because they couldn't count the letter number of hours and strawberry, uh, super dumb. Yeah. But
+
+00:31:45.850 --> 00:31:58.460
+one of the key, like the key to knowledge worker success in the future is understanding when, and
+
+00:31:58.460 --> 00:32:08.020
+when not a LLM gen AI can help you solve the problem and then giving it the right prompt
+
+00:32:08.020 --> 00:32:12.340
+to solve that problem for you. I don't want, I don't even want to talk about prompt engineering,
+
+00:32:12.340 --> 00:32:20.570
+but it's like I get praised a lot for my Google Fu, uh, because I can, I, my wife or somebody,
+
+00:32:20.570 --> 00:32:23.210
+she's actually pretty good at it too, but someone will search something in the internet and say,
+
+00:32:23.210 --> 00:32:29.050
+I can't find anything. I can find the right words in duck duck go or Google to, to find what I'm
+
+00:32:29.050 --> 00:32:36.170
+looking for via search. Uh, it's a skill and it kind of, uh, yeah, Brad's showing it this broken
+
+00:32:36.170 --> 00:32:41.320
+too. Um, we're going to fix this in a second. Uh, people don't know what we're talking about,
+
+00:32:41.400 --> 00:32:47.240
+but the ability to understand, oh, this is a problem that LLM can solve, or this is a problem
+
+00:32:47.240 --> 00:32:53.880
+that LLM can't solve, uh, is critical. And then the coming up with the prompt is almost,
+
+00:32:53.880 --> 00:32:59.000
+I think, I think actually, um, all I'm just going to get more forgiving on that. So maybe
+
+00:32:59.000 --> 00:33:01.960
+it's just the first part, maybe figuring out this is a problem that can be solved. This is
+
+00:33:01.960 --> 00:33:07.560
+a problem that can't, so Brent has asked, um, he has done the question in chat video, many,
+
+00:33:07.640 --> 00:33:14.600
+and he's asked how many R's are in strawberry. And it says two, which is incorrect. And it's
+
+00:33:14.600 --> 00:33:18.040
+even confident as you can see the letter R appears twice in strawberry. Now try this, Brent,
+
+00:33:18.040 --> 00:33:24.360
+try this, ask it to write Python code to count the number of R's in the, in the word strawberry.
+
+00:33:24.360 --> 00:33:32.040
+Okay. Uh, I'll do that. You talk. Okay. And what should happen here again,
+
+00:33:32.040 --> 00:33:37.480
+because again, this is people just don't take the time to understand the LLMs look for
+
+00:33:38.120 --> 00:33:43.530
+they have looked at such a wide body of text. They don't know what they're saying. They're
+
+00:33:43.530 --> 00:33:48.490
+putting the words together in a way that makes sense based on the gazillions of words they've
+
+00:33:48.490 --> 00:33:57.060
+looked at. Now there's no story books. There's no research papers written about, uh, written
+
+00:33:57.060 --> 00:34:01.860
+about how many R's are in the word strawberry, but they are really good at writing code.
+
+00:34:01.860 --> 00:34:07.940
+So Brent wrote exactly what asked him to write Python code to count the number of R's in
+
+00:34:07.940 --> 00:34:15.400
+strawberry. It says thought for four seconds, examining the count. He says, let me see,
+
+00:34:15.400 --> 00:34:20.120
+I'm identifying three R's in strawberry positions, three, seven, and eight. Contrastations. It didn't
+
+00:34:20.120 --> 00:34:26.760
+even know. We didn't even say you're wrong. So just write some code for this. And it automatically
+
+00:34:26.760 --> 00:34:32.120
+got the right answer because it knows code and it can fit and it, and it can get the context
+
+00:34:32.120 --> 00:34:37.800
+right. It goes, Oh, the question I get it. And it's just understanding how they work.
+
+00:34:37.800 --> 00:34:43.000
+You can make them behave in the right way. There was a five or Friday post like two months ago
+
+00:34:43.000 --> 00:34:49.690
+where there's an actual, someone wrote a nice little tutorial where you had to get an LLM to
+
+00:34:49.690 --> 00:34:54.570
+give some answers. And the goal was to give it the right prompt, understand enough what was going on.
+
+00:34:54.570 --> 00:34:59.210
+It was a good little, uh, almost a capture the flag on prompt engineering. Again,
+
+00:34:59.210 --> 00:35:03.210
+I hate that word, but anyway, the code doesn't matter. The fact they had to write the code
+
+00:35:03.210 --> 00:35:07.370
+makes it understand what it did wrong, which I think is fantastic. It's a little scary that
+
+00:35:07.450 --> 00:35:12.250
+it learns like that air quote learns like that. But, uh, so that's, that's that. Okay. We went
+
+00:35:12.250 --> 00:35:18.410
+on a tangent and we export it deeply. Let's pop the stack. I am saying that the ability
+
+00:35:19.130 --> 00:35:25.130
+to understand when and when not to use an LLM is one of the key skills of knowledge
+
+00:35:25.130 --> 00:35:37.290
+workers in the future. Fight me. Uh, um, I do think that's going, so yeah, in terms of
+
+00:35:37.290 --> 00:35:44.170
+accelerating learning, that's what you need to accelerate learning in for sure. Right. Because
+
+00:35:46.780 --> 00:35:54.060
+like I look at this thing, like Alan, Alan neglected to point out that yes, indeed
+
+00:35:55.020 --> 00:36:03.580
+it wrote Python code that would 100% generate the, the correct answer. Yeah. Of course. Yeah. That was,
+
+00:36:04.620 --> 00:36:12.700
+um, I've, while we do see bugs in, in, in LLM generated code, not usually on simple things.
+
+00:36:13.590 --> 00:36:19.670
+But let me just double check, uh, this Python string class
+
+00:36:20.620 --> 00:36:30.650
+of a count function. Oh, see, there's a better way to do it. Now. So the only thing I have seen it
+
+00:36:30.730 --> 00:36:39.110
+do, particularly with, with Python is that it will sometimes invent interfaces that don't exist.
+
+00:36:39.110 --> 00:36:46.870
+Oh, interesting methods in this case, right. String is going to be a common class that is used.
+
+00:36:47.670 --> 00:36:53.910
+And so yeah, it does indeed have a count function. So yeah, it generated it.
+
+00:36:54.550 --> 00:36:57.590
+Every method exists. If you have let right libraries installed.
+
+00:36:58.310 --> 00:37:09.080
+Right. Um, no, but some of the problems like, uh, uh, uh, Azure data explorer or, uh, what used to
+
+00:37:09.080 --> 00:37:13.480
+be known as Cousteau. I don't know if you ever had experienced it. I do remember. Oh my God.
+
+00:37:13.480 --> 00:37:19.720
+That's a blast from the past. Yeah. No, it's, it's alive and well, and it's awesome. Okay. Um,
+
+00:37:20.740 --> 00:37:29.990
+you can get this to, uh, like I'll do it now. Uh, right. It is. And what I do is I give commentary
+
+00:37:29.990 --> 00:37:39.430
+while Brent's typing in a chat GPT, cause this, this is the podcast you pay for it worth every penny
+
+00:37:39.430 --> 00:37:45.160
+of your subscription saying, right. Cousteau code to count the number of ours and strawberry.
+
+00:37:45.640 --> 00:37:52.780
+Is it going to know what Cousteau is? Yeah. Was Cousteau, was that ever external? Uh,
+
+00:37:52.780 --> 00:37:58.940
+multiple things released with that. I mean, it's formal name is, is, um, oh, I can't wait for this
+
+00:37:58.940 --> 00:38:07.640
+added data explorer. Right. So yeah. Oh my God. I recognize that. Good. Oh my God. Let's see. Yeah.
+
+00:38:08.360 --> 00:38:14.280
+So what it did, so walking through it, it first created a variable and you didn't call out,
+
+00:38:14.840 --> 00:38:21.640
+but I completely murdered my spelling of strawberry. No, you said added a backslash at the end, extra Y
+
+00:38:21.640 --> 00:38:28.040
+in the backslash. And no, and I, and actually two hours. Yeah. Okay. All right. Um, but it,
+
+00:38:28.040 --> 00:38:33.800
+it wrote the code, did the right spelling of strawberry, uh, converted it to lowercase,
+
+00:38:34.440 --> 00:38:43.240
+then figured out the string length of it, then removed all ours from that string and then
+
+00:38:43.240 --> 00:38:50.150
+counted that string length and then did the Delta. Well, that's an interesting way to do it. Um,
+
+00:38:50.790 --> 00:38:56.230
+but if you don't have like a counting function or a way to index it, this is an old deck. You're
+
+00:38:56.230 --> 00:39:00.550
+not gonna, you're not gonna loop in. So Kusta, by the way, if you ever use Cousteau, um,
+
+00:39:01.420 --> 00:39:05.180
+you used to use it at Microsoft. It seems like, oh, it's like a million years ago,
+
+00:39:05.180 --> 00:39:10.220
+probably, you know, eight years ago, just a quick, a query language for looking at, um,
+
+00:39:10.220 --> 00:39:17.260
+usually analytics data. Okay. But now here is why I brought in Cousteau. Okay. So God,
+
+00:39:17.260 --> 00:39:24.150
+I hope there was a reason there is, there is. So this function, do you recognize that function?
+
+00:39:24.790 --> 00:39:29.940
+I can't see your pointer. Oh, Sturlan. Yes, I do. Okay. Where does it come from?
+
+00:39:30.500 --> 00:39:38.020
+See, it comes from C. What about this one? Um, that's not a C function. I don't know what it is.
+
+00:39:38.020 --> 00:39:43.860
+That's a Python function. Replace. Yeah. Okay. Okay. So the problem with the Cousteau language
+
+00:39:43.860 --> 00:39:50.660
+is that the developers of it pick and chose things, names for things that already existed.
+
+00:39:51.460 --> 00:39:57.700
+Okay. So when, when you do, there's certain ways you can ask it to do something in Cousteau.
+
+00:39:58.900 --> 00:40:04.420
+You go and say, okay, create me a thing that does this in Cousteau. It will often
+
+00:40:04.420 --> 00:40:13.940
+invent things that don't exist because they do exist in other languages. And because Gen AI is
+
+00:40:13.940 --> 00:40:20.980
+nothing more than a probabilistic thing, it knows, Hey, this, this fake, uh, or this function that I
+
+00:40:20.980 --> 00:40:27.620
+want to use here, I know what comes next. And it has, it has lost the fact that it doesn't work.
+
+00:40:28.580 --> 00:40:33.140
+I get it. So you picked a more obscure language with, with attributes like this,
+
+00:40:33.220 --> 00:40:40.180
+because it's more apt to make errors. Right. Right. Now, as it, Oh, and by the way,
+
+00:40:41.060 --> 00:40:49.260
+I just scroll down. It not only gave me one way of doing it, it gave me two, three, four.
+
+00:40:50.380 --> 00:40:57.350
+Give me four. I would have honestly, I would have done four, a regex. The last one. Yeah. Yeah.
+
+00:40:57.350 --> 00:41:13.660
+Yeah. Yeah. Yeah. This one says count if lower word matches regex. Okay. So this fourth one
+
+00:41:13.660 --> 00:41:23.370
+would have been broken, um, because this is a single Boolean condition and there's only one word. So it
+
+00:41:23.370 --> 00:41:31.000
+would have returned. This one would return a one. Um, but there is a way in Cousteau, the,
+
+00:41:31.000 --> 00:41:34.840
+it picked the wrong function. There is a way in Cousteau where you could use regex
+
+00:41:35.560 --> 00:41:41.560
+and then you would count the number of groups. Okay. So what's the, what's the main point here?
+
+00:41:42.580 --> 00:41:49.060
+Well, so I like, like you connect in the dots. It's like, yeah, you need to accelerate learning,
+
+00:41:51.300 --> 00:41:59.300
+but your, your counter, it may, you may not need, you may not need to be accelerating learning
+
+00:42:01.100 --> 00:42:06.060
+in what you think you need to be accelerating learning. Yes. Yeah. And it goes back to the
+
+00:42:06.060 --> 00:42:10.300
+question on, which is based around what AI tools should use. And the answer is
+
+00:42:11.100 --> 00:42:18.100
+not until you have to, I mean, uh, they're not magic and you're there and there are some that
+
+00:42:18.100 --> 00:42:24.220
+are going to help you. Of course, Jen AI for first it's all the air quote AI power tools.
+
+00:42:24.220 --> 00:42:32.220
+It's the new dot net that I'm a little afraid of. I think actually in the top concept of AI,
+
+00:42:33.380 --> 00:42:40.700
+I think you're now world famous technology might need to be updated, which is what
+
+00:42:40.700 --> 00:42:45.900
+automation should be right. Alan, we should automate all the tests that should be automated.
+
+00:42:45.900 --> 00:42:54.500
+Okay. So what AI should we be using all the AI that we should. Right. And no more, no less. Yeah.
+
+00:42:56.060 --> 00:43:04.380
+Oh God. Have I ever, so I'm okay. I'm going to get like a few minutes here, but that reminds me,
+
+00:43:04.380 --> 00:43:11.030
+I never shared these, but I do have a list of the weasel laws. Okay. Um, just in case I ever need to
+
+00:43:11.030 --> 00:43:15.270
+refer, am I old and I forget things. So I'm just going to share these as a bonus for our listeners.
+
+00:43:15.830 --> 00:43:20.310
+And I think you've heard all of these. These are all things I say a lot of times that you're,
+
+00:43:20.310 --> 00:43:27.100
+you've said, and I've stolen them. Oh, I would love to have that. Um, you should automate 100%
+
+00:43:27.100 --> 00:43:32.860
+of the tests that should be automated. Weasel on number one, weasel on number two, the answer to
+
+00:43:32.860 --> 00:43:40.090
+any reasonably complex question is it depends. Number three, code coverage is a wonderful
+
+00:43:40.090 --> 00:43:45.930
+tool that a horrible metric. Yep. Number four, the more widespread a term is the less it
+
+00:43:45.930 --> 00:43:54.020
+holds to its original purpose. Case in point agile. Right. Weasel on number five, you can change your
+
+00:43:54.020 --> 00:43:58.980
+manager or you can change your manager or the version we also use, you can change your org or
+
+00:43:58.980 --> 00:44:04.820
+you can change your org. Yes. And weasel on number six, which, um, this is the newest one. They've
+
+00:44:04.820 --> 00:44:09.700
+come in order of, I've been using them. You are not nearly as much of a snowflake as you think you are.
+
+00:44:10.380 --> 00:44:19.130
+Is that a law or is that, is that officially Alan entering into geezer hood?
+
+00:44:19.690 --> 00:44:26.250
+No, but you know, stupid. No, no, stop that. It's like, well, Brent,
+
+00:44:26.250 --> 00:44:31.850
+Jen AI, well, it goes, it goes right to the software testers. You know, is it,
+
+00:44:31.850 --> 00:44:38.010
+Jen AI, it seems like a really cool advanced technology, but for the kind of testing I do,
+
+00:44:38.010 --> 00:44:45.670
+it's not really going to help. Right. No, that. And like, uh, you are not as much of a snowflake
+
+00:44:45.670 --> 00:44:56.860
+as you think you are. Actually. Yeah. No. Yeah. Your scenario. It reminds me of, of, of the three
+
+00:44:56.860 --> 00:45:03.500
+principles from, uh, how to measure anything, which of which I'm forgetting. He has three key
+
+00:45:03.500 --> 00:45:10.650
+principles. I'm nearly. And the book is usually right here. I don't know what I did with it.
+
+00:45:10.810 --> 00:45:16.730
+It's one of the books I keep an arm distance. Mine. I do as well. Oh, I know what you're
+
+00:45:16.730 --> 00:45:21.850
+talking. Yeah. Yeah. I know what you're talking about and I have him written down somewhere.
+
+00:45:22.760 --> 00:45:30.070
+God, where is the book? Find yours. All right. This is what we do here. This is what we do.
+
+00:45:32.150 --> 00:45:36.710
+Uh, God, it's, um, it's like you, it's, there's three things around data.
+
+00:45:37.540 --> 00:45:44.600
+You probably already have enough data. You probably, you, that's not it. Those aren't it.
+
+00:45:47.300 --> 00:45:52.420
+Those aren't the right ones. I know. Let me, let me ask the better search engine.
+
+00:45:52.420 --> 00:45:58.180
+You have just a second. I'll see if I can find it for you to this. Now this is compelling
+
+00:45:58.180 --> 00:46:03.620
+podcasting. Yeah. This is really, and I'm going to, I have a different way of searching for it.
+
+00:46:03.620 --> 00:46:15.110
+I'm going to see if it works. Um, I got it. I win. No, no, that's it. You have it. I was going to
+
+00:46:15.110 --> 00:46:20.470
+put this in my blog once, uh, the three, you have more data than you think you need less data than
+
+00:46:20.470 --> 00:46:25.830
+you think an adequate, adequate amount of new data is more accessible than you think. And I
+
+00:46:25.830 --> 00:46:30.790
+remember even in a metrics course, uh, I did a taught at Microsoft a long time ago. We talked
+
+00:46:30.790 --> 00:46:37.460
+about these cause yeah, people want to measure everything and, and see if any magic comes out,
+
+00:46:37.460 --> 00:46:43.670
+which anyway, you have more data than you think, which is true. You need less data than you think.
+
+00:46:43.670 --> 00:46:50.150
+Also very true, adequate amount of new data is like getting, getting the new data you need to
+
+00:46:50.150 --> 00:46:59.180
+answer it. Like some nuance of a question that's probably pretty easy too. The, and I, I'm
+
+00:46:59.180 --> 00:47:06.940
+realizing I may need to go back and reread this, his book to reenergize it and tie the context to,
+
+00:47:06.940 --> 00:47:13.980
+to current life because I look at this and I'm like, yeah, he's right on. Right. The, the, um,
+
+00:47:15.420 --> 00:47:26.040
+you need less data than you think, right here, he's inspiring. Um, hey, spend a little extra time
+
+00:47:26.040 --> 00:47:33.480
+thinking about what's the decision you're trying to make and do you really need to, to do this? And
+
+00:47:33.480 --> 00:47:40.280
+I'll, I'll tell you. So for example, I do a lot of AB testing, um, things for people. Okay.
+
+00:47:41.530 --> 00:47:47.610
+That's what we do here. AB testing. And sometimes the scenario that they're trying to validate
+
+00:47:47.610 --> 00:47:53.530
+is so infrequent. Like, Hey, if we do this, it'll stop this bug that happens. And the bug only
+
+00:47:53.610 --> 00:47:59.530
+happens at Wednesday at midnight and only in a random region, right? It's a rare bug, right? How
+
+00:47:59.530 --> 00:48:10.940
+do you get the sample set enough to, to, to do an AB test, get statistical significance to a degree
+
+00:48:10.940 --> 00:48:17.980
+that you can use the rules of data science and bless it. Right. And the answer is, is you let it
+
+00:48:17.980 --> 00:48:23.900
+run for F and ever because of the smaller number of sample size, the more you have to let it run.
+
+00:48:23.900 --> 00:48:29.100
+But if you don't have the time to let it run, when you look at it, you measure it a couple,
+
+00:48:29.100 --> 00:48:34.860
+two, three times, you go, okay, is it trending? Do we, do we see any evidence of having,
+
+00:48:35.420 --> 00:48:41.260
+right? You go, all right. You put what I often end up doing is I tell them what it says.
+
+00:48:42.220 --> 00:48:50.060
+However, I also say we can measure sort of the probabilistic angle around how we're seeing
+
+00:48:50.060 --> 00:48:57.750
+these results land. And we can then kind of accelerate what will probably be our decision.
+
+00:48:57.750 --> 00:49:05.190
+If we let this run, it is a risk. It'll be wrong. But I can now measure the distribution and from
+
+00:49:05.190 --> 00:49:10.150
+that distribution, I can run through simulation and go, yeah, this is probably heading in the
+
+00:49:10.150 --> 00:49:16.820
+direction where it will not pass significance or it will pass. Yeah. Well, you've, you've applied
+
+00:49:16.820 --> 00:49:23.900
+critical thinking to data analysis. Right. I mean, no, I mean, I mean, it's, this is knowledge work. And
+
+00:49:25.100 --> 00:49:32.780
+and it goes back to the testers, blah, blah, blah. It's, it's all knowledge work. And not to minimize
+
+00:49:32.780 --> 00:49:40.170
+what testing, development, lawyering, doctoring is, we do our job based on the knowledge and
+
+00:49:40.170 --> 00:49:44.890
+context we have, and we focus on continuous improvements. So we need to adapt and do that
+
+00:49:44.890 --> 00:49:52.650
+work better. AI can help accelerate the learning we need to do that. End of story.
+
+00:49:55.220 --> 00:50:00.820
+Agreed. All right. Let's, let's call that good, man. That wasn't a bad question. We're not going
+
+00:50:00.820 --> 00:50:07.220
+to do this every week. Sometimes we'll think of our own stuff, but in a pinch, not too bad.
+
+00:50:07.220 --> 00:50:14.570
+Not too bad. Yeah, we need to make sure. One of the things we need to talk to Jason about
+
+00:50:14.570 --> 00:50:20.650
+is how he gets, how he updates this thing with the transcript or podcasts. So that,
+
+00:50:20.650 --> 00:50:24.250
+I don't know if our transcripts make it in, let's figure that out, but, uh,
+
+00:50:24.250 --> 00:50:28.970
+no, no, no, we, we just need to, you know, tell them to make that happen. Yeah. Right.
+
+00:50:28.970 --> 00:50:33.210
+Because in a couple of months when we asked, I think we're doing that right now. Cause Jason,
+
+00:50:33.210 --> 00:50:39.690
+this is Jason make your completely free, completely free to us all effort on your thing.
+
+00:50:39.690 --> 00:50:43.610
+Could you please put a whole bunch of effort into it to make your free thing more
+
+00:50:43.610 --> 00:50:49.290
+valuable to Brent and I. Right. So that next week, next week, we can ask a new question and
+
+00:50:49.290 --> 00:50:55.690
+it'll be a new one, not a repeat. And can you sample our voices and just get like,
+
+00:50:55.690 --> 00:51:05.350
+do we have to be here for this? Uh, that would maybe not. Maybe not. That's can I just go to
+
+00:51:05.350 --> 00:51:11.430
+chat cheapy to say, Hey, please post a new AB testing podcast episode two, two 11 on this
+
+00:51:11.430 --> 00:51:18.920
+date. And it just shows up and like, why not? Why not? We're not that far away. Please.
+
+00:51:21.800 --> 00:51:29.080
+Episode two 11. All right. It's right. No, we're not there yet. It's not going to work. It's going
+
+00:51:29.080 --> 00:51:33.240
+to, but I can't wait to see what sort of confidently incorrect answer it gives.
+
+00:51:35.100 --> 00:51:38.300
+This is going to be great. Fred is asking it. Please post episode two, let the AB testing
+
+00:51:38.300 --> 00:51:44.220
+podcast by Sunday, October 6th. Um, it's now searching for that term. It's browed. It's
+
+00:51:44.220 --> 00:51:51.720
+browsing podcast addict. Unfortunately, that episode hasn't been released yet. So it, it gave
+
+00:51:51.720 --> 00:51:55.720
+you an answer that was correct. It's like a political debate when it didn't answer the
+
+00:51:55.720 --> 00:52:02.710
+question you asked. Right. We're done. Brent, Brent, no, Brent's going to be insistent.
+
+00:52:02.710 --> 00:52:08.550
+I want you to generate it and post it. Oh my God. This is the worst podcast, but you know what?
+
+00:52:08.550 --> 00:52:14.310
+It's probably better than AI for now. It does not have the capability to generate or post content.
+
+00:52:15.340 --> 00:52:21.560
+So, uh, oh, great. Now we have a sample script.
+
+00:52:25.080 --> 00:52:27.400
+Scroll down a little bit. We can act out a little bit. Then we got to go.
+
+00:52:28.520 --> 00:52:31.560
+So wait, go back. Go up, go up, go up. We're going to talk. We're just going to do a little bit.
+
+00:52:31.560 --> 00:52:36.920
+We got over our lines here. So Brent, let's kick things off with AI again, but this time let's
+
+00:52:36.920 --> 00:52:41.480
+take a closer look at how it's truly changing the way we approach quality beyond the hype.
+
+00:52:42.440 --> 00:52:47.960
+Right. We've talked about AI plenty, but there's something critical here. The role of data
+
+00:52:47.960 --> 00:52:55.800
+quality and bias in AI driven testing tools. AI is not the magic bullet. It's a magnifier of your
+
+00:52:55.800 --> 00:53:01.160
+data's quality. Then we have a discussion and then I say exactly. And Jason Arbin has been
+
+00:53:01.160 --> 00:53:07.160
+talking about how biases creep into AI testing systems. He emphasizes that we can't eliminate
+
+00:53:07.160 --> 00:53:14.040
+bias entirely, but can minimize harmful biases in our data and models. This is huge for testers.
+
+00:53:14.040 --> 00:53:20.040
+All right. There's your preview of episode two 11. I'm Alan. I'm Brad. We're out of here.
+
+00:53:20.040 --> 00:53:36.680
+Should we just change our podcast to ABC testing?
+

@@ -1,0 +1,2366 @@
+WEBVTT
+
+00:00:03.380 --> 00:00:08.460
+Welcome to AB Testing Podcast, your modern testing podcast.
+
+00:00:08.460 --> 00:00:14.580
+Your hosts, Alan and Brent, will be here to guide you through topics on testing, leadership,
+
+00:00:14.580 --> 00:00:17.220
+agile, and anything else that comes to mind.
+
+00:00:17.220 --> 00:00:18.980
+Now, on with the show.
+
+00:00:18.980 --> 00:00:23.310
+Hey everybody, welcome back to another episode of AB Testing.
+
+00:00:23.310 --> 00:00:24.310
+Hey, Brent.
+
+00:00:24.310 --> 00:00:25.390
+Hey, Alan.
+
+00:00:25.390 --> 00:00:29.950
+We have someone else in the virtual room with us like to welcome to the podcast, David
+
+00:00:29.950 --> 00:00:30.950
+Bishop.
+
+00:00:30.950 --> 00:00:31.950
+Say hi, David.
+
+00:00:31.950 --> 00:00:33.240
+Hi.
+
+00:00:34.240 --> 00:00:35.240
+Perfect.
+
+00:00:35.240 --> 00:00:36.240
+Perfect.
+
+00:00:36.240 --> 00:00:37.240
+So David is...
+
+00:00:37.240 --> 00:00:38.240
+Wait, wait.
+
+00:00:38.240 --> 00:00:40.240
+David, this is a podcast?
+
+00:00:40.240 --> 00:00:48.240
+Yeah, we're on Zoom and waving just isn't going to work.
+
+00:00:48.240 --> 00:00:50.240
+Nodding your head, not going to happen.
+
+00:00:50.240 --> 00:00:56.000
+So David is here because he has written a pretty cool new book called Meta-Agility.
+
+00:00:56.000 --> 00:00:57.000
+Is that right?
+
+00:00:57.000 --> 00:00:58.000
+Do I have the right David here?
+
+00:00:58.000 --> 00:00:59.000
+That's right.
+
+00:00:59.000 --> 00:01:00.000
+That's me.
+
+00:01:00.000 --> 00:01:01.000
+Okay.
+
+00:01:01.000 --> 00:01:04.400
+So I thought you would have a guest on this week and there's a lot of things that overlap
+
+00:01:04.400 --> 00:01:08.640
+with things Brent and I have talked about in your writings.
+
+00:01:08.640 --> 00:01:13.200
+And David and I talked about this, but as listeners know, there's AB testing in the
+
+00:01:13.200 --> 00:01:16.600
+title and Brent and I have some testing background, but we don't talk a lot about
+
+00:01:16.600 --> 00:01:17.600
+testing here.
+
+00:01:17.600 --> 00:01:20.960
+We talk a lot about agile and lean and the modern testing principles, which have nothing
+
+00:01:20.960 --> 00:01:22.360
+to do with testing.
+
+00:01:22.360 --> 00:01:26.920
+And I think Meta-Agility will have some nice overlaps and good discussion points.
+
+00:01:26.920 --> 00:01:28.120
+So are you ready?
+
+00:01:28.120 --> 00:01:31.360
+When we have guests, we just asked them about 50,000 questions.
+
+00:01:31.360 --> 00:01:33.120
+So are you ready for those David?
+
+00:01:33.120 --> 00:01:34.120
+Sure.
+
+00:01:34.120 --> 00:01:38.800
+First one is actually tell us a little bit more about yourself.
+
+00:01:38.800 --> 00:01:43.480
+I'll give you the super softball and then the softball question about Meta-Agility.
+
+00:01:43.480 --> 00:01:45.080
+So give a little intro.
+
+00:01:45.080 --> 00:01:47.800
+Well, I'm an engineer by trade.
+
+00:01:47.800 --> 00:01:54.320
+I've been in the IT and technology development business for about 25 years.
+
+00:01:54.320 --> 00:01:57.560
+Worked for a lot of different companies, big and small, large corporations.
+
+00:01:57.560 --> 00:02:03.200
+So like telecom and transportation and also a few startups as well and pretty much everything
+
+00:02:03.200 --> 00:02:04.720
+in between.
+
+00:02:04.720 --> 00:02:09.720
+And about 10 years ago, I was working with a company that was in the process of conducting
+
+00:02:09.720 --> 00:02:12.080
+an agile transformation.
+
+00:02:12.080 --> 00:02:16.480
+And this particular organization was at the time a relatively new business, industrial
+
+00:02:16.480 --> 00:02:20.260
+IoT, and they were having a very hard time.
+
+00:02:20.260 --> 00:02:26.120
+And to make a long story short, after watching them go through several iterations and hard
+
+00:02:26.120 --> 00:02:33.120
+stops and trials and errors and things like that, I decided that I wanted to try and
+
+00:02:33.120 --> 00:02:34.120
+solve that kind of problem.
+
+00:02:34.120 --> 00:02:36.800
+But I thought, well, how do you, what's the best way to go about it?
+
+00:02:36.800 --> 00:02:39.940
+Because it seems like nothing else is working very well.
+
+00:02:39.940 --> 00:02:43.260
+And so I decided to go back to school and get a PhD.
+
+00:02:43.260 --> 00:02:49.420
+And I focused on trying to solve that problem with some additional skills in business to
+
+00:02:49.420 --> 00:02:51.500
+combine with my engineering background.
+
+00:02:51.500 --> 00:02:57.460
+And I ended up publishing a body of work which resulted in some research papers and of course,
+
+00:02:57.460 --> 00:02:59.700
+the book that we're talking about today.
+
+00:02:59.700 --> 00:03:05.750
+There's some research which is very theoretical, like I see papers all the time that are,
+
+00:03:05.750 --> 00:03:09.950
+this is great, you've never actually tried this in the real world, have you?
+
+00:03:09.950 --> 00:03:15.350
+So I love it when I see people do research that actually results in practical or use
+
+00:03:15.350 --> 00:03:18.950
+as practical examples and relies on evidence of knowledge.
+
+00:03:18.950 --> 00:03:24.150
+Vincent and I are both fans of the Accelerate book by Nicole Forsgren, research-based but
+
+00:03:24.150 --> 00:03:26.150
+also practical and pragmatic.
+
+00:03:26.150 --> 00:03:28.270
+So I've seen that in your work as well.
+
+00:03:28.270 --> 00:03:34.110
+So tell us, I've mentioned this meta agility word and this is one of the big outcomes
+
+00:03:34.110 --> 00:03:35.870
+of your work in studies so far.
+
+00:03:35.870 --> 00:03:40.390
+So what is meta agility and what's different about it?
+
+00:03:40.390 --> 00:03:43.340
+Well, there's a few things.
+
+00:03:43.340 --> 00:03:48.180
+Meta agility is essentially a framework for managing agile transformation to help companies
+
+00:03:48.180 --> 00:03:50.060
+become number one in their market.
+
+00:03:50.060 --> 00:03:53.340
+It focuses on the product development engine of the company.
+
+00:03:53.340 --> 00:03:59.180
+One of the things that I discovered when I started out on this journey of researching
+
+00:03:59.180 --> 00:04:04.840
+agile transformations and what made them succeed and what made them fail, started working with
+
+00:04:04.840 --> 00:04:09.400
+real test cases, real use cases rather, beginning with the company that I was working
+
+00:04:09.400 --> 00:04:12.620
+with who was trying to undergo this transformation.
+
+00:04:12.620 --> 00:04:17.980
+And they were developing industrial IoT products which are essentially embedded systems like smart
+
+00:04:17.980 --> 00:04:19.380
+meters, smart cars.
+
+00:04:19.380 --> 00:04:23.340
+If you think about all the innovation happening today, it's really all about devices.
+
+00:04:23.340 --> 00:04:26.200
+It's not just about software anymore.
+
+00:04:26.200 --> 00:04:30.240
+But these devices are composed of hardware, firmware, and software developed on different
+
+00:04:30.240 --> 00:04:32.680
+tracks by different teams, sometimes by different companies.
+
+00:04:32.680 --> 00:04:36.840
+But it has to be tested and released as one cohesive product.
+
+00:04:36.840 --> 00:04:46.720
+That's really tough to do using traditional agile techniques and agile approaches as they've
+
+00:04:46.720 --> 00:04:51.120
+often been communicated over the first 10 years that the manifesto is released.
+
+00:04:51.120 --> 00:04:56.520
+And so I set about trying to figure out, well, how do you do this with this type of context?
+
+00:04:56.520 --> 00:05:01.560
+And after going through several case studies with that company and a few other companies,
+
+00:05:01.560 --> 00:05:07.720
+I managed to figure out that some companies were doing things really, really well.
+
+00:05:07.720 --> 00:05:09.120
+Most companies weren't doing things too well.
+
+00:05:09.120 --> 00:05:12.320
+They had lackluster results or not the results they expected.
+
+00:05:12.320 --> 00:05:16.440
+But there were a small subset of companies that managed to acquire what I called a super
+
+00:05:16.440 --> 00:05:23.620
+agile adaptation that allowed them to leverage agility to not just have an efficient organization
+
+00:05:23.620 --> 00:05:28.840
+or high quality products, but to become number one in their market.
+
+00:05:28.840 --> 00:05:35.060
+And so meta agility captures the essence of that success and attempts to bottle it into
+
+00:05:35.060 --> 00:05:40.240
+a framework that other companies can use to replicate the same results.
+
+00:05:40.240 --> 00:05:45.560
+And some other things that are different about it are, first of all, when you compare it
+
+00:05:45.560 --> 00:05:49.640
+to other frameworks like SAFE or SCRUM, or well, SCRUM is really more of a methodology
+
+00:05:49.640 --> 00:05:51.920
+set of rituals, not really a framework as we call it.
+
+00:05:51.920 --> 00:05:57.320
+But frameworks are more like LESS, DSDM, discipline agile, which was recently purchased by BMI.
+
+00:05:57.320 --> 00:05:59.240
+And of course, SAFE.
+
+00:05:59.240 --> 00:06:04.200
+Then you have Kanban, which is down at the process level, work in process level, which
+
+00:06:04.200 --> 00:06:09.400
+is now through certain organizations like Lean Kanban University is being expanded into more
+
+00:06:09.400 --> 00:06:13.220
+of a framework or management philosophy.
+
+00:06:13.660 --> 00:06:19.780
+But you have SAFE at the 10,000 foot level, and you have SCRUM down at the team level,
+
+00:06:19.780 --> 00:06:23.260
+and then you have work in progress down at the process level.
+
+00:06:23.260 --> 00:06:27.300
+But what meta agility focuses on is actually the product development engine.
+
+00:06:27.300 --> 00:06:31.980
+It focuses on product management, product development, project management, and your development and
+
+00:06:31.980 --> 00:06:35.820
+testing teams to get the product out the door where the highest possible quality and
+
+00:06:35.820 --> 00:06:40.980
+efficiency is possible to grab that early critical market share that has been a marker
+
+00:06:40.980 --> 00:06:44.340
+for success for many companies, especially in new markets.
+
+00:06:44.340 --> 00:06:51.040
+And also another component of meta agility is a new theory called agile vorticity, which
+
+00:06:51.040 --> 00:06:53.840
+is a grounded theory that came out of the research.
+
+00:06:53.840 --> 00:06:56.960
+And what that does is it tells you how agile you are.
+
+00:06:56.960 --> 00:07:00.920
+So one of the big questions in this industry is, I'm doing all this agile transformation,
+
+00:07:00.920 --> 00:07:05.520
+I'm doing all this work, but how do I know how agile it's making me?
+
+00:07:05.520 --> 00:07:09.120
+How do I know how agile I am in relation to my market?
+
+00:07:09.120 --> 00:07:13.760
+And how do I know if I need to be more agile or if I can be more agile and what I need to
+
+00:07:13.760 --> 00:07:14.760
+do to get there?
+
+00:07:14.760 --> 00:07:19.840
+So agile vorticity answers that question, which is a kind of a unique, actually a pretty unique
+
+00:07:19.840 --> 00:07:22.280
+feature, and that's actually been patented.
+
+00:07:22.280 --> 00:07:26.240
+That's another unique feature about meta agility is the other frameworks have not really been
+
+00:07:26.240 --> 00:07:27.240
+patented.
+
+00:07:27.240 --> 00:07:31.800
+This one has because it has that additional substance, theoretical substance that can be
+
+00:07:31.800 --> 00:07:35.360
+applied in industry that others don't quite have.
+
+00:07:35.360 --> 00:07:38.280
+So that's another unique attribute of it.
+
+00:07:38.280 --> 00:07:42.720
+So I like the the I'm going to let Brent dive in on this one, but the idea of how agile are
+
+00:07:42.720 --> 00:07:43.720
+you?
+
+00:07:43.720 --> 00:07:49.240
+I'm going to ask you about this, this, this agile, I think you're at the agile, not agile
+
+00:07:49.240 --> 00:07:51.910
+vortex, the agile business vortex.
+
+00:07:51.910 --> 00:07:55.590
+I'm going to go into that in a minute, but it's one of the things you touched on touched
+
+00:07:55.590 --> 00:07:58.070
+on our mission statement.
+
+00:07:58.070 --> 00:08:02.030
+Brent came up with many years ago, which is accelerate the achievement and the simple
+
+00:08:02.030 --> 00:08:03.030
+quality.
+
+00:08:03.030 --> 00:08:06.390
+And he talked about balancing the delivery and the quality, something really, really important
+
+00:08:06.390 --> 00:08:07.550
+to us.
+
+00:08:07.630 --> 00:08:11.590
+So, Brent, any comments or feedback on that before I move ahead?
+
+00:08:11.590 --> 00:08:14.100
+Oh, so many.
+
+00:08:14.100 --> 00:08:15.380
+I saw you writing notes.
+
+00:08:15.380 --> 00:08:18.820
+So so far away.
+
+00:08:18.820 --> 00:08:31.890
+So number one, obviously, so we also are, have been in the industry a very long time.
+
+00:08:31.890 --> 00:08:34.530
+The one thing that you mentioned, a couple of things that you mentioned, I would ask
+
+00:08:34.530 --> 00:08:36.010
+for a little bit more clarity.
+
+00:08:36.090 --> 00:08:38.890
+But one thing I find fascinating.
+
+00:08:38.890 --> 00:08:43.730
+So I'm a data scientist manager now.
+
+00:08:43.730 --> 00:08:50.330
+One of our favorite authors whose name escapes me, but Alan will remember it.
+
+00:08:50.330 --> 00:08:54.850
+It wrote a book, How to Measure Anything.
+
+00:08:54.850 --> 00:08:55.850
+And Hubbard.
+
+00:08:55.850 --> 00:08:56.850
+Thank you.
+
+00:08:56.850 --> 00:09:00.410
+And I think I have that book.
+
+00:09:00.410 --> 00:09:04.430
+He's he's he's a hero.
+
+00:09:04.430 --> 00:09:17.740
+The so the idea of what I think you said is you're quantifying the degree to which you
+
+00:09:17.740 --> 00:09:19.580
+are agile.
+
+00:09:19.580 --> 00:09:20.580
+Is that correct?
+
+00:09:20.580 --> 00:09:22.220
+Yes, that's the attempt.
+
+00:09:22.220 --> 00:09:23.220
+Yes.
+
+00:09:23.220 --> 00:09:24.620
+In relation to the marketplace.
+
+00:09:24.620 --> 00:09:26.170
+Yeah.
+
+00:09:26.170 --> 00:09:30.090
+In addition to OK, so it's a relative measure.
+
+00:09:30.090 --> 00:09:31.090
+That's right.
+
+00:09:31.090 --> 00:09:32.920
+Yes.
+
+00:09:33.990 --> 00:09:39.470
+Does it convert to all scopes of a team's operation?
+
+00:09:39.470 --> 00:09:43.790
+For example, I run a data science team.
+
+00:09:43.790 --> 00:09:50.150
+It's relatively small with this concept scale down.
+
+00:09:50.150 --> 00:09:56.210
+Or is it is it intended more towards the executive decision making process?
+
+00:09:56.210 --> 00:10:00.050
+It's the intended more towards the executive decision making process.
+
+00:10:00.050 --> 00:10:05.210
+Now, it can once you have that result, you can you can drill down into, you know, to
+
+00:10:05.210 --> 00:10:10.850
+the team level to try and pinpoint, you know, more agility or less agility with the teams.
+
+00:10:10.850 --> 00:10:14.650
+But that requires some additional tooling to make that happen.
+
+00:10:14.650 --> 00:10:18.610
+But it's mostly intended for the office and the executive level.
+
+00:10:18.610 --> 00:10:19.670
+Yes.
+
+00:10:19.670 --> 00:10:20.670
+So let's go back.
+
+00:10:20.670 --> 00:10:23.030
+So Alan's going to piggyback on that one.
+
+00:10:23.030 --> 00:10:27.780
+So I'll I'll I'll stay off any further questions on that one.
+
+00:10:27.780 --> 00:10:32.060
+But you earlier mentioned IOT.
+
+00:10:32.060 --> 00:10:36.020
+You noticed that there was having a you were having a hard time releasing, I believe you
+
+00:10:36.020 --> 00:10:39.500
+said with traditional agile techniques.
+
+00:10:39.500 --> 00:10:42.580
+What specifically was was their problem?
+
+00:10:42.580 --> 00:10:45.520
+Well, there were actually several.
+
+00:10:45.520 --> 00:10:49.600
+The company had attempted just quoting some of the one of the case studies that I worked
+
+00:10:49.600 --> 00:10:55.800
+with the company that had made several attempts to conduct an agile transformation.
+
+00:10:55.800 --> 00:10:57.760
+This company was in the smart meter industry.
+
+00:10:57.760 --> 00:11:00.160
+This was a little over 10 years ago.
+
+00:11:00.160 --> 00:11:04.440
+And to give you a little bit of background on the smart metering industry.
+
+00:11:04.440 --> 00:11:07.800
+During the Obama administration, there was a green initiative that kicked off quite
+
+00:11:07.800 --> 00:11:13.170
+a bit of funding to encourage utilities to adopt new technologies to update the grid.
+
+00:11:13.170 --> 00:11:17.710
+And so there were a number of companies that were popping up to push this smart grid
+
+00:11:17.710 --> 00:11:23.150
+technology, the smart metering technology, the the actually wireless networks that would
+
+00:11:23.190 --> 00:11:28.470
+allow you to measure power remotely and turn power off and on remotely and do all sorts
+
+00:11:28.470 --> 00:11:30.950
+of neat, fancy things.
+
+00:11:30.950 --> 00:11:37.560
+And so this this technology encompassed hardware, firmware and software that were developed
+
+00:11:37.560 --> 00:11:41.280
+by separate teams and in many cases, separate companies, because we had to support meters
+
+00:11:41.280 --> 00:11:46.330
+developed by different companies as well, depending on the utilities needs.
+
+00:11:46.330 --> 00:11:51.590
+And so it became very difficult to as we try to conduct an agile transformation, most
+
+00:11:51.590 --> 00:11:55.030
+of the consultants and I think they tried three or four times using some of the biggest
+
+00:11:55.030 --> 00:12:00.940
+consulting firms around at the time to try and conduct an agile transformation.
+
+00:12:00.940 --> 00:12:11.560
+And so what this they had one problem after another, essentially, most of the most of
+
+00:12:11.560 --> 00:12:15.680
+the consultants didn't really understand the context too well, they didn't understand embedded
+
+00:12:15.680 --> 00:12:21.280
+systems, they didn't understand, they were came from a purely software environment.
+
+00:12:21.280 --> 00:12:23.560
+And that was probably the biggest challenge.
+
+00:12:23.560 --> 00:12:27.720
+And so they had a they had a really hard time trying to figure out, well, how do we make
+
+00:12:27.720 --> 00:12:31.480
+these other teams agile, we can make the software teams agile, but we can't do anything with
+
+00:12:31.480 --> 00:12:34.080
+the firmware teams or the hardware teams.
+
+00:12:34.080 --> 00:12:38.340
+And so they went round and round with that and also coordinating the interactions between
+
+00:12:38.340 --> 00:12:44.960
+all these teams and managing the product so that it came out as one cohesive product.
+
+00:12:44.960 --> 00:12:50.940
+And so that it was released with the expected feature set on time was a big challenge.
+
+00:12:50.940 --> 00:12:55.140
+We had situations where, you know, firmware team might be waiting on the hardware teams
+
+00:12:55.140 --> 00:12:59.240
+hardware so they could test or the software team might be waiting on the firmware teams
+
+00:12:59.240 --> 00:13:01.340
+release so they could test or develop against.
+
+00:13:01.340 --> 00:13:06.200
+And so there were all these interdependencies made the product very complex and very hard
+
+00:13:06.200 --> 00:13:12.500
+to take a pure agile approach and adapted to that context.
+
+00:13:12.500 --> 00:13:18.140
+And they they the final time they tried, it was a it was a terrible failure.
+
+00:13:18.140 --> 00:13:22.820
+They ended up firing half the leadership, including the consultants.
+
+00:13:22.820 --> 00:13:27.200
+And then we after talking with them myself, they allowed me to kick off a research study
+
+00:13:27.200 --> 00:13:30.940
+to try and make some changes and monitor those changes over a period of time.
+
+00:13:30.940 --> 00:13:34.960
+It was basically about a five to 10 year study with that context as well as a few other
+
+00:13:34.960 --> 00:13:39.560
+case studies to try and figure out what the real happy path was.
+
+00:13:39.560 --> 00:13:47.160
+And what do you think was the single most important breakthrough in that transformation?
+
+00:13:47.160 --> 00:13:52.200
+Well, there were actually several it's kind of hard to pinpoint one single breakthrough.
+
+00:13:52.200 --> 00:13:58.220
+But well, I'd say probably the biggest breakthrough, I would say would be hybrid agile implementations.
+
+00:13:58.220 --> 00:14:03.360
+So hybrid agile implementations, as we traditionally know it have kind of a bad rap in our industry,
+
+00:14:03.360 --> 00:14:07.640
+you know, they think of when I hear hybrid agility, they think of wagel or scrummer
+
+00:14:07.640 --> 00:14:13.080
+fall or, you know, kind of a situation where you tried to be agile and you basically backslid
+
+00:14:13.080 --> 00:14:19.440
+and you have like this mixed process now and it's considered kind of a bad thing, right?
+
+00:14:19.440 --> 00:14:26.280
+But our research found that after making some surgical changes and doing a lot of testing
+
+00:14:26.280 --> 00:14:32.560
+and trial and error, we managed to adopt a hybrid agile implementation that allowed
+
+00:14:32.560 --> 00:14:35.120
+this company to become number one in its market.
+
+00:14:35.120 --> 00:14:40.440
+And that required the different development tracks, hardware, firmware and software to
+
+00:14:40.440 --> 00:14:42.460
+adopt agile differently.
+
+00:14:42.460 --> 00:14:47.740
+So you would have, for example, the software teams would be more of a pure agile type of
+
+00:14:47.740 --> 00:14:50.940
+adaptation where they would have their two weeks sprints, they'd have their daily standups
+
+00:14:50.940 --> 00:14:52.420
+and they'd have all that stuff.
+
+00:14:52.420 --> 00:14:54.460
+And then the firmware teams moved a little bit slower.
+
+00:14:54.460 --> 00:14:59.100
+So they would have maybe 30 day sprints and they may have standups not quite so
+
+00:14:59.100 --> 00:15:00.200
+often.
+
+00:15:00.200 --> 00:15:05.080
+And then you would have the hardware teams who would have still more of a waterfall
+
+00:15:05.080 --> 00:15:07.200
+type of release approach.
+
+00:15:07.200 --> 00:15:11.000
+It could be 12 to 18 months for their hardware to be released.
+
+00:15:11.000 --> 00:15:14.920
+However, they would adopt certain techniques to keep up with the other teams.
+
+00:15:14.920 --> 00:15:17.400
+They would do rapid prototyping.
+
+00:15:17.400 --> 00:15:20.720
+They would adopt something, they would use something called what we called C-level
+
+00:15:20.720 --> 00:15:25.080
+projects, which were projects under $60,000 that would allow them to develop a quick
+
+00:15:25.080 --> 00:15:29.440
+prototype to provide to the other software firmware teams so they could do their
+
+00:15:29.440 --> 00:15:33.840
+development and testing against it because this interdependency between these teams was
+
+00:15:33.840 --> 00:15:35.900
+a big problem.
+
+00:15:35.900 --> 00:15:40.620
+And so over time we figured out, you know, in agile you talk about, we hear a lot
+
+00:15:40.620 --> 00:15:44.460
+about interactions, people in interactions, right, and how important that is.
+
+00:15:44.460 --> 00:15:45.740
+But what is it?
+
+00:15:45.740 --> 00:15:49.140
+And so what Medagility does is it classifies all these different interaction
+
+00:15:49.140 --> 00:15:53.740
+types and actually provides a roadmap for the types of interactions and
+
+00:15:53.740 --> 00:15:59.020
+communications you need to have to duplicate this kind of success.
+
+00:15:59.020 --> 00:16:01.620
+And it's proven very effective.
+
+00:16:01.620 --> 00:16:03.780
+It would help this company become number one in their market.
+
+00:16:03.780 --> 00:16:06.740
+They got more meters on the ground than any of their competitors.
+
+00:16:06.740 --> 00:16:08.860
+They became number one in that industry.
+
+00:16:08.860 --> 00:16:16.140
+And Medagility basically productizes these learnings so that other companies can
+
+00:16:16.140 --> 00:16:19.220
+duplicate it, especially in the same context.
+
+00:16:19.220 --> 00:16:23.020
+Because when you think about, again, when you think about everything that's happening
+
+00:16:23.020 --> 00:16:25.100
+today, it's all about devices.
+
+00:16:25.100 --> 00:16:28.820
+And that embedded systems context has become so important, if not the most
+
+00:16:28.820 --> 00:16:31.180
+important context today.
+
+00:16:31.180 --> 00:16:33.980
+And it's something many companies still struggle with.
+
+00:16:33.980 --> 00:16:38.180
+I'm going to build on that and then segue because I want to get into the
+
+00:16:38.180 --> 00:16:39.340
+Agile business vortex.
+
+00:16:39.340 --> 00:16:43.460
+But one of the things you're talking about a little bit, and maybe we mentioned
+
+00:16:43.460 --> 00:16:49.340
+this when we chatted earlier, is I read articles on the internet about how Agile
+
+00:16:49.340 --> 00:16:50.900
+doesn't work.
+
+00:16:50.900 --> 00:16:55.660
+And then they describe what they're doing and they've taken one word from one
+
+00:16:55.660 --> 00:16:58.900
+principle in Agile and think they're doing Agile practices.
+
+00:16:58.900 --> 00:17:01.820
+And there's a lot more to it.
+
+00:17:01.820 --> 00:17:07.420
+And it sounds like focusing on different aspects of the communication, which is a
+
+00:17:07.420 --> 00:17:13.060
+big part of Agile and driving those as a way to almost hold the business
+
+00:17:13.060 --> 00:17:16.220
+accountable for actually doing Agile.
+
+00:17:16.220 --> 00:17:17.460
+I don't want to say doing Agile.
+
+00:17:17.460 --> 00:17:18.460
+It sounds weird.
+
+00:17:18.460 --> 00:17:24.380
+Following Agile practices a lot closer to the original author's intent, which is
+
+00:17:24.380 --> 00:17:26.180
+missing in a lot of teams.
+
+00:17:26.180 --> 00:17:27.180
+Yeah.
+
+00:17:27.180 --> 00:17:28.700
+That's a huge problem.
+
+00:17:28.700 --> 00:17:31.180
+I mean, Agile, what was it?
+
+00:17:31.180 --> 00:17:34.060
+There was this movie I saw.
+
+00:17:34.060 --> 00:17:35.060
+What was it?
+
+00:17:35.060 --> 00:17:36.740
+Pirates of the Caribbean, where they talk about the Pirates Code and they
+
+00:17:36.740 --> 00:17:38.700
+say, well, it's not really like rules.
+
+00:17:38.700 --> 00:17:39.700
+It rules.
+
+00:17:39.700 --> 00:17:41.100
+It's more like guidelines or something like that.
+
+00:17:41.100 --> 00:17:42.100
+Right.
+
+00:17:42.100 --> 00:17:43.100
+Remember that line of the movie.
+
+00:17:43.100 --> 00:17:45.620
+Well, that's kind of what the Agile manifesto is.
+
+00:17:45.620 --> 00:17:49.060
+It's a set of guidelines and it's open to interpretation to some extent.
+
+00:17:49.060 --> 00:17:51.180
+And it's often interpreted incorrectly.
+
+00:17:51.180 --> 00:17:52.180
+Yeah.
+
+00:17:52.180 --> 00:17:53.180
+And they're they're principles.
+
+00:17:53.180 --> 00:17:56.980
+They're they're decision making framework, but there's also principles.
+
+00:17:56.980 --> 00:18:00.460
+I can't remember at least 12 because I just quoted the 12th of the other
+
+00:18:00.460 --> 00:18:01.460
+day.
+
+00:18:01.460 --> 00:18:04.940
+But this is a nice segue into like, tell me more, tell us more, tell everyone
+
+00:18:04.940 --> 00:18:10.860
+more about the this Agile business vortex and what that covers, how teams
+
+00:18:10.860 --> 00:18:11.860
+use it.
+
+00:18:11.860 --> 00:18:14.020
+Just give us a little bit more of an insight into what that is.
+
+00:18:14.020 --> 00:18:15.020
+Right.
+
+00:18:15.020 --> 00:18:20.700
+So it's actually the Agile vorticity is a fairly, fairly complex theory.
+
+00:18:20.700 --> 00:18:24.170
+I've actually got an entire board here.
+
+00:18:24.170 --> 00:18:28.690
+I know this is a podcast, but I have a little board here to kind of
+
+00:18:28.690 --> 00:18:29.690
+match that out.
+
+00:18:29.690 --> 00:18:30.810
+I will describe it to you.
+
+00:18:30.810 --> 00:18:32.690
+There's pictures and it's blue.
+
+00:18:32.690 --> 00:18:33.690
+Right.
+
+00:18:33.690 --> 00:18:34.690
+Right.
+
+00:18:35.680 --> 00:18:37.360
+There are also swirlies.
+
+00:18:37.360 --> 00:18:38.360
+Yes.
+
+00:18:38.360 --> 00:18:39.360
+Yes.
+
+00:18:39.360 --> 00:18:41.210
+Yeah, absolutely.
+
+00:18:41.210 --> 00:18:43.370
+So I'll explain that.
+
+00:18:43.370 --> 00:18:47.730
+So you know, if you look at the cover of the book Managility, you'll notice there's a picture
+
+00:18:47.730 --> 00:18:50.630
+of a whirlpool on the front.
+
+00:18:50.630 --> 00:18:55.870
+And since this is a relatively complex theory, one of the ways to explain a complex theory
+
+00:18:55.870 --> 00:19:01.790
+is through a thought experiment, which is, you know, that's what Einstein did with the
+
+00:19:01.790 --> 00:19:05.430
+elevator right when he explained relatively stuff like that.
+
+00:19:05.430 --> 00:19:10.670
+So thought experiments are actually a great way to explain what a theory is and how it
+
+00:19:10.670 --> 00:19:11.670
+works.
+
+00:19:11.670 --> 00:19:16.060
+And so in my case, I used a whirlpool.
+
+00:19:16.060 --> 00:19:25.280
+And so if you think about a flow of water in a river, for example, the flow of water
+
+00:19:25.280 --> 00:19:30.840
+that's closer to the bank is going to be moving slower than the water in the center of the
+
+00:19:30.840 --> 00:19:34.800
+river, because the water closer to the bank is slowed down by friction.
+
+00:19:34.800 --> 00:19:39.640
+And so if you put a vorticity meter, for example, which is like a little buoy with a flag on
+
+00:19:39.640 --> 00:19:45.280
+it, you put that in between the two flows of water, it's going to spin very fast because
+
+00:19:45.280 --> 00:19:48.320
+the two flows of water are moving at different speeds.
+
+00:19:48.320 --> 00:19:50.360
+That's called vorticity.
+
+00:19:50.360 --> 00:19:55.920
+And so the greater the difference is between the two flows of water, the higher the
+
+00:19:55.920 --> 00:19:57.400
+vorticity is going to be.
+
+00:19:57.400 --> 00:20:00.920
+If the two flows of water are moving at relatively the same speed, you're going to have zero
+
+00:20:00.920 --> 00:20:05.510
+vorticity and that little buoy is not going to be moving very much.
+
+00:20:06.110 --> 00:20:07.270
+How does that relate to this?
+
+00:20:07.270 --> 00:20:16.530
+So a whirlpool, using the whirlpool as a thought experiment here, we have with innovation
+
+00:20:16.530 --> 00:20:20.050
+today, innovation is moving very, very fast.
+
+00:20:20.050 --> 00:20:21.690
+The markets are moving very, very fast.
+
+00:20:21.690 --> 00:20:25.810
+It's almost like a vortex in itself, if you will, when you think about how fast
+
+00:20:25.810 --> 00:20:27.690
+technology is moving.
+
+00:20:27.690 --> 00:20:33.450
+And so the center of the whirlpool is depicted as market pressure, the pressure from the
+
+00:20:33.450 --> 00:20:40.380
+market. And then the first outer rings of the whirlpool are depicted as market
+
+00:20:40.380 --> 00:20:46.420
+agility, which is, again, composed of market pressure and also product genesis.
+
+00:20:46.420 --> 00:20:50.780
+So as a product manager, I'm trying to develop a product that's going to meet the
+
+00:20:50.780 --> 00:20:51.700
+market demands.
+
+00:20:51.700 --> 00:20:55.860
+And I'm going to put together a spec or a set of features based on what I think the
+
+00:20:55.860 --> 00:20:57.340
+market wants.
+
+00:20:57.340 --> 00:21:00.260
+And so that is my market agility.
+
+00:21:00.260 --> 00:21:04.580
+Now, the market agility may be moving at a different speed from process agility.
+
+00:21:04.580 --> 00:21:09.580
+Process agility is the agility of my organization, my development testing teams.
+
+00:21:09.580 --> 00:21:11.420
+How fast are they moving?
+
+00:21:11.420 --> 00:21:16.540
+And when I look at an embedded systems organization, those teams are moving at
+
+00:21:16.540 --> 00:21:17.860
+different speeds.
+
+00:21:17.860 --> 00:21:21.260
+You have software teams that move faster, firmware teams that move a little bit
+
+00:21:21.260 --> 00:21:25.180
+slower, and then hardware teams on the outer rings of the whirlpool that move
+
+00:21:25.180 --> 00:21:26.580
+the slowest.
+
+00:21:26.660 --> 00:21:32.660
+But the combination of those three rings is your process agility.
+
+00:21:32.660 --> 00:21:36.940
+And so the process agility and the market agility, what you want is you want those
+
+00:21:36.940 --> 00:21:38.380
+to be moving at the same speed.
+
+00:21:38.380 --> 00:21:44.500
+You want the agility of your teams and your organization to match the agility,
+
+00:21:44.500 --> 00:21:48.740
+the market pressure, and the product genesis that the product managers are
+
+00:21:48.740 --> 00:21:50.690
+setting for.
+
+00:21:50.690 --> 00:21:55.490
+And so you're measuring the speed of the water between those two flows.
+
+00:21:55.490 --> 00:22:00.250
+And that encompasses the inner rings and the outer rings of the whirlpool,
+
+00:22:00.250 --> 00:22:03.270
+which is being powered by the market pressure.
+
+00:22:03.270 --> 00:22:09.630
+And so if you put a buoy in between those two flows of water, if the market
+
+00:22:09.630 --> 00:22:13.070
+agility is moving very, very fast and your process agility of your
+
+00:22:13.070 --> 00:22:16.310
+organization is moving slower, you're going to have high vorticity.
+
+00:22:16.310 --> 00:22:18.970
+That buoy is going to be moving very fast.
+
+00:22:18.970 --> 00:22:23.730
+So what you want is you want your process agility of your organization to
+
+00:22:23.730 --> 00:22:30.280
+move faster so that it moves at close to or at the same speed as market agility
+
+00:22:30.280 --> 00:22:33.260
+so that that vorticity is down to zero.
+
+00:22:33.260 --> 00:22:39.260
+So that high vorticity tells you that you're probably not as agile as you
+
+00:22:39.260 --> 00:22:40.140
+need to be.
+
+00:22:40.140 --> 00:22:45.500
+Zero vorticity tells you, oh, I'm very agile or as agile as I need to be.
+
+00:22:45.500 --> 00:22:48.740
+And so theoretically, that's how that works.
+
+00:22:48.740 --> 00:22:53.340
+Now, there's a whole set of metrics that you use to actually build that
+
+00:22:53.340 --> 00:22:58.940
+measurement, which is based on a PPM solution that's also talked about in the book.
+
+00:22:58.940 --> 00:23:03.220
+But theoretically, that's how it works.
+
+00:23:03.220 --> 00:23:10.660
+So I realize you're using the whirlpool as sort of an inspirational metaphor.
+
+00:23:10.660 --> 00:23:18.920
+But I'm curious, what negative consequences have you
+
+00:23:18.920 --> 00:23:28.530
+discovered if, say, the outer rings are actually more agile than the inner rings?
+
+00:23:28.530 --> 00:23:29.860
+Right.
+
+00:23:29.860 --> 00:23:31.340
+That hasn't happened too often.
+
+00:23:34.690 --> 00:23:38.330
+It's definitely not the typical problem yet.
+
+00:23:38.330 --> 00:23:45.470
+But I think what often happens is too much technical debt.
+
+00:23:45.470 --> 00:23:50.610
+So you may have product owners or product managers that create requirements that are
+
+00:23:50.610 --> 00:23:55.930
+not entirely based on customer need.
+
+00:23:55.930 --> 00:23:59.850
+Oftentimes, product owners, they don't change the way they develop requirements.
+
+00:23:59.850 --> 00:24:03.770
+They develop requirements in the same way they did when they were BAs in a waterfall
+
+00:24:03.770 --> 00:24:05.690
+environment.
+
+00:24:05.690 --> 00:24:08.210
+Their job title changes, but they don't change the way they develop those
+
+00:24:08.210 --> 00:24:09.530
+requirements.
+
+00:24:09.530 --> 00:24:15.530
+But David, I have been in this industry for 25 years, and I know how to ship
+
+00:24:15.530 --> 00:24:16.210
+software.
+
+00:24:16.930 --> 00:24:19.730
+Right?
+
+00:24:19.730 --> 00:24:20.790
+Right.
+
+00:24:20.790 --> 00:24:26.100
+That's sort of the attitude on the...
+
+00:24:26.100 --> 00:24:34.580
+In terms of initiating people change, you've covered process, you've covered,
+
+00:24:34.580 --> 00:24:36.860
+obviously, framework change.
+
+00:24:36.860 --> 00:24:42.180
+I found from my own transformation, it's actually changing the mindset of the
+
+00:24:42.180 --> 00:24:48.980
+people involved is by far the single most critical aspect.
+
+00:24:48.980 --> 00:24:50.630
+Right.
+
+00:24:50.630 --> 00:24:56.820
+And for that reason, we talked about it earlier, and I'll let you go back to
+
+00:24:56.820 --> 00:25:01.240
+describing it because I think I got my answer.
+
+00:25:01.240 --> 00:25:05.200
+I don't know if Alan told you this already, but I actually think the Agile
+
+00:25:05.200 --> 00:25:13.300
+Manifesto is simultaneously one of the greatest tools, but it's also the
+
+00:25:13.420 --> 00:25:15.860
+cause of the most harm to Agile.
+
+00:25:15.860 --> 00:25:17.370
+Yeah.
+
+00:25:17.370 --> 00:25:20.370
+And it's due to that people aspect.
+
+00:25:20.370 --> 00:25:26.570
+It's due to the fact that they've written things ambiguously.
+
+00:25:26.570 --> 00:25:28.820
+Right.
+
+00:25:28.820 --> 00:25:35.870
+And earlier you mentioned a great deal around Agile, and you made a
+
+00:25:35.870 --> 00:25:39.750
+comment around teams were deploying pure Agile.
+
+00:25:39.750 --> 00:25:44.030
+And I'm at a point where I don't actually think that it's such a thing
+
+00:25:44.030 --> 00:25:49.110
+that implies, for example, what's common is Agile and Scrum are
+
+00:25:49.110 --> 00:25:50.580
+synonyms.
+
+00:25:50.580 --> 00:26:00.640
+I actually am now at a point where I actually think Scrum itself is the
+
+00:26:00.640 --> 00:26:07.020
+hybrid in between waterfall and Agile because Scrum is more of an
+
+00:26:07.020 --> 00:26:14.100
+iterative model, and I found that when it's typically deployed, it's not
+
+00:26:14.100 --> 00:26:16.560
+very adaptive at all.
+
+00:26:16.560 --> 00:26:21.920
+Anyway, I'm preaching we're here to talk with you.
+
+00:26:21.920 --> 00:26:26.360
+So it seems like when you said the ring, so if the outer ring is going
+
+00:26:26.360 --> 00:26:31.840
+faster than the inner ring, it's not going to be viewed potentially as the
+
+00:26:31.840 --> 00:26:37.640
+outer ring doing something wrong or negatively impactful, but that the
+
+00:26:37.640 --> 00:26:41.200
+inner ring is going too slow and that's probably where you're going to focus
+
+00:26:41.200 --> 00:26:42.200
+your attention.
+
+00:26:42.200 --> 00:26:43.420
+Is that right?
+
+00:26:43.420 --> 00:26:48.940
+Yes, I would say that's probably a relatively fair statement.
+
+00:26:48.940 --> 00:26:52.380
+The research found that the organization, if this is done properly, they
+
+00:26:52.380 --> 00:26:55.460
+work together to try and keep the rings in sync.
+
+00:26:55.460 --> 00:26:58.380
+That's what the whole set of interconnections and interactions is all
+
+00:26:58.380 --> 00:27:02.180
+about is to try and work to keep those rings in sync.
+
+00:27:02.180 --> 00:27:07.220
+And so it's rare, if it's done properly, it's rare that the typically
+
+00:27:07.220 --> 00:27:11.780
+slower moving ring on the outside is going to move faster than the others.
+
+00:27:11.780 --> 00:27:15.460
+In most embedded systems organizations, they use software as the early
+
+00:27:15.460 --> 00:27:19.300
+strike force, for example, and the way they've designed the product.
+
+00:27:19.300 --> 00:27:22.100
+That's why the software teams move faster than the others by
+
+00:27:22.100 --> 00:27:25.700
+nature because they're software, but also they're leveraged that way in
+
+00:27:25.700 --> 00:27:27.540
+order to reduce cost.
+
+00:27:27.620 --> 00:27:34.620
+So for example, using like the Boeing 737 Max as an example, where you
+
+00:27:34.620 --> 00:27:39.980
+had this flaw in the design, they attacked that with a software solution.
+
+00:27:39.980 --> 00:27:42.860
+Well, let's just do a software update because that's typically how
+
+00:27:42.860 --> 00:27:45.460
+embedded systems organizations work is they'll try and use the software
+
+00:27:45.460 --> 00:27:48.660
+team as an early strike force to resolve these problems quickly because
+
+00:27:48.660 --> 00:27:51.540
+solving it with a hardware, a firmware solution, it's going to take a
+
+00:27:51.540 --> 00:27:55.100
+much longer amount of time and not be nearly as agile.
+
+00:27:55.100 --> 00:28:00.660
+So typically these organizations do work together very closely to maintain
+
+00:28:00.660 --> 00:28:05.260
+synchronicity and the Metagelie framework explains how to do that.
+
+00:28:05.260 --> 00:28:09.420
+Have you come across the Steve Denning book, the Leaders Guide, or Steve
+
+00:28:09.420 --> 00:28:12.780
+Denning's writing in general, but he wrote a book called the Leaders
+
+00:28:12.780 --> 00:28:17.180
+Guide to Radical Management, another book on agile after that, the
+
+00:28:17.180 --> 00:28:21.580
+scale, something about the scale of agile or something, but he's a
+
+00:28:21.580 --> 00:28:24.980
+business author and I, there's a little bit of a parallel here
+
+00:28:25.100 --> 00:28:29.060
+because he talks about agility at the business level, at the process level,
+
+00:28:29.460 --> 00:28:33.340
+which I find an interesting compliment to what you're talking about right now.
+
+00:28:34.250 --> 00:28:37.410
+I've heard of him, but I have not, I haven't read that latest book you
+
+00:28:37.410 --> 00:28:38.090
+mentioned now.
+
+00:28:38.610 --> 00:28:41.010
+Yeah, I don't like the latest book that much, but the Leaders
+
+00:28:41.010 --> 00:28:45.850
+Guide to Radical Management is he was discovering agile and finding ways
+
+00:28:45.850 --> 00:28:47.930
+it worked in the business perspective.
+
+00:28:49.250 --> 00:28:53.290
+Years ago, I read this maybe 10 years ago, so very early on and
+
+00:28:54.290 --> 00:28:55.490
+pretty happy with that one.
+
+00:28:55.570 --> 00:28:59.530
+So worth checking out, worth for the listeners checking out as well,
+
+00:28:59.530 --> 00:29:00.370
+in addition to your book.
+
+00:29:00.370 --> 00:29:02.490
+So Brent, you had something to say?
+
+00:29:03.050 --> 00:29:10.620
+Since we're on the topic of authors and I'm curious, obviously,
+
+00:29:10.620 --> 00:29:15.900
+Metagelie is going to be the one that you're going to probably recommend.
+
+00:29:16.020 --> 00:29:21.580
+So let's eliminate David Bishop from the list of authors.
+
+00:29:21.740 --> 00:29:29.820
+What authors have you read on this topic that based on your research,
+
+00:29:30.100 --> 00:29:34.860
+you would recommend or perhaps inspired you in your research?
+
+00:29:34.980 --> 00:29:39.860
+Like who are the authors based off of your data are spot on?
+
+00:29:40.910 --> 00:29:42.590
+Well, I like Jim Highsmith quite a bit.
+
+00:29:43.150 --> 00:29:45.910
+Many of his books I think are really great.
+
+00:29:46.030 --> 00:29:49.990
+I like when he talks about the, which is a big transformation for
+
+00:29:50.870 --> 00:29:52.350
+how companies manage their business.
+
+00:29:54.290 --> 00:29:57.810
+And the books where he talks about the iron triangle versus the agile
+
+00:29:57.810 --> 00:30:03.730
+triangle and understanding value and quality in the agile perspective.
+
+00:30:04.170 --> 00:30:07.210
+It's very important and I think it's something many people struggle with.
+
+00:30:07.370 --> 00:30:11.730
+Understanding what value is, how to measure value, where it comes from,
+
+00:30:11.730 --> 00:30:14.210
+the idea of intrinsic and extrinsic quality.
+
+00:30:15.250 --> 00:30:19.570
+And being able to translate the old iron triangle, as we all are very
+
+00:30:19.570 --> 00:30:23.530
+familiar with, into this new agile triangle, I think is just very important.
+
+00:30:23.530 --> 00:30:27.090
+It's very important to understand that in order to develop good agile metrics.
+
+00:30:27.330 --> 00:30:31.290
+And I think developing good agile metrics is important to actually figuring
+
+00:30:31.290 --> 00:30:35.810
+out your vorticity and where you are in the market, as well as down to the team level.
+
+00:30:37.430 --> 00:30:39.990
+And so that's a good example of an author.
+
+00:30:39.990 --> 00:30:44.910
+Also, most of the authors I've worked with, actually worked with and actually
+
+00:30:44.910 --> 00:30:51.950
+studied from, published quite a bit in business journals, like MIS Quarterly and
+
+00:30:52.630 --> 00:30:54.950
+information systems journals, things like that.
+
+00:30:54.990 --> 00:30:56.270
+And they've been published.
+
+00:30:56.270 --> 00:30:58.510
+Curing Convoy, for example, Richard Baskerville.
+
+00:30:59.470 --> 00:31:05.150
+Bluten is another author that publishes quite a bit in the agile business realm,
+
+00:31:05.230 --> 00:31:09.910
+so to speak, but these are mostly academic publications or engaged scholarship
+
+00:31:09.910 --> 00:31:14.550
+publications, which I've translated into industrial applications through the work
+
+00:31:14.550 --> 00:31:18.260
+I've done, but I think that's very important.
+
+00:31:19.300 --> 00:31:20.460
+How about the reverse?
+
+00:31:20.460 --> 00:31:30.140
+Which authors say are popular in the agile space that you fear are leading
+
+00:31:30.140 --> 00:31:34.060
+people in a less than productive direction?
+
+00:31:34.700 --> 00:31:40.820
+Well, I try not to attack.
+
+00:31:42.220 --> 00:31:43.780
+I told them we'd be nice.
+
+00:31:44.100 --> 00:31:47.020
+I'm not asking him to attack anyone.
+
+00:31:48.640 --> 00:31:55.930
+So maybe you don't mention the authors, but in terms of popular agile, how about
+
+00:31:56.050 --> 00:32:03.000
+themes or concepts that are out there without targeting an author?
+
+00:32:03.640 --> 00:32:09.680
+I'm not interested in creating author to author drama.
+
+00:32:09.680 --> 00:32:15.590
+I'm more interested in educating the audience around, hey, here's a series of
+
+00:32:15.590 --> 00:32:21.070
+concepts that are very popular out there and this could be harmful.
+
+00:32:21.070 --> 00:32:22.910
+Do you have a list along those lines?
+
+00:32:23.830 --> 00:32:25.110
+Yeah, I certainly do.
+
+00:32:25.510 --> 00:32:25.910
+Okay.
+
+00:32:26.900 --> 00:32:32.860
+And some of these concepts are not necessarily the issue I have with these
+
+00:32:32.940 --> 00:32:37.980
+concepts is that they're not necessarily bad within themselves, but I fear
+
+00:32:37.980 --> 00:32:41.260
+sometimes that they detract from what agile is really all about.
+
+00:32:41.780 --> 00:32:44.940
+You know, there's a lot of books and publications out there that are focused
+
+00:32:44.940 --> 00:32:49.340
+on agile as a way to make teams happy.
+
+00:32:49.820 --> 00:32:54.780
+Agile is a way to work together well and love each other.
+
+00:32:54.780 --> 00:33:01.540
+And there's ways of leveraging agile to become a better leader and things like that.
+
+00:33:01.540 --> 00:33:05.940
+And these are, I think they're important, but I've seen probably a greater
+
+00:33:05.940 --> 00:33:11.180
+focus on those types of themes lately than the theme of competition, the
+
+00:33:11.180 --> 00:33:18.090
+theme of, Hey, the purpose of agile is to become more competitive, to get higher
+
+00:33:18.090 --> 00:33:22.890
+quality products out the door faster before your competition does so that you
+
+00:33:22.890 --> 00:33:24.290
+can gain more market share.
+
+00:33:24.570 --> 00:33:27.330
+That's the real definition of agility.
+
+00:33:27.370 --> 00:33:31.650
+And I feel like many of these publications by focusing so much on those
+
+00:33:31.650 --> 00:33:34.890
+other themes are losing the essence of what agile is really all about.
+
+00:33:35.450 --> 00:33:40.290
+And that translates into making it more difficult sometimes to convince
+
+00:33:40.290 --> 00:33:44.170
+executives to take on an agile transformation because they want to see
+
+00:33:44.170 --> 00:33:44.850
+the business case.
+
+00:33:44.850 --> 00:33:48.410
+They want to see how an agile transformation is going to translate to the bottom
+
+00:33:48.410 --> 00:33:52.850
+line, how it's going to improve profits, how it's going to improve market share.
+
+00:33:53.250 --> 00:33:57.210
+And if you present it as a way to, well, this is going to make your teams happy here.
+
+00:33:57.210 --> 00:33:59.250
+It's going to make people work together better.
+
+00:33:59.250 --> 00:34:02.810
+It's, uh, you know, that sort of thing.
+
+00:34:02.930 --> 00:34:06.050
+It's going to make people feel more fulfilled and all that, which it can do.
+
+00:34:06.490 --> 00:34:10.930
+I think very agile certainly can do those things, but focusing so much on that,
+
+00:34:10.930 --> 00:34:16.230
+I think is, uh, uh, I think we're, we're put ourselves in danger of losing the
+
+00:34:16.230 --> 00:34:19.350
+essence of it and makes it more difficult to build a case for agile
+
+00:34:19.350 --> 00:34:21.230
+transformation in many ways.
+
+00:34:21.350 --> 00:34:23.030
+That's a really great call out.
+
+00:34:23.030 --> 00:34:25.310
+I'm going to, I'm going to jump on this one ahead of you, Brent, cause this
+
+00:34:25.310 --> 00:34:30.990
+is music to our ears because, uh, we talk about focus and the user.
+
+00:34:31.510 --> 00:34:32.910
+We quote Eric Reese a lot.
+
+00:34:33.190 --> 00:34:37.550
+Our engineering efforts are useless until it's in the hands of customers and our
+
+00:34:37.550 --> 00:34:42.950
+focus is in proving the business and only the customer understands can really
+
+00:34:42.950 --> 00:34:47.110
+truly evaluate quality and a lot of things Brent and I say, and people do
+
+00:34:47.110 --> 00:34:51.710
+get caught up in the, I'm going to use the D word in the dogma of agile and say,
+
+00:34:51.710 --> 00:34:55.830
+well, it's important that we, that we'd follow these rituals properly or the
+
+00:34:55.830 --> 00:35:00.870
+rituals as I interpret them, but no, those are a how and customers don't care.
+
+00:35:01.310 --> 00:35:05.550
+I gave a talk at a conference maybe 10 years ago on test metrics and I, I
+
+00:35:05.550 --> 00:35:10.470
+mocked up a back in the days when you can actually buy a box that had software
+
+00:35:10.470 --> 00:35:11.590
+in it, anybody remember that?
+
+00:35:12.230 --> 00:35:12.550
+Yeah.
+
+00:35:12.590 --> 00:35:17.070
+But I mocked up a box that said had a bunch of metrics, like over
+
+00:35:17.070 --> 00:35:21.110
+1000 unit tests, 78% code coverage.
+
+00:35:21.110 --> 00:35:22.830
+You know, customers don't care about the how.
+
+00:35:23.310 --> 00:35:27.870
+And the important thing is the business and getting something out quickly.
+
+00:35:27.870 --> 00:35:30.830
+And another thing we've talked about a lot you brought up, which I'm glad
+
+00:35:30.950 --> 00:35:36.350
+you brought up is the ability, the agility to get to market quickly and ahead
+
+00:35:36.350 --> 00:35:39.430
+of your competition is so, so important.
+
+00:35:39.950 --> 00:35:45.620
+Especially in this fickle world where you not only have to get out first, but
+
+00:35:45.620 --> 00:35:48.900
+you have to keep the customers happy because you only need to make one little
+
+00:35:48.900 --> 00:35:52.260
+glitch before sometimes maybe not an embedded systems where there's more of
+
+00:35:52.260 --> 00:35:57.140
+an investment, but often they'll, they'll change, change directions.
+
+00:35:57.260 --> 00:35:58.940
+Anyway, Brent build on that.
+
+00:35:59.650 --> 00:36:05.330
+Yeah, I was going to say, I mean, I think the issue at hand is it is the
+
+00:36:05.330 --> 00:36:09.950
+context that you're trying to sell agile too, right?
+
+00:36:09.950 --> 00:36:14.990
+Many of our listeners circle back and say, Hey, you've convinced me now,
+
+00:36:15.110 --> 00:36:25.750
+please give me advice on how I convince, uh, the execs to play a hand here.
+
+00:36:25.750 --> 00:36:31.710
+And at minimum support at maximum, uh, drive, drive leadership
+
+00:36:31.710 --> 00:36:38.970
+around the transformation, the, I mean, the, a, I agree with David that, that,
+
+00:36:39.330 --> 00:36:46.290
+uh, both are absolutely needed, but I, I also agree with David that, um,
+
+00:36:47.710 --> 00:36:49.670
+the executive is the place to start.
+
+00:36:49.670 --> 00:36:54.790
+There's a lot of science out there already that shows highly engaged
+
+00:36:54.950 --> 00:36:59.350
+teams have a greater customer empathy, right?
+
+00:36:59.390 --> 00:37:04.230
+There are more folks at the ground level, uh, than at the executive level.
+
+00:37:04.230 --> 00:37:09.350
+So having the, the ability for them to be aligned with the executive's
+
+00:37:09.350 --> 00:37:17.170
+decision principles, but actively learning and making, uh, tactical tweaks
+
+00:37:17.170 --> 00:37:21.850
+or changes that are in line with what their customer is doing and in
+
+00:37:21.850 --> 00:37:29.080
+engaged fashion, really from my experience, accelerates agility.
+
+00:37:29.860 --> 00:37:35.580
+It, it, uh, gets everyone aligned in applying their knowledge at their
+
+00:37:35.580 --> 00:37:37.100
+levels to move forward.
+
+00:37:37.930 --> 00:37:42.210
+That said, I wouldn't want to over pivot on the executive level as well.
+
+00:37:42.250 --> 00:37:48.810
+Cause time and time again, I've seen great agile practices move forward
+
+00:37:48.810 --> 00:37:56.860
+and get blocked by essentially commanding control at the top, who is often
+
+00:37:56.900 --> 00:37:59.100
+far too busy to understand the details.
+
+00:38:00.410 --> 00:38:02.970
+So it's an intricate balance.
+
+00:38:03.010 --> 00:38:10.420
+Um, and I think what I've heard from, from, from David earlier, right?
+
+00:38:10.420 --> 00:38:19.870
+He, I suspect my agility is going to be a, well, constructing hybrid models
+
+00:38:19.950 --> 00:38:24.550
+that work best for the context of your business and your market.
+
+00:38:24.590 --> 00:38:25.390
+Is that right?
+
+00:38:26.200 --> 00:38:27.640
+Yeah, that's a good way to position it.
+
+00:38:27.640 --> 00:38:27.920
+Yeah.
+
+00:38:28.640 --> 00:38:32.720
+That's so from my experience, there really is no such thing as that.
+
+00:38:33.080 --> 00:38:42.440
+It, it is a ever increasing set of tools, uh, that may or may not apply
+
+00:38:42.440 --> 00:38:44.480
+in your particular context, right?
+
+00:38:44.880 --> 00:38:49.160
+You mentioned earlier, Hey, it doesn't make sense for the hardware team,
+
+00:38:49.200 --> 00:38:51.440
+perhaps to do a daily standup.
+
+00:38:52.080 --> 00:38:58.390
+Whereas someone in a different team, I forget your example you use, but they
+
+00:38:58.390 --> 00:39:06.220
+will need to do a daily standup, uh, retro retrospectives, I mean, you got
+
+00:39:06.220 --> 00:39:10.940
+to understand what, what it is that you're trying to do, what it is, the approach.
+
+00:39:11.660 --> 00:39:18.860
+I've actually found agile is significantly more complex to competently
+
+00:39:18.860 --> 00:39:23.580
+deploy than waterfall waterfall has very prescriptive do this than this.
+
+00:39:24.020 --> 00:39:24.380
+Right.
+
+00:39:24.940 --> 00:39:30.390
+But a lot of people take up a framework and they go, Oh, we must follow the rules.
+
+00:39:30.950 --> 00:39:36.860
+And I think they forget the number one rule of agile and that's adapt.
+
+00:39:37.540 --> 00:39:37.900
+Right.
+
+00:39:38.540 --> 00:39:39.180
+Absolutely.
+
+00:39:39.580 --> 00:39:39.900
+Yeah.
+
+00:39:40.900 --> 00:39:43.820
+Anyway, do you want to go to your next series?
+
+00:39:43.980 --> 00:39:44.340
+Yeah.
+
+00:39:44.380 --> 00:39:46.700
+I even build on that and go on, but yeah, that one of the things Brent and
+
+00:39:46.700 --> 00:39:52.300
+I talk about a lot is that people focus on the iterative process of, of
+
+00:39:52.300 --> 00:39:56.020
+iterative as being agile, which is really just the old spiral model in a way.
+
+00:39:56.020 --> 00:39:59.740
+But what we focus on is just, it's the ability to adapt and that's what we
+
+00:39:59.740 --> 00:40:02.860
+want to do because we need to, that's only way we can build the right
+
+00:40:02.860 --> 00:40:03.940
+things for our customers.
+
+00:40:04.420 --> 00:40:07.540
+So, uh, one thing I'm curious about to go into the question.
+
+00:40:07.540 --> 00:40:10.660
+So you did a lot of research and I love research based writing.
+
+00:40:10.660 --> 00:40:12.020
+So this is fantastic.
+
+00:40:12.420 --> 00:40:15.060
+I'm always curious though, when I talked to someone who's done some research
+
+00:40:15.100 --> 00:40:19.860
+and written a book about, about how to apply what they've learned in their
+
+00:40:19.860 --> 00:40:23.180
+research, what surprised you in your research?
+
+00:40:23.180 --> 00:40:26.540
+Anything come like that was, cause we're always with our research.
+
+00:40:26.540 --> 00:40:30.420
+We're often trying to prove or disprove a hypothesis.
+
+00:40:30.740 --> 00:40:31.140
+Right.
+
+00:40:31.380 --> 00:40:34.580
+Often we go, well that there's an outlier.
+
+00:40:34.620 --> 00:40:38.180
+So I'm kind of curious what, what, if anything you found during your research,
+
+00:40:38.180 --> 00:40:40.620
+that was a little bit or a lot bit surprising to you.
+
+00:40:41.300 --> 00:40:45.940
+One of the things that was surprising was that, uh, to be able to see the linkage
+
+00:40:45.940 --> 00:40:50.180
+between the agile adaptation that was being made and the companies becoming
+
+00:40:50.180 --> 00:40:53.460
+number one in their market, to be able to see that linkage and define that
+
+00:40:53.460 --> 00:40:56.780
+linkage and know that it's there and actually see the results.
+
+00:40:57.300 --> 00:40:58.700
+That was fascinating to me.
+
+00:40:58.780 --> 00:41:02.460
+You know, in our heads, we know conceptually that should happen, but to
+
+00:41:02.460 --> 00:41:08.260
+actually see it work successfully is, is a joyous thing to see and exciting.
+
+00:41:08.860 --> 00:41:12.980
+Uh, it was also surprising to me that a hybrid agile implementation would
+
+00:41:12.980 --> 00:41:16.620
+provide the results that it did, but you know, previously I thought like many
+
+00:41:16.620 --> 00:41:19.780
+people that, oh, this needs to be more of a pure agile adaptation.
+
+00:41:19.780 --> 00:41:23.620
+No need to follow the rules, but the rules have changed.
+
+00:41:23.660 --> 00:41:27.060
+Uh, they often change based on the context, uh, and they have
+
+00:41:27.060 --> 00:41:30.980
+changed often over time, you know, there's been one of the things I talk
+
+00:41:30.980 --> 00:41:34.500
+about in my book is how, uh, if you look at the four tenets of agility of
+
+00:41:34.500 --> 00:41:38.100
+the agile manifesto, how those have sort of changed a little bit, uh, in
+
+00:41:38.140 --> 00:41:41.980
+their application today and in our best case studies compared to, you know,
+
+00:41:41.980 --> 00:41:44.500
+the way they were written, uh, 20 years ago.
+
+00:41:45.180 --> 00:41:49.020
+And so those are some of the differences that I saw that, uh, I was surprised by.
+
+00:41:49.620 --> 00:41:52.900
+I have, I have a question sort of related to that and then we should
+
+00:41:52.900 --> 00:41:57.260
+probably think about, uh, wrapping this thing up, but I think we answered
+
+00:41:57.260 --> 00:41:59.500
+this earlier, but I want to ask it more specifically.
+
+00:41:59.500 --> 00:42:04.340
+So when you set out on this journey to discover like you had some
+
+00:42:04.340 --> 00:42:09.900
+Eureka moment around meta agility, did that come out of the research or as
+
+00:42:09.900 --> 00:42:13.140
+you had kind of his concept of mind as you began and you're trying to prove that.
+
+00:42:13.780 --> 00:42:16.540
+Or what did you, there's a better way.
+
+00:42:16.820 --> 00:42:21.180
+What did you see missing in the world of agile that led you
+
+00:42:21.180 --> 00:42:23.020
+down this path of meta agility?
+
+00:42:23.700 --> 00:42:27.700
+The main thing I saw missing was how agile am I, how do I
+
+00:42:27.700 --> 00:42:30.380
+know if this is working and how do I measure it?
+
+00:42:30.380 --> 00:42:31.540
+That's what was missing.
+
+00:42:32.180 --> 00:42:35.860
+And I didn't know how to find it, but that was one of the things I was looking for.
+
+00:42:35.900 --> 00:42:40.780
+And I used a, uh, qualitative method of, uh, a method of qualitative research
+
+00:42:40.780 --> 00:42:45.500
+called ground and theory analysis, which focuses on what the central phenomenon
+
+00:42:45.580 --> 00:42:48.740
+is in the case studies that you're seeing and helps you derive
+
+00:42:48.740 --> 00:42:50.300
+that central phenomenon out.
+
+00:42:51.190 --> 00:42:52.870
+And that's what agile vorticity became.
+
+00:42:53.150 --> 00:42:53.310
+Yeah.
+
+00:42:53.350 --> 00:42:55.790
+So it's, I think it's less of to go back to your previous point,
+
+00:42:55.790 --> 00:43:00.710
+less of how agile am I, but is it more of how agile do I need to be?
+
+00:43:01.820 --> 00:43:02.580
+I think it's both.
+
+00:43:02.580 --> 00:43:06.020
+I mean, it tells you how agile you are and you know, how agile you probably
+
+00:43:06.020 --> 00:43:07.220
+need to be and how to get there.
+
+00:43:07.980 --> 00:43:11.660
+And then again, it's relative to the market, right?
+
+00:43:11.740 --> 00:43:19.300
+So yes, we've, we've talked on the podcast many a times, how, how speed to
+
+00:43:19.300 --> 00:43:27.590
+market and adapting to market challenges is, is, is, is a winner for that company.
+
+00:43:27.750 --> 00:43:32.070
+And there's just millions of case studies on this topic now.
+
+00:43:32.900 --> 00:43:41.300
+So it's sort of the, the old, uh, lion, the lion versus the zebra, right?
+
+00:43:41.340 --> 00:43:44.220
+It's both sides need to move as fast as possible.
+
+00:43:44.420 --> 00:43:51.940
+But if you're, if you're to win a market, you just need to be faster than
+
+00:43:51.980 --> 00:43:54.540
+the next fastest or the next leader.
+
+00:43:55.020 --> 00:44:00.020
+So in some regards, uh, and if you have the right muscle, then, then you're
+
+00:44:00.100 --> 00:44:06.220
+well prepared to adapt, um, to any other sort of challenges or
+
+00:44:06.260 --> 00:44:07.700
+up and coming rule changes.
+
+00:44:07.700 --> 00:44:11.580
+That's, that is what I see is going forward.
+
+00:44:11.660 --> 00:44:16.460
+The biggest, the biggest next challenge now that David, you've
+
+00:44:16.460 --> 00:44:19.420
+solved how to measure, uh, agility.
+
+00:44:19.900 --> 00:44:25.850
+I think the next biggest challenge is going to be sort of to predict when
+
+00:44:25.850 --> 00:44:27.130
+the rules are changing again.
+
+00:44:27.730 --> 00:44:28.170
+Right.
+
+00:44:28.730 --> 00:44:28.970
+Yeah.
+
+00:44:28.970 --> 00:44:31.890
+And in the book, I talked a little bit about what's, uh, what's coming
+
+00:44:31.890 --> 00:44:34.850
+forward, what some of the changes, uh, that we're seeing in some of the
+
+00:44:34.850 --> 00:44:39.250
+research, uh, the idea of, uh, there's a lot of talk about Kanban and how
+
+00:44:39.250 --> 00:44:43.970
+Kanban is integrated into agile by managing your work in progress and how
+
+00:44:43.970 --> 00:44:48.420
+is that going to work with some of the other frameworks and also, uh, how
+
+00:44:48.420 --> 00:44:51.620
+the agile manifesto is going to continue to change and evolve as
+
+00:44:51.620 --> 00:44:54.500
+technology and innovation itself evolves.
+
+00:44:55.180 --> 00:45:00.540
+Uh, you know, for example, people in process over tools or people in
+
+00:45:00.540 --> 00:45:03.660
+interactions over processes and tools as well, the tenants of agile, right.
+
+00:45:04.100 --> 00:45:07.460
+And that's what we learned 20 years ago, but tools have evolved.
+
+00:45:08.100 --> 00:45:10.900
+Tools have gotten a lot better tools today.
+
+00:45:11.580 --> 00:45:13.620
+Uh, they support collaboration.
+
+00:45:13.620 --> 00:45:15.860
+They support, uh, distributed teams.
+
+00:45:16.340 --> 00:45:18.740
+And so tools are not necessarily a bad thing that can help you
+
+00:45:18.740 --> 00:45:19.940
+actually become more agile.
+
+00:45:19.940 --> 00:45:24.740
+So that's just one tiny example, uh, of how maybe the, the tenants of the
+
+00:45:24.740 --> 00:45:28.380
+manifesto may somewhat change over time and be interpreted differently as
+
+00:45:28.620 --> 00:45:30.820
+technology changes and the industry changes.
+
+00:45:32.060 --> 00:45:37.960
+So research I've read recently along those same lines, um, points out that
+
+00:45:37.960 --> 00:45:43.720
+it's actually people processes and tools are critical and it's measuring the
+
+00:45:43.720 --> 00:45:46.000
+right integration between all three.
+
+00:45:46.960 --> 00:45:50.360
+And that, and I think that's to the point you just made.
+
+00:45:51.820 --> 00:45:52.620
+Yeah, absolutely.
+
+00:45:54.310 --> 00:45:56.390
+All right, Alan, I'll let you close.
+
+00:45:56.870 --> 00:45:58.430
+Well, gee, thanks, Brent.
+
+00:45:58.830 --> 00:45:59.110
+Yeah.
+
+00:45:59.150 --> 00:46:02.630
+What Brent said that that balance of those things is important.
+
+00:46:03.030 --> 00:46:08.230
+Uh, in my role, I have, I carry the process hammer, but I use it very
+
+00:46:08.230 --> 00:46:10.310
+carefully because I need to balance.
+
+00:46:11.070 --> 00:46:15.230
+I need to balance what the org can tolerate what's needed for our business.
+
+00:46:15.790 --> 00:46:19.390
+And sometimes I sometimes I'll have to push it up a little bit more
+
+00:46:19.470 --> 00:46:23.910
+process into what we do, uh, while retaining our culture of autonomy and
+
+00:46:23.910 --> 00:46:28.550
+agility, and it's, it's a fun leadership challenge to balance those things.
+
+00:46:28.870 --> 00:46:33.830
+I do have recently been saying something tools, not rules, which may
+
+00:46:33.830 --> 00:46:35.590
+be good for a t-shirt sometime.
+
+00:46:36.110 --> 00:46:36.470
+Right.
+
+00:46:37.670 --> 00:46:39.310
+Of course I could have other implications.
+
+00:46:39.350 --> 00:46:39.670
+Yeah.
+
+00:46:39.670 --> 00:46:39.910
+Yeah.
+
+00:46:39.910 --> 00:46:40.190
+Yeah.
+
+00:46:40.190 --> 00:46:40.390
+Yeah.
+
+00:46:40.390 --> 00:46:40.630
+Yeah.
+
+00:46:40.630 --> 00:46:40.670
+Yeah.
+
+00:46:40.670 --> 00:46:40.710
+Yeah.
+
+00:46:40.710 --> 00:46:45.480
+So, uh, but, uh, you made me think of it anyway.
+
+00:46:45.520 --> 00:46:47.280
+Uh, meta agility is the book.
+
+00:46:47.280 --> 00:46:49.240
+I'll put a link into the show notes.
+
+00:46:49.240 --> 00:46:52.800
+Uh, and I want to thank you, David, for taking the time to be on the
+
+00:46:52.800 --> 00:46:56.360
+podcast with Brent and I and Brent's virtually applauding.
+
+00:46:56.720 --> 00:46:58.200
+Uh, that means applauding on mute.
+
+00:46:58.640 --> 00:47:02.720
+I hope you're doing well in this time of everyone stays in their
+
+00:47:02.720 --> 00:47:07.280
+chair at home all the time world that we live in, uh, and, and
+
+00:47:07.280 --> 00:47:08.400
+where about in the country are you?
+
+00:47:09.160 --> 00:47:10.720
+I'm in Atlanta, Georgia.
+
+00:47:11.480 --> 00:47:13.000
+In hot land to Georgia.
+
+00:47:13.040 --> 00:47:13.960
+So that's right.
+
+00:47:14.720 --> 00:47:17.920
+What's the real quick, just what's the, before I close here, what's the
+
+00:47:17.920 --> 00:47:22.360
+COVID situation there are you all, uh, just hanging out at home, same as
+
+00:47:22.360 --> 00:47:24.760
+up here in the Northwest is sort of the same thing countrywide?
+
+00:47:25.400 --> 00:47:29.640
+Uh, well I have been, uh, I'm down here in my basement in my fortified bunker.
+
+00:47:30.360 --> 00:47:30.840
+Perfect.
+
+00:47:30.840 --> 00:47:34.280
+But, but, uh, as you probably have heard, you know, our governor has, uh,
+
+00:47:34.320 --> 00:47:37.440
+governor camp has been somewhat controversial in the fact that he's, uh,
+
+00:47:37.800 --> 00:47:41.200
+been one of the first to lift some of the restrictions and open up, uh,
+
+00:47:41.600 --> 00:47:45.280
+hair salons and nail salons and restaurants and things like that.
+
+00:47:45.280 --> 00:47:46.680
+My nails are fine.
+
+00:47:46.680 --> 00:47:47.680
+So I'm going to chill at home.
+
+00:47:48.360 --> 00:47:50.840
+Yeah, mine too.
+
+00:47:51.080 --> 00:47:54.400
+I can let my hair grow out and, and, you know, put it in the ponytail or whatever.
+
+00:47:54.440 --> 00:47:55.960
+Not my plan as well.
+
+00:47:55.960 --> 00:47:57.520
+I'm gonna, I'm gonna keep it safe.
+
+00:47:57.560 --> 00:48:00.000
+I just got myself a wall.
+
+00:48:00.640 --> 00:48:01.960
+Oh my God.
+
+00:48:02.000 --> 00:48:03.360
+Yeah, baby.
+
+00:48:03.560 --> 00:48:05.880
+The glare, the glare off that head.
+
+00:48:05.960 --> 00:48:06.480
+Wow.
+
+00:48:07.280 --> 00:48:13.040
+So I'm actually, I have, uh, I'm going to start owning a remote team in Atlanta.
+
+00:48:14.220 --> 00:48:17.180
+And it's interesting because we've been looking at it.
+
+00:48:17.180 --> 00:48:21.820
+You just said camp did this and I find that fascinating because based on a lot of
+
+00:48:21.820 --> 00:48:27.220
+predictions, uh, Georgia hasn't gotten over the hump yet.
+
+00:48:28.100 --> 00:48:28.460
+Right.
+
+00:48:28.460 --> 00:48:28.620
+Yeah.
+
+00:48:28.620 --> 00:48:32.580
+We had, uh, we were in the top, uh, I think top five, you know, thanks to the
+
+00:48:32.580 --> 00:48:35.700
+Atlanta hearts field airport, which is one of the biggest airports and we're a
+
+00:48:35.820 --> 00:48:37.740
+major hub for Delta and other airlines.
+
+00:48:37.740 --> 00:48:42.020
+And so, yeah, we got, uh, we got hit with a lot of cases.
+
+00:48:42.300 --> 00:48:46.220
+So why doesn't governor camp like the old people in his state?
+
+00:48:47.100 --> 00:48:47.660
+I don't know.
+
+00:48:49.940 --> 00:48:50.660
+I'm not sure.
+
+00:48:52.180 --> 00:48:52.540
+All right.
+
+00:48:52.540 --> 00:48:55.980
+We'll leave this as the, as, as the bonus footage, but no, we'll, we'll
+
+00:48:55.980 --> 00:48:57.100
+have us in the podcast again.
+
+00:48:57.100 --> 00:48:58.980
+Thanks both of you for taking the time to be here today.
+
+00:48:59.300 --> 00:49:01.140
+Uh, this will go out on Monday.
+
+00:49:01.620 --> 00:49:04.380
+Uh, I have your email, make sure you get a direct link to the, to the
+
+00:49:04.380 --> 00:49:10.540
+recording, but good luck to you in success of the book, uh, success of your
+
+00:49:10.540 --> 00:49:13.020
+health and everything else that you do.
+
+00:49:13.020 --> 00:49:14.060
+So thanks again.
+
+00:49:14.100 --> 00:49:16.260
+And, uh, we'll see you next time.
+
+00:49:16.780 --> 00:49:18.740
+Same to you and thank you both for having me.
+
+00:49:19.420 --> 00:49:20.420
+It was a joy, David.
+
+00:49:20.420 --> 00:49:20.860
+Thank you.
+

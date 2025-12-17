@@ -1,0 +1,1958 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.240
+You have to constantly embrace the new and try new stuff and figure out,
+
+00:00:06.240 --> 00:00:12.480
+not just dismissing stuff wholeheartedly. I'm just blown away that there are folks in software
+
+00:00:12.480 --> 00:00:16.720
+development. I see them in software testing. I don't pay attention to other knowledge of work
+
+00:00:16.720 --> 00:00:23.440
+jobs who are perfectly happy to keep doing things the way they've always done them because there
+
+00:00:23.440 --> 00:00:33.490
+couldn't possibly be a better way. Welcome to AB Testing Podcast, your modern testing podcast.
+
+00:00:33.490 --> 00:00:39.890
+Your hosts, Alan and Brent, will be here to guide you through topics on testing, leadership,
+
+00:00:39.890 --> 00:00:46.590
+agile, and anything else that comes to mind. Now, on with the show. Hey, everybody. It's Alan.
+
+00:00:48.030 --> 00:00:53.950
+And we're here for episode 187 with an asterisk of the AB Testing Podcast.
+
+00:00:53.950 --> 00:00:55.310
+There's an asterisk?
+
+00:00:55.310 --> 00:01:00.190
+There kind of is because I just saw this earlier and I forgot to let you know. Not that I tell
+
+00:01:00.190 --> 00:01:07.310
+you anything. But if you go to Spotify, remember I did a bunch of those one-off interviews? I still
+
+00:01:07.310 --> 00:01:12.350
+need to do more of those. I'm happy to do those. But we did the 343. Yeah, the 343.
+
+00:01:12.350 --> 00:01:13.630
+Yeah, those are fun.
+
+00:01:13.630 --> 00:01:18.510
+Three questions for one of our three listeners. Apparently, I did about, oh,
+
+00:01:18.510 --> 00:01:23.070
+12 of those because Spotify says this is our 199th episode.
+
+00:01:24.660 --> 00:01:30.500
+It's our 199th podcast upload on the AB Testing Feed. But episode 187,
+
+00:01:31.140 --> 00:01:36.340
+all kinds of milestones coming up. I don't know what we're going to do. We'll figure it out.
+
+00:01:36.340 --> 00:01:40.020
+I don't think there's going to be a party, but for those of you planning ahead, that's,
+
+00:01:40.900 --> 00:01:47.460
+yes, we know we've been on the one-a-month podcast. But Brent and I have had lives being
+
+00:01:47.460 --> 00:01:50.900
+busy to us. And by the way, Brent, you see I'm in my new room here.
+
+00:01:51.460 --> 00:01:52.740
+I did. I'm noticing.
+
+00:01:53.780 --> 00:01:56.660
+It's not unpacked. It's a big freaking pigsty in here.
+
+00:01:56.660 --> 00:01:58.500
+When was the move in?
+
+00:01:58.500 --> 00:02:01.460
+I don't remember. A couple of weeks ago because I did the Wonderland Trail
+
+00:02:01.460 --> 00:02:03.860
+right after we moved in. So, yeah.
+
+00:02:05.300 --> 00:02:09.300
+Are you hanging out in the family room or is this an office?
+
+00:02:09.300 --> 00:02:14.580
+This is my office. It's just not unpacked yet. I won't do the camera swoop, but sometime I will.
+
+00:02:14.580 --> 00:02:16.980
+Why not? For the live feed?
+
+00:02:16.980 --> 00:02:20.900
+For the live feed? Well, I've got the trash back there. There's windows over there.
+
+00:02:20.900 --> 00:02:23.380
+Oh, I like the windows. The windows are nice.
+
+00:02:23.380 --> 00:02:26.020
+There's my office door right there.
+
+00:02:27.060 --> 00:02:27.780
+Okay.
+
+00:02:27.780 --> 00:02:29.780
+And my closet, which is also my library.
+
+00:02:31.540 --> 00:02:35.940
+That is some thick-ass molding you have around that door.
+
+00:02:36.500 --> 00:02:43.220
+No kidding, right? 1906. So, what was I saying? What was I talking about? Podcasts? One-a-month.
+
+00:02:43.220 --> 00:02:49.060
+We'll get back to two-a-month here shortly, but it's close enough. You can start counting down.
+
+00:02:49.060 --> 00:02:57.780
+We had hoped to hit 200 right in April at the beginning of our eight-year anniversary,
+
+00:02:57.780 --> 00:03:02.820
+nine-year anniversary. We're going to be a little behind that, but definitely in 2024,
+
+00:03:02.820 --> 00:03:06.580
+we're going to hit the 200th episode. We're going to have some listeners on.
+
+00:03:06.580 --> 00:03:10.820
+I'm not sure how many or which ones or what to do, but we're going to figure it out.
+
+00:03:11.700 --> 00:03:14.660
+So, all kinds of fanfare coming up, but for today, we're just going to have
+
+00:03:15.300 --> 00:03:20.980
+Brent and I talking about a topic we have not yet. I'm not going to say decided on. I'm going to say
+
+00:03:20.980 --> 00:03:29.700
+discovered. Oh, wait. Brent is holding up a topic. Oh, yeah. I do not yet have a TV or a
+
+00:03:29.700 --> 00:03:35.940
+console hooked up, so I have not yet played the game that I need to be spending a lot of time on
+
+00:03:35.940 --> 00:03:41.220
+that is called Starfield. Brent, please, all I want to know is, because I know you've put probably
+
+00:03:41.940 --> 00:03:45.060
+good solid double digit if not triple digit hours in already.
+
+00:03:45.060 --> 00:03:48.260
+I have not. You'll be surprised actually.
+
+00:03:49.220 --> 00:03:50.820
+You always surprise me, Brent.
+
+00:03:50.820 --> 00:04:00.100
+No, no. So, I'll just share here. I'll just say to the listeners, there is a major
+
+00:04:00.820 --> 00:04:06.820
+life situation happening to me right now that's taking a lot of my time and attention.
+
+00:04:08.500 --> 00:04:14.740
+It's not at a point where I'm comfortable sharing it on the podcast, but I'll just, to answer
+
+00:04:14.740 --> 00:04:21.940
+Alan's question, actually, surprisingly, so I started playing it the day before it was publicly
+
+00:04:21.940 --> 00:04:29.620
+released. You're so cool. Actually, one of my peers said, oh, here's the steps that you have
+
+00:04:29.620 --> 00:04:35.860
+to do it and you can use money to get in early. I said, oh, that's fantastic. Of course, I think
+
+00:04:35.860 --> 00:04:40.900
+I talked about it last time. It required me to go buy a whole new Xbox.
+
+00:04:40.900 --> 00:04:43.300
+We heard all this. We heard all this. All I want to know.
+
+00:04:44.580 --> 00:04:47.860
+So now let me tell you, I have almost not played it at all.
+
+00:04:47.860 --> 00:04:52.820
+I need you to play it enough to tell me if it sucks or not.
+
+00:04:52.820 --> 00:04:59.140
+I am only level seven. I don't think I'm yet at that point.
+
+00:04:59.300 --> 00:05:05.060
+There are things, so I will tell you, I find myself comparing it to Fallout.
+
+00:05:06.300 --> 00:05:12.700
+The storyline hasn't captured my attention yet again, but only level seven.
+
+00:05:13.740 --> 00:05:19.730
+And there are still, when you play Fallout, you go and you craft stuff.
+
+00:05:19.730 --> 00:05:24.610
+And like crafting, I haven't quite figured that out yet.
+
+00:05:24.610 --> 00:05:27.730
+And I don't like if crafting is a major part of like,
+
+00:05:27.730 --> 00:05:32.370
+if I had a little bit of crafting, Fallout 76, a lot more crafting.
+
+00:05:32.370 --> 00:05:37.330
+I don't really like crafting. I'll do. I like repairing my armor if needed.
+
+00:05:37.330 --> 00:05:39.330
+Here's the deal. Here's the bottom line.
+
+00:05:39.330 --> 00:05:39.570
+Yeah.
+
+00:05:40.130 --> 00:05:47.890
+If I had a choice of never ever playing Starfield, despite the hype or a choice of playing it
+
+00:05:47.890 --> 00:05:51.330
+and discovering that it's awful, I would choose the former.
+
+00:05:52.480 --> 00:05:56.320
+That's all. I want to find out. We're going to have a guest on soon.
+
+00:05:56.320 --> 00:05:59.760
+So let me, without throwing any names out, let me just start this conversation.
+
+00:05:59.760 --> 00:06:03.280
+If you don't, I probably had something else random to discuss, but let's just start about.
+
+00:06:03.920 --> 00:06:08.700
+Listeners, you're in for a challenge because we're going to be all over the place.
+
+00:06:08.700 --> 00:06:12.060
+So there's been some interesting threads on AI.
+
+00:06:12.060 --> 00:06:17.020
+We're not even about AI, about chat GPT specifically.
+
+00:06:18.220 --> 00:06:21.500
+We've talked about this before. I want to bring it up again because it's getting
+
+00:06:22.610 --> 00:06:27.890
+almost embarrassing where some testing experts are writing articles about how
+
+00:06:28.770 --> 00:06:34.290
+chat GPT is broken and horrible and useless.
+
+00:06:35.170 --> 00:06:36.530
+My words that paraphrased.
+
+00:06:37.490 --> 00:06:42.210
+And I hate to be the person to say, but you're using it wrong.
+
+00:06:42.930 --> 00:06:44.530
+Like you and I, we've had this conversation.
+
+00:06:44.530 --> 00:06:49.970
+There are so many things that chat GPT is good for and LLMs are good for.
+
+00:06:50.690 --> 00:06:54.610
+But if you use them wrong, they're not going to be helpful.
+
+00:06:54.610 --> 00:06:58.130
+Yeah. You and I have said many times, I want to just finish this thought here
+
+00:06:58.130 --> 00:07:00.530
+because it's then we can see where it goes to.
+
+00:07:00.530 --> 00:07:05.330
+But you and I have said many times, AI isn't taking away people's jobs, but
+
+00:07:06.130 --> 00:07:10.690
+people who use AI are or will.
+
+00:07:10.690 --> 00:07:12.690
+So I was listening. I heard a variation of that.
+
+00:07:12.690 --> 00:07:14.290
+I'm going to share that. I'm going to shut up because
+
+00:07:14.290 --> 00:07:14.850
+okay.
+
+00:07:14.850 --> 00:07:20.290
+But really wants to talk. So I was listening to the Smartless podcast with Kara Swisher.
+
+00:07:20.290 --> 00:07:21.890
+You know, Kara Swisher is no.
+
+00:07:23.570 --> 00:07:26.050
+She's awesome. She's written about tech for a long time.
+
+00:07:26.050 --> 00:07:29.570
+She is super smart. She does a pivot podcast, a couple other podcasts.
+
+00:07:30.450 --> 00:07:30.930
+Love her.
+
+00:07:31.570 --> 00:07:33.490
+Oh, no, no, no. I am completely.
+
+00:07:35.460 --> 00:07:37.140
+I think I'm completely wrong.
+
+00:07:37.140 --> 00:07:41.220
+I think I do like she's been doing tech for.
+
+00:07:41.220 --> 00:07:44.020
+Yeah. She used to write with Walt Mossberg back in the day.
+
+00:07:44.020 --> 00:07:44.900
+Yeah. Okay.
+
+00:07:44.900 --> 00:07:48.100
+So Kara Swisher is talking about AI with the smart listen.
+
+00:07:48.100 --> 00:07:51.860
+I've heard her on pivot, talk about it before, but she I like the way she puts it like
+
+00:07:51.860 --> 00:07:52.980
+AI isn't evil.
+
+00:07:53.620 --> 00:07:55.620
+People who use AI can be evil.
+
+00:07:56.340 --> 00:07:59.860
+And I like that as a variation of ours, but she really gets.
+
+00:08:00.740 --> 00:08:03.060
+It's not going away and it's going to be valuable.
+
+00:08:03.060 --> 00:08:07.540
+And again, if you want to go back to our audience who is largely not completely,
+
+00:08:07.540 --> 00:08:16.260
+but largely testers do not shun AI and LLMs and things like GPT because you because somebody
+
+00:08:16.260 --> 00:08:17.940
+said or you don't think they're helpful.
+
+00:08:17.940 --> 00:08:25.300
+You will need to more and more over the coming years be able to use and maybe even build and
+
+00:08:25.300 --> 00:08:28.180
+develop LLMs in order to do your job better.
+
+00:08:28.180 --> 00:08:33.300
+So if you're going to ignore it, I'm going to go out on a limb and say you will likely be
+
+00:08:33.300 --> 00:08:36.900
+unemployed because I mean, there'll be a long tail where you don't be.
+
+00:08:36.900 --> 00:08:38.740
+But anyway, that's my thought.
+
+00:08:39.300 --> 00:08:40.420
+Let's start there.
+
+00:08:40.420 --> 00:08:42.420
+Any thoughts on any of that, Mr. Brandt?
+
+00:08:43.540 --> 00:08:46.740
+Yeah, there's I think there's an analogy.
+
+00:08:46.740 --> 00:08:47.780
+I think it's spot on.
+
+00:08:48.420 --> 00:08:48.580
+Right.
+
+00:08:48.580 --> 00:08:53.300
+The I forget the name of the guy.
+
+00:08:53.940 --> 00:08:59.940
+So the the super chess champion that that got Bobby Fisher.
+
+00:09:00.820 --> 00:09:05.060
+No, the one that that got beat by deep blue.
+
+00:09:05.860 --> 00:09:06.180
+Yeah.
+
+00:09:07.060 --> 00:09:07.940
+Kasparov.
+
+00:09:07.940 --> 00:09:08.580
+Yes, that's it.
+
+00:09:08.580 --> 00:09:08.980
+Thank you.
+
+00:09:09.700 --> 00:09:13.300
+One of the things that he did is he didn't get frustrated.
+
+00:09:14.340 --> 00:09:23.650
+What he did is join forces with AI and he called it a centaur, right?
+
+00:09:23.650 --> 00:09:26.130
+He's he's a centaur part human part.
+
+00:09:27.070 --> 00:09:28.670
+I guess AI is a horse.
+
+00:09:29.230 --> 00:09:29.710
+Which part?
+
+00:09:29.710 --> 00:09:31.390
+Yeah, which part is which I'm confused.
+
+00:09:32.350 --> 00:09:33.310
+And the drawing.
+
+00:09:33.310 --> 00:09:36.190
+I'm guessing the human part is the human right.
+
+00:09:37.150 --> 00:09:37.870
+But maybe not.
+
+00:09:37.870 --> 00:09:40.750
+I mean, I didn't I didn't come up with a term.
+
+00:09:40.750 --> 00:09:46.530
+But yeah, the centaur just destroyed deep blue.
+
+00:09:47.390 --> 00:09:47.630
+Right.
+
+00:09:47.630 --> 00:09:49.630
+And that's that's what's going to happen.
+
+00:09:50.270 --> 00:09:53.950
+I do think some of these things there was.
+
+00:09:53.950 --> 00:09:55.230
+Do you listen to Planet Money?
+
+00:09:55.950 --> 00:09:56.510
+I do not.
+
+00:09:57.950 --> 00:10:00.190
+Planet Money NPR show.
+
+00:10:00.190 --> 00:10:05.700
+So they did a they did a couple of lead up.
+
+00:10:05.700 --> 00:10:08.740
+It's on, you know, wherever you get your podcast.
+
+00:10:08.740 --> 00:10:10.420
+Maybe the same place you got the A.B.
+
+00:10:10.420 --> 00:10:12.740
+testing podcast you're listening to right now.
+
+00:10:12.740 --> 00:10:15.140
+By the way, give it a rating, write a review,
+
+00:10:15.140 --> 00:10:16.180
+get us some more listeners.
+
+00:10:16.180 --> 00:10:17.060
+Anyway, go on, Brett.
+
+00:10:17.060 --> 00:10:20.020
+Yeah, they had a couple of, you know, set up shows.
+
+00:10:20.020 --> 00:10:27.860
+And then they finally did a show where literally everything was done by AI.
+
+00:10:28.610 --> 00:10:31.410
+They even have a host that was AI.
+
+00:10:32.370 --> 00:10:32.930
+You know what?
+
+00:10:33.650 --> 00:10:35.650
+It was a lot of work.
+
+00:10:35.650 --> 00:10:39.200
+It was it did it.
+
+00:10:39.200 --> 00:10:43.680
+And it only needed the humans really to sort of integrate the pieces and do the final editing
+
+00:10:43.680 --> 00:10:46.640
+because that's something that I can't do yet.
+
+00:10:47.340 --> 00:10:48.060
+But it did it.
+
+00:10:48.620 --> 00:10:54.060
+It's not at a point where they felt their jobs were threatened.
+
+00:10:55.090 --> 00:10:57.570
+But you could look at the episode and go,
+
+00:10:57.570 --> 00:11:04.030
+OK, yeah, it just takes a little bit of additional effort.
+
+00:11:05.470 --> 00:11:08.910
+It's not hard to imagine that that's coming.
+
+00:11:08.910 --> 00:11:12.750
+And here here's the part that just kind of blows me away.
+
+00:11:12.750 --> 00:11:15.550
+And again, this is something we've said 50,000 times on here.
+
+00:11:15.550 --> 00:11:20.370
+But you know, I don't care whether you're coming from software development,
+
+00:11:20.370 --> 00:11:25.170
+software testing, construction, maybe not construction, actually, maybe construction.
+
+00:11:25.170 --> 00:11:31.090
+I wonder if we're getting to a point in the evolution of some of the manual labor skills
+
+00:11:31.090 --> 00:11:33.330
+where construction actually is knowledge work.
+
+00:11:33.970 --> 00:11:36.050
+I think in some contexts it is, but not all.
+
+00:11:36.690 --> 00:11:43.790
+But in knowledge work, work that requires discovery to you can go look up Drucker's
+
+00:11:43.790 --> 00:11:46.910
+definition of work that requires discovery, innovation and making mistakes in order to
+
+00:11:46.910 --> 00:11:49.630
+learn and get stuff done, which we do.
+
+00:11:49.630 --> 00:11:50.910
+Software testing is part of that.
+
+00:11:50.910 --> 00:11:52.030
+Software development is part of that.
+
+00:11:52.670 --> 00:11:53.870
+Lawyer is part of that.
+
+00:11:53.870 --> 00:11:54.750
+Cook is part of that.
+
+00:11:54.830 --> 00:11:58.910
+And I've talked a lot about cooking on the podcast and how it's the same thing.
+
+00:11:58.910 --> 00:12:06.670
+In knowledge work, you have to constantly embrace the new and try new stuff and figure out,
+
+00:12:06.670 --> 00:12:09.230
+not just dismissing stuff wholeheartedly.
+
+00:12:09.230 --> 00:12:13.470
+I'm just blown away that there are folks in software development.
+
+00:12:13.470 --> 00:12:15.470
+I see them in software testing.
+
+00:12:15.470 --> 00:12:21.470
+I don't pay attention to other knowledge work jobs who are perfectly happy to keep doing
+
+00:12:21.470 --> 00:12:26.030
+things the way they've always done them because there couldn't possibly be a better way.
+
+00:12:26.030 --> 00:12:29.870
+Anything that distracts from the way I've always done it is probably wrong.
+
+00:12:29.870 --> 00:12:35.390
+So I will put effort into proving that it is and in doing so highlight my dumbness.
+
+00:12:35.950 --> 00:12:38.270
+I mean, the only thing that's good about that approach,
+
+00:12:39.070 --> 00:12:43.230
+you'll still be able to sleep at night because you'll know who to blame.
+
+00:12:44.030 --> 00:12:44.270
+Right.
+
+00:12:45.470 --> 00:12:45.790
+Right.
+
+00:12:45.790 --> 00:12:48.510
+It's it's oh, it's the AI.
+
+00:12:48.510 --> 00:12:48.910
+Right.
+
+00:12:48.910 --> 00:12:53.070
+And, you know, last decade, it's agile, agile to blame.
+
+00:12:53.070 --> 00:12:56.370
+And I'm sorry, it's neither of those.
+
+00:12:56.930 --> 00:12:58.450
+It's it's you.
+
+00:12:59.170 --> 00:12:59.650
+All right.
+
+00:12:59.650 --> 00:13:03.250
+So let me I don't want to dwell on that, but I do want to talk more about AI.
+
+00:13:03.250 --> 00:13:06.690
+I do want to talk about AI because there's some aspects we haven't talked about.
+
+00:13:06.690 --> 00:13:08.530
+This is totally not planned.
+
+00:13:08.530 --> 00:13:13.250
+This is me just letting like Brent and I haven't talked in a month and I'm reflecting on what's
+
+00:13:13.250 --> 00:13:16.610
+happened in that time and stuff floating in my head in that month.
+
+00:13:16.610 --> 00:13:17.490
+I took a long hike.
+
+00:13:17.570 --> 00:13:22.450
+I wrote I wrote a blog post a little bit about it, but I a lot of thinking time.
+
+00:13:22.450 --> 00:13:26.050
+And one of the things I was thinking about this started off from and I can talk about
+
+00:13:26.050 --> 00:13:27.170
+my former employer.
+
+00:13:27.170 --> 00:13:30.450
+I don't think I have any NDA's that say I can't talk about anything.
+
+00:13:30.450 --> 00:13:31.650
+It's public knowledge.
+
+00:13:31.650 --> 00:13:35.060
+They they had a food park.
+
+00:13:35.890 --> 00:13:37.090
+They did some dumb stuff.
+
+00:13:37.090 --> 00:13:41.410
+And again, I predicted this dumb stuff three years ago.
+
+00:13:41.410 --> 00:13:46.320
+Let me tell you how they hired an exec who I worked with a Microsoft.
+
+00:13:46.320 --> 00:13:47.520
+I'm not going to name any names.
+
+00:13:48.080 --> 00:13:52.080
+And when he got hired, I thought, oh, he makes big dumb mistakes.
+
+00:13:53.470 --> 00:13:56.030
+He went from Microsoft to Amazon, then to Unity.
+
+00:13:56.030 --> 00:13:58.350
+And I thought, oh, boy, this guy is not good.
+
+00:13:58.350 --> 00:13:59.790
+We're going to see what happens.
+
+00:13:59.790 --> 00:14:03.310
+And he's the one that drove this mistake.
+
+00:14:04.030 --> 00:14:06.030
+It's you can go read on the Internet about it.
+
+00:14:06.030 --> 00:14:09.150
+The whole thing about I can talk about this from a public perspective.
+
+00:14:09.150 --> 00:14:13.470
+One of the things when you're a game development engine and Unity makes a bunch of other
+
+00:14:13.470 --> 00:14:16.350
+products as well, but their flagship products, the game development engine,
+
+00:14:16.990 --> 00:14:18.670
+which they sell for free.
+
+00:14:18.670 --> 00:14:19.390
+That's stupid.
+
+00:14:19.390 --> 00:14:20.190
+They don't sell for free.
+
+00:14:20.190 --> 00:14:21.230
+They give it away for free.
+
+00:14:21.230 --> 00:14:22.750
+If you're enterprise, you pay.
+
+00:14:23.230 --> 00:14:25.390
+You can pay an enterprise fee for more licenses, etc.
+
+00:14:26.030 --> 00:14:31.790
+There are some unenforced or not enforceable rules around if you get to a certain revenue,
+
+00:14:31.790 --> 00:14:36.750
+you should begin to pay for it and just kind of relying on the honor of the system.
+
+00:14:37.470 --> 00:14:42.430
+So the struggle has been and it always would be with a free thing like this.
+
+00:14:42.430 --> 00:14:43.790
+How do you monetize it?
+
+00:14:43.790 --> 00:14:47.390
+At what point do you just hope people once they see value, they feel good about it
+
+00:14:47.390 --> 00:14:51.150
+and they go pay as actually something I would do if I use free software and I
+
+00:14:51.150 --> 00:14:52.510
+begin to get a lot of value out of it.
+
+00:14:52.510 --> 00:14:55.070
+I go and pay for it even if I don't use the paid features.
+
+00:14:56.910 --> 00:14:59.870
+So yeah, or ads.
+
+00:14:59.870 --> 00:15:02.430
+It's a struggle to figure out how to monetize that stuff.
+
+00:15:02.990 --> 00:15:09.580
+And they came up with what I think is the worst possible model for how to make money
+
+00:15:09.580 --> 00:15:12.540
+and didn't seem well thought out when the users saw it.
+
+00:15:12.620 --> 00:15:15.580
+The users freaked out, got mad, all kinds of stuff happened.
+
+00:15:15.580 --> 00:15:17.820
+The Internet was an angry place for a few days.
+
+00:15:17.820 --> 00:15:24.940
+But what this led me to think about was how much of leadership or running a business
+
+00:15:26.560 --> 00:15:30.900
+could you drive through generative AI?
+
+00:15:31.660 --> 00:15:34.300
+For example, you know, judge EPT is very generic.
+
+00:15:34.300 --> 00:15:35.980
+This trained on literally everything.
+
+00:15:37.180 --> 00:15:40.780
+What a good portion of everything up until 2021.
+
+00:15:40.780 --> 00:15:41.740
+Correct.
+
+00:15:41.740 --> 00:15:43.260
+What if I generated?
+
+00:15:43.740 --> 00:15:47.340
+And help me with this thought experiment because while I did play a little bit
+
+00:15:47.340 --> 00:15:51.180
+with building an L, I'll call it a SLM, a small language model.
+
+00:15:51.180 --> 00:15:55.020
+I ran all 50 of my blog posts or whatever from the last year, just my recent ones.
+
+00:15:55.980 --> 00:15:56.780
+I think I told you this.
+
+00:15:56.780 --> 00:15:58.060
+I put it in a blog post something.
+
+00:15:58.060 --> 00:16:04.140
+And let's say we fed every business book paper from published,
+
+00:16:04.140 --> 00:16:09.500
+from ignoring copyright issues, just had to assimilate the knowledge,
+
+00:16:09.900 --> 00:16:13.340
+the vast majority of the knowledge of running businesses that are out there.
+
+00:16:14.930 --> 00:16:24.290
+Couldn't I just then wouldn't how feasible would it be for me then to ask questions of chat GPT
+
+00:16:24.290 --> 00:16:27.090
+on how to run my multimillion dollar business?
+
+00:16:28.140 --> 00:16:33.260
+Could it come up with a better solution for monetizing or better ideas for brainstorming?
+
+00:16:33.260 --> 00:16:38.140
+Could it tell me how and when to communicate those changes with customers?
+
+00:16:38.140 --> 00:16:41.260
+And what I'm getting at when I've read articles about which are kind of funny,
+
+00:16:41.260 --> 00:16:44.140
+but also when I think about it at the end of a long day of hiking,
+
+00:16:44.140 --> 00:16:48.780
+kind of interesting and scary are, could an AI be a CEO?
+
+00:16:49.500 --> 00:16:51.140
+It could.
+
+00:16:52.100 --> 00:17:00.820
+Or more likely, could an AI make a mediocre CEO, a good or an excellent CEO?
+
+00:17:00.820 --> 00:17:04.180
+So that one, I think is possible, right?
+
+00:17:04.180 --> 00:17:06.900
+Going back to the Centaur discussion.
+
+00:17:07.540 --> 00:17:09.620
+Replacing a CEO.
+
+00:17:10.740 --> 00:17:12.500
+You have to have someone to ask the question.
+
+00:17:12.500 --> 00:17:19.140
+So replacing is tough, but it's made me think that like the Centaur model is really great.
+
+00:17:19.140 --> 00:17:24.100
+I think it goes back to AI isn't replacing people, people who know how to use it are.
+
+00:17:24.100 --> 00:17:26.900
+But I wonder if, so now I'm going to keep thinking.
+
+00:17:26.900 --> 00:17:32.100
+Well, so let me just finish my thought there is, is yeah, I can see it.
+
+00:17:32.900 --> 00:17:35.860
+It could certainly play the role of a CEO.
+
+00:17:36.500 --> 00:17:38.180
+Okay, it's a generative AI.
+
+00:17:38.180 --> 00:17:40.580
+You ask it to generate things.
+
+00:17:40.580 --> 00:17:42.180
+It will generate things.
+
+00:17:42.900 --> 00:17:43.220
+Right?
+
+00:17:43.220 --> 00:17:50.300
+The thing you got to remember though, is that GPT is not an intelligent system.
+
+00:17:50.300 --> 00:17:52.380
+It's a parrot.
+
+00:17:52.380 --> 00:17:53.180
+Correct.
+
+00:17:53.180 --> 00:17:59.900
+It will be parroting things that it has learned that CEOs say.
+
+00:17:59.900 --> 00:18:10.380
+Now, whether or not your fictitious business is context sensitive enough for that generative
+
+00:18:10.380 --> 00:18:13.100
+AI to succeed or not, I don't know.
+
+00:18:14.220 --> 00:18:18.140
+Let me just explore this because there is a parallel to our first topic.
+
+00:18:18.140 --> 00:18:21.220
+What I want to do is, I think you're right.
+
+00:18:21.220 --> 00:18:25.620
+If you follow anyone, whether it's a person, a thought leader, or an AI,
+
+00:18:26.580 --> 00:18:30.100
+blindly, you are probably not going to make good decisions.
+
+00:18:30.980 --> 00:18:37.700
+But instead, where people screw up with these models, they ask them for specific things.
+
+00:18:37.700 --> 00:18:39.620
+Count the verbs in this paragraph.
+
+00:18:39.620 --> 00:18:41.540
+It's like, shut up, you count them.
+
+00:18:41.540 --> 00:18:44.180
+But as far as they can help with creativity.
+
+00:18:45.220 --> 00:18:50.500
+If I'm a CEO, I'm not going to pretend I'm a CEO of Acme chainsaws and bike parts.
+
+00:18:51.440 --> 00:18:58.240
+And I'm not going to ask it, what should my next marketing email be or business email?
+
+00:18:58.240 --> 00:19:01.520
+I understand my challenges and I'm going to ask my questions like this.
+
+00:19:01.520 --> 00:19:03.120
+I'll tell it, I'll give it context.
+
+00:19:03.920 --> 00:19:06.080
+I'll say my primary challenges are blah and blah.
+
+00:19:06.720 --> 00:19:09.680
+What are five things you think I should do to...
+
+00:19:10.240 --> 00:19:16.720
+Again, this is my fictitious LLM based entirely on whole of business knowledge.
+
+00:19:17.280 --> 00:19:20.880
+What are five things I should consider to solve these problems and move my business forward?
+
+00:19:21.740 --> 00:19:26.140
+None of them may be the right one, but those may inspire me to make a choice that I haven't
+
+00:19:26.140 --> 00:19:26.940
+thought of before.
+
+00:19:27.660 --> 00:19:31.820
+And I could say, well, help me with the marketing email or whatever.
+
+00:19:31.820 --> 00:19:33.580
+Give me examples.
+
+00:19:33.580 --> 00:19:36.140
+I've had chat GPT.
+
+00:19:36.140 --> 00:19:37.340
+I can't remember what I had to do.
+
+00:19:37.340 --> 00:19:38.460
+I had to write something for me.
+
+00:19:38.460 --> 00:19:43.020
+It sucked, but it was close enough to to unload some ideas from my head.
+
+00:19:43.660 --> 00:19:51.550
+So I think that I feel pretty confident that if you're comfortable at getting ideas from
+
+00:19:51.550 --> 00:19:53.950
+it to feed off your own, you can be really successful.
+
+00:19:53.950 --> 00:20:01.310
+And the parallel I wanted to draw is where in this scenario, if I was one of those CEOs
+
+00:20:01.310 --> 00:20:05.150
+who thought I already knew everything, I wouldn't bother asking it.
+
+00:20:05.950 --> 00:20:09.790
+In fact, I would just try too much time trying to prove it couldn't help me
+
+00:20:09.790 --> 00:20:13.710
+just as some of these other people are doing with it when they're not using it to their
+
+00:20:14.830 --> 00:20:19.630
+advantageous to their advantage to learn and grow.
+
+00:20:20.270 --> 00:20:20.750
+You know what?
+
+00:20:20.750 --> 00:20:27.710
+I'm going to make a note of that the next time Satya does an AMA, I may just ask that question.
+
+00:20:30.480 --> 00:20:31.360
+Hi, Satya.
+
+00:20:31.360 --> 00:20:32.800
+My name's Alan Page.
+
+00:20:32.800 --> 00:20:33.920
+I have a question for you.
+
+00:20:34.320 --> 00:20:38.240
+AlanPA at Microsoft.com.
+
+00:20:38.240 --> 00:20:39.920
+If the mail balances, don't worry.
+
+00:20:40.960 --> 00:20:41.520
+It is me.
+
+00:20:41.520 --> 00:20:42.000
+Trust me.
+
+00:20:43.200 --> 00:20:48.400
+Certainly, I know Scott Guthrie does AMAs all the time.
+
+00:20:48.400 --> 00:20:52.480
+I don't know if I mentioned it, but that's an ask me anything sort of.
+
+00:20:53.360 --> 00:20:54.720
+I think that's one.
+
+00:20:54.720 --> 00:20:55.920
+I think people know what AMAs are.
+
+00:20:55.920 --> 00:20:57.120
+They happen outside of Microsoft.
+
+00:20:58.000 --> 00:21:00.960
+So some of the things you certainly can do.
+
+00:21:04.160 --> 00:21:12.940
+Like I'm on the Bing bot right now, and I just told it that I am a franchise owner for Subway.
+
+00:21:13.660 --> 00:21:16.060
+And I asked it, who's my biggest competitor?
+
+00:21:16.880 --> 00:21:17.840
+Jimmy John's?
+
+00:21:17.840 --> 00:21:18.640
+No, actually.
+
+00:21:20.400 --> 00:21:21.120
+Burger King?
+
+00:21:21.120 --> 00:21:22.240
+McDonald's.
+
+00:21:22.240 --> 00:21:22.480
+Right.
+
+00:21:22.480 --> 00:21:23.120
+It went.
+
+00:21:23.120 --> 00:21:27.200
+It said McDonald's, KFC, Burger King, and Wendy's and Starbucks.
+
+00:21:27.920 --> 00:21:28.240
+Okay.
+
+00:21:28.240 --> 00:21:29.040
+And now.
+
+00:21:29.040 --> 00:21:29.600
+Oh, okay.
+
+00:21:29.600 --> 00:21:30.240
+That makes sense.
+
+00:21:30.240 --> 00:21:30.400
+Do.
+
+00:21:31.360 --> 00:21:44.930
+Now I'm going to ask you to do a spot analysis between my business, business, busyness, and Starbucks.
+
+00:21:46.100 --> 00:21:50.820
+This will be really cool because everybody will hear the key typing as well when you're talking.
+
+00:21:51.540 --> 00:21:51.940
+Yeah.
+
+00:21:51.940 --> 00:21:55.220
+Anyway, can you summarize the answer please before I go even farther on my
+
+00:21:55.860 --> 00:21:57.380
+AI can run our business?
+
+00:21:57.380 --> 00:21:58.740
+It hasn't generated it yet.
+
+00:22:00.130 --> 00:22:00.370
+Okay.
+
+00:22:00.370 --> 00:22:01.250
+While it's thinking.
+
+00:22:01.890 --> 00:22:08.050
+So going far, there's decision making, but honestly, I think AI, another area where it's
+
+00:22:08.050 --> 00:22:12.050
+going to help generative AI to be specific is in knowledge discovery.
+
+00:22:12.050 --> 00:22:15.890
+As you've known me for years, I'm very big on how we acquire knowledge.
+
+00:22:15.890 --> 00:22:18.210
+You talked about Philip Farmer's five orders of ignorance,
+
+00:22:18.770 --> 00:22:22.210
+and we need a suitable means to discover what we don't know.
+
+00:22:22.210 --> 00:22:22.770
+We don't know.
+
+00:22:23.650 --> 00:22:27.410
+Now imagine, let's talk about Microsoft system because we both know them and we can.
+
+00:22:28.130 --> 00:22:30.930
+Imagine if you took, are you still using head tracks?
+
+00:22:30.930 --> 00:22:31.410
+Doesn't matter.
+
+00:22:31.410 --> 00:22:32.290
+I'll give her a name.
+
+00:22:32.290 --> 00:22:38.770
+Imagine you take your employee accessible HR data, your employee accessible accounting data,
+
+00:22:39.330 --> 00:22:46.610
+your employee accessible information about who works on what based on internal, on
+
+00:22:47.970 --> 00:22:49.810
+documents that exist that people have created.
+
+00:22:50.370 --> 00:22:57.840
+I want to be able to ask a question like, who besides Brent Jensen's org is working on X?
+
+00:22:58.940 --> 00:23:00.940
+Actually, I can't say X because X is Twitter.
+
+00:23:00.940 --> 00:23:04.140
+Who in Brent Jensen's org is working on Z?
+
+00:23:05.900 --> 00:23:11.340
+I can ask questions like, I need to have a meeting with Brent and his entire team
+
+00:23:11.900 --> 00:23:14.540
+sometime the week of October 9th needs to be.
+
+00:23:14.540 --> 00:23:17.580
+And again, rather than me, it's like my assistant.
+
+00:23:18.380 --> 00:23:20.860
+I have someone else on my calendar, I have for several years.
+
+00:23:20.860 --> 00:23:21.260
+I love it.
+
+00:23:21.260 --> 00:23:24.940
+I can never go back, but couldn't AI handle my calendar?
+
+00:23:24.940 --> 00:23:25.660
+Couldn't.
+
+00:23:25.740 --> 00:23:32.220
+When a meeting request comes in, I could teach the model that meetings from this person are higher
+
+00:23:32.220 --> 00:23:33.660
+priority than meetings from this person.
+
+00:23:33.660 --> 00:23:35.420
+If it got confused, it could ask me.
+
+00:23:35.420 --> 00:23:36.540
+Yeah, but that's it.
+
+00:23:36.540 --> 00:23:39.020
+It could actually shuffle my calendar.
+
+00:23:39.020 --> 00:23:42.060
+So AI can do that and to some degree does.
+
+00:23:42.860 --> 00:23:51.180
+That type of AI is in or AI like that is in place with Outlook and Exchange, some of it.
+
+00:23:52.220 --> 00:23:54.700
+I would call that more of an algorithm than AI.
+
+00:23:55.420 --> 00:23:59.820
+But it's not LLM, it's traditional data science.
+
+00:24:00.460 --> 00:24:02.380
+Yes, you get the point though.
+
+00:24:02.380 --> 00:24:10.300
+I think we can, for example, I want to set up a meeting next week for three to five people
+
+00:24:10.300 --> 00:24:18.460
+who spend a significant amount of their time working on some technology from looking at docs
+
+00:24:18.460 --> 00:24:22.620
+and I don't want to say looking at emails, maybe looking at public emails,
+
+00:24:22.620 --> 00:24:23.740
+emails that go to DLs.
+
+00:24:24.220 --> 00:24:27.900
+It should if enough data is in there, it should be able to say,
+
+00:24:28.460 --> 00:24:32.780
+here are six people and three of them are available next Tuesday at 11 o'clock.
+
+00:24:33.420 --> 00:24:36.780
+Yeah, an AGI will absolutely do what you want to do.
+
+00:24:37.260 --> 00:24:43.180
+And AI is not, no AI is going to do that without some of.
+
+00:24:43.180 --> 00:24:43.900
+Sure, sure.
+
+00:24:43.900 --> 00:24:47.740
+I'm not talking about what we can do today or tomorrow, but eventually because
+
+00:24:48.460 --> 00:24:50.460
+you know that these are blockers.
+
+00:24:50.540 --> 00:24:55.500
+Things get slowed because we can't get the right players in the room to figure something out.
+
+00:24:55.500 --> 00:24:59.980
+If we can accelerate that, if we can accelerate the ability to discover knowledge, to discover
+
+00:24:59.980 --> 00:25:04.380
+the people we need to talk to, to identify problems and move forward,
+
+00:25:04.380 --> 00:25:06.380
+a lot of huge, cool, good things.
+
+00:25:06.380 --> 00:25:12.940
+Yeah, you know, the things that are, I was just thinking, even when I get the people in the room,
+
+00:25:13.940 --> 00:25:18.260
+like I'm not going to mention on the air, but there's a situation I'm dealing with where
+
+00:25:19.220 --> 00:25:23.540
+for the last three months, there's this team I've talked to, I've shown them,
+
+00:25:24.260 --> 00:25:30.100
+I've shown them some pretty cool AI that my team is doing that's LLM based.
+
+00:25:30.100 --> 00:25:31.460
+It's also a really cool problem.
+
+00:25:32.100 --> 00:25:35.620
+When I show it to them, they're like, oh my God, that's awesome.
+
+00:25:37.120 --> 00:25:42.720
+And they go, oh, we're going to set up time to go through planning and formalize this.
+
+00:25:43.600 --> 00:25:45.760
+And we now do semester planning.
+
+00:25:46.400 --> 00:25:50.320
+Today is the last day of the old semester.
+
+00:25:50.960 --> 00:25:52.480
+Monday, we start the new semester.
+
+00:25:53.870 --> 00:25:58.510
+They've not come and talked to me, even though I brought it up every time I met with them.
+
+00:25:59.230 --> 00:26:05.310
+So now I'm at a point where basically their value proposition to me is that they have
+
+00:26:05.310 --> 00:26:08.590
+UI Dev Talent that I would love to be able to leverage.
+
+00:26:08.590 --> 00:26:16.500
+I don't have UI Dev Talent that I have developers, but their skill sets are more back end stuff.
+
+00:26:16.500 --> 00:26:17.620
+And I'm like, you know what?
+
+00:26:18.430 --> 00:26:24.270
+I'm just going to sell it around because right now the customers I have for this particular product,
+
+00:26:24.270 --> 00:26:25.310
+they're huge fans.
+
+00:26:26.190 --> 00:26:27.630
+And okay, great.
+
+00:26:27.630 --> 00:26:28.590
+Would you like to?
+
+00:26:28.590 --> 00:26:29.950
+Oh, you run a dev team.
+
+00:26:29.950 --> 00:26:30.750
+Hey, do you.
+
+00:26:30.750 --> 00:26:33.310
+So you can lead a horse to water.
+
+00:26:33.310 --> 00:26:34.830
+You can't make them drink.
+
+00:26:34.830 --> 00:26:36.750
+And AI is not going to help with the drinking part,
+
+00:26:36.750 --> 00:26:39.070
+but you can get the horses to the water way faster.
+
+00:26:39.070 --> 00:26:44.190
+And if worse comes to worse, if my team needs to invest and build its own AI,
+
+00:26:44.750 --> 00:26:50.670
+I don't know if you've coded yet with the GPT co-pilot.
+
+00:26:50.670 --> 00:26:51.390
+I have not.
+
+00:26:51.390 --> 00:26:53.470
+Oh, you need to do that.
+
+00:26:54.270 --> 00:26:55.710
+You need to experience that.
+
+00:26:56.830 --> 00:27:01.950
+If nothing else, do it when the advent coding thing pops up.
+
+00:27:02.910 --> 00:27:03.550
+Oh yeah.
+
+00:27:04.510 --> 00:27:07.470
+At advent of codes going to be really interesting this year.
+
+00:27:07.470 --> 00:27:10.110
+That thing is a game changer.
+
+00:27:10.750 --> 00:27:14.110
+It's a game changer coding with this thing as your co-pilot.
+
+00:27:14.110 --> 00:27:15.230
+And I'm like, all right.
+
+00:27:15.870 --> 00:27:17.150
+So I can do coding now.
+
+00:27:18.270 --> 00:27:24.510
+I haven't yet figured out a good way to get it to define like an OOP architecture,
+
+00:27:25.390 --> 00:27:31.310
+but you can do things like write a base class, add properties, and it doesn't matter the language.
+
+00:27:31.310 --> 00:27:36.590
+Like it's things you know that can be done, but you don't know how to do it in this language.
+
+00:27:37.150 --> 00:27:40.750
+My worry with a co-pilot is going to lead people to
+
+00:27:41.870 --> 00:27:45.070
+run and rely on code they may not fully understand.
+
+00:27:46.060 --> 00:27:50.540
+Oh, it is most assuredly.
+
+00:27:51.500 --> 00:27:53.580
+Most assuredly.
+
+00:27:53.580 --> 00:27:56.830
+But the nice thing as well, like, you know what?
+
+00:27:56.830 --> 00:28:02.750
+My current favorite thing to do with the Coding Code Pilot, right?
+
+00:28:02.750 --> 00:28:07.070
+As we know on the podcast, Dev does not like testing.
+
+00:28:07.790 --> 00:28:13.230
+Yeah, it is really good at analyzing my interfaces and coming up with unit tests.
+
+00:28:14.270 --> 00:28:17.710
+Yeah, I'm like, yeah, baby, keep going.
+
+00:28:17.710 --> 00:28:19.230
+Oh, no, that one was dumb.
+
+00:28:19.230 --> 00:28:19.550
+All right.
+
+00:28:19.550 --> 00:28:21.310
+Let's then I go to my comment.
+
+00:28:21.310 --> 00:28:24.990
+I say, this unit test does this, this, this, and that.
+
+00:28:24.990 --> 00:28:27.790
+Then I hit enter and boom, there's the code.
+
+00:28:27.790 --> 00:28:28.430
+I scan it.
+
+00:28:28.430 --> 00:28:32.110
+I'm like, oh, this is making me so happy.
+
+00:28:33.310 --> 00:28:36.830
+I do have the SWOT analysis between Subway.
+
+00:28:36.830 --> 00:28:37.230
+Yeah.
+
+00:28:37.230 --> 00:28:37.710
+Oh, yeah.
+
+00:28:37.710 --> 00:28:39.310
+For those of you who stick around this long.
+
+00:28:39.310 --> 00:28:42.190
+So what is your business plan, Mr. Manager of Subway?
+
+00:28:42.190 --> 00:28:43.550
+Well, you know it's SWOT analysis.
+
+00:28:43.550 --> 00:28:44.030
+Wait, I'm sorry.
+
+00:28:44.030 --> 00:28:46.990
+Are you a manager or regional manager, assistant, regional manager,
+
+00:28:46.990 --> 00:28:48.350
+assistant to the regional manager?
+
+00:28:48.350 --> 00:28:48.670
+What do you do?
+
+00:28:48.670 --> 00:28:51.870
+No, in this fictitious example, I am the franchise owner.
+
+00:28:52.350 --> 00:29:00.270
+So, so Subway, Subway is very famous for being the cheapest of all the fast food
+
+00:29:00.270 --> 00:29:02.030
+franchising companies.
+
+00:29:02.030 --> 00:29:02.270
+Right.
+
+00:29:02.270 --> 00:29:05.550
+I think it's like 12K gets you a franchise.
+
+00:29:05.550 --> 00:29:08.590
+SWOT analysis is a basic MBA analysis.
+
+00:29:08.590 --> 00:29:12.830
+SWOT stands for strengths weaknesses, opportunities, threats.
+
+00:29:13.550 --> 00:29:15.150
+And I said, all right.
+
+00:29:15.150 --> 00:29:19.230
+You told me earlier that Starbucks is one of my big competitors.
+
+00:29:19.310 --> 00:29:22.190
+Tell me, you know, what, what's a pro and con here.
+
+00:29:22.750 --> 00:29:24.110
+The strength of Subway.
+
+00:29:24.670 --> 00:29:27.310
+Great degree of sub customization.
+
+00:29:27.870 --> 00:29:34.030
+It's the largest fast food restaurant chain in the world by count, which is good.
+
+00:29:34.030 --> 00:29:34.270
+Right.
+
+00:29:34.270 --> 00:29:35.630
+A good brand out there.
+
+00:29:35.630 --> 00:29:38.990
+And apparently they have good marketing strategies.
+
+00:29:38.990 --> 00:29:42.270
+The interior design looks cheap, turns people off.
+
+00:29:42.270 --> 00:29:44.670
+And I'll say, I kind of agree with that.
+
+00:29:45.310 --> 00:29:48.910
+One thing I wasn't aware of, it has a high employee turnover.
+
+00:29:49.920 --> 00:29:52.640
+And this is one of the problems with franchising.
+
+00:29:53.710 --> 00:29:57.390
+Services may not be consistent from store to store.
+
+00:29:57.390 --> 00:29:59.470
+Starbucks though has really mastered that.
+
+00:29:59.470 --> 00:30:03.070
+That's if I go order a triple Americano anywhere in the world,
+
+00:30:03.070 --> 00:30:04.910
+it tastes pretty much exactly the same.
+
+00:30:05.550 --> 00:30:08.750
+The biggest challenge with franchising is getting consistency.
+
+00:30:08.750 --> 00:30:12.670
+Because yeah, that consistency is what makes your brand threats.
+
+00:30:13.630 --> 00:30:15.310
+It's saturated, right?
+
+00:30:15.310 --> 00:30:18.510
+The fast food market is saturated like crazy.
+
+00:30:19.150 --> 00:30:24.270
+Other people are kind of moving more towards healthy, healthier eating.
+
+00:30:24.270 --> 00:30:29.390
+And even though fast food or Subway is kind of trying to change its brand on that front.
+
+00:30:29.390 --> 00:30:31.310
+I'm sure it'll list some opportunities around that.
+
+00:30:31.310 --> 00:30:31.710
+Keep it up.
+
+00:30:32.740 --> 00:30:36.980
+And local fast food chains, right?
+
+00:30:37.540 --> 00:30:40.820
+People were like, Starbucks, let's try something local.
+
+00:30:41.780 --> 00:30:43.540
+Now it says strength of Starbucks.
+
+00:30:43.540 --> 00:30:45.620
+Strong brand recognition.
+
+00:30:45.620 --> 00:30:46.660
+Are we still on strengths?
+
+00:30:46.660 --> 00:30:48.020
+You got to go a little faster, man.
+
+00:30:48.020 --> 00:30:50.180
+No, no, I went through all of the SWAT.
+
+00:30:50.900 --> 00:30:52.020
+Oh, no, no, I didn't.
+
+00:30:52.020 --> 00:30:55.680
+I went to, I missed opportunities.
+
+00:30:55.680 --> 00:30:59.680
+And there's one opportunity in here that I'm just like, oh, this is fantastic.
+
+00:31:00.480 --> 00:31:01.680
+Home meal delivery.
+
+00:31:02.240 --> 00:31:03.280
+And I'm like, really?
+
+00:31:03.280 --> 00:31:05.440
+The Starbucks not have a deal with DoorDash.
+
+00:31:05.440 --> 00:31:06.800
+Every freaking one of the else does.
+
+00:31:07.870 --> 00:31:10.270
+But introduction of drive-through.
+
+00:31:10.940 --> 00:31:14.220
+I'm like, I have not seen a Subway with drive-through.
+
+00:31:15.310 --> 00:31:15.950
+Why?
+
+00:31:15.950 --> 00:31:17.150
+I mean, that's a good idea.
+
+00:31:17.150 --> 00:31:17.790
+Why is it?
+
+00:31:17.950 --> 00:31:18.270
+You think?
+
+00:31:18.910 --> 00:31:24.110
+And this is where, Roger, with your everything on here, but this is why I think AI can help
+
+00:31:24.110 --> 00:31:28.270
+because even if it's a bad idea, it can help you think of things you haven't.
+
+00:31:28.270 --> 00:31:32.350
+And it could be the customization is too complex for drive-through to be efficient.
+
+00:31:32.350 --> 00:31:32.830
+I don't know.
+
+00:31:33.630 --> 00:31:39.870
+You and I would both pilot that and make a, we would make a impromptu drive-through with
+
+00:31:39.870 --> 00:31:43.630
+sandbags in the parking lot and get permission for that and see if it worked.
+
+00:31:44.830 --> 00:31:46.590
+And it wouldn't even be, it wouldn't even accept the intercom.
+
+00:31:46.590 --> 00:31:49.070
+It'd be somebody to take your order standing outside.
+
+00:31:49.070 --> 00:31:52.750
+We would do the pure concierge MVP and see if it was feasible.
+
+00:31:52.750 --> 00:31:54.430
+Well, so Chick-fil-A.
+
+00:31:54.430 --> 00:31:55.710
+It'll give you ideas.
+
+00:31:55.710 --> 00:31:56.830
+Chick-fil-A does that.
+
+00:31:57.470 --> 00:31:58.270
+Do you?
+
+00:31:58.270 --> 00:32:00.030
+They don't have the customization.
+
+00:32:00.030 --> 00:32:05.710
+No, but they do have the poor teenagers sitting outside in the cold and rain.
+
+00:32:05.710 --> 00:32:09.870
+And I'm like, I feel bad for those folks whenever I see them out.
+
+00:32:09.870 --> 00:32:13.310
+Well, you know, when Starbucks, they don't, I haven't seen this in years,
+
+00:32:13.310 --> 00:32:17.710
+but when the line would get long, somebody would come out and take your order while you were in line.
+
+00:32:18.510 --> 00:32:21.950
+And it turned, and that's, you know, efficient, but it turns out that's also
+
+00:32:23.710 --> 00:32:28.110
+psychologically keeps you from giving up and leaving because you've already given your order,
+
+00:32:28.110 --> 00:32:31.550
+even though you haven't paid yet, but you feel like you've given your order.
+
+00:32:31.550 --> 00:32:33.710
+Now you have to wait it out through the line.
+
+00:32:33.710 --> 00:32:33.950
+Right.
+
+00:32:34.670 --> 00:32:34.910
+Right.
+
+00:32:34.910 --> 00:32:39.070
+But if you're in, if you're in a line in the Chick-fil-A drive-through,
+
+00:32:39.870 --> 00:32:40.750
+you're not changing.
+
+00:32:40.750 --> 00:32:44.190
+I mean, you're there because there's someone in front of you and someone behind you.
+
+00:32:45.710 --> 00:32:46.590
+You're going nowhere.
+
+00:32:47.550 --> 00:32:52.030
+But again, again, let me just pause here and go back to the original statement.
+
+00:32:52.030 --> 00:32:55.870
+If you are trying to improve your business, oh, Brent, by the way,
+
+00:32:55.870 --> 00:32:58.270
+what is principle number one of the modern testing principles?
+
+00:32:59.870 --> 00:33:00.830
+Oh, it's, it's.
+
+00:33:03.150 --> 00:33:05.470
+I couldn't have set you up better, you dumbass.
+
+00:33:07.390 --> 00:33:10.110
+Our priority is, is improving the business.
+
+00:33:10.110 --> 00:33:10.590
+Thank you.
+
+00:33:10.590 --> 00:33:12.110
+Yes, that's that's it.
+
+00:33:13.230 --> 00:33:17.070
+So if hearing here, based on my statements, this is
+
+00:33:17.070 --> 00:33:23.070
+if you want to improve your business, you should use whatever tools you have,
+
+00:33:23.790 --> 00:33:30.750
+whether it's actual software tools, LLMs, books, knowledge, seminars, discussions,
+
+00:33:30.750 --> 00:33:32.670
+to try and get better at it.
+
+00:33:33.310 --> 00:33:38.190
+I think, uh, again, going back to our first topic about these experts dissing on
+
+00:33:38.270 --> 00:33:41.230
+LLMs, it's not like there's a lot of things wrong with chat GPT.
+
+00:33:41.230 --> 00:33:49.550
+I can pick on it, but they come from a point of arrogance where this thing
+
+00:33:49.550 --> 00:33:51.150
+couldn't possibly no more than me.
+
+00:33:51.150 --> 00:33:51.870
+Let me prove it.
+
+00:33:52.430 --> 00:33:57.070
+When I look at businesses, whether it's an software organization,
+
+00:33:57.070 --> 00:34:01.790
+it seems like your team at Microsoft or a large scale corporation,
+
+00:34:02.670 --> 00:34:08.590
+you have to run them from a place of humility where you know there's more
+
+00:34:08.590 --> 00:34:09.150
+to learn.
+
+00:34:09.150 --> 00:34:10.990
+You know, you have to experiment.
+
+00:34:10.990 --> 00:34:15.550
+You know, you have to try new things and you know, you need to get new ideas.
+
+00:34:16.110 --> 00:34:20.910
+People make fun of me at my last job and at this job because I drop book references,
+
+00:34:20.910 --> 00:34:22.750
+like change out of my pocket.
+
+00:34:22.750 --> 00:34:26.830
+That's a horrible metaphor, but all the time and, and someone that works to be
+
+00:34:26.830 --> 00:34:28.910
+this week to me like, how do you read so many books?
+
+00:34:28.910 --> 00:34:33.710
+You know, so many book titles, but I have such imposter syndrome.
+
+00:34:33.710 --> 00:34:36.430
+I feel like I need to read a couple books a month
+
+00:34:36.430 --> 00:34:39.630
+just to get enough ideas to hold my head above water.
+
+00:34:39.630 --> 00:34:41.150
+So I have things to try.
+
+00:34:41.150 --> 00:34:42.590
+I have things to think about.
+
+00:34:42.590 --> 00:34:44.750
+I have things to help me try and get better.
+
+00:34:45.310 --> 00:34:47.310
+And I think and I use it for this.
+
+00:34:47.310 --> 00:34:48.270
+We've talked about this.
+
+00:34:48.270 --> 00:34:50.990
+I use chat GPT a lot for that.
+
+00:34:50.990 --> 00:34:51.790
+Give me ideas.
+
+00:34:51.790 --> 00:34:53.070
+I'm thinking of doing X.
+
+00:34:53.070 --> 00:34:56.910
+I'm not putting in, you know, company secrets because we all heard the Samsung story,
+
+00:34:56.910 --> 00:34:59.790
+but I'm putting in like I want to do X.
+
+00:34:59.790 --> 00:35:02.990
+I've considered A and B. What else should I consider?
+
+00:35:02.990 --> 00:35:05.790
+And in those cases, it's super helpful for me.
+
+00:35:05.790 --> 00:35:09.070
+The moment I assume I know everything I need to do
+
+00:35:09.070 --> 00:35:11.950
+is probably about two weeks before I get fired.
+
+00:35:12.830 --> 00:35:14.030
+Well, hopefully.
+
+00:35:14.030 --> 00:35:14.510
+Right.
+
+00:35:14.510 --> 00:35:22.430
+The, the, the only reason why it wouldn't be is, is if people are afraid to fire you.
+
+00:35:23.660 --> 00:35:24.140
+Right.
+
+00:35:24.140 --> 00:35:31.500
+If you, if you've done a good job on making sure that they're screwed because you're the
+
+00:35:31.500 --> 00:35:32.140
+bottleneck.
+
+00:35:34.300 --> 00:35:35.980
+There's all kinds of dysfunctional ways.
+
+00:35:36.140 --> 00:35:36.620
+Doing that.
+
+00:35:37.180 --> 00:35:37.820
+Sure.
+
+00:35:37.820 --> 00:35:38.140
+Sure.
+
+00:35:38.140 --> 00:35:39.420
+But as you know, I don't believe it.
+
+00:35:39.420 --> 00:35:40.380
+No, and I know.
+
+00:35:41.020 --> 00:35:46.300
+And the one thing I will too echo all of the people like you are.
+
+00:35:47.500 --> 00:35:51.600
+Um, uh, a hungry reader.
+
+00:35:52.750 --> 00:35:54.910
+I've known that for years.
+
+00:35:54.910 --> 00:35:59.630
+I'll say the thing that I'm most impressed by is that you actually remember.
+
+00:36:00.510 --> 00:36:02.910
+Um, you remember sources.
+
+00:36:03.470 --> 00:36:04.030
+Authors.
+
+00:36:04.990 --> 00:36:06.910
+And, and the book title.
+
+00:36:06.910 --> 00:36:07.710
+Just the good ones.
+
+00:36:08.270 --> 00:36:08.670
+Yeah.
+
+00:36:08.670 --> 00:36:14.430
+No, I mean, I, at times I'm like, okay, I know Daniel pinks my hero, but what's the
+
+00:36:14.430 --> 00:36:15.870
+top three books that he's done?
+
+00:36:16.590 --> 00:36:19.950
+I'm like drive whole new mind.
+
+00:36:21.040 --> 00:36:22.320
+And I don't know what you'd do for number.
+
+00:36:22.320 --> 00:36:24.400
+Drives the only one that came to mind, my mind.
+
+00:36:24.400 --> 00:36:27.280
+And then like, well, right.
+
+00:36:27.920 --> 00:36:34.050
+And, um, like I wonder how long it'll take before I forget, uh,
+
+00:36:34.050 --> 00:36:39.810
+Nicole's book name, probably forever because it's because the word of her book
+
+00:36:39.810 --> 00:36:45.730
+is the first thing in our, in, in, in the end are the modern testing, um, motto.
+
+00:36:45.730 --> 00:36:46.050
+Right.
+
+00:36:46.050 --> 00:36:48.770
+And it's like that one's going to take forever for me to forget.
+
+00:36:49.410 --> 00:36:50.290
+You don't remember that.
+
+00:36:50.290 --> 00:36:50.530
+Okay.
+
+00:36:51.520 --> 00:36:54.080
+Well, it's, uh, it's about that time.
+
+00:36:54.080 --> 00:36:58.720
+And, uh, I hope, I hope you all enjoyed our little walkthrough AI.
+
+00:36:58.720 --> 00:37:03.440
+We're going to, um, on our next, one of our next couple podcasts, uh, there has
+
+00:37:03.520 --> 00:37:08.530
+been someone, uh, engaging with folks on trial.
+
+00:37:08.530 --> 00:37:12.370
+And he fully believes that like Brett and I do, but much more detail, much more
+
+00:37:12.370 --> 00:37:17.730
+knowledge that testers can learn a lot from AI and taking on these experts who are.
+
+00:37:18.530 --> 00:37:19.090
+I hate this.
+
+00:37:19.490 --> 00:37:23.010
+I hate to think of, I feel like I sound like Steve Jobs saying your
+
+00:37:23.010 --> 00:37:26.690
+iPhone wasn't working cause you're holding it wrong, but, you know,
+
+00:37:27.330 --> 00:37:31.090
+generative AI and GPT is very much garbage in garbage out.
+
+00:37:32.160 --> 00:37:36.240
+And if you're not getting out of it, what you think you should be, you should
+
+00:37:36.240 --> 00:37:38.320
+look at what you're asking it.
+
+00:37:38.320 --> 00:37:42.720
+So anyway, someone, uh, gonna have a guest on talk about that and go a little deeper.
+
+00:37:42.720 --> 00:37:43.600
+That'll be fun.
+
+00:37:43.600 --> 00:37:44.640
+A little bit more about AI.
+
+00:37:44.640 --> 00:37:45.600
+It'll be fun, fun, fun.
+
+00:37:46.640 --> 00:37:48.960
+Any closing words from you, Mr.
+
+00:37:48.960 --> 00:37:49.920
+You're just Brent today.
+
+00:37:49.920 --> 00:37:51.920
+No, I forget what your weird name was last time.
+
+00:37:51.920 --> 00:37:52.320
+I don't care.
+
+00:37:52.320 --> 00:37:53.120
+Don't repeat it.
+
+00:37:53.120 --> 00:37:54.720
+Yeah, no, we're good.
+
+00:37:55.280 --> 00:37:56.000
+All right, man.
+
+00:37:56.000 --> 00:37:56.320
+Okay.
+
+00:37:56.320 --> 00:37:59.520
+Well, this has been episode 187 of the AB testing podcast.
+
+00:37:59.520 --> 00:38:00.160
+I am Alan.
+
+00:38:00.160 --> 00:38:04.400
+I'm Brent and we'll see you next time.
+

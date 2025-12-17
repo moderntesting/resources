@@ -1,0 +1,2928 @@
+1
+00:00:00,000 --> 00:00:06,280
+I believe she said the Romans invented the unicorn and the Greeks invented the
+
+2
+00:00:06,280 --> 00:00:11,160
+Pegasus. And then she's like, I have no idea who came up with the aliquot.
+
+3
+00:00:14,800 --> 00:00:18,960
+Welcome to AB testing podcast, your modern testing podcast.
+
+4
+00:00:19,280 --> 00:00:24,720
+Your hosts, Alan and Brent, will be here to guide you through topics on testing,
+
+5
+00:00:24,920 --> 00:00:27,920
+leadership, agile and anything else that comes to mind.
+
+6
+00:00:28,160 --> 00:00:29,760
+Now on with the show.
+
+7
+00:00:30,570 --> 00:00:31,530
+Hello, everyone.
+
+8
+00:00:32,170 --> 00:00:36,650
+It's Alan and Brent and nobody else except for my dog.
+
+9
+00:00:36,650 --> 00:00:40,010
+We're here for episode 195 of the AB testing podcast. Welcome back.
+
+10
+00:00:40,010 --> 00:00:41,610
+Thanks for listening. How you doing, Brent?
+
+11
+00:00:42,010 --> 00:00:43,990
+I'm doing super.
+
+12
+00:00:43,990 --> 00:00:45,070
+He's doing so super.
+
+13
+00:00:45,070 --> 00:00:55,140
+He is wearing a San Francisco 49ers shirt and they are a sports ball team in the US.
+
+14
+00:00:55,180 --> 00:00:58,260
+They play football, but not the good kind of football.
+
+15
+00:00:58,500 --> 00:01:06,420
+The other kind that has gained massive popularity with the rise of the Taylor
+
+16
+00:01:06,420 --> 00:01:08,340
+Swift Travis Kelsey relationship.
+
+17
+00:01:08,380 --> 00:01:10,180
+I don't know how the Florida understand a chance.
+
+18
+00:01:10,180 --> 00:01:11,740
+Tell me what your thoughts, Brent.
+
+19
+00:01:12,140 --> 00:01:17,180
+I yeah, it was actually one of one of my employees had a one on one today.
+
+20
+00:01:17,180 --> 00:01:20,540
+She's like, I never watched football, but I'm totally watching this time.
+
+21
+00:01:20,540 --> 00:01:21,420
+I'm like, oh, really?
+
+22
+00:01:21,420 --> 00:01:21,860
+Why?
+
+23
+00:01:22,580 --> 00:01:23,940
+And she's like, because Taylor Swift.
+
+24
+00:01:24,260 --> 00:01:29,500
+Because you can see like five seconds of Taylor Swift in the box being
+
+25
+00:01:29,500 --> 00:01:30,220
+Swiftie.
+
+26
+00:01:30,620 --> 00:01:31,340
+Yeah, it's wild.
+
+27
+00:01:31,500 --> 00:01:32,420
+It's a wild time.
+
+28
+00:01:32,820 --> 00:01:34,500
+I'm just like, okay.
+
+29
+00:01:35,380 --> 00:01:35,660
+Right.
+
+30
+00:01:35,700 --> 00:01:39,500
+The Niners have a pretty good chance against the Chiefs, but can
+
+31
+00:01:39,500 --> 00:01:41,940
+the Niners also tackle Swiftism?
+
+32
+00:01:42,220 --> 00:01:43,020
+I don't know.
+
+33
+00:01:43,020 --> 00:01:45,180
+It's going to be wild.
+
+34
+00:01:45,860 --> 00:01:47,300
+I will watch every year.
+
+35
+00:01:47,300 --> 00:01:53,740
+I love watching all of the new commercials because there's like three times a year.
+
+36
+00:01:53,940 --> 00:01:58,220
+I watch actual commercials for more than those little 30 second blurbs on
+
+37
+00:01:58,260 --> 00:02:00,820
+on YouTube or now Amazon prime.
+
+38
+00:02:01,260 --> 00:02:06,820
+That is the Oscars, the Grammys and the Superbowl.
+
+39
+00:02:07,220 --> 00:02:07,820
+It's about it.
+
+40
+00:02:08,480 --> 00:02:11,000
+Because soccer, there's no commercials during the match.
+
+41
+00:02:11,000 --> 00:02:17,840
+And I use, I use halftime to go get food or make something or whatever.
+
+42
+00:02:17,840 --> 00:02:19,120
+Cause I know how long it's going to be.
+
+43
+00:02:19,120 --> 00:02:20,800
+It's very predictable sport.
+
+44
+00:02:21,200 --> 00:02:21,720
+Great.
+
+45
+00:02:21,880 --> 00:02:22,360
+Great.
+
+46
+00:02:23,080 --> 00:02:25,280
+Your brakes are more predictable.
+
+47
+00:02:25,640 --> 00:02:28,560
+Like I would say football is fairly predictable as well.
+
+48
+00:02:28,760 --> 00:02:29,080
+No.
+
+49
+00:02:29,160 --> 00:02:31,360
+Well, here's the deal.
+
+50
+00:02:31,640 --> 00:02:35,800
+Like if I'm actually, I will watch the CX play sometime, but I have to have a
+
+51
+00:02:35,800 --> 00:02:40,440
+project while I'm watching football because there's not very much football
+
+52
+00:02:40,440 --> 00:02:41,960
+in the three and a half hour football game.
+
+53
+00:02:42,900 --> 00:02:43,500
+Right.
+
+54
+00:02:43,620 --> 00:02:44,020
+Right.
+
+55
+00:02:44,060 --> 00:02:47,460
+It's, it's, it's a great social sport.
+
+56
+00:02:47,460 --> 00:02:51,180
+I can see why, like when I was younger, I go, I watch like football
+
+57
+00:02:51,180 --> 00:02:52,140
+games with friends and things.
+
+58
+00:02:52,140 --> 00:02:55,820
+Cause it's, it's, it's a social sport because there's plenty of time to
+
+59
+00:02:55,820 --> 00:02:58,100
+talk between plays and things.
+
+60
+00:02:58,820 --> 00:02:59,500
+Oh, for sure.
+
+61
+00:03:00,020 --> 00:03:00,500
+For sure.
+
+62
+00:03:00,820 --> 00:03:01,980
+And I don't like people.
+
+63
+00:03:01,980 --> 00:03:03,460
+So social sports are not for me.
+
+64
+00:03:03,900 --> 00:03:09,300
+I, I, um, I once, uh, a buddy of mine years ago once actually used
+
+65
+00:03:09,580 --> 00:03:14,080
+football as sort of a metaphor for waterfall.
+
+66
+00:03:14,990 --> 00:03:15,670
+Interesting.
+
+67
+00:03:16,030 --> 00:03:17,550
+It's like, oh yeah.
+
+68
+00:03:17,670 --> 00:03:17,950
+Right.
+
+69
+00:03:17,990 --> 00:03:21,190
+And NFL game, they plan for an hour.
+
+70
+00:03:21,940 --> 00:03:27,320
+The game's only going to take an hour, but yet it consistently never does.
+
+71
+00:03:27,880 --> 00:03:30,440
+That's interesting, uh, metaphor.
+
+72
+00:03:30,440 --> 00:03:32,120
+And it's one of the reasons why.
+
+73
+00:03:32,600 --> 00:03:32,840
+Right.
+
+74
+00:03:32,840 --> 00:03:38,000
+With, with the variant of agile, I never gave it the name, anything related to NFL.
+
+75
+00:03:38,480 --> 00:03:41,200
+Cause NFL is absolutely in comparison to soccer.
+
+76
+00:03:41,280 --> 00:03:44,040
+NFL is way more command and control.
+
+77
+00:03:44,680 --> 00:03:46,280
+So we are by ourselves.
+
+78
+00:03:46,360 --> 00:03:51,080
+We've had a couple of guests, uh, over the last few weeks, uh, split up,
+
+79
+00:03:51,120 --> 00:03:54,080
+uh, Jason into two, a big thing on AI.
+
+80
+00:03:54,080 --> 00:03:56,280
+And then we had Brian before that.
+
+81
+00:03:56,280 --> 00:03:59,320
+I want to do a little retro reflection on some of the things I learned there and
+
+82
+00:03:59,320 --> 00:04:01,880
+go a little bit deeper into those thoughts I have, but then I was also
+
+83
+00:04:01,880 --> 00:04:05,160
+thinking like, I like having guests on the podcast and it's fun.
+
+84
+00:04:05,160 --> 00:04:10,240
+People, we get feedback that people like getting new ideas and, and all these
+
+85
+00:04:10,240 --> 00:04:13,800
+things, and then my boss told me this week, he says, I skipped past your past
+
+86
+00:04:13,920 --> 00:04:14,360
+episodes.
+
+87
+00:04:14,360 --> 00:04:16,480
+I only want to hear you and Brent rant about things.
+
+88
+00:04:16,480 --> 00:04:17,680
+I don't care about your guests.
+
+89
+00:04:18,240 --> 00:04:19,000
+Your boss said that.
+
+90
+00:04:20,920 --> 00:04:24,720
+And I thought he's a total AI geek and he's listening right now.
+
+91
+00:04:24,720 --> 00:04:28,000
+Well, I mean, right now as the moment he hears us, but he would, didn't listen
+
+92
+00:04:28,000 --> 00:04:29,280
+to Jason geek out about AI.
+
+93
+00:04:29,280 --> 00:04:34,520
+So whatever I was, I don't, I don't know how I feel about that feedback.
+
+94
+00:04:34,720 --> 00:04:35,400
+Well, whatever.
+
+95
+00:04:35,480 --> 00:04:36,360
+Well, just, you know what?
+
+96
+00:04:36,520 --> 00:04:37,280
+Here's the deal.
+
+97
+00:04:37,280 --> 00:04:42,840
+Here is 195 episodes in and people know by now, look, we are the
+
+98
+00:04:42,840 --> 00:04:44,200
+AB testing podcast.
+
+99
+00:04:44,400 --> 00:04:46,320
+We do whatever the fuck we want.
+
+100
+00:04:46,480 --> 00:04:47,800
+I ain't fucking men.
+
+101
+00:04:47,800 --> 00:04:52,000
+And one thing that's really important that I think you just click me in on.
+
+102
+00:04:52,000 --> 00:04:56,920
+So you're saying that there's like a 95% chance that your manager is
+
+103
+00:04:56,920 --> 00:04:58,880
+going to listen to this episode.
+
+104
+00:04:58,960 --> 00:05:00,360
+Yes, I think so.
+
+105
+00:05:01,120 --> 00:05:04,960
+And he will tell me, in fact, he will send me a message the
+
+106
+00:05:04,960 --> 00:05:06,280
+moment he gets to that part.
+
+107
+00:05:06,320 --> 00:05:08,600
+It says, Hey, heard the call out sup.
+
+108
+00:05:08,920 --> 00:05:12,040
+I don't know your manager well, but I, I'm going to think of, I'm going
+
+109
+00:05:12,040 --> 00:05:15,280
+to think a bit about the chaos I might be able to cause you.
+
+110
+00:05:15,440 --> 00:05:18,920
+So I'm going to read you a blog post and our blog post, a LinkedIn post from today.
+
+111
+00:05:19,320 --> 00:05:19,560
+Okay.
+
+112
+00:05:19,600 --> 00:05:22,600
+And I want you to hold your comments and any facial expression, actually
+
+113
+00:05:22,600 --> 00:05:25,160
+facial expressions are fine because nobody could see them until I'm done.
+
+114
+00:05:25,980 --> 00:05:29,180
+This is, uh, from a fellow named Mike Thornton.
+
+115
+00:05:30,000 --> 00:05:31,920
+Developers shouldn't test their own code.
+
+116
+00:05:32,730 --> 00:05:34,250
+Developers have a blind spot.
+
+117
+00:05:34,290 --> 00:05:35,970
+Their focus is problem solving.
+
+118
+00:05:36,090 --> 00:05:39,570
+They are so solution oriented that they can't see education.
+
+119
+00:05:39,710 --> 00:05:41,690
+AY, so they will only test the happier path.
+
+120
+00:05:41,810 --> 00:05:43,290
+Only tester should test.
+
+121
+00:05:43,610 --> 00:05:45,810
+Developers shouldn't design their own software.
+
+122
+00:05:45,890 --> 00:05:47,690
+They will only design the happy path.
+
+123
+00:05:47,770 --> 00:05:48,850
+Only designers.
+
+124
+00:05:48,890 --> 00:05:53,080
+Should design developer should not deploy their own software.
+
+125
+00:05:53,120 --> 00:05:55,000
+They will only deploy the happy path.
+
+126
+00:05:55,320 --> 00:05:57,560
+Only deployers should deploy.
+
+127
+00:05:57,880 --> 00:06:00,360
+Developers shouldn't code their own software.
+
+128
+00:06:00,560 --> 00:06:02,440
+The will only code the happy path.
+
+129
+00:06:02,560 --> 00:06:04,240
+Only coders should code.
+
+130
+00:06:05,570 --> 00:06:06,530
+Last time, wait.
+
+131
+00:06:06,610 --> 00:06:07,170
+I'm not done yet.
+
+132
+00:06:07,450 --> 00:06:09,650
+Follow me for more career ending advice.
+
+133
+00:06:10,210 --> 00:06:17,610
+Okay.
+
+134
+00:06:17,610 --> 00:06:22,800
+I took Brent on a journey.
+
+135
+00:06:22,800 --> 00:06:24,760
+That was a roller coaster.
+
+136
+00:06:24,760 --> 00:06:27,040
+Oh my God.
+
+137
+00:06:27,040 --> 00:06:29,880
+It started off bad and got more absurd and then got good.
+
+138
+00:06:29,880 --> 00:06:32,080
+So I'm like, I'm like, what?
+
+139
+00:06:32,080 --> 00:06:35,320
+Like the last one was like, what?
+
+140
+00:06:35,320 --> 00:06:40,400
+What was cool is I saw this because Brian Finster commented on it and I followed Brian
+
+141
+00:06:40,400 --> 00:06:41,400
+Finster on LinkedIn.
+
+142
+00:06:41,400 --> 00:06:45,400
+So it showed up in my feed and it was really cool because what I'm finding is, and Brian
+
+143
+00:06:45,400 --> 00:06:52,480
+was on episode 192 and there's a line from that or a concept from that podcast I've been
+
+144
+00:06:52,480 --> 00:06:58,400
+talking about a lot lately where he says something to the effect of the way to really highlight
+
+145
+00:06:58,400 --> 00:07:01,960
+where the problems are in your delivery is to try and do CD.
+
+146
+00:07:01,960 --> 00:07:02,960
+Yeah.
+
+147
+00:07:02,960 --> 00:07:08,400
+And I have been thinking about that a lot because it's true and it's really about we want to
+
+148
+00:07:08,400 --> 00:07:10,480
+help people go super, super fast.
+
+149
+00:07:10,480 --> 00:07:14,240
+I've been talking to my team a little bit about that and there's a lot to that and
+
+150
+00:07:14,240 --> 00:07:15,840
+see what breaks.
+
+151
+00:07:15,840 --> 00:07:17,160
+So I want to reflect a little bit on that.
+
+152
+00:07:17,160 --> 00:07:23,920
+I have, I want to tie that into a longer topic, but also that was it for the Brian thing.
+
+153
+00:07:23,920 --> 00:07:25,200
+I thought that was pretty funny.
+
+154
+00:07:25,200 --> 00:07:28,240
+And of course the comments don't in the internet never read the comments.
+
+155
+00:07:28,240 --> 00:07:32,280
+The comments are like, actually I do want to finish this, this topic because the comments
+
+156
+00:07:32,280 --> 00:07:34,400
+are you're an idiot.
+
+157
+00:07:34,400 --> 00:07:35,800
+People said, I don't agree with you.
+
+158
+00:07:35,800 --> 00:07:37,520
+These are wrongs like, oh my God.
+
+159
+00:07:37,520 --> 00:07:43,800
+But what I'm happy to see is we have people that don't even know what modern testing
+
+160
+00:07:43,800 --> 00:07:48,520
+is doing modern testing principles, exactly what we knew was going on, but nobody believed
+
+161
+00:07:48,520 --> 00:07:49,520
+us at first.
+
+162
+00:07:49,520 --> 00:07:56,240
+And we're just seeing more and more examples of the fact that a whole lot of companies deliver.
+
+163
+00:07:56,240 --> 00:08:01,400
+There's anything we saw coming on that we, we pay attention to sort of trends that seem
+
+164
+00:08:01,400 --> 00:08:02,400
+to be successful.
+
+165
+00:08:02,400 --> 00:08:05,000
+Like we didn't have this.
+
+166
+00:08:05,000 --> 00:08:06,000
+We just observed it.
+
+167
+00:08:06,000 --> 00:08:13,080
+And the momentum of that or the momentum of that sort of initiative, that just kept
+
+168
+00:08:13,080 --> 00:08:17,800
+on going, but it, I think it's well beyond early adopter phase.
+
+169
+00:08:17,800 --> 00:08:22,160
+And that's the thing we, and the thing I keep on reordering, we didn't invent anything.
+
+170
+00:08:22,160 --> 00:08:25,440
+We talked about what we were seeing and we put some labels on things just to try and
+
+171
+00:08:25,440 --> 00:08:26,440
+explain it better.
+
+172
+00:08:26,440 --> 00:08:30,520
+So interesting now, like getting just that one connection with Brian brought a little
+
+173
+00:08:30,520 --> 00:08:37,200
+bit expanded my network a little bit into more people that get how modern software delivery
+
+174
+00:08:37,200 --> 00:08:38,200
+works.
+
+175
+00:08:38,200 --> 00:08:39,200
+So cool stuff.
+
+176
+00:08:39,920 --> 00:08:44,680
+I'm actually wondering how well, send me that link later.
+
+177
+00:08:44,680 --> 00:08:48,560
+I'm actually wondering how well that would fit on a t-shirt.
+
+178
+00:08:48,560 --> 00:08:57,750
+It's not just like that is the type of witty things that I would often get t-shirts.
+
+179
+00:08:57,750 --> 00:08:59,510
+It might be a little too verbal.
+
+180
+00:08:59,510 --> 00:09:01,030
+Yeah, it's a lot on there.
+
+181
+00:09:01,030 --> 00:09:05,230
+I also wanted to reflect a little bit on, we had Jason and you and I geeked out a
+
+182
+00:09:05,230 --> 00:09:07,030
+lot about AI.
+
+183
+00:09:07,030 --> 00:09:09,110
+I know you've been thinking about that a little bit.
+
+184
+00:09:09,150 --> 00:09:12,070
+You mentioned a little bit when we were first getting on the call and talking, but
+
+185
+00:09:12,070 --> 00:09:14,830
+something about, please don't say AI ops.
+
+186
+00:09:14,830 --> 00:09:16,270
+Tell me more where you were going.
+
+187
+00:09:16,270 --> 00:09:19,270
+Like, what are you even thinking about since that, about AI since that call?
+
+188
+00:09:19,270 --> 00:09:27,870
+Well, so one of the things, how do I do this without being, let me do a brief version
+
+189
+00:09:27,870 --> 00:09:31,980
+of it, a longer version of it might be worthwhile.
+
+190
+00:09:31,980 --> 00:09:37,300
+So been thinking around, I'll just invent a term.
+
+191
+00:09:37,300 --> 00:09:41,700
+And I'm not inventing a term because this is a conversation I had with my manager
+
+192
+00:09:41,700 --> 00:09:47,060
+just the other day, but let's just call it LLM ops.
+
+193
+00:09:47,060 --> 00:09:50,020
+Yeah, I feel a little sick already, but go on.
+
+194
+00:09:50,020 --> 00:09:50,260
+Right.
+
+195
+00:09:50,260 --> 00:09:55,300
+It's essentially, so if we think about the progression and there's a couple phases
+
+196
+00:09:55,300 --> 00:09:58,940
+in between that I'm, I'm forgetting the names of, right?
+
+197
+00:09:58,940 --> 00:10:04,900
+There was start off with sort of a dedicated SRE team.
+
+198
+00:10:04,900 --> 00:10:10,940
+Then the idea of DevOps and then probably a couple more.
+
+199
+00:10:10,940 --> 00:10:19,180
+Then there's AI ops where, well, so the big part of DevOps is now, now actually
+
+200
+00:10:19,180 --> 00:10:22,620
+the developer owns their own life side operations.
+
+201
+00:10:22,620 --> 00:10:28,500
+The idea behind DevOps was to get rid of the wall between the development team
+
+202
+00:10:28,500 --> 00:10:32,900
+and the operations team or the development team and the deployers, the
+
+203
+00:10:32,900 --> 00:10:35,340
+devs and deployers never shall meet.
+
+204
+00:10:35,340 --> 00:10:37,140
+Unicorn projects all around us.
+
+205
+00:10:37,140 --> 00:10:38,780
+Cognitive distance.
+
+206
+00:10:38,780 --> 00:10:39,260
+Yeah.
+
+207
+00:10:39,260 --> 00:10:40,300
+Don't need it.
+
+208
+00:10:40,300 --> 00:10:42,100
+So the idea is just get rid of the walls.
+
+209
+00:10:42,100 --> 00:10:43,140
+It's faster.
+
+210
+00:10:43,140 --> 00:10:44,020
+Get rid of the handoffs.
+
+211
+00:10:44,020 --> 00:10:45,020
+Just get rid of the handoff.
+
+212
+00:10:45,020 --> 00:10:48,100
+So to me, in a way, everything's DevOps.
+
+213
+00:10:48,100 --> 00:10:52,420
+We're trying to get rid of handoffs between teams, but I'll let you go with your story.
+
+214
+00:10:52,420 --> 00:10:52,740
+Right.
+
+215
+00:10:52,740 --> 00:10:59,300
+Well, well, so AI ops is again, trying to speed things up, essentially get
+
+216
+00:10:59,300 --> 00:11:05,140
+rid of the risk inherent in human decision making, right?
+
+217
+00:11:05,140 --> 00:11:09,450
+Have the AI make the decisions.
+
+218
+00:11:09,450 --> 00:11:12,290
+So we're not breaking down the wall between AI and ops.
+
+219
+00:11:12,290 --> 00:11:15,250
+We're breaking down the wall between humans and their decisions.
+
+220
+00:11:15,250 --> 00:11:25,780
+Well, so my absolute belief, AI, every AI I've encountered, and I think this is true
+
+221
+00:11:25,780 --> 00:11:27,500
+period for all AI.
+
+222
+00:11:27,500 --> 00:11:31,460
+AI's whole purpose in life is to automate decision making.
+
+223
+00:11:31,460 --> 00:11:33,180
+That's what it does.
+
+224
+00:11:33,180 --> 00:11:40,180
+It's certain AIs, certain AIs can only automate, you know, simple decision.
+
+225
+00:11:40,180 --> 00:11:44,500
+Even very complex models can only automate certain decisions.
+
+226
+00:11:44,500 --> 00:11:57,490
+But the thing around LLM that's attractive is it can, if you leverage it right,
+
+227
+00:11:57,490 --> 00:12:08,570
+I suppose hand wave, hand wave, it can make decisions of unstructured data of lots of forms.
+
+228
+00:12:08,570 --> 00:12:14,330
+Obviously, it can't, it has the weakness where it can't use numbers in a way, say,
+
+229
+00:12:14,330 --> 00:12:19,170
+traditional AI, every number to an LLM is a strain.
+
+230
+00:12:19,170 --> 00:12:20,890
+Everything is a strain.
+
+231
+00:12:20,890 --> 00:12:29,740
+But to me, it kind of feels like the next logical progression of speeding things up.
+
+232
+00:12:29,740 --> 00:12:32,980
+Of course, massive risk with it.
+
+233
+00:12:32,980 --> 00:12:41,190
+I just wanted to flip that topic to see the potential for your brain serving there.
+
+234
+00:12:41,190 --> 00:12:47,430
+Just to interject there, I've talked about the way I use chat GPT is to help me collaborate
+
+235
+00:12:47,430 --> 00:12:52,590
+and really to make decisions like, I do this or this, it is a form of decisions.
+
+236
+00:12:52,590 --> 00:12:58,230
+But then I was thinking also, like, one of the things that's always, that attracts like,
+
+237
+00:12:58,230 --> 00:13:04,390
+the leaders I've liked in my career, one attribute they all had was the ability for
+
+238
+00:13:04,390 --> 00:13:09,950
+them to make a quick and confident decision, whether it was based on a little data or
+
+239
+00:13:09,950 --> 00:13:13,150
+a lot of data, they just they were good at decision making.
+
+240
+00:13:13,150 --> 00:13:16,390
+And their track record was super accurate.
+
+241
+00:13:16,390 --> 00:13:24,830
+So if we can try to figure out if we use AI to help us make decisions, or AI is there
+
+242
+00:13:24,830 --> 00:13:30,030
+to make decisions for us or help us make decisions, I'll say, does that accelerate?
+
+243
+00:13:30,030 --> 00:13:33,510
+Does that improve leadership or replace leadership?
+
+244
+00:13:33,510 --> 00:13:39,580
+Certainly the risk of it to do both is quite high.
+
+245
+00:13:39,580 --> 00:13:43,260
+I think it's the former, by the way, at least for the short term, I think it's just
+
+246
+00:13:43,260 --> 00:13:46,900
+like the thing we always say, AI isn't taking your job away.
+
+247
+00:13:46,900 --> 00:13:49,380
+People who know how to use it effectively are.
+
+248
+00:13:49,380 --> 00:13:58,980
+Now, and the people who's here's my problem with with the folks knowledge, we've talked
+
+249
+00:13:58,980 --> 00:14:01,900
+about knowledge and where ideas come from, etc.
+
+250
+00:14:01,900 --> 00:14:03,140
+We like knowledge.
+
+251
+00:14:03,140 --> 00:14:07,740
+Yes, there's this concept of the adjacent possible.
+
+252
+00:14:07,740 --> 00:14:10,100
+I think I think I learned that from Johnson.
+
+253
+00:14:10,100 --> 00:14:11,820
+Yep, you did learn that from Stephen Johnson.
+
+254
+00:14:12,020 --> 00:14:12,540
+Yeah.
+
+255
+00:14:12,540 --> 00:14:19,820
+And so if everyone was to view like your personal knowledge as like, as like a literally
+
+256
+00:14:19,820 --> 00:14:23,940
+like a bubble, like when you go blow bubbles with children, right, a bubble inside of your
+
+257
+00:14:23,940 --> 00:14:27,860
+head, it's a sphere that has a surface area.
+
+258
+00:14:27,860 --> 00:14:35,100
+And anytime you gain knowledge, you're basically blowing more air into that bubble.
+
+259
+00:14:35,100 --> 00:14:39,340
+So it grows bigger, it has a better surface area.
+
+260
+00:14:39,340 --> 00:14:47,340
+And so there are more things that are now possible just out of the reach of that bubble.
+
+261
+00:14:47,340 --> 00:14:55,780
+The question is that I think about, okay, these these AI is coming to to to take our
+
+262
+00:14:55,780 --> 00:14:56,820
+jobs.
+
+263
+00:14:56,820 --> 00:14:57,820
+They will.
+
+264
+00:14:57,820 --> 00:15:02,620
+But will they take the portion of our job that we like or the portion of our job that
+
+265
+00:15:02,620 --> 00:15:03,740
+we hate?
+
+266
+00:15:03,740 --> 00:15:16,200
+Will will it be able to to what degree will it be able to go accelerate us such that each
+
+267
+00:15:16,200 --> 00:15:22,130
+of us as human beings are are able to access more of the adjacent possible?
+
+268
+00:15:22,130 --> 00:15:28,850
+I think when I think about a couple of things like automation, why did we build automation?
+
+269
+00:15:28,850 --> 00:15:29,850
+Right.
+
+270
+00:15:29,850 --> 00:15:32,810
+It's to get rid of sucky, repetitive things, the things that we kind of don't want to
+
+271
+00:15:32,810 --> 00:15:33,810
+do.
+
+272
+00:15:34,490 --> 00:15:38,850
+It's also to do things that scale that we can't do.
+
+273
+00:15:38,850 --> 00:15:45,690
+Like I do not have the ability to run manually a thousand test cases in parallel.
+
+274
+00:15:45,690 --> 00:15:51,300
+Like I'm pretty certain you don't either with automation I can, but not manually.
+
+275
+00:15:51,300 --> 00:15:56,180
+So there is that risk of anytime we automate, because we can do it at parallel in that
+
+276
+00:15:56,180 --> 00:16:01,660
+scale that that we're creating the ability to do something that we can't do manually.
+
+277
+00:16:01,660 --> 00:16:04,340
+It's certainly possible with with AI.
+
+278
+00:16:04,340 --> 00:16:11,340
+But a lot of it is is going to be based off of I don't need to make these decisions anymore.
+
+279
+00:16:11,340 --> 00:16:16,180
+It can it like I'm perfectly fine with something else.
+
+280
+00:16:16,180 --> 00:16:20,540
+Making those decisions, the lightweight ones, the ones where you're sitting with your wife
+
+281
+00:16:20,540 --> 00:16:22,180
+and they're like, hey, where do you want to go eat?
+
+282
+00:16:22,180 --> 00:16:23,180
+Oh, I don't know.
+
+283
+00:16:23,180 --> 00:16:24,180
+Where do you want to go eat?
+
+284
+00:16:24,180 --> 00:16:25,180
+Like, LLM.
+
+285
+00:16:25,180 --> 00:16:26,700
+Tell us where to go eat.
+
+286
+00:16:26,700 --> 00:16:27,700
+Great.
+
+287
+00:16:27,700 --> 00:16:28,700
+For sure.
+
+288
+00:16:28,700 --> 00:16:29,700
+So it's interesting you bring that up.
+
+289
+00:16:29,740 --> 00:16:33,020
+I'll talk a little bit more about the adjacent possible here because I was talking to
+
+290
+00:16:33,220 --> 00:16:35,140
+someone I forget who.
+
+291
+00:16:35,820 --> 00:16:36,740
+It's a long story.
+
+292
+00:16:37,220 --> 00:16:39,220
+Tech people, tech people I don't work with.
+
+293
+00:16:39,380 --> 00:16:40,140
+I'll leave it there.
+
+294
+00:16:40,260 --> 00:16:41,580
+And they asked the question.
+
+295
+00:16:41,620 --> 00:16:45,500
+Every person asks me when we talk about tech.
+
+296
+00:16:45,860 --> 00:16:48,500
+Alan, what do you think about AI?
+
+297
+00:16:50,240 --> 00:16:51,960
+I said, really, do we have all night?
+
+298
+00:16:52,120 --> 00:16:55,200
+But what it boils down to is I brought up the adjacent possible.
+
+299
+00:16:55,200 --> 00:17:00,080
+I think, you know, everybody is excited about AI and AI is now a buzzword.
+
+300
+00:17:00,280 --> 00:17:04,120
+Do you remember when Microsoft put dotnet on the on the end of every project?
+
+301
+00:17:04,400 --> 00:17:05,920
+I figure people are doing that with AI.
+
+302
+00:17:05,920 --> 00:17:06,680
+Everything's AI.
+
+303
+00:17:06,680 --> 00:17:10,840
+It's not probably 90 percent of the things out there now that says powered by
+
+304
+00:17:10,840 --> 00:17:12,840
+AI are not powered by AI.
+
+305
+00:17:12,840 --> 00:17:13,840
+It's dumb.
+
+306
+00:17:13,840 --> 00:17:16,120
+But that wasn't my answer.
+
+307
+00:17:16,120 --> 00:17:19,000
+My answer was all the stuff we've talked about.
+
+308
+00:17:19,280 --> 00:17:21,360
+Chat GPT is a great example.
+
+309
+00:17:21,360 --> 00:17:24,920
+I talk about how I collaborate with it, how it's enabling a lot of things.
+
+310
+00:17:24,920 --> 00:17:29,040
+It's really as exciting as chat GPT is.
+
+311
+00:17:29,680 --> 00:17:34,720
+What it has done is brought us to and what the adjacent possible is.
+
+312
+00:17:34,720 --> 00:17:38,800
+I forget Steven's definition, Steven Johnson, but it's like the adjacent
+
+313
+00:17:38,800 --> 00:17:42,760
+possible are the things that are possible to get done at our current
+
+314
+00:17:42,760 --> 00:17:45,040
+evolution of tech biology, whatever.
+
+315
+00:17:45,280 --> 00:17:45,520
+Right.
+
+316
+00:17:45,520 --> 00:17:53,320
+What chat GPT and LLMs and generative AI have done is it's we've taken a step
+
+317
+00:17:53,320 --> 00:17:59,000
+forward in what's possible, but I really believe the big invention.
+
+318
+00:17:59,160 --> 00:18:02,480
+The things that are really going to go, oh, shit about and go, wow, this is
+
+319
+00:18:02,600 --> 00:18:06,480
+amazing. This is accelerating or it's doing A, it's doing B, it's doing C.
+
+320
+00:18:06,960 --> 00:18:10,960
+They are things that are going that we haven't thought of yet, but are now
+
+321
+00:18:10,960 --> 00:18:15,280
+the new adjacent possible because of the existence of generative AI.
+
+322
+00:18:15,440 --> 00:18:15,800
+Right.
+
+323
+00:18:15,800 --> 00:18:17,480
+And then and the new forms of AI coming out.
+
+324
+00:18:17,480 --> 00:18:19,360
+There's something they say, what are you most excited about?
+
+325
+00:18:19,360 --> 00:18:22,920
+I'm excited about the thing I haven't heard about yet that actually builds
+
+326
+00:18:22,920 --> 00:18:25,560
+on this and takes us to a brand new place never been before.
+
+327
+00:18:25,880 --> 00:18:27,040
+That's what I'm most excited about.
+
+328
+00:18:27,200 --> 00:18:33,000
+I am I'll share with you how I'm thinking about it in the AI world.
+
+329
+00:18:33,040 --> 00:18:35,320
+Are you familiar with the concept of a centaur?
+
+330
+00:18:36,080 --> 00:18:38,760
+Oh, we've talked about this briefly before.
+
+331
+00:18:38,760 --> 00:18:39,280
+Yes.
+
+332
+00:18:39,520 --> 00:18:40,880
+An old professor.
+
+333
+00:18:41,120 --> 00:18:44,520
+So the term was invented by and I forget the guy's name.
+
+334
+00:18:44,920 --> 00:18:45,920
+Greek mythology.
+
+335
+00:18:46,640 --> 00:18:51,360
+Yeah, that term was but in the context of AI and actually my daughter
+
+336
+00:18:51,360 --> 00:18:55,200
+were here, she'd be able to confirm we denied it was actually the Greeks.
+
+337
+00:18:56,200 --> 00:18:56,920
+That's what I said.
+
+338
+00:18:56,960 --> 00:18:58,760
+I said the Greek, I said Greek mythology.
+
+339
+00:18:59,280 --> 00:18:59,880
+Yeah.
+
+340
+00:19:00,400 --> 00:19:03,640
+Anyway, they have taken, they have didn't invent the term.
+
+341
+00:19:03,840 --> 00:19:06,560
+They've taken the term and applied it in a new way.
+
+342
+00:19:06,960 --> 00:19:07,880
+In a new way.
+
+343
+00:19:08,080 --> 00:19:08,400
+Right.
+
+344
+00:19:08,840 --> 00:19:12,720
+We are all about accuracy on the AB testing podcast.
+
+345
+00:19:13,280 --> 00:19:18,080
+I learned from my daughter the other day, the following, and I
+
+346
+00:19:18,080 --> 00:19:19,280
+may get it backwards.
+
+347
+00:19:19,320 --> 00:19:20,080
+I don't care.
+
+348
+00:19:20,800 --> 00:19:26,960
+But I learned that I believe she said the Romans invented the unicorn
+
+349
+00:19:27,240 --> 00:19:30,160
+and the Greeks invented the Pegasus.
+
+350
+00:19:30,400 --> 00:19:33,720
+And then she's like, I have no idea who came up with the
+
+351
+00:19:33,720 --> 00:19:34,960
+alicorn, right?
+
+352
+00:19:34,960 --> 00:19:40,280
+But to your point, Steven Johnson, the Jason possible, no one was able to
+
+353
+00:19:40,280 --> 00:19:44,960
+invent the alicorn until the unicorn and the Pegasus were invented.
+
+354
+00:19:45,600 --> 00:19:49,600
+And for those on the call who have no idea WTF is an alicorn,
+
+355
+00:19:49,840 --> 00:19:51,800
+it is a unicorn Pegasus.
+
+356
+00:19:52,600 --> 00:19:55,040
+It is a unicorn with wings.
+
+357
+00:19:55,280 --> 00:19:58,360
+No, it's a Pegasus with a horn in the middle of his head.
+
+358
+00:20:00,040 --> 00:20:05,320
+The age old debate is a zebra black on white or white on black.
+
+359
+00:20:05,360 --> 00:20:05,560
+Yeah.
+
+360
+00:20:05,880 --> 00:20:08,560
+I clearly see where you stand on that to be.
+
+361
+00:20:08,920 --> 00:20:10,600
+Whatever, whatever is the opposite of you, Brent.
+
+362
+00:20:10,800 --> 00:20:14,040
+I yeah, like I said, I clearly see you wherever you stay.
+
+363
+00:20:14,240 --> 00:20:14,440
+Okay.
+
+364
+00:20:14,440 --> 00:20:15,320
+Where were you going?
+
+365
+00:20:15,360 --> 00:20:16,440
+Where the hell was I going with the floor?
+
+366
+00:20:16,440 --> 00:20:18,360
+Tell me about the centaur.
+
+367
+00:20:18,680 --> 00:20:19,240
+Oh, centaur.
+
+368
+00:20:19,280 --> 00:20:19,640
+Thank you.
+
+369
+00:20:20,200 --> 00:20:22,400
+Welcome to the ADHD podcast.
+
+370
+00:20:22,560 --> 00:20:23,080
+I'm Alan.
+
+371
+00:20:23,720 --> 00:20:24,360
+Hi, Brett.
+
+372
+00:20:24,920 --> 00:20:26,000
+We'll see you next time.
+
+373
+00:20:26,880 --> 00:20:28,560
+The centaur was invented.
+
+374
+00:20:29,160 --> 00:20:35,820
+The context of use it in this context was invented by the guy who first, the
+
+375
+00:20:35,820 --> 00:20:40,100
+chess brand master who got first beat defeated by deep blue, but then came
+
+376
+00:20:40,100 --> 00:20:41,340
+back and beat deep blue.
+
+377
+00:20:41,980 --> 00:20:42,980
+Is that Kasparov?
+
+378
+00:20:43,420 --> 00:20:44,340
+I think it is.
+
+379
+00:20:44,900 --> 00:20:52,580
+And what he has discovered is that him with deep blue is basically
+
+380
+00:20:52,580 --> 00:20:54,140
+undefeatable, right?
+
+381
+00:20:54,180 --> 00:20:59,740
+He calls it a centaur because it's literally man and machine working
+
+382
+00:20:59,740 --> 00:21:01,780
+cooperatively together.
+
+383
+00:21:02,340 --> 00:21:02,740
+Yeah.
+
+384
+00:21:03,180 --> 00:21:04,540
+I'm going to jump in.
+
+385
+00:21:04,540 --> 00:21:08,180
+Is that if the man's leading it, it's a centaur.
+
+386
+00:21:08,420 --> 00:21:11,260
+But if it's the other way around, it's just a mechanical Turk.
+
+387
+00:21:13,000 --> 00:21:15,960
+I never quite understood what a Turk was in that.
+
+388
+00:21:16,000 --> 00:21:19,360
+The idea was the mechanical Turk is that it's like this.
+
+389
+00:21:19,400 --> 00:21:23,880
+It's like the concierge MVP where you think there's a computer on the
+
+390
+00:21:23,880 --> 00:21:29,200
+back end doing stuff, just a human doing it for them is I'm asking is the
+
+391
+00:21:29,200 --> 00:21:33,000
+opposite of a centaur, a mechanical Turk where it's machine on the front,
+
+392
+00:21:33,320 --> 00:21:35,440
+but there's a human in the back making the decisions.
+
+393
+00:21:35,840 --> 00:21:36,480
+It might be.
+
+394
+00:21:36,480 --> 00:21:38,800
+Sorry, I like you on a tangent, but I was just thinking out loud.
+
+395
+00:21:38,800 --> 00:21:40,600
+In this case, as we do.
+
+396
+00:21:41,120 --> 00:21:48,320
+In this case, it's, it's, uh, yeah, the human making the final decision,
+
+397
+00:21:48,320 --> 00:21:50,280
+but heavily augmented by the machine.
+
+398
+00:21:50,320 --> 00:21:50,520
+Yeah.
+
+399
+00:21:50,600 --> 00:21:51,960
+But anyway, I love the idea.
+
+400
+00:21:51,960 --> 00:21:53,240
+This is the way I work.
+
+401
+00:21:53,400 --> 00:21:55,320
+Generative AI helps me.
+
+402
+00:21:55,800 --> 00:21:59,680
+It accelerates me in exactly the way you're describing with chess.
+
+403
+00:22:00,240 --> 00:22:00,560
+Right.
+
+404
+00:22:00,960 --> 00:22:05,200
+Now, one of the things that, and when I go on my full sort of
+
+405
+00:22:05,200 --> 00:22:10,600
+philosophical talk around, oh, one of the things I bring out is.
+
+406
+00:22:11,620 --> 00:22:16,980
+There are three personas that I've discovered that an LLM is, and I, and I
+
+407
+00:22:16,980 --> 00:22:22,060
+have talked about this to some degree and I basically say a parent, number one,
+
+408
+00:22:22,870 --> 00:22:29,100
+number two, a genie, and then the last one that's most important, which is an SME.
+
+409
+00:22:29,620 --> 00:22:29,980
+Okay.
+
+410
+00:22:30,180 --> 00:22:33,980
+And I find myself sharing this a lot, even with my own team who
+
+411
+00:22:33,980 --> 00:22:39,140
+has now heard it multiple times, but it's with a data science team is, I find
+
+412
+00:22:39,140 --> 00:22:43,500
+it's really important to share this so that they don't look at, at the LLM
+
+413
+00:22:43,500 --> 00:22:44,660
+and go, Oh, it's magic.
+
+414
+00:22:44,980 --> 00:22:46,220
+No, it's not magic.
+
+415
+00:22:46,260 --> 00:22:52,860
+It's a bunch of cleverly strung together a set of probabilities.
+
+416
+00:22:53,340 --> 00:22:58,020
+There's an example there that I might share later where one of my stronger
+
+417
+00:22:58,020 --> 00:23:02,420
+data scientists, I walked them through a scenario and, and I said, and then
+
+418
+00:23:02,420 --> 00:23:08,660
+I dropped the bomb on him, like to help him understand LLMs better, right?
+
+419
+00:23:09,300 --> 00:23:11,140
+I'm like, this is stateless.
+
+420
+00:23:11,540 --> 00:23:13,380
+It is a parent, right?
+
+421
+00:23:13,380 --> 00:23:19,300
+And then what that essentially means, it is, it, it doesn't know anything.
+
+422
+00:23:19,380 --> 00:23:22,540
+Anytime someone says, Oh, it learned this.
+
+423
+00:23:22,540 --> 00:23:25,420
+No, it did not learn this.
+
+424
+00:23:25,700 --> 00:23:31,020
+Are you familiar with, with the idea of a, of a one-shot prompt?
+
+425
+00:23:31,300 --> 00:23:35,320
+No, it makes sense in context, but go ahead and talk through it.
+
+426
+00:23:35,560 --> 00:23:37,560
+Hey, let me try it a different way.
+
+427
+00:23:38,280 --> 00:23:44,200
+So if you were to go to LLM and give it a prompt, what is one plus one?
+
+428
+00:23:44,880 --> 00:23:45,080
+Okay.
+
+429
+00:23:45,080 --> 00:23:47,680
+Now today, the LLM will do just fine.
+
+430
+00:23:48,080 --> 00:23:51,200
+Uh, when it first came out, it didn't do numbers very well.
+
+431
+00:23:51,360 --> 00:23:51,600
+Right.
+
+432
+00:23:51,640 --> 00:23:51,960
+Okay.
+
+433
+00:23:52,360 --> 00:23:55,960
+And all the people said, well, look, I don't believe in this stuff.
+
+434
+00:23:55,960 --> 00:23:57,200
+You can't even do math.
+
+435
+00:23:57,480 --> 00:23:57,800
+Right.
+
+436
+00:23:58,240 --> 00:24:03,040
+And even though now you go, what is one plus one?
+
+437
+00:24:03,040 --> 00:24:04,840
+It'll tell you the answer is two.
+
+438
+00:24:05,360 --> 00:24:08,160
+But I will tell you it's not doing math.
+
+439
+00:24:08,680 --> 00:24:11,280
+It is 100%.
+
+440
+00:24:11,800 --> 00:24:19,400
+Like the model has improved and it knows that the correct character to output,
+
+441
+00:24:20,380 --> 00:24:27,840
+given that initial stream of characters is with like five nines probability,
+
+442
+00:24:28,780 --> 00:24:29,540
+the number two.
+
+443
+00:24:30,380 --> 00:24:37,250
+However, what you can do, let's say you did what is, you know, and you, you
+
+444
+00:24:37,290 --> 00:24:41,730
+pound seven random characters on your, your number strip on your keyboard.
+
+445
+00:24:41,730 --> 00:24:45,330
+Plus do it again, different random characters.
+
+446
+00:24:45,810 --> 00:24:46,130
+Okay.
+
+447
+00:24:46,210 --> 00:24:49,570
+And then, uh, and then you hit enter.
+
+448
+00:24:49,570 --> 00:24:50,730
+It'll probably get that wrong.
+
+449
+00:24:51,250 --> 00:24:54,050
+Every time I do this example, I often have to come up with a
+
+450
+00:24:54,050 --> 00:24:57,090
+different set of random numbers, but I can get it to get it wrong.
+
+451
+00:24:57,490 --> 00:25:03,610
+However, if you do that same thing and then follow it up with the prompt example,
+
+452
+00:25:04,170 --> 00:25:10,910
+one plus one equals two, by doing that extra string, you kind of prune down
+
+453
+00:25:10,910 --> 00:25:17,140
+the probabilistic paths in the neural net, the backs of the LLM into one that
+
+454
+00:25:17,140 --> 00:25:21,540
+is far more likely to be correct because there aren't so many, um,
+
+455
+00:25:22,380 --> 00:25:24,420
+possibilities for it to spread out.
+
+456
+00:25:25,100 --> 00:25:32,430
+Uh, even at those very small probabilities, it will get things wrong
+
+457
+00:25:32,590 --> 00:25:37,110
+and from our perspective or perception, but it's a parent, it doesn't know anything.
+
+458
+00:25:37,150 --> 00:25:41,950
+It's just really good at simulating the correct response.
+
+459
+00:25:42,270 --> 00:25:48,830
+Now, when I say a genie, a genie means a genie historically, like if, if you,
+
+460
+00:25:48,830 --> 00:25:53,670
+uh, if you found an Aladdin's bottle and you asked it to be, um, you asked
+
+461
+00:25:53,670 --> 00:25:55,310
+to be a world-class swimmer, right?
+
+462
+00:25:55,350 --> 00:26:01,230
+The problem is genies are historically evil and it will fulfill your
+
+463
+00:26:01,230 --> 00:26:03,510
+wish by turning you into a shark, right?
+
+464
+00:26:03,510 --> 00:26:05,230
+You're a world-class swimmer.
+
+465
+00:26:05,510 --> 00:26:09,030
+You know, I grew up watching reruns of I Dream of Genie and
+
+466
+00:26:09,030 --> 00:26:10,350
+that genie was very nice.
+
+467
+00:26:11,100 --> 00:26:12,580
+Uh, that was made for TV.
+
+468
+00:26:13,060 --> 00:26:14,220
+Oh, yeah.
+
+469
+00:26:15,940 --> 00:26:16,900
+What, that wasn't real?
+
+470
+00:26:17,220 --> 00:26:18,660
+No, no, no.
+
+471
+00:26:18,740 --> 00:26:19,380
+Oh, weird.
+
+472
+00:26:19,380 --> 00:26:21,060
+Not, not historically accurate.
+
+473
+00:26:21,100 --> 00:26:21,380
+Okay.
+
+474
+00:26:21,380 --> 00:26:21,740
+All right.
+
+475
+00:26:21,740 --> 00:26:21,980
+Go on.
+
+476
+00:26:21,980 --> 00:26:24,380
+I just, I, I, I'm mind blown today.
+
+477
+00:26:24,380 --> 00:26:24,740
+I learned.
+
+478
+00:26:25,020 --> 00:26:25,340
+Yeah.
+
+479
+00:26:25,380 --> 00:26:30,740
+So the way you, you battle the genie, this is like, if you, if you ever
+
+480
+00:26:30,740 --> 00:26:36,220
+do encounter a, a, a, a genie in a lamp, the way to, the way to battle it,
+
+481
+00:26:36,220 --> 00:26:40,180
+when you do your wishes, you need to make sure they are so specific.
+
+482
+00:26:40,740 --> 00:26:45,700
+The genie has only the right way to grant your wish, like the way
+
+483
+00:26:45,700 --> 00:26:47,700
+you want it to be granted.
+
+484
+00:26:48,100 --> 00:26:51,860
+And that, that's kind of the issue with, with LLLMs.
+
+485
+00:26:52,140 --> 00:26:53,620
+Like there is a risk.
+
+486
+00:26:53,620 --> 00:26:59,100
+If you write a prompt and it is in any way, shape, or form, ambiguous,
+
+487
+00:26:59,220 --> 00:27:01,180
+there is a risk that's going to go sideways.
+
+488
+00:27:01,980 --> 00:27:02,220
+Right.
+
+489
+00:27:02,460 --> 00:27:06,460
+I'll give you an example for the, for the community here.
+
+490
+00:27:06,980 --> 00:27:08,380
+You give it a scenario.
+
+491
+00:27:08,460 --> 00:27:12,380
+Let's say you write up a narrative, a bug report or whatever, and you ask it,
+
+492
+00:27:12,420 --> 00:27:14,180
+is this a bug or is it by design?
+
+493
+00:27:14,740 --> 00:27:18,900
+Both of those are kind of philosophical.
+
+494
+00:27:19,580 --> 00:27:19,820
+Right.
+
+495
+00:27:19,900 --> 00:27:28,740
+And the definition of bug or by design is subjective and it will very often go
+
+496
+00:27:28,740 --> 00:27:35,340
+sideways. And one of my favorite examples is, Hey, if the product, let's say it's a
+
+497
+00:27:35,340 --> 00:27:44,060
+service fails to integrate with another service that only began its existence
+
+498
+00:27:44,060 --> 00:27:47,420
+after the first service was released.
+
+499
+00:27:48,100 --> 00:27:50,020
+Is that a bug or is it by design?
+
+500
+00:27:50,580 --> 00:27:53,900
+Well, it wasn't designed for it because the new service didn't exist.
+
+501
+00:27:54,930 --> 00:28:02,480
+So it can't be by design, but then the product is still working as it was
+
+502
+00:28:02,480 --> 00:28:04,360
+intended. So it's not a bug.
+
+503
+00:28:05,040 --> 00:28:09,800
+And if you ask the LLM, you had to pick one of those, but it will roll the dice.
+
+504
+00:28:09,800 --> 00:28:12,320
+You rerun it and it'll pick a different one each time.
+
+505
+00:28:13,320 --> 00:28:15,720
+I know this painfully from, from example.
+
+506
+00:28:15,880 --> 00:28:19,680
+Now, assuming you can battle the parent and the, and the genie.
+
+507
+00:28:20,000 --> 00:28:23,920
+The last person on the LLM is, is an SME.
+
+508
+00:28:24,590 --> 00:28:29,710
+It's a subject matter expert, or rather it can simulate the knowledge.
+
+509
+00:28:29,750 --> 00:28:31,950
+I was going to say, yes, it can act like one.
+
+510
+00:28:31,950 --> 00:28:32,550
+It isn't one.
+
+511
+00:28:32,550 --> 00:28:36,790
+It knows nothing as we've discussed, but it can fake it super well.
+
+512
+00:28:37,190 --> 00:28:42,030
+And it can, I would say, well, actually I don't need to say, cause when
+
+513
+00:28:42,030 --> 00:28:44,790
+LLMs came out, there was all sorts of elements on it.
+
+514
+00:28:44,790 --> 00:28:47,350
+Like LLMs can pass the freaking bar.
+
+515
+00:28:48,140 --> 00:28:48,380
+Right.
+
+516
+00:28:48,420 --> 00:28:48,740
+Right.
+
+517
+00:28:48,860 --> 00:28:56,340
+LLHBS can at some point in time, it is so good at simulating as being an SME.
+
+518
+00:28:56,660 --> 00:28:58,780
+You might as well just call it an SME.
+
+519
+00:28:59,420 --> 00:29:03,100
+Now the challenge is figuring out when it's gone sideways.
+
+520
+00:29:03,880 --> 00:29:04,160
+Right.
+
+521
+00:29:04,160 --> 00:29:12,680
+But I argue that's, that's an equivalent challenge, um, with a regular SME.
+
+522
+00:29:13,000 --> 00:29:13,800
+Sure.
+
+523
+00:29:14,200 --> 00:29:14,520
+Right.
+
+524
+00:29:15,160 --> 00:29:20,240
+Alan has talked about on the podcast, like I remember, like I enjoyed this story.
+
+525
+00:29:20,240 --> 00:29:23,440
+Like you know, you knew shit about A-B testing.
+
+526
+00:29:23,560 --> 00:29:28,600
+You were asked to write a presentation on it and I don't know, like three hours or
+
+527
+00:29:28,600 --> 00:29:32,960
+something, I think it was like three weeks, but, and you're like, yeah, sure.
+
+528
+00:29:33,680 --> 00:29:41,880
+You, you did your research enough to, to confidently fake that you were an expert
+
+529
+00:29:41,920 --> 00:29:42,560
+on A-B testing.
+
+530
+00:29:42,560 --> 00:29:43,440
+Absolutely.
+
+531
+00:29:43,640 --> 00:29:45,400
+And that's been the history of my career.
+
+532
+00:29:45,400 --> 00:29:50,200
+I can, I am confident now after, you know, going through a hard way a few times,
+
+533
+00:29:50,200 --> 00:29:55,680
+but there are a few limits on what I can do given enough time.
+
+534
+00:29:56,360 --> 00:29:58,840
+Cause I, I can suck in knowledge and remember things.
+
+535
+00:29:58,840 --> 00:29:59,800
+That's my superpower.
+
+536
+00:30:00,040 --> 00:30:03,960
+I somehow learn things quickly and find a way to conceptualize them.
+
+537
+00:30:04,590 --> 00:30:05,630
+Now what Chad G.
+
+538
+00:30:05,630 --> 00:30:08,190
+Pahita, it accelerates my ability to do that.
+
+539
+00:30:08,350 --> 00:30:12,470
+Where before, like I have to make big batches of brain soup to learn things.
+
+540
+00:30:12,470 --> 00:30:16,830
+I had to look at 30 articles on experimentation and statistical significance
+
+541
+00:30:17,110 --> 00:30:21,830
+in order to understand how A-B experiments work and understand just the,
+
+542
+00:30:21,870 --> 00:30:23,030
+the gist behind them.
+
+543
+00:30:23,030 --> 00:30:28,590
+And I got out Google analytics and learn how to implement that in, in Google
+
+544
+00:30:28,590 --> 00:30:32,470
+analytics and, but I had to do all that and just kind of let it sit there for a
+
+545
+00:30:32,470 --> 00:30:34,350
+while and then the soup came out.
+
+546
+00:30:34,350 --> 00:30:34,710
+Okay.
+
+547
+00:30:34,870 --> 00:30:36,470
+This is how I think it works.
+
+548
+00:30:36,470 --> 00:30:38,910
+Well, now I can get a lot faster.
+
+549
+00:30:39,310 --> 00:30:40,670
+I can go to chat GPT right now.
+
+550
+00:30:40,670 --> 00:30:45,110
+It says, give me, give me three simple examples to explain, uh,
+
+551
+00:30:45,110 --> 00:30:46,270
+statistical significance.
+
+552
+00:30:46,590 --> 00:30:51,750
+Now I don't have to go like in the past 10 years ago when I gave that talk, I
+
+553
+00:30:51,750 --> 00:30:54,030
+had to go read a whole bunch of stuff.
+
+554
+00:30:54,030 --> 00:30:56,790
+Like they say the best way to learn something is try and teach it.
+
+555
+00:30:57,150 --> 00:30:57,390
+Yep.
+
+556
+00:30:57,670 --> 00:31:01,030
+And like now I can learn it faster.
+
+557
+00:31:01,030 --> 00:31:04,830
+Cause I focus on learning with the goal of teaching, uh, tell me stuff.
+
+558
+00:31:04,830 --> 00:31:07,950
+Chat GPT, genie, parrot, S and E tell me stuff.
+
+559
+00:31:07,950 --> 00:31:09,990
+So I can pretend like I know it.
+
+560
+00:31:10,470 --> 00:31:10,870
+Right.
+
+561
+00:31:11,110 --> 00:31:11,430
+Right.
+
+562
+00:31:11,470 --> 00:31:18,590
+And of course the one thing in that particular example, even, even if GPT
+
+563
+00:31:19,190 --> 00:31:22,600
+is making things up, right, which is the risk, right?
+
+564
+00:31:22,600 --> 00:31:25,240
+Cause you don't know you're asking it to teach you something.
+
+565
+00:31:25,240 --> 00:31:27,600
+So you don't know if it's making shit up or not.
+
+566
+00:31:27,640 --> 00:31:27,760
+Yeah.
+
+567
+00:31:27,760 --> 00:31:29,000
+But I have ways of checking that.
+
+568
+00:31:29,000 --> 00:31:30,440
+I trust, but verify.
+
+569
+00:31:30,480 --> 00:31:31,760
+No, but even then, right.
+
+570
+00:31:32,120 --> 00:31:33,480
+We we've talked about it before.
+
+571
+00:31:33,480 --> 00:31:37,560
+GPT is really good at bullshitting.
+
+572
+00:31:38,270 --> 00:31:38,510
+Right.
+
+573
+00:31:38,510 --> 00:31:44,590
+It would be really hard for, unless you are asking it, like if you're asking it,
+
+574
+00:31:44,590 --> 00:31:53,070
+something's, uh, philosophical or subjective where you're, you're basically
+
+575
+00:31:53,070 --> 00:31:59,540
+avoiding it, mentioning facts, things that can't be fact checked, right?
+
+576
+00:31:59,940 --> 00:32:01,020
+It's going to be fine.
+
+577
+00:32:01,460 --> 00:32:03,060
+No, it's wonderful.
+
+578
+00:32:03,060 --> 00:32:04,020
+It's better than fine.
+
+579
+00:32:04,020 --> 00:32:04,500
+It's great.
+
+580
+00:32:04,860 --> 00:32:05,180
+Right.
+
+581
+00:32:05,180 --> 00:32:10,540
+So what you have realized is if we go back to my little knowledge bubble,
+
+582
+00:32:10,540 --> 00:32:15,420
+it's inside of you, but you're like, Oh, my knowledge bubble, as you just
+
+583
+00:32:15,420 --> 00:32:16,940
+called out is pretty awesome.
+
+584
+00:32:16,980 --> 00:32:20,780
+You are able to puff air into your knowledge bubble really fast.
+
+585
+00:32:21,020 --> 00:32:24,900
+Chat GPT is a supercharged air compressor blowing into my bubble.
+
+586
+00:32:25,020 --> 00:32:28,580
+That's one thing, but it is also its own bubble.
+
+587
+00:32:29,060 --> 00:32:32,660
+That's that you have direct access to.
+
+588
+00:32:33,340 --> 00:32:35,340
+Like so many bubbles.
+
+589
+00:32:35,580 --> 00:32:38,060
+When we talk about the centaur, right?
+
+590
+00:32:38,060 --> 00:32:40,500
+And, and I forgot we were talking about centaur.
+
+591
+00:32:40,580 --> 00:32:41,060
+That's awesome.
+
+592
+00:32:42,380 --> 00:32:45,700
+You actually forgot what we were really talking about, which is LLNOps.
+
+593
+00:32:45,740 --> 00:32:47,420
+I'm tying it back.
+
+594
+00:32:47,500 --> 00:32:48,420
+Oh my God.
+
+595
+00:32:48,420 --> 00:32:49,020
+That's right.
+
+596
+00:32:49,020 --> 00:32:50,100
+That was like a week ago.
+
+597
+00:32:50,180 --> 00:32:50,820
+Keep going.
+
+598
+00:32:51,260 --> 00:32:51,660
+All right.
+
+599
+00:32:52,020 --> 00:33:01,180
+So if we, if we agree that AI plus humans outperform either of those
+
+600
+00:33:01,180 --> 00:33:04,340
+components on their own, like AI plus you, okay.
+
+601
+00:33:04,460 --> 00:33:05,900
+Nobody can disagree with that.
+
+602
+00:33:05,940 --> 00:33:06,340
+Go on.
+
+603
+00:33:06,700 --> 00:33:16,100
+And then we agree that in certain contexts, LLM is a, is a equivalent or perhaps
+
+604
+00:33:16,340 --> 00:33:18,620
+better SME than the human.
+
+605
+00:33:19,340 --> 00:33:19,740
+Mm-hmm.
+
+606
+00:33:19,980 --> 00:33:21,740
+Then I go, okay.
+
+607
+00:33:21,740 --> 00:33:28,700
+What can AI plus LLM be particularly in the application of ops?
+
+608
+00:33:29,180 --> 00:33:30,980
+Because, you know, this is AB testing.
+
+609
+00:33:31,500 --> 00:33:32,620
+Is that a rhetorical question?
+
+610
+00:33:32,620 --> 00:33:33,300
+Do you have an answer?
+
+611
+00:33:33,580 --> 00:33:38,140
+No, it's, it's, it, that's, that's rhetorical.
+
+612
+00:33:38,500 --> 00:33:40,420
+I'm going to me.
+
+613
+00:33:41,090 --> 00:33:44,010
+That feels like an adjacent possible.
+
+614
+00:33:44,330 --> 00:33:46,050
+Free inventions right here.
+
+615
+00:33:47,730 --> 00:33:49,250
+I got to, we're almost out of time here.
+
+616
+00:33:49,250 --> 00:33:53,130
+I got to tell you one thing going back half a story is one of my
+
+617
+00:33:53,130 --> 00:33:55,010
+favorite moments in life.
+
+618
+00:33:55,530 --> 00:33:59,650
+So Brent has like a master's degree in data bullshit.
+
+619
+00:33:59,770 --> 00:34:00,050
+Right.
+
+620
+00:34:00,090 --> 00:34:06,290
+That the actual degree it's the time when in the middle of a podcast, I pulled
+
+621
+00:34:06,330 --> 00:34:10,010
+out a statistical term and used it correctly.
+
+622
+00:34:10,250 --> 00:34:13,690
+The look on Brent's face like, yeah, I can fake it till I'm in.
+
+623
+00:34:13,690 --> 00:34:21,020
+I was just like, I don't, I don't remember my face.
+
+624
+00:34:21,020 --> 00:34:22,940
+I remember, I remember the conversation.
+
+625
+00:34:23,540 --> 00:34:24,820
+I don't remember my face.
+
+626
+00:34:24,820 --> 00:34:26,660
+And I'm like, okay, which one did I do?
+
+627
+00:34:26,660 --> 00:34:30,020
+Was it the holy shit or yeah.
+
+628
+00:34:30,840 --> 00:34:35,000
+No, I think it was just to wonder, just to wonder like, where did he learn
+
+629
+00:34:35,000 --> 00:34:36,280
+that word and how to use it?
+
+630
+00:34:36,280 --> 00:34:39,360
+No, I've been aware of your superpower here for a long time.
+
+631
+00:34:39,360 --> 00:34:41,760
+I was like, and I'm not going to confuse myself.
+
+632
+00:34:41,800 --> 00:34:44,200
+It is absolutely one of Alan's superpowers.
+
+633
+00:34:44,640 --> 00:34:48,960
+And the other one of yours that I'm jealous with is, is on writing.
+
+634
+00:34:49,440 --> 00:34:55,580
+We're both INTPs, but apparently that doesn't come, come with like the
+
+635
+00:34:55,580 --> 00:35:00,260
+ability to actually just sit down and write shit and then be done in 20 minutes.
+
+636
+00:35:00,500 --> 00:35:02,340
+Yeah, but it's different now.
+
+637
+00:35:02,340 --> 00:35:06,580
+I sit down, it takes me more than 20, but I write, I have written a blog post
+
+638
+00:35:06,700 --> 00:35:10,580
+every week for the last, now I'm very last over a year now.
+
+639
+00:35:11,180 --> 00:35:16,700
+And these days I write my post and then I paste it into a chat GPT and say,
+
+640
+00:35:16,740 --> 00:35:17,820
+and ask it for feedback.
+
+641
+00:35:17,900 --> 00:35:23,220
+And literally I say any feedback on, on this article and maybe I'll put
+
+642
+00:35:23,220 --> 00:35:24,860
+some context, but not really paste it in.
+
+643
+00:35:25,340 --> 00:35:27,820
+It gives me like 10 bullet points.
+
+644
+00:35:27,820 --> 00:35:31,580
+I usually ignore about eight of them and two of them are like, Oh, actually
+
+645
+00:35:31,580 --> 00:35:33,180
+yeah, I could do a better segue there.
+
+646
+00:35:33,260 --> 00:35:36,020
+It is a cheap and quick editor.
+
+647
+00:35:36,860 --> 00:35:37,620
+I paste it in there.
+
+648
+00:35:37,620 --> 00:35:40,340
+It's never, it never like hacks up a red line stuff.
+
+649
+00:35:40,340 --> 00:35:44,660
+But it gives some basic, like some of the tips it gives are the same every single
+
+650
+00:35:44,660 --> 00:35:49,220
+week, but it can say like it lets me know if I have, I always look for a mix
+
+651
+00:35:49,220 --> 00:35:52,460
+between anecdotes and like, that's the way I write.
+
+652
+00:35:52,780 --> 00:35:55,180
+I have stories I want to tell from experiences.
+
+653
+00:35:55,180 --> 00:35:58,220
+I have books I want to refer to because I want people to know that
+
+654
+00:35:58,420 --> 00:36:00,060
+I have no ideas of my own.
+
+655
+00:36:00,500 --> 00:36:01,300
+I am really good.
+
+656
+00:36:01,300 --> 00:36:06,980
+Again, it's using these superpowers are related because I use the brain soup
+
+657
+00:36:06,980 --> 00:36:10,620
+I get from reading like 50 gazillion books and I let them regurgitate.
+
+658
+00:36:10,620 --> 00:36:11,980
+And I go, Oh, wait a minute.
+
+659
+00:36:11,980 --> 00:36:13,660
+This came up in a book and I figure out what it was anyway.
+
+660
+00:36:14,460 --> 00:36:16,540
+Try GPT is my, is my quick and dirty editor.
+
+661
+00:36:16,540 --> 00:36:17,140
+It makes me better.
+
+662
+00:36:17,180 --> 00:36:20,420
+Going all the way back to the beginning of the episode.
+
+663
+00:36:20,700 --> 00:36:21,620
+Oh my God.
+
+664
+00:36:21,620 --> 00:36:22,140
+We're good.
+
+665
+00:36:22,180 --> 00:36:22,500
+Yeah.
+
+666
+00:36:22,540 --> 00:36:28,060
+I am, I am absolutely impressed at my hit rate of being able to remember the
+
+667
+00:36:28,060 --> 00:36:33,990
+tangent, uh, usually I get lost and can't find my way back, but on CICD.
+
+668
+00:36:34,590 --> 00:36:34,950
+Right.
+
+669
+00:36:35,150 --> 00:36:35,470
+Yeah.
+
+670
+00:36:35,470 --> 00:36:42,430
+I, I will actually fully argue that that was the main point of the Phoenix project.
+
+671
+00:36:42,910 --> 00:36:43,110
+Right.
+
+672
+00:36:43,110 --> 00:36:47,590
+If you think about it, if you read that story, you think about how
+
+673
+00:36:48,070 --> 00:36:50,030
+the world frigging changed.
+
+674
+00:36:50,730 --> 00:36:52,850
+It was because they deployed CICD.
+
+675
+00:36:53,290 --> 00:36:53,530
+Yeah.
+
+676
+00:36:53,810 --> 00:36:54,050
+Right.
+
+677
+00:36:54,050 --> 00:36:57,970
+It, it, it isn't what they built, but how they built it.
+
+678
+00:36:58,370 --> 00:36:59,490
+They tried to move faster.
+
+679
+00:36:59,690 --> 00:37:04,330
+Uh, there's a whole other blog poster, blog post, whole other podcast here.
+
+680
+00:37:04,330 --> 00:37:05,130
+And we'll get to it next time.
+
+681
+00:37:05,130 --> 00:37:06,410
+It's actually what I was going to get to.
+
+682
+00:37:06,410 --> 00:37:08,890
+This was better, but it will be, other one will be good next week.
+
+683
+00:37:08,890 --> 00:37:10,290
+Just, just don't worry about it in two weeks.
+
+684
+00:37:11,080 --> 00:37:14,360
+Going fast highlights where your bottlenecks are.
+
+685
+00:37:14,360 --> 00:37:16,440
+If you go slow, you never see the bottlenecks.
+
+686
+00:37:17,240 --> 00:37:17,920
+You'll never see them.
+
+687
+00:37:18,560 --> 00:37:19,240
+They don't exist.
+
+688
+00:37:19,400 --> 00:37:19,800
+Yeah.
+
+689
+00:37:20,360 --> 00:37:22,280
+You don't even know you're numb to them.
+
+690
+00:37:22,280 --> 00:37:23,200
+They just don't happen.
+
+691
+00:37:24,030 --> 00:37:24,750
+Move faster.
+
+692
+00:37:24,750 --> 00:37:26,030
+Those little bumps get in the way.
+
+693
+00:37:26,070 --> 00:37:32,150
+Well, in any end, if you're, well, so one of the important blessings that I did
+
+694
+00:37:32,230 --> 00:37:35,070
+back in the days when I was actively doing agile coaching.
+
+695
+00:37:35,390 --> 00:37:39,990
+Back in the day, everyone thought it was purely about moving fast and
+
+696
+00:37:40,270 --> 00:37:46,060
+moving fast is very important, but the correct statement is adapt fast.
+
+697
+00:37:46,380 --> 00:37:46,940
+Absolutely.
+
+698
+00:37:46,980 --> 00:37:47,780
+We've talked about that.
+
+699
+00:37:47,780 --> 00:37:49,900
+There's a difference between iteration and adapting.
+
+700
+00:37:49,900 --> 00:37:54,020
+A lot of teams who fuck up agile do it because they focus so much on
+
+701
+00:37:54,060 --> 00:37:56,140
+iterating and not on adapting.
+
+702
+00:37:56,140 --> 00:38:01,940
+And CICD is so important because you're not waiting to integrate with main.
+
+703
+00:38:01,940 --> 00:38:03,300
+You're not waiting.
+
+704
+00:38:03,340 --> 00:38:04,220
+Feedback loops.
+
+705
+00:38:04,220 --> 00:38:11,500
+You get the feedback instantly and you're continuously improving main, right?
+
+706
+00:38:11,540 --> 00:38:14,740
+Um, which has a dramatic reduction in risk.
+
+707
+00:38:15,420 --> 00:38:15,700
+Yeah.
+
+708
+00:38:15,900 --> 00:38:18,020
+Um, one, one gazillion percent.
+
+709
+00:38:19,240 --> 00:38:19,640
+Agreed.
+
+710
+00:38:19,920 --> 00:38:20,760
+If that were possible.
+
+711
+00:38:21,660 --> 00:38:22,420
+I think it is.
+
+712
+00:38:22,900 --> 00:38:23,340
+Why not?
+
+713
+00:38:23,740 --> 00:38:25,740
+Two Brazilian, two Brazilian percent.
+
+714
+00:38:27,020 --> 00:38:28,180
+A Brazilian.
+
+715
+00:38:28,540 --> 00:38:28,820
+Yeah.
+
+716
+00:38:29,680 --> 00:38:31,240
+How much that that's like a law, right?
+
+717
+00:38:31,880 --> 00:38:35,380
+Uh, uh, well, no, that's like the person who lives in, in a
+
+718
+00:38:35,460 --> 00:38:36,620
+country in South America.
+
+719
+00:38:37,820 --> 00:38:38,980
+Oh, weird.
+
+720
+00:38:39,260 --> 00:38:39,860
+Yeah.
+
+721
+00:38:41,020 --> 00:38:41,380
+Okay.
+
+722
+00:38:41,500 --> 00:38:42,300
+Well, thanks.
+
+723
+00:38:42,540 --> 00:38:46,100
+This has been the, um, the dad joke portion of the AB testing podcast.
+
+724
+00:38:46,100 --> 00:38:47,260
+Really appreciate you coming by.
+
+725
+00:38:47,460 --> 00:38:48,140
+We'll be here all week.
+
+726
+00:38:49,180 --> 00:38:50,420
+Let's call it a day.
+
+727
+00:38:50,420 --> 00:38:53,300
+I got, this is cool because now I have a topic queued up for next
+
+728
+00:38:53,300 --> 00:38:54,780
+time when we talk in two weeks.
+
+729
+00:38:55,060 --> 00:38:56,940
+Yippee-ki-yay mother.
+
+730
+00:38:56,940 --> 00:38:57,660
+This is Alan.
+
+731
+00:38:57,820 --> 00:38:58,660
+Yes, this is Brent.
+
+732
+00:38:58,820 --> 00:39:00,220
+And we'll see you next time.
+

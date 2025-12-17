@@ -1,0 +1,2174 @@
+WEBVTT
+
+00:00:03.380 --> 00:00:07.820
+Welcome to A.B. testing podcast, your modern testing podcast.
+
+00:00:07.820 --> 00:00:13.540
+Your hosts, Alan and Brent will be here to guide you through topics on testing,
+
+00:00:13.540 --> 00:00:16.820
+leadership, agile, and anything else that comes to mind.
+
+00:00:16.820 --> 00:00:18.980
+Now on with the show.
+
+00:00:18.980 --> 00:00:23.660
+Good morning and welcome to the A.B. testing podcast.
+
+00:00:23.660 --> 00:00:24.660
+Hello.
+
+00:00:25.650 --> 00:00:26.650
+Hello.
+
+00:00:26.650 --> 00:00:33.610
+What I want to do today is take a deep breath and reflect on the last 114 episodes and
+
+00:00:33.610 --> 00:00:38.160
+ask yourself why would you come back for more?
+
+00:00:38.160 --> 00:00:39.160
+I'm Alan.
+
+00:00:39.160 --> 00:00:40.160
+I'm Brent.
+
+00:00:40.160 --> 00:00:42.280
+We're here for episode 115 of the A.B.
+
+00:00:42.280 --> 00:00:43.960
+testing podcast.
+
+00:00:43.960 --> 00:00:49.080
+And it's not like I plan it, but I just like to surprise Brent a little bit.
+
+00:00:49.080 --> 00:00:50.080
+It's good to see you, man.
+
+00:00:50.080 --> 00:00:51.080
+It's been a while.
+
+00:00:51.080 --> 00:00:52.080
+It has been a while.
+
+00:00:52.080 --> 00:00:53.080
+We have had...
+
+00:00:53.080 --> 00:00:57.520
+I'm not even certain we have a good answer to why we need to come back for more.
+
+00:00:57.520 --> 00:00:59.760
+Because it's like watching a train wreck.
+
+00:00:59.760 --> 00:01:02.360
+People want to see what's going to happen.
+
+00:01:02.360 --> 00:01:06.360
+That's probably the best reason I could think of.
+
+00:01:06.360 --> 00:01:07.390
+Yeah.
+
+00:01:07.390 --> 00:01:10.630
+So travel, holidays, other stuff.
+
+00:01:10.630 --> 00:01:13.750
+We did do a show in 2020, right?
+
+00:01:13.750 --> 00:01:14.750
+We did.
+
+00:01:14.750 --> 00:01:16.190
+So this is our second of 2020.
+
+00:01:16.190 --> 00:01:17.190
+It is.
+
+00:01:17.190 --> 00:01:18.190
+We're a little slow.
+
+00:01:18.190 --> 00:01:20.470
+We're going to get back on track.
+
+00:01:20.470 --> 00:01:25.390
+I don't have any extensive long traveling trips coming up.
+
+00:01:25.390 --> 00:01:26.390
+I am.
+
+00:01:26.390 --> 00:01:31.210
+Of course, no one wants to travel anymore today due to the coronavirus, the virus
+
+00:01:31.210 --> 00:01:33.010
+you get from drinking Mexican beer.
+
+00:01:33.010 --> 00:01:34.010
+Right.
+
+00:01:34.010 --> 00:01:35.010
+Is that right?
+
+00:01:35.010 --> 00:01:36.010
+That's what I have.
+
+00:01:36.010 --> 00:01:41.770
+I haven't been totally caught up on the details, but I know I didn't have any trips to China,
+
+00:01:41.770 --> 00:01:43.210
+so those aren't canceled.
+
+00:01:43.210 --> 00:01:45.170
+So anyway, we're back.
+
+00:01:45.170 --> 00:01:48.450
+We're going to do a podcast and we'll do another one in a couple of weeks as well
+
+00:01:48.450 --> 00:01:49.770
+and try and get back on track.
+
+00:01:49.770 --> 00:01:51.760
+Is that true?
+
+00:01:51.760 --> 00:01:52.760
+Is that our...
+
+00:01:52.760 --> 00:01:55.280
+Brent, Brent, rolling your eyes and shaking your head.
+
+00:01:55.280 --> 00:01:59.000
+The probability is greater than 50%.
+
+00:01:59.000 --> 00:02:06.200
+After 115 episodes, Brent doesn't quite realize that people who listen to this silly thing
+
+00:02:06.200 --> 00:02:07.720
+can't see his face.
+
+00:02:07.720 --> 00:02:10.240
+Anyway, shall we just...
+
+00:02:10.240 --> 00:02:17.120
+Anything particularly exciting or interesting to talk about before we get off onto our topics?
+
+00:02:17.120 --> 00:02:19.920
+I'm going to Scottsdale, Arizona this weekend.
+
+00:02:19.920 --> 00:02:20.920
+Going to retire?
+
+00:02:20.920 --> 00:02:21.920
+No.
+
+00:02:21.920 --> 00:02:22.920
+Play golf?
+
+00:02:22.920 --> 00:02:23.920
+No.
+
+00:02:23.920 --> 00:02:24.920
+Watch the Mariners?
+
+00:02:24.920 --> 00:02:25.920
+Go...
+
+00:02:25.920 --> 00:02:27.360
+Did they train there?
+
+00:02:27.360 --> 00:02:28.900
+I don't know.
+
+00:02:29.540 --> 00:02:33.000
+Going to do exactly nothing.
+
+00:02:33.000 --> 00:02:36.280
+And you're going to go all the way to Scottsdale, Arizona to do that?
+
+00:02:36.280 --> 00:02:37.280
+Yes.
+
+00:02:37.280 --> 00:02:40.360
+Because you're going to do exactly nothing someplace that's warm.
+
+00:02:40.360 --> 00:02:41.360
+Yes.
+
+00:02:41.360 --> 00:02:43.240
+That's exactly what we're excited about.
+
+00:02:43.240 --> 00:02:46.600
+I'm going to go be colder next week.
+
+00:02:46.600 --> 00:02:53.440
+It's my yearly pilgrimage to Whistler to try and see if my aging body can still fly down
+
+00:02:53.440 --> 00:02:54.820
+a mountain.
+
+00:02:54.820 --> 00:02:56.460
+Yeah, it should be fun.
+
+00:02:56.460 --> 00:03:01.500
+There's a lot of exciting things coming my way, coming up in the near future.
+
+00:03:01.500 --> 00:03:08.630
+I'm apparently doing a presentation to Satya next month.
+
+00:03:08.630 --> 00:03:10.990
+Share with you and the three.
+
+00:03:10.990 --> 00:03:15.870
+Oh my God, is my imposter syndrome just proactively triggering.
+
+00:03:15.870 --> 00:03:16.870
+Excellent.
+
+00:03:16.870 --> 00:03:18.430
+We're going to talk more about that later.
+
+00:03:18.430 --> 00:03:19.950
+That would have been a great segue.
+
+00:03:19.950 --> 00:03:21.550
+It would have.
+
+00:03:21.550 --> 00:03:23.070
+But that will get you...
+
+00:03:23.070 --> 00:03:27.950
+That little teaser will get you to come back and listen to the whole podcast.
+
+00:03:27.950 --> 00:03:34.150
+But you also mentioned, obviously I can't talk about it, but yesterday I can talk about
+
+00:03:34.150 --> 00:03:35.150
+some things.
+
+00:03:35.150 --> 00:03:49.760
+So Microsoft has a whole world crisis team that go through and run humanitarian missions.
+
+00:03:49.760 --> 00:03:55.640
+You may have heard that we're in the news.
+
+00:03:55.640 --> 00:04:06.240
+We have a plan where we're going to be completely carbon neutral, including retroactively sometime
+
+00:04:06.240 --> 00:04:10.040
+in the next few years.
+
+00:04:10.040 --> 00:04:16.960
+So there's a humanitarian aspect of Microsoft that is on the rise and growing.
+
+00:04:17.850 --> 00:04:33.810
+But my team, which now has some renown for natural language processing, is within Microsoft,
+
+00:04:33.810 --> 00:04:38.930
+has been called in to assist on the coronavirus stuff.
+
+00:04:38.930 --> 00:04:46.460
+So I already know, for example, at least one thing the common populace doesn't know.
+
+00:04:46.460 --> 00:04:49.000
+Not sharing that here.
+
+00:04:49.000 --> 00:04:51.600
+Are we all going to die?
+
+00:04:51.600 --> 00:04:52.600
+No.
+
+00:04:52.600 --> 00:04:54.480
+Is that thing you can't answer?
+
+00:04:54.480 --> 00:04:55.480
+Not all of us?
+
+00:04:55.480 --> 00:04:56.480
+Okay, great.
+
+00:04:56.480 --> 00:04:57.480
+No.
+
+00:04:57.480 --> 00:05:01.880
+And if you haven't done research, so this is the thing that's very common with this
+
+00:05:01.880 --> 00:05:03.200
+type of stuff.
+
+00:05:03.200 --> 00:05:13.670
+So coronavirus is, in essence, a worse flu virus.
+
+00:05:13.670 --> 00:05:17.790
+So flu virus you can die from.
+
+00:05:17.790 --> 00:05:24.930
+Coronavirus, there's a greater likelihood that you can die from, but not significantly
+
+00:05:24.930 --> 00:05:25.960
+greater.
+
+00:05:25.960 --> 00:05:34.510
+So like Douglas Haddow would say, keep calm, don't panic.
+
+00:05:34.510 --> 00:05:35.510
+It's not...
+
+00:05:35.510 --> 00:05:41.110
+You can actually do a lot of harm by panicking.
+
+00:05:41.110 --> 00:05:42.110
+People want to panic.
+
+00:05:42.110 --> 00:05:45.680
+They want this to be the one.
+
+00:05:45.680 --> 00:05:49.920
+The 20th century, the 21st century black plague.
+
+00:05:49.920 --> 00:05:52.800
+It's not going to be that.
+
+00:05:52.800 --> 00:05:57.800
+I think the worst thing that's going to happen is a lot of people are going to be inconvenienced
+
+00:05:57.800 --> 00:05:58.800
+greatly.
+
+00:05:58.800 --> 00:06:01.850
+All right.
+
+00:06:01.850 --> 00:06:02.850
+All right.
+
+00:06:02.850 --> 00:06:03.850
+Shall we start?
+
+00:06:03.850 --> 00:06:04.850
+Yeah.
+
+00:06:04.850 --> 00:06:05.850
+Okay.
+
+00:06:05.850 --> 00:06:07.210
+I have to turn around and see what the topic on the board...
+
+00:06:07.210 --> 00:06:09.770
+Oh, I should mention, we're in a whole new building.
+
+00:06:09.770 --> 00:06:11.170
+Brent has moved offices.
+
+00:06:11.170 --> 00:06:12.170
+Yes.
+
+00:06:12.170 --> 00:06:14.930
+He's in a secret location.
+
+00:06:14.930 --> 00:06:16.010
+I can't announce it.
+
+00:06:16.010 --> 00:06:20.370
+I had to be blindfolded, had a hood over my head, a couple of people walked me out along
+
+00:06:20.370 --> 00:06:25.810
+to the hallways, and I'm in the middle of a dark room, middle of a building inside of
+
+00:06:25.810 --> 00:06:26.890
+somewhere at Microsoft.
+
+00:06:26.890 --> 00:06:33.600
+So that's exciting, but let's just hope I get out in time to edit this podcast.
+
+00:06:33.600 --> 00:06:34.600
+It actually...
+
+00:06:34.600 --> 00:06:37.200
+So it's fairly new to me as well.
+
+00:06:37.200 --> 00:06:41.640
+It took us a good five minutes just to find the conference room because I haven't been
+
+00:06:41.640 --> 00:06:43.520
+in the building long enough to know these things.
+
+00:06:43.520 --> 00:06:47.680
+And I was a little late and I thought Brent would be prepared, but I thought wrong because
+
+00:06:47.680 --> 00:06:48.680
+I didn't want to.
+
+00:06:48.680 --> 00:06:49.680
+I don't know why you would think that.
+
+00:06:49.680 --> 00:06:50.680
+There was no reason.
+
+00:06:50.680 --> 00:06:51.680
+There was no reason.
+
+00:06:51.680 --> 00:06:57.040
+So let's go ahead and segue into the topic you alluded to earlier.
+
+00:06:57.040 --> 00:06:58.600
+You're presenting to Satya.
+
+00:06:58.600 --> 00:06:59.600
+Yep.
+
+00:06:59.600 --> 00:07:00.600
+And I have presented to Satya.
+
+00:07:00.600 --> 00:07:04.400
+Well, I've been part of a presentation to Satya, which is way different.
+
+00:07:04.400 --> 00:07:10.240
+I have also been part of a presentation to Bill Gates, and I have also was around
+
+00:07:10.240 --> 00:07:11.680
+during the Steve Ballmer area.
+
+00:07:11.680 --> 00:07:12.680
+So area?
+
+00:07:12.840 --> 00:07:14.840
+Steve Ballmer era.
+
+00:07:14.840 --> 00:07:19.320
+In my time off, I forgot how to speak, but whatever.
+
+00:07:19.320 --> 00:07:25.480
+One of the three whom I've forgotten asked if we could talk about like what's different?
+
+00:07:25.480 --> 00:07:31.380
+What was Microsoft like in the Gates, Ballmer and Satya eras?
+
+00:07:31.380 --> 00:07:34.560
+So that's, I think it's worthy of an opinion.
+
+00:07:34.560 --> 00:07:36.320
+I have opinions of all three.
+
+00:07:36.320 --> 00:07:40.380
+I don't know how you want to structure this or start because we started about the same
+
+00:07:40.380 --> 00:07:41.380
+time at Microsoft.
+
+00:07:41.380 --> 00:07:45.300
+We both had a significant amount of oh, there has been a significant milestone.
+
+00:07:45.300 --> 00:07:52.620
+I saw I'm now on an age where significant milestones just make me feel old.
+
+00:07:52.620 --> 00:07:54.260
+You have no idea.
+
+00:07:54.260 --> 00:07:58.940
+But last week I hit my 25th year.
+
+00:07:58.940 --> 00:07:59.940
+Oh, wow.
+
+00:07:59.940 --> 00:08:00.940
+Yeah.
+
+00:08:00.940 --> 00:08:01.940
+I, where would I be?
+
+00:08:01.940 --> 00:08:06.380
+If I was still at Microsoft, I was slightly behind you, right?
+
+00:08:06.380 --> 00:08:09.380
+So I would hit 25 in.
+
+00:08:10.020 --> 00:08:12.900
+Oh, June, this June.
+
+00:08:12.900 --> 00:08:13.900
+Yeah.
+
+00:08:13.900 --> 00:08:18.690
+I actually remember you being slightly ahead of me, but it would have been at Microsoft
+
+00:08:18.690 --> 00:08:22.450
+since January, 95, but I wasn't full time until June.
+
+00:08:22.450 --> 00:08:24.170
+So June would have been my 25.
+
+00:08:24.170 --> 00:08:25.170
+All right.
+
+00:08:25.170 --> 00:08:26.420
+Then.
+
+00:08:26.420 --> 00:08:27.420
+Yeah.
+
+00:08:27.420 --> 00:08:30.700
+So we're very similar.
+
+00:08:30.700 --> 00:08:40.160
+You have less experience now on how the Satya era is progressing, but I don't know.
+
+00:08:40.160 --> 00:08:41.160
+I guess I'll just start.
+
+00:08:41.920 --> 00:08:46.000
+Should we stop and go backward or how do you want to do this?
+
+00:08:46.000 --> 00:08:47.260
+So here's.
+
+00:08:47.260 --> 00:08:49.360
+You want to start and I'll jump in with commentary.
+
+00:08:49.360 --> 00:08:50.360
+Yeah.
+
+00:08:50.360 --> 00:08:54.760
+So here's how I view and we will have different perspectives and I guess we can just talk
+
+00:08:54.760 --> 00:08:57.560
+about what we see as a different perspective.
+
+00:08:57.560 --> 00:09:06.240
+The way I see the three CEOs and it was it was interesting that the bomber and the
+
+00:09:06.360 --> 00:09:15.190
+Bill Gates, at least during my career here, was very cleanly separated by decades.
+
+00:09:15.190 --> 00:09:16.190
+Right.
+
+00:09:16.190 --> 00:09:25.730
+Microsoft, as you may or may not know, started in 1975 in actually Albuquerque, New Mexico.
+
+00:09:25.730 --> 00:09:26.730
+Right.
+
+00:09:26.730 --> 00:09:28.050
+All well-known facts.
+
+00:09:28.050 --> 00:09:31.550
+I did not join until 1994.
+
+00:09:31.550 --> 00:09:36.990
+So there was nearly two decades of Microsoft before I came here.
+
+00:09:36.990 --> 00:09:38.030
+Yeah.
+
+00:09:38.030 --> 00:09:42.270
+And for context, because we joined about the same time, Microsoft was about 15,000 people
+
+00:09:42.270 --> 00:09:43.270
+back then.
+
+00:09:43.270 --> 00:09:44.430
+Probably 94 a little less.
+
+00:09:44.430 --> 00:09:47.250
+It was 15 when I joined.
+
+00:09:47.250 --> 00:09:48.250
+Yeah.
+
+00:09:48.250 --> 00:09:54.940
+My, if you use batch numbers, those aren't sequential.
+
+00:09:54.940 --> 00:09:57.380
+So I have a five digit batch number.
+
+00:09:57.380 --> 00:09:58.380
+Mine too.
+
+00:09:58.380 --> 00:10:02.500
+And I can tell you mine because it's not, it's not, it's invalid.
+
+00:10:02.500 --> 00:10:04.580
+I still remember my numbers, 39630.
+
+00:10:04.580 --> 00:10:05.580
+Yeah.
+
+00:10:05.580 --> 00:10:08.060
+So mine's 5,000 less than yours.
+
+00:10:08.060 --> 00:10:10.700
+But again, Alan believes they're not sequential.
+
+00:10:10.700 --> 00:10:14.620
+I think at that time they were, but I don't know.
+
+00:10:14.620 --> 00:10:15.620
+Don't care.
+
+00:10:15.620 --> 00:10:18.140
+Not relevant today.
+
+00:10:18.140 --> 00:10:23.650
+Here's how I see as the three different decades.
+
+00:10:23.650 --> 00:10:30.220
+And I don't know if Satya has already been here a decade, but it's coming up on it.
+
+00:10:30.220 --> 00:10:33.060
+Bill Gates, we were all about growth.
+
+00:10:33.060 --> 00:10:45.260
+And the way I would specify that that decade was sort of the competitive innovation decade.
+
+00:10:45.260 --> 00:10:47.260
+Right.
+
+00:10:47.260 --> 00:10:51.700
+We were rapidly growing.
+
+00:10:51.700 --> 00:10:58.760
+The way Bill ran things, he highly encouraged cross team competition.
+
+00:10:58.760 --> 00:11:09.000
+In some regards, that cultural aspect is what led not only James, but I think also you to
+
+00:11:09.000 --> 00:11:10.000
+leave the company.
+
+00:11:10.000 --> 00:11:11.000
+Yeah.
+
+00:11:11.000 --> 00:11:12.000
+Right.
+
+00:11:12.000 --> 00:11:13.600
+Because it's competition over customers.
+
+00:11:13.600 --> 00:11:15.020
+Right.
+
+00:11:15.020 --> 00:11:17.540
+Competition is more important than the customer.
+
+00:11:17.540 --> 00:11:18.540
+Internal competition.
+
+00:11:18.540 --> 00:11:19.540
+Everything's about competition.
+
+00:11:19.540 --> 00:11:24.860
+Internal, but it was the way to build up the abilities to compete for external customers
+
+00:11:24.860 --> 00:11:25.860
+was to compete internally.
+
+00:11:25.860 --> 00:11:27.020
+And that was still around.
+
+00:11:27.020 --> 00:11:34.060
+When I worked on teams to jump ahead, there were at least two or three other groups that
+
+00:11:34.060 --> 00:11:37.020
+thought they were building a Slack competitor.
+
+00:11:37.020 --> 00:11:40.700
+Our team just built the one that Satya liked best.
+
+00:11:40.700 --> 00:11:41.760
+Right.
+
+00:11:41.760 --> 00:11:42.760
+Right.
+
+00:11:42.760 --> 00:11:49.840
+And while I don't have a lot of visibility, I don't know too many teams that are doing
+
+00:11:49.840 --> 00:11:50.960
+it today.
+
+00:11:50.960 --> 00:11:57.280
+I do believe that they are still likely teams in Microsoft, both believing that they are
+
+00:11:57.280 --> 00:12:00.420
+going after the same mission.
+
+00:12:00.420 --> 00:12:04.910
+And that's that as a business strategy, I think that's fine.
+
+00:12:04.910 --> 00:12:06.350
+It's fine.
+
+00:12:06.350 --> 00:12:14.110
+It's not again, I got burned out on competition being part of the way we built software,
+
+00:12:14.110 --> 00:12:20.630
+even internal within a team due to the way people were reviewed, the way the highly
+
+00:12:20.630 --> 00:12:24.110
+competitive I must crush you to get up.
+
+00:12:24.110 --> 00:12:26.470
+It's like this isn't helping people.
+
+00:12:26.470 --> 00:12:34.950
+The incentive model in combination with these, these competitive, again, competitive innovation
+
+00:12:34.950 --> 00:12:43.030
+strategies created a lot in my view, it created a long term cultural issue that actually
+
+00:12:43.030 --> 00:12:44.390
+still exists today.
+
+00:12:44.390 --> 00:12:52.130
+Not nearly as bad as it did, but still exists and is detrimental today.
+
+00:12:52.130 --> 00:13:03.440
+New startups that are going into space similar to Microsoft, they have the ability to move
+
+00:13:03.440 --> 00:13:09.240
+forward in a way because some of the teams within Microsoft are going to be busy stepping
+
+00:13:09.240 --> 00:13:11.440
+on each other's toes, which will slow us down.
+
+00:13:11.440 --> 00:13:13.760
+I'm reminded of a Steven Sinek story.
+
+00:13:13.760 --> 00:13:16.920
+I believe was in leaders eat last, but I could be wrong.
+
+00:13:16.920 --> 00:13:22.600
+Ray talks about I'm sure I shared this on the podcast before where he was at a Microsoft
+
+00:13:22.600 --> 00:13:23.600
+exec offside.
+
+00:13:23.600 --> 00:13:33.500
+This is in the Balmer era and he saw presentations from execs and 90% of them were about competing
+
+00:13:33.500 --> 00:13:35.620
+their competitors.
+
+00:13:35.620 --> 00:13:38.840
+Who are they competing with?
+
+00:13:38.840 --> 00:13:42.480
+That team, that team, that team, and that company, that company.
+
+00:13:42.480 --> 00:13:45.640
+Then he went to an Apple and they've changed also.
+
+00:13:45.640 --> 00:13:46.640
+They have new CEOs.
+
+00:13:46.640 --> 00:13:53.360
+Went to an Apple exec retreat within the same year and 100% of those customers were what
+
+00:13:53.360 --> 00:13:54.800
+they were doing for the customer.
+
+00:13:54.800 --> 00:14:01.200
+I think there's something to be said about corporate culture there.
+
+00:14:01.200 --> 00:14:06.450
+Did you ever go to a, were you ever part of a Bill G review?
+
+00:14:06.450 --> 00:14:07.490
+Not a Bill G review.
+
+00:14:07.490 --> 00:14:13.250
+I mean, I've been in meetings with Bill, but never one of the official Bill G reviews.
+
+00:14:13.250 --> 00:14:19.090
+So I had two, I had two unique experiences with Bill Gates.
+
+00:14:19.090 --> 00:14:23.250
+One was presenting in a group of test architects.
+
+00:14:23.250 --> 00:14:28.870
+The original six or seven of us gave a presentation to him on what was going on.
+
+00:14:28.870 --> 00:14:31.190
+It was state of the art and testing.
+
+00:14:31.190 --> 00:14:33.910
+And we just made, made stuff up.
+
+00:14:33.910 --> 00:14:38.470
+But I remember him walking in the room and saying something to the effect of I'm glad
+
+00:14:38.470 --> 00:14:39.790
+you're here.
+
+00:14:39.790 --> 00:14:44.910
+I pay a ridiculous amount of money to hire testers for my company, but I don't know what
+
+00:14:44.910 --> 00:14:47.210
+you do.
+
+00:14:47.210 --> 00:14:48.530
+But after that, he was really nice.
+
+00:14:48.530 --> 00:14:51.410
+He was actually interested in what we had to talk about.
+
+00:14:51.410 --> 00:14:52.410
+He liked the techniques.
+
+00:14:52.410 --> 00:14:58.940
+We showed him some model based testing stuff with some visualization and he loved the visual.
+
+00:14:58.940 --> 00:15:02.260
+He wanted to play with the visualization for a long time, but we didn't let him.
+
+00:15:02.260 --> 00:15:03.260
+We moved on.
+
+00:15:03.260 --> 00:15:06.500
+But anyway, very super mellow friendly.
+
+00:15:06.500 --> 00:15:07.500
+Yeah.
+
+00:15:07.500 --> 00:15:16.140
+He was in a Bill G business review years later and he got the result he wanted and it was
+
+00:15:16.140 --> 00:15:19.980
+it was good to watch him work because he was so smart and so quick and he could pick apart
+
+00:15:19.980 --> 00:15:27.660
+anything and he would spot better than anyone I've ever seen where you had, where you were
+
+00:15:27.660 --> 00:15:30.790
+right and where you were hand waving.
+
+00:15:30.790 --> 00:15:37.500
+And to me, people knew this about him, yet they still fell back on.
+
+00:15:37.500 --> 00:15:45.220
+I mean, just the idea that I would, I was watching a PM on our team get torn apart because he
+
+00:15:45.220 --> 00:15:54.000
+went off script, started talking a little bit hyperbolic and, and he got ripped apart.
+
+00:15:54.000 --> 00:16:00.700
+So it was about facts and data and not feelings and about knowing exactly what you're doing
+
+00:16:00.700 --> 00:16:05.660
+and why you were doing it and backing it up and anything else was just shredded off
+
+00:16:05.660 --> 00:16:09.400
+like meat on a bone.
+
+00:16:09.400 --> 00:16:20.830
+There is a bit of advice that I give people and it's very relevant here.
+
+00:16:20.830 --> 00:16:30.130
+I don't know if it prevails multiple different companies here.
+
+00:16:30.130 --> 00:16:34.200
+A path of success is visibility.
+
+00:16:34.200 --> 00:16:40.640
+And it's well known, hey, like for example, I'm doing a presentation to Satya.
+
+00:16:40.640 --> 00:16:43.960
+I should be super excited.
+
+00:16:43.960 --> 00:16:45.880
+I'm going to be visible to Satya.
+
+00:16:45.880 --> 00:16:52.200
+That's going to grease the wheels for my triple skip promotion next month.
+
+00:16:52.200 --> 00:16:58.960
+That's I think, I mean, that's hyperbole, but that's kind of how the old school guard
+
+00:16:58.960 --> 00:16:59.960
+would view these things.
+
+00:17:00.400 --> 00:17:04.760
+And I'd say very much the way it's viewed now.
+
+00:17:04.760 --> 00:17:10.120
+I mean, I've been gone three years, but that was, that was still 100% the case three years
+
+00:17:10.120 --> 00:17:12.240
+ago.
+
+00:17:12.240 --> 00:17:13.240
+Go on.
+
+00:17:13.240 --> 00:17:18.880
+It is not 100% today, but yes, it's still there.
+
+00:17:18.880 --> 00:17:19.880
+Absolutely.
+
+00:17:19.880 --> 00:17:26.600
+Like until, until much of the old guard keeping, keeping that old culture alive, retire or otherwise
+
+00:17:26.600 --> 00:17:28.360
+leave the company.
+
+00:17:28.360 --> 00:17:31.520
+AKA your last boss.
+
+00:17:31.520 --> 00:17:32.520
+Yep.
+
+00:17:32.520 --> 00:17:33.520
+Yep.
+
+00:17:33.520 --> 00:17:34.520
+I saw that.
+
+00:17:34.520 --> 00:17:35.520
+Yeah.
+
+00:17:35.520 --> 00:17:36.520
+The, it's,
+
+00:17:36.520 --> 00:17:38.360
+That's going to be, and let me just a quick tangent.
+
+00:17:38.360 --> 00:17:40.160
+That's going to be interesting to watch.
+
+00:17:40.160 --> 00:17:48.020
+So my old VP is retiring and how shall I put this without being, I don't think anybody
+
+00:17:48.020 --> 00:17:53.500
+in my old team is educated enough to listen to the podcast except for, except for Dan.
+
+00:17:53.500 --> 00:17:54.660
+Hey, Dan.
+
+00:17:54.660 --> 00:17:59.940
+It's going to be interesting politically what happens because that org, but push me over
+
+00:17:59.940 --> 00:18:04.540
+the top and leaving, that org was built around people.
+
+00:18:04.540 --> 00:18:09.210
+And this is not, you know, I, I, I think teams is doing well.
+
+00:18:09.210 --> 00:18:10.610
+It's great.
+
+00:18:10.610 --> 00:18:14.650
+This is not spiteful, but that team, the frustrating part, the biggest frustration
+
+00:18:14.650 --> 00:18:23.380
+for me on that team was a leader who surrounded himself with people who sucked up to him.
+
+00:18:23.380 --> 00:18:33.110
+And that is not my vision of building a good engineering or a good culture on a team.
+
+00:18:33.110 --> 00:18:40.030
+So I wonder what's going to happen with someone coming in to replace him who I know of vaguely
+
+00:18:40.030 --> 00:18:46.210
+it's a way different style, how that's going to work and how fearful some of those people
+
+00:18:46.210 --> 00:18:49.270
+should be about their continued success in that organization.
+
+00:18:49.270 --> 00:18:53.970
+Yeah, I don't know who's, I think there's some, and it's weird that you have to
+
+00:18:53.970 --> 00:19:00.330
+worry in a company like that, like this, that, wherever they are, Microsoft, those political
+
+00:19:00.330 --> 00:19:04.730
+things, those, those, those bits become very, very important.
+
+00:19:04.730 --> 00:19:08.290
+But anyway, let's go back to where are we at?
+
+00:19:08.290 --> 00:19:12.210
+Satya, we skipped bomber, but bombers, a whole story we want to get to know.
+
+00:19:12.210 --> 00:19:13.450
+We're going to get into that one.
+
+00:19:13.450 --> 00:19:21.850
+So the one thing the important in the, the yes, there, there are some things that,
+
+00:19:22.850 --> 00:19:30.250
+Bill Gates era that still persists and it's, it's a negative aspect of the culture in my
+
+00:19:30.250 --> 00:19:31.930
+humble opinion.
+
+00:19:31.930 --> 00:19:38.710
+And it turns out based off of a report I saw recently of Bill's opinion too.
+
+00:19:38.710 --> 00:19:42.600
+But he, he's like fine wine, man.
+
+00:19:42.600 --> 00:19:44.280
+He's mellowed with age.
+
+00:19:44.280 --> 00:19:52.200
+He, he, he, his focus on innovating was critical to this company.
+
+00:19:52.200 --> 00:19:55.080
+And it was a big part of why our stock.
+
+00:19:55.080 --> 00:19:57.360
+1 million percent agree, if that were possible.
+
+00:19:57.360 --> 00:19:58.360
+So I'll go with a hundred.
+
+00:19:58.360 --> 00:19:59.420
+Yeah.
+
+00:19:59.420 --> 00:20:02.630
+Now bomber era.
+
+00:20:02.630 --> 00:20:21.200
+So Bill Gates brought Microsoft to number one on all sorts of bars, including capitalization.
+
+00:20:21.200 --> 00:20:28.480
+Meaning here we were the most valuable company on the stock market.
+
+00:20:28.480 --> 00:20:32.440
+Now there's consequences that come with that.
+
+00:20:32.440 --> 00:20:42.560
+And one of my favorite authors, Stephen Blank wrote a bunch of studies on this is that because
+
+00:20:42.560 --> 00:20:50.060
+of the free market, you're pushed to sort of continuously play the king of the hill game.
+
+00:20:50.060 --> 00:21:01.110
+And once you're the king of the hill, just by design, you end up having to defend your
+
+00:21:01.110 --> 00:21:07.920
+position and that takes up so much energy, innovation stagnates.
+
+00:21:07.920 --> 00:21:18.740
+Now bomber grew up in sales and was beholden to the board.
+
+00:21:18.740 --> 00:21:25.990
+And we were in number one and the bomber decade was purely around how to defend our
+
+00:21:25.990 --> 00:21:27.820
+position.
+
+00:21:27.820 --> 00:21:28.820
+Okay.
+
+00:21:28.820 --> 00:21:35.190
+Now there is a law that I've stated repeatedly on this one.
+
+00:21:35.190 --> 00:21:47.030
+Any time I call it, well, the law that I've coined states, he who is defensive loses always.
+
+00:21:47.030 --> 00:21:51.880
+You cannot win any game being defensive only.
+
+00:21:51.880 --> 00:21:59.290
+And Stephen Blank goes, that's actually the natural thing that happens to large enterprises
+
+00:21:59.290 --> 00:22:01.090
+that are the king of the hill.
+
+00:22:01.090 --> 00:22:07.480
+And the biggest mistake that they make is they significantly underfund the innovation
+
+00:22:07.480 --> 00:22:11.960
+in their desperate attempt to defend their sales.
+
+00:22:11.960 --> 00:22:16.400
+And at that time, there was a lot of confidence as well.
+
+00:22:16.400 --> 00:22:23.840
+Like I remember having conversations with my manager at the time and like we all knew
+
+00:22:23.840 --> 00:22:31.320
+that Windows had, to build Windows, it had one quadrillion lines of code.
+
+00:22:31.440 --> 00:22:40.200
+No company was going to go from nothing to competition on that overnight, except unless
+
+00:22:40.200 --> 00:22:50.010
+they start working through an agile paradigm and prioritizing building one little incremental
+
+00:22:50.010 --> 00:22:55.290
+piece of code at a time that satisfies the customer's needs.
+
+00:22:55.290 --> 00:22:59.330
+Fast forward, Android OS as an example.
+
+00:22:59.330 --> 00:23:02.570
+So I have an experience, yes, and I fully agree.
+
+00:23:02.570 --> 00:23:06.930
+And I have an experience that from the bomber area, from one of his, I guess it'd be one
+
+00:23:06.930 --> 00:23:12.520
+of his skip levels, so his down, it's one of the exact VPs at the time.
+
+00:23:12.520 --> 00:23:18.040
+I was at some leadership training and he was our guest presenter talking about operating
+
+00:23:18.040 --> 00:23:23.570
+systems and networking, et cetera.
+
+00:23:23.570 --> 00:23:32.440
+I asked, because this is the time when Chrome OS wasn't around, it was thought of, it wasn't
+
+00:23:32.440 --> 00:23:39.680
+really out there, and I asked him if, say, given the amount of knowledge work that is
+
+00:23:39.680 --> 00:23:47.340
+done in the browser today, do you see any reason for Microsoft to make a lightweight
+
+00:23:47.340 --> 00:23:55.500
+OS that could be used on lower cost computers for browser-based work?
+
+00:23:55.500 --> 00:23:56.500
+Which I think makes a lot of sense.
+
+00:23:56.500 --> 00:24:04.500
+It's not like Chrome OS has swept the industry or anything, but whether or not I'm not the
+
+00:24:04.500 --> 00:24:08.260
+marketer that figures out what the next thing is is going to win, but I felt like there
+
+00:24:08.260 --> 00:24:10.620
+was something there and I was curious about his opinion.
+
+00:24:10.620 --> 00:24:16.360
+And his answer was literally, but you can't play games on those and on Windows you can
+
+00:24:16.360 --> 00:24:17.360
+play games.
+
+00:24:18.470 --> 00:24:22.870
+And I think that epitomizes, it's a defense of like, we have something that does this while
+
+00:24:22.870 --> 00:24:24.790
+we want to do something else.
+
+00:24:24.790 --> 00:24:27.510
+We have, we've solved that problem.
+
+00:24:27.510 --> 00:24:30.550
+You can do games and use a browser.
+
+00:24:30.550 --> 00:24:37.790
+If I classify the Bill Gates era as sort of competitive innovation, right, bomber era was
+
+00:24:37.790 --> 00:24:41.130
+competitive sales.
+
+00:24:41.130 --> 00:24:48.730
+We shifted from a growth approach to trying to protect our revenue.
+
+00:24:48.730 --> 00:24:49.730
+What was the bomber era?
+
+00:24:49.730 --> 00:24:53.610
+Do you recall when he started and stopped so I can frame that in my career?
+
+00:24:53.610 --> 00:25:01.240
+It was around 10 years and no, I don't.
+
+00:25:01.240 --> 00:25:02.240
+It's on Wikipedia.
+
+00:25:02.240 --> 00:25:03.240
+All right.
+
+00:25:03.240 --> 00:25:05.680
+Early 2000s to about 10 years later.
+
+00:25:05.680 --> 00:25:06.910
+All right.
+
+00:25:06.910 --> 00:25:15.880
+When bombers leadership, for example, Sanofsky used his position as the head of Windows, which
+
+00:25:15.880 --> 00:25:25.280
+was the cash cow at the time or one of them to sort of influence features in other teams.
+
+00:25:25.280 --> 00:25:33.750
+They were driving towards the only thing that matters is protecting Windows sales.
+
+00:25:33.750 --> 00:25:34.750
+And.
+
+00:25:34.750 --> 00:25:36.270
+How'd that work out in the long term?
+
+00:25:36.270 --> 00:25:38.350
+I think time has shown.
+
+00:25:38.350 --> 00:25:48.500
+So the one thing with the bomber eras is that is actually when we were, when the tech era
+
+00:25:48.500 --> 00:25:54.300
+was strongly shifting between different worlds.
+
+00:25:54.300 --> 00:25:57.100
+That's the shift to more of a services.
+
+00:25:57.100 --> 00:25:58.620
+It's the shift to the cloud.
+
+00:25:58.620 --> 00:26:04.660
+I remember watching all that happen and we were slow to adapt as a company.
+
+00:26:04.660 --> 00:26:10.500
+That had been in many ways, not just in software, but in how software was made, engineering
+
+00:26:10.500 --> 00:26:11.860
+approaches a leader.
+
+00:26:11.860 --> 00:26:14.100
+We had, you know, I was in the room.
+
+00:26:14.100 --> 00:26:18.140
+We talked about the S debt title and now we can't get rid of the title.
+
+00:26:18.140 --> 00:26:19.140
+I'm very sorry.
+
+00:26:19.140 --> 00:26:22.620
+Industry with the shift to cloud.
+
+00:26:22.620 --> 00:26:23.660
+We did not innovate.
+
+00:26:23.660 --> 00:26:27.860
+We followed for a long time in that area.
+
+00:26:27.860 --> 00:26:30.980
+There were teams doing, doing real.
+
+00:26:30.980 --> 00:26:35.890
+There were organizations doing things like blue, green deployments, testing and production
+
+00:26:35.890 --> 00:26:39.960
+while we were still focusing on building up our environment.
+
+00:26:39.960 --> 00:26:46.090
+Here's the thing that I learned as you know from my, my job history.
+
+00:26:46.090 --> 00:26:53.860
+Bing has already figured it out, but they hadn't figured out a way to generalize it
+
+00:26:53.860 --> 00:26:54.860
+to everyone else.
+
+00:26:54.860 --> 00:26:57.660
+And I remember being, being like, Oh, you're not like us.
+
+00:26:57.660 --> 00:26:59.540
+Well, we can never learn from you.
+
+00:26:59.540 --> 00:27:04.860
+We had talks about being in, we had a talk with how agile worked in being being, you're
+
+00:27:04.860 --> 00:27:05.860
+right.
+
+00:27:05.860 --> 00:27:12.800
+Bing was probably, they might've been right there with the industry if not slightly ahead,
+
+00:27:12.800 --> 00:27:16.400
+but definitely not as behind as some other orgs were, but that didn't happen.
+
+00:27:16.400 --> 00:27:24.840
+But the thing is Bing, because they were fighting a, not only a losing battle, but
+
+00:27:24.840 --> 00:27:30.200
+a severely losing battle with Google.
+
+00:27:30.200 --> 00:27:37.170
+And at the same time, we were strongly trying to defend our, our sales.
+
+00:27:37.170 --> 00:27:43.110
+Even if they had the leadership that, that could influence the rest of Microsoft, it
+
+00:27:43.110 --> 00:27:47.510
+wouldn't have happened because all the other motivators were in the wrong direction.
+
+00:27:47.510 --> 00:27:48.510
+Okay.
+
+00:27:49.190 --> 00:27:58.510
+Satya part of his prior career is guess what organization he once had.
+
+00:27:58.510 --> 00:27:59.760
+Bing.
+
+00:27:59.760 --> 00:28:03.160
+Like he was well suited for understanding this new world.
+
+00:28:03.160 --> 00:28:07.320
+He had already been doing it for almost a decade.
+
+00:28:07.320 --> 00:28:14.750
+And the way I would classify Satya's thing right now is he's gone back to innovation,
+
+00:28:14.750 --> 00:28:16.910
+but it's collaborative innovation now.
+
+00:28:16.910 --> 00:28:17.910
+Okay.
+
+00:28:17.910 --> 00:28:20.030
+That's new in the last three years.
+
+00:28:20.030 --> 00:28:22.510
+That's new.
+
+00:28:22.510 --> 00:28:28.310
+He's very clear on his messages here, but he's also very clear that there's a lot of
+
+00:28:28.310 --> 00:28:34.590
+work to do to shift that culture internally to be a lot more collaborative.
+
+00:28:34.590 --> 00:28:39.090
+There's still, for example, my team.
+
+00:28:39.090 --> 00:28:46.090
+I'm doing a lot of work that benefits all of Azure, but I am funded by one specific
+
+00:28:46.090 --> 00:28:49.240
+team within Azure.
+
+00:28:49.240 --> 00:28:58.240
+My PM is an entirely different organization, an entirely different organization.
+
+00:28:58.240 --> 00:29:02.760
+We are an example of cross-group collaboration success.
+
+00:29:02.760 --> 00:29:11.640
+However, there's still enough of the old world practice that I am constantly worried,
+
+00:29:11.640 --> 00:29:20.720
+wondering around when am I going to be notified of the reorg that moves my team
+
+00:29:20.800 --> 00:29:24.440
+into the same organization as that PM.
+
+00:29:24.440 --> 00:29:27.120
+Thus killing cross-group.
+
+00:29:27.120 --> 00:29:31.000
+And one of the arguments I'm finding right now is actually me being outside of that
+
+00:29:31.000 --> 00:29:40.840
+group actually strengthens the forward progress because I can ignore their
+
+00:29:40.840 --> 00:29:45.160
+particular politics that may actually slow me down and they can ignore mine.
+
+00:29:45.160 --> 00:29:49.400
+So it allows us a little bit more adaptability, a little bit more agility.
+
+00:29:49.400 --> 00:30:01.300
+But we still have budget concerns, so there's still a semblance of competitiveness,
+
+00:30:01.300 --> 00:30:07.800
+but the review has definitely softened on that front.
+
+00:30:07.800 --> 00:30:11.070
+And yeah, we still have a lot more to do.
+
+00:30:11.070 --> 00:30:17.910
+But the biggest thing in my view is that he's really pushing on innovation on
+
+00:30:17.910 --> 00:30:19.110
+this one.
+
+00:30:19.110 --> 00:30:27.800
+And if you read the news on the Microsoft stock quotes, there are now financial
+
+00:30:27.800 --> 00:30:31.480
+advisors going with Microsoft motivation.
+
+00:30:31.480 --> 00:30:34.080
+It's a matter of time before we're number one.
+
+00:30:34.080 --> 00:30:34.720
+All right.
+
+00:30:34.720 --> 00:30:41.480
+So I would re-summarize your errors as Bill Gates is drive for innovation.
+
+00:30:41.480 --> 00:30:45.440
+Steve Ballmer is defend where we are and Stagnate.
+
+00:30:45.440 --> 00:30:51.970
+And Satya is let's put the bullshit behind us and try and actually win again.
+
+00:30:51.970 --> 00:30:52.810
+Sure.
+
+00:30:52.810 --> 00:30:53.490
+How does that work?
+
+00:30:53.490 --> 00:30:54.530
+That works for me.
+
+00:30:54.530 --> 00:30:56.770
+I had a few reviews of Satya before I left.
+
+00:30:56.770 --> 00:30:59.650
+I was in the room and I talked to him.
+
+00:30:59.650 --> 00:31:04.890
+Very level-headed, very, I believe from my interaction with him,
+
+00:31:04.890 --> 00:31:07.250
+I believe what you're saying.
+
+00:31:07.250 --> 00:31:11.770
+My frustration definitely with James Whitaker's frustration is how slow the
+
+00:31:11.770 --> 00:31:14.320
+ship is moving because of the old guard.
+
+00:31:14.320 --> 00:31:15.720
+Yeah, I completely agree.
+
+00:31:16.320 --> 00:31:22.240
+And you said win again and I want to tweak that because he is really driving that
+
+00:31:22.240 --> 00:31:26.720
+and again, it's going slower than I think you and I would want,
+
+00:31:26.720 --> 00:31:30.120
+but definitely Whitaker would want, but he is pushing towards it.
+
+00:31:30.120 --> 00:31:34.390
+Whitaker even mentioned it in his last article.
+
+00:31:34.390 --> 00:31:36.030
+He loved what Satya is doing.
+
+00:31:36.030 --> 00:31:38.370
+The only complaint, too slow.
+
+00:31:38.370 --> 00:31:46.320
+I mentioned earlier the humanitarian efforts and the carbon stuff.
+
+00:31:46.400 --> 00:31:52.760
+Satya is pushing to have Microsoft win, but also to have the world win.
+
+00:31:52.760 --> 00:31:55.040
+Yeah, and you look, if Bill Gates is still in charge of the company,
+
+00:31:55.040 --> 00:31:58.080
+he'd be doing the same thing today because that's what he's working on.
+
+00:31:58.080 --> 00:31:59.880
+Probably would be, I agree.
+
+00:31:59.880 --> 00:32:05.960
+I think it was more of the young let's go out and make something exciting happen.
+
+00:32:05.960 --> 00:32:09.440
+And I don't recall if Bill is still the chairman.
+
+00:32:09.440 --> 00:32:16.550
+I think he is, but Bill absolutely has influence over the board.
+
+00:32:16.550 --> 00:32:18.590
+But he's just not the CEO.
+
+00:32:18.590 --> 00:32:19.270
+Yep.
+
+00:32:19.270 --> 00:32:23.510
+And in fact, I didn't go to any of them, but during the bomber area,
+
+00:32:23.510 --> 00:32:28.170
+there were still regular Bill G reviews with teams.
+
+00:32:28.170 --> 00:32:32.100
+He would still come in for reviews frequently.
+
+00:32:32.100 --> 00:32:34.500
+And that I think was part of their thing.
+
+00:32:34.500 --> 00:32:41.540
+Like between the two of them, right, they always had the strong partnership
+
+00:32:41.540 --> 00:32:42.660
+relationship.
+
+00:32:42.660 --> 00:32:44.660
+He was the...
+
+00:32:44.660 --> 00:32:45.140
+Yep.
+
+00:32:45.140 --> 00:32:52.550
+He was always the tech guy, and bomber was sort of the charismatic sales guy.
+
+00:32:52.550 --> 00:32:57.130
+Now, going back to...
+
+00:32:57.130 --> 00:32:59.650
+So we started this, and I realized I'd never close on this.
+
+00:32:59.650 --> 00:33:03.650
+So there's advice I give people who try to go and talk to their executive.
+
+00:33:03.650 --> 00:33:11.830
+Like you told the story around PM coming in, and Bill could immediately see
+
+00:33:11.830 --> 00:33:15.720
+where fact was and where hand weaving was.
+
+00:33:15.720 --> 00:33:21.150
+When you were building a deck for an executive, the first and foremost thing
+
+00:33:21.150 --> 00:33:28.200
+you should understand is that they cannot scale.
+
+00:33:28.200 --> 00:33:32.160
+They cannot know the details.
+
+00:33:32.160 --> 00:33:39.280
+So they have optimized, and they have practiced, and they have gained skills
+
+00:33:39.280 --> 00:33:44.120
+in entering one question and one question only.
+
+00:33:44.120 --> 00:33:52.930
+And that is, can I blindly trust this guy to lead this mission?
+
+00:33:52.930 --> 00:33:59.970
+So when you're doing a presentation to those folks, your number one goal
+
+00:33:59.970 --> 00:34:07.070
+needs to express confidence that you got this.
+
+00:34:07.070 --> 00:34:14.140
+And different executives will have different bullshitometers,
+
+00:34:14.140 --> 00:34:20.600
+but understand they're using it every single time, because they are accountable
+
+00:34:20.600 --> 00:34:25.200
+for so many things that you do not understand, and you will often not even
+
+00:34:25.200 --> 00:34:31.100
+get enough time on their schedule to know how...
+
+00:34:31.100 --> 00:34:36.870
+To what degree your aspect of this is important to their mission.
+
+00:34:36.870 --> 00:34:41.350
+Yes, I'm looking up a tweet, because actually Angie...
+
+00:34:41.350 --> 00:34:41.790
+What kind of...
+
+00:34:41.790 --> 00:34:44.690
+I can't find this.
+
+00:34:44.810 --> 00:34:46.250
+I mentioned this on Twitter.
+
+00:34:46.250 --> 00:34:47.770
+She had a question on Twitter around...
+
+00:34:47.770 --> 00:34:50.850
+I'm at the paraphrase, because I can't find the tweet on my phone.
+
+00:34:50.850 --> 00:34:56.000
+She asked about internal presentations versus external presentations,
+
+00:34:56.000 --> 00:34:57.840
+and what do you do differently?
+
+00:34:57.840 --> 00:34:59.280
+And I said...
+
+00:34:59.280 --> 00:35:01.080
+I replied, because I have an opinion.
+
+00:35:01.080 --> 00:35:03.680
+I have three presentations I give.
+
+00:35:03.680 --> 00:35:08.120
+External presentations are about entertainment.
+
+00:35:08.120 --> 00:35:09.420
+Okay.
+
+00:35:09.420 --> 00:35:13.860
+Internal talks to my team are highly interactive.
+
+00:35:13.860 --> 00:35:15.540
+I wouldn't do an interactive for a keynote.
+
+00:35:15.540 --> 00:35:17.460
+It's like, let's get stuff out here.
+
+00:35:17.460 --> 00:35:20.740
+We'll talk about it, ask questions as they go a lot.
+
+00:35:20.740 --> 00:35:23.460
+Exec presentation is...
+
+00:35:23.460 --> 00:35:28.320
+I think I said also for external tell stories entertain.
+
+00:35:28.320 --> 00:35:35.880
+For execs, also tell stories, but using carefully researched and well-backed up
+
+00:35:35.880 --> 00:35:40.370
+data and not going off on any tangents.
+
+00:35:40.370 --> 00:35:42.650
+You have to communicate confidence.
+
+00:35:42.650 --> 00:35:43.370
+Yes.
+
+00:35:43.370 --> 00:35:44.450
+That's it.
+
+00:35:44.450 --> 00:35:45.450
+Yeah.
+
+00:35:45.450 --> 00:35:46.450
+And I tell...
+
+00:35:46.450 --> 00:35:47.450
+I tell...
+
+00:35:47.450 --> 00:35:48.450
+Yes.
+
+00:35:48.450 --> 00:35:51.650
+And then be ready for any question at any time and have a confident answer.
+
+00:35:51.650 --> 00:35:54.090
+That's not just preparing the presentation for confidence.
+
+00:35:54.090 --> 00:35:55.650
+It's preparing the...
+
+00:35:55.650 --> 00:35:58.840
+It's having the background at tip of tongue.
+
+00:35:58.840 --> 00:36:02.560
+I have a different perspective than that for that question.
+
+00:36:02.560 --> 00:36:09.920
+Like number one, if you are doing a presentation, the purpose of every presentation is to entertain
+
+00:36:09.920 --> 00:36:10.920
+your audience.
+
+00:36:10.920 --> 00:36:12.210
+Right?
+
+00:36:12.210 --> 00:36:14.050
+A lot of people go, no, it's to inform your audience.
+
+00:36:14.050 --> 00:36:15.050
+No, it's not.
+
+00:36:15.050 --> 00:36:16.530
+It's different between a...
+
+00:36:16.530 --> 00:36:19.770
+Like my external presentation is more of a...
+
+00:36:19.770 --> 00:36:21.720
+I'll put it this way.
+
+00:36:21.720 --> 00:36:25.320
+My presentation to execs is a documentary.
+
+00:36:25.320 --> 00:36:28.200
+Still entertaining, but full of data and information.
+
+00:36:28.200 --> 00:36:30.320
+You do it in a way that gets them excited.
+
+00:36:30.320 --> 00:36:31.320
+Yes.
+
+00:36:31.320 --> 00:36:38.980
+You have to do a different style if it's a right only presentation versus a read-write
+
+00:36:38.980 --> 00:36:39.980
+one.
+
+00:36:39.980 --> 00:36:42.500
+And here I mean writing a keynote.
+
+00:36:42.500 --> 00:36:44.830
+You're right.
+
+00:36:44.830 --> 00:36:47.190
+You got to be doing all the talking.
+
+00:36:47.190 --> 00:36:49.190
+It's definitely not my preference.
+
+00:36:49.190 --> 00:36:54.720
+I prefer the give and take with the crowd.
+
+00:36:54.720 --> 00:36:59.280
+But that doesn't scale at a certain size.
+
+00:36:59.280 --> 00:37:05.320
+In my view, the difference...
+
+00:37:05.320 --> 00:37:11.680
+So Alan is better at presenting than I am, but my difference between internal and external
+
+00:37:11.680 --> 00:37:14.120
+is external.
+
+00:37:14.200 --> 00:37:22.340
+I will scrub corporate IP and then on internal, I basically remove the fluff slides from the
+
+00:37:22.340 --> 00:37:27.360
+external to give room for interaction.
+
+00:37:27.360 --> 00:37:28.720
+That's my difference.
+
+00:37:28.720 --> 00:37:29.720
+Yeah.
+
+00:37:29.720 --> 00:37:30.720
+I...
+
+00:37:30.720 --> 00:37:31.720
+There's not much.
+
+00:37:31.720 --> 00:37:36.240
+In fact, I may take a couple of the presentations I gave internally at an internal conference
+
+00:37:36.240 --> 00:37:39.480
+and give the exact same presentation externally.
+
+00:37:39.480 --> 00:37:41.560
+I have very little corporate IP.
+
+00:37:41.560 --> 00:37:44.360
+I add some numbers, which I think are public.
+
+00:37:44.680 --> 00:37:46.720
+Well, we're not a public company, so they're not.
+
+00:37:46.720 --> 00:37:47.720
+So I'm doing...
+
+00:37:47.720 --> 00:37:48.720
+I would have to scrub a little bit.
+
+00:37:48.720 --> 00:37:50.760
+I'm doing a lot of data science presentations and...
+
+00:37:50.760 --> 00:37:53.460
+Yeah, just put a bunch of math.
+
+00:37:53.460 --> 00:37:54.460
+Yeah.
+
+00:37:54.460 --> 00:38:01.780
+So, if you're doing math in a data science presentation, I kind of find that pointless
+
+00:38:01.780 --> 00:38:05.340
+because you can just say, hey, look, here's a link to Wikipedia.
+
+00:38:05.340 --> 00:38:07.540
+Go look up the math.
+
+00:38:07.540 --> 00:38:08.540
+Right?
+
+00:38:08.540 --> 00:38:13.500
+The data that I would be presenting almost always represents IP.
+
+00:38:13.500 --> 00:38:16.200
+So I have to be very careful with that.
+
+00:38:16.200 --> 00:38:17.650
+Understood.
+
+00:38:17.650 --> 00:38:18.650
+Tell stories.
+
+00:38:18.650 --> 00:38:20.170
+Anyway, are we done?
+
+00:38:20.170 --> 00:38:24.650
+I'm not that we have time to get to anything else, but I want to make sure...
+
+00:38:24.650 --> 00:38:30.630
+Was there anything else on the Gates-Bomber-Sautia era?
+
+00:38:30.630 --> 00:38:33.050
+Did you ever present anything to Bomber?
+
+00:38:33.050 --> 00:38:41.660
+I had a word once, very simple interaction.
+
+00:38:41.660 --> 00:38:43.920
+He and I shared an elevator.
+
+00:38:43.920 --> 00:38:47.960
+And I'm like, he looks familiar.
+
+00:38:47.960 --> 00:38:51.800
+And I just looked at him and he looked at me like, what are you trying to figure out?
+
+00:38:51.800 --> 00:38:55.620
+And I'm like, you're Steve, aren't you?
+
+00:38:55.620 --> 00:38:57.540
+And he said yes.
+
+00:38:57.540 --> 00:38:58.540
+Excellent.
+
+00:38:58.540 --> 00:38:59.540
+Excellent.
+
+00:38:59.540 --> 00:39:00.540
+Have a great day.
+
+00:39:00.540 --> 00:39:01.540
+What a dork.
+
+00:39:01.540 --> 00:39:02.540
+What a dork.
+
+00:39:02.540 --> 00:39:09.780
+Well, so apparently I had not hidden my body language enough, so he looked at...
+
+00:39:09.780 --> 00:39:12.580
+I mean, he was clearly going, sup.
+
+00:39:12.580 --> 00:39:14.350
+Yeah.
+
+00:39:14.790 --> 00:39:16.990
+I just tried to figure out...
+
+00:39:16.990 --> 00:39:19.190
+Because you look a lot like him.
+
+00:39:19.190 --> 00:39:22.270
+There's an anecdote from the Bomber era where...
+
+00:39:22.270 --> 00:39:24.510
+Developers, developers, developers.
+
+00:39:24.510 --> 00:39:26.110
+Well, that was actually during...
+
+00:39:26.110 --> 00:39:27.950
+He said that during the Bill G era.
+
+00:39:27.950 --> 00:39:28.950
+Correct.
+
+00:39:28.950 --> 00:39:33.470
+But during the Bomber era, he did snatch someone's iPhone out of their hand and throw it on
+
+00:39:33.470 --> 00:39:36.630
+the ground at a company meeting.
+
+00:39:36.630 --> 00:39:37.630
+Yeah.
+
+00:39:37.630 --> 00:39:40.310
+And again, defend versus innovate.
+
+00:39:40.310 --> 00:39:42.760
+It's like, wow, this is taking off.
+
+00:39:42.760 --> 00:39:44.680
+Maybe we should make a bunch of apps for this.
+
+00:39:46.160 --> 00:39:47.160
+No.
+
+00:39:47.160 --> 00:39:48.160
+So...
+
+00:39:48.160 --> 00:39:49.160
+You'd have to go...
+
+00:39:49.160 --> 00:39:50.160
+That defense...
+
+00:39:50.160 --> 00:39:54.480
+So like here, this is one of the things, and this is something that I will state over
+
+00:39:54.480 --> 00:39:59.190
+and over again, because every now and again, I run into something like this.
+
+00:39:59.190 --> 00:40:02.910
+Teams that kind of will go, oh, you're duplicating our effort.
+
+00:40:02.910 --> 00:40:03.910
+I'm like, no.
+
+00:40:03.910 --> 00:40:04.910
+Right.
+
+00:40:04.910 --> 00:40:10.890
+I have developed a great strategy for when I get accused of that.
+
+00:40:10.890 --> 00:40:13.330
+But let's go back to modern testing principles.
+
+00:40:13.330 --> 00:40:14.330
+Right.
+
+00:40:14.330 --> 00:40:15.730
+That actually drives me on this one.
+
+00:40:15.730 --> 00:40:19.990
+And this is, in my view, Bomber did do that.
+
+00:40:19.990 --> 00:40:23.170
+And I think it was a tragic mistake.
+
+00:40:23.170 --> 00:40:29.930
+Like look, Bomber, we had the Windows phone and it was competing with iPhone and we were
+
+00:40:29.930 --> 00:40:32.290
+at least three years late.
+
+00:40:32.290 --> 00:40:33.290
+Okay.
+
+00:40:33.290 --> 00:40:35.000
+Yes and no.
+
+00:40:35.000 --> 00:40:42.280
+I had a touchscreen phone with Wi-Fi in my hand years before the iPhone came out.
+
+00:40:42.280 --> 00:40:43.880
+But here's the thing.
+
+00:40:44.240 --> 00:40:54.630
+Even if Bomber was able to, we'll call it, negatively motivate all of Microsoft to go to
+
+00:40:54.630 --> 00:41:00.250
+Windows Phone, and I don't remember, there was a period early on in his where we would
+
+00:41:00.250 --> 00:41:01.630
+all get Christmas gifts.
+
+00:41:01.630 --> 00:41:03.110
+Like we all got a Surface.
+
+00:41:03.110 --> 00:41:04.110
+I used the...
+
+00:41:04.110 --> 00:41:05.110
+Did we get a phone?
+
+00:41:05.110 --> 00:41:06.110
+I don't recall.
+
+00:41:06.110 --> 00:41:07.110
+Yeah, I got phones for years.
+
+00:41:07.110 --> 00:41:08.110
+Right.
+
+00:41:08.830 --> 00:41:18.060
+And like in terms of the market that we're trying to go into, even if all of Microsoft
+
+00:41:18.060 --> 00:41:24.620
+were users, if they weren't vocal advocates, then all you're going to get is Microsoft
+
+00:41:24.620 --> 00:41:26.620
+and that is a blip on that market.
+
+00:41:26.620 --> 00:41:27.620
+Right.
+
+00:41:27.620 --> 00:41:28.620
+It is small.
+
+00:41:28.620 --> 00:41:30.660
+It's not even a blip.
+
+00:41:30.660 --> 00:41:32.140
+A blip.
+
+00:41:32.140 --> 00:41:33.140
+A blip.
+
+00:41:33.140 --> 00:41:34.140
+A blip.
+
+00:41:34.140 --> 00:41:41.060
+And that's part of the thing I think was strategically in error, just quite honestly.
+
+00:41:41.060 --> 00:41:43.220
+And that's the point I was getting at.
+
+00:41:43.220 --> 00:41:45.820
+I think not looking...
+
+00:41:45.820 --> 00:41:49.220
+And that's, I think Bomber also epitomized the...
+
+00:41:49.220 --> 00:41:52.620
+It was all about not invented here during that time especially.
+
+00:41:52.620 --> 00:41:59.420
+It was not just for the internal tools like we've talked about, but we didn't look
+
+00:41:59.420 --> 00:42:06.020
+about how we could, we as Microsoft at the time, could take advantage of and interact
+
+00:42:06.020 --> 00:42:08.820
+with the changes that were happening.
+
+00:42:08.820 --> 00:42:10.300
+We talked about web stuff.
+
+00:42:10.300 --> 00:42:12.820
+The phone growth happened there too.
+
+00:42:12.820 --> 00:42:20.140
+And we saw it through our competitive colored glasses instead of, okay, what...
+
+00:42:20.140 --> 00:42:21.140
+How do we...
+
+00:42:21.140 --> 00:42:22.700
+Instead of principle number five.
+
+00:42:22.700 --> 00:42:24.180
+How do we ride the wave?
+
+00:42:24.180 --> 00:42:28.260
+Like I said, instead of principle number five.
+
+00:42:28.260 --> 00:42:29.260
+Right.
+
+00:42:29.300 --> 00:42:34.700
+We had phone products and we were doing pretty well with them.
+
+00:42:34.700 --> 00:42:38.300
+The ones that were all on the WinCEOS.
+
+00:42:38.300 --> 00:42:43.100
+I loved my PDA phone, if you remember those things.
+
+00:42:43.100 --> 00:42:44.820
+Yes, I do.
+
+00:42:44.820 --> 00:42:48.620
+But Apple was out innovating us.
+
+00:42:48.620 --> 00:42:52.940
+When we came out with Zoom, Apple was like, oh yeah, that's pretty neat.
+
+00:42:52.940 --> 00:42:54.700
+Hey, have you seen our iPhone?
+
+00:42:54.700 --> 00:42:57.260
+Like we were three years behind and still trying to play...
+
+00:42:57.260 --> 00:42:58.260
+We didn't quite...
+
+00:42:58.260 --> 00:42:59.740
+We tried to play catch up.
+
+00:42:59.740 --> 00:43:00.740
+Yes.
+
+00:43:00.740 --> 00:43:03.100
+And in those phases, you can't play follow the leader.
+
+00:43:03.100 --> 00:43:04.780
+You have to play leapfrog.
+
+00:43:04.780 --> 00:43:05.780
+Right.
+
+00:43:05.780 --> 00:43:06.780
+Right.
+
+00:43:06.780 --> 00:43:07.780
+And that's what's missing.
+
+00:43:07.780 --> 00:43:11.940
+It's like, how do you leapfrog instead of follow the leader?
+
+00:43:11.940 --> 00:43:12.940
+I like that.
+
+00:43:12.940 --> 00:43:21.840
+And the thing is, I actually thinking back, I think a lot of the bomber era in analyzing
+
+00:43:21.840 --> 00:43:29.720
+what happened, what went well, what didn't, helped influence my opinion around the modern
+
+00:43:29.720 --> 00:43:31.600
+testing principles.
+
+00:43:31.600 --> 00:43:33.040
+Absolutely.
+
+00:43:33.040 --> 00:43:34.280
+Because I kept on...
+
+00:43:34.280 --> 00:43:40.040
+By that point in time, I was teaching people how to do agile migrations.
+
+00:43:40.040 --> 00:43:45.550
+And I don't know if you remember this, I'm sure you will once I bring it up.
+
+00:43:45.550 --> 00:43:50.710
+Bomber had division by division sort of talking events with principle level folks.
+
+00:43:50.710 --> 00:43:52.390
+Oh, I remember those, yes.
+
+00:43:52.830 --> 00:43:59.070
+And I remember that I had already talked to three teams and major teams that go through
+
+00:43:59.070 --> 00:44:01.510
+this agile transition.
+
+00:44:01.510 --> 00:44:09.010
+When I first heard a bomber stayed out of his mouth, that we needed to shift to agile.
+
+00:44:09.010 --> 00:44:10.010
+Huh.
+
+00:44:10.010 --> 00:44:11.530
+Anyway, we got to go.
+
+00:44:11.530 --> 00:44:12.530
+All right.
+
+00:44:12.530 --> 00:44:14.720
+Yep.
+
+00:44:14.720 --> 00:44:15.720
+See ya.
+
+00:44:15.720 --> 00:44:15.740
+Bye.
+

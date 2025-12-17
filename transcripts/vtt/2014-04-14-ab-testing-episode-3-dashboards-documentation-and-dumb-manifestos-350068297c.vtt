@@ -1,0 +1,1361 @@
+WEBVTT
+
+00:00:16.270 --> 00:00:22.990
+Hey everybody, I'm Alan. I'm Brent. And we're here for yet another episode of AAB testing.
+
+00:00:23.870 --> 00:00:29.630
+I just got off the, not just got off, but last night I returned from a quick trip to Florida.
+
+00:00:29.630 --> 00:00:34.190
+I think my total time away from home was about 40 hours. Talking to some college students there
+
+00:00:34.190 --> 00:00:39.070
+at University of Florida in Gainesville. Great group of kids, two great groups of kids. And just
+
+00:00:39.070 --> 00:00:45.230
+started talking about sort of what testing was like at Microsoft. And a lot, it was, I didn't
+
+00:00:45.230 --> 00:00:50.350
+really know, I had some exercises. It was very data driven, which was interesting because that's
+
+00:00:50.350 --> 00:00:53.150
+kind of where, you know, what Brent and I have been talking about, where a test is going.
+
+00:00:53.150 --> 00:00:57.150
+He's talked a lot about data, analyzing data, how to look at data and some things like that.
+
+00:00:57.790 --> 00:01:04.350
+So Alan normally does these events and it's been primarily around helping
+
+00:01:04.350 --> 00:01:09.710
+recruiting get people into tests. So what did you find different this time around?
+
+00:01:09.710 --> 00:01:14.590
+As the role evolves, I'm finding, you know, when we go to a recruit at universities,
+
+00:01:14.590 --> 00:01:18.030
+we show them the three Microsoft roles, program management, software development,
+
+00:01:18.030 --> 00:01:21.870
+and software testing. And if you were to ask them to look at those roles by title
+
+00:01:22.510 --> 00:01:26.830
+and, you know, rank what they wanted to do, they go, well, I've gone to school to program.
+
+00:01:26.830 --> 00:01:31.950
+So obviously I want to be a developer, but if I can't do that, I want to be a program manager
+
+00:01:31.950 --> 00:01:37.470
+because they have manage in their title. And here's the real truth is that program managers
+
+00:01:37.470 --> 00:01:42.510
+don't program and they don't manage. And then they look at the last one and go, well, then I'll,
+
+00:01:42.510 --> 00:01:48.110
+I guess if I have to fall back on something, I'll be a tester. And we want to give recruiting a fair
+
+00:01:48.110 --> 00:01:52.430
+shake, a fair chance to land candidates for the right jobs. People are going to be successful
+
+00:01:52.430 --> 00:01:57.310
+in their career if they find a job that aligns with their sort of mental model and how they
+
+00:01:57.310 --> 00:02:02.110
+approach things. So what we find is in these classrooms, you do have people who want to take
+
+00:02:02.110 --> 00:02:07.310
+a design and implement it as, you know, as has been spec'd for them and just, you know,
+
+00:02:07.310 --> 00:02:11.550
+write features. And those people make great developers. And I asked them in the class, you
+
+00:02:11.550 --> 00:02:16.590
+know, if you think testing is just writing unit tests and functional tests, that's great.
+
+00:02:16.590 --> 00:02:20.820
+You're probably going to make a great developer because we need people to think more system
+
+00:02:20.820 --> 00:02:24.420
+thinking. I talk about program management a bit too and how it's project management plus
+
+00:02:25.300 --> 00:02:29.620
+a lot of, you know, coordinating schedules, managing dependencies, looking at plans,
+
+00:02:29.700 --> 00:02:33.220
+making sure all the pieces are kind of put together, require systems thinking and people
+
+00:02:33.220 --> 00:02:37.140
+skills at kind of a high level. Then I talk about the role of test and what we do.
+
+00:02:37.140 --> 00:02:41.540
+You all know there's a million things testers do, but I approach it a lot from
+
+00:02:42.100 --> 00:02:46.900
+sort of the how we look at data and how it's a very creative job and how we solve problems
+
+00:02:46.900 --> 00:02:50.980
+with code all the time. And I give them plenty of examples from my career. And then we do some
+
+00:02:50.980 --> 00:02:56.260
+exercises that they can pick and choose from. They form groups and they get really engaged.
+
+00:02:56.340 --> 00:02:59.940
+I was amazed how excited they were about working through some of these exercises.
+
+00:02:59.940 --> 00:03:03.940
+So it was a lot of fun. It gives them some insight into what testing is at Microsoft.
+
+00:03:03.940 --> 00:03:07.300
+A couple of the kids there are going to be doing internships. They're already on the books for
+
+00:03:07.300 --> 00:03:10.340
+that this summer. So I'm excited about that. Excited to see them here in action.
+
+00:03:10.340 --> 00:03:13.860
+And they're going to be great. So all in all, a good trip.
+
+00:03:13.860 --> 00:03:17.860
+How many budding new data scientists did you discover?
+
+00:03:18.900 --> 00:03:24.580
+A few, a few. And I did kind of delve into that. You used to ask people if they had
+
+00:03:24.580 --> 00:03:29.540
+software testing courses, but and they do, but they're all about formal verification,
+
+00:03:29.540 --> 00:03:34.260
+which is interesting, theoretically. But this time, instead of probing on that,
+
+00:03:34.260 --> 00:03:38.980
+I probed on who heard about big data. And actually, one of the questions I give them
+
+00:03:38.980 --> 00:03:45.460
+is analyzing a relatively small in the world of big data, but big enough to cause problems
+
+00:03:45.460 --> 00:03:50.420
+at a two gig data file and talk about the challenges in that. From there, we really,
+
+00:03:50.420 --> 00:03:53.460
+it's more of a discussion where they talk about strategies for parsing that,
+
+00:03:53.540 --> 00:03:57.060
+knowing that that disk access is really expensive, eventually lead them to a
+
+00:03:57.060 --> 00:04:02.900
+discussion around how MapReduce works. And one person in maybe two in the two
+
+00:04:03.620 --> 00:04:09.060
+sessions I had had heard of that. So I said, yeah, so I said, well, something to go read up on.
+
+00:04:10.420 --> 00:04:14.580
+I don't think universities changing and we like we have a lot of influence over what
+
+00:04:14.580 --> 00:04:19.700
+universities cover. Years ago, we say we need universities to teach more testing classes,
+
+00:04:20.420 --> 00:04:28.530
+but we still need that maybe, but we need now is we need data, data and huge data and big data
+
+00:04:28.530 --> 00:04:32.130
+is becoming so much a part of how so many software teams do business.
+
+00:04:32.850 --> 00:04:38.930
+That it's really important. I think that, you know, budding software engineers of any discipline
+
+00:04:38.930 --> 00:04:43.970
+have these basic knowledge of statistics and how big data works, you know,
+
+00:04:43.970 --> 00:04:46.210
+or if they're going to get a picture of what they're going to be doing in the industry.
+
+00:04:46.850 --> 00:04:53.570
+So I agree. We need we need more. We need more testing classes, but in a different context,
+
+00:04:53.570 --> 00:05:00.130
+it's more around how to test your own code. We need more TDD type classes. We need to train
+
+00:05:00.130 --> 00:05:05.650
+developers to do this upfront. But on the on the testing side, do we really need all
+
+00:05:05.650 --> 00:05:11.250
+these statistics? Don't we just need people to produce great dashboards?
+
+00:05:11.650 --> 00:05:12.150
+Yeah.
+
+00:05:13.650 --> 00:05:19.250
+Nice. Nice. Say, great. One thing I did get to do while I was off on my trip was I got a few tweets
+
+00:05:19.250 --> 00:05:24.210
+out and and one of them was inspired by a discussion I had the day before I left. And
+
+00:05:24.210 --> 00:05:29.730
+we'll just say it was a good thing. I left my tweet was, look, sometimes I just want to
+
+00:05:29.730 --> 00:05:34.610
+measure something because I think it will help me answer a question. And then in all caps,
+
+00:05:34.610 --> 00:05:41.420
+stop asking me to make dashboards. I'm all about communicating. I love communicating information.
+
+00:05:41.420 --> 00:05:46.060
+There's a value of that. But just because I'm measuring something doesn't mean I want to
+
+00:05:46.620 --> 00:05:52.860
+set a release criteria based on that or decide what the threshold is. Sometimes it's important
+
+00:05:52.860 --> 00:05:57.820
+for me just to know how many people downloaded this. I can do that without going, well,
+
+00:05:57.820 --> 00:06:02.620
+if I'm going to measure it, I should have a goal for what I want it to be. And I've been
+
+00:06:02.620 --> 00:06:07.420
+working with a lot of people who are really dead set on if you're going to measure it,
+
+00:06:07.420 --> 00:06:10.780
+you know, you want to know exactly what question you're going to answer and what your
+
+00:06:10.780 --> 00:06:18.140
+threshold metrics are and what your what does pass and fail mean. Oh, oh, God. Yeah. Oh, God.
+
+00:06:18.140 --> 00:06:23.260
+So let me just tee that up one little bit. Then I'll let the rage of Brent emerge upon the room.
+
+00:06:23.820 --> 00:06:27.740
+Another thing came out of the same conversation was because I was talking about measuring.
+
+00:06:27.740 --> 00:06:30.940
+Actually, I put this in my last blog post. But when you're looking at a scenario,
+
+00:06:30.940 --> 00:06:37.020
+how do you figure out what do you want to measure to know the health or how people are
+
+00:06:37.020 --> 00:06:42.060
+using that scenario that will help you kind of answer some questions? And the dichotomous
+
+00:06:42.060 --> 00:06:48.620
+deterministic group wants to take those measures and determine pass and fail for the scenario,
+
+00:06:48.620 --> 00:06:52.940
+which I have a hard time with. But Brent, unleash your comments.
+
+00:06:52.940 --> 00:07:00.530
+Guys, first and foremost, stop building dashboards that say pass or fail.
+
+00:07:01.520 --> 00:07:11.200
+The world that we're moving into, it is impossible to produce such a result that has any value.
+
+00:07:12.380 --> 00:07:21.580
+There is a place for this in the short term we talked about last time about what and why
+
+00:07:21.580 --> 00:07:28.380
+we're doing these changes. One of the things that's also important is to address how we're
+
+00:07:28.380 --> 00:07:36.060
+going to get from here to there. I do think in the short term that there is some value
+
+00:07:36.060 --> 00:07:43.020
+in these dashboards. The primary reason is because we have a whole community of people
+
+00:07:43.660 --> 00:07:52.350
+who don't know what they're doing. They don't know how to get there from here.
+
+00:07:53.150 --> 00:07:59.470
+And so they're trying to map this new set of goals to the world that they're used to.
+
+00:07:59.470 --> 00:08:02.670
+I'm sure I shared this quote, but the thing I've used a lot lately is
+
+00:08:02.670 --> 00:08:05.790
+surging into the future with one foot anchored deeply in the past.
+
+00:08:06.590 --> 00:08:13.630
+Yes, I went to a presentation by Alan Shalloway. For those in the Northwest,
+
+00:08:14.430 --> 00:08:23.020
+he runs a company called NetObjectives. And he shared a process where he talks about pickup sticks
+
+00:08:23.820 --> 00:08:30.620
+where changing culture is like playing a game of pickup sticks. For those who don't know the game,
+
+00:08:30.620 --> 00:08:35.980
+you have these multiple colored sticks. Each color represents a different number of point values.
+
+00:08:36.060 --> 00:08:40.780
+You kind of hold the whole pile of sticks in your hand and you drop them about six inches above the
+
+00:08:40.780 --> 00:08:46.380
+ground and they create a pile. And then you take turns with an opponent pulling sticks off of the
+
+00:08:46.380 --> 00:08:53.820
+pile. And if you get a stick off the pile without moving any of the others, you get to go again.
+
+00:08:54.460 --> 00:08:59.260
+And the whole point is to go back and forth. And once all the sticks are gone,
+
+00:09:00.620 --> 00:09:03.420
+whoever you add up points and whoever has the most wins.
+
+00:09:03.420 --> 00:09:07.180
+I just realized this is a real game and not something you play on the Xbox.
+
+00:09:07.180 --> 00:09:15.100
+I'm with you now. This is old school game. Games that Alan and I might have played when we were
+
+00:09:15.100 --> 00:09:22.540
+young kidlings with our marbles and jacks. In pickup sticks, there is a black stick. It's worth
+
+00:09:22.540 --> 00:09:30.380
+25 points. And generally, the person who gets the black stick wins. Now, what he talked about
+
+00:09:30.380 --> 00:09:37.420
+is that black stick is like the goal. If you go straight forward, there's a non-trivial chance
+
+00:09:37.420 --> 00:09:44.670
+that you're going to disrupt the whole pile and eventually lose the game. What he said and said is
+
+00:09:44.670 --> 00:09:50.430
+that what he noticed is when you play pickup sticks, there is always an easy stick on top to take.
+
+00:09:50.430 --> 00:09:55.150
+So if you just take that stick and you get to go again and then you take the next easy stick
+
+00:09:55.870 --> 00:10:01.070
+until the game is over, obviously, this dashboard world or this culture shifting world
+
+00:10:01.070 --> 00:10:09.140
+is kind of like that. It's how do you leverage the model that they have today? How do you leverage
+
+00:10:09.140 --> 00:10:14.420
+the capabilities of the people, the processes and the technology to move them forward in the
+
+00:10:14.420 --> 00:10:20.370
+correct direction? If you go straight for the black stick, you're going to cause all kinds
+
+00:10:20.370 --> 00:10:27.810
+of dysfunction, particularly in some of the larger groups because you can't disseminate
+
+00:10:27.810 --> 00:10:35.390
+what and why fast enough so that people yet have the ability to collaborate together. We don't have
+
+00:10:35.390 --> 00:10:42.430
+the technical wherewithal just yet to really reduce the friction around collaboration. So a lot of the
+
+00:10:42.430 --> 00:10:49.630
+top-down command control processes are going to be in place for a while. Dashboards you can fix.
+
+00:10:49.630 --> 00:10:54.740
+Fine, let's create a dashboard. But we're going to stop using pass-fail. What we're going to do
+
+00:10:54.740 --> 00:11:01.300
+instead is we're going to identify key metrics or KPIs that are important to the business.
+
+00:11:02.210 --> 00:11:06.210
+And we have to call them KPIs. That sounds so old school and dorky.
+
+00:11:08.400 --> 00:11:09.760
+What would you like to call them, Alan?
+
+00:11:10.480 --> 00:11:11.520
+S swims.
+
+00:11:12.320 --> 00:11:13.280
+Swims.
+
+00:11:13.280 --> 00:11:15.120
+Yeah. Shit we want to measure.
+
+00:11:15.120 --> 00:11:17.970
+Shit we want to measure.
+
+00:11:17.970 --> 00:11:19.680
+Does that work for you? No.
+
+00:11:19.680 --> 00:11:21.600
+How does it? Oh, should we measure?
+
+00:11:21.760 --> 00:11:29.120
+KPIs remind me of a time and I get it. And there's a big push here to classify the measurements into
+
+00:11:29.120 --> 00:11:36.640
+KPIs and CTQs, critical to quality. And these just remind me of a time of measurements that were
+
+00:11:37.520 --> 00:11:44.960
+purely top-down and almost purely useless. And so I get, yeah, they are the things we want to measure
+
+00:11:44.960 --> 00:11:50.160
+that are important, the key performance indicators. That name to me just it bristles my skin a
+
+00:11:50.160 --> 00:11:53.040
+little bit just because it has so much history with it.
+
+00:11:53.040 --> 00:11:56.480
+The biggest problem with the dashboards that we use today, there's two of them.
+
+00:11:56.480 --> 00:12:02.720
+Number one, they're focused on vanity metrics, not actionable metrics.
+
+00:12:04.160 --> 00:12:11.280
+Number two, they are focused on deriving action with the top of the hierarchy.
+
+00:12:11.280 --> 00:12:11.840
+Exam.
+
+00:12:11.840 --> 00:12:19.600
+So pass-fail. We have the scenario. It's failing 25% of the time. So?
+
+00:12:21.280 --> 00:12:26.320
+I don't even know what that means. I can't fathom what a failing. I mean, if it's unable to run,
+
+00:12:26.320 --> 00:12:32.560
+if it's functionally not there, it would fail. If you can complete it, does it pass or there's
+
+00:12:32.560 --> 00:12:37.630
+other criteria that they run? I don't know what group of measurements come through to make sure
+
+00:12:37.630 --> 00:12:45.200
+that it passes versus fail. And let me just equate this back to the age-old test pass.
+
+00:12:45.840 --> 00:12:52.000
+A stupid metric where we look at how many tests are passing, we go, oh, 98%. That's good.
+
+00:12:52.880 --> 00:12:59.040
+Is it? Because if those 2% of failures are data loss and crashes, maybe not. Or if it's 90%
+
+00:13:00.160 --> 00:13:06.480
+or 80% or 50% and the tests that are failing are these arbitrary test failures or arbitrary junk,
+
+00:13:06.480 --> 00:13:11.040
+it doesn't matter. What that number tells you is there's stuff to go look at and figure it out.
+
+00:13:11.120 --> 00:13:16.080
+I don't care about test pass rates. I care about the issues that we found and what we need to find.
+
+00:13:16.080 --> 00:13:21.040
+And let me tie that into what we're measuring now. And if you look at data-driven engineering of a
+
+00:13:21.040 --> 00:13:27.520
+scenario, we want to measure how long it takes to draw the screen. In my viewpoint, I want to know
+
+00:13:27.520 --> 00:13:31.600
+how long does it take the screen to appear or our web page to download, for example,
+
+00:13:31.600 --> 00:13:37.040
+our web page to appear over end. Page load time is a common metric.
+
+00:13:37.760 --> 00:13:44.640
+But I don't know if I want to put the actual pass-fail number there. Page must load in 0.5 seconds or
+
+00:13:44.640 --> 00:13:51.280
+less. Well, what if it's 0.51 seconds? Is that bad? Well, no. I don't know where to draw the line,
+
+00:13:51.280 --> 00:13:56.000
+so I don't want to draw it. I want to know how fast it loads, but I want to look at it in
+
+00:13:56.000 --> 00:14:01.120
+aggregate and then look at whether it's causing downstream effects, like if it's too long,
+
+00:14:01.120 --> 00:14:06.240
+are people leaving the site, et cetera. So I think that's a great example. So page load time
+
+00:14:06.240 --> 00:14:12.880
+by itself is absolutely a vanity metric. And just so people understand, difference between a
+
+00:14:12.880 --> 00:14:20.400
+vanity metric and an actionable metric. A vanity metric is, in general, a metric that makes you
+
+00:14:20.400 --> 00:14:29.500
+feel good. Hey, page load time is down to 2 milliseconds. Yay, we go celebrate. That's great
+
+00:14:30.380 --> 00:14:39.460
+for arguing for a beer budget, but for creating a solid business, it's not so good. What would be
+
+00:14:39.460 --> 00:14:51.920
+better is a ratio. Page load time over customer impact or over dollars earned. Because by turning
+
+00:14:51.920 --> 00:14:59.520
+it into a ratio, you now can graph it or you can look at it in a way that creates action.
+
+00:14:59.600 --> 00:15:03.120
+If you know where you're going with the action, it's really easy to create a ratio for ratios.
+
+00:15:03.120 --> 00:15:11.120
+I can create page load time divided by the days it rained last year. That's not as exciting for me.
+
+00:15:11.840 --> 00:15:16.880
+And you could drive action that way. The next thing would be to tie it to something that's
+
+00:15:16.880 --> 00:15:22.320
+important to the business. So when it comes to dashboards, the high level summary that I would
+
+00:15:22.320 --> 00:15:29.920
+say is, number one, they need to produce actionable metrics. Number two, they need to be consumable
+
+00:15:30.560 --> 00:15:36.160
+by the people who will take action. A lot of the times these actionable metrics,
+
+00:15:36.160 --> 00:15:44.640
+people produce scorecards because they want to publish it to the executives so the executives
+
+00:15:44.640 --> 00:15:48.560
+have confidence that that team is on track. You actually bring up a good point because
+
+00:15:48.560 --> 00:15:53.360
+a lot of people would tell you both inside and outside Microsoft say, well, management wants to
+
+00:15:53.360 --> 00:15:57.440
+see these numbers and what they want to see are vanity metrics. If I see another red, yellow,
+
+00:15:57.440 --> 00:16:03.200
+green, smiley face, sad face, frown face chart, I'm going to rip my head off and chuck it into
+
+00:16:03.200 --> 00:16:08.080
+this microphone. You know, the one that bothers me is the yellow arrows pointing to the right.
+
+00:16:08.910 --> 00:16:14.290
+What the hell does that mean? You got up arrow and it's green and down arrow, it's red and then
+
+00:16:14.290 --> 00:16:17.890
+yellow arrow pointing to the right. It's trending, Brad. It must be important.
+
+00:16:19.760 --> 00:16:27.410
+Okay. The last thing is the actionable metrics. So again, first one, you want actionable metrics.
+
+00:16:27.410 --> 00:16:32.290
+You want it to be presented in a way that's actionable towards the people who will take
+
+00:16:32.290 --> 00:16:40.930
+action. And the last one, it's tied to a KPI or a SWIM, whatever the hell you want to call it today.
+
+00:16:40.930 --> 00:16:45.170
+We'll come up with a better name. In fact, we will take suggestions from our four listeners.
+
+00:16:46.190 --> 00:16:52.430
+And it has to be tied to something that matters to the business. For example, a buddy of mine,
+
+00:16:52.430 --> 00:16:57.950
+I got a quote from him. One of the things he does, he likes to shock folks. And one of the
+
+00:16:57.950 --> 00:17:02.110
+things he does when he mentions, when he talks about the culture changes, he has this quote,
+
+00:17:02.990 --> 00:17:12.100
+features don't matter. Quality doesn't matter. Moving the metric is what matters.
+
+00:17:12.980 --> 00:17:18.420
+Defining the metric that matters is key. So explain what those last two mean. What is it?
+
+00:17:18.420 --> 00:17:24.190
+What go those last two sentences? Tell me what they mean. So moving the metric is what matters.
+
+00:17:24.750 --> 00:17:34.990
+What that means is learning how to take action on the metric, learning how to deploy code, experiment,
+
+00:17:36.110 --> 00:17:42.270
+measure the right things that will actually cause the metric to go up or down.
+
+00:17:42.270 --> 00:17:46.430
+All right. And then the last sentence, how do you find the metric that matters?
+
+00:17:48.720 --> 00:17:54.700
+At a high level, you measure the behavior you want. So when you talked about peach.
+
+00:17:54.700 --> 00:17:59.780
+But by measuring, I mean, we'll need a concrete example because most things you measure, you'll get
+
+00:18:00.610 --> 00:18:04.130
+whether for the right reasons or not. So you'll be really careful about defining that metric
+
+00:18:04.130 --> 00:18:10.530
+that matters. I forget the Hawthorne effect. Yeah. Hawthorne's principle. People's behavior
+
+00:18:10.530 --> 00:18:15.840
+change in accordance to how they are being measured. In this case, what we want to measure
+
+00:18:16.800 --> 00:18:23.360
+are things where our customer impact. And a lot of times they don't know that we're measuring it.
+
+00:18:23.440 --> 00:18:26.960
+And actually, it's really important there. I was leading you a little bit, but when you measure
+
+00:18:27.600 --> 00:18:32.720
+your metric or about the product or business and not about the people and what they're doing.
+
+00:18:33.280 --> 00:18:42.140
+Yes. So we talked about page load time. Amazon knows to the millisecond how much
+
+00:18:42.140 --> 00:18:50.020
+a millisecond is worth to its business in dollars. That's fantastic. Yes. How do they know this?
+
+00:18:50.020 --> 00:18:55.940
+They measured it and they did the correlation between page load time and churn rates of their
+
+00:18:55.940 --> 00:19:02.900
+customers. We talked about last time that right now in the service space, switching costs is
+
+00:19:02.900 --> 00:19:08.740
+rather easy. People don't have to go to Amazon. They can go to eBay. They can go to other e-retailers.
+
+00:19:10.420 --> 00:19:18.020
+So they measured what is the minimum page load time where they stop seeing people
+
+00:19:18.020 --> 00:19:24.340
+switching away. They associated latency to customer impact and then reassociated customer
+
+00:19:24.340 --> 00:19:30.400
+impact to the business. They want their customers to stay. That's the behavior they want. How do we
+
+00:19:30.400 --> 00:19:40.130
+keep them sane? Cool. Makes sense. All right. So dashboards are great when used properly.
+
+00:19:40.130 --> 00:19:47.380
+Crappy dashboards are crappy. That is words of wisdom from Brent. Yeah.
+
+00:19:47.380 --> 00:19:52.100
+Anything else on metrics before we move down the Kanban list, the lean coffee list?
+
+00:19:53.440 --> 00:20:00.960
+So we have up on the board, we have a discussion around dashboards. And next up is estimation.
+
+00:20:00.960 --> 00:20:01.760
+No. No.
+
+00:20:03.360 --> 00:20:05.120
+Screw it up, Brent. Oh.
+
+00:20:05.120 --> 00:20:10.320
+Can you read? There's a one and then there's a two. A one and a two.
+
+00:20:11.200 --> 00:20:14.080
+This process works so much better when we're doing it.
+
+00:20:14.080 --> 00:20:16.000
+There's not even a number by estimation.
+
+00:20:16.720 --> 00:20:18.720
+Matter of fact, there's an X through it.
+
+00:20:21.140 --> 00:20:26.820
+So folks, I warned Alan beforehand. I have been up since 3.30 this morning. It is now
+
+00:20:26.820 --> 00:20:32.260
+eight o'clock as we're doing this and the coffee is just not working.
+
+00:20:32.260 --> 00:20:34.180
+All right. What do you want to talk about then, Alan?
+
+00:20:34.180 --> 00:20:38.770
+I would like to pause for a moment and give all four of our listeners a chance to
+
+00:20:38.770 --> 00:20:41.620
+weep a little for you. And then I want to talk about...
+
+00:20:41.620 --> 00:20:42.340
+All right. Move on.
+
+00:20:42.420 --> 00:20:48.500
+You wanted to talk about shifting to a data-driven engineering culture and some pieces about that.
+
+00:20:48.500 --> 00:20:49.700
+Let's talk about that a little bit.
+
+00:20:49.700 --> 00:20:59.540
+Okay. So we've been talking a lot about why and specific things that we see as problems as well as
+
+00:21:00.740 --> 00:21:02.820
+quite honestly things that drive us crazy.
+
+00:21:03.460 --> 00:21:07.860
+If you look at the root cause of all this problem is really,
+
+00:21:07.860 --> 00:21:15.060
+we have strong command and control structure within the organization.
+
+00:21:16.620 --> 00:21:22.300
+Very hierarchical. And in there was a historical context to why this was needed.
+
+00:21:22.940 --> 00:21:31.580
+But today there is so much data that that as a decision-making framework slows us down.
+
+00:21:31.580 --> 00:21:37.580
+What we really need to do is entirely change the culture from one set of paradigms
+
+00:21:38.060 --> 00:21:48.460
+to a different set. To do that, you really need to use a process known as systems thinking.
+
+00:21:49.260 --> 00:21:56.000
+It isn't about how do we just fix dashboards. Dashboards is one bit.
+
+00:21:56.640 --> 00:22:01.500
+But in addition to dashboards, you got to fix the people.
+
+00:22:01.500 --> 00:22:04.860
+Yeah. There's a huge people problem. Great Weinberg quote, probably paraphrased,
+
+00:22:04.860 --> 00:22:06.460
+but he says it's always a people problem.
+
+00:22:07.420 --> 00:22:08.060
+It is always.
+
+00:22:08.140 --> 00:22:12.460
+You're talking about systems thinking and that's the challenge in making organizational change
+
+00:22:12.460 --> 00:22:19.740
+is you have so many things moving at once. And if you don't try and get a full big picture view
+
+00:22:19.740 --> 00:22:24.220
+and only look at one part, you're going to screw something up, which isn't necessarily bad,
+
+00:22:24.220 --> 00:22:28.700
+but you're going to do better if you know what the effect is of making this change here.
+
+00:22:28.700 --> 00:22:33.820
+What will that do downstream? And working within a larger, largest organization I've ever
+
+00:22:33.820 --> 00:22:38.540
+worked in at Microsoft, my team is very small, works within a very large organization, Windows.
+
+00:22:38.540 --> 00:22:47.340
+And he has a team of one books. I work in a application group, I don't know what to call
+
+00:22:47.340 --> 00:22:53.980
+us, an organization of about 120 people that sits inside this behemoth known as Windows of,
+
+00:22:53.980 --> 00:22:57.660
+I can't count that high. It's like a zillion. I don't know. Big number.
+
+00:22:58.500 --> 00:23:00.020
+It's many thousands. Yes.
+
+00:23:00.500 --> 00:23:05.780
+Um, anyway, systems thinking in this particular context, there's really three things you need
+
+00:23:05.780 --> 00:23:13.060
+to change simultaneously. You need to change the people, you need to change the processes,
+
+00:23:13.060 --> 00:23:18.340
+and you need to change the technology. When we talked about the dashboards, right? Okay.
+
+00:23:19.420 --> 00:23:25.820
+We need to change what information is being communicated in that dashboard. That's a
+
+00:23:25.820 --> 00:23:32.620
+technology question. But we also need to change the processes. Right now, most of the dashboards,
+
+00:23:33.500 --> 00:23:39.580
+as Alan pointed out, most people are used to dashboards as a preventative measure. We need
+
+00:23:39.580 --> 00:23:47.730
+to see this dashboard all light up green before we can ship. Right? That's primary reason we see
+
+00:23:47.730 --> 00:23:52.530
+a lot of dashboards, at least in the test context. The dashboard that I'm talking about,
+
+00:23:53.490 --> 00:23:58.720
+that would change that model. Right? Because you're always going to have what's the current state.
+
+00:23:58.720 --> 00:24:03.600
+Well, you want to monitor more than for release criteria. You want to know what's going on,
+
+00:24:03.600 --> 00:24:07.440
+which is great. Yep. But we need to release more frequently. You can't,
+
+00:24:07.440 --> 00:24:11.760
+it needs to be green all the time. And when it turns to yellow or red, you'll get it back to
+
+00:24:11.760 --> 00:24:19.760
+green right away. Or green could be relative. Like the whole idea of green is that we have
+
+00:24:19.760 --> 00:24:26.000
+the ability to have a predictive model around what is the threshold. What is the acceptable value?
+
+00:24:26.560 --> 00:24:33.840
+The one of the paradigm shifts that we will see people moving towards right now, we're all
+
+00:24:33.840 --> 00:24:37.680
+absolutist. Everything's got to be true, false, pass, fail, black, white.
+
+00:24:37.680 --> 00:24:38.640
+Hate it. I hate it.
+
+00:24:39.600 --> 00:24:48.320
+We're going to shift towards one that's much more probability based. There is a 77% chance
+
+00:24:49.120 --> 00:24:54.080
+that this will increase the revenue. All right. Let's go back to the dashboard example.
+
+00:24:54.800 --> 00:24:58.880
+So if we have this dashboard that communicates this monitoring and it says,
+
+00:24:59.600 --> 00:25:09.840
+Hey, this new deployment dropped the page load money KPI that I don't even know what it's called,
+
+00:25:09.840 --> 00:25:14.800
+but we talked about just a second ago with Amazon. We also need to change processes
+
+00:25:15.440 --> 00:25:22.400
+such that people know how to act on this data. They're used to publishing the data. And now what
+
+00:25:22.400 --> 00:25:28.480
+we want to do is have the data pre published. They're looking at it actively and they're
+
+00:25:28.480 --> 00:25:37.920
+reacting to it. That will also cause people to be retrained because the model that they're used to
+
+00:25:37.920 --> 00:25:43.840
+is again, very absolutist. We create a bunch of automation. We make sure they all sum up the
+
+00:25:43.840 --> 00:25:50.480
+pass and then we publish it. One of the key things that will have to change is reaction time.
+
+00:25:51.310 --> 00:25:59.070
+So we need, we need PMs to be able to say, Hey, I had this new data point. It had this customer
+
+00:25:59.070 --> 00:26:04.910
+impact. I don't understand why they need to be able to either reach out to the customer directly
+
+00:26:04.910 --> 00:26:12.110
+or use the data to, to surgically understand what is the customer's intent? What problem
+
+00:26:12.110 --> 00:26:21.010
+are they trying to solve? We'll need quality team, quality engineer team, whatever. Whatever. Yeah.
+
+00:26:21.010 --> 00:26:27.170
+Titles need to go away. That's a different podcast. Go on. We'll need them to be able to
+
+00:26:27.890 --> 00:26:35.330
+do two things important. Number one, in this world, data credibility is key. When I say
+
+00:26:35.410 --> 00:26:46.030
+the, the page load time dollar thingy is up 2%, it's up 2%. One of the challenges that we see
+
+00:26:46.030 --> 00:26:53.070
+right now is reminds me so much of the, the automation problems we had, uh, 10 years ago,
+
+00:26:54.110 --> 00:27:01.520
+um, where I used to joke, if you got five test architects in a room, you'd end up with six, uh,
+
+00:27:01.520 --> 00:27:08.240
+automation harnesses. We're going to have the same problem with respect to metrics and data.
+
+00:27:09.820 --> 00:27:16.700
+We need to, we will also need to change processes and people around collaboration. Yeah. I think
+
+00:27:16.700 --> 00:27:19.900
+it's, we're moving there and a lot of people in the industry move in there and data is becoming
+
+00:27:19.900 --> 00:27:23.420
+really important. We get that and it's going to be hard and we're going to screw it up and
+
+00:27:23.420 --> 00:27:28.060
+we're going to get some things right. And we're going to move forward. It's pointing at the clock.
+
+00:27:28.060 --> 00:27:34.460
+Like, like I'm out of time. Like is my, no, I got time. I got time. So I think this is now
+
+00:27:34.460 --> 00:27:40.620
+third time when I tried to do invisible hand signals and he calls me out, but yet I refuse
+
+00:27:40.620 --> 00:27:46.540
+to learn this lesson. Yes. Well, it's Brent and we all, we all know Brent, but Brent is right.
+
+00:27:46.540 --> 00:27:52.620
+That conversation is wrapped. We're going to move on to the mailbag. Yes, that's right. We got
+
+00:27:52.620 --> 00:27:57.500
+questions from our mailbag. Uh, I feel like we need like a little mailbag jingle, like in
+
+00:27:58.060 --> 00:28:04.140
+the mailbag. Yeah. Something like that. I thought about it, but copyrights and things like that
+
+00:28:04.140 --> 00:28:08.940
+get in the way when you go back and edit it, the, what you just did, just get a hot button for that.
+
+00:28:08.940 --> 00:28:13.340
+Yeah, I should, but again, I don't want to like, I'd have Nicola who made blues clues.
+
+00:28:14.300 --> 00:28:18.700
+I don't, whatever company made blues clues. Like Nick, Nick Jr. with like, like Sue me,
+
+00:28:19.340 --> 00:28:23.820
+it's like, I want all the money you've made off that podcast. And I would do like vanilla ice
+
+00:28:23.820 --> 00:28:28.060
+and just change the beat just a little bit. No, no, I never even heard that under pressure song.
+
+00:28:29.260 --> 00:28:33.500
+Dork. Um, so anyway, we had a couple of questions you're welcome to send them in. And I had a thought
+
+00:28:33.500 --> 00:28:39.100
+earlier one time we should do like, uh, like, uh, have people tweet us questions live during
+
+00:28:39.100 --> 00:28:43.980
+our recording. Just thought for the future. Do you think our four listeners are up at this
+
+00:28:43.980 --> 00:28:48.940
+time? No, I have way more. I have way more Twitter followers and we have listeners so we can,
+
+00:28:49.020 --> 00:28:54.140
+we can probably get some answers. All right. The first question is, does that mean we have to do
+
+00:28:54.140 --> 00:28:59.660
+live streaming? No, no, just, just, just don't throw it too hard. I'll go with the flow. Uh,
+
+00:28:59.660 --> 00:29:06.540
+Mark asks two questions. First one is how do you document your test efforts in a, such a fast
+
+00:29:06.540 --> 00:29:11.180
+environment, a fast based environment? I could tell you I'm going through a little transition
+
+00:29:11.180 --> 00:29:17.020
+right now as, uh, again, working with, uh, some of my larger organization with one foot
+
+00:29:17.020 --> 00:29:21.500
+anchored in the past and surging into the future with one foot anchored in the past.
+
+00:29:21.500 --> 00:29:25.500
+So you're, you're producing 30 page test plan documents for what you're going to release.
+
+00:29:25.500 --> 00:29:32.780
+But I got to tell you, there is the, the, my stance on documentation and planning is this,
+
+00:29:32.780 --> 00:29:37.180
+and this is where I drew the line and actually got them to make a change, um, which was getting
+
+00:29:37.180 --> 00:29:41.340
+a change in this group is hard. So I'm going to pat myself on the back without hurting my arm.
+
+00:29:41.340 --> 00:29:47.420
+My stance around documentation, especially test documentation is there is all the value is
+
+00:29:48.300 --> 00:29:54.380
+obtained in thinking through the problem and use the document to describe your intent to purposes,
+
+00:29:54.380 --> 00:29:59.260
+describe your intent and communicate with those around you what that intent is.
+
+00:29:59.260 --> 00:30:03.420
+I've used the verse that's wanting to do mind maps for that, but whoever you want to document
+
+00:30:03.420 --> 00:30:07.260
+that it's about making sure you think through the problem. And we'll give you a template,
+
+00:30:07.260 --> 00:30:12.860
+a very short one to kind of help you think through what are all the ways we can do a B and C.
+
+00:30:12.860 --> 00:30:17.740
+And you know, you want to describe your intent just to, and then by communicating that the second
+
+00:30:17.740 --> 00:30:21.980
+step you've one shared your ideas. People can learn your approaches and you're going to get
+
+00:30:21.980 --> 00:30:26.460
+new ideas and bring in there and you're going to enter the act, enter the project. This is all
+
+00:30:26.460 --> 00:30:31.020
+very quick. Um, you know, Google had their 10 minute test plan. And I think you want to spend
+
+00:30:31.580 --> 00:30:36.780
+enough time on these to be thorough, but no more where I draw the line. However, beyond those,
+
+00:30:37.420 --> 00:30:45.460
+is do not try to predict the future. There originally was a, you've all seen the test case
+
+00:30:45.460 --> 00:30:49.860
+design documents, whatever they're called with a list of here are the test cases I'm going to do,
+
+00:30:49.860 --> 00:30:55.060
+which is one of the stupidest practices I've ever imagined in my life. Because you don't,
+
+00:30:55.060 --> 00:30:59.460
+you can, you're imagining some test cases you might, but you don't know if those are going
+
+00:30:59.460 --> 00:31:02.340
+to be the final list, which ones are going to be irrelevant, which ones you're going to add to
+
+00:31:02.340 --> 00:31:07.860
+that. We talk about maintaining documentation. I don't believe planning documentation should be
+
+00:31:07.860 --> 00:31:13.460
+maintained at all. Cause it should be written in a way that areas that need maintenance do not
+
+00:31:13.460 --> 00:31:18.260
+exist. Talk about intent, what you're planning to do, you know, some ideas and how you're going to
+
+00:31:18.260 --> 00:31:24.180
+do it, and then go do it. Don't list your test case IDs. Don't list, don't link to things in your
+
+00:31:24.900 --> 00:31:31.140
+work item tracking database. Those things will change. I think we've, on our soapbox,
+
+00:31:31.140 --> 00:31:35.940
+that we have spent so much time, you know, worrying about maintaining documents and we don't,
+
+00:31:35.940 --> 00:31:39.860
+and we make jokes like, well, sustained engineering will use them and they don't,
+
+00:31:39.860 --> 00:31:44.180
+they would use that intent, but listing a bunch of stuff that you don't know predicting the future,
+
+00:31:44.180 --> 00:31:47.860
+unless you have a crystal ball or a time machine is a complete waste of time.
+
+00:31:47.860 --> 00:31:49.220
+It's okay. First and foremost.
+
+00:31:49.220 --> 00:31:51.140
+Did I get too high on the soapbox? Are you a little dizzy?
+
+00:31:51.140 --> 00:31:58.140
+No, the, I didn't follow you up there. First off, the answer to test plan,
+
+00:31:59.100 --> 00:32:10.140
+in my view, is, it's certainly something snarky. It is, hey, however dev wants to ride it is okay by me.
+
+00:32:11.780 --> 00:32:16.180
+The second one, planning. So Eisenhower, I believe, had a quote, which is,
+
+00:32:16.820 --> 00:32:20.020
+plans are useless. Planning is invaluable.
+
+00:32:20.580 --> 00:32:23.900
+I think it's indispensable. Whatever. Sure. Go on.
+
+00:32:23.900 --> 00:32:28.300
+In, indivisible. And liberty and, hey, go on.
+
+00:32:28.300 --> 00:32:33.820
+The plans, there are really only two goals to a plan.
+
+00:32:34.580 --> 00:32:41.070
+Number one, get you and the people who will be working with you on the same page.
+
+00:32:41.870 --> 00:32:46.350
+Number two, get your own self on the same page.
+
+00:32:46.350 --> 00:32:50.350
+Isn't that exactly my two intents? Describe your, yeah, describe your intents.
+
+00:32:50.350 --> 00:32:51.870
+That's exactly it. Share them.
+
+00:32:51.870 --> 00:32:57.470
+That's exactly it. In my view. So, so the question was, how do we document your
+
+00:32:57.470 --> 00:33:02.190
+test efforts in such a fast environment? I'm going to take the word test out,
+
+00:33:02.190 --> 00:33:06.270
+because that word bothers me. I'm going to say, how do we document our efforts?
+
+00:33:06.270 --> 00:33:07.550
+Anything we want to plan. Right.
+
+00:33:08.190 --> 00:33:16.270
+I am a huge believer in Agile. And the way, as an example, the way we do it on our team
+
+00:33:16.270 --> 00:33:21.310
+is the goal is collaboration, or it's not really the goal. The goal is same pagedness
+
+00:33:21.950 --> 00:33:24.990
+between you and the people who are going to work with you.
+
+00:33:24.990 --> 00:33:29.390
+You can call it collaboration, but the reason why we produce these docs is to
+
+00:33:29.390 --> 00:33:34.110
+make it easier for everyone to get on the same page and contribute to the outcome.
+
+00:33:35.520 --> 00:33:43.440
+What I think is the three most important things listed is the intent of the, of the plan,
+
+00:33:43.440 --> 00:33:48.400
+what we're trying to build, specifically the outcomes. And what I mean by outcomes,
+
+00:33:48.400 --> 00:33:57.840
+I mean a customer impact outcome. We, we want this to boost throughput for our customers by 10%.
+
+00:33:59.120 --> 00:34:05.360
+You want to have an implementation agnostic plan starting off with, and then you want to have a
+
+00:34:05.360 --> 00:34:10.000
+measurement of success. How do, how do you know if you're in the weeds? How do you know
+
+00:34:10.000 --> 00:34:16.320
+if you succeeded in this? That last one is the most important one forgotten. And it's the way you
+
+00:34:16.320 --> 00:34:23.200
+get out of this predictability BS, because the measurement of success is what tells you,
+
+00:34:23.840 --> 00:34:27.980
+are you failing or succeeding? And the goal is to fail fast.
+
+00:34:28.780 --> 00:34:33.740
+I get you. I get you. I want to, I have an estimation story I want to tell. Okay. And,
+
+00:34:33.740 --> 00:34:36.940
+and really the answer there is that the long answer for the short question was,
+
+00:34:37.820 --> 00:34:43.020
+plan just enough. And actually one thing to add is that one thing that helps us on our team is
+
+00:34:43.020 --> 00:34:51.230
+we're sort of scrummer, fallish, fragile, working our way towards agile. But one thing we do,
+
+00:34:51.790 --> 00:34:57.550
+your waterfall with short sprints, we're a little better than that. We're a little better than that.
+
+00:34:58.110 --> 00:35:04.670
+So don't judge if you're not living in my world. All right. And we do list every work item has
+
+00:35:04.670 --> 00:35:09.550
+in the work item itself. We make sure people define what does it mean when it's done. And
+
+00:35:09.550 --> 00:35:13.550
+for me, you know, what is the done done list? What is the done list? And for me that's,
+
+00:35:13.550 --> 00:35:18.830
+and I described that as I'm working on this team. We're trying to get better. I found that
+
+00:35:18.830 --> 00:35:24.510
+describing done before you start eliminates a ton of the problems and helps focus the work you do.
+
+00:35:24.510 --> 00:35:29.070
+And I believe it is also the gateway drug to do using behavior-driven development,
+
+00:35:29.070 --> 00:35:33.070
+which is where I like to get the team. Yes. The, the biggest issue I've seen with,
+
+00:35:33.070 --> 00:35:38.270
+with that lately though, is people are still defining done in terms of work items.
+
+00:35:38.830 --> 00:35:43.550
+Oh, I will have a database online. I will have a reporting online.
+
+00:35:43.550 --> 00:35:48.830
+And that's not allowed. Done means it will do this, this, this, and these things exactly.
+
+00:35:48.830 --> 00:35:52.590
+Yes. And then there's some other implied things about the crossing the I's,
+
+00:35:52.590 --> 00:35:54.990
+dotting the T's or whatever, however that thing goes.
+
+00:35:55.940 --> 00:35:59.300
+Yes. Anyway, let me tell my estimation story. Then we'll get on to the last question maybe.
+
+00:35:59.300 --> 00:36:04.980
+So I was sitting in a room, another tweet. I had to tweet. I had to sit next to a developer
+
+00:36:05.540 --> 00:36:11.220
+who wanted to cost estimate, I guess they call it costing now. These words,
+
+00:36:11.220 --> 00:36:18.660
+he wanted to cost every work item for the next year. And my, I got a little twinge on the back
+
+00:36:18.660 --> 00:36:25.950
+of my head and I asked him, so what granularity do you cost? He goes, man months. I go,
+
+00:36:25.950 --> 00:36:31.390
+I got a little good, good, good. I got the little face and I didn't quite wrap the telephone
+
+00:36:31.390 --> 00:36:37.870
+cord around my head, but I said, so, um, you know, that estimating when you say something
+
+00:36:37.870 --> 00:36:42.830
+takes two weeks or more, it means you have no idea how long it's going to take.
+
+00:36:42.830 --> 00:36:47.410
+You just don't know. I know there are studies that say anything two weeks or more as,
+
+00:36:47.410 --> 00:36:53.310
+you know, as a variance of 200%. And the, his justification was, I have done this in the past
+
+00:36:53.310 --> 00:36:59.150
+over three releases. I won't say which product I'll be nice to him. And they've been remarkably
+
+00:36:59.150 --> 00:37:05.070
+correct. And I'm thinking, well, it's all, it's a false. It's a false because hot thorns principle
+
+00:37:05.070 --> 00:37:11.310
+in play. I don't think it's hot for an effect. And I don't think that's it. I think when you take,
+
+00:37:11.310 --> 00:37:16.270
+sure, if I put these huge wide swaths around how long things I think things are going to take,
+
+00:37:16.830 --> 00:37:21.550
+not every, not every task takes more time than it should. Some take less. So I think just the
+
+00:37:21.550 --> 00:37:26.990
+law of averages, when you say everything's going to take somewhere between one and, you know,
+
+00:37:26.990 --> 00:37:32.750
+one in, you know, or 12, 15 man months to complete at a very high level. Sure. They're going to,
+
+00:37:32.750 --> 00:37:36.750
+you're going to get that because well, one, you're right. You're measuring it, but two,
+
+00:37:36.750 --> 00:37:42.750
+it's such a huge buffer built in there. It doesn't help you. It doesn't help you get better.
+
+00:37:42.750 --> 00:37:47.470
+It's just, to me, it's a fool's errand, a useless cause to try and estimate like that.
+
+00:37:47.470 --> 00:37:51.950
+So here's what happens. Here's, here's what I've noticed what happens with people
+
+00:37:51.950 --> 00:37:58.110
+in that situation. So they have this pride point. My estimates are always accurate. Well,
+
+00:37:58.110 --> 00:38:04.510
+as measured by what? By my ability to deliver on the time that I set. Okay, great. Now,
+
+00:38:04.510 --> 00:38:09.790
+this person is often in a management role and he has a pride point that my team will deliver on
+
+00:38:09.790 --> 00:38:15.230
+this. So the first question I asked these guys is like, I want to see your time tracking. I want
+
+00:38:15.230 --> 00:38:20.980
+to see how many hours your developers are working because I can guarantee you that team
+
+00:38:20.980 --> 00:38:27.470
+is working 30 hour days the last week of that month. 30 hour days. That's funny. Yeah. Anyway,
+
+00:38:27.470 --> 00:38:34.610
+I had to get that off of my chest because it's just, look, planning is good, predicting the future.
+
+00:38:34.610 --> 00:38:39.250
+Don't try to waste a time. So actually, before you go on the next one, there's a couple of
+
+00:38:39.250 --> 00:38:46.700
+things I wanted to say. Number one. So in a fast environment, this is the number one dysfunctional
+
+00:38:46.700 --> 00:38:56.960
+thing that I have learned from agile. Okay. And I will tell you, I despise the agile manifesto.
+
+00:38:58.320 --> 00:39:03.840
+We just lost half of our half of our four listeners. Yes. You better. And the reason why
+
+00:39:04.560 --> 00:39:11.200
+is because it lays out principles. And if you read it, it says, we favor collaboration
+
+00:39:11.200 --> 00:39:16.400
+above documentation. What it says, and then you have a bunch of clear, it does not say that it
+
+00:39:16.400 --> 00:39:21.760
+says this is good, but given a choice between this side and this side, we prefer this. If you
+
+00:39:21.760 --> 00:39:28.560
+read the language of the four motto thingies, it says favor this above this. Okay. Now,
+
+00:39:28.560 --> 00:39:37.630
+when it gets deployed with a bunch of old school people, I'll call them. I almost got
+
+00:39:37.630 --> 00:39:45.120
+us kicked off for what I was about to say, who are trained in the absolutist mindset.
+
+00:39:45.920 --> 00:39:53.440
+This, this favor model gets switched to no documentation. Yeah. That's just stupid. I hate
+
+00:39:53.440 --> 00:39:59.760
+that. Okay. Oh, we're agile. We don't have doctor. Agile does not freaking mean no planning. It means
+
+00:39:59.760 --> 00:40:05.280
+lightweight planning enough. And that's, yeah, I think that's clear. I think what you despise
+
+00:40:05.280 --> 00:40:11.920
+is not the manifesto. What you despise is the massive misinterpretation of the manifesto.
+
+00:40:12.400 --> 00:40:17.120
+I do that. And I think the manifesto itself could correct it if they reworded that in a way
+
+00:40:18.000 --> 00:40:25.040
+so that, so that the people who understand the spirit of it, agile as a term is so bastardized
+
+00:40:25.040 --> 00:40:29.360
+that we kind of need a new word to replace it to actually describe what good engineering is.
+
+00:40:29.360 --> 00:40:34.480
+People say they're agile when they're not all the time. It's so they can ignore the parts of
+
+00:40:34.480 --> 00:40:38.400
+the old world they don't like and not actually work any better. We've talked about this before.
+
+00:40:38.880 --> 00:40:45.520
+You know what? I think the world needs an agile manifesto for dummies. I do.
+
+00:40:47.440 --> 00:40:54.610
+Where it's just laid out. This is how you interpret this. Anyway, the next thing, my team,
+
+00:40:54.610 --> 00:40:59.410
+one of the things that I'm very proud of my team, we have this phase that we call the analyst phase
+
+00:40:59.410 --> 00:41:05.170
+and to get, this is on our version of the scrum board. Okay. There's a column analyze to
+
+00:41:05.250 --> 00:41:14.850
+get out of analyze. You have to have sign off from two design reviewers. Okay. Now, why is that key?
+
+00:41:14.850 --> 00:41:21.090
+Because if this project, whatever that ticket is being worked on, goes into the weeds, I don't,
+
+00:41:22.210 --> 00:41:28.450
+at our retrospective, I torture the design reviewers. I go, why did you let this thing go
+
+00:41:28.450 --> 00:41:34.720
+forward? What was wrong? And oftentimes it's like, well, we didn't understand the design.
+
+00:41:34.720 --> 00:41:40.540
+Again, why did you let this thing go forward? It's by doing that, by putting,
+
+00:41:41.580 --> 00:41:45.420
+making designs and doing it in a way that applies social pressure,
+
+00:41:46.220 --> 00:41:52.180
+you get, you converge very quickly to what is enough design. And that's going to change on
+
+00:41:52.180 --> 00:41:57.460
+a context by context basis. Yeah. I don't always believe in social pressure as the way to
+
+00:41:59.220 --> 00:42:03.460
+derive on the right answer, but it's not always. No, we got one more question. It's going to be
+
+00:42:03.540 --> 00:42:09.220
+a quick answer. Mark also asks, what challenges surprised you at Xbox things you didn't see coming?
+
+00:42:09.220 --> 00:42:16.340
+And I can tell you, Xbox was the, everything I've worked out in my career was the fastest moving
+
+00:42:16.340 --> 00:42:25.860
+and so many moving parts that everything was a surprise. It was, it was a crazy, crazy time.
+
+00:42:25.860 --> 00:42:31.380
+It was a load of fun, but I'm honest when I say that, I don't think anything threw me off,
+
+00:42:31.380 --> 00:42:34.580
+except for maybe this five year old hack in the password thing, which I probably,
+
+00:42:34.580 --> 00:42:40.660
+that's all I should say about it. But it every day, something was moving, something changing,
+
+00:42:40.660 --> 00:42:46.980
+and just keeping all the pieces glued together and the, you know, the pieces bolted down to get that,
+
+00:42:46.980 --> 00:42:51.700
+to get not the product as much as our test infrastructure and which was solid, but with
+
+00:42:51.700 --> 00:42:56.660
+the product changing underneath, it's a huge long story. But the short story is nothing
+
+00:42:56.660 --> 00:43:05.740
+surprised me because everything surprised me. Wow. That was remarkably Zenny and, or Zenny.
+
+00:43:05.740 --> 00:43:11.870
+I don't think. All right, everybody. That's all we have time for.
+
+00:43:14.430 --> 00:43:18.350
+All right. Thank you and see you next time. All right. Bye.
+

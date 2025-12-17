@@ -1,0 +1,1984 @@
+1
+00:00:00,000 --> 00:00:04,120
+Whereas a lot of engineers that I work with one-on-one have this limiting belief that
+
+2
+00:00:04,120 --> 00:00:08,980
+they get to hide behind the screen and just do what they're told, implement a fun technology,
+
+3
+00:00:08,980 --> 00:00:13,840
+learn interesting new stuff, new tech stacks, and that's it. That's all it takes.
+
+4
+00:00:13,840 --> 00:00:24,050
+Welcome to AVE Testing Podcast, your modern testing podcast. Your hosts, Alan and Brent,
+
+5
+00:00:24,050 --> 00:00:29,130
+will be here to guide you through topics on testing, leadership, agile, and anything
+
+6
+00:00:29,130 --> 00:00:32,250
+else that comes to mind. Now, on with the show.
+
+7
+00:00:32,330 --> 00:00:36,210
+Hey, everyone. It's Alan, and we're here for another AVE Testing Podcast, but it's the
+
+8
+00:00:36,210 --> 00:00:43,050
+A-B-D podcast because we have a special guest here. We have Dogna Bietta. Say hi, Dogna.
+
+9
+00:00:43,050 --> 00:00:44,770
+Hey, everyone.
+
+10
+00:00:44,770 --> 00:00:50,730
+Super happy to have you here. Dogna has a website called themindfuldev.com, which I will link to in
+
+11
+00:00:50,730 --> 00:00:55,410
+the show notes, and usually I remember. But I think rather than pause here and...
+
+12
+00:00:55,410 --> 00:00:57,530
+Oh, by the way, Brent's here too. Say hi, Brent.
+
+13
+00:00:57,610 --> 00:01:03,370
+Hi. I think we're the D-A-B, right?
+
+14
+00:01:03,370 --> 00:01:05,090
+Oh, correct. We're the DAB podcast.
+
+15
+00:01:05,090 --> 00:01:05,890
+Oh, right.
+
+16
+00:01:05,890 --> 00:01:06,810
+Love it.
+
+17
+00:01:06,810 --> 00:01:10,890
+Brent just dabbed on video. I think it's going to be a fun day.
+
+18
+00:01:10,890 --> 00:01:12,410
+Yeah, it'll be great.
+
+19
+00:01:12,410 --> 00:01:16,890
+So let's start off. Dogna, so happy to have you here. Excited. I've read about your stuff,
+
+20
+00:01:16,890 --> 00:01:21,850
+and you reached out to me to be on this podcast, so I'm humbled based on what you've done.
+
+21
+00:01:21,850 --> 00:01:28,090
+So can you please just tell us all, tell all three of our listeners a little bit about you
+
+22
+00:01:28,090 --> 00:01:30,250
+and where you came from and what you do.
+
+23
+00:01:30,250 --> 00:01:35,130
+Yeah, absolutely. I love to do that. And first of all, thank you for having me. Really appreciate it,
+
+24
+00:01:35,130 --> 00:01:39,930
+because one thing that I love doing is having conversations like the one that we're about to
+
+25
+00:01:39,930 --> 00:01:45,850
+have. So I'm super pumped you decided to schedule an hour of your day and hop on this conversation
+
+26
+00:01:45,850 --> 00:01:51,690
+with me. So in terms of what is it that I do, I moved away from being a software engineer,
+
+27
+00:01:51,930 --> 00:02:00,250
+to being a career coach for engineers in tech. And the reason it happened, it's, you know, over
+
+28
+00:02:01,930 --> 00:02:08,330
+a decade, I would say, as I was going through my own career progression, I noticed that while
+
+29
+00:02:08,330 --> 00:02:14,570
+engineering at the very beginning was really stimulating and exciting and solving problems where
+
+30
+00:02:15,530 --> 00:02:22,090
+was really something that kind of lit my fire. As the time went on and on, I noticed that I
+
+31
+00:02:23,900 --> 00:02:31,660
+wanted to do more of kind of one on one, deep conversations around engineering, but the
+
+32
+00:02:31,660 --> 00:02:37,660
+engineering in itself was less and less fun, if that makes sense. So I've experienced burnout
+
+33
+00:02:37,660 --> 00:02:46,620
+in my career, that was kind of a huge trigger point for myself. And as a result of that burnout,
+
+34
+00:02:46,620 --> 00:02:51,740
+I ended up seeking some professional help with therapy. And what talk therapy allowed me to do
+
+35
+00:02:51,740 --> 00:02:58,460
+was learning a lot about my internal mental programming. And I use some of that with my
+
+36
+00:02:58,460 --> 00:03:03,820
+clients that I coach one on one at this point in time. Because what's interesting,
+
+37
+00:03:04,540 --> 00:03:11,180
+there's so many parallels between how we create computer apps, or any sort of applications,
+
+38
+00:03:11,180 --> 00:03:18,460
+really, to how our minds work. So now I like to say that I move from programming computers to
+
+39
+00:03:18,460 --> 00:03:23,420
+reprogramming human minds, because that's what I do with my clients. We're already gonna go off
+
+40
+00:03:23,420 --> 00:03:29,980
+script here because because I think addressing burnout is something I do as a leader a lot,
+
+41
+00:03:29,980 --> 00:03:35,020
+especially during the last couple years of weird work schedules and times and lots and lots of
+
+42
+00:03:35,020 --> 00:03:39,900
+Zoom meetings. But also, I think I can, I'll just speak for Brent here, you can tell me edit it out
+
+43
+00:03:39,900 --> 00:03:48,120
+later. But having a therapist has been so not just good for me, but I can't help but translate
+
+44
+00:03:48,120 --> 00:03:53,320
+what I learned from therapy and helping me coach people on my team. And I think Brent would
+
+45
+00:03:53,320 --> 00:03:59,240
+probably say the same thing. Brent is nodding his head. Yes, I absolutely would. A side
+
+46
+00:03:59,240 --> 00:04:04,650
+recommendation, I think it's just, I can't emphasize that enough. I can't tell my team,
+
+47
+00:04:04,650 --> 00:04:09,770
+please use our benefits. But sometimes I want to say, please use our benefits. Because you get
+
+48
+00:04:10,620 --> 00:04:14,540
+help on so many different levels. So we had some questions we're going to talk about, but
+
+49
+00:04:14,540 --> 00:04:18,620
+I do want you to dive in a little bit more into burnout. So you mentioned that you were
+
+50
+00:04:18,620 --> 00:04:23,820
+facing burnout. Can maybe talk a little bit about how you recognized you were facing burnout
+
+51
+00:04:23,820 --> 00:04:28,540
+and what kinds of things you or what kinds of things you recommend to help deal with that in
+
+52
+00:04:28,540 --> 00:04:35,980
+people. Yeah, absolutely. So the number one thing was things that used to bring a lot of pleasure
+
+53
+00:04:35,980 --> 00:04:43,340
+to my life, like solving problems, creating a new deployment pipeline, making sure that the
+
+54
+00:04:43,340 --> 00:04:49,180
+bug gets tracked and fixed within a day or working on a new product that is being written
+
+55
+00:04:49,740 --> 00:04:55,980
+from grounds up totally from scratch. That used to be exciting. And there was a point in my life
+
+56
+00:04:55,980 --> 00:05:03,500
+that I reached that it wasn't exciting anymore. So that's number one, if something used to be fun,
+
+57
+00:05:03,500 --> 00:05:07,820
+and you used to find joy and pleasure in it, and then you're waking up every single day,
+
+58
+00:05:08,620 --> 00:05:16,060
+literally feeling like, I gotta go to work today. Not wanting to do it, not having the energy,
+
+59
+00:05:16,060 --> 00:05:23,340
+not having the motivation, procrastinating on the smallest of things, like reaching out to someone
+
+60
+00:05:23,340 --> 00:05:30,220
+on a different team that's working with your team. So whenever you're noticing those things,
+
+61
+00:05:30,220 --> 00:05:38,460
+another huge flag to observe is irony and sarcasm as you talk to other people. Because all these
+
+62
+00:05:38,460 --> 00:05:43,820
+emotions that are related to burnout that are very negative, they tend to spill over, whether
+
+63
+00:05:43,820 --> 00:05:51,100
+we want them or not, it comes out in how we handle other people in conversations, in communication,
+
+64
+00:05:51,660 --> 00:05:59,960
+whether we're being more or less rude. And that's something that you may not notice for yourself,
+
+65
+00:06:00,600 --> 00:06:07,720
+but your partner might tell you, your manager might tell you like, hey, would you mind tone it down a
+
+66
+00:06:07,720 --> 00:06:16,040
+little bit? So you'll probably get it from feedback from other people. So in my case, I moved in my
+
+67
+00:06:16,040 --> 00:06:20,760
+professional career, I worked as a software engineer back at home in Poland, and I moved
+
+68
+00:06:20,760 --> 00:06:26,840
+to United States and continue my software engineer career here. And one thing I noticed was that, you
+
+69
+00:06:26,840 --> 00:06:34,680
+know, on one hand, it was a cultural difference, because I am much more direct than my American
+
+70
+00:06:34,680 --> 00:06:41,960
+coworkers were at the time. But because of the move, I experienced something that's called
+
+71
+00:06:41,960 --> 00:06:49,990
+complicated grief, where I essentially had to leave my old life behind to start a new life
+
+72
+00:06:49,990 --> 00:06:56,710
+here in the States with my husband. And I didn't handle it so well, it was really hard to let go of
+
+73
+00:06:57,350 --> 00:07:06,070
+that past life. Nobody died, but still, my life completely changed as a result of me moving.
+
+74
+00:07:06,950 --> 00:07:15,510
+So with that, what happened was, I was the things kind of pancaked for me, you know,
+
+75
+00:07:15,510 --> 00:07:23,270
+like one thing happened on top of the other. And when I went to therapy to seek help, oh, and I had
+
+76
+00:07:23,270 --> 00:07:30,230
+a baby a long time as well. So postpartum depression probably played a role. And I went to seek therapy
+
+77
+00:07:30,230 --> 00:07:35,510
+and seek professional help, because I was at the point where I was like, you know what, I need
+
+78
+00:07:35,510 --> 00:07:42,950
+someone to let me know how to get out of where I'm at, because it's like, I'm not handling it
+
+79
+00:07:42,950 --> 00:07:48,950
+very well. That was at that point in time. Now, one thing that I have to say too, is that for me,
+
+80
+00:07:49,670 --> 00:07:56,790
+talking through what I was going through was helpful. So I didn't need any medication of sorts,
+
+81
+00:07:56,790 --> 00:08:03,700
+because again, there's so much power in understanding that human brain is kind of like an app,
+
+82
+00:08:03,700 --> 00:08:09,860
+and you can reprogram whatever you want, as long as you're open to understanding how
+
+83
+00:08:10,820 --> 00:08:16,500
+that programming was put into place, right? We don't have a good blame to access your brain and say,
+
+84
+00:08:16,500 --> 00:08:21,540
+oh, this is where those beliefs are coming from. I wish we did, but you know, that's kind of how
+
+85
+00:08:21,540 --> 00:08:28,580
+talk therapy worked for me, understanding how that, how my past experiences program my mind.
+
+86
+00:08:28,580 --> 00:08:33,140
+So yeah, we're kind of going off track here as well. But I hope that answers your question.
+
+87
+00:08:33,140 --> 00:08:40,740
+A lot of this is like hitting me right smack between the shoulder blades. So I'm glad we went
+
+88
+00:08:40,740 --> 00:08:45,220
+down there, but we're going to get onto the question I plan to ask you. Sorry about that.
+
+89
+00:08:45,220 --> 00:08:56,500
+Well, before we do that, Digna, thank you for sharing that. We'll probably, we can talk about
+
+90
+00:08:56,500 --> 00:09:10,410
+it briefly off air. I have had my unfair share of dealing with mental illness. I know it is,
+
+91
+00:09:11,450 --> 00:09:18,570
+it is part of your story. One, again, that I'm not yet willing to talk about on the podcast.
+
+92
+00:09:18,570 --> 00:09:23,290
+Alan knows a great deal about it. But thank you for sharing that and being willing,
+
+93
+00:09:23,850 --> 00:09:34,150
+being brave enough and willing to talk through that. I am also now going through therapy.
+
+94
+00:09:35,190 --> 00:09:43,670
+This is a big aspect, right? An old manager of mine said, once you realize that you're sort
+
+95
+00:09:43,670 --> 00:09:49,590
+of digging your own grave, the very first thing you need to do is put down the shovel and
+
+96
+00:09:49,590 --> 00:10:04,470
+recognize that you're sort of in a bad place and that you are still empowered to control your own
+
+97
+00:10:04,470 --> 00:10:10,870
+destiny, control your own life and move forward. Thank you for saying that. Now, going back to the
+
+98
+00:10:10,870 --> 00:10:15,910
+burnout thing, one of the things that your story reminded me of, are you familiar with Daniel Pink?
+
+99
+00:10:16,780 --> 00:10:26,150
+Yes. Okay. And his three things of what motivates people, like I'm wondering if in your move and
+
+100
+00:10:26,150 --> 00:10:32,730
+your code, if there's any chance that you actually ended up losing your purpose. You're like, okay,
+
+101
+00:10:32,730 --> 00:10:39,530
+I lost all my question. I lost all my friends. Everybody here does everything so freaking
+
+102
+00:10:39,530 --> 00:10:48,570
+weird. I got to be so nice and flowery. Before I could just tell people, you're a jerk, cut it out.
+
+103
+00:10:48,570 --> 00:10:55,610
+Now I pay the cost. Yeah. Totally get this whole thing. And so I'm wondering.
+
+104
+00:10:56,250 --> 00:11:02,810
+I love your question, Brent. So in terms of losing my purpose, when I was a teenager, what I wanted
+
+105
+00:11:02,810 --> 00:11:08,170
+to do is create the future. And one thing that sounded the most futuristic that I could
+
+106
+00:11:08,810 --> 00:11:14,090
+come up with was becoming an engineer and building robots. So I actually studied robotics,
+
+107
+00:11:14,090 --> 00:11:21,850
+control engineering and robotics in university back in Poland in my home country. And the moment
+
+108
+00:11:21,850 --> 00:11:27,290
+I graduated, I was actually so excited I wouldn't have to be coding in my life ever again,
+
+109
+00:11:27,290 --> 00:11:34,440
+because I hated programming. In my classes, as I was learning how to build robots,
+
+110
+00:11:34,440 --> 00:11:40,200
+a huge part of it is programming them. And that's on embedded level, and then on higher level,
+
+111
+00:11:40,200 --> 00:11:47,160
+and then sending things back and forth through different types of networks. But I realized
+
+112
+00:11:47,160 --> 00:11:55,240
+that working as a robotics engineer, it takes so freaking long to build a robot that it wasn't
+
+113
+00:11:55,240 --> 00:12:00,520
+fulfilling anymore at that point in time. It just took too long to build them for me to find
+
+114
+00:12:01,080 --> 00:12:05,960
+pleasure and have that motivation. So having had that foundation of programming,
+
+115
+00:12:06,520 --> 00:12:16,600
+I did move into a job where I started to code more. And at that time, I also met my husband.
+
+116
+00:12:16,600 --> 00:12:21,880
+So when I moved to the United States, I actually moved because I fell in love. And when people
+
+117
+00:12:21,880 --> 00:12:25,480
+fall in love, they do stupid things. So I just moved to a different continent, right?
+
+118
+00:12:25,480 --> 00:12:32,840
+And regardless of losing that motivation, one thing that I noticed is, even though I was building,
+
+119
+00:12:33,720 --> 00:12:37,400
+like in my most recent job that I was talking about where I experienced burnout,
+
+120
+00:12:37,960 --> 00:12:43,960
+I was creating the future in the sense that I was building apps that were being deployed
+
+121
+00:12:45,000 --> 00:12:51,480
+and impacted millions of people every day. But it just didn't feel like it had
+
+122
+00:12:52,200 --> 00:12:59,000
+that big of an impact. Technologically, it was stimulating at the beginning
+
+123
+00:12:59,860 --> 00:13:06,420
+because I need to ramp up on being a mobile engineer very quickly. And that was the fun part,
+
+124
+00:13:06,420 --> 00:13:11,620
+learning new things. And one thing that I tell my clients all the time, a lot of the time,
+
+125
+00:13:12,180 --> 00:13:18,980
+we're using learning as a procrastination technique because it feels good to learn something
+
+126
+00:13:18,980 --> 00:13:24,580
+new. But sometimes what you actually need to do that is good for your career and that is good for
+
+127
+00:13:24,580 --> 00:13:30,020
+your growth just doesn't sound that fun. So we don't end up doing it, right? So going back to
+
+128
+00:13:30,020 --> 00:13:36,820
+the motivation, I realized that my motivation was impact, but the impact that I could have on
+
+129
+00:13:37,380 --> 00:13:43,140
+an individual's life was much more important for me than the impact I could have by impacting
+
+130
+00:13:43,140 --> 00:13:46,740
+quote unquote millions of people that were using the apps that I've built,
+
+131
+00:13:46,740 --> 00:13:52,420
+if that makes sense, right? So the moment I started being more of a mentor, and then started
+
+132
+00:13:52,420 --> 00:13:57,460
+moving towards coaching because there are specific and important differences between mentorship and
+
+133
+00:13:57,460 --> 00:14:04,420
+coaching, which we can talk about later, I noticed that the moment I was able to help people have
+
+134
+00:14:04,420 --> 00:14:12,840
+similar aha moments that I had in my personal growth journey, and help them literally change
+
+135
+00:14:12,840 --> 00:14:19,000
+their whole life for the better. That was so much more fulfilling than any app that I could build,
+
+136
+00:14:19,000 --> 00:14:27,290
+if that makes sense. No, it makes a lot of sense. And honestly, I think software teams need more
+
+137
+00:14:27,290 --> 00:14:31,690
+coaches. And I've, I don't know if I've done this on the podcast before, but I have definitely
+
+138
+00:14:31,690 --> 00:14:36,890
+talked to friends and my wife about this. Like someday, if I'm ever like a CEO, I'm going to
+
+139
+00:14:36,890 --> 00:14:43,990
+have, I probably call them coaches, but really, I want therapists on my, on my staff to work with
+
+140
+00:14:43,990 --> 00:14:49,590
+my team. They're so yeah, without going down that rabbit hole, I do. There's one thing you said,
+
+141
+00:14:49,590 --> 00:14:54,070
+you were in your notes that you had some experience talking about, I like to get into,
+
+142
+00:14:54,070 --> 00:15:02,870
+especially in these economic times. There's a segue is what are the things an engineer can do,
+
+143
+00:15:02,870 --> 00:15:08,470
+or I was an engineer, an employee, a technical employee, a knowledge worker can do to help
+
+144
+00:15:08,470 --> 00:15:16,390
+lay off proof their career. Yes. So I was about to segue into that as well, kind of tying a little
+
+145
+00:15:16,390 --> 00:15:20,550
+bit along to what Brent said that, you know, previously in my job, I was able to kind of
+
+146
+00:15:20,550 --> 00:15:26,710
+be more upfront and direct to people. And then after I moved to United States, I wasn't able to
+
+147
+00:15:26,710 --> 00:15:33,110
+do that anymore. You know, one of the things that I learned that I can see now in hindsight
+
+148
+00:15:33,750 --> 00:15:39,990
+is that my communication, my style of communication was being a very aggressive communicator, right?
+
+149
+00:15:39,990 --> 00:15:47,800
+And whenever you're trying to get points across, what's really key is to, is to bring more of
+
+150
+00:15:48,440 --> 00:15:54,840
+EQ, which is like this emotional intelligence into the conversation, rather than just trying
+
+151
+00:15:54,840 --> 00:16:01,720
+to push your points across, right? Which is a soft skill that's very much critical if you
+
+152
+00:16:01,720 --> 00:16:08,600
+want to lay off proof your career, right? So clear communication is something that I work with my
+
+153
+00:16:08,600 --> 00:16:14,120
+clients on. And that's one of the skills that helps you become lay off proof. And before we
+
+154
+00:16:14,120 --> 00:16:21,500
+dive into other skills, another thing I want to point out that the reason engineers are not as,
+
+155
+00:16:22,460 --> 00:16:27,260
+well, as we experienced in the Q4 of 2022, we were...
+
+156
+00:16:28,470 --> 00:16:31,670
+Dang, now pause, pause for just a second. Looks like...
+
+157
+00:16:31,670 --> 00:16:31,830
+Okay.
+
+158
+00:16:32,870 --> 00:16:36,470
+Based on my side, it looks like we lost Alan. Alan, are you there?
+
+159
+00:16:37,030 --> 00:16:38,870
+Oh, yeah, I lost a visual of him too.
+
+160
+00:16:43,500 --> 00:16:48,060
+I don't know. I'm going to hope that, I don't sure if what happens with the recording when
+
+161
+00:16:48,060 --> 00:16:52,860
+Zeng Kaster decides to puke on my end, but I imagine you had a really good conversation there
+
+162
+00:16:52,860 --> 00:16:58,300
+that I will... It's again, every time I mention the word Zeng Kaster, Zeng Kaster does something
+
+163
+00:16:58,300 --> 00:17:00,460
+to screw up my audio.
+
+164
+00:17:01,340 --> 00:17:06,380
+That was at least five minutes of our conversation where I'm like, oh, well, at least this is
+
+165
+00:17:06,380 --> 00:17:12,460
+something new for Alan to complain about. I have no idea what happened. All right.
+
+166
+00:17:13,260 --> 00:17:16,780
+So, Dangna and I both officially forgot our question.
+
+167
+00:17:18,140 --> 00:17:21,180
+Well, we were talking about emotional quotient.
+
+168
+00:17:21,180 --> 00:17:22,140
+And...
+
+169
+00:17:22,140 --> 00:17:22,860
+Right.
+
+170
+00:17:22,860 --> 00:17:25,420
+Actually, I'm going to tell a quick story, kick it back into you, and you can kind of
+
+171
+00:17:25,420 --> 00:17:28,700
+pick up wherever we left off, and I will magically stitch this back together
+
+172
+00:17:29,500 --> 00:17:31,580
+in some way that makes sense.
+
+173
+00:17:31,580 --> 00:17:35,020
+Oh, just segue by complaining about Zeng Kaster.
+
+174
+00:17:35,020 --> 00:17:37,980
+Zeng Kaster, Zeng Kaster, Zeng Kaster, I hate you sometimes.
+
+175
+00:17:39,260 --> 00:17:43,180
+Your story about emotional quotient being direct reminded me of two things.
+
+176
+00:17:43,180 --> 00:17:49,020
+One, there is a book called The Culture Map, which is fascinating, and it talks about how
+
+177
+00:17:49,660 --> 00:17:55,340
+you can say the exact same words to someone from Germany or Poland and something from
+
+178
+00:17:55,340 --> 00:17:58,140
+France, and they'll take it completely differently.
+
+179
+00:17:58,140 --> 00:18:03,020
+And it's this map of how to communicate with different cultures, which is really important
+
+180
+00:18:03,020 --> 00:18:05,340
+if you're in a global group.
+
+181
+00:18:05,900 --> 00:18:08,860
+The other thing it reminded me of is this story from Microsoft.
+
+182
+00:18:08,860 --> 00:18:09,740
+I did this...
+
+183
+00:18:09,740 --> 00:18:10,380
+This is...
+
+184
+00:18:10,380 --> 00:18:15,660
+I was there for about 20 years, but maybe 15 years ago, I did this 360 review where
+
+185
+00:18:16,550 --> 00:18:21,270
+I was an up-and-coming leader, and they had all these people give this extensive feedback
+
+186
+00:18:21,270 --> 00:18:25,430
+and interviews about me, and I met with HR to go over my results, and they said,
+
+187
+00:18:25,430 --> 00:18:29,430
+Alan, people absolutely love the work you do.
+
+188
+00:18:29,430 --> 00:18:33,270
+They think you can do anything, but they also think you're a little bit of an asshole.
+
+189
+00:18:35,930 --> 00:18:36,730
+I can relate.
+
+190
+00:18:36,730 --> 00:18:37,530
+Oh, my goodness.
+
+191
+00:18:37,530 --> 00:18:38,810
+I can totally relate to that.
+
+192
+00:18:38,810 --> 00:18:42,410
+So that's what reminded me, and that's when I began to study emotional quotient and pay
+
+193
+00:18:42,410 --> 00:18:48,090
+attention to how I was coming across, and ask people for feedback.
+
+194
+00:18:48,090 --> 00:18:49,130
+I said, how did I...
+
+195
+00:18:50,410 --> 00:18:51,450
+My intent was this.
+
+196
+00:18:51,450 --> 00:18:52,410
+What do you think happened?
+
+197
+00:18:52,970 --> 00:18:54,250
+And do those sorts of things.
+
+198
+00:18:54,250 --> 00:18:56,730
+So I think that's where you're going.
+
+199
+00:18:56,730 --> 00:19:00,970
+I want to drop that in, but I think what you were saying is by growing your emotional
+
+200
+00:19:00,970 --> 00:19:04,570
+quotient, you can help make yourself layoff proof.
+
+201
+00:19:04,570 --> 00:19:05,850
+That's one aspect of it.
+
+202
+00:19:05,850 --> 00:19:07,210
+I don't know what else I missed in there.
+
+203
+00:19:07,210 --> 00:19:10,490
+If you're repeating yourself, it'll be beneficial for me.
+
+204
+00:19:11,290 --> 00:19:12,090
+How do you go about...
+
+205
+00:19:12,090 --> 00:19:17,370
+How do you suggest going about improving your emotional quotient, emotional intelligence?
+
+206
+00:19:17,930 --> 00:19:23,130
+So first off, what you hinted at there was really key.
+
+207
+00:19:23,130 --> 00:19:31,530
+Understanding that depending on where you come from, how people will come across will be different,
+
+208
+00:19:32,700 --> 00:19:35,820
+depending on their cultural background.
+
+209
+00:19:36,460 --> 00:19:41,900
+And there's a really cool tool that I use with my clients, which is called Hofstede model,
+
+210
+00:19:41,900 --> 00:19:47,260
+which helps you kind of compare on a very high level the different cultures that you
+
+211
+00:19:47,260 --> 00:19:52,140
+and your coworker coming from might perceive certain things differently.
+
+212
+00:19:52,700 --> 00:19:54,940
+But in terms of becoming...
+
+213
+00:19:55,580 --> 00:19:59,900
+Increasing the EQ, one of the things is empathy.
+
+214
+00:20:00,380 --> 00:20:07,900
+But I feel like empathy is important in communication, but also in having a
+
+215
+00:20:07,900 --> 00:20:09,900
+business understanding kind of setting.
+
+216
+00:20:10,860 --> 00:20:16,060
+As an engineer, you've been hired to bring value to the business that you work for.
+
+217
+00:20:16,060 --> 00:20:22,060
+How do you bring that value if you are not able to communicate with people across the board?
+
+218
+00:20:22,060 --> 00:20:28,300
+So one thing is communicating with your peers who have similar level of detail in understanding.
+
+219
+00:20:28,300 --> 00:20:34,460
+How do you work with them on setting expectations, realizing that there may be some hidden
+
+220
+00:20:34,460 --> 00:20:36,780
+assumptions as you're trying to solve problems?
+
+221
+00:20:36,780 --> 00:20:39,900
+Or how do you ask clarifying questions?
+
+222
+00:20:39,900 --> 00:20:45,820
+Or how do you actively listen to someone when you're having a conversation and then
+
+223
+00:20:45,820 --> 00:20:50,300
+give them that kind of feedback so they get it that you're on the same page, right?
+
+224
+00:20:50,300 --> 00:20:56,860
+So clear communication is really key here and being empathetic helps with that.
+
+225
+00:20:57,580 --> 00:21:04,060
+So if you are also, anyone listening here, coming across as arrogant, and I know I did for sure,
+
+226
+00:21:04,060 --> 00:21:09,820
+there was this one time that I got feedback that I sounded like a total asshole.
+
+227
+00:21:09,820 --> 00:21:14,300
+And the story was that the company I work for unfortunately had to make some cuts.
+
+228
+00:21:14,300 --> 00:21:15,900
+They had to let people go.
+
+229
+00:21:15,900 --> 00:21:20,220
+And we have this company-wide meeting and I'm asking this question because I thought
+
+230
+00:21:20,940 --> 00:21:26,300
+that the leadership level was not aware how the layoffs that they did and the engineering
+
+231
+00:21:27,100 --> 00:21:35,500
+people that they let go, how that impacted my day today in our deployment and caring for the apps
+
+232
+00:21:35,500 --> 00:21:42,940
+that we had. So I thought they were not aware. And then my boss's boss comes to me and tells me,
+
+233
+00:21:42,940 --> 00:21:49,500
+D'Agna, why did you call our leadership team a bunch of idiots in front of the whole company?
+
+234
+00:21:49,500 --> 00:21:55,940
+And I'm like, that was not my intention. Is that really how it came across?
+
+235
+00:21:56,100 --> 00:22:04,820
+Like, it was just hard for me to understand, but that was on one hand, this lack of assertiveness
+
+236
+00:22:04,820 --> 00:22:10,100
+in how I communicated, because I never had to communicate assertively.
+
+237
+00:22:11,140 --> 00:22:15,780
+I had to learn what it means and how to get my points across and how to
+
+238
+00:22:15,780 --> 00:22:18,580
+help people feel validated whenever we're having conversations.
+
+239
+00:22:18,580 --> 00:22:23,060
+And one book that is fabulous on the topic is from this FBI negotiator,
+
+240
+00:22:23,780 --> 00:22:30,580
+Chris Voss, who talks about how to negotiate as if your life depended on it,
+
+241
+00:22:30,580 --> 00:22:35,540
+because he used to do that in his job as the FBI negotiator, right? Brilliant book,
+
+242
+00:22:35,540 --> 00:22:42,020
+highly recommended. And it gives a lot of feedback and points on how to become more assertive,
+
+243
+00:22:42,020 --> 00:22:48,660
+understand where people are coming from, but in that more critical setting that I feel is more
+
+244
+00:22:48,660 --> 00:22:53,700
+appealing to engineers than when talking about empathy, because I feel like the word itself
+
+245
+00:22:53,700 --> 00:22:58,420
+is not that appealing to engineers, if that makes sense. It's very valuable, don't get me wrong.
+
+246
+00:22:59,220 --> 00:23:04,660
+It's just certain words have this associated context with them, and we feel a certain way
+
+247
+00:23:04,660 --> 00:23:09,300
+about them. And if someone says that trigger word, you're like, huh, not paying attention anymore,
+
+248
+00:23:09,300 --> 00:23:13,060
+if you know what I'm saying. But going back to lay of proofing,
+
+249
+00:23:13,060 --> 00:23:19,220
+because that's kind of where you got cut off for a second there, Alan, was being clear communicator
+
+250
+00:23:19,220 --> 00:23:24,340
+is really key. And this is if you think about it, like transferable skill that will help you in
+
+251
+00:23:24,340 --> 00:23:30,660
+any job you have, whether you're a QA engineer, whether you're a software engineer, whether you
+
+252
+00:23:30,660 --> 00:23:37,060
+move on to being a team lead, being able to communicate clearly will help you in any sort
+
+253
+00:23:37,060 --> 00:23:43,140
+of job in any sort of career track that you might select for yourself. The other things are
+
+254
+00:23:43,700 --> 00:23:50,740
+collaboration, productivity and ownership, which is also something we can dive into more.
+
+255
+00:23:51,380 --> 00:23:55,860
+Having that business acumen, which I hinted a little bit earlier, understanding what it is that
+
+256
+00:23:55,860 --> 00:24:02,420
+your business is doing and how you actually provide value within your day to day. And then marketing,
+
+257
+00:24:02,420 --> 00:24:08,580
+you know, a lot of engineers I work with have this limiting belief, my work speaks for itself,
+
+258
+00:24:08,580 --> 00:24:15,380
+which it doesn't. Right. So yeah, like, there's so many topics here that we can dive into.
+
+259
+00:24:15,380 --> 00:24:18,340
+Let me know which one sparks most of your interest.
+
+260
+00:24:18,340 --> 00:24:24,660
+I will, but I just want to, I mean, everything you said a million percent on the mark. One thing
+
+261
+00:24:24,660 --> 00:24:29,060
+before I forget, I believe the Chris Foss book is it's called Never Split the Difference.
+
+262
+00:24:29,620 --> 00:24:38,150
+Yes. I do recommend that as well. Jerry Weinberg says in a bunch of actually a couple of his
+
+263
+00:24:38,150 --> 00:24:42,470
+books that in software, eventually it's always a people problem. And even in the mythical man
+
+264
+00:24:42,470 --> 00:24:47,590
+month for Brooks calls out the problems in communication that plague teams trying to grow.
+
+265
+00:24:48,310 --> 00:24:52,230
+Yet, even though the mythical man month is like a hundred million years old by now,
+
+266
+00:24:52,950 --> 00:24:59,910
+estimating a lot of teams, just a lot of people just don't realize yet how critical
+
+267
+00:25:01,000 --> 00:25:06,200
+not just in, you can say communication, not just talking, but you mentioned active listening and
+
+268
+00:25:07,000 --> 00:25:11,960
+listening for intent and asking clarifying questions, clarifying understanding.
+
+269
+00:25:13,460 --> 00:25:18,260
+Like how many times, and this is a rhetorical question for you too on our listeners, has a
+
+270
+00:25:18,260 --> 00:25:24,820
+software team agreed to go do something and then walked out of the room with seven different ideas
+
+271
+00:25:24,820 --> 00:25:32,740
+of what they were going to go do. But what makes you more valuable is like everything you talked
+
+272
+00:25:32,740 --> 00:25:39,300
+about between marketing and communication and collaboration. These are the things that make
+
+273
+00:25:39,300 --> 00:25:44,660
+you a force multiplier on your team. These are the things that make you valuable. It's
+
+274
+00:25:44,660 --> 00:25:49,540
+far more valuable than the, you know, the coding's easy relatively than the human part.
+
+275
+00:25:50,500 --> 00:25:55,690
+I'm going to make that statement. You can disagree with me or not. But what, so was there
+
+276
+00:25:55,690 --> 00:26:01,420
+a question in there? I just wanted to underscore everything you said. Maybe dive into Brent's
+
+277
+00:26:01,420 --> 00:26:08,380
+laughing at me. The thing that I, when I coach teams, I think the thing that's maybe hardest
+
+278
+00:26:08,380 --> 00:26:14,700
+from all that, maybe talk about that a little bit more. How do you, like, how do you teach
+
+279
+00:26:14,780 --> 00:26:19,660
+or how do you, when you're coaching people, how do you coach around active listening and
+
+280
+00:26:19,660 --> 00:26:25,420
+clarifying questions and what tips do you have for people to get beyond shallow agreement?
+
+281
+00:26:26,820 --> 00:26:32,100
+That's a great one. Okay. We can talk about that, but I'm curious if Brent has anything to add in
+
+282
+00:26:32,100 --> 00:26:38,620
+terms of, you know, Brent always has things to add him managing people as well. Right.
+
+283
+00:26:38,620 --> 00:26:48,310
+That's a dangerous invite, Taika. Yeah. A lot of what you said resonated.
+
+284
+00:26:49,750 --> 00:26:57,190
+I don't know that you said this directly. I have been a manager for multiple years. I
+
+285
+00:26:58,820 --> 00:27:08,790
+have had, there's a story I had of an employee during a reorg. A couple of employees found out
+
+286
+00:27:08,790 --> 00:27:15,510
+that they might reorg to Brent. Oh no. So they went and did an investigation and talked to my
+
+287
+00:27:15,510 --> 00:27:22,710
+other employees. And they said, well, what can you say about Brent? And they said, Brent
+
+288
+00:27:23,270 --> 00:27:33,110
+is brutally honest. That was sort of, that is by the way, that is my, uh, my, what is it? Politically
+
+289
+00:27:33,110 --> 00:27:41,260
+correct way of translating asshole. Brent was brutally honest. And he said, literally,
+
+290
+00:27:42,440 --> 00:27:48,550
+number one, you really should not ask Brent any question you don't want the answer to.
+
+291
+00:27:49,270 --> 00:27:55,350
+Because he will tell you. So one of the things you didn't said is so the emotional,
+
+292
+00:27:55,350 --> 00:28:01,190
+so not only am I a huge believer in active listening, but I think the onus is on you,
+
+293
+00:28:01,190 --> 00:28:10,870
+the communicator to help encourage act. I'm going to invent a term, active hearing. You need to
+
+294
+00:28:10,870 --> 00:28:17,270
+understand what you said is empathy. A lot of people will go, oh, you need to feel what they're feeling.
+
+295
+00:28:18,230 --> 00:28:26,020
+And that turns off a lot of people because right. It sounds very touchy feeling. And
+
+296
+00:28:26,580 --> 00:28:34,660
+right. I tell my employees, I have two emotions, uh, depressed and pissed off. And I use neither
+
+297
+00:28:34,660 --> 00:28:44,180
+of them very often. Right. But when I do, that's all I do. Okay. It's, but the sense of empathy
+
+298
+00:28:44,180 --> 00:28:49,860
+that I think is important, I think it's valuable to bring up negotiation. Um, and that sort of
+
+299
+00:28:49,860 --> 00:28:57,380
+skillset because the letter, the set of empathy that you really need at minimum is to understand
+
+300
+00:28:57,380 --> 00:29:04,760
+where they're coming from. It because, uh, you know, the old cliche, put yourself in their shoes.
+
+301
+00:29:05,960 --> 00:29:12,390
+Now from negotiation tactics, I would say, okay, if you're in a, uh, a communication where
+
+302
+00:29:12,390 --> 00:29:19,430
+negotiation is involved, right? Really, if you set the other person and get them defensive,
+
+303
+00:29:20,150 --> 00:29:25,510
+then the conversation's over. All they're going to do is defend their position. You're not,
+
+304
+00:29:26,230 --> 00:29:34,790
+you're not going to create a win-win where everyone walks out happy. For me, the, the biggest book,
+
+305
+00:29:34,790 --> 00:29:39,270
+uh, that, that has transformed my point of view on that one is called getting to yes,
+
+306
+00:29:40,390 --> 00:29:47,670
+where it's, it's a whole series. It's, it's an older book. I'm an older guy. Um, but it's a
+
+307
+00:29:47,670 --> 00:29:56,420
+great series of how, what, what the guy did is go through and then they discussed the types of
+
+308
+00:29:56,420 --> 00:30:04,740
+arguments that are being made and how to, how to redirect those discussions into something that
+
+309
+00:30:04,740 --> 00:30:12,300
+then has a chance of becoming a win-win. Yes. In terms of, of the other thing that you said that
+
+310
+00:30:12,300 --> 00:30:19,900
+resonated with me, that reminded me a great deal. So I mentor a lot of folks and a lot of times I'll
+
+311
+00:30:19,900 --> 00:30:29,140
+get someone who is, who is new to management. And one of the biggest piece of advice that I give them
+
+312
+00:30:30,180 --> 00:30:36,660
+is look, you need to manage your employees. You need to produce business value. Like the,
+
+313
+00:30:36,660 --> 00:30:42,740
+the reason why you're delivering, like the reason why your team is formed, that's so important.
+
+314
+00:30:43,460 --> 00:30:48,420
+But in the back of your head, you always have to remember 10 years from now,
+
+315
+00:30:49,060 --> 00:30:55,860
+no one is going to remember what code you and your team wrote. No one, but the people who you
+
+316
+00:30:55,860 --> 00:31:04,060
+were managing, every single one of them is going to, is going to remember how you, you helped them
+
+317
+00:31:04,060 --> 00:31:12,820
+or didn't, how you got that product out or didn't. Right. So that the legacy, when you're a manager,
+
+318
+00:31:12,820 --> 00:31:19,780
+your legacy is the people that work for you and work around you. I don't know if that helps us
+
+319
+00:31:19,780 --> 00:31:25,540
+motivation, but yeah, that resonated and I'm going to cut myself off now.
+
+320
+00:31:28,780 --> 00:31:33,660
+That's very kind of you Brent. I totally agree with what you were saying in terms of,
+
+321
+00:31:33,980 --> 00:31:40,220
+empathy being a word that for a lot of people triggers, like, this is touchy-feely. I don't
+
+322
+00:31:40,220 --> 00:31:46,220
+care about what other people are feeling. I just want to get my job done. Right. And here's the
+
+323
+00:31:46,220 --> 00:31:55,400
+realization that comes with empathy that, I like to highlight is that let's look at the neuroscience
+
+324
+00:31:55,400 --> 00:32:00,920
+of it. Let's look at human evolution. Let's look at the tools that you have available as a human
+
+325
+00:32:00,920 --> 00:32:07,800
+being in order to help other human beings cooperate with you. Super helpful in the work
+
+326
+00:32:07,800 --> 00:32:11,480
+setting, right? Especially if you're part of a team and trying to accomplish something.
+
+327
+00:32:12,280 --> 00:32:17,800
+So whenever, you know, we took, we look at it from the perspective of neuroscience
+
+328
+00:32:18,360 --> 00:32:26,040
+and what it has to say about body language, what it has to say about creating a safe space,
+
+329
+00:32:26,040 --> 00:32:32,040
+psychological space so that people don't either shut down and stop listening completely to what
+
+330
+00:32:32,040 --> 00:32:37,000
+you're saying or become defensive, like you said, right? Whenever they're becoming defensive,
+
+331
+00:32:37,640 --> 00:32:42,120
+then whatever you say is not going to matter because they're protecting their ego. They're
+
+332
+00:32:42,120 --> 00:32:47,240
+protecting themselves because they are feeling under threat and under attack. So if you, if
+
+333
+00:32:47,240 --> 00:32:51,960
+we look at it from the neuroscience and evolutionary perspective, again, this is a
+
+334
+00:32:51,960 --> 00:32:59,340
+highly valuable and critical skill to help you get other people on board with what is it that
+
+335
+00:32:59,340 --> 00:33:04,460
+you're trying to accomplish, right? Whether that's shipping a new product, creating a new feature,
+
+336
+00:33:05,020 --> 00:33:13,180
+agreeing on maybe creating a new team, right? For a research project or making sure that you
+
+337
+00:33:13,180 --> 00:33:20,140
+implement a certain process within your company because it could increase business value. So at
+
+338
+00:33:20,140 --> 00:33:26,780
+the end of the day, just like you were talking about it, Alan, a while ago is that at the core
+
+339
+00:33:26,780 --> 00:33:33,420
+as an engineer, what you're doing is creating a product or making sure that the product is good
+
+340
+00:33:33,420 --> 00:33:39,180
+for other people and you're doing it with other people. So people are key there. Whereas a lot
+
+341
+00:33:39,180 --> 00:33:43,260
+of engineers that I work with one-on-one have this limiting belief that they get to hide behind
+
+342
+00:33:43,260 --> 00:33:48,540
+the screen and just do what they're told, implement a fun technology, learn interesting
+
+343
+00:33:48,540 --> 00:33:54,300
+new stuff, new tech stacks, and that's it. That's all it takes. And this is not at the core of
+
+344
+00:33:54,300 --> 00:34:01,420
+anyone's job. Yeah, it's fun. And it can be really entertaining and stimulating intellectually,
+
+345
+00:34:01,420 --> 00:34:07,260
+but that's, what's fun for your career isn't always beneficial and isn't going to get things done.
+
+346
+00:34:07,260 --> 00:34:13,260
+Right? So it kind of goes back to what your priorities are in terms of how do you see your
+
+347
+00:34:13,260 --> 00:34:17,420
+career going? Where do you want to go? Are you comfortable in the spot that you're in?
+
+348
+00:34:17,500 --> 00:34:20,860
+Do you want something more? Most of the people that I work with,
+
+349
+00:34:21,580 --> 00:34:27,740
+they feel that hidden potential within them and they want to do more. They're just not aware how
+
+350
+00:34:27,740 --> 00:34:33,420
+they're stopping themselves because what happens is most of those limiting beliefs, like my work
+
+351
+00:34:33,420 --> 00:34:38,860
+speaks for itself. I don't have to be an empathetic listener because empathy is blah.
+
+352
+00:34:40,700 --> 00:34:43,980
+Most of those limiting beliefs are hidden in the blind spot.
+
+353
+00:34:44,620 --> 00:34:50,380
+And until someone who has the experience of either going through the exact same experience as you did
+
+354
+00:34:50,380 --> 00:34:55,660
+or coaching other people and helping them get out of that rut, getting unstuck, you're not going
+
+355
+00:34:55,660 --> 00:35:00,220
+to be able to see it for yourself because it's exactly in your blind spot. Right? So that's
+
+356
+00:35:00,220 --> 00:35:05,260
+something that I do with my clients, addressing those limiting beliefs that they have in terms
+
+357
+00:35:05,260 --> 00:35:12,380
+of one, how they operate, how the world operates, how to work with other people. And going back
+
+358
+00:35:12,380 --> 00:35:18,250
+to tips on active listening. There's a really cool exercise that's very simple. If you want to
+
+359
+00:35:18,250 --> 00:35:26,100
+see if you're a good listener, is to close your eyes and try to count from one to 50. Right?
+
+360
+00:35:27,540 --> 00:35:34,980
+And see how that goes. Because I mean, presumably, if you're not able to listen to your own voice
+
+361
+00:35:34,980 --> 00:35:40,490
+in your own head, someone who you probably like, how are you going to be able to listen,
+
+362
+00:35:40,490 --> 00:35:46,730
+actively listen to what other people have to say. So that's a fun exercise to do and see whether or
+
+363
+00:35:46,730 --> 00:35:53,270
+not you can actually focus on yourself counting to 15 your own mind without disruptions. If you're,
+
+364
+00:35:53,270 --> 00:35:59,670
+if you have, you know, good listening skills. And the second thing is, I would say, a lot of
+
+365
+00:36:00,900 --> 00:36:07,140
+communication is around intent and understanding the intent of other people. Right? So whenever
+
+366
+00:36:07,220 --> 00:36:12,020
+you're coming to a conversation, you're trying to negotiate something, even if it's something as
+
+367
+00:36:12,020 --> 00:36:17,770
+simple as what we're getting for dinner tonight. There's this really cool quote by Jack Hanfield.
+
+368
+00:36:19,610 --> 00:36:25,610
+I really like his work in the books that he has. So one of the things that he says
+
+369
+00:36:26,570 --> 00:36:36,330
+is that at every point in time, what you're and anyone is doing is, you know, doing it in
+
+370
+00:36:36,330 --> 00:36:40,410
+order to meet their needs with the information, the awareness and the skills that they have.
+
+371
+00:36:41,130 --> 00:36:46,730
+So if they're coming across as a jerk, maybe they don't have the skills to communicate better.
+
+372
+00:36:47,590 --> 00:36:52,150
+Or maybe the information that they have, if they keep asking the same question again and again and
+
+373
+00:36:52,150 --> 00:36:57,270
+again, maybe they're not able to process the information you gave them. Or maybe that
+
+374
+00:36:57,270 --> 00:37:03,670
+information wasn't clear for them, or they need to get it delivered in a different way.
+
+375
+00:37:04,520 --> 00:37:10,520
+Or, you know, for some reason, their needs aren't being met. So they're not really able to focus
+
+376
+00:37:10,520 --> 00:37:14,680
+what it is that you're telling them. So whenever you come to a conversation,
+
+377
+00:37:15,560 --> 00:37:20,440
+understanding this basic psychology, that at any point in time, people are doing their best,
+
+378
+00:37:21,320 --> 00:37:27,320
+given the skills, information and awareness that they have in order to meet their needs,
+
+379
+00:37:28,040 --> 00:37:32,680
+that makes any conversation so much easier, because it's not about you anymore. Right? So
+
+380
+00:37:32,680 --> 00:37:37,800
+you don't have to get defensive. It's the baggage that they bring into the conversation
+
+381
+00:37:37,800 --> 00:37:43,880
+that can help you get them on board with whatever is the idea that you're presenting, like what to
+
+382
+00:37:43,880 --> 00:37:50,710
+have for dinner. I hope that makes sense. No, that makes so much sense. So much good stuff in there.
+
+383
+00:37:50,710 --> 00:37:57,960
+I'm going to build on it a little bit. If I remember what's your name? Tacos. Tacos. What?
+
+384
+00:37:58,040 --> 00:38:02,600
+That's what people say. So, oh, tacos for dinner, of course.
+
+385
+00:38:04,440 --> 00:38:08,840
+See, I was actively listening. Yeah. I was thinking by telling
+
+386
+00:38:08,840 --> 00:38:12,280
+Brent to actually count to 50, that getting distracted, you put him into his depressed mood.
+
+387
+00:38:13,400 --> 00:38:19,480
+Now, actually, actually hold on to your question. I see that you're trying to form it anyway.
+
+388
+00:38:19,480 --> 00:38:25,930
+But that one to 50, I simulated that and I would actually say, everyone will go, oh, of course I
+
+389
+00:38:26,010 --> 00:38:33,370
+can do that. It's one to 50. Right? But the second you actually begin to do that, you realize,
+
+390
+00:38:34,410 --> 00:38:40,810
+wow, 50 is a long count. Right? And the reason why I think that's an important training for
+
+391
+00:38:40,810 --> 00:38:47,610
+active listening, and I would actually even further and say, and do it every day. Start the
+
+392
+00:38:47,610 --> 00:38:55,290
+day closing your eyes, counting to 50, because it is practice for the coaching habit. Right? That's
+
+393
+00:38:55,290 --> 00:39:05,370
+something that we've talked on here before, is a big aspect of it is slow down, spend a little
+
+394
+00:39:05,370 --> 00:39:14,490
+extra time listening with the point of understanding and with what Doug is saying,
+
+395
+00:39:16,170 --> 00:39:22,330
+understanding where are they coming from in terms of their skills or their capabilities?
+
+396
+00:39:22,330 --> 00:39:27,930
+Can you understand what their needs are? Tying it all together, that's all helpful to sort of
+
+397
+00:39:27,930 --> 00:39:36,090
+construct a win-win conversation. All right. So to me, when I went from being the asshole,
+
+398
+00:39:36,090 --> 00:39:40,330
+and the difference was I would go into a meeting knowing I was right, because I was right most of
+
+399
+00:39:40,330 --> 00:39:47,400
+the time. And when people were wrong, they were obviously not as smart as me. And I didn't need
+
+400
+00:39:47,400 --> 00:39:53,800
+to listen to them. That's the way I felt. Because unfortunately, at that time in Microsoft,
+
+401
+00:39:53,800 --> 00:39:58,760
+that's the way my mentors operated. And that's the way I was indirectly coached to act.
+
+402
+00:39:59,590 --> 00:40:03,830
+You know, I love to learn stuff. I don't know if it's procrastination, I just love it no matter
+
+403
+00:40:03,830 --> 00:40:08,390
+what. And I started studying emotional quotient, but what really got me to engage in active
+
+404
+00:40:08,390 --> 00:40:13,110
+listening was the second level of listening. There are the words coming out of your mouth,
+
+405
+00:40:14,060 --> 00:40:19,020
+but then there's also the analysis of when I'm talking, how am I coming across trying to read
+
+406
+00:40:19,020 --> 00:40:22,860
+the room? And then when people are talking to me, if they say something I think is wrong,
+
+407
+00:40:23,420 --> 00:40:29,820
+or I disagree with, I can clarify understanding. What I'm trying to do is really understand what
+
+408
+00:40:29,820 --> 00:40:36,460
+I tell my team all the time is behavior comes from motivation. So what can I do to understand
+
+409
+00:40:36,460 --> 00:40:41,820
+the motivation of where they're coming from? And by clarifying understanding, I am coming
+
+410
+00:40:41,820 --> 00:40:45,980
+from programming. I spend a lot of my time as a professional debugger almost at Microsoft.
+
+411
+00:40:45,980 --> 00:40:51,180
+I want to debug where they're coming from. I'm going to ask clarifying questions, help me figure
+
+412
+00:40:51,180 --> 00:40:57,500
+out what is the motivation behind this decision or behavior they have, which is super interesting to
+
+413
+00:40:57,500 --> 00:41:05,020
+me. So now I'm actively listening because I want to, when I have a good conversation in a one-on-one
+
+414
+00:41:05,020 --> 00:41:10,460
+or a small group meeting, this conversation is happening at a couple different levels.
+
+415
+00:41:10,460 --> 00:41:16,700
+And I can't help but engage. And this question around, I will use language on my team around
+
+416
+00:41:16,700 --> 00:41:22,710
+to clarify understanding of the law or to talk about next steps to make sure we're clear on next
+
+417
+00:41:22,710 --> 00:41:29,740
+steps. Then one thing we do a lot, which Deignan did about 10 minutes ago was you get much better
+
+418
+00:41:29,740 --> 00:41:35,500
+alignment when everybody talks. And one thing we talk about when we do active listening is drawing
+
+419
+00:41:35,500 --> 00:41:40,700
+people into the conversation if they haven't spoken yet or spoken in a while. When you drew
+
+420
+00:41:40,700 --> 00:41:46,380
+Brent and I go, ah, she doesn't know that Brent talks forever, but she's doing the right thing,
+
+421
+00:41:46,380 --> 00:41:53,580
+which is really cool. So one other thing, more you talk, this is like stuff you're gluing together
+
+422
+00:41:53,580 --> 00:42:01,210
+a bunch of pieces that I think is a systems thinking, which is missing from a lot of engineers
+
+423
+00:42:01,210 --> 00:42:06,020
+when they get stuck in their career. When I come out of college, I can just program. Then people
+
+424
+00:42:06,020 --> 00:42:09,700
+who are just programming all day wonder, well, I write really good code. My code speaks for
+
+425
+00:42:09,700 --> 00:42:16,630
+itself. How come I'm not growing? And it's all those things you talked about where you have to
+
+426
+00:42:18,230 --> 00:42:24,070
+begin to communicate and lead other teams. You talked about being proactive. And one of the
+
+427
+00:42:24,070 --> 00:42:29,270
+things I'm talking to some of my senior engineers about, as people who want to get the senior is
+
+428
+00:42:29,270 --> 00:42:33,670
+there's a point where, and Brent knows this from happens at senior at Microsoft as well,
+
+429
+00:42:33,670 --> 00:42:39,640
+is maybe it's industry-wide. There comes a point where when you first start, you are
+
+430
+00:42:39,640 --> 00:42:46,520
+told what to do, but the more senior you get, the more you are expected to figure out
+
+431
+00:42:47,160 --> 00:42:51,960
+what the right thing to do is. Does that ring true for you? I'd be curious when you
+
+432
+00:42:51,960 --> 00:42:56,360
+talked about proactivity, is that part of it? Or maybe can you expand on what you meant by being
+
+433
+00:42:56,360 --> 00:43:02,520
+a proactive engineer? Absolutely. So like in terms of growing your career, what is it that
+
+434
+00:43:02,520 --> 00:43:07,800
+you want to do? Right? Because a lot of the time becoming, getting into tech is like this
+
+435
+00:43:07,800 --> 00:43:13,400
+comfy, cushy job that gives you amazing benefits. And you get the social status too,
+
+436
+00:43:13,400 --> 00:43:20,360
+like, oh, I work at Microsoft. I'm a cool person because how many people get to that particular
+
+437
+00:43:20,360 --> 00:43:26,920
+position? Or I make whatever salary I make, and I'm really living a comfortable life now.
+
+438
+00:43:26,920 --> 00:43:33,080
+So that's something that people kind of follow and it's evolutionary, right? Because we want to
+
+439
+00:43:33,720 --> 00:43:38,920
+provide and we want to set ourselves up for success. But then what happens is whenever we
+
+440
+00:43:38,920 --> 00:43:44,440
+get comfortable, that motivation is often lacking because there's lack of alignment with our values.
+
+441
+00:43:44,440 --> 00:43:49,880
+Right? So just like in my case, I realized that what was really valuable for me was to have
+
+442
+00:43:49,880 --> 00:43:56,600
+deep kinds of conversations on a very personal and deep level and help people in a one-on-one
+
+443
+00:43:56,600 --> 00:44:01,240
+setting. And I'm getting goosebumps as I'm telling you this. But for me, this is something
+
+444
+00:44:01,240 --> 00:44:07,240
+that I wake up and I want to do whatever's going on in my life. I just love doing what I do,
+
+445
+00:44:07,240 --> 00:44:13,800
+coaching. And discovering that that was a value for me took quite a while. I didn't like
+
+446
+00:44:14,520 --> 00:44:19,640
+wake up one day and just knew what I wanted to do. So there's a discovery process involved.
+
+447
+00:44:20,280 --> 00:44:26,520
+But you have to be kind of become conscious. And maybe it's part of maturity. Maybe it's
+
+448
+00:44:26,520 --> 00:44:33,160
+part of the phase of life that you're in, whether or not you have a family or people depending on you
+
+449
+00:44:33,800 --> 00:44:40,840
+in your salary or not. So it's really about this personal growth trajectory and how a career
+
+450
+00:44:40,840 --> 00:44:48,680
+can support a life with meaning, a life with purpose, a life that you'd be excited being
+
+451
+00:44:49,400 --> 00:44:54,760
+99 years old telling your neighbors, your grandkids, and people who are willing to listen.
+
+452
+00:44:55,240 --> 00:45:00,520
+I'm really on board here with what you were talking about in terms of productivity and leadership,
+
+453
+00:45:00,520 --> 00:45:07,240
+but more self-driven. What is it that you want and how you can structure a career around doing
+
+454
+00:45:07,240 --> 00:45:12,920
+what it is that you want? Because I mean, tech has so many opportunities and so many chances to even
+
+455
+00:45:12,920 --> 00:45:18,360
+create certain roles for yourself within a company if you're able to communicate the
+
+456
+00:45:18,360 --> 00:45:24,090
+business value that it was going to bring. Now, in terms of the education, if you think
+
+457
+00:45:24,090 --> 00:45:34,330
+about how we're educated and how the professional life works, we're primed to think that way.
+
+458
+00:45:35,050 --> 00:45:41,770
+The work speaks for itself. Why? In college, what do you do? You get assignments, then you send them
+
+459
+00:45:41,770 --> 00:45:46,650
+to your professor or TA, they go through your code and they see what works, what doesn't,
+
+460
+00:45:46,650 --> 00:45:51,530
+if there are comments, if they're not, if it's well-written or not, if there's a compile or not,
+
+461
+00:45:51,530 --> 00:45:56,410
+and then you get a grade because someone went into your code and looked at it.
+
+462
+00:45:56,410 --> 00:46:02,810
+In a professional setting, people who are decision makers about your promotion, race, advancement,
+
+463
+00:46:03,610 --> 00:46:07,930
+they typically don't have idea what it is that you're doing because you're working kind of
+
+464
+00:46:07,930 --> 00:46:14,730
+underneath the hood. So as long as things work and the software is producing what it's supposed
+
+465
+00:46:14,810 --> 00:46:22,090
+to be producing functionally, nobody cares. And yes, I know you're going to say, yes, people care.
+
+466
+00:46:22,650 --> 00:46:29,720
+That's true. But what I'm trying to say is we're primed to think in a way to get that feedback
+
+467
+00:46:30,920 --> 00:46:35,960
+for the work to speak for itself. I hope that makes sense. And then last thing that I wanted
+
+468
+00:46:35,960 --> 00:46:40,440
+to mention is whenever Alan, you were talking about being in the room thinking, yeah,
+
+469
+00:46:40,440 --> 00:46:45,800
+I'm smarter than them. I've been doing this. I'm the subject matter expert here. So of course,
+
+470
+00:46:45,800 --> 00:46:51,640
+they should listen to me. And that's a huge assumption that you're coming to a conversation
+
+471
+00:46:51,640 --> 00:46:58,600
+with. I was very, very wrong to be clear. Well, to be completely honest here, there was a point
+
+472
+00:46:58,600 --> 00:47:03,320
+in time where I believe the same thing. Like, yo, you hired me to do this job and now you're not
+
+473
+00:47:03,320 --> 00:47:08,760
+listening to my feedback. What's wrong with you? So I can totally resonate with that kind of
+
+474
+00:47:08,760 --> 00:47:14,600
+thinking. But the truth is that the people that you were having conversations with, or I was
+
+475
+00:47:14,600 --> 00:47:21,320
+having conversations with at that point in time, they had a different perspective. And if you're
+
+476
+00:47:22,280 --> 00:47:29,880
+looking at value, business value, as that unifying perspective, that where you can tell
+
+477
+00:47:29,880 --> 00:47:34,520
+who was more right or who was more wrong, because engineers, again, tend to chase what's
+
+478
+00:47:34,520 --> 00:47:39,800
+intellectually stimulating, not necessarily what's fun, not necessarily what's best for business.
+
+479
+00:47:40,920 --> 00:47:49,400
+So I couldn't agree with you more. I want to spend all day, like there's so much good information
+
+480
+00:47:49,400 --> 00:47:55,800
+in what you're talking about, Dogna, that I would love to spend all day. I think our listeners and
+
+481
+00:47:56,760 --> 00:48:00,040
+thousand other people need to hear this stuff. It's just so important. So,
+
+482
+00:48:00,040 --> 00:48:06,520
+but the clock says it's about time to wrap up, but I just want to thank you for hanging out with
+
+483
+00:48:06,520 --> 00:48:13,160
+us today and just dropping knowledge bombs right and left. Super fantastic. So thank you so much
+
+484
+00:48:13,160 --> 00:48:18,520
+for being here. Absolutely. And I appreciate again, you having me and you know, like I love
+
+485
+00:48:18,520 --> 00:48:23,240
+to give all these value knowledge bombs, as you call them, left and right. Because at the end of
+
+486
+00:48:23,240 --> 00:48:30,520
+the day, you know, there's a difference between knowing things and a difference in living from
+
+487
+00:48:30,520 --> 00:48:36,840
+that place. And I hope you could tell that I walk my talk. So everything that I help my clients with
+
+488
+00:48:36,840 --> 00:48:42,520
+is something that I've had to learn the hard way. And so, you know, if anyone is looking for that
+
+489
+00:48:42,520 --> 00:48:47,400
+kind of feedback for that kind of acceleration in their career, they're more than welcome to check
+
+490
+00:48:47,400 --> 00:48:52,760
+out my website, themindfuldev.com and see if they want me to be there to support them
+
+491
+00:48:52,760 --> 00:48:58,600
+in their growth because I can absolutely do that. I think that I can think of lots of people you
+
+492
+00:48:58,600 --> 00:49:05,720
+could help already. Awesome. Branczy, any final words? Everyone, please go check Dagnell out at
+
+493
+00:49:05,720 --> 00:49:15,000
+her her website. I do think she has a lot of insightful feedback to be able to give you. And
+
+494
+00:49:15,000 --> 00:49:23,240
+if you were at that point in your career where you feel lost and just remember, there is always
+
+495
+00:49:23,240 --> 00:49:28,120
+resources out there to help you. All right, everyone. Thanks for listening. Appreciate it.
+
+496
+00:49:28,120 --> 00:49:31,160
+We'll see you next time on A B testing.
+

@@ -1,0 +1,2096 @@
+WEBVTT
+
+00:00:03.380 --> 00:00:13.480
+Welcome to AB testing podcast your modern testing podcast your hosts Alan and Brent will be here to guide you through topics on testing
+
+00:00:13.940 --> 00:00:19.940
+Leadership agile and anything else that comes to mind now on with the show. Hey, Brett
+
+00:00:20.470 --> 00:00:27.890
+Yeah, we're gonna do this again another remote because we want to observe the six-foot rule
+
+00:00:28.590 --> 00:00:30.910
+AB testing podcast
+
+00:00:30.990 --> 00:00:35.550
+Actually think this is all over we think you and I should continue to observe that
+
+00:00:36.230 --> 00:00:41.830
+You know not a bad idea not a horrible idea. So how are things going?
+
+00:00:42.350 --> 00:00:44.110
+How are you adapting?
+
+00:00:44.110 --> 00:00:45.840
+so
+
+00:00:45.840 --> 00:00:48.040
+the last episode we did actually was
+
+00:00:48.680 --> 00:00:54.440
+rather helpful I spent a lot of time sort of thinking through and adapting to what
+
+00:00:55.040 --> 00:00:58.300
+What sort of things can I learn from Alan who has?
+
+00:00:59.140 --> 00:01:01.450
+mastered this I
+
+00:01:01.450 --> 00:01:05.130
+Would say like in my family my son
+
+00:01:06.440 --> 00:01:08.500
+Adapted pretty quickly
+
+00:01:08.980 --> 00:01:16.260
+He's 18 and school district says you don't have to do school. I mean that's enough information for him
+
+00:01:17.020 --> 00:01:19.900
+He works at McDonald's so every morning
+
+00:01:20.660 --> 00:01:24.860
+We get a hey dad. I'm essential and you're not
+
+00:01:25.420 --> 00:01:26.800
+Sort of common wait
+
+00:01:26.800 --> 00:01:31.200
+I I haven't really left the house and I haven't been to a McDonald's in forever
+
+00:01:31.360 --> 00:01:35.320
+But McDonald's is essential. Yeah, cuz they provide food
+
+00:01:36.470 --> 00:01:40.650
+No comment. All right, then did you see speaking of school?
+
+00:01:40.650 --> 00:01:44.150
+Did you see the on April 1st the there was a mocks?
+
+00:01:44.150 --> 00:01:49.990
+There's a screenshot looked really real of Jay Inslee with the banner below saying
+
+00:01:50.510 --> 00:01:57.470
+Governor makes the tough call to ask all students to repeat the 2019 2020 school year. I did not
+
+00:01:57.470 --> 00:02:01.010
+Yeah, that's a that that caused a lot of kids that poop their britches
+
+00:02:01.490 --> 00:02:03.910
+It's interesting. My daughter is
+
+00:02:04.550 --> 00:02:09.790
+Checking along. I mean the only issue with my daughter is I think that so she's been doing
+
+00:02:10.470 --> 00:02:15.270
+Online for a great deal. She goes to private school. So she's not beholden to
+
+00:02:17.240 --> 00:02:24.220
+Inslee's statement or so Inslee at one point in time basically said all schools are canceled
+
+00:02:25.360 --> 00:02:27.360
+North Shore School District had online
+
+00:02:27.960 --> 00:02:31.640
+That's where my son goes. They had online school going within
+
+00:02:32.200 --> 00:02:36.510
+a week and then the governor's office said
+
+00:02:37.790 --> 00:02:40.390
+Can't do that unfair to other districts
+
+00:02:40.390 --> 00:02:45.450
+And so they did some wrangling got that back online that just started this week
+
+00:02:45.470 --> 00:02:49.310
+but again my daughter private school the only issue there is
+
+00:02:50.710 --> 00:02:55.750
+She normally had been doing school for like six hours a day, right and right now
+
+00:02:57.030 --> 00:03:00.710
+Consistently every day at 10. I go. Okay. Are you done with school and
+
+00:03:01.270 --> 00:03:07.540
+She's like, oh, yeah, I've already turned in on all my homework assignments and everything and so I don't
+
+00:03:08.420 --> 00:03:11.140
+feel at the moment I'm getting my
+
+00:03:12.180 --> 00:03:14.180
+ROI of private school
+
+00:03:14.180 --> 00:03:19.220
+Yeah, so my kids are in public schools, but they both go to a it's called the big-picture school
+
+00:03:19.220 --> 00:03:23.100
+It's all project-based so they can do a lot of that from home and they're both
+
+00:03:23.900 --> 00:03:26.660
+I'm what my Alan one second pause
+
+00:03:27.660 --> 00:03:29.140
+What?
+
+00:03:29.140 --> 00:03:34.890
+I'm doing a podcast go away. I'm gonna leave that
+
+00:03:39.680 --> 00:03:42.880
+So it's a project-based school they able to do a lot of their stuff from home
+
+00:03:44.000 --> 00:03:48.360
+My son is sporadically working on a python project. I help him with a little bit
+
+00:03:48.640 --> 00:03:50.640
+Making him learn get so I can send him
+
+00:03:50.960 --> 00:03:55.680
+Pull requests for like I start things for him so he can finish them as a way to kind of get him going and
+
+00:03:55.880 --> 00:03:58.240
+That's plugging along. My daughter's doing a
+
+00:03:59.240 --> 00:04:01.810
+She's pretty much done with all her schoolwork
+
+00:04:02.250 --> 00:04:06.800
+But the point I was getting to is it's a gua. It was going to be where my kids go to school
+
+00:04:06.800 --> 00:04:10.710
+They were going to be at a school till April 20th and then
+
+00:04:11.190 --> 00:04:15.310
+Inslee extended that by two weeks. It's probably gonna be longer, but they're going to kick off
+
+00:04:15.990 --> 00:04:17.990
+remote learning sessions
+
+00:04:18.230 --> 00:04:24.750
+Beginning the week after their spring break would have been so it's all kicking in. I don't think they're going back to school this year
+
+00:04:25.910 --> 00:04:27.910
+We'll see what happens
+
+00:04:29.340 --> 00:04:31.340
+We'll see right I
+
+00:04:31.420 --> 00:04:33.420
+So first off many things
+
+00:04:35.220 --> 00:04:38.300
+So first second third fourth and fifth off go ahead right
+
+00:04:39.140 --> 00:04:41.140
+the you mentioned
+
+00:04:41.380 --> 00:04:43.740
+Teaching your son Python or working through Python
+
+00:04:44.500 --> 00:04:48.650
+There is a book. I got my daughter
+
+00:04:49.210 --> 00:04:52.490
+Ten-year-old daughter called its head first as we both
+
+00:04:53.570 --> 00:04:57.330
+Played we love that series. I do love the head first series
+
+00:04:58.460 --> 00:05:02.180
+They have a sick they have a book called learning to code and
+
+00:05:03.260 --> 00:05:09.180
+I have been doing this for about a month. We do a chapter a week with my daughter
+
+00:05:09.180 --> 00:05:16.100
+She's she's about to start chapter four and learn about while in for loops
+
+00:05:16.820 --> 00:05:20.580
+But those on the podcast can't see this
+
+00:05:21.160 --> 00:05:25.160
+But I got this as a follow-up once my daughter
+
+00:05:25.160 --> 00:05:32.480
+What he's showing me that it's a mystery it's porn no it's head first Python
+
+00:05:33.290 --> 00:05:39.050
+Yes, so the learning to code book uses Python as its primary language
+
+00:05:40.480 --> 00:05:44.360
+Forgot to mention that and then this one is far more in depth
+
+00:05:45.320 --> 00:05:48.720
+Very very interesting. I will check both of those out and
+
+00:05:49.790 --> 00:05:51.030
+Yeah, hey
+
+00:05:51.110 --> 00:05:56.630
+So getting back on to a little bit more COVID then we have some kind of loose topics to discuss today
+
+00:05:56.870 --> 00:06:01.390
+But I'm curious to talk about what's changed. Maybe I'll start
+
+00:06:01.390 --> 00:06:03.070
+I'll tell you what's changed for me at work
+
+00:06:03.070 --> 00:06:07.990
+You talked about me being an expert at working from home and I have more experience
+
+00:06:08.910 --> 00:06:15.220
+Not necessarily expertise, but what's happened and I can't remember if I mentioned this last time is
+
+00:06:16.220 --> 00:06:21.780
+It's learning to help everyone else learning to work from home has become a big part of my job and
+
+00:06:22.420 --> 00:06:24.420
+That means you are a
+
+00:06:25.660 --> 00:06:27.660
+Work from home coach now to
+
+00:06:28.260 --> 00:06:31.740
+Apparently and it's some therapy too because I have some employees who
+
+00:06:32.700 --> 00:06:39.320
+Live by themselves and they're going a little stir-crazy one in a in a apartment about as big as the office
+
+00:06:39.320 --> 00:06:41.180
+I'm recording this in at home
+
+00:06:41.180 --> 00:06:45.780
+So they have their own challenges. There are people with roommates who are slowly
+
+00:06:47.060 --> 00:06:49.180
+learning to loathe their roommates
+
+00:06:50.340 --> 00:06:52.340
+and and what
+
+00:06:53.020 --> 00:06:54.020
+impacts them
+
+00:06:54.420 --> 00:07:02.140
+Separation does make the heart grow fonder what impacts me the most is a lot more meetings on my calendar a
+
+00:07:02.700 --> 00:07:05.220
+Lot a lot a lot. I have calendar explosion
+
+00:07:06.300 --> 00:07:08.300
+It's good. I feel like
+
+00:07:08.560 --> 00:07:15.460
+95% plus of those meetings are actually effective uses of my time just ends up being exhausting. I'm probably in meetings
+
+00:07:15.460 --> 00:07:17.740
+I didn't count I was thinking of writing a
+
+00:07:19.380 --> 00:07:21.100
+plugin
+
+00:07:21.100 --> 00:07:28.380
+Extension to count how many hours and meetings I have a week, but I'm assuming it's somewhere near 40. Yeah, if you had
+
+00:07:29.900 --> 00:07:32.490
+If you were still at Microsoft and you had
+
+00:07:33.030 --> 00:07:36.630
+Outlook they have now a new analytics tool plugged in and
+
+00:07:37.400 --> 00:07:39.480
+So like last Monday
+
+00:07:40.280 --> 00:07:44.130
+The little plug-in sent me a mail and told me hey
+
+00:07:45.190 --> 00:07:50.940
+You should look into this your meeting schedule has spiked up in the last week
+
+00:07:50.940 --> 00:07:56.590
+Oh, yeah, that's that I kind of I can tell I can tell well
+
+00:07:56.590 --> 00:08:01.030
+So here's the thing that's depressing because it will quantify it and it told me that
+
+00:08:01.550 --> 00:08:06.110
+98% of my time now is being spent in meetings. I'm like, oh
+
+00:08:06.870 --> 00:08:08.620
+kill me
+
+00:08:08.620 --> 00:08:15.300
+The other interesting thing is there's some new meetings on my calendar that I don't always go to but they're interesting
+
+00:08:15.300 --> 00:08:19.020
+We have regular yoga classes over zoom. I can attend
+
+00:08:19.500 --> 00:08:22.460
+We have a happy hour every Friday virtual happy hour
+
+00:08:22.460 --> 00:08:27.620
+Everyone drinks at their home desk and toast each other and chats about whatever little things like that
+
+00:08:27.620 --> 00:08:29.660
+we have teams with discord servers and
+
+00:08:30.620 --> 00:08:34.400
+One of my teams has a slack hangout not a slack hangout a Google hangout
+
+00:08:34.480 --> 00:08:39.480
+they just keep running all day to pop in and out of and at work, you know, they all sit in a
+
+00:08:39.960 --> 00:08:42.720
+all sit together in a little pod and
+
+00:08:43.720 --> 00:08:49.400
+They're used to just having chatter with each other while they work and it gives them a way to emulate that
+
+00:08:49.400 --> 00:08:55.100
+So a lot of things it's it's interesting to watch how people adopt in a company a gazillion times bigger
+
+00:08:55.480 --> 00:09:01.440
+What's different about other than the media explosion would you I assume you've noticed what else is different? What do you what?
+
+00:09:01.520 --> 00:09:03.520
+Do you and your team is doing to?
+
+00:09:05.280 --> 00:09:07.280
+Handle the brave new world
+
+00:09:07.320 --> 00:09:15.100
+So my experience is different than my reports. It's interesting because the majority of my reports are reporting in
+
+00:09:16.590 --> 00:09:18.590
+So I have one kid that
+
+00:09:19.110 --> 00:09:25.890
+He just joined us from college. I call him a kid, but he's he went to a PhD
+
+00:09:25.890 --> 00:09:28.990
+So he's nearly 30. Yeah, my whole team are kids. It's alright
+
+00:09:29.920 --> 00:09:34.500
+He's going stir crazy. He's an extrovert and he's like people
+
+00:09:36.780 --> 00:09:43.340
+Yeah, the the rest of my team primary introverted and they're all reporting. Oh my god
+
+00:09:43.580 --> 00:09:49.140
+My productivity is through the roof right? I've heard that too. I've heard that for most of my team
+
+00:09:50.060 --> 00:09:52.060
+Yeah me
+
+00:09:52.660 --> 00:09:57.120
+I'm as we've talked about many times before I'm introverted
+
+00:09:58.600 --> 00:10:01.680
+By the way, I I had a meeting this week
+
+00:10:01.680 --> 00:10:06.320
+We're doing more like get to know each other meetings over over zoom and I'm interrupting you because
+
+00:10:07.280 --> 00:10:09.000
+one of my
+
+00:10:09.000 --> 00:10:16.320
+Skip levels spoke up. He's a kid. One of the kids lives by themselves. He said and I'm an INTP
+
+00:10:16.320 --> 00:10:19.320
+I thought as am I as we all are yes
+
+00:10:20.040 --> 00:10:25.320
+All right. Go on as a manager, right? You have to compensate, right?
+
+00:10:25.320 --> 00:10:32.160
+You you you can't follow your instinct to avoid or kill all the people that you were interacting with
+
+00:10:32.980 --> 00:10:36.900
+Crap, it's against the law. So you you learn
+
+00:10:38.040 --> 00:10:41.080
+skills to compensate for this and even
+
+00:10:41.760 --> 00:10:43.950
+how to fake
+
+00:10:44.030 --> 00:10:45.230
+momentarily
+
+00:10:45.230 --> 00:10:47.230
+being extroverted
+
+00:10:47.230 --> 00:10:49.870
+but the meeting schedule is
+
+00:10:51.260 --> 00:10:52.780
+tiresome
+
+00:10:52.820 --> 00:10:57.540
+Right. It's it drains your battery really quickly and
+
+00:10:59.980 --> 00:11:04.980
+You don't get to compensate or balance it out with actually getting stuff done
+
+00:11:05.500 --> 00:11:07.750
+right, you know
+
+00:11:07.750 --> 00:11:13.790
+Too much talky not enough Dewey in Prince life. Yeah, I think I've heard that. Yeah, I have
+
+00:11:14.390 --> 00:11:17.030
+Honestly, and this this won't sustain long term
+
+00:11:17.270 --> 00:11:21.530
+But for right now I've had to commit that I am just gonna have to spend
+
+00:11:22.010 --> 00:11:28.410
+Four hours half a day on Saturday doing the stuff that I would normally have done during the week the Dewey part
+
+00:11:29.640 --> 00:11:31.860
+I do my Dewey on Saturday
+
+00:11:33.040 --> 00:11:37.880
+So I I do that on the weekends as well. It's essentially
+
+00:11:38.560 --> 00:11:39.520
+as
+
+00:11:39.520 --> 00:11:45.760
+My body clock no matter what time I go to bed I get up at I haven't set an alarm clock in forever
+
+00:11:46.560 --> 00:11:51.700
+If I stay up too late that little aspect of my body clock drives me crazy
+
+00:11:52.240 --> 00:11:54.160
+So I am very defensive
+
+00:11:54.160 --> 00:11:57.980
+I need to make sure I go to bed on time because I know I'm getting up at five no matter what
+
+00:11:58.760 --> 00:12:04.800
+Anyway, the nice thing about that is the majority of my family on weekends will sleep in until 10
+
+00:12:05.630 --> 00:12:07.630
+like sweet
+
+00:12:08.830 --> 00:12:12.470
+Actually when I get the work done I have this weird thing where if I
+
+00:12:12.870 --> 00:12:18.350
+Most days I will wake up five or ten minutes before my alarm no matter what time my alarm set for I
+
+00:12:18.830 --> 00:12:21.530
+Usually have meetings beginning at 5 30 or 6 in the morning
+
+00:12:21.530 --> 00:12:28.190
+So I to get up at 5 or 5 30 every morning and I tend to wake up most mornings on my own on the weekends. I will
+
+00:12:29.100 --> 00:12:33.540
+My body is able to sleep till 7 o'clock, but my family doesn't roll out of bed till about 10
+
+00:12:33.540 --> 00:12:36.020
+so I have plenty of time after
+
+00:12:36.540 --> 00:12:41.520
+Taking care of the dog and take the dog for a walk and making some coffee to get a couple solid hours in then
+
+00:12:41.520 --> 00:12:47.700
+And that works out pretty well. Hormone. Yeah, what's your what are your team's doing at Microsoft to stay connected?
+
+00:12:47.700 --> 00:12:50.280
+Other than the typical day-to-day meetings
+
+00:12:50.820 --> 00:12:54.650
+So I have a daily stand-up, right? I did I
+
+00:12:55.330 --> 00:12:58.330
+Bring that up. I ask how people are coping how I can help
+
+00:12:58.930 --> 00:13:02.170
+We are doing a more relevant today
+
+00:13:02.850 --> 00:13:05.690
+with within my managers organization
+
+00:13:06.210 --> 00:13:08.930
+That should be interesting
+
+00:13:09.450 --> 00:13:17.050
+So as you know, typically with morale event that there's generally food involved and and some sort of activity
+
+00:13:17.370 --> 00:13:19.200
+Just bring your own food
+
+00:13:19.200 --> 00:13:21.200
+No, actually
+
+00:13:21.240 --> 00:13:23.240
+so
+
+00:13:23.360 --> 00:13:28.920
+Every member of the team yesterday got a $40 door dash
+
+00:13:29.920 --> 00:13:32.790
+gift certificate and
+
+00:13:33.790 --> 00:13:35.790
+We are all to
+
+00:13:36.700 --> 00:13:38.700
+Schedule our door dashes
+
+00:13:39.340 --> 00:13:41.340
+Make sure the food is there
+
+00:13:41.720 --> 00:13:46.080
+by noon and then noon we will be eating and
+
+00:13:46.800 --> 00:13:48.800
+Playing some sort of game. Oh
+
+00:13:50.310 --> 00:13:56.070
+Cool cool. We are there's a lot more virtual happy hours going on across teams some games
+
+00:13:56.070 --> 00:14:02.670
+I've been playing a lot of exploding kittens over the Internet a little bit on board game arena. I just downloaded doom eternal
+
+00:14:02.670 --> 00:14:04.510
+I'll be playing that all weekend
+
+00:14:04.510 --> 00:14:08.710
+But a couple questions for you during this time. What book are you reading right now?
+
+00:14:10.990 --> 00:14:13.770
+Not really much headfirst Dewey
+
+00:14:14.600 --> 00:14:19.440
+Yeah, so the the closest thing to a book that I've been reading is
+
+00:14:20.360 --> 00:14:21.760
+this one
+
+00:14:21.760 --> 00:14:27.520
+Called math riddles for smart kids Brent is where this is why we shouldn't do recordings over zoom cuz Brent
+
+00:14:27.640 --> 00:14:30.840
+Hold things up to the camera on a podcast. I
+
+00:14:31.600 --> 00:14:37.960
+Think it's kind of fun. But yes, it's smart riddles for for a math riddles for smart. I like that
+
+00:14:37.960 --> 00:14:42.400
+I like that. I like that. It's it's basically nothing but story problems
+
+00:14:42.400 --> 00:14:47.240
+And I sit down with my daughter and we do a couple of them a day. Good. What games are you playing else?
+
+00:14:49.100 --> 00:14:51.100
+Not playing
+
+00:14:51.460 --> 00:14:54.780
+anything again, here's what I would say is
+
+00:14:57.170 --> 00:15:00.250
+Because the meeting schedule has gone way up
+
+00:15:01.460 --> 00:15:04.040
+My drive if I have free time
+
+00:15:04.620 --> 00:15:12.500
+I'm getting stuff done because that actually helps my my karmic balance better than
+
+00:15:12.980 --> 00:15:14.820
+then
+
+00:15:14.820 --> 00:15:16.580
+Then those other
+
+00:15:16.580 --> 00:15:22.270
+You know normal relaxed time activities. Yeah, that's true for me as well
+
+00:15:22.270 --> 00:15:26.390
+I wonder if it has to do a little bit at least with the personality type makes my son and I
+
+00:15:28.110 --> 00:15:31.780
+Was interesting so
+
+00:15:32.380 --> 00:15:35.040
+He has a girlfriend. He's going a bit stir-crazy
+
+00:15:36.360 --> 00:15:38.040
+because of this
+
+00:15:38.040 --> 00:15:40.440
+can't spend time with them and
+
+00:15:41.270 --> 00:15:47.910
+He'll go up on Xbox and if his friends aren't there then he'll fall back to his plan Z
+
+00:15:47.910 --> 00:15:50.790
+Which is oh, let's see if dad wants to do something
+
+00:15:51.390 --> 00:15:55.580
+So we played a borderlands 3 for a couple hours
+
+00:15:56.340 --> 00:15:58.660
+four or five days ago
+
+00:16:00.400 --> 00:16:02.600
+But other than that, I mean there's nothing
+
+00:16:03.540 --> 00:16:05.540
+Nothing to report on my side
+
+00:16:06.670 --> 00:16:08.030
+you
+
+00:16:08.030 --> 00:16:11.030
+Like I told I've been playing Ori and the will of the wisps. I
+
+00:16:12.520 --> 00:16:14.040
+Kind of get
+
+00:16:14.040 --> 00:16:16.120
+platformers end up frustrating me after a while
+
+00:16:16.640 --> 00:16:25.100
+So I bought and downloaded doom eternal as I mentioned earlier last night and I'll be playing that this afternoon and this weekend
+
+00:16:25.460 --> 00:16:30.460
+That's what doom doom our first person shooters in general was a good way to
+
+00:16:32.060 --> 00:16:34.060
+Virtually act
+
+00:16:34.580 --> 00:16:38.020
+On your introverted instincts. Is that true?
+
+00:16:38.740 --> 00:16:42.860
+Right. Are you making crap in? No in in doom?
+
+00:16:43.140 --> 00:16:48.900
+You are allowed to kill all the people now. You're killing you're not killing people. You're killing demons
+
+00:16:49.540 --> 00:16:55.740
+Whatever big difference what's been other than the work stuff we talked about what's been the biggest change for you over the last two weeks
+
+00:16:55.740 --> 00:16:58.180
+three weeks
+
+00:16:58.180 --> 00:17:02.060
+finding a rhythm so so I
+
+00:17:02.460 --> 00:17:07.860
+Am I own babysitting duty up until noon then we hand off to my wife
+
+00:17:09.230 --> 00:17:12.070
+so finding a rhythm where I can kind of keep my
+
+00:17:13.190 --> 00:17:15.380
+my day schedule
+
+00:17:15.860 --> 00:17:18.840
+Sort of normal ish, but incorporating
+
+00:17:19.380 --> 00:17:21.380
+helping my my daughter
+
+00:17:21.540 --> 00:17:24.190
+That's been the biggest challenge like right now
+
+00:17:24.870 --> 00:17:29.930
+So normally around eight twenty and it's eight twenty six right now
+
+00:17:30.630 --> 00:17:34.350
+Normally around eight twenty. I have to stop whatever meeting. I'm in
+
+00:17:34.350 --> 00:17:42.190
+Go get my daughter breakfast, but today she's having cereal and I have put it all out on the table
+
+00:17:42.970 --> 00:17:46.170
+It's self-serve breakfast this morning. Yeah
+
+00:17:47.130 --> 00:17:52.930
+Having teenagers as painful as it can be is an advantage at this time because they're largely self-sufficient
+
+00:17:52.930 --> 00:17:59.450
+I have to give them some structure to make sure they get things done and other than that it works out pretty well
+
+00:18:01.910 --> 00:18:06.470
+Yes, I just went and glanced at the table. It doesn't look like she's up yet
+
+00:18:10.360 --> 00:18:15.960
+Yeah, oh, okay, I'm sure other stuff will come up but I am going to do a yet another
+
+00:18:16.480 --> 00:18:19.680
+episode where Alan outsources his job to Brent
+
+00:18:21.520 --> 00:18:28.760
+attempts to or looks for ideas and I am a big believer in the littuce Pauling quote that I mentioned probably
+
+00:18:29.360 --> 00:18:31.360
+10,000 times on the podcast
+
+00:18:31.480 --> 00:18:35.920
+The way to get good ideas is to have a lot of ideas then throw the bad ones away
+
+00:18:36.700 --> 00:18:38.980
+So I'm always looking for ideas
+
+00:18:38.980 --> 00:18:44.540
+So you're welcome to send me things if you're listening if you're on the one of the three dot slack comm slack group
+
+00:18:45.140 --> 00:18:47.140
+You can send them to me there
+
+00:18:47.620 --> 00:18:50.340
+By the way, we don't have it on our slack
+
+00:18:50.340 --> 00:18:54.780
+But looks like all the paid versions of slack have got the new slack upgrade. It's very slick
+
+00:18:54.860 --> 00:18:57.180
+You can now put for those of us that have
+
+00:18:57.900 --> 00:19:04.860
+Slack teams with lots and lots of channels. You can now organize those channels into folders or groups makes things very nice a
+
+00:19:05.180 --> 00:19:09.260
+Little more organized. I was worried at first it made slack feel a little bit too much like email
+
+00:19:09.380 --> 00:19:16.460
+But not too bad that should roll out to those of us mooching off the free version. I'm guessing in the next few weeks
+
+00:19:16.860 --> 00:19:18.540
+So it's kind of cool
+
+00:19:18.540 --> 00:19:20.700
+Anyway interesting. Does that mean?
+
+00:19:21.620 --> 00:19:24.580
+So it's it's it's right. It sounds like
+
+00:19:25.300 --> 00:19:31.900
+Slack is lighting it. I wonder if they're prioritizing their paid or if they're free just significantly
+
+00:19:32.940 --> 00:19:39.300
+Outnumbers, they're paid. I'm sure free significantly outnumbers paid. I don't know if they're fighting I think it's been available
+
+00:19:39.460 --> 00:19:41.460
+We just turned it on
+
+00:19:41.500 --> 00:19:45.300
+So I don't know I'm not a slack admin on I haven't been contacted
+
+00:19:45.300 --> 00:19:50.700
+I'm not sure how they're going to do for the paid version to contact an admin first and say hey when do you want this
+
+00:19:50.700 --> 00:19:53.580
+Turned on for you and they do a little testing and then they say yeah
+
+00:19:53.740 --> 00:19:56.500
+So anyway, I wanted to mention that because I like it
+
+00:19:56.700 --> 00:20:03.260
+But give me feedback and the question for Brent and for everyone listening is this
+
+00:20:03.900 --> 00:20:07.070
+Say for example, you knew someone
+
+00:20:08.600 --> 00:20:14.280
+Perhaps who's speaking right now who was given the abstract task of
+
+00:20:16.290 --> 00:20:18.610
+Increasing velocity on
+
+00:20:19.660 --> 00:20:23.340
+Their engineering team or in their engineering organization
+
+00:20:24.380 --> 00:20:26.280
+Knowing full well
+
+00:20:26.280 --> 00:20:31.440
+Actually, this is weird talking on this way. So I have been asked to increase velocity for the team
+
+00:20:32.200 --> 00:20:35.800
+with both parties knowing full well, there's no blueprint and
+
+00:20:37.200 --> 00:20:44.800
+Velocity is an abstract term and that it has probably as much perception as it is actual execution
+
+00:20:44.800 --> 00:20:51.600
+I have my own bag of tricks which has worked for a long time small batch size is probably the easiest one
+
+00:20:51.960 --> 00:20:55.320
+both for perception and actual throughput
+
+00:20:56.320 --> 00:21:04.180
+That along with a clear definition of done that focuses on that includes a focus on the customer problem
+
+00:21:04.180 --> 00:21:06.180
+That's being solved by that work
+
+00:21:06.440 --> 00:21:09.500
+Those two are my two go-tos
+
+00:21:10.180 --> 00:21:16.970
+But I know enough to know that those two alone aren't a blueprint. What else should I consider if I wanted to
+
+00:21:17.970 --> 00:21:20.450
+increase the actual and perceived
+
+00:21:20.450 --> 00:21:22.830
+velocity or
+
+00:21:23.470 --> 00:21:30.550
+I'll use the word velocity for now or put another way if you were the designated velocity champion
+
+00:21:30.670 --> 00:21:33.150
+What sorts of things should you be doing or thinking about?
+
+00:21:34.990 --> 00:21:36.990
+And I assume
+
+00:21:36.990 --> 00:21:45.260
+Gaming the numbers is off the table. This isn't Microsoft. We actually do legit work here. Okay, so
+
+00:21:46.260 --> 00:21:48.620
+You called out velocity versus
+
+00:21:49.180 --> 00:21:51.180
+perceived velocity
+
+00:21:51.700 --> 00:21:56.860
+So I can I can how do you think those are measured differently?
+
+00:21:57.540 --> 00:22:07.020
+It's the communication of the velocity. It's a little bit not necessarily how to lie with statistics or game the numbers but
+
+00:22:07.740 --> 00:22:08.980
+for example
+
+00:22:08.980 --> 00:22:15.340
+When we I send I have a couple weekly meetings one with America's one with Europe where I go over
+
+00:22:15.740 --> 00:22:17.540
+project status across the org
+
+00:22:17.540 --> 00:22:22.140
+And just just focusing not on these 70 or so projects. We have a flight but just focusing on
+
+00:22:22.700 --> 00:22:25.310
+the projects that have
+
+00:22:25.710 --> 00:22:29.310
+some delays or some risk and the purpose of that meeting is
+
+00:22:30.030 --> 00:22:32.030
+much less so on
+
+00:22:32.230 --> 00:22:36.340
+The actual delays because they could just send me those in slack. It's
+
+00:22:37.300 --> 00:22:44.100
+Really about emphasizing our culture of transparency and psychological safety and just learning from each other
+
+00:22:44.100 --> 00:22:47.860
+I think the primary use of that meeting in my time in the group has moved
+
+00:22:48.380 --> 00:22:55.500
+from sort of a status check to a meeting that covers that there's really about emphasizing our values as an org our principles and
+
+00:22:56.570 --> 00:23:01.010
+However, however, however to answer your question. I had to proceed with that afterwards
+
+00:23:01.010 --> 00:23:04.510
+I send it I send a brief set of notes to the whole org with
+
+00:23:05.770 --> 00:23:10.490
+completed projects that week delays updates and new projects
+
+00:23:11.230 --> 00:23:14.510
+One thing I did recently to address perceived
+
+00:23:15.510 --> 00:23:24.180
+Velocity is I started I used to start the thing off with delays had delays and then completed and then new I did two things
+
+00:23:24.860 --> 00:23:29.180
+To improve the perception of velocity exact same information one
+
+00:23:29.180 --> 00:23:34.300
+I put completed at the top instead of delays at the top and
+
+00:23:34.720 --> 00:23:41.920
+Then and then delayed and then I always have delayed with the reason but now I have delayed along with the mitigation step for that
+
+00:23:41.920 --> 00:23:44.600
+delay with the idea being that
+
+00:23:44.960 --> 00:23:50.400
+This is delay because team X was depending on team Y and they're waiting on whatever
+
+00:23:51.260 --> 00:23:56.460
+Same reason extra sentence. This is being resolved and determine if it's a systemic problem
+
+00:23:56.460 --> 00:24:02.260
+That should be solved at a higher level or whatever that it's a little bit in the marketing spin of the same information
+
+00:24:02.260 --> 00:24:04.140
+That's what I mean by perceived
+
+00:24:04.140 --> 00:24:07.380
+Okay in one way and that can be in a bunch of different ways
+
+00:24:08.450 --> 00:24:11.730
+So right now if I interpreted that correctly
+
+00:24:12.690 --> 00:24:14.690
+right that last thing is
+
+00:24:16.090 --> 00:24:18.090
+your manager
+
+00:24:18.330 --> 00:24:23.430
+Sounds like he actually reads your status report and I don't know
+
+00:24:23.430 --> 00:24:29.490
+I mean he does but it's the other people that read it. So I I'm surprised that people actually look at this
+
+00:24:29.910 --> 00:24:32.570
+It's just meeting notes. I wouldn't even call
+
+00:24:34.670 --> 00:24:40.510
+Sort of a regularly read and structured email and if it framed delay at the top
+
+00:24:40.550 --> 00:24:44.150
+You're puzzling through or had validated that
+
+00:24:44.670 --> 00:24:48.110
+You starting the top of this with delay is
+
+00:24:48.910 --> 00:24:54.030
+Artificially raising the focus on that that is my hypothesis. Yes. All right
+
+00:24:54.750 --> 00:24:59.070
+And that's just one example. There's there could be more but I wanted to give you an example
+
+00:25:00.340 --> 00:25:07.340
+Then if you put completed at the top, then the likely the next thing is is that your manager is going to so
+
+00:25:08.300 --> 00:25:11.180
+Count the number of bullet items underneath that
+
+00:25:11.740 --> 00:25:16.260
+Going forward is don't don't assume pointy Herodness
+
+00:25:16.900 --> 00:25:24.840
+the idea is that I think my hypothesis is that I will improve the perception of velocity by focusing
+
+00:25:25.320 --> 00:25:27.800
+first on the things that are done and then
+
+00:25:28.920 --> 00:25:36.240
+Improving the information that goes along with the items that are delayed. All right, so I'm gonna I'm gonna leave the perception thing
+
+00:25:36.520 --> 00:25:38.520
+aside for a moment because
+
+00:25:39.350 --> 00:25:42.230
+I'm gonna actually before you do that
+
+00:25:42.310 --> 00:25:50.430
+The reason I bring up the perception is often in the data we communicate the way this is true across velocity or quality or whatever
+
+00:25:50.430 --> 00:25:55.670
+we're trying to get across the way we present that requires a little bit of
+
+00:25:56.950 --> 00:26:03.510
+Spin whether you want to call it marketing or selling but this is common when you're distributing
+
+00:26:04.430 --> 00:26:06.420
+distributing
+
+00:26:06.420 --> 00:26:12.100
+Information to a large group when you have to consider your audience and your audience is vast
+
+00:26:12.100 --> 00:26:15.300
+And well, you know will interpret things in different ways
+
+00:26:16.580 --> 00:26:20.420
+Maybe I'll put this differently the larger your audience the more
+
+00:26:21.220 --> 00:26:26.740
+Spin you may have to put on things to get across the the takeaway you want them to get
+
+00:26:28.020 --> 00:26:29.840
+Yeah, I'm
+
+00:26:29.840 --> 00:26:31.760
+from a
+
+00:26:31.760 --> 00:26:35.600
+Sociological point of view sure spin is one thing
+
+00:26:36.200 --> 00:26:40.100
+But you're the way you're describing the problem. I actually don't view it as
+
+00:26:41.340 --> 00:26:44.820
+And I don't and honestly, I don't think I think perception is
+
+00:26:45.900 --> 00:26:47.900
+is
+
+00:26:48.340 --> 00:26:52.100
+Indicative of a problem with velocity. I don't think we're moving as fast as we can
+
+00:26:52.100 --> 00:26:56.720
+I don't want to go fast and break things. I want to go fast and break as few things as possible
+
+00:26:56.720 --> 00:27:01.440
+We'll break them in a very safe way as possible. I think sometimes we over plan
+
+00:27:02.080 --> 00:27:05.520
+Sometimes we over test and those are the things I want to work on
+
+00:27:05.680 --> 00:27:12.640
+But at the same time I work on the communication so that but again, there's little pointy Herodness in my boss
+
+00:27:12.760 --> 00:27:17.920
+But there are leaders and other disciplines who look at this and and don't know quite how to interpret
+
+00:27:17.920 --> 00:27:19.920
+So I want to communicate to them that
+
+00:27:20.400 --> 00:27:25.480
+Again, this meeting is about and emphasizing the fact that we are learning organization that were very transparent
+
+00:27:25.480 --> 00:27:29.420
+I want to emphasize in my communication that we are a learning
+
+00:27:30.180 --> 00:27:33.180
+Organization for those that may not be as close to the principles as I am
+
+00:27:33.500 --> 00:27:37.260
+So I think there is some truth to perceptions. I want to manage that but
+
+00:27:38.180 --> 00:27:40.980
+But yeah, sure sure great
+
+00:27:41.780 --> 00:27:49.540
+So anytime you're sending a broadcast and set us report type of thing. I tell people it's best to to view it
+
+00:27:51.390 --> 00:27:56.790
+Almost like a slide deck right? Yes, of course. Do you want to put the
+
+00:27:57.790 --> 00:28:02.550
+People are if you assume people are only going to spend a max of 10 minutes
+
+00:28:04.670 --> 00:28:11.030
+Reading it. Yeah, probably less it then you want to want to put the price you want to put the high order bits at the
+
+00:28:11.030 --> 00:28:14.510
+Top of the email and you want to be succinct? Yes
+
+00:28:15.030 --> 00:28:20.950
+I think just to move along I think maybe we're focusing a little bit too much on the perception part you asked about it
+
+00:28:20.950 --> 00:28:25.230
+And I want to give an example. Yeah, probably other ones, but I think I want to move on to the actual
+
+00:28:25.950 --> 00:28:32.750
+Well engineering velocity and practice soon. Yes, so I'm gonna do that now because previously
+
+00:28:33.350 --> 00:28:40.790
+So the best way to improve perceived velocity is actually to improve actual velocity. Yes
+
+00:28:41.790 --> 00:28:44.270
+Yes. Yes. Yes. It makes sure it's
+
+00:28:44.870 --> 00:28:46.230
+visible
+
+00:28:46.230 --> 00:28:52.670
+Clearly, right you want you want to get the perception to align with actual so
+
+00:28:52.980 --> 00:28:56.080
+How do you measure velocity today or do you?
+
+00:28:56.980 --> 00:29:02.460
+The only thing I use now is lead time. I only look at things at the project level
+
+00:29:02.820 --> 00:29:05.620
+So I can use lead time, which is a pretty good measure
+
+00:29:05.780 --> 00:29:12.660
+But what I'm missing is what that doesn't get me. There are some projects for example that
+
+00:29:13.990 --> 00:29:17.790
+their definition of MVP and my definition of MVP are
+
+00:29:19.780 --> 00:29:22.890
+Different to some degree
+
+00:29:23.250 --> 00:29:30.050
+And you know me, you know, I have a very lean definition of MVP
+
+00:29:30.050 --> 00:29:34.250
+What is the minimum thing we can build that will let us get validated learning?
+
+00:29:34.930 --> 00:29:39.610
+So on that one, I've had that conversation a million times
+
+00:29:40.410 --> 00:29:42.860
+that is generally a
+
+00:29:43.940 --> 00:29:51.140
+Discussion with the team and go MVP is not the new millennial version of the term beta
+
+00:29:51.140 --> 00:29:53.820
+They're not soon. Yes. Yes, you're right
+
+00:29:54.500 --> 00:29:56.500
+And what happens is
+
+00:29:57.140 --> 00:30:01.900
+So lead time is very much a trailing indicator for me. I can tell
+
+00:30:02.420 --> 00:30:06.340
+Lead time of our projects I can tell how many projects were delivering a month
+
+00:30:06.500 --> 00:30:14.060
+They're not all the same size, but it's in larger numbers. It makes sense, but it's all trailing indicators
+
+00:30:14.580 --> 00:30:17.540
+The work I need to do is at the team level
+
+00:30:17.660 --> 00:30:21.940
+So what I'm thinking of doing is trying to figure out what are some principles
+
+00:30:21.940 --> 00:30:26.940
+We should apply across our engineering orgs to increase velocity batch size is one
+
+00:30:27.780 --> 00:30:33.220
+But I'm probably getting too specific. I don't I want you to continue to comment. I'm just gonna steer you a little bit
+
+00:30:34.460 --> 00:30:38.300
+So I gave you a very long answer to your question that I should have just said I
+
+00:30:39.290 --> 00:30:42.850
+Know I know throughput at the project level and I know lead time
+
+00:30:43.330 --> 00:30:47.380
+Yeah
+
+00:30:47.420 --> 00:30:49.420
+So lead time
+
+00:30:50.660 --> 00:30:58.530
+Translated to compound is what the the time the the the batch is in development
+
+00:30:58.530 --> 00:31:05.550
+No, it's from it's from product hypothesis to customer reaction or customer feedback customer validation
+
+00:31:05.550 --> 00:31:08.530
+Oh, that's cycle time. Oh cycle. Wait. All right
+
+00:31:09.450 --> 00:31:14.570
+Got it. Well and and to be fair as I've read about this I've seen those terms
+
+00:31:15.610 --> 00:31:17.810
+not quite interchangeably used but
+
+00:31:18.250 --> 00:31:24.330
+Flopped and extended a bit. So thanks for clarifying. So this is not just development time. This is
+
+00:31:26.180 --> 00:31:28.180
+Wait, I've always thought of those backward have I?
+
+00:31:28.820 --> 00:31:30.820
+Anyway, it's this time like
+
+00:31:31.020 --> 00:31:36.580
+We want to build this so that includes planning all the way to in the hands of customers
+
+00:31:38.270 --> 00:31:43.070
+Lead I'm looking at so lead and delivery time often go hand-to-hand
+
+00:31:43.630 --> 00:31:47.390
+They are the terms invented from the manufacturing
+
+00:31:48.030 --> 00:31:50.460
+Okay, then I'm gonna go with them
+
+00:31:51.290 --> 00:31:58.570
+Okay lead is the time that will take to process and prepare material produce and transport it to you the customer
+
+00:31:58.570 --> 00:32:03.130
+Oh, okay. So lead time in that regard
+
+00:32:03.970 --> 00:32:05.490
+Yeah
+
+00:32:05.490 --> 00:32:07.330
+it's
+
+00:32:07.330 --> 00:32:12.010
+So for example, we're dealing with this all over the place in the world right now
+
+00:32:13.210 --> 00:32:17.010
+Manufacturing their lead times have gone way down, right?
+
+00:32:17.970 --> 00:32:20.130
+Are way up?
+
+00:32:20.130 --> 00:32:24.010
+I guess they've increased right if you need toilet paper
+
+00:32:24.650 --> 00:32:28.870
+the the lead time to for producing toilet paper is
+
+00:32:29.510 --> 00:32:37.670
+Has increased it will take longer to get it out to the customer as an aside. I was at the grocery store the other day
+
+00:32:38.980 --> 00:32:46.380
+They actually had toilet paper. I didn't need it, but I felt obligated to buy one small pack anyway
+
+00:32:46.820 --> 00:32:48.820
+You're part of the problem
+
+00:32:50.760 --> 00:32:53.400
+I almost posted on Facebook
+
+00:32:54.120 --> 00:32:58.600
+Achievement unlocked. I haven't bought toilet paper since this thing
+
+00:32:59.560 --> 00:33:05.840
+Happened I didn't I honestly I didn't need to but I bought just a small pack
+
+00:33:06.360 --> 00:33:12.340
+Anyway, alright good for you. Where are we? We're on a lead time tangent. Alright, so here's the thing
+
+00:33:13.340 --> 00:33:15.340
+That I normally do
+
+00:33:15.580 --> 00:33:18.180
+Okay, I think you're trying to do it from the top down
+
+00:33:18.180 --> 00:33:23.580
+Which is the thing that's interesting for me because I'm trying to I normally do it from the bottom up. Okay
+
+00:33:24.180 --> 00:33:28.760
+I work at the top. I need to go work with the bottom. So I do want to hear this
+
+00:33:29.950 --> 00:33:37.730
+Theory of constraints right what you need to do is figure out how to apply the theory of
+
+00:33:38.110 --> 00:33:41.110
+constraints at a useful macro level
+
+00:33:41.550 --> 00:33:44.160
+Right. You need to identify
+
+00:33:44.800 --> 00:33:47.480
+the very first thing that you need to do is
+
+00:33:50.070 --> 00:33:52.910
+Visualize the process
+
+00:33:52.910 --> 00:33:59.150
+In and obviously something automated is going to be great, but at your level
+
+00:34:02.300 --> 00:34:06.260
+Like how to do it at the macro level is something I have not ever done
+
+00:34:06.860 --> 00:34:09.430
+at the at the micro level
+
+00:34:10.350 --> 00:34:14.590
+Right visualizing bottlenecks is easy. You put together a Kanban board
+
+00:34:15.310 --> 00:34:21.470
+and you get useful columns going and you put whip in place and
+
+00:34:23.670 --> 00:34:27.270
+The bot where the bottleneck is becomes really clear
+
+00:34:28.230 --> 00:34:31.070
+Really fast. So one idea might be
+
+00:34:31.950 --> 00:34:33.950
+Whatever your macro level thing is
+
+00:34:34.950 --> 00:34:39.080
+Do you have the power to limit with?
+
+00:34:40.740 --> 00:34:42.820
+No, I can plant seeds though
+
+00:34:42.820 --> 00:34:47.500
+So I just talked about how our org works and it's interesting you brought that up because that's been on my mind as well
+
+00:34:47.660 --> 00:34:52.420
+Maybe last month. We have a monthly get together of all of our leads and I usually take
+
+00:34:53.300 --> 00:34:58.620
+across the world and I usually take 10 or 15 minutes and present something and
+
+00:34:59.820 --> 00:35:06.520
+It's usually not very prescriptive, but I'm planting seeds and the thing I talked about in this one was
+
+00:35:07.720 --> 00:35:13.080
+flow and cues and some lessons learned from Renaissance flow book
+
+00:35:13.560 --> 00:35:19.700
+It sparked a lot of interest. I use that to segue into a talk on because talked a lot about
+
+00:35:20.740 --> 00:35:26.580
+Q times I use that to segue into a brief overview about how you and I like to approach Kanban
+
+00:35:26.620 --> 00:35:32.860
+well, which is really how to use Kanban properly and I the model I used was
+
+00:35:33.540 --> 00:35:40.820
+People taking the default version of Kanban like the first board you create Kanban board has to do doing done
+
+00:35:40.820 --> 00:35:46.260
+And I say this isn't really very helpful you and I have quite similar columns
+
+00:35:46.260 --> 00:35:50.380
+I've used what you have built what you have built. I won't go into mall right now
+
+00:35:50.940 --> 00:35:53.900
+but logical steps that show flow all the way from
+
+00:35:54.740 --> 00:36:00.280
+Things that can be done to things that are validated in production. I show
+
+00:36:01.160 --> 00:36:08.120
+Why you know how that how that works and then I introduced whip which a lot of people using Kanban don't use and
+
+00:36:08.920 --> 00:36:15.320
+I show how easy it is. Just some quick examples how like I just throw up a Kanban board. Okay, what's the problem here and
+
+00:36:16.360 --> 00:36:21.960
+Immediately because human brains are fantastic at pattern matching. Everyone knows exactly what the bottlenecks are
+
+00:36:21.960 --> 00:36:27.360
+It's amazing if you use Kanban and whip properly how powerful that is
+
+00:36:28.080 --> 00:36:29.600
+not
+
+00:36:29.600 --> 00:36:31.600
+coincidentally I
+
+00:36:32.080 --> 00:36:36.800
+Did a query last night of I look a lot at all that our project data
+
+00:36:36.800 --> 00:36:38.830
+I did a query of
+
+00:36:38.830 --> 00:36:47.720
+every project that's been completed on time or early in the last since I joined the team in the last 10 months or so and
+
+00:36:49.610 --> 00:36:54.370
+The delivery owner in charge of those projects all of our projects have a product owner
+
+00:36:54.370 --> 00:36:57.050
+which is product management and a delivery owner, which is the engineering lead and
+
+00:36:58.370 --> 00:37:00.930
+Would you believe would you be surprised that?
+
+00:37:00.930 --> 00:37:02.210
+that
+
+00:37:02.210 --> 00:37:07.420
+The people at the top of that list are people that I know from talking to them
+
+00:37:07.680 --> 00:37:12.910
+Use Kanban and whip as part of their project management. I am not
+
+00:37:13.970 --> 00:37:20.330
+And actually it's interesting. Maybe you have found a clue there. Yeah, there's something there
+
+00:37:20.330 --> 00:37:24.130
+But here's here's a little bit of my challenge. Let me I need to get a little bit more of our culture
+
+00:37:24.130 --> 00:37:26.130
+Then go on there. We have a very
+
+00:37:27.010 --> 00:37:30.420
+We're very proud of our autonomous culture the the directions
+
+00:37:30.420 --> 00:37:35.980
+We give our engineering leads if you have three jobs you need to manage people you need to be a tech leader
+
+00:37:35.980 --> 00:37:37.980
+You need to do your own project management
+
+00:37:38.380 --> 00:37:40.220
+How you do that is up to you
+
+00:37:40.220 --> 00:37:47.220
+But when you do it you should balance that work is roughly 60% new stuff 20% keeping the business running 20% tech debt and
+
+00:37:48.050 --> 00:37:51.530
+We give them like in very much in the spirit of oh
+
+00:37:51.970 --> 00:37:55.810
+Who are the radical leaders guide to radical management the denning?
+
+00:37:56.370 --> 00:37:59.730
+give people a framework they can work in and then get out of their way and
+
+00:38:01.090 --> 00:38:03.090
+So I offer tips on
+
+00:38:03.770 --> 00:38:09.170
+Why they may be using scrum or Kanban and effectively and slowly they get better
+
+00:38:09.530 --> 00:38:15.850
+But that's kind of where we're at. So people get to choose. We don't prescribe a project management approach. I
+
+00:38:16.810 --> 00:38:20.250
+Obviously have my preferences but in the way our org works
+
+00:38:20.250 --> 00:38:23.810
+It wouldn't be fair of me to tell them what to do
+
+00:38:23.810 --> 00:38:29.370
+I can get them suggestions on what may work better in their context as I work my way around our our
+
+00:38:30.290 --> 00:38:32.630
+80 different engineering teams however many we have
+
+00:38:34.140 --> 00:38:35.420
+Yeah
+
+00:38:35.420 --> 00:38:37.420
+Okay, I get that so
+
+00:38:37.620 --> 00:38:43.760
+So in addition to this we need to come up with a strategy that doesn't involve command and control
+
+00:38:43.920 --> 00:38:47.440
+Yeah, and and I should also point out they do listen to me
+
+00:38:47.440 --> 00:38:52.260
+So if I just sent an email or a slack message or presentation that said
+
+00:38:53.220 --> 00:38:57.460
+Alan thinks velocity can be improved if we follow these three principles
+
+00:38:58.140 --> 00:39:01.040
+They'll try them. Oh
+
+00:39:01.360 --> 00:39:07.120
+So I will I can't prescribe but I've worked myself into a position of
+
+00:39:08.360 --> 00:39:13.180
+Credibility where if I say stuff it won't be whatever shut up
+
+00:39:13.300 --> 00:39:15.300
+So that there is that advantage
+
+00:39:15.380 --> 00:39:17.240
+well
+
+00:39:17.240 --> 00:39:19.440
+Right, if you were to say the principles
+
+00:39:20.200 --> 00:39:22.650
+Let me try these right?
+
+00:39:23.170 --> 00:39:25.170
+CICD obviously
+
+00:39:27.300 --> 00:39:29.300
+pole and whip
+
+00:39:32.360 --> 00:39:34.360
+right, I think
+
+00:39:34.400 --> 00:39:37.880
+the those three principles or those three
+
+00:39:38.760 --> 00:39:40.560
+acids techniques
+
+00:39:40.560 --> 00:39:42.560
+thingamabobs
+
+00:39:42.600 --> 00:39:44.600
+I don't care about the right now
+
+00:39:45.680 --> 00:39:48.080
+that's the secret sauce of
+
+00:39:49.080 --> 00:39:56.080
+Kombat to a great deal. I mean be the fourth one is visualize everything. Yes that helps, right?
+
+00:39:57.040 --> 00:39:59.040
+But if you have a team
+
+00:39:59.320 --> 00:40:03.810
+So if you initiated if you get teams to initiate whip
+
+00:40:05.580 --> 00:40:12.420
+And then people are gonna come up with well, hey, I'm idle I can't pick up another ticket because
+
+00:40:13.220 --> 00:40:14.870
+Whip
+
+00:40:14.870 --> 00:40:16.670
+What do I do?
+
+00:40:16.670 --> 00:40:20.110
+Right, then you you guide them towards pulling
+
+00:40:21.020 --> 00:40:23.020
+right, and then the CICD
+
+00:40:24.540 --> 00:40:27.300
+the best thing about CICD is
+
+00:40:29.220 --> 00:40:35.360
+Is it's just fantastic inoculation into the primary?
+
+00:40:37.130 --> 00:40:40.300
+Flaw with scrum in that is
+
+00:40:41.300 --> 00:40:46.180
+All the bugs get integrated or get introduced into the product
+
+00:40:47.180 --> 00:40:48.460
+The
+
+00:40:48.460 --> 00:40:55.260
+11 p.m. The night before the end of spring demo. Yeah, even our teams using scrum though, however, I'm
+
+00:40:56.180 --> 00:40:58.180
+90 plus percent of those
+
+00:40:58.380 --> 00:41:04.620
+Their stuff when it gets to the done column is going into production. They don't really it's a it's a scrummer bond sort of thing
+
+00:41:05.140 --> 00:41:07.180
+But we have CICD
+
+00:41:07.420 --> 00:41:13.020
+Across the org that parts there. What we don't have is this idea of whip and I think it does I
+
+00:41:13.580 --> 00:41:15.580
+think it is leading to
+
+00:41:16.700 --> 00:41:18.700
+perceived an actual
+
+00:41:18.980 --> 00:41:20.140
+slowness
+
+00:41:20.140 --> 00:41:24.570
+so if you have if you have whip in place
+
+00:41:25.650 --> 00:41:27.890
+then
+
+00:41:27.890 --> 00:41:31.050
+Then that you need to make sure pull is in place and
+
+00:41:32.800 --> 00:41:37.920
+and a lot of times when I say the word pull I mean the opposite of push
+
+00:41:38.850 --> 00:41:42.330
+Not a long thing that you hang electric wires off of
+
+00:41:44.960 --> 00:41:47.120
+Right so
+
+00:41:47.120 --> 00:41:49.120
+Whip is really powerful
+
+00:41:49.920 --> 00:41:51.200
+along with
+
+00:41:51.200 --> 00:41:52.160
+pull
+
+00:41:52.160 --> 00:41:53.200
+right
+
+00:41:53.200 --> 00:41:57.840
+So there's a problem at the individual level
+
+00:41:58.910 --> 00:42:00.910
+They're motivated
+
+00:42:00.910 --> 00:42:03.450
+To start the next new shiny thing
+
+00:42:05.100 --> 00:42:07.100
+Thanks for that
+
+00:42:08.650 --> 00:42:09.890
+Wow
+
+00:42:09.890 --> 00:42:15.280
+You'd make an attractive teenage girl. I don't know what you did
+
+00:42:16.360 --> 00:42:19.320
+Brent's hallucinating. Yeah, Ellen is
+
+00:42:19.320 --> 00:42:21.320
+somehow
+
+00:42:21.760 --> 00:42:23.520
+Incorporated
+
+00:42:23.520 --> 00:42:25.520
+Snapchat into zoom
+
+00:42:25.920 --> 00:42:27.760
+Shiny things
+
+00:42:27.760 --> 00:42:31.440
+Sorry tip of the day. Sorry to interrupt. I was goofing off listening to Brent
+
+00:42:31.440 --> 00:42:37.280
+There's you can go to snap camera snapchat calm and you can get a filter that'll work in your video app
+
+00:42:37.280 --> 00:42:42.200
+So you can change there's one where you can change yourself to a potato. It's pretty good anyway
+
+00:42:43.360 --> 00:42:45.360
+anyway, so
+
+00:42:46.070 --> 00:42:48.140
+once I get whip
+
+00:42:48.140 --> 00:42:52.340
+Getting whip on a team because whip seems like what you're doing is you're setting up
+
+00:42:53.100 --> 00:42:54.620
+artificial bottlenecks
+
+00:42:54.620 --> 00:43:00.400
+And it takes a little while to get people to understand know once once you have the white right
+
+00:43:00.980 --> 00:43:06.540
+limits in place on your con bun board you should always have exactly
+
+00:43:07.500 --> 00:43:13.260
+one column that's bottleneck if you have the right what lip limits in place and
+
+00:43:14.680 --> 00:43:18.880
+It's great because that is Kanban telling you
+
+00:43:19.520 --> 00:43:21.810
+Hey dive in here
+
+00:43:22.250 --> 00:43:24.250
+It's it's all about
+
+00:43:25.210 --> 00:43:30.130
+Creating an effective learning culture if you don't know where your bottleneck is
+
+00:43:32.490 --> 00:43:38.330
+Start adding whip and cranking it down until something starts to slow
+
+00:43:38.850 --> 00:43:46.830
+Absolutely, and I can offer this advice to the teams that are using who have chosen who have been nudged properly to use
+
+00:43:46.930 --> 00:43:52.700
+Kanban as their project management. The second thing is you got you want to
+
+00:43:53.620 --> 00:43:56.220
+You want to change?
+
+00:43:57.500 --> 00:43:59.500
+the intrinsic
+
+00:44:00.460 --> 00:44:04.980
+Motivation of each employee they're motivated to start the next new shiny thing
+
+00:44:05.220 --> 00:44:09.460
+You want to change that intrinsic motivation to be around?
+
+00:44:10.260 --> 00:44:12.960
+Closing is more important than starting
+
+00:44:14.370 --> 00:44:20.410
+Finishing what is in flight is more important than starting something new and
+
+00:44:22.540 --> 00:44:29.260
+What they what I when I get a team going into that particular rhythm and they successfully change that mindset
+
+00:44:29.740 --> 00:44:37.940
+You discover something fascinating and that is that they realize they can actually start the new shiny thing faster
+
+00:44:39.050 --> 00:44:41.050
+by focusing on
+
+00:44:41.210 --> 00:44:43.700
+closing
+
+00:44:43.700 --> 00:44:46.540
+Yes, and I feel like we may be pretty good at that
+
+00:44:47.460 --> 00:44:48.500
+Okay
+
+00:44:48.500 --> 00:44:51.600
+I think there may be and maybe you have true advice here
+
+00:44:51.600 --> 00:44:54.060
+We're actually believe it or not getting close to the end of our time is
+
+00:44:54.780 --> 00:44:58.700
+One thing I've discovered in looking at which projects have been successfully
+
+00:44:59.790 --> 00:45:02.310
+Delivered and looking across hundreds of projects now
+
+00:45:03.500 --> 00:45:05.500
+There is a correlation
+
+00:45:06.580 --> 00:45:10.900
+Between and it's a little different Microsoft with program managers who were a bunch of different hats
+
+00:45:11.020 --> 00:45:13.700
+but between our product managers our product owners and
+
+00:45:15.300 --> 00:45:21.760
+Our engineering leaders the better alignment they have between the two of them because they're able to figure out
+
+00:45:22.340 --> 00:45:27.540
+What exactly is they're building what problem? It's solving what a true MVP is
+
+00:45:28.140 --> 00:45:31.400
+but the tighter that alignment is the
+
+00:45:32.350 --> 00:45:40.090
+More velocity their teams have have you noticed anything like that or have any ideas how I could encourage that to work better
+
+00:45:43.410 --> 00:45:45.190
+When you have
+
+00:45:45.190 --> 00:45:51.350
+Teams that have a tight alignment. Here's how I phrase it my PM in engineering
+
+00:45:53.900 --> 00:45:55.900
+Or development let me do that
+
+00:45:56.860 --> 00:46:02.060
+PM in development they have different roles and
+
+00:46:03.620 --> 00:46:09.220
+often the the power structure between the two of them is unbalanced and
+
+00:46:11.330 --> 00:46:13.160
+the
+
+00:46:13.160 --> 00:46:16.440
+the way I
+
+00:46:16.440 --> 00:46:18.120
+Frame it is
+
+00:46:18.120 --> 00:46:19.800
+They're my partner
+
+00:46:19.800 --> 00:46:27.420
+And what I expect from a partner is that they are is as concerned about my goals as they are
+
+00:46:27.580 --> 00:46:30.500
+their goals and their goals are
+
+00:46:32.190 --> 00:46:34.190
+not my goals
+
+00:46:34.660 --> 00:46:38.580
+Meaning we have we have overlapping so some PMs go
+
+00:46:39.060 --> 00:46:44.100
+Do your goals are what I tell you to do. Here's the requirements that go do it, right?
+
+00:46:45.340 --> 00:46:51.680
+That doesn't work though. It does not work, but there are there there are some
+
+00:46:52.840 --> 00:46:56.000
+Thankfully, it's rare, but there are some PMs that are
+
+00:46:56.640 --> 00:46:59.470
+Power tripping
+
+00:47:00.870 --> 00:47:03.600
+So I sit down with my PMs and I go look
+
+00:47:04.100 --> 00:47:08.660
+This is my definition of a partnership if you want to be my partner. It's not by words
+
+00:47:08.660 --> 00:47:11.700
+This is what this means means you and I will
+
+00:47:12.380 --> 00:47:18.060
+Consistently sync up around what my goals are and what your goals are and we're going to have a conversation
+
+00:47:19.300 --> 00:47:25.420
+That results in both set of goals of being equally cared about by both sides
+
+00:47:25.420 --> 00:47:29.580
+That is a partnership. Yeah, right and
+
+00:47:30.140 --> 00:47:35.740
+Why do you have it a pushback? Why do you you want both sets of goals to be like how come you just can't have one set
+
+00:47:35.740 --> 00:47:40.140
+Of goals between you because the goals are gonna be different
+
+00:47:40.500 --> 00:47:44.340
+Right, they're gonna have something very PM focused as well on their list
+
+00:47:44.340 --> 00:47:49.740
+No, the screw that screw that your come your goals together are to solve a customer's problem
+
+00:47:51.320 --> 00:47:54.120
+That's nice as a t-shirt model
+
+00:47:54.800 --> 00:47:57.000
+But on any level of drill down
+
+00:47:57.520 --> 00:48:04.280
+It falls apart pretty quickly every human being has intrinsic goals. They have things that they want to achieve
+
+00:48:04.920 --> 00:48:10.560
+Hey, let's say you were my PM and hey, you're like, hey, this is the right thing for the customer and
+
+00:48:11.200 --> 00:48:13.520
+You know what you're really trying for a promotion
+
+00:48:14.200 --> 00:48:18.520
+Yeah, we we'd right that that's a Microsoft thing
+
+00:48:19.120 --> 00:48:21.660
+There are always
+
+00:48:21.660 --> 00:48:24.060
+intrinsic in and extrinsic goals
+
+00:48:24.180 --> 00:48:29.900
+I believe that people are trying to improve people are trying to grow but
+
+00:48:30.420 --> 00:48:33.780
+The first thing you do is realize that users come first
+
+00:48:35.010 --> 00:48:37.610
+How are we gonna solve that problem on the engineering side?
+
+00:48:37.650 --> 00:48:43.050
+You help figure out what's the minimal amount of work we need to do to validate whether we're solving that problem or not
+
+00:48:43.410 --> 00:48:47.150
+Agree on that implement it rinse lather repeat
+
+00:48:48.240 --> 00:48:54.800
+Yeah, so I've definitely come from the engineering management point of view and as you know with my experience like
+
+00:48:55.440 --> 00:48:57.440
+more often than not
+
+00:48:58.440 --> 00:49:04.720
+Nowadays I'm more of a I am my own PM right? I already have the lather risk repeat
+
+00:49:04.720 --> 00:49:07.360
+I know how to get feedback from the customers. I know how to
+
+00:49:08.440 --> 00:49:10.240
+Use the data
+
+00:49:10.240 --> 00:49:12.690
+So it's generally not a problem. Yeah, I
+
+00:49:13.850 --> 00:49:18.610
+Work with no PM's on the teams. I manage. I just want to help the rest the other
+
+00:49:19.570 --> 00:49:22.210
+240 engineers in the organization be successful
+
+00:49:22.610 --> 00:49:25.890
+So before we run out of time there's one last
+
+00:49:27.180 --> 00:49:33.220
+Concept that I wanted to bring up on your other question and that's the identification of waste
+
+00:49:33.900 --> 00:49:39.260
+Do you have the ability do you understand this concept? Yes, absolutely. This is all over my
+
+00:49:39.860 --> 00:49:41.860
+presentation I gave a month ago on
+
+00:49:42.340 --> 00:49:44.140
+lean and writer's and
+
+00:49:44.140 --> 00:49:46.660
+So if you can identify
+
+00:49:47.740 --> 00:49:50.140
+So I have a particular style of a retrospective
+
+00:49:51.020 --> 00:49:53.420
+We definitely do not have time to go through it
+
+00:49:54.380 --> 00:49:56.700
+where you where you can
+
+00:49:57.500 --> 00:50:00.860
+Force teams to understand what waste is and
+
+00:50:02.140 --> 00:50:04.140
+Visualize it in a retrospective
+
+00:50:04.560 --> 00:50:09.240
+But the more you can make that part of a culture and make each individual realize
+
+00:50:10.360 --> 00:50:18.000
+Realize on their own that the effort that just spent on it could have been reduced by n number of days
+
+00:50:19.700 --> 00:50:26.780
+You then get that learning in that pre-thinking done
+
+00:50:29.020 --> 00:50:30.340
+Going forward
+
+00:50:30.340 --> 00:50:35.510
+Right. You got to get rid of any sort of semblance of a blame culture
+
+00:50:35.510 --> 00:50:39.750
+I have no doubt that that's pretty thriving not blame culture
+
+00:50:40.910 --> 00:50:49.590
+Non-blame culture, I think is thriving at unity based on how you describe it in our org psychological safety is definitely something that both my manager
+
+00:50:49.590 --> 00:50:51.790
+And I make sure is a top priority. Yes
+
+00:50:52.390 --> 00:50:56.060
+So once you get through that then getting people
+
+00:50:56.860 --> 00:50:58.950
+through
+
+00:50:58.950 --> 00:51:02.910
+trained on at a ground level how to
+
+00:51:05.210 --> 00:51:07.530
+use a retrospective to identify
+
+00:51:08.610 --> 00:51:10.410
+sources of
+
+00:51:10.410 --> 00:51:12.400
+waste
+
+00:51:12.400 --> 00:51:17.120
+As a way to learn what to do next time because turns out
+
+00:51:18.410 --> 00:51:24.770
+Very specific causes of waste are very rare. It almost always generalizes
+
+00:51:25.360 --> 00:51:26.920
+that
+
+00:51:26.920 --> 00:51:31.800
+That is actually a good brain tickle that last bit you brought up because
+
+00:51:32.480 --> 00:51:37.620
+I've talked a lot about with my teams around I call them my teams
+
+00:51:37.620 --> 00:51:40.860
+I consider the whole org sort of dotted line report to me
+
+00:51:41.500 --> 00:51:45.020
+Whether they do or not, but we talked about
+
+00:51:46.210 --> 00:51:50.970
+Waste and cues and whip and all these things
+
+00:51:50.970 --> 00:51:54.770
+but one of the things I haven't planted enough seeds about and I
+
+00:51:55.580 --> 00:51:59.940
+Talk a lot about planting seeds and leadership and just kind of mentioning things and see who picks up on it
+
+00:52:00.580 --> 00:52:02.740
+My org is very fertile
+
+00:52:03.180 --> 00:52:06.610
+They like when I plant seeds they pick them up, but I'm surprised sometimes
+
+00:52:06.610 --> 00:52:10.950
+Hey, Alan, I tried this thing you mentioned it's working. I thought that wasn't even my main point
+
+00:52:11.030 --> 00:52:17.590
+But yeah, and I haven't planted enough seeds yet around the power of retrospectives
+
+00:52:17.590 --> 00:52:18.700
+and
+
+00:52:18.700 --> 00:52:23.180
+that may be one of the next things I talk about with the team and start planting because that's
+
+00:52:23.420 --> 00:52:29.260
+That's where the improvement happens. We have a learning culture and most or probably all the teams do retros
+
+00:52:29.260 --> 00:52:34.060
+But are they effective retros that focus on not just on?
+
+00:52:35.920 --> 00:52:37.920
+bugs or issues that came up or
+
+00:52:38.880 --> 00:52:44.400
+Conflicts but make sure those retros include ideas on improving velocity or
+
+00:52:45.120 --> 00:52:48.200
+identifying waste or cues would be
+
+00:52:49.840 --> 00:52:51.840
+Right so
+
+00:52:52.600 --> 00:52:54.690
+Retrospective and
+
+00:52:54.690 --> 00:52:57.050
+You know said not be a postmortem
+
+00:52:57.050 --> 00:53:04.050
+It right right and I I don't think they're that but I think I can nudge those to being a way to scale some of this
+
+00:53:04.290 --> 00:53:11.610
+Knowledge and we are going to spend our next podcast talking quite a bit more about retrospectives whether you know it or not
+
+00:53:11.610 --> 00:53:15.780
+I just put it in slack. What do you think about that? I think that's fantastic
+
+00:53:16.700 --> 00:53:22.400
+All right. I will will have forgotten it. All right. I better get going
+
+00:53:23.350 --> 00:53:25.670
+All right
+
+00:53:25.830 --> 00:53:27.750
+Alan is now mr. Potato
+
+00:53:27.750 --> 00:53:32.110
+I have become a potato for Brent and hey, it is good chatting with you glad things are going
+
+00:53:32.110 --> 00:53:34.830
+Well, please stay healthy and that message goes to
+
+00:53:35.430 --> 00:53:37.510
+Brent as well as the rest of our listeners
+
+00:53:38.100 --> 00:53:40.820
+All right. All right. I will see you. Thank you
+

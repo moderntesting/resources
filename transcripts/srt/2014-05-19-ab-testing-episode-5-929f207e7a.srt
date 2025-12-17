@@ -1,0 +1,2996 @@
+1
+00:00:17,740 --> 00:00:18,740
+Hey, I'm Alan.
+
+2
+00:00:18,740 --> 00:00:19,440
+I'm Brent.
+
+3
+00:00:19,440 --> 00:00:22,540
+And we're back here for another episode of A B testing
+
+4
+00:00:22,780 --> 00:00:26,040
+where Alan and Brent just talk about random crap and see what comes up.
+
+5
+00:00:26,140 --> 00:00:27,620
+Semi-random crap.
+
+6
+00:00:27,620 --> 00:00:31,620
+As usual, we have a lean coffee board written up
+
+7
+00:00:32,020 --> 00:00:35,180
+and now we begin the process of kind of ignoring it.
+
+8
+00:00:35,520 --> 00:00:39,860
+No, we're going to slowly work our way through it and get through part of it.
+
+9
+00:00:40,460 --> 00:00:41,360
+That's the plan.
+
+10
+00:00:41,360 --> 00:00:42,460
+Yes, we are.
+
+11
+00:00:42,460 --> 00:00:44,460
+We are on a pretty good schedule.
+
+12
+00:00:44,480 --> 00:00:49,720
+We had a three week break between podcasts because I went to star East for a week.
+
+13
+00:00:50,220 --> 00:00:53,400
+So I thought we'd start by I'll give you a little recap, tell you
+
+14
+00:00:53,400 --> 00:00:57,260
+some things that happened there if you missed the explosion on my blog.
+
+15
+00:00:57,300 --> 00:00:59,560
+And I'll see what Brent has to say about all this.
+
+16
+00:00:59,700 --> 00:01:06,040
+Yes, the so I'd love to start off on the on the the blog that Alan did.
+
+17
+00:01:06,140 --> 00:01:09,080
+The only problem I see with Alan's blog
+
+18
+00:01:09,870 --> 00:01:11,670
+was that I didn't write it.
+
+19
+00:01:11,670 --> 00:01:13,610
+Oh, Brent.
+
+20
+00:01:13,630 --> 00:01:15,270
+There's a story behind this blog post.
+
+21
+00:01:15,270 --> 00:01:20,370
+This wasn't like some plot I had or some like, oh, I want to be controversial.
+
+22
+00:01:20,610 --> 00:01:23,410
+What happened was I was signed up at star to
+
+23
+00:01:24,530 --> 00:01:27,070
+give a lightning talk, which are five minute talks.
+
+24
+00:01:27,070 --> 00:01:27,610
+And they do.
+
+25
+00:01:27,610 --> 00:01:30,410
+Lee Copeland does lightning strikes the keynotes and everybody gives a five
+
+26
+00:01:30,410 --> 00:01:32,010
+minute talk, not everybody.
+
+27
+00:01:32,010 --> 00:01:33,770
+Eleven of us.
+
+28
+00:01:33,770 --> 00:01:35,070
+I went there purposely.
+
+29
+00:01:35,070 --> 00:01:37,670
+If you listen to the last podcast, you know, I didn't have a topic plan.
+
+30
+00:01:38,010 --> 00:01:42,810
+I didn't have one figured out until we got to the day of the morning
+
+31
+00:01:42,890 --> 00:01:44,930
+of the lightning talk.
+
+32
+00:01:44,930 --> 00:01:46,930
+I was out for a jog and I was thinking about
+
+33
+00:01:47,930 --> 00:01:49,930
+everything I had heard so far.
+
+34
+00:01:49,930 --> 00:01:52,970
+And a lot of people were struggling with their automation.
+
+35
+00:01:52,970 --> 00:01:55,570
+They're writing a lot of GUI automation and end to end automation.
+
+36
+00:01:55,810 --> 00:01:58,710
+And they're spending a lot of time investigating failed tests,
+
+37
+00:01:59,470 --> 00:02:00,410
+thinking about this.
+
+38
+00:02:00,410 --> 00:02:03,790
+And then I was thinking about what I'm doing at work with,
+
+39
+00:02:04,030 --> 00:02:05,990
+you know, getting more focused on data.
+
+40
+00:02:06,450 --> 00:02:08,490
+And I was jogging along and I just stopped.
+
+41
+00:02:09,990 --> 00:02:12,990
+I thought, well, it's not a heart attack, but I have an idea.
+
+42
+00:02:13,490 --> 00:02:17,250
+I'm going to do my lightning talk on stop writing automation with two main
+
+43
+00:02:17,250 --> 00:02:18,090
+premises.
+
+44
+00:02:18,090 --> 00:02:22,810
+One is that for the things that automation is really good for short
+
+45
+00:02:22,810 --> 00:02:27,250
+confirmatory tests, or as I have been lectured now several times,
+
+46
+00:02:27,250 --> 00:02:28,750
+I should call those checks.
+
+47
+00:02:28,750 --> 00:02:30,650
+I'm going to call them short tests because I've, you know, it's,
+
+48
+00:02:30,650 --> 00:02:32,610
+it's my vocabulary.
+
+49
+00:02:32,610 --> 00:02:37,850
+Anyway, those short tests, it's so much more efficient and so much more
+
+50
+00:02:37,850 --> 00:02:40,710
+applicable to have the developers, the programmers of that code,
+
+51
+00:02:40,910 --> 00:02:42,450
+write those tests.
+
+52
+00:02:42,550 --> 00:02:45,390
+So what's left those long tests that we can't maintain.
+
+53
+00:02:45,590 --> 00:02:47,950
+And to be clear, there are a lot of long tests.
+
+54
+00:02:47,990 --> 00:02:52,030
+You can even do some sort of end to end scenarios automated at the object
+
+55
+00:02:52,030 --> 00:02:55,850
+level versus the GUI or the lower, the better API testing.
+
+56
+00:02:55,850 --> 00:02:59,520
+Those things can be done quite easily through automation.
+
+57
+00:02:59,980 --> 00:03:03,020
+Long story short, cause it was only a five minute lightning talk and I'm
+
+58
+00:03:03,020 --> 00:03:04,460
+taking longer than that to explain it.
+
+59
+00:03:05,160 --> 00:03:08,260
+Dev should own the short tests and a lot of the,
+
+60
+00:03:09,180 --> 00:03:13,580
+a lot of the results testers typically look for in their long tests can
+
+61
+00:03:13,580 --> 00:03:16,420
+be obtained through customer data and instrumentation.
+
+62
+00:03:16,920 --> 00:03:21,260
+The only thing I would, I would add to that, and I intend to,
+
+63
+00:03:21,260 --> 00:03:25,140
+to write a follow up blog post hopefully this weekend, similar to that.
+
+64
+00:03:25,960 --> 00:03:29,000
+Cause we also in, in the services world,
+
+65
+00:03:29,400 --> 00:03:33,380
+there is a role for things that feel like test automation.
+
+66
+00:03:33,380 --> 00:03:36,420
+It is those who, who have heard about tip tests.
+
+67
+00:03:37,040 --> 00:03:43,280
+In addition to that, I completely agree with what, what Alan is saying regarding
+
+68
+00:03:43,420 --> 00:03:48,320
+the traditional way we think of test cases and test automation, right?
+
+69
+00:03:48,320 --> 00:03:52,360
+Those, those regression checks not only should be done by dev,
+
+70
+00:03:52,360 --> 00:03:56,700
+they actually dramatically improve devs throughput by dev only.
+
+71
+00:03:56,700 --> 00:03:58,560
+And they improve code design.
+
+72
+00:03:58,560 --> 00:04:01,680
+In every case I've seen this people write, when they write testing their own code,
+
+73
+00:04:01,680 --> 00:04:03,300
+they write better code in the first place.
+
+74
+00:04:03,320 --> 00:04:09,320
+I actually, so, so my team is undergoing a, a reorg and I was just on a,
+
+75
+00:04:09,320 --> 00:04:12,560
+on a phone with a dev architect in a different group.
+
+76
+00:04:12,560 --> 00:04:16,600
+And, and there is a, a rumor going around that,
+
+77
+00:04:16,600 --> 00:04:21,000
+that we may follow the combined engineering model, which will mean.
+
+78
+00:04:21,000 --> 00:04:22,740
+I hate that word. I think it's stupid.
+
+79
+00:04:22,800 --> 00:04:25,770
+Yeah. Great.
+
+80
+00:04:25,830 --> 00:04:28,370
+I don't care about, I don't, the point is, and we're going to,
+
+81
+00:04:28,370 --> 00:04:31,290
+no, you, you don't like it because it, it, you,
+
+82
+00:04:31,310 --> 00:04:35,030
+you want to get rid of this, this,
+
+83
+00:04:35,190 --> 00:04:38,190
+we're all just engineers is kind of what I think you'll say to them.
+
+84
+00:04:38,190 --> 00:04:42,310
+Yeah. I think with special, I believe in God,
+
+85
+00:04:42,310 --> 00:04:43,710
+it is a generalizing specialists.
+
+86
+00:04:43,910 --> 00:04:48,170
+And I think that you want to build a good team with a lot of specialties and I
+
+87
+00:04:48,170 --> 00:04:51,270
+will always be a test specialist and I don't care what you call me.
+
+88
+00:04:51,270 --> 00:04:52,230
+It doesn't matter,
+
+89
+00:04:52,230 --> 00:04:54,830
+but don't put me on a team where you call it combined engineering.
+
+90
+00:04:54,830 --> 00:04:57,950
+That it's like you're trying too hard. Just anyway,
+
+91
+00:04:57,990 --> 00:04:59,150
+I don't know if that. So I,
+
+92
+00:04:59,690 --> 00:05:01,730
+I don't know if they'll frame it as combined engineering.
+
+93
+00:05:01,730 --> 00:05:03,290
+It just pushes a button with me.
+
+94
+00:05:03,330 --> 00:05:06,590
+I really think titles are going away at Microsoft at least at some point,
+
+95
+00:05:06,590 --> 00:05:09,930
+but anyway, go on. Sorry. I agree. The, anyway, the,
+
+96
+00:05:10,290 --> 00:05:13,090
+I don't think I've mentioned this. Maybe I have.
+
+97
+00:05:13,370 --> 00:05:17,210
+So I spent the majority of my career as a middle manager in test. Uh,
+
+98
+00:05:17,210 --> 00:05:20,650
+here at Microsoft, we call that a test manager role. Also called the loser.
+
+99
+00:05:20,690 --> 00:05:25,610
+Go on. Yes. Uh, or, or, or meeting a tender. Um,
+
+100
+00:05:26,800 --> 00:05:32,300
+I then shifted into a dev role where I did not have any testers at all.
+
+101
+00:05:32,840 --> 00:05:36,760
+And one of the things that that forced me to do is of course,
+
+102
+00:05:36,780 --> 00:05:39,620
+in order to, to ship quality software,
+
+103
+00:05:39,620 --> 00:05:44,620
+I had to have my guys owning their own testing and we didn't want to do the
+
+104
+00:05:45,280 --> 00:05:48,520
+full on test process where you test passes and,
+
+105
+00:05:48,560 --> 00:05:52,920
+and all of that sort of thing. Uh, so we, we kind of did it,
+
+106
+00:05:53,020 --> 00:05:54,980
+adually and figured out, well, what,
+
+107
+00:05:55,020 --> 00:05:59,260
+how exact much of testing we needed to do. So we, uh, we,
+
+108
+00:05:59,260 --> 00:06:00,540
+we learned very quickly,
+
+109
+00:06:01,260 --> 00:06:02,540
+I've been a picker in terms of words to you.
+
+110
+00:06:02,660 --> 00:06:05,420
+You learned the exact amount of testing you needed to do.
+
+111
+00:06:06,430 --> 00:06:09,190
+We, we were constantly learning that. Okay.
+
+112
+00:06:09,550 --> 00:06:13,910
+But it was iterative. So what I was about to say is that like, for example,
+
+113
+00:06:13,910 --> 00:06:17,950
+first time, uh, we have a principle of we shipped straight to prod.
+
+114
+00:06:17,950 --> 00:06:22,950
+So there is maybe hours latency between check-in and it's,
+
+115
+00:06:23,210 --> 00:06:28,210
+it's live what the team discovered very quickly is that we had insufficient
+
+116
+00:06:30,390 --> 00:06:34,230
+testing because the, we constantly, once we checked in,
+
+117
+00:06:34,230 --> 00:06:39,230
+we constantly had to revert and thankfully we had the signals in place to know
+
+118
+00:06:39,870 --> 00:06:41,830
+when we had to revert. Uh,
+
+119
+00:06:42,150 --> 00:06:46,910
+but that reversion process caused friction caused annoyance on the team and
+
+120
+00:06:46,910 --> 00:06:49,990
+what ended up happening is each of the guys learned very quickly.
+
+121
+00:06:50,030 --> 00:06:51,710
+What checks they needed to put in place.
+
+122
+00:06:51,990 --> 00:06:56,770
+It also caused learning, right? That's the big point. And that's, you know,
+
+123
+00:06:56,770 --> 00:07:00,290
+I heard so many people, I gave this talk and then, um,
+
+124
+00:07:00,290 --> 00:07:02,610
+took out the blog post in a second. I gave this talk. It's like, well,
+
+125
+00:07:02,610 --> 00:07:06,770
+that won't work at our, we have a mission critical it app people use for
+
+126
+00:07:06,770 --> 00:07:10,200
+expenses. And I go, you know what? That's a good spot for it.
+
+127
+00:07:10,460 --> 00:07:13,880
+And the guy at the bank says, this is a bank. We can't do it here.
+
+128
+00:07:13,880 --> 00:07:15,960
+And I just, it was your aside, you know, he's talking,
+
+129
+00:07:15,960 --> 00:07:20,200
+he's doing like, um, if your application is maybe you have some comments on
+
+130
+00:07:20,200 --> 00:07:25,200
+this, but I conceded when your whole application is helping traders make trades,
+
+131
+00:07:27,140 --> 00:07:30,420
+um, in real time, I think you want to be a little bit more careful,
+
+132
+00:07:30,660 --> 00:07:34,120
+but just generally being a bank, you can say, well, we have to have accounts.
+
+133
+00:07:34,120 --> 00:07:35,200
+Right? Yes, you do.
+
+134
+00:07:35,420 --> 00:07:39,940
+But if you are a bank and you are not AB testing that credit card offer on
+
+135
+00:07:39,940 --> 00:07:44,620
+your homepage, you are screwing up. Yeah. And if you're not clear, uh,
+
+136
+00:07:44,680 --> 00:07:47,260
+what AB testing kind of means in this context,
+
+137
+00:07:47,720 --> 00:07:50,040
+that's right. We have two AB testing. We have Alan Brent,
+
+138
+00:07:50,040 --> 00:07:53,400
+and then we have controlled experiments. Right. Now, one of the,
+
+139
+00:07:53,400 --> 00:07:58,320
+one of the, the, the processes in AB testing typically is it's not an all or
+
+140
+00:07:58,320 --> 00:08:00,960
+nothing. So when we say we shipped a prod,
+
+141
+00:08:00,960 --> 00:08:05,260
+we don't light it up for the entire world. We, we,
+
+142
+00:08:05,360 --> 00:08:10,280
+we mitigate risk by lighting it up to a small number of people,
+
+143
+00:08:10,720 --> 00:08:13,840
+the number of people that if we do screw over, uh,
+
+144
+00:08:13,840 --> 00:08:18,740
+we have the ability to reach out and, and personally
+
+145
+00:08:18,780 --> 00:08:22,860
+engage and repair that issue. Like if you light up to the whole world and you
+
+146
+00:08:22,860 --> 00:08:26,420
+negatively impact millions of people, your team cannot scale.
+
+147
+00:08:26,460 --> 00:08:27,340
+Yeah. And that's the really,
+
+148
+00:08:27,340 --> 00:08:30,420
+that's the really important thing that, um, I forgot, you know,
+
+149
+00:08:30,420 --> 00:08:31,940
+I sort of in my head is taking for granted,
+
+150
+00:08:31,940 --> 00:08:36,620
+but I forgot to mention is that when you roll out these things to and get data
+
+151
+00:08:36,620 --> 00:08:39,580
+from real customers, you, when you're rolling out changes,
+
+152
+00:08:39,780 --> 00:08:43,180
+you're doing it to a very small audience versus like 1% or less first.
+
+153
+00:08:43,200 --> 00:08:47,880
+And then then the concentric circles growing with monitors in
+
+154
+00:08:47,880 --> 00:08:51,880
+place to let you know the second things, whether it's perf, whether it's,
+
+155
+00:08:52,120 --> 00:08:56,160
+you know, disk space, if something's CPU, if something's going, not as expected,
+
+156
+00:08:56,320 --> 00:08:59,640
+you can immediately stop and roll back or roll forward depending on the product.
+
+157
+00:08:59,760 --> 00:09:04,000
+Yes. So back to the, how, how it worked on my last team.
+
+158
+00:09:04,400 --> 00:09:09,000
+So my, my guys got really irritated with this and I made it very clear.
+
+159
+00:09:09,300 --> 00:09:13,380
+I will not be looking for testers. So you guys need to figure it out.
+
+160
+00:09:13,860 --> 00:09:17,220
+And I offered, you know, more actionable suggestions to that,
+
+161
+00:09:17,220 --> 00:09:20,400
+but I, I, I primarily empowered them to work through it.
+
+162
+00:09:20,880 --> 00:09:24,980
+And what I discovered is on their own, nice on their own,
+
+163
+00:09:25,940 --> 00:09:29,460
+uh, they, what they did is they realized first and foremost,
+
+164
+00:09:29,460 --> 00:09:30,300
+in order to do this,
+
+165
+00:09:30,300 --> 00:09:33,540
+they need to get the right set of checks in place to,
+
+166
+00:09:33,540 --> 00:09:37,800
+to manage what they now have learned is things that can cause the service to
+
+167
+00:09:37,800 --> 00:09:42,800
+go down. And then what they did is they realized that their code wasn't built for
+
+168
+00:09:44,440 --> 00:09:48,340
+testability concerns. So they ended up refactoring their code.
+
+169
+00:09:48,340 --> 00:09:52,820
+And as they refactored their code in reducing coupling between objects and,
+
+170
+00:09:52,820 --> 00:09:54,980
+and making objects much more cohesive,
+
+171
+00:09:55,460 --> 00:10:00,460
+turns out we found out that it was a lot easier to add new features because
+
+172
+00:10:00,940 --> 00:10:05,540
+things, the, the overall complexity of the system had dramatically reduced.
+
+173
+00:10:05,700 --> 00:10:07,520
+That's a really critical thing. Not, you know,
+
+174
+00:10:07,520 --> 00:10:09,760
+it's not just more efficient, touching this before,
+
+175
+00:10:09,760 --> 00:10:12,020
+but that's more efficient for developers to write their, their,
+
+176
+00:10:12,280 --> 00:10:17,080
+their short test for those things. But it has such an impact on code quality.
+
+177
+00:10:17,080 --> 00:10:20,520
+They were, they realized right away, oh crap, I can't test this code.
+
+178
+00:10:20,520 --> 00:10:23,920
+There's no way. And they, and they, the code is designed so much better. It's,
+
+179
+00:10:23,920 --> 00:10:27,120
+it's, I'm really excited. It's a little fantastic.
+
+180
+00:10:27,800 --> 00:10:30,280
+The, the current model that we do where,
+
+181
+00:10:30,280 --> 00:10:31,400
+where there's this,
+
+182
+00:10:31,460 --> 00:10:35,660
+this awkward segmentation between dev and a handoff over to, to test.
+
+183
+00:10:36,100 --> 00:10:37,220
+What this does is it,
+
+184
+00:10:37,340 --> 00:10:42,220
+it optimizes for the maximization of costs to produce crap quality.
+
+185
+00:10:42,620 --> 00:10:46,220
+So, so in addition to, to the code quality going down,
+
+186
+00:10:46,860 --> 00:10:49,660
+because the code quality is now more isolated,
+
+187
+00:10:49,900 --> 00:10:54,900
+the need for additional tests or checks also goes down.
+
+188
+00:10:56,360 --> 00:10:57,200
+Absolutely.
+
+189
+00:10:57,200 --> 00:11:00,140
+You'd no longer have to create this,
+
+190
+00:11:00,180 --> 00:11:04,780
+this huge bank of end to end automation because the
+
+191
+00:11:04,780 --> 00:11:09,220
+system is so put together and so complex that you really have no freaking clue
+
+192
+00:11:09,420 --> 00:11:11,500
+which of these test cases could fail and win.
+
+193
+00:11:11,940 --> 00:11:16,810
+Correct. So back to the original subject quickly, we'll get,
+
+194
+00:11:17,610 --> 00:11:20,490
+one more thing and then remind me that we were talking about something else.
+
+195
+00:11:20,530 --> 00:11:24,870
+Automation. So the, the other thing I would say, you mentioned, Hey,
+
+196
+00:11:24,870 --> 00:11:26,930
+this is the type of automation we should have.
+
+197
+00:11:27,390 --> 00:11:30,550
+The one thing that I don't, I wonder where you will put it in.
+
+198
+00:11:30,590 --> 00:11:32,910
+Cause in my way of thinking, uh,
+
+199
+00:11:32,930 --> 00:11:36,470
+we will need synthetic simulation.
+
+200
+00:11:36,910 --> 00:11:39,650
+We talked about this in the past and I do think this is,
+
+201
+00:11:39,950 --> 00:11:44,690
+this is code that sounds and feels like automation from the old school way,
+
+202
+00:11:44,990 --> 00:11:48,470
+but it differs in that I don't give a f*** if this automation
+
+203
+00:11:48,950 --> 00:11:51,630
+contains validation code.
+
+204
+00:11:52,110 --> 00:11:55,390
+All I wanted to do is drive synthetic simulation against the product.
+
+205
+00:11:55,650 --> 00:11:59,130
+Yeah. And for, um, I don't have talked about synthetics before in the past,
+
+206
+00:11:59,130 --> 00:12:02,410
+but that's kind of what we did in testing for a long, long time. It's,
+
+207
+00:12:02,530 --> 00:12:06,370
+it's a bunch of it's code to or data to pretend you're the user.
+
+208
+00:12:07,310 --> 00:12:10,360
+Yes. So I was getting ready for this. Uh,
+
+209
+00:12:10,400 --> 00:12:15,010
+I decided what I was going to do for my, uh, star keynote, uh,
+
+210
+00:12:15,030 --> 00:12:18,660
+start the lightning talk and Brent is touching my coffee.
+
+211
+00:12:19,100 --> 00:12:24,240
+Brent don't touch my coffee and I was getting it together in my
+
+212
+00:12:24,240 --> 00:12:28,460
+head and I think I, it was the same day. I did a, uh, uh,
+
+213
+00:12:28,500 --> 00:12:31,540
+interview for sticky minds. I'll, I'll plug it when it's ever was published.
+
+214
+00:12:31,900 --> 00:12:34,220
+And I'm thinking about it all day and I'm trying to get it in my head.
+
+215
+00:12:34,220 --> 00:12:36,220
+I think about writing some notes out and I go, you know what?
+
+216
+00:12:36,900 --> 00:12:39,980
+I am just going to stream of consciousness, blog,
+
+217
+00:12:40,420 --> 00:12:41,580
+my lightning talk.
+
+218
+00:12:42,300 --> 00:12:45,980
+And I ended up making some slides and putting the pictures in the blog post.
+
+219
+00:12:45,980 --> 00:12:50,200
+And it was literally, I wrote that post in 15,
+
+220
+00:12:50,440 --> 00:12:53,120
+maybe 20 minutes, threw it up there,
+
+221
+00:12:53,380 --> 00:12:58,470
+did the lightning talk. And then I doubled the,
+
+222
+00:12:58,470 --> 00:13:01,350
+the I have my old record for the most hits on my blog in a day.
+
+223
+00:13:01,550 --> 00:13:05,230
+And I doubled that in four of the next five days. As people tell me,
+
+224
+00:13:05,430 --> 00:13:07,550
+some people said, Oh yeah, we do this all the time.
+
+225
+00:13:07,750 --> 00:13:11,710
+But most people said, you are a flaming idiot. You have,
+
+226
+00:13:11,750 --> 00:13:14,550
+one person told me posts like this are annoying.
+
+227
+00:13:14,910 --> 00:13:18,870
+You should let the testing profession have the credit it deserves.
+
+228
+00:13:19,110 --> 00:13:20,970
+I'm not taking anything away from testing.
+
+229
+00:13:21,110 --> 00:13:23,390
+This is not just for Microsoft,
+
+230
+00:13:23,410 --> 00:13:25,870
+how we do it at Microsoft and almost every team,
+
+231
+00:13:26,070 --> 00:13:30,830
+but how a lot of big companies, especially with services do things.
+
+232
+00:13:30,910 --> 00:13:31,750
+It's not, it's not,
+
+233
+00:13:31,950 --> 00:13:35,670
+I'm not like describing the future or some hypothetical thing.
+
+234
+00:13:35,670 --> 00:13:39,870
+There are companies already doing this stuff.
+
+235
+00:13:40,150 --> 00:13:43,550
+When I get similar guidance of not giving tests,
+
+236
+00:13:43,670 --> 00:13:47,230
+the credit that is due, I make it very clear. Look,
+
+237
+00:13:47,290 --> 00:13:52,210
+this stuff in the, in, in the world that we exited 10
+
+238
+00:13:52,210 --> 00:13:56,210
+years ago, by the way, this stuff in the world that we exit,
+
+239
+00:13:57,290 --> 00:13:59,730
+it was hugely valuable.
+
+240
+00:13:59,810 --> 00:14:02,330
+But we didn't exit it because in the star expo,
+
+241
+00:14:02,330 --> 00:14:05,850
+there were like a dozen vendors selling GUI automation tools.
+
+242
+00:14:06,750 --> 00:14:11,910
+I would say modern testing techniques
+
+243
+00:14:12,830 --> 00:14:16,190
+changed around 10 years ago and
+
+244
+00:14:16,810 --> 00:14:21,810
+testing companies, testing institutions, maybe that's a better word.
+
+245
+00:14:22,250 --> 00:14:24,810
+They haven't really caught suit, including here.
+
+246
+00:14:25,530 --> 00:14:29,530
+It takes time. I found a GTAC talk. Maybe I can't remember who pointed this to me.
+
+247
+00:14:30,530 --> 00:14:32,170
+A GTAC talk from 2007.
+
+248
+00:14:32,610 --> 00:14:34,350
+That's seven years ago for those of you counting.
+
+249
+00:14:35,440 --> 00:14:37,960
+And the statement in the talk was monitoring,
+
+250
+00:14:38,040 --> 00:14:42,160
+monitoring services is indistinguishable from test automation.
+
+251
+00:14:43,470 --> 00:14:45,030
+Brent made a face. So it's a little bit of a stretch.
+
+252
+00:14:45,090 --> 00:14:46,610
+And I probably script the paraphrasing,
+
+253
+00:14:46,810 --> 00:14:48,530
+but he's talking about these exact same things.
+
+254
+00:14:48,770 --> 00:14:53,330
+There's definitely a mapping is very similar. The, the,
+
+255
+00:14:54,150 --> 00:14:59,370
+when you first start off, it's, it's almost verbatim test cases against prod,
+
+256
+00:14:59,490 --> 00:15:02,130
+right? It's, it's testing in production.
+
+257
+00:15:02,610 --> 00:15:05,250
+But over time, as you get the right data exhaust,
+
+258
+00:15:05,730 --> 00:15:07,170
+then you,
+
+259
+00:15:07,170 --> 00:15:12,170
+you end up building towards leveraging more of the exhaust and actual product or
+
+260
+00:15:12,990 --> 00:15:17,870
+customer traffic. Then the signals generated from these synthetics.
+
+261
+00:15:17,870 --> 00:15:21,790
+So one of the processes that I see very common is once that flows,
+
+262
+00:15:22,230 --> 00:15:26,390
+people then start building muscle around, okay, which of these tests can we shut
+
+263
+00:15:26,390 --> 00:15:29,590
+off? Because typically what happens is these,
+
+264
+00:15:29,590 --> 00:15:32,330
+these monitors get put in play and when they fail,
+
+265
+00:15:32,330 --> 00:15:36,030
+they wake somebody up and that generally perceived as annoying.
+
+266
+00:15:36,350 --> 00:15:39,470
+Got it. Got it. All right. We've, we've beat on that a little bit.
+
+267
+00:15:39,710 --> 00:15:41,790
+So we skipped over the first one.
+
+268
+00:15:41,930 --> 00:15:44,280
+Well it's because that's your fault.
+
+269
+00:15:44,520 --> 00:15:48,960
+Yeah. I, I, I, and I would do it again. All right. Just star in general.
+
+270
+00:15:49,360 --> 00:15:51,810
+It's a conference is growing.
+
+271
+00:15:51,810 --> 00:15:54,850
+I can't remember how many stars I've been to at this point.
+
+272
+00:15:55,370 --> 00:15:58,090
+It was a good time. It's, it's a, it's a weird crowd.
+
+273
+00:15:58,090 --> 00:16:00,430
+Probably half the crowd has been testing for less than a year.
+
+274
+00:16:00,430 --> 00:16:04,010
+And most of the speakers are consultants trying to drum up business.
+
+275
+00:16:04,410 --> 00:16:07,530
+I sort of inferred that second part, but most of the other consultants and
+
+276
+00:16:08,090 --> 00:16:11,650
+nothing against consultants. And this is a great place to drum up business.
+
+277
+00:16:11,970 --> 00:16:14,410
+But they're drumming up business from people that haven't been testing very
+
+278
+00:16:14,410 --> 00:16:16,650
+long. Take that for what it is. And as I mentioned before,
+
+279
+00:16:16,670 --> 00:16:20,610
+a bunch of vendors selling, uh, trying to sell GUI automation tools,
+
+280
+00:16:20,730 --> 00:16:23,690
+but there were some cool vendors or two sauce labs. They are really like them.
+
+281
+00:16:24,370 --> 00:16:26,890
+Smart bear was there. Smart bear does some really cool stuff.
+
+282
+00:16:27,090 --> 00:16:29,290
+If you, you know, smart bear software, the first,
+
+283
+00:16:29,350 --> 00:16:30,890
+my first exposure to smart bear,
+
+284
+00:16:31,010 --> 00:16:34,210
+this is like their flagship legacy old product is code collaborator,
+
+285
+00:16:34,370 --> 00:16:36,770
+which is a fantastic code review tool.
+
+286
+00:16:37,050 --> 00:16:40,210
+Really good for capturing comments and lie and keeping them and,
+
+287
+00:16:40,510 --> 00:16:46,100
+and in a variety of different formats and sort of takes all the best things
+
+288
+00:16:46,100 --> 00:16:48,580
+from all the different forms of code review and puts them into one tool.
+
+289
+00:16:48,660 --> 00:16:51,220
+That wasn't even a paid plug, but I was a big fan of that.
+
+290
+00:16:51,240 --> 00:16:53,580
+And now they make a bunch of other testing tools as well. And,
+
+291
+00:16:54,140 --> 00:16:56,660
+and Scott Barber, I'm off on a random topic, but anyway,
+
+292
+00:16:56,700 --> 00:16:58,820
+big fan of smart bear and I'll shut up there.
+
+293
+00:16:59,140 --> 00:17:02,540
+So Scott was there at then Scott Barber was there. Yeah. I'm, I'm a,
+
+294
+00:17:02,580 --> 00:17:06,240
+I'm a fan of Scott. Um, and I didn't mention this last time.
+
+295
+00:17:06,240 --> 00:17:09,660
+Like I'm a huge fan of, of leak Copeland.
+
+296
+00:17:10,000 --> 00:17:15,280
+I think he's done a great job in terms of sort of curating the history
+
+297
+00:17:15,300 --> 00:17:20,120
+of, of test and what's value in that. I am curious. I haven't,
+
+298
+00:17:20,120 --> 00:17:22,720
+I haven't followed him recently.
+
+299
+00:17:22,720 --> 00:17:26,960
+Is he staying in sync with sort of modern testing techniques from your point of
+
+300
+00:17:26,960 --> 00:17:30,840
+view? You know, it's honestly, as much as we rant about it,
+
+301
+00:17:30,840 --> 00:17:34,400
+I'm not sure what modern test techniques are, if I could describe them,
+
+302
+00:17:34,720 --> 00:17:39,240
+but I can say dropping test automation would be an example.
+
+303
+00:17:39,920 --> 00:17:43,160
+I think if you don't think test is changing drastically, I think, you know,
+
+304
+00:17:43,160 --> 00:17:48,000
+there's a lot of people out there stuck in 1990s testing and they're really
+
+305
+00:17:48,000 --> 00:17:49,960
+good at 1990s testing. And guess what?
+
+306
+00:17:50,200 --> 00:17:53,700
+There's still software being made like it's 1990 and all that's great.
+
+307
+00:17:54,280 --> 00:17:57,720
+I think, uh, at least for the star conference is somewhere in between.
+
+308
+00:17:58,000 --> 00:18:00,480
+You're starting to see the audience is a lot more technical.
+
+309
+00:18:00,800 --> 00:18:03,590
+So this is a period generalization,
+
+310
+00:18:03,810 --> 00:18:07,590
+but I would say I've seen star grow. It's sort of lagging, you know,
+
+311
+00:18:07,590 --> 00:18:09,930
+some of the industry leaders, but they are growing.
+
+312
+00:18:10,370 --> 00:18:15,370
+There were a lot of talks on forgive me father test automation and some more
+
+313
+00:18:15,770 --> 00:18:17,890
+technical topics. Alan Richardson,
+
+314
+00:18:17,890 --> 00:18:21,890
+Missouri gave a tutorial on selenium so that people get testers writing code,
+
+315
+00:18:22,170 --> 00:18:25,890
+a lot of testers and a lot of, you know, S debt type testers know how to code.
+
+316
+00:18:26,250 --> 00:18:30,170
+Whereas even five years ago, in fact, it was probably five,
+
+317
+00:18:30,170 --> 00:18:35,170
+six years ago, somewhere back there, I gave a talk and as part of the talk,
+
+318
+00:18:35,950 --> 00:18:40,660
+I showed some code and people got up and walked out. It's like, ah,
+
+319
+00:18:41,020 --> 00:18:43,620
+I won the code. I go to a programming conference.
+
+320
+00:18:43,900 --> 00:18:46,060
+Interesting. So what you're seeing,
+
+321
+00:18:46,380 --> 00:18:49,140
+so in old school Microsoft vernacular,
+
+322
+00:18:49,260 --> 00:18:53,580
+those types of testers we used to call STEs and are you,
+
+323
+00:18:53,600 --> 00:18:55,740
+are you seeing there's a shift.
+
+324
+00:18:55,780 --> 00:18:59,780
+There's a shift from the tester to the tester who can code whatever you call
+
+325
+00:18:59,780 --> 00:19:02,000
+them. I, you know, from the moment it was introduced,
+
+326
+00:19:02,000 --> 00:19:04,300
+I didn't like the S debt title, but a tester who can code.
+
+327
+00:19:04,840 --> 00:19:06,040
+So I wonder,
+
+328
+00:19:06,720 --> 00:19:11,640
+do you guys have access to the title of the attendees?
+
+329
+00:19:12,120 --> 00:19:14,440
+Cause I'm wondering if actually if what you,
+
+330
+00:19:14,480 --> 00:19:19,420
+what we're beginning to see is actually people who are actually developers who
+
+331
+00:19:19,420 --> 00:19:21,160
+are trying to enhance their skillset.
+
+332
+00:19:21,580 --> 00:19:24,640
+I don't know if we have that Lee may have access,
+
+333
+00:19:24,640 --> 00:19:26,300
+but the thing is titles mean nothing.
+
+334
+00:19:27,400 --> 00:19:30,520
+They don't mean nothing. They mean something. It may be fuzzy.
+
+335
+00:19:31,410 --> 00:19:33,570
+No, they mean nothing. No, they mean nothing.
+
+336
+00:19:33,990 --> 00:19:36,510
+Nothing. Nothing. If you look, you're, you know,
+
+337
+00:19:36,550 --> 00:19:39,750
+I have a four year old Alan. I could do this all day.
+
+338
+00:19:40,860 --> 00:19:42,340
+Nothing. Something. All right.
+
+339
+00:19:44,940 --> 00:19:45,780
+So anyway,
+
+340
+00:19:46,460 --> 00:19:49,460
+all I'll say that I can from my observations that I talked to,
+
+341
+00:19:49,740 --> 00:19:52,540
+I didn't manage to talk to every single person at star.
+
+342
+00:19:53,100 --> 00:19:57,900
+I talked to 20 or 30 and most of those were not every single person at star.
+
+343
+00:19:58,060 --> 00:20:01,700
+No, there's about 700. Don't be a dick.
+
+344
+00:20:04,400 --> 00:20:07,400
+Anyway, a lot more recoding. I talked to really interesting. I talked to,
+
+345
+00:20:08,240 --> 00:20:10,280
+I'm going to leave all anonymize this.
+
+346
+00:20:10,460 --> 00:20:15,000
+I talked to a few people who work at a company and they're telling me is you're
+
+347
+00:20:15,000 --> 00:20:17,800
+going to love this story. I didn't, didn't prepare Brent on this one.
+
+348
+00:20:18,840 --> 00:20:23,560
+They were telling me that about their command and control managers.
+
+349
+00:20:23,560 --> 00:20:27,040
+And I was giving a talk about software engineers are knowledge workers and
+
+350
+00:20:27,040 --> 00:20:28,460
+they can't be managed in the same way.
+
+351
+00:20:28,760 --> 00:20:32,280
+And they had very much these command and controls. How do you work within that?
+
+352
+00:20:33,060 --> 00:20:33,900
+And I have some,
+
+353
+00:20:34,060 --> 00:20:37,860
+I have some good ideas because we have a very not command and control org living
+
+354
+00:20:37,860 --> 00:20:40,680
+within a larger command and control org in my head.
+
+355
+00:20:40,860 --> 00:20:43,300
+After talking about, about their managers, I say, man,
+
+356
+00:20:43,300 --> 00:20:44,860
+these guys sound just like some of the,
+
+357
+00:20:45,460 --> 00:20:49,700
+the old school managers I've worked with who have a way they want to do things
+
+358
+00:20:49,720 --> 00:20:51,220
+and want to micromanage, et cetera.
+
+359
+00:20:51,420 --> 00:20:54,780
+Then they dropped the bomb that their managers were former Microsoft managers.
+
+360
+00:20:55,740 --> 00:21:00,340
+Yep. And, and to be fair, I, I've been talking a lot.
+
+361
+00:21:00,340 --> 00:21:02,440
+I think we might've talked about this before, but people, um,
+
+362
+00:21:03,240 --> 00:21:04,160
+I think people,
+
+363
+00:21:04,360 --> 00:21:08,500
+it's really easy to rely on your past to bring you forward. And you're thinking,
+
+364
+00:21:08,600 --> 00:21:10,480
+I spent 15 years, you know,
+
+365
+00:21:10,480 --> 00:21:14,840
+managing people this way and I got promoted and so they hired me because of my
+
+366
+00:21:14,840 --> 00:21:17,160
+background. So I should do things the exact same way.
+
+367
+00:21:17,600 --> 00:21:21,560
+Yeah. So it's interesting because about 10 years ago,
+
+368
+00:21:21,560 --> 00:21:24,940
+I was frustrated with that aspect that we were losing some, some,
+
+369
+00:21:25,080 --> 00:21:27,720
+some of our management talent to other companies.
+
+370
+00:21:28,140 --> 00:21:31,740
+But what now occurs to me is it actually might be a competitive advantage for
+
+371
+00:21:31,740 --> 00:21:32,580
+Microsoft.
+
+372
+00:21:32,580 --> 00:21:34,900
+I didn't like the way you use talent in that sentence.
+
+373
+00:21:36,180 --> 00:21:37,860
+Fair enough. The, the,
+
+374
+00:21:37,980 --> 00:21:42,340
+it's interesting because I have seen that a lot of our old,
+
+375
+00:21:43,370 --> 00:21:46,850
+10 years ago, we were way more command and control than we are today.
+
+376
+00:21:47,410 --> 00:21:51,050
+And a lot of the old talent is now in my view,
+
+377
+00:21:51,050 --> 00:21:55,080
+corrupting our competitors. And I'm like, okay.
+
+378
+00:21:55,540 --> 00:21:59,220
+It was very interesting. Um, in the,
+
+379
+00:21:59,220 --> 00:22:02,540
+I'm going to skip that one because I think it's leads right into number four.
+
+380
+00:22:02,780 --> 00:22:07,220
+Okay. I, on Friday of star East week, uh,
+
+381
+00:22:07,240 --> 00:22:10,660
+there's a smaller summit. Um, hundred people ish,
+
+382
+00:22:10,820 --> 00:22:15,140
+I gave a keynote there and sort of serendipitously what happened that week at
+
+383
+00:22:15,140 --> 00:22:19,220
+work is I was thinking a lot about our team culture and what made my current
+
+384
+00:22:19,220 --> 00:22:20,980
+team a great place to work. So I,
+
+385
+00:22:21,300 --> 00:22:24,740
+I sketched out some of our principles and our, and the values.
+
+386
+00:22:25,140 --> 00:22:26,860
+I'll talk about what those mean in a second. And I was,
+
+387
+00:22:27,940 --> 00:22:29,700
+it was going to bounce those off our team. And they said,
+
+388
+00:22:29,940 --> 00:22:33,480
+this is exactly what we're doing and how we want them written down.
+
+389
+00:22:33,480 --> 00:22:34,320
+So this is great.
+
+390
+00:22:34,740 --> 00:22:37,680
+The one thing I want to stress is that when you're trying to,
+
+391
+00:22:37,980 --> 00:22:42,220
+I tweeted this yesterday and, and I'll repeat it again, paraphrase, is that,
+
+392
+00:22:42,860 --> 00:22:47,380
+I think a lot of software teams undervalue how important it is to have a good
+
+393
+00:22:47,380 --> 00:22:51,180
+team culture. And in order to make great software, he had a great team.
+
+394
+00:22:51,820 --> 00:22:54,820
+And I think too often going back to command and control,
+
+395
+00:22:54,820 --> 00:22:57,960
+we think we don't need a great team. You know, people are just, you know,
+
+396
+00:22:57,980 --> 00:22:58,780
+they're like cogs.
+
+397
+00:22:58,780 --> 00:23:00,760
+We were a place and we'll just,
+
+398
+00:23:00,760 --> 00:23:02,120
+as long as they keep turning the crank,
+
+399
+00:23:02,160 --> 00:23:05,120
+the right thing will happen at the end. And it doesn't really work that way.
+
+400
+00:23:06,140 --> 00:23:07,060
+Some of the ways that,
+
+401
+00:23:07,060 --> 00:23:10,620
+unless you view the right thing that happened at the end is everyone's working
+
+402
+00:23:10,620 --> 00:23:12,700
+30 hour days and producing crap.
+
+403
+00:23:13,140 --> 00:23:15,560
+Exactly. Exactly. 30 hour days are good.
+
+404
+00:23:15,800 --> 00:23:17,900
+So one of the things that I've found,
+
+405
+00:23:17,980 --> 00:23:21,540
+and I've read this a lot like in Pat Legione's work and that I found is
+
+406
+00:23:21,760 --> 00:23:25,280
+being ultra transparent in,
+
+407
+00:23:25,700 --> 00:23:26,860
+as a leadership team,
+
+408
+00:23:27,140 --> 00:23:31,860
+what you care about is probably the biggest step in my experience
+
+409
+00:23:31,860 --> 00:23:36,860
+for helping, helping build that strong team culture. Nobody likes, you know,
+
+410
+00:23:37,140 --> 00:23:41,980
+I talked about surprises at review time and nobody wants the mushroom concept.
+
+411
+00:23:41,980 --> 00:23:43,140
+I can't remember what it means anymore,
+
+412
+00:23:43,140 --> 00:23:46,380
+but people don't want to be in the dark on things.
+
+413
+00:23:46,540 --> 00:23:50,100
+And if you let them know everything, like here's how we function,
+
+414
+00:23:50,100 --> 00:23:54,720
+how we expect you to work and over communicate that over communicate that
+
+415
+00:23:54,920 --> 00:23:58,320
+because everybody on the same page and it does amazing things for team.
+
+416
+00:23:58,600 --> 00:24:03,610
+There's a risk with over communication. And if you over communicate, then,
+
+417
+00:24:03,650 --> 00:24:07,730
+then everyone understands that these are the words that we want everyone to
+
+418
+00:24:07,730 --> 00:24:11,890
+follow. But if you don't follow it up with action from the leadership,
+
+419
+00:24:11,930 --> 00:24:12,770
+then they will bit flip.
+
+420
+00:24:12,770 --> 00:24:17,770
+Then the next step is you over communicate and then you praise
+
+421
+00:24:17,770 --> 00:24:22,150
+and reward people who, who show examples of following those principles or values.
+
+422
+00:24:22,190 --> 00:24:24,390
+Yes. And that you don't have to like, you know,
+
+423
+00:24:25,070 --> 00:24:27,830
+John followed principle number two very well.
+
+424
+00:24:27,870 --> 00:24:31,390
+He gets a hundred dollars and a gift certificate to target. Thank you.
+
+425
+00:24:31,430 --> 00:24:35,670
+Thanks to, uh, to Wendy, she did a fantastic job working with others.
+
+426
+00:24:35,670 --> 00:24:37,470
+You know, we really value that on the team. Um,
+
+427
+00:24:37,510 --> 00:24:40,510
+so it's a great example for others. And that's just that public praise is
+
+428
+00:24:40,530 --> 00:24:44,270
+massive because, Oh, I want to be praised too. I'm going to do those things.
+
+429
+00:24:44,590 --> 00:24:45,970
+Well, there's other ones, right?
+
+430
+00:24:46,030 --> 00:24:50,350
+Not everyone's not anyone, not everyone's motivated by public praise,
+
+431
+00:24:51,150 --> 00:24:53,190
+but for example, for me,
+
+432
+00:24:53,950 --> 00:24:58,630
+I will do those types of things because I want to accelerate towards the goal.
+
+433
+00:24:58,790 --> 00:25:02,350
+And I would try to measure my acceleration towards those goals.
+
+434
+00:25:02,390 --> 00:25:06,110
+You're reading my mind on this, uh, this talk I gave. No, it's really good. Um,
+
+435
+00:25:06,430 --> 00:25:09,230
+I spoke a lot about the knowledge worker. It's been a lot of writing about
+
+436
+00:25:09,230 --> 00:25:12,470
+this. You know, Dan pink wrote about it first in a whole new mind and then a
+
+437
+00:25:12,470 --> 00:25:14,110
+little bit more in drive and in drive,
+
+438
+00:25:14,530 --> 00:25:16,730
+but perfectly logical point. When you think about it,
+
+439
+00:25:16,930 --> 00:25:20,290
+knowledge workers are motivated by progress, pay them enough money.
+
+440
+00:25:20,290 --> 00:25:24,130
+So money's off the table. And then if you give them the tools and frameworks
+
+441
+00:25:24,130 --> 00:25:26,010
+they need and they can, they can see progress happening,
+
+442
+00:25:26,130 --> 00:25:27,530
+they get excited and want to make more.
+
+443
+00:25:27,610 --> 00:25:28,970
+And that sounds very much like what you said.
+
+444
+00:25:29,010 --> 00:25:32,730
+So to follow up earlier, you were just talking about the,
+
+445
+00:25:32,730 --> 00:25:36,530
+the smart bear project, sure. Uh, along the lines of,
+
+446
+00:25:36,650 --> 00:25:38,890
+as well as you talked about command and control.
+
+447
+00:25:39,250 --> 00:25:42,730
+And one of the things that I found is right.
+
+448
+00:25:42,730 --> 00:25:45,790
+Command and control is a decision making framework. It's,
+
+449
+00:25:46,150 --> 00:25:48,710
+they wait for data to bubble up to them.
+
+450
+00:25:48,710 --> 00:25:53,710
+And then they add their experience and expertise and bubble data down
+
+451
+00:25:54,110 --> 00:25:58,150
+in this new world. The easiest way you can defeat command and control,
+
+452
+00:25:58,190 --> 00:26:03,280
+even if you are deeply entrenched in command and control is
+
+453
+00:26:03,280 --> 00:26:07,840
+increase the rate of knowledge at the lowest level.
+
+454
+00:26:08,040 --> 00:26:11,440
+So, so creating a good shared knowledge management strategy,
+
+455
+00:26:11,800 --> 00:26:16,720
+whereas the guys at the bottom have all this knowledge and all this data,
+
+456
+00:26:17,200 --> 00:26:20,740
+and they're very quickly making decisions. You will blow the stack.
+
+457
+00:26:20,740 --> 00:26:23,020
+This guy at the top will not be able to scale.
+
+458
+00:26:23,180 --> 00:26:26,820
+I also talked about decentralization and the work of Steve Denning,
+
+459
+00:26:26,820 --> 00:26:30,960
+who says that in leaders guide to radical management says that for knowledge
+
+460
+00:26:30,960 --> 00:26:34,540
+workers, give them a framework to work in and then get out of their way,
+
+461
+00:26:34,700 --> 00:26:37,960
+let them self-organize into teams, let them figure things out.
+
+462
+00:26:38,180 --> 00:26:41,420
+But the key insight that I would say here,
+
+463
+00:26:41,420 --> 00:26:45,780
+and I'll let you finish your train of thought is knowledge
+
+464
+00:26:45,780 --> 00:26:50,340
+management as an important technology
+
+465
+00:26:52,050 --> 00:26:56,490
+is something that is more and more becoming evident as
+
+466
+00:26:56,530 --> 00:27:01,330
+critical in this new world order. The, I think a lot of people are like,
+
+467
+00:27:01,330 --> 00:27:05,850
+what? I wrote a doc, it's up on SharePoint someplace. Go, go, go search. No,
+
+468
+00:27:05,910 --> 00:27:08,830
+that doesn't help creating,
+
+469
+00:27:08,950 --> 00:27:12,910
+creating something like like we have with Yammer,
+
+470
+00:27:13,390 --> 00:27:16,950
+something that allows people in this, this, this,
+
+471
+00:27:17,350 --> 00:27:21,070
+I forget the name of the code bear, smart bear, smart bear. Yeah. No, the,
+
+472
+00:27:21,070 --> 00:27:24,390
+but the project where a co collaborator co collaborator where they're
+
+473
+00:27:24,390 --> 00:27:28,510
+capturing shared knowledge in the context of the code,
+
+474
+00:27:29,070 --> 00:27:33,390
+those types of things accelerate the people who will be actually taking
+
+475
+00:27:33,390 --> 00:27:37,770
+action and negates the need for every decision to flow up.
+
+476
+00:27:38,960 --> 00:27:41,800
+So now you have Phillip armors, five orders of ignorance.
+
+477
+00:27:41,800 --> 00:27:42,840
+I'm not going to go through them all,
+
+478
+00:27:43,000 --> 00:27:46,660
+but we need to provide the top levels when you know about the order.
+
+479
+00:27:46,660 --> 00:27:48,560
+So you know how knowledge acquisition works,
+
+480
+00:27:48,560 --> 00:27:52,680
+but the level below that is you need a suitable means to discover what you
+
+481
+00:27:52,700 --> 00:27:56,920
+don't know. You don't know. Yes. And Alan has a phrase he uses here at
+
+482
+00:27:56,920 --> 00:27:59,920
+Microsoft and I have been finding that,
+
+483
+00:28:00,300 --> 00:28:04,220
+that I am repeating this phrase over and over again in my own conversations.
+
+484
+00:28:04,540 --> 00:28:08,900
+And I've also found that I continue to feel
+
+485
+00:28:09,260 --> 00:28:14,380
+rather dirty every time I use the phrase because it's one of the few things
+
+486
+00:28:14,380 --> 00:28:16,860
+I've noticed from Alan that is terribly smart.
+
+487
+00:28:17,700 --> 00:28:23,660
+And that is, and that is if only Microsoft knew what Microsoft knew,
+
+488
+00:28:24,240 --> 00:28:29,240
+there are numerous times I sit in my office and I'm now sitting at my desk and I
+
+489
+00:28:29,600 --> 00:28:34,600
+know I am solving a problem right now that someone,
+
+490
+00:28:34,760 --> 00:28:39,200
+someone somewhere else in this company has already solved,
+
+491
+00:28:39,320 --> 00:28:40,880
+mastered and optimized it.
+
+492
+00:28:40,920 --> 00:28:44,920
+But the reason why I am solving this problem right now is I have no clue how
+
+493
+00:28:44,920 --> 00:28:49,080
+to find that guy. Well, yeah. Um, I have a, um,
+
+494
+00:28:49,080 --> 00:28:50,680
+I have a thinking about it.
+
+495
+00:28:50,680 --> 00:28:52,980
+Yeah. Um, I have a, um,
+
+496
+00:28:53,500 --> 00:28:56,300
+I have a thank week paper I never finished and I probably never finished it
+
+497
+00:28:56,320 --> 00:28:59,100
+about it's called if only Microsoft knew what Microsoft knew.
+
+498
+00:28:59,100 --> 00:29:03,400
+And the idea is that I think at this stage and maybe it's getting better.
+
+499
+00:29:03,400 --> 00:29:06,340
+Um, it's hard to tell cause things are so incremental with such a large
+
+500
+00:29:06,340 --> 00:29:11,340
+company, but right now I would say Microsoft size is sort of slowing them
+
+501
+00:29:12,940 --> 00:29:15,780
+down. And I think Microsoft size,
+
+502
+00:29:15,820 --> 00:29:18,980
+if there was a suitable means for people to discover what they didn't know,
+
+503
+00:29:19,520 --> 00:29:23,660
+it takes a while to get there that we could use our size as a serious
+
+504
+00:29:23,660 --> 00:29:27,140
+competitive advantage. If we had so much mindshare here,
+
+505
+00:29:27,200 --> 00:29:32,200
+yet if we had a really efficient means for capturing and sharing knowledge,
+
+506
+00:29:34,260 --> 00:29:39,160
+we would, we would destroy our competition. If we just had that,
+
+507
+00:29:39,160 --> 00:29:44,000
+but because it's an indirect asset, who knows when that's going to get funded?
+
+508
+00:29:44,040 --> 00:29:45,920
+Yeah. I'm just going to book drop all over the place.
+
+509
+00:29:45,920 --> 00:29:49,340
+Peter Singar wrote a book called the fifth discipline about the learning
+
+510
+00:29:49,340 --> 00:29:53,300
+organization about, um, and that's one of the, the bits of one of the
+
+511
+00:29:53,300 --> 00:29:56,900
+principles for our team is that for my team and our principles, I wrote,
+
+512
+00:29:57,180 --> 00:30:00,220
+we are a learning organization and we strive for continuous improvement.
+
+513
+00:30:00,620 --> 00:30:03,820
+We realize that failure is an option and that making mistakes is part of
+
+514
+00:30:03,820 --> 00:30:07,980
+learning. That's so we five principles. And one of them is, you know,
+
+515
+00:30:07,980 --> 00:30:09,940
+we're going to try things out and if they don't work,
+
+516
+00:30:09,940 --> 00:30:12,620
+we're going to say awesome job trying that out. Try something else.
+
+517
+00:30:12,960 --> 00:30:17,560
+I have it when usually I give this type of speech, I simplify it.
+
+518
+00:30:17,560 --> 00:30:20,640
+And I said, in order to learn, you must fail.
+
+519
+00:30:21,470 --> 00:30:25,510
+You don't learn from succeeding. No. Um, anyway,
+
+520
+00:30:25,510 --> 00:30:26,670
+I had a good time giving that talk.
+
+521
+00:30:26,710 --> 00:30:31,170
+It made me think a lot about sort of our own team and reflect on that a lot.
+
+522
+00:30:31,170 --> 00:30:35,710
+So I'm really, there's some good stuff going on to, uh, recap,
+
+523
+00:30:36,190 --> 00:30:38,750
+figure out what you care about on culture on your team and make sure
+
+524
+00:30:38,750 --> 00:30:42,000
+everyone on the team knows. Yeah. So I,
+
+525
+00:30:42,220 --> 00:30:45,060
+do you think you could publish your principles?
+
+526
+00:30:45,100 --> 00:30:47,180
+You know, I think I could, I showed them at the conference.
+
+527
+00:30:47,620 --> 00:30:49,980
+I could probably publish them. Do you want me to go through them quickly? Yeah,
+
+528
+00:30:50,140 --> 00:30:53,760
+sure. So the principles are the organizations, teams,
+
+529
+00:30:53,760 --> 00:30:56,220
+and disciplines don't define the limits of what we do.
+
+530
+00:30:56,540 --> 00:30:59,740
+Our team members will feel free to work across the quality team boundaries,
+
+531
+00:30:59,900 --> 00:31:03,260
+take on dev work as needed and represent their own work as a project owner
+
+532
+00:31:03,260 --> 00:31:06,060
+when necessary. So we're not worried about walls. In other words,
+
+533
+00:31:06,240 --> 00:31:09,580
+tear down the walls. We don't have, you know, we don't let walls between,
+
+534
+00:31:09,600 --> 00:31:11,340
+oh, that's not my job. It's your job. Get in the way.
+
+535
+00:31:11,360 --> 00:31:14,390
+Something needs to get done. You get it done. Yes.
+
+536
+00:31:15,070 --> 00:31:17,910
+We have a culture of innovation and we embrace positive deviance.
+
+537
+00:31:17,950 --> 00:31:18,750
+You familiar with that term?
+
+538
+00:31:20,200 --> 00:31:24,240
+So positive deviance is when you have individuals or groups whose uncommon
+
+539
+00:31:24,260 --> 00:31:27,160
+behaviors and strategies enable them to find better solutions.
+
+540
+00:31:27,480 --> 00:31:29,680
+So we're looking for people to try to try different.
+
+541
+00:31:30,280 --> 00:31:33,680
+So risk takers, innovators, that sort of thing. Yeah. Okay. Everyone,
+
+542
+00:31:33,680 --> 00:31:38,120
+and this is actually the thing I'm most proud of on our team is everyone on
+
+543
+00:31:38,120 --> 00:31:41,400
+our team has meaningful work that aligns with their passions and expertise.
+
+544
+00:31:41,660 --> 00:31:44,060
+We've been able to poach and cherry pick a little bit on this team.
+
+545
+00:31:44,380 --> 00:31:47,940
+So we've been able to kind of fit pieces together and people are super excited
+
+546
+00:31:47,940 --> 00:31:50,380
+about what they do. That's critical. We don't want people, again,
+
+547
+00:31:50,380 --> 00:31:53,820
+goes back to Daniel Pink's work is that if you like your work and you make
+
+548
+00:31:53,820 --> 00:31:56,100
+progress, you're just going to do more of it. Yeah.
+
+549
+00:31:57,230 --> 00:32:00,350
+And then we're open and transparent about what is going well and where we need
+
+550
+00:32:00,350 --> 00:32:03,230
+to improve. And this principle is multi-directional.
+
+551
+00:32:03,230 --> 00:32:06,950
+It's true across the team from individual contributors to leadership and from
+
+552
+00:32:06,950 --> 00:32:11,120
+leadership back to individual contributors. Yep. We share everything. And I
+
+553
+00:32:11,140 --> 00:32:14,180
+mentioned we're a learning organization and we strive for continuous improvement,
+
+554
+00:32:14,540 --> 00:32:18,720
+failure is an option, making mistakes as part of learning. And then the last one,
+
+555
+00:32:19,720 --> 00:32:22,040
+unlike the others, but very important in how we approach,
+
+556
+00:32:22,040 --> 00:32:24,160
+this is all the how we approach our job.
+
+557
+00:32:24,920 --> 00:32:27,880
+The best place to evaluate customer experiences is in production.
+
+558
+00:32:28,750 --> 00:32:31,550
+We will push our components to real users as frequently as possible.
+
+559
+00:32:32,790 --> 00:32:35,270
+It's a little bit different, but it's still part of the how. So we...
+
+560
+00:32:35,270 --> 00:32:39,450
+Yeah. I don't like the best place. I mean, I completely agree with it,
+
+561
+00:32:39,450 --> 00:32:41,990
+but it implies that there's other places that you could...
+
+562
+00:32:43,230 --> 00:32:44,710
+You want me to change this to the only place?
+
+563
+00:32:45,070 --> 00:32:49,070
+The only valuable place. If you evaluate. Yeah.
+
+564
+00:32:49,670 --> 00:32:51,350
+And the other thing, just to tack onto that,
+
+565
+00:32:51,350 --> 00:32:55,110
+that we're really transparent about is any company has a,
+
+566
+00:32:55,150 --> 00:32:57,670
+some sort of review system, whether it's the,
+
+567
+00:32:58,030 --> 00:33:01,870
+the evil stack rank or something else.
+
+568
+00:33:02,150 --> 00:33:05,510
+And we want people to know, you know, I say no surprises at review time.
+
+569
+00:33:05,790 --> 00:33:08,870
+We want our team to know exactly how they're being rewarded,
+
+570
+00:33:08,870 --> 00:33:12,330
+what we care about. And it's very simple list. It's, um,
+
+571
+00:33:12,370 --> 00:33:16,070
+we value output. Our team gets a lot of work done. We also,
+
+572
+00:33:16,070 --> 00:33:17,470
+that not blind output.
+
+573
+00:33:17,550 --> 00:33:22,210
+We also value business and customer impact that the output directly impacts our
+
+574
+00:33:22,210 --> 00:33:25,670
+business and customers. So it's really pot. You can, you, you,
+
+575
+00:33:25,670 --> 00:33:26,510
+you've seen, you know,
+
+576
+00:33:26,510 --> 00:33:28,990
+examples of people who are really busy doing a lot of stuff,
+
+577
+00:33:29,310 --> 00:33:33,560
+but it's not relevant stuff. And that's not, that's not valuable.
+
+578
+00:33:34,340 --> 00:33:37,780
+Back at again, re-emphasizing innovation and experiments.
+
+579
+00:33:38,040 --> 00:33:41,680
+We experiment with new ideas, tools, customer experiments, et cetera.
+
+580
+00:33:41,680 --> 00:33:45,600
+We're, we're, we're, we're experimenters. We're trying new things out. And then,
+
+581
+00:33:46,160 --> 00:33:47,840
+an obvious one, collaboration,
+
+582
+00:33:48,040 --> 00:33:51,160
+our team works together and supports and helps each other to be successful.
+
+583
+00:33:51,360 --> 00:33:55,920
+So when we're looking at, when we're having rewards discussions, you know,
+
+584
+00:33:55,920 --> 00:33:58,720
+we're having discussions about Brett, what, what Brent did,
+
+585
+00:33:58,960 --> 00:34:00,920
+how his work impacted the customer,
+
+586
+00:34:01,300 --> 00:34:05,240
+what new ideas he brought to the team in order to get a lot of ideas,
+
+587
+00:34:05,460 --> 00:34:08,300
+good ideas. You get a lot of ideas and throw the bad ones away.
+
+588
+00:34:08,540 --> 00:34:10,580
+So we need lots of people bringing in ideas.
+
+589
+00:34:10,940 --> 00:34:14,180
+I need you to work well with others and help others better,
+
+590
+00:34:14,660 --> 00:34:16,180
+especially for our more senior people.
+
+591
+00:34:16,380 --> 00:34:20,220
+We expect that you're doing significant work to help make those around you
+
+592
+00:34:20,240 --> 00:34:24,010
+better. Yeah. I had a discussion, uh,
+
+593
+00:34:24,010 --> 00:34:28,310
+recently with, with one of my mentees and it was interesting cause he was
+
+594
+00:34:28,310 --> 00:34:30,610
+trying to put together a Brownback and he's like,
+
+595
+00:34:30,970 --> 00:34:34,090
+he put together one and he talked through it.
+
+596
+00:34:34,790 --> 00:34:39,550
+And he noticed that people weren't really reacting to it.
+
+597
+00:34:40,370 --> 00:34:43,890
+And it was interesting, but I'll, I'll cut the story very short.
+
+598
+00:34:44,370 --> 00:34:46,330
+But at the end of that event,
+
+599
+00:34:46,330 --> 00:34:49,690
+one of the things I made it very clear is that there is an important
+
+600
+00:34:49,690 --> 00:34:53,750
+distinction between teaching and learning.
+
+601
+00:34:54,620 --> 00:34:58,020
+Yeah. Right. Just because you're standing up and teaching people doesn't mean
+
+602
+00:34:58,020 --> 00:35:02,460
+that they're learning and make sure that the goal that you have is the
+
+603
+00:35:02,460 --> 00:35:06,490
+right one. If your goal is to teach, great, you did it,
+
+604
+00:35:07,090 --> 00:35:10,550
+but it non-trivial chance, zero impact.
+
+605
+00:35:11,730 --> 00:35:15,510
+The all you gotta do is say, no, teaching is a means.
+
+606
+00:35:15,970 --> 00:35:19,440
+How do I get these guys to learn? Right. But he,
+
+607
+00:35:19,440 --> 00:35:23,120
+he had approached it as that more of a teaching exercise.
+
+608
+00:35:23,120 --> 00:35:25,730
+How could I tell them what I know? Is that closer?
+
+609
+00:35:26,210 --> 00:35:30,410
+How can I get what I know stuck between their ears?
+
+610
+00:35:30,530 --> 00:35:32,850
+Yeah. You got to think about learning objectives and what,
+
+611
+00:35:32,870 --> 00:35:35,790
+what you want them to get out of it and focus on those. It's a, it's a,
+
+612
+00:35:36,190 --> 00:35:39,510
+it's a difficult art. Yeah. I think it's a lot,
+
+613
+00:35:39,510 --> 00:35:41,390
+a lot of room for learning and making mistakes here.
+
+614
+00:35:41,750 --> 00:35:44,790
+I've realized looking at the clock in our list that we're not going to get very
+
+615
+00:35:44,790 --> 00:35:49,350
+much farther. So I'm going to share one little bit of,
+
+616
+00:35:49,790 --> 00:35:52,990
+uh, mail I received and just keep your reaction on it. And then, um,
+
+617
+00:35:53,390 --> 00:35:56,790
+I hear that you have a mail bag reaction. We'll get to that. We'll close.
+
+618
+00:35:56,830 --> 00:36:02,130
+Yeah. So where's the, uh, the, the new mail bag theme? Oh, wait.
+
+619
+00:36:03,030 --> 00:36:03,870
+Okay.
+
+620
+00:36:05,870 --> 00:36:10,150
+Excellent. This is rapidly becoming my favorite part of the discussion.
+
+621
+00:36:10,870 --> 00:36:15,070
+All right. So the first one is I saw a mail, uh,
+
+622
+00:36:15,110 --> 00:36:19,350
+recently with someone talking about planning and just some,
+
+623
+00:36:19,470 --> 00:36:21,350
+some work the team had to do.
+
+624
+00:36:22,290 --> 00:36:26,130
+And then the last two paragraphs I thought were really interesting where the
+
+625
+00:36:26,410 --> 00:36:30,160
+manager in question felt the need to, uh,
+
+626
+00:36:30,160 --> 00:36:33,800
+take two paragraphs to explain we are not waterfall.
+
+627
+00:36:34,980 --> 00:36:39,540
+We are not waterfall and explain and start starting to justify nothing above was
+
+628
+00:36:39,540 --> 00:36:41,340
+really too waterfallish,
+
+629
+00:36:41,940 --> 00:36:45,720
+but I thought it was interesting that the manager felt the need to spell out to
+
+630
+00:36:45,720 --> 00:36:47,300
+the team that we are not waterfall.
+
+631
+00:36:47,320 --> 00:36:52,220
+So there's nothing above it that was really waterfallish. Not really. I think there's,
+
+632
+00:36:52,220 --> 00:36:53,660
+why do you think he, he felt,
+
+633
+00:36:53,660 --> 00:36:57,460
+there's gotta be other motivation there. Yeah. But whenever I see,
+
+634
+00:36:57,520 --> 00:36:58,840
+and in general,
+
+635
+00:36:59,260 --> 00:37:03,040
+when I see people defend whatever they're doing is not waterfall, like waterfall,
+
+636
+00:37:03,060 --> 00:37:06,600
+like, you know, waterfall is the evil death and we're not that you need to look
+
+637
+00:37:06,600 --> 00:37:10,580
+at what you're doing and think, and really think deeper about, you know,
+
+638
+00:37:10,580 --> 00:37:12,240
+what are you doing? It, it, I mean,
+
+639
+00:37:12,240 --> 00:37:15,500
+it does come across the way you've tell the story. It comes across as a,
+
+640
+00:37:16,120 --> 00:37:19,000
+as a defensive rationalization.
+
+641
+00:37:19,280 --> 00:37:22,880
+I think someone may have like talked to him offline and that showed its way
+
+642
+00:37:22,880 --> 00:37:23,720
+in there,
+
+643
+00:37:23,820 --> 00:37:28,820
+but I think it also falls into that trap that people think that waterfall and
+
+644
+00:37:28,820 --> 00:37:33,800
+agile are a dichotomy and they're not opposites on the end of the scale.
+
+645
+00:37:36,800 --> 00:37:40,880
+Brent's about to go into a rat hole here. No. So the problem is,
+
+646
+00:37:41,600 --> 00:37:43,280
+so I agree with what you're saying.
+
+647
+00:37:43,920 --> 00:37:45,200
+The problem is,
+
+648
+00:37:45,200 --> 00:37:49,840
+is that at least in the context that you're referring to both waterfall and
+
+649
+00:37:49,960 --> 00:37:53,640
+agile are dramatically overloaded. The people you,
+
+650
+00:37:53,640 --> 00:37:57,380
+absolutely people using these terms, uh,
+
+651
+00:37:57,420 --> 00:38:02,060
+know what it means in terms of the culture that they're used to,
+
+652
+00:38:02,300 --> 00:38:05,140
+but they don't know what it means in terms of like the, the,
+
+653
+00:38:05,380 --> 00:38:09,900
+the data that you have and due to the investigations in the research you have,
+
+654
+00:38:10,500 --> 00:38:14,280
+like I can't tell you the number of people I've talked to that says,
+
+655
+00:38:14,280 --> 00:38:16,060
+I hate agile.
+
+656
+00:38:16,840 --> 00:38:21,840
+And it's primarily because they see it as totally slow and
+
+657
+00:38:21,960 --> 00:38:26,460
+inefficient and, and it really, when you look at it, it's what,
+
+658
+00:38:26,460 --> 00:38:31,500
+what has happened is they have taken the waterfall process and applied two week
+
+659
+00:38:32,860 --> 00:38:37,890
+sprints to it. So they're merely iterative. They're very merely iterative,
+
+660
+00:38:37,890 --> 00:38:42,310
+but the, the, the heavyweight big design upfront model that,
+
+661
+00:38:42,370 --> 00:38:45,890
+that often typifies, uh,
+
+662
+00:38:45,890 --> 00:38:50,890
+I'll double quote it the waterfall process that that still,
+
+663
+00:38:51,710 --> 00:38:54,390
+uh, part of their new agile team.
+
+664
+00:38:54,390 --> 00:38:58,550
+So you spend 13 weeks building, building,
+
+665
+00:38:59,190 --> 00:39:03,390
+no 13 weeks. So people will do one month long, um,
+
+666
+00:39:04,530 --> 00:39:06,250
+agile milestones,
+
+667
+00:39:06,570 --> 00:39:11,070
+spend a week and a half building doing all of their design work upfront,
+
+668
+00:39:11,370 --> 00:39:16,530
+a week doing coding and then a week running around like headless chickens.
+
+669
+00:39:16,530 --> 00:39:19,170
+Little sprinter fall. Yeah. And they,
+
+670
+00:39:19,390 --> 00:39:23,750
+it's basically they're trying to shorten the cycle,
+
+671
+00:39:24,540 --> 00:39:28,660
+the iterative cycle and they're not getting it right.
+
+672
+00:39:28,660 --> 00:39:32,020
+It's a big part of, of, of agile that,
+
+673
+00:39:32,020 --> 00:39:35,820
+that really makes things efficient because you don't try to boil the ocean.
+
+674
+00:39:36,220 --> 00:39:41,020
+You try to go find the coldest part of the ocean, make it warm that up,
+
+675
+00:39:41,040 --> 00:39:44,900
+and then figure out how to keep it warm so then you can go find the next
+
+676
+00:39:45,180 --> 00:39:46,020
+coldest part of the ocean.
+
+677
+00:39:46,020 --> 00:39:50,600
+I guess the important thing that often missed is the value of constant learning
+
+678
+00:39:50,620 --> 00:39:53,520
+and adapting that comes with that. You want to learn as much,
+
+679
+00:39:53,560 --> 00:39:54,960
+do you want to be a learning organization?
+
+680
+00:39:55,260 --> 00:39:58,240
+Like a good agile organization is a good learning organization,
+
+681
+00:39:58,240 --> 00:40:00,600
+not that other organizations can't be learning,
+
+682
+00:40:00,880 --> 00:40:02,680
+but sort of built into the process.
+
+683
+00:40:03,120 --> 00:40:08,160
+I was on a Twitter discussion recently and it was a
+
+684
+00:40:08,160 --> 00:40:09,600
+bunch of people, uh,
+
+685
+00:40:10,240 --> 00:40:14,400
+venting about how, how the learning loop is important to agile.
+
+686
+00:40:14,900 --> 00:40:16,900
+And, uh, one of the,
+
+687
+00:40:17,260 --> 00:40:21,500
+one of the stories that I shared on that is the,
+
+688
+00:40:21,900 --> 00:40:26,500
+if you go to the dictionary and look up what agile means, it's,
+
+689
+00:40:26,520 --> 00:40:31,500
+it says to move quickly. And so people interpret this as, oh, well,
+
+690
+00:40:31,500 --> 00:40:36,460
+we're agile, so we got to go as fast as possible. And, and I said, no,
+
+691
+00:40:36,940 --> 00:40:38,940
+okay. This is false.
+
+692
+00:40:38,980 --> 00:40:42,980
+That the definition in terms of how we need to use it is not correct.
+
+693
+00:40:43,440 --> 00:40:47,400
+You go look at, uh, what was the champion, uh,
+
+694
+00:40:47,600 --> 00:40:52,720
+four 40 runner in the last summer Olympics, the, the, I forget his name.
+
+695
+00:40:52,920 --> 00:40:54,960
+Yeah, go on. We'll call him that guy.
+
+696
+00:40:55,280 --> 00:40:58,720
+So that guy is really fast,
+
+697
+00:40:59,320 --> 00:41:03,740
+but they don't call him agile. They call him fast, right?
+
+698
+00:41:03,760 --> 00:41:08,160
+Agile is the ability to move quickly in a new direction.
+
+699
+00:41:08,320 --> 00:41:11,540
+Ninjas are agile. I throw something at a ninja.
+
+700
+00:41:11,800 --> 00:41:14,240
+He gets out of the way pretty damn quickly.
+
+701
+00:41:14,360 --> 00:41:17,480
+It's always a great podcast. We can bring ninjas into the mix. Yeah.
+
+702
+00:41:17,480 --> 00:41:21,720
+I was trying to quickly think, is there a way to do pirates? Uh, but no, I can't.
+
+703
+00:41:21,880 --> 00:41:24,200
+That's all right. Yeah. Arr there. Um,
+
+704
+00:41:25,400 --> 00:41:28,840
+so agile is about changing direction quickly.
+
+705
+00:41:29,240 --> 00:41:31,240
+And if it's about changing direction quickly,
+
+706
+00:41:31,260 --> 00:41:33,960
+then you need to know the direction you were heading.
+
+707
+00:41:33,960 --> 00:41:35,400
+You need to know the new direction.
+
+708
+00:41:35,420 --> 00:41:37,720
+Both of these are often guided by goals.
+
+709
+00:41:38,060 --> 00:41:41,680
+And in order to establish the new direction,
+
+710
+00:41:42,140 --> 00:41:44,960
+you need the ability to learn quickly.
+
+711
+00:41:46,610 --> 00:41:48,650
+Yes. You know, when I saw that mail,
+
+712
+00:41:48,650 --> 00:41:52,010
+it's like little red flag in my head. And I thought there's more, one,
+
+713
+00:41:52,010 --> 00:41:55,970
+there's more going on here, but two, you don't need to be defensive. I just,
+
+714
+00:41:55,970 --> 00:41:56,330
+you know,
+
+715
+00:41:56,330 --> 00:42:00,650
+I think you want to make software based on the context of your team and your
+
+716
+00:42:00,650 --> 00:42:01,610
+customer and,
+
+717
+00:42:01,610 --> 00:42:05,890
+and all kinds of other things in the most efficient way possible that often that's,
+
+718
+00:42:06,470 --> 00:42:10,190
+very agile or as I heard it called in a meeting a few weeks ago, super agile.
+
+719
+00:42:10,430 --> 00:42:14,110
+This guy, I've still, it reminds me of slow drill.
+
+720
+00:42:14,110 --> 00:42:16,750
+I still want to buy a term and I use it. Um,
+
+721
+00:42:17,470 --> 00:42:22,470
+this guy, he would have done a better job instead of arguing why he's not
+
+722
+00:42:23,590 --> 00:42:28,300
+waterfall, uh, arguing, or maybe not even arguing,
+
+723
+00:42:28,540 --> 00:42:32,700
+but instead of saying what we aren't, he should have said what we are.
+
+724
+00:42:32,820 --> 00:42:34,260
+Yes. Uh,
+
+725
+00:42:34,320 --> 00:42:36,600
+notice the principles I gave for our, for our team.
+
+726
+00:42:37,320 --> 00:42:40,320
+None of them says what we don't do. It's all about what we do. Right.
+
+727
+00:42:41,040 --> 00:42:44,160
+Jensen's number one rule of politics.
+
+728
+00:42:45,240 --> 00:42:49,660
+He who is defensive loses always.
+
+729
+00:42:50,180 --> 00:42:52,420
+You cannot win any game,
+
+730
+00:42:52,440 --> 00:42:55,860
+any competition by playing defense only.
+
+731
+00:42:56,340 --> 00:43:01,400
+And when you start up a team who is with a framing that is defensive in
+
+732
+00:43:01,900 --> 00:43:05,540
+nature, that will permeate throughout the team culture. I,
+
+733
+00:43:05,540 --> 00:43:09,740
+my advice to you would be to go talk to that guy and get him to do a follow up
+
+734
+00:43:09,740 --> 00:43:14,040
+and say, by the way, I've gotten some, some guidance.
+
+735
+00:43:14,680 --> 00:43:18,240
+I want to be also clear. This is what we are.
+
+736
+00:43:19,080 --> 00:43:22,980
+Yeah, that's good. That's good. So, um, we got a closer,
+
+737
+00:43:22,980 --> 00:43:26,100
+but Brent, you had a little personal touch on the mail bag. Yeah.
+
+738
+00:43:26,100 --> 00:43:29,100
+So I have a mail bag story as well. Um,
+
+739
+00:43:29,560 --> 00:43:33,920
+so last time we, we spent some, some time talking about,
+
+740
+00:43:33,920 --> 00:43:38,040
+uh, my son and he, he, he told me,
+
+741
+00:43:38,280 --> 00:43:41,400
+Hey dad, I have a mail bag item for you.
+
+742
+00:43:41,760 --> 00:43:47,430
+I want you to let, uh, Mr. Page know that yes,
+
+743
+00:43:48,590 --> 00:43:54,200
+it is true. It is because of him that I'm following this podcast.
+
+744
+00:43:54,560 --> 00:43:58,120
+That's excellent news. That's great. That half of our listeners,
+
+745
+00:43:58,340 --> 00:44:02,140
+um, at least are following just me only. Yes. So I, I, uh,
+
+746
+00:44:02,740 --> 00:44:06,220
+two, two, two thoughts. Very cool. Number one. Yes.
+
+747
+00:44:06,220 --> 00:44:11,220
+I have a confirmed listener and number two stupid teenagers.
+
+748
+00:44:12,700 --> 00:44:15,760
+All right. We're going to get kicked out of our rooms. We're going to take off.
+
+749
+00:44:15,760 --> 00:44:19,840
+So I'm Alan. I'm Brent and we'll see you next time. Thank you. Bye.
+

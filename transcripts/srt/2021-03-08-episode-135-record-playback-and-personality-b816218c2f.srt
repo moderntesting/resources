@@ -1,0 +1,3792 @@
+1
+00:00:03,380 --> 00:00:07,820
+Welcome to AB testing podcast, your modern testing podcast.
+
+2
+00:00:08,180 --> 00:00:13,580
+Your hosts, Alan and Brent will be here to guide you through topics on testing
+
+3
+00:00:13,820 --> 00:00:16,820
+leadership, agile, and anything else that comes to mind.
+
+4
+00:00:17,060 --> 00:00:18,620
+Now on with the show.
+
+5
+00:00:18,820 --> 00:00:20,780
+Welcome to the AB testing podcast.
+
+6
+00:00:20,780 --> 00:00:22,500
+I'm Alan and I'm not wearing a shirt.
+
+7
+00:00:23,260 --> 00:00:25,980
+Uh, he is Alan and he's lying.
+
+8
+00:00:26,260 --> 00:00:26,620
+All right.
+
+9
+00:00:26,620 --> 00:00:30,020
+It's for, it's for you to use your imagination.
+
+10
+00:00:30,020 --> 00:00:34,460
+We're back for episode one 35 of the AB testing podcast.
+
+11
+00:00:34,460 --> 00:00:35,900
+This is still season one.
+
+12
+00:00:36,300 --> 00:00:38,700
+Some podcasts have seasons and we have one also.
+
+13
+00:00:38,700 --> 00:00:43,340
+It's just all season one because our topics, if we had seasons, have you
+
+14
+00:00:43,340 --> 00:00:45,020
+listened to podcasts that have seasons?
+
+15
+00:00:45,780 --> 00:00:46,140
+Yeah.
+
+16
+00:00:46,300 --> 00:00:48,100
+A season kind of needs a theme.
+
+17
+00:00:48,740 --> 00:00:52,820
+A theme would require planning an organization, neither of which
+
+18
+00:00:52,820 --> 00:00:54,460
+we do here at AB testing.
+
+19
+00:00:54,980 --> 00:00:56,420
+We are adaptive.
+
+20
+00:00:56,420 --> 00:01:00,340
+We talk about whatever's important at the time we're recording, because
+
+21
+00:01:00,340 --> 00:01:01,860
+it's the thing we can think of to talk about.
+
+22
+00:01:02,460 --> 00:01:03,220
+That's correct.
+
+23
+00:01:03,380 --> 00:01:06,660
+Although if, you know, if there's a high demand for seasons, I would
+
+24
+00:01:06,660 --> 00:01:10,620
+propose we could just, uh, advance it based on years.
+
+25
+00:01:10,900 --> 00:01:12,660
+Yeah.
+
+26
+00:01:13,220 --> 00:01:16,700
+Except whoever proposes it, it's going to have to go back and, and
+
+27
+00:01:16,740 --> 00:01:18,660
+renumber our prior season.
+
+28
+00:01:18,660 --> 00:01:18,900
+Yeah.
+
+29
+00:01:18,900 --> 00:01:20,460
+That it's that seems like work.
+
+30
+00:01:20,700 --> 00:01:21,420
+Work.
+
+31
+00:01:21,900 --> 00:01:22,100
+Yeah.
+
+32
+00:01:22,100 --> 00:01:23,020
+That involves work.
+
+33
+00:01:23,380 --> 00:01:26,340
+Uh, and we're not in, well, I mean, we do a lot
+
+34
+00:01:26,380 --> 00:01:27,060
+of work, right?
+
+35
+00:01:27,580 --> 00:01:30,980
+But I want the podcast to be something that's interesting for people to
+
+36
+00:01:30,980 --> 00:01:32,140
+listen to.
+
+37
+00:01:32,500 --> 00:01:36,420
+So we should talk about things that we think are interesting to us.
+
+38
+00:01:36,660 --> 00:01:39,620
+That sounds very selfish when I put it that way, but hopefully we talk
+
+39
+00:01:39,620 --> 00:01:40,700
+about things that are relevant.
+
+40
+00:01:40,740 --> 00:01:44,860
+And again, if we go back for, if you're listening to your first AB testing,
+
+41
+00:01:45,100 --> 00:01:50,300
+or maybe your second, we are not defining anything new.
+
+42
+00:01:50,740 --> 00:01:53,580
+We are not predicting what's going to happen.
+
+43
+00:01:53,580 --> 00:01:58,620
+We are not prescribing something we think is where we think people should go.
+
+44
+00:01:58,780 --> 00:02:02,100
+We're talking about what we're already seeing, what we're seeing being successful.
+
+45
+00:02:02,300 --> 00:02:07,220
+So if you see change coming, uh, in fact, if I go to Reddit in the testing or
+
+46
+00:02:07,220 --> 00:02:10,380
+quality assurance subreddit once a week, someone is talking about what's
+
+47
+00:02:10,380 --> 00:02:12,380
+happening, changing and testing our team.
+
+48
+00:02:12,740 --> 00:02:16,260
+Our team is getting rid of our testers and everyone's a developer.
+
+49
+00:02:16,260 --> 00:02:16,820
+What does it mean?
+
+50
+00:02:16,820 --> 00:02:19,780
+We're here to help you figure out what that means and how to help you
+
+51
+00:02:19,780 --> 00:02:23,100
+get your team to not screw that up because we've gone through it.
+
+52
+00:02:23,100 --> 00:02:27,100
+And you and I have both seen very closely team screw that up.
+
+53
+00:02:27,140 --> 00:02:28,700
+So where was I going with that?
+
+54
+00:02:28,740 --> 00:02:31,220
+I don't know anything else where I talk about me some more.
+
+55
+00:02:31,780 --> 00:02:37,020
+No, I would, I would even further say we've seen teams screw it up.
+
+56
+00:02:37,660 --> 00:02:40,300
+But here's actually, here's something I'm curious from your point of view.
+
+57
+00:02:41,130 --> 00:02:44,650
+We, we, we both are saying that there should be, when you're doing this,
+
+58
+00:02:44,770 --> 00:02:50,810
+uh, I think we both agree that the benefits far outweigh the, the
+
+59
+00:02:50,810 --> 00:02:58,570
+detriments number one, uh, people should move forward, but do so plan fully.
+
+60
+00:02:58,970 --> 00:03:04,770
+I don't know, but you know, don't plan like a 1998 big design up front
+
+61
+00:03:04,770 --> 00:03:07,930
+waterfall thing, like you'll make mistakes, but adapt.
+
+62
+00:03:08,650 --> 00:03:12,650
+I've talked about the way we plan projects in my org at unity before
+
+63
+00:03:12,650 --> 00:03:15,490
+at this 50% probability of a date.
+
+64
+00:03:15,730 --> 00:03:20,410
+We do that not because to be different, we do it because it's a sweet spot
+
+65
+00:03:20,410 --> 00:03:22,050
+between over-planning and under-planning.
+
+66
+00:03:22,050 --> 00:03:26,450
+And what's happened in our culture is this idea of a P 50 comes up for.
+
+67
+00:03:27,310 --> 00:03:30,030
+Other types of changes as well, not just delivery of code.
+
+68
+00:03:30,310 --> 00:03:32,350
+What's your P 50 plan to do X?
+
+69
+00:03:32,990 --> 00:03:35,830
+So yeah, it's a, you should have a sweet spot between over-planning
+
+70
+00:03:35,830 --> 00:03:39,470
+like we did in the old days, just enough design up front to aim
+
+71
+00:03:39,470 --> 00:03:43,150
+yourself in the right direction and then be ready to learn and adapt.
+
+72
+00:03:43,470 --> 00:03:43,750
+Yeah.
+
+73
+00:03:44,150 --> 00:03:48,390
+But in addition to it, it's like, don't let the fear of
+
+74
+00:03:48,390 --> 00:03:50,230
+screwing up the role out.
+
+75
+00:03:50,510 --> 00:03:51,470
+Abt again.
+
+76
+00:03:51,510 --> 00:03:52,990
+Yeah, you should be okay.
+
+77
+00:03:52,990 --> 00:03:53,830
+Just screw stuff up.
+
+78
+00:03:54,350 --> 00:04:02,870
+So speaking of learning segue, I gave in between the last podcast and this one,
+
+79
+00:04:02,910 --> 00:04:05,430
+I delivered a webinar.
+
+80
+00:04:05,670 --> 00:04:07,390
+Thank you to test project for hosting it.
+
+81
+00:04:07,790 --> 00:04:11,950
+Talking about this again, we've talked about now for three podcasts.
+
+82
+00:04:11,950 --> 00:04:16,190
+So we'll go too deep, but this myth that there is a huge mindset change between
+
+83
+00:04:16,190 --> 00:04:22,000
+developing and testing, and I really just talked about some things talked about
+
+84
+00:04:22,000 --> 00:04:27,000
+before, went into more details on some things I wrote in an article about six
+
+85
+00:04:27,000 --> 00:04:31,940
+weeks ago now, and I was ready to be skewered, but I wasn't.
+
+86
+00:04:33,090 --> 00:04:35,170
+I was pleasantly surprised.
+
+87
+00:04:35,170 --> 00:04:38,770
+The questions were more like we'd address on the podcast.
+
+88
+00:04:38,770 --> 00:04:40,210
+Like, how do I handle this change?
+
+89
+00:04:40,210 --> 00:04:42,610
+How do I, how should I go about this change?
+
+90
+00:04:42,610 --> 00:04:44,650
+What do I do when developers don't want to test?
+
+91
+00:04:44,650 --> 00:04:50,090
+No sorts of things that I'd expect the sort of facts for if developers do testing, how
+
+92
+00:04:50,090 --> 00:04:51,370
+can they do it as well as I do?
+
+93
+00:04:51,370 --> 00:04:52,810
+I'm a specialist, blah, blah, blah.
+
+94
+00:04:53,050 --> 00:04:54,690
+Nobody told me I was full of crap.
+
+95
+00:04:54,850 --> 00:05:00,650
+Although the video recording is up on YouTube and you can find it in my Twitter
+
+96
+00:05:00,650 --> 00:05:03,530
+stream so far, only one downvote.
+
+97
+00:05:04,050 --> 00:05:06,210
+Brent, I have to ask, why did you downvote me?
+
+98
+00:05:06,730 --> 00:05:10,130
+Uh, I just didn't like how you were looking on there.
+
+99
+00:05:10,130 --> 00:05:11,770
+You weren't dapper enough.
+
+100
+00:05:11,930 --> 00:05:13,370
+No, I look like crap.
+
+101
+00:05:13,730 --> 00:05:15,290
+You weren't representing the brand.
+
+102
+00:05:15,890 --> 00:05:20,210
+Brent started the podcast leading way back saying I am staying away from my keyboard.
+
+103
+00:05:20,650 --> 00:05:21,010
+Yeah.
+
+104
+00:05:21,050 --> 00:05:25,370
+Now, now he's bringing up my YouTube video so we can see if he can download it again
+
+105
+00:05:25,370 --> 00:05:26,410
+under a different account.
+
+106
+00:05:27,300 --> 00:05:31,020
+I want to see what the additional, uh, comments might've been.
+
+107
+00:05:31,220 --> 00:05:33,940
+I don't think anyone's commented on the YouTube video.
+
+108
+00:05:33,940 --> 00:05:37,020
+I haven't looked at it in a while, but I could tell you, yeah, the one downvote,
+
+109
+00:05:37,020 --> 00:05:38,740
+but I only have 12 up votes.
+
+110
+00:05:38,740 --> 00:05:41,140
+So it's not, and comments are turned off.
+
+111
+00:05:41,140 --> 00:05:42,460
+So nobody, nobody said anything.
+
+112
+00:05:43,100 --> 00:05:44,380
+So that's what we know so far.
+
+113
+00:05:44,740 --> 00:05:45,100
+All right.
+
+114
+00:05:45,140 --> 00:05:46,020
+Anyway, check it out.
+
+115
+00:05:46,020 --> 00:05:49,300
+If you didn't see the webinar, I don't think it's anything surprising to anyone
+
+116
+00:05:49,300 --> 00:05:52,740
+on here, but, uh, that was a fun one to put together.
+
+117
+00:05:52,740 --> 00:05:53,980
+I feel pretty good about the talk.
+
+118
+00:05:54,380 --> 00:05:55,620
+Uh, of course I'd love feedback.
+
+119
+00:05:55,620 --> 00:05:59,500
+You can go to our slack group at one of the three dot slack.com and get an
+
+120
+00:05:59,500 --> 00:06:05,100
+invitation from our, our website at modern testing.org, pluggity, plug, plug,
+
+121
+00:06:05,100 --> 00:06:05,540
+plug.
+
+122
+00:06:05,980 --> 00:06:06,980
+So yeah, that happened.
+
+123
+00:06:07,340 --> 00:06:12,180
+And, and when I'm really bored, I'm going to go back and look at this video of
+
+124
+00:06:12,180 --> 00:06:15,580
+yours from seven years ago about starting out in security testing.
+
+125
+00:06:16,100 --> 00:06:16,900
+Oh yeah.
+
+126
+00:06:16,940 --> 00:06:17,180
+Yeah.
+
+127
+00:06:17,180 --> 00:06:21,740
+I have a couple of things that was me interviewing Alan Mervold.
+
+128
+00:06:21,780 --> 00:06:26,140
+So we're talking about, there was a time when I was in engineering excellence.
+
+129
+00:06:26,140 --> 00:06:27,780
+I can't believe that was only seven years ago.
+
+130
+00:06:27,780 --> 00:06:31,660
+It feels like a freaking lifetime and a half ago then, or maybe actually
+
+131
+00:06:31,700 --> 00:06:32,980
+it was recorded before then.
+
+132
+00:06:32,980 --> 00:06:34,500
+I just uploaded it then.
+
+133
+00:06:34,780 --> 00:06:41,180
+But the idea was we had realized how much of how much learning happened in
+
+134
+00:06:41,180 --> 00:06:44,300
+the old days when we'd be at, I have offices and we go to work.
+
+135
+00:06:44,900 --> 00:06:47,540
+You just go into someone's office and ask him a question and get
+
+136
+00:06:47,540 --> 00:06:50,100
+15 minutes of gold knowledge.
+
+137
+00:06:50,380 --> 00:06:55,900
+So what we did for a little while was these are highly staged, but we'd,
+
+138
+00:06:56,620 --> 00:07:01,380
+I only posted a couple of them to YouTube, but we had a dozen or so of these
+
+139
+00:07:01,620 --> 00:07:06,340
+conceptual whiteboard videos where the idea was you'd see me knock on someone's
+
+140
+00:07:06,340 --> 00:07:10,220
+door and then come in and ask a question and they'd explain it to me on
+
+141
+00:07:10,220 --> 00:07:11,820
+the whiteboard, I'd ask questions.
+
+142
+00:07:12,020 --> 00:07:13,220
+That part wasn't staged.
+
+143
+00:07:13,260 --> 00:07:16,580
+We just kind of staged me walking in with the camera running, but then we
+
+144
+00:07:16,580 --> 00:07:21,020
+just recorded them explaining something to me and we put it on, we used them
+
+145
+00:07:21,020 --> 00:07:25,130
+internally, put it on the internet to try and capture that, to try and spread
+
+146
+00:07:25,130 --> 00:07:27,010
+that method of learning a little, little wider.
+
+147
+00:07:27,050 --> 00:07:27,810
+It's a good idea.
+
+148
+00:07:28,170 --> 00:07:29,050
+It was fun at the time.
+
+149
+00:07:29,290 --> 00:07:30,010
+So where was I going?
+
+150
+00:07:30,650 --> 00:07:30,890
+I don't know.
+
+151
+00:07:30,930 --> 00:07:32,130
+Webinar was good.
+
+152
+00:07:32,250 --> 00:07:33,090
+Appreciate your feedback.
+
+153
+00:07:33,450 --> 00:07:39,580
+Why do you, why do you think it ended up being so different than what
+
+154
+00:07:39,660 --> 00:07:41,540
+you expected?
+
+155
+00:07:41,540 --> 00:07:43,220
+Do you think, I think I made my point.
+
+156
+00:07:43,220 --> 00:07:49,220
+Well, also probably some, the people that probably hated what I wrote and hated
+
+157
+00:07:49,220 --> 00:07:54,520
+the concept probably didn't tune in or I don't know, I don't know.
+
+158
+00:07:54,880 --> 00:08:00,750
+I did expect a little bit more, but Alan, you whatever, but that wasn't there.
+
+159
+00:08:00,750 --> 00:08:02,190
+I think people got where I was coming from.
+
+160
+00:08:02,190 --> 00:08:05,390
+I gave, I thought I supported my case pretty well.
+
+161
+00:08:06,260 --> 00:08:12,340
+So I think the thing most people struggle with is not that I felt like in that room,
+
+162
+00:08:12,340 --> 00:08:16,000
+people felt like, okay, developers can do good testing.
+
+163
+00:08:16,000 --> 00:08:19,240
+They're still stuck in the, but my developers don't want to do testing or my
+
+164
+00:08:19,240 --> 00:08:21,800
+developers shouldn't have to do testing.
+
+165
+00:08:21,960 --> 00:08:25,600
+Any one of those flavors, which have different solutions than the mindset thing.
+
+166
+00:08:25,640 --> 00:08:31,000
+I'd like to think I did a fairly good job convincing people that if a developer
+
+167
+00:08:31,880 --> 00:08:35,720
+is given the responsibility of testing, they can do quite well.
+
+168
+00:08:36,440 --> 00:08:36,760
+Yeah.
+
+169
+00:08:36,760 --> 00:08:42,000
+It's it's, those are sort of the top three excuses, right?
+
+170
+00:08:42,000 --> 00:08:46,120
+It's a number one developers can't do it.
+
+171
+00:08:46,160 --> 00:08:46,680
+All right.
+
+172
+00:08:46,680 --> 00:08:48,680
+Well, no, that's false.
+
+173
+00:08:49,240 --> 00:08:54,000
+Number two, they don't want to do it.
+
+174
+00:08:54,000 --> 00:08:55,720
+What's your first pushback on that one?
+
+175
+00:08:56,320 --> 00:08:57,400
+And they don't want to do it.
+
+176
+00:08:57,840 --> 00:08:58,200
+Mm-hmm.
+
+177
+00:08:58,200 --> 00:09:00,640
+Uh, often, often that's not really it.
+
+178
+00:09:00,640 --> 00:09:02,200
+They think they don't want to do it.
+
+179
+00:09:02,200 --> 00:09:06,760
+I it's pairing is almost my answer for all of those questions.
+
+180
+00:09:07,080 --> 00:09:11,280
+I think sometimes they're not wanting to do it is a fear of not knowing how to do
+
+181
+00:09:11,280 --> 00:09:13,680
+it or a fear of seeing value in them doing it.
+
+182
+00:09:14,200 --> 00:09:18,400
+I've found the solution to all that stuff is to begin pairing with them, test
+
+183
+00:09:18,400 --> 00:09:21,800
+things together and they'll figure out, Oh, I can do this on my own.
+
+184
+00:09:22,040 --> 00:09:26,480
+And they understand the value of it in that all of what we do and accelerate
+
+185
+00:09:26,840 --> 00:09:28,280
+the achievement, simple quality.
+
+186
+00:09:28,440 --> 00:09:30,040
+We want to tighten up feedback loop.
+
+187
+00:09:30,040 --> 00:09:36,080
+So that feedback loop involves a pass off, uh, that may involve time zones.
+
+188
+00:09:36,080 --> 00:09:37,360
+Even that's inefficient.
+
+189
+00:09:37,880 --> 00:09:41,840
+Yeah, for me, I would say, well, of course they don't want to do it.
+
+190
+00:09:42,160 --> 00:09:42,480
+Right.
+
+191
+00:09:42,800 --> 00:09:46,240
+We're, we're essentially proposing to take away their safety net.
+
+192
+00:09:46,240 --> 00:09:47,000
+It's scary.
+
+193
+00:09:47,120 --> 00:09:47,520
+For sure.
+
+194
+00:09:47,560 --> 00:09:52,160
+And I think, I think they're just scared, but we have beat this horse to hell.
+
+195
+00:09:52,240 --> 00:09:56,080
+I want to talk about my next rant and, and get some feedback.
+
+196
+00:09:56,760 --> 00:09:58,800
+I am using test project as a platform.
+
+197
+00:09:58,800 --> 00:10:01,400
+They've asked me to write some blogs for them and I haven't written blogs in a while.
+
+198
+00:10:01,400 --> 00:10:04,680
+And if you remember, I wanted to get back into writing some more blogs to go back
+
+199
+00:10:04,680 --> 00:10:05,680
+to our prediction episode.
+
+200
+00:10:05,680 --> 00:10:06,320
+And here I go.
+
+201
+00:10:06,400 --> 00:10:07,760
+Self-fulfilling prophecy.
+
+202
+00:10:08,360 --> 00:10:11,680
+But what I'm writing about and what they don't mind me doing is things that
+
+203
+00:10:11,680 --> 00:10:12,320
+pissed me off.
+
+204
+00:10:12,320 --> 00:10:17,040
+So first I talked about this mindset thing, which I think is crap that a few
+
+205
+00:10:17,040 --> 00:10:23,590
+people have a few, uh, large, I want to say large egos, large influences in the
+
+206
+00:10:23,590 --> 00:10:27,870
+test world talk about this deep into this mindset change, which I think I've
+
+207
+00:10:27,870 --> 00:10:28,630
+proven as crap.
+
+208
+00:10:28,710 --> 00:10:33,070
+The next thing I wrote about was challenging the notion that test automation
+
+209
+00:10:33,070 --> 00:10:35,390
+is done by a separate team from the team developing.
+
+210
+00:10:35,390 --> 00:10:38,590
+I think developers should write the vast majority of test automation.
+
+211
+00:10:38,590 --> 00:10:40,190
+I think that would actually improve design.
+
+212
+00:10:40,350 --> 00:10:41,590
+I made the points in the article.
+
+213
+00:10:42,270 --> 00:10:43,510
+I feel pretty strongly about that.
+
+214
+00:10:43,550 --> 00:10:45,710
+And I'm thinking about what else pisses me off.
+
+215
+00:10:45,710 --> 00:10:50,630
+It's like so many things make me mad, but I thought, well, maybe I'll write
+
+216
+00:10:50,630 --> 00:10:55,590
+something on exploratory test automation, but I've kind of done that before.
+
+217
+00:10:55,630 --> 00:10:57,430
+And I could give some examples.
+
+218
+00:10:57,430 --> 00:11:00,910
+It could be a more techie article and put some code samples in it, how I've used
+
+219
+00:11:00,910 --> 00:11:05,670
+tools to help me test, but then something hit me and I want to run it by you.
+
+220
+00:11:05,670 --> 00:11:09,870
+So you've been in testing a test automation for a long time.
+
+221
+00:11:10,070 --> 00:11:14,150
+What do you think of when I mentioned record and playback automation?
+
+222
+00:11:14,710 --> 00:11:16,190
+Like what's your, what's your first reaction?
+
+223
+00:11:17,100 --> 00:11:21,380
+Good tool when used for it's for what it's good for.
+
+224
+00:11:21,460 --> 00:11:22,180
+How's that for it?
+
+225
+00:11:22,180 --> 00:11:24,020
+Says how would you, well, that's, that's crappy.
+
+226
+00:11:24,020 --> 00:11:27,260
+So let me go ahead and answer that question myself because your answer sucks.
+
+227
+00:11:27,260 --> 00:11:30,860
+You get an F minus record and playback tools.
+
+228
+00:11:30,860 --> 00:11:32,620
+I used to hate, they were flaky as hell.
+
+229
+00:11:33,180 --> 00:11:36,620
+They weren't maintainable, but I was in a different mindset back then of
+
+230
+00:11:36,620 --> 00:11:40,140
+automate all the things or many of the things, at least all the
+
+231
+00:11:40,140 --> 00:11:41,300
+things that should be automated.
+
+232
+00:11:41,620 --> 00:11:48,200
+But if we look at what we agree about, I think the test automation pyramid
+
+233
+00:11:48,200 --> 00:11:51,360
+is a reflection of what happens when you have well-designed code.
+
+234
+00:11:51,360 --> 00:11:54,360
+You have very few of these end to end tests and a few of those
+
+235
+00:11:54,360 --> 00:11:56,120
+tests are UI automation tests.
+
+236
+00:11:56,240 --> 00:12:00,720
+Uh, we used to avoid record and playback tools because there were, the code
+
+237
+00:12:00,720 --> 00:12:01,880
+they generated was flaky.
+
+238
+00:12:02,080 --> 00:12:06,480
+We didn't want to deal with all the crap and they were marketed at not a developers.
+
+239
+00:12:06,480 --> 00:12:11,360
+They were marketed at testers who did not know how to code, who are not the
+
+240
+00:12:11,360 --> 00:12:14,400
+best people to be choosing what needs to be automated in my opinion.
+
+241
+00:12:14,840 --> 00:12:20,960
+Now, if we were to market those record and playback tools to developers, one,
+
+242
+00:12:21,080 --> 00:12:22,360
+they would use very few of them.
+
+243
+00:12:22,400 --> 00:12:25,000
+It would be faster than writing anything in selenium.
+
+244
+00:12:25,400 --> 00:12:26,840
+I have a bunch of people gonna be mad at me.
+
+245
+00:12:27,480 --> 00:12:27,880
+Yes.
+
+246
+00:12:27,920 --> 00:12:29,240
+Selenium is a good framework.
+
+247
+00:12:29,760 --> 00:12:32,120
+It's not an efficient way to write you animation.
+
+248
+00:12:32,120 --> 00:12:33,440
+I prefer test cafe.
+
+249
+00:12:33,440 --> 00:12:34,560
+A lot of people use cypress.
+
+250
+00:12:34,800 --> 00:12:37,080
+A lot of people don't like them for reasons A, B and C.
+
+251
+00:12:37,120 --> 00:12:39,680
+I'm kind of thinking here's the, here's the hill.
+
+252
+00:12:40,240 --> 00:12:41,640
+I'm thinking of climbing.
+
+253
+00:12:42,040 --> 00:12:46,440
+I think given that the good record and playback tools from test
+
+254
+00:12:46,440 --> 00:12:53,720
+to Mabel, Autify and others have eliminated the vast majority of the flakiness
+
+255
+00:12:53,720 --> 00:12:55,320
+from your web automation tests.
+
+256
+00:12:56,280 --> 00:13:00,120
+And I, I assume for UI automation with Appium, there are some similar things,
+
+257
+00:13:00,280 --> 00:13:05,770
+but if that flakiness is gone and we only want to have a few of those tests,
+
+258
+00:13:06,170 --> 00:13:11,930
+why invest a lot of time relative amount, a lot of time of writing tests
+
+259
+00:13:11,930 --> 00:13:15,650
+with selenium when you could just record and playback those suckers and
+
+260
+00:13:15,650 --> 00:13:19,810
+have them stay fairly reliable for a long time problem is they're marketing
+
+261
+00:13:19,810 --> 00:13:23,130
+these things towards testers and not developers, but I kind of think the
+
+262
+00:13:23,130 --> 00:13:29,290
+time is ripe for record and playback to be the default way to do web automation.
+
+263
+00:13:30,040 --> 00:13:34,440
+So I don't, I don't have any current experience on recording and playback,
+
+264
+00:13:34,440 --> 00:13:39,400
+but I think the standard by which I would, I would hold that is essentially
+
+265
+00:13:39,400 --> 00:13:45,640
+it's going to be a combination of, uh, that, well, everything I do is by ROI.
+
+266
+00:13:45,920 --> 00:13:46,080
+Okay.
+
+267
+00:13:46,080 --> 00:13:51,010
+But the problem with the record and playback stuff is if they're
+
+268
+00:13:51,010 --> 00:13:55,010
+intended to persist the traditional record and playback, the problem with that
+
+269
+00:13:55,010 --> 00:14:02,670
+is they're cheap to get out, but you spend, I don't know, a significant more
+
+270
+00:14:02,670 --> 00:14:06,430
+time on the backend of the price tag of this one, like maintenance
+
+271
+00:14:06,430 --> 00:14:07,710
+costs is through the roof.
+
+272
+00:14:08,310 --> 00:14:11,190
+That's the problem with, with record and playback.
+
+273
+00:14:11,190 --> 00:14:19,640
+Now, if you have a, if you have a measuring it by the total price tag,
+
+274
+00:14:19,640 --> 00:14:25,480
+including the maintenance cost over, over the expected lifetime of the automation,
+
+275
+00:14:25,520 --> 00:14:33,360
+if that's been improved, uh, yeah, why not there, there, they're cheap to, to grind out.
+
+276
+00:14:33,880 --> 00:14:37,840
+And if the current record and playback systems have gotten to the point where
+
+277
+00:14:37,840 --> 00:14:44,080
+they can write maintainable code, like, Hey, we noticed you do this same
+
+278
+00:14:44,080 --> 00:14:46,160
+routine over and over again, we've.
+
+279
+00:14:46,600 --> 00:14:47,400
+Well, it doesn't matter.
+
+280
+00:14:47,480 --> 00:14:49,200
+I mean, it used to be like that.
+
+281
+00:14:49,240 --> 00:14:51,480
+Oh, well, the burden playback sucks.
+
+282
+00:14:51,560 --> 00:14:52,880
+We can't reuse code chunks.
+
+283
+00:14:53,080 --> 00:14:59,240
+I don't, I kind of don't care if the code underneath is spaghetti that I can't read
+
+284
+00:14:59,240 --> 00:15:02,120
+and I can't, I can't do anything with manually.
+
+285
+00:15:02,240 --> 00:15:03,560
+I don't even care if I can see it.
+
+286
+00:15:03,920 --> 00:15:09,720
+If I just need something that I can rely on to, to continue to let me know that
+
+287
+00:15:09,720 --> 00:15:12,640
+some scenarios functionality is correct.
+
+288
+00:15:13,640 --> 00:15:19,520
+And it withstands changes underneath, which is what all these, these higher
+
+289
+00:15:19,520 --> 00:15:22,280
+end tools do, I kind of don't care about the code underneath.
+
+290
+00:15:22,280 --> 00:15:23,200
+It doesn't matter to me.
+
+291
+00:15:23,840 --> 00:15:30,720
+How does, how, how does current record and playback tools implement the Oracle?
+
+292
+00:15:31,360 --> 00:15:34,480
+How do you define pass and fail and current playback?
+
+293
+00:15:34,600 --> 00:15:38,080
+Well, it's up to the human to define the Oracle and what, what
+
+294
+00:15:38,080 --> 00:15:39,440
+you want from a scenario.
+
+295
+00:15:39,480 --> 00:15:42,800
+For example, you may want to see a, you have an account creation scenario.
+
+296
+00:15:43,240 --> 00:15:43,960
+It would be a good one.
+
+297
+00:15:43,960 --> 00:15:47,280
+You probably want to test end to end and not just at the integration level.
+
+298
+00:15:47,480 --> 00:15:50,480
+Cause that's, that's critical part of your onboarding of customers.
+
+299
+00:15:50,840 --> 00:15:53,400
+That may be you get, there's two things you do.
+
+300
+00:15:53,520 --> 00:15:56,160
+One is at the UI level.
+
+301
+00:15:56,520 --> 00:16:01,120
+You make sure that you get to the signup successful page.
+
+302
+00:16:01,600 --> 00:16:05,770
+That would be the Oracle is this page exists by test past, but you also want to
+
+303
+00:16:05,770 --> 00:16:10,090
+have a parallel test I would kick off that would verify that the back end matches.
+
+304
+00:16:10,490 --> 00:16:10,770
+Yeah.
+
+305
+00:16:10,770 --> 00:16:14,410
+So I got to tell you often in the web automation world, people may only web
+
+306
+00:16:14,450 --> 00:16:17,610
+verify the front end, like, Oh, the, we got the right page that past.
+
+307
+00:16:17,770 --> 00:16:21,370
+You need to apply a little bit of systems thinking to that, but that's the Oracle.
+
+308
+00:16:21,370 --> 00:16:23,730
+You decide what the outcome is.
+
+309
+00:16:23,730 --> 00:16:26,930
+You want what is the outcome of what you want to do from your test.
+
+310
+00:16:27,250 --> 00:16:30,930
+So where are these tools help over traditional automation in the, in
+
+311
+00:16:30,930 --> 00:16:37,770
+selenium, I would find the web element for, for, to create a login or an
+
+312
+00:16:37,770 --> 00:16:41,770
+account on the site, and then one by one, I'd find the elements, wait for them to
+
+313
+00:16:41,770 --> 00:16:46,170
+appear, add my data to those, press the button, and then verify.
+
+314
+00:16:46,170 --> 00:16:50,210
+I got to again, through web elements, something like the thing I got to, I
+
+315
+00:16:50,210 --> 00:16:52,410
+changed the ID of one of those things.
+
+316
+00:16:52,450 --> 00:16:54,370
+Generally my test breaks.
+
+317
+00:16:54,770 --> 00:16:59,130
+So what happens is, especially this is where this is going back a step to
+
+318
+00:16:59,130 --> 00:17:01,730
+developers owning the test automation.
+
+319
+00:17:01,930 --> 00:17:05,810
+What happens now is the developers change some IDs, move some things around.
+
+320
+00:17:06,050 --> 00:17:10,330
+All of the test engineers, remember on a different team, their stuff all breaks and
+
+321
+00:17:10,330 --> 00:17:12,370
+they have to go figure out why and change their test.
+
+322
+00:17:12,690 --> 00:17:14,250
+That is a, that's an inefficiency.
+
+323
+00:17:14,650 --> 00:17:19,290
+Now what these tools do, audifies my favorite by no lot of people use Mabel or,
+
+324
+00:17:19,690 --> 00:17:20,730
+or what's the other one I mentioned?
+
+325
+00:17:20,730 --> 00:17:21,210
+Test him.
+
+326
+00:17:21,250 --> 00:17:23,170
+I think there are probably 20 others by now.
+
+327
+00:17:23,170 --> 00:17:23,930
+It's a hot market.
+
+328
+00:17:24,490 --> 00:17:29,290
+What they do is they figure out enough other information about the control that
+
+329
+00:17:29,290 --> 00:17:32,530
+you can change all kinds of crap about it, and they will still figure out what
+
+330
+00:17:32,530 --> 00:17:37,850
+control you intended and often let you know, like give you a maintenance step.
+
+331
+00:17:37,850 --> 00:17:38,170
+Okay.
+
+332
+00:17:38,170 --> 00:17:40,850
+This is, is this the same thing we'll update your, we'll
+
+333
+00:17:40,850 --> 00:17:42,090
+update our underlying structure.
+
+334
+00:17:42,410 --> 00:17:43,250
+So they make it harder.
+
+335
+00:17:43,370 --> 00:17:47,890
+They make it harder to screw stuff up by inferring and whether you want to call it
+
+336
+00:17:47,890 --> 00:17:49,850
+AI or ML or just being smart.
+
+337
+00:17:50,090 --> 00:17:55,090
+I think on a side tangent, a lot of the stuff we did as smart monkeys 15 years
+
+338
+00:17:55,090 --> 00:17:57,050
+ago, that people are now calling AI and ML.
+
+339
+00:17:57,050 --> 00:17:58,490
+So it's a fine line.
+
+340
+00:17:59,130 --> 00:18:04,570
+But what these tools do is they allow the underlying code to change and for the
+
+341
+00:18:04,570 --> 00:18:10,610
+tests to still run and, and in most cases help you update those to help them stay
+
+342
+00:18:10,690 --> 00:18:13,050
+stay relevant or stay accurate in the future.
+
+343
+00:18:13,290 --> 00:18:19,490
+So in the face of, of number one, these record and play tools, if the initial
+
+344
+00:18:19,490 --> 00:18:25,330
+technology is such that, uh, that initially the maintenance costs of it,
+
+345
+00:18:25,330 --> 00:18:29,450
+cause as you and I know, like it, that's the, that's the Achilles heel of record
+
+346
+00:18:29,450 --> 00:18:35,930
+plate is made it, if they've made it such that the maintenance cost is extremely
+
+347
+00:18:35,930 --> 00:18:39,850
+low now and then even furthermore, creation cost is low.
+
+348
+00:18:39,850 --> 00:18:41,770
+So I can have a scenario.
+
+349
+00:18:41,770 --> 00:18:45,970
+It may take me four hours to automate and selenium plus ongoing maintenance
+
+350
+00:18:45,970 --> 00:18:47,050
+costs to keep it going.
+
+351
+00:18:47,130 --> 00:18:50,770
+If I can automate that workflow with a record and playback tool in 10 minutes
+
+352
+00:18:50,770 --> 00:18:56,010
+and have that test continue to run for weeks or months or years, why would I
+
+353
+00:18:56,010 --> 00:18:59,930
+invest in creating a bunch of tests in selenium and again, it could get on
+
+354
+00:18:59,930 --> 00:19:03,170
+weirdly if you add hundreds and hundreds of these, but that's the wrong
+
+355
+00:19:03,170 --> 00:19:04,090
+thing to do as well.
+
+356
+00:19:04,370 --> 00:19:04,930
+Uh, yeah.
+
+357
+00:19:04,930 --> 00:19:08,690
+And I agree the, the, at least again, I don't have any recent
+
+358
+00:19:08,690 --> 00:19:12,410
+practical knowledge on this front, but, but based on how you lay out, I don't
+
+359
+00:19:12,410 --> 00:19:17,650
+see the flaw, like in addition, you call out that where a maintenance cost
+
+360
+00:19:17,650 --> 00:19:24,490
+is incurred, these tools are now smarter and telling you and asking, uh,
+
+361
+00:19:24,530 --> 00:19:28,530
+essentially the way you phrase it is saying, Hey, is it okay?
+
+362
+00:19:28,690 --> 00:19:30,570
+Is it okay for us to make this change?
+
+363
+00:19:30,930 --> 00:19:31,970
+Like we're uncertain.
+
+364
+00:19:32,330 --> 00:19:33,690
+Well, what do you plan with?
+
+365
+00:19:35,160 --> 00:19:40,620
+Uh, what is, what is in your hand?
+
+366
+00:19:44,800 --> 00:19:47,000
+This is my child, Brent.
+
+367
+00:19:47,120 --> 00:19:48,840
+So here's my statement.
+
+368
+00:19:48,840 --> 00:19:51,760
+So all that said, give me feedback if you think that's crap, but I kind of
+
+369
+00:19:51,800 --> 00:19:53,160
+think there's something there.
+
+370
+00:19:53,560 --> 00:19:59,520
+I think as far as all the vendors out there marketing tools to testers, if
+
+371
+00:19:59,520 --> 00:20:03,560
+you want to win, if you want to be like, there's a bunch of competition.
+
+372
+00:20:03,560 --> 00:20:07,640
+If you want to get the most customers and, and get more market share, start
+
+373
+00:20:07,680 --> 00:20:09,360
+marketing your stuff to developers.
+
+374
+00:20:09,760 --> 00:20:12,240
+They're going to know how to use your stuff most effectively.
+
+375
+00:20:12,240 --> 00:20:14,480
+Testors are not your long-term audience.
+
+376
+00:20:14,840 --> 00:20:15,120
+Yeah.
+
+377
+00:20:15,120 --> 00:20:16,520
+I completely agree.
+
+378
+00:20:16,600 --> 00:20:20,680
+Uh, the, and in addition to that, I'm wondering, like in this
+
+379
+00:20:20,720 --> 00:20:24,840
+particular topic, like knowing you as I do, right.
+
+380
+00:20:25,040 --> 00:20:30,320
+You're, I don't know, a half an insight away from just going all in and
+
+381
+00:20:30,320 --> 00:20:32,360
+just saying test automation is dumb.
+
+382
+00:20:32,400 --> 00:20:33,680
+You should record them playback.
+
+383
+00:20:33,920 --> 00:20:41,120
+I'm wondering if you shouldn't, uh, set up a special AB episode on that front.
+
+384
+00:20:41,320 --> 00:20:46,480
+Uh, with one of the listeners I'm here, I'm specifically thinking, uh,
+
+385
+00:20:46,520 --> 00:20:50,520
+Percy to, to go through that thought process.
+
+386
+00:20:50,560 --> 00:20:55,280
+I like, there it is an open invitation to anyone of the three, especially
+
+387
+00:20:55,280 --> 00:21:01,080
+if your name is Percy for a, uh, that would be Friday afternoon at six P
+
+388
+00:21:01,080 --> 00:21:05,280
+at Friday evening at 6 PM your time on a Friday of your choice, as long as
+
+389
+00:21:05,280 --> 00:21:06,640
+it aligns with our two week schedule.
+
+390
+00:21:06,880 --> 00:21:07,720
+There it is.
+
+391
+00:21:08,120 --> 00:21:09,000
+Let us know.
+
+392
+00:21:09,640 --> 00:21:10,440
+I'm looking at Slack.
+
+393
+00:21:10,460 --> 00:21:12,120
+Oh, we haven't posted this yet.
+
+394
+00:21:12,120 --> 00:21:13,640
+So we don't know yet, but there it is.
+
+395
+00:21:13,920 --> 00:21:14,680
+And YouTube.
+
+396
+00:21:15,240 --> 00:21:16,040
+We're not live streaming.
+
+397
+00:21:16,040 --> 00:21:16,880
+We're not live streaming.
+
+398
+00:21:16,960 --> 00:21:17,840
+We're live streaming.
+
+399
+00:21:17,920 --> 00:21:18,760
+Did I press record?
+
+400
+00:21:18,880 --> 00:21:20,040
+At least we're recording.
+
+401
+00:21:20,240 --> 00:21:22,680
+Well, that is a step in the right direction.
+
+402
+00:21:22,880 --> 00:21:23,400
+Okay, cool.
+
+403
+00:21:23,440 --> 00:21:27,060
+I want to move on to another topic and I think this is one that's going to
+
+404
+00:21:27,060 --> 00:21:33,680
+involve both some discussion today and maybe some homework for next time.
+
+405
+00:21:34,040 --> 00:21:36,560
+Oh, uh, and I'll see what you think.
+
+406
+00:21:36,560 --> 00:21:38,880
+And I, cause I want to get one, some homework for us to do.
+
+407
+00:21:38,880 --> 00:21:44,600
+And then another one ideas from our listeners on what we should do.
+
+408
+00:21:44,600 --> 00:21:50,540
+So the topic is, it's not just personality tests, but I was
+
+409
+00:21:50,540 --> 00:21:54,260
+reflected talking to my daughter last night and she was sharing a bunch of
+
+410
+00:21:54,260 --> 00:22:00,100
+different, uh, different personality or characteristics tests she's done.
+
+411
+00:22:00,300 --> 00:22:01,540
+And she's done MBTI.
+
+412
+00:22:02,020 --> 00:22:07,100
+She's also done the test that says which, uh, Hogwarts house you would live in.
+
+413
+00:22:07,460 --> 00:22:09,140
+Uh, some other ones as well.
+
+414
+00:22:09,140 --> 00:22:11,780
+Another one called any agreement here.
+
+415
+00:22:12,660 --> 00:22:12,980
+Yeah.
+
+416
+00:22:13,020 --> 00:22:14,180
+Like which Marvel hero would you be?
+
+417
+00:22:14,180 --> 00:22:17,340
+Those are a little out there, but I want to talk about the ones I've done.
+
+418
+00:22:17,340 --> 00:22:19,820
+Cause we share a couple of these together.
+
+419
+00:22:19,940 --> 00:22:21,380
+We both done MBTI.
+
+420
+00:22:21,940 --> 00:22:22,300
+Yep.
+
+421
+00:22:22,300 --> 00:22:23,620
+Myers-Briggs type indicator.
+
+422
+00:22:24,100 --> 00:22:28,260
+That one is, it does give some good insights about yourself.
+
+423
+00:22:28,260 --> 00:22:30,700
+What I found most valuable in that one is understanding.
+
+424
+00:22:30,940 --> 00:22:32,780
+Cause again, it doesn't tell you how you act.
+
+425
+00:22:33,020 --> 00:22:35,860
+It tells you what's difficult and what gives you energy.
+
+426
+00:22:36,100 --> 00:22:38,580
+Uh, but there's some, there's some valuable information there.
+
+427
+00:22:39,020 --> 00:22:41,860
+We have both done a thing was very popular at Microsoft.
+
+428
+00:22:41,860 --> 00:22:43,740
+Not sure if it's still there anymore called insights.
+
+429
+00:22:43,740 --> 00:22:44,700
+Is that still being used there?
+
+430
+00:22:45,380 --> 00:22:46,460
+Uh, not to my knowledge.
+
+431
+00:22:46,460 --> 00:22:47,340
+Remember insights.
+
+432
+00:22:47,580 --> 00:22:48,420
+I need to look it up.
+
+433
+00:22:48,420 --> 00:22:50,460
+I have my book full of evaluations there.
+
+434
+00:22:50,460 --> 00:22:52,820
+You get a color and I think I'm blue, red.
+
+435
+00:22:52,980 --> 00:22:53,900
+I can't quite remember.
+
+436
+00:22:54,020 --> 00:22:57,700
+I'm definitely not green, which means nothing to anybody who hasn't taken it.
+
+437
+00:22:58,140 --> 00:22:58,380
+Yeah.
+
+438
+00:22:58,380 --> 00:23:02,900
+And, and actually I am red, blue and they're nearly equivalent.
+
+439
+00:23:02,940 --> 00:23:06,260
+I am like 0.05.
+
+440
+00:23:06,340 --> 00:23:09,140
+I should look and I believe I may have changed.
+
+441
+00:23:09,220 --> 00:23:11,460
+I think that one may change over time.
+
+442
+00:23:11,460 --> 00:23:11,900
+I'm not sure.
+
+443
+00:23:11,900 --> 00:23:13,100
+My roles are changed a lot.
+
+444
+00:23:13,740 --> 00:23:16,100
+So, so actually I've done this research.
+
+445
+00:23:16,100 --> 00:23:24,480
+I will tell you upfront, uh, the, the color one uses is no different than MBTI.
+
+446
+00:23:24,480 --> 00:23:25,440
+So it doesn't change.
+
+447
+00:23:25,680 --> 00:23:26,400
+It's who you are.
+
+448
+00:23:27,080 --> 00:23:30,120
+Well, it does change because the, the, the problem.
+
+449
+00:23:30,520 --> 00:23:34,600
+Carl Jung would say that with your MBTI, which, which it's based on his work.
+
+450
+00:23:34,800 --> 00:23:35,600
+You don't change.
+
+451
+00:23:35,600 --> 00:23:36,440
+It's your preferences.
+
+452
+00:23:36,440 --> 00:23:36,960
+They're innate.
+
+453
+00:23:36,960 --> 00:23:37,880
+They do not change.
+
+454
+00:23:38,320 --> 00:23:39,040
+Well, right.
+
+455
+00:23:39,080 --> 00:23:43,720
+Carl's Jung's work would say that MB, MBTI is.
+
+456
+00:23:43,720 --> 00:23:46,000
+Actually a far cry from Carl Jung's work.
+
+457
+00:23:46,240 --> 00:23:46,440
+Okay.
+
+458
+00:23:46,440 --> 00:23:49,040
+It's agreed.
+
+459
+00:23:49,040 --> 00:23:52,240
+Although it's based on that, it's based on that knowledge.
+
+460
+00:23:52,360 --> 00:23:55,440
+So there has to be, there has to be something to that statement.
+
+461
+00:23:55,880 --> 00:24:00,960
+But what I'm, what I was trying to close on is MBTI and insights has a direct
+
+462
+00:24:00,960 --> 00:24:06,680
+relationship and, and the insight stuff is actually just using two letters from.
+
+463
+00:24:07,160 --> 00:24:07,920
+MBTI.
+
+464
+00:24:08,440 --> 00:24:08,680
+Okay.
+
+465
+00:24:08,680 --> 00:24:11,200
+And it's I versus E or T versus F.
+
+466
+00:24:11,280 --> 00:24:18,640
+And so if you are an extroverted feeler, you're a yellow, if you are a,
+
+467
+00:24:19,120 --> 00:24:19,440
+yep.
+
+468
+00:24:19,720 --> 00:24:20,800
+And basically,
+
+469
+00:24:20,880 --> 00:24:23,000
+which is don't we have the same MBTI type?
+
+470
+00:24:23,480 --> 00:24:23,920
+We do.
+
+471
+00:24:24,120 --> 00:24:27,840
+That's why I'm, I'm like a little more, little more, which is weird
+
+472
+00:24:28,120 --> 00:24:31,560
+that I am a blue, red, and you're a red, blue, because you're the
+
+473
+00:24:31,560 --> 00:24:33,160
+one in the analytics role.
+
+474
+00:24:34,100 --> 00:24:34,580
+Uh, yeah.
+
+475
+00:24:34,580 --> 00:24:38,660
+But if you look at mine, they're really close to exactly the same.
+
+476
+00:24:38,900 --> 00:24:42,060
+Like there are times I just simply describe myself as purple.
+
+477
+00:24:42,500 --> 00:24:42,820
+Okay.
+
+478
+00:24:42,900 --> 00:24:45,700
+I want to, uh, I will get mine out before next time.
+
+479
+00:24:45,700 --> 00:24:46,860
+I want to dive a little bit deeper.
+
+480
+00:24:47,020 --> 00:24:51,220
+We've also both done strength finders, which I think is a really good one as well.
+
+481
+00:24:51,580 --> 00:24:52,060
+Yes.
+
+482
+00:24:52,220 --> 00:24:54,740
+And so I want to talk again a little bit about those.
+
+483
+00:24:54,740 --> 00:24:58,180
+And the reason is, is I mentioned this in a five for Friday.
+
+484
+00:24:58,180 --> 00:25:02,340
+I think a few of the three have done it, but there's a new one from Pat Lanchoni,
+
+485
+00:25:02,340 --> 00:25:06,180
+who's the author of five dysfunctions of a team and a bunch of other books
+
+486
+00:25:06,180 --> 00:25:10,140
+of which I have read every single one of them, probably at least twice each for now.
+
+487
+00:25:10,140 --> 00:25:10,580
+All of them.
+
+488
+00:25:10,900 --> 00:25:13,180
+I'm a huge fan of his work and his podcast.
+
+489
+00:25:13,780 --> 00:25:14,700
+And he has a new one.
+
+490
+00:25:14,700 --> 00:25:17,260
+He calls working genius.
+
+491
+00:25:18,320 --> 00:25:22,200
+And I'm not going to do a full advertisement for Pat Lanchoni and his working genius,
+
+492
+00:25:22,200 --> 00:25:26,080
+but he says there's six types of six types of sort of leadership genius
+
+493
+00:25:26,080 --> 00:25:27,200
+you bring to the table.
+
+494
+00:25:27,520 --> 00:25:28,360
+Maybe I'll bring mine up.
+
+495
+00:25:28,360 --> 00:25:30,040
+Maybe I will talk about them a little bit.
+
+496
+00:25:30,240 --> 00:25:33,120
+If you haven't done the test, he should not even give you a code
+
+497
+00:25:33,120 --> 00:25:34,880
+for one if you want it, you don't, you didn't have to pay for it.
+
+498
+00:25:35,120 --> 00:25:35,320
+Okay.
+
+499
+00:25:35,320 --> 00:25:38,720
+So he says there's the genius of wonder, which is the natural gift of pondering
+
+500
+00:25:38,720 --> 00:25:41,640
+the possibility of greater potential and opportunity given situation.
+
+501
+00:25:41,840 --> 00:25:45,640
+The genius of invention, natural gift of creating original and novel ideas
+
+502
+00:25:45,640 --> 00:25:50,200
+and solutions, genius of discernment, natural gift of intuitively and
+
+503
+00:25:50,200 --> 00:25:54,280
+instinctively evaluating ideas and situations, galvanizing, which is
+
+504
+00:25:54,280 --> 00:25:57,920
+rallying, inspiring and organizing, enablement, which is providing
+
+505
+00:25:57,920 --> 00:26:02,160
+encouragement and assistance for an idea or project and tenacity, which
+
+506
+00:26:02,160 --> 00:26:04,800
+is pushing projects or tasks to completion or achieve results.
+
+507
+00:26:05,320 --> 00:26:08,080
+I have, I'm curious for your opinions on this.
+
+508
+00:26:08,080 --> 00:26:10,120
+I'll give you more time to look at it before the next podcast.
+
+509
+00:26:10,120 --> 00:26:12,520
+Cause sometimes I like it.
+
+510
+00:26:12,680 --> 00:26:17,360
+Cause the idea is that there's probably two of these that you love doing
+
+511
+00:26:17,720 --> 00:26:20,760
+two that you know how to do and two that you suck at.
+
+512
+00:26:20,800 --> 00:26:23,400
+You need to work with people that can do that to help you get stuff done.
+
+513
+00:26:23,600 --> 00:26:28,120
+But I look at those and I've had to do, well, I suppose it's fair to say
+
+514
+00:26:28,120 --> 00:26:29,520
+I've had to do all of those.
+
+515
+00:26:29,520 --> 00:26:34,680
+So maybe the question is to look at which ones the evaluation I did
+
+516
+00:26:34,680 --> 00:26:37,480
+says that I don't like doing cause they, they didn't realize it didn't
+
+517
+00:26:37,480 --> 00:26:40,200
+like doing them. And there is something to that as well.
+
+518
+00:26:40,560 --> 00:26:42,400
+And from mine, I won't go deeply into these.
+
+519
+00:26:42,400 --> 00:26:46,240
+I won't go into everything, but I am best at discernment and galvanizing.
+
+520
+00:26:46,560 --> 00:26:51,040
+So I am good and enjoy using intuition and instincts to evaluate and
+
+521
+00:26:51,040 --> 00:26:52,520
+assess ideas or plans.
+
+522
+00:26:52,720 --> 00:26:58,120
+That's the N in INTP and I'm galvanizing, which is I get people to do
+
+523
+00:26:58,120 --> 00:27:01,920
+shit together, you're good at and enjoy rallying people and inspiring
+
+524
+00:27:01,920 --> 00:27:04,240
+them to take action around a project task or idea.
+
+525
+00:27:04,400 --> 00:27:08,160
+And what's funny with that is my inspiration for wanting to do that and to
+
+526
+00:27:08,160 --> 00:27:11,560
+get people to rally around that idea, which may lead into another topic
+
+527
+00:27:11,560 --> 00:27:12,080
+here in a minute.
+
+528
+00:27:12,080 --> 00:27:16,720
+So let's put a little pin there is that I read one of his books.
+
+529
+00:27:16,760 --> 00:27:21,720
+I forget which one it was called now, but this idea that when companies
+
+530
+00:27:21,720 --> 00:27:25,320
+are in trouble, like when Microsoft had their security issues back in
+
+531
+00:27:25,320 --> 00:27:29,080
+the early two thousands, the company rallied around improving in security.
+
+532
+00:27:29,080 --> 00:27:30,000
+There was a rallying cry.
+
+533
+00:27:30,000 --> 00:27:30,960
+People were excited about it.
+
+534
+00:27:30,960 --> 00:27:31,760
+They were invested in it.
+
+535
+00:27:31,760 --> 00:27:33,440
+They wanted to get better, learn a bunch of stuff.
+
+536
+00:27:33,680 --> 00:27:35,480
+And they built this culture of security.
+
+537
+00:27:35,720 --> 00:27:38,560
+Well, the concept of this book was you want to build that rallying cry
+
+538
+00:27:38,560 --> 00:27:39,720
+before there's a crisis.
+
+539
+00:27:39,920 --> 00:27:43,520
+You want to have something you align on and the organization wants to do
+
+540
+00:27:44,040 --> 00:27:46,080
+before there's a problem that they're trying to solve.
+
+541
+00:27:46,640 --> 00:27:48,200
+And so that was very inspiring to me.
+
+542
+00:27:48,200 --> 00:27:50,720
+So that's kind of the way I've approached a lot of my leadership since then.
+
+543
+00:27:50,720 --> 00:27:53,680
+So there could be a weird bias in the reason that one's such
+
+544
+00:27:53,680 --> 00:27:55,440
+an important for me, but I do enjoy that.
+
+545
+00:27:55,480 --> 00:27:59,840
+I love seeing organizations come together or people across an organization
+
+546
+00:27:59,840 --> 00:28:01,600
+come together to solve a common problem.
+
+547
+00:28:01,680 --> 00:28:04,800
+And I'm going to give you an example about that in a little bit, but curious,
+
+548
+00:28:04,800 --> 00:28:08,200
+it sounds like you've typed up and are glancing at the, uh, the site right now.
+
+549
+00:28:08,240 --> 00:28:11,000
+Any initial feedback before we maybe dive a little deeper next time?
+
+550
+00:28:11,040 --> 00:28:15,880
+This is interesting in, at least in some regards, obviously I have
+
+551
+00:28:15,880 --> 00:28:17,320
+not ever heard of this before.
+
+552
+00:28:17,520 --> 00:28:20,160
+It's it only came out like literally three months ago.
+
+553
+00:28:20,800 --> 00:28:26,840
+There is, I mean, I could see connections to this to both
+
+554
+00:28:26,840 --> 00:28:28,840
+strength finders and the MBTI.
+
+555
+00:28:29,900 --> 00:28:33,620
+Actually, he brings it up in five dysfunctions of a team that he is a big fan
+
+556
+00:28:33,620 --> 00:28:37,220
+of MBTI and likes to do that across all of the teams he works with.
+
+557
+00:28:37,220 --> 00:28:38,660
+So definitely some influence there.
+
+558
+00:28:39,180 --> 00:28:39,380
+Yeah.
+
+559
+00:28:39,380 --> 00:28:44,620
+The thing I think is the thing I like about MBTI is it really helps
+
+560
+00:28:44,660 --> 00:28:50,370
+promote understanding when used in the right context, right?
+
+561
+00:28:50,410 --> 00:28:57,410
+Um, an example is basically one example I bring up.
+
+562
+00:28:57,850 --> 00:29:00,890
+So I know a lot about MBTI and I'm fairly certain I could
+
+563
+00:29:00,890 --> 00:29:01,930
+teach a course on it.
+
+564
+00:29:02,450 --> 00:29:06,170
+Like way Ts and Fs look at the world is different.
+
+565
+00:29:07,080 --> 00:29:08,960
+Just as an example, if I'm
+
+566
+00:29:09,240 --> 00:29:12,360
+these are intuitive and feeling for those that aren't doing
+
+567
+00:29:12,360 --> 00:29:15,440
+that the MBTI lingo TNF is thinking and feeling.
+
+568
+00:29:15,480 --> 00:29:15,760
+That's right.
+
+569
+00:29:15,760 --> 00:29:16,360
+Thinking and feeling.
+
+570
+00:29:16,360 --> 00:29:16,560
+Yeah.
+
+571
+00:29:16,640 --> 00:29:17,160
+What did I say?
+
+572
+00:29:17,400 --> 00:29:18,200
+Touching and feeling.
+
+573
+00:29:18,520 --> 00:29:19,120
+That's not it.
+
+574
+00:29:19,440 --> 00:29:19,680
+Yeah.
+
+575
+00:29:19,760 --> 00:29:20,560
+No, that's a different letter.
+
+576
+00:29:20,920 --> 00:29:25,880
+And that particular letter it's what it, what it's evaluating is your
+
+577
+00:29:25,880 --> 00:29:29,480
+general preference around how you decide.
+
+578
+00:29:30,040 --> 00:29:34,240
+And so the other letters sort of focus on what sort of things do you
+
+579
+00:29:34,240 --> 00:29:36,080
+bring to the table to make the decision?
+
+580
+00:29:36,080 --> 00:29:40,160
+The TNF is what standard, but is it that you use to decide and
+
+581
+00:29:40,160 --> 00:29:46,880
+T's sort of decide between right and wrong in a, in a logical sense.
+
+582
+00:29:47,280 --> 00:29:54,080
+Fs their standard is good and bad on a, on a more of a morality sense.
+
+583
+00:29:54,720 --> 00:29:59,400
+And one of the things that I've learned from using this is that if you go in and
+
+584
+00:29:59,400 --> 00:30:05,880
+have a conversation as a T with someone who's an F and say you're wrong
+
+585
+00:30:07,050 --> 00:30:11,050
+subconsciously, the way they interpret it is that you just told them they're
+
+586
+00:30:11,050 --> 00:30:14,600
+immoral, right, which will bit flip them.
+
+587
+00:30:14,600 --> 00:30:17,920
+But the other thing, so you and I, we're very different on
+
+588
+00:30:17,920 --> 00:30:19,800
+strength finders, those results.
+
+589
+00:30:19,800 --> 00:30:21,280
+And I just look at this list.
+
+590
+00:30:21,280 --> 00:30:24,400
+I also suspect you and I will be very different.
+
+591
+00:30:24,560 --> 00:30:25,240
+I think so too.
+
+592
+00:30:25,760 --> 00:30:28,200
+Yeah, it's about, it's a little bit more about execution and how you
+
+593
+00:30:28,200 --> 00:30:30,040
+execute with your personality.
+
+594
+00:30:30,480 --> 00:30:31,240
+Anyway, I'm curious.
+
+595
+00:30:31,600 --> 00:30:33,520
+Oh, I'll take it as soon as I can.
+
+596
+00:30:33,600 --> 00:30:33,880
+Yeah.
+
+597
+00:30:33,920 --> 00:30:40,290
+So, I don't know, let me just segue and talk about how I've applied that second
+
+598
+00:30:40,290 --> 00:30:43,890
+one and maybe for next time, if you, if you take it and get some examples like,
+
+599
+00:30:43,890 --> 00:30:44,970
+Oh, Hey, I've done this before.
+
+600
+00:30:45,210 --> 00:30:51,450
+So as our listeners know, a few months ago, maybe six months ago, I expanded
+
+601
+00:30:51,450 --> 00:30:54,210
+my role to cover a lot larger.
+
+602
+00:30:54,690 --> 00:31:00,170
+Well, basically all of the infrastructure support and everything for services at
+
+603
+00:31:00,170 --> 00:31:00,530
+unity.
+
+604
+00:31:00,930 --> 00:31:05,570
+So what that means is I have this team of roughly, roughly 75 people in
+
+605
+00:31:05,570 --> 00:31:09,870
+a variety of different roles, how the team had functioned previously and it
+
+606
+00:31:09,870 --> 00:31:14,910
+worked and I'm sure we all know teams like this, they're very busy.
+
+607
+00:31:15,430 --> 00:31:19,510
+They did important work, but it was, it was just a lot of incremental
+
+608
+00:31:19,510 --> 00:31:23,510
+development across a whole bunch of different areas, which is good.
+
+609
+00:31:23,710 --> 00:31:24,630
+They kept teams running.
+
+610
+00:31:24,630 --> 00:31:27,710
+I mean, our, our slowest deployment pipeline is 40 minutes.
+
+611
+00:31:27,710 --> 00:31:29,430
+So it's not like they were bad at anything.
+
+612
+00:31:29,790 --> 00:31:31,030
+They're actually very effective.
+
+613
+00:31:31,190 --> 00:31:35,150
+But one of the things I wanted to do the rally and cry, and I won't go
+
+614
+00:31:35,150 --> 00:31:39,030
+into any details on what our rallying cries were, but I picked a small
+
+615
+00:31:39,030 --> 00:31:42,070
+number of projects that these are some things we got to keep the business
+
+616
+00:31:42,070 --> 00:31:42,390
+running.
+
+617
+00:31:42,710 --> 00:31:47,150
+We got to keep accelerating our every development team's ability to
+
+618
+00:31:47,150 --> 00:31:48,830
+deliver easier, faster, safer.
+
+619
+00:31:49,150 --> 00:31:52,110
+We talked about that before, but also there are a few big rocks.
+
+620
+00:31:52,110 --> 00:31:52,910
+I want to move.
+
+621
+00:31:53,590 --> 00:31:58,840
+I wanted to ignore as much as possible organizational structure and say,
+
+622
+00:31:58,840 --> 00:32:01,200
+if you need help, ask for it.
+
+623
+00:32:01,520 --> 00:32:04,960
+If there's something else, something happening outside of your direct team,
+
+624
+00:32:04,960 --> 00:32:07,760
+you think you'd have some insight on, please go work on that.
+
+625
+00:32:07,880 --> 00:32:11,640
+Get your day job done, but, but please find ways to collaborate across
+
+626
+00:32:11,640 --> 00:32:14,160
+teams as we try and move these big rocks.
+
+627
+00:32:14,760 --> 00:32:18,680
+So I set the rallying cry and Darna, if it didn't work, I mentioned
+
+628
+00:32:18,680 --> 00:32:20,320
+before you, I manage our documentation team.
+
+629
+00:32:20,320 --> 00:32:23,800
+And one of the things we're working on is spinning up our own customer
+
+630
+00:32:23,800 --> 00:32:24,840
+facing doc portal.
+
+631
+00:32:25,580 --> 00:32:29,700
+If they weren't in my team full of a bunch of people who really, who know
+
+632
+00:32:29,700 --> 00:32:33,220
+how to build pipelines and deploy stuff to web services, that would
+
+633
+00:32:33,220 --> 00:32:34,980
+have been a lot slower process.
+
+634
+00:32:35,220 --> 00:32:40,020
+We just kicked that off short time ago and that pipeline is already built.
+
+635
+00:32:40,540 --> 00:32:44,980
+And it works and it's magic and it's great, but this is multiple
+
+636
+00:32:44,980 --> 00:32:46,380
+teams working together.
+
+637
+00:32:46,540 --> 00:32:48,620
+This is world of Warcraft guide to project management.
+
+638
+00:32:48,820 --> 00:32:53,380
+We brought varying skill sets, regardless of managerial structure.
+
+639
+00:32:53,900 --> 00:32:54,900
+And we're not a holocracy.
+
+640
+00:32:54,900 --> 00:32:57,380
+We have people managers who are responsible for people's growth
+
+641
+00:32:57,380 --> 00:33:00,740
+and finding the right work, but we built a system in which they could
+
+642
+00:33:01,300 --> 00:33:07,740
+easily help each other out and find where they could align and
+
+643
+00:33:07,740 --> 00:33:08,940
+make sure everything got done.
+
+644
+00:33:09,060 --> 00:33:10,940
+So pretty happy with that.
+
+645
+00:33:11,260 --> 00:33:13,220
+Uh, but again, that came from the rallying cry.
+
+646
+00:33:13,460 --> 00:33:15,500
+Like we're going to, we're going to work together on stuff.
+
+647
+00:33:15,540 --> 00:33:18,460
+I'm going to provide some vehicles for you to discover what's happening
+
+648
+00:33:18,460 --> 00:33:21,700
+across the org and these few things are the important things that
+
+649
+00:33:21,700 --> 00:33:24,660
+we're really going to move on and set goals around.
+
+650
+00:33:25,100 --> 00:33:29,060
+So also for those rallying cries, I put some pretty, put some pretty big goals
+
+651
+00:33:29,060 --> 00:33:32,140
+in place so they could have something hard to shoot for what they get from
+
+652
+00:33:32,140 --> 00:33:36,460
+that, which ends up being able to show progress is they get some metrics
+
+653
+00:33:36,460 --> 00:33:38,500
+that actually matter around those ideas.
+
+654
+00:33:38,980 --> 00:33:39,220
+Yeah.
+
+655
+00:33:39,220 --> 00:33:45,460
+I actually think I have a slightly different perspective on
+
+656
+00:33:45,580 --> 00:33:47,020
+what you did, but it's an alignment.
+
+657
+00:33:47,380 --> 00:33:52,700
+I actually think what I, what happened here was, uh, what's this
+
+658
+00:33:52,700 --> 00:33:54,620
+last name, Johnson, Johnson,
+
+659
+00:33:55,600 --> 00:33:57,360
+Steven Johnson, where good ideas come from.
+
+660
+00:33:57,840 --> 00:33:58,200
+Yep.
+
+661
+00:33:58,440 --> 00:33:58,640
+Yeah.
+
+662
+00:33:58,680 --> 00:34:01,000
+What are the books we should just make the modern testing
+
+663
+00:34:01,000 --> 00:34:02,320
+bookshelf with our favorites.
+
+664
+00:34:03,040 --> 00:34:03,360
+Yeah.
+
+665
+00:34:03,400 --> 00:34:09,280
+It's that one where accelerate accelerate how to measure anything.
+
+666
+00:34:09,280 --> 00:34:12,000
+I think those would be, oh, and a lean startup.
+
+667
+00:34:12,120 --> 00:34:12,880
+It probably goes.
+
+668
+00:34:13,000 --> 00:34:13,480
+Yes.
+
+669
+00:34:13,840 --> 00:34:15,920
+That is, that is a very good start.
+
+670
+00:34:15,920 --> 00:34:16,360
+Yes.
+
+671
+00:34:16,800 --> 00:34:19,280
+The, but right.
+
+672
+00:34:19,640 --> 00:34:26,920
+You had constructed, so life had constructed an environment where these
+
+673
+00:34:26,920 --> 00:34:32,720
+two major, but typically separate big ideas were forced to come together.
+
+674
+00:34:33,600 --> 00:34:42,920
+And then you further sort of motivated the birthing of new ideas.
+
+675
+00:34:43,360 --> 00:34:45,560
+By, uh, your rallying cry.
+
+676
+00:34:45,880 --> 00:34:49,800
+And I mean, I, this is from Steven Johnson's book, but it's, it's apropos
+
+677
+00:34:49,840 --> 00:34:55,570
+is this is my job as a manager or as a leader of a large team is to create
+
+678
+00:34:55,570 --> 00:34:59,650
+the right opportunities and a Steven Johnson says chance favors the
+
+679
+00:34:59,650 --> 00:35:04,130
+connected mind, my role is to make these opportunities for people to discover.
+
+680
+00:35:04,730 --> 00:35:09,970
+One find work that's interesting to them and don't worry about organizational
+
+681
+00:35:10,930 --> 00:35:13,570
+boundaries and an org like mine where we don't ship a thing.
+
+682
+00:35:14,210 --> 00:35:16,730
+We make lots and lots of things.
+
+683
+00:35:16,930 --> 00:35:20,290
+Having ownership within a team is going to be a bottleneck.
+
+684
+00:35:21,050 --> 00:35:21,330
+Yeah.
+
+685
+00:35:21,330 --> 00:35:26,870
+The, the, the thing that I think is a strong skill you have, uh, with
+
+686
+00:35:26,870 --> 00:35:31,990
+people on that front is, and I'm nowhere near as skilled as you, uh, on
+
+687
+00:35:31,990 --> 00:35:38,270
+this one is just motivating the discovery.
+
+688
+00:35:38,470 --> 00:35:38,830
+Right.
+
+689
+00:35:39,390 --> 00:35:43,790
+You have, I don't know how many people let's say 50 people underneath you.
+
+690
+00:35:43,990 --> 00:35:50,590
+You have high confidence that they are as smart or smarter than you are.
+
+691
+00:35:50,630 --> 00:35:55,270
+I have actually 75 people in every single one of them is smarter than me.
+
+692
+00:35:55,710 --> 00:35:56,030
+Right.
+
+693
+00:35:56,510 --> 00:36:02,350
+Your job is to get that smartness working together and knowing that once
+
+694
+00:36:02,350 --> 00:36:07,470
+you've achieved the tipping point of the maybe a fifth book, you can get out of the way.
+
+695
+00:36:08,030 --> 00:36:10,350
+Your job is just to get it over, over the tipping point.
+
+696
+00:36:10,350 --> 00:36:12,390
+Well, let me go to another one of my favorite books.
+
+697
+00:36:12,390 --> 00:36:14,150
+This is the modern testing book episode.
+
+698
+00:36:14,150 --> 00:36:18,430
+So the, the, the, the leaders guide to radical management.
+
+699
+00:36:18,430 --> 00:36:22,890
+And this is the, um, what's his Facebook that'll come back to me in a minute.
+
+700
+00:36:22,890 --> 00:36:27,170
+But this was a business writer worked for Rodoloff for Forbes magazine.
+
+701
+00:36:27,170 --> 00:36:28,210
+Still writes for Forbes.
+
+702
+00:36:28,730 --> 00:36:29,490
+Why am I spacing out?
+
+703
+00:36:29,530 --> 00:36:31,770
+Denny, not Denny, maybe Denny.
+
+704
+00:36:32,050 --> 00:36:37,100
+Anyway, uh, he said, create an environment for people to work in and
+
+705
+00:36:37,220 --> 00:36:37,940
+get out of their way.
+
+706
+00:36:38,620 --> 00:36:42,220
+And again, it's all different ways of saying the same thing.
+
+707
+00:36:42,340 --> 00:36:47,140
+I have to give you a funny story here because I frequently tell my team, like,
+
+708
+00:36:47,180 --> 00:36:50,180
+I may have an idea, but please take all my ideas with a grain of salt.
+
+709
+00:36:50,340 --> 00:36:51,380
+You're doing the work.
+
+710
+00:36:51,540 --> 00:36:52,620
+You make the decisions.
+
+711
+00:36:53,140 --> 00:36:56,780
+And I was talking, I can't remember if it was a one-on-one or a meeting.
+
+712
+00:36:56,780 --> 00:37:01,260
+And I mentioned something and one of my newer leads was like, Alan said,
+
+713
+00:37:01,260 --> 00:37:03,220
+we should do this in, in, in a meeting.
+
+714
+00:37:03,220 --> 00:37:05,220
+And everybody else being just laughed at him.
+
+715
+00:37:06,670 --> 00:37:08,950
+Like, it doesn't matter what he says.
+
+716
+00:37:08,950 --> 00:37:12,750
+We make it cause they know, they know they've worked for me for longer, but, uh,
+
+717
+00:37:12,790 --> 00:37:16,750
+largely we have that culture is that I could say, you know what?
+
+718
+00:37:16,750 --> 00:37:19,870
+I think we should only deploy on Saturdays.
+
+719
+00:37:20,110 --> 00:37:24,110
+They would all tell me to go do something anatomically impossible with
+
+720
+00:37:24,110 --> 00:37:28,670
+myself because they know that I am not the one to make decisions like that.
+
+721
+00:37:28,670 --> 00:37:33,670
+I am going, my, my job is to set them up so they can make the best decisions
+
+722
+00:37:33,670 --> 00:37:37,190
+because I, I, they're one, they're smarter than me to the closer to the work.
+
+723
+00:37:38,550 --> 00:37:39,550
+Reminded me of that story.
+
+724
+00:37:39,550 --> 00:37:40,230
+I thought it was funny.
+
+725
+00:37:40,310 --> 00:37:43,230
+I had to go, no, here's what we should do.
+
+726
+00:37:43,230 --> 00:37:47,200
+I could add a kind of phrase of like, I don't want to give all the details of,
+
+727
+00:37:47,200 --> 00:37:50,480
+I said, yeah, there could be a situation where it's, it's true.
+
+728
+00:37:50,480 --> 00:37:51,680
+It's not universally true.
+
+729
+00:37:51,840 --> 00:37:54,160
+I rely on you all to make the decision on what to do here.
+
+730
+00:37:55,120 --> 00:37:59,080
+But most people get that after, you know, you have to, again, going back to
+
+731
+00:37:59,080 --> 00:38:03,000
+L'Ancioni, you communicate the rally and cry.
+
+732
+00:38:03,160 --> 00:38:08,640
+You clarify the rally and cry, and then you communicate the rally and cry again,
+
+733
+00:38:08,640 --> 00:38:09,240
+something like that.
+
+734
+00:38:09,960 --> 00:38:10,840
+It's working well.
+
+735
+00:38:10,960 --> 00:38:11,840
+Oh, one other story.
+
+736
+00:38:11,840 --> 00:38:16,720
+And again, going back to management is again, I'm going to be very fuzzy on
+
+737
+00:38:16,720 --> 00:38:21,160
+details, a lot of times just setting yourself up to take advantage of.
+
+738
+00:38:21,980 --> 00:38:25,660
+You spend a lot of time setting yourself up to be ready for what happens next.
+
+739
+00:38:26,340 --> 00:38:27,020
+Does that make sense?
+
+740
+00:38:27,020 --> 00:38:27,660
+Like you, you.
+
+741
+00:38:28,300 --> 00:38:33,660
+I spend time making sure that I can be adaptive and I had a tiny little change
+
+742
+00:38:33,660 --> 00:38:38,780
+happen with the career director, someone on my team, and it immediately,
+
+743
+00:38:39,640 --> 00:38:45,520
+immediately solved a major, a major, I would say a problem or a challenge,
+
+744
+00:38:45,520 --> 00:38:48,720
+but a structural thing I've been thinking about how to take care of on my team.
+
+745
+00:38:48,800 --> 00:38:52,560
+By one person making a different choice, a bunch of stuff fell into place
+
+746
+00:38:52,560 --> 00:38:55,800
+perfectly and everybody involved is super excited about it.
+
+747
+00:38:55,800 --> 00:38:58,520
+So being ready for those things is what I like to do.
+
+748
+00:38:58,560 --> 00:39:00,600
+Just, I love adapting so much.
+
+749
+00:39:00,600 --> 00:39:06,160
+And, uh, I've told my team this too, is that everything I do in management is agile.
+
+750
+00:39:06,560 --> 00:39:07,200
+It's lean.
+
+751
+00:39:07,440 --> 00:39:11,440
+I try, I will try stuff all the time with the expectation that a big chunk of it
+
+752
+00:39:11,440 --> 00:39:14,730
+won't work and they're getting used to that, which is great.
+
+753
+00:39:14,770 --> 00:39:16,630
+So yeah.
+
+754
+00:39:16,630 --> 00:39:17,230
+And that's what I do.
+
+755
+00:39:17,710 --> 00:39:21,030
+And that's, that's, that's what, that's what energizes me is what allows me to be
+
+756
+00:39:21,030 --> 00:39:23,590
+a manager and not hate it.
+
+757
+00:39:24,790 --> 00:39:25,510
+That yeah.
+
+758
+00:39:25,510 --> 00:39:26,670
+You're in a perfect role.
+
+759
+00:39:26,670 --> 00:39:31,750
+Like for the majority of the time I've known you, you've been anti-management.
+
+760
+00:39:32,710 --> 00:39:32,990
+Right.
+
+761
+00:39:33,030 --> 00:39:35,350
+Well, I didn't want to be a manager at Microsoft.
+
+762
+00:39:35,710 --> 00:39:36,670
+Things are better now.
+
+763
+00:39:36,870 --> 00:39:42,120
+But when at that time at Microsoft, it was on, how would you put it?
+
+764
+00:39:42,440 --> 00:39:45,680
+It wasn't a good thing to want to manage a high performing team.
+
+765
+00:39:45,880 --> 00:39:49,920
+You wanted to manage a team with a few good people, a few, okay, people
+
+766
+00:39:50,040 --> 00:39:53,600
+and a few crappy people, because you had to fit a curve, whether you had
+
+767
+00:39:53,600 --> 00:39:56,000
+a curve or not, cause we had a curve and we didn't have a curve.
+
+768
+00:39:56,040 --> 00:39:59,880
+The curve lasted through several different versions of the review cycle.
+
+769
+00:40:01,130 --> 00:40:02,170
+I didn't want to deal with that.
+
+770
+00:40:02,170 --> 00:40:07,130
+There was too much emotional and bureaucratic and political baggage
+
+771
+00:40:07,130 --> 00:40:10,330
+that came with being a manager at Microsoft for the majority of my career.
+
+772
+00:40:10,330 --> 00:40:12,650
+There I've heard a lot of that's better now.
+
+773
+00:40:13,250 --> 00:40:16,570
+It is a lot better, but I mean, we're not even.
+
+774
+00:40:18,000 --> 00:40:23,700
+So I'd been here now 26 years and that really started when
+
+775
+00:40:23,700 --> 00:40:29,620
+Satya got here and it's still far from solidified the, but it's going
+
+776
+00:40:29,620 --> 00:40:33,020
+in the right direction, but I totally know what you're talking about.
+
+777
+00:40:33,020 --> 00:40:44,100
+Like you were the review system physically incentivize you to construct heroes.
+
+778
+00:40:45,440 --> 00:40:45,680
+Right.
+
+779
+00:40:45,680 --> 00:40:46,640
+100% correct.
+
+780
+00:40:47,200 --> 00:40:47,480
+Yeah.
+
+781
+00:40:49,070 --> 00:40:54,470
+I mean, obviously heroes are rare and in the world that we're in now,
+
+782
+00:40:54,510 --> 00:40:59,510
+particularly Microsoft and in my case, I'm in Azure that that doesn't scale.
+
+783
+00:41:00,450 --> 00:41:05,050
+Like you, you have too few heroes to come and save the day for all the different
+
+784
+00:41:05,050 --> 00:41:07,210
+problems that we're having.
+
+785
+00:41:08,500 --> 00:41:11,100
+You need rockstar teams.
+
+786
+00:41:12,020 --> 00:41:15,820
+Um, and if, and let me give you an example of, and again, it's, it's a
+
+787
+00:41:15,820 --> 00:41:19,300
+lot of different stuff I know, Mike, I don't, a lot of people have noted my,
+
+788
+00:41:19,340 --> 00:41:23,500
+uh, consistent denouncing of Microsoft.
+
+789
+00:41:23,500 --> 00:41:28,700
+I found it hard to do the work that I loved doing there eventually.
+
+790
+00:41:29,180 --> 00:41:33,820
+You know, one example, like here, if I have, say I have 30 people on my team,
+
+791
+00:41:33,860 --> 00:41:37,140
+just knock it out of the park and all deserve big raises.
+
+792
+00:41:37,820 --> 00:41:41,300
+Let's say HR comes back and says, you don't have the budget for that.
+
+793
+00:41:41,780 --> 00:41:43,060
+At Microsoft you're screwed, right?
+
+794
+00:41:43,060 --> 00:41:47,100
+I mean, I would go talk to our CEO about that and show data that
+
+795
+00:41:47,100 --> 00:41:48,380
+showed what people were doing.
+
+796
+00:41:48,620 --> 00:41:51,540
+And I would get that budget we could take care of them.
+
+797
+00:41:51,540 --> 00:41:53,300
+If people do good work, we can take care of them.
+
+798
+00:41:54,140 --> 00:41:54,420
+Yeah.
+
+799
+00:41:54,980 --> 00:41:57,860
+I don't, I don't, I mean, there is a budget.
+
+800
+00:41:57,860 --> 00:42:00,100
+I can't just lie and say my whole team's great.
+
+801
+00:42:00,100 --> 00:42:02,180
+Everyone gets a 20% raise.
+
+802
+00:42:02,740 --> 00:42:03,540
+I can't do that.
+
+803
+00:42:03,540 --> 00:42:08,300
+No, it's, it's, you can't do that.
+
+804
+00:42:08,300 --> 00:42:15,870
+And even, and even if you could, um, it wouldn't be the right thing to do
+
+805
+00:42:15,870 --> 00:42:20,700
+because the point of the incentive model is to incentivize.
+
+806
+00:42:21,100 --> 00:42:23,980
+And if you were to do something like that, it would, it would
+
+807
+00:42:23,980 --> 00:42:26,260
+probably lead to bad behaviors.
+
+808
+00:42:26,260 --> 00:42:26,580
+Like, yeah.
+
+809
+00:42:26,660 --> 00:42:30,940
+And like another thing, other one for the, the book list is we never call it out
+
+810
+00:42:30,940 --> 00:42:36,780
+explicitly, but a lot of our, I use Dan pink's autonomy, mastery, and purpose
+
+811
+00:42:36,780 --> 00:42:42,140
+model a lot, like our whole review discussion is based on tying the work
+
+812
+00:42:42,140 --> 00:42:43,580
+you do to purpose.
+
+813
+00:42:43,660 --> 00:42:45,100
+So we worry about purpose a lot.
+
+814
+00:42:45,580 --> 00:42:48,620
+And we want people to understand how the work they do impacts the company.
+
+815
+00:42:48,860 --> 00:42:52,540
+And we, of course, as Dan pink says, pay them enough money where money is not
+
+816
+00:42:52,540 --> 00:42:57,060
+the issue and people are motivated by a reward in the short term, but in the
+
+817
+00:42:57,060 --> 00:43:02,860
+longterm they're more motivated by having work that they enjoy and that challenges
+
+818
+00:43:02,860 --> 00:43:05,380
+them, I'm not saying don't pay them.
+
+819
+00:43:05,940 --> 00:43:09,100
+The motivation you get from a pay raise is short lived.
+
+820
+00:43:09,860 --> 00:43:10,420
+It is.
+
+821
+00:43:10,420 --> 00:43:15,860
+And there's been lots of different studies on this that essentially once
+
+822
+00:43:15,860 --> 00:43:23,820
+you've gotten past sort of a bare minimum of fiscal stability, I'll just
+
+823
+00:43:23,820 --> 00:43:29,620
+call it that way, whether, whether it be, you know, you have big dreams of,
+
+824
+00:43:29,940 --> 00:43:36,500
+you know, toys or, or really all you need money to do is to make sure you
+
+825
+00:43:36,500 --> 00:43:40,020
+don't have to worry about it, which is kind of, that's kind of the
+
+826
+00:43:40,020 --> 00:43:41,580
+position I'm in.
+
+827
+00:43:42,100 --> 00:43:47,260
+I, I, I only want to get paid so much as I don't have to ever worry about it again.
+
+828
+00:43:47,300 --> 00:43:54,180
+I had this, this goes back to some pains in my, in growing up that I just
+
+829
+00:43:54,180 --> 00:43:57,220
+like, look, I don't want to ever go back to that.
+
+830
+00:43:57,220 --> 00:44:00,540
+And as long as I have enough to make sure that doesn't happen, it's great.
+
+831
+00:44:00,780 --> 00:44:05,500
+Purpose then becomes the better incentive.
+
+832
+00:44:06,780 --> 00:44:07,660
+And that's exactly it.
+
+833
+00:44:07,660 --> 00:44:12,140
+And I love that our review is, which is we call them three Q's, three questions,
+
+834
+00:44:12,140 --> 00:44:12,900
+three times a year.
+
+835
+00:44:13,420 --> 00:44:17,220
+The first thing we talk about is like, why is what you do important?
+
+836
+00:44:18,120 --> 00:44:19,520
+I do most of my discussion on that.
+
+837
+00:44:20,270 --> 00:44:21,510
+And then some are on mastery.
+
+838
+00:44:21,510 --> 00:44:23,350
+We have a discussion around how it's going.
+
+839
+00:44:23,350 --> 00:44:27,870
+And we ask questions around, usually I ask, what would you like to do more or
+
+840
+00:44:27,870 --> 00:44:29,670
+less of or start doing or stop doing?
+
+841
+00:44:30,660 --> 00:44:31,980
+Like a starfish with respect.
+
+842
+00:44:31,980 --> 00:44:32,300
+Yeah.
+
+843
+00:44:32,380 --> 00:44:32,620
+Yeah.
+
+844
+00:44:32,660 --> 00:44:34,660
+And that, and we have a deep discussion about that.
+
+845
+00:44:34,660 --> 00:44:38,900
+And it's stuff we talk about generally in one-on-ones, but three times a year,
+
+846
+00:44:38,900 --> 00:44:42,140
+we have a longer and deeper and more reflective one-on-one we call our
+
+847
+00:44:42,140 --> 00:44:45,460
+three key process, and it's about making sure we're connected with what
+
+848
+00:44:45,460 --> 00:44:47,460
+people want to do and making sure they enjoy.
+
+849
+00:44:48,220 --> 00:44:52,740
+We are so lucky in this world to do jobs that are hard and challenging
+
+850
+00:44:52,740 --> 00:44:54,380
+and fun and get paid for them.
+
+851
+00:44:55,290 --> 00:44:58,930
+So if anyone's not feeling challenged and having fun, I want to take care of
+
+852
+00:44:58,930 --> 00:45:00,810
+that because that's, that's, that's not good.
+
+853
+00:45:00,810 --> 00:45:01,530
+That's no bueno.
+
+854
+00:45:02,930 --> 00:45:04,330
+See no bueno.
+
+855
+00:45:05,850 --> 00:45:07,170
+Do those words make sense?
+
+856
+00:45:07,770 --> 00:45:09,770
+No, I've heard them before.
+
+857
+00:45:11,320 --> 00:45:12,840
+Spanish, not one of my languages.
+
+858
+00:45:13,240 --> 00:45:15,040
+No bueno means not good.
+
+859
+00:45:15,120 --> 00:45:15,320
+Yeah.
+
+860
+00:45:15,320 --> 00:45:15,560
+Okay.
+
+861
+00:45:15,600 --> 00:45:17,000
+I'm I'm, I am in the ballpark.
+
+862
+00:45:17,600 --> 00:45:18,320
+So cool.
+
+863
+00:45:18,320 --> 00:45:20,040
+So let's go ahead.
+
+864
+00:45:20,040 --> 00:45:20,600
+It's a quick question.
+
+865
+00:45:20,600 --> 00:45:22,400
+Well, what are the three questions again?
+
+866
+00:45:22,960 --> 00:45:25,480
+Oh, um, why is your mission important?
+
+867
+00:45:25,760 --> 00:45:26,760
+What are you doing?
+
+868
+00:45:27,520 --> 00:45:28,320
+How are you doing?
+
+869
+00:45:28,760 --> 00:45:29,560
+Or how's it going?
+
+870
+00:45:30,320 --> 00:45:33,440
+That those are the questions, but my variation, every manager has their own
+
+871
+00:45:33,440 --> 00:45:34,240
+take on those.
+
+872
+00:45:34,400 --> 00:45:38,440
+What I do with the why question is I make everyone tie their
+
+873
+00:45:38,440 --> 00:45:39,560
+mission to the customer.
+
+874
+00:45:40,080 --> 00:45:41,680
+How does this help our customer?
+
+875
+00:45:41,840 --> 00:45:45,680
+So if they don't get there in their, in their first track at it, I walk them
+
+876
+00:45:45,680 --> 00:45:47,920
+there because it's for me, it's really important.
+
+877
+00:45:47,920 --> 00:45:52,240
+They realize that we're at a size company where the work you do
+
+878
+00:45:52,280 --> 00:45:55,880
+affects our customers indirectly, but it affects them.
+
+879
+00:45:56,360 --> 00:45:57,960
+And then what are you doing?
+
+880
+00:45:57,960 --> 00:45:59,600
+And again, I know the work they do.
+
+881
+00:45:59,600 --> 00:46:01,880
+So I want to hear like, what are the, what are you most, what are you
+
+882
+00:46:01,880 --> 00:46:03,280
+most proud of over the last four months?
+
+883
+00:46:03,280 --> 00:46:06,040
+What's something you're really excited when you talk to your parents,
+
+884
+00:46:06,040 --> 00:46:07,280
+talking about your work, what do you talk about?
+
+885
+00:46:07,520 --> 00:46:11,240
+I want to get an idea of that gives me idea of motivation and then how it's
+
+886
+00:46:11,240 --> 00:46:13,880
+going, I mentioned before is the, is the starfish retro.
+
+887
+00:46:14,280 --> 00:46:18,720
+And then I add the, the fourth question, which I think is super valuable
+
+888
+00:46:18,720 --> 00:46:23,960
+is I asked them, what can I do more or less to help you be successful in your
+
+889
+00:46:23,960 --> 00:46:26,640
+mission and it's just my way of getting some feedback from them.
+
+890
+00:46:27,200 --> 00:46:27,560
+Yeah.
+
+891
+00:46:27,760 --> 00:46:30,240
+And I actually think that's an important way to go.
+
+892
+00:46:30,920 --> 00:46:36,370
+I was, I was, I was taking your three questions and then thinking through,
+
+893
+00:46:36,770 --> 00:46:42,500
+like, I, I like to keep these things simple and the more it, the more it's
+
+894
+00:46:42,500 --> 00:46:49,880
+simple, the more you can, you can have a really exciting partnership with your
+
+895
+00:46:49,880 --> 00:46:52,680
+report towards positive goals.
+
+896
+00:46:52,920 --> 00:46:53,160
+Yeah.
+
+897
+00:46:53,280 --> 00:46:57,770
+And that's where book plug again, this is going to be a record, but
+
+898
+00:46:57,770 --> 00:47:01,770
+radical candor says you have to, you care personally challenged directly.
+
+899
+00:47:01,850 --> 00:47:05,890
+So the better relationship I can build with these people that work for me,
+
+900
+00:47:06,090 --> 00:47:09,970
+the easier it is for both of us to give that direct feedback to each other.
+
+901
+00:47:10,450 --> 00:47:10,770
+Yeah.
+
+902
+00:47:10,850 --> 00:47:16,730
+And in that, that involves, I tell my staff, my very first
+
+903
+00:47:16,730 --> 00:47:19,470
+goal is to earn their trust.
+
+904
+00:47:19,630 --> 00:47:20,270
+Absolutely.
+
+905
+00:47:21,180 --> 00:47:22,140
+A million percent agree.
+
+906
+00:47:22,990 --> 00:47:23,430
+All right.
+
+907
+00:47:23,470 --> 00:47:23,750
+Cool.
+
+908
+00:47:23,830 --> 00:47:27,870
+Well, we meandered our way through another AAB testing podcast.
+
+909
+00:47:27,870 --> 00:47:31,390
+And as a teaser for next time, I'd like to talk about the, let's talk
+
+910
+00:47:31,390 --> 00:47:32,590
+about, let's start with working genius.
+
+911
+00:47:32,590 --> 00:47:36,590
+But if you have any other, maybe we'll just kind of walk through our results
+
+912
+00:47:36,590 --> 00:47:38,030
+on the other ones as well.
+
+913
+00:47:38,430 --> 00:47:42,630
+It'll be like the personality type review episode.
+
+914
+00:47:43,540 --> 00:47:47,140
+Is that the homework I got to take working genius and then bring in
+
+915
+00:47:47,340 --> 00:47:47,820
+the other things.
+
+916
+00:47:47,820 --> 00:47:47,860
+Yeah.
+
+917
+00:47:47,860 --> 00:47:49,540
+You can find it just to talk through them.
+
+918
+00:47:50,060 --> 00:47:54,460
+I'm also curious to hear if there are others of these.
+
+919
+00:47:54,620 --> 00:47:58,260
+I may also send you the quiz to help you figure out your Hogwarts house.
+
+920
+00:47:58,580 --> 00:47:59,940
+Cause that may be fun to talk about too.
+
+921
+00:48:00,260 --> 00:48:04,630
+You slithering you, but you're not really, you're not, you're, you're,
+
+922
+00:48:04,670 --> 00:48:05,990
+you're more of a Ravenclaw.
+
+923
+00:48:06,590 --> 00:48:07,470
+I think we'll find out.
+
+924
+00:48:07,870 --> 00:48:09,030
+I'm the blue one.
+
+925
+00:48:09,070 --> 00:48:10,070
+I've done this test.
+
+926
+00:48:10,070 --> 00:48:11,470
+I'd forget which one that is.
+
+927
+00:48:12,230 --> 00:48:13,070
+I haven't done it.
+
+928
+00:48:13,070 --> 00:48:13,990
+I'll have to figure it out.
+
+929
+00:48:16,110 --> 00:48:16,590
+All right.
+
+930
+00:48:16,590 --> 00:48:17,070
+Good.
+
+931
+00:48:17,390 --> 00:48:18,030
+Okay, man.
+
+932
+00:48:18,070 --> 00:48:21,990
+Thank you everyone for listening to yet another episode.
+
+933
+00:48:22,110 --> 00:48:24,350
+Well, by the way, did you, someone came to our slack
+
+934
+00:48:24,350 --> 00:48:27,910
+group again, you can get a link from modern testing.org to join, but someone
+
+935
+00:48:27,910 --> 00:48:31,110
+said they started at episode one and are working their way through.
+
+936
+00:48:31,270 --> 00:48:34,550
+And I can't imagine a more painful introduction to AB testing
+
+937
+00:48:34,790 --> 00:48:38,300
+than starting with episode one, but it happened.
+
+938
+00:48:38,740 --> 00:48:41,260
+I think it's actually very enlightening.
+
+939
+00:48:41,780 --> 00:48:43,380
+I've gone back and listened to it.
+
+940
+00:48:43,380 --> 00:48:52,980
+And it's like you, if you were to binge on it, you very quickly see how we
+
+941
+00:48:52,980 --> 00:48:56,500
+improve and then how we're on our way back down again right now.
+
+942
+00:48:56,740 --> 00:48:57,700
+Well, it could be, could be.
+
+943
+00:48:57,700 --> 00:48:59,340
+We definitely have our ups and downs.
+
+944
+00:48:59,380 --> 00:48:59,700
+All right.
+
+945
+00:48:59,900 --> 00:49:00,940
+Well, this has been fun.
+
+946
+00:49:01,100 --> 00:49:03,700
+Uh, thanks for hanging out with me today, Brent, and I'll see you in a
+
+947
+00:49:03,700 --> 00:49:07,500
+couple of weeks, but thanks everyone else for listening to AB testing.
+
+948
+00:49:07,980 --> 00:49:08,300
+Bye.
+

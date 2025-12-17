@@ -1,0 +1,2928 @@
+1
+00:00:12,370 --> 00:00:13,730
+Hello, everyone.
+
+2
+00:00:13,730 --> 00:00:14,730
+Happy.
+
+3
+00:00:14,730 --> 00:00:16,730
+You all right, Brett?
+
+4
+00:00:16,730 --> 00:00:20,970
+Yeah, not enough coffee for you to already start hitting on me.
+
+5
+00:00:20,970 --> 00:00:24,050
+Well, you know how things go when you're having fun.
+
+6
+00:00:24,050 --> 00:00:25,970
+I'm Alan, and that's Brent, as you can tell.
+
+7
+00:00:25,970 --> 00:00:29,050
+We're here for another episode of AB Testing.
+
+8
+00:00:29,050 --> 00:00:30,050
+Number 90.
+
+9
+00:00:30,050 --> 00:00:31,050
+Okay, so...
+
+10
+00:00:31,050 --> 00:00:34,650
+Hey, so what is the AB Podcast all about, Alan?
+
+11
+00:00:34,650 --> 00:00:35,650
+I...
+
+12
+00:00:35,650 --> 00:00:36,650
+It's...
+
+13
+00:00:36,650 --> 00:00:37,650
+I don't know.
+
+14
+00:00:37,650 --> 00:00:45,410
+And to your financial report of political views, AB Testing is a podcast by Alan and Brent,
+
+15
+00:00:45,410 --> 00:00:48,330
+and we talk about making great software.
+
+16
+00:00:48,330 --> 00:00:55,170
+Sometimes it's about software testing, sometimes it's about data science and other fancy buzzwords.
+
+17
+00:00:55,170 --> 00:00:59,290
+Software engineering, agile, leadership, most importantly.
+
+18
+00:00:59,290 --> 00:01:01,130
+Lately, this thing we've been talking about...
+
+19
+00:01:01,130 --> 00:01:02,130
+Shift left.
+
+20
+00:01:02,130 --> 00:01:06,370
+...nonstop, shift into my pants.
+
+21
+00:01:06,370 --> 00:01:10,920
+Modern testing.
+
+22
+00:01:10,920 --> 00:01:13,520
+And man, I got to tell you, it's weird.
+
+23
+00:01:13,520 --> 00:01:16,000
+We've been talking about...
+
+24
+00:01:16,000 --> 00:01:18,760
+We talked about the principles for a couple episodes.
+
+25
+00:01:18,760 --> 00:01:22,480
+Then we deep dove into the principles for a while.
+
+26
+00:01:22,480 --> 00:01:26,880
+And then we took questions that came up during those discussions for a while.
+
+27
+00:01:26,880 --> 00:01:34,340
+And it's been a long time since we had a podcast where the topic wasn't specifically
+
+28
+00:01:34,340 --> 00:01:37,940
+modern testing, even though we always...
+
+29
+00:01:37,940 --> 00:01:38,940
+Will come up.
+
+30
+00:01:38,940 --> 00:01:40,100
+For sure.
+
+31
+00:01:40,100 --> 00:01:45,740
+But it's a little weird, as I was driving here this morning, there's a weird thing that
+
+32
+00:01:45,740 --> 00:01:53,710
+happens if you don't live in the Northwest, in the tech center of Washington.
+
+33
+00:01:53,710 --> 00:01:56,350
+There's a vortex where...
+
+34
+00:01:56,350 --> 00:02:00,230
+Maybe it's a vortex, I'm not sure, but you can tell how close you are to Microsoft
+
+35
+00:02:00,230 --> 00:02:06,160
+Campus by how bad the driving is.
+
+36
+00:02:06,160 --> 00:02:10,640
+And there's a correlation, and maybe you can do the data science on this, it's expensive
+
+37
+00:02:10,640 --> 00:02:11,960
+cars driving poorly.
+
+38
+00:02:11,960 --> 00:02:14,280
+Oh my God, I must be near a Microsoft building.
+
+39
+00:02:14,280 --> 00:02:16,380
+Are you sure it's Microsoft?
+
+40
+00:02:16,380 --> 00:02:18,800
+I'm pretty damn sure.
+
+41
+00:02:18,800 --> 00:02:25,930
+Because I think it's the tech center.
+
+42
+00:02:25,930 --> 00:02:30,250
+It's not like there's a lot of other tech companies buried around here.
+
+43
+00:02:30,250 --> 00:02:33,250
+They are in the Northwest, but around the Microsoft Campus, it's Microsoft.
+
+44
+00:02:33,250 --> 00:02:36,930
+Oh, so yeah, if you come closer to the East side, yeah, it's definitely...
+
+45
+00:02:36,930 --> 00:02:40,730
+Yeah, as I get closer to the Microsoft headquarters...
+
+46
+00:02:40,730 --> 00:02:43,130
+There's Google on the East side as well.
+
+47
+00:02:43,130 --> 00:02:45,690
+But they're up in Kirkland, they're not here in this epicenter.
+
+48
+00:02:45,690 --> 00:02:48,650
+And they may drive poorly there too, but I can tell as I...
+
+49
+00:02:48,650 --> 00:02:50,890
+I'm fairly certain they do.
+
+50
+00:02:50,890 --> 00:02:53,450
+All right, well, I want you to go do the...
+
+51
+00:02:53,450 --> 00:02:54,650
+And then I would also...
+
+52
+00:02:54,650 --> 00:02:57,410
+Do the proofy proofy data science stuff on that.
+
+53
+00:02:57,410 --> 00:02:59,450
+Yeah, I will get right on that.
+
+54
+00:02:59,450 --> 00:03:03,970
+All right, so that's my hypothesis.
+
+55
+00:03:03,970 --> 00:03:10,530
+My hypothesis is that if I see an expensive car driving very, very badly, I'm near a Microsoft
+
+56
+00:03:10,530 --> 00:03:12,130
+building.
+
+57
+00:03:12,130 --> 00:03:17,970
+I think it's also going to be heavily correlated to your latitude and longitude at that moment
+
+58
+00:03:17,970 --> 00:03:20,180
+in time.
+
+59
+00:03:20,180 --> 00:03:26,700
+Because I think if you worked at or near Amazon and you had to drive there on a day-to-day
+
+60
+00:03:26,700 --> 00:03:28,940
+basis, you would find the same things.
+
+61
+00:03:28,940 --> 00:03:29,940
+Perhaps, perhaps.
+
+62
+00:03:30,020 --> 00:03:34,260
+Although that is also just because driving in Seattle blows.
+
+63
+00:03:34,260 --> 00:03:35,860
+Near someplace that had...
+
+64
+00:03:35,860 --> 00:03:42,060
+Well, at least if you work there, you have a reasonable public transportation route to
+
+65
+00:03:42,060 --> 00:03:43,060
+get there.
+
+66
+00:03:43,060 --> 00:03:44,190
+Yeah.
+
+67
+00:03:44,190 --> 00:03:47,580
+Okay, so anyway...
+
+68
+00:03:47,580 --> 00:03:49,420
+Which also blows.
+
+69
+00:03:49,420 --> 00:03:53,740
+For our next number, we'd like to play the soothing sounds of boss gags.
+
+70
+00:03:53,740 --> 00:03:57,290
+Okay, go ahead.
+
+71
+00:03:57,290 --> 00:03:59,810
+Okay, we have...
+
+72
+00:03:59,810 --> 00:04:00,810
+It's weird.
+
+73
+00:04:00,850 --> 00:04:04,570
+We have sort of an agenda on the board, but we're not going to do it right away.
+
+74
+00:04:04,570 --> 00:04:06,370
+Well, maybe not in that order.
+
+75
+00:04:06,370 --> 00:04:10,090
+Actually, in terms of soothing sounds, like really buzz?
+
+76
+00:04:10,090 --> 00:04:15,830
+I was trying to pick something that I didn't like in the 70s.
+
+77
+00:04:15,830 --> 00:04:16,830
+Oh, okay.
+
+78
+00:04:16,830 --> 00:04:17,830
+Fair enough.
+
+79
+00:04:17,830 --> 00:04:18,830
+It was sarcastic.
+
+80
+00:04:18,830 --> 00:04:19,830
+Yes, it was.
+
+81
+00:04:19,830 --> 00:04:21,550
+I'm like, why would you pick that?
+
+82
+00:04:21,550 --> 00:04:23,550
+There's so many better...
+
+83
+00:04:23,550 --> 00:04:24,550
+Okay.
+
+84
+00:04:24,550 --> 00:04:27,630
+I immediately started thinking of Miles Davis.
+
+85
+00:04:27,630 --> 00:04:29,820
+I like Miles Davis.
+
+86
+00:04:29,940 --> 00:04:32,780
+That's because he's awesome.
+
+87
+00:04:32,780 --> 00:04:40,100
+Well, really, he did all these relaxing, cooking, all these albums with this great band and
+
+88
+00:04:40,100 --> 00:04:41,500
+John Coltrane.
+
+89
+00:04:41,500 --> 00:04:43,180
+Those are the best.
+
+90
+00:04:43,180 --> 00:04:45,180
+People always go to the mainstream.
+
+91
+00:04:45,180 --> 00:04:49,100
+They go, oh, I'm into Miles Davis because they have Kinda Blue.
+
+92
+00:04:49,100 --> 00:04:50,760
+I go, fine.
+
+93
+00:04:50,760 --> 00:04:53,640
+Check out the better stuff.
+
+94
+00:04:53,640 --> 00:04:56,040
+Kinda Blue's good, to be clear.
+
+95
+00:04:56,040 --> 00:05:02,120
+But relax and cook in all, which I just said before, but that whole series of stuff.
+
+96
+00:05:02,120 --> 00:05:06,520
+Remember there, at that time, putting out an album, they'd put out like three a year,
+
+97
+00:05:06,520 --> 00:05:07,520
+four years sometimes.
+
+98
+00:05:07,520 --> 00:05:08,520
+That's impressive.
+
+99
+00:05:08,520 --> 00:05:10,560
+So these guys in different bands, all the time.
+
+100
+00:05:10,560 --> 00:05:11,560
+I saw it.
+
+101
+00:05:11,560 --> 00:05:12,560
+They were great players.
+
+102
+00:05:12,560 --> 00:05:13,560
+They could improvise.
+
+103
+00:05:13,560 --> 00:05:16,160
+Record companies were making most of the money from that.
+
+104
+00:05:16,160 --> 00:05:18,120
+Those recordings are so good.
+
+105
+00:05:18,120 --> 00:05:19,220
+Anyway...
+
+106
+00:05:19,220 --> 00:05:22,110
+How about Leon Redbone?
+
+107
+00:05:22,110 --> 00:05:24,830
+Never was much into Leon.
+
+108
+00:05:24,830 --> 00:05:27,110
+I introduced him to my...
+
+109
+00:05:27,110 --> 00:05:30,270
+I think there's really only a couple of songs.
+
+110
+00:05:30,270 --> 00:05:39,210
+I introduced him to my son the other day and he looked at me like, what is wrong with you?
+
+111
+00:05:39,210 --> 00:05:43,610
+Oh, my daughter and I had a weird moment that we don't speak of anymore, but we actually
+
+112
+00:05:43,610 --> 00:05:49,140
+found out that sometimes our musical tastes overlap.
+
+113
+00:05:49,140 --> 00:05:54,420
+I was listening to something and she goes, wait, I like that song.
+
+114
+00:05:55,420 --> 00:05:58,380
+I said, all right, let's just move on.
+
+115
+00:05:58,380 --> 00:06:02,320
+To be clear, she listens to a lot of stuff I don't like.
+
+116
+00:06:02,320 --> 00:06:03,320
+She's into K-pop.
+
+117
+00:06:03,320 --> 00:06:08,970
+I'll just leave it there.
+
+118
+00:06:08,970 --> 00:06:11,970
+What did I do wrong?
+
+119
+00:06:11,970 --> 00:06:18,020
+I was just like, oh, I have that on my playlist.
+
+120
+00:06:18,020 --> 00:06:20,660
+I could annoy Alan right now.
+
+121
+00:06:20,660 --> 00:06:23,180
+Oh, God.
+
+122
+00:06:24,180 --> 00:06:31,660
+Some of those songs is extremely fun to keep on your...
+
+123
+00:06:31,660 --> 00:06:33,460
+What is it?
+
+124
+00:06:33,460 --> 00:06:37,540
+K-pop band 21, I think, or something?
+
+125
+00:06:37,540 --> 00:06:38,540
+I don't know.
+
+126
+00:06:38,540 --> 00:06:41,500
+They have the song, I Am The Best.
+
+127
+00:06:41,500 --> 00:06:42,980
+That sounds like a Pokemon song.
+
+128
+00:06:42,980 --> 00:06:43,980
+Pokemon song.
+
+129
+00:06:43,980 --> 00:06:45,980
+Don't most of them...
+
+130
+00:06:45,980 --> 00:06:47,980
+Yeah, shucks.
+
+131
+00:06:47,980 --> 00:06:48,980
+Okay.
+
+132
+00:06:48,980 --> 00:06:55,660
+But any time my middle-aged son, or not my middle-aged, but my teenage son, middle son...
+
+133
+00:06:55,660 --> 00:06:58,140
+Fred's so old he has a middle-aged son.
+
+134
+00:06:58,140 --> 00:07:02,260
+No, I kind of combine middle and teenage inappropriately.
+
+135
+00:07:02,260 --> 00:07:05,800
+Wait, what did you do in a pro...
+
+136
+00:07:05,800 --> 00:07:06,800
+Never mind.
+
+137
+00:07:06,800 --> 00:07:12,360
+Any time he's misbehaving, I could throw that one up, or pretty much anything from Taylor
+
+138
+00:07:12,360 --> 00:07:16,300
+Swift immediately...
+
+139
+00:07:16,300 --> 00:07:19,380
+Don't be harsh and untate.
+
+140
+00:07:19,380 --> 00:07:20,380
+I'm not.
+
+141
+00:07:20,380 --> 00:07:21,380
+She's fantastic.
+
+142
+00:07:21,380 --> 00:07:27,520
+I find her music extremely useful.
+
+143
+00:07:27,520 --> 00:07:31,420
+Say what you will, that woman can write a pop song.
+
+144
+00:07:31,420 --> 00:07:37,980
+So on that front, it's actually interesting because my son, the same son, he's now at
+
+145
+00:07:37,980 --> 00:07:52,300
+a point where he's starting to express that he likes dad's music more than dad.
+
+146
+00:07:52,300 --> 00:08:00,180
+So he'll find some obtuse band from the 80s or the 90s, and he'll go, yeah, this freaking
+
+147
+00:08:00,180 --> 00:08:01,180
+rocks.
+
+148
+00:08:01,180 --> 00:08:07,840
+I'm mostly into what used to be called alternative rock.
+
+149
+00:08:07,840 --> 00:08:12,340
+Our local radio station, The End, is mostly what I would listen to, although...
+
+150
+00:08:12,340 --> 00:08:13,340
+Are they still around?
+
+151
+00:08:13,340 --> 00:08:14,340
+They're still around.
+
+152
+00:08:14,340 --> 00:08:17,620
+I haven't listened to anything on the radio in so long.
+
+153
+00:08:17,620 --> 00:08:18,620
+Anyway...
+
+154
+00:08:19,380 --> 00:08:30,860
+The radio station that I grew up with, which was KROQ in LA, they're now streaming on Radio.com,
+
+155
+00:08:30,860 --> 00:08:34,260
+and that's pretty much all I listen to now.
+
+156
+00:08:34,260 --> 00:08:38,500
+He'll listen to some songs that used to have a lot of play, and I'm like, who the hell
+
+157
+00:08:38,500 --> 00:08:39,500
+are you listening to?
+
+158
+00:08:39,500 --> 00:08:42,500
+He's like, dad, oh, this is...
+
+159
+00:08:42,500 --> 00:08:45,310
+What is it?
+
+160
+00:08:45,310 --> 00:08:46,310
+Social...
+
+161
+00:08:46,310 --> 00:08:47,310
+Distortion?
+
+162
+00:08:47,310 --> 00:08:48,310
+Yes.
+
+163
+00:08:48,390 --> 00:08:54,140
+And I'm like, oh, yeah, it is.
+
+164
+00:08:54,140 --> 00:09:02,580
+He's way into Foo Fighters, he's way into Green Day, he's over the top into Red Hot Chili Peppers.
+
+165
+00:09:02,580 --> 00:09:04,620
+Are those considered alternative?
+
+166
+00:09:04,620 --> 00:09:05,620
+I never paid attention.
+
+167
+00:09:05,620 --> 00:09:06,620
+Alternative rock.
+
+168
+00:09:06,620 --> 00:09:07,620
+All right, whatever.
+
+169
+00:09:07,620 --> 00:09:13,180
+I was done with Red Hot Chili Peppers about 10 years ago, and the fact that it's come
+
+170
+00:09:13,180 --> 00:09:17,700
+back as he's full on addicted to them, I know he's a crap out of me.
+
+171
+00:09:17,700 --> 00:09:20,900
+Give it away, give it away, give it away.
+
+172
+00:09:20,900 --> 00:09:22,410
+Now.
+
+173
+00:09:22,410 --> 00:09:23,410
+Give it away now.
+
+174
+00:09:23,410 --> 00:09:27,330
+All right, there was...
+
+175
+00:09:27,330 --> 00:09:32,330
+Oh, quickly, Weasel is heading to changing the subject, is that okay?
+
+176
+00:09:32,330 --> 00:09:33,330
+Just interrupt me.
+
+177
+00:09:33,330 --> 00:09:38,780
+Yeah, you know, it's funny, because I didn't pick up on the change, and I'm like...
+
+178
+00:09:38,780 --> 00:09:39,780
+I interpret...
+
+179
+00:09:39,780 --> 00:09:41,300
+Speaking of LA, I'll do a segue.
+
+180
+00:09:41,300 --> 00:09:44,060
+Speaking of LA, I'm heading to Anaheim next week.
+
+181
+00:09:44,060 --> 00:09:49,300
+I interpreted your statement as Weezer, which by the way, the Africa song is fantastic.
+
+182
+00:09:49,300 --> 00:09:51,900
+Oh, did you see...
+
+183
+00:09:51,900 --> 00:10:00,100
+But everybody's seen, I mean, lots of play about Weezer covering Africa by Toto very,
+
+184
+00:10:00,100 --> 00:10:01,100
+very well.
+
+185
+00:10:01,100 --> 00:10:04,260
+Did I see the Toto hash pipe cover?
+
+186
+00:10:04,260 --> 00:10:07,700
+Did you know that Toto covered hash pipe?
+
+187
+00:10:07,700 --> 00:10:10,260
+No, but let me finish my freaking story.
+
+188
+00:10:10,260 --> 00:10:11,820
+Did you see it gets better?
+
+189
+00:10:11,820 --> 00:10:14,860
+Imagine what is better than Weezer covering Toto's Africa.
+
+190
+00:10:14,860 --> 00:10:15,860
+What could be better?
+
+191
+00:10:15,860 --> 00:10:20,690
+Imagine when Weird Al joins them on stage to play an accordion solo during the song.
+
+192
+00:10:20,690 --> 00:10:21,690
+I have not seen that.
+
+193
+00:10:21,690 --> 00:10:23,250
+That is worth checking out.
+
+194
+00:10:23,250 --> 00:10:26,370
+It's not just Weezer playing Africa.
+
+195
+00:10:26,370 --> 00:10:29,890
+It's Weezer playing Africa with Weird Al, not coming out to be Weird Al, not coming
+
+196
+00:10:29,890 --> 00:10:35,300
+out to do a parody, just playing a rockin' accordion solo.
+
+197
+00:10:35,300 --> 00:10:39,580
+Did he take over the keyboard solo part of that song?
+
+198
+00:10:39,580 --> 00:10:42,460
+It's a moment that I'm glad was captured on film.
+
+199
+00:10:42,460 --> 00:10:47,660
+Usually I hate it when I go to a concert and there's like 50,000 people, I guess I
+
+200
+00:10:47,660 --> 00:10:48,660
+don't go to concerts that big.
+
+201
+00:10:48,660 --> 00:10:52,060
+I go to concerts that are in very small places usually.
+
+202
+00:10:52,060 --> 00:10:55,300
+But when everybody's holding their camera up the whole damn show, their phone up the
+
+203
+00:10:55,300 --> 00:10:57,740
+whole damn show, it's like, just watch, man.
+
+204
+00:10:57,740 --> 00:10:58,740
+Use your eyes.
+
+205
+00:10:58,740 --> 00:10:59,740
+All right.
+
+206
+00:10:59,740 --> 00:11:05,380
+It's very easy to find on the internets.
+
+207
+00:11:05,380 --> 00:11:06,820
+Brand has already bookmarked that.
+
+208
+00:11:06,820 --> 00:11:09,340
+That's my homepage now.
+
+209
+00:11:09,340 --> 00:11:14,730
+So anyway, I'll be at Star West coming up here.
+
+210
+00:11:14,730 --> 00:11:17,010
+Kids and I are going down early, going to the Disneyland thing.
+
+211
+00:11:17,010 --> 00:11:18,010
+I'm going to send them back.
+
+212
+00:11:18,010 --> 00:11:19,010
+Hopefully they make it home.
+
+213
+00:11:19,010 --> 00:11:20,850
+Then I'll do my tutorial.
+
+214
+00:11:20,850 --> 00:11:21,850
+I come back.
+
+215
+00:11:21,850 --> 00:11:22,850
+I'm back for a week.
+
+216
+00:11:22,850 --> 00:11:27,310
+I go down to Portland for PNSQC.
+
+217
+00:11:27,310 --> 00:11:28,310
+Really looking forward to that.
+
+218
+00:11:28,310 --> 00:11:30,990
+I kind of need to finish my presentation for that.
+
+219
+00:11:30,990 --> 00:11:33,390
+So go ahead and ask your question.
+
+220
+00:11:33,390 --> 00:11:34,390
+Star West?
+
+221
+00:11:34,390 --> 00:11:35,390
+Star West.
+
+222
+00:11:35,390 --> 00:11:37,390
+Is this because you had that prior commit?
+
+223
+00:11:37,390 --> 00:11:38,390
+Yes.
+
+224
+00:11:38,390 --> 00:11:39,390
+Okay.
+
+225
+00:11:39,390 --> 00:11:40,390
+Yeah, I'm just doing a tutorial, nothing else.
+
+226
+00:11:40,390 --> 00:11:44,430
+And then I'm flying back afterwards.
+
+227
+00:11:44,430 --> 00:11:47,630
+And then PNSQC, I am working on my presentation.
+
+228
+00:11:47,630 --> 00:11:51,870
+So for those of you that have seen my modern testing thing, which would be just those of
+
+229
+00:11:51,870 --> 00:11:57,370
+you at Test Bash, hello, everyone.
+
+230
+00:11:57,370 --> 00:11:58,650
+Welcome to the cast.
+
+231
+00:11:58,650 --> 00:11:59,650
+Yes.
+
+232
+00:11:59,650 --> 00:12:04,530
+I kind of ish some of the same stuff, but so much has changed.
+
+233
+00:12:04,530 --> 00:12:09,890
+So at Test Bash, if you remember, the one listener, one of the three that was there, if you remember.
+
+234
+00:12:09,890 --> 00:12:12,130
+You're talking about Brighton or Philly?
+
+235
+00:12:12,130 --> 00:12:13,130
+Brighton.
+
+236
+00:12:13,130 --> 00:12:14,130
+Brighton.
+
+237
+00:12:14,130 --> 00:12:15,130
+Philly was like a year before.
+
+238
+00:12:15,130 --> 00:12:19,130
+Everything was a twinkle in our eyes.
+
+239
+00:12:19,130 --> 00:12:20,930
+And I was working on Microsoft Teams.
+
+240
+00:12:20,930 --> 00:12:24,960
+Oh my God.
+
+241
+00:12:24,960 --> 00:12:28,520
+Is there a story that you can tell me off the air?
+
+242
+00:12:28,520 --> 00:12:34,690
+I don't think it's inappropriate to say on air.
+
+243
+00:12:34,690 --> 00:12:41,070
+So I'll just do it this way.
+
+244
+00:12:41,070 --> 00:12:56,300
+Teams, lowercase teams, some are being forced to be on capital T teams instead of Skype.
+
+245
+00:12:56,300 --> 00:13:10,700
+Honestly, I don't really care except for, you know, forcing people to do exactly the
+
+246
+00:13:10,700 --> 00:13:16,220
+same sort of crap they've been doing on a totally new interface.
+
+247
+00:13:16,220 --> 00:13:18,420
+But it's the best.
+
+248
+00:13:18,420 --> 00:13:20,560
+Defined by who?
+
+249
+00:13:20,560 --> 00:13:21,560
+I can give you a name.
+
+250
+00:13:21,560 --> 00:13:26,340
+I know the name that you would probably name.
+
+251
+00:13:26,340 --> 00:13:30,570
+And I just, so yesterday I loaded up Skype.
+
+252
+00:13:30,570 --> 00:13:34,290
+I needed to talk to one of my PM's.
+
+253
+00:13:34,290 --> 00:13:42,050
+Skype had the little green indicating, as you know, hey, my PM is there and he's available.
+
+254
+00:13:42,960 --> 00:13:48,230
+So I started typing, wrote a long ass thing because I knew he was in his office, not in
+
+255
+00:13:48,230 --> 00:13:49,920
+the meeting.
+
+256
+00:13:49,920 --> 00:13:58,060
+And I think it's absolutely rude when people go, are you there?
+
+257
+00:13:58,060 --> 00:14:00,060
+And then you respond yes.
+
+258
+00:14:00,060 --> 00:14:10,750
+And then you write a 15 minute diatribe and their attention is captured the entire time.
+
+259
+00:14:10,750 --> 00:14:13,470
+So here's a little tidbit I do on these things.
+
+260
+00:14:13,550 --> 00:14:18,870
+If I'm going to ping you with some long ass question, I'm going to type it up in notepad
+
+261
+00:14:18,870 --> 00:14:20,190
+first.
+
+262
+00:14:20,190 --> 00:14:22,470
+Then I'm going to say, hey, Alan, are you there?
+
+263
+00:14:22,470 --> 00:14:25,990
+And when you respond, I'm just going to copy and paste because I don't want to waste your
+
+264
+00:14:25,990 --> 00:14:27,150
+time.
+
+265
+00:14:27,150 --> 00:14:28,280
+Okay.
+
+266
+00:14:28,280 --> 00:14:33,840
+So I pinged, I wrote this long question, sent it.
+
+267
+00:14:33,840 --> 00:14:36,560
+Then I got a response.
+
+268
+00:14:36,560 --> 00:14:44,150
+Oh, this guy is exclusively on teams and cannot see your message.
+
+269
+00:14:44,150 --> 00:14:48,430
+And I'm like, what the hell is this?
+
+270
+00:14:48,430 --> 00:14:55,870
+Could you not have told me that before I spent five minutes typing this goddamn essay?
+
+271
+00:14:55,870 --> 00:14:59,230
+Can you just copy and paste it from notepad again to someplace else?
+
+272
+00:14:59,230 --> 00:15:04,030
+Turns out actually in the middle of me typing, it turns out this same guy was actually walking
+
+273
+00:15:04,030 --> 00:15:05,110
+to my office.
+
+274
+00:15:05,110 --> 00:15:10,610
+So literally like two minutes after I hit send, he was at my door.
+
+275
+00:15:10,610 --> 00:15:14,960
+And I'm like, not even two minutes, like the 10 seconds.
+
+276
+00:15:14,960 --> 00:15:17,000
+But I'm just like, this is dumb.
+
+277
+00:15:17,000 --> 00:15:22,330
+Why don't they?
+
+278
+00:15:22,330 --> 00:15:24,930
+What I love Alan is our Slack usage.
+
+279
+00:15:24,930 --> 00:15:26,170
+Slack is like teams.
+
+280
+00:15:26,170 --> 00:15:29,570
+It's another product that lets you collaborate and communicate across your team.
+
+281
+00:15:29,570 --> 00:15:31,250
+It's just so natural.
+
+282
+00:15:31,250 --> 00:15:33,570
+It's just such a natural part of our communication.
+
+283
+00:15:33,570 --> 00:15:39,130
+But I think Microsoft grew up embedded in email so much, it's hard for people to get
+
+284
+00:15:39,130 --> 00:15:41,890
+out of there and find another place to do it.
+
+285
+00:15:41,890 --> 00:15:46,090
+And what's weird about Skype is I have to do a Skype call later, which sucks
+
+286
+00:15:46,090 --> 00:15:48,890
+because I had to install Skype.
+
+287
+00:15:48,890 --> 00:15:50,560
+Sorry.
+
+288
+00:15:50,560 --> 00:15:52,630
+There is a web interface.
+
+289
+00:15:52,630 --> 00:15:56,270
+There was something, oh, I was telling a story about test, my presentation coming up.
+
+290
+00:15:56,270 --> 00:16:03,110
+There was a story, if you remember, back on our regular schedule program, I'm modern
+
+291
+00:16:03,110 --> 00:16:04,910
+testing talk.
+
+292
+00:16:04,910 --> 00:16:12,110
+If you remember at Brighton, I talked about modern testing, kind of how we got there,
+
+293
+00:16:12,110 --> 00:16:17,110
+how my journey through software made these things make sense.
+
+294
+00:16:17,110 --> 00:16:20,270
+I thought your deck was like Adventures of a Modern ...
+
+295
+00:16:20,270 --> 00:16:26,310
+And then we had just sort of finalized the principles.
+
+296
+00:16:26,310 --> 00:16:29,510
+I knew they'd be tweaked a little bit, and I think they maybe haven't been tweaked
+
+297
+00:16:29,510 --> 00:16:30,510
+since then.
+
+298
+00:16:30,510 --> 00:16:32,750
+They've actually lasted like seven months.
+
+299
+00:16:32,750 --> 00:16:35,990
+But I didn't go into them in depth at all.
+
+300
+00:16:35,990 --> 00:16:39,630
+I just showed them one by one, kind of walked through them and said, stay tuned,
+
+301
+00:16:39,630 --> 00:16:42,270
+listen to the podcast, learn more about them a lot.
+
+302
+00:16:42,270 --> 00:16:47,950
+I think what I want to do in Portland, what I'm planning to do in Portland, is actually
+
+303
+00:16:47,950 --> 00:16:51,870
+have a slide each on the principles and kind of talk about what they mean.
+
+304
+00:16:51,870 --> 00:16:57,710
+So it'll be the one minute version of the last eight episodes at that part.
+
+305
+00:16:57,710 --> 00:17:01,670
+So I'll take 10 minutes and talk through each of the principles and why I think they're
+
+306
+00:17:01,670 --> 00:17:02,670
+important.
+
+307
+00:17:02,670 --> 00:17:09,050
+And then it leads up to the potentially controversial number seven, which is interesting.
+
+308
+00:17:09,050 --> 00:17:10,050
+I'll bring it up there.
+
+309
+00:17:10,050 --> 00:17:15,370
+I love bringing it up in test crowds because it's like, but what's cool about number seven,
+
+310
+00:17:15,370 --> 00:17:20,250
+and I don't have it in front of me, but number seven is the one where the tail end says,
+
+311
+00:17:20,250 --> 00:17:25,130
+it may reduce or eliminate the need for a dedicated testing specialist.
+
+312
+00:17:25,130 --> 00:17:31,600
+And if a team is just starting on the modern testing journey, or they're not even there
+
+313
+00:17:31,600 --> 00:17:39,120
+yet, they're making software in a very predictable, traditional model, that principle is like,
+
+314
+00:17:39,120 --> 00:17:41,880
+these are, it's usually the reaction.
+
+315
+00:17:41,880 --> 00:17:44,960
+If I can quote the air quotes around that.
+
+316
+00:17:44,960 --> 00:17:52,560
+But once you start moving down the modern testing journey, you look at that and you go,
+
+317
+00:17:52,560 --> 00:17:55,280
+oh yeah, I could see how that makes sense.
+
+318
+00:17:55,280 --> 00:17:59,120
+That's been my experience in both my team and talking to people that have looked at
+
+319
+00:17:59,120 --> 00:18:00,120
+these things.
+
+320
+00:18:00,120 --> 00:18:03,960
+I think it's only controversial until it's not.
+
+321
+00:18:03,960 --> 00:18:07,980
+And the way it becomes not controversial is that you start to realize, you begin to
+
+322
+00:18:07,980 --> 00:18:11,940
+realize that, okay, I can see, yeah, I could see that.
+
+323
+00:18:11,940 --> 00:18:21,800
+So you and I talked offline in terms of one, we'll probably weave this into podcast
+
+324
+00:18:21,800 --> 00:18:22,800
+episodes.
+
+325
+00:18:22,800 --> 00:18:33,440
+But one of the things that I think is needed is sort of some tactical scenario discussions
+
+326
+00:18:33,440 --> 00:18:37,200
+around problems and how the scenarios weave together.
+
+327
+00:18:37,240 --> 00:18:43,320
+Because I think the other thing that we need to talk about on MT and come up with sort of
+
+328
+00:18:43,320 --> 00:18:53,320
+a cogent way of doing it is these principles do not operate alone.
+
+329
+00:18:53,320 --> 00:19:04,200
+And it's very similar when I go and talk about Agile and I go and talk about Lean, or even
+
+330
+00:19:04,200 --> 00:19:05,200
+Kanban.
+
+331
+00:19:05,200 --> 00:19:08,440
+And now the sort of operational principles.
+
+332
+00:19:08,440 --> 00:19:12,120
+One of the common things about Agile, as you know, is it's principle oriented.
+
+333
+00:19:12,120 --> 00:19:19,160
+If it were rule oriented, then you start, it's just a matter of time before you have
+
+334
+00:19:19,160 --> 00:19:25,850
+an inability to adapt, which is the point of Agile.
+
+335
+00:19:25,850 --> 00:19:32,080
+And that's probably where, just thinking quickly, where a lot of the fragile approaches fail
+
+336
+00:19:32,080 --> 00:19:35,280
+is they become too prescriptive and rule-based.
+
+337
+00:19:35,280 --> 00:19:39,000
+They turn Agile into something it's not.
+
+338
+00:19:39,000 --> 00:19:43,680
+And another part of it is also simplification.
+
+339
+00:19:43,680 --> 00:19:50,300
+People at the very beginning, they will look at, what's an example, Lean I think has seven
+
+340
+00:19:50,300 --> 00:19:52,690
+principles.
+
+341
+00:19:52,690 --> 00:20:00,130
+And until you practice, it's hard to keep all of the principles sort of in your head
+
+342
+00:20:00,130 --> 00:20:04,370
+and see how they sort of interact with each other.
+
+343
+00:20:04,370 --> 00:20:10,050
+The issue with the principles is that if you do one to the extreme and ignore the others,
+
+344
+00:20:10,050 --> 00:20:12,330
+it can absolutely take you into the weeds.
+
+345
+00:20:12,330 --> 00:20:15,890
+And it's another principle that balances that.
+
+346
+00:20:15,890 --> 00:20:18,530
+It's a check and balance system.
+
+347
+00:20:18,530 --> 00:20:23,010
+It wasn't intentional in the original, but as they evolved, and actually as we discussed
+
+348
+00:20:23,010 --> 00:20:26,530
+them, I'm sure I mentioned this a couple times during our previous discussions, but
+
+349
+00:20:26,530 --> 00:20:32,850
+I was pleasantly surprised on how well the principles did interact with each other and
+
+350
+00:20:32,850 --> 00:20:34,250
+support each other.
+
+351
+00:20:34,250 --> 00:20:35,810
+People need to practice the principles.
+
+352
+00:20:35,810 --> 00:20:41,210
+This is why I think the scenarios are critical, so that they see how you connect the dots between
+
+353
+00:20:41,210 --> 00:20:42,210
+them.
+
+354
+00:20:42,210 --> 00:20:47,090
+And I do think that as you connect the dots between them, I don't think, this is not
+
+355
+00:20:47,090 --> 00:20:48,210
+a belief.
+
+356
+00:20:48,210 --> 00:20:50,250
+I've lived this.
+
+357
+00:20:50,250 --> 00:20:55,290
+It becomes fairly easy for people to see how it works.
+
+358
+00:20:55,290 --> 00:21:01,620
+I think the issue is it's still kind of too new and they don't see how the dots
+
+359
+00:21:01,620 --> 00:21:02,620
+connect.
+
+360
+00:21:02,620 --> 00:21:04,500
+We're not being prescriptive.
+
+361
+00:21:05,880 --> 00:21:06,880
+Of course not.
+
+362
+00:21:06,880 --> 00:21:07,880
+Yeah.
+
+363
+00:21:07,880 --> 00:21:12,960
+So I think, yeah, we have definitely plenty of future podcast fodder there.
+
+364
+00:21:12,960 --> 00:21:14,250
+Cool.
+
+365
+00:21:14,250 --> 00:21:16,170
+I have a couple things I wanted to...
+
+366
+00:21:16,170 --> 00:21:19,770
+One, sometimes Brent and I have conversations over Slack.
+
+367
+00:21:19,770 --> 00:21:20,770
+Not over Skype, that's nice.
+
+368
+00:21:20,770 --> 00:21:22,370
+Over Slack.
+
+369
+00:21:22,370 --> 00:21:26,020
+And it ends up being interesting enough.
+
+370
+00:21:26,020 --> 00:21:28,780
+Well, one, I'm too lazy to type it.
+
+371
+00:21:28,780 --> 00:21:31,660
+And then two, I think, we can just talk about that on the podcast, because that'd be a
+
+372
+00:21:31,660 --> 00:21:34,500
+fun one to share with the three.
+
+373
+00:21:34,500 --> 00:21:37,880
+And remembering back to our roots, the original...
+
+374
+00:21:37,880 --> 00:21:43,240
+The reason we have a podcast, it's not because we like each other, because that's not it.
+
+375
+00:21:43,240 --> 00:21:44,240
+No.
+
+376
+00:21:44,240 --> 00:21:48,120
+He used to have these test architect group meetings and Brent would crash.
+
+377
+00:21:48,120 --> 00:21:51,920
+He wasn't like a good tester or anything, but he'd want to hang out with the smart people.
+
+378
+00:21:51,920 --> 00:21:53,280
+Yeah, that's it.
+
+379
+00:21:53,280 --> 00:21:57,120
+But we would have these discussions and then I think it was Michael Hunter who said,
+
+380
+00:21:57,120 --> 00:22:00,720
+you guys got to record this into a podcast, because we just...
+
+381
+00:22:00,720 --> 00:22:04,620
+We're happy giving each other crap, respectfully.
+
+382
+00:22:04,620 --> 00:22:07,100
+I respectfully think you're full of crap, Brent.
+
+383
+00:22:07,100 --> 00:22:13,620
+I don't know about respectfully, but yeah, everything else in that sentence was accurate.
+
+384
+00:22:13,620 --> 00:22:15,780
+I'm mad at Twitter.
+
+385
+00:22:15,780 --> 00:22:17,900
+Okay, tell me about it.
+
+386
+00:22:17,900 --> 00:22:21,660
+I saw you change your name on Twitter.
+
+387
+00:22:21,660 --> 00:22:23,820
+My protest name is Twitter hates me.
+
+388
+00:22:23,820 --> 00:22:26,010
+Twitter doesn't like me?
+
+389
+00:22:26,010 --> 00:22:27,010
+What is it?
+
+390
+00:22:27,010 --> 00:22:28,010
+Would they go on?
+
+391
+00:22:28,010 --> 00:22:29,010
+It's something like that.
+
+392
+00:22:29,010 --> 00:22:30,010
+All right.
+
+393
+00:22:30,010 --> 00:22:31,530
+Really, are you really surprised?
+
+394
+00:22:31,530 --> 00:22:32,530
+No.
+
+395
+00:22:32,530 --> 00:22:35,950
+Can I finish my story?
+
+396
+00:22:35,950 --> 00:22:36,950
+It's an interesting story.
+
+397
+00:22:36,950 --> 00:22:40,560
+I don't know if it's a good story, but I'm going to tell it anyway.
+
+398
+00:22:40,560 --> 00:22:41,560
+Twitter-ter.
+
+399
+00:22:41,560 --> 00:22:45,280
+Oh, because you can't have Twitter as part of your username.
+
+400
+00:22:45,280 --> 00:22:48,150
+So I put a hyphen in it.
+
+401
+00:22:48,150 --> 00:22:50,800
+Nice.
+
+402
+00:22:50,800 --> 00:22:51,990
+Doesn't like me.
+
+403
+00:22:51,990 --> 00:22:52,990
+Yes, yes.
+
+404
+00:22:52,990 --> 00:22:58,350
+I tried and also, Twitter also has a crummy password policy where your passwords can't
+
+405
+00:22:58,350 --> 00:23:00,790
+have spaces, but I'll save that for another rant.
+
+406
+00:23:00,790 --> 00:23:02,350
+Oh, nope, I didn't.
+
+407
+00:23:02,350 --> 00:23:07,950
+Anyway, as I've mentioned, maybe on here before, but there is a...
+
+408
+00:23:08,710 --> 00:23:10,870
+My current Twitter handle is Alan Page.
+
+409
+00:23:10,870 --> 00:23:15,160
+You're welcome to follow me or block me.
+
+410
+00:23:15,160 --> 00:23:19,000
+Many times I've gone to the Angry Weasel Twitter handle.
+
+411
+00:23:19,000 --> 00:23:25,560
+Twitter.com, like Angry Weasel, hoping that it would just show up as a 404 at some point,
+
+412
+00:23:25,560 --> 00:23:26,560
+but no it doesn't.
+
+413
+00:23:26,560 --> 00:23:32,450
+It's there from a person who tweeted once nine years ago.
+
+414
+00:23:32,450 --> 00:23:33,450
+That's it.
+
+415
+00:23:33,450 --> 00:23:34,970
+One tweet nine years ago.
+
+416
+00:23:34,970 --> 00:23:41,870
+So I read some stuff on the internet about how to...
+
+417
+00:23:41,870 --> 00:23:42,870
+What do you do?
+
+418
+00:23:42,870 --> 00:23:44,390
+How can you reclaim used accounts?
+
+419
+00:23:44,390 --> 00:23:48,910
+Some people have had some success just reporting it as an impersonation and explaining it
+
+420
+00:23:48,910 --> 00:23:51,430
+as not an impersonation.
+
+421
+00:23:51,430 --> 00:23:58,890
+I can prove this is associated with me and had success in getting unused Twitter handles
+
+422
+00:23:58,890 --> 00:23:59,890
+from Twitter.
+
+423
+00:23:59,890 --> 00:24:00,890
+So I did that.
+
+424
+00:24:00,890 --> 00:24:02,450
+There's a crapload of Angry Weasel.
+
+425
+00:24:05,340 --> 00:24:07,140
+There's only one spelled correctly.
+
+426
+00:24:07,140 --> 00:24:10,760
+Loop back into the conversation here.
+
+427
+00:24:10,760 --> 00:24:19,000
+So yes, I can change the spelling of Angry Weasel and get another handle, but I wanted
+
+428
+00:24:19,000 --> 00:24:20,360
+the regular spelling one.
+
+429
+00:24:20,360 --> 00:24:23,280
+So anyway, Twitter told me to F off.
+
+430
+00:24:23,280 --> 00:24:25,380
+We don't do that.
+
+431
+00:24:25,380 --> 00:24:26,860
+And so that happened.
+
+432
+00:24:26,860 --> 00:24:30,300
+So then I thought, I wonder if modern testing is available.
+
+433
+00:24:30,300 --> 00:24:39,780
+And modern testing is also one tweet from 10 years ago and then, or maybe an account
+
+434
+00:24:39,780 --> 00:24:40,780
+but no tweets.
+
+435
+00:24:40,780 --> 00:24:43,780
+I think that one was one tweet from nine years ago as well.
+
+436
+00:24:43,780 --> 00:24:45,260
+And then I also checked for AB testing.
+
+437
+00:24:45,260 --> 00:24:47,420
+No, AB testing podcast.
+
+438
+00:24:47,420 --> 00:24:49,730
+One of those.
+
+439
+00:24:49,730 --> 00:24:54,370
+And it was created and it's never tweeted.
+
+440
+00:24:54,370 --> 00:25:07,150
+So modern testing joined 2013 and you look at their, no, this dude is all about us.
+
+441
+00:25:07,150 --> 00:25:12,450
+No, I appreciate spelling.
+
+442
+00:25:12,450 --> 00:25:13,610
+They have the modern testing account.
+
+443
+00:25:13,610 --> 00:25:17,060
+There's no I in testing.
+
+444
+00:25:17,060 --> 00:25:21,060
+That sounds like a, oh, that sounds like a quote for a t-shirt.
+
+445
+00:25:21,060 --> 00:25:22,220
+There's no I in testing.
+
+446
+00:25:22,220 --> 00:25:24,220
+Oh wait, there is.
+
+447
+00:25:24,220 --> 00:25:25,220
+Seven.
+
+448
+00:25:25,220 --> 00:25:27,460
+But not this one.
+
+449
+00:25:27,460 --> 00:25:32,100
+So anyway, that's my Twitter rant that, and Brandt doesn't care about reading, so he doesn't
+
+450
+00:25:32,100 --> 00:25:33,780
+notice that this letter is missing.
+
+451
+00:25:33,780 --> 00:25:39,780
+So my wish for our, none of the three who work at Twitter is that we could reclaim accounts
+
+452
+00:25:39,780 --> 00:25:41,740
+that haven't been used in a decade.
+
+453
+00:25:41,740 --> 00:25:43,250
+Yeah.
+
+454
+00:25:43,250 --> 00:25:45,520
+What did you means to similar, right?
+
+455
+00:25:45,520 --> 00:25:47,720
+You have to, you have to pay for your domain, right?
+
+456
+00:25:47,720 --> 00:25:50,070
+You have to pay to renew it.
+
+457
+00:25:50,070 --> 00:25:51,350
+Oh, right.
+
+458
+00:25:51,350 --> 00:25:55,580
+And since there's no, yeah, they cost money.
+
+459
+00:25:55,580 --> 00:26:02,040
+I wonder how long it'll take before Twitter has to do something on that front.
+
+460
+00:26:02,040 --> 00:26:07,560
+So it's not, they don't have to do anything, but at some point in time, you would imagine
+
+461
+00:26:07,560 --> 00:26:18,330
+that, that certain decoration for redundant handles, uh, becomes so fricking obtuse, it's
+
+462
+00:26:18,330 --> 00:26:20,810
+becomes harder to use.
+
+463
+00:26:20,810 --> 00:26:21,810
+Yup.
+
+464
+00:26:21,810 --> 00:26:22,890
+Okay.
+
+465
+00:26:22,890 --> 00:26:27,330
+Let's do, let's go, we'll go up that way.
+
+466
+00:26:27,330 --> 00:26:32,290
+So I have, uh, in my hand for those of you not on the video feed, Oh, you know what I
+
+467
+00:26:32,290 --> 00:26:40,610
+want to do by the way, in this all tangent episode, uh, we should just for fun do an
+
+468
+00:26:40,610 --> 00:26:41,610
+episode.
+
+469
+00:26:41,610 --> 00:26:42,690
+Why is your leg twitching like that, man?
+
+470
+00:26:42,690 --> 00:26:43,690
+You're freaking me out.
+
+471
+00:26:43,690 --> 00:26:49,650
+Listen, ADD guy, move forward.
+
+472
+00:26:49,650 --> 00:26:52,170
+I'm trying, but man, like the roof's shaking.
+
+473
+00:26:52,170 --> 00:26:53,650
+What was I gonna say?
+
+474
+00:26:53,650 --> 00:26:54,650
+We should periscope it.
+
+475
+00:26:54,650 --> 00:26:55,730
+We should periscope one of these.
+
+476
+00:26:55,730 --> 00:27:00,660
+So like most of this stuff will get edited out that you don't even hear it, but we should
+
+477
+00:27:00,660 --> 00:27:06,120
+just live feed a podcast recording for the three.
+
+478
+00:27:06,120 --> 00:27:07,740
+Sure.
+
+479
+00:27:07,740 --> 00:27:09,700
+Not a tangent episode.
+
+480
+00:27:09,700 --> 00:27:15,100
+Oh, and, and, uh, I just wanted to point out, this is the first podcast recording I remember
+
+481
+00:27:15,100 --> 00:27:19,250
+in a while where branch has not been wearing his AB testing shirt.
+
+482
+00:27:19,250 --> 00:27:21,050
+I thought about putting it on today.
+
+483
+00:27:21,050 --> 00:27:26,810
+So you can go to cafepress.com, whack AB testing and pick up your own AB testing shirt.
+
+484
+00:27:26,810 --> 00:27:30,770
+But in the meantime, I have some questions for you that were thrown to me and I think
+
+485
+00:27:30,770 --> 00:27:33,090
+I have answers for them, but I'm going to check them.
+
+486
+00:27:33,090 --> 00:27:34,090
+These aren't mailbag.
+
+487
+00:27:34,090 --> 00:27:37,090
+I'm actually supposed to answer these at some point, but I'm just going to work through
+
+488
+00:27:37,090 --> 00:27:39,330
+you and see what you think of my answers.
+
+489
+00:27:39,330 --> 00:27:40,590
+Okay.
+
+490
+00:27:40,590 --> 00:27:43,420
+By me listening to your answers.
+
+491
+00:27:43,420 --> 00:27:45,060
+This is a good one.
+
+492
+00:27:45,060 --> 00:27:50,820
+I actually think that that model is one thing that makes our partnership work well.
+
+493
+00:27:50,820 --> 00:27:59,950
+You're very good at writing concise language and I am not.
+
+494
+00:27:59,950 --> 00:28:02,990
+I'm going to edit that as just says you are very good and I am not.
+
+495
+00:28:02,990 --> 00:28:06,690
+A couple of questions about AI, ML.
+
+496
+00:28:06,690 --> 00:28:08,610
+That's artificial intelligence and machine learning.
+
+497
+00:28:08,610 --> 00:28:11,290
+For those of you not into the, the name game.
+
+498
+00:28:11,290 --> 00:28:15,250
+Do you think AI and ML will replace the, replace the traditional tester?
+
+499
+00:28:15,250 --> 00:28:17,960
+As is a loaded question.
+
+500
+00:28:17,960 --> 00:28:19,760
+Cause I don't even know what the traditional tester is.
+
+501
+00:28:19,760 --> 00:28:20,760
+I do.
+
+502
+00:28:21,120 --> 00:28:24,680
+But does the question asker mean traditional?
+
+503
+00:28:24,680 --> 00:28:35,420
+I do think, I do think automation will replace the traditional tester and automation techniques
+
+504
+00:28:35,420 --> 00:28:37,300
+will include AI, ML.
+
+505
+00:28:37,300 --> 00:28:38,300
+Yep.
+
+506
+00:28:38,300 --> 00:28:39,300
+Yep.
+
+507
+00:28:39,300 --> 00:28:40,300
+Pretty straightforward.
+
+508
+00:28:40,300 --> 00:28:42,880
+There's a couple of companies right now using, it's interesting.
+
+509
+00:28:42,880 --> 00:28:51,820
+There are companies like Testem and Mabel who use ML to improve automation and
+
+510
+00:28:51,820 --> 00:28:58,500
+actually make, I've always hated record playback, but they make some test generation tools that
+
+511
+00:28:58,500 --> 00:29:04,460
+look so deep at all the different ways that items can be selected that even if the, on
+
+512
+00:29:04,460 --> 00:29:09,420
+a webpage, that even if the item name or class or location changes, it can still figure
+
+513
+00:29:09,420 --> 00:29:10,740
+out what to do.
+
+514
+00:29:10,740 --> 00:29:14,980
+Which again, which is solving a problem that could be solved just by having an approach
+
+515
+00:29:14,980 --> 00:29:19,050
+that makes like adding data IDs to those things.
+
+516
+00:29:19,050 --> 00:29:21,770
+So just think of how the, how the market's moving.
+
+517
+00:29:21,770 --> 00:29:25,690
+I don't know how much you're paying attention to it, but I actually had a one-on-one with
+
+518
+00:29:25,690 --> 00:29:28,970
+one of my employees just this week.
+
+519
+00:29:28,970 --> 00:29:38,490
+And I actually think we're going to start to see the fall of the data scientist over
+
+520
+00:29:38,490 --> 00:29:41,350
+this next decade.
+
+521
+00:29:41,350 --> 00:29:50,030
+And primarily, so I was talking to an employee and this employee, there was a bit of AI I
+
+522
+00:29:50,030 --> 00:29:51,760
+wrote.
+
+523
+00:29:51,760 --> 00:29:52,760
+He picked it up.
+
+524
+00:29:52,800 --> 00:29:54,000
+Generalized it.
+
+525
+00:29:54,000 --> 00:30:00,760
+He doesn't under, he doesn't understand data science really, but he does understand how
+
+526
+00:30:00,760 --> 00:30:08,760
+to take an algorithm and turn it into code and pass it inputs and evaluate outputs.
+
+527
+00:30:08,760 --> 00:30:17,190
+And what I think is going to happen is number one, with computing the cloud, it kind of
+
+528
+00:30:17,910 --> 00:30:27,280
+raises, it kind of changes the definition of brute force in parallel.
+
+529
+00:30:27,280 --> 00:30:31,480
+So there are a lot of techniques that can be done brute force.
+
+530
+00:30:31,480 --> 00:30:37,280
+So when you have the cloud, you can do them really fast.
+
+531
+00:30:37,280 --> 00:30:43,960
+So old algorithms will come into play that just couldn't scale because you didn't have
+
+532
+00:30:43,960 --> 00:30:49,480
+enough hardware resources in your lab or didn't have beefy enough machines.
+
+533
+00:30:49,480 --> 00:30:51,080
+That kind of all just goes away.
+
+534
+00:30:51,080 --> 00:30:55,520
+It can scale as much as you're willing to pay for.
+
+535
+00:30:55,520 --> 00:31:04,870
+We're going to have AI techniques in APIs readily accessible to developers.
+
+536
+00:31:04,870 --> 00:31:08,630
+So you drifted off my original question a little bit talking about data science in
+
+537
+00:31:08,630 --> 00:31:09,630
+general.
+
+538
+00:31:10,450 --> 00:31:20,960
+No, but this, as these come up and as people solidify specific contexts, there is an old
+
+539
+00:31:20,960 --> 00:31:21,960
+tool.
+
+540
+00:31:21,960 --> 00:31:25,760
+So AI has been in the industry, in the test industry for a long time.
+
+541
+00:31:25,760 --> 00:31:35,270
+We've, there's a tool that I know Alan's familiar with that was, it's probably been
+
+542
+00:31:35,270 --> 00:31:38,710
+dead for 10 years now.
+
+543
+00:31:38,710 --> 00:31:42,350
+And Genesis, right.
+
+544
+00:31:42,350 --> 00:31:47,750
+And it used genetic AI to hunt through and find test cases.
+
+545
+00:31:47,750 --> 00:31:50,670
+And it was very effective at finding bugs.
+
+546
+00:31:50,670 --> 00:31:53,430
+What it sucked at is finding bugs that were important.
+
+547
+00:31:53,430 --> 00:31:54,430
+Yeah.
+
+548
+00:31:54,430 --> 00:31:57,470
+So what I've discovered so far, I spent a chunk of time.
+
+549
+00:31:57,470 --> 00:32:01,270
+In fact, I just wrote my, some of the three notes I've shared from a few of these on
+
+550
+00:32:01,270 --> 00:32:03,990
+the Slack channel, but I do a weekly newsletter for my team.
+
+551
+00:32:03,990 --> 00:32:06,910
+And I wrote up one this week on ML and AI.
+
+552
+00:32:06,910 --> 00:32:10,070
+And I just got a lot of screws on my mind because I was looking at these questions.
+
+553
+00:32:10,070 --> 00:32:18,510
+And what I'm realizing is while there's a, he, there's definitely a buzzword status push
+
+554
+00:32:18,510 --> 00:32:25,420
+for AI and ML in testing conferences are filled with talks about AI and ML tools, getting
+
+555
+00:32:25,420 --> 00:32:27,260
+massive funding.
+
+556
+00:32:27,260 --> 00:32:32,700
+They use AI and ML, but they're not doing things particularly interesting.
+
+557
+00:32:32,700 --> 00:32:35,740
+Like I mentioned the tools that I think it's really great.
+
+558
+00:32:35,740 --> 00:32:42,140
+If you don't have access or the ability, like when we talk about software development, it's
+
+559
+00:32:42,140 --> 00:32:43,940
+not an us and them, it's just a we.
+
+560
+00:32:43,940 --> 00:32:45,940
+That's the way I put it.
+
+561
+00:32:45,940 --> 00:32:50,580
+And these tools are designed for, I need to write a bunch of web, a UI automation for
+
+562
+00:32:50,580 --> 00:32:51,740
+a web page.
+
+563
+00:32:51,740 --> 00:32:55,340
+And I can't get the developers to change their code and add accessible IDs and they're not
+
+564
+00:32:55,340 --> 00:32:56,340
+writing automation.
+
+565
+00:32:56,340 --> 00:32:58,020
+We've got to get something put together here.
+
+566
+00:32:58,020 --> 00:33:00,340
+Those tools are excellent in that situation.
+
+567
+00:33:00,340 --> 00:33:03,970
+I just don't want to be in the situation where they excel.
+
+568
+00:33:03,970 --> 00:33:08,050
+Or I'm that last line of defense tester trying to write automation at the very end.
+
+569
+00:33:08,050 --> 00:33:12,330
+These tool, these, these AI solutions, if you're in that situation, if you have to write
+
+570
+00:33:12,330 --> 00:33:19,480
+a bunch of a web automation and you can't work with the dev team or, or you're unable
+
+571
+00:33:19,480 --> 00:33:23,200
+to or they're unwilling to work with you and you just have to get this done, these
+
+572
+00:33:23,200 --> 00:33:28,800
+tools will accelerate your ability to do that, but they're not solving the root problem.
+
+573
+00:33:28,800 --> 00:33:30,440
+That's what bugs me about them.
+
+574
+00:33:30,440 --> 00:33:33,120
+Not yet.
+
+575
+00:33:33,360 --> 00:33:37,880
+I think, but also in looking through what's out there in ML and AI, and there are some
+
+576
+00:33:37,880 --> 00:33:44,400
+tools that do some test generation based on examining the page, based on, based on learning
+
+577
+00:33:44,400 --> 00:33:46,040
+about the product.
+
+578
+00:33:46,040 --> 00:33:50,040
+But I still feel like everything that I've seen out there is scratching the surface of
+
+579
+00:33:50,040 --> 00:33:53,920
+what's possible for improving quality using AI and ML.
+
+580
+00:33:53,920 --> 00:33:58,440
+For example, oh, I just looked at this thing called sourced.
+
+581
+00:33:58,440 --> 00:34:03,040
+It's sourced with a D in curly brackets.
+
+582
+00:34:03,040 --> 00:34:08,360
+It's a static analysis tool, but like the things you've internally at Microsoft uses
+
+583
+00:34:08,360 --> 00:34:12,360
+an abstract syntax tree to break things down and figure out how things work together.
+
+584
+00:34:12,360 --> 00:34:19,560
+But it has models and does a bunch of ML analysis to try and figure out where bugs
+
+585
+00:34:19,560 --> 00:34:24,760
+may be in the code based on a bunch of heuristics, which is, which is again, a start.
+
+586
+00:34:24,760 --> 00:34:28,600
+If we could look at, if we could have ML and you might have this at your fancy data
+
+587
+00:34:28,600 --> 00:34:33,040
+science stuff that looks at customer usage patterns collected and then uses those to
+
+588
+00:34:33,040 --> 00:34:40,560
+figure out where risk areas and or what problems they need to be looked at by the
+
+589
+00:34:40,560 --> 00:34:44,960
+internal team using ML to help figure out pinpoint where things should be done.
+
+590
+00:34:44,960 --> 00:34:50,360
+Better test selection, which we've both done, are all great things.
+
+591
+00:34:50,360 --> 00:34:55,680
+I guess the point is, without me listing examples, there is a big push for AI and
+
+592
+00:34:55,680 --> 00:34:56,680
+ML and testing.
+
+593
+00:34:56,680 --> 00:35:02,160
+There's a lot of it out there, but I feel like it's just barely getting started of the capabilities
+
+594
+00:35:02,160 --> 00:35:06,010
+of what we could use those things for.
+
+595
+00:35:06,010 --> 00:35:12,770
+In that, I would say, and therein lies an opportunity.
+
+596
+00:35:12,770 --> 00:35:22,620
+The Alan, I'm sure you're tired of this question, but where do ideas come from?
+
+597
+00:35:22,620 --> 00:35:24,540
+Ideas come from other ideas, Brent.
+
+598
+00:35:24,540 --> 00:35:31,120
+So we've talked at the story like where air conditioning came from, right?
+
+599
+00:35:31,120 --> 00:35:32,120
+Yeah.
+
+600
+00:35:32,120 --> 00:35:33,120
+Did that turn on?
+
+601
+00:35:33,120 --> 00:35:35,040
+Did air conditioning get it?
+
+602
+00:35:35,040 --> 00:35:39,400
+Did it land on, ooh, what we need to build is air conditioning overnight?
+
+603
+00:35:39,400 --> 00:35:41,960
+No, of course not.
+
+604
+00:35:41,960 --> 00:35:46,350
+I will tell you that I know.
+
+605
+00:35:46,350 --> 00:35:50,710
+So for example, we have AI here at Microsoft.
+
+606
+00:35:50,710 --> 00:35:54,470
+So to the prior question, this customer usage data?
+
+607
+00:35:54,470 --> 00:35:55,470
+Yes.
+
+608
+00:35:55,470 --> 00:35:56,470
+Do I have it?
+
+609
+00:35:56,550 --> 00:36:02,480
+I have lots of it, tons of it.
+
+610
+00:36:02,480 --> 00:36:10,600
+What we still have work to do is connecting different data streams together and then coming
+
+611
+00:36:10,600 --> 00:36:15,160
+up along with an approach to context.
+
+612
+00:36:15,160 --> 00:36:22,680
+So we here in Azure, we have the ability to, when we see, so we can use AI to sort
+
+613
+00:36:22,680 --> 00:36:29,890
+of cluster common failures together.
+
+614
+00:36:29,890 --> 00:36:37,820
+We've had a similar thing in Windows for a long time where we get like call stack telemetry.
+
+615
+00:36:37,820 --> 00:36:43,860
+This is actually, no, we're clustering similar signals based off of multiple different failure
+
+616
+00:36:43,860 --> 00:36:45,420
+classes.
+
+617
+00:36:46,060 --> 00:36:57,940
+For example, hey, the network blipped, meaning it had a momentary loss of packets.
+
+618
+00:36:57,940 --> 00:37:06,260
+We now have the ability to sort of group a bunch of different signals together, then
+
+619
+00:37:06,260 --> 00:37:11,940
+do what's known as discrimination analysis and go, okay, which set of signals really
+
+620
+00:37:11,940 --> 00:37:15,000
+is important for this cluster?
+
+621
+00:37:15,000 --> 00:37:18,720
+And then go and pinpoint a root cause.
+
+622
+00:37:18,720 --> 00:37:22,480
+Now what we're doing right there is essentially, if you think about it, what we're doing
+
+623
+00:37:22,480 --> 00:37:30,650
+there is using AI to find system integration bugs.
+
+624
+00:37:30,650 --> 00:37:42,080
+Now because there's a lack of testers inside Microsoft, Dev's really interested in these
+
+625
+00:37:42,080 --> 00:37:47,400
+type of things because it helps them to scale.
+
+626
+00:37:47,400 --> 00:37:51,280
+No one inside Microsoft, to my knowledge, and I think it's also because there's a lack
+
+627
+00:37:51,280 --> 00:37:57,680
+of testers in here, is trying to really apply this towards a test context.
+
+628
+00:37:57,680 --> 00:38:01,680
+Although I'm on the compute team, like the one thing I would be interested in doing
+
+629
+00:38:01,680 --> 00:38:08,000
+and I haven't done is go and talk to some of the UI folks and see, you know, what,
+
+630
+00:38:08,000 --> 00:38:10,920
+if anything, they're doing in this.
+
+631
+00:38:10,920 --> 00:38:16,100
+Because a lot of the times on the compute team, you can view it as sort of a system
+
+632
+00:38:16,100 --> 00:38:18,940
+integration bug almost all the time.
+
+633
+00:38:18,940 --> 00:38:22,580
+On the UI side, do you have another question?
+
+634
+00:38:22,580 --> 00:38:26,740
+Yeah, we've actually, interestingly, we've actually already answered the questions
+
+635
+00:38:26,740 --> 00:38:28,810
+that are coming up here.
+
+636
+00:38:28,810 --> 00:38:34,530
+So we've actually talked through the other questions in talking about this, but one,
+
+637
+00:38:34,530 --> 00:38:38,410
+just to get your thoughts, I had a little bit of rambling, but what are some other
+
+638
+00:38:38,410 --> 00:38:42,770
+ways you see AI and ML supporting testers?
+
+639
+00:38:42,770 --> 00:38:46,130
+And this is weird for me because when I see a tester, I think, I don't want to do that.
+
+640
+00:38:46,450 --> 00:38:49,390
+Supporting quality.
+
+641
+00:38:49,390 --> 00:38:54,070
+You want to frame it as pre-production quality?
+
+642
+00:38:54,070 --> 00:38:57,390
+I mean, there's a whole bunch of existing techniques.
+
+643
+00:38:57,390 --> 00:39:01,090
+It's essentially where do we move the needle?
+
+644
+00:39:01,090 --> 00:39:13,300
+Where I found AI is really effective is in scaling calendar time.
+
+645
+00:39:13,300 --> 00:39:18,650
+And so if I had known we were going to talk about this, I would have done a
+
+646
+00:39:18,650 --> 00:39:22,410
+particular research, but there's something that I'll share with others.
+
+647
+00:39:22,410 --> 00:39:30,170
+I did this a couple of months ago, and this is probably a deflection of your question.
+
+648
+00:39:30,170 --> 00:39:36,170
+I don't focus, as I think I just, I am not focused day to day on how to use AI,
+
+649
+00:39:36,170 --> 00:39:39,890
+ML to solve the test problem.
+
+650
+00:39:39,890 --> 00:39:46,330
+I'm focused on customer quality, which hopefully if you're a long enough time
+
+651
+00:39:46,330 --> 00:39:52,370
+listener to this podcast, you realize we view as a separate topic.
+
+652
+00:39:52,370 --> 00:40:03,060
+But if you go to scholar.google.com and you do a search for test testers,
+
+653
+00:40:03,060 --> 00:40:10,170
+software testing, as well as AI and machine learning, you'll see that there are
+
+654
+00:40:10,170 --> 00:40:15,650
+a bunch of published articles already and that they're beginning to increase.
+
+655
+00:40:15,650 --> 00:40:21,450
+So what's happening right now is academia is definitely doing research in a bunch of
+
+656
+00:40:21,450 --> 00:40:29,350
+different places, and it's not going to be, it's still going to be a few years
+
+657
+00:40:29,350 --> 00:40:35,910
+before any of these things hit something that becomes really useful for the masses
+
+658
+00:40:35,910 --> 00:40:39,150
+or really productized.
+
+659
+00:40:39,150 --> 00:40:44,100
+But to me, this is absolutely on its way.
+
+660
+00:40:44,100 --> 00:40:52,330
+Test prioritization, that might be one place where it would be an obvious
+
+661
+00:40:52,330 --> 00:40:59,680
+relationship between testing and the user data.
+
+662
+00:40:59,680 --> 00:41:04,080
+So if you have test cases measured under code coverage, if you had,
+
+663
+00:41:04,080 --> 00:41:08,080
+if you did an experiment where some customers, you know,
+
+664
+00:41:08,080 --> 00:41:12,680
+interacted with an instrumented build, then you can start bridging the gap
+
+665
+00:41:12,680 --> 00:41:21,610
+between what are common sequences that customers go through and associate that to the test cases
+
+666
+00:41:21,610 --> 00:41:25,440
+that can validate that.
+
+667
+00:41:25,440 --> 00:41:30,000
+Going to a world of how we do continuous deployment, right?
+
+668
+00:41:30,000 --> 00:41:31,100
+Sure.
+
+669
+00:41:31,100 --> 00:41:35,000
+You could run all of your test cases in five minutes by leveraging a million dollars
+
+670
+00:41:35,000 --> 00:41:38,400
+worth of cloud compute resources, right?
+
+671
+00:41:38,400 --> 00:41:40,760
+Probably is not effective.
+
+672
+00:41:40,760 --> 00:41:47,760
+But you could also mitigate your risk by using historical data on both sides,
+
+673
+00:41:47,760 --> 00:41:54,160
+your test cases and your customer data to sort of prioritize what these cases are important.
+
+674
+00:41:54,160 --> 00:42:01,760
+And then, like a very simple AI technique would be to use AI to decide the stopping condition.
+
+675
+00:42:01,760 --> 00:42:04,960
+When is the risk minimized enough that you can just ship it now?
+
+676
+00:42:04,960 --> 00:42:05,960
+Yeah.
+
+677
+00:42:05,960 --> 00:42:07,690
+Okay, cool.
+
+678
+00:42:07,690 --> 00:42:08,590
+All right.
+
+679
+00:42:08,590 --> 00:42:10,990
+A little more long-winded than I wanted, but I'll take it.
+
+680
+00:42:10,990 --> 00:42:12,790
+Oh, sorry.
+
+681
+00:42:12,790 --> 00:42:14,790
+Hey, we are...
+
+682
+00:42:14,790 --> 00:42:17,890
+One thing, this is definitely last but definitely not least,
+
+683
+00:42:17,890 --> 00:42:21,990
+one thing we haven't brought up here is, but worth bringing up now is,
+
+684
+00:42:21,990 --> 00:42:27,790
+we lost one of our heroes last month when Jerry Weinberg passed away.
+
+685
+00:42:27,790 --> 00:42:32,290
+I was looking through his list of books here and I realized,
+
+686
+00:42:32,290 --> 00:42:36,470
+I didn't realize that I had all of them.
+
+687
+00:42:36,470 --> 00:42:39,170
+I recommend Secrets of Consulting a lot.
+
+688
+00:42:39,170 --> 00:42:45,370
+It's a book about leadership, which is a good book about leadership.
+
+689
+00:42:45,370 --> 00:42:47,970
+I recommended a lot to people.
+
+690
+00:42:47,970 --> 00:42:49,270
+I forget who.
+
+691
+00:42:49,270 --> 00:42:52,170
+Someone on Twitter asked me the infamous,
+
+692
+00:42:52,170 --> 00:42:54,830
+how do you measure quality question?
+
+693
+00:42:54,830 --> 00:42:59,080
+And we started off with a little bit of,
+
+694
+00:42:59,080 --> 00:43:01,780
+well, what is quality and da-da-da-da-da.
+
+695
+00:43:01,780 --> 00:43:09,280
+And I recommended that he take a look at the quality software management series by Weinberg.
+
+696
+00:43:09,280 --> 00:43:13,380
+I think I might have recommended it started with book two, but maybe book one.
+
+697
+00:43:13,380 --> 00:43:20,280
+Anyway, because the book is 20 years old, maybe 25 years old,
+
+698
+00:43:20,280 --> 00:43:23,780
+I can't remember, he asked if it was still relevant.
+
+699
+00:43:23,780 --> 00:43:24,980
+I said, yeah, I think it is.
+
+700
+00:43:24,980 --> 00:43:26,280
+And I hadn't looked at it in a while.
+
+701
+00:43:26,280 --> 00:43:28,480
+I have it on my shelf at home.
+
+702
+00:43:28,480 --> 00:43:31,380
+And he got back with it a couple days.
+
+703
+00:43:31,380 --> 00:43:32,980
+He had already ordered it and got it.
+
+704
+00:43:32,980 --> 00:43:35,580
+He goes, oh my God, this is so good.
+
+705
+00:43:35,580 --> 00:43:36,780
+This is so relevant.
+
+706
+00:43:36,780 --> 00:43:38,740
+It's helping so much.
+
+707
+00:43:38,740 --> 00:43:40,340
+Yeah, it's really timeless work.
+
+708
+00:43:40,340 --> 00:43:45,540
+I reread Are Your Lights On probably every other year or so.
+
+709
+00:43:45,540 --> 00:43:49,440
+Just a good book to remind me how to frame problems
+
+710
+00:43:49,440 --> 00:43:53,240
+and to think about solving the real problem,
+
+711
+00:43:53,240 --> 00:43:54,840
+not the problem that appears on the surface,
+
+712
+00:43:54,840 --> 00:43:58,740
+but taking a step back and solving the real problem.
+
+713
+00:43:59,440 --> 00:44:03,340
+Well, I'll miss Jerry, but his written works live on, which is great.
+
+714
+00:44:03,340 --> 00:44:06,240
+He just gave a lot to the software community.
+
+715
+00:44:06,240 --> 00:44:09,040
+I wish I had never met him personally, have you?
+
+716
+00:44:09,040 --> 00:44:11,280
+No, I never did either.
+
+717
+00:44:11,280 --> 00:44:16,720
+But based on his writings, I don't know if I'm going out on the limb,
+
+718
+00:44:16,720 --> 00:44:28,100
+but I wonder if really Jerry was continuously the ultimate modern tester.
+
+719
+00:44:28,100 --> 00:44:29,300
+Could be, could be.
+
+720
+00:44:29,500 --> 00:44:34,400
+His approach on things, it was timeless
+
+721
+00:44:34,400 --> 00:44:41,360
+because he had done it with a set of principles that don't die.
+
+722
+00:44:41,360 --> 00:44:44,210
+And the guy could tell a story too.
+
+723
+00:44:44,210 --> 00:44:53,860
+Yeah, you know, RIP Jerry, you've had a lot of impact to us for certain.
+
+724
+00:44:53,860 --> 00:44:57,620
+And I'm sure he's well aware of.
+
+725
+00:44:58,680 --> 00:45:02,560
+He's changed probably millions of lives.
+
+726
+00:45:02,560 --> 00:45:03,810
+Yep.
+
+727
+00:45:03,810 --> 00:45:05,010
+Okay, man.
+
+728
+00:45:05,010 --> 00:45:06,810
+So I'll miss you Jerry.
+
+729
+00:45:06,810 --> 00:45:08,910
+Well, if we had our drinks here, we'd raise a drink to you,
+
+730
+00:45:08,910 --> 00:45:10,710
+but I'll do that tonight when I get home.
+
+731
+00:45:10,710 --> 00:45:14,210
+And in the meantime, we have finished another episode of A.B. testing.
+
+732
+00:45:14,210 --> 00:45:18,540
+So thanks for listening and we will talk to you next time.
+

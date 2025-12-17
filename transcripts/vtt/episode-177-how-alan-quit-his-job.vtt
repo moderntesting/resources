@@ -1,0 +1,2768 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.400
+We need to gamify chat GPT.
+
+00:00:03.470 --> 00:00:06.150
+And if you ask dumb questions, you lose points.
+
+00:00:06.790 --> 00:00:11.620
+If you ask questions that it could actually help with and, and make you
+
+00:00:11.620 --> 00:00:13.420
+smarter, you get points.
+
+00:00:17.090 --> 00:00:21.230
+Welcome to AB testing podcast, your modern testing podcast.
+
+00:00:21.530 --> 00:00:26.970
+Your hosts, Alan and Brent will be here to guide you through topics on testing
+
+00:00:27.170 --> 00:00:30.170
+leadership, agile, and anything else that comes to mind.
+
+00:00:30.450 --> 00:00:31.970
+Now on with the show.
+
+00:00:32.820 --> 00:00:34.900
+Brent, man, it has been a long time.
+
+00:00:34.940 --> 00:00:35.620
+How are you doing?
+
+00:00:36.340 --> 00:00:38.340
+I'm doing super duper.
+
+00:00:38.860 --> 00:00:39.780
+You look nice there.
+
+00:00:39.780 --> 00:00:42.220
+You're wearing a vest in your office.
+
+00:00:42.900 --> 00:00:45.180
+What do you think of the, Oh, Hey everybody.
+
+00:00:45.820 --> 00:00:48.900
+Brent is joining the beard club.
+
+00:00:49.730 --> 00:00:52.610
+It looks good on you because your face is not pretty.
+
+00:00:52.610 --> 00:00:53.290
+You look way better.
+
+00:00:53.770 --> 00:00:54.730
+I think so too.
+
+00:00:54.730 --> 00:00:56.850
+My, my wife disagrees.
+
+00:00:57.130 --> 00:01:02.890
+Well, um, yeah, I don't think I'm going to, I mean, I don't think I'm
+
+00:01:02.890 --> 00:01:06.970
+going to, uh, I like as completely as I have now.
+
+00:01:07.010 --> 00:01:14.450
+So if, if I could fast forward to, to, to your stage, right.
+
+00:01:14.490 --> 00:01:20.170
+Uh, then yeah, I would go full on Viking style and like braid it with like cool
+
+00:01:20.170 --> 00:01:25.720
+beads and skull and crossbones and things like that, but I, I'm a low maintenance
+
+00:01:25.720 --> 00:01:25.960
+dude.
+
+00:01:25.960 --> 00:01:27.280
+I don't have the patience for that crap.
+
+00:01:27.480 --> 00:01:27.800
+Yeah.
+
+00:01:27.800 --> 00:01:31.960
+So I, oh, I have so many stories to tell and I'll probably go backward or
+
+00:01:31.960 --> 00:01:33.800
+out of order, people can figure them out.
+
+00:01:33.800 --> 00:01:37.480
+But now mine's been trimmed like twice in the last six months.
+
+00:01:37.480 --> 00:01:39.520
+Once I just got it kind of trimmed because it was bad.
+
+00:01:40.160 --> 00:01:44.160
+And, but before that I could actually water it up and tie a knot in the bottom.
+
+00:01:44.950 --> 00:01:54.190
+And now I, I was in Monro, or for the Americans, Montreal, uh, took a vacation
+
+00:01:54.190 --> 00:01:59.110
+up there because as astute listeners will know and people on LinkedIn
+
+00:01:59.110 --> 00:02:00.190
+will know I quit my job.
+
+00:02:00.190 --> 00:02:04.550
+So I had some time and we'll, yeah, we'll talk more about that in a minute.
+
+00:02:04.990 --> 00:02:08.470
+But I got my beard trimmed and a guy, this guy did a really good job.
+
+00:02:08.470 --> 00:02:11.510
+He kind of took all the fluff off the side.
+
+00:02:11.510 --> 00:02:16.510
+So it was less puffy Santa Claus and more Viking down to my sternum.
+
+00:02:16.830 --> 00:02:21.670
+Kind of not really pointy, but you know, it's more point dish.
+
+00:02:22.030 --> 00:02:24.230
+It's a look I'm getting used to.
+
+00:02:24.470 --> 00:02:25.350
+I'm getting used to.
+
+00:02:25.350 --> 00:02:26.150
+So that's my thing.
+
+00:02:26.590 --> 00:02:29.830
+So anyway, it has been a while because there has been stuff going on
+
+00:02:29.830 --> 00:02:32.430
+in my world, let's go backward.
+
+00:02:32.430 --> 00:02:35.390
+I took a week and went to Montreal before that.
+
+00:02:35.390 --> 00:02:36.790
+I took a week and went skiing.
+
+00:02:37.110 --> 00:02:41.110
+And before that I gave myself some time off by leaving my job at unity.
+
+00:02:42.550 --> 00:02:47.870
+I left that as an Easter egg in our very last podcast right before we logged off.
+
+00:02:47.870 --> 00:02:51.190
+And I said, like next time we can talk about how I quit my job.
+
+00:02:51.670 --> 00:02:52.030
+Yeah.
+
+00:02:52.070 --> 00:02:56.750
+And, and you're still, I presume under, under the, what is it?
+
+00:02:56.750 --> 00:02:58.110
+One year NDA.
+
+00:02:58.190 --> 00:03:03.710
+So the, your former unity employees will get no red meat here today.
+
+00:03:03.710 --> 00:03:04.270
+Correct?
+
+00:03:04.470 --> 00:03:04.950
+Correct.
+
+00:03:04.950 --> 00:03:05.190
+Correct.
+
+00:03:05.710 --> 00:03:10.310
+In fact, I will, well, they'll get nothing I didn't share with them already.
+
+00:03:10.670 --> 00:03:11.430
+Ah, gotcha.
+
+00:03:11.910 --> 00:03:16.550
+And you know, it's different when I left and I have so many things to talk about.
+
+00:03:16.950 --> 00:03:23.410
+Let me start from pause there a moment and just kind of check it out as a whole
+
+00:03:23.410 --> 00:03:24.730
+story there may take a while.
+
+00:03:24.730 --> 00:03:28.380
+You may have questions and I promised we'd talk about it, but it's
+
+00:03:28.380 --> 00:03:32.220
+been like a month, maybe since we recorded last.
+
+00:03:32.220 --> 00:03:33.100
+So what have you been up to?
+
+00:03:33.100 --> 00:03:33.860
+How are you?
+
+00:03:33.860 --> 00:03:35.820
+You're still in your office at Microsoft.
+
+00:03:35.820 --> 00:03:37.980
+So you're, you're still employed, which is great.
+
+00:03:38.380 --> 00:03:38.700
+Yep.
+
+00:03:38.700 --> 00:03:49.920
+Still still employed and theoretically today is the last day, uh, for the, at
+
+00:03:49.920 --> 00:03:56.280
+least the communicated layoffs as, as you know, that doesn't, doesn't mean
+
+00:03:56.280 --> 00:04:00.480
+they can't circle back on Monday with a whole new set of communicated layoffs.
+
+00:04:00.480 --> 00:04:00.760
+Right.
+
+00:04:00.960 --> 00:04:04.200
+But for the most part, Satya thinks he's done for now.
+
+00:04:04.760 --> 00:04:05.440
+Is that what you're saying?
+
+00:04:05.880 --> 00:04:06.440
+No.
+
+00:04:06.600 --> 00:04:11.120
+Well, what I'm saying is what Satya announced back in January is supposed
+
+00:04:11.120 --> 00:04:16.560
+to finish today, there was nothing he messaged around and that will be it
+
+00:04:16.560 --> 00:04:21.080
+for the year or the, or that would be unfair.
+
+00:04:21.080 --> 00:04:22.560
+You never know what's going to go on.
+
+00:04:22.600 --> 00:04:23.200
+So that's good.
+
+00:04:23.560 --> 00:04:23.880
+Yeah.
+
+00:04:24.080 --> 00:04:24.400
+All right.
+
+00:04:24.400 --> 00:04:29.840
+I assume your team charter is still the same, still working on, um, stuff.
+
+00:04:30.520 --> 00:04:30.960
+Yeah.
+
+00:04:31.320 --> 00:04:31.640
+Yeah.
+
+00:04:31.880 --> 00:04:32.200
+No.
+
+00:04:32.240 --> 00:04:39.480
+Um, we got a bunch of bunch of new, really interesting work coming in.
+
+00:04:40.000 --> 00:04:45.640
+And I'm looking into what I see what I'm trying to fix.
+
+00:04:45.720 --> 00:04:45.960
+Yeah.
+
+00:04:46.000 --> 00:04:47.120
+I'll just go with stuff.
+
+00:04:47.160 --> 00:04:48.400
+We're doing stuff.
+
+00:04:48.920 --> 00:04:49.920
+Uh, it's cool.
+
+00:04:49.920 --> 00:04:53.440
+I don't have enough time to think about how I can make sure.
+
+00:04:53.440 --> 00:04:58.360
+The question really is the question burning the minds of all three
+
+00:04:58.400 --> 00:05:04.100
+AB testing listeners is, is AI taking away your job?
+
+00:05:04.780 --> 00:05:07.570
+Uh, not yet.
+
+00:05:08.170 --> 00:05:13.850
+I don't know if you saw the, well, so it's even bigger in the news now, right?
+
+00:05:13.890 --> 00:05:22.980
+There's a, there's a big signed petition, uh, by multiple serious, uh, business
+
+00:05:22.980 --> 00:05:29.510
+leaders, including ones that are heads of AI companies, trying to get the
+
+00:05:29.510 --> 00:05:34.790
+government to, to do some sort of pause on AI.
+
+00:05:35.350 --> 00:05:39.390
+Let's just pause the use of this for six months.
+
+00:05:40.070 --> 00:05:47.780
+It'll be weird to see if that can land, um, uh, for big things like so.
+
+00:05:48.660 --> 00:05:52.420
+Did you hear they bid you're they, they're putting a pausing big pause in
+
+00:05:52.420 --> 00:05:55.180
+Italy, they banned chat GPT in Italy.
+
+00:05:55.820 --> 00:05:57.140
+I did not hear that.
+
+00:05:57.220 --> 00:05:57.460
+Yeah.
+
+00:05:57.460 --> 00:05:58.100
+Check that out.
+
+00:05:58.180 --> 00:05:59.900
+Uh, look at it right now.
+
+00:06:00.140 --> 00:06:04.460
+Unfortunately, things like that are going to do the square root of nothing.
+
+00:06:05.100 --> 00:06:09.420
+I know, but I, I'm just enjoying watching the world try and figure out,
+
+00:06:09.420 --> 00:06:10.700
+Hey, I had to handle this stuff.
+
+00:06:10.740 --> 00:06:15.260
+And in that some different kinds of innovation are going to happen.
+
+00:06:15.260 --> 00:06:19.580
+Some actual, we're, Steven Johnson calls, we're on the adjacent possible now of
+
+00:06:19.580 --> 00:06:22.740
+some really cool things happening with chat AI.
+
+00:06:23.340 --> 00:06:27.020
+Now the enterprise computer, the computer from the enterprise from
+
+00:06:27.020 --> 00:06:30.860
+Star Trek is like, yeah, that's totally possible.
+
+00:06:30.940 --> 00:06:32.300
+Just put some voice on this thing.
+
+00:06:32.780 --> 00:06:33.540
+Uh, yeah.
+
+00:06:33.660 --> 00:06:40.140
+I've also seen, uh, someone made Bard, which is Google's, uh, chat AI and
+
+00:06:40.140 --> 00:06:43.420
+chat GPT, uh, square off in a rap battle.
+
+00:06:43.580 --> 00:06:44.380
+That was pretty cool.
+
+00:06:44.940 --> 00:06:45.900
+And, and who won?
+
+00:06:46.380 --> 00:06:47.100
+I don't recall.
+
+00:06:47.500 --> 00:06:49.660
+Just it's not who wins or loses.
+
+00:06:49.700 --> 00:06:50.820
+It's who plays the game.
+
+00:06:51.380 --> 00:06:58.900
+I have, uh, so I have seen a few several articles around that of course, make
+
+00:06:58.900 --> 00:07:06.220
+me happy, uh, around Bard looking like, uh, a brainless monkey in comparison
+
+00:07:06.260 --> 00:07:09.540
+to, uh, for example, the Bing chat bot.
+
+00:07:10.320 --> 00:07:15.760
+The I'm looking at the, the article you just said, and I think that one's.
+
+00:07:16.800 --> 00:07:19.240
+They're blocking it over privacy concerns.
+
+00:07:19.800 --> 00:07:20.160
+Right.
+
+00:07:20.160 --> 00:07:24.320
+And there's concerns with, uh, Dolly as well.
+
+00:07:24.920 --> 00:07:25.200
+Right.
+
+00:07:25.480 --> 00:07:26.680
+That, okay.
+
+00:07:26.680 --> 00:07:34.320
+So it's learning, uh, it's learning off of, off of available assets.
+
+00:07:34.320 --> 00:07:41.040
+Like if you are an artist, uh, there's a chance and you have something public.
+
+00:07:41.040 --> 00:07:45.200
+There's a chance that Dolly has been trained off of, off of your art form.
+
+00:07:45.480 --> 00:07:45.800
+Right.
+
+00:07:45.800 --> 00:07:49.920
+And we had a whole conversation about art last time and, and everything is derivative.
+
+00:07:50.560 --> 00:07:50.800
+Right.
+
+00:07:50.800 --> 00:07:51.040
+Right.
+
+00:07:51.040 --> 00:07:51.240
+Right.
+
+00:07:51.240 --> 00:07:51.600
+Right.
+
+00:07:51.680 --> 00:07:59.980
+But it'll be interesting that discussion around whether this, whether that is
+
+00:07:59.980 --> 00:08:06.940
+really a privacy concern or not, or a copyright concern or not, right.
+
+00:08:06.980 --> 00:08:10.420
+That, that needs to be accelerated and closed.
+
+00:08:11.100 --> 00:08:19.020
+And then depending on the results of that one, um, then it's just going to be a crazy,
+
+00:08:20.410 --> 00:08:25.890
+even a faster, crazy world, or, or it'll be, you know, the, the doom will be
+
+00:08:25.890 --> 00:08:27.130
+slowed down slightly.
+
+00:08:27.930 --> 00:08:31.650
+Like a, like a speed bump in a, in a grocery parking lot.
+
+00:08:32.130 --> 00:08:33.130
+Sure.
+
+00:08:33.490 --> 00:08:34.290
+Sure.
+
+00:08:34.730 --> 00:08:43.300
+It has internally, I will say it has created a big fuss.
+
+00:08:44.120 --> 00:08:48.520
+Like I would say right now we were preparing for intern season and I would
+
+00:08:48.520 --> 00:08:56.820
+say, I don't know, 70% of the projects, uh, have the letters GPT involved somehow.
+
+00:08:57.600 --> 00:09:01.640
+I, of course, I'm going in a different direction because I understand what
+
+00:09:01.640 --> 00:09:04.560
+GPT is right now.
+
+00:09:05.530 --> 00:09:09.170
+Uh, and I think a lot of these people are investing in science fair projects.
+
+00:09:09.690 --> 00:09:10.170
+Yes.
+
+00:09:10.210 --> 00:09:10.850
+Yes, indeed.
+
+00:09:11.330 --> 00:09:11.610
+Yeah.
+
+00:09:12.500 --> 00:09:12.780
+All right.
+
+00:09:12.780 --> 00:09:14.140
+Well, cool stuff going on.
+
+00:09:14.180 --> 00:09:17.820
+Um, I think AI will be a recurring, especially chat GPT.
+
+00:09:17.860 --> 00:09:22.820
+I, I, I now pay, I decided to pay the 20 bucks to get the more reliable,
+
+00:09:22.820 --> 00:09:28.060
+faster, more robust version and access to chat GPT for, for me, it's worth it.
+
+00:09:28.060 --> 00:09:31.180
+And again, I use it as a, as I mentioned before, not going to go into it.
+
+00:09:31.820 --> 00:09:35.940
+A brainstorming tool, the tool that helped me think about things, think
+
+00:09:35.940 --> 00:09:37.780
+through things, summarize things.
+
+00:09:38.140 --> 00:09:41.140
+It is a collaborative partner for me.
+
+00:09:41.740 --> 00:09:46.100
+And that's my usage of that may have all over time, but I'm now a paying customer.
+
+00:09:46.100 --> 00:09:50.180
+So I'm into it and your prediction from December is coming true.
+
+00:09:50.220 --> 00:09:54.500
+Anyway, AI chat GPT will probably be recurring topics here.
+
+00:09:54.900 --> 00:09:57.100
+Worth checking in on what's going on.
+
+00:09:57.180 --> 00:09:59.700
+One of the things I will encourage you to do.
+
+00:10:00.220 --> 00:10:06.020
+You protect your is ask it to generate test cases for a calculator.
+
+00:10:06.810 --> 00:10:07.290
+No.
+
+00:10:07.690 --> 00:10:08.210
+Oh, okay.
+
+00:10:08.210 --> 00:10:08.490
+Good.
+
+00:10:08.530 --> 00:10:14.650
+If you're, if we're remarkably bored and you, you know, you have a choice between
+
+00:10:14.970 --> 00:10:21.050
+trimming your fingernails again and doing that, maybe that, but even then it's sort
+
+00:10:21.050 --> 00:10:29.120
+of an iffy, iffy case for me, try out the Bing chatbot along with the, the GPT
+
+00:10:29.120 --> 00:10:31.520
+Ford GPT four is much better.
+
+00:10:32.120 --> 00:10:38.920
+Uh, but one of the things I am finding is the Bing bot, which combines the current
+
+00:10:38.920 --> 00:10:45.400
+jet chat, be GPT model, the, the three five model, not four, along with
+
+00:10:45.480 --> 00:10:50.400
+smart info retrieval, for me, it's producing much better results.
+
+00:10:51.160 --> 00:10:53.440
+And it has the benefit of being free.
+
+00:10:54.200 --> 00:10:55.400
+I will check it out.
+
+00:10:55.840 --> 00:10:56.120
+Yeah.
+
+00:10:56.480 --> 00:10:58.280
+So being.
+
+00:10:59.380 --> 00:10:59.740
+Yeah.
+
+00:10:59.820 --> 00:11:02.380
+Is that, I know that's going to be hard.
+
+00:11:02.380 --> 00:11:04.020
+What is, what is Bing stand for?
+
+00:11:04.140 --> 00:11:05.020
+Is that an acronym?
+
+00:11:05.460 --> 00:11:05.780
+Yeah.
+
+00:11:05.780 --> 00:11:10.900
+It's, it's short for being, being, being.
+
+00:11:11.180 --> 00:11:11.780
+Oh my Lord.
+
+00:11:12.300 --> 00:11:20.300
+So you picked on a very good metaphor or comparison earlier because I am maybe
+
+00:11:20.300 --> 00:11:26.380
+my only neuroses, but definitely my biggest one is I cannot stand my fingernails
+
+00:11:26.380 --> 00:11:28.500
+not being sheared all the way back.
+
+00:11:29.180 --> 00:11:29.700
+Oh, really?
+
+00:11:29.780 --> 00:11:35.860
+Like I can feel the weight of them and throw like a millimeter law just feels weird.
+
+00:11:36.880 --> 00:11:43.360
+Oh, I, so if it's too short, then I can't pry things open.
+
+00:11:43.480 --> 00:11:47.720
+And obviously playing the guitar is better with a little bit of
+
+00:11:47.760 --> 00:11:53.050
+nailage, but I guess you don't, on the right hand, I suppose nails
+
+00:11:53.050 --> 00:11:55.490
+getting the way of, yeah, no, on the left hand, it's annoying.
+
+00:11:55.490 --> 00:11:57.250
+I assume playing right hand guitar.
+
+00:11:57.250 --> 00:11:57.490
+All right.
+
+00:11:57.650 --> 00:11:57.890
+Yeah.
+
+00:11:57.890 --> 00:11:58.250
+Yeah.
+
+00:11:59.270 --> 00:11:59.630
+Hey.
+
+00:11:59.630 --> 00:12:01.830
+So anyway, I, um, I quit.
+
+00:12:02.680 --> 00:12:03.400
+You did.
+
+00:12:03.640 --> 00:12:07.200
+And, and then you banned me from talking about it.
+
+00:12:07.600 --> 00:12:08.400
+No, I didn't.
+
+00:12:08.440 --> 00:12:11.160
+No, I well, I didn't, I didn't.
+
+00:12:11.200 --> 00:12:16.400
+Uh, I decided to leave and it's a, you know, it's a long story.
+
+00:12:16.400 --> 00:12:18.400
+I wish no ill will on unity.
+
+00:12:18.400 --> 00:12:20.720
+It's different from Microsoft where I was just done.
+
+00:12:21.200 --> 00:12:25.880
+I had a manager at Microsoft who was to compare my last manager at
+
+00:12:25.880 --> 00:12:27.680
+Microsoft was a total shithead.
+
+00:12:28.040 --> 00:12:32.640
+He is the epitome of everything you can do wrong as a manager.
+
+00:12:33.120 --> 00:12:36.680
+The first one ever, although you hear stories all the time, the first
+
+00:12:36.680 --> 00:12:39.240
+one ever who made up stuff in my review, I didn't do.
+
+00:12:39.880 --> 00:12:41.680
+And it was just, he was just horrible.
+
+00:12:42.470 --> 00:12:45.390
+There was a culture of sucking up.
+
+00:12:46.190 --> 00:12:47.150
+You remember Brian?
+
+00:12:47.190 --> 00:12:47.630
+Yeah.
+
+00:12:47.630 --> 00:12:48.190
+Yeah.
+
+00:12:48.190 --> 00:12:48.510
+Yeah.
+
+00:12:48.630 --> 00:12:49.750
+It's like, I just can't work.
+
+00:12:49.750 --> 00:12:52.350
+This is not the culture I want to work in.
+
+00:12:52.550 --> 00:12:57.310
+And if you recall, if you recall, I was scared.
+
+00:12:57.390 --> 00:13:02.910
+AF when I found out that you moved in to Brian's org.
+
+00:13:03.510 --> 00:13:03.710
+Yeah.
+
+00:13:03.710 --> 00:13:05.150
+It was fun for a while.
+
+00:13:05.150 --> 00:13:06.870
+It was a good experience.
+
+00:13:06.870 --> 00:13:09.470
+I liked it, but it was good to get out as well.
+
+00:13:09.470 --> 00:13:11.790
+So different experience leaving unity.
+
+00:13:11.790 --> 00:13:13.390
+And like, let me give you the example.
+
+00:13:13.390 --> 00:13:18.580
+I told my manager, I was leaving and gave him a bunch of reasons why.
+
+00:13:18.740 --> 00:13:20.580
+They said, yep, those make sense.
+
+00:13:21.180 --> 00:13:25.100
+And it says, I've never successfully talked to anyone out of resigning.
+
+00:13:25.100 --> 00:13:27.860
+So let's just figure out how to make a good transition.
+
+00:13:28.500 --> 00:13:29.820
+And we did.
+
+00:13:29.900 --> 00:13:34.020
+And I'm super happy with, I won't go into details on the podcast.
+
+00:13:34.020 --> 00:13:37.860
+If you're at unity and listening, of course, you know, what my suggestions were,
+
+00:13:37.860 --> 00:13:39.980
+because that's, that's what happened.
+
+00:13:39.980 --> 00:13:46.380
+And I'm really happy with how simple the transition went, how nice everyone
+
+00:13:46.380 --> 00:13:48.020
+was and everyone at unity is great.
+
+00:13:48.380 --> 00:13:51.100
+I'm not going to go deep into the reasons I left.
+
+00:13:51.100 --> 00:13:52.300
+I'll go a little bit.
+
+00:13:52.660 --> 00:13:53.900
+It was a little bit of culture.
+
+00:13:54.500 --> 00:13:59.820
+What I can say is the culture was nowhere near as like as bad as I felt
+
+00:13:59.820 --> 00:14:00.900
+Microsoft was at the time.
+
+00:14:00.900 --> 00:14:05.580
+And I, and from talking to you and others, I trust that Satya is making a difference
+
+00:14:05.620 --> 00:14:10.540
+and that the culture, the siloed backstabbing culture of Microsoft when I
+
+00:14:10.540 --> 00:14:13.260
+was there is, is indeed slowly fading away.
+
+00:14:13.700 --> 00:14:18.220
+Uh, it's backstabbing is nearly gone.
+
+00:14:18.340 --> 00:14:18.820
+Yeah.
+
+00:14:19.780 --> 00:14:20.780
+A couple of the things.
+
+00:14:20.780 --> 00:14:24.700
+So my experience is my org, my manager, totally fine.
+
+00:14:24.700 --> 00:14:27.260
+It was, it was a great place, great org to be in.
+
+00:14:27.260 --> 00:14:28.260
+I could do what I wanted.
+
+00:14:28.260 --> 00:14:31.860
+Plenty of, plenty of additional room for growth there.
+
+00:14:32.300 --> 00:14:37.940
+What it really came down to for me was in the position I was in as a
+
+00:14:37.940 --> 00:14:39.660
+VP reporting to the CTO.
+
+00:14:39.660 --> 00:14:41.420
+So my skip level was our CEO.
+
+00:14:41.780 --> 00:14:44.940
+I was dealing a lot more with executives from across the company.
+
+00:14:45.700 --> 00:14:49.860
+Most of which were fantastic and great people and humble and everything.
+
+00:14:49.940 --> 00:14:54.500
+There were a few, and I'm not going to name names and this is maybe a little
+
+00:14:54.500 --> 00:15:00.500
+more than I went to, went into directly with my team at Unity, but still well
+
+00:15:00.500 --> 00:15:03.820
+worth sharing, um, and they could have drawn the line easily.
+
+00:15:04.420 --> 00:15:09.380
+There are a few of the senior leaders that happened to be folks who were at
+
+00:15:09.380 --> 00:15:13.100
+Microsoft when I was there, who I did not like when I was there because that
+
+00:15:13.140 --> 00:15:19.760
+they were very much that frat boy, good old boys culture of, you know, you
+
+00:15:19.760 --> 00:15:20.720
+remember what it was like.
+
+00:15:20.880 --> 00:15:21.680
+Yeah, yeah, yeah.
+
+00:15:21.680 --> 00:15:28.290
+No, uh, they're the type of people that we wanted to improve the culture.
+
+00:15:28.290 --> 00:15:29.890
+We wanted out of Microsoft.
+
+00:15:29.890 --> 00:15:30.130
+Right.
+
+00:15:30.130 --> 00:15:35.050
+And they left and like, and so, and a couple of them went to, from there,
+
+00:15:35.370 --> 00:15:42.450
+went to Amazon where they became more business savvy versions of the old
+
+00:15:42.530 --> 00:15:45.570
+frat boy backstabbers they were.
+
+00:15:46.210 --> 00:15:52.810
+And in interacting with them and seeing that their spots didn't change that much
+
+00:15:53.250 --> 00:15:57.570
+and being, you know, I'm pretty good in influencing culture, even in
+
+00:15:57.570 --> 00:16:01.450
+places that aren't mine, but these were, it was a hardship to move and
+
+00:16:01.450 --> 00:16:02.650
+I could have worked around it.
+
+00:16:02.690 --> 00:16:06.260
+I could have, there was no, I can't work here anymore.
+
+00:16:06.260 --> 00:16:07.060
+This is too hard.
+
+00:16:07.060 --> 00:16:11.340
+This was like, this is hard and I'm old and I don't feel like doing this anymore.
+
+00:16:12.330 --> 00:16:13.930
+So that was really what kind of left up to it.
+
+00:16:13.930 --> 00:16:19.220
+Some things just didn't feel like it was easy to do good work anymore.
+
+00:16:19.620 --> 00:16:24.300
+And that was, it's not that it's not easy to do good work at Unity in general.
+
+00:16:24.420 --> 00:16:28.460
+In my position, it was because the people I had to go influence,
+
+00:16:29.060 --> 00:16:30.660
+they lost my respect.
+
+00:16:32.380 --> 00:16:36.820
+So I decided to step away and, and it was really cool as I gave specific
+
+00:16:36.820 --> 00:16:39.860
+reasons to my manager, none, which I share with my team, none, which I'll
+
+00:16:39.860 --> 00:16:44.980
+share here, a very pointed example after example, or after example, where
+
+00:16:44.980 --> 00:16:46.100
+I felt things weren't right.
+
+00:16:46.420 --> 00:16:51.900
+And it was really cool was most managers would try and tell you like, this
+
+00:16:51.900 --> 00:16:53.500
+is wrong, blah, blah, blah, blah.
+
+00:16:54.060 --> 00:16:57.220
+He agreed with all of them, whether he did or not, I don't, whether
+
+00:16:57.220 --> 00:16:59.180
+he really did or not, I don't know.
+
+00:16:59.180 --> 00:17:01.340
+But he agreed with all of them and said, yep, these are problems.
+
+00:17:01.580 --> 00:17:05.260
+And it's going to take about a year, maybe two for, to get these things
+
+00:17:05.260 --> 00:17:07.020
+ironed out and get things smooth again.
+
+00:17:07.740 --> 00:17:09.980
+And I told him, I think you're exactly right.
+
+00:17:10.180 --> 00:17:12.580
+I just don't have the patience right now at this point in my
+
+00:17:12.580 --> 00:17:14.180
+career to ride that out.
+
+00:17:14.180 --> 00:17:15.300
+So I'm going to take a break.
+
+00:17:15.700 --> 00:17:16.620
+I'm old.
+
+00:17:17.590 --> 00:17:18.550
+I've done that.
+
+00:17:19.070 --> 00:17:20.710
+No, it's I get it.
+
+00:17:20.830 --> 00:17:21.070
+Right.
+
+00:17:21.070 --> 00:17:25.950
+It's at some point in time, you want to stop fixing the same
+
+00:17:25.950 --> 00:17:30.500
+problems and see what happens on the other side of the mountain.
+
+00:17:30.700 --> 00:17:32.140
+Maybe, maybe.
+
+00:17:32.580 --> 00:17:34.420
+Well, and I want to fix problems.
+
+00:17:34.540 --> 00:17:37.220
+I don't mind fixing some of the same problems.
+
+00:17:37.580 --> 00:17:38.820
+Some of yes.
+
+00:17:38.820 --> 00:17:39.180
+Greeting.
+
+00:17:39.180 --> 00:17:43.460
+When I feel, when I have confidence, I don't need a lot because, uh, I
+
+00:17:43.460 --> 00:17:44.460
+don't need a lot of confidence.
+
+00:17:44.460 --> 00:17:49.020
+I want to feel like there's a path where I can be successful.
+
+00:17:49.580 --> 00:17:54.020
+Sorry, I'm way too esoteric here, but yeah, it's, um, I decided to leave.
+
+00:17:54.020 --> 00:17:59.100
+So then what happened was I did the thing where my last day was
+
+00:17:59.100 --> 00:18:04.140
+March 17th in the office, but I was on vacation for two weeks.
+
+00:18:04.140 --> 00:18:10.410
+My actual official last day was the 24th for reasons that are confusing and
+
+00:18:10.410 --> 00:18:15.050
+actually ended up not being valid at the end anyway, I waited until it's on the
+
+00:18:15.050 --> 00:18:18.090
+24th, I did go turn in my laptop on my card key at the Bellevue office.
+
+00:18:18.090 --> 00:18:20.130
+And, and it was a little surreal.
+
+00:18:20.650 --> 00:18:24.290
+Somebody else I knew who was at Microsoft quit the same day and his
+
+00:18:24.290 --> 00:18:25.530
+laptop was back there too.
+
+00:18:25.530 --> 00:18:31.410
+And our receptionist we call workplace experience was kind of expecting me.
+
+00:18:31.410 --> 00:18:34.210
+He said, Hey, she said, all the dinosaurs are leaving.
+
+00:18:34.210 --> 00:18:34.730
+I said, what do you mean?
+
+00:18:34.730 --> 00:18:35.930
+He was a dinosaur.
+
+00:18:36.410 --> 00:18:39.610
+And she said, no, that's what we just called anybody who remembers the old
+
+00:18:39.610 --> 00:18:40.930
+building we call dinosaurs.
+
+00:18:40.930 --> 00:18:41.450
+So, okay.
+
+00:18:41.490 --> 00:18:41.730
+Okay.
+
+00:18:41.730 --> 00:18:42.650
+Then I'm a dinosaur.
+
+00:18:42.690 --> 00:18:43.810
+The first one, oh my God.
+
+00:18:43.810 --> 00:18:45.450
+Like the old building was what?
+
+00:18:45.940 --> 00:18:47.220
+Four years ago.
+
+00:18:48.060 --> 00:18:48.380
+Yeah.
+
+00:18:48.420 --> 00:18:48.620
+Yeah.
+
+00:18:48.620 --> 00:18:48.780
+Yeah.
+
+00:18:49.020 --> 00:18:50.300
+We moved out four years ago.
+
+00:18:53.110 --> 00:18:53.550
+Yeah.
+
+00:18:53.830 --> 00:18:57.910
+The one next to our, what toys are us used to be?
+
+00:18:57.910 --> 00:18:58.310
+Yeah.
+
+00:18:58.310 --> 00:18:58.670
+Yeah.
+
+00:18:59.350 --> 00:19:02.030
+Anyway, I turned to my stuff and I was like a little surreal.
+
+00:19:02.030 --> 00:19:06.390
+I walked out and walking back to my car and from my phone, I posted a quick
+
+00:19:06.390 --> 00:19:09.230
+little LinkedIn thing that said something to the effect of, I don't have it in
+
+00:19:09.230 --> 00:19:13.940
+front of me, so something to the effect of, well, that's that after six years
+
+00:19:13.940 --> 00:19:19.220
+at unity, I turned in my card key and laptop today off to see what's next.
+
+00:19:20.180 --> 00:19:25.220
+And so many, I mean, there's like a dozen comments, 15 comments, a bunch
+
+00:19:25.220 --> 00:19:29.180
+of reactions, a whole bunch of DMS, a whole bunch of messages elsewhere.
+
+00:19:29.260 --> 00:19:30.300
+And I was kind of touched.
+
+00:19:30.300 --> 00:19:32.700
+A lot of people concerned about me.
+
+00:19:33.570 --> 00:19:34.690
+Like, are you okay?
+
+00:19:34.690 --> 00:19:36.570
+Like, and these days, like it was left.
+
+00:19:36.570 --> 00:19:37.010
+Did you quit?
+
+00:19:37.010 --> 00:19:37.490
+What happened?
+
+00:19:37.570 --> 00:19:38.970
+Why would you quit in this economy?
+
+00:19:38.970 --> 00:19:39.730
+Are you stupid?
+
+00:19:39.770 --> 00:19:44.330
+I'm a little stupid, but, uh, but I was, it was really, and then on our
+
+00:19:44.330 --> 00:19:47.370
+Slack group as well, it's like, Hey, Alan, I just heard you quit.
+
+00:19:47.370 --> 00:19:48.250
+Is everything all right?
+
+00:19:48.250 --> 00:19:50.890
+And yeah, it's great.
+
+00:19:51.370 --> 00:19:57.240
+It is great to be in a position where you feel like you could, like taking
+
+00:19:57.240 --> 00:19:58.800
+a break is the best thing for you.
+
+00:19:59.280 --> 00:20:04.850
+People I haven't heard from in years checking in on me, some unfortunately,
+
+00:20:04.850 --> 00:20:09.090
+people that have been laid off from Microsoft recently out there wondering,
+
+00:20:09.090 --> 00:20:11.450
+looking for commiserating on, well, where are you going to end up?
+
+00:20:11.450 --> 00:20:12.210
+Could I end up there?
+
+00:20:12.210 --> 00:20:12.410
+What?
+
+00:20:12.410 --> 00:20:14.010
+I, and I don't know.
+
+00:20:14.010 --> 00:20:18.130
+I mean, everybody has their own path and journey, but anyway, the short story
+
+00:20:18.130 --> 00:20:21.930
+is a lot, I didn't think I thought there was no picture.
+
+00:20:21.970 --> 00:20:25.450
+There was no interesting blog post to go with it, just a quick little blurb.
+
+00:20:25.690 --> 00:20:30.970
+So I was kind of, um, surprised and touched over all the concern and the
+
+00:20:30.970 --> 00:20:34.090
+comments from people on, on me leaving.
+
+00:20:34.090 --> 00:20:34.770
+Are you okay?
+
+00:20:34.770 --> 00:20:39.730
+And yes, for anyone listening to the podcast, I'm sure far more people see
+
+00:20:39.730 --> 00:20:43.890
+my posts, like 10 people see my posts on LinkedIn and only three
+
+00:20:43.890 --> 00:20:45.330
+people listen to the podcast.
+
+00:20:45.330 --> 00:20:49.910
+But if you happen to be both, yeah, I'm doing great.
+
+00:20:50.310 --> 00:20:50.950
+I'm fine.
+
+00:20:50.950 --> 00:20:51.870
+I feel good.
+
+00:20:51.870 --> 00:20:52.750
+I'm relaxed.
+
+00:20:52.750 --> 00:20:53.670
+I'm rested.
+
+00:20:53.830 --> 00:20:59.590
+I've had a very, very nice break and things are going well.
+
+00:21:00.070 --> 00:21:01.070
+So yeah, that's that.
+
+00:21:01.430 --> 00:21:01.790
+Yeah.
+
+00:21:01.990 --> 00:21:15.820
+So you did not leave without understanding a better, uh, I'm
+
+00:21:15.820 --> 00:21:16.940
+being, trying to be very careful.
+
+00:21:16.940 --> 00:21:20.340
+Life for yourself post leaving, right?
+
+00:21:20.340 --> 00:21:23.220
+It wasn't, it wasn't F this place.
+
+00:21:23.220 --> 00:21:31.330
+I'm out of here and you left after thoughtfulness and some
+
+00:21:31.330 --> 00:21:33.890
+form of prescriptiveness.
+
+00:21:34.490 --> 00:21:39.570
+And unfortunately in right now, like everything is layoff heavy.
+
+00:21:40.330 --> 00:21:42.690
+I understand why everyone might think, right?
+
+00:21:42.690 --> 00:21:46.490
+You didn't have a choice in the matter or you were pressured
+
+00:21:46.490 --> 00:21:47.410
+negatively in it.
+
+00:21:48.570 --> 00:21:51.610
+I know some of the details and I'll absolutely say that's, that
+
+00:21:52.090 --> 00:21:53.450
+that's not what happened here.
+
+00:21:54.090 --> 00:21:58.090
+Um, can I just talk a little bit about it because it's something
+
+00:21:58.090 --> 00:22:01.410
+we've talked about before, not in a while, but really I was
+
+00:22:01.410 --> 00:22:06.370
+experiencing burnout is, is, is the, the gut of it from a lot
+
+00:22:06.370 --> 00:22:07.130
+of different things.
+
+00:22:07.130 --> 00:22:10.850
+And so when I got to the end, I, it was hard for me to wake
+
+00:22:10.850 --> 00:22:13.530
+up in the morning and go to work.
+
+00:22:13.930 --> 00:22:16.970
+I've been getting up and I got, I changed this at the first
+
+00:22:16.970 --> 00:22:17.290
+of the year.
+
+00:22:17.290 --> 00:22:19.410
+So I've been feeling, I've been thinking about leaving all
+
+00:22:19.410 --> 00:22:20.570
+the way back since November.
+
+00:22:21.720 --> 00:22:24.720
+And I thought it was just getting up early.
+
+00:22:24.760 --> 00:22:28.800
+I've been getting up at 6 AM or 5 30 AM four days a week,
+
+00:22:28.920 --> 00:22:33.660
+sometimes five, uh, for the last couple of years after the
+
+00:22:33.660 --> 00:22:36.660
+first year, I changed my schedule so that my first meeting
+
+00:22:37.480 --> 00:22:40.780
+on Monday, Wednesday, and Friday wasn't until seven 30
+
+00:22:40.780 --> 00:22:41.560
+at the earliest.
+
+00:22:41.600 --> 00:22:44.920
+I started early on the other days, still pretty early for,
+
+00:22:44.920 --> 00:22:49.520
+for a West coaster still was having a hard time getting
+
+00:22:49.520 --> 00:22:52.760
+engaged and you know, the layout, I'll admit the layoffs
+
+00:22:52.760 --> 00:22:53.320
+are part of it.
+
+00:22:53.320 --> 00:22:56.640
+I, you know, I disagree with the way the layoffs are
+
+00:22:56.640 --> 00:22:59.440
+done at unity, but what happened was I couldn't get
+
+00:22:59.440 --> 00:23:00.000
+engaged.
+
+00:23:00.040 --> 00:23:01.520
+I could go through the motions.
+
+00:23:01.520 --> 00:23:02.680
+I could take care of my team.
+
+00:23:02.680 --> 00:23:05.960
+I could go to meetings and make decisions and do the
+
+00:23:05.960 --> 00:23:10.200
+minimum really, but there were any sort of the extra
+
+00:23:10.200 --> 00:23:11.040
+work that I liked to do.
+
+00:23:11.040 --> 00:23:12.080
+I didn't call it extra.
+
+00:23:12.160 --> 00:23:14.560
+It's just really just doing stuff beyond the meetings,
+
+00:23:14.560 --> 00:23:17.920
+like just coming up with strategic plans and helping
+
+00:23:17.920 --> 00:23:20.800
+a lot and doing the extra work to align around what's
+
+00:23:20.800 --> 00:23:23.040
+important and digging in with our partner teams,
+
+00:23:23.040 --> 00:23:24.320
+understand what we're going to do.
+
+00:23:24.520 --> 00:23:25.760
+I had no energy for that.
+
+00:23:26.160 --> 00:23:31.950
+I was obligated through just care about keeping the
+
+00:23:31.950 --> 00:23:34.430
+team running and keeping them successful and happy
+
+00:23:34.430 --> 00:23:37.470
+and engaged, but I couldn't find any energy to
+
+00:23:37.470 --> 00:23:38.670
+engage beyond there.
+
+00:23:38.750 --> 00:23:43.780
+So there was a three day weekend in January.
+
+00:23:43.780 --> 00:23:46.020
+I turned into a four day weekend and completely
+
+00:23:46.020 --> 00:23:48.420
+unplugged, tried to see if I get back into it.
+
+00:23:48.420 --> 00:23:49.060
+It didn't work.
+
+00:23:49.620 --> 00:23:52.140
+So then in fab around presidents day, I took a
+
+00:23:52.140 --> 00:23:55.820
+five day weekend or maybe a big chunk of time.
+
+00:23:55.820 --> 00:23:58.020
+Not well, anybody in Europe would go.
+
+00:23:58.060 --> 00:23:59.900
+That's not a big chunk of time, Alan, but for,
+
+00:24:00.140 --> 00:24:00.940
+for Americans.
+
+00:24:00.980 --> 00:24:01.260
+Yeah.
+
+00:24:01.900 --> 00:24:04.500
+So I took a longer weekend again, completely unplugged,
+
+00:24:04.580 --> 00:24:09.540
+just tried to meditate and relax and just see if I
+
+00:24:09.540 --> 00:24:11.220
+could find it again.
+
+00:24:11.380 --> 00:24:12.780
+And I came back and I couldn't.
+
+00:24:12.780 --> 00:24:15.420
+And that when I came back and I couldn't, that's
+
+00:24:15.420 --> 00:24:18.460
+when I typed up a letter of resignation and my
+
+00:24:18.460 --> 00:24:21.540
+manager was on, uh, or traveling that week.
+
+00:24:21.540 --> 00:24:22.100
+Complication.
+
+00:24:22.100 --> 00:24:22.780
+I can't remember.
+
+00:24:23.020 --> 00:24:25.220
+So when I met with him the next week is when
+
+00:24:25.220 --> 00:24:26.140
+we had that discussion.
+
+00:24:26.820 --> 00:24:29.740
+So it was, it was a long time coming.
+
+00:24:29.740 --> 00:24:33.860
+It was definitely not a table flip run out the room.
+
+00:24:34.180 --> 00:24:38.940
+I really, really tried to make it work in my head,
+
+00:24:38.940 --> 00:24:41.610
+but in the end, you know, I told the story back
+
+00:24:41.610 --> 00:24:43.290
+at Microsoft, it was hard to leave.
+
+00:24:43.290 --> 00:24:44.650
+And I finally made the decision to do it.
+
+00:24:44.650 --> 00:24:45.450
+It felt right.
+
+00:24:46.210 --> 00:24:48.050
+And the same thing happened with unity.
+
+00:24:48.050 --> 00:24:49.450
+It's a different, different culture, different
+
+00:24:49.450 --> 00:24:52.090
+situation, but it was, it was the right thing.
+
+00:24:52.530 --> 00:24:56.410
+And, and I'll say, so I'll say two things.
+
+00:24:56.410 --> 00:24:59.890
+Number one, when you left Microsoft, it was
+
+00:24:59.970 --> 00:25:01.090
+absolutely right.
+
+00:25:01.090 --> 00:25:04.570
+Like the, the, at least the two to three
+
+00:25:04.570 --> 00:25:08.180
+years that followed that has been the most
+
+00:25:08.180 --> 00:25:12.060
+energized I had seen of you, Alan.
+
+00:25:12.460 --> 00:25:12.700
+Right.
+
+00:25:12.700 --> 00:25:17.730
+It was, you know, we joked, joked in quotes, like
+
+00:25:17.730 --> 00:25:21.050
+when you were here, you were kind of following,
+
+00:25:21.810 --> 00:25:25.610
+uh, a variant of the Moore's law in terms of
+
+00:25:25.610 --> 00:25:27.570
+how long you stayed in a group.
+
+00:25:29.110 --> 00:25:29.390
+Right.
+
+00:25:29.390 --> 00:25:31.830
+Um, one of the things that we share in
+
+00:25:31.830 --> 00:25:33.770
+common, right.
+
+00:25:33.770 --> 00:25:37.570
+We, we, we, we are fascinated by where ideas
+
+00:25:37.570 --> 00:25:38.570
+come from.
+
+00:25:39.490 --> 00:25:45.300
+Uh, uh, I think we both share commonality
+
+00:25:45.300 --> 00:25:47.580
+that when, when the thing gets to the point
+
+00:25:47.580 --> 00:25:52.180
+where it's a, it's a greased engine that just
+
+00:25:52.260 --> 00:25:58.900
+runs, at least I get intensely bored rapidly.
+
+00:25:59.700 --> 00:25:59.980
+Right.
+
+00:25:59.980 --> 00:26:04.140
+And if, if, if I can't find something that
+
+00:26:04.740 --> 00:26:08.460
+reenergizes me a new direction, a new
+
+00:26:08.460 --> 00:26:11.380
+opportunity, something else to build ROI on.
+
+00:26:12.270 --> 00:26:15.870
+Um, yeah, then it's, it's, it's, it's time
+
+00:26:15.870 --> 00:26:17.550
+for me to go to find something else.
+
+00:26:17.790 --> 00:26:19.590
+That's, that's kind of how I've been
+
+00:26:19.590 --> 00:26:20.950
+interpreting your story.
+
+00:26:21.470 --> 00:26:21.990
+Um,
+
+00:26:22.310 --> 00:26:24.750
+a little bit, it's very clear that when
+
+00:26:24.750 --> 00:26:26.430
+I'm bored, I'm done.
+
+00:26:27.210 --> 00:26:30.010
+And this is a little different in
+
+00:26:30.010 --> 00:26:31.850
+that the boredom came, it wasn't really
+
+00:26:31.850 --> 00:26:32.330
+bored.
+
+00:26:32.330 --> 00:26:35.500
+I just couldn't, I couldn't, it was a
+
+00:26:35.500 --> 00:26:37.660
+weird place because I wasn't bored.
+
+00:26:38.520 --> 00:26:40.320
+But maybe I kind of was because I
+
+00:26:40.320 --> 00:26:43.240
+couldn't, I was unable to find, to motivate
+
+00:26:43.240 --> 00:26:46.640
+myself to do the super engaging things.
+
+00:26:46.640 --> 00:26:48.040
+The thing, the things that where I
+
+00:26:48.040 --> 00:26:49.040
+would get growth from.
+
+00:26:50.140 --> 00:26:51.980
+I was just, you know, we talk about my
+
+00:26:51.980 --> 00:26:54.900
+ACM model of having the above work or
+
+00:26:54.900 --> 00:26:56.700
+the ambitious work that stretches you
+
+00:26:56.700 --> 00:26:57.900
+and the stuff you're just good at
+
+00:26:57.900 --> 00:26:58.580
+and the other stuff.
+
+00:26:58.980 --> 00:27:00.740
+I was eliminating all the ambitious
+
+00:27:00.740 --> 00:27:02.060
+stuff because I just, I couldn't get
+
+00:27:02.060 --> 00:27:03.020
+the energy to do it.
+
+00:27:03.020 --> 00:27:04.300
+So I was just doing stuff in my
+
+00:27:04.300 --> 00:27:06.690
+wheelhouse stuff that I knew how to
+
+00:27:06.690 --> 00:27:08.530
+do, but I wasn't stretching myself at
+
+00:27:08.530 --> 00:27:10.130
+all and I had no desire to stretch
+
+00:27:10.130 --> 00:27:10.850
+myself at all.
+
+00:27:11.370 --> 00:27:13.570
+And so that's, that's a flavor of it
+
+00:27:14.090 --> 00:27:16.130
+because anytime I'm not stretching
+
+00:27:16.130 --> 00:27:18.290
+myself at all, I changed jobs.
+
+00:27:19.500 --> 00:27:19.900
+Yeah.
+
+00:27:20.420 --> 00:27:22.380
+It's just the path that I got there
+
+00:27:22.380 --> 00:27:22.980
+was different.
+
+00:27:23.260 --> 00:27:25.420
+So I have now been in Azure, I
+
+00:27:25.420 --> 00:27:26.740
+think eight years.
+
+00:27:27.300 --> 00:27:30.640
+And there have been times where I'm
+
+00:27:30.640 --> 00:27:33.650
+just like, okay, what the hell to do
+
+00:27:33.650 --> 00:27:34.130
+now?
+
+00:27:34.410 --> 00:27:34.690
+Right.
+
+00:27:34.690 --> 00:27:37.410
+Where I fall back and right.
+
+00:27:37.450 --> 00:27:40.890
+I do things in my wheelhouse because
+
+00:27:40.930 --> 00:27:44.620
+you know, I'm at minimum I'm paid a
+
+00:27:44.620 --> 00:27:46.660
+salary, I should be producing
+
+00:27:46.900 --> 00:27:48.180
+something useful.
+
+00:27:48.780 --> 00:27:49.100
+Right.
+
+00:27:49.140 --> 00:27:51.740
+But, but if that lasts more than
+
+00:27:51.740 --> 00:27:54.220
+a week, well, I guess thankfully
+
+00:27:54.220 --> 00:27:55.140
+for me, it hasn't.
+
+00:27:55.780 --> 00:27:58.020
+Well, let me talk about one more
+
+00:27:58.020 --> 00:28:00.100
+thing that I do that it hasn't
+
+00:28:00.100 --> 00:28:01.700
+come up yet, but actually very much
+
+00:28:01.700 --> 00:28:02.660
+part of this decision.
+
+00:28:03.660 --> 00:28:04.900
+I haven't mentioned it yet.
+
+00:28:05.060 --> 00:28:08.020
+Uh, but it was very much a part
+
+00:28:08.020 --> 00:28:08.780
+of my decision.
+
+00:28:09.790 --> 00:28:11.710
+As you know, one of the things I
+
+00:28:11.710 --> 00:28:15.070
+love to do, and this is, uh, you
+
+00:28:15.070 --> 00:28:16.430
+know, not for the faint of heart.
+
+00:28:16.470 --> 00:28:18.270
+I love to work myself out of a job.
+
+00:28:19.410 --> 00:28:20.770
+Do you think you did that this time?
+
+00:28:21.130 --> 00:28:23.410
+Um, I actually, I didn't work
+
+00:28:23.410 --> 00:28:25.970
+myself out of a job, but I did
+
+00:28:25.970 --> 00:28:27.170
+work myself out of a job.
+
+00:28:27.170 --> 00:28:28.850
+Let me, let me, Brent has a
+
+00:28:28.850 --> 00:28:30.810
+skeptical look, so let me explain.
+
+00:28:30.850 --> 00:28:33.490
+So I think, I think you're prior
+
+00:28:33.690 --> 00:28:36.930
+prior to the reorg you were last
+
+00:28:36.930 --> 00:28:38.690
+day, I think you had, I think that
+
+00:28:38.690 --> 00:28:40.850
+was the reason why the reorg happened.
+
+00:28:41.250 --> 00:28:41.450
+Yeah.
+
+00:28:41.450 --> 00:28:43.170
+Well, let me give you the context.
+
+00:28:43.170 --> 00:28:44.970
+So part of it was I was dumb, but
+
+00:28:44.970 --> 00:28:46.530
+also part of it was I shared this
+
+00:28:46.530 --> 00:28:48.970
+with my directs at unity.
+
+00:28:48.970 --> 00:28:50.850
+And I believe it.
+
+00:28:50.850 --> 00:28:53.130
+And part of the realization on that
+
+00:28:53.130 --> 00:28:55.210
+five day weekend that came to me was.
+
+00:28:56.390 --> 00:28:57.990
+My directs still have, all of them
+
+00:28:57.990 --> 00:29:00.030
+had definitely room to grow and they
+
+00:29:00.110 --> 00:29:02.190
+thought like they didn't need me.
+
+00:29:02.910 --> 00:29:05.830
+But I also felt like they had matured
+
+00:29:05.830 --> 00:29:07.510
+enough that every single one of them
+
+00:29:07.510 --> 00:29:08.910
+could run their own business.
+
+00:29:09.780 --> 00:29:11.700
+Once I gave them that realization, had
+
+00:29:11.700 --> 00:29:13.940
+a similar realization about how.
+
+00:29:14.580 --> 00:29:17.100
+We could keep everything running
+
+00:29:17.100 --> 00:29:20.520
+at with minimal disruption and suggested
+
+00:29:20.520 --> 00:29:22.840
+that to my manager and all those steps
+
+00:29:22.840 --> 00:29:25.680
+happened and basically without going
+
+00:29:25.680 --> 00:29:28.200
+into details and I'm very confident
+
+00:29:28.200 --> 00:29:29.840
+of the team's ongoing success.
+
+00:29:31.070 --> 00:29:32.750
+My manager will not replace me.
+
+00:29:33.700 --> 00:29:35.100
+Oh, interesting.
+
+00:29:35.100 --> 00:29:37.500
+So I came, I had a plan I thought would
+
+00:29:37.500 --> 00:29:40.340
+work and all the pieces fell into place.
+
+00:29:40.340 --> 00:29:42.060
+People were willing and open to it.
+
+00:29:42.060 --> 00:29:48.060
+And, and I think the org will be very,
+
+00:29:48.060 --> 00:29:50.340
+very successful, at least as successful
+
+00:29:50.340 --> 00:29:51.820
+it would have been if I was there.
+
+00:29:52.540 --> 00:29:54.700
+Without the need to replace me at all.
+
+00:29:54.700 --> 00:29:55.140
+So,
+
+00:29:55.340 --> 00:29:57.260
+do you think he's gonna, do you think
+
+00:29:57.260 --> 00:29:58.740
+he's going to spread out your team
+
+00:29:58.740 --> 00:29:59.620
+amongst his current?
+
+00:29:59.620 --> 00:30:01.620
+No, I know, I know exactly what he's done.
+
+00:30:01.620 --> 00:30:03.540
+I'm not going to go into details of what
+
+00:30:03.540 --> 00:30:04.260
+we did there.
+
+00:30:04.620 --> 00:30:06.540
+It's not important for the podcast,
+
+00:30:06.540 --> 00:30:11.220
+but if I can leave and in a way that
+
+00:30:11.220 --> 00:30:13.460
+does not cause me to need to be replaced,
+
+00:30:13.860 --> 00:30:16.300
+you could say I was able to work
+
+00:30:16.300 --> 00:30:18.260
+myself out of a job, at least in some
+
+00:30:18.260 --> 00:30:21.580
+context as part of this or the preparation
+
+00:30:21.580 --> 00:30:23.460
+or the basis for that was done.
+
+00:30:24.380 --> 00:30:25.180
+That's what I'm saying.
+
+00:30:25.860 --> 00:30:26.340
+Okay.
+
+00:30:27.190 --> 00:30:28.070
+Yeah, that's good.
+
+00:30:28.110 --> 00:30:28.710
+That's great.
+
+00:30:29.190 --> 00:30:29.470
+Yeah.
+
+00:30:29.510 --> 00:30:32.390
+So I will, I'll find the new place to land.
+
+00:30:32.510 --> 00:30:35.070
+I will learn a lot and stretch myself
+
+00:30:35.150 --> 00:30:38.840
+and eventually work myself out of a job.
+
+00:30:39.000 --> 00:30:41.480
+In which case I will, I've been very,
+
+00:30:41.480 --> 00:30:44.000
+very fortunate and lucky in my career.
+
+00:30:44.360 --> 00:30:47.040
+In that when I work myself out of a job,
+
+00:30:47.120 --> 00:30:48.840
+I'm able to find the next one.
+
+00:30:48.840 --> 00:30:50.520
+That's even harder and harder to,
+
+00:30:50.560 --> 00:30:51.880
+harder to work myself out of.
+
+00:30:52.840 --> 00:30:53.200
+Yeah.
+
+00:30:53.600 --> 00:30:54.960
+And I don't do it on purpose.
+
+00:30:54.960 --> 00:30:56.160
+I, I don't know.
+
+00:30:56.240 --> 00:30:57.440
+I think it's laziness.
+
+00:30:57.440 --> 00:30:59.240
+Like I want to do less and less of my
+
+00:30:59.240 --> 00:31:01.080
+job, so I'd make people do more and more
+
+00:31:01.080 --> 00:31:02.760
+of it and eventually I'm not needed.
+
+00:31:02.800 --> 00:31:04.320
+I don't know how it happens.
+
+00:31:04.320 --> 00:31:06.200
+I don't, it's not a conscious thing.
+
+00:31:06.200 --> 00:31:06.520
+I do.
+
+00:31:06.520 --> 00:31:08.800
+I don't like put on my goals, work
+
+00:31:08.800 --> 00:31:09.960
+myself out of a job.
+
+00:31:10.400 --> 00:31:13.080
+It's something that happens when I do
+
+00:31:13.080 --> 00:31:15.760
+my job and then I, in hindsight, I go,
+
+00:31:15.760 --> 00:31:17.520
+oh wow, I work myself out of a job again.
+
+00:31:17.880 --> 00:31:21.280
+I can't explain, there's no strategy around it.
+
+00:31:21.680 --> 00:31:25.800
+It's an artifact of doing things the way I do.
+
+00:31:25.800 --> 00:31:26.760
+It's super weird.
+
+00:31:27.040 --> 00:31:28.800
+I do a similar thing.
+
+00:31:28.800 --> 00:31:33.000
+And then at times I actually, I stare into it.
+
+00:31:33.000 --> 00:31:36.520
+Like there's a, there's a rarely used
+
+00:31:36.520 --> 00:31:38.320
+joke I do with my ICs.
+
+00:31:38.320 --> 00:31:42.040
+So let's say my IC is on a challenging
+
+00:31:42.040 --> 00:31:46.980
+problem and I'm like, yeah, Brett, I just
+
+00:31:46.980 --> 00:31:49.140
+have no clue how I'm going to solve it.
+
+00:31:49.780 --> 00:31:52.620
+And I know their experience and I know
+
+00:31:52.620 --> 00:31:56.140
+it's, it's, they're perfectly capable of it.
+
+00:31:56.340 --> 00:31:58.460
+And then sort of setting the scenario
+
+00:31:58.460 --> 00:32:00.140
+wrong just to get to the punch line.
+
+00:32:00.140 --> 00:32:01.860
+But I will look at them.
+
+00:32:01.860 --> 00:32:03.980
+I'll say, Hey, would you like to know how
+
+00:32:03.980 --> 00:32:05.060
+I intend to solve it?
+
+00:32:06.300 --> 00:32:08.720
+And they're like, yes.
+
+00:32:09.760 --> 00:32:11.920
+And I'll say, okay, I'll tell you upfront.
+
+00:32:11.920 --> 00:32:13.160
+It's not going to help you much.
+
+00:32:13.920 --> 00:32:15.560
+Let's find, let's hear the idea.
+
+00:32:15.960 --> 00:32:16.320
+Okay.
+
+00:32:16.480 --> 00:32:19.640
+What I'm going to do is hire a really
+
+00:32:19.640 --> 00:32:22.200
+smart person to do this thing and then
+
+00:32:22.200 --> 00:32:22.800
+delegate it.
+
+00:32:23.710 --> 00:32:25.190
+And then they'll look at me like, Oh,
+
+00:32:25.190 --> 00:32:25.990
+you're an asshole.
+
+00:32:26.350 --> 00:32:27.150
+Yeah, that's right.
+
+00:32:27.270 --> 00:32:31.070
+I am like the context.
+
+00:32:31.070 --> 00:32:32.350
+I didn't tell the scenario, right?
+
+00:32:32.350 --> 00:32:35.550
+But the context is when, when they found
+
+00:32:35.550 --> 00:32:39.190
+some sort of strategy to get out of the, to
+
+00:32:39.190 --> 00:32:41.980
+get me out of coaching mode and they're
+
+00:32:41.980 --> 00:32:45.660
+trying to sort of reverse delegate back to me.
+
+00:32:45.940 --> 00:32:47.740
+And I'm like, no, I want you to work
+
+00:32:47.740 --> 00:32:51.540
+through this and I'll do this and I'll
+
+00:32:51.540 --> 00:32:53.540
+follow up after I do the joke and say,
+
+00:32:53.540 --> 00:32:55.860
+no, this is, this is something I think
+
+00:32:55.860 --> 00:32:57.980
+it's important to you as well as the
+
+00:32:57.980 --> 00:33:00.220
+business to, to invest in.
+
+00:33:00.220 --> 00:33:01.620
+And, and right.
+
+00:33:01.620 --> 00:33:03.020
+We're knowledge workers.
+
+00:33:03.140 --> 00:33:05.300
+Knowledge doesn't come for free.
+
+00:33:05.780 --> 00:33:07.260
+At least not entirely yet.
+
+00:33:07.300 --> 00:33:10.860
+Uh, chat GPT is working on fixing that.
+
+00:33:11.220 --> 00:33:14.500
+And, and, you know, uh, just as an aside,
+
+00:33:15.460 --> 00:33:18.740
+I'm already seeing signs of, of GPT
+
+00:33:18.740 --> 00:33:20.980
+encouraging intellectual laziness.
+
+00:33:22.170 --> 00:33:25.930
+And that scares the crap out of me.
+
+00:33:25.930 --> 00:33:27.450
+How you use it.
+
+00:33:27.450 --> 00:33:29.370
+I, I think a lot of the ways I see you
+
+00:33:29.370 --> 00:33:31.770
+is wrong again, we're not, we already did
+
+00:33:31.770 --> 00:33:34.970
+the AI portion of the podcast, but I use
+
+00:33:34.970 --> 00:33:39.010
+it to, I use it to learn, to expand my
+
+00:33:39.010 --> 00:33:42.250
+creativity, it's my partner in figuring
+
+00:33:42.250 --> 00:33:43.010
+out ideas.
+
+00:33:43.010 --> 00:33:44.970
+So I don't think there's for me, at
+
+00:33:44.970 --> 00:33:46.370
+least there's no laziness.
+
+00:33:47.010 --> 00:33:48.610
+I think as people figure out what to
+
+00:33:48.610 --> 00:33:50.570
+do with it, there definitely is the
+
+00:33:50.570 --> 00:33:51.810
+possibility for that.
+
+00:33:52.050 --> 00:33:54.010
+And if I were programming chat GPT,
+
+00:33:54.010 --> 00:33:55.530
+and again, we're out of, we did this
+
+00:33:55.530 --> 00:33:56.650
+section already of the podcast.
+
+00:33:57.250 --> 00:33:58.010
+I would teach it.
+
+00:33:58.050 --> 00:33:59.170
+I want to mean chat.
+
+00:33:59.290 --> 00:34:01.490
+Like I want to chat GPT.
+
+00:34:01.490 --> 00:34:02.810
+I want to give it a prompt that says,
+
+00:34:02.850 --> 00:34:04.730
+if I ask you something stupid, that's
+
+00:34:04.730 --> 00:34:06.490
+inappropriate for you, please tell me
+
+00:34:06.490 --> 00:34:07.730
+what a dumbass I'm being.
+
+00:34:08.170 --> 00:34:09.370
+Yeah, it won't do that.
+
+00:34:09.650 --> 00:34:10.290
+Yes, it will.
+
+00:34:11.370 --> 00:34:13.930
+Many of the prompts are set up to
+
+00:34:13.930 --> 00:34:16.610
+prevent you from, from it doing
+
+00:34:16.610 --> 00:34:18.410
+anything that could even have a
+
+00:34:18.410 --> 00:34:19.850
+hint of being offensive.
+
+00:34:19.930 --> 00:34:21.690
+I'm saying program it.
+
+00:34:22.050 --> 00:34:23.050
+So it does.
+
+00:34:23.050 --> 00:34:23.650
+It does.
+
+00:34:23.650 --> 00:34:25.410
+Oh, if you worked, oh, I got it.
+
+00:34:25.410 --> 00:34:26.090
+I missed it.
+
+00:34:26.090 --> 00:34:26.610
+Make it.
+
+00:34:26.610 --> 00:34:27.050
+Sorry.
+
+00:34:27.570 --> 00:34:28.050
+Yeah.
+
+00:34:28.290 --> 00:34:31.250
+Turn it into, um, make it, make it
+
+00:34:31.250 --> 00:34:33.570
+meaner, I don't get more opinionated
+
+00:34:33.570 --> 00:34:34.010
+and meaner.
+
+00:34:34.290 --> 00:34:36.530
+We, we, as you've called that, I
+
+00:34:36.530 --> 00:34:37.890
+think three times in the last 30
+
+00:34:37.890 --> 00:34:41.640
+seconds, it is not, uh, we've already
+
+00:34:41.640 --> 00:34:43.160
+done the AI segment.
+
+00:34:43.920 --> 00:34:45.760
+Uh, but I'm, I'm definitely of the
+
+00:34:45.760 --> 00:34:50.640
+belief now that anything resembling
+
+00:34:50.720 --> 00:34:55.070
+EQ for an AI, uh, if I had a choice,
+
+00:34:55.070 --> 00:34:56.910
+I would just, you know, not even
+
+00:34:57.550 --> 00:34:59.230
+partially just straight up, let's
+
+00:34:59.230 --> 00:35:00.950
+just start calling that unethical.
+
+00:35:01.740 --> 00:35:03.180
+I don't want it calling names.
+
+00:35:03.220 --> 00:35:04.580
+I don't want it praising you.
+
+00:35:05.300 --> 00:35:07.660
+We need to gamify chat GPT.
+
+00:35:08.790 --> 00:35:10.510
+And if you ask dumb questions, you
+
+00:35:10.510 --> 00:35:13.750
+lose points if you ask questions that
+
+00:35:14.540 --> 00:35:16.540
+it could actually help with and, and
+
+00:35:16.540 --> 00:35:18.780
+make you smarter, you get points
+
+00:35:19.180 --> 00:35:20.300
+and you can use those in anyway.
+
+00:35:20.540 --> 00:35:24.220
+So moving on fine, fine.
+
+00:35:24.740 --> 00:35:26.900
+I think I saw that, uh, star field
+
+00:35:26.900 --> 00:35:28.140
+announced a date that I see that
+
+00:35:28.140 --> 00:35:28.820
+right somewhere.
+
+00:35:29.140 --> 00:35:30.460
+I thought it was September.
+
+00:35:30.900 --> 00:35:31.580
+Yeah.
+
+00:35:31.980 --> 00:35:32.620
+Countdown.
+
+00:35:32.780 --> 00:35:37.130
+I have done none far away.
+
+00:35:38.100 --> 00:35:38.340
+Yeah.
+
+00:35:38.340 --> 00:35:39.420
+So what's new in entertainment?
+
+00:35:39.420 --> 00:35:40.940
+I got a, I got a catch up on other
+
+00:35:40.940 --> 00:35:42.460
+games first before that comes out.
+
+00:35:42.460 --> 00:35:43.420
+I'm still working my way through
+
+00:35:43.420 --> 00:35:45.180
+Mario Odyssey and the Harry Potter
+
+00:35:45.180 --> 00:35:47.300
+game and a whole bunch of other crap.
+
+00:35:47.540 --> 00:35:50.020
+I, I think I'm caught up.
+
+00:35:50.020 --> 00:35:51.140
+You're watching the Mandalorian.
+
+00:35:51.940 --> 00:35:54.820
+Uh, I today is Friday.
+
+00:35:54.860 --> 00:35:57.740
+I did not see last night, but I was
+
+00:35:57.740 --> 00:35:58.860
+caught up up until then.
+
+00:35:59.500 --> 00:35:59.980
+All right, man.
+
+00:36:00.300 --> 00:36:01.220
+Is it, come on Wednesday night.
+
+00:36:01.220 --> 00:36:01.500
+Anyway.
+
+00:36:01.540 --> 00:36:01.820
+Okay.
+
+00:36:01.900 --> 00:36:02.580
+Good caught up.
+
+00:36:02.860 --> 00:36:03.460
+No, you're right.
+
+00:36:03.460 --> 00:36:04.220
+It is Wednesday.
+
+00:36:05.140 --> 00:36:05.380
+Yeah.
+
+00:36:05.380 --> 00:36:06.180
+It's getting better.
+
+00:36:06.180 --> 00:36:09.300
+I, I, a lot of people are not liking
+
+00:36:09.300 --> 00:36:10.700
+the Disney star Wars series.
+
+00:36:10.700 --> 00:36:12.260
+I like them all very much.
+
+00:36:12.260 --> 00:36:16.020
+The Mandalorian is frigging awesome.
+
+00:36:16.660 --> 00:36:18.180
+I was talking to somebody last week
+
+00:36:18.180 --> 00:36:20.660
+and I said, I, I, and I believe this.
+
+00:36:20.660 --> 00:36:23.980
+I said, I think Andor to me is a better series.
+
+00:36:24.880 --> 00:36:27.480
+Oh, for me, Mandalorian is better.
+
+00:36:27.760 --> 00:36:27.920
+Yeah.
+
+00:36:27.960 --> 00:36:30.600
+And, but the reason he gave why Andor was not,
+
+00:36:30.600 --> 00:36:32.400
+and this is, this is true.
+
+00:36:32.440 --> 00:36:35.280
+Star Wars geekdom is that he said it's
+
+00:36:35.280 --> 00:36:36.760
+too human centric.
+
+00:36:36.800 --> 00:36:39.000
+The star Wars universe has lots of weird
+
+00:36:39.000 --> 00:36:41.680
+looking aliens and because Andor doesn't
+
+00:36:41.680 --> 00:36:45.440
+have enough of those that it's inferior
+
+00:36:45.440 --> 00:36:46.280
+to the Mandalorian.
+
+00:36:46.920 --> 00:36:47.360
+Okay.
+
+00:36:47.360 --> 00:36:49.600
+I think that's a weird take, right?
+
+00:36:50.000 --> 00:36:50.360
+Anyway,
+
+00:36:52.700 --> 00:36:55.980
+in that regard, I mean, by that bar, you
+
+00:36:55.980 --> 00:36:59.540
+would say, okay, is it really part of the
+
+00:36:59.540 --> 00:37:01.260
+star Wars ethos, right?
+
+00:37:01.620 --> 00:37:02.980
+That, right.
+
+00:37:03.060 --> 00:37:04.980
+So that is one thing I will say, right?
+
+00:37:04.980 --> 00:37:11.860
+It doesn't, it didn't come across as Star Wars.
+
+00:37:12.380 --> 00:37:12.740
+Right.
+
+00:37:12.740 --> 00:37:14.700
+It, it, it, it's in the universe.
+
+00:37:15.450 --> 00:37:17.930
+But you could have, you could have picked
+
+00:37:17.930 --> 00:37:23.780
+any sci-fi universe and like, it's a good
+
+00:37:23.780 --> 00:37:25.060
+story.
+
+00:37:25.500 --> 00:37:25.780
+Okay.
+
+00:37:25.780 --> 00:37:31.200
+But Star Wars in my view is, is only mentioned
+
+00:37:31.200 --> 00:37:33.760
+there as part of a brand, right?
+
+00:37:33.760 --> 00:37:37.350
+The rest of the Star Wars brand doesn't
+
+00:37:37.350 --> 00:37:38.790
+really make sense for that story.
+
+00:37:38.830 --> 00:37:41.430
+That part I, I will agree with.
+
+00:37:41.430 --> 00:37:42.950
+I don't, I don't really care about that.
+
+00:37:43.470 --> 00:37:45.950
+The alien thing or whatever, but right.
+
+00:37:45.950 --> 00:37:51.070
+The, the, the empire versus the rebellion.
+
+00:37:51.550 --> 00:37:55.110
+Those are just all story assets.
+
+00:37:55.550 --> 00:37:56.670
+All right.
+
+00:37:57.270 --> 00:37:59.150
+But what are you watching new?
+
+00:37:59.150 --> 00:37:59.710
+That's good.
+
+00:37:59.750 --> 00:38:01.390
+What are you watching our play in new?
+
+00:38:01.390 --> 00:38:01.990
+That's good.
+
+00:38:02.590 --> 00:38:05.630
+Uh, Mandalorian is what I'm watching right now.
+
+00:38:05.630 --> 00:38:08.950
+I've, I've gotten to the end of DC stuff
+
+00:38:08.990 --> 00:38:12.310
+on, uh, I'm at the end of Marvel.
+
+00:38:12.310 --> 00:38:14.470
+I'm at the end of DC stuff.
+
+00:38:15.360 --> 00:38:18.720
+Uh, so it's time for me to go back and see
+
+00:38:18.720 --> 00:38:22.520
+what's interesting on, on Amazon prime.
+
+00:38:23.440 --> 00:38:23.760
+Right.
+
+00:38:23.760 --> 00:38:27.160
+Cause right now, Mandalorian, I'm glad that
+
+00:38:27.160 --> 00:38:27.880
+you told me that.
+
+00:38:28.640 --> 00:38:30.880
+Uh, and then baseball season started up again.
+
+00:38:30.880 --> 00:38:33.560
+So I got, I got, I got that to watch now.
+
+00:38:33.560 --> 00:38:34.600
+I'm very excited about it.
+
+00:38:35.160 --> 00:38:35.680
+Nice.
+
+00:38:35.840 --> 00:38:37.080
+How is your hour?
+
+00:38:37.080 --> 00:38:38.920
+The, I was a local team going to do this year.
+
+00:38:39.360 --> 00:38:42.280
+Well, they, they have won a hundred percent
+
+00:38:42.280 --> 00:38:45.520
+of their games yesterday was opening day.
+
+00:38:45.520 --> 00:38:45.760
+Yeah.
+
+00:38:46.880 --> 00:38:47.440
+Nice.
+
+00:38:47.840 --> 00:38:48.200
+Nice.
+
+00:38:48.520 --> 00:38:50.240
+Are they going to win the next 161?
+
+00:38:51.290 --> 00:38:52.890
+Probably not.
+
+00:38:53.330 --> 00:38:53.530
+Right.
+
+00:38:53.530 --> 00:38:55.970
+I'm not, I am a data scientist.
+
+00:38:55.970 --> 00:38:58.090
+I think that statistically unlikely, but I
+
+00:38:58.090 --> 00:38:59.690
+would love to see if they could get into
+
+00:38:59.690 --> 00:39:00.690
+the playoffs again.
+
+00:39:00.890 --> 00:39:03.130
+Last, last season was really exciting towards
+
+00:39:03.130 --> 00:39:03.490
+the end.
+
+00:39:03.890 --> 00:39:04.170
+Yeah.
+
+00:39:04.170 --> 00:39:05.530
+Cause they got to, they got to go to the
+
+00:39:05.530 --> 00:39:06.010
+playoffs.
+
+00:39:06.290 --> 00:39:06.530
+Yeah.
+
+00:39:06.890 --> 00:39:09.050
+Oh, and by the way, I've been helping my
+
+00:39:09.050 --> 00:39:11.170
+daughter with her statistics homework.
+
+00:39:11.530 --> 00:39:11.850
+Yeah.
+
+00:39:11.850 --> 00:39:13.610
+Um, so I'm, I'm, uh,
+
+00:39:13.650 --> 00:39:14.810
+and have you survived it?
+
+00:39:15.580 --> 00:39:17.700
+Sometimes, sometimes I go, yeah, I know this.
+
+00:39:17.700 --> 00:39:18.700
+I was like, Oh, what?
+
+00:39:19.340 --> 00:39:20.140
+What did that?
+
+00:39:20.220 --> 00:39:20.740
+Why?
+
+00:39:20.780 --> 00:39:21.620
+What?
+
+00:39:22.140 --> 00:39:24.380
+So, um, yeah, doing all right.
+
+00:39:24.380 --> 00:39:24.980
+Doing all right.
+
+00:39:25.020 --> 00:39:25.940
+It's kind of fun stuff.
+
+00:39:26.620 --> 00:39:26.940
+Okay.
+
+00:39:26.940 --> 00:39:28.660
+I don't think I have anything else exciting
+
+00:39:28.660 --> 00:39:29.260
+going on.
+
+00:39:29.260 --> 00:39:31.580
+Just talk about my desk.
+
+00:39:32.220 --> 00:39:36.180
+So we're, we're recording again next week.
+
+00:39:36.220 --> 00:39:36.460
+Yeah.
+
+00:39:36.500 --> 00:39:37.220
+Back to back.
+
+00:39:37.220 --> 00:39:38.980
+This is one 77 by the way.
+
+00:39:39.300 --> 00:39:39.580
+Yeah.
+
+00:39:39.620 --> 00:39:41.620
+And the reason why we're doing that is
+
+00:39:41.620 --> 00:39:43.780
+because normally we do it every other week,
+
+00:39:44.060 --> 00:39:46.340
+but it's been a while since we recorded
+
+00:39:46.340 --> 00:39:51.890
+and the week after that, I am on vacation.
+
+00:39:52.490 --> 00:39:56.770
+My daughter is doing a class trip and
+
+00:39:56.770 --> 00:39:59.010
+we're going to go check out Philadelphia
+
+00:39:59.010 --> 00:40:00.090
+and DC.
+
+00:40:00.330 --> 00:40:00.810
+Oh, cool.
+
+00:40:01.330 --> 00:40:03.410
+It's so, I have never been to DC.
+
+00:40:03.410 --> 00:40:04.810
+I've always wanted to go.
+
+00:40:04.850 --> 00:40:05.930
+I've never been there.
+
+00:40:05.930 --> 00:40:08.810
+I, I will get there sometime soon.
+
+00:40:08.810 --> 00:40:11.530
+I have never been to either.
+
+00:40:12.010 --> 00:40:14.330
+I've never been to any of the places
+
+00:40:14.330 --> 00:40:15.850
+that we're talking about and we're going
+
+00:40:15.850 --> 00:40:18.970
+to be, so as you know, I graduated from an
+
+00:40:18.970 --> 00:40:21.450
+online school, we're going to be within
+
+00:40:21.450 --> 00:40:24.170
+an hour and a half drive to the actual
+
+00:40:24.170 --> 00:40:26.770
+school I graduated from, which I have never
+
+00:40:26.770 --> 00:40:27.570
+actually been to.
+
+00:40:27.690 --> 00:40:28.490
+Funny.
+
+00:40:28.730 --> 00:40:28.970
+Yeah.
+
+00:40:28.970 --> 00:40:29.330
+Funny.
+
+00:40:29.370 --> 00:40:29.650
+Cool.
+
+00:40:30.290 --> 00:40:30.650
+Yeah.
+
+00:40:31.090 --> 00:40:32.290
+So anyway, it's good to be back.
+
+00:40:32.610 --> 00:40:34.410
+Um, thanks for everyone for hanging out
+
+00:40:34.410 --> 00:40:35.730
+and being patient between podcasts.
+
+00:40:35.730 --> 00:40:36.650
+Good seeing you again, Brent.
+
+00:40:36.650 --> 00:40:37.570
+The beard looks good.
+
+00:40:37.890 --> 00:40:42.260
+Everyone else have to trust me and, uh,
+
+00:40:42.300 --> 00:40:44.140
+I'm unemployed, Alan.
+
+00:40:44.940 --> 00:40:48.140
+And I am still still employed, Brent.
+
+00:40:48.740 --> 00:40:49.660
+We'll see you next time.
+
+00:40:50.060 --> 00:40:50.380
+Bye.
+

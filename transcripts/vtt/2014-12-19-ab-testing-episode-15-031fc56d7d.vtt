@@ -1,0 +1,1715 @@
+WEBVTT
+
+00:00:14.130 --> 00:00:21.690
+Hey everybody. Hello, it's Alan and Brent and we're back again for the final AB testing episode of
+
+00:00:22.170 --> 00:00:28.530
+2014 yes number 15 and last one for the year that reminds me and it's at 1415
+
+00:00:28.930 --> 00:00:33.330
+episode 15 15 last of 2014, right so I
+
+00:00:33.750 --> 00:00:40.690
+Have a question for you Brent not on the whiteboard, but that's allowed in AB testing. Yes to you. Do you prefer to say?
+
+00:00:41.310 --> 00:00:42.810
+2014 or
+
+00:00:42.810 --> 00:00:50.690
+2014 I'm 2014. I'm a 2014 camp to we got and this it's actually a little one of these little anal peeves of mine because we called
+
+00:00:50.690 --> 00:00:51.930
+it
+
+00:00:51.930 --> 00:00:53.090
+1980
+
+00:00:53.090 --> 00:01:00.330
+1990 milk you with Colin 2000 2000 because we called 19 1900. Mm-hmm, but we're in 20s now not
+
+00:01:00.650 --> 00:01:04.460
+2000s is that over the top over the top? No, it's
+
+00:01:05.420 --> 00:01:08.700
+like I was so happy when we got through the
+
+00:01:09.660 --> 00:01:12.560
+the first 10 years of this millennium and
+
+00:01:13.240 --> 00:01:18.260
+I didn't know what the what is that first decade? Yeah, I think you're even okay there cuz we call it
+
+00:01:18.260 --> 00:01:24.880
+Night. Well, I wasn't alive then despite popular rumors in history class. It was like 1907 so I can go
+
+00:01:25.800 --> 00:01:27.080
+2007
+
+00:01:27.080 --> 00:01:32.740
+2007 anyway, is it the what's what's the decade? Listen people the odds. Ah, we're in
+
+00:01:33.720 --> 00:01:39.240
+2014 soon to go into 2015 if you could all please join me in my crusade to stop calling at
+
+00:01:39.640 --> 00:01:42.800
+2000 and I'd be really happy. Thank you very much
+
+00:01:42.800 --> 00:01:50.400
+This has been a public service announcement from the A B testing crew will now resume with our normally scheduled podcast
+
+00:01:55.090 --> 00:02:00.450
+You really cannot guess what will happen on this podcast you never know
+
+00:02:01.050 --> 00:02:07.330
+What's new for you Alan? Hey, I just did I'm glad you asked Brent this week. I did a little
+
+00:02:08.330 --> 00:02:12.050
+Interview that wasn't like an interview in person where they actually talked to you with the microphone
+
+00:02:12.050 --> 00:02:16.010
+They sent me some questions that hey answered these and we'll put them on our blog
+
+00:02:16.010 --> 00:02:20.810
+I did this for the a1 QA blog. It's at a1 QA comm slash blog
+
+00:02:21.330 --> 00:02:23.330
+What does it stand for?
+
+00:02:23.370 --> 00:02:28.610
+A1 like like really good like steak sauce like quality assurance like steak sauce quality assurance
+
+00:02:28.610 --> 00:02:31.330
+I gotcha, but they've interviewed a lot of people. They have some good blogs up there
+
+00:02:31.330 --> 00:02:36.330
+I'm some good articles and posts and I answered some questions and I answered questions
+
+00:02:36.810 --> 00:02:40.010
+That you would expect the angry weasel to answer
+
+00:02:40.790 --> 00:02:46.190
+What were those may you ask? I don't remember. No, I answered
+
+00:02:47.670 --> 00:02:53.360
+There was a question about combined engineering is at the end of all testing and I said yes or no
+
+00:02:53.360 --> 00:02:57.320
+You'll have to read to find out. I also answered questions about data-driven quality
+
+00:02:58.800 --> 00:03:05.400
+The future of testing and whether testers should actually have engineering skills whether it makes a difference and what it makes a difference and
+
+00:03:06.400 --> 00:03:11.800
+My un bashful opinion appears at a1 QA comm slash blog
+
+00:03:12.240 --> 00:03:18.500
+Yeah, I'm looking at the title right now. I cannot wait to go tear this blog post apart
+
+00:03:18.560 --> 00:03:23.580
+So the title they they took a quote out of the out of my answers and made the title of it said test
+
+00:03:23.960 --> 00:03:28.480
+specialists are essential members of software teams and not sure let's tear it apart right now because
+
+00:03:28.840 --> 00:03:33.920
+We the gauntlet has been thrown down for Brent and I to finally have a little more in-depth discussion
+
+00:03:34.720 --> 00:03:40.120
+About generalizing specialists or specializing generalists and what that means. Yep
+
+00:03:41.400 --> 00:03:44.000
+So the con I'll give my context then we'll go into that topic
+
+00:03:44.000 --> 00:03:47.140
+So my context was I was talking about generalizing specialists
+
+00:03:47.140 --> 00:03:53.760
+And I think people that have a specialization in test in testing skills and those kind of tester DNA big picture
+
+00:03:53.760 --> 00:03:55.280
+How do things fit together?
+
+00:03:55.280 --> 00:04:01.280
+Will remain an essential part of software teams regardless of whether they're called testers or not
+
+00:04:03.750 --> 00:04:10.110
+Sure, the the only dispute I have with that is that I don't think they'll end up being specialists
+
+00:04:10.110 --> 00:04:12.910
+I think they'll end up that will be a
+
+00:04:14.530 --> 00:04:22.310
+More of a generalist talent and that it will spread out throughout the entire team. So let's
+
+00:04:23.110 --> 00:04:27.190
+That's that for a moment and we'll come back to it as we discuss because sure
+
+00:04:27.630 --> 00:04:31.430
+today on today this week on Twitter I introduced the
+
+00:04:32.150 --> 00:04:34.150
+The term lost it
+
+00:04:34.190 --> 00:04:39.740
+Okay, and I did not see that did not see lost it
+
+00:04:39.740 --> 00:04:45.620
+I did not see lost it so after reading Twitter and people making comments about you know, I
+
+00:04:46.140 --> 00:04:48.540
+Don't like what you're saying isn't testing
+
+00:04:49.500 --> 00:04:56.100
+What I proposed was the law of software testing discussions lost it and you could reference lost it
+
+00:04:56.700 --> 00:05:02.420
+Anytime a discussion is bogus because the definitions of testing do not match and then someone asked this morning
+
+00:05:02.540 --> 00:05:09.220
+If we could extend lost it to match term general terminology terminology in general non matching terminology
+
+00:05:09.220 --> 00:05:13.840
+so let's apply that rule to
+
+00:05:14.600 --> 00:05:20.320
+Generalizing special specialized in general what is the law the law the law is that I can claim
+
+00:05:20.520 --> 00:05:23.200
+It's more of a motion. I can claim lost it and
+
+00:05:24.130 --> 00:05:28.010
+It immediately invalidates a discussion where we're not talking about the same thing
+
+00:05:29.160 --> 00:05:35.340
+Okay, all right this this sounds analogous to my test is a four-letter word sure
+
+00:05:35.520 --> 00:05:38.600
+Right. Yeah, exactly. Exactly. It applied the test. Yes. Yep
+
+00:05:39.920 --> 00:05:46.920
+Let's see if we can come to some clarity on what generalists and specialists and specializing generalizing generalizing specialists means to us
+
+00:05:46.920 --> 00:05:49.240
+So Brett, what's a generalist a
+
+00:05:50.480 --> 00:05:52.480
+generalist is
+
+00:05:52.840 --> 00:05:55.440
+someone who has a
+
+00:05:56.400 --> 00:05:58.400
+Talent in
+
+00:05:58.920 --> 00:06:02.540
+Most things needed to get software engineering done
+
+00:06:03.160 --> 00:06:05.390
+they do not have
+
+00:06:05.630 --> 00:06:10.150
+The way I would phrase it the difference between a generalist and a specialist is I would say
+
+00:06:11.150 --> 00:06:16.010
+There's multiple skills that that an individual needs to have across three dimensions
+
+00:06:16.550 --> 00:06:22.470
+In engineering they'll have process skills. They'll have technology skills. They'll have people skills a
+
+00:06:23.270 --> 00:06:25.270
+generalist is someone who can
+
+00:06:26.120 --> 00:06:28.120
+do all of those
+
+00:06:28.840 --> 00:06:30.840
+with sort of a
+
+00:06:32.590 --> 00:06:33.630
+50%
+
+00:06:33.630 --> 00:06:36.130
+speed in
+
+00:06:36.130 --> 00:06:42.130
+That's a that's a weird definition. I wouldn't get so complex on that. I would just say a generalist is
+
+00:06:43.050 --> 00:06:45.210
+Can do a little about a lot of things
+
+00:06:47.240 --> 00:06:52.000
+It depends right the little about a lot of things. I would definitely say a
+
+00:06:53.160 --> 00:06:55.800
+Generalist is someone that you would classify as
+
+00:06:56.800 --> 00:06:59.520
+Here's my jack of all trades sure
+
+00:07:00.000 --> 00:07:01.090
+Let's go with that
+
+00:07:01.090 --> 00:07:06.570
+Okay, because your other when we went with generals to specialists getting generalizing specialist is gonna get super complex
+
+00:07:06.570 --> 00:07:10.050
+So we can't make that more a little bit more simple. So general's is a jack of all trades good
+
+00:07:10.450 --> 00:07:14.810
+I'll say a specialist is someone who goes really deep in an area
+
+00:07:15.330 --> 00:07:17.330
+I know for example
+
+00:07:17.730 --> 00:07:22.210
+The guy that does the memory management stuff for Windows is a deep specialist there
+
+00:07:22.210 --> 00:07:24.890
+He asked him to do the UI or an application. He would just
+
+00:07:25.370 --> 00:07:33.840
+Laugh at you. I will generalize that and say a specialist in my worldview is someone who has a deep
+
+00:07:34.980 --> 00:07:37.140
+deep knowledge
+
+00:07:37.340 --> 00:07:43.180
+because I do think the the important distinction between a generalist and the specialist is what knowledge they have and
+
+00:07:44.030 --> 00:07:47.750
+A specialist has deep knowledge in some
+
+00:07:48.510 --> 00:07:49.880
+skill
+
+00:07:49.880 --> 00:07:54.920
+Okay, so now you specified an area it may not be an area right it could be a skill
+
+00:07:54.920 --> 00:07:58.880
+I'll say a skill very good. I agree. So now without getting too complex. Tell me
+
+00:07:59.400 --> 00:08:03.520
+What is a generalizing specialist in your opinion your words?
+
+00:08:05.890 --> 00:08:07.890
+generalizing specialist
+
+00:08:07.890 --> 00:08:10.480
+Is someone who well again?
+
+00:08:12.360 --> 00:08:16.260
+So I think of it in terms of more of a
+
+00:08:19.910 --> 00:08:21.910
+Data science II way
+
+00:08:24.480 --> 00:08:27.160
+No, so you asked me for me to simplify it
+
+00:08:27.160 --> 00:08:34.360
+Yeah, um a generalist blah blah more meat a generalizing specialist is
+
+00:08:37.310 --> 00:08:43.270
+Someone who still has really deep knowledge in a a particular skill
+
+00:08:46.800 --> 00:08:48.800
+But they have
+
+00:08:48.840 --> 00:08:51.020
+other
+
+00:08:51.020 --> 00:08:56.120
+They have knowledge and other aspects
+
+00:08:56.760 --> 00:09:03.020
+To the degree where they they can they can handle multiple different skills
+
+00:09:03.700 --> 00:09:05.920
+but not to the degree of
+
+00:09:07.160 --> 00:09:11.600
+What they have on the skill that they have mastered so that the difference I would say between
+
+00:09:12.280 --> 00:09:14.560
+I haven't asked for a difference as for definition
+
+00:09:15.120 --> 00:09:20.670
+Okay, I can see from your body language my definition sucks. What is yours?
+
+00:09:20.670 --> 00:09:26.110
+So blah blah blah blah blah my definition if I were Scott Amler, I'm gonna read his definition
+
+00:09:26.110 --> 00:09:32.110
+Okay, a generalizing specialist is someone who one has one or more technical specialties
+
+00:09:32.670 --> 00:09:38.510
+For example, like Java programming project management. You talk about you know people or yeah, that's more concrete
+
+00:09:38.510 --> 00:09:41.270
+That's kind of what I was least a general knowledge of software development
+
+00:09:41.670 --> 00:09:46.070
+Has a general knowledge of the business domain in which they work and actively seeks
+
+00:09:46.070 --> 00:09:48.030
+Here's the important one especially if people attest
+
+00:09:48.070 --> 00:09:54.150
+They're good at this actively seeks to gain new skills and both their existing specialties as well as in other areas
+
+00:09:57.080 --> 00:09:59.080
+Okay. All right
+
+00:09:59.240 --> 00:10:05.320
+Any and Scott am was articles like when I come out 2007 8 it's pretty old. So what he's saying is
+
+00:10:06.080 --> 00:10:08.080
+Similar to what I was saying is that?
+
+00:10:08.880 --> 00:10:13.080
+As one or more your words one or more technical specialties
+
+00:10:13.320 --> 00:10:20.000
+The one problem I would the one tweak I would have with that is it still would be a limited number of technical specialties
+
+00:10:21.190 --> 00:10:24.390
+a basic knowledge of how to do stuff
+
+00:10:26.230 --> 00:10:29.470
+basic knowledge of the goals that they're trying to achieve and
+
+00:10:31.430 --> 00:10:37.070
+Learns good. So what's a specializing generalist is a term that's not used as much but you like it a lot
+
+00:10:37.070 --> 00:10:39.190
+So tell me what a specialized generalism
+
+00:10:39.190 --> 00:10:44.030
+I don't have a fancy definition from someone important to read for this one. So we're gonna have to trust Brent stay tuned
+
+00:10:47.440 --> 00:10:50.530
+It's it's the reverse of this
+
+00:10:51.290 --> 00:10:53.650
+so they have a general knowledge of
+
+00:10:55.290 --> 00:10:57.990
+All or most of the technical
+
+00:10:59.090 --> 00:11:02.070
+Skill, so they're broader. They're broader. Okay
+
+00:11:02.850 --> 00:11:07.920
+And they're actively seeking to gain new skills
+
+00:11:09.120 --> 00:11:12.810
+Deeper in a new specialty
+
+00:11:12.810 --> 00:11:18.610
+So so both both sides if you were to run them as sort of an iterative loop
+
+00:11:18.610 --> 00:11:23.830
+I do think you would see both generalizing specialists and specializing generalists
+
+00:11:24.950 --> 00:11:30.950
+Converged to a steady state. I okay. I think we're more in agreement which sucks for our listeners who wanted to fight
+
+00:11:31.030 --> 00:11:34.510
+But I read I tweeted about this as well and Jim Holmes
+
+00:11:35.030 --> 00:11:40.690
+Because at first I read Scott Ambler who later in the same article says there's a lines of something like
+
+00:11:41.870 --> 00:11:47.430
+What then what the heck is a can there be a specialized in generalist and he says basically I?
+
+00:11:48.190 --> 00:11:53.390
+Guess so just a different path to get there. Although he says it's rare. Maybe it's not so rare
+
+00:11:53.670 --> 00:11:56.790
+but you're saying that the specializing generalist is
+
+00:11:57.870 --> 00:12:03.270
+Mostly a general to specializes and the generalizing specialists mostly a specialist who can go a bit broader
+
+00:12:03.590 --> 00:12:06.690
+But eventually yes, which those will converge as you go as they both go
+
+00:12:06.990 --> 00:12:12.350
+Because they're both have to share that attribute of wanting to learn new things eventually they sort of converge
+
+00:12:12.750 --> 00:12:19.270
+Yeah, so the way we could we could discuss this further like if if we both intuitively
+
+00:12:19.990 --> 00:12:21.990
+intuitively
+
+00:12:22.950 --> 00:12:27.310
+Believe we had a couple beers before we started at 8 in the morning, so your friends having a hard time
+
+00:12:27.950 --> 00:12:30.350
+That that they would likely converge
+
+00:12:31.030 --> 00:12:32.470
+to
+
+00:12:32.470 --> 00:12:35.200
+the same whichever it may be
+
+00:12:35.920 --> 00:12:37.920
+right
+
+00:12:38.000 --> 00:12:40.200
+Then really the discussion is
+
+00:12:41.760 --> 00:12:43.760
+If you were to start a new team
+
+00:12:44.360 --> 00:12:47.250
+What should it be?
+
+00:12:47.250 --> 00:12:52.880
+Where do you start and in most of the blogs that I've seen that the advocate for?
+
+00:12:53.840 --> 00:12:55.840
+generalizing specialists
+
+00:12:56.520 --> 00:13:00.280
+My perception is the the battle that they're solving is they're trying to
+
+00:13:00.640 --> 00:13:04.840
+they're not trying to solve the combined engineering problem that we are but they're trying to
+
+00:13:06.420 --> 00:13:08.420
+essentially get pure dev orgs
+
+00:13:08.820 --> 00:13:15.720
+to stop being stupid because pure dev orgs at least in the world that we're coming from is
+
+00:13:16.520 --> 00:13:21.640
+Is a world of pure specialization? Yeah, and that doesn't work no
+
+00:13:22.370 --> 00:13:27.290
+So I tweeted this and asked if there was a difference because I read the Scott Ambler article
+
+00:13:27.290 --> 00:13:31.490
+I thought well, you know and I kind of got to that convergence point that you got to I thought maybe they're the same
+
+00:13:32.370 --> 00:13:39.970
+But until they're the same they're different until they converge they are different and Jim Holmes who's an awesome, dude
+
+00:13:39.970 --> 00:13:44.810
+I met him a couple years ago to peer conference and that he was organizing and hosting. He was part of Telerik
+
+00:13:45.730 --> 00:13:47.280
+I
+
+00:13:47.280 --> 00:13:49.880
+Said he wrote an article again six years ago
+
+00:13:50.040 --> 00:13:54.280
+Talked about being a specialized in generalist and and I kind of got that there is a difference and
+
+00:13:54.800 --> 00:13:59.820
+He's a generalist first and dives deep where needed. So let's play a game. Okay
+
+00:13:59.820 --> 00:14:04.560
+I only have one round of this game because I just made it up right now tag. You're it
+
+00:14:05.830 --> 00:14:07.830
+so my role
+
+00:14:08.560 --> 00:14:10.560
+What do I do at work? I?
+
+00:14:10.880 --> 00:14:12.880
+Am kind of a consultant for the team
+
+00:14:13.480 --> 00:14:16.580
+Okay, my boss calls me that I look at what's going on
+
+00:14:16.580 --> 00:14:20.880
+I figure out where holes are make sure they're gonna make sure they're getting addressed make sure we're not
+
+00:14:21.040 --> 00:14:27.780
+Letting pieces fall through the cracks. I also spent a lot of time on this team because we don't have anyone managing in charge of managing
+
+00:14:27.780 --> 00:14:28.960
+our builds
+
+00:14:28.960 --> 00:14:32.180
+tweaking a lot of our build configurations making sure people get help with
+
+00:14:32.560 --> 00:14:35.400
+Get and source control when they need it because it's new for a lot of people
+
+00:14:36.080 --> 00:14:37.880
+optimizing tweaking
+
+00:14:37.880 --> 00:14:40.200
+Set up some new static analysis tools for the team
+
+00:14:40.920 --> 00:14:47.240
+Got those up and running so we can you know, I'm big on code hygiene and code sanity in the past
+
+00:14:47.240 --> 00:14:49.680
+I've done similar sort of things and also written some
+
+00:14:50.480 --> 00:14:52.400
+infrastructure tools
+
+00:14:52.400 --> 00:14:54.720
+but at the same time kind of did a lot of
+
+00:14:55.980 --> 00:15:02.080
+leadership things making sure that whether there are virtual teams another conversation what virtual teams or
+
+00:15:03.300 --> 00:15:08.380
+Directives that we need that the team needed to follow we're taking making care of team-wide communication, etc
+
+00:15:08.380 --> 00:15:13.140
+Kind of the things I do is I'm big on community. I'm big on learning from others. I'm big on sharing. I'm big on
+
+00:15:14.060 --> 00:15:16.060
+Enabling people to do a better job
+
+00:15:17.800 --> 00:15:21.400
+What am I am I a generalizing specialist or specializing generalist I
+
+00:15:22.240 --> 00:15:26.480
+The way you just described I think you're specializing general. Yeah, that's it's interesting
+
+00:15:26.480 --> 00:15:33.560
+That's the realization I came to as I began researching this which is weird because I've been going to a specialist and
+
+00:15:34.960 --> 00:15:36.960
+and
+
+00:15:37.960 --> 00:15:41.320
+And I can I give him a tiny Python flashback right there Oh
+
+00:15:42.480 --> 00:15:49.560
+Time out I'm going to it's probably too young at almost 11 years old but over one of my goals over
+
+00:15:50.080 --> 00:15:55.000
+Winter break is to have my son watch money Python on the Holy Grail for the first time
+
+00:15:55.040 --> 00:15:59.880
+Maybe not entirely appropriate, but I think he's silly enough that he would enjoy the humor
+
+00:15:59.880 --> 00:16:01.800
+I think my youngest son as well
+
+00:16:01.800 --> 00:16:07.560
+And I absolutely feel like I have not done my parental duty by introducing them to flying circuit
+
+00:16:07.640 --> 00:16:11.400
+Yeah, so that's gonna happen. That's that that's gonna happen. We'll see how that goes
+
+00:16:12.960 --> 00:16:16.460
+My daughter may just roll her eyes and leave the room and go play with makeup or something
+
+00:16:16.680 --> 00:16:19.280
+My daughter is just about to turn five
+
+00:16:19.840 --> 00:16:23.220
+She would yeah, she would immediately bit flip and leave
+
+00:16:23.220 --> 00:16:30.040
+But I think if I my old my youngest son would be all in and I think I could get I get it apply social pressure
+
+00:16:30.440 --> 00:16:33.680
+I'm gonna give it a shot. You know we did this weekend and we're off in the weeds
+
+00:16:33.680 --> 00:16:35.680
+I'm gonna come back to the specialized and generalist is
+
+00:16:36.640 --> 00:16:39.440
+There's a school of rock wreck a mile from Microsoft
+
+00:16:39.440 --> 00:16:43.800
+And you know that's a great movie and I made the kids watch the movie in fact
+
+00:16:43.800 --> 00:16:47.380
+My daughter had a friend over we called her mom make sure we could watch a PG-13 movie
+
+00:16:47.380 --> 00:16:50.640
+And it was it was like barely PG-13 and and yeah
+
+00:16:50.640 --> 00:16:55.280
+It was I forgot how awesome Jack Black is and that whole movie was great
+
+00:16:55.360 --> 00:16:58.960
+I would say how awesome Jack Black used to be perhaps
+
+00:17:00.360 --> 00:17:07.080
+All right, so I came the realization that I was a specialized in generalist so by your own definition
+
+00:17:08.160 --> 00:17:13.510
+You are suboptimal. I right. No, I've changed my definition
+
+00:17:14.590 --> 00:17:18.030
+once I realized that I kind of what I do is more of a I
+
+00:17:19.960 --> 00:17:22.500
+Yeah, I know a lot about a little little about a lot
+
+00:17:22.980 --> 00:17:27.840
+I do always learn new things and go as deep as I need to to help the team
+
+00:17:27.840 --> 00:17:31.940
+So here's not usually a lot deeper. Here's here's the realization
+
+00:17:32.780 --> 00:17:34.780
+just so that you don't
+
+00:17:35.100 --> 00:17:38.820
+Feel alienated or lost out or where did I go wrong?
+
+00:17:39.740 --> 00:17:42.860
+Yeah every day as I cry in the corner. I think those things so
+
+00:17:43.500 --> 00:17:50.200
+As I guess just got through those who grew up in particularly at this company those who grew up in dev
+
+00:17:50.360 --> 00:17:58.360
+Are used to being a specialist it's still whenever I introduce teams to agile that is the number one
+
+00:17:59.000 --> 00:18:02.560
+conflict I have when I introduced this to
+
+00:18:03.740 --> 00:18:09.140
+We'll call them dev teams who grew up in dev even though everything's combined engineering now
+
+00:18:11.200 --> 00:18:13.840
+Tess is the reverse
+
+00:18:13.880 --> 00:18:17.880
+Right. We've talked many a times that when when we had these separated roles
+
+00:18:18.880 --> 00:18:25.340
+Test was the guys trained to fill in the blanks. So we got talented at blank filling
+
+00:18:25.480 --> 00:18:31.840
+Yeah, our friend Jim Moore who listens once in a while says that you said the job of test is the remainder
+
+00:18:32.320 --> 00:18:33.870
+Yeah, I
+
+00:18:33.900 --> 00:18:40.420
+Love Jim don't like that. I I like it. I I what you just said in different words. No, no, it's a it's a hundred percent
+
+00:18:40.420 --> 00:18:43.020
+Right and I still hate it
+
+00:18:43.020 --> 00:18:45.070
+I
+
+00:18:45.070 --> 00:18:49.110
+And then I even wrote a blog on on that topic. Gosh a year ago
+
+00:18:50.030 --> 00:18:52.950
+Do you blog anymore? I will get another one out
+
+00:18:53.950 --> 00:19:00.180
+In the before the end of this into this year actually ideally this weekend stay tuned. Yep
+
+00:19:01.580 --> 00:19:05.520
+But one of the things that that I have
+
+00:19:06.540 --> 00:19:08.140
+done
+
+00:19:08.140 --> 00:19:10.100
+is
+
+00:19:10.100 --> 00:19:11.570
+I've
+
+00:19:11.610 --> 00:19:16.210
+Watched I've I've owned teams that came from both backgrounds
+
+00:19:17.010 --> 00:19:18.330
+Okay
+
+00:19:18.330 --> 00:19:24.010
+and when you get into the the agile process that they're
+
+00:19:24.880 --> 00:19:27.620
+Let me take a step back
+
+00:19:27.620 --> 00:19:33.100
+You you from a technical standpoint, I would definitely classify you as a generalist
+
+00:19:34.490 --> 00:19:35.610
+however
+
+00:19:35.610 --> 00:19:43.490
+You are a specialist in certain things. So I definitely think that for example learning knowledge sharing that is a specialty
+
+00:19:43.970 --> 00:19:47.610
+You have beyond the shadow of a doubt, right?
+
+00:19:50.170 --> 00:19:51.650
+New tech
+
+00:19:51.650 --> 00:19:56.780
+You're you're not afraid to go deep and you are able to go deep
+
+00:19:59.620 --> 00:20:03.880
+Just about any time the business needs it the difference
+
+00:20:04.700 --> 00:20:09.460
+From from my point of view between a generalizing specialist and a specializing generalist
+
+00:20:10.820 --> 00:20:16.820
+a specialization in the agile world as we've talked before is another name for
+
+00:20:17.810 --> 00:20:22.980
+Team bottleneck. So the challenge comes into play is when there's a specialization
+
+00:20:22.980 --> 00:20:30.140
+We're the only specialist you're the only specialist and the worst case scenario is you're the only specialist in a
+
+00:20:30.820 --> 00:20:32.820
+specialization that the team no longer needs
+
+00:20:33.540 --> 00:20:36.190
+for example
+
+00:20:36.190 --> 00:20:38.280
+let's say
+
+00:20:38.280 --> 00:20:44.640
+You are work. You are working on a UI database product and you're the database specialist and
+
+00:20:45.220 --> 00:20:47.500
+they decide to go a different direction and
+
+00:20:48.140 --> 00:20:52.980
+We no longer need that database. We're gonna outsource that database to a third party
+
+00:20:55.900 --> 00:20:59.140
+What do you do get a new job? That's exactly what you do
+
+00:20:59.460 --> 00:21:02.500
+Yeah, but if you're a specializing generalist, what do you do?
+
+00:21:02.820 --> 00:21:08.140
+You pick one of your other general areas and fill in or find another area specialty you find another area
+
+00:21:08.140 --> 00:21:10.140
+That's true for a specializing generalist as well
+
+00:21:10.860 --> 00:21:12.860
+the anxiety is
+
+00:21:12.860 --> 00:21:19.040
+Significantly different I guess so there's that sort of a lot of people have mentioned. I know Lisa Crispin has I'm not sure if
+
+00:21:19.640 --> 00:21:25.960
+If it's hers or she got up somewhere else. Sorry, but the tree shaped persona where you have the T shaped persona where you're broad
+
+00:21:25.960 --> 00:21:30.040
+You go deep, but then somebody says well, there's other places that go maybe not quite as deep
+
+00:21:31.480 --> 00:21:34.080
+Yeah with my hands you guys can't see it, but I think
+
+00:21:35.270 --> 00:21:37.270
+Yeah to be successful in software
+
+00:21:37.310 --> 00:21:43.630
+You can't just be a trunk of a tree need some breath and you need some branches and vines dangling down areas where you know
+
+00:21:44.230 --> 00:21:49.270
+Where you can dive in what I would say is the this is actually an interesting discussion
+
+00:21:49.350 --> 00:21:54.470
+The oh my gosh, it's actually interesting. Thanks for telling everyone Brent. Sorry
+
+00:21:55.230 --> 00:21:56.870
+every now and again
+
+00:21:56.870 --> 00:21:58.230
+Alan
+
+00:21:58.230 --> 00:22:00.230
+Pull something useful out
+
+00:22:01.350 --> 00:22:07.350
+So if specialization can turn into a problem around bottlenecking
+
+00:22:08.280 --> 00:22:13.440
+then then is it true and I believe it is the generalization means a
+
+00:22:15.000 --> 00:22:17.000
+generalist might be a
+
+00:22:17.840 --> 00:22:19.840
+specialist in adaptability
+
+00:22:20.800 --> 00:22:25.880
+Yes, but they do have the week is like discussing mutant powered strengths and weaknesses
+
+00:22:26.480 --> 00:22:28.000
+you need
+
+00:22:28.000 --> 00:22:32.600
+Know when you have a complex performance problem the generals can't help you you need the purse
+
+00:22:32.600 --> 00:22:36.200
+you need somebody with with strengths in performance or or
+
+00:22:37.160 --> 00:22:42.480
+Specialty and performance as part of their tool bag to help with that. I would argue the generalists can help you
+
+00:22:44.220 --> 00:22:47.700
+But it may not be in an effective time frame. Yes, okay
+
+00:22:48.220 --> 00:22:54.480
+Because and I would say the generals may help you as they ramp up specialty in that area in order to help you
+
+00:22:54.480 --> 00:22:58.640
+That's maybe why the time frame is long. Yes, okay. Yeah
+
+00:22:59.720 --> 00:23:06.120
+So all that said I don't see a test specialist
+
+00:23:06.120 --> 00:23:12.160
+So this is a and in context of the article, it's a a test special someone who's a generalizing specialist
+
+00:23:12.780 --> 00:23:19.360
+Where there or a specializing generalist? Let's talk about me for example, and but I still consider myself a test specialist
+
+00:23:19.360 --> 00:23:21.480
+I know a lot about approaches for testing
+
+00:23:21.480 --> 00:23:27.320
+I help our dev team a lot and how they're writing their tests now. They're executing their tests. I'm actually I shouldn't say our dev team my team
+
+00:23:28.160 --> 00:23:32.560
+that happened to be programmers who are purely specialists in programming to
+
+00:23:33.750 --> 00:23:35.750
+Broaden their ability to write
+
+00:23:36.710 --> 00:23:42.970
+Unit functional and acceptance tests to journey that is a test specialist a team is always going to needs
+
+00:23:43.770 --> 00:23:47.810
+I'm stopping you there. Is that a test specialist or a test specialization?
+
+00:23:48.130 --> 00:23:49.730
+It's a test specialization
+
+00:23:49.730 --> 00:23:57.090
+So I guess I think I get the part so if that is all you did that you are taking offense that is because I call
+
+00:23:57.090 --> 00:24:03.690
+It test specialist. That means that that is just a specialist and not a generalizing especially when you say that I
+
+00:24:04.690 --> 00:24:06.200
+immediately go
+
+00:24:06.200 --> 00:24:10.220
+Team bottleneck and in in in in the year that dude screwed
+
+00:24:10.780 --> 00:24:13.580
+Because he has anybody knows how to do it, right? Yeah, so
+
+00:24:14.100 --> 00:24:18.920
+Yeah, a test specialization. I have several areas of test specialization
+
+00:24:18.920 --> 00:24:22.840
+Because test is more than just one area helping them write better tests is one thing
+
+00:24:23.100 --> 00:24:29.060
+Helping them think about how their components interact with others helping them helping them think helping them think
+
+00:24:29.820 --> 00:24:37.920
+I'm a thinking I have I'm not a thinking specialist. I'm a specialization in thinking we haven't talked about test zombies in a long time
+
+00:24:37.920 --> 00:24:39.920
+But yeah, we're not going to yeah
+
+00:24:40.250 --> 00:24:46.120
+Do we do we reach critical mass on that so it doesn't let me let me see if I can let me try and summarize
+
+00:24:46.400 --> 00:24:48.400
+What I got out of this conversation
+
+00:24:48.880 --> 00:24:54.320
+You can tell me where I'm wrong and then we'll try again. Okay, so there is a difference between
+
+00:24:55.800 --> 00:25:01.580
+Generalizing specials and a specialized in general and it comes in the second half of that word a specialized in general
+
+00:25:01.580 --> 00:25:05.220
+It's more of a general to specializes and vice versa for the other one
+
+00:25:05.220 --> 00:25:11.520
+But eventually as these people one attribute they share they share multiple attributes one they share. It's important is this
+
+00:25:12.200 --> 00:25:19.350
+They're grasping new knowledge and bringing it into their tool back. Yes, and then eventually as the specializing
+
+00:25:19.970 --> 00:25:21.380
+generalist
+
+00:25:21.380 --> 00:25:26.560
+Gets more specializations or deeper specializations and it's a generalizing specialist
+
+00:25:27.420 --> 00:25:35.240
+Gets more broad they kind of converge on being the same person the same type. Yeah. Yeah. Well, obviously, yeah
+
+00:25:35.500 --> 00:25:37.500
+Yeah, and science fiction here
+
+00:25:39.000 --> 00:25:42.480
+They the the same balance and
+
+00:25:43.080 --> 00:25:48.280
+It'd be interesting to discover where that converges anything and and the path to get this Scott antlers
+
+00:25:48.280 --> 00:25:50.280
+right the path that gets you there is
+
+00:25:50.680 --> 00:25:52.680
+is kind of what
+
+00:25:52.760 --> 00:25:55.640
+Makes you one of the other for example if I were to
+
+00:25:56.480 --> 00:25:59.120
+I have a couple areas I go deep in but
+
+00:25:59.620 --> 00:26:03.630
+Let's in anyway without rambling about how I become one of the other
+
+00:26:03.850 --> 00:26:06.890
+Because I don't care as long as I'm valuable to the team or if they don't fire me
+
+00:26:06.970 --> 00:26:09.490
+Can I also extrapolate beyond there that?
+
+00:26:10.930 --> 00:26:14.770
+That's the kind and this has been written 150 times in different articles
+
+00:26:14.770 --> 00:26:20.570
+I think I'm safe saying this that a good engineering team a whole engineering team an agile team a combined engineering team a discipline free
+
+00:26:20.570 --> 00:26:23.010
+engineering team is made up of
+
+00:26:23.690 --> 00:26:25.490
+those types of people
+
+00:26:25.490 --> 00:26:31.130
+Primarily how much room is there for the dev specialist on the team of the future?
+
+00:26:31.490 --> 00:26:33.900
+the programming specialist
+
+00:26:33.900 --> 00:26:37.850
+Don't they need some generalization to remain relevant guy?
+
+00:26:37.850 --> 00:26:44.650
+I think I think that when you say that I'm like, okay, what would be the the dev specialist?
+
+00:26:45.210 --> 00:26:46.840
+and
+
+00:26:46.840 --> 00:26:53.320
+My initial gut is that's that's what we call the architect. No, I think the architect is the generalist
+
+00:26:55.000 --> 00:27:01.160
+The good architects I've known are actually some of the best test minds I've dealt with in development
+
+00:27:02.140 --> 00:27:06.500
+They get how the pieces fit together they know how to think about it they know they know
+
+00:27:07.500 --> 00:27:11.740
+Well, no so questions to ask it's interesting. Maybe you've had shitty architects
+
+00:27:11.740 --> 00:27:15.280
+This is why I think you brought up the the losted conversation
+
+00:27:15.860 --> 00:27:20.620
+because what I think of a good architect is that they are a
+
+00:27:21.420 --> 00:27:23.420
+specialist in in
+
+00:27:24.100 --> 00:27:29.260
+Architecture which is sort of an abstract concept right almost a general concept
+
+00:27:32.950 --> 00:27:39.830
+Just messing with you, right? Yeah, I think I think architecture is a deep
+
+00:27:43.960 --> 00:27:45.820
+It's a deep
+
+00:27:45.820 --> 00:27:47.860
+Concept but it's at the high level
+
+00:27:48.680 --> 00:27:54.080
+Right it it whereas you brought it up. Yeah
+
+00:27:56.630 --> 00:27:58.320
+The
+
+00:27:58.320 --> 00:28:04.700
+So a a dev specialist from going back to your question a dev specialist from your concept is
+
+00:28:05.440 --> 00:28:07.440
+What then someone who knows?
+
+00:28:07.800 --> 00:28:13.010
+The database in and out not to pick on our company which I'm gonna do in the next segment as well
+
+00:28:13.170 --> 00:28:17.890
+But we have a lot of developers who are good at only
+
+00:28:18.640 --> 00:28:25.230
+Tell me what to code. I'll code it and then I'll check it in. So what is that?
+
+00:28:25.710 --> 00:28:32.680
+That's is that a coding specialist? That's I guess C sharp specialist. I don't know. Yeah, it's a language specialist. I'll implement that
+
+00:28:34.020 --> 00:28:36.300
+Yeah, but then from a coding standpoint
+
+00:28:37.000 --> 00:28:42.590
+If they're a C sharp specialist, are they a coding general? No, I guess so
+
+00:28:42.590 --> 00:28:46.110
+I guess so because I think are we are we now like
+
+00:28:47.830 --> 00:28:49.830
+Are we now?
+
+00:28:50.110 --> 00:28:56.470
+The question coming to the opinion that it doesn't matter and everybody's the same. Let me rewind. Oh god
+
+00:28:56.470 --> 00:29:03.110
+I don't know why I invite you only because your B is in the yeah, you I can help you find another
+
+00:29:03.110 --> 00:29:05.110
+The question was oh god
+
+00:29:05.890 --> 00:29:08.760
+All right, the question was Brent
+
+00:29:09.200 --> 00:29:15.440
+Yes, Alan the question was is let me ask it differently so I can try and reel you the heck in
+
+00:29:15.440 --> 00:29:17.440
+Good luck with that. I know
+
+00:29:17.560 --> 00:29:20.290
+Go for it. I'm ready describe
+
+00:29:20.810 --> 00:29:24.850
+Take a team of 20 people. You have a 20 person engineering team
+
+00:29:25.840 --> 00:29:33.240
+Are they specialists generalists generalizing special specializing generalists? What's your mix generally at the start or at the end?
+
+00:29:33.700 --> 00:29:38.300
+God no, cuz we just got through talking about they're just hired. Okay, you hired a team
+
+00:29:38.300 --> 00:29:43.780
+You have a brand new product. You're gonna build a fizz banger which fizzes bangs or bangs physics
+
+00:29:43.780 --> 00:29:45.780
+I'm gonna have I'm likely
+
+00:29:46.180 --> 00:29:51.420
+in today's world, I'm likely to have a team of generalists and specialists and
+
+00:29:51.940 --> 00:29:54.800
+I will need to kickstart the process
+
+00:29:55.420 --> 00:30:00.720
+that creates the learning loop that gets them rolling to a
+
+00:30:01.340 --> 00:30:07.340
+Converge center so you're gonna start with generalists and specialists and that and let them turn into specializing generalist and generalizing specialists
+
+00:30:07.540 --> 00:30:15.380
+Yeah, then become whatever the hell we haven't needed. I'm already a specializing general so you won't hire me because I'm not like a
+
+00:30:16.180 --> 00:30:20.910
+One of the other in that case. No, what do you hire me as a generalist?
+
+00:30:20.910 --> 00:30:26.200
+I would hire you but in the class you wouldn't hire me, but you know it theoretically
+
+00:30:26.260 --> 00:30:33.060
+I would so hire you I would I would love for the first three months the the one-on-ones I
+
+00:30:33.700 --> 00:30:36.700
+Don't do one-on-ones. Oh you would no
+
+00:30:37.220 --> 00:30:39.220
+Sorry, I'm busy
+
+00:30:39.220 --> 00:30:41.220
+Making your product work. Yeah
+
+00:30:41.860 --> 00:30:47.990
+All right. My ideal world would be to start with
+
+00:30:48.990 --> 00:30:56.950
+Again specializing generalist people because I would want to optimize for adaptability, but the specializations I would try to
+
+00:30:59.310 --> 00:31:07.470
+Diversify so that there is a lot of opportunity for knowledge sharing to run amongst the team and their specializations are aligned with
+
+00:31:08.620 --> 00:31:13.510
+What my product needs? All right. Okay, I'm gonna put a
+
+00:31:14.630 --> 00:31:20.150
+Nice bed out with a blanket and a pillow and put this topic into the bed and tuck it in for a nice rest
+
+00:31:20.150 --> 00:31:25.780
+What do you think? That's up to you. I'm not done with this. You're not done. Nope. Oh god. Okay
+
+00:31:26.240 --> 00:31:28.760
+Just to let people know I got an earthquake get out of bed
+
+00:31:29.320 --> 00:31:34.000
+Know what's happening with the no no yeses in the SG's so just to share
+
+00:31:34.400 --> 00:31:41.880
+So I tweeted on this that I believe I have a mechanism. I think we I think we've hypothesized what will happen
+
+00:31:42.760 --> 00:31:48.320
+For those I think we talked about that I've gone back to school and I just completed a class on
+
+00:31:48.880 --> 00:31:54.440
+Modeling and simulation so I'm gonna model and simulate this and see what actually happens
+
+00:31:55.770 --> 00:31:57.130
+I
+
+00:31:57.130 --> 00:31:59.010
+that may be my
+
+00:31:59.010 --> 00:32:01.010
+Play toy exercise for the next
+
+00:32:01.690 --> 00:32:06.290
+Couple of weeks. No one wants to know about your play toy exercises. I
+
+00:32:07.700 --> 00:32:13.020
+Do you think to get this? I do think we've converged on
+
+00:32:16.120 --> 00:32:21.920
+Something we've already converged on like it it really doesn't matter if it's
+
+00:32:22.380 --> 00:32:28.180
+SG's or GS's when you begin what's critical is this this learning?
+
+00:32:28.700 --> 00:32:35.340
+Adaptability loop and over time we I think we both believe that they're gonna come to some happy center and
+
+00:32:35.820 --> 00:32:38.480
+What is that happy center? We don't know
+
+00:32:40.540 --> 00:32:48.060
+Correct. We don't know when I'm done with this. I'll know. All right now now can I put it to bed?
+
+00:32:48.100 --> 00:32:53.020
+You may it's in bed. Okay. All right one more topic. No mailbag this week. Sorry no
+
+00:32:55.820 --> 00:32:59.340
+Cuz it's not happening because nobody asked me questions that I recall
+
+00:33:00.500 --> 00:33:08.420
+But I was thinking just the other day. Did you ever read microsurf the Doug Copeland book? Yeah long long long time ago
+
+00:33:08.420 --> 00:33:10.820
+I remember liking I was
+
+00:33:11.740 --> 00:33:13.740
+Before I started at Microsoft. I
+
+00:33:14.060 --> 00:33:16.460
+Like one chapter of it was in Wired magazine
+
+00:33:16.460 --> 00:33:20.300
+I thought this is pretty cool and then I started at Microsoft and I got the book and read it
+
+00:33:20.300 --> 00:33:22.660
+There was a lot of it was interesting. There was a lot of
+
+00:33:23.760 --> 00:33:30.720
+Microsoft II, you know little quirks about Microsoft. This is written in, you know, pre Windows 95 pre calm it had a lot of
+
+00:33:31.930 --> 00:33:37.620
+Sort of inside information funny things about Microsoft ease and and and it was a different
+
+00:33:38.340 --> 00:33:42.060
+Microsoft it was a lot different and that book came out right when I started and
+
+00:33:42.220 --> 00:33:47.460
+We talked last time Brett and I are both approaching the 20 year mark and Brent's bizarre internship story
+
+00:33:48.060 --> 00:33:50.180
+Listen to the last podcast for that the previous one
+
+00:33:50.960 --> 00:33:54.340
+But I was thinking and I don't know if you have many of these but I've
+
+00:33:55.360 --> 00:33:57.310
+There are things
+
+00:33:57.310 --> 00:34:02.670
+People do at Microsoft that I kind of want to feed to Doug Copeland see if I start like a follow-up
+
+00:34:02.910 --> 00:34:05.070
+but for now, I'll just feed them to the
+
+00:34:05.870 --> 00:34:08.480
+They're not enough of them yet for a book for sure
+
+00:34:08.760 --> 00:34:14.740
+But let me fun to discuss maybe we'll make a segment out of this we're gonna think talk about things Microsoft ease do
+
+00:34:15.370 --> 00:34:19.330
+What would be the title of this book? I don't know. I don't know. I haven't thought that far ahead yet
+
+00:34:19.350 --> 00:34:25.350
+I don't think any of this anything regarding the topics of this podcast do not get thought of in advance
+
+00:34:25.830 --> 00:34:32.790
+So don't ask me like things like that. All right, so what's your what you have me? Do you want to mind? What's your nuggets?
+
+00:34:33.230 --> 00:34:39.590
+There's an interesting phenomenon. I see at Microsoft more than anywhere else and people will
+
+00:34:40.150 --> 00:34:46.290
+To exit the bathroom. They'll basically wrap their entire arm and paper towels to pull the door open
+
+00:34:47.110 --> 00:34:54.030
+Yet they'll eat anything you put on the kitchen counter. I don't get it. I
+
+00:34:57.340 --> 00:34:59.340
+could put turd cookies out there
+
+00:35:00.340 --> 00:35:02.340
+I could put like
+
+00:35:03.540 --> 00:35:06.880
+Lasagna directly on the counter on a plate. They all is on ya. Yeah
+
+00:35:07.960 --> 00:35:13.100
+But they cannot touch that stainless steel door handle this this
+
+00:35:13.820 --> 00:35:16.170
+So Alan Alan wrote up the topic
+
+00:35:16.830 --> 00:35:22.350
+And I'm like, okay usually when Alan wrote safe topics, I'm like, all right, I'll be able to swing with this
+
+00:35:22.830 --> 00:35:24.830
+Yeah, I was like, okay
+
+00:35:24.870 --> 00:35:32.150
+So you have you found some weird OCD specialists that you're hanging out with check it out. So Microsoft employees
+
+00:35:32.150 --> 00:35:38.570
+What do we pay I don't think it's like a 59 total compensation like a fiction. I was like an entry-level person
+
+00:35:39.350 --> 00:35:42.050
+They get good amount of money and they get great benefits
+
+00:35:42.710 --> 00:35:48.350
+We take care of people here and we have a lot of long and tooth people like me and Brent not poor
+
+00:35:48.870 --> 00:35:54.910
+We're not zillionaires or we wouldn't hey hey podcast Brent maybe poor. Yeah, it depends on it's a relative discussion
+
+00:35:56.070 --> 00:35:57.530
+Well, anyway
+
+00:35:57.530 --> 00:36:04.210
+You can get like an email from an admin saying hey, we're giving away free $5 t-shirts over here
+
+00:36:04.490 --> 00:36:11.310
+Everyone will stop working like autumn deadline smedline. I'm getting my free shirt. Yes
+
+00:36:12.560 --> 00:36:17.280
+and it doesn't be a shirt it can be a you know can be a shot glass or a mug or a
+
+00:36:17.760 --> 00:36:26.120
+Little card that lets you have a badge for your avatar or whatever that the little teeny things people will I know I have a deadline
+
+00:36:26.120 --> 00:36:32.080
+No, this build broken and I'm responsible to fix it. But there's a free t-shirt two buildings over. I'm going to get it
+
+00:36:32.080 --> 00:36:34.400
+You ever read free? No
+
+00:36:35.960 --> 00:36:41.920
+So one of the the topics that I'm hugely fascinated by is this thing called behavioral economics
+
+00:36:42.800 --> 00:36:43.320
+and
+
+00:36:43.320 --> 00:36:51.390
+The word free is just powerful right? Hey free stuff it it it doesn't even matter
+
+00:36:51.390 --> 00:36:53.390
+I don't think this is a Microsoft phenomenon
+
+00:36:53.790 --> 00:36:58.550
+Perhaps not yeah people we have free coffee and free soda people just grab when they go by it
+
+00:36:58.550 --> 00:36:59.790
+Oh my god, the soda is free
+
+00:36:59.790 --> 00:37:05.750
+If we're gonna say like if you like sodas free only on Fridays people would stockpile they go crazy if they changed it
+
+00:37:06.150 --> 00:37:13.330
+Hey new t-shirt one nickel. Oh, yeah, I guarantee you would see a totally different behavior
+
+00:37:14.370 --> 00:37:22.210
+So I was noticing that there was a a division wide t-shirt giveaway and I'm walking
+
+00:37:22.210 --> 00:37:26.470
+I'm watching the throng and you know, I'm the ever the efficiency
+
+00:37:27.010 --> 00:37:30.650
+And and wait, I hate waste and I'm watching
+
+00:37:31.290 --> 00:37:35.290
+Thousands of people walk over to get their t-shirt and I thought you know
+
+00:37:35.970 --> 00:37:38.550
+We have work to do and they're waiting in line
+
+00:37:38.930 --> 00:37:45.110
+I know there's so when you said the microsurfs and so do the differences between the the
+
+00:37:45.770 --> 00:37:48.880
+How called the decades like we are?
+
+00:37:49.640 --> 00:37:54.100
+Definitely knee-deep in a new transformation
+
+00:37:54.500 --> 00:37:56.250
+Right. I
+
+00:37:56.250 --> 00:38:03.690
+Haven't I I can talk about the first decade. I was here in the second decade. I was here and very distinctly
+
+00:38:03.690 --> 00:38:06.650
+I'm not gonna do it today, but the next decade
+
+00:38:08.140 --> 00:38:12.380
+It's going to be very different like the one thing I found out yesterday
+
+00:38:12.380 --> 00:38:17.660
+I didn't know about this and I'm still thinking through what are the downstream consequences?
+
+00:38:18.730 --> 00:38:23.110
+Apparently we've stopped the ship it program. Yeah, we have. Yeah, right and I'm like
+
+00:38:24.980 --> 00:38:30.260
+Interesting. So we're moving towards stopping the ship it program where we were
+
+00:38:30.900 --> 00:38:33.320
+Microsoft as a whole was moving away from sort of a
+
+00:38:33.940 --> 00:38:38.020
+Office space lifestyle more towards an open space lifestyle
+
+00:38:39.740 --> 00:38:44.150
+And it's really for me hard to predict what this is going to be at the
+
+00:38:44.790 --> 00:38:46.790
+end of that particular
+
+00:38:46.790 --> 00:38:53.590
+Journey. Well the ship it program for those that don't work at the evil Empire is every time you ship a product you get a little
+
+00:38:54.410 --> 00:38:57.730
+Decal to go on this that little metal decal to go on this plaque. Yeah
+
+00:38:57.730 --> 00:39:02.010
+Yep, and I have two of them full of products that some I'm proud of and some I'm not
+
+00:39:03.130 --> 00:39:04.660
+in
+
+00:39:04.660 --> 00:39:06.250
+the
+
+00:39:06.250 --> 00:39:09.270
+We're moving to a world where we may not have
+
+00:39:10.310 --> 00:39:14.490
+Any products at Microsoft have major releases anymore. Maybe all incremental
+
+00:39:14.490 --> 00:39:19.270
+Yeah, and then from that from that point of view, I totally agree with the removal the ship it program
+
+00:39:19.270 --> 00:39:24.550
+But one of the things that I've used that ship it program when I go and I meet a new person
+
+00:39:24.550 --> 00:39:26.550
+That's one of the first things I go look at
+
+00:39:26.890 --> 00:39:28.190
+because
+
+00:39:28.190 --> 00:39:32.630
+Right there is a stalker. That's like someone's Facebook history
+
+00:39:32.950 --> 00:39:41.300
+No, what is listed right there is a set of experiences for that individual set of products a set of knowledge
+
+00:39:41.300 --> 00:39:43.760
+And I find that I'm like, oh
+
+00:39:44.720 --> 00:39:46.360
+Hey
+
+00:39:46.360 --> 00:39:51.360
+You and I worked on the same team. I did not realize that well on mine
+
+00:39:51.360 --> 00:39:54.360
+You would see I worked on Windows millennium and you would think less of me
+
+00:39:57.400 --> 00:39:59.400
+At this point in time that's a challenge
+
+00:40:00.290 --> 00:40:02.290
+Oh
+
+00:40:02.470 --> 00:40:04.580
+Hear that
+
+00:40:04.580 --> 00:40:13.020
+Right just didn't hear he worked on it. And as we heard earlier, he's a test specialist and yet millennium still happened
+
+00:40:13.540 --> 00:40:19.610
+It's a law I could talk about windows. It's me. I don't know the millennium came from I thought it was Windows marketing edition
+
+00:40:20.370 --> 00:40:25.010
+Millennium edition. Yeah, I was that was that the fix for y2k? No
+
+00:40:25.490 --> 00:40:27.530
+I'm still puzzled why that thing ever went out
+
+00:40:27.530 --> 00:40:34.650
+You know why it went out because that was before we companies were distributing applications primarily via the internet and Windows
+
+00:40:34.730 --> 00:40:37.850
+Was the only ship vehicle for a lot of applications?
+
+00:40:37.850 --> 00:40:42.730
+So we had to put a new version of Windows out in order to ship a bunch of things that people wanted to have shipped elsewhere
+
+00:40:42.730 --> 00:40:46.430
+at Microsoft. Yeah
+
+00:40:46.840 --> 00:40:49.640
+Sorry world. Yep
+
+00:40:49.720 --> 00:40:54.760
+We broke the world. Do I have any Alan broke the world? I haven't matched the trend yet
+
+00:40:54.760 --> 00:40:56.760
+I'm gonna make a list of these
+
+00:40:57.080 --> 00:41:04.020
+There is a weird vortex around campus and I can't now that we used to have parking passes we stuck in their window
+
+00:41:04.040 --> 00:41:09.340
+I never put one in but you can always tell a Microsoft driver because they had the same little pass hanging from their window
+
+00:41:09.340 --> 00:41:12.720
+Yeah, but now we don't require those so I can't identify the Microsoft drivers
+
+00:41:12.720 --> 00:41:15.680
+but I can say there is a vortex around the campus of
+
+00:41:16.600 --> 00:41:18.600
+Really aggressive bad driving?
+
+00:41:19.910 --> 00:41:23.990
+yes, but I haven't found the pattern yet to to really make that a
+
+00:41:24.990 --> 00:41:28.680
+An observable trend that I can predict
+
+00:41:29.960 --> 00:41:31.080
+Six years ago
+
+00:41:31.080 --> 00:41:35.920
+This was like all throughout our internal like news sources that it was a huge problem
+
+00:41:35.920 --> 00:41:38.520
+And I haven't seen any sort of um, I I
+
+00:41:39.200 --> 00:41:44.080
+People ignoring pedestrians and oh they do completely I yeah sometimes if I get up late
+
+00:41:44.080 --> 00:41:47.480
+I will go for a run in the middle of the day rather than I usually run in the morning and
+
+00:41:47.880 --> 00:41:53.760
+I take a path that has me crossing the fewest streets as possible yet. I still
+
+00:41:54.360 --> 00:42:03.180
+Pretty much I'm in fear for my life every time I cross the street. Yeah, I just let the car go by I try to
+
+00:42:03.180 --> 00:42:05.700
+But then yeah, it's it's it's a crazy
+
+00:42:05.740 --> 00:42:11.100
+It's crazy and I think part of it is do you think that so Microsoft has these streets that go through campus?
+
+00:42:11.220 --> 00:42:18.060
+But they're they're public streets technically I think but the police never watch them. They are public streets. So yeah people drive
+
+00:42:19.480 --> 00:42:23.000
+That shit crazy. Yep, and yeah, so
+
+00:42:23.840 --> 00:42:27.520
+And even around blind corners and and
+
+00:42:28.280 --> 00:42:30.030
+one of the
+
+00:42:30.030 --> 00:42:33.310
+One of the things that I tell people on that because I get every so often
+
+00:42:33.310 --> 00:42:33.910
+Oh my god
+
+00:42:33.910 --> 00:42:37.910
+I was just about to enter the crosswalk and this guy went anyway, and I'm like, okay
+
+00:42:37.910 --> 00:42:43.430
+Well, you didn't enter the crosswalk. So by the legal they can still go once you step a foot in there
+
+00:42:43.590 --> 00:42:47.470
+Yeah, they have to stop and that's the other thing the the Microsoft pedestrians
+
+00:42:48.070 --> 00:42:50.070
+They don't slow down. No, they
+
+00:42:50.630 --> 00:42:56.740
+It's idiotic the approach of my lights green I'm going if you hit me it's your fault. Yes, and you're going to die
+
+00:42:57.180 --> 00:43:00.660
+Yeah, that's the thing that like with the pedestrian even worse
+
+00:43:01.940 --> 00:43:06.220
+I have a longer story for this. I'm not gonna go into it today. But the nutshell of it is
+
+00:43:07.560 --> 00:43:08.920
+Look guys
+
+00:43:08.920 --> 00:43:12.640
+You walk in the crosswalk and you and you get hit
+
+00:43:13.470 --> 00:43:15.470
+Yes, they are in the wrong
+
+00:43:16.110 --> 00:43:17.990
+They'll go to jail
+
+00:43:17.990 --> 00:43:19.990
+You'll go to the graveyard. I
+
+00:43:20.510 --> 00:43:26.470
+Just don't get your perspective, right? I was on a run one morning at work and
+
+00:43:27.870 --> 00:43:29.870
+a guy was on his bicycle on the
+
+00:43:30.510 --> 00:43:33.860
+On the sidewalk and he wanted to there's this turn
+
+00:43:33.860 --> 00:43:37.900
+There's this place for people coming off the freeway and they want to turn right and it's really hard visibility
+
+00:43:37.900 --> 00:43:39.340
+They want to turn right on the red
+
+00:43:39.340 --> 00:43:44.920
+But they can't because they can't see there was a guy on his bicycle and he was like one foot in the street
+
+00:43:44.920 --> 00:43:47.300
+Ready to go the second that crosswalk turned green
+
+00:43:47.740 --> 00:43:51.260
+Pedestrian sign turns green the same time the traffic light turns green the guy
+
+00:43:53.280 --> 00:43:55.480
+Started turn right slammed on his brakes
+
+00:43:55.480 --> 00:44:00.480
+He wasn't going very fast and the bicyclist because he wanted to make a point just stood in front of him
+
+00:44:00.480 --> 00:44:05.680
+He stared at him and stood right in front of his car. Just I mean like an aggressive bicyclist and I
+
+00:44:06.680 --> 00:44:09.080
+Don't get it. Anyway off of the weeds here a little bit
+
+00:44:09.080 --> 00:44:14.680
+But we'll look for I'll look for some more and it isn't just like one isolated thing. I'm looking for some more trends
+
+00:44:14.760 --> 00:44:18.100
+There's a new pattern going like one of the things
+
+00:44:19.200 --> 00:44:22.440
+Like the open the open space model
+
+00:44:24.120 --> 00:44:30.760
+Here in Xbox, I think it's done rather effectively. I'm moving to to a new
+
+00:44:32.120 --> 00:44:35.520
+building where it with a different design it's sort of the
+
+00:44:37.040 --> 00:44:44.360
+The the corral people in like cows about to get milked a model that you'll see you that the Skype team has
+
+00:44:44.360 --> 00:44:50.760
+Oh, I hate that but but the thing is that we've been told is that it's all open space and it's collaborative
+
+00:44:51.040 --> 00:44:54.240
+but you go walk in those buildings and it's like
+
+00:44:55.280 --> 00:45:01.240
+Entering a library during the middle of a funeral. I love team rooms. I love them
+
+00:45:01.880 --> 00:45:04.200
+When they max out at 10 people at the most
+
+00:45:05.200 --> 00:45:11.980
+Yeah, when you shove in 30 it it turns into a library I was yeah a whole other conversation
+
+00:45:12.180 --> 00:45:14.780
+But there's there's a there will be
+
+00:45:16.120 --> 00:45:21.920
+Pattern consequences to that model. All right. We'll look for things to happen in the next decade. Yes, we will stay employed that long
+
+00:45:22.360 --> 00:45:30.420
+All right, everyone have a happy happy and safe holiday and a fantastic new year. All right, I'm not Brent. I am not Alan
+
+00:45:30.420 --> 00:45:32.420
+All right, we'll see you in 2015
+
+00:45:33.500 --> 00:45:35.500
+Ciao
+

@@ -1,0 +1,1600 @@
+1
+00:00:00,000 --> 00:00:10,640
+This is the AB Testing 343 podcast, a podcast where we ask one of the three listeners of
+
+2
+00:00:10,640 --> 00:00:17,520
+the AB Testing podcast, three questions about almost anything. ABT 343 is a fun slice of
+
+3
+00:00:17,520 --> 00:00:23,230
+what's going on in the world of modern testing. Let's get started. We're back again for another
+
+4
+00:00:23,230 --> 00:00:28,990
+episode of ABT 343 and we have one of our three listeners with us today. Today we have
+
+5
+00:00:28,990 --> 00:00:36,430
+Percy Ababa. Say hi, Percy. Hi everyone. I hope the other two is out and about and we'll be
+
+6
+00:00:36,430 --> 00:00:41,550
+listening to this. Yeah, we'll get this out sometime during the holiday season. Happy to
+
+7
+00:00:41,550 --> 00:00:46,430
+have you here, getting a lot of great feedback on this series. So glad to have someone who's
+
+8
+00:00:46,430 --> 00:00:53,950
+practically a show regular here today. Percy was on the show we did without Brent in Philadelphia
+
+9
+00:00:53,950 --> 00:00:59,070
+three years ago, four years ago now, maybe four years. Yeah. Wow. A while back. Yeah, three,
+
+10
+00:00:59,070 --> 00:01:07,310
+four. Yeah. And then also took part in our 100th episode and is the creator of,
+
+11
+00:01:09,630 --> 00:01:14,590
+in a way, the creator of one of the three.slack.com. He put our Slack group together first.
+
+12
+00:01:15,890 --> 00:01:21,330
+Yeah, I was just the guy who signed up. Yeah, there's a lot of credit to be the
+
+13
+00:01:21,330 --> 00:01:29,760
+guy who signs up for stuff. Yeah, I do think that it's something that's inevitable. I'm not
+
+14
+00:01:29,760 --> 00:01:36,000
+going to pull a Thanos here, but it's something that would have happened. I mean, there is
+
+15
+00:01:36,000 --> 00:01:41,760
+definitely an acceleration among the listeners and the feedback, especially with how you and Brent
+
+16
+00:01:41,760 --> 00:01:47,040
+are talking about the mailbag questions that you guys get. It's like, man, how come nobody's ever
+
+17
+00:01:47,040 --> 00:01:54,400
+tried to bring everybody together to something that's kind of like 10,000 conversations permanent?
+
+18
+00:01:54,400 --> 00:01:59,360
+Yeah. One of the things we talk about, I was in a conversation on Reddit over the weekend with
+
+19
+00:01:59,360 --> 00:02:06,640
+someone who was very confused about modern testing. And in this conversation, I didn't
+
+20
+00:02:06,640 --> 00:02:12,880
+plan to bring this up. A nice tangent to start off with. He said, and I don't know the quote in
+
+21
+00:02:12,880 --> 00:02:15,920
+front of me, but he said, an agile is getting phased out. And I said, what, what do you mean
+
+22
+00:02:15,920 --> 00:02:20,400
+agile is getting phased out? I think it's market driven and it helps. He goes, well,
+
+23
+00:02:20,400 --> 00:02:32,000
+it's being replaced by CICD. And I thought maybe you don't understand what any of these words mean.
+
+24
+00:02:33,280 --> 00:02:41,200
+So yeah, CICD is a way to achieve the agile principles. And he got into another conversation
+
+25
+00:02:41,840 --> 00:02:46,480
+which involves modern testing. It's not there to be something new to try and push the industry
+
+26
+00:02:46,560 --> 00:02:50,640
+in some direction. We're just putting a label on some things that are already happening. And
+
+27
+00:02:50,640 --> 00:02:55,760
+many teams have come up with modern testing approaches without knowing modern testing.
+
+28
+00:02:55,760 --> 00:03:01,120
+And some people recognize this change is happening and want some tools and ideas to help navigate
+
+29
+00:03:01,120 --> 00:03:05,120
+how to survive or how to best transition this move.
+
+30
+00:03:05,840 --> 00:03:12,800
+Right. And I think this is actually a really good segue into the transition guide, right?
+
+31
+00:03:12,800 --> 00:03:21,360
+Which is, you know, it's not a thing that you're supposed to be able to follow and decide,
+
+32
+00:03:22,740 --> 00:03:28,900
+specifically tell you what to do so that you can get to the next kind of level of the capabilities.
+
+33
+00:03:28,900 --> 00:03:34,420
+It's a way for you to evaluate and understand where you are. And then from there, you can
+
+34
+00:03:34,420 --> 00:03:41,870
+build your backlog on what you could do, whether the focus is going to be on tooling or skills or
+
+35
+00:03:42,750 --> 00:03:48,670
+blend of both or improving the process. But at the end of the day, knowing what your team is capable
+
+36
+00:03:48,670 --> 00:03:54,750
+of, breaking down whatever assumptions you have on what a thing is or what a thing is supposed to be.
+
+37
+00:03:56,830 --> 00:04:01,790
+You're definitely better off from there, but that's just the first step. There's a lot more
+
+38
+00:04:01,790 --> 00:04:06,270
+that needs to be done to get you to the point where, for example, you're switching from
+
+39
+00:04:07,230 --> 00:04:13,870
+chaos to growing, for example, right? From your testing breath capability. So it's definitely
+
+40
+00:04:16,100 --> 00:04:21,220
+a good way to look into where you are. Yeah. So Percy is talking about for,
+
+41
+00:04:21,860 --> 00:04:25,460
+if any of the other two haven't seen it, is the Quality Cultural Transition Guide,
+
+42
+00:04:25,460 --> 00:04:30,660
+which goes along with Principle Number 4, which is the one that says we care deeply about the
+
+43
+00:04:30,660 --> 00:04:36,020
+quality of our team and we coach and lead and nurture them towards a more mature quality culture.
+
+44
+00:04:36,660 --> 00:04:43,460
+This is the one where 20 years ago, we may have had some managers, some more say testing is
+
+45
+00:04:43,460 --> 00:04:47,380
+responsible for quality, which we know is stupid. We knew it was stupid then. We know it's even more
+
+46
+00:04:47,380 --> 00:04:53,780
+stupid now. But I would say even today that as we're making this transition, that testers or the
+
+47
+00:04:53,780 --> 00:04:58,980
+people formerly known as testers need to be a big part and have some responsibility for driving
+
+48
+00:04:58,980 --> 00:05:04,660
+the quality culture. And this spreadsheet I put together on the Quality Culture Transition Guide
+
+49
+00:05:04,660 --> 00:05:12,220
+is some tips on how to help, not even to, actually, this is what missing, what you are going to talk
+
+50
+00:05:12,220 --> 00:05:19,100
+about is it's a list of descriptions of how you can mature your quality culture in several different
+
+51
+00:05:19,100 --> 00:05:28,220
+ways. But what's missing is the guidebook. What are the tips that help you? How do you do that?
+
+52
+00:05:28,220 --> 00:05:33,180
+How do you, this is nice to read all this stuff, but I'll open this first question up to you,
+
+53
+00:05:33,180 --> 00:05:39,360
+Percy, is how do you lead a team towards a higher quality culture? You have a guidebook,
+
+54
+00:05:39,360 --> 00:05:43,520
+but you have some rules, but no guidebook. What do you do?
+
+55
+00:05:45,340 --> 00:05:51,340
+Personally, for me, based on my own experience, one of the biggest detractors for this is not
+
+56
+00:05:51,340 --> 00:05:56,940
+really having a shared mindset, that that's really number one. So when we say that something
+
+57
+00:05:56,940 --> 00:06:02,140
+is something that not everybody agrees on the same definition, I mean, look, the quality itself
+
+58
+00:06:02,140 --> 00:06:09,820
+is a big question here, but getting everybody in the same spot, we talk about what do you actually
+
+59
+00:06:09,820 --> 00:06:17,970
+mean when you say regression testing, for example, which is probably an entire podcast on itself and
+
+60
+00:06:17,970 --> 00:06:24,130
+why that name doesn't really describe what we're trying to do when it comes to performing the set
+
+61
+00:06:24,130 --> 00:06:30,610
+of testing activities that we have for that, I guess, coined term. So the shared mindset is
+
+62
+00:06:30,610 --> 00:06:37,810
+definitely key. Getting everybody on a regular basis so that you will continuously communicate,
+
+63
+00:06:39,490 --> 00:06:45,330
+be able to encourage everybody that, hey, this is not the end all and be all of what you know about
+
+64
+00:06:45,890 --> 00:06:55,310
+what we're doing. So if you have test specialists, as testers, you have to have the desire to learn
+
+65
+00:06:55,310 --> 00:07:00,590
+some more and expand that circle of comfortability when it comes to just, okay, I'm just
+
+66
+00:07:00,590 --> 00:07:05,710
+testing this ticket, like what are the things that will be affected if I don't do this well.
+
+67
+00:07:07,390 --> 00:07:14,290
+At the end of the day, it's essentially a people problem, right? It's not going to be a knowledge
+
+68
+00:07:14,290 --> 00:07:21,710
+thing or a process thing, but like how do we get these set of people who you call as your team
+
+69
+00:07:21,710 --> 00:07:28,910
+members to share that mindset? There's going to be complications around how often people move in
+
+70
+00:07:28,910 --> 00:07:34,990
+and out of your team or depending on the resourcing model that you have within your company
+
+71
+00:07:35,710 --> 00:07:40,670
+on how you'd be able to deal with that. But yeah, that's just really the tip of the iceberg on the
+
+72
+00:07:40,670 --> 00:07:47,710
+challenges that you have with making sure that you have a common mindset on what we actually
+
+73
+00:07:48,350 --> 00:07:51,150
+think our quality culture is and where we need to be.
+
+74
+00:07:51,790 --> 00:07:57,150
+What are some things, and I agree. In fact, the definition I use of quality culture,
+
+75
+00:07:57,150 --> 00:08:03,710
+the first three words are a shared mindset, 100% on board. But how do you do that? What
+
+76
+00:08:03,710 --> 00:08:05,950
+are some things you can do to help build that shared mindset?
+
+77
+00:08:06,750 --> 00:08:12,350
+One of the things that we've tried so far has really been setting up a community of practice,
+
+78
+00:08:12,990 --> 00:08:18,110
+which is really just a fancy way of saying, hey, let's all come together. Let's talk about
+
+79
+00:08:18,830 --> 00:08:23,630
+something that we've learned, and then we'll break that out into something that we can actually
+
+80
+00:08:23,630 --> 00:08:30,910
+apply across the board. Or does it open itself up to more questions, more scrutiny? But at least
+
+81
+00:08:30,910 --> 00:08:38,690
+we're all doing it together. There's definitely going to be a few people who will take over the
+
+82
+00:08:38,690 --> 00:08:46,530
+conversation in the first few meetings. But as you go along, as everybody realizes that, hey,
+
+83
+00:08:46,530 --> 00:08:53,570
+this is a safe space for us to be in, to express our concerns, our questions, and encourage them
+
+84
+00:08:53,570 --> 00:09:04,610
+that, hey, no question is wrong. It's just a matter of you being able to either understand,
+
+85
+00:09:05,330 --> 00:09:11,170
+why are you actually asking that question? What is the context around why something is important
+
+86
+00:09:11,170 --> 00:09:19,170
+to you that needs to be broken apart? It puts you in a position where you give up whatever
+
+87
+00:09:19,170 --> 00:09:21,970
+assumptions you have and declare them on the table.
+
+88
+00:09:22,690 --> 00:09:27,970
+Yeah, I've been thinking through that while you were talking. It's a fun challenge. It's
+
+89
+00:09:27,970 --> 00:09:32,770
+a leadership challenge. I think, of course, there's the other things you can do. Just when you see
+
+90
+00:09:32,770 --> 00:09:38,940
+people do things that are... I'll back up a little bit. Quality culture is a very easy
+
+91
+00:09:38,940 --> 00:09:43,580
+thing to hand wave about. I've talked with plenty of teams that, yes, we care about quality,
+
+92
+00:09:44,140 --> 00:09:48,860
+but when you look one level deeper, there's a huge bug backlog. There's
+
+93
+00:09:48,860 --> 00:09:55,070
+massive amounts of tech debt and customers are angry. Those two things don't align.
+
+94
+00:09:56,140 --> 00:10:00,620
+You have to get past the hand-waving part and actually get some agreement and some alignment
+
+95
+00:10:00,620 --> 00:10:05,740
+and that shared mindset and make sure it's really true and do the things like rewarding
+
+96
+00:10:05,740 --> 00:10:10,780
+the behaviors you want to see and course correcting and realizing it's definitely
+
+97
+00:10:10,780 --> 00:10:16,140
+a marathon, not a sprint. It takes a while to get that culture. One of the stories I often
+
+98
+00:10:16,140 --> 00:10:23,020
+tell is how Microsoft got their security culture, which is one of the few examples I can ever recall
+
+99
+00:10:23,020 --> 00:10:28,620
+where a culture was created via mandate. It's a big bet. It's an expensive bet. It doesn't
+
+100
+00:10:28,620 --> 00:10:35,580
+always work, but in 2000, at Microsoft, year 2000, Code Red, Slammer, the I Love You virus,
+
+101
+00:10:35,580 --> 00:10:41,020
+we're all back to back to back exploiting vulnerabilities in Microsoft software.
+
+102
+00:10:41,260 --> 00:10:47,420
+And the whole company went offline for about a month where we took maybe it was longer.
+
+103
+00:10:47,420 --> 00:10:54,220
+There was massive security trainings and threat models that across the board and code review
+
+104
+00:10:54,220 --> 00:10:59,740
+tools or added analysis tools to find these potential, many potential errors. But that
+
+105
+00:10:59,740 --> 00:11:05,260
+quality culture lives through to today, or that's the quality culture, the security culture
+
+106
+00:11:05,260 --> 00:11:12,580
+lives through to today. Two completely different things. And I don't know that that worked because
+
+107
+00:11:12,580 --> 00:11:17,620
+there was a crisis. And usually by the time a company has a quality crisis, it's too late
+
+108
+00:11:17,620 --> 00:11:23,540
+and they're about to go under. So the challenge with building a quality culture is trying to
+
+109
+00:11:23,540 --> 00:11:30,100
+build that culture before it becomes an urgent issue. If your customers are all complaining and
+
+110
+00:11:30,100 --> 00:11:34,820
+you can't even get a build done because the CICD is broken or your build system is broken,
+
+111
+00:11:35,460 --> 00:11:41,970
+and there's just no way to get the work done, then it's kind of too late to build that quality
+
+112
+00:11:41,970 --> 00:11:45,970
+culture. You're digging out from the bottom of the hole where it's better to try and kick that
+
+113
+00:11:45,970 --> 00:11:49,570
+off. When things are running pretty smooth and people go, oh yeah, we're doing well.
+
+114
+00:11:50,210 --> 00:11:53,730
+You can use that quality culture transition guide to figure out, okay, how can we turn up the
+
+115
+00:11:53,730 --> 00:12:02,750
+notch? What can we do even better? Right. One of the things I think to be able to rally everyone
+
+116
+00:12:03,470 --> 00:12:10,190
+towards a particular goal is figuring out what is that shared priority that everybody has.
+
+117
+00:12:10,190 --> 00:12:17,310
+And that is a very difficult. It's a very elusive thing to deal with, especially when you have
+
+118
+00:12:18,260 --> 00:12:28,420
+multiple teams or if you have 140,000 employee companies. And that's kind of the need of
+
+119
+00:12:28,420 --> 00:12:35,940
+rallying point where you can start bringing things up. So let's say if we talk about Agile,
+
+120
+00:12:35,940 --> 00:12:46,530
+for example, because of the success of folks at Scrum, a lot of the misconceptions now when it
+
+121
+00:12:46,530 --> 00:12:52,770
+comes to Agile is that Agile equals Scrum and then Scrum equals the rituals.
+
+122
+00:12:54,510 --> 00:12:57,650
+That drives me crazy. Which is not. And like,
+
+123
+00:12:57,650 --> 00:13:01,090
+which is probably what was meant when that guy said that when they said
+
+124
+00:13:01,810 --> 00:13:07,810
+Agile was evolving into CICD, they probably acquitted Agile and Scrum. But anyway, go on.
+
+125
+00:13:07,810 --> 00:13:15,010
+Right. So at the end of the day, there's definitely going to be multiple, even though,
+
+126
+00:13:15,010 --> 00:13:20,770
+let's say let's stick to the Scrum context, for example, even if we're reading all the same
+
+127
+00:13:20,770 --> 00:13:27,250
+Scrum guide, right? Everybody has completely different definitions of or at least interpretations
+
+128
+00:13:27,250 --> 00:13:33,730
+of what the rituals are for, which one comes first. Now, it's just a lot of chicken and
+
+129
+00:13:33,730 --> 00:13:38,770
+the egg thing when it comes to like, if you do the rituals often enough, then it becomes natural.
+
+130
+00:13:39,890 --> 00:13:44,450
+Or the other side too would say, like, do what's natural for you. And then eventually,
+
+131
+00:13:44,450 --> 00:13:53,570
+it'll seep into kind of your team dynamics. But looking into what that shared priority is,
+
+132
+00:13:53,570 --> 00:13:56,930
+all of these things will break apart. So this reminds me of a story with,
+
+133
+00:13:57,490 --> 00:14:00,670
+have you heard of the company called Alcoa? Yes.
+
+134
+00:14:01,780 --> 00:14:08,020
+Right. And when they had that, probably in the early 90s, maybe, or the early 80s,
+
+135
+00:14:08,580 --> 00:14:13,700
+when they hired Paul O'Neill as their new CEO, and they were really having some issues
+
+136
+00:14:14,260 --> 00:14:19,680
+within the company. And what he did was, you know what, everybody cares about safety.
+
+137
+00:14:20,480 --> 00:14:27,680
+But the thing is, he did not define what safety was. But that became like a rallying call for
+
+138
+00:14:27,680 --> 00:14:33,840
+everyone else. And then from there, everybody had a direct responsibility to ensure safety
+
+139
+00:14:34,480 --> 00:14:42,720
+among everybody within their groups. And long story short, it can tuple their valuation,
+
+140
+00:14:42,800 --> 00:14:49,280
+their income. And they became one of the most respected companies in the world, one of the
+
+141
+00:14:49,280 --> 00:14:54,240
+safest companies in the world. It's just finding that one thing that everybody can rally about.
+
+142
+00:14:55,680 --> 00:15:00,000
+Personally, for me, that's still kind of elusive. I have some hints here and there, but
+
+143
+00:15:01,760 --> 00:15:09,520
+it's something that I do want to be able to bring forward and get some partners to work with
+
+144
+00:15:09,520 --> 00:15:15,200
+me across all the development centers that we have all over the world.
+
+145
+00:15:16,220 --> 00:15:19,500
+Yeah, this conversation, I didn't realize it until we've been getting into it,
+
+146
+00:15:19,500 --> 00:15:24,880
+reminds me of, I just finished reading The Phoenix Project, which is, I don't know if
+
+147
+00:15:24,880 --> 00:15:31,120
+you've read it yet or not, but it's a story about DevOps transformation. But the company
+
+148
+00:15:32,160 --> 00:15:37,760
+massive, or having massive quality issues, it's kind of like the story I described before,
+
+149
+00:15:37,760 --> 00:15:41,680
+they can't get a build out. It takes, even if they can get a build to finish, it takes,
+
+150
+00:15:41,680 --> 00:15:46,800
+there's approval process that takes forever to get something out. And they talk about how
+
+151
+00:15:46,800 --> 00:15:52,400
+that transformation works. But you and I have done these things before. I don't think we're either
+
+152
+00:15:52,400 --> 00:15:57,680
+one of us are particularly bad at them. My one gripe with the book that goes a little bit
+
+153
+00:15:57,680 --> 00:16:06,400
+too far into the world of fiction is that the transition happens too easily. It's like, oh,
+
+154
+00:16:06,400 --> 00:16:10,880
+all of a sudden it's CI CD everywhere. And they've remembered dependencies and they're
+
+155
+00:16:10,880 --> 00:16:17,120
+able to ship stuff all the time. And it's just not that easy. And I don't think it's
+
+156
+00:16:17,120 --> 00:16:23,120
+particularly hard because the technical part is it's hard enough. One other example is they
+
+157
+00:16:24,240 --> 00:16:28,400
+rewrote a mobile app and shipped it to customer delight in a week.
+
+158
+00:16:29,200 --> 00:16:35,520
+If I remember correctly, but mostly it's the people part, the transitional part that
+
+159
+00:16:35,520 --> 00:16:42,240
+drove me a little crazy. So it really ends up being a leadership problem or a lot of problem,
+
+160
+00:16:42,240 --> 00:16:48,000
+a leadership challenge. So it leads me to one question as people going through this.
+
+161
+00:16:48,000 --> 00:16:54,300
+And I think you may have some ideas on it is making this transformation requires a leader
+
+162
+00:16:54,300 --> 00:17:00,700
+growing your quality culture requires some leadership to do. What are some challenges
+
+163
+00:17:00,700 --> 00:17:06,540
+you may face if you're doing that like you and I have done within a company versus someone who's
+
+164
+00:17:06,540 --> 00:17:12,620
+hired as a consultant or a consultant working or someone working across divisions at a company.
+
+165
+00:17:12,620 --> 00:17:16,540
+What are some challenges that may make that full-time person on the team
+
+166
+00:17:16,940 --> 00:17:22,300
+more difficult or easier than someone who's visiting the team as a consultant?
+
+167
+00:17:22,300 --> 00:17:31,900
+Well, it's the idea of permanence, right? Where you kind of don't have that person who will be
+
+168
+00:17:31,900 --> 00:17:38,940
+like, let me try that in a different way. Just imagine you're hiring a head coach.
+
+169
+00:17:38,940 --> 00:17:45,280
+That's part-time, right? It doesn't work like where the head coach will only show up on game
+
+170
+00:17:45,280 --> 00:17:52,380
+day. It's very difficult to kind of force that. And then the learnings that you're supposed to do
+
+171
+00:17:52,380 --> 00:18:03,470
+as a team throughout the week, that needs to have a more kind of introspective eye of the coach
+
+172
+00:18:03,470 --> 00:18:10,510
+that gets you, how can we do this better? So the idea of always at the end of the sprint
+
+173
+00:18:10,910 --> 00:18:15,790
+always at the end of the sprint retrospective kind of gets thrown at the window from a
+
+174
+00:18:16,590 --> 00:18:22,910
+digital transformation perspective because there's a lot of things that a coach might see that needs
+
+175
+00:18:22,910 --> 00:18:27,950
+to be addressed right away instead of waiting for that to kind of fester. That can be done when you
+
+176
+00:18:27,950 --> 00:18:34,100
+have someone that's there and it's focused. A shout out there to the retro, one of the most
+
+177
+00:18:34,100 --> 00:18:38,580
+important meetings or probably the most important meeting you can have, especially in regards to the
+
+178
+00:18:38,580 --> 00:18:43,780
+quality culture transition guide because that's where teams have been exposed to that,
+
+179
+00:18:43,780 --> 00:18:48,580
+that I work with. That's the time we bring that out during retro time. It's like, oh, let's see
+
+180
+00:18:48,580 --> 00:18:52,660
+what we could do here. We just say anything about this. It's a nice reference during retrospectives.
+
+181
+00:18:53,380 --> 00:18:58,580
+There's a book, if you've ever read by, I forget his first name Maxwell, called The Five Levels
+
+182
+00:18:58,580 --> 00:19:05,580
+of Leadership. You've heard of this book? I have not heard of that book. It applies a little bit
+
+183
+00:19:05,580 --> 00:19:11,180
+here because the first level is you're put in a position of leadership, which means you've been
+
+184
+00:19:11,180 --> 00:19:19,040
+made a manager. You've been, or in our case, maybe you're the sole dedicated testing specialist.
+
+185
+00:19:19,040 --> 00:19:21,680
+You're the person who's leading the quality culture. You're in a position,
+
+186
+00:19:22,400 --> 00:19:25,120
+someone could announce you in that position. You could say, hey, I'm going to try and lead
+
+187
+00:19:25,120 --> 00:19:29,920
+a source of higher quality culture. You're in a position of leadership. As you know, at that level,
+
+188
+00:19:30,560 --> 00:19:38,240
+it doesn't give you any rights or privileges unless you're a company that has a very specific
+
+189
+00:19:38,240 --> 00:19:44,400
+emphasis on hierarchy. But it's that next level where you have to give people permission to let
+
+190
+00:19:44,400 --> 00:19:50,910
+you lead them. People have to give you permission to let them lead them, let you lead them. God
+
+191
+00:19:50,910 --> 00:19:58,750
+damn. People have to give you permission to let you lead them. What that means is you don't
+
+192
+00:19:58,750 --> 00:20:03,630
+just get your leadership by a level. You have to let people know you're there to help and they
+
+193
+00:20:03,630 --> 00:20:08,510
+accept that you have good ideas. That may be one of the hardest levels to get past. You have to
+
+194
+00:20:08,510 --> 00:20:17,140
+establish credibility. In Weinberg's Secret of Technical Consulting and in a book called Getting
+
+195
+00:20:17,140 --> 00:20:22,020
+Naked by Pat Lentione, they're both really good stories. The latter being a business novel like
+
+196
+00:20:22,020 --> 00:20:28,300
+The Phoenix Project, but much better. Showing how important it is to when you're trying to be
+
+197
+00:20:28,300 --> 00:20:34,460
+a leader for a team and help them through transition. To be humble, to ask questions,
+
+198
+00:20:34,460 --> 00:20:38,540
+to not be afraid to ask the dumb questions. Because what that does is that establishes
+
+199
+00:20:38,540 --> 00:20:42,540
+what it helps you learn, which is the important thing. But it establishes trust. People know that
+
+200
+00:20:42,540 --> 00:20:47,340
+you're not there just to boss them around. You really do care and you want to help them.
+
+201
+00:20:48,670 --> 00:20:52,670
+It isn't until you get to that level, you get to level three, which is where you begin to
+
+202
+00:20:52,670 --> 00:20:59,070
+produce results. Until you as a leader and you can again, much easier being that permanent part
+
+203
+00:20:59,070 --> 00:21:04,510
+of the team because establishing trust is not something you can do on a sporadic basis.
+
+204
+00:21:05,390 --> 00:21:10,750
+You have to be engaged. Once the team understands that you're there to help and they want you to
+
+205
+00:21:10,750 --> 00:21:16,750
+help them, then you can begin to move the team down the path of improving their quality culture.
+
+206
+00:21:17,390 --> 00:21:20,270
+You have to ping me later the title of the book. I didn't write it.
+
+207
+00:21:20,990 --> 00:21:27,550
+That would be a good next read for me, which actually does remind me with another
+
+208
+00:21:27,550 --> 00:21:31,390
+organizational book called requisite organization by Elliot Jack.
+
+209
+00:21:31,950 --> 00:21:32,750
+I have not read that.
+
+210
+00:21:33,710 --> 00:21:42,210
+Elliot Jacks. It's interesting because he looks at it in also the same, but this one is in
+
+211
+00:21:42,210 --> 00:21:48,770
+like seven levels or maybe even eight or higher levels than that, where he breaks it apart into
+
+212
+00:21:50,370 --> 00:21:54,690
+the amount of time that you have to be able to do your work.
+
+213
+00:21:56,960 --> 00:22:04,240
+The first level essentially are the people on the ground. Whether you're a sales splurge or
+
+214
+00:22:05,570 --> 00:22:14,930
+traffic be cop, for example, where your work is mostly routine. Then the second level is
+
+215
+00:22:15,730 --> 00:22:20,530
+first line managers. From a softer perspective, this would be
+
+216
+00:22:21,330 --> 00:22:29,920
+probably our leads or maybe senior developers who have more responsibilities, not just from a day to
+
+217
+00:22:29,920 --> 00:22:34,960
+day basis, but they look at things that need to be done, let's say at the end of a sprint.
+
+218
+00:22:36,000 --> 00:22:42,480
+Then the next level up is instead of focusing on the deliverables every two weeks,
+
+219
+00:22:43,120 --> 00:22:47,520
+now you have quarterly deliverables. The next level up would be your directors,
+
+220
+00:22:48,160 --> 00:22:58,320
+so on and so forth. Your vision can't be enacted up until you have maybe months or for CEOs for
+
+221
+00:22:59,040 --> 00:23:05,470
+really huge companies. They have years or maybe even a decade to be able to enact on something.
+
+222
+00:23:05,470 --> 00:23:12,540
+I think the way we look at it, especially from setting that culture, whoever it is that's
+
+223
+00:23:12,540 --> 00:23:18,220
+assigned for those needs to have a different outlook and make sure that everyone else
+
+224
+00:23:18,220 --> 00:23:25,420
+underneath the lower levels can also focus on their work and get their work done pretty well.
+
+225
+00:23:25,420 --> 00:23:32,620
+But you have a larger vision of where you need to be. Let's say if it takes a lot longer to
+
+226
+00:23:33,580 --> 00:23:40,620
+be enacted on. Tying that back into the Phoenix project, it's almost a typical
+
+227
+00:23:40,780 --> 00:23:51,180
+fairy tale story where everything is happy ever after. All the individual work that needs to be
+
+228
+00:23:51,180 --> 00:23:58,140
+done leading up to that point where they can actually release in a more consistent cadence
+
+229
+00:23:58,140 --> 00:24:04,380
+and they can capture feedback at the level where they can actually act on it.
+
+230
+00:24:04,380 --> 00:24:09,060
+That's the hard work that we're kind of, hey, instant coffee time.
+
+231
+00:24:09,940 --> 00:24:19,490
+You're not worried about waiting for your coffee beans to grow and roasting them and grinding them
+
+232
+00:24:19,490 --> 00:24:28,670
+and you making that cup of coffee type of thing. There's definitely a lot of, I guess, dimensions
+
+233
+00:24:28,670 --> 00:24:34,030
+that we can look deeper, but I have to get the copy of that book that you just mentioned.
+
+234
+00:24:34,750 --> 00:24:41,470
+I'll send you some links. It definitely helps. We've talked a lot of the strategic part. We know
+
+235
+00:24:43,230 --> 00:24:49,630
+it's a leadership issue. We know that it's difficult and it takes time and all those things.
+
+236
+00:24:50,270 --> 00:24:58,300
+But let's go into some more of the tactical. In helping teams improve their quality culture,
+
+237
+00:24:59,020 --> 00:25:05,980
+what are some examples of tactical things you've done? How have you addressed
+
+238
+00:25:06,860 --> 00:25:09,660
+specifically some aspects of improving the quality culture?
+
+239
+00:25:11,180 --> 00:25:18,980
+One of the first things that I actually almost always do when I get asked to join a given team
+
+240
+00:25:18,980 --> 00:25:25,460
+is that I ask them for what are the activities that everybody actually does?
+
+241
+00:25:26,100 --> 00:25:33,780
+So let's take a look at your last release and the contents of what you've released.
+
+242
+00:25:35,310 --> 00:25:42,220
+How long did it take for that to pass through your pipeline for that to get into the hands
+
+243
+00:25:42,220 --> 00:25:50,190
+of the customer? Digging deeper into that, then it shows, all right, we're actually spending 15
+
+244
+00:25:50,190 --> 00:25:56,190
+business days to do user acceptance testing because that's still a thing in my world.
+
+245
+00:25:58,110 --> 00:26:04,350
+We take a look at what they're actually doing in detail, breaking that down and see if we could
+
+246
+00:26:04,350 --> 00:26:10,110
+get rid of some of the things that are redundant. Most of the time, there's really very obvious
+
+247
+00:26:10,110 --> 00:26:18,110
+things that show us why, hey, why does it take you 12 hours to generate all the user data that
+
+248
+00:26:18,110 --> 00:26:24,780
+you need to be able to perform your tests? Because it's a person doing it and the automation
+
+249
+00:26:24,860 --> 00:26:31,580
+attempt was employing Allen's favorite tool, which is Selenium, to click through the browser
+
+250
+00:26:31,580 --> 00:26:39,420
+to create the data. So changing things like that into, you know what, let's talk to the developers.
+
+251
+00:26:39,420 --> 00:26:45,820
+Maybe there is an API in the backend that creates this data for us and you can just
+
+252
+00:26:45,820 --> 00:26:50,940
+see the difference where what used to take 12 hours now takes, I don't know, three minutes
+
+253
+00:26:51,660 --> 00:26:59,580
+to get things done. So this is an example of how the principles overlap and support each other
+
+254
+00:26:59,580 --> 00:27:04,860
+because it definitely improves the quality culture to get rid of that technical debt,
+
+255
+00:27:04,860 --> 00:27:08,940
+but you're doing it also by identifying and mitigating a bottleneck in your system.
+
+256
+00:27:10,500 --> 00:27:17,140
+Right. And then most of the time, because of how busy everyone is on their day-to-day
+
+257
+00:27:17,140 --> 00:27:22,430
+and the expectations, a lot of these things are just accepted. It's just like, yeah, it's
+
+258
+00:27:22,430 --> 00:27:26,670
+how things are done. That's the way it's always been. We're going to continue to do it. And it's
+
+259
+00:27:26,670 --> 00:27:34,260
+usually one of the most, I guess, poisonous things that will happen in any kind of team culture.
+
+260
+00:27:35,060 --> 00:27:41,790
+And that's what's so important. It's important that this is where you and I and people driving
+
+261
+00:27:41,790 --> 00:27:47,790
+modern testing can really help out as we don't, we're not good with the status quo. We go,
+
+262
+00:27:47,790 --> 00:27:52,030
+why couldn't this be better? It's the old fable that I won't retell today about
+
+263
+00:27:52,960 --> 00:27:57,360
+why the woman cut the ends off her roast beef before she put it in the pan and look it up.
+
+264
+00:27:58,400 --> 00:28:06,100
+I know you've heard it, you're laughing. But it's a great example of just, this isn't right. How
+
+265
+00:28:06,100 --> 00:28:12,910
+can we make it better? You have another one? It's really something that is very similar.
+
+266
+00:28:13,630 --> 00:28:20,080
+I've told this story a lot of times. I'm taking like three shots right away.
+
+267
+00:28:23,280 --> 00:28:29,040
+When I first joined the company that I'm in, it used to take us 29 days to upgrade a single site.
+
+268
+00:28:30,380 --> 00:28:37,740
+That includes all the necessary evidences for a company that's under specific
+
+269
+00:28:38,460 --> 00:28:46,450
+regulations for us to be able to release something. From there, they've been trying for the past
+
+270
+00:28:46,450 --> 00:28:52,050
+four years on how to get it more efficient with and without automation, with and without
+
+271
+00:28:52,930 --> 00:28:59,410
+tooling. But they still can't go past that 29 days for a single 29 day turnaround time
+
+272
+00:29:00,210 --> 00:29:03,490
+to test the site before we can actually push for an upgrade.
+
+273
+00:29:04,050 --> 00:29:10,770
+And what we realized was really just a ton of redundancy. So I guess you fast, I'm going to
+
+274
+00:29:10,770 --> 00:29:18,290
+pull a Phoenix project here. Fast forward four years, that 29 days can now be done in
+
+275
+00:29:19,810 --> 00:29:26,210
+90 minutes. And we can now handle, instead of just dealing with a single site at once,
+
+276
+00:29:26,210 --> 00:29:35,090
+we're dealing with 600 sites from an operational scale perspective for upgrading.
+
+277
+00:29:36,130 --> 00:29:43,710
+I think the key there really was all the silent noises in between the handoffs,
+
+278
+00:29:44,430 --> 00:29:50,430
+a, data creation, b, making sure that the build environment is set up properly, making sure that the
+
+279
+00:29:51,310 --> 00:29:58,670
+configuration schemas are correct and we're not going back and forth, looking into
+
+280
+00:29:59,390 --> 00:30:07,710
+more difficult bugs to be able to debug because it's just a flag that everybody ignores. And there's no
+
+281
+00:30:08,350 --> 00:30:14,510
+kind of sense of static analysis based assertions where we can now check that, hey, is this actually
+
+282
+00:30:14,510 --> 00:30:20,140
+the last known configuration that everybody kind of blessed and approved saying that this is
+
+283
+00:30:20,220 --> 00:30:27,660
+actually works. Before that was just all kind of throwing the ether saying, no one's looking at it
+
+284
+00:30:27,660 --> 00:30:32,780
+because we're too busy dealing with the UI stuff. And the other thing that we did with the UI stuff
+
+285
+00:30:32,780 --> 00:30:44,160
+was we converted a majority of our tests from Selenium based click things into just replacing
+
+286
+00:30:44,160 --> 00:30:52,480
+80 assertions of this element present into just a single visual test. So we work closely with
+
+287
+00:30:53,280 --> 00:31:02,580
+some of the more leading AI based visual comparison tools that's out there. And that really
+
+288
+00:31:02,580 --> 00:31:09,460
+accelerated a ton of what we're able to do. So now it's not just the testers that are consuming
+
+289
+00:31:10,260 --> 00:31:14,980
+that information, handing that off to the dev team, but now the product owners are actually
+
+290
+00:31:15,700 --> 00:31:23,170
+jumping in because we made sure that throughout that approval process, they would be included in it.
+
+291
+00:31:23,970 --> 00:31:30,190
+If it's a matter of, hey, there's a weird bug that the visual check has captured,
+
+292
+00:31:30,190 --> 00:31:38,780
+is this actually something that we introduce when we're dealing with internationalization,
+
+293
+00:31:38,780 --> 00:31:44,780
+for example, across multiple markets, we can't hire every single person that can speak a certain
+
+294
+00:31:44,780 --> 00:31:50,060
+language, which can be broke. So having something like this, and we can just hand it off to an
+
+295
+00:31:50,060 --> 00:31:59,260
+auditor or reviewer saying, oh, right, that is an intentional change based on the intent of the
+
+296
+00:31:59,260 --> 00:32:08,500
+wording that we're really trying to make. So it's an easy, fast way for us to flag certain diffs
+
+297
+00:32:09,140 --> 00:32:14,260
+and hand that off to the person and the person can easily understand without sitting on it for
+
+298
+00:32:15,060 --> 00:32:22,740
+days and days. So it's really a whole, I guess it's a whole process fix for us,
+
+299
+00:32:22,740 --> 00:32:29,440
+for that particular group. Yeah, sounds nice. I think as you were talking, I was also thinking,
+
+300
+00:32:30,560 --> 00:32:38,000
+we just need a book filled with these stories of how these improvements have been made.
+
+301
+00:32:38,000 --> 00:32:42,720
+I'm not suggesting writing a book, but I'm just thinking if I talk to you about all these choices,
+
+302
+00:32:43,120 --> 00:32:47,840
+I talk to my people around Unity where I work and that I've gone through this,
+
+303
+00:32:47,840 --> 00:32:53,280
+and there's all kinds of stories about how a good low hanging fruit is just going back through the
+
+304
+00:32:53,280 --> 00:32:58,960
+bug backlog for people that have big bug backlogs and deciding what are we going to fix and what
+
+305
+00:32:58,960 --> 00:33:01,840
+are we not going to fix? And let's take the bugs that we said we're going to fix,
+
+306
+00:33:01,920 --> 00:33:09,820
+just fix them now. It's a very freeing thing to free up that just bug tech debt,
+
+307
+00:33:09,820 --> 00:33:14,540
+but you have some process tech debt you're dealing with as well, getting people to...
+
+308
+00:33:15,820 --> 00:33:22,820
+I've helped people begin that journey towards collecting data to help understand where
+
+309
+00:33:22,820 --> 00:33:30,180
+customers are seeing success and failing. And it happens again, that happens slowly.
+
+310
+00:33:30,180 --> 00:33:35,860
+It isn't overnight, like in Phoenix Project, where you have nothing and the next day,
+
+311
+00:33:35,860 --> 00:33:39,700
+oh, we have all this wonderful customer telemetry telling us exactly what's going on.
+
+312
+00:33:39,700 --> 00:33:46,100
+It's like, this is an iterative process that has two steps forward, one step back to get
+
+313
+00:33:46,100 --> 00:33:51,540
+the right data. It takes a while, but it's worth the effort. All you're just looking at is,
+
+314
+00:33:53,220 --> 00:33:59,140
+what are we doing? How can we improve? What we use with that transition guide is let you look
+
+315
+00:33:59,140 --> 00:34:04,500
+at holistically at, I don't know how many there are anymore, eight different ways you can improve
+
+316
+00:34:04,500 --> 00:34:09,940
+your quality culture, different attributes, areas, and look and see what's going on,
+
+317
+00:34:09,940 --> 00:34:14,740
+figure out where you're at, figure out what different behaviors or tools or processes your
+
+318
+00:34:14,740 --> 00:34:21,260
+team could be using. So good examples of that. Here's an oldie, but it's a goodie.
+
+319
+00:34:21,260 --> 00:34:27,820
+Since you're talking about stories, maybe it's time to put the notion of a beautiful modern
+
+320
+00:34:27,820 --> 00:34:32,980
+testing book in your backlog. Way in the back of the backlog.
+
+321
+00:34:37,250 --> 00:34:44,880
+When I was a shout out to Adam Goucher as the editor and one of the contributing authors of
+
+322
+00:34:44,880 --> 00:34:55,470
+that series, but it puts you in an anchoring position, listening to the stories that everybody
+
+323
+00:34:55,550 --> 00:35:03,950
+had. You wrote something, Scott Barber's story was actually pretty good as well. It's one of
+
+324
+00:35:03,950 --> 00:35:10,030
+the things I can remember on top of my head, but it's things that, hey, this is what's happening.
+
+325
+00:35:10,030 --> 00:35:16,190
+I think this is what you're doing with the ABT 343 podcast is a matter of writing.
+
+326
+00:35:16,190 --> 00:35:21,230
+Yeah, maybe someday we grow into that where I curate a book like Adam did with Beautiful Testing.
+
+327
+00:35:23,440 --> 00:35:27,040
+That could work. We'll work out. We need to get some more stories. It'd be great to get some of
+
+328
+00:35:27,040 --> 00:35:34,400
+these stories of, I forget the name of the company I quoted yesterday in the Slack group,
+
+329
+00:35:34,400 --> 00:35:40,320
+Mercado, I think it was, who discovered they were doing modern testing before they heard about
+
+330
+00:35:40,320 --> 00:35:45,840
+modern testing. And I'd love to get those stories as well. Like what happened? How did you get
+
+331
+00:35:45,840 --> 00:35:50,320
+there? And they're at last seen to some extent do things that are like modern testing. It's
+
+332
+00:35:50,320 --> 00:35:54,560
+not a thing we're making up, which I've said before, but it'd be fun to gather stories,
+
+333
+00:35:54,560 --> 00:35:58,160
+people that discovered it without us because we're just there to put a label on it and to
+
+334
+00:35:58,160 --> 00:36:01,440
+help people that are going, what the hell is going on? My job is changing.
+
+335
+00:36:01,440 --> 00:36:09,550
+We'll give you a little bit of a map. Lots to do. It has been as always absolute pleasure
+
+336
+00:36:09,550 --> 00:36:15,870
+talking with you, Percy. These are good stories, fun stuff and a lot for me. And I would expect
+
+337
+00:36:15,870 --> 00:36:20,670
+for the listeners to chew on or think about. So thank you a ton for being on the show today.
+
+338
+00:36:21,790 --> 00:36:26,750
+You're definitely welcome. It's always a pleasure. You know what? Just a side note,
+
+339
+00:36:27,390 --> 00:36:33,230
+it was around this time when I first found out about the EBTesting podcast. And it was really,
+
+340
+00:36:34,460 --> 00:36:42,980
+I was reading up, scrolling through my Twitter feed and here comes Mike Blarson's list of
+
+341
+00:36:44,180 --> 00:36:48,500
+must hear podcasts. He had the best description of us.
+
+342
+00:36:49,060 --> 00:36:51,060
+Yes.
+
+343
+00:36:57,360 --> 00:37:03,040
+Of the next year. And I downloaded your, that was the first time I was actually picking up
+
+344
+00:37:03,040 --> 00:37:09,950
+family from California at that time. And it started playing as we were driving out of the airport.
+
+345
+00:37:10,510 --> 00:37:19,650
+And what you hear is full volume intro of the, that riff that you have in the beginning.
+
+346
+00:37:21,090 --> 00:37:27,070
+And I had to like turn it down because it was a shock. But then I listened through the ride.
+
+347
+00:37:27,070 --> 00:37:32,910
+And I guess two of my family members listened through the ride as well for the first EBTesting
+
+348
+00:37:32,910 --> 00:37:39,950
+podcast that the three of us shared that experience. So it's been like what, four or five years now?
+
+349
+00:37:40,510 --> 00:37:48,190
+And I do appreciate everything that you guys are doing. And it's grown into something.
+
+350
+00:37:48,190 --> 00:37:53,150
+And is it okay if I close with a question? Yes, absolutely.
+
+351
+00:37:53,790 --> 00:38:00,510
+I know we started with defining modern testing as the acceleration of shippable quality.
+
+352
+00:38:00,510 --> 00:38:07,820
+Has there been any nuances or changes to how you understood that the first time you and Brent
+
+353
+00:38:07,900 --> 00:38:14,900
+coined that term fast forward to now on what that means to you?
+
+354
+00:38:16,340 --> 00:38:21,300
+Yes and no. So what's happened to me is like the first, Brent coined that phrase.
+
+355
+00:38:22,100 --> 00:38:25,140
+This is actually a very good question because Brent coined that phrase.
+
+356
+00:38:25,140 --> 00:38:29,620
+He said, yeah, this makes sense. Sure. How do we do this? And then we started talking about
+
+357
+00:38:29,620 --> 00:38:34,260
+very early before we had a name for it, how we wanted to approach quality before we called it
+
+358
+00:38:34,260 --> 00:38:40,100
+modern testing, which as we all know, nothing modern, not about testing. It's just an antidote
+
+359
+00:38:40,100 --> 00:38:49,380
+to traditional test last testing methods. But as we talked more and more, and then when I got the
+
+360
+00:38:49,380 --> 00:38:56,180
+notion somewhere around in the sixties or ish that we should, not the years, the episodes,
+
+361
+00:38:56,180 --> 00:39:02,260
+that we should have modern testing principles and trying to iterate on those, is that I begin to
+
+362
+00:39:02,260 --> 00:39:08,980
+realize how much they supported that mission of accelerate the achievement of shippable quality.
+
+363
+00:39:09,700 --> 00:39:13,620
+What was odd, it was nothing, none of it was consciousness. It wasn't like, okay,
+
+364
+00:39:13,620 --> 00:39:18,180
+how does principle number two promote the mission? How does principle number three promote the mission?
+
+365
+00:39:18,180 --> 00:39:24,720
+I didn't even think about them separately. What I did, we did the principles, just trying to capture
+
+366
+00:39:26,000 --> 00:39:30,000
+all the stuff that Britt and I had talked about and aligned on that we cared about.
+
+367
+00:39:30,720 --> 00:39:36,640
+And probably what was the interesting part, the insight was that all the things that we
+
+368
+00:39:36,640 --> 00:39:41,360
+cared and aligned about without even thinking about it directly aligned with
+
+369
+00:39:41,360 --> 00:39:46,480
+accelerate the achievement of shippable quality. So that was really the bigger insight is that
+
+370
+00:39:46,480 --> 00:39:50,000
+I thought once the principles were done and we had iterated on them and then we had talked
+
+371
+00:39:50,000 --> 00:39:57,760
+through all of them and I put together talks on each of them and courses, the farther and the
+
+372
+00:39:57,760 --> 00:40:04,480
+deeper I got into internalizing what these principles were, what modern testing was,
+
+373
+00:40:04,480 --> 00:40:10,240
+and why we cared about it, it was just, I can't even call it serendipitous because you knew it
+
+374
+00:40:10,240 --> 00:40:17,200
+would happen. But the alignment with the mission just was super, I was gonna say supernatural,
+
+375
+00:40:17,200 --> 00:40:23,040
+that's a different thing. The alignment with the mission was natural and it just happened.
+
+376
+00:40:23,040 --> 00:40:33,220
+And it tells me that it all is fitting together as it should. And it really just goes back to
+
+377
+00:40:34,500 --> 00:40:42,020
+the values. We knew this was the right thing. We had talked about it a lot and everything we
+
+378
+00:40:42,020 --> 00:40:47,700
+had talked about aligned with that mission statement. So it's probably the backward answer
+
+379
+00:40:47,700 --> 00:40:50,500
+of what you're expecting. We never went back and looked at the mission statement and said,
+
+380
+00:40:50,500 --> 00:40:55,060
+well, can we make this better? We just left it as it was. Although one of my employees,
+
+381
+00:40:55,060 --> 00:40:59,220
+and I like this one, Brent doesn't, but she shortens it. One of my former employees,
+
+382
+00:40:59,220 --> 00:41:04,820
+still at Unity, says, accelerate the delivery of customer value, which rolls off the tongue a
+
+383
+00:41:04,820 --> 00:41:10,000
+little bit better. And I think it tells the same story. I think it's fine. But yeah,
+
+384
+00:41:11,040 --> 00:41:17,920
+it's all aligned with, again, what we think, but also what we see going on, which is nice.
+
+385
+00:41:18,000 --> 00:41:22,640
+It makes it make sense. For me at least, it makes me feel even stronger in
+
+386
+00:41:23,280 --> 00:41:26,800
+that it's the right thing to be talking to people about and sharing with the community.
+
+387
+00:41:26,800 --> 00:41:27,520
+Well, thank you.
+
+388
+00:41:27,520 --> 00:41:29,040
+My pleasure.
+
+389
+00:41:29,040 --> 00:41:29,120
+I really appreciate that.
+
+390
+00:41:29,120 --> 00:41:35,040
+That was a fantastic question. All right. We should wrap it up here. I will put your
+
+391
+00:41:36,160 --> 00:41:42,240
+Twitter handle. You have blog links, books, public appearances. You want to plug at this point?
+
+392
+00:41:42,240 --> 00:41:43,360
+Ah, Twitter's fine.
+
+393
+00:41:43,760 --> 00:41:45,760
+All right.
+
+394
+00:41:45,760 --> 00:41:46,960
+Just keep it simple.
+
+395
+00:41:46,960 --> 00:41:50,320
+Okay. We'll put that in the notes for the show, get this out in a few days. But
+
+396
+00:41:50,880 --> 00:41:56,320
+have a wonderful happy holiday, Merry Christmas, and we'll chat with you again in the new year.
+
+397
+00:41:56,320 --> 00:41:57,360
+Thank you, Percy.
+
+398
+00:41:57,360 --> 00:41:58,640
+All right. We'll do it. Thank you, Alan.
+
+399
+00:41:58,640 --> 00:41:59,040
+All right. See you.
+
+400
+00:41:59,040 --> 00:42:00,430
+All right. Bye.
+

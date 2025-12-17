@@ -1,0 +1,1607 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.880
+And to be clear, when I was in college, I worked at a grocery store and I was a checker.
+
+00:00:10.510 --> 00:00:17.310
+Welcome to AB Testing Podcast, your modern testing podcast. Your hosts, Alan and Brent,
+
+00:00:17.310 --> 00:00:22.750
+will be here to guide you through topics on testing, leadership, Agile, and anything else
+
+00:00:22.750 --> 00:00:28.990
+that comes to mind. Now, on with the show. Hey, hey, everybody. Hey, hey, hey.
+
+00:00:30.590 --> 00:00:39.390
+Hey, it's AB Testing. It's AAB Testing. I was thinking Fat Albert. Hey, hey, hey.
+
+00:00:39.390 --> 00:00:45.540
+We're doing a podcast and did you know we're doing a podcast? Are you aware of this fact?
+
+00:00:46.720 --> 00:00:56.510
+Are you aware that we have a podcast? I just call in. What are we on? 167. So we've been doing this
+
+00:00:56.510 --> 00:01:03.150
+podcast. Here is the question of the day, a little podcast trivia. And you can play along at home.
+
+00:01:03.150 --> 00:01:10.460
+Just open your favorite podcast app and put in this code. What was the date that we posted
+
+00:01:11.180 --> 00:01:19.740
+episode one of AAB Testing? Wasn't that April? April something April 1st.
+
+00:01:20.220 --> 00:01:32.610
+What year? Oh, God, I have no idea. April 13th, 2014. Okay. We are coming up. We're six months
+
+00:01:32.610 --> 00:01:39.230
+away from our nine year anniversary. Not too bad for two people who started a podcast for
+
+00:01:39.950 --> 00:01:46.670
+really almost on a dare from Michael Hunter, right? Yeah. I don't know if it was a dare.
+
+00:01:47.310 --> 00:01:50.510
+You guys should make a podcast. We're dumb enough to go. Um, sure.
+
+00:01:51.950 --> 00:01:58.030
+I interpreted it a little bit differently. He could have said you guys should stick your
+
+00:01:58.030 --> 00:02:04.990
+finger in a light socket. We would have gone. Um, yeah, sounds great. You might've. So I might've
+
+00:02:04.990 --> 00:02:10.770
+because I'm not particularly bright, but what's interesting. And I want to do a little meta and
+
+00:02:10.770 --> 00:02:16.450
+talk about the podcast a little bit here today. I was in a meeting today with some folks,
+
+00:02:16.450 --> 00:02:23.090
+external to unity and with some folks internal to unity and, and almost all the time I'm finding
+
+00:02:23.090 --> 00:02:30.290
+more and more stalkers and you know who you are. It's like the podcast was a different thing when
+
+00:02:30.290 --> 00:02:35.330
+everybody who listened was an anonymous human being. We didn't know. Remember when we had three
+
+00:02:35.330 --> 00:02:39.580
+listeners and like Jim Moore would come up and say, Hey, I'm one of your three listeners.
+
+00:02:40.300 --> 00:02:43.900
+And Steve would say, I'm one of your three listeners and we only have three listeners,
+
+00:02:43.900 --> 00:02:51.040
+but yeah. Okay. Good. Anyway. The point I was getting to was as you type away on your keyboard
+
+00:02:51.040 --> 00:02:55.600
+is that these folks in this meeting are like, Oh, Hey man, you know, Alan was a podcast.
+
+00:02:55.600 --> 00:02:59.280
+They listened to the podcast. So hi, Wyatt, hi, John. Hi, Stephen. I,
+
+00:02:59.280 --> 00:03:08.130
+and anybody else is listening. It's not a very good podcast. I guess it is an excellent example
+
+00:03:08.770 --> 00:03:16.210
+of the, this is no 98% invisible. Now it's the Malcolm Gladwell. Stop. This is an excellent
+
+00:03:16.210 --> 00:03:25.650
+example of a podcast for the genre we invented. What's the genre? I'm leaving that for the
+
+00:03:25.650 --> 00:03:33.570
+listeners. Oh, you know, actually we are the number one podcast of all time in our genre as well.
+
+00:03:33.570 --> 00:03:42.450
+Absolutely. I completely agree. I'm, I'm picking up what you're laying down. So I switched to
+
+00:03:42.450 --> 00:03:47.090
+anchor FM for hosting, which has been really good. And this, I'm not, I could do ads for anchor and
+
+00:03:47.090 --> 00:03:52.050
+they pay us, but I don't, you know, uh, but anchor has been pretty good. There's your ad anchor.
+
+00:03:52.050 --> 00:03:57.970
+If you're grepping text in our podcast, but they keep stats much better than my previous
+
+00:03:57.970 --> 00:04:03.250
+platforms I used. Do you know? So it's been less than a year. It was last January. I
+
+00:04:03.250 --> 00:04:07.170
+changed everything over to anchor and screwed up everybody's feeds and got it all correct again.
+
+00:04:08.050 --> 00:04:13.730
+Guess how many another Japanese question. Another is on your quiz app. Everybody
+
+00:04:13.730 --> 00:04:20.450
+guess how many people in that last year have gone back to listen to episode number one and
+
+00:04:21.410 --> 00:04:29.660
+made it through the vast majority of it. Three. Oh, that what's weird. It could,
+
+00:04:29.660 --> 00:04:38.940
+it could be the same three people each doing it 254 times because we have 700 or two wrong math.
+
+00:04:38.940 --> 00:04:44.860
+You know, we have 712 listens of episode one in that last year. I don't know what you people
+
+00:04:44.860 --> 00:04:51.180
+are doing. That is, uh, even though even its debut episode was still the top of our genre,
+
+00:04:51.180 --> 00:04:56.460
+it was not even meh. It was, it was Brenton Allen trying to figure out how equipment work,
+
+00:04:56.460 --> 00:04:59.900
+trying to figure out what to talk about, which is kind of what we're doing here. Eight and a half
+
+00:04:59.900 --> 00:05:06.880
+years later. Yeah. You know, when you, when you master a skill, you make it part of the
+
+00:05:07.760 --> 00:05:15.280
+environment and we'll call it the dark genre as well. But we've made it very clear on this
+
+00:05:15.280 --> 00:05:22.560
+podcast and specializing generalists that I'm really a master of nothing. My secret skill
+
+00:05:22.560 --> 00:05:28.240
+is I can learn enough of anything to be super effective, but I'm not a master of anything.
+
+00:05:29.040 --> 00:05:39.600
+I will say your secret power in this context. And I do not, I do think that this phrase very well
+
+00:05:39.600 --> 00:05:46.960
+captures it. And I do not in any way, shape, or form mean any offense. This is nothing but praise.
+
+00:05:47.680 --> 00:05:54.720
+Right. You are the master of fake it till you make it. Oh, 100%. That is, you know, maybe that's how
+
+00:05:54.720 --> 00:06:00.160
+we work together. So I was thinking about how different you and I are. Like I was making,
+
+00:06:00.160 --> 00:06:03.520
+they're asking about the podcast and I, and someone brought up the fact we're talking about
+
+00:06:03.520 --> 00:06:08.640
+politics sometimes. And I said, yeah, Brent's one of those stupid libertarians who let his political
+
+00:06:08.640 --> 00:06:12.480
+views get in the way of actually making progress in the country. But we'll get, we'll get back
+
+00:06:12.560 --> 00:06:20.510
+to that later. But also in this context, you know, Brent said, you're number one, number one of my
+
+00:06:20.510 --> 00:06:28.510
+genre. That's great. So you have, you are a deeper expert in the areas where you need to be like,
+
+00:06:28.510 --> 00:06:34.910
+you were deep in test automation and wrote a, a very good and probably one of the best
+
+00:06:35.790 --> 00:06:43.790
+test automation harnesses used at Microsoft. Both a praise and a dig. Also what you're doing now with
+
+00:06:43.790 --> 00:06:48.030
+data science and it's, it's super deep, what you know, and I'm more of a, I mean, you've seen me,
+
+00:06:48.030 --> 00:06:52.510
+I can get around in the data science world and, but I faked everything, but it's, it's even
+
+00:06:52.510 --> 00:06:59.970
+before I got into tech, that was my thing. I played in high school. I played clarinet and
+
+00:06:59.970 --> 00:07:05.490
+saxophone. I did not want to bring my nice saxophone outside to play in the marching band.
+
+00:07:05.490 --> 00:07:09.810
+So I learned how to play drums well enough to make the drum line in my high school. So then
+
+00:07:09.810 --> 00:07:14.130
+I played drums and drum core, I played drums in college, college marching band. I even,
+
+00:07:16.210 --> 00:07:22.450
+I did not know that. So here's the funny part. Not only did I do that, and then I played, I
+
+00:07:22.450 --> 00:07:26.880
+played percussion. I made the top jazz band playing vibraphone vibes.
+
+00:07:27.520 --> 00:07:31.440
+If you like those are. Is that the cool thing that they use to make the
+
+00:07:32.640 --> 00:07:37.600
+Star Trek sound? It's like, no, no, no, that's a theremin. It's like a xylophone,
+
+00:07:38.320 --> 00:07:44.720
+but metal wider keys, two octaves or one octave below often use in jazz. So a big fan of Gary
+
+00:07:44.720 --> 00:07:49.520
+Burton for those of you want to dig in there. So I, I wanted to do it. It was actually easier path.
+
+00:07:49.520 --> 00:07:55.360
+There was an easier path to me to get in the top touring jazz band playing mallet percussion
+
+00:07:55.360 --> 00:08:00.560
+than it was for me to get in the long, long line of saxophones. So I did that for a while.
+
+00:08:00.560 --> 00:08:04.160
+And then here's the funny part. I went out and everybody knows this that I taught school for
+
+00:08:04.160 --> 00:08:09.820
+four years after I graduated. I came back to graduate school. You know, it was, I went back
+
+00:08:09.820 --> 00:08:14.540
+to graduate school at the same school. They knew me, but we had a new percussion director who was
+
+00:08:14.540 --> 00:08:20.380
+just fantastic. And in graduate school, I studied composition. I did not have to play an instrument,
+
+00:08:20.380 --> 00:08:28.290
+but it was, I needed a place to like get people to play my composition. So I, so I lied a little,
+
+00:08:28.290 --> 00:08:33.090
+what did I do? I don't know if I lied. I, I told them I was a percussionist and I joined,
+
+00:08:33.090 --> 00:08:37.730
+and I joined the percussion department and I studied private lessons under not the grad assistant,
+
+00:08:37.730 --> 00:08:42.130
+which all the, the noobs had to take underneath the professor. And I played in the, he put me
+
+00:08:42.130 --> 00:08:47.890
+in the top percussion ensemble, assuming I knew what I was doing. And I absolutely faked it
+
+00:08:47.890 --> 00:08:52.370
+until I make it. I remember him giving me a timpani solo. You want to tip, you know,
+
+00:08:52.370 --> 00:08:59.410
+a timpani or like kettle drums. Yeah. They're cool. Yeah. But they're, they're tuned with your,
+
+00:08:59.410 --> 00:09:04.450
+there's pedals that tune them and they're not easy to tune. There's a lot of ear in there and
+
+00:09:04.450 --> 00:09:10.050
+a lot of like feel. And I just, you know, I practiced till I could do it. And I, I nailed
+
+00:09:10.050 --> 00:09:14.690
+my timpani parts. I ended up playing timpani in our top orchestra as well. And just, I didn't
+
+00:09:14.770 --> 00:09:18.050
+know what I was doing. I was faking my way through it. So that was my, so I faked my way through there,
+
+00:09:18.050 --> 00:09:24.370
+but even, yeah, my whole life I have, I do like, if I want to do something, I'll learn just enough
+
+00:09:24.370 --> 00:09:29.330
+so I can do it. And that's, um, until I'm not good enough to do that anymore. And then I do
+
+00:09:29.330 --> 00:09:37.650
+something else. That's my thing. Yeah. I just wrote down five letters, J I T G E just to see if
+
+00:09:37.650 --> 00:09:46.590
+it spells something cool because you are just in time good enough. Yeah, absolutely. To me.
+
+00:09:47.550 --> 00:09:56.480
+So I'm a, I'm a believer in faking till you make it the problem. One of the things I think that is
+
+00:09:56.480 --> 00:10:06.050
+different than you and I on that front is we both have sort of imposter syndrome.
+
+00:10:06.770 --> 00:10:15.500
+I, you're in my way of resolving it is fundamentally different. And I'm trying to, like for me, I go to
+
+00:10:15.500 --> 00:10:20.540
+an analytical space. I say, okay, I need to know this. So I'm going to frigging know it.
+
+00:10:21.340 --> 00:10:29.420
+And I, in my quest for that knowledge, just to, just to alleviate the fear I have a random
+
+00:10:29.420 --> 00:10:37.060
+imposter syndrome. I go, I definitely go deeper than, than you do. I don't have a solid sense of
+
+00:10:37.060 --> 00:10:42.340
+good enough when I'm in that phase when I'm, when I'm running from my imposter syndrome fear.
+
+00:10:42.980 --> 00:10:47.460
+Honestly, I think it is. And this is, you know, I don't mean this demeaning to myself or praising
+
+00:10:47.460 --> 00:10:51.540
+to you, but it was a different, we have a different kind of intelligence or smartness.
+
+00:10:51.540 --> 00:10:58.830
+You're able to go deeper. I get to a point where there are vastly diminishing returns on
+
+00:10:58.830 --> 00:11:04.590
+me going deeper. I am, I am much better knowing a lot about a little than I am knowing a little
+
+00:11:04.590 --> 00:11:09.070
+about a lot. And there are some things, obviously music, cause I faked it so long there. I know
+
+00:11:09.070 --> 00:11:13.230
+some things about the same thing with, with computers and debugging and some of the areas
+
+00:11:13.230 --> 00:11:21.520
+I've dug into, but I think the way I'm wired, I'm better suited to just to what I do.
+
+00:11:22.320 --> 00:11:26.080
+I do what I do. Cause it's what I'm best at. This J I T G E is,
+
+00:11:27.040 --> 00:11:34.320
+is the way for me to be the most effective in anything I'm doing. And I don't, I don't,
+
+00:11:34.320 --> 00:11:39.970
+I just don't think I'm just build up more clearly. I don't know if I have the mental capacity to go
+
+00:11:39.970 --> 00:11:46.690
+as deep as you do on some things. Well, uh, I don't know that that's true or not.
+
+00:11:46.690 --> 00:11:49.810
+Cause I think I don't mean it's self demeaning. I kind of mean like I just,
+
+00:11:49.810 --> 00:11:50.690
+I think it's the way it is.
+
+00:11:51.650 --> 00:11:58.130
+Maybe, maybe. I mean, there's other, uh, there's other commonalities we do share,
+
+00:11:58.130 --> 00:12:04.580
+right? We both, I would say we are both more starters than, than
+
+00:12:05.940 --> 00:12:10.740
+closers in a lot of regards. You are a better closer than I am for certain.
+
+00:12:11.820 --> 00:12:17.900
+And maybe that's why you were driven by good enough. It's like, okay, I, uh, you, you got
+
+00:12:17.900 --> 00:12:24.220
+to close. Um, whereas I'm like, no, I got to figure out how to defer closure. Cause there's not enough.
+
+00:12:25.410 --> 00:12:33.090
+None of here to make my imposter syndrome go away. But we, we are both fascinated by the new,
+
+00:12:33.090 --> 00:12:39.890
+very interested by the new, right? Like, even though you and I are discussing our differences,
+
+00:12:39.890 --> 00:12:46.930
+it doesn't, doesn't at all alleviate that we are, I don't know if there's a term for this, but
+
+00:12:46.930 --> 00:12:53.090
+from a technical standpoint, ADHD written. Let me talk about the new because let's see if our
+
+00:12:53.090 --> 00:12:58.050
+approach to the new is different. Cause I believe that I have read, you know, I read a lot of books
+
+00:12:58.050 --> 00:13:03.490
+and when I'm in a groove, I'll read a book every two weeks and digital cover to cover,
+
+00:13:03.490 --> 00:13:09.090
+but I probably have 50 books I've read half of because I get halfway through and I feel like I
+
+00:13:09.090 --> 00:13:15.890
+have learned everything. I w I'm fascinated in chapter one. I am pattern matching the hell out
+
+00:13:15.890 --> 00:13:22.050
+of chapters two through 10. And then I'm kind of done. Cause I figured out how to incorporate it.
+
+00:13:22.050 --> 00:13:26.850
+So when I get a new idea, whether it's from a book or a video or a lecture or wherever,
+
+00:13:27.570 --> 00:13:33.730
+I want to learn it well enough to understand if it fits within the other patterns that I know
+
+00:13:33.730 --> 00:13:37.970
+and how to connect it. And once I get it there, though, I'm kind of done with it.
+
+00:13:37.970 --> 00:13:49.440
+I have a similar collection of books and I'll say 50 of them. Well, so if we assume a subset of 50,
+
+00:13:50.000 --> 00:13:59.600
+I would say 50% of them, I have at least finished chapter one. I'll say easily 25% of that 50,
+
+00:14:00.640 --> 00:14:06.560
+other than opening the book to go, Oh, my book came. That's all I've done with it. And then
+
+00:14:06.560 --> 00:14:15.650
+the other 25%, right? I'm still multitasking and working my way through it. Yeah. It's when I
+
+00:14:15.650 --> 00:14:23.170
+collect books, I do it from a, usually I do it from, I have a very tactical problem that I'm trying to
+
+00:14:23.170 --> 00:14:31.940
+solve. And I'm like, I think this thing is, is going to, to help fix it. I used to, my daughter
+
+00:14:31.940 --> 00:14:39.460
+and I were talking about this, so I used to be a big sci-fi reader. And ever since shifting to data
+
+00:14:39.460 --> 00:14:49.860
+science, I haven't, I haven't read just to read in forever. Stephen Johnson books, those are sort
+
+00:14:49.860 --> 00:14:57.780
+of the last ones that I would read to sort of understand certain concepts better. Like where idea,
+
+00:14:57.780 --> 00:15:04.500
+so we've talked about this before on the, in strength finders, I have ideation where ID
+
+00:15:04.500 --> 00:15:13.840
+ideas come from is absolutely fascinating to me. And strength, the strength finders thing
+
+00:15:14.830 --> 00:15:21.150
+very much indicates that the more you, that it's not a attribute of me, it's something that it's a
+
+00:15:21.150 --> 00:15:27.220
+skill, it's something I can develop and take advantage of. And I do. Yeah, so that's sort
+
+00:15:27.300 --> 00:15:34.740
+of in personal development. I see you reading things from my perspective. Some of the things you read
+
+00:15:34.740 --> 00:15:41.620
+are just, I just go, that's randomly random. It doesn't, let me talk about what I'm doing.
+
+00:15:41.620 --> 00:15:46.900
+So I have, let me go back to the first time I was a people manager and in hindsight, I didn't know
+
+00:15:46.900 --> 00:15:51.780
+what I was doing. I was like, look, look at me. I'm not a micromanager because I'm giving people no
+
+00:15:51.780 --> 00:15:57.700
+coaching, no guidance. I'm leaving them alone so I can do my own IC work and we'll talk when we
+
+00:15:57.700 --> 00:16:04.110
+have time. Not very good. I didn't know, I didn't get people nearly enough feedback, good and bad.
+
+00:16:05.070 --> 00:16:09.310
+I was lucky to have a good team. So we performed well. So if you look at how the team, if you
+
+00:16:09.310 --> 00:16:13.470
+look at as a manager's reflection of the team doing well, I looked good because my team was
+
+00:16:13.470 --> 00:16:17.870
+doing well because we had hired well. Then I struggled the first time I had employees who
+
+00:16:17.870 --> 00:16:21.950
+weren't delivering and maybe I didn't realize they were delivering because I wasn't paying
+
+00:16:21.950 --> 00:16:26.430
+attention. So I learned a lot. And then, so talking about running away from imposter syndrome. So now
+
+00:16:26.430 --> 00:16:34.270
+I have a bank. Like I have a bank of knowledge I use to lead my team, to manage people, to
+
+00:16:34.830 --> 00:16:40.270
+influence people, to make decisions, to build strategies, et cetera. I have a bank of knowledge
+
+00:16:40.270 --> 00:16:46.190
+in my head, which has come from both a practice on the job training or on the job practice and
+
+00:16:46.190 --> 00:16:52.670
+reading a bunch of books. So all the time I am looking at when I see a book or hear about a book,
+
+00:16:54.080 --> 00:16:57.760
+or if I hear a review of a book, because I listen to so many damn podcasts, I hear people talk about
+
+00:16:57.760 --> 00:17:06.480
+books. I will consider like, can this book bring new knowledge into my new knowledge,
+
+00:17:06.480 --> 00:17:13.280
+into my body of knowledge? So my goal in all these books I'm reading is I want to think about
+
+00:17:13.280 --> 00:17:17.200
+the pattern matching. I want to read this book and figure out, can I pattern match this? Does this
+
+00:17:17.200 --> 00:17:23.600
+change? Does this change my body of knowledge? Does it make me make a fundamental like,
+
+00:17:23.600 --> 00:17:29.360
+oh, I was looking at this wrong. Does it emphasize things I'm doing that maybe I want to do more of?
+
+00:17:29.360 --> 00:17:34.480
+Like I, there's a psychological fallacy for this I'm sure, but the books that preach to what I
+
+00:17:34.480 --> 00:17:37.840
+already do, I nod my head and go, wow, this is a great book because I already do this stuff.
+
+00:17:37.840 --> 00:17:42.400
+I must be awesome. But still you get ideas on how to influence things. You get those anecdotes
+
+00:17:42.400 --> 00:17:46.940
+you can tell to help, to help with all of those problems. So I'm just trying to add to my body of
+
+00:17:46.940 --> 00:17:51.820
+knowledge and I ignore all the rest. So I talked about when I get halfway through sometimes,
+
+00:17:51.820 --> 00:17:57.660
+and not all books are like this, but sometimes I get halfway through and it's like, well, I don't,
+
+00:17:57.660 --> 00:18:02.940
+I've read last three or four chapters and found no new knowledge to incorporate. So I go and tell
+
+00:18:02.940 --> 00:18:08.700
+my ROI on reading the book has faded. And that hasn't happened in a while. I've been reading a
+
+00:18:08.700 --> 00:18:13.500
+lot of books all the way through lately, but I've been slowing down because work's been super busy
+
+00:18:13.500 --> 00:18:18.300
+and gross and all that stuff. But that's sort of my approach. I'm trying to add to my knowledge,
+
+00:18:19.100 --> 00:18:25.260
+bring in as much as I can to help me just get my, I was trying to like you and I the same,
+
+00:18:25.260 --> 00:18:31.740
+trying to get better at what we do and it's incremental. But I always feel like there's
+
+00:18:31.740 --> 00:18:34.860
+got to be one nugget that's going to help me do just a little bit better next week.
+
+00:18:34.860 --> 00:18:40.820
+Because that's what I'm searching for. Yeah, I am constantly, I pay attention to
+
+00:18:42.100 --> 00:18:48.880
+how do I stay in a leadership position in the things that I'm doing, but I'm also paying
+
+00:18:48.880 --> 00:18:58.850
+attention to the next transition. Right. We've talked about this. So my role is a data science
+
+00:18:58.850 --> 00:19:05.810
+and I do believe we're at the end of the data science era and it converts into a primary
+
+00:19:06.530 --> 00:19:16.530
+dev role sometime before I retire. Right. And so I feel like, okay, while I'm working, I'm beholden
+
+00:19:16.530 --> 00:19:24.610
+to number one, improve myself there and then guide my team in that direction. Right. And they
+
+00:19:24.610 --> 00:19:30.770
+kind of benefit each other because then I'm leading by example as well as, you know, coaching and
+
+00:19:30.770 --> 00:19:37.730
+guiding. Now the other difference is you're now a highfalutin executive and I'm still frontline.
+
+00:19:38.740 --> 00:19:47.940
+So you're going to be probably guiding your directs more on the strategic sense and how to set good
+
+00:19:47.940 --> 00:19:53.420
+principles. Yeah. And no, maybe. Yeah, you know, absolutely right. I am much more management
+
+00:19:53.420 --> 00:19:59.740
+overhead, but also even, you know, when I was frontline, like my main objective,
+
+00:19:59.740 --> 00:20:06.620
+and we've talked about this before on the podcast drink still in this role is, and one of the reasons
+
+00:20:06.620 --> 00:20:13.980
+it's so challenging is I'm still trying to make myself obsolete. And this is a fun part. Never been
+
+00:20:13.980 --> 00:20:19.580
+in this position before as, you know, really purely a manager and, you know, working across
+
+00:20:19.580 --> 00:20:26.220
+the company, my entire role is to take my nine direct reports and make it so they can all
+
+00:20:26.220 --> 00:20:31.020
+function completely without me. Let me give you an example. Well, that part makes it. It's not an
+
+00:20:31.020 --> 00:20:37.970
+example. Let me give you an anecdote. I took last week, last week, oh God, we didn't talk about our
+
+00:20:37.970 --> 00:20:43.890
+stuff. So last week I flew, which is a red eye Saturday night, a week ago, but no, it was two
+
+00:20:43.890 --> 00:20:48.690
+weeks ago. I took a red eye from Seattle to Detroit and then flew from Detroit to Buffalo,
+
+00:20:48.690 --> 00:20:52.290
+hung out with my kid for about six hours, went back to the airport, flew back to Detroit,
+
+00:20:52.290 --> 00:20:56.290
+flew from Detroit up to Montreal, spent Monday, Tuesday, half day, Wednesday in Montreal.
+
+00:20:56.610 --> 00:21:00.860
+Flew back to Detroit, back to Seattle. And I worked on Thursday.
+
+00:21:01.420 --> 00:21:05.980
+Oh my God. That's so exhausting. All that, I did not catch COVID. Pretty exhausting. A lot of work.
+
+00:21:05.980 --> 00:21:11.820
+It was necessary for me to spend a little time there and see some people. But one of my directs
+
+00:21:12.700 --> 00:21:17.500
+pinged me and said, do you have time to talk to it? I said, okay, yeah, totally. Always have time.
+
+00:21:17.500 --> 00:21:22.780
+And they said something to the effect of, I know we don't, because I cancelled all my one-on-ones
+
+00:21:22.860 --> 00:21:26.460
+because I was traveling for that week. I took a week off from one-on-ones. And they said,
+
+00:21:26.460 --> 00:21:30.460
+I'm so glad you found time. It's really hard, but I don't have a chance to check in with you every
+
+00:21:30.460 --> 00:21:35.340
+week. And while I think the one-on-one is the most important meeting you can do,
+
+00:21:36.220 --> 00:21:41.860
+that is a little bit of a yellow flag for me. I have to get, I think, I don't want that to be
+
+00:21:41.860 --> 00:21:50.080
+the case. I want people to feel like they have the courage, autonomy, confidence to execute
+
+00:21:50.080 --> 00:21:55.920
+without checking in with me regularly. Yeah, it does feel a little codependency-ish.
+
+00:21:58.160 --> 00:22:08.320
+Well, it's not COVID. It's coaching. More coaching I need to do. It tells me I'm not obsolete yet,
+
+00:22:08.320 --> 00:22:13.520
+so I'm still working. I got a ways to go. And I need all the skills and tips and tricks I can get
+
+00:22:13.520 --> 00:22:22.480
+to get there. Yeah, I have similar phenomenon. Meanwhile, there's always rumors of, okay,
+
+00:22:22.480 --> 00:22:26.880
+I'm making some progress and they go, oh, Alan, your org is good. Can we put some more teams in
+
+00:22:26.880 --> 00:22:39.580
+your org? I go, no. Who are these people who get to define good? So before we get off even further
+
+00:22:39.580 --> 00:22:45.020
+into whatever agenda we're actually talking about. No, the agenda is this winding road. For
+
+00:22:45.020 --> 00:22:50.860
+those of you on the first time, welcome to the AB testing podcast where you learn what we're saying
+
+00:22:51.820 --> 00:22:58.700
+pretty much the same time we are. It's not going to publish. It's, yeah, extra, especially
+
+00:22:58.700 --> 00:23:04.380
+tangential episode. I know some podcasts have like a title and agenda before they start. Like,
+
+00:23:04.380 --> 00:23:10.660
+imagine that. I feel like we used to function that way and then we don't, but this is kind of,
+
+00:23:10.660 --> 00:23:15.140
+oh, by the way, today is international podcast day, which is why I wanted to take some more
+
+00:23:15.140 --> 00:23:20.500
+time to talk about the podcast itself. That's there. There's the agenda. Anyway, you were saying,
+
+00:23:20.500 --> 00:23:29.740
+oh, gotcha. Usually segues happen first, but you know, innovation is coming from Alan today.
+
+00:23:29.740 --> 00:23:33.740
+Watch me magically edit this entire podcast coherent.
+
+00:23:35.900 --> 00:23:40.940
+Yeah, you don't have the time for that. No, I don't. And you, I don't know, like you,
+
+00:23:40.940 --> 00:23:46.220
+there was a time when you would listen to the podcast with your, with your son in the car,
+
+00:23:46.220 --> 00:23:49.100
+but I think your sons are older now. They don't ride in the car with you anymore.
+
+00:23:49.660 --> 00:24:00.780
+Uh, they don't, they don't. My daughter does still, you know, very often, but she is now at a point
+
+00:24:00.780 --> 00:24:08.540
+where appropriately, uh, she doesn't want to listen to the podcast. Right. One of the things I'll
+
+00:24:08.540 --> 00:24:15.420
+bring up, like I had not one of the three. Got it. She is not one of the three. Uh, my oldest
+
+00:24:15.420 --> 00:24:22.780
+still was, uh, for a while in college, just, I guess, cause you know, he missed dad or something.
+
+00:24:22.780 --> 00:24:25.180
+It's a way of checking on you to make sure you're not talking about him.
+
+00:24:25.980 --> 00:24:31.900
+Right. But I encountered something that you've been dealing with for a long time. I encountered
+
+00:24:31.900 --> 00:24:46.640
+it for the very first time. Um, on August 1st, I met my new employee who started off with,
+
+00:24:47.520 --> 00:24:53.790
+I'm one of the three. No shit. And I'm like, what? Why?
+
+00:24:57.950 --> 00:25:00.350
+Do you really not have anything better to do with your time?
+
+00:25:01.230 --> 00:25:07.310
+Yeah. So it was my first day meeting her. So I didn't want to go into incessant mocking on the
+
+00:25:07.310 --> 00:25:11.070
+first day, you know, good impressions and all that. You gotta work, you gotta build a relationship
+
+00:25:11.070 --> 00:25:17.390
+where you can mock each other. Yeah. Right. Um, but I'm like, dear God, why?
+
+00:25:18.990 --> 00:25:23.470
+Right. And that is my reaction to what I, today, when I heard these people say,
+
+00:25:23.470 --> 00:25:27.630
+Oh, you should have got Alan's podcast. Alan is a podcast. And they're like, Oh God, no.
+
+00:25:27.630 --> 00:25:34.830
+Anyway, go on. So the reason why is she, she knew person straight out of college,
+
+00:25:34.830 --> 00:25:42.110
+was hoping to get some Intel on the manager. Right. And the title of the podcast is A B
+
+00:25:42.110 --> 00:25:48.750
+testing. She's coming into a data science role. I see. Did she ask you? So I listened to your
+
+00:25:48.750 --> 00:25:55.550
+podcast and it kind of sucks. What's your data behind continuing to do it? I had my one on one
+
+00:25:55.550 --> 00:26:03.570
+with her literally an hour ago for this week. Uh, I may, I may need to bring up questions like that,
+
+00:26:04.530 --> 00:26:13.580
+next time. Is it just basically seriously why like, it's almost to my mind, it almost should be
+
+00:26:13.580 --> 00:26:20.140
+an interview question. Do you listen to the A B testing podcast? Yes. Oh, sorry. Yeah.
+
+00:26:23.100 --> 00:26:25.820
+That's not, no, you need to make it a behavioral question.
+
+00:26:26.300 --> 00:26:29.260
+Tell me about a time you listened to the A B testing podcast.
+
+00:26:30.140 --> 00:26:36.460
+I wonder, I'm just putting myself in, into the threes shoes right now. And they're like,
+
+00:26:36.460 --> 00:26:39.900
+what the hell? They're just spending the last 10 minutes bashing their own podcast.
+
+00:26:41.420 --> 00:26:46.940
+To be fair, I mean, look, it is no 98% invisible. Like I said before,
+
+00:26:46.940 --> 00:26:50.940
+but it is number one in this genre. It is number one in this genre. And,
+
+00:26:51.100 --> 00:26:57.260
+what is that genre? What do we, it's, is the genre, it's something like two dudes talking
+
+00:26:57.260 --> 00:27:00.540
+while they're drinking beer, even though I think we're both drinking coffee right now.
+
+00:27:01.300 --> 00:27:09.680
+I have a Coke. Yeah. And we've only actually drunk anything adult beverage once.
+
+00:27:09.680 --> 00:27:16.000
+Yeah. On my very last day at Microsoft. But that was a good adult beverage.
+
+00:27:16.000 --> 00:27:20.080
+That was, that was an excellent adult beverage. So, uh, here I am, do you know,
+
+00:27:20.080 --> 00:27:24.880
+and just to get an idea how time flies on the podcast and I should go look up what episode that
+
+00:27:24.880 --> 00:27:32.400
+was. I think for sure, for sure. We have done more episodes with me, not at Microsoft than we have at
+
+00:27:32.400 --> 00:27:40.540
+Microsoft for sure. I have been at unity now five years and seven months and the podcast is about
+
+00:27:40.540 --> 00:27:46.380
+eight and a half years old. Doesn't that blow your mind a little bit? But when I think about
+
+00:27:46.380 --> 00:27:51.740
+years in time, I try and anchor it to things, which has been really hard over the last two
+
+00:27:51.740 --> 00:27:57.260
+and a half years. I've lost all my anchors. Like if the pandemic could have began three months ago,
+
+00:27:57.260 --> 00:28:00.780
+it's all just kind of a blur or 10 years ago. But anyway, yeah, it does blow my mind. Been
+
+00:28:00.780 --> 00:28:07.200
+here a long time. Still liking it. Yeah. Yeah. It's challenging. I, I tell, I, I need to tell
+
+00:28:07.200 --> 00:28:11.680
+myself the same time, the same thing I tell people on my team. If it was easy, it wouldn't
+
+00:28:11.680 --> 00:28:23.060
+be fun. Right. And that's absolutely true. Although the corollary, the corollary is true too,
+
+00:28:23.060 --> 00:28:34.000
+I think that if it's not easy, then it better be fun. Well, oh, I ran into tangents. I keep on
+
+00:28:34.000 --> 00:28:40.320
+running into people I knew in a past life. I found one of my skip levels worked on teams.
+
+00:28:40.400 --> 00:28:46.770
+He joined after I left. I thought that was kind of funny. Oh, and then I found somebody else who
+
+00:28:47.490 --> 00:28:51.330
+just met in the office in the day. They used to work on, they remember me from Xbox and I,
+
+00:28:51.330 --> 00:28:56.930
+I had forgotten who they were. Yeah. We're, we're at that age too. No kidding, right?
+
+00:28:58.370 --> 00:29:04.160
+They're, they're all the time now actually with COVID. So the other thing that's happening
+
+00:29:04.160 --> 00:29:10.260
+is I'm doing with COVID, you do end up doing a lot of presentations online and you have no
+
+00:29:10.900 --> 00:29:16.900
+like, you don't even see the audience list on teams a lot of the time, right? Because it's,
+
+00:29:16.900 --> 00:29:23.220
+it's, it's like 70 people and you, you just see like the three that had their hands raised.
+
+00:29:23.220 --> 00:29:26.500
+You don't have, does teams not have like a gallery view where you can see everybody?
+
+00:29:28.860 --> 00:29:35.180
+They do. Because like when I do a team meeting, I use gallery view so I can see people's like,
+
+00:29:35.180 --> 00:29:40.860
+I can, these days I'm getting good at, I can zoom in on facial reactions. I can say,
+
+00:29:40.860 --> 00:29:46.300
+Hey Lance, you're making a face. What's up? Do you actually have a guy named Lance on your team?
+
+00:29:46.300 --> 00:29:51.900
+I do. And I'm probably listening right now. Sorry, just pick, just pick the name.
+
+00:29:52.540 --> 00:29:58.380
+The, uh, you're talking about teams and lectures. So that's the subject I want to talk about,
+
+00:29:58.380 --> 00:30:05.820
+but go ahead. The point I was bringing up is, is it's often the case someone will come up
+
+00:30:07.170 --> 00:30:11.970
+and it will go, Oh, Hey Brent. And then I'll look at them and I'll go
+
+00:30:13.010 --> 00:30:20.610
+and they don't have a mask on, which, and I'll still go, Hey person,
+
+00:30:21.730 --> 00:30:27.410
+based off of your reaction, I should probably know, but have no idea why you know my name.
+
+00:30:27.970 --> 00:30:32.210
+It is difficult to match from the 2d world to the 3d world. But I was in Montreal two weeks
+
+00:30:32.210 --> 00:30:38.530
+ago. I had a lot of that and people both that I had been on my team. I never met in person to
+
+00:30:38.530 --> 00:30:43.970
+people I knew that I had seen before in the 3d world is a lot of people said, Oh, Hey, Alan.
+
+00:30:43.970 --> 00:30:48.370
+And of course I have this, um, uh, small beard makes me more recognizable, but like,
+
+00:30:48.370 --> 00:30:53.710
+they're there. I just, a lot of that. Well, it depends. Like if, if you, uh,
+
+00:30:53.710 --> 00:31:00.030
+if you go and search for you on, on the interwebs, right? You find the football
+
+00:31:00.030 --> 00:31:06.350
+player, Supreme court justice, Alan Page. No, no, no. You, you I'm, I'm saying find you not search
+
+00:31:06.350 --> 00:31:12.990
+for your name, but search for you. Okay. Right. You, you've had facial hair forever, but not
+
+00:31:12.990 --> 00:31:23.150
+this glorious, uh, uh, uh, noun that you, that you're sporting. Now I could come up with a good
+
+00:31:23.150 --> 00:31:29.630
+noun. So, uh, yeah, feeling your best Maine. Maine's a good one that you're, you're sporting now.
+
+00:31:30.430 --> 00:31:36.670
+Yeah. It's my tribute to COVID. And a lot of the times, a lot of the times I'll go on conference
+
+00:31:36.670 --> 00:31:43.230
+calls and I keep my camera off. And so it's a picture that I haven't updated in like 10 years.
+
+00:31:43.230 --> 00:31:51.310
+I keep the camera off because I'm a big old fatty fat from fat Phil now. And I can't stand looking
+
+00:31:51.310 --> 00:31:58.670
+at my camera. I, if you notice right now, I'm like backed away because then with my eyesight,
+
+00:31:58.670 --> 00:32:03.630
+my own image kind of just blurs out and for you, I can just stare at you.
+
+00:32:04.430 --> 00:32:08.270
+All right. And that is a beautiful thing to look at. So, um, I know originally when we talked three
+
+00:32:08.270 --> 00:32:12.830
+weeks ago, I took last week off, but we talked three weeks ago, uh, we were going to talk about
+
+00:32:12.830 --> 00:32:18.430
+how someone goes from testing into a more experimentation role and we may get there today,
+
+00:32:18.510 --> 00:32:22.590
+but I do have one more question now that we're on the subject of, let me talk about podcasts.
+
+00:32:22.590 --> 00:32:26.590
+And this is not the normal AB testing, but what the hell we can do. We want. It's our podcast.
+
+00:32:27.310 --> 00:32:34.100
+I heard a podcast and again, adding to my knowledge and a lot of times what happens is
+
+00:32:34.100 --> 00:32:39.780
+I'll get an idea and I want to experiment with it. So I heard an interview with a leader at
+
+00:32:39.780 --> 00:32:45.780
+Doest and Doest is the company that makes a to doist, which I'm a big user of for task
+
+00:32:45.780 --> 00:32:53.570
+tracking. And they also make a, um, sort of a Slack teams like app called, uh, twist,
+
+00:32:53.570 --> 00:33:01.730
+which I'll come back to in a minute. They are just 90 people in 30 countries and which is,
+
+00:33:01.730 --> 00:33:04.850
+you know, a little unity, like we're pretty spread out. And I was talking to somebody this week,
+
+00:33:04.850 --> 00:33:08.690
+you know, Microsoft is actually talking to one of these folks, he used to work at Microsoft in
+
+00:33:08.690 --> 00:33:13.170
+the Vancouver office. I have one of those on my team and Microsoft. I don't think you can argue
+
+00:33:13.250 --> 00:33:17.170
+with this brand. It's very Redmond culture that maybe it's different from what I've been there,
+
+00:33:17.170 --> 00:33:21.970
+but very Redmond culture, 90% of the companies in Redmond. If you're not in Redmond, it's kind of
+
+00:33:22.690 --> 00:33:27.250
+it's common knowledge. At least it used to be, it's harder to get promoted, harder to make,
+
+00:33:27.250 --> 00:33:31.090
+you know, influences the, the, it's a very Redmond culture.
+
+00:33:31.970 --> 00:33:41.340
+Um, I will say, yes, that is still probably true, but it's, it's far different.
+
+00:33:41.340 --> 00:33:44.940
+Yeah. I imagine, I imagine skinny, but you're getting more global. And I was thinking about,
+
+00:33:44.940 --> 00:33:50.380
+well, where I work at unity, we're not definitely not every third person in a different country,
+
+00:33:50.380 --> 00:33:58.460
+but our, our headquarters isn't even our largest office. So, uh, so that, but it's a little,
+
+00:33:58.460 --> 00:34:05.010
+it's a lot more the same ever, but anyway, do as, uh, because they're global and we're global too.
+
+00:34:05.010 --> 00:34:10.050
+And you know, I have people spanning 10 time zones. Actually, if I don't count my teams in
+
+00:34:10.050 --> 00:34:15.970
+APAC, nothing against people in APAC, I'm just limited hours in the day, lots of time zones,
+
+00:34:15.970 --> 00:34:26.140
+but doest do almost everything asynchronously. And it made me think like, what am I doing? How,
+
+00:34:26.780 --> 00:34:31.980
+one thing we haven't learned, I'm curious if you've got any tips or tricks on this is as a company,
+
+00:34:32.540 --> 00:34:39.580
+we're not great at working asynchronously. And I want to get better at it. So I started reading
+
+00:34:39.580 --> 00:34:44.620
+more of their article. They have great articles on doest.com on, on how they've learned to work
+
+00:34:44.620 --> 00:34:49.580
+asynchronously things they do. And some of them are kind of out there, but it's like even their
+
+00:34:49.580 --> 00:35:00.850
+CEO has like four meetings a week. Okay. I'm listening. Right. The, the, if this,
+
+00:35:01.970 --> 00:35:14.260
+my problem with asynchronously is I do not, I do not yet know of a good technique to work asynchronously
+
+00:35:15.460 --> 00:35:27.540
+and still build a, a strong team. Right. And so, so as you know, from like my discussions with
+
+00:35:27.540 --> 00:35:33.300
+Colossal and things like that, what I, what I work towards is not making a team of rock stars,
+
+00:35:33.300 --> 00:35:39.570
+but a rock star team. And if this book can, can solve both of those things, like,
+
+00:35:39.570 --> 00:35:45.780
+yeah, well, there's no book. There was a block or there was a podcast that I listened to and I then
+
+00:35:45.780 --> 00:35:52.020
+started reading articles from the company. And so there's no book. And also you're absolutely
+
+00:35:52.020 --> 00:35:56.020
+right on the relationship building and the team building, it accelerates so many things.
+
+00:35:56.020 --> 00:36:01.220
+It's like you got to get people to the whole team together for a week and then they can work
+
+00:36:01.220 --> 00:36:06.450
+apart asynchronously for a while and be pretty successful. It is really hard to do it off the
+
+00:36:06.450 --> 00:36:11.330
+bat. It takes, I think it takes some discipline and practice. And one of the reasons they built.
+
+00:36:12.500 --> 00:36:17.460
+So actually this is something teams is better at than Slack. Oh my God. Did I say that
+
+00:36:18.180 --> 00:36:24.580
+is, uh, if you remember way back in the day, um, I worked on teams, um, we had threading built in
+
+00:36:25.890 --> 00:36:32.100
+Slack said, Oh, threads may be convenient and sort of, they added threads, but they're really lame
+
+00:36:32.740 --> 00:36:39.380
+threads in Slack or lame. So, so what really bugs me is in Slack, somebody makes a post and sometimes
+
+00:36:39.380 --> 00:36:45.470
+there are comments and reactions or, um, questions to that in the main channel and some are on a
+
+00:36:45.470 --> 00:36:49.390
+thread and they get intermingled with other messages. It's very confusing. So they built,
+
+00:36:49.390 --> 00:36:57.150
+it wasn't working for them. And so they built twist, which is just yet another messaging only
+
+00:36:57.150 --> 00:37:02.270
+pla it's messaging only platform, but it's threaded by default. So it's the old style.
+
+00:37:02.270 --> 00:37:06.430
+If here's a post and you make comments on that post, you don't make another post to reply to it
+
+00:37:06.430 --> 00:37:11.630
+just to kind of force people down that path. And they use these threads to work asynchronously.
+
+00:37:11.630 --> 00:37:18.590
+So it is possible. Uh, you got to get people engaged on it. A lot of times people,
+
+00:37:18.590 --> 00:37:21.390
+yeah. If you don't get them in that meeting to draw them out, it's hard,
+
+00:37:21.390 --> 00:37:24.030
+especially if they don't know you, there's that level of trust involved.
+
+00:37:24.670 --> 00:37:28.750
+I think it takes a ton of work. So kudos to them if they're working asynchronously.
+
+00:37:29.470 --> 00:37:33.070
+It's you can't just say we're going to work asynchronously now and have it work.
+
+00:37:34.130 --> 00:37:41.710
+No, it is a battle. No, because there's, there has to be something that is
+
+00:37:42.430 --> 00:37:50.460
+guiding what gets done next. What, what direction are we heading? Do we adapt, persevere? Like that,
+
+00:37:50.460 --> 00:37:58.220
+that just going straight up all async from an intellectual point of view. It's fun to think about.
+
+00:37:58.220 --> 00:38:01.740
+Well, let me talk about a couple of things I'm going to do after reading all this stuff.
+
+00:38:02.540 --> 00:38:07.660
+One is I'm still going to do all my one-on-ones. They do async one-on-ones. I need
+
+00:38:08.540 --> 00:38:15.020
+the FaceTime, but how many, I'm going to ask you this. How many times in your one-on-one
+
+00:38:15.020 --> 00:38:19.340
+does your direct report ask you a bunch of questions or give you a bunch of information
+
+00:38:19.340 --> 00:38:23.740
+that didn't have to be in the one-on-one? It could have been in a team's message or an email.
+
+00:38:25.060 --> 00:38:31.950
+Oh, 50 to 80 percent of the time.
+
+00:38:31.950 --> 00:38:37.390
+More than would be more than is necessary. And that to me, that cuts down on the time we could
+
+00:38:37.390 --> 00:38:42.270
+talk about career, earlier before we talked about career growth and strategy and working
+
+00:38:42.270 --> 00:38:48.910
+with them on that. So one thing I'm going to do is make sure we have a shared channel so we can have
+
+00:38:50.580 --> 00:38:54.180
+discuss more of those tactical things asynchronously, those little check-in things.
+
+00:38:54.180 --> 00:38:57.540
+Like what do you think about this? I want to do that. I don't want to take our one-on-one
+
+00:38:57.540 --> 00:39:03.220
+time to do that. I want to take our one-on-one time to talk about how I can help them grow
+
+00:39:03.220 --> 00:39:07.460
+enough where I can be obsolete. That's my goal in the one-on-one. And if I have to check in on,
+
+00:39:07.460 --> 00:39:11.300
+hey, what do you think I should do with this hiring thing? I don't want to just ask me elsewhere.
+
+00:39:11.300 --> 00:39:16.020
+So that's one thing. So there's a little tweaky adjustment I can make. I can add some async and
+
+00:39:16.020 --> 00:39:20.260
+keep the relationship building part. Well, that's where I think the coaching habit works well.
+
+00:39:20.260 --> 00:39:26.260
+Yes, absolutely. And that's the kind of, that's what I want. I would like 90 to 100 percent of my
+
+00:39:26.260 --> 00:39:31.620
+one-on-one time to be coaching and take care of the other stuff. Async. So that's one thing
+
+00:39:31.620 --> 00:39:35.140
+I'm going to do. The other thing is I should probably glance up my calendar for a second,
+
+00:39:35.140 --> 00:39:40.180
+which is. Are you writing these down? Because it seems like you're proactively writing up your
+
+00:39:40.180 --> 00:39:47.620
+New Year's resolutions. No, I don't do resolutions. Oh, gotcha. Okay. So the other thing is that a lot
+
+00:39:47.620 --> 00:39:52.820
+of meetings I'm moving to from, I don't know how it is with you. I know that Microsoft, a lot of
+
+00:39:52.820 --> 00:39:58.660
+the meetings weren't very useful where I'm at now. Most of my meetings are, but I'm actively
+
+00:39:58.660 --> 00:40:04.340
+moving 60 minute meetings to 30 minute meetings. All of my 30 minute meetings right now appear to
+
+00:40:04.340 --> 00:40:08.980
+be one-on-ones looking at my calendar. Anyway, just looking for things like,
+
+00:40:10.290 --> 00:40:14.530
+there's a meeting coming up on Monday. I'm not going to name the meeting or the group it's with,
+
+00:40:14.530 --> 00:40:19.010
+but it is a monthly meeting that is constantly a meeting that should be an email.
+
+00:40:20.290 --> 00:40:24.850
+And if I gave some feedback after the last one, and if it happens again,
+
+00:40:25.570 --> 00:40:32.500
+I will do something. I'm not going to tolerate it anymore. My time's too valuable and not like I'm
+
+00:40:32.500 --> 00:40:40.180
+like, Oh, my time's too valuable. I need some, I got to eat my caviar at 830. I'm tired of meetings.
+
+00:40:40.180 --> 00:40:47.700
+No, I actually, that's an interesting topic because one of the things, so I have two
+
+00:40:47.940 --> 00:40:51.780
+newly minted principles working for me.
+
+00:40:54.900 --> 00:41:03.780
+It is nice, but so I'm trying to help them adapt to what that role means. Because when you switch
+
+00:41:03.780 --> 00:41:09.220
+bands, it's very common for people to initially start off with, Oh, it's the same thing as the
+
+00:41:09.220 --> 00:41:16.340
+other band, just more. And new, no, it's not. And they're like, what? Yeah, no, it's not. And
+
+00:41:16.340 --> 00:41:22.740
+walking them through it. And one of the things that I've been trying to get them to understand,
+
+00:41:24.260 --> 00:41:36.240
+and I haven't, you kind of touched on it. It's like, look, I want you to be allergic to being,
+
+00:41:36.880 --> 00:41:44.480
+to spending your time on things that a significantly lower level person can do
+
+00:41:44.480 --> 00:41:53.570
+competently. Right. That is not, there is no ROI for your time on that.
+
+00:41:54.290 --> 00:42:00.530
+But Brent, what if as your principal, I can do it twice as fast as the more junior level person?
+
+00:42:01.920 --> 00:42:10.690
+Well, then if it is something like there's a live site where I need the fire put out,
+
+00:42:11.250 --> 00:42:17.810
+then it might be the right call. But if it's something that's repeated, then actually,
+
+00:42:17.810 --> 00:42:26.050
+you are not helping me grow these lower level folks. Yeah, exactly. Right. And I do put it on them.
+
+00:42:26.050 --> 00:42:32.370
+Like, look, whether you wanted the job or not, you're now a principal and people are looking and
+
+00:42:32.370 --> 00:42:40.460
+watching and you are leading by example. And I want that example to be something when you look back
+
+00:42:40.540 --> 00:42:51.340
+on it, you go, oh, I am proud of what I did there. Right. It's not around being a dick and say,
+
+00:42:52.620 --> 00:42:58.700
+do you? Right. No, I'm not doing that. Let's say you're talking to a PM or something. Like I talk to
+
+00:42:58.700 --> 00:43:05.660
+lower level PMs all the time and they're like, okay, great. Can you do this? This query for me?
+
+00:43:06.220 --> 00:43:19.500
+Mm, good. I can. Not gonna. Right. If like with in particular with PMs, my strategy is
+
+00:43:21.500 --> 00:43:27.500
+so far until I can't scale. Anyone who wants to learn to fish come to me, I will spend the time
+
+00:43:27.500 --> 00:43:33.020
+and I will teach you to fish. But if you're coming to me thinking I'm the fish welfare department,
+
+00:43:34.000 --> 00:43:40.720
+yeah, you're wrong. Go away. Yeah. So actually this reminds me as we as we spin our web through
+
+00:43:40.720 --> 00:43:45.760
+tangentville, you took a little bit of shit. We had an incident with one of our internal systems
+
+00:43:46.320 --> 00:43:50.800
+two weeks ago and I spent some time in the incident channel helping to debug because
+
+00:43:50.800 --> 00:43:55.280
+debugging is one of the things that I got good enough that I I'm pretty good at.
+
+00:43:56.420 --> 00:44:00.900
+I think somebody gave me some crap or like as a as you call me, the uppity exact.
+
+00:44:01.540 --> 00:44:05.460
+Is it really a good use of your time to spend time looking at this incident and actually
+
+00:44:06.400 --> 00:44:09.600
+given it was mission critical? Yeah, yeah, I can spend some time there poking around. It's
+
+00:44:09.600 --> 00:44:13.920
+all right. Yeah. Yeah. But regularly I don't want to do that. I shouldn't be in every incident
+
+00:44:13.920 --> 00:44:20.980
+helping them debug. That would be dumb. No, it it's it's it's a good it's a good thing to get
+
+00:44:20.980 --> 00:44:25.620
+your hands dirty on things like that every so often so that you can you can get a sense of
+
+00:44:27.220 --> 00:44:35.140
+why can't someone lower level? Yeah, figure this out. Let's rewind the stack once. So I'm going to
+
+00:44:35.140 --> 00:44:41.460
+I'm committing to not making a resolution. I'm going to make my one on ones better by having
+
+00:44:41.460 --> 00:44:48.500
+more async communication with my direct reports. I am going to again, this is just I'm looking at
+
+00:44:48.500 --> 00:44:53.060
+information is what I do. I take a bunch of information in I figure out how much is practical
+
+00:44:53.060 --> 00:44:58.660
+to incorporate with or to experiment in the current way I do things. I want to encourage
+
+00:44:58.660 --> 00:45:03.300
+more async work. I want to encourage more communication. Sometimes it's a European to
+
+00:45:03.300 --> 00:45:06.500
+America handoff. I don't know how do I get those conversations to happen? I don't know
+
+00:45:07.540 --> 00:45:10.980
+getting discussion or we don't really have discussion meetings, but getting
+
+00:45:12.180 --> 00:45:15.460
+a check in meeting or need to make a decision to get those to happen faster.
+
+00:45:15.460 --> 00:45:22.000
+I think 90 percent of 60 minute meetings can be done in 30 minutes. I think probably a lot of
+
+00:45:22.000 --> 00:45:27.600
+30 minute meetings can be done in 15 minutes. Let me go. Can I tell you one thing that bugs
+
+00:45:27.600 --> 00:45:32.830
+the hell out of me is when we are in a 60 minute meeting or a 30 minute meeting, I don't care,
+
+00:45:32.830 --> 00:45:39.970
+a long meeting and we get down to five minutes left and we're done and some buddy running the
+
+00:45:39.970 --> 00:45:45.040
+meeting says, okay, we have five minutes left. What should we talk about that? Does that happen
+
+00:45:45.040 --> 00:45:52.000
+to you all the time? That's how the that's how the meeting gets converted from
+
+00:45:52.000 --> 00:45:57.840
+ending early to going a half hour over. Oh my god. Why do people do that? I like I try and make a
+
+00:45:57.840 --> 00:46:01.600
+practice of it like I have I have employees to do this too and I give them feedback.
+
+00:46:01.600 --> 00:46:07.360
+If there is a minute left, you do not get to say one more thing. A minute left is done. Anything in
+
+00:46:07.360 --> 00:46:11.760
+five minutes. If there's a pause in the conversation with five minutes or less left,
+
+00:46:11.760 --> 00:46:18.580
+the meeting's over, especially in the in the online world where I need a chance to go fill
+
+00:46:18.580 --> 00:46:25.010
+up my coffee cup or my water glass or use the bathroom. That's that said, that said,
+
+00:46:25.010 --> 00:46:34.130
+if I have five minutes left, I would rather and someone has a burning question. Why did it not come
+
+00:46:34.130 --> 00:46:46.140
+up in the first 25 minutes? Sometimes people forget things. Right. When the I would rather them ask me
+
+00:46:46.140 --> 00:46:54.300
+that now, then set up a whole other half hour meeting, but it's cyclical. They should be asking
+
+00:46:54.300 --> 00:47:00.460
+you that question in teams or slack or whatever thing you have. But they're because we haven't
+
+00:47:00.460 --> 00:47:03.580
+figured out how to work a sink because those questions don't get answered. They feel like
+
+00:47:03.580 --> 00:47:09.420
+they have to ask you in the meeting. Right. And that's wrong. And I want that to be fixed.
+
+00:47:09.420 --> 00:47:16.700
+That's my point as a world in technology, the fact that we have not learned, and I should say we
+
+00:47:17.260 --> 00:47:23.100
+generally do rock this as well as probably many other companies. But you and I can say
+
+00:47:23.900 --> 00:47:29.100
+for our respective worlds, we have not learned nearly as much about working
+
+00:47:29.100 --> 00:47:34.220
+asynchronously in the last two and a half years as we should have in hindsight.
+
+00:47:34.940 --> 00:47:41.580
+No, I do think there has been a lot of learning around working autonomously.
+
+00:47:42.140 --> 00:47:52.300
+Yes. But asynchronously towards a mutually agreed valuable direction has definitely not
+
+00:47:52.300 --> 00:47:57.260
+occurred in a lot of regards autonomously in that same direction has often not occurred.
+
+00:47:57.260 --> 00:48:07.310
+Autonomous, autonomous. Yeah. Anyway, go ahead. No, I can fix that for you. So autonomy without
+
+00:48:07.310 --> 00:48:13.070
+alignment doesn't work. If I give you autonomy to do your work, you still need to know what
+
+00:48:13.070 --> 00:48:19.360
+problem you're trying to solve. And so what's happened is we have these meetings to try and
+
+00:48:19.360 --> 00:48:24.640
+get alignment. We're unable to get alignment asynchronously. We use the meetings to gain
+
+00:48:24.640 --> 00:48:29.950
+alignment or we don't gain alignment at all. And people work autonomously and they just work
+
+00:48:29.950 --> 00:48:32.910
+on random shit because they don't have any alignment of what they're supposed to be doing.
+
+00:48:34.210 --> 00:48:38.930
+Autonomy does not work without high alignment. Sorry. High autonomy does not work without high
+
+00:48:38.930 --> 00:48:47.730
+alignment. Right. No. In a team environment with that. Sure. But seriously, if I'm
+
+00:48:47.730 --> 00:48:54.290
+working by myself on something, my solo project to do whatever, I already have autonomy because
+
+00:48:54.290 --> 00:49:00.400
+I'm not accountable to anybody. I can do whatever the hell I want. Anyway, Async would love to hear
+
+00:49:01.760 --> 00:49:08.240
+each of our three listeners from you on what it means to work asynchronously and how your
+
+00:49:08.240 --> 00:49:13.680
+companies are doing. I would love to read much, much more about this. There's a ton of articles
+
+00:49:13.680 --> 00:49:17.760
+from Doest. You cannot believe how many are out there. I'm sure other companies do this. I would
+
+00:49:17.760 --> 00:49:22.480
+love to hear how it works. And I'm a little embarrassed that we haven't done better. That's
+
+00:49:22.480 --> 00:49:27.970
+all. Okay, man. So I know I said this at the end of the last podcast, but really next time we
+
+00:49:27.970 --> 00:49:35.840
+should really talk about what it takes to go from being a traditional checker, tester, whatever
+
+00:49:35.840 --> 00:49:39.870
+people do, whatever they call themselves. Nobody calls themselves a checker. So why do we call
+
+00:49:39.870 --> 00:49:44.030
+it checking versus testing? I have no idea. I guess it's because the devs keep checking,
+
+00:49:44.030 --> 00:49:47.470
+but they're called developers, not checkers. I don't get it. Anyway, I want to talk about
+
+00:49:47.550 --> 00:49:55.550
+how someone goes from a more typical testing role into doing experimentation or A-B testing or
+
+00:49:55.550 --> 00:50:01.310
+something that actually helps you understand what your customer is doing and make their lives better.
+
+00:50:02.210 --> 00:50:09.090
+And to be clear, when I was in college, I worked at a grocery store and I was a checker.
+
+00:50:09.650 --> 00:50:15.570
+Oh, nice. Nice. Nice. That's good. Then I left that job to become a tester.
+
+00:50:15.890 --> 00:50:20.370
+That's a really good point. Did you do anything in between? Did you go from college,
+
+00:50:20.370 --> 00:50:26.770
+right, into testing at Microsoft? Yeah, no, remember. Well, you may have forgotten.
+
+00:50:26.770 --> 00:50:32.750
+So my path to Microsoft was a little unique. Oh, yes, that's right. I remember now. And then
+
+00:50:32.750 --> 00:50:37.900
+did you ever read that book called How We Test Software at Microsoft? No, I possess it.
+
+00:50:38.860 --> 00:50:48.780
+I possess it too. I've scanned a few things, right? It's for me because I know all of the authors.
+
+00:50:48.780 --> 00:50:53.660
+It was kind of fun to kind of go through and say, okay, can I guess who wrote which and things?
+
+00:50:53.660 --> 00:50:59.660
+Did I tell you about the time when I was actively looking for new jobs outside of Microsoft? And
+
+00:51:00.380 --> 00:51:07.820
+I had a recruiter literally asking me. So on a scale of not at all to the author,
+
+00:51:07.900 --> 00:51:11.100
+how we test software at Microsoft, how much do you know about testing at Microsoft?
+
+00:51:11.950 --> 00:51:16.270
+Are you asking me? No, that was that was what I was asked. I didn't realize I was one of the
+
+00:51:16.270 --> 00:51:20.990
+authors or the main author. Really? Is that what they said? Yeah. You're like,
+
+00:51:21.630 --> 00:51:29.150
+um, to be clear at this point in time, 120%. Well, there I did the math. I said, well,
+
+00:51:30.510 --> 00:51:37.230
+the other authors wrote about 70 pages each and I wrote about 270 pages. So, um, I did the math,
+
+00:51:37.230 --> 00:51:41.870
+whatever percentage that is, that's how much I know. Plus whatever you've learned that now makes
+
+00:51:41.870 --> 00:51:45.870
+that book. And what's funny is they didn't contact me back after that. I think my answer
+
+00:51:45.870 --> 00:51:51.010
+was too much of a smart ass. I decided I was a Dick. Yeah. Well, it's okay, man. I ended up
+
+00:51:51.010 --> 00:51:56.610
+with a good gig that I like. So all is good, man. All is good. Dumb things happen to all of us in
+
+00:51:56.610 --> 00:52:01.490
+life. And we, and we, we avoid the life is all about just getting through the obstacles and
+
+00:52:01.490 --> 00:52:08.850
+surviving. Life is an obstacle course. I completely agree. But on that last thing that you just said,
+
+00:52:09.490 --> 00:52:16.770
+I absolutely am supportive of being your, your true self in an interview. And if they don't
+
+00:52:16.770 --> 00:52:23.410
+call you back, that's frigging fantastic. Did I tell you about the time I interviewed at Amazon?
+
+00:52:23.410 --> 00:52:28.770
+I decided about a quarter of the way into my second interview. There was absolutely no way
+
+00:52:28.770 --> 00:52:36.130
+I was ever going to work there. No, you did not. And then I, I, and I, I just, that was my attitude
+
+00:52:36.130 --> 00:52:43.200
+the rest of the day. What was that? I really convinced me. I want to work here because I
+
+00:52:43.200 --> 00:52:47.760
+don't want to be here. They made me finish my day of interviews. Um, I asked a lot of
+
+00:52:47.760 --> 00:52:54.160
+questions about, I kind of mocked their questions because they were, I was, I maybe didn't have a
+
+00:52:54.160 --> 00:53:01.600
+good panel. I don't know. It was a joke. And I felt like I was inside of like a business firm more than
+
+00:53:01.600 --> 00:53:07.120
+a software company. And then they actually, they, uh, called me back and said, well,
+
+00:53:07.120 --> 00:53:10.640
+Hey, you weren't a good fit for this role, but we can, we'd like you to come back for a lower
+
+00:53:10.640 --> 00:53:18.160
+level job. And I said, actually, no, I'm good. Yeah. Thank you. No, not a good, not a good fit.
+
+00:53:18.160 --> 00:53:24.480
+I'm sorry, Amazon. I, I, I spend a crap ton of money with you, but you're, you're not the place
+
+00:53:24.480 --> 00:53:32.080
+I would ever work. I'm sorry. Uh, nor, nor will I. And I too had my own, uh, I had my own experience
+
+00:53:32.080 --> 00:53:37.280
+there and I'll just say like the, the, their bar razor, you know, do you know that? Yeah.
+
+00:53:37.280 --> 00:53:40.960
+Yeah. I know all about the bar is actually, I should say Amazon's a big company. There could
+
+00:53:40.960 --> 00:53:46.000
+be groups at Amazon that I would love working in. I just had like this experience of like, wow,
+
+00:53:47.100 --> 00:53:51.420
+thank you for bringing me in because now I know I don't want to work here. This is actually very good.
+
+00:53:52.370 --> 00:54:02.000
+Yeah. Their bar razor had a, had a laptop that had a sticker on it that had, had F but not F
+
+00:54:02.000 --> 00:54:09.200
+the full spelled out Microsoft. Oh, that's awesome. Right. And, and there, and I'm like,
+
+00:54:10.580 --> 00:54:17.740
+interesting laptop. Right. And, and to me it was interesting because I'm like, okay,
+
+00:54:17.740 --> 00:54:24.700
+what culture where you're, what, what can you say about the culture that, that sort of permits
+
+00:54:24.700 --> 00:54:30.780
+profanity on laptops? It doesn't have like a, some sort of stigma against it. I mean, I'm not,
+
+00:54:30.780 --> 00:54:36.700
+I'm not anti profanity, but I'm like, okay, that's an unusual thing about, uh, and, uh,
+
+00:54:36.860 --> 00:54:41.500
+to me that's, that's an antithesis to the culture that I experienced in my interview.
+
+00:54:41.500 --> 00:54:46.140
+But I do want to say that speaking of the bar razor, I am taking an online training course
+
+00:54:46.140 --> 00:54:53.900
+available through, uh, unity on, uh, interviewing, which is actually excellent. And it's done by a
+
+00:54:53.900 --> 00:54:58.460
+guy whose name I forget who was, I don't know if he was one of the inventors of the bar razor or
+
+00:54:58.460 --> 00:55:04.540
+anyway, or he's involved in it at least, I don't know, but really good tips on not just tips, but
+
+00:55:05.500 --> 00:55:09.900
+guidelines on doing good interviews. I've seen a lot of bad interviews. As you know, I wasn't as
+
+00:55:09.900 --> 00:55:14.940
+appropriate at Microsoft, like a gazillion interviews. I had seen so many bad interviews. It's good to,
+
+00:55:15.900 --> 00:55:20.220
+good to have a refresher. And again, it goes back to that book of, I like the books where I
+
+00:55:20.220 --> 00:55:23.740
+nod my head all the way through. So I'm, I'm watching this training and kind of nodding my
+
+00:55:23.740 --> 00:55:27.660
+head all the way through. Yeah. Yeah. Yeah. This is good stuff. More people, more people should,
+
+00:55:27.660 --> 00:55:32.940
+should watch this anyway, man. I don't think anybody's still listening because, uh,
+
+00:55:32.940 --> 00:55:37.740
+this was a, they kept on waiting for us to get to the point. And the point is that the podcast
+
+00:55:37.740 --> 00:55:44.660
+is now over. Yeah. I mean, I understand. I stopped listening like 10 minutes ago. Same. Same. All right,
+
+00:55:44.660 --> 00:55:51.700
+man. It's been good hanging out with you. I will see you in two weeks for episode 168 on the road
+
+00:55:51.700 --> 00:55:57.220
+to 200 and the 10 year anniversary. We'll see how things go. Awesome. All right. I'm Alan.
+
+00:55:57.220 --> 00:56:00.660
+I'm Brad. Bonne voir. Bye. Sayonara.
+

@@ -1,0 +1,2246 @@
+WEBVTT
+
+00:00:03.380 --> 00:00:11.620
+Welcome to AV testing podcast your modern testing podcast your hosts Alan and Brent will be here to guide you through
+
+00:00:12.180 --> 00:00:18.580
+Topics on testing leadership agile and anything else that comes to mind now on with the show
+
+00:00:18.980 --> 00:00:22.050
+Hey everyone
+
+00:00:22.050 --> 00:00:24.050
+Brett say something. Hi
+
+00:00:24.890 --> 00:00:26.250
+All right
+
+00:00:26.250 --> 00:00:31.300
+But you said hey everyone like that was for the list that was for the three people
+
+00:00:31.740 --> 00:00:39.600
+Brit you're you remain the smartest idiot I've ever known but luckily we have someone even smarter joining us on our
+
+00:00:40.140 --> 00:00:41.140
+our
+
+00:00:41.140 --> 00:00:48.460
+Socially distanced podcast this morning. We have Julian Bucknell who is the CTO of test cafe? Hey Julian and
+
+00:00:49.100 --> 00:00:52.100
+Good morning. It's well, it's morning for me. Yeah
+
+00:00:57.580 --> 00:00:59.180
+Hello
+
+00:00:59.180 --> 00:01:03.520
+Long-time listeners may know that we we record it 8 a.m
+
+00:01:03.520 --> 00:01:09.140
+On Fridays usually so are welcome to have Julian get up early for us. Which part of the world are you in Julian?
+
+00:01:09.140 --> 00:01:16.420
+I'm actually in Colorado. So it's it's not an early morning for me. It's it's pretty good. I mean I've got my
+
+00:01:17.620 --> 00:01:20.500
+Starbucks coffee which I went to him, you know a
+
+00:01:21.500 --> 00:01:22.660
+Drive-thru
+
+00:01:22.660 --> 00:01:24.660
+To get and I'm ready
+
+00:01:24.900 --> 00:01:26.260
+It's
+
+00:01:26.260 --> 00:01:28.260
+Ready for the the morning's work
+
+00:01:28.780 --> 00:01:36.500
+All right. Wait, you introduced me as the CTO of test cafe. I actually am the CTO of developer Express who
+
+00:01:37.060 --> 00:01:45.570
+Create and market test. Thank you for the clarification. What else does dev express do we are mostly about
+
+00:01:46.830 --> 00:01:53.470
+Kind of user interface controls for for developers across the gamut from Windows
+
+00:01:54.790 --> 00:01:56.790
+to the web and
+
+00:01:56.790 --> 00:02:01.170
+You know, I can get into why we created test cafe because you know
+
+00:02:01.170 --> 00:02:04.010
+we have all these user interface controls for the web and
+
+00:02:04.950 --> 00:02:11.030
+We need to test them and so on so forth. But yeah, we we basically target developers
+
+00:02:11.670 --> 00:02:13.670
+creating applications
+
+00:02:13.790 --> 00:02:16.150
+you know either for Windows or for the web or
+
+00:02:17.230 --> 00:02:24.070
+It's getting more and more things like the Mac and and so on so forth. It's it's getting very interesting
+
+00:02:24.830 --> 00:02:29.190
+Yes, indeed and I like that you said you cater towards developers
+
+00:02:32.350 --> 00:02:35.830
+I don't I didn't mention this earlier in our pre-show talk, but I
+
+00:02:36.870 --> 00:02:42.350
+My role is difficult to describe. I run engineering systems for an org of about 250 people and
+
+00:02:43.470 --> 00:02:50.070
+We don't have any dedicated QA. In fact, we have a lot of people doing testing. They're also called developers and
+
+00:02:51.110 --> 00:02:53.430
+many of our developers for the parts of our
+
+00:02:53.910 --> 00:03:00.110
+Our product that are in UI are using test cafe and I have played with it in the past for some prototyping
+
+00:03:00.110 --> 00:03:02.110
+And I have to say I'm a fan
+
+00:03:02.550 --> 00:03:06.110
+so I am curious why in a world where
+
+00:03:07.670 --> 00:03:10.950
+Selenium is ubiquitous. Did you like what was the
+
+00:03:11.670 --> 00:03:18.550
+Where'd you where'd you come from here? Well, the thing was this is my word. This is probably about seven years ago now
+
+00:03:19.430 --> 00:03:21.430
+Yes, we we developed
+
+00:03:21.630 --> 00:03:23.630
+Web controls
+
+00:03:23.630 --> 00:03:25.190
+controls for web applications
+
+00:03:25.190 --> 00:03:30.370
+so, you know the boring things like menus and buttons and all that kind of stuff we have a
+
+00:03:31.030 --> 00:03:35.470
+theming thing we have grids and spreadsheets and
+
+00:03:36.870 --> 00:03:43.710
+Previews and dashboards now and all that kind of stuff and the big problem without this is yeah, we can write
+
+00:03:44.750 --> 00:03:46.750
+our own
+
+00:03:47.150 --> 00:03:50.070
+Tests or the developers can write their own tests
+
+00:03:50.590 --> 00:03:53.730
+to a certain extent when you're talking about things like
+
+00:03:54.430 --> 00:03:59.950
+unit tests or integration tests and so on a functional testing but
+
+00:04:00.710 --> 00:04:02.790
+When you're talking about the web
+
+00:04:03.390 --> 00:04:05.540
+as
+
+00:04:05.540 --> 00:04:09.060
+I'm sure you both know and all everybody listening knows
+
+00:04:10.450 --> 00:04:16.450
+You're not actually running the web app on its own. You're running it inside a browser and
+
+00:04:17.870 --> 00:04:20.510
+We ran into the problem with Selenium
+
+00:04:20.510 --> 00:04:27.470
+Which I'm sure a lot of people run into is in order to test an application say
+
+00:04:28.070 --> 00:04:31.310
+test your user interface you've got to
+
+00:04:32.710 --> 00:04:38.830
+Install something inside your browser. I think it's called web driver or something like that and
+
+00:04:39.870 --> 00:04:46.510
+And that becomes a problem. You can't just you know start up a browser and say, okay
+
+00:04:46.510 --> 00:04:50.670
+Let me test this particular piece of my application or this particular piece of the UI
+
+00:04:51.030 --> 00:04:56.150
+Am I getting the right results from my back end and so on so forth?
+
+00:04:56.150 --> 00:04:59.230
+and so we we started to run into these problems and
+
+00:05:01.350 --> 00:05:06.110
+Pure JavaScript controls were originally written for the mobile market
+
+00:05:06.750 --> 00:05:10.230
+so we talk about phones which were tablets and all that kind of stuff and
+
+00:05:11.470 --> 00:05:13.830
+Selenium tablets the phones
+
+00:05:14.630 --> 00:05:20.070
+No, so we had to basically come up with an idea
+
+00:05:21.510 --> 00:05:28.750
+Some kind of tool that we could use to test our own user interface controls on mobile devices
+
+00:05:30.510 --> 00:05:32.510
+Automatically and
+
+00:05:32.550 --> 00:05:35.490
+You know put it inside our continuous integration
+
+00:05:36.470 --> 00:05:40.870
+Service and all that kind of stuff. And so we started off in test cafe
+
+00:05:40.870 --> 00:05:45.070
+I remember when we first launched it. I think was 2013
+
+00:05:46.710 --> 00:05:51.870
+There was a big conference in San Francisco an HTML 5 conference or some description
+
+00:05:51.870 --> 00:05:55.190
+and so we had a booth there and we were showing it off and
+
+00:05:55.830 --> 00:05:57.830
+and I had my
+
+00:05:58.350 --> 00:06:00.770
+my Kindle and
+
+00:06:01.530 --> 00:06:08.310
+You know, we were showing everybody that oh it runs on this laptop that we have here and there's Julian with his Kindle
+
+00:06:08.430 --> 00:06:11.510
+Look, then test cafe was working on the Kindle
+
+00:06:12.990 --> 00:06:14.990
+Yes, we love doing stuff like that
+
+00:06:17.950 --> 00:06:22.410
+And it kind of grew from there really people got enthusiastic about it
+
+00:06:23.590 --> 00:06:30.950
+The thing is with test cafe, I'm sure you know is you write your tests in JavaScript
+
+00:06:31.330 --> 00:06:34.590
+So not only you writing JavaScript for your web app
+
+00:06:36.080 --> 00:06:39.080
+You're also writing JavaScript for your tests
+
+00:06:39.440 --> 00:06:44.360
+You're not having to learn something new. You're not having to install something new. It's just
+
+00:06:44.880 --> 00:06:48.290
+You know, it's no JS essentially a nice
+
+00:06:49.290 --> 00:06:51.290
+framework for no JS
+
+00:06:51.690 --> 00:06:58.110
+Can install it with NPM and you know, it's dead easy and as I say you don't have to install
+
+00:06:59.350 --> 00:07:03.550
+Anything on the browser to make it from the test
+
+00:07:04.620 --> 00:07:07.020
+The thing was that you know at that point
+
+00:07:07.540 --> 00:07:12.460
+We realized there were a lot of people out there who would like it even
+
+00:07:14.020 --> 00:07:18.400
+We just have a user interface which ran in the browser and
+
+00:07:19.360 --> 00:07:22.200
+People saying yeah, but you're not doing this you're not doing that
+
+00:07:22.200 --> 00:07:29.100
+So we basically stopped developing user interface and we decided to create an open source
+
+00:07:30.200 --> 00:07:32.200
+framework for test cafe
+
+00:07:33.630 --> 00:07:35.800
+And
+
+00:07:35.800 --> 00:07:38.560
+Then once that was popular
+
+00:07:39.160 --> 00:07:40.960
+create a better
+
+00:07:40.960 --> 00:07:43.680
+dashboard style or studio style
+
+00:07:44.720 --> 00:07:50.840
+Interface for recording tests and all that kind of stuff. So yeah, you can you can download it from
+
+00:07:51.760 --> 00:07:55.080
+GitHub it's open source project. We get a lot of
+
+00:07:56.480 --> 00:07:59.580
+Feedback from from people who are using it
+
+00:08:00.760 --> 00:08:03.160
+and so on so forth it's
+
+00:08:04.120 --> 00:08:06.120
+It's been a it's been a journey
+
+00:08:07.200 --> 00:08:13.760
+Yeah, so I briefly my experience touched on this a little bit in our pre podcast talk, but
+
+00:08:14.960 --> 00:08:18.760
+Many years ago when I was still at Microsoft as a Microsoft for a long time with Brent
+
+00:08:18.760 --> 00:08:21.760
+That's where we met tonight. I've moved on from there about three years ago. I
+
+00:08:22.480 --> 00:08:27.040
+My last job there. I ran a team where the developers were using
+
+00:08:28.000 --> 00:08:30.920
+Slow down protractor for an angular website and
+
+00:08:31.480 --> 00:08:33.400
+one of the things that
+
+00:08:33.400 --> 00:08:39.660
+Bugged me was that the only browser we could get all of our tests to run on consistently was Chrome
+
+00:08:40.320 --> 00:08:46.720
+There were various issues with Firefox more issues with ie and granted. This is now five or six years ago
+
+00:08:47.720 --> 00:08:50.720
+Five well three four four or five years ago. I can do the math here
+
+00:08:51.680 --> 00:08:55.360
+So when I got a chance to prototype test cafe just to let you know
+
+00:08:55.360 --> 00:08:58.380
+My experience as a user it was NPM install test cafe
+
+00:08:59.480 --> 00:09:02.340
+Open some you look at the docks write a little code go
+
+00:09:02.340 --> 00:09:09.000
+Oh, wow, this just runs and then try a different browser and it just runs and I wrote more extensive tests
+
+00:09:09.000 --> 00:09:11.620
+And not only did I write I just wrote a little
+
+00:09:12.240 --> 00:09:18.400
+Basic test for one page to create some random project names for us. This was an angular set at the time and
+
+00:09:20.080 --> 00:09:23.980
+It was pretty easy to get a basic test up and running
+
+00:09:24.860 --> 00:09:30.180
+Ended up having to do a lot more and I'm gonna really anger the Selenium crowd
+
+00:09:30.180 --> 00:09:35.940
+I'm not against Selenium as everybody knows we had Jason Huggins on the show last year to talk about it's a lot of value to it
+
+00:09:36.100 --> 00:09:38.100
+But as far as quick
+
+00:09:38.740 --> 00:09:44.220
+Getting things up and running it worked really well for me and those tests ran with only one
+
+00:09:44.220 --> 00:09:47.180
+Air when someone pulled them out and dusted them off to build on them
+
+00:09:47.900 --> 00:09:51.740
+Six or eight months after I wrote them. So I think that's a testament to
+
+00:09:52.460 --> 00:09:54.460
+How well things work?
+
+00:09:54.620 --> 00:10:01.020
+I'm a little bit removed from that but I remember in Selenium a lot of waiting for elements to appear which
+
+00:10:01.540 --> 00:10:03.780
+You have to do a little bit of a test cafe
+
+00:10:03.780 --> 00:10:07.940
+But it's a little smarter about not needing to write these massive nested
+
+00:10:08.860 --> 00:10:15.820
+Weights and checks so a big fan. So this is all leading to a question. So when I first used test cafe, I
+
+00:10:16.900 --> 00:10:18.500
+posted
+
+00:10:18.540 --> 00:10:25.100
+Eventually Alan gets somewhere. I posted to Twitter and said hey because I haven't done a lot of web automation. I
+
+00:10:26.140 --> 00:10:31.180
+Said I've used test cat facings to work pretty well and what am I missing? What's what?
+
+00:10:31.620 --> 00:10:37.180
+Why isn't this a bigger deal and the feedback I get from my followers who use
+
+00:10:37.700 --> 00:10:40.820
+And others who are forwarded. There's a lot of Selenium folks out there
+
+00:10:41.380 --> 00:10:47.420
+We're really just two things and maybe watch you address these and kind of get rather than my opinion your opinion
+
+00:10:47.540 --> 00:10:55.060
+One was which I will actually argue with first one was will it inject JavaScript into your website?
+
+00:10:55.060 --> 00:10:57.060
+So it's not the real site customers are seeing
+
+00:10:57.260 --> 00:11:00.900
+I thought that is and just I'll just dismiss that one is lame
+
+00:11:01.020 --> 00:11:03.020
+but the second one is
+
+00:11:03.180 --> 00:11:09.900
+But web it doesn't use webdriver and webdriver is w3c c standard w3c standard and
+
+00:11:10.780 --> 00:11:17.940
+My answer to that was so and they said but it's a standard and I said so and they said but it's a standard
+
+00:11:18.020 --> 00:11:22.780
+But you may have a better answer to that question. So I'll leave you with that to comment on
+
+00:11:24.260 --> 00:11:26.260
+My my viewpoint
+
+00:11:26.660 --> 00:11:33.940
+Just to go back. I mean we create these user interface controls written in JavaScript for web applications
+
+00:11:33.940 --> 00:11:37.300
+And the thing is we don't just say
+
+00:11:38.180 --> 00:11:42.020
+these controls only work in Chrome or Firefox or
+
+00:11:42.020 --> 00:11:47.050
+Safari or whatever edge. Yeah, that was the other one edge. Ha
+
+00:11:48.050 --> 00:11:51.250
+Yeah, we say it's you know, it's a
+
+00:11:52.290 --> 00:11:58.130
+User interface control for the web and it should work in any browser and what we get is if we get it wrong
+
+00:11:58.130 --> 00:12:06.130
+We get you know a support question or whatever it happens to be. Hey, I'm using this version of Safari and your web
+
+00:12:07.010 --> 00:12:09.730
+Your user interface control doesn't work
+
+00:12:09.730 --> 00:12:13.070
+And so we have to basically, you know
+
+00:12:13.950 --> 00:12:18.750
+Boot up some Safari or other and check it out. The problem is
+
+00:12:19.630 --> 00:12:26.530
+Once you fixed whatever issue it was in whatever particular browser it was
+
+00:12:27.650 --> 00:12:30.210
+You've got to repeat that test forevermore
+
+00:12:30.770 --> 00:12:36.610
+It's part of your test suite at that point because you don't want to revert to a buggy
+
+00:12:37.330 --> 00:12:39.330
+Version and so on so forth
+
+00:12:40.290 --> 00:12:42.290
+So that's you know
+
+00:12:42.930 --> 00:12:44.930
+emphasizing the fact that
+
+00:12:45.490 --> 00:12:47.490
+Yes, web driver may be
+
+00:12:48.130 --> 00:12:50.050
+W3C
+
+00:12:50.050 --> 00:12:52.610
+Compatible and all the rest of it, but it's not in every browser
+
+00:12:53.570 --> 00:13:00.210
+It's not there if I download and install Firefox, it's not there you have to then install
+
+00:13:01.010 --> 00:13:03.010
+something else and
+
+00:13:03.570 --> 00:13:06.290
+And you know if I come my
+
+00:13:07.170 --> 00:13:09.250
+I'm old-fashioned. I've got an iPhone 6
+
+00:13:10.610 --> 00:13:17.890
+It's you know, the operating system is version 12 of iOS not version 13. It won't go up any further
+
+00:13:18.370 --> 00:13:20.370
+so at some point, you know
+
+00:13:22.460 --> 00:13:23.740
+I'm just saying
+
+00:13:23.740 --> 00:13:29.740
+We're going to create a user interface control or some feature and other and it's just not going to work on my iPhone 6
+
+00:13:29.740 --> 00:13:33.100
+And i'll be able to say okay guys, you know sort this out
+
+00:13:33.980 --> 00:13:37.330
+but with selenium
+
+00:13:37.650 --> 00:13:39.550
+until
+
+00:13:39.550 --> 00:13:42.750
+If you like the web driver becomes like
+
+00:13:43.470 --> 00:13:44.750
+um
+
+00:13:44.750 --> 00:13:48.670
+The big thing everyone's talking about these days is wasm web assembly
+
+00:13:49.390 --> 00:13:56.290
+Every browser now has web assembly built into the browser so you could now write applications
+
+00:13:56.750 --> 00:13:59.150
+Which target web assembly fine?
+
+00:14:00.030 --> 00:14:02.030
+web driver is not like that
+
+00:14:02.430 --> 00:14:04.430
+and um, so
+
+00:14:05.230 --> 00:14:07.470
+You know for us in particular
+
+00:14:08.350 --> 00:14:11.310
+Uh emphasizes the fact that we needed
+
+00:14:12.110 --> 00:14:14.110
+something which went beyond
+
+00:14:14.750 --> 00:14:20.190
+Um what selenium could do because we have customers out there across the world
+
+00:14:20.670 --> 00:14:24.910
+Using a wild variety of different browsers, so we cannot
+
+00:14:26.430 --> 00:14:30.270
+Just say oh, sorry. You're using internet explorer 11
+
+00:14:31.230 --> 00:14:34.590
+You would believe the number of people you still use internet explorer 11
+
+00:14:35.150 --> 00:14:37.150
+Um, I would because i've run those
+
+00:14:38.110 --> 00:14:40.750
+Because we had to when I when I had web apps
+
+00:14:41.150 --> 00:14:46.590
+At microsoft I would look at browser percentage and at the time again four or five years ago
+
+00:14:47.310 --> 00:14:50.130
+At I was surprised how many people were running ie8
+
+00:14:51.230 --> 00:14:57.470
+Yeah, absolutely. I mean it is it can be absolutely crazy, but then you start thinking about okay
+
+00:14:58.270 --> 00:15:02.510
+It's a legacy app and you know, we haven't upgraded all our users
+
+00:15:04.270 --> 00:15:10.590
+So on so on so on I mean, I wonder how many people out there are using the new microsoft edge for example if they're using edge
+
+00:15:11.150 --> 00:15:15.550
+Did they actually do the extra step to install this brand new chrome based edge?
+
+00:15:16.030 --> 00:15:18.030
+Brand you you're probably using chrome edge
+
+00:15:19.680 --> 00:15:22.080
+Uh not by purpose. No
+
+00:15:23.520 --> 00:15:25.520
+Do you call it credge internally?
+
+00:15:26.080 --> 00:15:28.080
+No, we do not we do not
+
+00:15:28.400 --> 00:15:30.400
+I'm gonna offer that up for free
+
+00:15:30.800 --> 00:15:34.000
+Just pass that along to satya or the ie team directly
+
+00:15:35.360 --> 00:15:41.280
+If it goes that way it's already going to get translated to frames internally. Oh, i'm sorry. I'm sorry. I said microsoft
+
+00:15:42.160 --> 00:15:44.160
+I'm sorry. Credge for business
+
+00:15:45.360 --> 00:15:47.360
+No, so like the
+
+00:15:47.360 --> 00:15:48.400
+the
+
+00:15:48.400 --> 00:15:49.940
+uh
+
+00:15:49.940 --> 00:15:51.940
+I do think going with the chrome
+
+00:15:54.460 --> 00:15:57.180
+Architecture was a net positive for edge
+
+00:15:57.660 --> 00:16:01.660
+Uh, I don't think there's much disagreement there not for me
+
+00:16:02.300 --> 00:16:03.500
+No, no
+
+00:16:03.500 --> 00:16:04.540
+but
+
+00:16:04.540 --> 00:16:09.740
+Like to me, I think there's a bit of a branding problem right now because I think the majority
+
+00:16:12.140 --> 00:16:14.140
+About if I were in the right position
+
+00:16:14.460 --> 00:16:18.460
+Once I made the decision to go with the chrome back in I would have rebranded
+
+00:16:19.920 --> 00:16:23.760
+Right because I think I think edge is synonymous with
+
+00:16:24.480 --> 00:16:25.440
+pain
+
+00:16:25.440 --> 00:16:26.480
+in in
+
+00:16:26.560 --> 00:16:27.600
+the world market
+
+00:16:27.600 --> 00:16:32.560
+That's just my opinion and satya listens to this and what's the question me on it?
+
+00:16:33.360 --> 00:16:38.960
+Um, I'll still stand by that even though I have no data to prove it one way or the other
+
+00:16:39.440 --> 00:16:41.150
+um
+
+00:16:41.150 --> 00:16:43.150
+couple couple of things, uh
+
+00:16:43.710 --> 00:16:45.710
+So i'm currently stocking
+
+00:16:46.190 --> 00:16:48.190
+julian on linkedin
+
+00:16:49.570 --> 00:16:55.250
+Oh and I see he actually has spent time at microsoft as well
+
+00:16:56.130 --> 00:16:58.130
+Yes, that was a while back
+
+00:17:00.210 --> 00:17:03.250
+I was at microsoft for about a year. Um
+
+00:17:04.050 --> 00:17:06.050
+I was brought on um
+
+00:17:06.450 --> 00:17:07.890
+because
+
+00:17:07.890 --> 00:17:11.090
+The visual studio team were about to release visual studio
+
+00:17:12.590 --> 00:17:15.790
+2003
+
+00:17:15.790 --> 00:17:23.230
+And if you know your visual studio history, there was no visual studio 2003 because there was a major cockup
+
+00:17:23.950 --> 00:17:28.830
+And so it became visual studio 2005 and so I was brought into you know
+
+00:17:29.900 --> 00:17:31.900
+in theory to
+
+00:17:32.460 --> 00:17:34.460
+provide
+
+00:17:34.540 --> 00:17:41.580
+I was program manager to provide ideas and thoughts about what the next version of visual studio would would have and
+
+00:17:42.220 --> 00:17:45.100
+Would be doing and so on so forth except that
+
+00:17:46.020 --> 00:17:50.020
+I was brought in and everything had been decided and
+
+00:17:50.980 --> 00:17:55.300
+We were doing visual studio 2000, what's it called? Um codename whitby
+
+00:17:56.320 --> 00:17:59.680
+It's kind of interesting. I remember these things. Wow. Yeah
+
+00:18:02.560 --> 00:18:06.800
+C-sharp was getting um generics. That was the big thing about it
+
+00:18:08.770 --> 00:18:11.570
+I remember when generics came out those were cool. Uh,
+
+00:18:12.210 --> 00:18:15.810
+So you remember when wittaker was in dev dev
+
+00:18:16.860 --> 00:18:18.930
+Was it around that time frame?
+
+00:18:19.090 --> 00:18:24.770
+It might have been so barton barton was running their massive qa org
+
+00:18:25.490 --> 00:18:30.450
+But when did I don't remember when wittaker's first stint at microsoft began and ended?
+
+00:18:30.850 --> 00:18:34.850
+But yeah about that time he actually might have come a little bit later
+
+00:18:36.610 --> 00:18:39.490
+Yeah, was was tfs a thing then julian?
+
+00:18:40.320 --> 00:18:42.450
+Tfs was just starting
+
+00:18:42.450 --> 00:18:44.450
+It hadn't the team foundation server
+
+00:18:45.550 --> 00:18:47.550
+I I I
+
+00:18:47.630 --> 00:18:51.070
+No, that was later i'm sure i'm trying to get back now
+
+00:18:52.420 --> 00:18:56.580
+I mean i've i've been with dev express now 14 years. So it's like
+
+00:18:57.410 --> 00:18:59.250
+you know
+
+00:18:59.250 --> 00:19:02.290
+I forgot I forgot most of those days at microsoft. It was uh,
+
+00:19:02.770 --> 00:19:07.570
+It was fun, but I just didn't fit in at that particular point. Unfortunately, so all right
+
+00:19:08.050 --> 00:19:14.130
+I had to give your yearbook away. No, that makes that makes perfect sense like like um
+
+00:19:15.280 --> 00:19:18.800
+You know, he started this question with sort of a web driver
+
+00:19:19.600 --> 00:19:23.600
+Is the standard thing right in in the somewhat of a?
+
+00:19:25.140 --> 00:19:27.940
+cyclical argument in my view standards change
+
+00:19:28.900 --> 00:19:30.660
+right, uh, I
+
+00:19:30.660 --> 00:19:32.660
+Just happened to be looking
+
+00:19:32.660 --> 00:19:33.780
+uh
+
+00:19:33.780 --> 00:19:38.580
+Uh in right now I found a page that talks about laws that have changed
+
+00:19:39.060 --> 00:19:43.700
+Right there was a law apparently in washington in 1969 where it
+
+00:19:44.420 --> 00:19:49.540
+Made it a felony and punishable by five years in prison if you um
+
+00:19:50.640 --> 00:19:52.640
+Slayed bigfoot
+
+00:19:56.270 --> 00:19:58.270
+Where are you going with this?
+
+00:19:58.350 --> 00:19:59.950
+No, I I'm just
+
+00:19:59.950 --> 00:20:01.950
+Which page you've got up?
+
+00:20:02.830 --> 00:20:05.650
+So so that law that law was in 1969
+
+00:20:06.990 --> 00:20:11.070
+In and in the context back then there was there
+
+00:20:11.870 --> 00:20:14.270
+Either this was a complete joke or
+
+00:20:15.580 --> 00:20:23.180
+Uh in in the people who passed that a lot had nothing else better to do or there was some evidence or a real strong belief
+
+00:20:24.290 --> 00:20:31.010
+That bigfoot is a creature that needs to be protected. My my point is is that as time advances?
+
+00:20:31.650 --> 00:20:35.010
+We create new tech new standards need to be
+
+00:20:36.050 --> 00:20:37.490
+Uh
+
+00:20:37.490 --> 00:20:39.490
+Standards need to be reconsidered
+
+00:20:40.370 --> 00:20:42.690
+right, um
+
+00:20:43.730 --> 00:20:45.730
+Qa certification
+
+00:20:46.180 --> 00:20:51.560
+Right. There's still a lot of standards in in in the eu around qa certification
+
+00:20:52.180 --> 00:20:55.540
+And and as an example i'd make a large argument
+
+00:20:56.260 --> 00:20:58.260
+that those standards are
+
+00:20:59.900 --> 00:21:04.240
+Contradictory, uh to to many marketplaces today
+
+00:21:05.200 --> 00:21:07.300
+Not all but many
+
+00:21:07.540 --> 00:21:09.540
+I I I
+
+00:21:09.780 --> 00:21:17.380
+Alan you you sort of just immediately bit flip the javascript argument. Likewise. I bit flipped the web driver argument
+
+00:21:18.180 --> 00:21:19.940
+um, alan
+
+00:21:19.940 --> 00:21:24.340
+Well, actually i'll i'll ask one question that i'm very curious about so
+
+00:21:25.220 --> 00:21:30.340
+Dev express targets deaths, right? We we talked about at the very beginning. It's very
+
+00:21:31.360 --> 00:21:33.340
+fascinating
+
+00:21:33.340 --> 00:21:35.340
+What about test cafe?
+
+00:21:36.120 --> 00:21:39.180
+Specifically do you have any sort of sense of
+
+00:21:40.740 --> 00:21:43.560
+If you can share this sort of your your customer segmentation
+
+00:21:44.240 --> 00:21:45.860
+around
+
+00:21:45.860 --> 00:21:49.540
+Uh a developer versus a a traditional
+
+00:21:50.420 --> 00:21:52.820
+Uh ui tester or ui automator
+
+00:21:53.940 --> 00:21:56.000
+Uh, so
+
+00:21:56.000 --> 00:21:58.880
+So let me let me approach that in in a slightly
+
+00:22:00.160 --> 00:22:01.360
+weird way
+
+00:22:01.360 --> 00:22:06.480
+Originally, we wrote test cafe for developers because we as a company
+
+00:22:07.200 --> 00:22:09.680
+market to developers essentially
+
+00:22:10.320 --> 00:22:11.360
+um
+
+00:22:11.360 --> 00:22:14.000
+As I said, we do user interface controls across the board
+
+00:22:14.640 --> 00:22:20.160
+and so originally test cafe was targeted towards developers and those developers would be
+
+00:22:21.760 --> 00:22:26.000
+Fairly proficient in javascript as I said we're talking about five six seven years ago
+
+00:22:26.640 --> 00:22:27.920
+um
+
+00:22:27.920 --> 00:22:28.720
+and
+
+00:22:28.720 --> 00:22:30.720
+what we found was
+
+00:22:30.720 --> 00:22:31.920
+that
+
+00:22:31.920 --> 00:22:33.920
+The developers were saying
+
+00:22:34.080 --> 00:22:36.080
+This is too simplistic
+
+00:22:37.260 --> 00:22:38.540
+um
+
+00:22:38.540 --> 00:22:40.540
+For us to use you've got to
+
+00:22:41.740 --> 00:22:44.300
+broaden it and you've got to
+
+00:22:45.420 --> 00:22:47.900
+Make it easier to program to
+
+00:22:48.620 --> 00:22:55.180
+Um, and so on so forth. So that's why we split test cafe away from its user interface to
+
+00:22:55.820 --> 00:22:57.660
+a pure
+
+00:22:57.660 --> 00:22:59.660
+javascript framework essentially
+
+00:23:00.540 --> 00:23:03.180
+And that was made open source and blah blah blah blah
+
+00:23:03.660 --> 00:23:06.620
+And then we went back to the user interface to say
+
+00:23:07.180 --> 00:23:08.220
+Okay
+
+00:23:08.220 --> 00:23:10.220
+We know that developers
+
+00:23:10.300 --> 00:23:11.980
+will um
+
+00:23:11.980 --> 00:23:15.740
+I'm going to say the word enjoy using test cafe because
+
+00:23:16.460 --> 00:23:22.620
+You know, they're writing web applications and writing some javascript and they know javascript and they can write javascript to do their tests
+
+00:23:23.180 --> 00:23:24.220
+brilliant
+
+00:23:24.220 --> 00:23:26.620
+Now we have to target those people who
+
+00:23:27.500 --> 00:23:29.740
+Maybe don't know javascript as well
+
+00:23:30.620 --> 00:23:32.620
+but are
+
+00:23:32.780 --> 00:23:35.820
+Qa people testing people people who
+
+00:23:36.780 --> 00:23:38.620
+basically
+
+00:23:38.620 --> 00:23:40.210
+are
+
+00:23:40.210 --> 00:23:43.330
+If you like away from that developer mentality and go
+
+00:23:44.130 --> 00:23:50.370
+How is this application really going to work and how easy is it to use and how can we test the
+
+00:23:51.310 --> 00:23:53.310
+usability of this application
+
+00:23:54.030 --> 00:23:58.830
+Easily and quickly which is when we produced test cafe studio, which has
+
+00:23:59.390 --> 00:24:01.070
+basically a visual
+
+00:24:01.070 --> 00:24:02.510
+test recorder
+
+00:24:02.510 --> 00:24:06.350
+So yeah a developer could go in with the studio and say all right
+
+00:24:06.350 --> 00:24:12.510
+Here's my web page and i'm going to press this button i'm expecting this to happen and you know these
+
+00:24:13.870 --> 00:24:19.710
+Elements to be updated and so on so forth and they could actually just record that using
+
+00:24:20.750 --> 00:24:22.190
+the visual
+
+00:24:22.190 --> 00:24:26.910
+Test recorder instead of actually, you know trying to write the javascript and
+
+00:24:27.630 --> 00:24:30.430
+Oh, they're using or really and they need
+
+00:24:31.070 --> 00:24:37.470
+You know an extra bit of code to actually access the elements and and so on so forth
+
+00:24:37.950 --> 00:24:42.270
+so we originally started targeting developers, but with the
+
+00:24:44.270 --> 00:24:46.510
+User interface either studio side or
+
+00:24:47.630 --> 00:24:50.910
+It's going to migrate into a kind of dashboard type
+
+00:24:51.610 --> 00:24:52.810
+application
+
+00:24:52.810 --> 00:24:54.430
+um
+
+00:24:54.430 --> 00:24:56.430
+You know, we're we're then
+
+00:24:56.670 --> 00:25:00.270
+Basically saying okay developers you have a qa team
+
+00:25:00.910 --> 00:25:03.950
+Um who may not be as proficient in javascript as you are
+
+00:25:04.510 --> 00:25:09.470
+And you don't want them to come to you to say write me this test, please because i've got to run it
+
+00:25:09.550 --> 00:25:11.550
+You know add infinitum every day
+
+00:25:12.030 --> 00:25:14.270
+uh in my integrated test suite
+
+00:25:14.910 --> 00:25:17.070
+um
+
+00:25:17.070 --> 00:25:18.270
+that's
+
+00:25:18.270 --> 00:25:21.550
+The whole point where we thought okay, we have to target
+
+00:25:22.030 --> 00:25:23.070
+um
+
+00:25:23.070 --> 00:25:27.230
+Uh the testing environment in these companies these uh corporations
+
+00:25:27.870 --> 00:25:30.110
+and make it easier for them to
+
+00:25:30.750 --> 00:25:35.470
+Create a suite of tests to run that suite of tests as part of some integration
+
+00:25:36.030 --> 00:25:37.230
+um
+
+00:25:37.230 --> 00:25:38.350
+and
+
+00:25:38.350 --> 00:25:40.350
+So on so forth so it's um
+
+00:25:41.550 --> 00:25:43.550
+We're not we're not saying
+
+00:25:44.060 --> 00:25:49.900
+Oh developers you've been doing it wrong. Here's a great new studio, which will help you do it better
+
+00:25:50.540 --> 00:25:54.540
+And we're not saying to the testers. Oh, i'm sorry. You don't know javascript that well
+
+00:25:54.860 --> 00:25:58.140
+Here's something to make it easier for it. No, we're basically saying
+
+00:26:00.640 --> 00:26:02.640
+Writing tests is
+
+00:26:02.880 --> 00:26:08.960
+I mean, there's so many different types of tests you've got you know, as I said units integration tests functional testing
+
+00:26:09.040 --> 00:26:11.040
+Which is very developer based
+
+00:26:11.040 --> 00:26:13.040
+um performance testing
+
+00:26:14.060 --> 00:26:20.220
+Hmm in usability testing the thing that fascinates me most and um,
+
+00:26:21.320 --> 00:26:23.160
+uh as uh
+
+00:26:23.160 --> 00:26:25.160
+Cto at dev express no
+
+00:26:27.050 --> 00:26:29.050
+I'm very into usability
+
+00:26:29.670 --> 00:26:32.110
+Unfortunately these days I don't do much development
+
+00:26:32.890 --> 00:26:38.810
+Um, you know, I started off years ago as a developer, but I don't do much development nowadays. So I tend to look at things
+
+00:26:39.370 --> 00:26:41.370
+from a
+
+00:26:41.370 --> 00:26:44.910
+User standpoint more than a developer standpoint
+
+00:26:45.530 --> 00:26:48.970
+so usability testing for me is is something that's
+
+00:26:50.650 --> 00:26:52.650
+interesting and um
+
+00:26:53.130 --> 00:26:58.250
+I I really want to get more into and um, you know to be able to look at our
+
+00:26:59.130 --> 00:27:01.130
+particular controls and to say
+
+00:27:01.690 --> 00:27:04.330
+Yes, they're usable if the user
+
+00:27:06.090 --> 00:27:12.410
+Comes across an application written with our controls. They know how to use the application. They're not searching around
+
+00:27:12.730 --> 00:27:18.090
+You know the window going well, what do I do to do this? It gets obvious
+
+00:27:19.580 --> 00:27:23.980
+um, and you know test cafe is all about that it's uh, um,
+
+00:27:24.620 --> 00:27:27.740
+especially the studio side of things it's the ability for
+
+00:27:28.380 --> 00:27:29.340
+um
+
+00:27:29.340 --> 00:27:31.900
+Qa testers to actually
+
+00:27:33.420 --> 00:27:39.500
+Write tests which show that an application is usable and continues to be usable
+
+00:27:40.140 --> 00:27:41.500
+so
+
+00:27:41.500 --> 00:27:45.820
+I don't know the state of the art today on test recorders
+
+00:27:46.620 --> 00:27:47.740
+when
+
+00:27:47.740 --> 00:27:53.100
+When I started this this was back in oh my god ms test was when it started
+
+00:27:53.500 --> 00:27:54.300
+Ooh
+
+00:27:54.300 --> 00:27:58.220
+Are those who remember that? I I I was a beta user
+
+00:27:59.420 --> 00:28:00.620
+um
+
+00:28:00.620 --> 00:28:05.340
+and one of the traditional problems with this is they were
+
+00:28:06.060 --> 00:28:12.780
+They were absolutely great for very quickly creating a bunch of repeatable tests
+
+00:28:14.060 --> 00:28:17.980
+As long as your developers didn't check in any changes
+
+00:28:19.280 --> 00:28:27.620
+Uh, then it very quickly then it very quickly became a maintenance nightmare often with people who didn't understand
+
+00:28:29.280 --> 00:28:31.280
+Uh the code being produced
+
+00:28:32.320 --> 00:28:33.580
+um
+
+00:28:33.580 --> 00:28:35.580
+What's the what's the state of the art on?
+
+00:28:36.220 --> 00:28:37.180
+that
+
+00:28:37.180 --> 00:28:38.780
+that's
+
+00:28:38.780 --> 00:28:47.980
+That's that's that kind of a broad question because if you like we suffer from that from our um, you know main
+
+00:28:48.700 --> 00:28:51.820
+um thrust of our um our company is
+
+00:28:52.280 --> 00:28:55.020
+Breaking changes, you know, we're we
+
+00:28:55.960 --> 00:28:57.960
+So let's say we produce a control
+
+00:28:58.200 --> 00:29:03.800
+Um people like it and they want some changes and they want this feature and that feature and all that kind of stuff
+
+00:29:04.280 --> 00:29:07.160
+It's very easy at that point to say, you know
+
+00:29:08.160 --> 00:29:11.520
+We thought about doing abc with this control at the beginning
+
+00:29:11.600 --> 00:29:16.640
+but it turns out that c is not really required it really ought to be d and
+
+00:29:17.280 --> 00:29:20.720
+We make the change and it's a breaking change and
+
+00:29:21.680 --> 00:29:23.680
+Yes, we have to tell our
+
+00:29:23.740 --> 00:29:26.000
+Customers that yet there is a breaking change
+
+00:29:26.480 --> 00:29:32.640
+Uh, it won't work in the same way as it did in the previous version and all that kind of stuff and the one thing about test cafe
+
+00:29:33.200 --> 00:29:34.240
+video
+
+00:29:34.240 --> 00:29:40.080
+Test recorder is that it's actually writing the stuff as javascript in the background
+
+00:29:40.800 --> 00:29:44.320
+So it's not some weird and wonderful
+
+00:29:45.440 --> 00:29:49.680
+Database there and we're just doing some wacky sql to
+
+00:29:50.240 --> 00:29:54.720
+Put the test into the database and all that kind of stuff. No, it's just a javascript file
+
+00:29:55.360 --> 00:29:56.480
+so
+
+00:29:56.480 --> 00:30:00.560
+In one sense, it's uh fairly easy to make changes
+
+00:30:00.880 --> 00:30:04.480
+Yes, the developers can do something which will break a test
+
+00:30:05.200 --> 00:30:08.400
+as the test broken because the change made was
+
+00:30:08.960 --> 00:30:15.360
+Um bad or was the breaking change a good breaking change in this case you have to change the test for sure
+
+00:30:15.760 --> 00:30:18.880
+and it's easier to change the test if it's just
+
+00:30:19.520 --> 00:30:25.600
+You know language, you know and can just quickly change or re-record the test with the new
+
+00:30:26.240 --> 00:30:30.480
+Um new outcome that you're expecting from this new feature
+
+00:30:31.290 --> 00:30:38.350
+Yeah, so to build on what with what brent asked and as answer part of it myself in the old days of windows ui automation
+
+00:30:38.810 --> 00:30:45.290
+People would change an id of a control or the tab or a tab order or something that would screw up all your automation
+
+00:30:45.770 --> 00:30:47.770
+in the web world brent the
+
+00:30:48.940 --> 00:30:50.540
+If people
+
+00:30:50.540 --> 00:30:57.900
+Have auto generated or randomly named or or usually unnamed controls things get weird even in test cafe
+
+00:30:57.980 --> 00:31:03.420
+I had one control in that little suite. I wrote that didn't have an easy way to access
+
+00:31:03.500 --> 00:31:05.580
+so I had to make a constant with
+
+00:31:06.540 --> 00:31:08.400
+with the
+
+00:31:08.400 --> 00:31:12.800
+Totally ugly selector name and we went back and changed it later
+
+00:31:13.200 --> 00:31:19.280
+But the way you get around those tests breaking is you you give your controls ids with sensible names
+
+00:31:19.760 --> 00:31:21.760
+That makes them easier to access
+
+00:31:22.400 --> 00:31:25.600
+So which is one of the reasons I think it's critical
+
+00:31:25.920 --> 00:31:31.840
+Whether you're using selenium or test cafe or any of the other tools around this is that for that
+
+00:31:32.320 --> 00:31:35.680
+Unit level that basic bvt of ui wouldn't be unit level test
+
+00:31:35.920 --> 00:31:40.160
+But that basic bvt of ui like are my controls there and they do
+
+00:31:40.560 --> 00:31:43.840
+I'm beginning not testing logic is the stuff where I want it to be
+
+00:31:44.400 --> 00:31:48.480
+Have the devs write that because they're going to feel that pain right away and go fix
+
+00:31:49.280 --> 00:31:51.280
+Yeah, and I mean
+
+00:31:51.760 --> 00:31:56.800
+We don't have qa on our team, but if they if they go oh wait, this is stupid
+
+00:31:56.880 --> 00:32:03.200
+Why am I doing it this way? That's such an efficiency boom rather than the if you have a like there are some
+
+00:32:03.900 --> 00:32:09.920
+organizations where a tester writes test cases and an automation team goes to automate them and the back and
+
+00:32:10.240 --> 00:32:12.720
+forth between those layers and the developer
+
+00:32:13.440 --> 00:32:17.600
+Just it's it's an inefficient game of ping pong that drives me nuts
+
+00:32:18.000 --> 00:32:22.480
+So let's take care of and maybe if you have that automation team, which i'm not a fan of
+
+00:32:23.040 --> 00:32:30.160
+I'm not against having qa teams. I think it makes sense, especially in a in a ui centric application, but get that basic
+
+00:32:30.960 --> 00:32:35.680
+Testing that that first level of testing done by the dev team have them own those tests
+
+00:32:36.080 --> 00:32:42.240
+Because if not you're going to be playing a constant game of back and forth and back and forth the entire time you're building your product
+
+00:32:42.560 --> 00:32:44.800
+And it's just a horrible way to make software
+
+00:32:45.360 --> 00:32:47.360
+That's a that's a good point actually
+
+00:32:48.400 --> 00:32:51.040
+And one of the things we discovered is yes
+
+00:32:51.680 --> 00:32:58.800
+Uh test cafe will record a test saying is the 13th child of this particular parent because you haven't actually given it an id
+
+00:32:59.600 --> 00:33:02.960
+And yeah, something will break pretty quickly at that particular point
+
+00:33:03.520 --> 00:33:06.080
+Um, which is why we also have
+
+00:33:07.840 --> 00:33:10.240
+Not only pure if you like css
+
+00:33:10.960 --> 00:33:12.000
+um
+
+00:33:12.000 --> 00:33:16.800
+Classes and ids that we can search for and use and all that kind of stuff. We also have
+
+00:33:17.600 --> 00:33:19.360
+the ability to
+
+00:33:19.360 --> 00:33:21.360
+um have
+
+00:33:23.230 --> 00:33:26.190
+Format format framework specific
+
+00:33:26.730 --> 00:33:31.070
+Um selectors, so if you're using react for example react is
+
+00:33:31.790 --> 00:33:38.430
+If you like notorious for hiding things from you because it creates an old separate dom and you know
+
+00:33:38.910 --> 00:33:45.230
+What do we do about that in test cafe? Well answer is we have a react
+
+00:33:46.510 --> 00:33:50.270
+plugin if you like which knows about react and knows how to get
+
+00:33:50.830 --> 00:33:57.310
+uh to a particular control or a particular element in the react dom tree to be able to
+
+00:33:58.650 --> 00:34:00.650
+ascertain its
+
+00:34:01.950 --> 00:34:03.630
+status and
+
+00:34:03.630 --> 00:34:06.140
+What it's showing or whatever
+
+00:34:06.140 --> 00:34:11.740
+But yeah, that's an excellent way of putting it if your developers can't write the test then
+
+00:34:12.620 --> 00:34:14.620
+Nobody else could
+
+00:34:14.940 --> 00:34:22.380
+Zen and the art of motorcycle maintenance a book on the philosophy of quality basically says quality and care are two sides of the same coin
+
+00:34:22.860 --> 00:34:26.140
+If I look at my work, if I look at a string of random
+
+00:34:27.310 --> 00:34:33.870
+Glued greater than signs and strings that that that is a thing in my test. I am not proud of that work
+
+00:34:34.270 --> 00:34:40.190
+Right, and I want to be proud of what I make whether it's a test or production code or or even a project
+
+00:34:40.190 --> 00:34:42.910
+I like to be proud of my work. Uh, I want to
+
+00:34:44.320 --> 00:34:46.320
+Ask you a different question
+
+00:34:46.640 --> 00:34:49.600
+And I think it's fair for because again a lot of people
+
+00:34:50.640 --> 00:34:56.080
+I don't I don't think it's any mystery to you. There are more selenium users and there are test cafe users
+
+00:34:56.240 --> 00:35:01.680
+I haven't looked up that number, but I'm pretty sure I can say that I feel I have a high confidence. That's correct
+
+00:35:02.720 --> 00:35:08.160
+What are some for the selenium crowd maybe because i'll get questions about this maybe let's preempt some of those
+
+00:35:08.560 --> 00:35:16.880
+What are some things you think selenium does better than test cafe or or or a reason you would use selenium in some instance over test cafe?
+
+00:35:18.720 --> 00:35:23.120
+that's a question that I really could not answer because I
+
+00:35:24.000 --> 00:35:27.360
+Personally have never used selenium. So I
+
+00:35:28.160 --> 00:35:29.980
+I
+
+00:35:29.980 --> 00:35:35.820
+I just don't know. I am to officially outsource that question then because I don't know either
+
+00:35:36.540 --> 00:35:37.980
+I
+
+00:35:37.980 --> 00:35:41.100
+I mean I get I get the point that selenium has been around
+
+00:35:41.900 --> 00:35:43.420
+the longest
+
+00:35:43.420 --> 00:35:44.840
+so
+
+00:35:44.840 --> 00:35:48.440
+So actually I have one maybe we can talk through because I haven't thought about this
+
+00:35:48.440 --> 00:35:51.640
+But I think I think I can talk through it. Maybe you can help me with it
+
+00:35:52.200 --> 00:35:53.160
+is
+
+00:35:53.480 --> 00:36:00.520
+One of the things that were built on top of selenium is selenium grid the ability to have a basically a server farm run a whole
+
+00:36:00.520 --> 00:36:01.960
+bunch of things
+
+00:36:01.960 --> 00:36:05.720
+you test across a whole bunch of browsers and a whole bunch of
+
+00:36:06.500 --> 00:36:08.250
+permutations
+
+00:36:08.250 --> 00:36:13.370
+I'm as I say that because I brought i'm just trying to think I think I could duplicate
+
+00:36:13.770 --> 00:36:16.170
+All of that in a modern ci system
+
+00:36:16.170 --> 00:36:17.290
+Is that something that's come up with you?
+
+00:36:17.290 --> 00:36:21.610
+Has anybody ever asked like I want to run this across on every build across
+
+00:36:22.170 --> 00:36:24.410
+16 different browser and os flavors
+
+00:36:24.810 --> 00:36:30.570
+Would they just use test cafe on something like browser stack or like what will be your what would be your answer to that?
+
+00:36:31.050 --> 00:36:37.370
+That question that's something that we are continuing to improve. Let's put it like that the ability to run
+
+00:36:39.550 --> 00:36:41.550
+Test suites concurrently
+
+00:36:41.550 --> 00:36:43.550
+and
+
+00:36:43.550 --> 00:36:45.240
+it's
+
+00:36:45.240 --> 00:36:48.600
+Quite unquite difficult, but it's still it works at the moment. We
+
+00:36:49.680 --> 00:36:52.080
+The other thing is to go back is
+
+00:36:54.080 --> 00:36:56.080
+We get an awful lot
+
+00:36:56.720 --> 00:36:58.720
+these days
+
+00:36:59.980 --> 00:37:04.380
+Of people are using sites like source labs
+
+00:37:05.980 --> 00:37:10.700
+To run their application on multiple different mobile devices
+
+00:37:11.580 --> 00:37:15.740
+And yes, we'll do that in quite parallel. Uh, unquote
+
+00:37:16.650 --> 00:37:17.770
+Um
+
+00:37:17.770 --> 00:37:23.370
+Which again, you know selenium is more geared towards your desktop browser
+
+00:37:24.310 --> 00:37:28.730
+Experience and not necessarily. Oh i'm running it on a very smaller
+
+00:37:29.610 --> 00:37:36.970
+Very smaller and a smaller screen and you know, these things disappear until you hit the hamburger menu
+
+00:37:37.370 --> 00:37:39.370
+Icon and stuff like that
+
+00:37:39.850 --> 00:37:44.090
+The way test cafe works is it uses a proxy server essentially
+
+00:37:45.000 --> 00:37:46.040
+so
+
+00:37:46.040 --> 00:37:49.400
+It's end-to-end testing and test cafes in the middle. So
+
+00:37:50.120 --> 00:37:53.160
+If your browser asks for a particular, you know
+
+00:37:54.790 --> 00:38:02.170
+HTTP request test cafe receives the HTTP request recognizes it sends it on to the actual back end
+
+00:38:02.650 --> 00:38:10.650
+And then when the back end replies will then pass that reply over to the browser and um
+
+00:38:11.770 --> 00:38:13.900
+Um
+
+00:38:13.900 --> 00:38:18.780
+You know inject if you like it's uh its own test, uh information
+
+00:38:19.500 --> 00:38:25.340
+Uh so that it can verify that test is running. Okay, and all the rest of it that server
+
+00:38:26.460 --> 00:38:28.460
+proxy server will
+
+00:38:28.860 --> 00:38:30.860
+work with multiple
+
+00:38:30.920 --> 00:38:32.920
+browsers at the same time
+
+00:38:33.420 --> 00:38:37.180
+So you can basically with test cafe set it up so that
+
+00:38:38.620 --> 00:38:40.620
+You know it'll run
+
+00:38:40.940 --> 00:38:42.940
+even on a desktop
+
+00:38:43.980 --> 00:38:50.780
+Chrome and firefox and edge all at the same time running the same test for the same application and so on so forth
+
+00:38:51.340 --> 00:38:59.180
+But I would guess that selenium if you like does it better because it's it's an actual application. It's uh, you know, it's
+
+00:39:00.600 --> 00:39:03.560
+Giving the whole hog as it were
+
+00:39:03.800 --> 00:39:06.250
+Yeah, I think in
+
+00:39:06.410 --> 00:39:12.970
+So let me talk through this. I haven't thought through this completely but because the installation is just an npm install
+
+00:39:13.610 --> 00:39:20.170
+Yeah, uh, it's it makes it fairly easy. Well, not fairly makes it extremely easy to add to my
+
+00:39:20.970 --> 00:39:24.490
+My ci workflow. I just added I add a step that's
+
+00:39:25.130 --> 00:39:30.890
+Uh, there's a setup step for npm install and then it runs the test results get reported and I can definitely
+
+00:39:31.950 --> 00:39:38.350
+in parallel send that that that step to multiple locations whether it's on a farm or
+
+00:39:38.910 --> 00:39:43.150
+Or I can specify where I want those to run. So that should work and i'm sure and again
+
+00:39:43.230 --> 00:39:49.550
+I have used selenium protractor fairly extensively, but again, this is years ago. I I don't have the data
+
+00:39:49.630 --> 00:39:53.710
+But uh, my experiences are similar, but i'm actually looking forward to hearing
+
+00:39:54.350 --> 00:39:59.790
+Uh what our listeners have to say and if you're fairly new to the podcast if you go back to
+
+00:40:01.070 --> 00:40:04.050
+About a year ago one of the early posts from 2019
+
+00:40:04.930 --> 00:40:08.850
+I think that's what it was. We had jason huggins on the podcast
+
+00:40:09.570 --> 00:40:11.820
+in response to a tweet
+
+00:40:12.300 --> 00:40:16.220
+Actually, this was better brought up a minute ago. We're talking about ids
+
+00:40:16.700 --> 00:40:22.380
+I had come across a blog post and someone talking about how they solved the problem in selenium
+
+00:40:22.700 --> 00:40:24.700
+And they're very proud of this code
+
+00:40:24.700 --> 00:40:27.660
+And I looked and talked about looking at code and saying am I proud of this?
+
+00:40:27.740 --> 00:40:30.300
+They were very proud of code that I thought was
+
+00:40:31.180 --> 00:40:32.440
+ugly
+
+00:40:32.500 --> 00:40:36.040
+Unfarrassingly ugly. It was a long string of
+
+00:40:36.680 --> 00:40:40.200
+Of the selector they had to choose to get it get access to the control
+
+00:40:41.480 --> 00:40:45.160
+And I tweeted something crass like reason
+
+00:40:46.420 --> 00:40:48.420
+438 why I hate selenium
+
+00:40:49.080 --> 00:40:56.680
+And the community exploded against me and told me I I couldn't hate selenium and it's not I don't actually I I think selenium is great
+
+00:40:57.160 --> 00:40:59.640
+Uh, it solves it solves a huge problem
+
+00:40:59.880 --> 00:41:04.040
+What I didn't like is that it enabled that stuff. This is true also in test cafe
+
+00:41:04.520 --> 00:41:07.320
+but it started a nice little war, uh, one of the
+
+00:41:07.800 --> 00:41:13.480
+the contributors to web driver was extremely mad at me and and gave me uh,
+
+00:41:13.560 --> 00:41:15.800
+I'll just say some grief over twitter
+
+00:41:16.520 --> 00:41:18.720
+and I
+
+00:41:18.800 --> 00:41:23.600
+We ended up having jason on the show to talk about it and he was actually he was super pleasant and he got it and
+
+00:41:23.840 --> 00:41:28.000
+He asked he tried to bait brent and I with a uh, a question
+
+00:41:28.480 --> 00:41:32.320
+Well, should should selenium just not support selector? So that make it easier said no
+
+00:41:32.560 --> 00:41:37.920
+We should you've you've you have legacy of a million different tests. You can't just go break them
+
+00:41:38.480 --> 00:41:42.560
+Uh, I think in a way he was acknowledging it that part kind of created a monster
+
+00:41:42.560 --> 00:41:44.880
+But the point I wanted to make was not that I hate selenium
+
+00:41:45.520 --> 00:41:51.760
+Uh, I hate hated the way it was being used the way people like again going back to my statement before
+
+00:41:52.400 --> 00:41:54.680
+which is
+
+00:41:54.680 --> 00:41:57.960
+Don't don't settle for having to access controls like that
+
+00:41:58.520 --> 00:42:01.880
+And I got all kinds of well, we can't get developers to do that
+
+00:42:02.120 --> 00:42:09.320
+Okay, if you if you're not collaborating with your development team if you're in a dedicated testing role and you're not collaborating with your dev team
+
+00:42:09.800 --> 00:42:11.480
+That's the problem
+
+00:42:11.480 --> 00:42:13.880
+Solve that problem. You'll solve all kinds of other things, too
+
+00:42:14.520 --> 00:42:16.120
+so anyway, uh
+
+00:42:16.120 --> 00:42:19.640
+We we support everyone if in fact I will put an open invitation out
+
+00:42:19.960 --> 00:42:23.960
+If someone wants to come what else wants to come on the show and tell and tell me why?
+
+00:42:24.920 --> 00:42:26.280
+uh
+
+00:42:26.280 --> 00:42:29.640
+Why selenium is so much more awesome than test cafe?
+
+00:42:30.040 --> 00:42:34.620
+We could do that too and I will offer that to you julian as free competitive analysis
+
+00:42:36.920 --> 00:42:39.800
+I'll tell you I'll tell you if you if you want to do that
+
+00:42:40.440 --> 00:42:44.840
+that's somebody on and uh have me be there as well and
+
+00:42:45.800 --> 00:42:53.080
+You know have a big discussion about this versus why and i'm gonna even go more meta on this and say
+
+00:42:54.120 --> 00:42:56.040
+uh
+
+00:42:56.040 --> 00:43:01.400
+Don't use a tool because it's the one everyone else is using don't follow someone
+
+00:43:01.800 --> 00:43:05.880
+Because that's the guy you think you want to follow form your own opinions
+
+00:43:06.520 --> 00:43:09.480
+Whether it's around philosophy approach quality
+
+00:43:10.120 --> 00:43:17.400
+Test automation tools do your research and form your own opinions. I can tell you i've formed mine and mine is that
+
+00:43:17.960 --> 00:43:21.720
+uh test cafe is very easy to use and
+
+00:43:22.260 --> 00:43:25.320
+Consistently runs my tests across every browser. I could throw at it
+
+00:43:25.800 --> 00:43:29.240
+It does seem to me that intellectual laziness and
+
+00:43:30.040 --> 00:43:35.400
+In the knowledge work business is a great way to limit your career
+
+00:43:36.120 --> 00:43:38.120
+Um one million percent. Yes
+
+00:43:38.920 --> 00:43:42.760
+The and then for those listeners who are curious
+
+00:43:43.920 --> 00:43:47.760
+Alan's uh ui rant was episode 102
+
+00:43:48.400 --> 00:43:51.280
+And the follow-up 103 was the one with
+
+00:43:52.760 --> 00:43:54.760
+Jason
+
+00:43:54.920 --> 00:44:01.160
+I I will look up those and um, um listen to them afterwards. I just like to say, um
+
+00:44:03.180 --> 00:44:06.700
+I had a thought and it's gone. Um, it sounded like me
+
+00:44:09.100 --> 00:44:11.100
+No, it's completely gone
+
+00:44:12.460 --> 00:44:17.980
+Actually, I was looking at um angry weasel ab testing the website and um
+
+00:44:18.940 --> 00:44:25.100
+You are responsive or the site is responsive. So it's a word. It's just a wordpress site. Yeah
+
+00:44:27.740 --> 00:44:29.340
+Actually, I should bring this up
+
+00:44:29.580 --> 00:44:35.180
+I used to give a workshop at conferences called tools you can use a bunch of different tools that any tester could use for testing
+
+00:44:35.500 --> 00:44:40.780
+And I use test cafe as part of that i've since open sourced that I know one of our listeners chris kentz has
+
+00:44:41.340 --> 00:44:46.460
+Given that workshop and anyone can but I used a quick little test cafe script
+
+00:44:47.020 --> 00:44:51.340
+uh to do some automation of angry weasel.com and
+
+00:44:52.410 --> 00:44:57.210
+And show that as a demo like this is this is how easy it is. It was not very much code
+
+00:44:57.930 --> 00:44:58.810
+Yeah
+
+00:44:58.810 --> 00:45:01.370
+The I I just remembered what I was talking about. Um
+
+00:45:01.930 --> 00:45:04.570
+You were saying about, um developers
+
+00:45:05.210 --> 00:45:08.680
+um
+
+00:45:08.680 --> 00:45:10.680
+not being um
+
+00:45:11.540 --> 00:45:16.360
+Exploratory enough if you like and just plumping for whatever everybody else is using
+
+00:45:17.080 --> 00:45:21.960
+Um, this is something that we we come across with regard to our trial versions
+
+00:45:22.440 --> 00:45:26.200
+Essentially the trial versions of our products are there so you can
+
+00:45:26.680 --> 00:45:33.800
+Play around with them and see if they're actually going to suit your particular application your particular company and uh
+
+00:45:34.040 --> 00:45:39.320
+Whether you should actually buy them and all the rest of it and I always say to developers when they're
+
+00:45:39.960 --> 00:45:43.800
+When they're saying well, you know, why why should I buy yours and not?
+
+00:45:43.800 --> 00:45:46.700
+Um, you know competitive be your competency
+
+00:45:47.640 --> 00:45:52.440
+And I just say to be honest, you know writing user interface controls
+
+00:45:52.760 --> 00:45:57.400
+You have two audiences you have the user and you have the developer
+
+00:45:58.040 --> 00:45:59.080
+and
+
+00:45:59.080 --> 00:46:02.540
+So play around with it use it as a developer
+
+00:46:03.320 --> 00:46:09.560
+And show it to your users and see if they like it and the same thing with test cafe
+
+00:46:10.180 --> 00:46:11.720
+essentially
+
+00:46:11.720 --> 00:46:13.720
+Try it use it
+
+00:46:15.260 --> 00:46:17.260
+You know do a
+
+00:46:18.380 --> 00:46:23.740
+Contest if you like between selenium or cypress or one of the other big ones
+
+00:46:24.380 --> 00:46:26.620
+Uh versus test cafe
+
+00:46:27.180 --> 00:46:33.340
+How easy is it to use? Does it suit your particular application? Does it suit suit your particular?
+
+00:46:34.360 --> 00:46:36.700
+environment
+
+00:46:36.700 --> 00:46:37.740
+And
+
+00:46:37.740 --> 00:46:40.620
+Go from there if you plump for one brilliant
+
+00:46:40.860 --> 00:46:45.420
+I'm not going to argue with you if you say, you know, we did a test we checked, you know
+
+00:46:46.060 --> 00:46:51.420
+You versus selenium versus cypress versus weber and we like selenium better
+
+00:46:52.280 --> 00:46:55.240
+fine, brilliant you actually did the work to
+
+00:46:56.040 --> 00:46:57.000
+say
+
+00:46:57.000 --> 00:46:57.960
+that
+
+00:46:57.960 --> 00:47:03.560
+Selenium was better and i'm not going to argue with that i'm not going to jump up and down and say well we use javascript
+
+00:47:03.560 --> 00:47:05.080
+We use javascript
+
+00:47:05.080 --> 00:47:09.160
+You know, you know, it's it's nothing nothing to do with that. I
+
+00:47:10.720 --> 00:47:15.440
+Goes back to that whole, you know writing crappy code or whatever or writing
+
+00:47:16.160 --> 00:47:20.480
+Code which you look at and go. Holy cow. Is there any way to make that simpler?
+
+00:47:21.200 --> 00:47:28.080
+Uh, maybe if I switch my framework, it would be simpler to write and to maintain and to use and all that kind of stuff
+
+00:47:28.720 --> 00:47:30.720
+but at that point it's
+
+00:47:30.720 --> 00:47:32.240
+you and
+
+00:47:32.240 --> 00:47:34.240
+your developer mindset
+
+00:47:34.800 --> 00:47:37.680
+Whichever thing works best for you go for it
+
+00:47:38.840 --> 00:47:40.840
+Yeah, same same advice for me
+
+00:47:41.240 --> 00:47:44.120
+Yes, brandt. Sorry. Yeah, this is to julian
+
+00:47:45.800 --> 00:47:49.880
+Julian has so are you familiar with the work of nicole forstman?
+
+00:47:51.790 --> 00:47:54.350
+She recently published a book called accelerate
+
+00:47:56.270 --> 00:48:02.990
+I just like to point out now for our listeners. This is the 37th podcast in a row. We've mentioned the book accelerate
+
+00:48:03.310 --> 00:48:05.550
+Go on brandt. Yeah, we we
+
+00:48:06.510 --> 00:48:10.800
+Um, so what she did is she went back and did
+
+00:48:11.680 --> 00:48:15.360
+A research study around sort of typical agile practices
+
+00:48:16.560 --> 00:48:17.920
+and
+
+00:48:17.920 --> 00:48:19.920
+she concluded
+
+00:48:20.600 --> 00:48:22.600
+many interesting things
+
+00:48:22.600 --> 00:48:24.220
+um
+
+00:48:24.220 --> 00:48:26.380
+one of them was that
+
+00:48:27.760 --> 00:48:30.640
+Uh developers owning their testing
+
+00:48:31.360 --> 00:48:36.320
+Owning the testing for a company was highly correlated with
+
+00:48:38.410 --> 00:48:40.650
+Uh the company's success and productivity
+
+00:48:41.850 --> 00:48:43.850
+uh, however
+
+00:48:44.330 --> 00:48:46.330
+qa owning
+
+00:48:46.410 --> 00:48:48.410
+the the tests
+
+00:48:48.890 --> 00:48:52.730
+uh was not at all correlated with
+
+00:48:54.350 --> 00:48:56.350
+highly valuable business results
+
+00:48:57.130 --> 00:48:58.890
+and um
+
+00:48:58.890 --> 00:49:04.570
+This is somewhat towards the salimian salimian comment and perhaps test cafe
+
+00:49:05.370 --> 00:49:08.810
+But I wonder if if companies in your sorts of business
+
+00:49:10.200 --> 00:49:15.760
+Shouldn't in some regards help your your customers?
+
+00:49:17.180 --> 00:49:18.700
+um
+
+00:49:18.700 --> 00:49:22.140
+I need those sort of goals. Uh, meaning
+
+00:49:23.260 --> 00:49:25.260
+Right. Sure. If you don't have an id
+
+00:49:26.140 --> 00:49:32.140
+Uh, if you don't have ids we're gonna fall back and we'll still succeed within test cafe
+
+00:49:32.300 --> 00:49:34.620
+But now you're gonna have the high maintenance
+
+00:49:36.060 --> 00:49:39.180
+Uh version of your recorded test rate. Um
+
+00:49:40.560 --> 00:49:47.840
+I'm wondering if things like annoying warnings or or or something along those lines to sort of
+
+00:49:50.200 --> 00:49:54.680
+Start changing the their engineering behavior towards
+
+00:49:55.320 --> 00:50:01.320
+towards things that are that are known to produce positive business outcomes like it seems to me
+
+00:50:02.430 --> 00:50:05.150
+Uh if test cafe was able to say
+
+00:50:06.840 --> 00:50:12.120
+Hey, we not only just do tests, but we actually help you change
+
+00:50:12.520 --> 00:50:15.800
+Uh the culture of your business
+
+00:50:16.860 --> 00:50:19.900
+Right. We're an ally to your business as well as our own
+
+00:50:22.010 --> 00:50:23.790
+anyway
+
+00:50:23.790 --> 00:50:29.710
+That's an interesting viewpoint and i'll have a chat with the developers. We already produce a
+
+00:50:30.510 --> 00:50:33.950
+Uh a product for c-sharp developers and javascript developers
+
+00:50:34.830 --> 00:50:36.830
+called code rush which
+
+00:50:37.070 --> 00:50:42.030
+Helps you analyze your code and suggest ways of improving your code
+
+00:50:43.150 --> 00:50:44.830
+like it already
+
+00:50:44.830 --> 00:50:46.350
+and
+
+00:50:46.350 --> 00:50:51.230
+That seems to be or what you're saying there brent seems to be something that we could
+
+00:50:51.870 --> 00:50:54.110
+do with test cafe whereby
+
+00:50:54.830 --> 00:50:55.790
+as a
+
+00:50:55.790 --> 00:51:02.510
+An example like the stupid example I gave earlier, you know instead of hey, you're selecting the 13th child of this parent
+
+00:51:02.830 --> 00:51:04.860
+Why don't you give it a name?
+
+00:51:05.180 --> 00:51:11.180
+And here's a name for you or something like that. Let me that's an interesting viewpoint
+
+00:51:11.900 --> 00:51:17.980
+And I I've just bought it on amazon and it's coming tomorrow. So there you go. It's a great book
+
+00:51:18.940 --> 00:51:23.420
+Um, okay, that was my turn to forget what I was going to say as a photo
+
+00:51:25.420 --> 00:51:27.420
+Yeah, it's the end of the week
+
+00:51:27.900 --> 00:51:30.860
+Mind you every day seems to be the end of the week
+
+00:51:31.900 --> 00:51:36.460
+Oh, yeah. No, my my recurring comment there is every day is tuesday
+
+00:51:38.090 --> 00:51:43.770
+Right. It's not monday. It's like the not the typical misery of monday. It's it's not oh wend's day
+
+00:51:43.850 --> 00:51:47.130
+Hey, we're halfway through it is most certainly not friday
+
+00:51:48.910 --> 00:51:54.830
+All right with with that I with us all being confused by the day of the week
+
+00:51:55.390 --> 00:51:58.030
+but not being confused on uh
+
+00:51:59.870 --> 00:52:01.870
+branch shut up
+
+00:52:03.230 --> 00:52:08.670
+But not being confused on having a great and fun time talking to julian today
+
+00:52:09.070 --> 00:52:11.260
+Uh, we need to close
+
+00:52:11.500 --> 00:52:18.540
+Well, thank you very much. Alan and brent for invite me on to the uh, the podcast. I I must say I enjoyed it very much
+
+00:52:19.020 --> 00:52:25.500
+We're super glad to have you here. And I uh, I say again if you uh invite somebody who wants to have a discussion
+
+00:52:26.460 --> 00:52:29.420
+A versus b then I'll certainly come back
+
+00:52:30.140 --> 00:52:34.220
+Yeah, sure. Let us know. Let us know. All right. Great. How do you hear?
+
+00:52:35.020 --> 00:52:37.740
+Brent what were you saying? I said hear that hugs
+
+00:52:40.140 --> 00:52:42.780
+We'll see if one of the listeners uh routes it to a
+
+00:52:43.420 --> 00:52:45.580
+Yeah, we'll see what happens and again
+
+00:52:45.660 --> 00:52:48.620
+I think it's I think again. I just want to close and say
+
+00:52:49.420 --> 00:52:52.220
+critical thinking blind faith in anything
+
+00:52:53.020 --> 00:52:54.060
+is
+
+00:52:54.060 --> 00:53:01.340
+Whether it's ideology or tools or anything in between is going to get you in a heap mess of trouble
+
+00:53:02.300 --> 00:53:03.340
+so
+
+00:53:03.340 --> 00:53:05.180
+with that message, uh
+
+00:53:05.180 --> 00:53:07.820
+Thanks again. Julian good talking with you brent
+
+00:53:08.380 --> 00:53:10.060
+And we'll talk to
+
+00:53:10.060 --> 00:53:14.220
+You too and our other three listeners sometime soon. Everyone say goodbye
+
+00:53:14.220 --> 00:53:17.200
+Bye, bud
+

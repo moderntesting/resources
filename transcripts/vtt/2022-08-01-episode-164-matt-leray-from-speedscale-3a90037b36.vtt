@@ -1,0 +1,1736 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.600
+So my name is Matt LeRae and I hate writing tests. And so I thought it would be super ironic
+
+00:00:05.600 --> 00:00:08.800
+if I started a company that was in the testing space.
+
+00:00:12.510 --> 00:00:19.390
+Welcome to AV testing podcast, your modern testing podcast. Your hosts, Alan and Brent,
+
+00:00:19.390 --> 00:00:24.830
+will be here to guide you through topics on testing, leadership, Agile, and anything else
+
+00:00:24.830 --> 00:00:31.070
+that comes to mind. Now on with the show. Hey, everyone. I am Alan. I'm here with Brent.
+
+00:00:31.070 --> 00:00:35.550
+Brent, say hi. Hi, everyone. And we have another guest. We have Matt. Matt, say hi.
+
+00:00:35.550 --> 00:00:38.590
+Hey, nice to meet you. Hey, welcome, Matt. I know
+
+00:00:39.390 --> 00:00:43.310
+what Matt does and where he works, but give us the intro bio, Matt.
+
+00:00:43.310 --> 00:00:48.430
+Yeah. So my name is Matt LeRae and I hate writing tests. And so I thought it would be
+
+00:00:48.430 --> 00:00:54.590
+super ironic if I started a company that was in the testing space. And so the name of the company
+
+00:00:54.670 --> 00:01:02.510
+is SpeedScale. And we use automated traffic replay to validate your software. So you don't
+
+00:01:02.510 --> 00:01:05.710
+have to write tests anymore. And that's what I do for a living nowadays.
+
+00:01:07.790 --> 00:01:12.750
+Can you say that sentence again? Because I don't think on the podcast I have heard a
+
+00:01:12.750 --> 00:01:19.310
+sentence that I love more. Say it again. So I hate writing tests. And so the sentence is,
+
+00:01:19.310 --> 00:01:27.150
+I'll say multiple sentences, is because I'm so lazy and I do not wish to, you know, like write,
+
+00:01:27.150 --> 00:01:32.670
+like do integration tests and like end to end tests and all that. We came up with this idea
+
+00:01:32.670 --> 00:01:37.550
+of recording production API calls, like using it's like a like a distributed wire shark,
+
+00:01:38.270 --> 00:01:45.310
+basically, we take all the traffic, then we massage it into incoming test cases. I mean,
+
+00:01:45.310 --> 00:01:48.990
+we call them test cases, but it's really just incoming user transactions. And then we take the
+
+00:01:48.990 --> 00:01:54.270
+other half of the traffic, the traffic, and we turn it into automated mocks. So that means like,
+
+00:01:54.270 --> 00:02:01.390
+let's say your service depends on the x, you know, Xbox Live API, or, you know, depends on Gmail or
+
+00:02:01.390 --> 00:02:06.430
+something like that. Our service will read what happens in production, and we will pretend to be
+
+00:02:06.430 --> 00:02:11.230
+any of those API's so that you can do like an integration test without actually building an
+
+00:02:11.230 --> 00:02:16.190
+integration test environment or writing tests. And we do that by like recording like wire shark
+
+00:02:16.190 --> 00:02:21.870
+recording what's actually happening. Love it. I'm ready to go into Q&A already. Love it. Love it.
+
+00:02:21.870 --> 00:02:28.430
+Love everything about it. Love, love, love. So let me before you go into Q&A, I want to
+
+00:02:28.430 --> 00:02:33.390
+talk about why this is important for our, I want to actually add some context. And also I want to
+
+00:02:33.390 --> 00:02:39.790
+point out, this is the quickest ever, ever in the history of 164 episodes, the A.B. testing
+
+00:02:39.790 --> 00:02:44.830
+podcast. We've actually got to a conversation about something substantial in the first three
+
+00:02:44.830 --> 00:02:52.110
+minutes. And I am not kidding. Oh, yeah, we had this other agenda. So, uh, no, no, no, no,
+
+00:02:52.110 --> 00:02:59.470
+no, be quiet, be quiet, be quiet. I'm going to go on often in the, the testing world. And there's
+
+00:02:59.470 --> 00:03:03.950
+these different bubbles of where people are. And I talked to Matt a little bit before you got here,
+
+00:03:03.950 --> 00:03:08.510
+right around generalizing specialists and how we sort of saw the move to agile working.
+
+00:03:09.070 --> 00:03:15.310
+I think a lot of times people write tests. Um, there are teams and this hurts my soul that we
+
+00:03:15.310 --> 00:03:21.230
+have teams dedicated to nothing except writing automation and usually writing some UI automation
+
+00:03:21.230 --> 00:03:26.590
+and not being smart about it or converting manual tests to automated tests, which is again,
+
+00:03:26.590 --> 00:03:31.310
+just this is smart. This is like, let's take some stuff we already have
+
+00:03:32.110 --> 00:03:35.390
+and let's turn it into something that's actually even more valuable.
+
+00:03:35.470 --> 00:03:39.230
+I'm going to let Brent ask his questions, but I know Bing did something like this a couple
+
+00:03:39.230 --> 00:03:43.070
+of times too. We had a little bit of things that Microsoft had a little small scale. Like,
+
+00:03:43.070 --> 00:03:47.390
+let me do some traffic replay to try and try and see what Bing would look like if it doubled
+
+00:03:47.390 --> 00:03:54.030
+from 5,000 to 10,000 users. Oh, there's, there's a, yeah, there is, there's a lot on, on sort of
+
+00:03:54.030 --> 00:04:01.150
+traffic replay shadow environments is another thing where, where essentially you have a separate
+
+00:04:01.150 --> 00:04:07.470
+environment where your, your, your proposed code is deployed. And then you just automatically
+
+00:04:07.470 --> 00:04:14.510
+clone the traffic across both environments. There's a lot of techniques here. I don't know.
+
+00:04:15.150 --> 00:04:20.590
+Like I, I think now around, okay, what are the frameworks within Microsoft that's really
+
+00:04:20.590 --> 00:04:26.020
+helping to emphasize this. And I can't think of a single one, right? And it's because it's hard.
+
+00:04:26.740 --> 00:04:34.580
+It's hard and it's hard to make it generalize. And so when, when teams reorganize, things get forgotten,
+
+00:04:34.580 --> 00:04:39.940
+people like, Oh, that was interesting, but we'd have to spend 18 years to port it. It's hard.
+
+00:04:40.690 --> 00:04:46.370
+So great. If, if Matt and team have, have essentially, have you, are you solving this
+
+00:04:46.370 --> 00:04:53.170
+through a SAS play or do you, do you have to install libraries from your team? Like,
+
+00:04:53.250 --> 00:04:57.650
+Yeah, good question. So the, so first thing I'll say is it is really hard. It's harder than I
+
+00:04:57.650 --> 00:05:02.210
+thought it would be. But fortunately, as my co-founder says, I really enjoy pain. I really
+
+00:05:02.210 --> 00:05:08.930
+enjoy the suffering that comes from solving this problem. It just, it just fulfills me as a person.
+
+00:05:08.930 --> 00:05:13.730
+But it is actually really hard. But, you know, it turns out there's like, once you get past a
+
+00:05:13.730 --> 00:05:18.930
+few heuristics, a lot of it isn't actually that difficult. When you get past like,
+
+00:05:18.930 --> 00:05:24.930
+re-signing, you know, JWT's or JOTS or tokens, authorization, authentication, you know,
+
+00:05:24.930 --> 00:05:29.810
+you get into like, being able to change fields and database queries. A lot of the problems like
+
+00:05:29.810 --> 00:05:36.450
+an 80-20 rule, but it is a SAS play, which is the original question is a SAS play. Although we are
+
+00:05:36.450 --> 00:05:40.370
+able to take it on premise later, but right now, because we're kind of small still, we're,
+
+00:05:40.370 --> 00:05:44.450
+we're keeping it in house so that we can see the data and we can figure out what those heuristics
+
+00:05:44.450 --> 00:05:49.650
+and patterns are, as new ones come up. But yeah, it's SAS for now, the number one thing people always
+
+00:05:50.530 --> 00:05:57.330
+don't like is sending data to someone else, right for this. And so we have a data loss prevention
+
+00:05:57.330 --> 00:06:00.930
+thing we do, which is basically like it's like a masking engine. It's just a little,
+
+00:06:00.930 --> 00:06:07.890
+little bit smarter, because it'll, it'll find the same, like not allowed like PII data, it'll say,
+
+00:06:07.890 --> 00:06:12.930
+Hey, if I see Alan over here on an inbound transaction, and I see Alan going to the
+
+00:06:12.930 --> 00:06:17.170
+database, I need to replace both Alan's with the same, excuse me, redacted information,
+
+00:06:17.170 --> 00:06:21.650
+so that it'll play back correctly. And so it's like, if we're mocking it, we're pretending to
+
+00:06:21.650 --> 00:06:25.650
+be the database, the database, meaning speed scale, we'll pretend like we know who Alan is,
+
+00:06:26.290 --> 00:06:32.690
+you know, back and forth. So without knowing, right? Without what? Without actually knowing.
+
+00:06:32.690 --> 00:06:39.570
+So you probably, you probably are hashing the detecting and hashing the string and then using
+
+00:06:39.570 --> 00:06:44.530
+that renaming the mallah, the backward string hash.
+
+00:06:48.130 --> 00:06:54.770
+Okay. Are we going back to the useless stuff at the typical part of the humor went right over your
+
+00:06:54.770 --> 00:07:01.010
+head as usual, Brent. It, it, it did. Do you guys know what a Wiseman score is from the show,
+
+00:07:01.010 --> 00:07:06.050
+Silicon Valley? I remember the name of it. Remind me and I'll remember it. So it's,
+
+00:07:06.850 --> 00:07:11.250
+it's something they made up for the show, but actually is a real mathematical formula. Like
+
+00:07:11.250 --> 00:07:15.170
+it actually works, but they made it up for the show. And it basically is a way of ranking
+
+00:07:15.170 --> 00:07:18.850
+compression algorithms by how they'll play. Of course, of course. Yeah.
+
+00:07:18.850 --> 00:07:23.010
+Middle out's the best, right? Yeah, exactly. Yeah. Middle out's the best. So my running joke
+
+00:07:23.010 --> 00:07:27.330
+with my, one of my co-founders is the first time we did this like data loss engine, uh,
+
+00:07:27.330 --> 00:07:31.010
+or first time we, we, you know, we're sending this data around, we ended up, uh, writing a
+
+00:07:31.010 --> 00:07:34.130
+negative Wiseman score compression algorithm, which if you look at the math and how that
+
+00:07:34.130 --> 00:07:37.970
+works, it means we caused it to get a lot bigger. So that's, that's a, that's a computer
+
+00:07:37.970 --> 00:07:41.490
+science first. Um, our compression algorithm made everything bigger. And the way
+
+00:07:43.730 --> 00:07:45.810
+you got to start somewhere, you got to start somewhere.
+
+00:07:47.650 --> 00:07:53.410
+So if you just start with decompressing the raw data, then, then you'll go in the right direction.
+
+00:07:54.370 --> 00:07:55.890
+You know, I'm going to take that back.
+
+00:07:57.250 --> 00:07:58.130
+What you want to do.
+
+00:07:58.130 --> 00:07:59.330
+Perhaps suggest not.
+
+00:07:59.970 --> 00:08:03.250
+Some other unsolicited advice, take all the parts of the,
+
+00:08:03.250 --> 00:08:06.930
+just take the parts you don't need and delete those smaller
+
+00:08:09.650 --> 00:08:14.450
+or, you know, just, you know, every, every other bit, just drop, drop those.
+
+00:08:14.450 --> 00:08:19.170
+I'm sure it'll just be fine. 50% compression right there. Yeah.
+
+00:08:19.170 --> 00:08:20.130
+You didn't need them anyway.
+
+00:08:22.690 --> 00:08:25.570
+Yeah. It's the extra parts that you get from my Kia, right?
+
+00:08:26.370 --> 00:08:31.170
+One of the things that we've said on the podcast years ago, years and years and years ago.
+
+00:08:31.170 --> 00:08:32.610
+That's before I had a beard.
+
+00:08:32.610 --> 00:08:38.050
+Now, one of the things, one of the things that, that we talked about here is,
+
+00:08:39.090 --> 00:08:45.410
+is one way to sort of merge. This was at a time where people were still trying to get
+
+00:08:45.410 --> 00:08:53.090
+comfortable moving from on-prem to the service space. And they were sort of duplicating their
+
+00:08:53.170 --> 00:09:00.450
+test cases. And they felt that tip meant moving my test suite to the cloud and then
+
+00:09:00.450 --> 00:09:08.770
+monitors and tests were the same thing. And so one of the things, one of the things we talked about
+
+00:09:08.770 --> 00:09:17.170
+here is, yeah, really in this new world, you should be able to use, say, local automation,
+
+00:09:17.170 --> 00:09:22.370
+to sort of drive traffic, which I think you're improving upon that, but use local automation,
+
+00:09:22.370 --> 00:09:26.930
+to drive traffic. And one of the things that we proposed was essentially,
+
+00:09:26.930 --> 00:09:34.210
+but change your validation side of the suite. That your validation should be able to use your
+
+00:09:34.210 --> 00:09:40.370
+existing telemetry and not specific validation steps to identify whether or not you have,
+
+00:09:41.170 --> 00:09:47.250
+let's say, a regression or even a live site type incident. Your thoughts on that and how
+
+00:09:47.250 --> 00:09:51.810
+was SpeedScale advanced sort of those thought processes?
+
+00:09:51.810 --> 00:09:55.250
+You guys, I don't know if you know, if you guys know where it came from. You remember the phrase
+
+00:09:56.050 --> 00:10:00.130
+pets versus cattle? The Kubernetes folks talk about this a lot. Have you guys ever heard that?
+
+00:10:00.130 --> 00:10:01.810
+No, I'm not a warrior.
+
+00:10:01.810 --> 00:10:05.330
+I heard it from Kelsey Hightower, but he credited someone else. I don't remember who it was.
+
+00:10:05.330 --> 00:10:08.530
+And follow Kelsey on Twitter. Kelsey Hightower is awesome.
+
+00:10:08.530 --> 00:10:11.650
+That's where I got it from, is on Twitter. Yeah, he's awesome. He's full of knowledge.
+
+00:10:13.330 --> 00:10:16.530
+But anyway, what it basically says, when you go to these cloud environments,
+
+00:10:17.170 --> 00:10:24.530
+you generally, you stop keeping these carefully curated servers. And instead, like a pet,
+
+00:10:24.530 --> 00:10:28.210
+we just love them, and you dress them, and you give names, and you teach them how to say certain
+
+00:10:28.210 --> 00:10:34.450
+words and whatever. And eventually, you go towards herds of cattle. And they're all going to eventually
+
+00:10:34.450 --> 00:10:38.210
+be, you're not really naming them, you're just kind of keeping them corralled or whatever.
+
+00:10:38.210 --> 00:10:42.690
+And if some of them get lost, it's not that big a deal. And so the kind of the idea is,
+
+00:10:43.330 --> 00:10:48.290
+if you take that to the world of testing, cloud testing, if you lift and shift your entire
+
+00:10:48.290 --> 00:10:52.930
+testing suite from the old thing you were doing, and you move it over to this cloud environment,
+
+00:10:52.930 --> 00:10:57.090
+you're not really getting any benefit. You might as well stay on boxes or bare metal or whatever,
+
+00:10:57.090 --> 00:11:02.770
+you know, VMs or whatever it is. And so that's, you're kind of hitting at the heart of what made
+
+00:11:02.770 --> 00:11:07.570
+us come up with the idea is like, or, you know, the problem is, I want to treat all this stuff
+
+00:11:07.570 --> 00:11:11.010
+as cattle, I want to treat it like it can be blown away, and it's no big deal. And how do
+
+00:11:11.010 --> 00:11:15.010
+you do that? Well, what if I just record a new version out of production every so often,
+
+00:11:15.010 --> 00:11:19.730
+you know, like, so what, you know, like some of our, like, we'll do it for like every hour,
+
+00:11:19.730 --> 00:11:22.930
+for instance, we'll just say, you know, every hour, we're gonna get a new copy of this stuff,
+
+00:11:22.930 --> 00:11:27.090
+like a certain sections of it or whatever. And then, you know, reproduce that and bring it back.
+
+00:11:27.090 --> 00:11:31.970
+And so, so yeah, that's the idea is to bring that automation back to it. And then the other
+
+00:11:31.970 --> 00:11:38.110
+thing is, I, I don't know what you guys experiences like, but I've never been able to
+
+00:11:38.110 --> 00:11:43.470
+keep up with tests, like handwritten tests, even the best handwritten tests or mocks.
+
+00:11:43.470 --> 00:11:46.670
+Have you ever seen, you guys ever seen that work? Where like it stays up to date,
+
+00:11:46.670 --> 00:11:52.030
+and it's not a huge burden on people? Only in places where we have like five unit tests.
+
+00:11:54.910 --> 00:12:01.070
+Seems like there's some downsides to that. Yeah, just, just, just a little. Yeah.
+
+00:12:02.030 --> 00:12:09.950
+The maintenance cost is ginormous. This is one of the places where Alan and I, for example, we were
+
+00:12:09.950 --> 00:12:19.150
+just like, no, handcrafted UI tests should just be banned, just outright banned. And then Alan,
+
+00:12:19.150 --> 00:12:24.510
+I don't know, what is it, but a year where you did, did some deep thinking on this and you're like,
+
+00:12:24.510 --> 00:12:30.670
+Alan shifted. We spent most of our career going, yeah, recording playback, they're stupid.
+
+00:12:31.150 --> 00:12:38.190
+Because they're just a bitch to maintain. Yeah. But if you get rid of the bitch to maintain part,
+
+00:12:38.190 --> 00:12:45.070
+then they become pretty fantastic. Yeah. Just to, to loop, uh, Madden on our thinking, um,
+
+00:12:45.070 --> 00:12:50.510
+the record and playback stuff now has a little bit of ML built into it to adjust for when things
+
+00:12:50.510 --> 00:12:56.590
+move or whatever kind of work. And even if like your selenium test is going to eventually fail
+
+00:12:56.590 --> 00:13:01.630
+this stuff, eventually, no matter how clever you write it, it's, you spent hours or weeks on
+
+00:13:01.630 --> 00:13:05.230
+these tests, they're eventually going to get stale and not work. I would rather just do the record
+
+00:13:05.230 --> 00:13:11.070
+and playback because you can ha if you need that UI test to verify some logic you shoved into your UI,
+
+00:13:11.070 --> 00:13:14.990
+use the record and playback test because it's smart enough to keep working for a long time.
+
+00:13:14.990 --> 00:13:19.070
+And when it finally stops working, you can take five minutes and create a brand new one from
+
+00:13:19.070 --> 00:13:24.430
+fresh data. Yeah. And that people don't like me. Well, you two like me saying that there's some
+
+00:13:24.430 --> 00:13:28.910
+people that don't like that approach. They go, they're holding on to their test automation job,
+
+00:13:28.910 --> 00:13:35.790
+writing selenium all day. Like it's the, I just don't get it to me. It's not a, it's factory work.
+
+00:13:35.790 --> 00:13:40.110
+Basically it's not, it's not, it's not, it's not the love. It's not the kind of pain I'm with you,
+
+00:13:40.110 --> 00:13:44.110
+Matt. I want, I like to live in pain. Other people to live in pain, just me.
+
+00:13:45.630 --> 00:13:52.270
+Yeah. So I'm, I'm far less masochistic, but, but I will say that if it's easy, it's not fun.
+
+00:13:52.830 --> 00:13:57.070
+True. Or if you don't learn true. Right. Right. Exactly. Yeah. Yeah. It was,
+
+00:13:57.070 --> 00:14:01.070
+I was thinking through another scenario on, on that we were just talking about it. It's
+
+00:14:01.070 --> 00:14:09.470
+already escaped me. Sorry. I do want to ask you, Matt, do you have a, an example ready nearby of,
+
+00:14:09.470 --> 00:14:14.270
+uh, a handcrafted cart, cart guitar? Yes. Yes. Actually,
+
+00:14:15.150 --> 00:14:18.110
+Brent is just changing. Yeah. Just, just, uh, just,
+
+00:14:18.110 --> 00:14:23.630
+Brent, while we were talking, Brent decided to read the little bio of that from the website
+
+00:14:23.630 --> 00:14:27.550
+and now wants to take our podcast in the completely fricking different directions.
+
+00:14:27.550 --> 00:14:36.030
+So it's, it's AB testing. It's not just a testing. Uh, it's ADHD testing.
+
+00:14:36.030 --> 00:14:39.870
+You skipped over the bullshit part of the podcast. So I'm going back
+
+00:14:40.590 --> 00:14:46.110
+like ever, ever since I saw his bio, I'm like, yeah. So that was something that I was actually
+
+00:14:46.750 --> 00:14:52.110
+thinking about picking up as a hobby. And then I got a bunch of instruction books and I'm like,
+
+00:14:52.110 --> 00:14:57.230
+oh, this is going to take for goddamn ever playing guitar or carving guitars.
+
+00:14:57.230 --> 00:15:04.320
+Why don't I show you? Yeah. You gotta play, right? It's hanging on the wall. Oh.
+
+00:15:06.080 --> 00:15:10.720
+And, and our listeners can't see this, but just live vicariously through our words.
+
+00:15:10.720 --> 00:15:14.000
+Beautiful. What is the, the, the wood you used?
+
+00:15:14.000 --> 00:15:19.760
+So, uh, this is a, this is like a mahogany, a thin mahogany. Um, I actually bought from a kit,
+
+00:15:19.760 --> 00:15:24.960
+so I don't, I think it's maple. So, uh, I'm not, I'm not an expert on that. Uh, but I carved this,
+
+00:15:25.680 --> 00:15:31.120
+uh, by hand, the speed scale logo, as you can see on my shirt, speed scale, nice. And then I,
+
+00:15:31.120 --> 00:15:35.920
+it was my first experience carving wood. And then also do you, do you play speedy scales?
+
+00:15:35.920 --> 00:15:43.600
+You know, I, I used to play quite speedy scales. Now I sound, uh, more like I belong
+
+00:15:43.600 --> 00:15:48.080
+in like a, like earth wind and fire cover band or something. Like I'm not, uh, it's more of like,
+
+00:15:48.080 --> 00:15:51.520
+let the singers do their thing. I'm not so much a great guitar player.
+
+00:15:51.520 --> 00:15:56.400
+There is absolutely zero wrong, zero with an earth wind and fire.
+
+00:15:56.400 --> 00:15:59.280
+Wonderful music. Just not like super guitar music, you know?
+
+00:15:59.280 --> 00:16:02.800
+I, I dream of being able to be at that level.
+
+00:16:03.680 --> 00:16:09.520
+Yeah. It was funny. I was, uh, I was watching stranger things, uh, you know,
+
+00:16:09.520 --> 00:16:14.320
+in my copious free time. And, um, and they have that, the scene, you may have seen it right where
+
+00:16:14.320 --> 00:16:19.600
+the, the, one of the guys plays master of puppets. Yeah. Eddie. And I felt like I was like,
+
+00:16:19.600 --> 00:16:26.640
+it's been 30 years and I'm finally cool. Finally. Everybody, the song was 30 years note. Everybody
+
+00:16:26.640 --> 00:16:30.080
+hated that song, you know, whatever. We were like the weird people, but now people know what it
+
+00:16:30.080 --> 00:16:35.360
+is. I do want to point out because I have, uh, so many things I've forgotten in my life
+
+00:16:35.360 --> 00:16:41.120
+and Brent's right. The bullshit parts here. I remember the eighties so well, just so well. And
+
+00:16:41.680 --> 00:16:49.840
+that, oh shoot, what year is it? 86 86. It's set on spring break of 1986. That whole, uh,
+
+00:16:50.640 --> 00:16:55.920
+stranger things. And that's no spoiler there. Master of puppets was released in the beginning
+
+00:16:55.920 --> 00:17:05.040
+of March, 1986. So that meant Eddie learned to shred on that song with no tab, no internet
+
+00:17:05.040 --> 00:17:07.280
+in less than three weeks. Impossible. No.
+
+00:17:10.460 --> 00:17:14.380
+Just want to point that out for the cup, for the, for your continuity. And I don't think that
+
+00:17:14.380 --> 00:17:23.020
+spoils anything, but yeah, where were we, right? Oh, oh, um, so a couple of things I want to talk
+
+00:17:23.020 --> 00:17:27.500
+about. Um, I would like to learn a little bit more about how you learn to hate testing.
+
+00:17:27.500 --> 00:17:33.900
+Yeah. Uh, so I've been, I worked in the observability space or what we call monitoring
+
+00:17:33.900 --> 00:17:40.940
+back then for 15 years. It actually started with satellite monitoring. So it was, it was
+
+00:17:40.940 --> 00:17:47.020
+a great job out of college. Uh, and I would go around the world and install monitoring systems
+
+00:17:47.020 --> 00:17:52.220
+for earth stations. So that's like the intent on the ground part of satellites. And then also
+
+00:17:52.220 --> 00:17:57.820
+fiber optic cables. So as a 22 year old, I would go out to these fiber optic cables that would span
+
+00:17:57.820 --> 00:18:03.420
+like run out into the ocean and sit on the beach and install software. There were worse things in
+
+00:18:03.420 --> 00:18:11.020
+life back then. So, uh, but yeah, so then I got into, uh, I was very fortunate to get
+
+00:18:11.020 --> 00:18:15.660
+into a company called Wiley technology that was bought by CA. Um, it was a, the first sort of
+
+00:18:15.660 --> 00:18:20.220
+APM vendor, which meant, you know, back then what it really meant is like tracing,
+
+00:18:20.300 --> 00:18:24.220
+uh, one of the first vendors that did tracing metrics, it didn't do logs, but, um,
+
+00:18:24.860 --> 00:18:31.740
+and, uh, got to kind of learn about how big enterprises, uh, tried to solve problems in
+
+00:18:31.740 --> 00:18:36.460
+monolithic systems. Um, so I don't know how care how much everybody's interested in the deep
+
+00:18:36.460 --> 00:18:40.060
+technical bits, but like Wiley was one of the first companies that did something called
+
+00:18:40.060 --> 00:18:45.340
+bytecode instrumentation, which was you would be able to look inside of a running Java process
+
+00:18:45.340 --> 00:18:49.020
+by losing, like sticking little hooks everywhere. It was almost like, you know,
+
+00:18:49.020 --> 00:18:53.180
+like putting timers everywhere, right? Without anybody noticing. And so, you know,
+
+00:18:53.180 --> 00:18:57.340
+that was great for a monolith because in the monolith world, you know, like getting a stack
+
+00:18:57.340 --> 00:19:01.260
+trace is like King, right? Like that's the, that's as like, as good as it gets,
+
+00:19:01.260 --> 00:19:04.620
+especially if you can get a stack trace with timings, like a flame graph over time. Right.
+
+00:19:05.180 --> 00:19:08.860
+And so we got to do that. And it was, it was fantastic. Cause it was like, all these
+
+00:19:08.860 --> 00:19:11.260
+folks were struggling with this stuff and you'd walk in and you'd be like, here,
+
+00:19:11.260 --> 00:19:14.300
+just install this and they'd be like, yeah, I don't know. No, no, no, trust me,
+
+00:19:14.300 --> 00:19:17.180
+install it. And they would install it. And they'd be like, I can't believe it. I was like,
+
+00:19:17.180 --> 00:19:23.180
+I know exactly. It's amazing. Right. And so we have to do that. And then I kind of watched
+
+00:19:23.180 --> 00:19:27.580
+some of the transition into microservices and that kind of changed things for me
+
+00:19:27.580 --> 00:19:31.580
+where it wasn't like getting the stack trace and the flame graph was what was important.
+
+00:19:31.580 --> 00:19:36.380
+It like inside of a process, it was more like the problem moved to the, to the between the
+
+00:19:36.380 --> 00:19:45.260
+processes. So yeah. Yeah. Yeah. Go ahead. No, no, no, no. I was just guessing. Like that's,
+
+00:19:45.260 --> 00:19:51.260
+that's the nightmare I'm dealing with every day, day in and day out. It's, it's essentially
+
+00:19:51.260 --> 00:19:58.620
+the problems are in the no man's land between components and therefore teams and therefore,
+
+00:19:59.660 --> 00:20:06.770
+right. Trying to figure out how the components are fitting together. And more importantly,
+
+00:20:06.770 --> 00:20:12.370
+how they're not is the problematic aspect. Please. I'm enthralled by your story. Please continue.
+
+00:20:12.370 --> 00:20:16.530
+So when that happened, what, what you needed in a monitoring tool changed. And I think that
+
+00:20:16.530 --> 00:20:21.730
+kind of gave rise to observability, you know, and I kind of stayed in that world for a while.
+
+00:20:22.530 --> 00:20:26.130
+But you know what, like, and I think a lot of like a lot of attractions being made there,
+
+00:20:26.130 --> 00:20:29.730
+some of the new, like the new monitoring tools are amazing, right? The new observability tools,
+
+00:20:29.730 --> 00:20:33.890
+what they can do, open tracing, they're open telemetry and, you know,
+
+00:20:33.890 --> 00:20:37.570
+more broadly, they're putting that into the core libraries now in a lot of the ghost stuff
+
+00:20:37.650 --> 00:20:42.450
+and in Java as well. And so like out of the box, like, let's say you're running Istio,
+
+00:20:42.450 --> 00:20:45.170
+which is a service mesh. And I don't know if everybody knows what a service mesh is,
+
+00:20:45.170 --> 00:20:48.690
+but it's, it's like the networking layer on top of Kubernetes. I'm oversimplifying,
+
+00:20:48.690 --> 00:20:50.370
+but otherwise this will be a five hour podcast.
+
+00:20:53.170 --> 00:20:55.570
+We'll do a whole other three part series on what a service.
+
+00:20:59.410 --> 00:21:00.050
+No, we won't.
+
+00:21:02.050 --> 00:21:06.530
+Like if you turn on some of the observability stuff where it generates spans, which are like
+
+00:21:06.530 --> 00:21:10.530
+where the hops are, if they generate, if you turn that on in some of the service meshes,
+
+00:21:10.530 --> 00:21:15.810
+and then you use the default libraries, right, you get a pretty good view of what's going on,
+
+00:21:15.810 --> 00:21:19.890
+actually, you still need commercial stuff. You know, you still need or not answer commercial,
+
+00:21:19.890 --> 00:21:23.970
+but you at least need Prometheus and all that, or Jaeger zipkin to go and like,
+
+00:21:24.610 --> 00:21:29.730
+put stitch it together for you. But it's kind of an interesting new world to me. And I don't
+
+00:21:29.730 --> 00:21:33.250
+claim to be an expert on all the newest and latest and greatest, because I'm busy with
+
+00:21:33.250 --> 00:21:36.690
+speed scale, but it's a pretty, a pretty interesting world. But it sounds like you
+
+00:21:36.690 --> 00:21:40.050
+guys have been doing a lot of work with that. So what's your, what's your take?
+
+00:21:40.050 --> 00:21:45.090
+I want to talk a little bit about Istio. If, if you can get it up and running,
+
+00:21:47.300 --> 00:21:53.940
+it's, it's, it's a little fickle. There is just a massive amount of information and capabilities
+
+00:21:53.940 --> 00:21:58.740
+in that there's so much you can, it's, it's a kitchen sink of stuff. Yeah. But this kind
+
+00:21:58.740 --> 00:22:01.700
+of gets a little bit into the another question I wanted to ask you about. You got all the way
+
+00:22:01.700 --> 00:22:06.180
+here, although, although I don't know, ever know if I heard your story or if I heard why you hate test.
+
+00:22:06.180 --> 00:22:11.300
+Oh yeah. So, um, uh, I was, I was always in like engineering leadership and then I did a
+
+00:22:11.300 --> 00:22:15.460
+stint in technical sales for like seven years, but I did like, you know, in general leadership.
+
+00:22:15.460 --> 00:22:20.740
+And, uh, the, the thing I hated about testing is like being serious for a second is everybody
+
+00:22:20.740 --> 00:22:25.940
+hates the testers and they're the ones who, who keep you from lighting yourself on fire.
+
+00:22:25.940 --> 00:22:29.540
+Right. Like you're like, okay, I love this code. It's going to be great. It's awesome.
+
+00:22:29.540 --> 00:22:33.060
+I'm ready to send it to production. And then the tester goes and says, Hey,
+
+00:22:33.060 --> 00:22:36.180
+I was messing with this thing. And then it burst into flames and you're like, yeah,
+
+00:22:36.180 --> 00:22:40.580
+you did something wrong. And they're like, no, no, I didn't. Right. Uh, and so, but then everybody
+
+00:22:40.580 --> 00:22:45.620
+hates that, that function anyway. Right. Because it seems like it's a waste. And then the folks
+
+00:22:45.620 --> 00:22:49.460
+who were doing it are sitting here writing all these, like you said, the end-to-end Selenium
+
+00:22:49.460 --> 00:22:54.420
+tests or whatever they've got, maybe it's postman they're just like trying APIs and it's just
+
+00:22:54.420 --> 00:22:58.740
+toil. It's like the definition of developer toil, like just sitting there just grinding.
+
+00:22:58.740 --> 00:23:03.300
+And so what got, you know, I watched all that happen and it was usually about 30% of my team.
+
+00:23:03.300 --> 00:23:06.740
+Uh, and maybe that's cause the products I worked on, but, uh, it was about 30% of my team was just
+
+00:23:06.740 --> 00:23:10.660
+testers. And I thought, you know, this is just inefficient. Everybody hates it. Right. As
+
+00:23:10.660 --> 00:23:14.820
+engineers, we just hate doing it. Uh, we hate, like we hate the bad news that comes from it.
+
+00:23:14.820 --> 00:23:18.820
+So I said, you know, can we, can we, can we automate this thing? You know, and the cool
+
+00:23:18.820 --> 00:23:22.820
+thing was we went and started speed scale is you were talking about Istio a little bit,
+
+00:23:22.820 --> 00:23:26.580
+but it's, it's the whole Kubernetes ecosystem. Like the whole container management thing
+
+00:23:26.580 --> 00:23:30.580
+like makes it possible. Now, like when I said distributor and wireshark, you can actually do
+
+00:23:30.580 --> 00:23:35.220
+that now. And even like five years ago, I don't know of a way to do that at scale, like, you know,
+
+00:23:35.220 --> 00:23:38.980
+at any reasonable scale, you know, to, to do a distributed work. I'm sure somebody can build
+
+00:23:38.980 --> 00:23:42.260
+something. I'm just saying it was like, it was way hard and it's gotten a lot easier because
+
+00:23:42.260 --> 00:23:46.580
+everybody's been pioneering shout out to link your D to not just Istio, but link your D as well.
+
+00:23:46.580 --> 00:23:50.820
+You know, um, those folks, but, uh, um, you know, they're kind of pioneering it. So anyway,
+
+00:23:50.820 --> 00:23:56.980
+that's linker D less finicky, less finicky does a little less little, little smaller. Well,
+
+00:23:56.980 --> 00:24:00.340
+yeah. Well, I have a customer and I won't name them because they will get mad, uh, but I have
+
+00:24:00.340 --> 00:24:05.220
+a customer that says, uh, uh, a friend who says, uh, I said, do you use list, you know, like Istio,
+
+00:24:05.220 --> 00:24:09.460
+like in anger, like in production, cause a lot of folks just play with it and pre-prod he goes,
+
+00:24:09.460 --> 00:24:15.140
+he goes, yes. He says the only way to use Istio is in anger. So, uh, that's the only.
+
+00:24:16.020 --> 00:24:21.620
+So that could be on a t-shirt. So this all leads me to a question I wanted to ask based on,
+
+00:24:21.620 --> 00:24:28.340
+um, just some leading up to this podcast is a long time ago, I used to do a lot of debugging in
+
+00:24:28.340 --> 00:24:35.060
+windows and I was part of my job was to, we ran these stress tests overnight and I was one of
+
+00:24:35.060 --> 00:24:39.300
+the people who got to go connect to everyone's debugger remotely and poke around, see what was
+
+00:24:39.300 --> 00:24:43.540
+going on and either debug it myself or find someone else to bring in. And I really enjoyed
+
+00:24:43.540 --> 00:24:48.660
+it and it was hard. And like Brent said earlier, it was hard and I was learning, so it was fun,
+
+00:24:48.660 --> 00:24:54.290
+but man, as confident and as good as I was feeling at that when it comes to debugging
+
+00:24:55.570 --> 00:25:00.770
+microservices, when, as Brent was talking about before, when the problems happen in the hops in
+
+00:25:00.770 --> 00:25:05.330
+between and trying to reconstruct what's going on as things go from service to microservice to
+
+00:25:05.330 --> 00:25:11.970
+microservice, man, it's a, it's a, I'm good thing. I'm management overhead now. Cause I
+
+00:25:11.970 --> 00:25:16.210
+probably just pull my hair out all day trying to figure out what to do there. So, so, uh, I think
+
+00:25:16.210 --> 00:25:19.570
+you have some, it sounds like you have some experience or thoughts or like to hear like,
+
+00:25:19.570 --> 00:25:24.530
+one, maybe expand a little bit on the challenge and then talk about like how you get better at
+
+00:25:24.530 --> 00:25:32.110
+it. Okay. Sure. So, okay. So the, the, the thing that, um, so in a, in an observability suite,
+
+00:25:32.110 --> 00:25:37.550
+there's like two big areas of things you need, right? And again, I'm oversimplifying. There's
+
+00:25:37.550 --> 00:25:42.430
+a million little things, but like in categories, one is you need deep visibility and you're going
+
+00:25:42.430 --> 00:25:46.270
+to get deep visibility. The easiest one is you're like, you're going to turn on the log monitor.
+
+00:25:46.270 --> 00:25:48.990
+Every turns on the monitor. The next thing you're gonna do is you're like going to turn on
+
+00:25:48.990 --> 00:25:53.870
+stats D and you're going to get some metrics, right? Uh, CPU memory, something put out of your
+
+00:25:53.870 --> 00:25:58.590
+application. Those are like the two easy things to start. If you're really, really, uh, you
+
+00:25:58.590 --> 00:26:02.670
+know, like dedicated, maybe you'll get some traces too, but that's un, you know, more unusual.
+
+00:26:03.390 --> 00:26:06.910
+Um, and so you kind of start there. That's like the beginning of deep visibility. Now,
+
+00:26:07.470 --> 00:26:13.710
+the better deep visibility you get, the more, the more you get into each of the individual boxes in
+
+00:26:13.710 --> 00:26:17.870
+the microservice diagram. So I'll give you an example. Uh, you, are you guys familiar with
+
+00:26:17.870 --> 00:26:23.790
+EBPF? You heard of that technology? I have not. Okay. So extended Berkeley packet filter,
+
+00:26:24.350 --> 00:26:28.190
+and it's like giving Linux a super power. Like if you're running Linux and they're also
+
+00:26:28.190 --> 00:26:31.710
+reporting into windows as well, like you're mentioning, uh, you know, being windows debugger
+
+00:26:31.710 --> 00:26:39.470
+and what EBPF lets you do is view the inside of what's going on in the kernel with low overhead
+
+00:26:39.470 --> 00:26:47.070
+and an excellent security model. So you can go and see inside of an SSL payload as the kernel
+
+00:26:47.070 --> 00:26:50.990
+sees it. Like if you instrument like open SSL library, which almost everybody uses or most
+
+00:26:50.990 --> 00:26:56.990
+languages use, you'll see the HTTP transaction going back and forth inside of it. And so that's
+
+00:26:57.070 --> 00:27:01.150
+like the ultimate deep visibility. Right. And so there's, there's a good product that they're
+
+00:27:01.150 --> 00:27:05.550
+called contain IQ. There's a pixie, which is an open source project. That's really good.
+
+00:27:05.550 --> 00:27:09.630
+And you'll look at how they did everything. Um, but anyway, that EBPF, so that's like going deep
+
+00:27:09.630 --> 00:27:14.110
+into these things, right? Okay, that's cool. So you want deep visibility, right? The problem is
+
+00:27:14.110 --> 00:27:18.110
+the deeper your visibility, the more data you get and the more unintelligible it is.
+
+00:27:18.110 --> 00:27:21.950
+It's impossible to understand. And what you'll see with that, at least I saw with all the,
+
+00:27:21.950 --> 00:27:27.470
+the big enterprises is, uh, the, the alert storm, or as I like to call it, the can filled
+
+00:27:27.470 --> 00:27:32.910
+with coins that's just shakes all day long. You know, you know, the alert thing, it's just like
+
+00:27:32.910 --> 00:27:37.790
+alerts go off. Nobody knows what they mean. So what you end up having to do is create some sort
+
+00:27:37.790 --> 00:27:44.270
+of correlation and analysis engine to go and make sense of that thing. Right. And so what I was
+
+00:27:44.270 --> 00:27:48.830
+going with that about microservices is in the old days in monoliths, the value was all about
+
+00:27:48.830 --> 00:27:51.710
+looking deep, you know, like, like EBPF and all that, and that's still valuable.
+
+00:27:52.270 --> 00:27:56.830
+But in the microservices world, it's all about the correlation engine is how good are you at
+
+00:27:56.830 --> 00:28:00.670
+getting signal from noise? And I think you do some ML work, right? So I don't know if
+
+00:28:00.670 --> 00:28:07.870
+you have some thoughts on that, but, Oh, it did. My, my team is, is deep in that space.
+
+00:28:09.470 --> 00:28:16.670
+But a lot of the code that we're working on, how do we put this? So Microsoft as the,
+
+00:28:16.670 --> 00:28:22.110
+as the stepwise transformed, a lot of the things that we did is we basically lift and
+
+00:28:22.110 --> 00:28:30.270
+shifted server code and kind of turn it into service code. Yeah. Right. And, and we're still
+
+00:28:31.150 --> 00:28:36.430
+in some places, you know, buying down that technical debt and, and, and converting
+
+00:28:36.430 --> 00:28:42.270
+things into microservices and picking it up. Right. So we were at a point right now. So for example,
+
+00:28:43.230 --> 00:28:50.350
+there is a non-trivial open telemetry migration that's underway. It's going to still take
+
+00:28:50.990 --> 00:28:59.470
+multiple years to finally close. But yeah, we, we, there's a lot of tedious work in,
+
+00:28:59.470 --> 00:29:08.190
+in, I view it as tedious because every, every team has produced their own telemetry. We get called in
+
+00:29:08.590 --> 00:29:16.590
+to, to do anomaly detection along the telemetry. So we have to, we have to do everything that you're
+
+00:29:16.590 --> 00:29:24.510
+talking about and, and, and do it kind of manually from a, from a data science way. And each project,
+
+00:29:24.510 --> 00:29:30.750
+because it hasn't been sort of normalized or curated into a common schema is, is basically
+
+00:29:30.750 --> 00:29:36.190
+starting from ground zero all over again. It's painful. Thankfully, that's one of my sister
+
+00:29:36.190 --> 00:29:42.270
+teams working on that problem. My, my, my problem is more in the, in the, in the customers,
+
+00:29:43.150 --> 00:29:51.310
+customer space, trying to understand what causes customers to retain or, or leave. But those two
+
+00:29:51.310 --> 00:30:01.630
+worlds are very quickly merging. And so that's, that's one of the problems I'm trying to work on
+
+00:30:01.630 --> 00:30:08.750
+is essentially, all right, when we see this type of, let's call it signature as a, as a sort of a
+
+00:30:08.750 --> 00:30:14.670
+call flow pattern from the combination of the customer and the platform, can we translate that
+
+00:30:14.670 --> 00:30:21.230
+to an expression of a problem, say that a customer might, might do in their support case report,
+
+00:30:21.230 --> 00:30:27.550
+right? That type of correlation is kind of what my team focuses on. Can we figure out which of
+
+00:30:27.550 --> 00:30:36.350
+these patterns piss off our customers? And do more of those, right? Another, just sort of practical
+
+00:30:36.350 --> 00:30:41.470
+example. I love to hear Matt, your thoughts on this. This is, I will try to anonymize this phrase
+
+00:30:41.470 --> 00:30:46.590
+the most I can. So part of biggest part of my org is just platform engineering. I've made a
+
+00:30:46.590 --> 00:30:53.950
+statement to one of our big service owners that, well, two things happen. One is we'll have
+
+00:30:53.950 --> 00:30:59.150
+incidents, operational surprises, and we spend, I think more, well, in my opinion, more time
+
+00:30:59.790 --> 00:31:04.110
+than we should trying to figure out exactly where the problem is. The result of that is when I
+
+00:31:04.110 --> 00:31:08.510
+talked to the owners of our, some of our bigger services, I will say, and they won't argue with
+
+00:31:08.510 --> 00:31:14.910
+me. I say, I guarantee you right now, something is broken in your, in your microservice architecture.
+
+00:31:14.910 --> 00:31:18.910
+Something is not working as it should. We may know tomorrow. We may know next week. We may
+
+00:31:18.910 --> 00:31:23.710
+never know. It may get fixed by something else, but we just don't know. And it, it all just is
+
+00:31:23.710 --> 00:31:29.230
+making my case for observability or, and how it needs to improve. So that statement is probably
+
+00:31:29.230 --> 00:31:35.470
+true for most microservice architectures, probably in production today. Something's broken now.
+
+00:31:35.470 --> 00:31:39.230
+It's what's, whether you know or not is the challenge. Yeah. Well, the old days you'd say,
+
+00:31:39.230 --> 00:31:45.550
+what changed, right? Everything. And it isn't even that we can have stuff change. It's a
+
+00:31:45.550 --> 00:31:50.830
+little break and nothing changed. Nothing, no code changed, not nothing changed, no code changed.
+
+00:31:50.830 --> 00:31:53.710
+I'm going to give kind of an abstract answer because I've worked a lot on this at previous
+
+00:31:53.710 --> 00:31:59.310
+companies, right? The, but like my thoughts on it are kind of, all right. So in the old days,
+
+00:31:59.310 --> 00:32:02.910
+and this is like updating your thinking for like the new world of microservices or, or
+
+00:32:02.910 --> 00:32:05.710
+the new version of microservices, because if you remember long ago, we've, we've done,
+
+00:32:05.710 --> 00:32:09.390
+you know, if anybody remembers service oriented architectures, we've done some of this before,
+
+00:32:09.390 --> 00:32:14.270
+but in the past, but with microservices architectures. So there's two key things
+
+00:32:14.270 --> 00:32:18.190
+that give you superpowers, right? For, for finding problems to, at least in my experience,
+
+00:32:18.190 --> 00:32:23.550
+and I'm always interested in what you guys think, but the first one is, is you need a set of
+
+00:32:23.550 --> 00:32:29.470
+heuristics that tell you what normal is. And so, and that usually is applied to metrics or log
+
+00:32:29.470 --> 00:32:34.830
+patterns, usually not always, but often, right? And so the simplest version of that is like,
+
+00:32:34.830 --> 00:32:38.030
+you know, it's like baselining, like automatic baselining algorithms, right? There was like a,
+
+00:32:38.030 --> 00:32:41.790
+there was a great company called app dynamics that kind of pioneered this long ago of like
+
+00:32:41.790 --> 00:32:46.990
+finding like dynamic baselines. Okay, cool. That's good. The problem is in microservices,
+
+00:32:46.990 --> 00:32:51.550
+that's it's two variable things change too much because your load balancing, or your, your
+
+00:32:51.550 --> 00:32:55.150
+replicas are scaling up scaling down, like depending on how sophisticated your system is,
+
+00:32:55.150 --> 00:32:59.550
+stuff's changing constantly. So a basic baseline is not going to cut it, right? But you have to
+
+00:32:59.550 --> 00:33:03.550
+come up with some system for understanding normal. The second thing, I think this is the part that
+
+00:33:03.550 --> 00:33:09.790
+people don't understand as well is you have to come up with a graph of dependencies that is
+
+00:33:09.790 --> 00:33:16.270
+continuously updated, and that that influences the normal model. So, like well says like,
+
+00:33:16.990 --> 00:33:20.430
+in the old days is really easy because you'd say, Okay, well, I have a database and I have, you know,
+
+00:33:20.430 --> 00:33:24.830
+I have two or three services, and then I have the user and the load balancer and few little things.
+
+00:33:25.470 --> 00:33:29.550
+And then if I go, if the graph goes down, right, like that's kind of like horizontally, the graph
+
+00:33:29.550 --> 00:33:32.990
+goes across graphs goes down, and I go into the servers and the VMs and the networks and the
+
+00:33:32.990 --> 00:33:36.750
+containers and all the other stuff, right? And you could come up with a pretty good idea of that,
+
+00:33:36.750 --> 00:33:40.670
+right? The issue that comes in now is that with microservices, like, I don't know,
+
+00:33:40.670 --> 00:33:44.510
+have you guys ever seen the Death Star diagrams that were popular a few years ago, where they
+
+00:33:44.510 --> 00:33:49.790
+basically, you know, it's like, yeah, like Netflix has them. And other folks do as well, you, it's very
+
+00:33:49.790 --> 00:33:54.830
+hard to keep that graph up to date. And you can't hold it in your head anymore. At least, I don't
+
+00:33:54.830 --> 00:34:00.590
+know, you can't reason about it anymore. So you need some tool that will, whether you build it,
+
+00:34:00.590 --> 00:34:04.510
+or you buy one or whatever, you need some tool that will figure out what normal is statistically,
+
+00:34:04.510 --> 00:34:08.910
+and then something that will go and overlay that with the heuristics derived from the graph model.
+
+00:34:08.910 --> 00:34:13.470
+And then you start to get somewhere of actually hunting things down, where I see the noise
+
+00:34:13.470 --> 00:34:19.330
+generation happening is where people have one or the other and they're disconnected. So, you know,
+
+00:34:19.330 --> 00:34:23.490
+I'm talking like state of the art, right? Now, now that there's an alternative to that is you get
+
+00:34:23.490 --> 00:34:30.050
+into I mentioned Netflix, right? Netflix has a lot of consistent, incredible volume, but a lot of
+
+00:34:30.050 --> 00:34:34.530
+consistency in the kind of workload, right? Like, it's the stream. So like, that's a different
+
+00:34:34.530 --> 00:34:38.610
+problem. And they have genius people who solve that problem differently. I'm talking the average
+
+00:34:38.610 --> 00:34:41.730
+enterprise that has a lot of weird shaped objects that they're trying to fit together
+
+00:34:41.730 --> 00:34:45.810
+into an online bill pay application or something, you know? So yeah, Netflix has a different
+
+00:34:45.810 --> 00:34:49.570
+quality of problem, I think. But so anyway, I talked a lot there. So I'm going to stop talking.
+
+00:34:50.530 --> 00:34:55.010
+No, it was I had some good flashback there. Everybody used to debug stuff, which can get,
+
+00:34:55.010 --> 00:34:59.250
+you know, it's multi-threaded stuff. And remember taking a lot of notes on a pad of paper,
+
+00:34:59.250 --> 00:35:03.010
+just so I can remember context and try and it was too much to hold in my head.
+
+00:35:03.010 --> 00:35:07.730
+But I could, I could write some cues that would help me remember what a value was on
+
+00:35:07.730 --> 00:35:13.170
+some stack and some other thread or something without scrolling up and losing my train of thought.
+
+00:35:13.170 --> 00:35:15.890
+And I don't have enough paper to do that for microservices.
+
+00:35:16.850 --> 00:35:22.930
+You have to have a system that doesn't. I absolutely think it's, so I've not heard it
+
+00:35:22.930 --> 00:35:29.170
+described so simply. I think that's super elegant. I think one of the things that is
+
+00:35:29.810 --> 00:35:35.570
+sort of inspiring the thought process in my head right now is to what degree
+
+00:35:36.530 --> 00:35:43.890
+are we kind of in this weird, awkward space because people are artificially holding on to the idea
+
+00:35:44.930 --> 00:35:53.010
+that it's understandable, that the complexity of how software operates, that, that, oh, if we just
+
+00:35:53.010 --> 00:36:00.050
+do this, we'll be able to understand it. And I'm now wondering what, what additional advancements
+
+00:36:00.690 --> 00:36:03.170
+would happen if we just let go of that idea.
+
+00:36:03.890 --> 00:36:07.250
+I'm certainly guilty of it. I look at our production system. I know what's wrong. No,
+
+00:36:07.250 --> 00:36:11.890
+you don't Matt. No, no, you don't. Because it's, it's like, it's too complicated to hold in your
+
+00:36:11.890 --> 00:36:17.330
+head. Even our system as a startup, there was 99% invisible. One of my favorite podcasts,
+
+00:36:17.330 --> 00:36:23.010
+I think it, I think it was that one. They, a pencil, a simple pencil. And this is something
+
+00:36:23.010 --> 00:36:28.770
+I think about all the time. Just a simple wooden pencil. There is actually no one that can
+
+00:36:28.770 --> 00:36:37.490
+make those anymore. There's nobody, there's nobody that knows how to build it all. Everything is sort
+
+00:36:37.490 --> 00:36:41.810
+of, there's one person that knows how to build the erasers. There's one person that knows how
+
+00:36:41.810 --> 00:36:51.540
+to assemble the parts together. But the pencil has kind of been something where no one by itself
+
+00:36:52.500 --> 00:37:03.260
+can build it from scratch, from raw material. Yeah. And I find that concept fascinating because you
+
+00:37:03.260 --> 00:37:07.500
+can hold a pencil, you can look at it and go, it seems like something I should be able to build,
+
+00:37:07.500 --> 00:37:12.860
+but no, no, you, you can't. Now you, now you take something to something more abstract,
+
+00:37:12.860 --> 00:37:19.500
+more complicated, like microservices. How do we even find out which microservices are calling
+
+00:37:19.500 --> 00:37:25.660
+which other microservices that goes to your dependency call? Okay. Well, or how about,
+
+00:37:26.300 --> 00:37:31.580
+how about circular circular dependencies in a microservice architecture?
+
+00:37:31.580 --> 00:37:35.740
+So let me just interrupt there and say, that's a solvable problem. We've solved it. We've,
+
+00:37:35.740 --> 00:37:40.780
+it's pretty easy to build from the little show how your services interact. Then you look at this
+
+00:37:40.780 --> 00:37:45.100
+big mess of a tangled spider web and you go, okay, now what? Well, then you have to filter
+
+00:37:45.100 --> 00:37:49.420
+at Y workload, right? This particular thing, whether it's like a particular kind of trend,
+
+00:37:49.420 --> 00:37:53.420
+like user request or something or whatever, you know, you have to zoom in, you know, whatever,
+
+00:37:53.420 --> 00:37:57.340
+but you're right. It's a big ball, ball of ball of wax. I mean, it's a big, all yarn. I mean,
+
+00:37:57.340 --> 00:38:05.900
+it's a big ball of yarn or wax. It depends. You know, you got me thinking a little bit
+
+00:38:05.900 --> 00:38:09.260
+Brent with what you said is that one of the things that happens when you go to these
+
+00:38:09.260 --> 00:38:12.780
+distributed architectures is that software development is like really hard, at least
+
+00:38:12.860 --> 00:38:18.060
+is hard for people like me. So like, it's very hard for some of us, right? And microservices makes
+
+00:38:18.060 --> 00:38:23.420
+it very easy to build software. But then then what happens is all the complexity moves over to
+
+00:38:23.420 --> 00:38:28.860
+Allen's team, the operation platform team, all those guys, it takes all the complexity away,
+
+00:38:28.860 --> 00:38:32.780
+like it makes it way easier to build the software and much way harder to run it.
+
+00:38:32.780 --> 00:38:36.460
+Because like you said, there's no pad of paper, it's too complicated, too many parts.
+
+00:38:36.460 --> 00:38:39.100
+But the development teams love it, because they're like, this is great. All I have to
+
+00:38:39.100 --> 00:38:42.540
+worry about is my own little thing. And it's polyglot. And I only worry about my little,
+
+00:38:42.540 --> 00:38:46.140
+you know, my little loves, I can circumscribe my concerns. It's like, yeah,
+
+00:38:46.140 --> 00:38:48.060
+but now you have a different set of problems. You know,
+
+00:38:49.020 --> 00:38:56.780
+no, it's easy. It's easy for you to produce. As long as you ignore that, you know what,
+
+00:38:56.780 --> 00:39:01.900
+the over time, the amount of time that you're spending actually writing new code versus
+
+00:39:01.900 --> 00:39:09.900
+going in debugging log streams slowly, well, maybe not slowly, increasing. I don't know what
+
+00:39:09.900 --> 00:39:15.900
+the common term is. But for example, in my organization, the DRI, is DRI a common term,
+
+00:39:16.940 --> 00:39:23.020
+a designated person to go investigate? The designated responsible individual.
+
+00:39:23.020 --> 00:39:30.620
+So if your service is out, I assume you, Matt, have some process to handle who's on point to
+
+00:39:30.620 --> 00:39:35.900
+go investigate live site issues, right? That's the, we use the acronym DRI here.
+
+00:39:35.900 --> 00:39:43.500
+When you slowly discover, so you're an executive, Matt, if you were to find out that 50% plus
+
+00:39:44.300 --> 00:39:53.440
+of your engineering team is being spent on just DRI duties, right? You kind of go, well,
+
+00:39:53.440 --> 00:39:58.880
+okay, great. It's easy to produce code, but that's not where the cost is anymore. The cost is in
+
+00:39:58.880 --> 00:40:06.800
+the maintenance tax on shipping the code. And the issue is, okay, no, we got to stop thinking about
+
+00:40:06.800 --> 00:40:12.080
+shipping as code is a singular thing. We got to think of it as, okay, how are we going to maintain
+
+00:40:12.080 --> 00:40:18.880
+it? When some random team reports to us that our random microservice, which then calls into 18 other
+
+00:40:18.880 --> 00:40:25.840
+random microservices, how do we know where the bug fix is supposed to check in at?
+
+00:40:26.320 --> 00:40:30.560
+Yeah, right. That's kind of the problem today. Today, in my view,
+
+00:40:30.560 --> 00:40:34.000
+I want to rewind the stack a little bit pre-brand or I may just delete
+
+00:40:34.000 --> 00:40:37.440
+Brent entirely from that section. I'll think I can figure it out later.
+
+00:40:37.440 --> 00:40:42.880
+One thing you mentioned is like, you're right. My platform team makes sure you have all the stuff
+
+00:40:42.880 --> 00:40:48.560
+it's easy at your service running. But also 15 years ago, I was worried about building testability
+
+00:40:48.560 --> 00:40:53.760
+into products so they could be easier tested. Now it's, I make sure that people can build
+
+00:40:53.760 --> 00:40:57.760
+observability into their service from the beginning and make sure like, just try and give
+
+00:40:57.760 --> 00:41:03.920
+them, here's this nice paved road to walk down. If you do this, here's where you start.
+
+00:41:03.920 --> 00:41:08.720
+And if you do this, you're going to be happy for a long time. A lot of risk is gone.
+
+00:41:08.720 --> 00:41:12.080
+You know, the observability is there. We're going to give you basically the equivalence of
+
+00:41:12.080 --> 00:41:16.880
+stats D or something. And we use Prometheus and some things on top of that. And we're going to
+
+00:41:16.880 --> 00:41:19.760
+just give that to you and show you how to get started there. And you're going to be in good
+
+00:41:19.760 --> 00:41:24.480
+shape or you can kind of go walk off in the weeds somewhere into your own thing and good luck.
+
+00:41:24.480 --> 00:41:27.840
+Yeah. You got me thinking a little bit of a little tactical thing or not tactic,
+
+00:41:27.840 --> 00:41:31.200
+what little things, but tactical things like we're going to standardize the monitoring stack,
+
+00:41:31.200 --> 00:41:35.360
+at least to a basic level. You can do crazy stuff if you want to. Like that has so much value.
+
+00:41:35.360 --> 00:41:39.280
+I'd say actually, uh, Christine Spang at Nylus, she's one of the founders of this company,
+
+00:41:39.280 --> 00:41:43.520
+Nylus, she said something at a conference that stuck with me is one of the biggest
+
+00:41:43.600 --> 00:41:49.760
+bangs for the buck in a microservices architecture is to simply put correlation IDs
+
+00:41:50.320 --> 00:41:54.240
+that traverse every microservice, just simple, like a header, you know what I mean? A header
+
+00:41:54.240 --> 00:41:59.280
+always there. And then the first thing the logging library does is print it with every
+
+00:41:59.280 --> 00:42:06.320
+log message. If you just do that, your microservices architecture is like way easier. And
+
+00:42:06.320 --> 00:42:09.360
+I think that Google did something, some of that with dapper, they all went, of course,
+
+00:42:09.440 --> 00:42:13.760
+way more advanced, right? Or whatever. But like you said, it's like just a few little things can
+
+00:42:13.760 --> 00:42:19.120
+make it a system so much more observable. Nice. So Matt, I saw from your LinkedIn that you,
+
+00:42:19.120 --> 00:42:21.360
+uh, went to school in Georgia. Are you still in that part of the country?
+
+00:42:21.360 --> 00:42:27.520
+I actually moved to the Bay area and, uh, okay. But you moved back. Yeah, I did. I moved back
+
+00:42:27.520 --> 00:42:33.280
+actually right before COVID. I moved back. I like to tell everybody that it was my pre,
+
+00:42:33.280 --> 00:42:36.320
+foreknowledge of what was going to happen in the world, like a month later, because I moved
+
+00:42:36.320 --> 00:42:40.320
+back like a month before it all hit. Uh, but that's not true. That's not true. Uh,
+
+00:42:40.320 --> 00:42:45.600
+that's just the way I tell, um, uh, actually I moved back to Atlanta because my, my, uh,
+
+00:42:45.600 --> 00:42:50.400
+I went to Georgia. I met my wonderful wife who is definitely the brains of this outfit in this
+
+00:42:50.400 --> 00:42:55.360
+house. She's the brains of this outfit. And she, uh, uh, she wanted to be near her family and her,
+
+00:42:55.360 --> 00:43:00.800
+you know, uh, her family. And I'll tell you with COVID changing the landscape, even post,
+
+00:43:00.800 --> 00:43:03.360
+I mean, I don't know if we're post COVID, but it's, you know, it's died down.
+
+00:43:03.360 --> 00:43:08.160
+We may never be post COVID. Exactly. Um, but with it being less top of mind for folks,
+
+00:43:08.160 --> 00:43:13.760
+you know, it's the, the environment's changed a lot. Like, uh, in Atlanta, it's, uh, there's a,
+
+00:43:13.760 --> 00:43:16.960
+there's a startup scene here and there wasn't when I left, when I left for the Bay area,
+
+00:43:16.960 --> 00:43:19.920
+you had to go to the Bay area. If you want to be taken seriously, that's, it's true.
+
+00:43:19.920 --> 00:43:24.720
+Atlanta has a, not just startup, Atlanta has a growing texting. Yeah. You,
+
+00:43:24.720 --> 00:43:31.680
+yeah. Callenly, like I have employees in it in Atlanta. We're building up a whole
+
+00:43:31.680 --> 00:43:36.560
+new development center there. Once a month, I bring up, I bring up a topic to my boss.
+
+00:43:36.560 --> 00:43:40.480
+When are we getting an office in Atlanta? It's a great place. You should come here.
+
+00:43:40.480 --> 00:43:44.080
+It's awesome. Uh, the great, one of the great things that Atlanta is you got Georgia tech
+
+00:43:44.080 --> 00:43:48.080
+right here and you got UGA, which is a pretty good engineering school. Georgia tech is a great
+
+00:43:48.080 --> 00:43:52.960
+engineering school and it's kind of an untapped resource, right? And so like you said, Microsoft's
+
+00:43:52.960 --> 00:43:57.280
+got a, uh, you know, building, you know, across the, you know, over the, over our major highway
+
+00:43:57.280 --> 00:44:02.640
+here, 75 Google's here and I think Amazon is expanding their presence. And you know, the,
+
+00:44:02.640 --> 00:44:06.880
+there's other thing is that there are real legitimate startups. So like, if you think about
+
+00:44:06.880 --> 00:44:10.800
+like where you get ignition and a tech scene, I don't claim to be an expert on this, but like,
+
+00:44:10.800 --> 00:44:14.320
+you know, we're like the fire starts to go a little bit. You need the big companies with
+
+00:44:14.320 --> 00:44:18.000
+all the really smart people, you know, learning best practices, how to do stuff,
+
+00:44:18.000 --> 00:44:21.520
+the Microsoft's, the Google's, the, you know, all those different folks. And then you need
+
+00:44:21.520 --> 00:44:26.800
+kind of like the money, right? Frankly, the, you need the VCs and the money. And then you need
+
+00:44:26.800 --> 00:44:31.120
+kind of, you need just a few people who've gotten that taste where they've had an exit,
+
+00:44:31.120 --> 00:44:34.800
+like full or not an exit, but at least gotten big, like full story or Calendly.
+
+00:44:35.520 --> 00:44:38.400
+Again, these are not, they're not huge companies, but they're unicorns. I mean, they're, they're
+
+00:44:38.400 --> 00:44:42.480
+doing pretty, you know, a sales off pin drop. There's, there's some, I'm here and then you
+
+00:44:42.480 --> 00:44:45.360
+get a taste of that. And with those three combos, people start to go, Hey, you know,
+
+00:44:46.000 --> 00:44:50.720
+I could go do this. You know, why, why would I be the next Jeff Jeff Bezos or whatever,
+
+00:44:50.720 --> 00:44:53.760
+you know, Bill Gates or, you know, it's like, I could do that. And so it's pretty exciting
+
+00:44:53.760 --> 00:44:59.280
+time here. And then when you get enough of these startups and then with attrition, so to start,
+
+00:44:59.840 --> 00:45:05.920
+start crossbreeding and creating new things, it then starts to take on a, its own spirit of its own.
+
+00:45:05.920 --> 00:45:14.080
+Yeah. The VC, the VC thing, that's probably the biggest blocker. I know Bay Area. I mean,
+
+00:45:14.080 --> 00:45:19.760
+it's just chock full riddle with, with tech VCs. I don't know. Maybe, maybe start doing something
+
+00:45:19.760 --> 00:45:25.840
+with Coca-Cola. I'd be something to get it growing. I'll say there's a story from Reed Hoffman in the
+
+00:45:25.840 --> 00:45:31.680
+Alliance. He talks from LinkedIn talks about don't have the world anymore of where we work for one
+
+00:45:31.680 --> 00:45:36.240
+company for 30 or 40 years and then retire people change jobs. And I think change people
+
+00:45:36.240 --> 00:45:40.800
+changing jobs is actually a good thing. I survived to Microsoft for so long for two reasons.
+
+00:45:40.800 --> 00:45:45.440
+One was I changed jobs every 18 months or two years, something I always denied to Brent until
+
+00:45:45.440 --> 00:45:51.040
+he proved me I was, he was right. But also for the first big chunk of my career at Microsoft,
+
+00:45:51.040 --> 00:45:56.400
+there really wasn't another place to go. There wasn't a lot of, or the kind of the level I was,
+
+00:45:56.400 --> 00:46:00.800
+there was, wasn't a lot of other tech besides Microsoft, but now you can bounce all over the
+
+00:46:00.800 --> 00:46:05.840
+place. Atlanta, same thing. There's a, there's a place for you to grow. And I think there's
+
+00:46:05.840 --> 00:46:10.640
+value. I think it's good when someone goes from one company to the other. You don't have to
+
+00:46:10.640 --> 00:46:14.640
+worry so much about, Oh my gosh, we lost all year. Everything we trained you on we lost. Well,
+
+00:46:15.280 --> 00:46:21.120
+you still got value from that. And cause it's a light, it's a partnership. And I think Atlanta
+
+00:46:21.120 --> 00:46:24.880
+is ripe for that. And just, I've met so many smart people from there. I'm just excited to watch it
+
+00:46:24.880 --> 00:46:30.800
+grow. And I want to get the darn unity office in Atlanta ASAP. JR, if you're listening, do it.
+
+00:46:30.800 --> 00:46:34.720
+Come on down. It's great. The weather's not so great right now. That's the one thing I miss
+
+00:46:34.720 --> 00:46:39.200
+about the Bay area. I'm going to, I'm not going to lie. It was, my car said it was 98 degrees
+
+00:46:39.200 --> 00:46:42.000
+and I'm pretty sure that's because it got so hot that the thermometer broke.
+
+00:46:42.800 --> 00:46:45.920
+Yeah. My, my car said 98 degrees here in Seattle today.
+
+00:46:45.920 --> 00:46:49.120
+Okay. Well, there you go. Yeah. It's, it's starting close to that right now.
+
+00:46:50.800 --> 00:46:52.960
+We don't, we don't get the Atlanta humidity though.
+
+00:46:52.960 --> 00:46:55.040
+No, Atlanta's got great weather most of the year, but yeah,
+
+00:46:55.040 --> 00:46:58.240
+there's a few months where it gets a little rougher, you know, but hey, it gets away in the
+
+00:46:58.240 --> 00:47:03.200
+East Bay and California too. So, you know, it's all right, then I, this was actually before we end
+
+00:47:03.200 --> 00:47:06.800
+here, anything else you want to add about the company? Anything else you wanted to shout out
+
+00:47:06.800 --> 00:47:10.640
+today? Are you, are you on Twitter regularly? You want to give a handle there? I can include
+
+00:47:10.720 --> 00:47:13.920
+or anything like that. I'm not on Twitter that regularly, but it's Matthew LeRae.
+
+00:47:14.720 --> 00:47:17.920
+You can find me, you can find my company on Twitter, speed scale,
+
+00:47:17.920 --> 00:47:23.200
+Inc. You can, yeah, LinkedIn, Twitter. Yeah, that's good.
+
+00:47:23.200 --> 00:47:27.520
+All right. Our listeners generally like to stalk people that come on the show. So it's good to
+
+00:47:27.520 --> 00:47:32.640
+give them a few clues to start with. Okay. Then follow me on Twitter because I, I, I definitely,
+
+00:47:32.640 --> 00:47:39.680
+I definitely post there regularly as of the, all the time. I'm religious about Twitter.
+
+00:47:41.600 --> 00:47:44.560
+As of today. Yeah. Right now. I'm going to post right now.
+
+00:47:45.600 --> 00:47:51.440
+All right. Thank you again for being on, being on our podcast today. Hope you had fun. It was very
+
+00:47:51.440 --> 00:47:56.880
+informative for me and man, it got my head thinking harder than it normally does on a Friday afternoon.
+
+00:47:56.880 --> 00:48:02.640
+So thank you. So actually before we close, like for, for our list, Brent with one more
+
+00:48:02.640 --> 00:48:09.280
+tangents with our listeners, like what's the ideal customer to come and engage with speed scale?
+
+00:48:09.360 --> 00:48:13.600
+Right. Obviously you have expertise around Kubernetes. So if you're on containers,
+
+00:48:13.600 --> 00:48:18.960
+you're doing microservices, come talk to us. Yeah. Yeah. What's your pitch?
+
+00:48:18.960 --> 00:48:24.320
+So we help all companies of all sizes, right? Here's the thing. If you got like three,
+
+00:48:24.320 --> 00:48:28.480
+one of three problems, right? Let's say you're trying to move to a container system like
+
+00:48:28.480 --> 00:48:32.320
+Kubernetes, you're trying to migrate there or you're trying to learn about it. You should
+
+00:48:32.320 --> 00:48:37.600
+talk to us because we will help you not like, like have the quick way to test, to validate
+
+00:48:37.600 --> 00:48:41.760
+your software and test it. And so if you're making that migration, talk to us. The second
+
+00:48:41.760 --> 00:48:47.680
+thing is, is if you are fed up with your cloud spend on your, in your, like your integration and
+
+00:48:47.680 --> 00:48:53.200
+development test environments, come talk to us because our little mocking engines, right,
+
+00:48:53.200 --> 00:48:57.840
+are super efficient, too super tight. And they can replace huge tests, integration test environments
+
+00:48:57.840 --> 00:49:01.600
+with tiny little containers. So if you want to save some money on that, give us a shout.
+
+00:49:01.600 --> 00:49:06.080
+And the third thing is, is that if you, if you hate writing tests, then you're,
+
+00:49:06.080 --> 00:49:10.320
+you're definitely our people. And if you're all three, yeah, that's even better. Yeah.
+
+00:49:10.320 --> 00:49:15.600
+Perfect. Thank you. All right. Thanks everyone. All right, everybody. This is Alan. I'll see you
+
+00:49:15.600 --> 00:49:18.000
+soon. Goodbye. Thanks everybody. Thanks, Alan. Thanks.
+

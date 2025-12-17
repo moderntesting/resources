@@ -1,0 +1,2208 @@
+1
+00:00:11,660 --> 00:00:20,310
+The modern testing podcast join your hosts Alan and Brent I am mindless agile
+
+2
+00:00:20,310 --> 00:00:26,540
+robot I must iterate as we talk about software engineering software quality
+
+3
+00:00:26,540 --> 00:00:32,020
+leadership and whatever else comes to mind now on with the show hey Brent hi
+
+4
+00:00:32,020 --> 00:00:39,880
+Alan it's good to be back yeah and thank you for listening yes been a
+
+5
+00:00:39,880 --> 00:00:45,720
+rough week Alan I'm sorry I'm sorry we moved into a we at unity yeah the thing I
+
+6
+00:00:45,720 --> 00:00:54,640
+saw you were in two headquarters oh so no no no no no no no so a test bash is
+
+7
+00:00:54,640 --> 00:00:59,880
+going on this week shut out the test bashers in San Francisco and Philippe
+
+8
+00:00:59,880 --> 00:01:04,560
+walked by the unity office probably the main one in San Francisco where test
+
+9
+00:01:04,560 --> 00:01:10,400
+bash is and waved at it we currently have two different offices in San
+
+10
+00:01:10,400 --> 00:01:16,480
+Francisco because we outgrew that one so we have one for ads and one for the rest
+
+11
+00:01:16,480 --> 00:01:22,720
+of unity at some point I believe we'll reconsolidate in a larger space so that's
+
+12
+00:01:22,720 --> 00:01:29,560
+that was my comment about two buildings but even better I currently now work in
+
+13
+00:01:29,560 --> 00:01:37,080
+hands down the absolute nicest office I've ever been in in my life I visited
+
+14
+00:01:37,080 --> 00:01:43,840
+Google and I visited Facebook and screw them our unity Bellevue office is
+
+15
+00:01:43,840 --> 00:01:47,920
+sometimes you walk in the rooms you just laugh cuz they're over the top we have
+
+16
+00:01:47,920 --> 00:01:53,920
+there it's really good it's really fun even our in a weird space before we were
+
+17
+00:01:53,920 --> 00:01:57,680
+we were renting some just some random office space for a shoved in there until
+
+18
+00:01:57,680 --> 00:02:03,040
+we could build something and we're in Lincoln Square those you know know the
+
+19
+00:02:03,040 --> 00:02:07,520
+area the new Lincoln Square building which is four blocks away from the old
+
+20
+00:02:07,520 --> 00:02:12,080
+Lincoln Square building where I used to work on Microsoft Teams but it is very
+
+21
+00:02:12,080 --> 00:02:16,160
+good we still get lunch served every day and now we have our own kitchen on
+
+22
+00:02:16,160 --> 00:02:19,760
+site so we have chefs and food staff that prepare that for us and it is
+
+23
+00:02:19,760 --> 00:02:29,690
+fantastic I will say the time so there is a when when James worked at Google
+
+24
+00:02:29,690 --> 00:02:38,660
+he invited me over several times to go do lunch there and the lunch experience
+
+25
+00:02:38,660 --> 00:02:45,780
+at Google is just yeah there's is there's a choice there because there's so
+
+26
+00:02:45,780 --> 00:02:49,260
+many people they can be there's different chef stations depending on what
+
+27
+00:02:49,260 --> 00:02:52,100
+you want to do we get one lunch for everyone there's enough right of there
+
+28
+00:02:52,100 --> 00:02:58,540
+it's very good so anyway office is good I missed the grand opening the week they
+
+29
+00:02:58,540 --> 00:03:03,320
+moved in I was in Europe visiting with my team which was good Europe was good
+
+30
+00:03:03,320 --> 00:03:07,400
+got I had meet with the group formerly known as my leads because only one of
+
+31
+00:03:07,400 --> 00:03:12,560
+them still works for me anymore through the power of modern testing I still
+
+32
+00:03:12,560 --> 00:03:20,680
+coach mentor helped them a lot all of them so that's going on but interesting
+
+33
+00:03:20,680 --> 00:03:29,730
+conversations about what this means and and how that fits into how I guess at
+
+34
+00:03:29,730 --> 00:03:36,640
+a meta level how what happens when modern testing takes off we already had a
+
+35
+00:03:36,640 --> 00:03:45,160
+message from one listener who did work himself out of a role and a job we took
+
+36
+00:03:45,160 --> 00:03:49,480
+care of we talked about in a mailbag a few episodes ago I have plenty of job
+
+37
+00:03:49,480 --> 00:03:54,600
+and plenty of role left but I'm also used to things with larger scope so I'm
+
+38
+00:03:54,600 --> 00:03:58,320
+trying to the thing we're working together on it's good to have this
+
+39
+00:03:58,320 --> 00:04:03,710
+group people to work with is how do you if you're you imagine the visual I
+
+40
+00:04:03,710 --> 00:04:09,110
+guess is is as I'm delegating more of this work away to developers and other
+
+41
+00:04:09,110 --> 00:04:15,710
+people as we move towards something like modern testing what do I feel that void
+
+42
+00:04:15,710 --> 00:04:19,590
+with that gap with and some of this just you know some of that scope continues but
+
+43
+00:04:19,590 --> 00:04:24,270
+what happens is is more like it's delegated I do gain more capacity and
+
+44
+00:04:24,270 --> 00:04:28,270
+it's good to have a plan as you gain capacity and ability to do more stuff
+
+45
+00:04:28,270 --> 00:04:34,690
+you have a pipeline to fill those things I have a pipeline but the water is
+
+46
+00:04:34,690 --> 00:04:41,090
+not on full blast it's trickling in some working on that that is those such the
+
+47
+00:04:41,090 --> 00:04:47,240
+transitions can can definitely be challenging yeah I think and I was
+
+48
+00:04:47,240 --> 00:04:51,840
+prepared for it it just what happens is again with the visual if it all of a
+
+49
+00:04:51,840 --> 00:04:55,200
+sudden pours out faster than you expected yo wait I got to turn the
+
+50
+00:04:55,200 --> 00:05:00,000
+water on over here so imagine you have a bucket and you have water pouring out
+
+51
+00:05:00,000 --> 00:05:03,880
+one side you have water pouring it at the same speed your bucket stays full
+
+52
+00:05:03,880 --> 00:05:09,280
+my water started pouring out of my bucket faster than my incoming stream
+
+53
+00:05:09,280 --> 00:05:14,160
+yes so so the capacity went up as the water level went down not a huge issue
+
+54
+00:05:14,160 --> 00:05:17,120
+but just something we talked a lot about like what do we do what are some
+
+55
+00:05:17,120 --> 00:05:23,480
+options just trying to find the best things to do we is the group formerly
+
+56
+00:05:23,480 --> 00:05:30,930
+known as my leads oh so we had our it's not just you they're even having no no
+
+57
+00:05:30,930 --> 00:05:36,290
+no cuz they're there in no no it's mostly me okay mostly me all right so
+
+58
+00:05:36,290 --> 00:05:41,290
+anyway we work together are there consequences to know of your leads
+
+59
+00:05:41,290 --> 00:05:45,610
+express or your former leads expressed any sort of negative consequences
+
+60
+00:05:45,610 --> 00:05:51,400
+absolutely not they're they're they feel supported by their new manager they
+
+61
+00:05:51,400 --> 00:05:59,320
+do they do all right all is well oh yeah that is we done data science what yeah
+
+62
+00:05:59,320 --> 00:06:03,840
+that's that's what you do next data science I should be doing more with data
+
+63
+00:06:03,840 --> 00:06:09,600
+and I have a couple options there but probably not to be discussed here okay I
+
+64
+00:06:09,600 --> 00:06:14,400
+don't know if I've ever mentioned this before one of the thing before we get
+
+65
+00:06:14,400 --> 00:06:25,800
+into the meat of the topic of the day is I think my LinkedIn profile my advice
+
+66
+00:06:25,800 --> 00:06:30,640
+is and I did this for a while at Microsoft is just don't put your title
+
+67
+00:06:30,640 --> 00:06:38,040
+in your LinkedIn title don't just for when I did generic employee as my title
+
+68
+00:06:38,040 --> 00:06:43,520
+as my job title the random recruiter and BS mail I got from people went
+
+69
+00:06:43,520 --> 00:06:52,460
+remarkably down it all depends on where you are in terms of wanting to explore
+
+70
+00:06:52,460 --> 00:07:01,100
+the the job market I well no because there's two things I get I don't just get
+
+71
+00:07:01,100 --> 00:07:07,140
+random job recruitment things I got two different emails this week asking me if
+
+72
+00:07:07,140 --> 00:07:11,640
+I wanted to be a contract s debt on Windows we looked at your profile we
+
+73
+00:07:11,640 --> 00:07:16,320
+think you may be a good fit for this I said did you know did you did you
+
+74
+00:07:16,320 --> 00:07:23,420
+actually respond no I didn't okay the thing is I don't want and and but
+
+75
+00:07:23,420 --> 00:07:28,940
+what's worse than the random recruiting things is the amount of vendor spam I
+
+76
+00:07:28,940 --> 00:07:33,860
+get both in LinkedIn and somehow they got they figured out my email address I
+
+77
+00:07:33,860 --> 00:07:39,420
+don't know where but the amount I get sent to both my Alan angry weasel calm
+
+78
+00:07:39,420 --> 00:07:46,100
+which listeners know and my my unity account on you let us help you
+
+79
+00:07:46,100 --> 00:07:52,340
+revolutionize your QA testing business with our QA automation tools and and
+
+80
+00:07:52,340 --> 00:07:57,860
+testers we can help you improve the reliability and stability of your testing
+
+81
+00:07:57,860 --> 00:08:01,300
+process and I'm just making up crap but that's what their stuff sounds like too
+
+82
+00:08:01,300 --> 00:08:04,940
+and then not only do some of this stuff that I delete or go straight straight
+
+83
+00:08:04,940 --> 00:08:11,280
+to my spam folder some of these vendors actually get mad that I don't reply Alan
+
+84
+00:08:11,280 --> 00:08:15,120
+you haven't replied to our mail what is wrong with you what the hell is what the
+
+85
+00:08:15,120 --> 00:08:20,060
+hell are you doing why don't you care about quality not in those words but but
+
+86
+00:08:20,060 --> 00:08:23,900
+follow up after follow up can I please have 30 minutes to tell you how stupid
+
+87
+00:08:23,900 --> 00:08:29,660
+you're being by not contacting us and holy crap like non-stop I get 20 a week
+
+88
+00:08:29,660 --> 00:08:33,060
+and now they're set up they all go to my spam folder so only see him I go
+
+89
+00:08:33,060 --> 00:08:38,620
+empty out my spam make sure nothing good in there but it is absolutely over the
+
+90
+00:08:38,620 --> 00:08:44,820
+top ridiculous like no I don't want to hire an army of vendors to test my web
+
+91
+00:08:44,820 --> 00:08:52,020
+by website because 10% maybe 5% a tiny bit of what I do our websites and no I
+
+92
+00:08:52,020 --> 00:08:56,500
+don't want to write a gazillion selenium tests just this morning I got
+
+93
+00:08:56,500 --> 00:08:59,580
+a note I got a note over LinkedIn saying hey are you interested in
+
+94
+00:08:59,580 --> 00:09:08,920
+selenium certification you know my answer is that I didn't lie yeah it's no
+
+95
+00:09:08,920 --> 00:09:17,270
+trucking way so I yeah I that is and my title is I think this quality director
+
+96
+00:09:17,270 --> 00:09:29,120
+and not QA director not test manager I want to direct quality I want to be in
+
+97
+00:09:29,120 --> 00:09:33,240
+charge of quality which I which means I influence a lot of people and sometimes
+
+98
+00:09:33,320 --> 00:09:38,640
+I don't remember when someone oh I signed up for a webinar and I accidentally put
+
+99
+00:09:38,640 --> 00:09:45,060
+in my right phone number and they called me oh dude and I didn't what
+
+100
+00:09:45,060 --> 00:09:50,580
+happened was is it was a Chrome autofill and normally I purposely delete
+
+101
+00:09:50,580 --> 00:09:55,040
+out the phone number or I'll alter it if they require it and I must have missed
+
+102
+00:09:55,040 --> 00:10:00,960
+it and they called and wanted to know what do testers do and said not what
+
+103
+00:10:00,960 --> 00:10:04,240
+you expect what are testers you know what you expect leave me the hell alone
+
+104
+00:10:04,240 --> 00:10:10,190
+yeah I know they're I know this is their business and but hell and then one last
+
+105
+00:10:10,190 --> 00:10:13,870
+thing is every once in a while I will because I'll glance at some of these
+
+106
+00:10:13,870 --> 00:10:16,510
+things I'll just kind of see what they're selling and go oh god no
+
+107
+00:10:16,510 --> 00:10:20,390
+everyone's mostly something wow that's actually kind of cool and I won't give
+
+108
+00:10:20,390 --> 00:10:25,110
+any names here but I will follow up a little bit and say well tell me more
+
+109
+00:10:25,110 --> 00:10:30,390
+about this how does it work is there a demo cool or a video whatever and then I
+
+110
+00:10:30,390 --> 00:10:37,060
+asked about pricing and it is a tools are a crazy market which is weird giving
+
+111
+00:10:37,060 --> 00:10:44,020
+how many good tools are available open source because some of these tools are
+
+112
+00:10:44,020 --> 00:10:48,140
+three thousand five thousand ten thousand dollars ahead subscription for
+
+113
+00:10:48,140 --> 00:10:53,900
+fifty thousand dollars a year like wow that's a lot of money even in
+
+114
+00:10:53,900 --> 00:11:01,940
+Microsoft dollars yeah there the but then again you balance what's only half
+
+115
+00:11:01,940 --> 00:11:08,020
+an employee for a year to have that well the problem is is that is again these
+
+116
+00:11:08,020 --> 00:11:15,460
+tool companies that are essentially targeting niche markets yes all right
+
+117
+00:11:15,460 --> 00:11:20,140
+their license fees have to be through the roof yeah I know they had to make
+
+118
+00:11:20,260 --> 00:11:25,660
+money I get it I get the business model but it's a tough place to be in it I mean
+
+119
+00:11:25,660 --> 00:11:35,020
+you have only a certain level of business size that can support that cost yeah yeah
+
+120
+00:11:35,020 --> 00:11:40,980
+it's it's not a business market that I would want to be in no no and a lot of
+
+121
+00:11:40,980 --> 00:11:52,540
+times I have to shy it away there is this this one tool that that I
+
+122
+00:11:52,540 --> 00:11:59,660
+really really really really love it really makes things simple but it's six
+
+123
+00:11:59,660 --> 00:12:11,220
+grand for a single user and you have to renew it on an annual basis yeah and I'm
+
+124
+00:12:11,220 --> 00:12:22,210
+like you know what don't love it that much and I could rewrite it with greater
+
+125
+00:12:22,210 --> 00:12:33,450
+than six grand worth of satisfaction through Python or R for for my needs
+
+126
+00:12:33,450 --> 00:12:37,770
+yeah the the frugality of I mean I'm sure it's the right price for the market
+
+127
+00:12:37,770 --> 00:12:42,050
+but the frugality of it of me my frugalness makes you think God that's
+
+128
+00:12:42,050 --> 00:12:48,770
+really tough to justify anyway but vendors if you're listening I know you're
+
+129
+00:12:48,770 --> 00:12:57,680
+not please stop if I don't call me I'll call you yeah I the the vendor stuff even
+
+130
+00:12:57,680 --> 00:13:01,400
+the people I get the same crap and the problem is it is there is good stuff out
+
+131
+00:13:01,400 --> 00:13:06,680
+there but I know it's there what the good stuff I know it's there if I don't I'll
+
+132
+00:13:06,680 --> 00:13:15,120
+find it so I got one just this week and it's it's one of the few I've gotten
+
+133
+00:13:15,120 --> 00:13:22,700
+recently where where I like huh that might be interesting and it's Facebook
+
+134
+00:13:22,700 --> 00:13:28,500
+reached out they they're looking to bolster their leadership team and what
+
+135
+00:13:28,500 --> 00:13:34,640
+they call the data analytics space and I'm like okay that could potentially be
+
+136
+00:13:34,640 --> 00:13:42,450
+interesting wait where's Facebook Oh Seattle yeah no I guess I'm not driving
+
+137
+00:13:42,450 --> 00:13:48,100
+or working in Seattle you take a bus I take a bus nope do I do mailbags first
+
+138
+00:13:48,100 --> 00:13:54,820
+or do the thing first let's do mailbags first because I think it feeds in okay hey
+
+139
+00:13:54,820 --> 00:14:06,770
+we have a couple questions from the mailbag from Johan his question there
+
+140
+00:14:06,770 --> 00:14:12,250
+have been a lot of discussions about how to get testers to change and adapt MT
+
+141
+00:14:12,730 --> 00:14:19,690
+but in my work now I talk more to developers so I was wondering what parts
+
+142
+00:14:19,690 --> 00:14:25,690
+have you found hard to get buy-in from developers and how do you get through to
+
+143
+00:14:25,690 --> 00:14:33,330
+them as an example number five seems to be a big thing for testers but with
+
+144
+00:14:33,330 --> 00:14:38,970
+developers I've not had an issue with a single number for me developers have
+
+145
+00:14:38,970 --> 00:14:43,260
+liked the idea and bought into them almost from the start and the issues
+
+146
+00:14:43,260 --> 00:14:48,060
+start to come after a while when they understand how much responsibilities they
+
+147
+00:14:48,060 --> 00:14:55,250
+really have it's kind of sounds like he's figured it out already MT isn't
+
+148
+00:14:55,250 --> 00:15:00,330
+about improving or adapting your testing as as an individual at least MT is
+
+149
+00:15:00,330 --> 00:15:05,210
+about leadership and quality if you're able to lead the team towards those
+
+150
+00:15:05,210 --> 00:15:13,340
+things and improve that quality culture then you are then you are doing the
+
+151
+00:15:13,340 --> 00:15:17,480
+right thing read me the first sentence again before I think in his
+
+152
+00:15:17,480 --> 00:15:23,240
+elaboration he answered it well so the here's the question what parts of modern
+
+153
+00:15:23,240 --> 00:15:29,400
+testing have you found hard to get buy-in from developers and how do you get them
+
+154
+00:15:29,480 --> 00:15:36,080
+it depends on the developer I think in my experience on some teams just getting
+
+155
+00:15:36,080 --> 00:15:42,720
+him over the hump of like oh you can actually do testing is once they begin
+
+156
+00:15:42,720 --> 00:15:46,880
+to understand that things go much quicker but if you have an old school
+
+157
+00:15:46,880 --> 00:15:50,040
+like I can imagine developers at Microsoft you tell them to do testing
+
+158
+00:15:50,040 --> 00:15:56,680
+they go screw you not my job I would say the the hardest part of it is is
+
+159
+00:15:56,680 --> 00:16:04,920
+on that front right multiple folks have pushed back on MT making the statement
+
+160
+00:16:04,920 --> 00:16:12,070
+but but dev doesn't want to do testing right and now number one I'm pretty sure
+
+161
+00:16:12,070 --> 00:16:18,060
+I've said this here before right you don't build a whole test discipline just
+
+162
+00:16:18,060 --> 00:16:22,860
+because some other discipline doesn't want to do that work okay that's number
+
+163
+00:16:22,860 --> 00:16:33,700
+one number two once you've worked with the developers then this is where I would
+
+164
+00:16:33,700 --> 00:16:41,010
+say is the hardest part when when I did unified engineering it was actually
+
+165
+00:16:41,010 --> 00:16:50,410
+rather easy because I basically said you know what developer so if you recall I
+
+166
+00:16:50,410 --> 00:16:57,630
+had a combined team some that came back from xdev some came from xtest when I
+
+167
+00:16:57,630 --> 00:17:07,220
+stated this requirement it the the test was like oh sure makes sense no problem
+
+168
+00:17:07,220 --> 00:17:15,210
+okay but what I found is as the developers who really didn't want to do
+
+169
+00:17:15,210 --> 00:17:20,010
+the testing they would take shortcuts and they would ship the prod and then
+
+170
+00:17:20,010 --> 00:17:26,210
+there was another process that I had where essentially bugs get funded by the
+
+171
+00:17:26,210 --> 00:17:32,980
+whole team and so and on the board is fairly transparent so when when you
+
+172
+00:17:32,980 --> 00:17:42,320
+hotshot dev specialist basically gaining the perception of the team has to
+
+173
+00:17:42,320 --> 00:17:50,230
+prepare for an interrupt every time your thing ships the social behavior begins
+
+174
+00:17:50,230 --> 00:17:59,910
+to to I get it I get it I think it's preparing there's a perceived perceived
+
+175
+00:17:59,910 --> 00:18:09,100
+velocity drop when developers own quality and testing it's not perceived it is real
+
+176
+00:18:09,100 --> 00:18:15,300
+no no it's perceived because I'm if because they don't count the rework time
+
+177
+00:18:15,300 --> 00:18:19,220
+that will happen later after they find all their bugs that's why I mean
+
+178
+00:18:19,220 --> 00:18:25,140
+perceived so the other thing that I did back in those days is I had the similar
+
+179
+00:18:25,140 --> 00:18:31,630
+sign you know like you see a like construction sites a sign that says zero
+
+180
+00:18:31,630 --> 00:18:39,420
+days without incident man so I had a similar thing and I said okay guys when
+
+181
+00:18:39,420 --> 00:18:46,220
+we get to 30 days without anything lunch is on me not Microsoft me we're all
+
+182
+00:18:46,220 --> 00:18:54,640
+gonna go to roost Chris it took them six months to get there and every time it
+
+183
+00:18:54,640 --> 00:19:00,920
+got to like 28 and then one of those developers checked in something and
+
+184
+00:19:00,920 --> 00:19:07,400
+didn't do enough testing right the social pressure kicked in the but also
+
+185
+00:19:07,400 --> 00:19:14,560
+having that measure and that goal was something that helped positive behavior
+
+186
+00:19:14,560 --> 00:19:21,040
+the last thing though because it's part of this where they have this theory right
+
+187
+00:19:21,040 --> 00:19:28,480
+oh it's gonna delay time it's gonna do all it's gonna add time delays I don't
+
+188
+00:19:28,480 --> 00:19:34,680
+want to do this work in the first place once I got through that hurdle once I
+
+189
+00:19:34,680 --> 00:19:43,020
+got the 30 days bug-free we didn't have a we got to like 60 once we got the 30
+
+190
+00:19:43,020 --> 00:19:48,340
+because what happened is they kept on having to re-arc they had to re-discuss
+
+191
+00:19:48,340 --> 00:19:57,310
+they they both they added on the right test cases and it turned that developer
+
+192
+00:19:57,310 --> 00:20:05,230
+completely 180 degrees to a place where they were upset when I left because
+
+193
+00:20:05,230 --> 00:20:09,550
+they're like holy crap what if my new manager forces me to go back to this
+
+194
+00:20:09,550 --> 00:20:17,180
+old stupid world right so it's if you make it visible then the problem that
+
+195
+00:20:17,180 --> 00:20:21,780
+you're talking about kind of goes away yeah but I guess maybe even the shorter
+
+196
+00:20:21,780 --> 00:20:28,900
+answer is there may be some initial problems on some calm legacy dev teams
+
+197
+00:20:28,900 --> 00:20:37,660
+but but I think in my experience beyond that developers are they see much less
+
+198
+00:20:37,660 --> 00:20:42,540
+controversy in MT than testers do because again modern testing isn't about
+
+199
+00:20:42,540 --> 00:20:48,500
+testing it's about building software in a way that is much more efficient and
+
+200
+00:20:48,500 --> 00:20:55,310
+delivers customer value better and more frequently than traditional testing so
+
+201
+00:20:55,310 --> 00:20:58,110
+it makes sense his experience makes sense I expect that would be the same for
+
+202
+00:20:58,110 --> 00:21:02,270
+everyone will be less controversy with dev teams in fact I think it was I
+
+203
+00:21:02,510 --> 00:21:09,950
+Michael Cross who showed the video of my test bash Brighton talk on modern
+
+204
+00:21:09,950 --> 00:21:16,820
+testing which was the debut of Monty the modern tester and his dev team washed
+
+205
+00:21:16,820 --> 00:21:21,270
+it and they said things like oh it's just common sense so I think it's gonna
+
+206
+00:21:21,270 --> 00:21:25,350
+be typical on most dev teams and and the ones that freak out are the ones
+
+207
+00:21:25,350 --> 00:21:29,230
+that either need a lot of work from you as a leader to get them there or
+
+208
+00:21:29,230 --> 00:21:36,680
+teams just to run away from and let them die a slow miserable death of failure
+
+209
+00:21:36,680 --> 00:21:47,810
+what's the next question on that bright note from Ryan Ryan the Ryanator for a
+
+210
+00:21:47,810 --> 00:21:54,110
+team that is starting to practice the MT principles what would you recommend as
+
+211
+00:21:54,110 --> 00:22:02,110
+the first steps how would you show MT's value to stakeholders managers that have
+
+212
+00:22:02,110 --> 00:22:11,210
+a traditional testing mindset I see now why you thought this would be a good segue
+
+213
+00:22:11,210 --> 00:22:20,540
+into the main topic of the day so let's answer this question for the next 25
+
+214
+00:22:20,540 --> 00:22:26,780
+minutes okay if you don't mind I don't okay good good to be clear and I
+
+215
+00:22:26,780 --> 00:22:31,220
+mentioned this before but the lead-up here I'll say it again I have not once
+
+216
+00:22:31,220 --> 00:22:38,230
+ever gone to anyone at unity anyone on my teams is saying here's this thing I
+
+217
+00:22:38,230 --> 00:22:43,390
+call modern testing we're gonna do it here are my principles we should all
+
+218
+00:22:43,390 --> 00:22:47,430
+follow them that's one it wouldn't work but two it's just not the way I
+
+219
+00:22:47,430 --> 00:22:56,430
+do things I don't think anyone should do that well I'm just clear I don't so I
+
+220
+00:22:56,430 --> 00:23:00,390
+don't want anyone to think that oh you can just say you're doing it and you'll
+
+221
+00:23:00,390 --> 00:23:05,390
+show people the the video and put the principles on the wall and bam we are
+
+222
+00:23:05,390 --> 00:23:14,860
+MT there are a lot of folks that have asked for like specific steps to do
+
+223
+00:23:14,860 --> 00:23:20,540
+this and I'm honestly rather worried about being overly prescriptive because
+
+224
+00:23:20,540 --> 00:23:25,380
+it's gonna be a tautology but leading people leading teams towards modern
+
+225
+00:23:25,380 --> 00:23:35,910
+testing is a leadership challenge yes so one way but it's also not an
+
+226
+00:23:35,910 --> 00:23:45,020
+intellectually lazy one correct so well let me tell you a little bit how this
+
+227
+00:23:45,020 --> 00:23:50,940
+came about I the thing I'm about to talk about I gave a talk at the test
+
+228
+00:23:50,940 --> 00:23:59,980
+leadership Congress in New York in May I believe keynote on leading a quality
+
+229
+00:23:59,980 --> 00:24:04,950
+culture and I at that point I talked a lot about quality culture what it meant
+
+230
+00:24:04,950 --> 00:24:14,060
+to me a lot about leadership test leadership conference Congress but I
+
+231
+00:24:14,180 --> 00:24:19,900
+hadn't thought at least formally about what actually is how would you define
+
+232
+00:24:19,900 --> 00:24:24,860
+at a more granular level what a quality culture is and then maybe just a few
+
+233
+00:24:24,860 --> 00:24:29,700
+weeks later I was in a conversation at unity with my manager and a few of my
+
+234
+00:24:29,700 --> 00:24:34,580
+peers and this idea of like I start I was I quality culture on the mind I
+
+235
+00:24:34,580 --> 00:24:37,780
+was talking about quality culture and I said well what is it how would you
+
+236
+00:24:37,780 --> 00:24:43,230
+define it and and I said let me I think I can do that let me write that
+
+237
+00:24:43,230 --> 00:24:49,500
+down and I thought about it for a couple days and and thought and thought I
+
+238
+00:24:49,500 --> 00:24:56,110
+said I don't know what to write down how do I how can I quantify in some way or
+
+239
+00:24:56,110 --> 00:25:01,590
+what how do I describe a quality culture in a way that covers all the things that
+
+240
+00:25:01,590 --> 00:25:06,650
+would that would lead a team towards quality I very much put a modern
+
+241
+00:25:06,650 --> 00:25:12,090
+testing lens on it and that I looked at agile and lean and the modern
+
+242
+00:25:12,090 --> 00:25:17,730
+testing principles I thought what what makes a team function in an empty way
+
+243
+00:25:17,730 --> 00:25:23,730
+and all of a sudden at some point something clicked and I do so much work
+
+244
+00:25:23,730 --> 00:25:29,130
+air-quilt work just driving around and walking the dog and thinking that when I
+
+245
+00:25:29,130 --> 00:25:36,400
+spit this thing out originally it was like an hour of work and it's had some
+
+246
+00:25:36,400 --> 00:25:41,120
+tweaking since then but not overhauled edits so what I built after that long
+
+247
+00:25:41,120 --> 00:25:53,070
+diatribe is a quality grid it's I I'm pausing because it frequently gets
+
+248
+00:25:53,070 --> 00:25:59,310
+referred to as a maturity model and I hate maturity models for many reasons
+
+249
+00:25:59,310 --> 00:26:05,590
+one is just a basic allergic this to things like CMM CMMI how about the
+
+250
+00:26:05,590 --> 00:26:15,180
+quality culture transition guide let's call it that quality culture transition
+
+251
+00:26:15,180 --> 00:26:21,410
+guide if I had internet access I change it right now my original doc so what I
+
+252
+00:26:21,410 --> 00:26:24,410
+did and the way this worked out and just do my thought process before we go
+
+253
+00:26:24,410 --> 00:26:29,900
+through these is I listed the hard part was coming up with what were the
+
+254
+00:26:29,900 --> 00:26:35,900
+attributes of a team really clicking on frequently delivering customer value
+
+255
+00:26:35,900 --> 00:26:41,260
+accelerating the achievement of quality what does a good dev team a good
+
+256
+00:26:41,260 --> 00:26:45,260
+engineering team look like delivering that as able to break it down into about
+
+257
+00:26:45,260 --> 00:26:49,100
+I should count them eight attributes but I'll read them then we'll kind of go
+
+258
+00:26:49,100 --> 00:26:52,980
+through them one by one I might have mentioned these on a previous podcast
+
+259
+00:26:52,980 --> 00:26:57,930
+we'll dive a little bit deeper today quality and test ownership and I'll come
+
+260
+00:26:57,930 --> 00:27:02,300
+back and go deeper into these like who owns quality technical debt and
+
+261
+00:27:02,300 --> 00:27:11,180
+maintenance code quality and tools customer data analysis the development
+
+262
+00:27:11,180 --> 00:27:19,260
+approach learning and improvement and leadership emphasis and Brent I'm gonna
+
+263
+00:27:19,260 --> 00:27:22,100
+ask you to interrupt me whenever you want otherwise I'm just gonna talk a
+
+264
+00:27:22,100 --> 00:27:29,430
+little bit about what I did those those headers are sort of horizontal aspects yes
+
+265
+00:27:29,430 --> 00:27:34,030
+you think or expect teams to be in fact it's probably a good time to
+
+266
+00:27:34,030 --> 00:27:41,640
+interject a partial answer to the question is I would look at how well the
+
+267
+00:27:41,640 --> 00:27:48,200
+team is doing on each of those aspects each of those horizontals and some areas
+
+268
+00:27:48,200 --> 00:27:55,090
+they may be more I'll put it in the accelerate way some teams may have more
+
+269
+00:27:55,090 --> 00:27:59,890
+capabilities in those areas than other in some areas than others you can use
+
+270
+00:27:59,890 --> 00:28:09,000
+this quality culture transition guide love it to figure out where one where you
+
+271
+00:28:09,000 --> 00:28:13,400
+are but not to grade yourself in the in the old world of maturity model but to
+
+272
+00:28:13,400 --> 00:28:18,360
+figure out where you may need to make improvement so let's talk about testing
+
+273
+00:28:18,360 --> 00:28:22,720
+breadth wait before you continue on there's there's one thing I would say
+
+274
+00:28:22,720 --> 00:28:36,430
+sure so first off with anything that's the one paradigm here you often hear it
+
+275
+00:28:36,430 --> 00:28:46,420
+as you can think of it as a crawl walk run type model exactly right now generally
+
+276
+00:28:46,420 --> 00:28:51,690
+my guidance when dealing with these type of things is first you go through an
+
+277
+00:28:51,690 --> 00:28:59,410
+inventory where you're at and then you go okay how do we get to the next column
+
+278
+00:28:59,410 --> 00:29:05,650
+don't try to skip columns generally is what I advise because a lot of times that
+
+279
+00:29:05,650 --> 00:29:13,220
+creates more problems than it's worth I definitely agree and but even that
+
+280
+00:29:13,220 --> 00:29:17,260
+even that approach sounds a little bit too much like the old maturity model
+
+281
+00:29:17,260 --> 00:29:23,460
+approach to me so what I have had teams do is sort of assess themselves on where
+
+282
+00:29:23,460 --> 00:29:27,980
+they are on the model sometimes just the the QA person on my team but more often
+
+283
+00:29:27,980 --> 00:29:34,260
+with a with the dev lead with them and then not worry about necessarily about
+
+284
+00:29:34,260 --> 00:29:39,540
+getting to the next box but okay we've gone through this now we've it's forced
+
+285
+00:29:39,540 --> 00:29:43,180
+us to take a different kind of retrospective on overall on what the
+
+286
+00:29:43,180 --> 00:29:46,300
+team is doing and how we approach software and delivery and building things
+
+287
+00:29:46,820 --> 00:29:51,240
+and what are one or two or three areas we want to work on improving in this
+
+288
+00:29:51,240 --> 00:29:57,000
+transition guide comes up a lot in retrospectives and in the incorporation of
+
+289
+00:29:57,000 --> 00:30:05,110
+an experimental or experimenting culture where you say hey let's brainstorm come
+
+290
+00:30:05,110 --> 00:30:10,470
+up with ideas around what what actions we should take let's take those actions
+
+291
+00:30:10,470 --> 00:30:14,830
+let's also determine how we're going to determine if it's success succeeded or
+
+292
+00:30:14,830 --> 00:30:22,250
+failed and if it failed no judgment call except if we you know try it again
+
+293
+00:30:22,250 --> 00:30:26,570
+or continue trying to power through that's the biggest thing that I see let
+
+294
+00:30:26,570 --> 00:30:31,650
+me I have a gazillion examples of how we've used this so let me just go ahead
+
+295
+00:30:31,650 --> 00:30:36,670
+get through it but I gotta get a little bit more I think the listeners need a
+
+296
+00:30:36,670 --> 00:30:40,590
+little bit more than just the headers so I'll talk a little bit about how I
+
+297
+00:30:40,590 --> 00:30:46,310
+built the model and what's in there so I built a transition guide a model I call
+
+298
+00:30:46,310 --> 00:30:52,230
+it the thing sometimes to avoid calling it any sort of maturity thing but there's
+
+299
+00:30:52,230 --> 00:30:56,230
+a starting level where the thing basically isn't happening where there is
+
+300
+00:30:56,230 --> 00:31:00,230
+no testing breath where people assume that doing some happy path tests is
+
+301
+00:31:00,230 --> 00:31:05,000
+enough what horizontal you talking about I'm talking about testing breath okay
+
+302
+00:31:05,360 --> 00:31:13,140
+this is testing breath so if you have a lack of almost complete lack of capability
+
+303
+00:31:13,140 --> 00:31:18,700
+in testing breath you're probably focused almost entirely on functional testing
+
+304
+00:31:18,700 --> 00:31:23,760
+and verification you may do some other things but they're not planned and
+
+305
+00:31:23,760 --> 00:31:30,150
+sporadic whereas if you are super mature and the way I built this was to kind of
+
+306
+00:31:30,150 --> 00:31:33,350
+describe what I thought like what is it if you're basically not doing this
+
+307
+00:31:33,350 --> 00:31:38,950
+and what is it like if you are like rock stars kicking butt at this superstars
+
+308
+00:31:38,950 --> 00:31:46,030
+and if you're at the top level building a multi-dimensional quality strategy is
+
+309
+00:31:46,030 --> 00:31:51,470
+part of how the team builds software design includes that your testing
+
+310
+00:31:51,470 --> 00:31:55,430
+approaches consistently cover all areas of like the agile quadrant you want to
+
+311
+00:31:55,430 --> 00:31:59,830
+use that model you're thinking about all aspects of quality your continues to
+
+312
+00:31:59,830 --> 00:32:02,710
+thinking about what are the different ways I mean the test is where do we
+
+313
+00:32:02,710 --> 00:32:09,550
+need to do perf securities involved early as a specialty but also you're
+
+314
+00:32:09,550 --> 00:32:12,550
+just thinking about all the different things and go wrong all the time and
+
+315
+00:32:12,550 --> 00:32:18,490
+we've we've dealt with teams like this so there are teams that do operate at
+
+316
+00:32:18,490 --> 00:32:21,310
+that level and of course there are levels in between where maybe you're
+
+317
+00:32:21,310 --> 00:32:23,830
+you're not you're getting to learn things but you're not doing them
+
+318
+00:32:23,830 --> 00:32:28,510
+consistently there's there's levels in between but the growth is from one end
+
+319
+00:32:29,230 --> 00:32:35,840
+to the other on the testing breath you're saying that there's a multi-dimensional
+
+320
+00:32:35,840 --> 00:32:45,850
+you say thinking I don't necessarily think you're referring to a you know a
+
+321
+00:32:45,850 --> 00:32:50,770
+traditional test plan no I said a quality strategy how do we build this
+
+322
+00:32:50,770 --> 00:32:57,090
+with quality meaning right I'm building a if I'm building YouTube probably not the
+
+323
+00:32:57,090 --> 00:33:00,570
+best MVP to start with but if I'm building YouTube I'm thinking about
+
+324
+00:33:00,570 --> 00:33:07,090
+scale and reliability and security and all those things from square one they're
+
+325
+00:33:07,090 --> 00:33:10,530
+not like oh wow I guess I should think about scale so there's the old-school
+
+326
+00:33:10,530 --> 00:33:16,490
+60-page test plan no no I'm just saying this criteria though it does not okay
+
+327
+00:33:16,490 --> 00:33:23,050
+because the old-school 60-page test plan was often not a strategy with often a
+
+328
+00:33:23,050 --> 00:33:27,410
+list of things and even worse a list of test cases that would be done against
+
+329
+00:33:27,410 --> 00:33:31,930
+these things I don't want that I this is about and you you're playing devil's
+
+330
+00:33:31,930 --> 00:33:40,140
+advocate here but this is about a full-breath quality strategy as is
+
+331
+00:33:40,140 --> 00:33:46,550
+planned and executed as part of building the thing you you and I have been on
+
+332
+00:33:46,550 --> 00:33:52,750
+teams where illities any perf or security or scale testing that's what we
+
+333
+00:33:52,750 --> 00:33:56,550
+did at the very end of the product when we knew we're gonna ship in two
+
+334
+00:33:56,550 --> 00:33:59,190
+weeks anyway and we found a bunch of bugs that people weren't gonna fix
+
+335
+00:33:59,190 --> 00:34:03,300
+because it was just too late because oh that's gonna be an architecture change
+
+336
+00:34:03,300 --> 00:34:09,140
+we can't do that now yeah the the other thing I would say in there would be
+
+337
+00:34:09,140 --> 00:34:15,500
+right adaptability is gonna be key in there right I think the biggest thing so
+
+338
+00:34:15,500 --> 00:34:22,470
+I think you're trying to express an element of holistic aspect yeah I want
+
+339
+00:34:22,470 --> 00:34:26,230
+you to recognize like all these things matter and we'll go a little faster
+
+340
+00:34:26,230 --> 00:34:29,830
+through the rest so we can finish well let me know yeah cuz we're never gonna
+
+341
+00:34:29,830 --> 00:34:33,910
+finish go ahead go ahead this number one I don't think you're saying anything
+
+342
+00:34:33,910 --> 00:34:43,780
+around prescriptive or are reactive right as you know I don't want everyone anyone
+
+343
+00:34:43,780 --> 00:34:48,740
+building the 80 page test plan what I'm saying is that all has to be done
+
+344
+00:34:48,740 --> 00:34:54,700
+before we ship all aspects of quality are considered from day one to day in
+
+345
+00:34:54,700 --> 00:35:00,150
+that's it that's at the top level and there's steps you can think about what
+
+346
+00:35:00,150 --> 00:35:04,710
+you need to do to get there in between you again we can all think of the baby
+
+347
+00:35:04,710 --> 00:35:10,310
+steps I'm not gonna list them out here yep quality and test ownership at level
+
+348
+00:35:10,310 --> 00:35:14,110
+one is traditional testing I should even call it level one when you have
+
+349
+00:35:14,110 --> 00:35:17,990
+lack of capability you're doing there's a test team that does all the testing
+
+350
+00:35:17,990 --> 00:35:22,350
+because it's their job and it's not and developers do developing because it's
+
+351
+00:35:22,350 --> 00:35:27,940
+their job okay but at the other end I could probably set up with the last line
+
+352
+00:35:27,940 --> 00:35:31,780
+in this thing which I did not get any pushback even from people outside my
+
+353
+00:35:31,780 --> 00:35:39,060
+team where you truly have whole team owned quality and one of my gripes with
+
+354
+00:35:39,060 --> 00:35:43,700
+agile testing is even though Lisa and Janet Lisa Crispin Janet Gregory
+
+355
+00:35:43,700 --> 00:35:47,940
+describe whole team testing is everyone owns testing and quality often what I
+
+356
+00:35:47,940 --> 00:35:54,300
+see unfortunately on agile teams is even there is they iterate but the tester
+
+357
+00:35:54,300 --> 00:35:58,220
+stills the tester on the team still does all the testing the agile tester yeah I
+
+358
+00:35:58,220 --> 00:36:04,140
+don't think that's Lisa Janet no it's definitely not their intent they they sigh
+
+359
+00:36:04,140 --> 00:36:11,420
+visibly or or with verbs every time this comes up but I'll read the end of
+
+360
+00:36:11,420 --> 00:36:14,700
+this that the test specialist focuses on coaching the team and assisting
+
+361
+00:36:14,700 --> 00:36:20,540
+quality efforts sounds like MT blah blah blah and then last sentence where I did
+
+362
+00:36:20,540 --> 00:36:26,490
+not get any pushback because I've shared this across all of unity is teams at
+
+363
+00:36:26,490 --> 00:36:30,930
+this level may not need a dedicated quality specialist nobody shit their pants
+
+364
+00:36:30,930 --> 00:36:36,580
+nobody freaked out yeah I think we've talked about those things enough on
+
+365
+00:36:36,580 --> 00:36:40,860
+here we don't need to go any deeper yeah technical debt and one thing on
+
+366
+00:36:40,860 --> 00:36:51,610
+the last one that I'm tired of if everyone owns quality then nobody
+
+367
+00:36:51,610 --> 00:37:01,890
+owns quality alright that's it okay so tech debt and maintenance this is the
+
+368
+00:37:01,890 --> 00:37:04,410
+biggest thing here something talked about is just working from a zero bug
+
+369
+00:37:04,410 --> 00:37:08,410
+backlog but we also need to recognize that bugs are not the only form of tech
+
+370
+00:37:08,410 --> 00:37:14,340
+debt keep your debt paid off keep it zero team that that is very has zero
+
+371
+00:37:14,340 --> 00:37:19,540
+or a little capability here has a huge bug backlog they have all kinds of to
+
+372
+00:37:19,540 --> 00:37:23,940
+do's riddled through the code they have they don't even know what static
+
+373
+00:37:23,940 --> 00:37:26,860
+analysis linter errors they have because they don't run those tools they
+
+374
+00:37:26,860 --> 00:37:33,940
+have a huge both known and unknown mound of tech debt whereas teams on the most
+
+375
+00:37:33,940 --> 00:37:41,780
+mature scale have little to zero leaning towards zero tech debt they just
+
+376
+00:37:41,780 --> 00:37:46,650
+don't carry it forward they pay their bills on time something else we've also
+
+377
+00:37:46,650 --> 00:37:51,170
+talked about in the context of empty a lot or they they cancel their
+
+378
+00:37:51,170 --> 00:38:00,130
+subscription right to me a bug is not necessarily tech debt right as we've
+
+379
+00:38:00,130 --> 00:38:06,150
+talked on multiple cases there's many a bugs that are never worth fixing right
+
+380
+00:38:06,150 --> 00:38:10,470
+but I think just not even but I would say keeping those bugs around even if
+
+381
+00:38:10,470 --> 00:38:13,790
+you're not going to fix them that is debt because you end up looking at those
+
+382
+00:38:13,790 --> 00:38:19,590
+bugs over and over again that's waste is in my waste yeah fine and in between
+
+383
+00:38:19,590 --> 00:38:22,830
+you can see like okay we're keeping things triage we have a we have a fairly
+
+384
+00:38:22,830 --> 00:38:28,550
+low bug camp but we're happy with 20 and that's I guess it's a start but you
+
+385
+00:38:28,550 --> 00:38:30,750
+can look at where you are in between and where you want to go and figure
+
+386
+00:38:30,750 --> 00:38:36,500
+things out the team that when I started at unity had the highest bug
+
+387
+00:38:36,500 --> 00:38:41,660
+count and was the crummiest quality is now down finally under 10 total bugs
+
+388
+00:38:41,660 --> 00:38:46,140
+that they carry that they carry and there with the goal still to get to zero
+
+389
+00:38:46,140 --> 00:38:50,060
+by the end of the year but in fact another one of my teams that was when
+
+390
+00:38:50,060 --> 00:38:55,140
+that team got low there was another pair of teams that were then my new
+
+391
+00:38:55,140 --> 00:39:00,900
+highest in the 30s and they just got to zero yesterday day before so slowly but
+
+392
+00:39:00,900 --> 00:39:08,620
+surely almost all of the teams in my jurisdiction area care about are still on
+
+393
+00:39:08,620 --> 00:39:11,900
+track to get to a zero bug backlog by the end of the calendar year and the
+
+394
+00:39:11,900 --> 00:39:16,720
+teams that have gotten there and sustained it what's their feedback it's
+
+395
+00:39:16,720 --> 00:39:24,780
+it's freeing right no I know that I'm yeah yeah that's how they feel yeah it's
+
+396
+00:39:24,780 --> 00:39:29,540
+all like oh this is much better but they don't miss doing triage beans we look
+
+397
+00:39:29,540 --> 00:39:34,900
+at the same bugs over and over and over no yeah I don't either yeah but the other
+
+398
+00:39:34,900 --> 00:39:39,380
+phenomenon that I noticed is that once you get to that state and you've
+
+399
+00:39:39,380 --> 00:39:49,440
+maintained that state it becomes a lot clearer that how bad feature development
+
+400
+00:39:49,440 --> 00:39:55,160
+was for you and you were carrying that bug backlog right the thing I've noticed
+
+401
+00:39:55,160 --> 00:40:02,720
+with all the teams I've put them through is essentially this model sort of
+
+402
+00:40:02,720 --> 00:40:11,020
+encourages more scalable architectures and a scalable architecture allows you to
+
+403
+00:40:11,020 --> 00:40:17,180
+produce features when you trying to figure out how to not fund the bug but
+
+404
+00:40:17,180 --> 00:40:24,580
+string a feature through a minefield of a couple hundred bugs your estimates
+
+405
+00:40:24,580 --> 00:40:30,850
+go slower in your release like for sure yep you are correct go next attribute is
+
+406
+00:40:30,850 --> 00:40:36,610
+around code quality and tools and this means a team that does no capability
+
+407
+00:40:36,610 --> 00:40:42,290
+here they compile their code and then there and you can see these things
+
+408
+00:40:42,290 --> 00:40:47,210
+interact because if you're you're not going to be generally I have a hard time
+
+409
+00:40:47,210 --> 00:40:52,700
+thinking of a team who had no capability in some areas but we're very very high
+
+410
+00:40:52,700 --> 00:40:57,450
+in other areas so team they're not running they're probably compiling at a
+
+411
+00:40:57,450 --> 00:41:01,490
+look not at the highest warning level these aren't independent attributes right
+
+412
+00:41:01,490 --> 00:41:06,010
+exactly they will just like the modern testing principles yeah so they're not
+
+413
+00:41:06,010 --> 00:41:10,410
+using any to any code correctness tools things like code coverage which is a
+
+414
+00:41:10,410 --> 00:41:15,570
+wonderful tool in a horrible metric linters compiler warnings other static
+
+415
+00:41:15,570 --> 00:41:20,370
+analysis tools security analysis tools teams that are very mature here their
+
+416
+00:41:20,370 --> 00:41:27,050
+CI runs a crap ton of code correctness tools because that's where we can catch
+
+417
+00:41:27,050 --> 00:41:32,090
+the bulk of those things and that's where they should be caught not by tests
+
+418
+00:41:32,090 --> 00:41:36,530
+down the road this is like the level of tests that run before unit tests yeah
+
+419
+00:41:36,530 --> 00:41:40,610
+and then goes with tech debt so you turn on these linters I see teams turn
+
+420
+00:41:40,610 --> 00:41:45,450
+on linters and go oh this is bad I'm gonna have I'm gonna run the linter but
+
+421
+00:41:45,450 --> 00:41:50,500
+we're gonna turn off all the warnings like I you I get what you're doing
+
+422
+00:41:50,500 --> 00:41:54,860
+there but you you yeah teams that are very mature here they they are
+
+423
+00:41:54,860 --> 00:42:01,220
+constantly trying to find holes or risk using code coverage they have linters and
+
+424
+00:42:01,220 --> 00:42:06,020
+static analysis tools running on on every check-in to make sure that they
+
+425
+00:42:06,020 --> 00:42:11,190
+have the highest code correctness they can and in the middle levels maybe
+
+426
+00:42:11,190 --> 00:42:14,430
+you're starting to use things be to look at the results or you turn or you
+
+427
+00:42:14,430 --> 00:42:22,490
+turn off a lot of the rules for our linters you're not I think teams at a
+
+428
+00:42:22,490 --> 00:42:25,610
+mature level here are also not just running these tools but they're looking
+
+429
+00:42:25,610 --> 00:42:29,930
+for additional tools my partner what they do is like oh what else do you
+
+430
+00:42:29,930 --> 00:42:35,010
+define this looking for code correctness tools as part of maybe some
+
+431
+00:42:35,010 --> 00:42:39,610
+of the investigation that comes out of a retro or an RCA analysis yeah the one
+
+432
+00:42:39,610 --> 00:42:45,850
+thing I guess it's RC analysis or otherwise it's redundant release no no
+
+433
+00:42:45,850 --> 00:42:51,130
+root cause analysis rather than saying RCA analysis is redundant right it's like
+
+434
+00:42:51,130 --> 00:42:59,530
+an ATM machine anyway go on right yeah the one thing I was actually really
+
+435
+00:42:59,530 --> 00:43:09,040
+fond of back in the day was measuring cyclo-matic complexity oh yeah yeah at
+
+436
+00:43:09,040 --> 00:43:16,400
+the nice and even complexity metrics are a great thing for risk we had you
+
+437
+00:43:16,400 --> 00:43:21,000
+and side to engineer unity had a hack week they had to have one every year I
+
+438
+00:43:21,000 --> 00:43:26,560
+haven't been to one yet my travel is a little crazy this summer but I did make
+
+439
+00:43:26,560 --> 00:43:31,080
+sure I took a half a day during hack week in the Seattle office and just do
+
+440
+00:43:31,080 --> 00:43:36,340
+something random and the random thing I did was I wrote again using some
+
+441
+00:43:36,340 --> 00:43:45,060
+helpers from the NPM library I wrote a little node app that would look at the
+
+442
+00:43:45,060 --> 00:43:50,860
+files you had checked out run a complexity analysis tools around a bunch
+
+443
+00:43:50,860 --> 00:43:54,160
+of different around cyclo-matic complexity Halsted metrics and some other
+
+444
+00:43:54,160 --> 00:43:59,220
+complexity analysis and we give home with an overall number and I would flag files
+
+445
+00:43:59,220 --> 00:44:05,780
+or functions that had in just your checked out files that have a high
+
+446
+00:44:05,780 --> 00:44:11,720
+level level over and whatever N was of complexity because complexity doesn't
+
+447
+00:44:11,720 --> 00:44:15,480
+mean the code is buggy it's a smoke alarm out of fire it means there is risk there
+
+448
+00:44:15,480 --> 00:44:25,890
+yeah I mean that the one thing that I haven't observed yet is tooling that can
+
+449
+00:44:25,890 --> 00:44:34,810
+analyze how you've put together your code and help to simplify it yeah hey if
+
+450
+00:44:34,810 --> 00:44:39,450
+you if you incorporate this design pattern instead of the thing that you did
+
+451
+00:44:39,450 --> 00:44:44,050
+you'd be able to reduce part of it is part of the maturity here is continuing
+
+452
+00:44:44,050 --> 00:44:48,450
+to search for things like that yes chances are eventually they'll exist
+
+453
+00:44:48,450 --> 00:44:55,570
+next thing near and dear to do you have a heart no okay near and dear to the
+
+454
+00:44:55,570 --> 00:45:00,170
+cavity and branch chest where a heart would live is customer data analysis yay
+
+455
+00:45:00,330 --> 00:45:05,970
+we're at a where you had low capability you don't do it you don't collect anything
+
+456
+00:45:05,970 --> 00:45:10,330
+about higher products being used and then you can imagine we've talked about
+
+457
+00:45:10,330 --> 00:45:16,770
+Brent's data maturity model in here before right but I think the lower lowest
+
+458
+00:45:16,770 --> 00:45:21,850
+capability I would hope this doesn't exist but it would essentially be your
+
+459
+00:45:21,850 --> 00:45:30,600
+entire team functions off of what's the founder syndrome which is essentially no
+
+460
+00:45:30,600 --> 00:45:41,110
+founder of a startup has ever has ever understood why his idea isn't the hottest
+
+461
+00:45:41,110 --> 00:45:46,270
+thing since pancakes yeah and I'm actually gonna read through the model
+
+462
+00:45:46,270 --> 00:45:51,230
+here because I think it'll help explain it and I'll go quickly I'll skip so free
+
+463
+00:45:52,090 --> 00:45:58,360
+in this transition guide I wrote I wrote a couple levels in between to help
+
+464
+00:45:58,360 --> 00:46:01,800
+figure help teams like figure out where they were in the middle and figure out
+
+465
+00:46:01,800 --> 00:46:04,880
+what kind of things they could do to improve and I have a whole accompanying
+
+466
+00:46:04,880 --> 00:46:10,000
+doc I wrote internally it talks a little more deeply this will be in the
+
+467
+00:46:10,000 --> 00:46:14,230
+twenty twenty eight release of the modern testing book I'm just making that
+
+468
+00:46:14,230 --> 00:46:17,870
+twenty twenty eight yeah I figure it'll take that long it'll be obsolete
+
+469
+00:46:17,870 --> 00:46:20,590
+like oh we're coming up on the ten year anniversary of how we test off
+
+470
+00:46:20,590 --> 00:46:24,030
+right Microsoft by the way I'll need to write a blog post about that so anyway
+
+471
+00:46:24,030 --> 00:46:30,710
+on data analysis I mentioned like it's data is untracked or ignored with a few
+
+472
+00:46:30,710 --> 00:46:35,040
+more capabilities a little more higher along the transition guide you're gonna
+
+473
+00:46:35,040 --> 00:46:40,080
+have some data track that may be used to understand quality prioritization data
+
+474
+00:46:40,080 --> 00:46:44,480
+may be discarded if it does not match intuition or anecdotal feedback and
+
+475
+00:46:44,480 --> 00:46:47,520
+we've seen this happen but you're starting to collect data you just don't
+
+476
+00:46:47,520 --> 00:46:52,520
+trust it yet because it's it's yeah it's what do you call this data affirmed
+
+477
+00:46:52,520 --> 00:46:59,610
+yeah that's similar to that level it was a Steve Rowe call it that but I've now
+
+478
+00:46:59,610 --> 00:47:02,290
+stolen it all right yeah and I stole it from you
+
+479
+00:47:02,290 --> 00:47:10,330
+yay me and then even before you get to the most you know optimal level you
+
+480
+00:47:10,330 --> 00:47:13,330
+may be at a level where the team has at least a handful of metrics in place
+
+481
+00:47:13,330 --> 00:47:17,370
+that help them understand feature quality and customer experience there's probably
+
+482
+00:47:17,490 --> 00:47:20,210
+some holes in interpreting the data but those usually address quickly
+
+483
+00:47:20,210 --> 00:47:25,290
+instrumentation and or analytics as part of the requirements are done definition
+
+484
+00:47:25,290 --> 00:47:28,770
+and almost all and almost always done as part of feature development so at
+
+485
+00:47:28,770 --> 00:47:38,290
+that point you're well on your way to becoming data centric but like all
+
+486
+00:47:38,290 --> 00:47:41,970
+things that are like maturity models even if we don't like to call them that
+
+487
+00:47:41,970 --> 00:47:46,530
+there's a level where that can be okay for a while for some teams you don't
+
+488
+00:47:46,530 --> 00:47:52,050
+have to get to the highest level in everything no I like that it's a guide
+
+489
+00:47:52,050 --> 00:47:56,250
+yes it's to help you read you read through and figure out okay here's
+
+490
+00:47:56,250 --> 00:48:00,010
+something I can do more of this is actually the way I want it to be used is
+
+491
+00:48:00,010 --> 00:48:06,210
+for I mean in a very immature quality culture you might think that okay once
+
+492
+00:48:06,210 --> 00:48:09,450
+the test team plays with the buttons and things for 10 minutes or an hour or
+
+493
+00:48:09,450 --> 00:48:14,450
+a day then we ship and it's good but looking at what are all the things that
+
+494
+00:48:14,450 --> 00:48:18,370
+actually influence a quality culture two more rows to go through three more
+
+495
+00:48:18,370 --> 00:48:23,550
+ways to get last one can you reread that very quickly again no because I
+
+496
+00:48:23,550 --> 00:48:27,550
+paraphrased what I wrote so it'll be even different so the team has a
+
+497
+00:48:27,550 --> 00:48:30,030
+handful of metrics in place help them understand feature quality customer
+
+498
+00:48:30,030 --> 00:48:34,950
+experience although there may be some holes they're usually addressed quickly
+
+499
+00:48:34,950 --> 00:48:39,550
+analytics as part of the requirements or done definition and almost always done
+
+500
+00:48:39,550 --> 00:48:43,230
+as part of feature development okay okay because what I think you said was
+
+501
+00:48:43,230 --> 00:48:48,670
+instrumentation before analytics is a much better word yeah I have I used both
+
+502
+00:48:48,670 --> 00:48:55,070
+in here so but the one problem I also see and this by no means is a north star
+
+503
+00:48:55,070 --> 00:48:59,910
+that we're trying to guide people towards and that is a lot of times you'll
+
+504
+00:48:59,910 --> 00:49:04,910
+see in the traditional world you'll see a PM with their 60 page spec listing out
+
+505
+00:49:04,910 --> 00:49:09,950
+requirements and then there's a three page section of all the instrumentation
+
+506
+00:49:09,950 --> 00:49:16,460
+requirements and it's just a grab bag of random crap here I would say go back to
+
+507
+00:49:16,460 --> 00:49:24,220
+what episode was it 62 the hypothesis episode where I I don't know remember
+
+508
+00:49:24,220 --> 00:49:27,700
+the exercise I walked you through yeah I don't know it was in the I was in the
+
+509
+00:49:27,700 --> 00:49:32,300
+80s that's far more helpful all right really important thing is the
+
+510
+00:49:32,300 --> 00:49:38,630
+development approach and this is where a lean and agile come in at the zero
+
+511
+00:49:38,630 --> 00:49:43,990
+capability level you have no approach it's pure cowboy write it and compile it
+
+512
+00:49:43,990 --> 00:49:50,030
+and ship it world we're at the end of course you have a system Brent and I both
+
+513
+00:49:50,030 --> 00:49:56,140
+prefer Kanban but basically you have working in small batches flow is high
+
+514
+00:49:56,140 --> 00:50:01,300
+you probably are using experimentation to deliver features or delivering things
+
+515
+00:50:01,300 --> 00:50:06,300
+behind flags you have a development approach that allows the team to ship
+
+516
+00:50:06,300 --> 00:50:12,460
+quickly and safely which is worse try to think through which is worse big design
+
+517
+00:50:12,460 --> 00:50:24,970
+up front or cowboy equally bad that is a good question I like to tweet that well
+
+518
+00:50:24,970 --> 00:50:30,370
+they do I want anarchy or over prescription and very quickly because
+
+519
+00:50:30,370 --> 00:50:34,930
+we're a little tight on time yeah the last two are learning and improvement I
+
+520
+00:50:34,930 --> 00:50:38,530
+mentioned earlier we're and we've been on teams that don't give a crap about
+
+521
+00:50:38,530 --> 00:50:41,890
+improving there's no retros they don't try and get better at anything they're
+
+522
+00:50:41,890 --> 00:50:45,530
+just happy to crank out their crummy software day after day where on the other
+
+523
+00:50:45,530 --> 00:50:50,410
+end of the spectrum you probably have teams where you do have teams who retro
+
+524
+00:50:50,410 --> 00:50:53,450
+they do recognize that retros are the most important things they can do
+
+525
+00:50:53,450 --> 00:51:00,050
+every week the whole team is a learning organization people focus on
+
+526
+00:51:00,050 --> 00:51:04,530
+learning and getting better and growing as part of the software development and
+
+527
+00:51:04,530 --> 00:51:08,450
+that helps improve culture overall which reminds me to refer to the lens
+
+528
+00:51:08,450 --> 00:51:13,880
+you only work that shows that organizational health which I think
+
+529
+00:51:13,880 --> 00:51:20,230
+comes from this is direct as a direct correlation with product quality it does
+
+530
+00:51:20,230 --> 00:51:25,280
+there is a absolute principle there that may be of what you just mentioned you're
+
+531
+00:51:25,280 --> 00:51:30,120
+gonna post this up on MT at some point at some point I'm not sure if I want to
+
+532
+00:51:30,120 --> 00:51:36,930
+share the whole grid yet but I will okay and then the last level is around
+
+533
+00:51:37,530 --> 00:51:42,210
+leadership emphasis which I you gave me some feedback which I thought about and
+
+534
+00:51:42,210 --> 00:51:48,020
+rejected I don't think that mandates of thou shalt have a quality culture work
+
+535
+00:51:48,020 --> 00:51:54,880
+so the the maturity here the growth is a little interesting so we'll just cover
+
+536
+00:51:54,880 --> 00:51:58,240
+it briefly and then you can send us a bunch of mail by questions we'll dive in
+
+537
+00:51:58,240 --> 00:52:04,280
+deeper in the following weeks is at a at the lowest level here there is no
+
+538
+00:52:04,280 --> 00:52:09,120
+leadership support zero because they did they just there's nothing that that
+
+539
+00:52:09,120 --> 00:52:12,320
+supports sort of that cowboy culture we talked about in development approach
+
+540
+00:52:12,320 --> 00:52:16,840
+and everything else and that can come from multiple different ways yeah
+
+541
+00:52:16,840 --> 00:52:22,940
+whereas as you get a little bit more mature the leadership communicates
+
+542
+00:52:22,940 --> 00:52:26,540
+quality is they like say quality is important it's part of what we do it's
+
+543
+00:52:26,540 --> 00:52:34,840
+in our vision etc and at the most mature level it's you get to a level
+
+544
+00:52:34,840 --> 00:52:39,040
+where leadership doesn't need to be involved because the team is
+
+545
+00:52:39,040 --> 00:52:42,560
+internalized qualities what they do I mean it's still part of the rallying cry
+
+546
+00:52:42,560 --> 00:52:46,800
+anyway we'll dive deeper later but that's sort of how that works and I
+
+547
+00:52:46,800 --> 00:52:49,720
+didn't get to talk about the examples we'll do that why don't we plan on doing
+
+548
+00:52:49,720 --> 00:52:55,480
+that next time yeah there's more I what would want to talk about for Ryan's
+
+549
+00:52:55,480 --> 00:53:00,080
+let's figure out a good agenda of topics and things we want to dive into
+
+550
+00:53:00,080 --> 00:53:05,360
+next time hope that was a good start to an answer for Ryan's question and we'll
+
+551
+00:53:05,360 --> 00:53:11,800
+continue to answer it on the next time we talk on A-B testing okay goodbye
+
+552
+00:53:11,800 --> 00:53:15,120
+everybody bye
+

@@ -1,0 +1,2796 @@
+1
+00:00:03,380 --> 00:00:10,580
+Welcome to AV testing podcast, your modern testing podcast. Your hosts, Alan and Brent
+
+2
+00:00:10,580 --> 00:00:15,980
+will be here to guide you through topics on testing, leadership, agile, and anything else
+
+3
+00:00:15,980 --> 00:00:21,370
+that comes to mind. Now on with the show. Hey, Brent, how's it going?
+
+4
+00:00:21,370 --> 00:00:26,210
+Going good, Alan. All right. That's enough of that small talk. We are not alone today.
+
+5
+00:00:26,210 --> 00:00:34,370
+We have an old colleague of mine, not old in age, but someone who I worked with.
+
+6
+00:00:34,370 --> 00:00:39,810
+Let me finish. I'm going to let you finish, Brent. Someone I work with, I think last time
+
+7
+00:00:39,810 --> 00:00:44,210
+we crossed paths, we'll do a little catch up here about 15 years ago. I'd like to welcome
+
+8
+00:00:44,210 --> 00:00:48,930
+Sue Lowe to the AB testing podcast. Hi, Sue.
+
+9
+00:00:48,930 --> 00:00:52,210
+Thank you. Hi, nice to talk to you.
+
+10
+00:00:52,210 --> 00:01:02,180
+It's been a while, right? I'm going to see if I can recollect. I think I left CE in 2005
+
+11
+00:01:02,180 --> 00:01:06,260
+and we worked a Windows CE for those of you that were for the millennials there. It was
+
+12
+00:01:06,260 --> 00:01:09,620
+an old embedded version of Windows. It was fun.
+
+13
+00:01:09,620 --> 00:01:14,250
+It was IoT before IoT was a thing.
+
+14
+00:01:14,250 --> 00:01:19,050
+It was ahead of its time. It was ahead of its time. We used to build like entire operating
+
+15
+00:01:19,050 --> 00:01:23,530
+systems and web services with device drivers that booted off of a floppy disk. Once again
+
+16
+00:01:23,530 --> 00:01:26,890
+for the millennials, a floppy disk was a little thing you shoved into your computer that had
+
+17
+00:01:26,890 --> 00:01:29,940
+data on it. Kind of like a USB key.
+
+18
+00:01:29,940 --> 00:01:30,940
+It wasn't floppy.
+
+19
+00:01:30,940 --> 00:01:36,460
+No. Well, if you tore it apart, it was, but then you couldn't use it anymore.
+
+20
+00:01:36,460 --> 00:01:42,740
+I'm not going to try and remember everything. Maybe you, did you move away while working
+
+21
+00:01:42,740 --> 00:01:45,580
+on CE? Didn't you move to Atlanta or something?
+
+22
+00:01:45,580 --> 00:01:46,580
+Yeah, I was working remotely.
+
+23
+00:01:46,580 --> 00:01:50,500
+I remember. But then you came back.
+
+24
+00:01:50,500 --> 00:01:58,100
+Yeah, my husband had, he wanted to do an academic job and there's only one university here in
+
+25
+00:01:58,100 --> 00:02:03,380
+Seattle and if you don't get a job there, you have to choose other things. So he went
+
+26
+00:02:03,380 --> 00:02:07,980
+to Georgia Tech and I went with him and luckily the team let me stay working remotely.
+
+27
+00:02:07,980 --> 00:02:11,350
+That's cool. And then you decided to come back. So I'm not going to walk through your
+
+28
+00:02:11,350 --> 00:02:14,950
+whole career because I'm not, well, I do want to catch up a little bit on what
+
+29
+00:02:14,950 --> 00:02:20,270
+you've been up to since then. There's another bigger topic that you know I want to get to.
+
+30
+00:02:20,270 --> 00:02:27,030
+But first, let's just, I am curious, both for, mostly for me, but I think the listeners
+
+31
+00:02:27,030 --> 00:02:31,350
+find it interesting. So what have you been up to the last 15 years?
+
+32
+00:02:31,350 --> 00:02:40,940
+Well, working on Windows CE turned into working on Windows Mobile and Windows Phone. And I
+
+33
+00:02:40,940 --> 00:02:45,180
+had a great time working on Windows Phone. I loved that product with all my heart and
+
+34
+00:02:45,180 --> 00:02:53,300
+it slowly died. As that product disappeared, we all got organized into the Windows team and
+
+35
+00:02:53,300 --> 00:02:59,300
+I worked on the Windows team for a while until one day I decided I wanted to get back to
+
+36
+00:02:59,300 --> 00:03:05,330
+devices again and looked around and found a friend on the HoloLens team and managed
+
+37
+00:03:05,330 --> 00:03:10,290
+to finagle my way into working on HoloLens. So I've been doing that for the last, almost
+
+38
+00:03:10,290 --> 00:03:16,300
+the year now. And what do you do on the HoloLens team? What's your specialty?
+
+39
+00:03:16,300 --> 00:03:22,960
+I work with our telemetry data. Part of my work is just watching our reliability and
+
+40
+00:03:22,960 --> 00:03:31,940
+making sure we fix all the crashes, including some stuff on Unity, by the way. But mostly
+
+41
+00:03:31,940 --> 00:03:41,720
+a lot in our own code. And then also actually building out the pipeline for our government
+
+42
+00:03:41,720 --> 00:03:45,880
+product that we have. I want to ask, but I'm probably not allowed
+
+43
+00:03:45,880 --> 00:03:53,000
+to government product. Well, it's publicly announced. There's a military HoloLens product where
+
+44
+00:03:53,000 --> 00:03:59,160
+you could imagine augmented reality things you might do with Soldier.
+
+45
+00:04:00,670 --> 00:04:03,230
+So what's the biggest bug you're worried about with that product?
+
+46
+00:04:06,110 --> 00:04:09,790
+Leaking data onto the public internet.
+
+47
+00:04:13,180 --> 00:04:17,180
+Oh, yeah, that's one hack away from everyone being a Soldier.
+
+48
+00:04:17,180 --> 00:04:20,830
+Right. Which might be fun.
+
+49
+00:04:20,830 --> 00:04:26,220
+When we work together on Windows CE, you're working on performance, but it was file system
+
+50
+00:04:26,220 --> 00:04:31,740
+stuff as well. I know in Windows you're on doing performance, looking at low level
+
+51
+00:04:31,740 --> 00:04:37,820
+performance fixes. What keeps you, you like working in the guts of things.
+
+52
+00:04:37,820 --> 00:04:41,140
+So what keeps you excited about that? What's interesting about that for you?
+
+53
+00:04:43,100 --> 00:04:51,740
+I love the chase, you know, investigating really tough things where you've got a sniff of
+
+54
+00:04:51,740 --> 00:04:56,140
+what's going on and you have to dig and try to figure it out.
+
+55
+00:04:56,140 --> 00:05:02,460
+You know, when you finally figure it out, it was always a story, you know.
+
+56
+00:05:03,820 --> 00:05:06,700
+That's a good parallel into the real reason you're here.
+
+57
+00:05:06,700 --> 00:05:11,620
+I'm seeing some parallels between our main topic of the day and the story you just told.
+
+58
+00:05:11,900 --> 00:05:13,380
+I always like the debugging, too.
+
+59
+00:05:14,220 --> 00:05:18,220
+Yeah, I could tell stories, but it's your podcast today, so I'm going to stop.
+
+60
+00:05:18,340 --> 00:05:19,460
+But I love debugging.
+
+61
+00:05:19,460 --> 00:05:21,220
+And someone today, I just helped them find a clue.
+
+62
+00:05:21,220 --> 00:05:26,220
+They said this is like Colombo where we're under where we're uncovering clues to find things.
+
+63
+00:05:26,220 --> 00:05:28,620
+It's really fun. So I'll stop there.
+
+64
+00:05:28,620 --> 00:05:33,100
+But let me move on to the real reason you're here and we could talk.
+
+65
+00:05:33,100 --> 00:05:37,580
+We could do a whole podcast talking about what you've done and the interesting things
+
+66
+00:05:37,580 --> 00:05:39,620
+you found. And I think it's all really cool.
+
+67
+00:05:39,620 --> 00:05:41,180
+I love that kind of work.
+
+68
+00:05:41,180 --> 00:05:45,860
+But what's more important is you have an evil plan to save the world.
+
+69
+00:05:46,380 --> 00:05:49,140
+Yes. And that is fantastic.
+
+70
+00:05:49,140 --> 00:05:50,460
+And I want to hear more about it.
+
+71
+00:05:50,460 --> 00:05:52,140
+Tell me about your evil plan to say.
+
+72
+00:05:52,140 --> 00:05:54,140
+Actually, don't tell me. I know it.
+
+73
+00:05:54,140 --> 00:05:57,580
+Tell everyone listening about your evil plan to save the world.
+
+74
+00:05:58,180 --> 00:06:07,900
+Sure. It started several years ago when I was listening to an NPR story about how
+
+75
+00:06:08,180 --> 00:06:13,140
+the Hunger Games after the Hunger Games came out,
+
+76
+00:06:13,940 --> 00:06:17,300
+the number of girls taking archery skyrocketed.
+
+77
+00:06:18,060 --> 00:06:24,870
+And I said, wow, you know, if big companies like Microsoft and Amazon and Google
+
+78
+00:06:24,870 --> 00:06:30,110
+were really interested in improving the diversity of people doing software,
+
+79
+00:06:30,830 --> 00:06:37,820
+they should hire people to make best selling novels and movies about kids
+
+80
+00:06:37,820 --> 00:06:44,050
+saving the world with software and get more girls and more diverse people
+
+81
+00:06:44,050 --> 00:06:50,050
+interested in working with software by making it as cool as the Hunger Games made archery.
+
+82
+00:06:51,010 --> 00:06:57,490
+So I was mostly just kind of talking about this and wishing I could make something happen.
+
+83
+00:06:57,890 --> 00:07:01,490
+And a friend of mine said, you know, ghost writers exist.
+
+84
+00:07:01,730 --> 00:07:04,570
+Let's go. Let's make it happen.
+
+85
+00:07:04,570 --> 00:07:07,250
+And I told them to go away because he was scaring me.
+
+86
+00:07:07,250 --> 00:07:11,450
+But that, you know, started me on the journey where I said, OK,
+
+87
+00:07:11,450 --> 00:07:14,370
+if I were to really do this, you know, like, do I have a story?
+
+88
+00:07:14,370 --> 00:07:17,850
+What would I have as as the basis of this thing?
+
+89
+00:07:18,170 --> 00:07:23,490
+And it took me probably about a year to come up with the list of characters and a plot.
+
+90
+00:07:24,370 --> 00:07:30,290
+And so I started looking up ghost writers and realized how much it was going to cost.
+
+91
+00:07:30,330 --> 00:07:34,890
+So I decided to run a kickstarter to pay for the ghost writing.
+
+92
+00:07:35,250 --> 00:07:40,850
+And so it does help that having been in the software industry for 20 years,
+
+93
+00:07:40,850 --> 00:07:43,290
+I knew a lot of people.
+
+94
+00:07:43,290 --> 00:07:47,170
+I basically emailed everyone I had connected to me on LinkedIn,
+
+95
+00:07:47,170 --> 00:07:49,370
+which was like 800 people at the time.
+
+96
+00:07:49,770 --> 00:07:54,730
+And that, you know, since it was something a lot of people in software care about,
+
+97
+00:07:54,730 --> 00:07:58,170
+trying to improve the diversity of the people in the software industry,
+
+98
+00:07:58,170 --> 00:07:59,850
+a lot of people helped out.
+
+99
+00:07:59,850 --> 00:08:04,930
+And so I managed to fund this through a kickstarter.
+
+100
+00:08:05,210 --> 00:08:10,410
+And it took the author and me together about a year to put it together.
+
+101
+00:08:10,970 --> 00:08:15,810
+And then, um, me more time to get it published.
+
+102
+00:08:16,010 --> 00:08:20,250
+And it was just published about a month ago on May 20th.
+
+103
+00:08:21,030 --> 00:08:24,750
+And it, to be clear, is a book called Raven.
+
+104
+00:08:25,390 --> 00:08:28,710
+Yes. Which I've read and enjoyed very much.
+
+105
+00:08:29,230 --> 00:08:29,870
+Thank you.
+
+106
+00:08:29,870 --> 00:08:32,950
+I'm not afraid to read a young adult thriller.
+
+107
+00:08:33,890 --> 00:08:36,530
+Yeah, it's targeted at middle schoolers.
+
+108
+00:08:36,530 --> 00:08:37,650
+And it is funny.
+
+109
+00:08:37,650 --> 00:08:41,330
+I asked my mom what she thought and her answer was, well,
+
+110
+00:08:41,770 --> 00:08:43,330
+you could tell it's not written for me.
+
+111
+00:08:44,730 --> 00:08:49,970
+There's a lot of, you know, like kids talking to each other and lingo and stuff.
+
+112
+00:08:49,970 --> 00:08:52,850
+And, um, so that's okay.
+
+113
+00:08:53,490 --> 00:08:59,010
+The, but it's aimed at the middle school, young high school age folks.
+
+114
+00:08:59,450 --> 00:09:01,330
+Uh, just trying to give my maturity.
+
+115
+00:09:02,810 --> 00:09:03,490
+I like it.
+
+116
+00:09:03,490 --> 00:09:06,930
+I honestly, I read that book with a huge smile on my face.
+
+117
+00:09:06,930 --> 00:09:08,050
+Cause it's just fun.
+
+118
+00:09:09,060 --> 00:09:11,940
+It's aimed at that age group.
+
+119
+00:09:12,180 --> 00:09:14,660
+Uh, and it's really just a fun story.
+
+120
+00:09:14,660 --> 00:09:18,620
+You know, at the end of the day, kids aren't going to read it if it's not a fun story.
+
+121
+00:09:18,620 --> 00:09:24,420
+So, uh, we did our best to make it something that folks in that age group would enjoy.
+
+122
+00:09:24,620 --> 00:09:31,140
+And it's, uh, the premise of the book is what if software companies got tired of
+
+123
+00:09:31,140 --> 00:09:35,340
+waiting for, you know, the ability to hire more people.
+
+124
+00:09:35,340 --> 00:09:37,500
+Cause it's, it's so hard to find people.
+
+125
+00:09:37,740 --> 00:09:42,660
+They start running their own academies where you go to the school for free, uh,
+
+126
+00:09:42,660 --> 00:09:47,980
+spend time there earning the equivalent of a bachelor's degree in computer science.
+
+127
+00:09:48,060 --> 00:09:52,300
+And when you're done, you work at the company to pay off the cost of your
+
+128
+00:09:52,300 --> 00:09:54,780
+schooling, and then you're free to go and do whatever you want.
+
+129
+00:09:55,300 --> 00:10:02,100
+So, and the students are working on this team for the university and the
+
+130
+00:10:02,100 --> 00:10:07,340
+university, well, the, the academy and the company are hired to
+
+131
+00:10:07,420 --> 00:10:09,060
+investigate a hack at a bank.
+
+132
+00:10:09,300 --> 00:10:13,740
+I actually came up with this plot before Experian got hacked.
+
+133
+00:10:14,060 --> 00:10:18,420
+And then when that came into the news, I was like, I got to publish this
+
+134
+00:10:18,420 --> 00:10:20,140
+book before more things come true.
+
+135
+00:10:23,180 --> 00:10:30,980
+Uh, so yeah, they, they are investigating a hack at a bank and, uh, it turns out
+
+136
+00:10:30,980 --> 00:10:36,540
+to be, you know, a mystery of what's going on earlier.
+
+137
+00:10:36,540 --> 00:10:40,940
+And with no intention at all on asking like what kept you interested in tech, I
+
+138
+00:10:41,060 --> 00:10:45,940
+saw a parallel between the story you told me, like the, the, uh, investigation
+
+139
+00:10:45,940 --> 00:10:50,660
+and the discovery and the detective work and what happens in Raven.
+
+140
+00:10:50,820 --> 00:10:52,420
+So obviously intentional.
+
+141
+00:10:52,940 --> 00:10:56,740
+And the book, the book has a lot of, a lot of really cool tech ideas
+
+142
+00:10:56,740 --> 00:10:57,940
+in it too, which were fun.
+
+143
+00:10:58,180 --> 00:10:59,380
+So I'm just curious.
+
+144
+00:10:59,540 --> 00:11:03,340
+How did that work between you and the ghost writer?
+
+145
+00:11:03,340 --> 00:11:05,900
+Cause I assume the ghost writer maybe didn't have that tech background.
+
+146
+00:11:06,060 --> 00:11:07,660
+What's that relationship like?
+
+147
+00:11:08,140 --> 00:11:13,140
+So, uh, I don't have the right to give away my ghost writer's name, but
+
+148
+00:11:13,260 --> 00:11:14,220
+I'm not asking that.
+
+149
+00:11:14,420 --> 00:11:14,820
+Yeah.
+
+150
+00:11:14,820 --> 00:11:17,500
+But she had actually worked in the tech industry.
+
+151
+00:11:18,340 --> 00:11:23,820
+She was actually a, uh, involved in, uh, the production of windows 95.
+
+152
+00:11:24,930 --> 00:11:27,690
+And so, um, it, that was,
+
+153
+00:11:27,690 --> 00:11:28,650
+It narrows it down.
+
+154
+00:11:29,290 --> 00:11:29,650
+Yeah.
+
+155
+00:11:29,970 --> 00:11:31,210
+Well, a woman,
+
+156
+00:11:34,250 --> 00:11:37,130
+but it still won't tell you who it was, but, uh, yeah.
+
+157
+00:11:37,130 --> 00:11:43,210
+And she had actually even had problems with being, uh, mistreated as a person
+
+158
+00:11:43,210 --> 00:11:44,690
+in the tech industry at the time.
+
+159
+00:11:44,690 --> 00:11:50,260
+So it was, you know, she turned out to be a great partner on this last year.
+
+160
+00:11:50,260 --> 00:11:51,380
+And Brett, you don't know this.
+
+161
+00:11:51,420 --> 00:11:54,780
+Um, one thing I know, so I've, I can write technical stuff all day.
+
+162
+00:11:54,780 --> 00:11:58,740
+I did the Howie test software at Microsoft book and articles here and there.
+
+163
+00:11:59,060 --> 00:12:06,180
+Last year for a nano Rimo, I wrote about 10,000 words of a, maybe 20,000 words
+
+164
+00:12:06,180 --> 00:12:11,760
+of a, of a business fiction novel about this modern testing thing.
+
+165
+00:12:12,440 --> 00:12:14,480
+And it's all it's no, but it's awful.
+
+166
+00:12:15,040 --> 00:12:16,800
+So I'm picking your brain.
+
+167
+00:12:17,520 --> 00:12:21,760
+So that was, that was part of the intent also of hiring a ghost
+
+168
+00:12:21,760 --> 00:12:26,000
+writer was to get an actual professional to do it so that it would be a good book.
+
+169
+00:12:26,120 --> 00:12:26,600
+Yeah.
+
+170
+00:12:27,040 --> 00:12:30,920
+The stories in my head that I think about when I'm walking, or I go to write them
+
+171
+00:12:30,920 --> 00:12:35,680
+down and I better just stick to writing a technical descriptions of things, but
+
+172
+00:12:36,200 --> 00:12:37,240
+it's just really cool.
+
+173
+00:12:37,240 --> 00:12:42,880
+So in Raven, I really enjoyed how the plot, I don't want to give away any
+
+174
+00:12:42,880 --> 00:12:48,040
+spoilers, you've done well, how the plot, uh, the problems that we're solving and
+
+175
+00:12:48,040 --> 00:12:52,040
+even getting to know more about the characters all kind of happened in
+
+176
+00:12:52,040 --> 00:12:52,800
+parallel.
+
+177
+00:12:53,120 --> 00:12:55,400
+I think that made it a page turner for me.
+
+178
+00:12:56,400 --> 00:12:56,800
+I don't know.
+
+179
+00:12:56,800 --> 00:13:02,930
+I, I don't know if there's a question there or not, but it just, you know, even
+
+180
+00:13:02,970 --> 00:13:07,450
+reading a book targeted for someone slightly younger than me, uh, it all
+
+181
+00:13:07,450 --> 00:13:08,450
+kind of fell together.
+
+182
+00:13:08,450 --> 00:13:12,090
+I, I, you know, as the person I mentioned before, oh, I love debugging.
+
+183
+00:13:12,410 --> 00:13:18,110
+That's the part that really, that really got me was just watching them
+
+184
+00:13:18,110 --> 00:13:20,590
+discover the problem and the problem unfold.
+
+185
+00:13:20,830 --> 00:13:25,190
+And then then the, the students who are, you're talking about, they get their
+
+186
+00:13:25,190 --> 00:13:29,790
+equivalent of their, their, their BA in computer science, they're all in high
+
+187
+00:13:29,790 --> 00:13:33,110
+school and smarter than any BA I ever interviewed in my life.
+
+188
+00:13:34,320 --> 00:13:35,160
+So it's fun.
+
+189
+00:13:35,240 --> 00:13:35,640
+It's fun.
+
+190
+00:13:35,640 --> 00:13:37,440
+And anyway, just to comment there.
+
+191
+00:13:38,000 --> 00:13:42,520
+I, I was kind of proud to sort of get them in there looking at performance
+
+192
+00:13:42,520 --> 00:13:47,040
+logs and things, uh, you know, as a performance person, having some of the
+
+193
+00:13:47,040 --> 00:13:51,040
+problems in the story involved performance and similar investigations, the
+
+194
+00:13:51,040 --> 00:13:52,240
+things I would have done.
+
+195
+00:13:52,560 --> 00:13:54,280
+Uh, I was happy to get that in there.
+
+196
+00:13:54,920 --> 00:13:55,160
+Yeah.
+
+197
+00:13:55,200 --> 00:14:01,990
+And you also covered, uh, some of the Jerry Weinberg says in software,
+
+198
+00:14:01,990 --> 00:14:03,870
+eventually it's always a people problem.
+
+199
+00:14:04,350 --> 00:14:09,390
+And the book also covers in the character development, how much the
+
+200
+00:14:09,390 --> 00:14:14,310
+relationships and conflicts and, and even teamwork among the team members.
+
+201
+00:14:14,590 --> 00:14:16,150
+Uh, it felt very real to me.
+
+202
+00:14:17,470 --> 00:14:17,950
+Yeah.
+
+203
+00:14:18,350 --> 00:14:23,030
+Uh, you know, one of the other things I wanted to portray was the fact that,
+
+204
+00:14:23,630 --> 00:14:29,270
+uh, software is not necessarily just writing code, you know, there are a lot
+
+205
+00:14:29,270 --> 00:14:34,070
+of different things that, uh, you can go into and software, it's a pretty broad,
+
+206
+00:14:34,310 --> 00:14:38,550
+you know, you, you've worked in testing, I've worked in performance, you know,
+
+207
+00:14:38,870 --> 00:14:43,150
+um, you sure, you have to know how to write code, but it's not necessarily
+
+208
+00:14:43,150 --> 00:14:44,630
+the thing that you love about it.
+
+209
+00:14:44,950 --> 00:14:50,190
+And one of the characters, it didn't entirely come out, but it was specific to
+
+210
+00:14:50,190 --> 00:14:56,870
+her, but like, uh, the character, um, Wiz was intended to be somebody who was
+
+211
+00:14:56,950 --> 00:15:00,750
+actually really good with people and understanding people and figuring
+
+212
+00:15:00,750 --> 00:15:01,830
+out what people needed.
+
+213
+00:15:02,270 --> 00:15:07,670
+And, um, other people were intended to have different kind of focuses
+
+214
+00:15:07,670 --> 00:15:09,110
+on what they were good at.
+
+215
+00:15:09,630 --> 00:15:14,910
+Uh, so I wanted to show that you didn't have to love writing code in
+
+216
+00:15:14,910 --> 00:15:16,910
+order to love working on software.
+
+217
+00:15:17,800 --> 00:15:18,120
+Yeah.
+
+218
+00:15:18,160 --> 00:15:19,400
+And that definitely comes out.
+
+219
+00:15:19,400 --> 00:15:24,690
+And, and as you know, like I've mentioned, I've been in more infrastructure
+
+220
+00:15:24,690 --> 00:15:29,530
+and, and DevOps roles, which are a lot about there's use code to solve some
+
+221
+00:15:29,530 --> 00:15:33,050
+problems, but it's more about just kind of making things work, making
+
+222
+00:15:33,050 --> 00:15:34,650
+things easier to solve.
+
+223
+00:15:35,010 --> 00:15:37,930
+And of course, working in performance, it's, you mentioned earlier, it's
+
+224
+00:15:38,370 --> 00:15:40,730
+looking at a lot of data than figuring out what to do.
+
+225
+00:15:40,730 --> 00:15:45,650
+And then maybe writing code to help you in some ways to help you understand
+
+226
+00:15:46,210 --> 00:15:47,290
+what you're looking at.
+
+227
+00:15:47,290 --> 00:15:50,250
+And then of course, looking at the code to figure out how does this relate
+
+228
+00:15:50,250 --> 00:15:52,650
+into what's happening here and what can we fix here?
+
+229
+00:15:52,970 --> 00:15:55,170
+And that thinking part is a lot of fun.
+
+230
+00:15:56,410 --> 00:15:56,610
+Right.
+
+231
+00:15:56,610 --> 00:15:56,970
+Brent,
+
+232
+00:15:57,410 --> 00:15:59,850
+I wonder if it's just a maturity model.
+
+233
+00:15:59,930 --> 00:16:07,210
+Like I was just thinking through, it has been a long time, uh, since I've
+
+234
+00:16:07,730 --> 00:16:17,360
+cared about the code I write, it's more around taking an idea and giving it birth.
+
+235
+00:16:18,150 --> 00:16:18,350
+Right.
+
+236
+00:16:18,350 --> 00:16:21,470
+It's solving a problem that wasn't solved before.
+
+237
+00:16:21,510 --> 00:16:26,030
+Like, um, Pete, my, my, so I have a 10 year old daughter.
+
+238
+00:16:26,230 --> 00:16:32,430
+Um, I, I've started sort of walking her through Python and it's interesting.
+
+239
+00:16:33,730 --> 00:16:37,650
+And I'm learning very, uh, a bunch of different things.
+
+240
+00:16:37,650 --> 00:16:41,490
+Both of my boys, uh, have learned Java.
+
+241
+00:16:41,490 --> 00:16:42,370
+They were older.
+
+242
+00:16:42,850 --> 00:16:46,090
+She's very different for her.
+
+243
+00:16:46,570 --> 00:16:50,290
+It's interesting because coding needs to be a social event.
+
+244
+00:16:51,380 --> 00:16:51,580
+Right.
+
+245
+00:16:51,860 --> 00:16:59,030
+Unlike me sitting down and writing code, uh, very introspective for her.
+
+246
+00:16:59,030 --> 00:17:02,120
+It's, it's, she's having fun.
+
+247
+00:17:02,120 --> 00:17:07,360
+If I'm sitting there with my laptop next to her writing code too.
+
+248
+00:17:08,530 --> 00:17:08,730
+Right.
+
+249
+00:17:08,730 --> 00:17:15,610
+It's if I, if I, if I close my laptop to start making dinner, her interest just
+
+250
+00:17:15,930 --> 00:17:21,390
+plummets, but I saw her doing some of the things this last time.
+
+251
+00:17:21,590 --> 00:17:24,750
+I don't know why I got on this topic, but I saw her doing things this last time.
+
+252
+00:17:25,800 --> 00:17:30,720
+Um, oh, I remember knowing where eventually, but not always gets to a point.
+
+253
+00:17:30,960 --> 00:17:38,150
+This is, um, I, I, I, I deserve the reputation of, I say in 20 words,
+
+254
+00:17:38,150 --> 00:17:43,430
+what takes three, I saw her going up on stack exchange and doing searches and
+
+255
+00:17:43,430 --> 00:17:47,550
+trying to find Python code that she could, she could copy paste.
+
+256
+00:17:48,230 --> 00:17:55,910
+And I'm like, wow, she's, she's, she's almost an actual professional.
+
+257
+00:17:59,430 --> 00:18:03,630
+Anyway, she asked me, you know, what languages do I know?
+
+258
+00:18:03,950 --> 00:18:08,870
+And, uh, and, uh, and I, I listed them off, but then I told her, I'm like,
+
+259
+00:18:08,990 --> 00:18:13,950
+what the reality is in my humble opinion, uh, I know them all now.
+
+260
+00:18:14,350 --> 00:18:21,030
+Uh, it's just, uh, it's because the patterns of coding languages are
+
+261
+00:18:21,030 --> 00:18:26,970
+all essentially the same, uh, they just have different approaches, like a
+
+262
+00:18:26,970 --> 00:18:29,210
+functional language, uh, sure.
+
+263
+00:18:29,250 --> 00:18:30,170
+I could code in it.
+
+264
+00:18:30,250 --> 00:18:31,210
+Don't want to.
+
+265
+00:18:31,210 --> 00:18:32,210
+It hurts my head.
+
+266
+00:18:32,450 --> 00:18:42,420
+Um, uh, in with one link, uh, link paradigm, I just can't get my head
+
+267
+00:18:42,420 --> 00:18:47,620
+wrapped around that one, but anyway, that was the aspect is the coding
+
+268
+00:18:47,620 --> 00:18:51,430
+language is not at all interesting anymore to me.
+
+269
+00:18:51,470 --> 00:18:58,780
+And I'm wondering if it's, if that's just because we're all, uh, experienced
+
+270
+00:18:58,780 --> 00:19:05,400
+and in, uh, you know, have, have time behind our belts on in this industry,
+
+271
+00:19:07,240 --> 00:19:10,040
+like the glamor of a new language and whatever.
+
+272
+00:19:12,020 --> 00:19:15,380
+I would like to point out that over the last week, I've been learning rust
+
+273
+00:19:16,490 --> 00:19:17,450
+and, and I like it.
+
+274
+00:19:18,810 --> 00:19:21,810
+I don't even know what I I've heard of it, but I don't know what
+
+275
+00:19:21,810 --> 00:19:22,730
+you would use it for.
+
+276
+00:19:23,130 --> 00:19:26,170
+It's actually for anything.
+
+277
+00:19:26,170 --> 00:19:31,290
+It's a, it's actually a lot like C and C plus plus with better
+
+278
+00:19:31,530 --> 00:19:32,250
+memory management.
+
+279
+00:19:33,320 --> 00:19:35,200
+So, uh, yeah, I've, I've enjoyed it so far.
+
+280
+00:19:35,520 --> 00:19:37,080
+Um, I don't know what I'd use it for.
+
+281
+00:19:38,060 --> 00:19:42,300
+Anything I write these days is in, actually, I don't write much code
+
+282
+00:19:42,300 --> 00:19:47,580
+anymore, but probably Python is the most you after writing C forever, uh,
+
+283
+00:19:47,620 --> 00:19:48,940
+Python, probably what I use the most.
+
+284
+00:19:49,580 --> 00:19:57,340
+So anyway, uh, Brent, the good story, uh, the, um, that nobody can see
+
+285
+00:19:57,340 --> 00:19:58,860
+my eyes roll in the podcast.
+
+286
+00:19:59,180 --> 00:20:03,900
+I have some more book questions, but before I forget, I do want to, I
+
+287
+00:20:03,900 --> 00:20:11,380
+know I'm pretty sure you do some other things for like English,
+
+288
+00:20:12,780 --> 00:20:16,620
+like extracurriculars to also get more people involved in tech.
+
+289
+00:20:16,940 --> 00:20:20,020
+And one of them is a thing that.
+
+290
+00:20:20,660 --> 00:20:23,820
+Another old colleague of ours, a former employee of mine still at
+
+291
+00:20:23,820 --> 00:20:25,660
+Microsoft did for a while.
+
+292
+00:20:25,660 --> 00:20:28,940
+I know you're heavily involved in now is hunt the wampus.
+
+293
+00:20:28,940 --> 00:20:32,300
+So I'm sure, which I want to hear about, but what else are you doing?
+
+294
+00:20:32,300 --> 00:20:32,980
+What's going on?
+
+295
+00:20:32,980 --> 00:20:35,660
+You're doing, you're doing stuff for people and I want to hear about it.
+
+296
+00:20:36,440 --> 00:20:39,800
+Wampus is one of the major other things I do.
+
+297
+00:20:39,800 --> 00:20:40,280
+Yeah.
+
+298
+00:20:40,520 --> 00:20:46,400
+Uh, before we go into that, I guess I don't, I'm trying to think of what
+
+299
+00:20:46,440 --> 00:20:52,400
+other I organized for my hockey team, but that's not particularly related to
+
+300
+00:20:52,400 --> 00:20:57,520
+software, um, I'm kind of a sucker and get involved in lots of things
+
+301
+00:20:57,520 --> 00:21:01,600
+because people can just sense that I can get involved and organized.
+
+302
+00:21:01,600 --> 00:21:05,190
+So, uh, it's a challenge to say no.
+
+303
+00:21:07,100 --> 00:21:09,340
+Um, so hunt the wampus.
+
+304
+00:21:09,580 --> 00:21:09,860
+Yeah.
+
+305
+00:21:09,860 --> 00:21:13,940
+I doubt other than you and I, maybe nobody knows what that is.
+
+306
+00:21:13,940 --> 00:21:15,820
+So tell me about it.
+
+307
+00:21:16,180 --> 00:21:21,140
+I would love to hear who it was that you worked with, but before we do that,
+
+308
+00:21:21,140 --> 00:21:27,540
+um, hunt the wampus is a program to get more students into computer
+
+309
+00:21:27,540 --> 00:21:33,860
+science by, uh, taking the students in a class, um, a computer class and
+
+310
+00:21:33,980 --> 00:21:39,700
+forming them into teams and then having mentors go help them, uh, through
+
+311
+00:21:39,700 --> 00:21:42,220
+a project, building a hunt them up this game.
+
+312
+00:21:42,260 --> 00:21:48,260
+So we give them a spec for how the game should be played and then help
+
+313
+00:21:48,260 --> 00:21:53,380
+them figure out how to turn that into objects and each student owns an object
+
+314
+00:21:53,700 --> 00:21:55,820
+and they work together to make this game.
+
+315
+00:21:55,820 --> 00:21:59,900
+And the really cool thing is, you know, they start out excited.
+
+316
+00:22:00,540 --> 00:22:03,980
+They have all these grand ideas for how they're going to make their game.
+
+317
+00:22:04,300 --> 00:22:08,500
+Uh, and then they get all bogged down in confusion because they don't actually
+
+318
+00:22:08,500 --> 00:22:10,140
+know how to turn that into something.
+
+319
+00:22:10,180 --> 00:22:12,140
+And we help them through all that confusion.
+
+320
+00:22:12,140 --> 00:22:15,940
+And then at the end, they've produced something that isn't quite what they
+
+321
+00:22:16,140 --> 00:22:21,180
+had dreamed up, but is at the end more than what they kind of expected
+
+322
+00:22:21,180 --> 00:22:23,420
+out of themselves and feel really proud about it.
+
+323
+00:22:23,460 --> 00:22:27,540
+So it's, it's really fun to mentor students through it.
+
+324
+00:22:27,980 --> 00:22:34,100
+And one of the cool things also is that the schools that we work with, we
+
+325
+00:22:34,100 --> 00:22:36,940
+end up growing their computer science program.
+
+326
+00:22:37,060 --> 00:22:41,140
+So I've been working with Redmond high school for about a decade.
+
+327
+00:22:41,340 --> 00:22:45,860
+When I started, we had one class, the computer science that we were working
+
+328
+00:22:45,860 --> 00:22:48,980
+with and this past year we had five.
+
+329
+00:22:49,580 --> 00:22:53,780
+And in fact, every year he keeps coming back and saying, yeah, I have more.
+
+330
+00:22:54,460 --> 00:22:56,490
+So that's cool.
+
+331
+00:22:56,530 --> 00:23:00,850
+It was, um, Evan Goldring was doing some of that many years ago.
+
+332
+00:23:00,850 --> 00:23:02,970
+He, he, uh, was involved in that.
+
+333
+00:23:03,130 --> 00:23:04,610
+It's a super cool program.
+
+334
+00:23:05,010 --> 00:23:07,050
+And I think it it's, it's across multiple.
+
+335
+00:23:07,050 --> 00:23:10,090
+I don't remember anymore, but it's across multiple high schools, right?
+
+336
+00:23:10,770 --> 00:23:11,090
+Yeah.
+
+337
+00:23:11,090 --> 00:23:15,330
+We work with, I think it was six area high schools this past year.
+
+338
+00:23:15,930 --> 00:23:21,770
+Um, the, and even it's been, we've had little sprinklings of things outside
+
+339
+00:23:21,770 --> 00:23:24,410
+of the, uh, Seattle area as well.
+
+340
+00:23:24,410 --> 00:23:28,130
+But the truth is, you know, we organize Microsoft mentors.
+
+341
+00:23:28,130 --> 00:23:30,770
+And so it tends to be here in the local Seattle area.
+
+342
+00:23:31,090 --> 00:23:34,050
+When I was in Atlanta, that's when I got involved.
+
+343
+00:23:34,050 --> 00:23:36,290
+I brought it to one of the high schools in Atlanta.
+
+344
+00:23:36,410 --> 00:23:40,810
+I was going to ask if it's spread out and, and now that the workforce of
+
+345
+00:23:41,010 --> 00:23:44,170
+every company is spread out amongst the whole world.
+
+346
+00:23:44,810 --> 00:23:48,530
+Uh, it's, it, maybe it could spread even wider this, this year.
+
+347
+00:23:48,530 --> 00:23:52,210
+Did you do hunt the wampus virtually or did it happen or what happened?
+
+348
+00:23:53,010 --> 00:23:56,330
+Uh, we, yeah, we work each spring.
+
+349
+00:23:56,530 --> 00:24:01,090
+Uh, we start in the schools around the end of January and then go through
+
+350
+00:24:01,090 --> 00:24:03,890
+the spring semester and end at the end of the school year where we
+
+351
+00:24:03,890 --> 00:24:05,170
+bring them all to Microsoft.
+
+352
+00:24:05,810 --> 00:24:08,010
+We, so we, not much of that happened.
+
+353
+00:24:08,330 --> 00:24:08,890
+Yeah.
+
+354
+00:24:09,250 --> 00:24:11,610
+So we, we did get started.
+
+355
+00:24:11,770 --> 00:24:17,690
+Um, most of our schools got about a month into it and then, uh, yeah,
+
+356
+00:24:17,730 --> 00:24:19,410
+the mentors weren't allowed at first.
+
+357
+00:24:19,410 --> 00:24:21,130
+It was no, no visitors.
+
+358
+00:24:21,250 --> 00:24:23,890
+The mentors weren't allowed to go to the schools and then eventually
+
+359
+00:24:23,890 --> 00:24:25,370
+all the students were sent home.
+
+360
+00:24:25,810 --> 00:24:30,490
+And, uh, for the most part, we just ended up shutting down the program.
+
+361
+00:24:30,530 --> 00:24:33,450
+We had two teams of students continue.
+
+362
+00:24:33,810 --> 00:24:38,770
+Um, one was a group of students who just self-organized at Redmond high
+
+363
+00:24:38,770 --> 00:24:42,970
+school and one was, there was a private school that we brought in for the
+
+364
+00:24:42,970 --> 00:24:45,250
+first time this year, uh, East side prep.
+
+365
+00:24:45,730 --> 00:24:51,250
+And those students, uh, the school was very, very well prepared to do things online.
+
+366
+00:24:51,250 --> 00:24:54,090
+They already had classes going on teams.
+
+367
+00:24:54,170 --> 00:24:57,890
+Uh, and they actually sent their students home earlier than the rest of
+
+368
+00:24:57,890 --> 00:24:59,170
+the public schools around here.
+
+369
+00:24:59,170 --> 00:25:04,050
+And so they just continued with business as usual and their mentors would help
+
+370
+00:25:04,050 --> 00:25:08,290
+them through the project over teams and, uh, everything was working great for them.
+
+371
+00:25:08,370 --> 00:25:12,810
+So they continued and this one group of determined students at Redmond high
+
+372
+00:25:12,810 --> 00:25:15,330
+school continued, and so we got two projects.
+
+373
+00:25:16,530 --> 00:25:18,570
+That's given the circumstances.
+
+374
+00:25:18,570 --> 00:25:19,810
+That's still very cool.
+
+375
+00:25:20,170 --> 00:25:22,250
+Hey, Brent, have you heard of hunt the wampus before?
+
+376
+00:25:22,890 --> 00:25:30,420
+I played it back back, uh, when I was seven, eight, the program, uh, that,
+
+377
+00:25:30,460 --> 00:25:35,180
+that sugus described, I had not, and I'm extremely interested, right?
+
+378
+00:25:35,180 --> 00:25:44,060
+Um, uh, one of the things that, that it is very possible, like, uh, my middle
+
+379
+00:25:44,060 --> 00:25:49,620
+someone, when he was coding, he'd never mentioned the term hunt the wampus,
+
+380
+00:25:49,660 --> 00:25:55,260
+but he had a similar thing where it ended with a field trip at Microsoft.
+
+381
+00:25:56,170 --> 00:25:56,450
+Right.
+
+382
+00:25:56,490 --> 00:25:57,970
+He might've been wampus.
+
+383
+00:25:58,490 --> 00:26:05,320
+He spent the, the entire day in a building 33.
+
+384
+00:26:05,680 --> 00:26:12,790
+Um, the, uh, I'll have to, I'll have to ask him the, but for my daughter, one of the
+
+385
+00:26:12,790 --> 00:26:22,340
+things, um, so have you gone into the lower age range I've gone through and.
+
+386
+00:26:22,940 --> 00:26:28,900
+She's, she's more advanced than, uh, what's that beginning thing that starts the
+
+387
+00:26:28,900 --> 00:26:32,610
+beginning programming thing that starts with an S scratch.
+
+388
+00:26:32,850 --> 00:26:33,330
+That's it.
+
+389
+00:26:33,330 --> 00:26:33,810
+Thank you.
+
+390
+00:26:34,050 --> 00:26:35,130
+Um, yeah.
+
+391
+00:26:35,530 --> 00:26:44,490
+Um, so she's more advanced than that, but, um, certain coding constructs confuses her.
+
+392
+00:26:44,530 --> 00:26:52,130
+And, and originally I had started with, um, uh, headfirst, uh, learning the code.
+
+393
+00:26:52,130 --> 00:26:56,410
+And love the headfirst series, but even that's too advanced.
+
+394
+00:26:56,410 --> 00:27:05,070
+So now what I've been looking for is, is, um, uh, little, little, very simple
+
+395
+00:27:05,070 --> 00:27:08,870
+projects where it's very clear the outcome.
+
+396
+00:27:08,870 --> 00:27:16,270
+It would be fun to do and now sort of reverse, reverse teaching her coding.
+
+397
+00:27:16,310 --> 00:27:19,190
+Instead of like sort of teaching her, this is what a for loop does.
+
+398
+00:27:19,190 --> 00:27:20,310
+And this is how to use it.
+
+399
+00:27:20,310 --> 00:27:24,390
+So instead of teaching the widget seats would begin to end and then go back
+
+400
+00:27:24,390 --> 00:27:30,270
+and explain the widgets, but what I'm looking for is sort of a open source, uh,
+
+401
+00:27:30,550 --> 00:27:38,800
+listing of little projects like that, that she can select from, um, doesn't
+
+402
+00:27:38,800 --> 00:27:44,780
+seem like that aspect has been well enough organized yet.
+
+403
+00:27:45,020 --> 00:27:47,860
+They like, like code kata for teens and tweens.
+
+404
+00:27:48,220 --> 00:27:48,740
+Right.
+
+405
+00:27:48,780 --> 00:27:49,380
+Exactly.
+
+406
+00:27:49,740 --> 00:27:50,220
+Right.
+
+407
+00:27:50,660 --> 00:27:51,100
+Right.
+
+408
+00:27:51,580 --> 00:27:56,380
+But yeah, my kids have lots of fun on code.org making little things.
+
+409
+00:27:56,380 --> 00:27:58,220
+That's basically scratch though.
+
+410
+00:27:58,220 --> 00:28:04,060
+And it's not, it's probably too boring for a, uh, someone your daughter's age.
+
+411
+00:28:05,340 --> 00:28:05,580
+Yeah.
+
+412
+00:28:05,780 --> 00:28:08,740
+She, she has this dream.
+
+413
+00:28:09,140 --> 00:28:16,840
+Um, her heroes right now are the female developers at, uh, Roblox.
+
+414
+00:28:18,580 --> 00:28:19,860
+She can list them off.
+
+415
+00:28:20,020 --> 00:28:27,040
+Sadly I can't, um, and she kind of wants to follow in the, in, in those shoes.
+
+416
+00:28:27,920 --> 00:28:28,560
+I love that.
+
+417
+00:28:28,560 --> 00:28:30,200
+She's got some role models.
+
+418
+00:28:30,520 --> 00:28:30,880
+Yeah.
+
+419
+00:28:31,920 --> 00:28:35,760
+Are these, are these, um, the people building Roblox or people
+
+420
+00:28:35,760 --> 00:28:37,880
+building cool stuff on Roblox?
+
+421
+00:28:38,200 --> 00:28:38,720
+Yes.
+
+422
+00:28:39,660 --> 00:28:40,060
+Both.
+
+423
+00:28:40,460 --> 00:28:40,700
+Yeah.
+
+424
+00:28:41,420 --> 00:28:41,980
+Yes.
+
+425
+00:28:42,340 --> 00:28:42,820
+Yes.
+
+426
+00:28:42,860 --> 00:28:48,140
+Um, and so she comes in and, uh, she comes in.
+
+427
+00:28:48,300 --> 00:28:53,380
+But some of the systems there, it gets her the ability to sort of
+
+428
+00:28:53,380 --> 00:28:56,300
+design things and she can sell things.
+
+429
+00:28:56,860 --> 00:29:03,340
+I haven't, I haven't dove enough into it to, to go, what exactly is she doing?
+
+430
+00:29:03,660 --> 00:29:05,420
+Um, I probably should.
+
+431
+00:29:06,180 --> 00:29:08,860
+Cause I think I can tie that to her coding adventure.
+
+432
+00:29:10,140 --> 00:29:17,160
+Anyway, Roblox, I've not takored a lot with it, but I did show my 11 year old
+
+433
+00:29:17,160 --> 00:29:20,760
+how to install their dev kit and get started.
+
+434
+00:29:20,760 --> 00:29:24,000
+And she was making her own platformer games within 15 minutes.
+
+435
+00:29:24,000 --> 00:29:25,240
+I was very impressed.
+
+436
+00:29:25,240 --> 00:29:27,320
+It's a great way to get some kids started.
+
+437
+00:29:27,800 --> 00:29:29,040
+That's impressive.
+
+438
+00:29:29,080 --> 00:29:29,480
+Yeah.
+
+439
+00:29:30,080 --> 00:29:31,480
+That's way easier than unity.
+
+440
+00:29:32,490 --> 00:29:32,930
+Yeah.
+
+441
+00:29:33,250 --> 00:29:34,010
+And I can say that,
+
+442
+00:29:35,810 --> 00:29:36,290
+yeah.
+
+443
+00:29:36,330 --> 00:29:42,930
+Uh, having spent, so when I got started on the HoloLens team, I, you know, it's
+
+444
+00:29:42,930 --> 00:29:46,530
+not my job to write HoloLens apps, but I wanted to see what it was like.
+
+445
+00:29:46,530 --> 00:29:49,730
+So I set aside a day and said, I'm going to spend this whole day learning how to
+
+446
+00:29:49,730 --> 00:29:51,050
+write HoloLens apps.
+
+447
+00:29:51,530 --> 00:29:55,370
+And four hours later, I was still trying to get unity and visual studio and
+
+448
+00:29:55,370 --> 00:30:00,850
+everything that we needed installed correctly in order to get started.
+
+449
+00:30:00,890 --> 00:30:02,890
+And that was enormously frustrating.
+
+450
+00:30:02,890 --> 00:30:05,810
+And that's something that we definitely need to fix for our product.
+
+451
+00:30:05,810 --> 00:30:09,570
+And, uh, I was impressed that Roblox just had an instant, you know,
+
+452
+00:30:09,570 --> 00:30:10,770
+download and you're done.
+
+453
+00:30:11,900 --> 00:30:12,180
+Yeah.
+
+454
+00:30:12,260 --> 00:30:17,180
+Both of my kids have gone through a programming and unity course for teens.
+
+455
+00:30:17,580 --> 00:30:20,060
+Uh, they're 16 and 14.
+
+456
+00:30:20,540 --> 00:30:22,940
+Uh, they did this a couple of years ago, maybe two summers ago.
+
+457
+00:30:23,340 --> 00:30:28,620
+Anyway, they can, they both, uh, learned some of the basics of it, but, uh, the,
+
+458
+00:30:28,620 --> 00:30:31,940
+the learning curve is it's there.
+
+459
+00:30:32,220 --> 00:30:33,700
+You can do some basics pretty well.
+
+460
+00:30:33,980 --> 00:30:38,620
+Uh, but yeah, getting it once you start trying to get to work with a
+
+461
+00:30:38,620 --> 00:30:41,500
+bunch of other things, it's a little bit of a, huh, what?
+
+462
+00:30:41,620 --> 00:30:42,020
+Yeah.
+
+463
+00:30:42,460 --> 00:30:43,500
+So yep.
+
+464
+00:30:43,620 --> 00:30:44,660
+Room for improvement there.
+
+465
+00:30:45,990 --> 00:30:47,630
+Uh, we can work together on that.
+
+466
+00:30:47,670 --> 00:30:48,190
+Yes.
+
+467
+00:30:48,190 --> 00:30:48,310
+Yeah.
+
+468
+00:30:48,310 --> 00:30:52,590
+So, um, for better, for worse, I don't work on that part of unity.
+
+469
+00:30:52,590 --> 00:30:55,350
+I just work in, in the ads business.
+
+470
+00:30:55,830 --> 00:30:58,710
+I make sure that game developers can make money off of their games.
+
+471
+00:30:59,430 --> 00:31:00,390
+Also important.
+
+472
+00:31:00,630 --> 00:31:01,470
+It is, it is.
+
+473
+00:31:01,510 --> 00:31:07,190
+Uh, so let's go back to the book a little bit.
+
+474
+00:31:07,590 --> 00:31:08,830
+I just have a couple more questions.
+
+475
+00:31:08,830 --> 00:31:11,990
+So maybe you can, I don't know if we can do this or not, but without any
+
+476
+00:31:11,990 --> 00:31:16,510
+spoilers and you mentioned earlier, you read the book with a smile on your face.
+
+477
+00:31:16,950 --> 00:31:19,430
+Do you have a favorite part of the book or a favorite?
+
+478
+00:31:19,470 --> 00:31:25,350
+And again, maybe you can't answer this without spoiling, but I'm curious, uh, did
+
+479
+00:31:25,550 --> 00:31:28,310
+like, was there a part of the book that turned out even better than you
+
+480
+00:31:28,310 --> 00:31:30,150
+expected, maybe I'll put it that way.
+
+481
+00:31:30,830 --> 00:31:33,710
+Uh, I can answer that without spoiling.
+
+482
+00:31:33,750 --> 00:31:39,590
+Uh, the spoilers are some of my favorite parts, but, uh, the, um, one of the
+
+483
+00:31:39,630 --> 00:31:46,980
+things that kind of happened as I and the writer went along was, uh, we ended up
+
+484
+00:31:46,980 --> 00:31:52,780
+kind of modeling a software development environment that is a lot more wholesome
+
+485
+00:31:53,780 --> 00:31:58,780
+than many, you know, uh, there's this character mom who's, you know, trying
+
+486
+00:31:58,780 --> 00:32:02,140
+to take care of the kids and like making them eat their vegetables and stuff,
+
+487
+00:32:02,180 --> 00:32:06,540
+you know, and always making sure that if they're up late working on something
+
+488
+00:32:06,540 --> 00:32:08,180
+that they get a sandwich, you know,
+
+489
+00:32:08,420 --> 00:32:09,900
+mom is awesome.
+
+490
+00:32:09,940 --> 00:32:15,180
+And it, you know, even, yeah, I'll just say that throughout the book, mom is awesome.
+
+491
+00:32:15,780 --> 00:32:16,260
+Yeah.
+
+492
+00:32:16,260 --> 00:32:20,820
+And, and so I was really proud, but it's more than just that, you know, like
+
+493
+00:32:20,820 --> 00:32:26,740
+there's Carver who's running the school, the academy, uh, and kind of, uh, I
+
+494
+00:32:26,740 --> 00:32:29,500
+don't know, quarterbacking their team also.
+
+495
+00:32:30,060 --> 00:32:35,180
+Uh, and between the two of them, they're watching out for the welfare of
+
+496
+00:32:35,180 --> 00:32:40,300
+the students involved, not just, um, you know, working them to death and, and
+
+497
+00:32:40,460 --> 00:32:45,700
+focusing on the goals, but also focusing on them as people.
+
+498
+00:32:46,100 --> 00:32:51,900
+And that is something that I was kind of proud of modeling in the book was a more,
+
+499
+00:32:51,900 --> 00:32:55,420
+you know, people centric development environment.
+
+500
+00:32:57,230 --> 00:32:57,550
+Yeah.
+
+501
+00:32:57,590 --> 00:32:58,150
+Very cool.
+
+502
+00:32:58,150 --> 00:32:59,750
+Like it definitely came across.
+
+503
+00:33:00,110 --> 00:33:02,830
+So, uh, you missed it before you logged in.
+
+504
+00:33:02,870 --> 00:33:06,290
+Uh, as you know, I've read the book, but Brent, uh, you
+
+505
+00:33:06,290 --> 00:33:08,050
+say you have, you have a copy for your daughter.
+
+506
+00:33:08,090 --> 00:33:08,810
+She hasn't read yet.
+
+507
+00:33:08,810 --> 00:33:09,370
+Is that correct?
+
+508
+00:33:10,230 --> 00:33:10,830
+Oh yeah.
+
+509
+00:33:11,030 --> 00:33:20,090
+Uh, yesterday I went up and looked up, um, uh, and, uh, downloaded it to my daughter's
+
+510
+00:33:20,130 --> 00:33:20,630
+Kindle.
+
+511
+00:33:20,630 --> 00:33:22,490
+She, she's awake yet.
+
+512
+00:33:22,610 --> 00:33:25,450
+Uh, so, or she's awake now.
+
+513
+00:33:25,890 --> 00:33:29,050
+Um, but so she hasn't looked at her Kindle because the first thing she does
+
+514
+00:33:29,050 --> 00:33:33,170
+is breakfast and then she goes, um, goes on the roadblocks.
+
+515
+00:33:35,200 --> 00:33:35,400
+Yeah.
+
+516
+00:33:35,440 --> 00:33:39,520
+I, I, I will, we won't have it for today, but I look forward to hearing her reaction.
+
+517
+00:33:40,080 --> 00:33:41,000
+Uh, I'll share it.
+
+518
+00:33:41,240 --> 00:33:41,840
+I'll share it.
+
+519
+00:33:42,120 --> 00:33:44,320
+Um, and it's nothing else.
+
+520
+00:33:44,320 --> 00:33:48,600
+Uh, I'll, I'll send whatever feedback to you directly soon.
+
+521
+00:33:49,360 --> 00:33:49,680
+Yeah.
+
+522
+00:33:49,720 --> 00:33:50,760
+It's a fun read.
+
+523
+00:33:50,760 --> 00:33:57,520
+And also I see from your website, there's some positive reviews coming in.
+
+524
+00:33:58,040 --> 00:34:02,080
+Uh, I won't ask you to say to share your sales information, but I hope the
+
+525
+00:34:02,080 --> 00:34:05,360
+book is going well because well, actually, let me ask.
+
+526
+00:34:05,400 --> 00:34:05,880
+It this way.
+
+527
+00:34:07,190 --> 00:34:14,430
+We'll where are we at right now with the, the concept of maybe having a book too?
+
+528
+00:34:15,430 --> 00:34:19,630
+Um, I would, I would love to make a book to happen.
+
+529
+00:34:20,030 --> 00:34:27,270
+Uh, at the moment I'm spending my time focusing on trying to, uh, do a
+
+530
+00:34:27,270 --> 00:34:33,230
+good job with book one, you know, uh, I sent out feelers to get help from all
+
+531
+00:34:33,710 --> 00:34:38,190
+from people and all sorts of things like libraries I should talk to about
+
+532
+00:34:38,190 --> 00:34:40,870
+carrying the book and youth organizations.
+
+533
+00:34:40,870 --> 00:34:43,670
+I should donate copies to things like that.
+
+534
+00:34:43,710 --> 00:34:46,550
+And I haven't followed up on all of those things yet.
+
+535
+00:34:46,830 --> 00:34:52,790
+So I'm trying to complete my mission on book one before getting started on book two.
+
+536
+00:34:53,150 --> 00:34:53,710
+Understood.
+
+537
+00:34:54,190 --> 00:34:54,670
+Yeah.
+
+538
+00:34:54,710 --> 00:34:55,910
+I would love to.
+
+539
+00:34:55,990 --> 00:35:02,070
+Um, I just have to, uh, I don't know, convince myself that it's worth it.
+
+540
+00:35:02,150 --> 00:35:06,590
+And the number of people that I'll reach, but you know, the funny thing is like
+
+541
+00:35:06,590 --> 00:35:09,870
+the best way to market book one is to have a book two, right?
+
+542
+00:35:10,270 --> 00:35:13,710
+Uh, the best way to get more readers is to keep writing.
+
+543
+00:35:14,070 --> 00:35:16,270
+And so we'll see.
+
+544
+00:35:16,390 --> 00:35:17,790
+I would love to make it happen.
+
+545
+00:35:17,790 --> 00:35:21,030
+I just have to justify the expense.
+
+546
+00:35:21,150 --> 00:35:25,070
+You know, I have to be asking people to donate to another Kickstarter.
+
+547
+00:35:25,470 --> 00:35:29,670
+And, um, the time wasn't really that bad on my part.
+
+548
+00:35:30,190 --> 00:35:30,590
+So.
+
+549
+00:35:31,270 --> 00:35:32,990
+Do you have plenty more ideas?
+
+550
+00:35:33,790 --> 00:35:35,070
+Do you have more ideas?
+
+551
+00:35:35,070 --> 00:35:39,510
+Do you have, do you have additional plots and technical problem solving things?
+
+552
+00:35:39,870 --> 00:35:43,750
+I actually have another plot that I like even better than the first book.
+
+553
+00:35:45,500 --> 00:35:46,940
+So, so exciting.
+
+554
+00:35:48,940 --> 00:35:52,660
+I like it enough that I kind of want it to be book three, but I have to come up
+
+555
+00:35:52,660 --> 00:35:57,740
+with another idea for you have to find your empire strikes back to go in the
+
+556
+00:35:57,740 --> 00:35:58,140
+middle.
+
+557
+00:35:58,700 --> 00:35:59,060
+Yeah.
+
+558
+00:36:01,880 --> 00:36:10,120
+You should lead with, uh, uh, that last statement, um, as you try to succeed
+
+559
+00:36:10,120 --> 00:36:13,480
+in your mission on with Raven, right?
+
+560
+00:36:13,480 --> 00:36:18,120
+And that might be enough to say, to inspire your audience.
+
+561
+00:36:18,160 --> 00:36:23,840
+Oh, if we could just push Sue over that boundary, we'll, we'll get that paper.
+
+562
+00:36:24,440 --> 00:36:25,080
+Yeah.
+
+563
+00:36:25,520 --> 00:36:29,880
+Well, um, yeah, if you want to help support it, then buy books
+
+564
+00:36:29,880 --> 00:36:31,320
+for the young folks in your life.
+
+565
+00:36:32,860 --> 00:36:37,100
+So, you know, just kind of encourage them to think about themselves in a software
+
+566
+00:36:37,100 --> 00:36:44,000
+career, how have you been, uh, how have you been surviving during COVID quarantine?
+
+567
+00:36:44,560 --> 00:36:45,760
+How's the big going for you Sue?
+
+568
+00:36:46,660 --> 00:36:47,740
+It's been good.
+
+569
+00:36:47,740 --> 00:36:48,420
+Actually.
+
+570
+00:36:48,460 --> 00:36:55,100
+So, uh, we've had a nanny watching our kids ever since we had kids and, uh, our
+
+571
+00:36:55,100 --> 00:36:58,940
+nanny has still been coming every day to watch them.
+
+572
+00:36:58,940 --> 00:37:04,460
+So unlike many parents with young kids, it hasn't been that hard on us, uh,
+
+573
+00:37:04,460 --> 00:37:08,140
+during the day we can, uh, have a pretty normal work day.
+
+574
+00:37:08,460 --> 00:37:12,740
+So overall, if anything, I'm working too much and need to find
+
+575
+00:37:12,740 --> 00:37:14,300
+better ways to set boundaries.
+
+576
+00:37:15,940 --> 00:37:17,700
+I've heard that before too.
+
+577
+00:37:18,140 --> 00:37:18,460
+Yeah.
+
+578
+00:37:18,460 --> 00:37:22,040
+It's, it's definitely, you know, I was working from home most days before
+
+579
+00:37:22,040 --> 00:37:27,020
+because none of the teams, none of my team is in the Seattle area.
+
+580
+00:37:27,500 --> 00:37:34,100
+They're all in San Francisco and, uh, UK and Helsinki and maybe, and maybe
+
+581
+00:37:34,100 --> 00:37:39,620
+a few other places, so it's just been getting used to, uh, just getting used
+
+582
+00:37:39,620 --> 00:37:41,700
+to them all being home to Brent.
+
+583
+00:37:41,700 --> 00:37:47,960
+On the other hand is, have you just blown up yet or, or what's, are you
+
+584
+00:37:47,960 --> 00:37:50,400
+survive, are you getting any better at handling this Brent?
+
+585
+00:37:51,120 --> 00:37:52,800
+No, no, it is.
+
+586
+00:37:53,790 --> 00:38:05,650
+It, it is absolutely thankfully it's slow, but it is absolutely a steady,
+
+587
+00:38:06,010 --> 00:38:08,450
+consistent decline.
+
+588
+00:38:08,450 --> 00:38:14,510
+I can't predict when I'm going to go crazy, but I can, I can feel it every
+
+589
+00:38:14,510 --> 00:38:17,890
+single day getting closer and closer and closer.
+
+590
+00:38:18,760 --> 00:38:26,310
+Uh, however, I think I understand now the primary cause, um, uh, last week
+
+591
+00:38:26,330 --> 00:38:32,470
+we had a meeting free day and I was completely recharged.
+
+592
+00:38:32,470 --> 00:38:38,510
+I'm like, ah, a day where no fricking PM can spontaneously set up a 30
+
+593
+00:38:38,710 --> 00:38:40,250
+minute meeting on my calendar.
+
+594
+00:38:40,270 --> 00:38:41,750
+Oh, fantastic.
+
+595
+00:38:42,710 --> 00:38:44,510
+Uh, and that's all I got things done.
+
+596
+00:38:44,830 --> 00:38:50,710
+Um, so the, the, the, I don't think it's the working from home so much as
+
+597
+00:38:50,750 --> 00:39:00,210
+working from home is, is inspiring far too much time on my calendar spent
+
+598
+00:39:00,570 --> 00:39:06,530
+talking and not enough doing in that, that, that lack of balance is, is
+
+599
+00:39:06,610 --> 00:39:08,690
+driving me insane today.
+
+600
+00:39:08,690 --> 00:39:12,850
+In fact, unfortunately I overslept, but today my half hour meetings
+
+601
+00:39:12,850 --> 00:39:15,530
+were supposed to start at six, six in the morning.
+
+602
+00:39:16,090 --> 00:39:20,450
+Uh, they don't end till 5 PM and it literally is back to back to back to
+
+603
+00:39:20,450 --> 00:39:22,930
+back all the way through lunch, half hour meetings.
+
+604
+00:39:22,970 --> 00:39:24,690
+Uh, everyone asked me for status.
+
+605
+00:39:25,830 --> 00:39:30,510
+So bad plot ideas for the Raven series, a whole book where they can't
+
+606
+00:39:30,510 --> 00:39:33,150
+save the world because they're too busy in meetings all day.
+
+607
+00:39:35,150 --> 00:39:35,630
+No, no, no.
+
+608
+00:39:35,630 --> 00:39:39,830
+But you know, if you want your villain, you know, that could be the, the,
+
+609
+00:39:40,070 --> 00:39:43,910
+um, the origination story for the village.
+
+610
+00:39:44,830 --> 00:39:46,150
+Crazy because of it.
+
+611
+00:39:47,830 --> 00:39:55,000
+Oh my well, Sue, it's, uh, it's been really fun having you on the podcast.
+
+612
+00:39:55,000 --> 00:39:55,840
+Thanks for doing this.
+
+613
+00:39:55,840 --> 00:40:01,200
+I, I, I saw the, I missed the kick and I, if there's another kickstarter
+
+614
+00:40:01,200 --> 00:40:03,720
+for book two, I will be part of the support for that.
+
+615
+00:40:04,120 --> 00:40:09,680
+I, I missed seeing a kickstarter the first time, but I did see on LinkedIn,
+
+616
+00:40:09,680 --> 00:40:12,840
+I said, wait, I know this person and that was like a cool idea.
+
+617
+00:40:12,840 --> 00:40:16,560
+And I got the book right away and it's a good read.
+
+618
+00:40:16,600 --> 00:40:21,400
+And so for anyone listening, I read it for yourself, read it for your family or
+
+619
+00:40:21,400 --> 00:40:24,800
+get it for your family, get it for your kids, get it for your friends, kids.
+
+620
+00:40:25,280 --> 00:40:29,640
+Uh, let's get the word out because not only is it, is the premise behind
+
+621
+00:40:29,640 --> 00:40:31,400
+your evil plan to save the world.
+
+622
+00:40:31,840 --> 00:40:33,120
+Really, really cool.
+
+623
+00:40:33,200 --> 00:40:36,560
+Uh, but you ended up with a really nice product.
+
+624
+00:40:36,560 --> 00:40:38,680
+You, you solve the problem very well.
+
+625
+00:40:38,760 --> 00:40:39,720
+You saw a problem.
+
+626
+00:40:40,160 --> 00:40:41,320
+You said, I'm going to do this.
+
+627
+00:40:41,360 --> 00:40:44,960
+And your solution for that problem was just, it's, I think it's fantastic.
+
+628
+00:40:44,960 --> 00:40:50,440
+So, uh, I will put when I post this on Monday, I'll have links to both your
+
+629
+00:40:50,440 --> 00:40:55,960
+evil plan to save the world and, uh, links to, I don't know.
+
+630
+00:40:57,240 --> 00:41:00,240
+I can't, I can't decide if we're hating Amazon or not right now.
+
+631
+00:41:00,280 --> 00:41:05,440
+I can do an Amazon link, but, uh, whatever, whatever other link to everything.
+
+632
+00:41:05,560 --> 00:41:05,960
+Yeah.
+
+633
+00:41:06,120 --> 00:41:09,760
+I will, I will look at your site and see whatever links you have to whatever
+
+634
+00:41:09,760 --> 00:41:12,400
+bookstores are around, but definitely worth checking out.
+
+635
+00:41:12,480 --> 00:41:17,680
+And, uh, any, any final words from you, uh, Brent or Sue before we close for today?
+
+636
+00:41:18,800 --> 00:41:24,280
+Well, one thing I want to call out is, uh, with, with this, with Sue, I
+
+637
+00:41:24,280 --> 00:41:29,580
+don't know that we went into her evil plan sufficiently enough, but she's
+
+638
+00:41:29,580 --> 00:41:35,420
+trying to spread the word, uh, like we talked a great deal around getting
+
+639
+00:41:35,420 --> 00:41:41,020
+girls to code, um, that's a big part of it up on Kindle right now.
+
+640
+00:41:41,180 --> 00:41:42,700
+Uh, it's 99 cents.
+
+641
+00:41:42,700 --> 00:41:46,220
+It's she's, she's not just like with this podcast.
+
+642
+00:41:46,260 --> 00:41:49,660
+Sue is not doing this, uh, to, to get rich.
+
+643
+00:41:49,780 --> 00:41:57,100
+It's just, it's to share and spread a message and, and to try to change how we,
+
+644
+00:41:57,940 --> 00:42:02,180
+uh, impact interest into the tech and sciences.
+
+645
+00:42:02,220 --> 00:42:05,260
+Um, I believe, tell me where I'm going.
+
+646
+00:42:06,060 --> 00:42:06,380
+Yeah.
+
+647
+00:42:06,380 --> 00:42:06,900
+Yeah.
+
+648
+00:42:06,940 --> 00:42:10,380
+No, I, I priced it absolutely as low as I could.
+
+649
+00:42:10,420 --> 00:42:14,900
+Um, any money I make off of it, I'm going to donate.
+
+650
+00:42:14,940 --> 00:42:22,660
+So, um, it's, it's all about trying to, uh, change people's perceptions about
+
+651
+00:42:22,660 --> 00:42:25,900
+jobs and software, and in fact, I've put in enough money.
+
+652
+00:42:26,420 --> 00:42:27,940
+I'm never going to break even.
+
+653
+00:42:27,940 --> 00:42:28,820
+And that's fine.
+
+654
+00:42:29,260 --> 00:42:35,060
+Uh, the other thing I'm doing, uh, lately, uh, since the social
+
+655
+00:42:35,060 --> 00:42:40,700
+unrest that's been happening is I started to try supporting black authors.
+
+656
+00:42:40,740 --> 00:42:46,020
+There's a community amount around the self publishing industry that I got
+
+657
+00:42:46,060 --> 00:42:50,740
+in involved in, and I volunteered there that I would read and review
+
+658
+00:42:50,860 --> 00:42:52,460
+books by black authors.
+
+659
+00:42:52,460 --> 00:42:55,820
+And I've been posting book reviews on my evil plan to save the world.
+
+660
+00:42:55,820 --> 00:43:00,500
+So another way people can help is just go look at the book reviews.
+
+661
+00:43:00,500 --> 00:43:04,140
+And if there are any books that look good, go buy them from these authors.
+
+662
+00:43:04,340 --> 00:43:04,780
+So.
+
+663
+00:43:06,600 --> 00:43:10,760
+I would love to continue with that, by the way, as I keep going, when I
+
+664
+00:43:10,760 --> 00:43:15,440
+finished this first round of books that I've committed to read and review, I'm
+
+665
+00:43:15,440 --> 00:43:21,280
+going to keep going with books, uh, any books that promote diversity in STEM
+
+666
+00:43:21,280 --> 00:43:24,680
+and tech, so just keep a look there.
+
+667
+00:43:25,700 --> 00:43:29,380
+It's beginning to sound like your evil plan to save the world.
+
+668
+00:43:29,460 --> 00:43:31,100
+Isn't actually so evil,
+
+669
+00:43:33,060 --> 00:43:35,300
+but it makes it more fun to call it that.
+
+670
+00:43:35,660 --> 00:43:36,180
+It does.
+
+671
+00:43:36,740 --> 00:43:39,300
+Uh, I'm, I'm massively impressed.
+
+672
+00:43:40,020 --> 00:43:40,500
+Thank you.
+
+673
+00:43:41,100 --> 00:43:42,260
+Thank you for having me.
+
+674
+00:43:42,300 --> 00:43:42,620
+Yeah.
+
+675
+00:43:42,940 --> 00:43:43,420
+Yeah.
+
+676
+00:43:43,420 --> 00:43:44,540
+Our pleasure again.
+
+677
+00:43:44,540 --> 00:43:45,500
+It's good to catch up with you.
+
+678
+00:43:45,500 --> 00:43:49,820
+It's only been 15 years, but, uh, uh, it's, it's great to talk to you
+
+679
+00:43:49,820 --> 00:43:55,940
+again and hear you've been up to and just congratulations on, on doing such a.
+
+680
+00:43:56,740 --> 00:43:57,980
+I'm doing what you've been doing.
+
+681
+00:43:57,980 --> 00:44:00,260
+It's it's, it's, it's just really impressive for me.
+
+682
+00:44:00,260 --> 00:44:01,620
+I'm, I'm, I'm really in awe.
+
+683
+00:44:01,660 --> 00:44:02,260
+So thank you.
+
+684
+00:44:02,700 --> 00:44:03,260
+Thank you.
+
+685
+00:44:03,700 --> 00:44:04,420
+It's been fun.
+
+686
+00:44:05,020 --> 00:44:05,420
+Okay.
+
+687
+00:44:05,420 --> 00:44:06,020
+Well, thanks.
+
+688
+00:44:06,060 --> 00:44:11,900
+Uh, please everyone check, check out everything Sue talked about and, uh, and
+
+689
+00:44:11,900 --> 00:44:16,060
+let's do this support more diversity in tech, uh, more actually, I shouldn't say
+
+690
+00:44:16,060 --> 00:44:18,420
+in tech, let's just support diversity everywhere.
+
+691
+00:44:18,500 --> 00:44:18,940
+All right.
+
+692
+00:44:19,460 --> 00:44:21,380
+Gosh, seems so easy.
+
+693
+00:44:22,170 --> 00:44:22,490
+All right.
+
+694
+00:44:22,650 --> 00:44:24,290
+Uh, thank you again, Sue.
+
+695
+00:44:24,290 --> 00:44:25,010
+Uh, thanks Brent.
+
+696
+00:44:25,050 --> 00:44:28,330
+Thanks for hanging out and we'll see everyone next time.
+
+697
+00:44:28,370 --> 00:44:28,690
+Thank you.
+
+698
+00:44:29,370 --> 00:44:29,570
+Bye.
+
+699
+00:44:29,610 --> 00:44:30,090
+Thank you.
+

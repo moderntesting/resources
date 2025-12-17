@@ -1,0 +1,1805 @@
+WEBVTT
+
+00:00:03.380 --> 00:00:09.420
+Welcome to AV testing podcast your modern testing podcast your hosts Alan and
+
+00:00:09.420 --> 00:00:15.220
+Brent will be here to guide you through topics on testing leadership agile and
+
+00:00:15.220 --> 00:00:20.930
+anything else that comes to mind now on with the show. Hey everybody howdy hey
+
+00:00:20.930 --> 00:00:26.410
+hey we're not alone here we have a guest yes how many of you remember the
+
+00:00:26.410 --> 00:00:32.680
+last time we had a guest but this episode has epic sound quality
+
+00:00:32.680 --> 00:00:39.030
+Steve say hi hey Steve remind everybody who you are I'm Steve
+
+00:00:39.030 --> 00:00:42.850
+I've worked with it right now and before I've been on the podcast once or
+
+00:00:42.850 --> 00:00:45.830
+twice but before they tell you to go back and listen so they're trying to cut
+
+00:00:45.830 --> 00:00:51.040
+me out I'm a data scientist in the windows team do you have the data to
+
+00:00:51.040 --> 00:00:55.080
+back that up I don't really you're just gonna make I tell you my p-value is
+
+00:00:55.080 --> 00:01:00.960
+really low though we can we can cut out that comment right I can do anything I
+
+00:01:01.040 --> 00:01:05.240
+want yeah I can glue words together to make you say things you never thought
+
+00:01:05.240 --> 00:01:15.290
+you were saying yeah so we do refer to a lot of to a lot of folks to start in
+
+00:01:15.290 --> 00:01:24.760
+the late 60s and Steve while officially the most frequent guest on the show
+
+00:01:24.760 --> 00:01:30.720
+hasn't been on since we sort of started telling people go back to those times so
+
+00:01:30.720 --> 00:01:38.040
+he was part of the discussions when we were forming up and helping to frame MT
+
+00:01:38.040 --> 00:01:44.840
+and sort of guiding people towards this new world but we haven't had him on since
+
+00:01:44.840 --> 00:01:48.980
+since we formalized all it's been a long time I've been listening it's been good
+
+00:01:48.980 --> 00:01:54.980
+it's been good to have discussions so that's that's good we covered that the
+
+00:01:54.980 --> 00:01:58.860
+the boards behind me I think it's a day when I sort of facilitate a
+
+00:01:58.860 --> 00:02:03.340
+conversation I have a bad feeling because they're gonna use math things
+
+00:02:03.340 --> 00:02:08.940
+and we're not gonna talk math oh good okay I worry when I get in a room I
+
+00:02:08.940 --> 00:02:13.380
+work with a lot of data scientists now and whenever yeah I do nice and when I
+
+00:02:13.380 --> 00:02:17.260
+talk with them they start using a lot of things phrases and words that remember
+
+00:02:17.260 --> 00:02:21.060
+when I used to be able to fake data science I can't I can't do that that
+
+00:02:21.060 --> 00:02:26.430
+now yeah no I'm just not you guys keep invent words faster than I can fake my
+
+00:02:26.430 --> 00:02:31.430
+way into understanding them you just say what's the p-value for that that's all
+
+00:02:31.430 --> 00:02:34.510
+you have to do no matter what they say yeah is that significant and then you're
+
+00:02:34.510 --> 00:02:38.190
+then you're good to go oh oh good all right did you calculate a confidence
+
+00:02:38.190 --> 00:02:43.110
+interval oh yeah I just reread a chunk of how we measure anything the Hubbard
+
+00:02:43.110 --> 00:02:46.910
+book so I have a little bit of math in my head which is where I've gotten some
+
+00:02:46.910 --> 00:02:50.310
+of my fake data science naked statistics actually is a really good book if you
+
+00:02:50.310 --> 00:02:53.590
+want to start beat strapping yourself into I have children in my home I can't
+
+00:02:53.590 --> 00:02:57.230
+read naked books that's just poetry it is fairly rated G even though the although
+
+00:02:57.230 --> 00:03:01.470
+although getting getting naked the Pat Lencioni book is not at all what I thought
+
+00:03:01.470 --> 00:03:05.420
+it was gonna be about but it was still very good you were very disappointed it
+
+00:03:05.420 --> 00:03:12.890
+depends he's he's looking for books to rationalize an odd behavior he already
+
+00:03:12.890 --> 00:03:18.610
+has it's a negative still a lot same need so okay disappointment in what in
+
+00:03:18.610 --> 00:03:26.200
+the title and one last random awkward book conversation I recently I always have
+
+00:03:26.200 --> 00:03:31.160
+a copy of every read it every copy of how to talk so your children will listen
+
+00:03:31.160 --> 00:03:35.940
+which is what I don't use it on my kids these are people I work with okay works
+
+00:03:35.940 --> 00:03:43.740
+great so Brent or Steve the BS of this podcast what is our topic for the
+
+00:03:43.740 --> 00:03:52.190
+day today we're gonna talk about ethics and ethics related to data science and
+
+00:03:52.190 --> 00:04:01.300
+machine learning yes we had a listener who posted a we could have almost called
+
+00:04:01.300 --> 00:04:08.930
+this a mailbag but I was looking at the thread and there's no question there but
+
+00:04:08.930 --> 00:04:15.290
+he did title the episode today weapons of math destruction surely that's been
+
+00:04:15.290 --> 00:04:21.450
+used before who cares not on a B it's not a Spielberg movie maybe not yet
+
+00:04:21.450 --> 00:04:24.730
+yeah it was one of the early ones from the late early 80s who should play me in
+
+00:04:24.730 --> 00:04:36.610
+the movie Macaulay Colton that kid who played in silver spoons oh sure the
+
+00:04:36.610 --> 00:04:41.050
+blonde guy yeah yeah maybe we should get back to ethics rotor I think right
+
+00:04:41.050 --> 00:04:53.330
+that's him right oh and tangent that wasn't if that wasn't no no tangential
+
+00:04:53.330 --> 00:05:01.570
+question I guess does society in fact need a reboot of 90210 oh you know what
+
+00:05:01.570 --> 00:05:07.410
+I watched like five minutes of that and I thought this is even below my standards
+
+00:05:07.770 --> 00:05:14.570
+okay so so I think the answer is no point in the room I haven't seen it I saw yeah
+
+00:05:14.570 --> 00:05:17.890
+watch most of the original which you know I probably shamed up these days
+
+00:05:17.890 --> 00:05:27.930
+same same which is why I and I'll edit my comment out but yeah yeah I thought oh
+
+00:05:27.930 --> 00:05:34.330
+I wonder what these people are like and they're potentially even worse actors
+
+00:05:34.330 --> 00:05:40.170
+than they were yeah 20 years Jason Priestley is in some new movie from 90210
+
+00:05:40.170 --> 00:05:44.290
+right I blocked it out but I thought I'm like hey he's still acting I'm
+
+00:05:44.290 --> 00:05:50.290
+shocked no here's what I think is because so what's the what's your
+
+00:05:50.290 --> 00:05:58.210
+confidence interval on that 97.3 okay just checking when those shows came out
+
+00:05:58.210 --> 00:06:02.850
+and I say those shows because we haven't talked about Melrose plays for
+
+00:06:02.850 --> 00:06:11.730
+good reason I think all three of us were likely in various degrees of early on
+
+00:06:11.730 --> 00:06:21.050
+relationship with our spouses and probably fell prey to the oh let's spend
+
+00:06:21.050 --> 00:06:29.680
+time together and then lost the TV choice no no I did it on my own oh did you
+
+00:06:29.680 --> 00:06:33.440
+really yeah yeah so yeah I'm home from work I think the first show I remember
+
+00:06:33.440 --> 00:06:38.780
+watching together with my wife when we were first dating was the Sopranos that's
+
+00:06:38.780 --> 00:06:42.340
+a way to build a really yeah yeah I was I was I was leaving me and here's what's
+
+00:06:42.340 --> 00:06:53.590
+gonna happen all right shall we get into yes a little bit further okay yes what
+
+00:06:53.590 --> 00:06:59.710
+it what what is it what what it maybe I'll ask later what is it we're talking
+
+00:06:59.710 --> 00:07:02.750
+about what what do you when you say ethics and data science what does that
+
+00:07:02.750 --> 00:07:06.500
+mean what are we discussing oh we'll probably talk about things that pissed
+
+00:07:06.500 --> 00:07:12.020
+Steve and I off oh yeah that's something that you're comfortable with so things
+
+00:07:12.020 --> 00:07:15.820
+that pissed you off are ethical or unethical I just want to get my story
+
+00:07:15.820 --> 00:07:21.500
+straight okay let me ask you so you just told a story but you're working
+
+00:07:21.500 --> 00:07:32.300
+with a lot of data scientists sure okay my view of a data scientist's job is
+
+00:07:32.300 --> 00:07:38.990
+ultimately to automate the decision-making process yes okay but one
+
+00:07:38.990 --> 00:07:47.460
+thing that I see over and over and over and over and over again is
+
+00:07:47.820 --> 00:07:55.210
+unfortunately data scientists are human they are driven by intrinsic incentives
+
+00:07:55.210 --> 00:08:02.290
+like hey I want a better review this year than last year that's only a
+
+00:08:02.290 --> 00:08:11.620
+Microsoft that but they have the advantage that in the in the software
+
+00:08:11.620 --> 00:08:16.020
+world today they have the advantage that no one knows what the hell they're
+
+00:08:16.020 --> 00:08:20.900
+talking about I have seen the scenario you've played out over and over again
+
+00:08:20.900 --> 00:08:28.020
+where you have a data scientist comes in talks to business leaders throws up three
+
+00:08:28.020 --> 00:08:32.930
+slides of math equations which makes everything clear of course no data
+
+00:08:32.930 --> 00:08:42.240
+scientist outside of that team in the room starts walking through it and you
+
+00:08:42.240 --> 00:08:47.300
+could see the business leaders eyes glaze over and the final conclusion of
+
+00:08:48.020 --> 00:08:58.540
+oh great job keep up the good work right and without the individual the decks that
+
+00:08:58.540 --> 00:09:05.940
+I see then afterwards I'm like hey wait a minute what's your test score on this
+
+00:09:05.940 --> 00:09:12.880
+like great you you can describe a bunch of math stuff which by the way is
+
+00:09:12.880 --> 00:09:16.640
+almost always up on Wikipedia anyway you don't need to put slides in there
+
+00:09:16.920 --> 00:09:22.440
+but this is slide driven development though it's been proven to work yeah it
+
+00:09:22.440 --> 00:09:26.120
+gets it gets permission all the time so I think the big thing about ethics and
+
+00:09:26.120 --> 00:09:28.880
+data science is that you have a tool that's not understood by a lot of people
+
+00:09:28.880 --> 00:09:32.360
+like Brent says so the implications of that aren't always clear but even when
+
+00:09:32.360 --> 00:09:35.040
+they are there's a lot of things you can do right this comes down to the
+
+00:09:35.040 --> 00:09:37.800
+spider-man principle right with great power comes great responsibility and
+
+00:09:37.800 --> 00:09:42.040
+there's a lot you can do with data science to make decisions or to find
+
+00:09:42.040 --> 00:09:45.400
+unique insights that otherwise aren't there and the question is should you or
+
+00:09:45.400 --> 00:09:48.520
+should you not right probably a lot of our listeners know of the target
+
+00:09:48.520 --> 00:09:52.560
+incident from from many years ago where a girl's father called up the manager at
+
+00:09:52.560 --> 00:09:55.960
+target said why are you telling why are you sending my daughter a bunch of
+
+00:09:55.960 --> 00:09:59.480
+pregnancy test information or a bunch of pregnant pregnant woman information
+
+00:09:59.480 --> 00:10:03.440
+right things for right it was like it was like diapers and formula yeah and
+
+00:10:03.440 --> 00:10:06.520
+and you know how dare you insinuate that of my daughter and the manager
+
+00:10:06.520 --> 00:10:10.440
+apologizes and then a week later that the manager calls back to say hey I'm
+
+00:10:10.440 --> 00:10:13.240
+really sorry that's like no no it's okay there was something going out of
+
+00:10:13.240 --> 00:10:16.560
+my house that I wasn't aware of your algorithm was your stuff was correct I
+
+00:10:16.560 --> 00:10:20.720
+apologize for yelling at you but should target have targeted somebody in that
+
+00:10:20.720 --> 00:10:23.920
+way or not is the question and that's the kind of question we're gonna be
+
+00:10:23.920 --> 00:10:27.320
+answering today ah yeah that's a good question because I work with the data
+
+00:10:27.320 --> 00:10:32.120
+science team I work with I work in ads monetization we're trying to give
+
+00:10:32.120 --> 00:10:36.160
+we're trying to benefit both the consumer and the publisher by showing
+
+00:10:36.160 --> 00:10:42.260
+them the right advertisement when they want it and yeah how do we know that we
+
+00:10:42.260 --> 00:10:50.570
+our formula isn't is accurate but not unethically actually just not unethical
+
+00:10:50.570 --> 00:10:55.690
+data science is a powerful tool if you align it to MT like one of the things
+
+00:10:55.690 --> 00:11:02.530
+that we're trying to do is is help businesses be stronger by priority
+
+00:11:02.530 --> 00:11:06.450
+number one principle number one our goal is improving the business go on by
+
+00:11:06.450 --> 00:11:13.870
+servicing their customers in in building quality solutions to customers problems
+
+00:11:13.870 --> 00:11:24.820
+and data science is a powerful tool but it can be it it is very easy to remove
+
+00:11:24.820 --> 00:11:31.060
+the customer satisfaction part of that equation when working through your models
+
+00:11:31.060 --> 00:11:33.820
+right it's easy to think about how much money you could raise if we could
+
+00:11:33.820 --> 00:11:37.220
+target somebody for this particular thing even if maybe they don't want to
+
+00:11:37.220 --> 00:11:40.700
+be targeted for it it's easy to forget about that just to make the money but
+
+00:11:40.700 --> 00:11:43.660
+principle five says that the customer is the only one capable of judging the
+
+00:11:43.660 --> 00:11:46.580
+quality of our product right and part of the quality is their satisfaction and
+
+00:11:46.580 --> 00:11:50.940
+the their satisfaction with the ads and how creepy you seem is all
+
+00:11:50.940 --> 00:11:54.260
+kinds of things are gonna affect your long-term potential as a company even if
+
+00:11:54.260 --> 00:11:56.540
+the short term you can make a lot of money out of targeting somebody for
+
+00:11:56.540 --> 00:12:03.520
+something they may not want you to know about my hyperbolic example is so
+
+00:12:03.520 --> 00:12:12.660
+we have a lot of vision recognition we have we are shrinking cameras right no
+
+00:12:12.660 --> 00:12:19.130
+one talks about Google Glass anymore but that's I think that's a technology that
+
+00:12:19.130 --> 00:12:25.880
+perhaps was a little before its time but that'll still push forward right uh I
+
+00:12:25.880 --> 00:12:30.320
+know Steve and I both wear glasses I know I certainly would would think it's
+
+00:12:30.320 --> 00:12:35.120
+cool if I had the ability to have a near real-time heads-up display in my my eye
+
+00:12:35.120 --> 00:12:39.560
+wear as long as I didn't you know add another pound on top of the bridge my
+
+00:12:39.560 --> 00:12:42.240
+nose yeah at some point somebody I'll manage to get a hollow lens shrunk down
+
+00:12:42.240 --> 00:12:45.360
+small to fit in your glasses and have a long battery life and then things will
+
+00:12:45.360 --> 00:12:51.620
+be very interesting yes for example mentalist you guys know what these are
+
+00:12:51.620 --> 00:12:56.480
+a mentalist like that well I can read your mind the people that wasn't there a
+
+00:12:56.480 --> 00:13:00.480
+TV show called the mentalist that I never watched there was okay yes same thing
+
+00:13:00.480 --> 00:13:04.720
+yes should I pause I'm gonna boot up Netflix wait can I get your Wi-Fi
+
+00:13:04.720 --> 00:13:13.360
+password nevermind okay the what they are very good at is seeing micro
+
+00:13:13.360 --> 00:13:19.160
+movements in your face and they are able and they have determined patterns so for
+
+00:13:19.160 --> 00:13:26.740
+example I don't I'm not a mentalist but if someone asks you a question and then
+
+00:13:26.740 --> 00:13:31.670
+that if that person doesn't look you in the eyes answering it the direction
+
+00:13:31.670 --> 00:13:38.930
+where they look if they look up or decide it's known that it's probabilistic
+
+00:13:38.930 --> 00:13:44.850
+what they're doing like looking up I remember this one looking up when they
+
+00:13:44.850 --> 00:13:50.840
+answer generally means they're inventing an answer and they're well
+
+00:13:50.840 --> 00:13:57.240
+trained to observe this but an automation computer vision with AI with
+
+00:13:57.240 --> 00:14:05.910
+these type of glasses honestly we're not far off from you're right yeah I can
+
+00:14:05.910 --> 00:14:12.320
+wear my special glasses I can tell if you're full of BS or not right in what
+
+00:14:12.320 --> 00:14:18.120
+happens in a world what happens in a world when everyone knows that everyone
+
+00:14:18.120 --> 00:14:27.650
+else is lying mate isn't that what we call the press today yeah what would
+
+00:14:27.650 --> 00:14:35.970
+the I mean that would completely revamp the dating scene completely there should
+
+00:14:35.970 --> 00:14:51.420
+be a show about that and it's fine and fantasy but I but I do think it's sort
+
+00:14:51.420 --> 00:14:55.720
+of a it's sort of a version of uncanny valley I actually think you know the
+
+00:14:55.720 --> 00:15:03.220
+phenomenon that the where what is it social media bullying it has a clever
+
+00:15:03.220 --> 00:15:14.380
+name cyber bullying yes thank you I'm here to help where where teenagers one
+
+00:15:14.380 --> 00:15:21.790
+of the problems is on the site on social media peer groups will say on
+
+00:15:21.790 --> 00:15:27.300
+social media what they won't say to your face that's been true of email
+
+00:15:27.300 --> 00:15:33.060
+since I first used email yeah but the friction's a lot smaller yeah the the
+
+00:15:33.060 --> 00:15:37.140
+the feedback loop is faster right there's always been the phenomenon email where you
+
+00:15:37.140 --> 00:15:40.940
+can't tell if somebody's yelling at you or if they're all caps man I'm like yeah
+
+00:15:40.940 --> 00:15:46.580
+it's very difficult to get sarcasm out of an email you put a sarcasm taken there
+
+00:15:46.580 --> 00:15:52.410
+you go slash s and you're good yeah yeah if you're conscious about it yeah and
+
+00:15:52.410 --> 00:15:58.970
+the rate of teenagers that have been suicidal as a result of the feedback that
+
+00:15:58.970 --> 00:16:04.090
+they read on that and not being able like things like these glasses would just
+
+00:16:04.090 --> 00:16:09.300
+take it to the next level going to such happy places on this podcast right no
+
+00:16:09.300 --> 00:16:19.630
+well so again that's a hyper ballistic example but it's something that if ethics
+
+00:16:19.630 --> 00:16:28.070
+isn't talked about in the data science world it's gonna happen right it's it's
+
+00:16:28.070 --> 00:16:35.860
+just a matter of time right I I used to I used to joke that the reason why I went
+
+00:16:35.860 --> 00:16:43.700
+into data science is that 20 years from now I'm hoping that our AI overlords will
+
+00:16:43.700 --> 00:16:49.060
+look upon us more fondly than the rest of you guys right yeah we'll be there
+
+00:16:49.060 --> 00:16:52.660
+with this that the beach here people or whatever in the right you know brave new
+
+00:16:52.660 --> 00:16:57.530
+world instead of one of the AI's are the a tier yeah I think it does come down to
+
+00:16:57.530 --> 00:17:00.050
+a little bit I think it was a Jurassic Park quote or whatever where they said
+
+00:17:00.050 --> 00:17:02.090
+you know they were so busy thinking about whether they could they stopped
+
+00:17:02.090 --> 00:17:05.090
+thinking about whether they should and so part of what ethics is trying to do
+
+00:17:05.090 --> 00:17:08.450
+is say you know think about what you should build these kind of glasses and
+
+00:17:08.450 --> 00:17:16.820
+whether you should target people for pregnancy etc right so why don't we go
+
+00:17:16.820 --> 00:17:22.420
+through so Brent has a list of things to talk about no actually those are
+
+00:17:22.420 --> 00:17:27.700
+Steve's list Steve has a list of things to talk about why don't you guys I will
+
+00:17:27.700 --> 00:17:32.180
+sit back and add questions as needed but go ahead and discuss those and I'll sit
+
+00:17:32.180 --> 00:17:37.020
+back and drink my coffee so the first thing I'll say is to the situation like
+
+00:17:37.020 --> 00:17:43.170
+you Alan I take I take it very seriously in my role my currency is
+
+00:17:43.170 --> 00:17:48.980
+credibility I want to make sure that if I were a data science you were working
+
+00:17:48.980 --> 00:17:55.830
+with or data scientists you were with I want to walk you through and I want I
+
+00:17:55.830 --> 00:18:01.350
+would want to prove to you this is where you can trust my model and this is
+
+00:18:01.350 --> 00:18:10.440
+where you can't and where the math is too hard I would simplify it and still
+
+00:18:10.440 --> 00:18:17.180
+try to walk you through it because again I want to I'm not gonna be the only
+
+00:18:17.180 --> 00:18:22.110
+data scientist you work with but I want to do my part to kill two birds one
+
+00:18:22.110 --> 00:18:28.730
+stone earn your trust and make sure you you have learned how to apply those
+
+00:18:28.730 --> 00:18:34.730
+techniques to call bullshit on other data scientists if I come to you and
+
+00:18:34.730 --> 00:18:43.480
+say hey dude I got a model and it's our squared is one then I know you're lying
+
+00:18:43.480 --> 00:18:51.980
+no well I'm either broken models when I'm either lying or my models bullshit
+
+00:18:51.980 --> 00:18:55.820
+for those you at home are squared is the percentage of variability that your
+
+00:18:55.820 --> 00:18:58.260
+model captures and if you think you captured every single little nuance
+
+00:18:58.260 --> 00:19:03.810
+you're probably wrong yeah any in ones you did get some math one is a perfect
+
+00:19:03.810 --> 00:19:12.400
+score and every model that I have ever seen that comes back with a one and it is
+
+00:19:12.400 --> 00:19:21.750
+possible is entirely useless I've been able to pick that apart easily all right
+
+00:19:21.750 --> 00:19:26.910
+what do you want to talk about one up there I'm not quite sure where you were
+
+00:19:26.910 --> 00:19:29.830
+going with it so maybe we should we can start there or we can start with
+
+00:19:29.830 --> 00:19:32.230
+prize there's one at the top yeah do you want to start with privacy because
+
+00:19:32.230 --> 00:19:35.940
+kind of the big one in the news all these days every is afraid of the game
+
+00:19:35.940 --> 00:19:39.940
+let me explain that to you and then I'll let you I'll let you decide where you
+
+00:19:39.940 --> 00:19:44.940
+want to go all right you're our value guess the assumption of independence this
+
+00:19:44.940 --> 00:19:51.460
+kind of plays into the generalist for there's a specialist discussion there's a
+
+00:19:51.460 --> 00:19:57.820
+phenomenon they see all the time of two key KPIs and it doesn't matter which
+
+00:19:57.820 --> 00:20:03.340
+KPIs we could say speed and quality and then what you do is you have a data
+
+00:20:03.340 --> 00:20:09.340
+science team focused on quality and you have another data science team focused on
+
+00:20:09.340 --> 00:20:16.940
+speed and there is an assumption of independence between the master KPIs
+
+00:20:16.940 --> 00:20:22.910
+that they're focused on which is completely false meaning changing one is
+
+00:20:22.910 --> 00:20:26.310
+probably gonna affect the other in ways you weren't otherwise expecting right
+
+00:20:26.430 --> 00:20:35.180
+but the other phenomenon I see is because both teams are not using the other KPI in
+
+00:20:35.180 --> 00:20:45.570
+their models what happens is team one claims success and coincidentally team two
+
+00:20:45.570 --> 00:20:50.570
+goes yes something happened this last week we don't understand what happened
+
+00:20:50.570 --> 00:20:54.730
+but we're working on a model on our prove it and then when they do so they
+
+00:20:54.730 --> 00:21:00.570
+claim success and team two says this goes yeah something happened in our model
+
+00:21:00.570 --> 00:21:04.610
+we don't understand what happened well I think that's true of any time you give
+
+00:21:04.610 --> 00:21:09.250
+somebody primacy of one particular metric to drive whether it has data science
+
+00:21:09.250 --> 00:21:13.250
+involved or not right I remember back in the day we were working on Windows
+
+00:21:13.250 --> 00:21:17.810
+probably the late Vista error or XPSP one error or something like that for
+
+00:21:17.810 --> 00:21:21.650
+those of you that don't know windows is an operating system much like Mac OS or
+
+00:21:21.650 --> 00:21:26.610
+Ubuntu go on anyway we run the security kick and there's a fundamental
+
+00:21:26.610 --> 00:21:29.450
+piece of Windows called calm not that it matters but there's a fundamental piece
+
+00:21:29.450 --> 00:21:32.410
+that everything runs through and one team was given the ability the
+
+00:21:32.410 --> 00:21:35.370
+responsibility to make sure things were secure so they came to us and said if
+
+00:21:35.370 --> 00:21:39.290
+you just disable calm we can make the entire operating system secure which
+
+00:21:39.290 --> 00:21:42.350
+is good you just can't do anything with it anymore so that was kind of where
+
+00:21:42.350 --> 00:21:46.090
+they had one primacy of security over everything else and they weren't
+
+00:21:46.090 --> 00:21:49.810
+thinking through the implications of that and the usability model in this
+
+00:21:49.810 --> 00:21:54.820
+case fell through the floor but it's secure secure calm is the component
+
+00:21:54.820 --> 00:21:59.540
+object model I still I don't have it anymore but I have my inside calm book
+
+00:21:59.540 --> 00:22:06.450
+for a long time yeah anyway all zero things you can do would have been secure
+
+00:22:06.450 --> 00:22:11.290
+Steve so I assume you were supportive of this oh very much though yeah it was
+
+00:22:11.290 --> 00:22:14.410
+totally secure all right all right so yes make sure that you're paying
+
+00:22:14.410 --> 00:22:17.730
+attention to all aspects and not to one a lot of times that means if
+
+00:22:17.730 --> 00:22:20.490
+you're going to have metrics you want some guardrail metrics that you're
+
+00:22:20.490 --> 00:22:23.970
+watching along with the thing you watch like if you run an experiment right you
+
+00:22:23.970 --> 00:22:27.570
+run an AV test somewhere you oftentimes have what we call guardrail metrics to
+
+00:22:27.570 --> 00:22:30.770
+make sure that other things aren't going wrong even though the one thing
+
+00:22:30.770 --> 00:22:34.170
+you're looking at goes up so maybe you're looking for something like you
+
+00:22:34.170 --> 00:22:38.290
+know response to your ad but you have guardrail metrics around you know
+
+00:22:38.290 --> 00:22:42.530
+usability around usage and around monetization etc and so maybe people
+
+00:22:42.530 --> 00:22:45.570
+click on your ad a whole lot but your overall numbers go down that would be
+
+00:22:45.570 --> 00:22:48.290
+bad not something you want to ship even though the thing you're aiming for is
+
+00:22:48.290 --> 00:22:51.770
+good it just ended up taking everything else I love that term I normally use
+
+00:22:51.770 --> 00:22:57.910
+tension metrics for similar concept but guardrail guard is clear okay privacy
+
+00:22:57.910 --> 00:23:00.070
+alright so let's talk about privacy because that's kind of the biggest one
+
+00:23:00.070 --> 00:23:02.870
+in the news these days I think everybody's you know the news is all
+
+00:23:02.870 --> 00:23:07.230
+afraid about you know Cambridge Analytica and what Facebook's doing with your
+
+00:23:07.230 --> 00:23:13.460
+stuff and who's listening to which devices audio systems and whatnot
+
+00:23:13.820 --> 00:23:20.740
+privacy is a hard one because what we see a lot in the industry except for when big
+
+00:23:20.740 --> 00:23:31.530
+things like the the Russians taking over Facebook and using that to influence
+
+00:23:31.530 --> 00:23:40.540
+decisions which is absolutely clearly unethical what we see from be from
+
+00:23:40.540 --> 00:23:46.540
+almost all behavioral studies on this people are willing to give up privacy
+
+00:23:46.540 --> 00:23:53.100
+for ease right they are and then they they get upset at the overall right so
+
+00:23:53.100 --> 00:23:56.580
+nobody ever says I'm not gonna give you my gmail account because you're gonna
+
+00:23:56.580 --> 00:23:59.300
+scan it nobody ever says I'm not gonna sign up for Facebook because you're
+
+00:23:59.300 --> 00:24:02.580
+gonna scan it but then later they get really mad at those companies for doing
+
+00:24:02.580 --> 00:24:06.940
+things with them so there's we're gonna talk later about informed consent
+
+00:24:06.940 --> 00:24:10.260
+but people have to be very clear about what you're gonna do with it and
+
+00:24:10.260 --> 00:24:14.630
+then then there's issue then they're they're much more willing to do things
+
+00:24:14.630 --> 00:24:18.710
+or give you things but I think Brent's right that you as a person creating a
+
+00:24:18.710 --> 00:24:21.910
+tool have to think through the privacy concerns in ways that your users
+
+00:24:21.910 --> 00:24:24.870
+probably won't initially think through because they could come back to bite you
+
+00:24:24.870 --> 00:24:28.190
+later when they get upset even if they're not initially outraged by it
+
+00:24:28.190 --> 00:24:36.350
+right people aren't cons I think when them I haven't done the study on this
+
+00:24:36.350 --> 00:24:40.710
+I haven't seen a study on this but my my hypothesis is people take that
+
+00:24:40.710 --> 00:24:46.110
+approach because they very clearly see the benefit of the new capability being
+
+00:24:46.110 --> 00:24:54.280
+lit up hey so for example I adore I recently got a nest doorbell I adore that
+
+00:24:54.280 --> 00:24:58.280
+right now if Amazon were to drop something off at my house I could see
+
+00:24:58.280 --> 00:25:05.750
+what's going on okay but that means there is a live connection between my
+
+00:25:05.750 --> 00:25:13.340
+doorbell and the world there was something that recently happened I don't
+
+00:25:13.340 --> 00:25:20.500
+think it was nest but a hacker got into an internal someone's internal camera and
+
+00:25:20.500 --> 00:25:25.300
+speaker and took it over and was able to see everything inside someone's house
+
+00:25:25.300 --> 00:25:28.820
+and was able to interact with the owners and the owner could do nothing
+
+00:25:28.820 --> 00:25:33.580
+about it they the hacker they could have they could have unplugged their
+
+00:25:33.580 --> 00:25:37.620
+camera that's more of a security issue I think then yeah ethical privacy issue
+
+00:25:37.620 --> 00:25:42.020
+right the privacy question though comes when for quality reasons a company like
+
+00:25:42.020 --> 00:25:46.940
+Amazon when you when they have people that listen to the audio coming back from
+
+00:25:46.940 --> 00:25:50.180
+Alexa or at least they did I think they still do and then they would try to
+
+00:25:50.180 --> 00:25:53.540
+translate that into whatever it really was to help improve Alexa but that
+
+00:25:53.540 --> 00:25:57.020
+means that they're listening to things that are going on in your house and not
+
+00:25:57.020 --> 00:25:59.460
+always are you saying I'm sure we don't trigger a lot of stuff you know
+
+00:25:59.460 --> 00:26:03.980
+Alexa play some song right sometimes it just accidentally picks something up and
+
+00:26:03.980 --> 00:26:06.260
+maybe you're having a conversation about something you don't want anybody to know
+
+00:26:06.260 --> 00:26:10.100
+but you say a word that's close enough to Alexa and it the little blue ring
+
+00:26:10.100 --> 00:26:13.940
+shows up and it goes ding and suddenly somebody back you know at Amazon might
+
+00:26:13.940 --> 00:26:17.900
+be able to hear what it was that you just said and imagine there's this
+
+00:26:17.900 --> 00:26:21.460
+unethical person there who says I really want to get Steve let me go see
+
+00:26:21.460 --> 00:26:25.180
+what Alexa may have captured from his stuff right you can imagine somebody
+
+00:26:25.180 --> 00:26:28.580
+who's very political and they say I wonder if you know Elizabeth Warren or
+
+00:26:28.580 --> 00:26:32.100
+I wonder if Donald Trump has an Alexa in their house let me go find out and I can
+
+00:26:32.100 --> 00:26:35.380
+listen and see if anything happened there right so that's that's one of the
+
+00:26:35.380 --> 00:26:39.500
+implications you have to think about from a privacy standpoint let me ask the
+
+00:26:39.500 --> 00:26:43.260
+people in this room I assume every one that's me and Steve for being they may
+
+00:26:43.260 --> 00:26:53.860
+lost track go on that is my job that's what the 42 that's what the a stands for
+
+00:26:53.860 --> 00:27:01.500
+a be testing so everyone has an assistant at home I assume I do yes I
+
+00:27:01.500 --> 00:27:05.900
+have Google you guys I assume you'll have Alexa I do I have to have something
+
+00:27:05.900 --> 00:27:10.500
+to turn off the light I have an Amazon built smart device okay I thought you has
+
+00:27:10.500 --> 00:27:14.500
+one is like getting triggered like crazy right yeah Alexa oh some people just
+
+00:27:14.500 --> 00:27:18.960
+for just a little tell some people call it echo oh right and just yeah it's
+
+00:27:18.960 --> 00:27:23.280
+yeah devices are going crazy right now yeah oh I found out by the way if
+
+00:27:23.280 --> 00:27:27.840
+you're playing I play song quiz all the time I love a little 20 on my 80s music
+
+00:27:27.840 --> 00:27:33.960
+I'm I'm pretty proud of that where was I going with this oh it asked for your name
+
+00:27:33.960 --> 00:27:39.040
+I was bragging but if you ask what it lost you for your name and people just
+
+00:27:39.040 --> 00:27:42.640
+give it some BS name but if you tell it your name is Alexa it just can't
+
+00:27:42.640 --> 00:27:46.520
+comprehend it can't even go into a loop yeah it's calling itself over until
+
+00:27:46.520 --> 00:27:50.480
+there's a big giant flaming pile of yeah it just can't yeah yeah it just
+
+00:27:50.480 --> 00:27:59.080
+can't figure it out anyway go on right so so hey Google tell everyone to listen
+
+00:27:59.080 --> 00:28:07.500
+to the A B testing podcast now our phones just went my phone just
+
+00:28:07.500 --> 00:28:15.300
+interacted right yeah there is a strong chance at my home right now I just woke
+
+00:28:15.300 --> 00:28:23.680
+up my son I think it only works at home if it's over Wi-Fi though we'll find out
+
+00:28:23.680 --> 00:28:27.840
+yeah but people with their phones yeah it's something probably just the
+
+00:28:27.840 --> 00:28:30.240
+question is what you do about these privacy things you first you have to be
+
+00:28:30.240 --> 00:28:33.880
+aware of them and cognizant of them and think through them and make sure
+
+00:28:33.880 --> 00:28:36.440
+you're telling people what you're gonna do with it well the second thing though
+
+00:28:36.440 --> 00:28:40.440
+is to try to as much as possible avoid them and so you can do things like set
+
+00:28:40.440 --> 00:28:44.120
+up retention policies so if Amazon has your information and they do keep these
+
+00:28:44.120 --> 00:28:47.560
+voice snippets but if they throw them away after a week they're a lot less
+
+00:28:47.560 --> 00:28:52.040
+likely to cause issues than if they keep them around for you know a year or
+
+00:28:52.040 --> 00:28:57.800
+two or some long period of time well even further like you brought up a
+
+00:28:57.800 --> 00:29:04.930
+hypothetical does anyone in this room know what the data retention policy is on
+
+00:29:04.930 --> 00:29:10.460
+these voice that this I have no idea in Europe it would be 30 days right which
+
+00:29:10.460 --> 00:29:17.420
+in my view is far too long yeah like after you've responded and done whatever
+
+00:29:17.420 --> 00:29:21.340
+I said that snippet should be deleted right now there's other things you can
+
+00:29:21.340 --> 00:29:25.380
+do about it like you can anonymize it right imagine you took these these audio
+
+00:29:25.380 --> 00:29:28.980
+clips and then you took away the name so you didn't know it was from Steve you
+
+00:29:28.980 --> 00:29:31.980
+had no idea to trace it back to an IP address you had no idea how to trace it
+
+00:29:31.980 --> 00:29:34.940
+back to a person that becomes a lot less dangerous you could even do
+
+00:29:34.940 --> 00:29:38.740
+something like shift the voice or or something along those lines to make it
+
+00:29:38.740 --> 00:29:42.900
+so that it was impossible to hear even recognize a voice of that person yes
+
+00:29:42.900 --> 00:29:46.540
+things that can protect my privacy and still allow Amazon to get done with a
+
+00:29:46.540 --> 00:29:51.260
+need to get done right and if you look at it it's it's just the basic premises
+
+00:29:51.260 --> 00:29:56.720
+of privacy don't collect the information click the information that you're going
+
+00:29:56.720 --> 00:30:01.480
+to use to improve your business and have no way to trace that information back
+
+00:30:01.480 --> 00:30:04.960
+to a specific user right you might say well what if I need this information
+
+00:30:04.960 --> 00:30:08.040
+over the long term right sometimes an automizational work although there's
+
+00:30:08.040 --> 00:30:11.120
+been some work done to prove that you can de-anonymize at least a reasonable
+
+00:30:11.120 --> 00:30:14.440
+amount of the time but you can also keep aggregates right so instead of keeping
+
+00:30:14.440 --> 00:30:17.480
+here's what Steve did and here's what Brent did and here's Alan did you can
+
+00:30:17.480 --> 00:30:21.320
+say the average of this room was you know the three on whatever this this
+
+00:30:21.320 --> 00:30:25.080
+value was we're trying to connect now you can't know whether that was you know
+
+00:30:25.080 --> 00:30:29.440
+Brent at 12 and Steven Allen at a much lower number or you know what it
+
+00:30:29.440 --> 00:30:32.840
+was and so you can keep the averages over time without keeping all the
+
+00:30:32.840 --> 00:30:42.320
+individual information yeah except they're still so Google I don't know I
+
+00:30:42.320 --> 00:30:49.400
+haven't played with Alexa but with Google you can ask a simple question hey
+
+00:30:49.400 --> 00:30:57.620
+Google what's my name right and Google will generate two responses Google will
+
+00:30:57.620 --> 00:31:05.490
+generate two responses hey your name is Brent or I don't recognize your voice okay
+
+00:31:05.970 --> 00:31:12.820
+which means in order for it to succeed is part of the feature for it to do voice
+
+00:31:12.820 --> 00:31:21.830
+print recognition and know who you are so Google that's in some aspect when I'm at
+
+00:31:21.830 --> 00:31:28.740
+home knows who I am absolutely does yeah and the question for the person
+
+00:31:28.740 --> 00:31:32.620
+implementing that system at Google is how much of this should you do you
+
+00:31:32.620 --> 00:31:36.420
+certainly can do voice recognition and figure out I know this is Brent and I
+
+00:31:36.420 --> 00:31:39.860
+recognize his name and I know that he bought you know this thing last time and
+
+00:31:39.860 --> 00:31:43.300
+on the store I know that he goes to these websites how much of that should
+
+00:31:43.300 --> 00:31:46.540
+you connect together you can the question is how much should you and
+
+00:31:46.540 --> 00:31:50.300
+and that's the determination you have to make right is there a silo is there a
+
+00:31:50.300 --> 00:31:54.100
+sandbox around what aspect of Google knows who I am
+
+00:31:54.100 --> 00:32:01.500
+does it does the only aspect my phone and my speakers at home right and then
+
+00:32:01.500 --> 00:32:04.460
+there's a question everywhere where the work is done right so you can you can get a
+
+00:32:04.460 --> 00:32:08.180
+lot of this stuff done in a more privacy protecting manner like Apple does a lot
+
+00:32:08.180 --> 00:32:13.540
+of its AI and ML XML on machines is sending it back to the cloud I was at
+
+00:32:13.540 --> 00:32:15.660
+the strata conference a few months ago and there was a bunch of talks about
+
+00:32:15.660 --> 00:32:19.620
+something called federated AI so imagine that you are in your browser and you
+
+00:32:19.620 --> 00:32:24.380
+will start typing into the into the toolbar and it predicts hey here's
+
+00:32:24.380 --> 00:32:27.850
+where you're gonna go you you know type in C and it knows that you go to
+
+00:32:27.850 --> 00:32:31.890
+CNN a lot so it finishes it with CNN comm right that's cool but maybe it's
+
+00:32:31.890 --> 00:32:35.370
+not CNN comm maybe it's something you're more ashamed of or you don't want
+
+00:32:35.370 --> 00:32:40.050
+people to know the way they do it today is generally send all those URLs back to
+
+00:32:40.050 --> 00:32:42.930
+the central server that can calculate them and comes back and says here's the
+
+00:32:42.930 --> 00:32:47.210
+things that are likely to happen federated AI says I'm gonna have you go
+
+00:32:47.210 --> 00:32:51.330
+build a small model on your machine and then send back only some of the data
+
+00:32:51.330 --> 00:32:54.650
+points from that model back to the central some of the weights and then
+
+00:32:54.650 --> 00:32:57.970
+they'll be average in the back end and so nobody knows that you went to
+
+00:32:57.970 --> 00:33:02.130
+CNN comm or Fox News comm or wherever you went to they just know that people
+
+00:33:02.130 --> 00:33:05.010
+tend to go to these sorts of places when they also go to these other places and
+
+00:33:05.010 --> 00:33:09.820
+then they can't that is kind of an anonymized version of that should we
+
+00:33:09.820 --> 00:33:12.820
+talk about informed consent yeah kind of the next logical thing to go from here
+
+00:33:12.820 --> 00:33:17.890
+so I was thinking about this right if you I oftentimes go to the pewall up
+
+00:33:17.890 --> 00:33:20.090
+fair or the Western Washington State Fair which is one of the big fairs
+
+00:33:20.090 --> 00:33:24.330
+is coming up in the fall and you wander around the booth section there they're
+
+00:33:24.330 --> 00:33:27.370
+all trying to hawk you their wares and a lot of times they say hey sign
+
+00:33:27.370 --> 00:33:30.930
+up for free you know a chance to win a free set of windows or turn up for a
+
+00:33:30.930 --> 00:33:34.410
+chance to win a free roof or some a free garage door and so you fill out a page
+
+00:33:34.410 --> 00:33:37.290
+and you say my name is Steve and here's my address and here's my phone number and
+
+00:33:37.290 --> 00:33:41.850
+then about three weeks later somebody calls you and says hey I'm Joe from the
+
+00:33:41.850 --> 00:33:45.890
+garage door company do you want to buy one can we send you you know a list I
+
+00:33:45.890 --> 00:33:50.050
+don't feel my privacy has been invaded by that because I know that I gave them
+
+00:33:50.050 --> 00:33:54.330
+a piece of paper that I'm sure they're gonna call me back on right so that's
+
+00:33:54.330 --> 00:33:58.050
+informed consent I gave them in permission basically to call me and try
+
+00:33:58.050 --> 00:34:01.210
+to sell me to garage doors even though I have no interest in buying them if they
+
+00:34:01.210 --> 00:34:04.150
+want to give them to me free I'm happy to otherwise I can ignore them but I'm
+
+00:34:04.150 --> 00:34:07.810
+not upset that they call me for doing that on the other hand if I just go to a
+
+00:34:07.810 --> 00:34:11.010
+garage door website and all of a sudden somebody calls me from there because
+
+00:34:11.010 --> 00:34:15.170
+Google or Amazon or Facebook gave them my phone number I'm gonna feel kind of
+
+00:34:15.170 --> 00:34:18.650
+violated what's the difference I didn't give consent in the second case
+
+00:34:18.650 --> 00:34:23.530
+and I gave consent in the first case well and the thing is even in the
+
+00:34:23.530 --> 00:34:30.650
+first case yeah you get it you you'll yeah but there's a high degree of people
+
+00:34:30.650 --> 00:34:34.210
+or a large number of people who don't get it who are actually surprised why are
+
+00:34:34.210 --> 00:34:38.410
+you calling me I think mostly that comes from the fact that they're not it's not
+
+00:34:38.410 --> 00:34:43.690
+obvious somebody's calling Brett now it is not always obvious it's Google yeah
+
+00:34:43.690 --> 00:34:48.610
+they want to sell you a garage door it's not always obvious that the way
+
+00:34:48.610 --> 00:34:51.330
+you've given consent to sometimes it's hidden in a giant set of boilerplate
+
+00:34:51.330 --> 00:34:55.210
+16 pages long you have to click OK on in order to use your software and so while
+
+00:34:55.210 --> 00:34:58.970
+you technically you said yes to it you didn't actually read it right if I just
+
+00:34:58.970 --> 00:35:01.570
+walked through the door of the people up there and they said all right now we're
+
+00:35:01.570 --> 00:35:04.410
+gonna give your information away and have a sign that says by walking through
+
+00:35:04.410 --> 00:35:07.810
+the door you give your consent for this I'm not gonna feel like I actually gave
+
+00:35:07.810 --> 00:35:12.450
+my consent it has to be informed and not merely consent makes sense but that's
+
+00:35:12.450 --> 00:35:20.230
+it falls into the thing of another example of where where tech could lead
+
+00:35:20.230 --> 00:35:27.270
+down a dark path here most of us have NFC or some sort of ID on our phones who's
+
+00:35:27.270 --> 00:35:33.030
+to say that couldn't be used to track to track our entrance into a mall and to see
+
+00:35:33.030 --> 00:35:37.310
+and see what stores we spend our time in AT&T or T-Mobile or Verizon or whoever
+
+00:35:37.310 --> 00:35:41.110
+your wireless carrier is knows exactly where you are all the time right all
+
+00:35:41.110 --> 00:35:44.670
+those things that you can you walk into a store and they got fence you know
+
+00:35:44.670 --> 00:35:47.950
+basically what are they called not ring fencing some kind of a geo fencing
+
+00:35:48.070 --> 00:35:51.110
+right so they know okay you walked into this store I can offer you ads or I can
+
+00:35:51.110 --> 00:35:54.950
+know where you were or I can tell that you're near the Pokemon gym or whatever
+
+00:35:54.950 --> 00:35:58.630
+it is you're trying to go do AT&T and all those companies know from
+
+00:35:58.630 --> 00:36:01.590
+triangulation off their towers exactly where you are all the time the
+
+00:36:01.590 --> 00:36:05.750
+question is what they're gonna do with it there's a famous example on from
+
+00:36:05.750 --> 00:36:10.900
+Nordstrom that did exactly that where a common behavior is people come in with
+
+00:36:10.900 --> 00:36:16.800
+their Wi-Fi on and although Nordstrom's Wi-Fi is secured but they
+
+00:36:16.800 --> 00:36:23.080
+found that they could they can triangulate where you are by your
+
+00:36:23.080 --> 00:36:32.640
+devices attempt to request access to the network and those attempts in the
+
+00:36:32.640 --> 00:36:37.640
+triangulation they can go oh Alan was in the the sock department now he's over
+
+00:36:37.640 --> 00:36:42.960
+in perfume and my two favorite things to shop for yeah now perfume is gonna
+
+00:36:42.960 --> 00:36:46.680
+follow him around the internet for the next week and a half that's my favorite
+
+00:36:46.680 --> 00:36:49.480
+part is only follow you around everywhere yeah just bought something I
+
+00:36:49.480 --> 00:36:52.480
+bought a truck once upon a time and suddenly for the next month they were
+
+00:36:52.480 --> 00:36:55.680
+following on truck ads I'm like I already bought one I don't need a second truck
+
+00:36:55.680 --> 00:37:00.960
+yeah but they want to give you a buyer's remorse on the truck you bought
+
+00:37:00.960 --> 00:37:05.960
+yeah no I mean there's there's got to be an example to this the reason why
+
+00:37:05.960 --> 00:37:14.330
+you're getting truck ads is because purchasing a truck turns out to be a
+
+00:37:14.330 --> 00:37:17.650
+pretty solid feature about whether or not you're interested in purchasing a
+
+00:37:17.650 --> 00:37:20.410
+truck I said actually it's probably true that they don't know that I purchased it
+
+00:37:20.410 --> 00:37:23.330
+they only know that I was thinking about it so all right but but informed
+
+00:37:23.330 --> 00:37:27.370
+consent is all about making sure users know and actively say yes to the thing
+
+00:37:27.370 --> 00:37:30.770
+that you want to go do with their data and so you give them a giant list or
+
+00:37:30.770 --> 00:37:33.450
+you give them very vague wording saying like we're allowed to give it to
+
+00:37:33.450 --> 00:37:36.410
+other people and we can do whatever we want with it technically they have
+
+00:37:36.410 --> 00:37:38.770
+consented but not in a way that they're gonna be happy about so if
+
+00:37:38.770 --> 00:37:42.330
+you're going to have people listen to it you better make it very clear to
+
+00:37:42.330 --> 00:37:45.970
+people that their their audio is going to be listened to for quality control
+
+00:37:45.970 --> 00:37:51.250
+purposes this is a reason why every time you call anybody you call the bank or
+
+00:37:51.250 --> 00:37:56.210
+you call you know somebody REI stuff from Comcast one of the first things they
+
+00:37:56.210 --> 00:37:59.770
+say is and they say it explicitly this is not even just in the recording a lot
+
+00:37:59.770 --> 00:38:02.770
+of times the first thing the person has to tell you is this call may be
+
+00:38:02.770 --> 00:38:06.530
+recorded for quality control purposes and then if you really don't want that I
+
+00:38:06.530 --> 00:38:09.970
+guess you hang up and just deal with the fact that Comcast overcharged you
+
+00:38:10.780 --> 00:38:16.940
+back on to the ethical should we talk about bias next yeah yeah yeah trying to
+
+00:38:16.940 --> 00:38:22.500
+get through some of these so bias go ahead go ahead sorry so bias is
+
+00:38:22.500 --> 00:38:26.220
+actually something we don't talk about a whole lot it doesn't make the news as
+
+00:38:26.220 --> 00:38:30.620
+much but it's actually pretty interesting so data sets always reflect what they
+
+00:38:30.620 --> 00:38:33.860
+where they came from and so it's kind of a garbage in garbage out situation and
+
+00:38:33.860 --> 00:38:38.500
+if you're not careful biases that are in your data can come out later so if
+
+00:38:38.500 --> 00:38:42.740
+you gather a bunch of data from people that are you know all biased in a
+
+00:38:42.740 --> 00:38:46.020
+particular direction they all like small cars and they hate big cars and then you
+
+00:38:46.020 --> 00:38:48.300
+say what kind of cars are people gonna like and you tell your machine to go
+
+00:38:48.300 --> 00:38:51.220
+predict it it's all gonna pick small cars and it's not gonna pick big cars
+
+00:38:51.220 --> 00:38:55.140
+not because big cars are bad or because nobody wants the big cars but because
+
+00:38:55.140 --> 00:38:58.220
+you happen to be you know talking only to people that are in a large city and
+
+00:38:58.220 --> 00:39:01.180
+so the number of people in a large city that want to buy pickup trucks very low
+
+00:39:01.180 --> 00:39:04.740
+they may not want to and so if you build your model only on people that
+
+00:39:04.740 --> 00:39:10.940
+come from large cities then you'll never say you know people want the dually quad
+
+00:39:10.940 --> 00:39:19.330
+cab pickup full bed pickup trucks like Brent has yeah I love my truck yeah there
+
+00:39:19.330 --> 00:39:23.290
+are a few truck people in this room and then there's Alan yeah yeah his current
+
+00:39:23.290 --> 00:39:28.050
+car couldn't fit in the back of my truck but this last car could right but
+
+00:39:28.050 --> 00:39:32.250
+this becomes a big issue right if you think about Amazon trying to offer you
+
+00:39:32.250 --> 00:39:36.010
+books here people bought this book could also buy this book you'd be very
+
+00:39:36.010 --> 00:39:40.850
+careful what's going on there I remember many years ago there was Amazon had a
+
+00:39:40.850 --> 00:39:44.610
+set of books and had a book by a civil rights author and then I had a book by I
+
+00:39:44.610 --> 00:39:48.010
+think Jane Goodall or something and it advertised them together which I'm sure
+
+00:39:48.010 --> 00:39:53.330
+the the the system had no idea what it was implying right but a lot of humans
+
+00:39:53.330 --> 00:39:56.450
+that read that saw the page did they got outraged and they came and said hey
+
+00:39:56.450 --> 00:39:58.970
+you got to get rid of that of course Amazon replied very quickly and got
+
+00:39:58.970 --> 00:40:04.720
+rid of that that association right but that was that was a bias not a not an
+
+00:40:05.720 --> 00:40:10.200
+implicit bias like I don't think anybody even in their audience was putting those
+
+00:40:10.200 --> 00:40:13.840
+two together it just happened to be the case and they weren't careful about well
+
+00:40:13.840 --> 00:40:19.080
+right you and I both build models it didn't happen to be the case there there
+
+00:40:19.080 --> 00:40:22.880
+is some relationship that was there that got weighted yeah I guess what I'm
+
+00:40:22.880 --> 00:40:25.560
+saying is it's probably not the relationship every implied from it for
+
+00:40:25.560 --> 00:40:31.360
+sure likely yeah for sure but that that is that is a I mean it's an example of
+
+00:40:32.240 --> 00:40:38.240
+of an ethical concern where where you're building a model models do have a
+
+00:40:38.240 --> 00:40:43.760
+tendency to be objective with the data that you give them and the end results
+
+00:40:43.760 --> 00:40:48.200
+is you've built an AI bot that's racist right a lot of the early no a lot
+
+00:40:48.200 --> 00:40:52.640
+of the early face recognition systems were tuned on people with lighter skin
+
+00:40:52.640 --> 00:40:55.960
+and they didn't work very well for you with darker skin and nobody quite
+
+00:40:55.960 --> 00:40:59.040
+realized that initially for a lot of the early models and then it became kind
+
+00:40:59.040 --> 00:41:02.520
+of an issue in voice recognition as well yeah what's going to tend to
+
+00:41:02.520 --> 00:41:05.560
+recognize male voices I think better than female voices in the early versions and
+
+00:41:05.560 --> 00:41:12.920
+and the American accent versus any other accent yeah that's been a problem by the
+
+00:41:12.920 --> 00:41:17.960
+way my trick is actually my phone and one thing I want to mention is when
+
+00:41:17.960 --> 00:41:22.840
+Brent was talking to his phone mine didn't respond so that was pretty cool
+
+00:41:22.840 --> 00:41:30.960
+but the point I was gonna make is I have two or I used three different I used
+
+00:41:30.960 --> 00:41:36.080
+the AI recognition from Microsoft Google and Amazon in my home from time to time
+
+00:41:36.080 --> 00:41:41.400
+one of them is far worse but I found if I talk like a robot it it will
+
+00:41:41.400 --> 00:41:45.480
+understand me much more often if I give up I can just talk like this and
+
+00:41:45.480 --> 00:41:51.880
+and it will understand me that's my that's my tip for I'll try this Alexa
+
+00:41:51.880 --> 00:41:57.520
+buy me a car I think there's two sorts of bias you to be careful about right
+
+00:41:57.520 --> 00:42:01.320
+maybe three but there's two major poses of bias you need to be careful of
+
+00:42:01.320 --> 00:42:05.120
+accidental bias things like the the book example I gave out with with Amazon
+
+00:42:05.120 --> 00:42:08.320
+earlier and then there's explicit bias where you're gathering stuff from a
+
+00:42:08.320 --> 00:42:11.480
+particular group of people because they're the ones that are available to
+
+00:42:11.480 --> 00:42:15.800
+you and so you sample only those people so if you're Amazon and you sell your
+
+00:42:15.800 --> 00:42:19.280
+Alexis everywhere and then you use that to train your system if you're
+
+00:42:19.280 --> 00:42:21.600
+selling mostly in North America it's gonna work great on North American
+
+00:42:21.600 --> 00:42:25.480
+accents and it's not gonna work so well on British accents or maybe even like
+
+00:42:25.480 --> 00:42:30.600
+Midwestern accents are you familiar with the sharpshooter bias maybe
+
+00:42:30.600 --> 00:42:35.760
+why don't tell our audience so this is since it's an ethical discussion on data
+
+00:42:35.760 --> 00:42:43.100
+science this is one of the biases that drive me crazy any data scientist worth
+
+00:42:43.100 --> 00:42:51.400
+their salt will avoid it but I see it a lot when when the untrained are trying
+
+00:42:51.400 --> 00:43:00.040
+to play the game trying to get into this sharpshooter bias is essentially you
+
+00:43:00.040 --> 00:43:07.890
+first plot all the dots then you circle the clusters and go oh that was my guess
+
+00:43:07.890 --> 00:43:11.290
+is the way you're going yeah it's so it's essentially it's called the
+
+00:43:11.290 --> 00:43:16.650
+sharpshooter bias you can imagine you have a person who's blindfolded
+
+00:43:16.650 --> 00:43:21.690
+shooting at a side of a barn and then looks for the the the tightest cluster
+
+00:43:21.690 --> 00:43:26.450
+and then draws the target or paints the target around that cluster and then goes
+
+00:43:26.450 --> 00:43:30.170
+talks to his friends like look look at how awesome a shot I am yeah this is
+
+00:43:30.170 --> 00:43:34.770
+happening a lot in psychological studies actually and social studies where they
+
+00:43:34.770 --> 00:43:37.730
+don't know what they're looking for so they go looking for anything with what's
+
+00:43:37.730 --> 00:43:41.570
+called a high low p-value right something that says it's significant and
+
+00:43:41.570 --> 00:43:45.330
+then they declare afterwards like aha I found that you know this effect is
+
+00:43:45.330 --> 00:43:49.010
+how is taking place right the most famous example is probably the priming
+
+00:43:49.010 --> 00:43:52.410
+effect there was an example Kahneman unfortunately talks about it in his book
+
+00:43:52.410 --> 00:43:58.130
+and had to at least somewhat recant but the idea is if you tell people like that
+
+00:43:58.130 --> 00:44:01.250
+I think the initial one was like a test and on that test they had words that
+
+00:44:01.250 --> 00:44:04.050
+said like slow and old and decrepit and then they measured how long it took
+
+00:44:04.050 --> 00:44:07.490
+people to get from there to the outside of the door and then it took longer in
+
+00:44:07.490 --> 00:44:11.170
+those cases they went aha I found this thing and then it was sort of
+
+00:44:11.170 --> 00:44:13.730
+replicated a whole bunch of times because people would say I'm gonna go
+
+00:44:13.730 --> 00:44:16.650
+look for it if I find it I'll publish and if I don't find it I won't
+
+00:44:16.650 --> 00:44:19.650
+publish and suddenly it looks like it's happening everywhere then he went back
+
+00:44:19.650 --> 00:44:22.370
+and actually had to reproduce it initially and the only way they could get
+
+00:44:22.370 --> 00:44:25.650
+the effect is if they told the researchers who was on the slow and who
+
+00:44:25.650 --> 00:44:30.190
+was on the fast list and they actually ended up slowing the people down as they
+
+00:44:30.190 --> 00:44:33.270
+were exiting because they knew who was supposed to go slow and who wasn't
+
+00:44:33.270 --> 00:44:37.390
+supposed to go slow but we find that a lot of back to the theme that sounds
+
+00:44:37.390 --> 00:44:40.910
+unethical to me it does sound unethical right but it's not intentionally
+
+00:44:40.910 --> 00:44:43.670
+unethical they're just trying to find something but because they don't know
+
+00:44:43.670 --> 00:44:45.750
+what they're trying to find or they know what they're trying to find but
+
+00:44:45.750 --> 00:44:49.090
+they don't know what rules they're gonna follow in order to try to find it
+
+00:44:49.090 --> 00:44:52.370
+they end up saying well what happens if we take people of this sort out maybe
+
+00:44:52.370 --> 00:44:55.970
+they're illegitimate and so they measure a thousand people they say oh but all
+
+00:44:55.970 --> 00:44:58.450
+the people that were left-handed those probably have a bias in them so we'll
+
+00:44:58.450 --> 00:45:01.330
+get rid of them out of the system and you start moving enough things around
+
+00:45:01.330 --> 00:45:05.130
+and suddenly you can come up with a significantly significant answer the
+
+00:45:05.130 --> 00:45:09.570
+the solution to this has been you have to pre-register what you're trying to
+
+00:45:09.570 --> 00:45:12.690
+go do here's the test that I'm going to go run and then I'm gonna go run
+
+00:45:12.690 --> 00:45:18.380
+it and it turns out that after that things drop off dramatically yeah you
+
+00:45:18.380 --> 00:45:22.980
+find a lot less interesting things as an I'm mostly true things as an aside I'm
+
+00:45:22.980 --> 00:45:27.300
+not gonna mention it but recent I'm not gonna mention any specifics but recently
+
+00:45:27.300 --> 00:45:34.120
+I was presenting to one of our senior execs and I am aware that he is
+
+00:45:34.120 --> 00:45:42.800
+beholden by the board to a particular KPI and I studied this KPI and said I
+
+00:45:42.800 --> 00:45:50.510
+am seriously concerned that how we generate this data is heavily influenced
+
+00:45:50.510 --> 00:45:56.270
+by the priming effect and in that case you should be safe because the priming
+
+00:45:56.270 --> 00:46:03.090
+effect turned out not to be true in that case yes but if you read that I mean
+
+00:46:03.090 --> 00:46:08.840
+multiple Dan Ariely has talked about the priming effect and they've those
+
+00:46:08.840 --> 00:46:15.560
+studies in that book I believe they've passed the the repeatability aspect it's
+
+00:46:15.560 --> 00:46:18.480
+very interesting for the audience to go look up other yeah that the priming
+
+00:46:18.480 --> 00:46:21.880
+effect and see where they think it's it's where where the research has gone
+
+00:46:21.880 --> 00:46:27.830
+because it's there's a lot of discussion right now and then selection bias
+
+00:46:27.830 --> 00:46:36.100
+selection bias is absolutely critical like to again I keep thinking of Alan
+
+00:46:36.100 --> 00:46:44.500
+as the the person who's flooded by data scientists math equations right the
+
+00:46:44.500 --> 00:46:51.960
+question is when they come and say hey we we did this right how do we train
+
+00:46:51.960 --> 00:46:57.600
+leaders who don't understand the craft to ask the poignant questions around
+
+00:46:57.600 --> 00:47:04.000
+selection bias do you want to tell our audience what selection bias is we've
+
+00:47:04.000 --> 00:47:11.760
+we talked about it before drink yeah so selection bias is building a strong
+
+00:47:11.760 --> 00:47:17.080
+model because you've selected the data that encourages that model or and
+
+00:47:17.080 --> 00:47:21.960
+reinforces that model we've the thing we talked about multiple times before is
+
+00:47:21.960 --> 00:47:27.720
+sort of the World War two airplane condition that was a strong example of
+
+00:47:27.720 --> 00:47:35.960
+selection bias gone wrong for those who have only started since episode 70 what
+
+00:47:35.960 --> 00:47:41.440
+there was World War two they had a bunch of people studying the airplanes
+
+00:47:41.440 --> 00:47:47.360
+that came back looking at the bullet holes and deciding where the arm armor
+
+00:47:47.360 --> 00:47:54.840
+was to go and at the last or one one brilliant guy whose name is escaping me
+
+00:47:54.840 --> 00:47:59.880
+at the moment I believe his first name starts with Arthur he realized that what
+
+00:47:59.880 --> 00:48:04.840
+they were doing was a complete mistake because there was selection bias because
+
+00:48:04.840 --> 00:48:10.960
+they weren't getting random examples of they only had the planes that came back
+
+00:48:10.960 --> 00:48:17.410
+and what he argued is that the planes that came back Abraham walled I believe
+
+00:48:17.410 --> 00:48:23.010
+oh Abraham great well what he said is no what you need to do is analyze the
+
+00:48:23.010 --> 00:48:29.820
+absence of bullet holes in armor there because you're looking for the planes
+
+00:48:29.820 --> 00:48:33.220
+that got destroyed and those aren't the ones coming back if you have a bullet
+
+00:48:33.220 --> 00:48:35.780
+hole and you made it back by definition you can probably survive having a hole
+
+00:48:35.780 --> 00:48:41.210
+there right exactly yeah the only last thing we're gonna talk about we won't so
+
+00:48:41.210 --> 00:48:44.530
+much but make sure you understand what kind of decisions you're making what
+
+00:48:44.530 --> 00:48:49.210
+ideas what you're allowing the system to make unchecked right are you allowing
+
+00:48:49.210 --> 00:48:52.330
+it to automatically deny alone are you allowing it to automatically send an
+
+00:48:52.330 --> 00:48:55.970
+ad are you like to automatically launch a missile like be careful what kind of
+
+00:48:55.970 --> 00:48:59.570
+power you're giving the system where you wouldn't want unchecked decisions to
+
+00:48:59.570 --> 00:49:02.770
+be made because your model could easily be wrong in ways that you don't
+
+00:49:02.770 --> 00:49:06.370
+understand and if you get into that situation you better have a check on it
+
+00:49:06.370 --> 00:49:11.150
+and currently most models are making a single decision without without
+
+00:49:11.150 --> 00:49:16.710
+consideration to downstream decisions right almost all software is
+
+00:49:16.710 --> 00:49:23.110
+essentially a big if-then-else case that is huge and most models are not
+
+00:49:23.110 --> 00:49:28.470
+trying to optimize for the whole system they're they're generally trying to make
+
+00:49:28.470 --> 00:49:33.550
+a single decision and that single decision could have a negative
+
+00:49:33.550 --> 00:49:38.980
+downstream effect yeah ready careful that all right thanks for coming see sure
+
+00:49:38.980 --> 00:49:43.740
+thanks for having me all right we'll see you next time
+
