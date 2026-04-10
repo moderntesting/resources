@@ -1,0 +1,2544 @@
+1
+00:00:04,400 --> 00:00:10,240
+Welcome to AB testing podcast your modern testing podcast your hosts Alan
+
+2
+00:00:10,240 --> 00:00:15,120
+Hi, and Brent not Brent will be here to guide you through topics on testing leadership
+
+3
+00:00:15,560 --> 00:00:22,380
+Agile and anything else that comes to mind now on with the show. Hey everyone back for AB testing
+
+4
+00:00:22,380 --> 00:00:25,780
+It's just me s for spy. Don't call me Alan and
+
+5
+00:00:26,340 --> 00:00:31,700
+Brent is still on hiatus. He is I believe he's massaging Satya Nadella's feet right now
+
+6
+00:00:31,740 --> 00:00:37,540
+And so instead I have my good friend Tim here Tim. Say hi. Hello everybody
+
+7
+00:00:38,060 --> 00:00:43,540
+Alright, so Tim's gonna fill in and and play the role of Brent, which means I'm gonna yell it in make fun of him
+
+8
+00:00:43,540 --> 00:00:49,660
+Are you ready for it Tim? Yeah, and I may I may use your dead name because I'm not used to calling you spy yet
+
+9
+00:00:49,660 --> 00:00:53,020
+Okay, well get used to I don't it's so I apologize up front
+
+10
+00:00:53,620 --> 00:00:58,500
+It's our people learn people learn doesn't help that my little name take at the bottom here has my government name on it
+
+11
+00:00:59,500 --> 00:01:01,380
+If you're just tuning into the podcast
+
+12
+00:01:01,380 --> 00:01:06,380
+This is our second one after I took four and a half month hiatus to go walk from Mexico to Canada
+
+13
+00:01:06,740 --> 00:01:13,460
+Had a blast and along the way my name changed. It's no longer the old name that you may know me by it's now spy
+
+14
+00:01:13,460 --> 00:01:18,060
+And that's who I am to anybody met me on the trail. So
+
+15
+00:01:19,060 --> 00:01:22,060
+For those you one of you listen listening
+
+16
+00:01:22,860 --> 00:01:26,460
+One of the three did meet on the trail and everybody else just learned to call me my new name
+
+17
+00:01:27,220 --> 00:01:32,180
+Good meme posted on our our slack group this week one of the three dot slack comm you can get it
+
+18
+00:01:32,540 --> 00:01:35,540
+From modern testing org. It's the one with the astronaut
+
+19
+00:01:36,180 --> 00:01:39,180
+Looking at the earth and they're the one with a gun behind him
+
+20
+00:01:39,180 --> 00:01:42,900
+But they said is Alan spy and said it was like it always has been
+
+21
+00:01:43,620 --> 00:01:48,820
+Which is true. It's great. It's wonderful. So Tim, thanks for thanks for being here to be my punching bag
+
+22
+00:01:50,460 --> 00:01:52,460
+Yeah, yeah, I'm
+
+23
+00:01:52,500 --> 00:01:54,630
+as you all know, I'm unemployed and
+
+24
+00:01:55,590 --> 00:02:01,660
+Happily unemployed right now, even though I'm kind of looking for I'm not kind of kind of I mentioned this last time
+
+25
+00:02:01,660 --> 00:02:06,820
+I'm not going to the whole big thing. I'm looking for a job. I'm being selective because I don't want to have a job or
+
+26
+00:02:07,460 --> 00:02:09,460
+They don't care about people or software
+
+27
+00:02:10,140 --> 00:02:12,660
+In fact, I just talked to a former colleague of mine
+
+28
+00:02:13,540 --> 00:02:15,540
+about a lot of this and
+
+29
+00:02:16,340 --> 00:02:20,340
+anyway, as mentioned last week, my job would probably come through my network versus
+
+30
+00:02:21,140 --> 00:02:27,700
+LinkedIn but I thought I'd well first let me check in with you. See how you're doing. What's up? What's new? How's life?
+
+31
+00:02:27,700 --> 00:02:32,380
+Oh life's going good. You know on that, you know looking for a job my
+
+32
+00:02:33,060 --> 00:02:36,240
+Spawn is also looking for a job despite my best
+
+33
+00:02:37,640 --> 00:02:43,480
+ability to talk him out of going into the same tech field that I'm in he decided that was he's gonna get his degree in and
+
+34
+00:02:43,720 --> 00:02:44,920
+as
+
+35
+00:02:44,920 --> 00:02:47,040
+anybody who's tried to get a job in the
+
+36
+00:02:48,260 --> 00:02:53,580
+Cascadia Northwest in the tech, it's up and down right now. So it's a weird world
+
+37
+00:02:53,580 --> 00:02:58,460
+Yeah, and and he cut he's getting he's he's worked service while he was doing jobs
+
+38
+00:02:58,460 --> 00:03:00,900
+so while he's doing school, excuse me and
+
+39
+00:03:01,660 --> 00:03:03,260
+so a
+
+40
+00:03:03,260 --> 00:03:08,540
+Opportunity through his network came up to work at at a place that's pretty close to where he's living now
+
+41
+00:03:08,540 --> 00:03:12,020
+So, oh, that's cool. That's cool. Well, nice nice
+
+42
+00:03:12,820 --> 00:03:16,660
+meanwhile, here I am playing pickleball with the retirees and
+
+43
+00:03:17,300 --> 00:03:24,100
+Going to the gym and goofing off. So yeah, awesome. So I want to talk a little bit about
+
+44
+00:03:25,980 --> 00:03:32,340
+my experiences on the social media platform known as LinkedIn, oh boy and
+
+45
+00:03:33,740 --> 00:03:37,220
+Because I thought I should spend some time there because I'm looking for a job
+
+46
+00:03:37,220 --> 00:03:42,220
+It turns out that LinkedIn isn't a very good place to look for a job splice place for recruiters to look for people
+
+47
+00:03:42,260 --> 00:03:48,020
+Oh, yeah, I get like three a week it usually from Florida and Atlanta areas
+
+48
+00:03:48,020 --> 00:03:53,900
+Yeah, I I don't live there. I don't it's weird. I don't I don't even I'll move there for the right job
+
+49
+00:03:53,900 --> 00:03:59,180
+but I I end up scrolling LinkedIn and I haven't been on Twitter for
+
+50
+00:03:59,900 --> 00:04:01,460
+Years, I never deleted my account
+
+51
+00:04:01,460 --> 00:04:08,180
+But I haven't been there or X as it's called and I feel like LinkedIn has turned into when people left that platform
+
+52
+00:04:08,620 --> 00:04:12,450
+LinkedIn to kind of came the place where I don't know where they
+
+53
+00:04:13,180 --> 00:04:15,100
+Hung out instead. Oh
+
+54
+00:04:15,100 --> 00:04:18,260
+Yeah, I can see that there's a lot of random weird posts
+
+55
+00:04:18,260 --> 00:04:23,100
+So I mean I deleted my Twitter account with a vengeance when oh good for you
+
+56
+00:04:23,100 --> 00:04:26,460
+I am bought his but bought out the company and
+
+57
+00:04:27,140 --> 00:04:32,740
+Weird weird weird. So what happens is usually once a day sometimes twice a day. I will make it through
+
+58
+00:04:33,420 --> 00:04:34,540
+To
+
+59
+00:04:34,540 --> 00:04:38,180
+Sometimes three pages of scrolling I get discussed in closed LinkedIn until the next day
+
+60
+00:04:38,180 --> 00:04:40,220
+Like there's a lot of the job shows up there. It's a lot
+
+61
+00:04:42,020 --> 00:04:44,020
+Unhealthy five minutes of my day
+
+62
+00:04:44,940 --> 00:04:47,640
+But what did I see I'm seeing
+
+63
+00:04:48,770 --> 00:04:54,970
+Like I've also actively unfollowed people. I know I'm creating an echo chamber, but I don't have time for dumbness
+
+64
+00:04:55,610 --> 00:05:02,190
+Who does yeah, so apparently a lot of people in this country too, but I honestly don't
+
+65
+00:05:02,590 --> 00:05:07,760
+So what I found interesting that we're gonna go off in a couple different directions here is
+
+66
+00:05:09,160 --> 00:05:12,760
+Tim and I both have a fair amount of experience in
+
+67
+00:05:13,680 --> 00:05:19,680
+Good project management agile project management moving stuff along. I'm a galvanizer. I love to get stuff moving along
+
+68
+00:05:22,160 --> 00:05:28,140
+Boy the internet's weird the post I saw I'm not gonna bring it up. I can't remember the so I won't quote it
+
+69
+00:05:28,140 --> 00:05:29,900
+you can't find it but
+
+70
+00:05:29,900 --> 00:05:36,790
+Someone was saying like ask the question and they were trying to be I think people on LinkedIn
+
+71
+00:05:36,790 --> 00:05:42,390
+They're they're trying to they're just trying to get engagement because they get their ego gets boosted by getting a bunch of oppressions and comments
+
+72
+00:05:42,390 --> 00:05:48,430
+So maybe they're basically they're trolling I think or they're dumb or both and I can't tell
+
+73
+00:05:48,430 --> 00:05:53,390
+Yeah, they said something like can you even do agile without a good without a scrum master?
+
+74
+00:05:54,810 --> 00:05:57,450
+Yes, yes, you can I've been doing it for two years
+
+75
+00:05:58,090 --> 00:06:00,770
+well the point I like to bring up is that
+
+76
+00:06:01,660 --> 00:06:07,760
+Scrum has been around as a framework and this is I'm gonna get on a soapbox here scrum has been around as a framework
+
+77
+00:06:08,900 --> 00:06:14,100
+Since before the agile manifesto agile manifesto came out and a bunch of people said oh
+
+78
+00:06:14,780 --> 00:06:18,740
+But we can we can't we can't ship software without a framework
+
+79
+00:06:18,740 --> 00:06:24,260
+Oh, here's one little work and what 90% of the teams do was scrum
+
+80
+00:06:24,260 --> 00:06:29,260
+And again all the roles you don't need a scrum master to do scrum. You don't need
+
+81
+00:06:30,220 --> 00:06:31,820
+You
+
+82
+00:06:31,820 --> 00:06:38,900
+God you don't need most of it. What it did was it gave teams a nice little way to do mini waterfalls
+
+83
+00:06:39,540 --> 00:06:41,800
+back to back to back to back
+
+84
+00:06:42,480 --> 00:06:44,800
+Yeah, yeah, and
+
+85
+00:06:47,520 --> 00:06:54,680
+And there are so many teams lost in the I need to have a person in this role telling me what to do
+
+86
+00:06:54,680 --> 00:06:59,920
+And making sure we do these rituals. I mean if I recall from looking at scrum 20 years ago
+
+87
+00:07:00,040 --> 00:07:06,900
+A lot of these air quote rituals aren't even called rituals in the scrum original scrum guide doesn't matter. I don't care
+
+88
+00:07:07,520 --> 00:07:13,640
+That where people get lost in agile. I'm gonna shut up and give some opinions where people get lost in agile is
+
+89
+00:07:14,080 --> 00:07:19,830
+They focus on iteration which is not the goal of agile instead of adaptability which is
+
+90
+00:07:21,970 --> 00:07:28,410
+Yeah, yeah, and you're catching me raw because I spent the first three days of this week in our
+
+91
+00:07:29,410 --> 00:07:31,410
+Software programs
+
+92
+00:07:32,380 --> 00:07:37,380
+Program increment and we're gonna talk about program increment. Yeah. Yeah, we just did
+
+93
+00:07:38,060 --> 00:07:43,340
+I will get on a taller soapbox, but I'm gonna let you finish. Yeah, we did this to their planning for the next 13 weeks
+
+94
+00:07:44,460 --> 00:07:49,940
+This last three days. Yeah, we have longer. We have longer program increments because we're
+
+95
+00:07:50,700 --> 00:07:51,740
+more
+
+96
+00:07:51,740 --> 00:07:57,520
+Synced up with our government customer. So and they do things on quarters. So we do things on quarters
+
+97
+00:07:57,920 --> 00:08:03,840
+Yeah, I agree. I've been doing scrum for two years without a scrum master
+
+98
+00:08:03,840 --> 00:08:06,280
+I was originally the scrum master when our
+
+99
+00:08:07,000 --> 00:08:12,880
+stuff switched over to agile or and you know, specifically safe agile, which is
+
+100
+00:08:13,840 --> 00:08:20,280
+Agile safe stands for I don't want to do agile. Yeah, it really does because what we did in the first
+
+101
+00:08:20,960 --> 00:08:24,450
+Ten twelve years. I was on this program was
+
+102
+00:08:25,130 --> 00:08:27,130
+waterfall that was just what we did and
+
+103
+00:08:27,890 --> 00:08:31,450
+Because of the team that I work on they kind of just sort of left us alone
+
+104
+00:08:31,450 --> 00:08:34,890
+You know, we had we would get maybe one maybe two
+
+105
+00:08:36,260 --> 00:08:42,620
+Tasks assigned to us. But you know since my team is an operations operating system development team
+
+106
+00:08:43,460 --> 00:08:45,260
+That one thing
+
+107
+00:08:45,260 --> 00:08:47,780
+Contained a lot of stuff. So they left us alone now
+
+108
+00:08:47,780 --> 00:08:52,900
+We switched over to agile and it seems like nickel and diming to death, you know
+
+109
+00:08:52,900 --> 00:08:55,100
+Because we have to do every single thing
+
+110
+00:08:55,620 --> 00:09:00,790
+But they don't understand the concept of story points
+
+111
+00:09:01,190 --> 00:09:06,470
+Because they've just assigned an hour value to story points at management level and it's just a nightmare
+
+112
+00:09:07,150 --> 00:09:11,270
+Yeah, that's just that's the biggest drawback with story points is and
+
+113
+00:09:12,960 --> 00:09:16,720
+Is the yeah, somebody will do that and then they're then they're ruined
+
+114
+00:09:17,380 --> 00:09:20,260
+yeah, and what's been that way for about two years and
+
+115
+00:09:21,360 --> 00:09:23,360
+That's that's my biggest
+
+116
+00:09:23,710 --> 00:09:29,550
+The biggest thing I banged my head against it's the you know, I this I know this task is it take you 40 minutes
+
+117
+00:09:29,550 --> 00:09:31,550
+but you got to put one story point on it because
+
+118
+00:09:31,750 --> 00:09:38,670
+That's as slow as we go story points are integers. We just got so many other people that try to use a decimalized story points
+
+119
+00:09:38,670 --> 00:09:42,790
+I'm like, well, that's that's that's just that's just waterfall
+
+120
+00:09:42,790 --> 00:09:46,630
+You just tell me how many minutes it's gonna be and we can drop the whole pretense of points
+
+121
+00:09:46,630 --> 00:09:49,470
+The story point is a measure of complexity not a measure of time
+
+122
+00:09:49,630 --> 00:09:56,990
+Exactly and if if the bean counters get involved in a different way, it's difficult and the challenge let me talk about two things
+
+123
+00:09:56,990 --> 00:10:02,450
+One is I've never had scrum masters. I believe my development leads are responsible for in their projects
+
+124
+00:10:02,450 --> 00:10:06,630
+However, they want to they can use scrum. They can use waterfall. They can use some made-up thing
+
+125
+00:10:06,630 --> 00:10:10,150
+I don't care dead leads are in charge of their project management now
+
+126
+00:10:11,750 --> 00:10:16,640
+I'm gonna save my safe rant. Am I gonna save my safe rant? I'm gonna save the safe rant
+
+127
+00:10:16,640 --> 00:10:18,640
+All right for for a minute
+
+128
+00:10:20,140 --> 00:10:24,580
+The challenge with agile adaptable and
+
+129
+00:10:25,500 --> 00:10:30,540
+Story points don't matter. I don't care what they are. You want to you work on things until they're done and
+
+130
+00:10:31,540 --> 00:10:35,080
+The challenge is you can have a like there's a whole no estimates
+
+131
+00:10:36,980 --> 00:10:42,820
+I call a culture a no estimates movement along the agile community saying predicting the future is impossible. We're not gonna do it
+
+132
+00:10:43,260 --> 00:10:45,260
+No, we're not gonna give you estimates because
+
+133
+00:10:45,980 --> 00:10:49,020
+Things are done when they're done and we're gonna work on and work on them in the best way
+
+134
+00:10:49,060 --> 00:10:53,220
+That's not really fair either because stakeholders whether it's management or customers or other teams
+
+135
+00:10:53,380 --> 00:10:55,660
+They kind of want to know when things can are gonna get done
+
+136
+00:10:56,060 --> 00:11:01,260
+So it's not the no estimates thing really isn't fair. So I'll give you it on that but
+
+137
+00:11:01,740 --> 00:11:07,180
+The idea is is you break down like I always require my teams to give estimates when things are gonna get done
+
+138
+00:11:07,340 --> 00:11:10,660
+But I give them some leeway. I said there's a great a fact
+
+139
+00:11:10,940 --> 00:11:16,820
+There's one of my favorite books is this Hubbard book called how to measure anything and then he just came out with a new book
+
+140
+00:11:17,100 --> 00:11:19,100
+Sort of a
+
+141
+00:11:20,130 --> 00:11:22,890
+Iteration on that called how to measure anything in project management
+
+142
+00:11:22,930 --> 00:11:25,970
+But the idea isn't how to measure anything as you measure on confidence levels
+
+143
+00:11:26,410 --> 00:11:28,810
+so I have my teams give p50 estimates or
+
+144
+00:11:29,690 --> 00:11:31,690
+sometimes an estimate like what's your
+
+145
+00:11:31,770 --> 00:11:33,610
+what's your
+
+146
+00:11:33,610 --> 00:11:40,050
+90% range between this state and this state they both work and Hubbard uses them both and then they have permission to be
+
+147
+00:11:40,050 --> 00:11:44,850
+Wrong, but they also have permission to learn from that and that what they learn is they have to break stuff down into smaller
+
+148
+00:11:44,850 --> 00:11:50,570
+Pieces they can get done and over time if you do that over and over those dates can get more and more accurate if you
+
+149
+00:11:51,090 --> 00:11:54,530
+Tie if the bean counters, I'm gonna call the pointy hair bosses being casual
+
+150
+00:11:55,170 --> 00:11:57,170
+if they get tied to
+
+151
+00:11:57,250 --> 00:12:02,450
+Picking a date when something's going to get or picking how many hours something get done do the math and say, okay
+
+152
+00:12:02,450 --> 00:12:04,810
+I'm gonna have my widget by next Friday
+
+153
+00:12:06,170 --> 00:12:13,930
+It's there's too much uncertainty in software and as you know on the technical side we can break that down when there's uncertainty
+
+154
+00:12:13,930 --> 00:12:17,730
+We break it down farther. We try and make it simple by breaking down the problem into smaller problems and
+
+155
+00:12:18,250 --> 00:12:21,630
+Over time we can get better at picking when those things are going to get done
+
+156
+00:12:22,050 --> 00:12:27,930
+But there's always are going to be outliers things that take longer things that take shorter and
+
+157
+00:12:28,690 --> 00:12:30,690
+the minute you pick a two a
+
+158
+00:12:30,890 --> 00:12:35,310
+Story point of five and actually get it done in realize it's easy and get done in an hour
+
+159
+00:12:35,430 --> 00:12:39,610
+They're gonna think all the five should be done in an hour. So as as a PO
+
+160
+00:12:40,690 --> 00:12:42,450
+How do you deal with?
+
+161
+00:12:42,450 --> 00:12:47,050
+Tell me more about how you deal with story points and the estimates and people expecting on when stuff's gonna get done
+
+162
+00:12:47,550 --> 00:12:53,780
+Yeah. Yeah. Well, so our my team's initial problem lies in being an
+
+163
+00:12:54,500 --> 00:13:00,520
+Operating as a Kanban team in a sea of scrum team. So we've got eight teams on our program
+
+164
+00:13:01,220 --> 00:13:05,440
+two of them are Kanban and ever so everybody else is planning to
+
+165
+00:13:06,160 --> 00:13:10,510
+What sprint is this gonna be done in and we just don't work that way
+
+166
+00:13:10,550 --> 00:13:12,550
+So when we do planning we just kind of
+
+167
+00:13:13,270 --> 00:13:17,390
+Shuffle all the things into the bin. So we're like, okay, we're not over in any sprint
+
+168
+00:13:17,390 --> 00:13:20,070
+We're you know, we have a confidence of four
+
+169
+00:13:20,070 --> 00:13:24,510
+We're gonna meet plan and then you know the next day we go and shuffle everything around
+
+170
+00:13:24,990 --> 00:13:29,520
+but when I get my devs to write stories or
+
+171
+00:13:30,310 --> 00:13:38,310
+Feature that they're that they had aren't quite ready to write stories for but stories. I try to contain them to a
+
+172
+00:13:39,110 --> 00:13:41,430
+complexity of one
+
+173
+00:13:41,550 --> 00:13:47,030
+Three or five if it's one, it's super easy meaning you could probably do three or four in a day
+
+174
+00:13:47,310 --> 00:13:49,030
+If it's three, it's medium hard
+
+175
+00:13:49,030 --> 00:13:51,530
+It's probably gonna take you a couple days and if it's five
+
+176
+00:13:51,870 --> 00:13:54,950
+It's probably gonna take you most of a week to get done
+
+177
+00:13:54,950 --> 00:14:00,270
+If you have a story that's over a five which is allowed in in all the different frameworks
+
+178
+00:14:00,710 --> 00:14:03,110
+Trainings that I've been shoved down my throat
+
+179
+00:14:03,270 --> 00:14:08,310
+If it's over five you need to replant that into multiple things because that you know
+
+180
+00:14:08,350 --> 00:14:12,470
+If you have a seven or twelve point story that doesn't tell you when it's gonna get done
+
+181
+00:14:12,470 --> 00:14:14,230
+It tells you you don't know when you're gonna get done
+
+182
+00:14:14,230 --> 00:14:20,230
+It tells you when you don't you don't know exactly right and go ahead and finish and we have to meet
+
+183
+00:14:21,480 --> 00:14:26,320
+Contractual dates so we've got to kind of work backwards from those dates and figure out
+
+184
+00:14:26,520 --> 00:14:30,320
+When are we gonna get all the little bits done so that we can meet this date?
+
+185
+00:14:31,000 --> 00:14:33,000
+For code cutoff and delivery
+
+186
+00:14:33,360 --> 00:14:34,430
+But
+
+187
+00:14:34,430 --> 00:14:38,310
+Once threes and fives, it's all I want to see the occasional twos fine
+
+188
+00:14:38,310 --> 00:14:41,830
+But you know, I don't want to see anything over a five for my team
+
+189
+00:14:41,830 --> 00:14:47,910
+Yeah, and that's good. And again, I always let my teams choose whatever method they want to use attract set
+
+190
+00:14:47,910 --> 00:14:53,610
+But they must give a date with the confidence level now over a year a year. I tracked
+
+191
+00:14:54,210 --> 00:14:59,930
+we delivered like a hundred and eighty different projects and a project is something that delivers customer value in some way and
+
+192
+00:15:00,490 --> 00:15:02,290
+I tracked
+
+193
+00:15:02,330 --> 00:15:06,370
+Original estimate the actual delivery date for every single one of those and a bunch of other data
+
+194
+00:15:06,610 --> 00:15:09,330
+What I found is gonna back up what you say completely
+
+195
+00:15:09,890 --> 00:15:14,210
+Anything from one to two weeks was on time like 80 to 90 percent of the time
+
+196
+00:15:14,410 --> 00:15:20,770
+Somewhere in there like pretty accurate went two weeks or less pretty accurate four weeks and beyond was all over the map
+
+197
+00:15:21,770 --> 00:15:27,130
+Ridiculous long because that means there's a length when you cannot figure out how much work there is to do and
+
+198
+00:15:27,930 --> 00:15:32,250
+Interestingly when people often thought something's gonna be easy they put like it also be done by Friday
+
+199
+00:15:32,490 --> 00:15:34,490
+It always took like twice as long
+
+200
+00:15:34,650 --> 00:15:38,210
+So it's and which is fine. They learn from that and they got better and over time
+
+201
+00:15:38,210 --> 00:15:41,250
+You want to just give people room to fail so they can target in on these things
+
+202
+00:15:41,250 --> 00:15:44,250
+So you want is predictability for your partners your customers, etc
+
+203
+00:15:44,970 --> 00:15:48,970
+But you have to give them room to screw that up now
+
+204
+00:15:49,650 --> 00:15:52,120
+There's something else I was gonna say and then my brain farted
+
+205
+00:15:53,380 --> 00:15:55,700
+That happens. Yeah, well age
+
+206
+00:15:57,570 --> 00:15:59,670
+Crap, what was it?
+
+207
+00:16:00,310 --> 00:16:04,190
+Delivery teams blah blah blah, it'll come back to me, but I
+
+208
+00:16:04,990 --> 00:16:09,910
+I just I don't I don't get why people are. Oh, let me go. It was combo
+
+209
+00:16:09,910 --> 00:16:12,590
+It's about combo. So combo is great because you're tracking
+
+210
+00:16:14,400 --> 00:16:18,400
+And again for an interrupt driven team. It's the right way to do it versus try and plan those things out
+
+211
+00:16:20,290 --> 00:16:22,650
+You want to be able to focus on
+
+212
+00:16:23,290 --> 00:16:29,170
+You know a minute a finite number of things at once and as Brenton I always say focus on on
+
+213
+00:16:30,010 --> 00:16:32,010
+Finishing not on doing
+
+214
+00:16:32,820 --> 00:16:33,900
+so
+
+215
+00:16:33,900 --> 00:16:39,610
+So you don't have your whole like I was working with the team once they're doing Kanban and they had
+
+216
+00:16:40,290 --> 00:16:45,480
+And the thing with Kanban is a it's a flowchart basically and you can understand where the bottlenecks are things get stuck
+
+217
+00:16:45,480 --> 00:16:47,880
+In one column for too long. You know, okay, what's the problem here?
+
+218
+00:16:47,880 --> 00:16:50,480
+And the problem could be work isn't broken down enough
+
+219
+00:16:50,480 --> 00:16:54,280
+That's probably where I was going before is we taught people to break down their work over time
+
+220
+00:16:54,280 --> 00:16:55,280
+That makes it more predictable
+
+221
+00:16:55,280 --> 00:16:58,280
+Especially if you can deliver if you have a big feature you're gonna deliver for customers
+
+222
+00:16:58,280 --> 00:17:03,700
+You can deliver part of it in two weeks to give them some value and the rest in two more weeks or even spread out longer
+
+223
+00:17:03,840 --> 00:17:07,440
+That's so so much better and more predictable and honestly
+
+224
+00:17:07,440 --> 00:17:12,520
+You're gonna get feedback customers faster than doing something that takes six eight ten weeks now with Kanban
+
+225
+00:17:13,040 --> 00:17:17,800
+working with the team once they had a big bottleneck in the development thing because they had a bunch of
+
+226
+00:17:18,200 --> 00:17:22,000
+three four and five like like longer projects in there and
+
+227
+00:17:22,880 --> 00:17:27,720
+they kept on upping the limit so common as a concept of a work-in-progress a whip and
+
+228
+00:17:28,760 --> 00:17:35,690
+They had like nine a limit of nine in that development and they had nine developers
+
+229
+00:17:37,200 --> 00:17:41,040
+So there's no way for anybody to help each other out. Everybody was stuck on getting their thing done
+
+230
+00:17:41,400 --> 00:17:45,920
+It's if you use in Kanban, I'm just curious in your experience here as well
+
+231
+00:17:46,440 --> 00:17:52,880
+The beauty of Kanban is you can use it to figure out where the bottlenecks are and and optimize around them
+
+232
+00:17:52,880 --> 00:17:55,280
+So so true. How does your team do that?
+
+233
+00:17:56,770 --> 00:17:58,370
+usually
+
+234
+00:17:58,370 --> 00:18:04,360
+The way our team is a little it operates is a little unusual for what you call it a scrum team
+
+235
+00:18:04,920 --> 00:18:09,280
+Doing Kanban in the midst of a bunch of other teams doing scrum in that we try to
+
+236
+00:18:10,440 --> 00:18:14,240
+resort to doing most of the planning between myself the product owner and
+
+237
+00:18:14,920 --> 00:18:18,080
+my second in charge the program manager and
+
+238
+00:18:19,160 --> 00:18:20,760
+when we have
+
+239
+00:18:20,760 --> 00:18:23,880
+Planning which is what we did the first three days of this week
+
+240
+00:18:24,000 --> 00:18:27,120
+It'll just be me and him doing most of the work now
+
+241
+00:18:27,120 --> 00:18:34,180
+We've had a lot of work run up to it, you know getting stories and whatnot in ready in place, but
+
+242
+00:18:35,000 --> 00:18:36,400
+for the most part
+
+243
+00:18:36,400 --> 00:18:43,560
+We try to figure out and work one-on-one with with the engineers prior to our planning
+
+244
+00:18:44,200 --> 00:18:45,880
+meetings and
+
+245
+00:18:45,880 --> 00:18:48,920
+figure out what they think they can get done and
+
+246
+00:18:49,160 --> 00:18:56,510
+Plan it out accordingly, then we have to lay out our plan according to the rest of the
+
+247
+00:18:58,360 --> 00:19:01,960
+The rest of our program groups all beings
+
+248
+00:19:02,720 --> 00:19:08,900
+Scrum teams and we'll lay it all out and we'll know that it's good things are gonna get shuffled around a little bit
+
+249
+00:19:09,320 --> 00:19:11,320
+and one of the things that we do as
+
+250
+00:19:11,640 --> 00:19:17,040
+Because we know our team is gonna get stuff changed a lot. We run on a higher
+
+251
+00:19:18,000 --> 00:19:23,720
+Pop-up budget than a lot of other teams is a lot of the other teams will do like 15 20 percent of their
+
+252
+00:19:24,000 --> 00:19:31,360
+Capacity reserved for pop-up work and we typically run about 35 percent because we know that stuff's gonna pop up for us
+
+253
+00:19:31,880 --> 00:19:33,880
+And we typically fill that
+
+254
+00:19:35,200 --> 00:19:37,200
+35% budget every time
+
+255
+00:19:37,400 --> 00:19:43,080
+And a lot of times that happens within like two weeks after the start of the of the new scrum increment
+
+256
+00:19:43,640 --> 00:19:49,680
+Because the customer changed their mind or some new requirement came down and being on the operating system team
+
+257
+00:19:49,680 --> 00:19:55,800
+You've got to have you're basically the lowest part things have to get working in your environment for anybody up
+
+258
+00:19:55,800 --> 00:20:00,940
+The line can do their work. One of the reasons I prefer Kanban over any of the other models
+
+259
+00:20:01,480 --> 00:20:03,760
+Is because it allows for that
+
+260
+00:20:03,760 --> 00:20:10,080
+It's I mean if you look at I mean so many people who there's so many scrum masters and scrum folks who are
+
+261
+00:20:10,080 --> 00:20:13,340
+Induit they get to take them and equate scrum with agile idiots
+
+262
+00:20:14,240 --> 00:20:18,800
+They don't even they're even read the documentation on it. What you know, originally it said that
+
+263
+00:20:19,520 --> 00:20:24,020
+And I haven't looked at this in years. Maybe decades if you end up adding
+
+264
+00:20:24,840 --> 00:20:30,900
+You know, I heard was any or an increment if you're if you're adding work stop replan start over
+
+265
+00:20:31,300 --> 00:20:36,050
+That that burn up is hard and now and you can put a buffer in there
+
+266
+00:20:36,050 --> 00:20:38,290
+Which I don't which I don't particularly like it works
+
+267
+00:20:38,290 --> 00:20:44,050
+But if you're going to be interrupt driven either either don't do scrum or
+
+268
+00:20:45,380 --> 00:20:50,740
+Do scrum on a one-week increments increments so that pop-up work comes you can plan it into the thing starting the next Monday
+
+269
+00:20:50,900 --> 00:20:55,820
+Yeah, yeah, don't do it. Don't do a four-week sprint. If you know, you're gonna have interrupts coming in
+
+270
+00:20:56,450 --> 00:20:58,450
+Yeah, our team is
+
+271
+00:20:58,490 --> 00:20:59,930
+specifically
+
+272
+00:20:59,930 --> 00:21:01,990
+interrupt driven mainly because we
+
+273
+00:21:03,130 --> 00:21:06,290
+Don't know we've kind of got gained a reputation as as
+
+274
+00:21:06,970 --> 00:21:12,490
+Solution fixers, you know people come to us with their with the problems that their team's working on and so that's why our
+
+275
+00:21:13,050 --> 00:21:16,730
+Budget for sort of what we call pop-ups pop-up work is so high
+
+276
+00:21:17,090 --> 00:21:20,450
+Because we know we're gonna fill it. We know it's gonna come along and
+
+277
+00:21:21,050 --> 00:21:23,050
+We'll just have to rearrange things
+
+278
+00:21:23,290 --> 00:21:27,710
+Yeah, well it makes sense. It sounds like and I'm gonna rant on safe for a second now
+
+279
+00:21:27,710 --> 00:21:29,830
+Then we're gonna talk about how to fix it. So
+
+280
+00:21:30,770 --> 00:21:35,330
+It's a scaled agile framework for enterprise enterprise
+
+281
+00:21:35,450 --> 00:21:42,250
+Yeah, it is a way for enterprises. So when the pointy hair boss decides he wants to do agile, but he's afraid of it
+
+282
+00:21:42,250 --> 00:21:45,810
+He can do safe and not really do agile. So
+
+283
+00:21:46,890 --> 00:21:50,130
+Brent I'm glad he's not here because Brent actually is certified and safe as well
+
+284
+00:21:50,690 --> 00:21:55,530
+And I yeah, I have a scrum master and a PO certification. I
+
+285
+00:21:56,560 --> 00:21:57,880
+Yeah, so
+
+286
+00:21:57,880 --> 00:22:01,920
+Let's say it's a big waterfall framework wrapped around
+
+287
+00:22:02,680 --> 00:22:09,320
+Wrapped around agile not necessarily scrum. Although those teams do these product increments, which are scrum sessions of two to four weeks and
+
+288
+00:22:10,040 --> 00:22:14,320
+It's it's really not agile at all. If you go back to the manifesto
+
+289
+00:22:14,520 --> 00:22:20,600
+It's you know, I'll skip the individuals interactions, but it's working software customer collaboration and responding to change
+
+290
+00:22:20,600 --> 00:22:22,600
+those are the things they value the most and
+
+291
+00:22:23,380 --> 00:22:29,880
+When you are delivering things at the end of a 13 week product, how long is your PI?
+
+292
+00:22:30,640 --> 00:22:33,800
+It's one quarter. So 13 weeks. We typically have a
+
+293
+00:22:34,520 --> 00:22:36,120
+we've got
+
+294
+00:22:36,120 --> 00:22:41,960
+Usually four sprints of two weeks and then a longer fifth sprint which is supposed to be your you know
+
+295
+00:22:42,520 --> 00:22:47,120
+Where you're supposed to be learning new things, but we never have time for that
+
+296
+00:22:47,120 --> 00:22:49,000
+People are people are finishing up all the stuff
+
+297
+00:22:49,000 --> 00:22:52,320
+They didn't get done the other sprints because they didn't do them right in the first place. Yeah
+
+298
+00:22:53,200 --> 00:22:57,560
+Every team over promises and those things. It's a big mess. Yeah, it is
+
+299
+00:22:58,120 --> 00:23:02,640
+It is it's not agile it's it's it's I think it's a and we did
+
+300
+00:23:03,680 --> 00:23:09,840
+My last company used safe and I immediately pulled my team out of safe completely didn't make sense for a platform team
+
+301
+00:23:10,560 --> 00:23:12,040
+but it
+
+302
+00:23:12,040 --> 00:23:17,570
+Was actually done even more horribly and it was a big bureaucratic meeting fest
+
+303
+00:23:17,570 --> 00:23:20,350
+I wish I had that I wish I had that option
+
+304
+00:23:20,350 --> 00:23:27,470
+but I am you know, despite being in in this job for 20 years and the and the industry for 30 I'm still just
+
+305
+00:23:27,910 --> 00:23:32,310
+Senior developer. I'm not I didn't I had zero desire to go into management. So
+
+306
+00:23:33,110 --> 00:23:37,230
+that really wasn't my option, but so here's the challenge and
+
+307
+00:23:39,180 --> 00:23:43,420
+Deliveries hard. We're so we should not try it. I think is a message. That's not the message
+
+308
+00:23:43,420 --> 00:23:46,740
+I want to turn this into a leadership conversation
+
+309
+00:23:47,660 --> 00:23:56,120
+Good good. I have like I think again do not mention where you work and and but
+
+310
+00:23:56,520 --> 00:24:01,720
+What is it like like how do you communicate the challenges like, you know safe doesn't work
+
+311
+00:24:02,440 --> 00:24:07,720
+You're you're you're working around it in a bunch of different ways and I'm sure you're not the only person
+
+312
+00:24:07,720 --> 00:24:13,080
+I'm sure across your organization people going this is a big mess. There has to be a better way. Why aren't we doing it?
+
+313
+00:24:13,720 --> 00:24:18,550
+What is that like and and and why do you think in your case your management doesn't get it?
+
+314
+00:24:19,110 --> 00:24:22,200
+Well, I think mainly the management
+
+315
+00:24:22,440 --> 00:24:24,440
+I think mainly the management
+
+316
+00:24:24,440 --> 00:24:27,640
+That I want and I won't talk about specifically my managers
+
+317
+00:24:27,800 --> 00:24:32,280
+Okay, the manager I have is talking generalities generalities because the manager I have now is
+
+318
+00:24:33,160 --> 00:24:37,400
+they were an engineer prior to becoming a manager and they wanted to be a manager because
+
+319
+00:24:37,880 --> 00:24:43,000
+The manager previous to that was an engineer but didn't want to be a manager and they kind of tricked him into it
+
+320
+00:24:43,560 --> 00:24:45,270
+but uh
+
+321
+00:24:45,270 --> 00:24:48,790
+so they understand our current manager understands the
+
+322
+00:24:49,750 --> 00:24:54,470
+Ins and outs of the troubles that we have with with agile and safe specifically
+
+323
+00:24:56,130 --> 00:24:59,730
+I think it was the reason that our organization uses it
+
+324
+00:24:59,730 --> 00:25:04,050
+I think it was dictated by the customer they because they wanted to be able to integrate
+
+325
+00:25:05,010 --> 00:25:08,050
+with something that they're already using they're already familiar with so
+
+326
+00:25:09,090 --> 00:25:11,330
+I know that our customer has accounts in our
+
+327
+00:25:12,130 --> 00:25:15,650
+system so they can check on progress of stories and
+
+328
+00:25:16,210 --> 00:25:19,890
+Things like that from from their end without having to call somebody up and ask them
+
+329
+00:25:22,720 --> 00:25:29,780
+And i'm, not really sure how you work into a scrum type or an agile
+
+330
+00:25:31,680 --> 00:25:38,180
+Environment in a in a company as large as ours and uh and be able to survive
+
+331
+00:25:39,360 --> 00:25:42,080
+But like I said that my first 10 years there were
+
+332
+00:25:43,720 --> 00:25:46,200
+We didn't use agile we didn't use
+
+333
+00:25:46,760 --> 00:25:48,200
+Scrum we didn't use any of that stuff
+
+334
+00:25:48,200 --> 00:25:53,560
+We just kind of you know everybody got together on a semi-weekly basis and said what do we got to do this week?
+
+335
+00:25:53,640 --> 00:25:55,670
+and boom off we went
+
+336
+00:25:55,910 --> 00:26:01,190
+And our team usually only had to go like once a month because you know, we knew all the things that we needed to do
+
+337
+00:26:01,750 --> 00:26:06,390
+Uh, we didn't want to waste a lot of time explaining it to people who didn't really understand
+
+338
+00:26:06,950 --> 00:26:08,710
+I want to ask a point of clarification
+
+339
+00:26:08,710 --> 00:26:12,870
+So you have a a customer team that wanted to know when things were going to get done
+
+340
+00:26:14,160 --> 00:26:16,160
+Correct and the solution was safe
+
+341
+00:26:16,820 --> 00:26:18,960
+well
+
+342
+00:26:18,960 --> 00:26:22,160
+As I as I mentioned our our customer is the government so
+
+343
+00:26:23,040 --> 00:26:26,480
+If you have a government contract, you kind of don't have a lot of negotiating
+
+344
+00:26:27,040 --> 00:26:30,160
+Space and obviously I was not involved with any of that
+
+345
+00:26:30,720 --> 00:26:34,240
+I came onto this program after it was already like five years in
+
+346
+00:26:34,860 --> 00:26:36,850
+operation
+
+347
+00:26:36,850 --> 00:26:38,290
+Yeah, I I get it
+
+348
+00:26:38,290 --> 00:26:41,650
+I guess it would be a little farther up the chain where somebody would
+
+349
+00:26:42,130 --> 00:26:47,010
+Like my question is when somebody tells me they need something I would say imagine you had that tell me what it looks like
+
+350
+00:26:47,490 --> 00:26:48,290
+and
+
+351
+00:26:48,290 --> 00:26:49,410
+they're
+
+352
+00:26:49,410 --> 00:26:52,450
+You know in my view again, I haven't had government customers
+
+353
+00:26:53,810 --> 00:26:58,370
+I would think and i'm sure you think it's too there and it wasn't your decision to make but surely there had to be
+
+354
+00:26:58,370 --> 00:26:59,810
+A better solution
+
+355
+00:26:59,810 --> 00:27:01,330
+Oh, yes. Yeah
+
+356
+00:27:01,330 --> 00:27:04,130
+and part of the part of the problem I see
+
+357
+00:27:04,610 --> 00:27:06,930
+Over the decades i've been on this is that
+
+358
+00:27:07,940 --> 00:27:15,300
+The leadership or the mid-level leadership of our customer changes out every year year and a half two years because
+
+359
+00:27:15,860 --> 00:27:17,300
+people are moving from
+
+360
+00:27:17,300 --> 00:27:23,140
+You know people get into government positions and they either stay there for 40 years until they're ready to retire or get
+
+361
+00:27:23,780 --> 00:27:29,060
+You know kicked out because they're too old or they change jobs as often as they can to keep
+
+362
+00:27:29,620 --> 00:27:32,820
+climbing the ladder and so that's what we see a lot and
+
+363
+00:27:32,820 --> 00:27:38,290
+And uh, it's just you know, you don't have any consistency from the customer side either
+
+364
+00:27:41,400 --> 00:27:42,840
+There is a book
+
+365
+00:27:42,840 --> 00:27:45,240
+um, I don't know if you've read this, uh
+
+366
+00:27:46,040 --> 00:27:51,560
+It's i'm gonna keep it's a really good book called orbiting. I'll show you the picture here called orbiting the giant hairball
+
+367
+00:27:52,520 --> 00:27:57,160
+Good lord, it's about um, it's a corporate fool's guide to surviving with grace
+
+368
+00:27:57,800 --> 00:27:58,920
+and
+
+369
+00:27:58,920 --> 00:28:01,400
+One thing it sounds like you've done pretty well, which um
+
+370
+00:28:02,560 --> 00:28:06,000
+I've done well and not done well in this for is when you're in
+
+371
+00:28:07,040 --> 00:28:12,080
+A sickening bureaucracy is how do you survive the author is this guy is artist who got a job at hallmark
+
+372
+00:28:12,400 --> 00:28:16,560
+And how he learned to still be kind of keep his integrity as a freewheeling artist and also
+
+373
+00:28:17,120 --> 00:28:18,320
+work with him
+
+374
+00:28:18,320 --> 00:28:21,760
+What is a surprisingly bureaucratic and political company?
+
+375
+00:28:23,560 --> 00:28:24,760
+now
+
+376
+00:28:24,760 --> 00:28:27,200
+I wonder
+
+377
+00:28:27,200 --> 00:28:28,400
+uh, and
+
+378
+00:28:28,400 --> 00:28:30,480
+Obviously people are still employed and they're capable
+
+379
+00:28:30,640 --> 00:28:34,880
+About I want to work one of the stories just talk to like right before we talk talk to an old colleague of mine
+
+380
+00:28:35,700 --> 00:28:37,540
+and they were
+
+381
+00:28:37,540 --> 00:28:39,540
+challenged because
+
+382
+00:28:41,060 --> 00:28:44,020
+They had had three different managers in the last year
+
+383
+00:28:44,500 --> 00:28:48,340
+And none of them really understand what what they're they're their organization did
+
+384
+00:28:48,980 --> 00:28:54,020
+and spend a lot of their time just explaining like what they did and the value it brought and
+
+385
+00:28:54,740 --> 00:28:56,260
+Depending on
+
+386
+00:28:56,260 --> 00:28:57,750
+You know
+
+387
+00:28:57,750 --> 00:28:59,750
+In most cases they didn't really care
+
+388
+00:29:00,800 --> 00:29:02,390
+It was just
+
+389
+00:29:02,390 --> 00:29:05,990
+You know so many manager were about people in power versus understanding what's going on
+
+390
+00:29:06,630 --> 00:29:07,750
+and
+
+391
+00:29:07,750 --> 00:29:10,310
+if you look at the literature on what
+
+392
+00:29:11,430 --> 00:29:14,470
+drives employee engagement what makes a good organization or
+
+393
+00:29:15,270 --> 00:29:19,750
+What makes a job miserable is the opposite of that is people just want to know that they want feedback
+
+394
+00:29:19,830 --> 00:29:24,150
+They want to know their manager cares about them in their career and they want to know why their job is important
+
+395
+00:29:24,870 --> 00:29:26,870
+and I wonder in
+
+396
+00:29:27,670 --> 00:29:31,190
+A situation where you're following a framework and you're kind of stuck in it
+
+397
+00:29:31,190 --> 00:29:35,910
+Maybe you find ways to work around and orbit the giant hairball. Maybe it's just frustrating
+
+398
+00:29:36,550 --> 00:29:37,350
+but
+
+399
+00:29:37,350 --> 00:29:42,390
+What's it like? I want to understand a little bit more what it's like when you know, there's a better way
+
+400
+00:29:42,790 --> 00:29:44,790
+But you're doing it the way you're told
+
+401
+00:29:44,790 --> 00:29:47,830
+Anyway, like what's that like for you and the folks you work with?
+
+402
+00:29:48,930 --> 00:29:50,210
+well
+
+403
+00:29:50,210 --> 00:29:52,930
+Obviously, we know there's a better way. Well
+
+404
+00:29:53,650 --> 00:29:59,730
+For us a better way and that was you know to be basically left unsupervised and off the leash and we would get the
+
+405
+00:30:00,850 --> 00:30:04,450
+High high. Yeah, because everybody on our team is an engineer
+
+406
+00:30:05,650 --> 00:30:09,090
+Some of us got voluntold into these agile positions
+
+407
+00:30:09,970 --> 00:30:12,610
+and so now I spend upwards of like
+
+408
+00:30:13,410 --> 00:30:15,810
+70 percent of my time doing planning and
+
+409
+00:30:16,850 --> 00:30:19,890
+Talking to the other engineers and making sure everything goes right
+
+410
+00:30:20,370 --> 00:30:24,130
+When I got into engineering because I like doing the engineering part of it
+
+411
+00:30:24,800 --> 00:30:27,080
+but
+
+412
+00:30:27,080 --> 00:30:29,360
+as for
+
+413
+00:30:29,360 --> 00:30:34,240
+Support from above now in in the time that i've been on this this team like
+
+414
+00:30:34,780 --> 00:30:37,520
+17 plus years i've had seven different managers
+
+415
+00:30:38,160 --> 00:30:43,200
+And some of them were really good managers because they came from engineering and others
+
+416
+00:30:44,560 --> 00:30:48,400
+Didn't and you could tell which ones were and the ones that weren't
+
+417
+00:30:48,960 --> 00:30:53,120
+Typically didn't last on our ass as our team's manager for very long and
+
+418
+00:30:55,760 --> 00:30:57,760
+What I find that my team needs
+
+419
+00:30:58,400 --> 00:30:59,360
+is
+
+420
+00:30:59,360 --> 00:31:02,160
+To be able to just put their heads down do their work
+
+421
+00:31:02,560 --> 00:31:06,640
+And at the end of the increment we're going to come out with what you've asked for
+
+422
+00:31:07,400 --> 00:31:12,360
+And again, our team is very pop-up driven, but that doesn't cover everybody on the team
+
+423
+00:31:12,360 --> 00:31:15,400
+That's usually like two or three people on the team because they're
+
+424
+00:31:16,390 --> 00:31:21,350
+The big brains you know big brain on brad so they need them to go work this
+
+425
+00:31:21,990 --> 00:31:26,150
+emergent problem on in the labs or an emergent problem on another team
+
+426
+00:31:26,710 --> 00:31:31,430
+And so they'll jump over to that stuff. It sounds like you're orbiting the giant hairball pretty well
+
+427
+00:31:31,910 --> 00:31:33,940
+We are we are so
+
+428
+00:31:33,940 --> 00:31:35,540
+We kind of just
+
+429
+00:31:35,540 --> 00:31:41,460
+Work around it. We go. Yeah. Yeah. Okay. The giant hairball is there and we acknowledge it
+
+430
+00:31:41,540 --> 00:31:44,660
+But we're not going to get hung up by it. We're just going to kind of work around it
+
+431
+00:31:45,060 --> 00:31:47,060
+and until
+
+432
+00:31:47,060 --> 00:31:49,060
+Somebody says hey, why aren't you?
+
+433
+00:31:49,460 --> 00:31:56,260
+Why are you trekking through the hairy forest like everyone else is we go? Well because you guys want us to meet our
+
+434
+00:31:57,460 --> 00:32:02,820
+Release deadlines. So we just kind of give you the lip service. Yes, we're doing that and we just kind of go
+
+435
+00:32:02,820 --> 00:32:04,500
+Do our own thing anyway
+
+436
+00:32:04,500 --> 00:32:06,020
+Yeah, makes sense
+
+437
+00:32:06,020 --> 00:32:10,740
+and we do that by sacrificing one or two of the senior engineers to
+
+438
+00:32:11,380 --> 00:32:15,940
+Doing all the paperwork as opposed to having to have everybody do all that stuff now
+
+439
+00:32:16,020 --> 00:32:20,100
+Like I said, I get some of my engineers to write their own stories
+
+440
+00:32:20,180 --> 00:32:25,460
+But oftentimes it just falls to me and the program manager to write all the story work
+
+441
+00:32:26,100 --> 00:32:30,340
+Because we're the ones that's spending all the time in meetings with their teams and management and the customer
+
+442
+00:32:31,300 --> 00:32:34,420
+So we kind of know what what's going on in the overall
+
+443
+00:32:35,400 --> 00:32:40,680
+And I just want to let my engineers do engineering and not have to worry so much about this
+
+444
+00:32:42,500 --> 00:32:46,740
+Framework paperwork nightmare. Yeah, I mean and I say paperwork
+
+445
+00:32:47,300 --> 00:32:53,220
+I say paperwork, but it's all online. I know what you mean. It's all it's all policy and bureaucracy. So
+
+446
+00:32:53,860 --> 00:32:55,060
+Uh, no, I get it. I get it
+
+447
+00:32:55,060 --> 00:32:57,620
+It's not like you're doing a good job navigating the team through that
+
+448
+00:32:57,940 --> 00:33:01,380
+I tend to get frustrated in those things because when i'm oh, yeah. Yeah
+
+449
+00:33:02,420 --> 00:33:05,670
+I
+
+450
+00:33:05,670 --> 00:33:10,390
+It's not that I even get mad and tell people I don't go raging, you know go raging and there's a this is wrong
+
+451
+00:33:10,470 --> 00:33:13,030
+It's stupid, but I do want to
+
+452
+00:33:14,160 --> 00:33:16,960
+push people and brent brent is you know
+
+453
+00:33:17,680 --> 00:33:21,680
+more than one time referred to me as a change agent, I like to make change happen and I
+
+454
+00:33:22,320 --> 00:33:26,080
+I believe in a line from leadership online books on the floor over there. I won't grab it
+
+455
+00:33:26,800 --> 00:33:31,000
+leadership is disappointing people at a level they can absorb and
+
+456
+00:33:31,880 --> 00:33:33,880
+you know when i'm in those situations I
+
+457
+00:33:34,680 --> 00:33:37,480
+want to push things I want to change things but and you
+
+458
+00:33:39,380 --> 00:33:40,500
+I
+
+459
+00:33:40,500 --> 00:33:46,420
+Also want to push people a little out of their comfort zone, but not so much they get all freaked out
+
+460
+00:33:46,900 --> 00:33:51,460
+And it's a little game because everybody gets like sometimes I can push a little people freak out sometimes push a lot and they don't
+
+461
+00:33:51,780 --> 00:33:55,380
+You have to kind of read that as you go along, but so many times
+
+462
+00:33:56,440 --> 00:33:57,970
+like uh
+
+463
+00:33:57,970 --> 00:33:59,490
+I mean, it's the right thing to do
+
+464
+00:33:59,490 --> 00:34:04,370
+Uh, I just thinking I put reflection on my last job when there was somebody I could push like let me just touch my
+
+465
+00:34:04,370 --> 00:34:09,250
+Microphone barely and they go hey stop stop. I can't handle the change. It's too much
+
+466
+00:34:09,730 --> 00:34:11,010
+Like dude
+
+467
+00:34:11,010 --> 00:34:13,010
+It's just it's it's sad
+
+468
+00:34:13,890 --> 00:34:16,070
+so um
+
+469
+00:34:16,070 --> 00:34:21,430
+But that's that's one of the things I like about hearing your work stories when we get together outside of this
+
+470
+00:34:22,150 --> 00:34:24,770
+arena and
+
+471
+00:34:24,770 --> 00:34:28,850
+You've got a lot of leadership qualities that I wish that I had in myself
+
+472
+00:34:29,570 --> 00:34:33,330
+Uh, not for the point of being uh management or a vp or anything
+
+473
+00:34:33,330 --> 00:34:38,210
+But I think that if I was a better leader than my engineers could be better engineers
+
+474
+00:34:39,240 --> 00:34:41,240
+It sounds like you're doing a pretty good job
+
+475
+00:34:41,320 --> 00:34:42,520
+I try
+
+476
+00:34:42,520 --> 00:34:47,400
+And I think we bring different leadership skills to different leadership situations
+
+477
+00:34:47,960 --> 00:34:50,000
+I
+
+478
+00:34:50,000 --> 00:34:51,920
+I do not like stagnant organizations
+
+479
+00:34:51,920 --> 00:34:56,800
+I believe if we should build organ it sounds like you're doing this building organization people have an opportunity to learn something every day
+
+480
+00:34:57,520 --> 00:35:03,840
+Where they can do their best to work where they are engaged in what they're doing and if they're stuck in
+
+481
+00:35:04,560 --> 00:35:05,440
+You know
+
+482
+00:35:05,440 --> 00:35:10,160
+How much work are your engineers getting done during six hours of meetings today? Not very much, right, right
+
+483
+00:35:10,880 --> 00:35:12,880
+and the downfall of of
+
+484
+00:35:13,520 --> 00:35:19,200
+Of your teaching your engineers to be better engineers and to learn new things is
+
+485
+00:35:20,370 --> 00:35:26,770
+Right now I'm I work with a team of ten five of them are senior engineers myself included and
+
+486
+00:35:27,570 --> 00:35:29,670
+five of them are
+
+487
+00:35:29,830 --> 00:35:35,270
+Less than five years in the field completely. In fact some two of them are like right out of college
+
+488
+00:35:36,760 --> 00:35:41,000
+And in the last three years, we've had we've gone through one two three
+
+489
+00:35:41,240 --> 00:35:46,600
+We've gone through four right out of college engineers. They come on they stay for six months eight months
+
+490
+00:35:47,080 --> 00:35:51,080
+and they learn a lot and they're just becoming productive and
+
+491
+00:35:52,290 --> 00:35:57,490
+Out the door. They're off to either another program within the company or off to another company and
+
+492
+00:35:59,010 --> 00:36:01,000
+It doesn't make me want to
+
+493
+00:36:01,000 --> 00:36:05,800
+work with the engineers and make them better any less, but that is one of the pitfalls of
+
+494
+00:36:06,440 --> 00:36:07,240
+of
+
+495
+00:36:07,240 --> 00:36:09,320
+Helping to make your your junior engineers
+
+496
+00:36:10,120 --> 00:36:12,120
+senior lines are we and
+
+497
+00:36:13,220 --> 00:36:15,460
+I'll tell a story from our last company after I asked this question
+
+498
+00:36:16,020 --> 00:36:17,140
+but uh
+
+499
+00:36:17,140 --> 00:36:21,460
+Is there less turnover given the current market situation where there aren't as many jobs for them to go to?
+
+500
+00:36:22,100 --> 00:36:23,300
+uh, well
+
+501
+00:36:23,300 --> 00:36:27,540
+The two newest members on our team are less than six months
+
+502
+00:36:28,180 --> 00:36:29,540
+on the team
+
+503
+00:36:29,540 --> 00:36:30,580
+so
+
+504
+00:36:30,580 --> 00:36:33,810
+and that that was one was a replacement and
+
+505
+00:36:34,770 --> 00:36:40,050
+One was a new, you know a team expansion that we've been screaming for for several years
+
+506
+00:36:40,690 --> 00:36:43,410
+I think I start I told on the podcast once but in my last
+
+507
+00:36:44,130 --> 00:36:45,410
+company
+
+508
+00:36:45,410 --> 00:36:48,370
+I was in some management or leadership meeting and they were
+
+509
+00:36:48,690 --> 00:36:53,410
+Someone from hr was bragging about the fact that turnover was the lowest it had been in the last, you know several years
+
+510
+00:36:54,520 --> 00:36:59,720
+Completely failing to recognize the context that there were no jobs for them. Yeah, yeah in the world. There's nothing to do
+
+511
+00:37:01,400 --> 00:37:02,680
+So
+
+512
+00:37:02,680 --> 00:37:04,760
+Uh, I I I do worry a lot there
+
+513
+00:37:06,040 --> 00:37:08,600
+Um, there was something else i was going to ask about this, but maybe I don't know
+
+514
+00:37:09,320 --> 00:37:11,560
+Like do you like it?
+
+515
+00:37:11,560 --> 00:37:15,960
+Do you like what you're doing? If I didn't like it, I wouldn't have been doing it for the last 17 18 years
+
+516
+00:37:16,440 --> 00:37:18,040
+um, and
+
+517
+00:37:18,040 --> 00:37:21,000
+I get you know, we've been talking about leadership and
+
+518
+00:37:21,780 --> 00:37:23,880
+planning and all of that but again
+
+519
+00:37:24,820 --> 00:37:29,300
+The days that that just screamed by i'm like, oh man, it's time to go home already
+
+520
+00:37:29,460 --> 00:37:33,540
+Those are the days that I have some tough engineering problem I get to work on
+
+521
+00:37:33,940 --> 00:37:38,740
+And those even though they're farther apart than they were in my beginning days here
+
+522
+00:37:39,830 --> 00:37:42,870
+Those are the days that really make it for me. They make it worth it
+
+523
+00:37:43,270 --> 00:37:47,910
+Uh when I get to see the younger engineers go, ah, and they learn some new concept
+
+524
+00:37:48,470 --> 00:37:52,710
+And uh things get better for them that that's another thing that makes it worth it. So
+
+525
+00:37:53,350 --> 00:37:56,710
+Um, it's kind of it's kind of one of the reasons that i'm looking to
+
+526
+00:37:57,270 --> 00:38:00,230
+Retire and go into teaching, uh from this job
+
+527
+00:38:01,360 --> 00:38:02,160
+um
+
+528
+00:38:02,160 --> 00:38:07,040
+Is i'd like that being able to teach the young minds and give them new stuff
+
+529
+00:38:08,290 --> 00:38:11,570
+Yeah, that's why I want to stay in software. I want to teach young minds and give them new stuff
+
+530
+00:38:12,130 --> 00:38:13,650
+Yeah, well, i'm
+
+531
+00:38:13,650 --> 00:38:19,890
+Yeah, i'm 30 plus years in the software software, uh computers hardware networking. That was like
+
+532
+00:38:20,610 --> 00:38:22,610
+My hobby when I was younger
+
+533
+00:38:22,770 --> 00:38:27,330
+And so I went oh if this is my hobby I can make it my job and so I made it my job without any sort
+
+534
+00:38:27,330 --> 00:38:30,930
+Of formal training completed degrees after I already had the job
+
+535
+00:38:31,650 --> 00:38:34,770
+To get the degrees that would allow me to continue to hold on to the job
+
+536
+00:38:35,570 --> 00:38:39,330
+And uh now I want to go teach the things that are my hobbies now which are
+
+537
+00:38:39,970 --> 00:38:41,970
+Decidedly not computer and software
+
+538
+00:38:42,530 --> 00:38:48,210
+Related. Yeah, that's super cool. Um, speaking of hobbies and and stuff
+
+539
+00:38:48,770 --> 00:38:49,810
+I
+
+540
+00:38:49,810 --> 00:38:55,330
+On the last podcast, uh what we did last week. We were talking about andreas and I think andreas suggested this is
+
+541
+00:38:55,890 --> 00:38:57,490
+um should
+
+542
+00:38:57,490 --> 00:39:01,010
+Index like the transcripts of all of the ab testing episodes
+
+543
+00:39:01,570 --> 00:39:03,570
+Yeah, yeah, I was bored
+
+544
+00:39:04,080 --> 00:39:10,720
+Oh goodness a script to download all the mp3s from anchor where we're hosted was pretty easy. They came down pretty quickly
+
+545
+00:39:11,280 --> 00:39:13,120
+um, so there's like
+
+546
+00:39:13,120 --> 00:39:16,640
+This is episode 221. I think but there's like we did about I did some
+
+547
+00:39:17,280 --> 00:39:23,440
+Bonus episodes that kind of there's like there's like 240 some episodes are downloaded and then uh
+
+548
+00:39:25,060 --> 00:39:28,580
+Use whisper ai and just use the python library for it and I went through
+
+549
+00:39:29,300 --> 00:39:30,980
+Because I had time
+
+550
+00:39:30,980 --> 00:39:34,900
+I went ahead and picked a more efficient model so I could get better transcripts
+
+551
+00:39:35,460 --> 00:39:38,740
+So I used whisper ai to trant to transcribe
+
+552
+00:39:39,970 --> 00:39:41,970
+every single podcast
+
+553
+00:39:41,970 --> 00:39:44,930
+into just a raw text dump as well as um
+
+554
+00:39:45,490 --> 00:39:49,650
+Some formats that are used by closed captioning systems. I did that took about 24 hours to run. It was kind of cool
+
+555
+00:39:50,130 --> 00:39:51,330
+Yeah, yeah
+
+556
+00:39:51,330 --> 00:39:54,450
+I mean kind of it's a it's a macbook air but it's an m4
+
+557
+00:39:54,530 --> 00:40:01,090
+So i'm not sure if well still you're talking about 200 plus hours that you processing. That's pretty good. Yeah, so
+
+558
+00:40:01,570 --> 00:40:02,690
+um
+
+559
+00:40:02,690 --> 00:40:04,930
+That's a 24 hours process took a day
+
+560
+00:40:05,680 --> 00:40:08,960
+Well of the of the the podcast. Oh, yeah of the pot. Yeah, yeah of yeah
+
+561
+00:40:09,360 --> 00:40:13,120
+Math there's like 240 hours of podcasts. Yeah, I went through all those I have transcripts and then
+
+562
+00:40:13,680 --> 00:40:16,320
+I think i'm gonna put them into notebook llm or something
+
+563
+00:40:16,400 --> 00:40:20,240
+I could but what I did first was I wrote a little a little python search engine
+
+564
+00:40:20,400 --> 00:40:24,080
+Just I globbed together all the text files and I can see the beast man
+
+565
+00:40:24,880 --> 00:40:29,440
+Just gonna feed them into an llm. Of course, I have to but for for now i'm not
+
+566
+00:40:29,840 --> 00:40:36,720
+But I can do things like like I can pick like principal five or project management or scrum and I can find
+
+567
+00:40:37,810 --> 00:40:41,490
+How many how many episodes which episodes that term was mentioned in?
+
+568
+00:40:41,970 --> 00:40:44,130
+And how many times did that episode it was mentioned?
+
+569
+00:40:45,090 --> 00:40:46,050
+Wow
+
+570
+00:40:46,050 --> 00:40:49,810
+So i'm i'm gonna do one right now pick. Um, let me find my my command prompt
+
+571
+00:40:50,690 --> 00:40:56,420
+Um, where's my?
+
+572
+00:40:56,420 --> 00:40:58,320
+Is that my thing?
+
+573
+00:40:58,320 --> 00:41:00,450
+No
+
+574
+00:41:00,450 --> 00:41:05,250
+I forgot what I called it
+
+575
+00:41:05,250 --> 00:41:07,410
+Okay, pick a word pick a word
+
+576
+00:41:08,950 --> 00:41:11,170
+um
+
+577
+00:41:11,170 --> 00:41:13,080
+Oh good lord
+
+578
+00:41:13,080 --> 00:41:18,120
+Good lord. No. No, that's not the word. But you know, it goes right on the spot pick a word
+
+579
+00:41:18,200 --> 00:41:20,200
+We're gonna we're gonna do this live. This is great
+
+580
+00:41:20,760 --> 00:41:23,640
+Uh, all right ai because we were just oh my god
+
+581
+00:41:24,200 --> 00:41:25,720
+Yeah, i'm worried
+
+582
+00:41:25,720 --> 00:41:32,680
+Yeah, i'm worried worried for you because my comment was I was scrolling through the the old episodes just uh this morning
+
+583
+00:41:32,760 --> 00:41:34,760
+And I noticed that a lot of them. Okay, you're gonna love this
+
+584
+00:41:35,400 --> 00:41:37,720
+Episodes with at least one mention ten
+
+585
+00:41:38,960 --> 00:41:42,080
+I don't believe total mentions across those episodes a thousand
+
+586
+00:41:43,910 --> 00:41:48,310
+That seems a little small but okay, it seems like it would be more than ten, right?
+
+587
+00:41:48,390 --> 00:41:50,390
+but maybe it didn't come out as
+
+588
+00:41:51,060 --> 00:41:53,060
+I bet it didn't come out
+
+589
+00:41:55,140 --> 00:42:00,740
+Yeah, something's weird they might not be talking they might not be counting like when you say artificial intelligence or lom
+
+590
+00:42:01,380 --> 00:42:02,870
+instead
+
+591
+00:42:02,870 --> 00:42:04,870
+What if I say gen ai?
+
+592
+00:42:06,450 --> 00:42:12,050
+Just to make that even better closer. Uh, that's a lot. Let me scroll up here. Holy crap gen ai
+
+593
+00:42:12,850 --> 00:42:14,930
+Still 10 episodes, but 103 mentions
+
+594
+00:42:16,800 --> 00:42:20,800
+um anyway, it well I I didn't say testing because that would have been a
+
+595
+00:42:21,780 --> 00:42:25,220
+That would have sank that shows up in the intro because the intro gets transcribed as well
+
+596
+00:42:25,620 --> 00:42:30,180
+so, uh, yeah, not gonna do that, but I searched for whiskey that's like 10 of those or eight of those and
+
+597
+00:42:31,380 --> 00:42:37,220
+It's fun. I'm not sure what i'm gonna do with it, but it's there. Yeah, it'd be interesting to see the uh,
+
+598
+00:42:38,290 --> 00:42:43,010
+Increase in frequency of stuff like hiking because you know, you've been a hiker for a long time
+
+599
+00:42:43,010 --> 00:42:47,250
+But there's all kinds of stuff we're talking about it and probably I should just because they're just text files
+
+600
+00:42:47,330 --> 00:42:51,170
+I should maybe think about uploading all those text files. We have a um
+
+601
+00:42:51,810 --> 00:42:52,690
+uh
+
+602
+00:42:52,690 --> 00:42:55,890
+I forget what it's called. I haven't been to github in a while, but we have a we have a slot
+
+603
+00:42:55,970 --> 00:42:58,370
+We have a github repository for
+
+604
+00:42:59,170 --> 00:43:03,010
+The uh for the podcast. Okay, I just put them up there and then
+
+605
+00:43:03,570 --> 00:43:06,770
+You know at some point it has all the episodes up through last week
+
+606
+00:43:06,850 --> 00:43:09,810
+At some point I could just you know, do it with the rest of them. I gotta think about it
+
+607
+00:43:10,370 --> 00:43:13,410
+um, yeah, there's something there and uh
+
+608
+00:43:14,290 --> 00:43:16,850
+There was on slack. There was a great quote
+
+609
+00:43:17,830 --> 00:43:19,830
+It said
+
+610
+00:43:19,910 --> 00:43:22,130
+I'm gonna find out quick here. Um
+
+611
+00:43:24,230 --> 00:43:29,430
+What was it? There's a german proverb that translates roughly into having is better than needing
+
+612
+00:43:29,830 --> 00:43:32,950
+So now you have the transcripts when the time comes you will know what to do with them
+
+613
+00:43:33,030 --> 00:43:34,950
+So I have them i'll know when I find them
+
+614
+00:43:35,650 --> 00:43:38,530
+uh, I find that uh, I find that to be
+
+615
+00:43:40,080 --> 00:43:46,240
+The hoarder's mindset man. I'm telling you because and i'm not i'll i'll i'll hoard digitally but um,
+
+616
+00:43:46,560 --> 00:43:52,240
+Uh, yeah, I well I get that i'm just as bad physically with certain things but digitally
+
+617
+00:43:52,880 --> 00:43:54,720
+um, I mean I
+
+618
+00:43:54,720 --> 00:43:58,640
+I have weaned myself off of it in that I don't have a large
+
+619
+00:43:59,280 --> 00:44:01,040
+storage area network
+
+620
+00:44:01,040 --> 00:44:03,040
+filer in the house anymore, but
+
+621
+00:44:03,510 --> 00:44:09,670
+Yeah, I used to used to hold on to stuff for way too long and never got never went back to it
+
+622
+00:44:10,710 --> 00:44:13,270
+Just it was the having not the needing at that point
+
+623
+00:44:13,910 --> 00:44:18,390
+Well, I think you can be selective about what you need and well and I am now so it's just
+
+624
+00:44:19,190 --> 00:44:21,270
+You know which eliminates the need for having a
+
+625
+00:44:21,830 --> 00:44:26,150
+You know multi-terabyte filer in the house anymore. Yeah, for sure for sure
+
+626
+00:44:27,160 --> 00:44:29,000
+All right, man. Um
+
+627
+00:44:29,000 --> 00:44:32,520
+It I think it's probably a good enough place to wrap it up. You know the thoughts on anything else
+
+628
+00:44:32,520 --> 00:44:36,040
+We want to talk about you know, any shout outs comments. I don't know what to ask you
+
+629
+00:44:36,820 --> 00:44:37,860
+uh
+
+630
+00:44:37,860 --> 00:44:39,540
+I don't think so. I mean
+
+631
+00:44:39,620 --> 00:44:43,940
+That would be of little interest of the two other people who listen the two other people who listen
+
+632
+00:44:44,020 --> 00:44:46,020
+Hello you two good good to have you here
+
+633
+00:44:46,930 --> 00:44:48,930
+All right, then well, um
+
+634
+00:44:49,240 --> 00:44:55,240
+Sorry, you say something no. No, go right ahead. Well, let's uh, let me find my my my fancy buttons here
+
+635
+00:44:55,880 --> 00:44:59,240
+And uh, let's call it a day. Um, i've been spy
+
+636
+00:45:00,100 --> 00:45:05,640
+I've been tim. All right. We'll see you next time on the spy somebody else podcast
+

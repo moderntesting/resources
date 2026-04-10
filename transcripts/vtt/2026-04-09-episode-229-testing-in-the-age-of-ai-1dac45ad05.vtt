@@ -1,0 +1,2447 @@
+WEBVTT
+
+00:00:04.340 --> 00:00:11.100
+Welcome to AB testing podcast your modern testing podcast your hosts Alan and Brent
+
+00:00:11.100 --> 00:00:18.220
+Not here will be here to guide you through topics on testing leadership agile and anything else that comes to mind now
+
+00:00:18.740 --> 00:00:19.820
+on with the show
+
+00:00:19.820 --> 00:00:24.380
+It's time for another episode of AB testing Brent is not here again
+
+00:00:24.380 --> 00:00:28.700
+He is doing a lot of work for Satya right now. He finished up all the cat six in
+
+00:00:29.580 --> 00:00:30.620
+Satya's garden shed
+
+00:00:30.620 --> 00:00:33.980
+But now he's working on doing some tailoring for Satya's new suit
+
+00:00:33.980 --> 00:00:37.460
+I can't wait to see what it looks like and we'll check in with Brent sometime after that
+
+00:00:37.460 --> 00:00:40.460
+I am joined today by the wonderfully
+
+00:00:41.340 --> 00:00:45.380
+Amazing and interesting and I can't wait to talk to him or Chris Armstrong Chris
+
+00:00:45.380 --> 00:00:50.120
+Go ahead and introduce yourself tell what's going on in your world. What are we gonna talk about today all that stuff?
+
+00:00:50.870 --> 00:00:53.750
+That's an awful lot of things. Maybe you'll never get a chance to talk again
+
+00:00:54.790 --> 00:00:59.430
+So yes, I am Chris. I'm the dev role manager at smart bear
+
+00:01:00.350 --> 00:01:06.590
+But you may also know me from another top testing podcast in the test in peers world
+
+00:01:06.670 --> 00:01:09.330
+We also have an in-person
+
+00:01:10.350 --> 00:01:14.650
+Testing conference that we just smashed off last month as well
+
+00:01:15.310 --> 00:01:19.310
+but in my role at smart bear I get to and
+
+00:01:20.030 --> 00:01:25.150
+Get to chat to good people like yourself others in the community and then bring back all that
+
+00:01:25.430 --> 00:01:31.710
+Good conversation and experience and then shape our products around those things. This is a really exciting space to be and
+
+00:01:32.590 --> 00:01:38.650
+kind of like a dream kind of role to sort of sit within because you get to play in the community and then shape the
+
+00:01:39.230 --> 00:01:41.850
+products going forwards
+
+00:01:41.850 --> 00:01:47.810
+Very cool. Very cool. And did you mention the company where you work because you can so I want to talk about my bear
+
+00:01:47.810 --> 00:01:53.250
+yeah, I said it was yeah, I said, yeah, I just want to make sure because I am I I
+
+00:01:54.160 --> 00:01:58.440
+Have been a fan of smart bear and I used to have I got rid of the book finally
+
+00:01:59.080 --> 00:02:01.360
+smart bear had one product in like
+
+00:02:02.400 --> 00:02:08.440
+2002 it was a code review tool and it was I really liked the way it worked and it was it was
+
+00:02:08.940 --> 00:02:14.260
+and I became a fan read their little book and they of course smart bears so so much more and
+
+00:02:15.620 --> 00:02:18.820
+Also, I've been had a chance to play with smart bear products for a little while now
+
+00:02:19.580 --> 00:02:25.980
+And I'm excited about this and most important I brought this up yesterday and got okay from the higher-ups I
+
+00:02:27.700 --> 00:02:29.700
+Love bad puns and
+
+00:02:30.060 --> 00:02:35.400
+I want to just kick off this podcast before we get into talking about like what you're excited about Chris
+
+00:02:35.860 --> 00:02:38.740
+By acknowledging the I'll call it the bear in the room
+
+00:02:39.260 --> 00:02:41.940
+I have puns and I will be using them and
+
+00:02:42.500 --> 00:02:49.140
+Maybe the first one is is I will just let everyone know that I am I can barely contain my excitement right now
+
+00:02:49.140 --> 00:02:54.980
+I'm what we're going to talk about. Oh, you know, do you know the origin of the name smart bear? I do not know
+
+00:02:55.620 --> 00:02:59.390
+So it's from John Irving's book Hotel New Hampshire
+
+00:03:00.090 --> 00:03:05.350
+Okay, a a novel where a smart bear plays an important role
+
+00:03:06.010 --> 00:03:10.290
+And near the end you'll report repeatedly told that the smart bear makes all the difference
+
+00:03:10.610 --> 00:03:12.610
+And so the name was actually chosen
+
+00:03:13.660 --> 00:03:17.900
+Not without not with really any great thought about marketing or business sensibility
+
+00:03:19.220 --> 00:03:24.920
+Just it was a cool name. It's a cool name. It's a cool name. All right, so
+
+00:03:25.820 --> 00:03:29.260
+I'm gonna let you frame the conversation today. I think I know what we're talking about
+
+00:03:29.260 --> 00:03:34.340
+But how would you like what is top of mind for you? You've been testing for a long time
+
+00:03:34.820 --> 00:03:40.590
+Care a lot about it. What's top of mind for you these days in the world of testing? Yeah
+
+00:03:42.370 --> 00:03:45.250
+I don't know about you and but I find quite a lot of the time
+
+00:03:46.140 --> 00:03:50.300
+there's a recurring theme that comes around that's kind of
+
+00:03:51.020 --> 00:03:55.980
+given a new layer of sauce on the top to give it a bit of
+
+00:03:57.020 --> 00:04:00.860
+A new flavor, but underneath is the same ingredient and that really is
+
+00:04:01.420 --> 00:04:04.780
+What is the role of testing and or quality engineering?
+
+00:04:05.420 --> 00:04:08.700
+Now we're in what's being referred to as an ai age
+
+00:04:09.260 --> 00:04:11.260
+What what do we have to do is testers?
+
+00:04:11.840 --> 00:04:15.520
+Do we need to pivot? How do we need to advocate? How do we need to communicate?
+
+00:04:16.160 --> 00:04:18.160
+How do we need to represent things do?
+
+00:04:19.040 --> 00:04:25.680
+Those old things that we held true in agile testing with your modern testing principles things like that. Do they hold true?
+
+00:04:25.840 --> 00:04:29.760
+Do we need to do that anymore? Can't we just vibe and I feel there's a lot of
+
+00:04:30.560 --> 00:04:33.600
+There's a lot of thoughts in the world around
+
+00:04:34.980 --> 00:04:38.020
+Is it replaceable? Is it not am I important?
+
+00:04:38.420 --> 00:04:39.700
+Am I not
+
+00:04:39.700 --> 00:04:41.940
+Is the world's bubble going to burst?
+
+00:04:42.820 --> 00:04:46.340
+or or are other things going to happen and and I feel like
+
+00:04:48.050 --> 00:04:50.620
+We have an opportunity
+
+00:04:50.620 --> 00:04:55.820
+To actually be at the forefront and drive things rather than just being on the coattails of developers
+
+00:04:56.880 --> 00:05:04.640
+Rather than being driven by something that's happening to us. We've got the opportunity here as professional cynics
+
+00:05:05.040 --> 00:05:09.840
+As naturally curious individuals to actually drive and shape things
+
+00:05:10.640 --> 00:05:12.640
+So i'm quite excited, but I
+
+00:05:12.940 --> 00:05:14.640
+completely understand
+
+00:05:14.640 --> 00:05:16.740
+um a lot of concern
+
+00:05:16.980 --> 00:05:22.420
+Well, and i'll jump in a little bit because we are in such violent agreement. I want to I
+
+00:05:23.300 --> 00:05:27.220
+Have to say I want to reach through the screen and give you a bear hug because
+
+00:05:28.340 --> 00:05:30.340
+And it won't be this bad the whole time
+
+00:05:31.840 --> 00:05:34.480
+Some of the fears we hear and i'm going to go back to what you said
+
+00:05:35.820 --> 00:05:42.180
+Adaptability and curiosity are key. They have always been key for people in testing and
+
+00:05:42.820 --> 00:05:44.340
+where
+
+00:05:44.340 --> 00:05:47.140
+Some of the fear comes up. It's this fear of change
+
+00:05:48.100 --> 00:05:49.620
+but
+
+00:05:49.620 --> 00:05:52.820
+I think the best testers the ones that go oh change
+
+00:05:53.540 --> 00:05:54.820
+fun
+
+00:05:54.820 --> 00:05:57.540
+Let me figure out how this works and what it means
+
+00:05:59.180 --> 00:06:03.820
+And uh, that's that's the people that do that are thriving. They're thriving
+
+00:06:04.220 --> 00:06:06.220
+The folks that are digging their nails in saying
+
+00:06:07.900 --> 00:06:09.340
+They're not doing as well
+
+00:06:09.340 --> 00:06:15.500
+and it's but it's always been the case and i've drawn this parallel other times and curious on your thoughts on it, it's
+
+00:06:16.620 --> 00:06:20.700
+When you know the modern testing principles came around because we were trying to help testers
+
+00:06:21.180 --> 00:06:25.260
+Figure out what to do in a world where everything is moving faster. This was 15 years ago
+
+00:06:27.060 --> 00:06:33.700
+Well, guess what the world got even faster. So I think the modern testing principles apply even more because it's how do we
+
+00:06:34.660 --> 00:06:40.020
+Like the first one our our priority is improving the business if if you think our priority is finding all the bugs
+
+00:06:40.180 --> 00:06:41.730
+There's not enough time
+
+00:06:41.730 --> 00:06:42.860
+No
+
+00:06:42.860 --> 00:06:46.700
+But we can we can we can uh have influence on the system
+
+00:06:46.780 --> 00:06:50.540
+Those our software is created and we can work like I think pairing
+
+00:06:50.860 --> 00:06:55.900
+With developers and working with developers as a tester is becoming even more important so that they can start to work
+
+00:06:55.900 --> 00:06:59.740
+Some of that quality in from the beginning even though they're moving much much faster
+
+00:07:00.690 --> 00:07:07.730
+Yeah, I mean you you you mentioned the they've planted the little seed of systems thinking there and I think that's vital I mean
+
+00:07:08.690 --> 00:07:12.050
+a lot of the great testers i've had the opportunity to work with and learn from
+
+00:07:12.370 --> 00:07:15.490
+Have been system thinkers people who look at the holistic picture
+
+00:07:16.050 --> 00:07:18.050
+And and they're trying to see
+
+00:07:18.050 --> 00:07:20.050
+Where best we can attribute?
+
+00:07:20.050 --> 00:07:23.170
+um our effort and our change to improve things I was
+
+00:07:24.530 --> 00:07:27.010
+Led to a cold open from malcolm in the middle
+
+00:07:27.810 --> 00:07:32.850
+Where um hal goes in and discovers a light bulb isn't working
+
+00:07:33.490 --> 00:07:37.970
+And then he goes through a series of events like going going to a shelf to try and find something
+
+00:07:37.970 --> 00:07:41.810
+But it's broken so then going on somewhere else tries to get some oil
+
+00:07:42.210 --> 00:07:46.690
+Um and discovers that it's empty so jumps in his car tries to turn over the engine
+
+00:07:47.010 --> 00:07:51.170
+And it's ticking off and and such and his wife comes in and um
+
+00:07:51.250 --> 00:07:55.490
+Says why haven't you fixed the light bulb and he's underneath the car trying to sort it out going
+
+00:07:55.490 --> 00:07:56.930
+What do you think i'm doing?
+
+00:07:56.930 --> 00:08:01.650
+And a lot of a lot of a lot of this is we're we're naturally born
+
+00:08:02.130 --> 00:08:07.170
+Problem solvers. We want to know how all the bits piece together and we want to uncover the source
+
+00:08:07.170 --> 00:08:11.570
+We don't want to fix the top of tree. We don't want to fix the top of the the iceberg
+
+00:08:11.650 --> 00:08:13.970
+We want to look for source of problems. We're
+
+00:08:14.910 --> 00:08:19.970
+Intuitively we care about these things and I think in this moment where a lot more people are looking at
+
+00:08:20.990 --> 00:08:22.990
+specificity up front
+
+00:08:23.150 --> 00:08:26.110
+That's something we've been striving for not explicit
+
+00:08:27.210 --> 00:08:30.350
+Specificity, but knowing where we're heading what that intent looks like
+
+00:08:31.070 --> 00:08:35.470
+Up front so that we can build the right thing first time or at least
+
+00:08:36.270 --> 00:08:38.300
+Good enough first time
+
+00:08:38.300 --> 00:08:40.300
+Yeah, and I i've said it's not only
+
+00:08:41.770 --> 00:08:44.650
+The right thing. I mean it's not building the right thing for the customer
+
+00:08:45.520 --> 00:08:49.120
+Just because we're faster. We can build the wrong product much faster now
+
+00:08:50.030 --> 00:08:51.500
+Yay
+
+00:08:51.500 --> 00:08:53.100
+Helps no one
+
+00:08:53.100 --> 00:08:57.500
+No, it's like it's like a a crackling speaker if you've got a poor connection on it
+
+00:08:57.740 --> 00:09:00.700
+And you just turn the volume up. It's going to sound a lot worse
+
+00:09:01.260 --> 00:09:03.260
+By amplifying that yeah
+
+00:09:03.260 --> 00:09:04.380
+Yeah
+
+00:09:04.380 --> 00:09:06.060
+It's not going to help
+
+00:09:06.060 --> 00:09:08.060
+uh a lot of
+
+00:09:08.380 --> 00:09:10.380
+the emphasis on
+
+00:09:11.450 --> 00:09:14.730
+Or the excitement around ai is how much faster we can create code
+
+00:09:15.900 --> 00:09:16.860
+uh
+
+00:09:16.860 --> 00:09:21.580
+I I know this myself. I can create a website in minutes. I wanted to learn how to create
+
+00:09:21.900 --> 00:09:24.780
+Agentic ai so I created my own agent last night in about a
+
+00:09:26.220 --> 00:09:28.090
+half an hour
+
+00:09:28.090 --> 00:09:30.890
+Uh, but I know how it works. I took that and this is the key
+
+00:09:30.970 --> 00:09:34.970
+We should take time to understand how the code works to understand. I'll just go. Oh it runs great
+
+00:09:35.610 --> 00:09:36.650
+uh
+
+00:09:36.650 --> 00:09:39.610
+What we haven't seen and I know you have some opinions here
+
+00:09:40.250 --> 00:09:41.550
+um
+
+00:09:41.550 --> 00:09:46.750
+We haven't seen a lot of press excitement whatever on how ai affects
+
+00:09:47.310 --> 00:09:51.150
+Everything else that goes into software development writing code's never been the hard part
+
+00:09:52.080 --> 00:09:55.520
+There's a lot more that goes into delivering the right product for customers. So
+
+00:09:56.560 --> 00:09:58.110
+how should
+
+00:09:58.110 --> 00:10:00.830
+Testers or teams or people making software?
+
+00:10:01.470 --> 00:10:07.790
+Um, how should they be thinking about leveraging ai more to help with all the other bits of goo?
+
+00:10:09.000 --> 00:10:12.200
+Right. So, I mean, it's a great question. I mean when we we talk about
+
+00:10:13.660 --> 00:10:17.660
+All of the things beyond just that thing that i'm focused on today
+
+00:10:18.540 --> 00:10:20.940
+um, I kind of I think to how
+
+00:10:21.740 --> 00:10:23.400
+in
+
+00:10:23.400 --> 00:10:26.600
+Pitches like shark tank or dragons. Don't we have in uk?
+
+00:10:27.320 --> 00:10:31.000
+Where somebody's got a proof of concept very often, but it's not a fully fleshed
+
+00:10:31.640 --> 00:10:36.120
+Out idea and they're kind of grilled by people who say well, have you thought about this?
+
+00:10:36.120 --> 00:10:40.840
+Have you thought about that? How about distribution? How about the customer? How about the problem that you're solving?
+
+00:10:40.840 --> 00:10:47.880
+What about alternatives and a lot of those questions people oftentimes the the the least successful people there
+
+00:10:48.200 --> 00:10:50.490
+Are the ones who haven't thought
+
+00:10:50.730 --> 00:10:54.250
+About the what's the whys the how's the when's
+
+00:10:54.890 --> 00:10:59.930
+Um, they haven't pitched those those areas and i'm not saying we use ai to
+
+00:11:00.410 --> 00:11:05.210
+Give us those answers because I don't think we should be using ai to provide us answers
+
+00:11:05.210 --> 00:11:11.610
+It should be there like we said before about sort of amplifying and sourcing patterns and providing us
+
+00:11:12.170 --> 00:11:14.170
+really good additional
+
+00:11:15.500 --> 00:11:20.480
+Copilot, unfortunately other people have used that but I like that sort of collaboration piece
+
+00:11:20.480 --> 00:11:22.240
+next to each other where
+
+00:11:22.240 --> 00:11:27.920
+I've got an idea and I want to spin it up and I can get a proof of concept super fast whether i'm creating
+
+00:11:28.640 --> 00:11:30.640
+code whether i'm writing
+
+00:11:31.200 --> 00:11:33.200
+product pitches whether i'm
+
+00:11:33.840 --> 00:11:35.840
+creating presentations or
+
+00:11:36.160 --> 00:11:40.560
+Or narratives around things to to speak with investors or if I want to design
+
+00:11:40.880 --> 00:11:46.720
+Tests or a matrix or a dashboard or something I can get something that looks good quite quickly
+
+00:11:47.600 --> 00:11:53.520
+I can't really ask ai to tell me necessarily if it's right, but it can tell me where it's wrong
+
+00:11:54.510 --> 00:11:56.590
+And as long as i'm always working with ai
+
+00:11:57.310 --> 00:11:59.440
+against
+
+00:11:59.440 --> 00:12:01.440
+positive reinforcement
+
+00:12:01.520 --> 00:12:07.200
+It's one of the first things I instruct any l and m I have to work with is please don't positively reinforce
+
+00:12:07.760 --> 00:12:09.760
+Anything that i'm doing
+
+00:12:09.760 --> 00:12:11.280
+Tell me what's wrong
+
+00:12:11.280 --> 00:12:12.720
+Where are the gaps?
+
+00:12:12.720 --> 00:12:18.400
+Where can I whether I need to clarify and that works in writing that works in code construction
+
+00:12:18.800 --> 00:12:21.200
+that works in in tests and things where
+
+00:12:22.160 --> 00:12:24.160
+It's sensational at patterns
+
+00:12:25.070 --> 00:12:32.270
+Yes, and gaps and and looking for overlap duplication that you should rethink about classic automation
+
+00:12:32.890 --> 00:12:39.470
+Frameworks you're looking for stuff that is repeatable that is maintainable. That is scalable. That is testable where I can
+
+00:12:40.030 --> 00:12:43.310
+Make things as optimal as possible, but also as dynamic as possible
+
+00:12:44.110 --> 00:12:49.230
+And if I had an existing suite, I probably already know it's not as good as it could be
+
+00:12:49.550 --> 00:12:56.750
+But imagine having something that can appraise that whole framework for me and tell me where those duplications are where there are opportunities to
+
+00:12:58.590 --> 00:13:02.750
+Improve and optimize that's wonderful because that's not taking away
+
+00:13:03.630 --> 00:13:04.670
+thought
+
+00:13:04.670 --> 00:13:08.670
+From me. It's a test. I've got an idea. I know what I want to achieve
+
+00:13:09.070 --> 00:13:11.230
+But it's the way it handles data
+
+00:13:12.280 --> 00:13:18.200
+The way it identifies patterns that can be such a strong accelerator that can then enable my thinking to
+
+00:13:18.840 --> 00:13:22.680
+To move on to okay. Now. I know what I had a hunch for before
+
+00:13:23.560 --> 00:13:26.320
+Now I can apply
+
+00:13:26.320 --> 00:13:30.400
+Changes and improve things and all the while I know what's going on
+
+00:13:32.010 --> 00:13:34.330
+Rather than just letting something run off
+
+00:13:36.190 --> 00:13:38.990
+well, i'm gonna i'm gonna tell a little bit of a
+
+00:13:39.950 --> 00:13:45.230
+Long question here because i'm thinking about i'm a big fan of this new latest work by pat lanchione
+
+00:13:45.310 --> 00:13:47.310
+He's famous for five dysfunctions of a team
+
+00:13:47.390 --> 00:13:52.030
+He's been talking for about five years. We used to book about two years ago called the six working geniuses
+
+00:13:52.510 --> 00:13:53.790
+And i'm not going to summarize at all
+
+00:13:53.790 --> 00:13:58.510
+But it says for any project you start with wonder you wonder what's possible then you invent
+
+00:13:58.750 --> 00:14:03.630
+Then you discern you ask questions in the mold then you galvanize and get people excited about the project
+
+00:14:03.790 --> 00:14:09.150
+Then you give them what the training or tools which is enablement then finally the tenacity to get it done
+
+00:14:11.200 --> 00:14:16.560
+What I think about that in the context of ai ai is really good at the at the second half of that
+
+00:14:17.500 --> 00:14:21.500
+Just just getting okay. We got the idea. I can go implement this
+
+00:14:22.140 --> 00:14:26.460
+What we're I think what we need more in the ai age curious are your thoughts on this is
+
+00:14:27.420 --> 00:14:29.740
+The creativity and thoughts like when you're
+
+00:14:30.680 --> 00:14:32.680
+trying to identify
+
+00:14:33.080 --> 00:14:39.720
+Let me just think of oh example I use often is i've written test frameworks ai can create one for me
+
+00:14:40.520 --> 00:14:42.520
+but more interestingly
+
+00:14:42.920 --> 00:14:47.320
+Guy named david catlett and I on xbox one many years ago wrote the most
+
+00:14:47.880 --> 00:14:51.160
+The most incredible database driven test selection
+
+00:14:53.160 --> 00:14:57.960
+Algorithm you could do such cool things like just run all the graphics tests that take take
+
+00:14:58.990 --> 00:15:04.670
+We had so much information on tests because let's type a command that runs all the graphic tests that run in less than 10 seconds each
+
+00:15:05.930 --> 00:15:10.890
+And just any any query you could think of you could find those tests and run those on an xbox in the lab
+
+00:15:11.880 --> 00:15:12.760
+uh
+
+00:15:12.760 --> 00:15:15.960
+Really cool tool. I would never write it again because ai can do all that for me
+
+00:15:16.600 --> 00:15:22.600
+In a second and and also I think we get ideas like i've written a lot of diagnostic tools
+
+00:15:23.240 --> 00:15:25.880
+And debugging tools. I spend a lot of time doing that at microsoft
+
+00:15:26.520 --> 00:15:31.320
+And sometimes I go it'd be really cool if I had a tool to do x. I thought I don't have time to write that
+
+00:15:31.400 --> 00:15:33.200
+I have I have work to do
+
+00:15:33.200 --> 00:15:34.480
+and
+
+00:15:34.480 --> 00:15:35.360
+what I
+
+00:15:35.360 --> 00:15:38.000
+and I just want to carry this on your thoughts and that's where the limit is is
+
+00:15:39.710 --> 00:15:40.830
+as
+
+00:15:40.830 --> 00:15:43.870
+I'm going to say as a tester as someone interested in software quality
+
+00:15:45.530 --> 00:15:50.090
+You can build these things almost as fast as you can come up with the ideas
+
+00:15:50.170 --> 00:15:55.050
+The ideas become the new commodity versus the the the fingers on the keyboard
+
+00:15:55.130 --> 00:15:57.450
+It's it's what are the ideas we can use
+
+00:15:58.330 --> 00:16:04.490
+And i'm curious if you see that same shift if you see like a move towards that creative mind being critical in what you call
+
+00:16:04.490 --> 00:16:07.720
+This age of ai
+
+00:16:07.720 --> 00:16:09.720
+The short answer is yes
+
+00:16:11.480 --> 00:16:14.680
+but longer to that, I think what it's done is
+
+00:16:16.170 --> 00:16:17.050
+it's
+
+00:16:17.050 --> 00:16:19.610
+Shortcut some areas of things because
+
+00:16:20.250 --> 00:16:25.770
+Turning something into something very quickly happens, but it's generated a lot more noise further down the line
+
+00:16:27.080 --> 00:16:29.660
+um
+
+00:16:29.660 --> 00:16:34.540
+And I I kind of look at look at that in both a good and a bad way because I can now visualize things that before
+
+00:16:34.540 --> 00:16:36.990
+I couldn't
+
+00:16:36.990 --> 00:16:43.150
+And sometimes that's good. I don't know about you and but sometimes i'm a bit of a catastrophizer naturally
+
+00:16:43.630 --> 00:16:48.830
+And so I play out conversations. I play out routines. I play out ideas and and I think about
+
+00:16:49.310 --> 00:16:51.790
+The what ifs and the hows and I and I learn
+
+00:16:52.430 --> 00:16:56.110
+Through a lot of process about what i'm comfortable with and what i'm not comfortable with
+
+00:16:56.910 --> 00:16:59.630
+And sometimes when you skip that step
+
+00:17:01.680 --> 00:17:03.870
+Because it's so easy
+
+00:17:03.870 --> 00:17:07.550
+You can you can lose some of the stuff you learned about so you talked about
+
+00:17:08.110 --> 00:17:12.190
+Some of the stuff you built you learned a hell of a lot. Maybe you wouldn't do it again
+
+00:17:12.510 --> 00:17:16.190
+But that informed knowledge through experience is something that's incredibly valuable
+
+00:17:16.670 --> 00:17:18.680
+And the the threat
+
+00:17:18.680 --> 00:17:20.280
+That I see
+
+00:17:20.280 --> 00:17:26.860
+Is this whole thing where it's it's very very easy to do something without needing that informed experience
+
+00:17:27.340 --> 00:17:31.660
+Without necessarily even needing to know the whys the what's the hows because
+
+00:17:33.090 --> 00:17:35.600
+You know claude can
+
+00:17:35.600 --> 00:17:39.120
+sort it out for me claude can have a look not just claude other tools are available, but
+
+00:17:39.840 --> 00:17:41.840
+um, it's it's the
+
+00:17:43.740 --> 00:17:45.740
+the displacement of thought
+
+00:17:46.830 --> 00:17:51.150
+In terms of how design looks like and what processes look like we've kind of gone through
+
+00:17:51.470 --> 00:17:56.510
+The deep thinking the exploration of those things into the creation of the thing so quickly
+
+00:17:57.230 --> 00:18:02.910
+That it's very very noisy in the world of here's all the things that we've created rather than what do I want?
+
+00:18:02.910 --> 00:18:04.190
+What do I need?
+
+00:18:04.190 --> 00:18:09.230
+What sort of process would be good? What would be interesting to learn and I don't know if you've seen this whole
+
+00:18:10.960 --> 00:18:17.440
+Fad that's happening with people who are a bit younger than you and I um who are into this friction maxing
+
+00:18:18.590 --> 00:18:23.790
+Where they I haven't heard of this educate me. So it's it's it's so great. They use two x's
+
+00:18:24.430 --> 00:18:28.670
+And oh no, and and so the whole point is you go a bit more lo-fi
+
+00:18:29.150 --> 00:18:32.350
+So rather than just having something automated
+
+00:18:32.990 --> 00:18:37.070
+I'll actually go and i'll take something apart and i'll build it myself even though I don't have to
+
+00:18:38.000 --> 00:18:40.000
+Because then I get a sense of achievement
+
+00:18:40.800 --> 00:18:45.760
+In having created that thing and I kind of feel like there was a bit of pride in what you talked about
+
+00:18:45.760 --> 00:18:47.280
+When you said what you created
+
+00:18:47.280 --> 00:18:51.520
+But if you did that today and you just spun it up with vibe coding you wouldn't be filled with that pride of
+
+00:18:51.520 --> 00:18:55.200
+That thing that I did the wise the the journey that you went upon
+
+00:18:55.520 --> 00:18:59.840
+And the story that you tell would no longer be compelling because it'd be like I gave this prompt
+
+00:19:00.660 --> 00:19:05.700
+Here it was that was done and it displaces that the intent yes
+
+00:19:06.340 --> 00:19:08.820
+but also the purpose and and and
+
+00:19:09.460 --> 00:19:13.620
+The the context that thing that we care so dearly about in our industry
+
+00:19:14.990 --> 00:19:18.850
+We're sort of offsetting some of that into a different layer of responsibility
+
+00:19:19.810 --> 00:19:22.310
+That could still fall upon us for being the prompters
+
+00:19:24.530 --> 00:19:26.370
+But I I feel like
+
+00:19:26.370 --> 00:19:30.130
+That's that's the bit I almost mourn a little bit that that thought
+
+00:19:31.760 --> 00:19:34.720
+The sort of initial thought to creation of something
+
+00:19:35.440 --> 00:19:42.640
+Is so short now the most exciting part for me often is that early creation process that's the thinking behind it
+
+00:19:43.560 --> 00:19:48.440
+Yeah, I I think there's I love that answer. Um, it's it's it was grisly good
+
+00:19:48.920 --> 00:19:53.400
+Uh, but the thing I think about is is that creativity is important
+
+00:19:53.720 --> 00:19:57.640
+But also I think you hit on something with this friction maxing that scares the crap out of me
+
+00:19:57.960 --> 00:20:01.480
+The reason it took me a half hour to create this agent last night
+
+00:20:01.800 --> 00:20:04.680
+Versus the five minutes that actually took claude to create it
+
+00:20:05.320 --> 00:20:09.960
+Was I actually then had claude explain every little bit to me
+
+00:20:09.960 --> 00:20:14.200
+So like I wanted to understand it was critical to me to understand how it worked
+
+00:20:15.520 --> 00:20:16.640
+and
+
+00:20:16.720 --> 00:20:22.720
+Honestly, I can't think of a I mean i'm a frightened of a world and I know this exists but i'm frightened of it
+
+00:20:23.120 --> 00:20:29.840
+Where ai is generating things and we just take them. Yep. This is this is the thing it works. I'm done with it
+
+00:20:30.320 --> 00:20:36.480
+I don't like that. That scares me. I I have a need to understand. I don't need to
+
+00:20:37.200 --> 00:20:42.100
+Memorize, you know what the syntax is to call into the anthropic llm necessarily
+
+00:20:42.500 --> 00:20:48.020
+But I want to understand what goes on what goes into the asian I have my json tests I have
+
+00:20:48.660 --> 00:20:51.860
+My own prompt I get to tweak which is actually the cool part within in there
+
+00:20:52.420 --> 00:20:54.420
+And then I understand
+
+00:20:54.500 --> 00:20:58.500
+How iterations work and how many times it'll call itself back and how it figures out?
+
+00:20:59.220 --> 00:21:02.660
+What which is non-deterministic when it has enough information?
+
+00:21:03.540 --> 00:21:04.660
+and
+
+00:21:04.660 --> 00:21:07.860
+Uh, it helped me understand a lot of things that I sort of maybe
+
+00:21:08.100 --> 00:21:13.140
+Didn't quite understand about how llms and ai work and I and I understand a lot of us to do this a lot
+
+00:21:13.700 --> 00:21:14.980
+I think
+
+00:21:14.980 --> 00:21:17.780
+As you talk about it. I realized that how
+
+00:21:18.500 --> 00:21:22.980
+Many people using ai whether it's just a chat interface or code
+
+00:21:23.940 --> 00:21:26.980
+Aren't taking the time to understand or even to review
+
+00:21:28.260 --> 00:21:29.940
+what it's generating
+
+00:21:29.940 --> 00:21:33.060
+And you know what my last little editorial comment on this before I get your thoughts is
+
+00:21:33.940 --> 00:21:35.940
+If you look at enough
+
+00:21:36.020 --> 00:21:41.140
+Chat gpt and clod output you can recognize it short sentences, you know em dashers are the giveaway
+
+00:21:41.620 --> 00:21:42.580
+Uh, you know
+
+00:21:42.580 --> 00:21:47.620
+They use words like quietly and you recognize the patterns they use and you can recognize that
+
+00:21:47.940 --> 00:21:53.140
+A solid quarter to a half of the posts on linkedin are copy and pasted directly out of
+
+00:21:54.100 --> 00:21:55.140
+of a chat
+
+00:21:55.140 --> 00:22:00.740
+Interface and not even attempted to be edited or put into the author's voice and it's just it's killing me
+
+00:22:01.140 --> 00:22:05.460
+But it's the same thing as generating code without going. Okay, it works. I don't even know how it works
+
+00:22:07.180 --> 00:22:08.390
+Yeah
+
+00:22:08.390 --> 00:22:12.950
+I mean on on the on the linkedin front it it it's sad like I have
+
+00:22:14.100 --> 00:22:21.060
+Long been a fan of blog outputs that the folks have been putting out and I I there's not enough time to my point
+
+00:22:21.140 --> 00:22:26.980
+Earlier, there's just so much content that's out there. A lot of it doesn't feel like it's been reviewed before it's been published
+
+00:22:27.780 --> 00:22:31.140
+It hurts my soul a little bit. Um mine too mine too
+
+00:22:31.780 --> 00:22:33.750
+but I guess
+
+00:22:33.750 --> 00:22:34.470
+I
+
+00:22:34.470 --> 00:22:36.710
+in I mentioned to you, um
+
+00:22:37.350 --> 00:22:39.430
+before we we started recording like
+
+00:22:40.290 --> 00:22:45.290
+Oftentimes i've i've i've ended up landing back on my old istqb syllabus
+
+00:22:46.230 --> 00:22:48.490
+Where I was looking at the verification and validation
+
+00:22:49.570 --> 00:22:50.950
+definitions
+
+00:22:50.950 --> 00:22:52.950
+um, which was
+
+00:22:52.950 --> 00:22:56.230
+Did we build the thing right as well as did we build the right thing?
+
+00:22:57.930 --> 00:23:02.330
+Just the the subtle switch around and I feel like a lot of folks
+
+00:23:02.970 --> 00:23:07.210
+Are still very focused and by the way, i'm very happy that they are on building the right thing
+
+00:23:09.860 --> 00:23:13.560
+I worry as a sort of a quality engineering practitioner
+
+00:23:14.660 --> 00:23:17.300
+That we're not so concerned with building the thing
+
+00:23:18.100 --> 00:23:20.440
+right
+
+00:23:20.440 --> 00:23:22.760
+And that again comes to the point of do I even know?
+
+00:23:23.400 --> 00:23:26.390
+What is best practice?
+
+00:23:26.470 --> 00:23:30.950
+Have I you know memory so available tokens are so prevalent. They're all over the shop
+
+00:23:31.190 --> 00:23:33.350
+I don't need to be efficient and optimal, but I can just
+
+00:23:33.990 --> 00:23:39.190
+Chuck a bit more memory I can you know, it's it's not like I worked in computer games as well
+
+00:23:39.350 --> 00:23:42.150
+And you know that was a one and done system
+
+00:23:42.950 --> 00:23:44.950
+Right the games it was on that disc
+
+00:23:45.700 --> 00:23:50.180
+Game over once it was completed. There was no dlc. There was no day one patch
+
+00:23:50.660 --> 00:23:54.820
+What was on that disc was the final thing it had a constraint a known constraint
+
+00:23:54.820 --> 00:23:58.020
+It had an end date and that was a one and done and so
+
+00:23:58.820 --> 00:24:02.340
+The satisfaction upon release was that is now complete
+
+00:24:02.420 --> 00:24:05.300
+But it also meant that the way that we appraised the software
+
+00:24:06.310 --> 00:24:10.070
+Was to make sure that for the end user it was so perfect
+
+00:24:11.510 --> 00:24:17.590
+To work within but for those who were developing it was very much along the lines of i've got this known constraint
+
+00:24:17.670 --> 00:24:21.910
+I've only got this much available space on a disc with which I can work
+
+00:24:22.630 --> 00:24:23.350
+and
+
+00:24:23.350 --> 00:24:25.430
+That meant that there was a lot more
+
+00:24:26.650 --> 00:24:30.170
+I mean a different level of creativity to operate within that constraints
+
+00:24:30.170 --> 00:24:33.530
+But we've kind of had so much of that's been torn apart now
+
+00:24:34.390 --> 00:24:37.110
+That it's almost like it's quite easy
+
+00:24:37.750 --> 00:24:40.550
+Even if you remove ai to be quite a lazy
+
+00:24:41.250 --> 00:24:43.280
+inefficient coder
+
+00:24:43.460 --> 00:24:46.420
+Yeah, oh, yeah, because you don't need to be good at it
+
+00:24:47.060 --> 00:24:50.820
+To get it done
+
+00:24:51.060 --> 00:24:53.300
+That's frightening. It's true, but frightening and I think
+
+00:24:54.020 --> 00:24:58.180
+There is even with ai assisted coding. There's
+
+00:24:58.580 --> 00:25:02.740
+Definitely room for some care and as you if you I know you read my stuff
+
+00:25:03.140 --> 00:25:07.540
+Big fan of zen and the art of motorcycle maintenance quality and care two sides of the same coin
+
+00:25:08.100 --> 00:25:09.140
+so
+
+00:25:09.140 --> 00:25:11.140
+I do as you talk I realize we're
+
+00:25:12.100 --> 00:25:16.660
+In creating software. We're getting rid of some of the care and I talked earlier
+
+00:25:17.220 --> 00:25:18.730
+about how
+
+00:25:18.730 --> 00:25:22.490
+Uh, we need creativity to kind of build to build the right thing
+
+00:25:23.130 --> 00:25:25.210
+Customers don't want software. They want their problem solved
+
+00:25:25.210 --> 00:25:29.770
+How can we get their problem solved with with an intuitive easy to use software? That's one thing
+
+00:25:30.330 --> 00:25:31.690
+and then
+
+00:25:31.690 --> 00:25:35.690
+One side of quality other side is how do we build it in a way? That's going to be
+
+00:25:36.570 --> 00:25:37.690
+right
+
+00:25:37.690 --> 00:25:39.690
+close to right
+
+00:25:40.330 --> 00:25:43.610
+The first time so let's talk about the latter part of that
+
+00:25:44.250 --> 00:25:47.190
+how
+
+00:25:47.190 --> 00:25:49.590
+How do we like I have some ideas here? I want yours
+
+00:25:50.310 --> 00:25:56.230
+It's there's room to use ai to help build the thing right and i'm gonna give you one example again
+
+00:25:56.230 --> 00:25:58.300
+of something I built in the past
+
+00:25:58.300 --> 00:25:59.340
+and
+
+00:25:59.340 --> 00:26:01.340
+Where ai would be so much better
+
+00:26:02.220 --> 00:26:03.020
+um
+
+00:26:03.020 --> 00:26:07.740
+I worked on and and i'm going to preface this and say I worked on microsoft teams and
+
+00:26:08.790 --> 00:26:10.580
+I left that
+
+00:26:10.580 --> 00:26:12.820
+Left that org and microsoft nine years ago
+
+00:26:13.540 --> 00:26:17.940
+uh the product is much more difficult to use and and
+
+00:26:18.500 --> 00:26:21.220
+Poorer quality than when I left before the beta nine years ago
+
+00:26:21.300 --> 00:26:25.620
+This is what so happens sometimes when you try and make software for a millions of millions of people
+
+00:26:27.000 --> 00:26:31.640
+But one thing we did for the early beta is we had one great thing about microsoft is you always have scale
+
+00:26:31.720 --> 00:26:38.520
+We had thousands and thousands maybe tens of thousands of beta users and we gave them a a form to enter a bug or feedback
+
+00:26:39.240 --> 00:26:40.120
+and
+
+00:26:40.120 --> 00:26:45.160
+That feedback wasn't looked at by a human it went directly into a big database and then if we saw
+
+00:26:46.120 --> 00:26:47.640
+Something spike up
+
+00:26:47.640 --> 00:26:50.600
+Like hey, is anybody seeing connection issues on the latest build?
+
+00:26:50.760 --> 00:26:54.600
+We could just go query this database using elastic search and figure out what was going on
+
+00:26:55.240 --> 00:26:56.280
+Now
+
+00:26:56.280 --> 00:27:00.600
+Imagine instead of that. I just give the database to a llm
+
+00:27:01.400 --> 00:27:06.920
+And say find the patterns here. What are the biggest things people are seeing in an organ and sort it by build number
+
+00:27:08.090 --> 00:27:10.090
+Wow now
+
+00:27:10.090 --> 00:27:11.510
+again
+
+00:27:11.510 --> 00:27:14.150
+People can argue about testing and production getting feedback. It is a beta
+
+00:27:14.790 --> 00:27:17.670
+We can get some of that information and we can even correlate that information with the
+
+00:27:18.150 --> 00:27:24.550
+The telemetry the metrics we've created automatically and now we have insights into what's working and not working in production
+
+00:27:25.030 --> 00:27:27.190
+Uh so much faster so much easier now
+
+00:27:27.670 --> 00:27:32.790
+We need the ideas on how to see those things. But then also how do we like what are some ways you see?
+
+00:27:33.670 --> 00:27:37.430
+Where incorporating ai is going to help make sure we build the thing, right?
+
+00:27:40.020 --> 00:27:42.200
+so
+
+00:27:42.200 --> 00:27:48.120
+What are you well a year or so just done from when mcp was cut in playwright?
+
+00:27:49.030 --> 00:27:50.980
+um
+
+00:27:50.980 --> 00:27:54.100
+That was an exciting new world and I had
+
+00:27:54.740 --> 00:27:57.060
+A managing director who said to me
+
+00:27:57.780 --> 00:27:59.750
+chris, I uh
+
+00:27:59.750 --> 00:28:02.710
+Don't have confidence
+
+00:28:02.710 --> 00:28:05.030
+In what we're building and people are saying it's
+
+00:28:06.730 --> 00:28:08.550
+It's the po's fault
+
+00:28:08.550 --> 00:28:10.540
+It's the developer's fault
+
+00:28:10.540 --> 00:28:17.500
+It's somebody's fault. There's something that's not right. Nobody's giving me the confidence that when we're releasing
+
+00:28:18.420 --> 00:28:20.420
+We're releasing the things right
+
+00:28:20.420 --> 00:28:23.300
+What do you think's wrong?
+
+00:28:23.300 --> 00:28:25.980
+and you think well
+
+00:28:25.980 --> 00:28:29.020
+Probably the whole system the whole pipeline not great
+
+00:28:30.060 --> 00:28:32.300
+What can I use ai to help me with? Well
+
+00:28:33.100 --> 00:28:35.100
+if I have established
+
+00:28:35.260 --> 00:28:37.850
+What good looks like?
+
+00:28:37.850 --> 00:28:41.210
+And maybe if i've done practices like a risk storming
+
+00:28:42.180 --> 00:28:46.660
+Where i've kind of i've understood what good looks like at the very very end of the process
+
+00:28:46.740 --> 00:28:51.460
+But I also know what that throughput the mitigations development practices the testing practices that I have
+
+00:28:51.940 --> 00:28:53.140
+throughout
+
+00:28:53.140 --> 00:28:58.900
+The life cycle of developing software is if I have that informed knowledge
+
+00:28:59.620 --> 00:29:02.500
+As i'm going through I can sort of step
+
+00:29:03.220 --> 00:29:04.920
+back through
+
+00:29:04.920 --> 00:29:06.680
+It's this is all to do with
+
+00:29:06.680 --> 00:29:08.780
+the brilliance of traceability
+
+00:29:09.400 --> 00:29:14.760
+And transparency when we're linking our our test to our code to our task management to our test management
+
+00:29:15.080 --> 00:29:17.080
+Whatever our stack is
+
+00:29:17.720 --> 00:29:19.720
+If I can see those things
+
+00:29:20.790 --> 00:29:22.870
+If i'm able to to weave my way through
+
+00:29:23.900 --> 00:29:25.660
+the connected
+
+00:29:25.660 --> 00:29:27.660
+Tissue within my pipeline
+
+00:29:28.140 --> 00:29:29.500
+i'm able to
+
+00:29:29.500 --> 00:29:31.740
+Say to inform my mcp to go
+
+00:29:33.300 --> 00:29:35.300
+Does my ticket have enough?
+
+00:29:35.460 --> 00:29:42.340
+Acceptance criteria does it have designs that are missing does it have what we just we you know declared in our
+
+00:29:43.280 --> 00:29:49.220
+Definition of ready did we meet that good practice before we even started writing code?
+
+00:29:49.780 --> 00:29:51.780
+let alone everything else because
+
+00:29:52.020 --> 00:29:56.020
+Traditional development when we as testers pick stuff up way down the line
+
+00:29:56.580 --> 00:30:00.820
+If we said this requirement's missing everyone go. Oh, it's too late. It's awful
+
+00:30:01.460 --> 00:30:06.180
+We're supposed to be more agile. We're supposed to be more collaborative. We're supposed to have those things up front
+
+00:30:06.660 --> 00:30:09.940
+And knowing it's that word again. It's it's intent
+
+00:30:10.790 --> 00:30:13.190
+To is confidence is a lot easier to generate
+
+00:30:14.710 --> 00:30:17.510
+when when you've actually
+
+00:30:17.750 --> 00:30:21.590
+Followed steps you've proved along the way. It's all well and good
+
+00:30:22.070 --> 00:30:25.110
+Telling somebody that you know how to do it. Trust me
+
+00:30:26.780 --> 00:30:28.540
+You know, I you know the you know
+
+00:30:28.540 --> 00:30:33.180
+You might be a po who's very very cool and says i'll just call me in if you need me on a call
+
+00:30:33.260 --> 00:30:40.460
+But it's not their work isn't captured. They haven't commented. They haven't input. They haven't spoken and communicated and software development
+
+00:30:40.700 --> 00:30:43.740
+Is definitively a social activity whether we are
+
+00:30:44.460 --> 00:30:50.460
+Our introvert or extrovert you still need to socialize. We've got a new actor in our socializing circle now
+
+00:30:51.900 --> 00:30:54.140
+But we still need to communicate with it
+
+00:30:54.860 --> 00:30:56.860
+Because if we just if we
+
+00:30:57.900 --> 00:30:59.900
+We're going to talk more about autonomous
+
+00:31:00.780 --> 00:31:04.700
+Agents and things in testing, but if we don't tell it
+
+00:31:05.930 --> 00:31:07.610
+What good looks like?
+
+00:31:07.610 --> 00:31:11.930
+How can we test against it? You know, the act of testing quite often is
+
+00:31:12.730 --> 00:31:17.770
+Uncovering information. Yeah, and then validating if that's what it should or shouldn't be doing
+
+00:31:18.680 --> 00:31:26.200
+Um through the lens of our end user and all those sorts of good things as well del jure did that that classic information
+
+00:31:26.840 --> 00:31:27.960
+um
+
+00:31:27.960 --> 00:31:34.280
+Diagram in his blog a while ago where he sort of channeled his rumsfeldian goodness of known knowns
+
+00:31:34.840 --> 00:31:38.760
+known unknowns and all those those pieces and that's that's
+
+00:31:39.400 --> 00:31:41.320
+Great a great as a model to have but
+
+00:31:42.120 --> 00:31:47.560
+If I don't even know what i'm supposed to know what good looks like there are stories that folks tell you about
+
+00:31:48.630 --> 00:31:54.550
+Testing a login page on a website and they go. Oh, this was great. I did it a little manual exploratory testing
+
+00:31:54.550 --> 00:31:57.400
+It was great. I came to log out
+
+00:31:57.400 --> 00:31:58.440
+Oh
+
+00:31:58.440 --> 00:32:00.520
+I can't log out
+
+00:32:00.520 --> 00:32:04.600
+Go and speak to their developer and say hey, is there supposed to be a log out and they say oh it wasn't
+
+00:32:04.600 --> 00:32:06.840
+In the requirements
+
+00:32:06.840 --> 00:32:08.840
+So they go back to the uh
+
+00:32:09.240 --> 00:32:14.040
+The po who just says oh, yeah. Well, obviously if there's a login there's a log out
+
+00:32:14.780 --> 00:32:17.900
+There's an inference. There's something that's an assumption that's been made
+
+00:32:18.540 --> 00:32:22.540
+And it's all that way down at the beginning before anyone even wrote the code
+
+00:32:23.180 --> 00:32:26.460
+If you don't have that level of critical thinking that questioning of things
+
+00:32:26.940 --> 00:32:33.180
+Earlier and you get further down the line. You've created a heavy heavy cost and that the scale at which we can go
+
+00:32:34.140 --> 00:32:37.500
+With now ai amplifying a broken process
+
+00:32:39.130 --> 00:32:41.530
+Yes could create so much more
+
+00:32:42.700 --> 00:32:44.700
+When that one small thing
+
+00:32:45.500 --> 00:32:46.780
+Could have been
+
+00:32:46.860 --> 00:32:51.900
+Addressed early so that when it scaled when it was amplified it was
+
+00:32:52.620 --> 00:33:00.060
+Correct. It was good. It did all the right things and it's it's it's like I feel like ai is an opportunity to
+
+00:33:00.700 --> 00:33:06.140
+Learn to clarify ourselves a little bit better. Yeah, I think express intent better
+
+00:33:07.540 --> 00:33:08.980
+and i've done you know
+
+00:33:08.980 --> 00:33:12.660
+decades ago i've done those large scale requirements reviews and
+
+00:33:13.060 --> 00:33:18.740
+And using just my brain trying to find where the dangling things are where things don't match where logout's missing
+
+00:33:19.140 --> 00:33:24.260
+And it's hard working and you can stare at these requirements docs for hours and still miss stuff
+
+00:33:24.260 --> 00:33:26.340
+It's really hard ai can really help out there
+
+00:33:27.100 --> 00:33:29.100
+And I think what's missing
+
+00:33:29.880 --> 00:33:34.520
+A lot from folks is understanding where ai is helpful and where it's not
+
+00:33:35.160 --> 00:33:38.600
+It is great as you mentioned earlier wonderful at pattern matching
+
+00:33:39.400 --> 00:33:42.010
+It has no judgment
+
+00:33:42.410 --> 00:33:48.330
+So that's where the human needs to come in and evaluate and give it more context and understand
+
+00:33:48.890 --> 00:33:51.130
+What sorts of things can go wrong? And I think
+
+00:33:52.440 --> 00:33:54.440
+there are so many
+
+00:33:54.440 --> 00:33:56.440
+folks out there even
+
+00:33:56.680 --> 00:33:59.880
+three years into when I don't remember how long chat gp's been out but
+
+00:34:00.600 --> 00:34:01.800
+still
+
+00:34:01.800 --> 00:34:07.960
+Failing to recognize that it's non-deterministic. You could ask it the same question twice have it do the same thing twice
+
+00:34:08.280 --> 00:34:10.280
+It'll give you different answers
+
+00:34:10.820 --> 00:34:14.020
+And that's just that's by design the way it works
+
+00:34:15.420 --> 00:34:19.820
+We need to use judgment to figure out if what it's doing is solving what we needed to do
+
+00:34:19.900 --> 00:34:23.740
+And if not question it or you know, reform the prompt whatever we need to do
+
+00:34:24.540 --> 00:34:29.020
+You mentioned, um, can we talk about autonomous agents? Do you mind if we talk a little bit about um,
+
+00:34:29.660 --> 00:34:32.300
+My experience playing with bear q. Could we is that okay?
+
+00:34:32.920 --> 00:34:36.620
+Absolutely talking about isn't uh, you know, uh, I
+
+00:34:37.260 --> 00:34:39.980
+I freaking I love bear q. Um
+
+00:34:40.540 --> 00:34:45.900
+I played with it a bit and let me tell you why I'll let you talk about the autonomous and agents where they're going but
+
+00:34:46.860 --> 00:34:47.820
+uh
+
+00:34:47.820 --> 00:34:50.140
+What I and this is going to sound like a product plug
+
+00:34:50.140 --> 00:34:55.740
+Which it isn't really just my experience on how we apply judgment and our knowledge to using an autonomous agent
+
+00:34:56.780 --> 00:34:59.420
+I would come up with a testing idea and this is
+
+00:35:00.260 --> 00:35:02.820
+You know exploratory testing. Um is
+
+00:35:04.060 --> 00:35:06.300
+Is like I forget all the different definitions
+
+00:35:06.300 --> 00:35:13.820
+But for me, it's I think there's one a long time ago simultaneous learning and execution of testing like what happens gives me another idea
+
+00:35:14.300 --> 00:35:17.180
+Um, so maybe it's that maybe it's not but what I would just have an idea
+
+00:35:17.580 --> 00:35:20.700
+There's this thing and there's an example I put in my blog post worth bringing up here
+
+00:35:20.700 --> 00:35:24.620
+There's a uh, github repo called the big list of naughty strings. It is
+
+00:35:26.120 --> 00:35:31.340
+10,000 strings known to cause problems in different sorts and they're separated by separated by categories
+
+00:35:31.340 --> 00:35:35.580
+There's a there's a node app. You can pull them out if you want to get do some fancy stuff. It's great
+
+00:35:36.300 --> 00:35:37.260
+um
+
+00:35:37.260 --> 00:35:41.820
+traditionally i've just copy and pasted a bunch of these into inputs to see what would happen I
+
+00:35:43.130 --> 00:35:46.090
+I just gave an agent. I said here's a big list of naughty strings pick
+
+00:35:46.650 --> 00:35:51.370
+Pick a hundred of these at random and try them out on these input fields and see what happens
+
+00:35:52.170 --> 00:35:55.210
+And I just with that plain english
+
+00:35:55.290 --> 00:35:59.930
+I send that command that I go and make coffee and by the time I've even finished making coffee
+
+00:36:00.250 --> 00:36:04.330
+I have a bunch of results back on strings that didn't work and cause problems
+
+00:36:04.890 --> 00:36:06.540
+and
+
+00:36:06.620 --> 00:36:07.500
+that
+
+00:36:07.500 --> 00:36:12.620
+Time savings again. I had to have the idea. I can't go tell it. Hey, I can't go tell a
+
+00:36:13.180 --> 00:36:17.180
+And my agent come up with a really cool testing idea and let me know what happens
+
+00:36:17.180 --> 00:36:19.820
+It doesn't know what to do, but give it a little bit of direction
+
+00:36:20.860 --> 00:36:22.620
+The bag of tricks
+
+00:36:22.620 --> 00:36:26.380
+And this is what design this is what test design is how many what are my test ideas?
+
+00:36:29.240 --> 00:36:34.120
+What can I think of to do you can separate those just pick the sequel injection ones try this password field
+
+00:36:34.840 --> 00:36:38.840
+You can give it a you can point it to some security documentation and say
+
+00:36:39.400 --> 00:36:44.040
+You use what using what you've learned on this page. Try and find security vulnerabilities in this
+
+00:36:44.680 --> 00:36:46.680
+You know chat form or whatever
+
+00:36:47.000 --> 00:36:50.040
+And it will do the given the context it will try those things
+
+00:36:50.680 --> 00:36:55.080
+Much much faster and much much more complete than I could do even if I was writing code to do this
+
+00:36:55.160 --> 00:36:57.560
+This is where when I talked about test design
+
+00:36:58.440 --> 00:37:01.800
+One of my tautologies that's in my list of weasel quotes is
+
+00:37:02.280 --> 00:37:05.400
+Uh, you should automate 100 of the tests that should be automated
+
+00:37:06.120 --> 00:37:07.000
+and
+
+00:37:07.000 --> 00:37:11.160
+When I can use the power of the computer to do more complete testing I do
+
+00:37:12.230 --> 00:37:16.390
+What's happening with especially with these autonomous agents and I'm sure definitely you talk more about them is
+
+00:37:17.110 --> 00:37:20.870
+I can generate and run tests as fast as I can think of them
+
+00:37:22.280 --> 00:37:24.600
+And that's pretty awesome. But anyway, that's my experience
+
+00:37:24.600 --> 00:37:29.240
+But you're done a lot more like where do you think we're going with autonomous agents?
+
+00:37:30.310 --> 00:37:32.310
+And not just for code development
+
+00:37:32.470 --> 00:37:33.990
+No, well, I mean
+
+00:37:33.990 --> 00:37:36.070
+I think one of the exciting things through a
+
+00:37:37.130 --> 00:37:39.020
+for testing lens
+
+00:37:39.020 --> 00:37:41.660
+And a design lens is is around
+
+00:37:43.080 --> 00:37:45.080
+persona driven development
+
+00:37:46.680 --> 00:37:53.820
+And indeed risk-informed stuff where we can have agents that have specific personas whether they have accessible requirements
+
+00:37:54.520 --> 00:37:55.640
+um
+
+00:37:55.640 --> 00:37:56.440
+or
+
+00:37:56.440 --> 00:37:57.700
+you know
+
+00:37:57.700 --> 00:38:02.040
+localization internationalization type requirements we can we can have informed agents that
+
+00:38:02.600 --> 00:38:06.840
+Uh sort of carry with them that persona and they can do a bunch of things
+
+00:38:07.400 --> 00:38:09.400
+But you mentioned before
+
+00:38:09.720 --> 00:38:11.720
+the importance of the word context
+
+00:38:12.420 --> 00:38:16.740
+Because one of the great risks in more autonomic agentic
+
+00:38:17.380 --> 00:38:20.500
+Testing is a bunch of actions without context
+
+00:38:21.900 --> 00:38:23.900
+I look busy. I'm doing lots of things
+
+00:38:24.460 --> 00:38:28.140
+But there is no output now humans have been doing this for for millennia. So i'm not
+
+00:38:28.860 --> 00:38:30.940
+I'm not i'm not saying that's a new thing, but
+
+00:38:31.580 --> 00:38:35.740
+The strength comes with as much of that thinking that test design thinking
+
+00:38:36.360 --> 00:38:41.020
+Referenced the more that we can give the more that we can guide the more that we can show
+
+00:38:41.930 --> 00:38:43.930
+Kind of what we're looking for
+
+00:38:45.400 --> 00:38:47.800
+That level of action with context
+
+00:38:49.290 --> 00:38:56.090
+Is a beautiful thing and and can can scale and more importantly, you know, I can remember interviewing people
+
+00:38:56.970 --> 00:39:01.770
+For testing roles for a long time and you'd say well what do you do when the testing's finished and one of the chaps I interviewed
+
+00:39:02.010 --> 00:39:07.050
+Slammed the table and said there's never enough testing done and he was very enthusiastic and things
+
+00:39:07.610 --> 00:39:09.160
+now
+
+00:39:09.160 --> 00:39:11.160
+our our expectations
+
+00:39:11.960 --> 00:39:16.040
+for what can be done have increased but I feel like
+
+00:39:17.030 --> 00:39:19.350
+risk appetite and risk tolerance perhaps is
+
+00:39:20.360 --> 00:39:24.200
+There is more appetite for risk. There's more tolerance for less good
+
+00:39:24.600 --> 00:39:27.960
+That's come out of the back of this and it's it's a strange
+
+00:39:28.600 --> 00:39:33.560
+Balance that's gone because there is more and people just kind of accept that there's more and it's fast
+
+00:39:33.960 --> 00:39:36.250
+But it's not necessarily
+
+00:39:36.250 --> 00:39:38.220
+as good
+
+00:39:38.220 --> 00:39:40.220
+But we still want to make the right
+
+00:39:40.540 --> 00:39:42.540
+Decisions on what we're building
+
+00:39:43.290 --> 00:39:45.610
+But because everything can be quite disposable now
+
+00:39:46.470 --> 00:39:49.910
+It's like make the thing run through. It doesn't matter. I'll throw it away put it back again
+
+00:39:50.790 --> 00:39:52.700
+and
+
+00:39:52.700 --> 00:39:56.060
+I've gone i've gone slightly around in circles, but I think
+
+00:39:57.750 --> 00:40:02.790
+The the whole autonomous thing isn't to say everything needs to go and go away and think for itself
+
+00:40:03.030 --> 00:40:05.350
+You've mentioned that you you've come up with ideas
+
+00:40:05.350 --> 00:40:12.150
+You've had the thinking you've provided the context and then you've allowed something to go off and then you've retrospectively reviewed and
+
+00:40:12.790 --> 00:40:14.790
+um appraised it and and I think
+
+00:40:15.430 --> 00:40:16.630
+um
+
+00:40:16.630 --> 00:40:21.670
+At smart bell we've kind of talked about this autonomy spectrum that was that's informed
+
+00:40:22.310 --> 00:40:24.310
+by the um autonomous driving
+
+00:40:25.580 --> 00:40:30.140
+Of cars, you know where it's it's kind of like no one's involved versus
+
+00:40:30.540 --> 00:40:35.260
+You're completely involved and everything in between on this spectrum. You know, i'm fully manual
+
+00:40:35.260 --> 00:40:42.060
+I'm doing everything by myself. I'm doing the manual gear shift. I'm making all decisions. There's no gps. There's no computer versus
+
+00:40:43.210 --> 00:40:47.850
+A car drives me off like in time cop and just takes me home and I open the door and i'm not in
+
+00:40:47.850 --> 00:40:49.930
+My own home anymore. I don't know where I am
+
+00:40:51.210 --> 00:40:53.210
+And and there's everything in between and
+
+00:40:54.060 --> 00:40:55.990
+I think
+
+00:40:55.990 --> 00:41:01.430
+The future therefore comes from what risk tolerance what risk appetite we have
+
+00:41:03.000 --> 00:41:07.400
+Because that that's going to inform how where we're going to go because the art of the possible
+
+00:41:08.280 --> 00:41:10.200
+Has never been
+
+00:41:10.200 --> 00:41:12.200
+more broad and exciting
+
+00:41:12.920 --> 00:41:15.640
+But the art of or the wealth of whatever
+
+00:41:16.280 --> 00:41:19.560
+Is is possible is also the threat of the impossible
+
+00:41:20.520 --> 00:41:23.160
+Uh of the threat of the possible not impossible
+
+00:41:23.720 --> 00:41:28.280
+And and that's so there's there's a sliding scale across these bits
+
+00:41:28.360 --> 00:41:33.240
+And I think that's where the future is going to be broader. It's it's going to amplify that whole
+
+00:41:34.380 --> 00:41:35.980
+thing, you know, it used to be
+
+00:41:35.980 --> 00:41:39.740
+Just you were a technical tester or you weren't a technical tester
+
+00:41:39.900 --> 00:41:46.780
+You only did front end or you did under the hood or or you were you were an automator only or whatever
+
+00:41:47.420 --> 00:41:48.730
+and
+
+00:41:48.730 --> 00:41:51.050
+Now it's it's kind of like
+
+00:41:51.530 --> 00:41:56.010
+The threat is not knowing, you know, we we've used in in smart bear this whole
+
+00:41:57.010 --> 00:41:59.010
+terminology wrapper of
+
+00:41:59.190 --> 00:42:01.610
+application integrity
+
+00:42:01.610 --> 00:42:06.570
+That's that's for me it kind of aligns very strongly with the whole
+
+00:42:07.430 --> 00:42:08.890
+confidence
+
+00:42:08.890 --> 00:42:10.090
+trust
+
+00:42:10.090 --> 00:42:15.130
+Quality piece that isn't something that you demand from people you don't say
+
+00:42:16.010 --> 00:42:18.730
+You you I can't just say to you Alan. Trust me
+
+00:42:19.640 --> 00:42:22.920
+Right without without it being qualified. I can't say
+
+00:42:23.560 --> 00:42:29.880
+My software is amazing without you looking at it and experiencing it doing it yourself. I can't say
+
+00:42:31.180 --> 00:42:34.380
+Um have confidence in all of my work because I told you so
+
+00:42:35.300 --> 00:42:37.300
+And that's the same with this
+
+00:42:39.770 --> 00:42:44.410
+Next phase this agentic bits. We might have to phase ourselves through that
+
+00:42:46.220 --> 00:42:48.940
+See how far we can go like, you know, you've you've got a dog behind you
+
+00:42:49.720 --> 00:42:54.120
+You don't immediately let that dog off the leash the first time you go to the park, right?
+
+00:42:54.600 --> 00:42:57.720
+You're going to release it for a while. See how it goes. You're going to do some training
+
+00:42:57.960 --> 00:43:04.680
+You're going to do some positive and some negative reinforcement. You're going to address things. You're going to help help it learn
+
+00:43:05.400 --> 00:43:09.480
+What's what what you want? What good look like how you want it to be in the room with you
+
+00:43:09.800 --> 00:43:11.800
+All of those things and it's the same
+
+00:43:12.040 --> 00:43:17.420
+when you even have something that's autonomous you need to share with it what you want it to look like and
+
+00:43:18.140 --> 00:43:24.720
+Have it learn how to report back if I might lean a bit further into other possibilities
+
+00:43:25.500 --> 00:43:27.380
+testers are
+
+00:43:27.380 --> 00:43:29.460
+storytellers
+
+00:43:29.460 --> 00:43:31.780
+We tell the story of the quality of our products
+
+00:43:32.580 --> 00:43:34.820
+Um, and we try to do that through the lens
+
+00:43:35.380 --> 00:43:39.220
+multiple different lenses often advocating for customers, but also others and
+
+00:43:39.940 --> 00:43:44.100
+AI could help us tell that story. We talked about a lot of that data, but if you think about
+
+00:43:45.990 --> 00:43:50.310
+Regulated industries and industries with heavy compliance and things like that
+
+00:43:50.390 --> 00:43:55.190
+AI is going to be able to help us through that lens. We can say here's a constraint. Here's a good practice
+
+00:43:55.190 --> 00:43:58.630
+Here's a requirements document and it can go off and help us tell that story
+
+00:43:59.430 --> 00:44:02.870
+But no regulator is going to accept that story if it's not qualified
+
+00:44:03.590 --> 00:44:04.550
+right
+
+00:44:04.550 --> 00:44:11.350
+So you need to show me that's when I come back to that traceability that transparency that be able to look under the hood to see
+
+00:44:11.990 --> 00:44:14.090
+How it works as well
+
+00:44:14.090 --> 00:44:16.090
+Because what we don't want to do is remove
+
+00:44:17.530 --> 00:44:20.330
+ownership and accountability from ourselves
+
+00:44:21.800 --> 00:44:24.600
+Even if that work isn't going to be all done by ourselves
+
+00:44:25.610 --> 00:44:26.650
+um
+
+00:44:26.650 --> 00:44:28.970
+And so we're definitely going to have
+
+00:44:29.930 --> 00:44:31.830
+faster feedback
+
+00:44:31.830 --> 00:44:34.070
+We're definitely going to have broader exploration
+
+00:44:35.960 --> 00:44:40.280
+But the risks that are inherent in that world are there's an illusion of quality
+
+00:44:40.280 --> 00:44:43.560
+There's an illusion of something that looks good. That's busy. That's noisy
+
+00:44:44.780 --> 00:44:45.900
+but
+
+00:44:45.900 --> 00:44:48.540
+one small mistake
+
+00:44:48.540 --> 00:44:52.140
+Can amplify the wrong direction there could be a whole system that no one understands
+
+00:44:52.300 --> 00:44:59.100
+We've talked about those memes with there's a huge foundation with a tiny little brick holding up the whole building
+
+00:44:59.100 --> 00:45:03.420
+Which is that code that no one knows how it works, but it works imagine that at scale
+
+00:45:03.900 --> 00:45:05.900
+that's terrifying and so as
+
+00:45:06.220 --> 00:45:11.900
+testers as critical thinkers as people who who want to still know how that works that doesn't mean that we have to
+
+00:45:12.920 --> 00:45:20.520
+Prescribe everything because we all know that a scripted test isn't the be all end all for everything that we want to achieve anyhow
+
+00:45:21.580 --> 00:45:22.780
+so
+
+00:45:22.780 --> 00:45:24.860
+It's it's it's more more of that
+
+00:45:24.860 --> 00:45:31.740
+But it's it's it's knowing I I have confidence because I know because i've experienced because I can trust something
+
+00:45:33.300 --> 00:45:35.300
+That I it's funny one
+
+00:45:36.100 --> 00:45:42.020
+Million percent agree that is there's so much value in there, but even talking there. I got another test idea
+
+00:45:42.100 --> 00:45:43.780
+I would give
+
+00:45:43.780 --> 00:45:45.780
+Almost every software is using
+
+00:45:46.020 --> 00:45:49.780
+Almost every product is some sort of open source somewhere not all of them most of them
+
+00:45:50.260 --> 00:45:55.940
+And there's this there's this cartoon that shows like dependencies and you can somebody wrote the code to build this dependency map
+
+00:45:55.940 --> 00:46:01.380
+You can see like here's this tiny repo maintained by one person in Duluth, Minnesota that
+
+00:46:02.100 --> 00:46:06.580
+Everything's depending on yeah, but I want to give I can give ai my dependence
+
+00:46:06.580 --> 00:46:09.780
+I don't have to go look it up build the tool. I can just give ai here are my dependencies
+
+00:46:10.340 --> 00:46:13.460
+Give me the top three risks we have in building building and based on these
+
+00:46:15.460 --> 00:46:20.420
+And then you can go investigate and make sure like I could go to that dependency repo and I may even go add
+
+00:46:20.820 --> 00:46:25.620
+tests and quality checks to it and monitoring to let me know when something changes so I get the breaking change information and
+
+00:46:26.180 --> 00:46:28.980
+And there's all kinds of stuff we can do there within the system
+
+00:46:29.700 --> 00:46:32.100
+a couple things I want to get some closing words from you, but
+
+00:46:32.900 --> 00:46:36.340
+You talked around a couple things. I wanted to call out one of the things i'm
+
+00:46:37.140 --> 00:46:42.980
+I like about what smart bear is doing is not just the products and this sounds pitchy, but it's not is
+
+00:46:44.420 --> 00:46:49.860
+What's being what you're publishing and you talked about these levels of autonomy from auto manufacturers, but there's a great post
+
+00:46:49.940 --> 00:46:51.060
+I'll put these in the show notes
+
+00:46:51.060 --> 00:46:54.660
+but talking about what autonomy looks like in quality going from the level where
+
+00:46:55.380 --> 00:47:00.420
+People just build everything or we were a long time ago ai helps chetty first came out
+
+00:47:00.820 --> 00:47:01.540
+um
+
+00:47:01.540 --> 00:47:04.900
+The ai begins to notice patterns and autonomy where we give people
+
+00:47:05.620 --> 00:47:10.340
+Is the same thing with cars we can give people give people. Oh my god. I'm talking about ai like it's people
+
+00:47:12.100 --> 00:47:13.860
+You can give the agents
+
+00:47:13.860 --> 00:47:19.060
+Things to do and they'll do them and then at the top level with self completely self-driving cars or ai
+
+00:47:19.540 --> 00:47:22.420
+We define the outcome and let the computers do the work
+
+00:47:22.900 --> 00:47:28.260
+Uh, we're not totally we're not there yet and that's fine. I don't know if I want to be there. It's frightening but
+
+00:47:28.660 --> 00:47:30.580
+even at even
+
+00:47:30.580 --> 00:47:32.580
+Close to that is pretty amazing
+
+00:47:32.820 --> 00:47:36.260
+And then there's another great one again, i'll give a um, i'll put these show notes
+
+00:47:36.260 --> 00:47:41.060
+But there's a nice survey and study on closing the ai software quality gap
+
+00:47:41.380 --> 00:47:49.540
+Which is I think worth reading for anyone which is probably everyone who is dealing with ai in their product development and they'll just
+
+00:47:50.820 --> 00:47:56.020
+Really nicely done stuff. I find super valuable for anyone whether you're using smart bread products or not
+
+00:47:57.740 --> 00:48:01.020
+Man this time flew by but i'm gonna but it's okay
+
+00:48:01.100 --> 00:48:07.420
+We started a minute late, but what didn't we cover that is worth mentioning here before we before we close out
+
+00:48:10.140 --> 00:48:12.140
+so many things
+
+00:48:13.100 --> 00:48:15.920
+But I mean, I guess first of a nine-part miniseries
+
+00:48:16.940 --> 00:48:22.860
+To reinforce some of the the smart beer thinking why i'm actually happy to be here representing smart beer in this conversation
+
+00:48:23.500 --> 00:48:25.940
+Really is
+
+00:48:25.940 --> 00:48:28.660
+I when I when I interviewed with with them last year
+
+00:48:30.700 --> 00:48:33.260
+It was this art of the possible kind of moment like
+
+00:48:33.740 --> 00:48:38.300
+There's a lot of things that we can do but we want to be on the right side of these sorts of things
+
+00:48:38.540 --> 00:48:40.540
+Like we've all seen skynet
+
+00:48:40.700 --> 00:48:45.740
+Um and many other um things like this and people go oh, we know consciousness and stuff. It's okay
+
+00:48:45.820 --> 00:48:47.980
+Well, there's an opportunity here for us to do
+
+00:48:48.700 --> 00:48:53.180
+the right things but explicitly for the practitioners of the world the people who
+
+00:48:53.900 --> 00:48:56.020
+actually give a damn about
+
+00:48:56.020 --> 00:48:58.020
+the software that they are creating
+
+00:48:58.420 --> 00:48:59.460
+and
+
+00:48:59.460 --> 00:49:00.500
+testing
+
+00:49:00.500 --> 00:49:02.500
+um in that space and
+
+00:49:02.500 --> 00:49:04.020
+therefore
+
+00:49:04.020 --> 00:49:08.580
+One of our our mantras in this this year has been to come as you are
+
+00:49:09.990 --> 00:49:12.410
+This isn't the case of
+
+00:49:12.410 --> 00:49:14.410
+The future is only agentic
+
+00:49:15.050 --> 00:49:17.690
+Yes, the future is agentic, but it's also
+
+00:49:18.730 --> 00:49:21.240
+manual
+
+00:49:21.240 --> 00:49:27.560
+Inverted commas. It's also a hybrid between those bits because context wherever you are
+
+00:49:28.440 --> 00:49:30.410
+is different
+
+00:49:30.490 --> 00:49:37.050
+There are different needs different wants and while the market today is is going full-blown replace everyone with these things
+
+00:49:37.690 --> 00:49:40.730
+we've already talked about some of the risks that are inherent and
+
+00:49:41.610 --> 00:49:45.370
+The beauty that smart bit has is an estate of tools
+
+00:49:46.600 --> 00:49:51.240
+That cover all of those things but also a bunch of humans that actually care
+
+00:49:52.220 --> 00:49:54.940
+about who's going to be using it because we hate we
+
+00:49:55.580 --> 00:49:57.340
+We work on tools
+
+00:49:57.340 --> 00:50:03.660
+That people use to build software use to validate software whether that's in production whether that's
+
+00:50:04.140 --> 00:50:08.060
+In development whether that's in design whether that's in api and and many other things
+
+00:50:08.700 --> 00:50:12.300
+And that's really exciting to see people who aren't just
+
+00:50:13.260 --> 00:50:14.220
+shilling
+
+00:50:14.220 --> 00:50:17.580
+Who aren't just drinking the kool-aid and going whoo
+
+00:50:18.700 --> 00:50:22.860
+It's it's it's more than that. It's it's about actually giving a damn
+
+00:50:24.090 --> 00:50:26.090
+About what software development?
+
+00:50:26.730 --> 00:50:33.930
+Is what good software looks like and trying to enable that beyond just creating tools that we're proud of
+
+00:50:34.660 --> 00:50:37.700
+but it's like you said it's creating content that speaks to
+
+00:50:38.660 --> 00:50:43.300
+How we go about those things how we should be thinking about those things how we could do that in practice
+
+00:50:43.860 --> 00:50:45.860
+Who we can talk to about those things?
+
+00:50:46.260 --> 00:50:52.740
+Giving attribution to good thought leadership that's going on in the space, but also good practice beyond good thought
+
+00:50:53.300 --> 00:50:55.300
+and and speaking to that and
+
+00:50:55.700 --> 00:51:01.220
+The the investment in that side of things is as exciting as a tool
+
+00:51:01.300 --> 00:51:06.500
+I remember taking a demo from a tool vendor once and we walked through a tool
+
+00:51:06.500 --> 00:51:10.340
+It was I don't need to name the tool but at the end of it. They said isn't that exciting?
+
+00:51:11.610 --> 00:51:13.320
+and I said
+
+00:51:13.320 --> 00:51:15.240
+It depends on
+
+00:51:15.240 --> 00:51:17.720
+The problem that it's solving
+
+00:51:17.960 --> 00:51:23.240
+I care about the people who are using it if they're benefiting from it if it's actually good
+
+00:51:23.560 --> 00:51:28.920
+The exciting part is the benefit of the tool that you're making not the tool that you're making
+
+00:51:30.490 --> 00:51:32.230
+in isolation
+
+00:51:32.230 --> 00:51:34.230
+and I feel like
+
+00:51:34.230 --> 00:51:39.670
+The part that got me really excited about this the reason why application integrity as a story
+
+00:51:40.230 --> 00:51:43.590
+Is one that excites me is because it's not just talking about
+
+00:51:44.620 --> 00:51:47.640
+Here's a thing that you achieve
+
+00:51:47.800 --> 00:51:53.800
+It's you work through something and you you you earn application integrity through good practice
+
+00:51:54.360 --> 00:51:58.200
+Through putting those pieces together with good thought and good practice whether that is
+
+00:51:59.160 --> 00:52:06.680
+At the bottom end of the autonomous spectrum or at the full end you're going in with clear intent goals eyes on quality
+
+00:52:07.240 --> 00:52:08.490
+and
+
+00:52:08.490 --> 00:52:11.130
+We're building things along that line, which means that
+
+00:52:11.990 --> 00:52:15.430
+Is the future scary? Yes. Has it always been scary?
+
+00:52:16.380 --> 00:52:19.820
+Yes, how many times have I been told that the tester is dead?
+
+00:52:20.820 --> 00:52:22.500
+many many times
+
+00:52:22.500 --> 00:52:23.300
+but
+
+00:52:23.300 --> 00:52:25.300
+testing test thoughts
+
+00:52:25.860 --> 00:52:28.420
+Good quality practices will persist
+
+00:52:29.660 --> 00:52:32.140
+What we do on a day-to-day basis is going to change
+
+00:52:32.780 --> 00:52:40.220
+we're probably moving from the executor to the signal interpreter and maybe moving from more coaching to
+
+00:52:41.430 --> 00:52:43.430
+system sense making
+
+00:52:44.540 --> 00:52:48.460
+But that's okay because that's still got that universality of quality
+
+00:52:49.100 --> 00:52:52.060
+First and that's what we're here talking about and advocating for
+
+00:52:52.700 --> 00:52:56.380
+going forwards
+
+00:52:56.380 --> 00:52:58.380
+yeah, that the
+
+00:52:59.320 --> 00:53:04.540
+Fantastic summary and I think it's all true. And yeah, I like to say testing is dead long-lived testing
+
+00:53:04.540 --> 00:53:07.420
+which goes back to what we started off with at the top here is
+
+00:53:08.060 --> 00:53:09.580
+if you're
+
+00:53:09.580 --> 00:53:16.060
+Software, it's adaptive like you if you don't want to change. Yeah, then the future is very very scary. You're screwed
+
+00:53:16.970 --> 00:53:23.050
+If you want to learn if you want to adapt if you remain curious, uh, the feature is very exciting not scary
+
+00:53:24.780 --> 00:53:26.940
+and I also want to say I love the um,
+
+00:53:27.660 --> 00:53:29.660
+the we talk about pierceg, uh
+
+00:53:30.060 --> 00:53:33.900
+the quality and care are two sides the same point we talked originally about care being
+
+00:53:34.460 --> 00:53:37.180
+The care we put into how we make it making it right
+
+00:53:37.180 --> 00:53:42.020
+but what I like hearing from you is there's care about the problem you're solving and
+
+00:53:42.900 --> 00:53:45.000
+um, it's
+
+00:53:45.240 --> 00:53:47.160
+not a
+
+00:53:47.160 --> 00:53:52.200
+Not enough folks making software get to have get to feel like that. That's really I've worked on a couple products in
+
+00:53:52.200 --> 00:53:54.200
+My life like that have all been great
+
+00:53:54.200 --> 00:53:57.160
+um, it's a different sort of feeling than working on something that just
+
+00:53:57.960 --> 00:54:02.120
+You know, it's it's it's different and I like hearing that that's exciting
+
+00:54:03.180 --> 00:54:05.530
+Man, it has been uh
+
+00:54:05.690 --> 00:54:08.890
+Where did the time go? It's been fantastic talking with you
+
+00:54:09.690 --> 00:54:10.730
+uh
+
+00:54:10.730 --> 00:54:12.330
+And again, i'm
+
+00:54:12.330 --> 00:54:14.810
+I'm excited about what smart bear is doing. Um
+
+00:54:15.530 --> 00:54:19.050
+I do want to say thank you for pawing through all of my questions with me
+
+00:54:19.610 --> 00:54:23.530
+And oh I should have used a care bear thing. I'm talking about care. Oh, well next time next time
+
+00:54:23.530 --> 00:54:25.530
+I'll get there a few bear puns
+
+00:54:25.530 --> 00:54:28.970
+Um chris fantastic having you here
+
+00:54:29.690 --> 00:54:30.810
+uh
+
+00:54:30.810 --> 00:54:34.570
+So much more to talk about but I think people are going to the folks listening here
+
+00:54:34.970 --> 00:54:42.170
+Are going to get a lot of insight and hopefully a lot more engagement. So thank you again for coming and um
+
+00:54:42.250 --> 00:54:47.370
+And thanks for the focus mark bear for setting this up. I I love talking with you and check out the testing peers podcast
+
+00:54:48.460 --> 00:54:49.340
+Yes
+
+00:54:49.340 --> 00:54:51.580
+Thank you. All right. All right. Thank you
+

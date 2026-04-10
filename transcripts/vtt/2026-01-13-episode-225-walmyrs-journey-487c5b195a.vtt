@@ -1,0 +1,4103 @@
+WEBVTT
+
+00:00:05.200 --> 00:00:10.300
+Welcome to A.B. Testing Podcast, your modern testing podcast.
+
+00:00:10.300 --> 00:00:14.720
+Your hosts, Alan, Spy, and Brent, not here, will be here to guide you through topics on
+
+00:00:14.720 --> 00:00:19.080
+testing, leadership, agile, and anything else that comes to mind.
+
+00:00:19.080 --> 00:00:20.840
+Now on with the show.
+
+00:00:20.840 --> 00:00:23.760
+Hey everyone, welcome back to the A.B. testing podcast.
+
+00:00:23.760 --> 00:00:24.760
+I am Spy.
+
+00:00:24.760 --> 00:00:28.520
+I am not joined by Brent again.
+
+00:00:28.520 --> 00:00:29.720
+Brent has moved on.
+
+00:00:29.720 --> 00:00:37.360
+He is actually polishing the axles on Satya's Porsche, actually on Satya's fleet of Porsches.
+
+00:00:37.360 --> 00:00:44.240
+So those are getting all nice and shiny and lubed up and ready for a special Porsche off-roading
+
+00:00:44.240 --> 00:00:46.120
+adventure that Satya is going on.
+
+00:00:46.120 --> 00:00:48.720
+In the meantime, we have Valmer back on the show again.
+
+00:00:48.720 --> 00:00:52.560
+Valmer was on here a few weeks ago and I wanted to go a little bit deeper talking
+
+00:00:52.560 --> 00:00:53.560
+to him.
+
+00:00:53.560 --> 00:00:57.300
+So Valmer, say hi and reintroduce yourself to the audience, all three of them.
+
+00:00:57.300 --> 00:00:58.300
+Hey, Alan.
+
+00:00:58.300 --> 00:00:59.300
+Thanks for having me again.
+
+00:00:59.780 --> 00:01:05.570
+It's a pleasure to be here and I hope everyone enjoys the show today.
+
+00:01:05.570 --> 00:01:06.570
+They will.
+
+00:01:06.570 --> 00:01:07.570
+They will.
+
+00:01:07.570 --> 00:01:08.570
+You are.
+
+00:01:08.570 --> 00:01:11.050
+Well, there's only two people left after you, so they will listen.
+
+00:01:11.050 --> 00:01:12.770
+It will be great.
+
+00:01:12.770 --> 00:01:13.770
+Happy to have you here.
+
+00:01:13.770 --> 00:01:16.690
+A couple of things we talked about last time piqued my interest though.
+
+00:01:16.690 --> 00:01:20.850
+We can go a little bit deeper and I don't know, we can just, I'm going to have
+
+00:01:20.850 --> 00:01:21.850
+opinions.
+
+00:01:21.850 --> 00:01:24.490
+I also want to let you talk about some things you want to talk about.
+
+00:01:24.490 --> 00:01:27.890
+And when we chatted over Slack and over Slack, if you want to be in our Slack group,
+
+00:01:27.890 --> 00:01:31.810
+you can go to one of the three, actually go to modern testing dot org where you can
+
+00:01:31.810 --> 00:01:34.170
+get a link to join our Slack group.
+
+00:01:34.170 --> 00:01:37.450
+It's the activity faded while I was gone on my long hike, but it's it's picking
+
+00:01:37.450 --> 00:01:38.890
+back up again.
+
+00:01:38.890 --> 00:01:41.250
+Always looking for folks to join me, talk about things, but we're always happy
+
+00:01:41.250 --> 00:01:44.610
+to have discussions there as well.
+
+00:01:44.610 --> 00:01:47.890
+So Valmer, I'm going to turn it over to you.
+
+00:01:47.890 --> 00:01:52.690
+I'd like you to talk about, as we discussed, some of the things you've been doing in
+
+00:01:52.690 --> 00:01:57.490
+the role of not just a QA engineer, but a QA advisor, an educator.
+
+00:01:57.490 --> 00:02:01.050
+And I'm going to jump in a little bit, but I'm just going to leave it open for
+
+00:02:01.050 --> 00:02:04.570
+you. Let's talk about what you've been up to and why it may be interesting to
+
+00:02:04.570 --> 00:02:06.000
+our audience.
+
+00:02:06.000 --> 00:02:10.480
+Of course. And first of all, I highly recommend anyone listening to the
+
+00:02:10.480 --> 00:02:14.360
+podcast to join the Slack group.
+
+00:02:14.360 --> 00:02:16.480
+Great conversations there.
+
+00:02:16.480 --> 00:02:19.400
+Nice discussions as well.
+
+00:02:19.400 --> 00:02:24.240
+So I think I'm going to start with a little bit of background of who I am.
+
+00:02:24.240 --> 00:02:29.360
+I am a Brazilian who has been living here in Europe for around 10 years, and
+
+00:02:29.360 --> 00:02:34.920
+I've been working with quality assurance for the past 21 years.
+
+00:02:34.920 --> 00:02:40.920
+I started my career doing manual testing and got bored to doing the same
+
+00:02:40.920 --> 00:02:45.520
+thing that I did yesterday, today, knowing that I would be doing the same
+
+00:02:45.520 --> 00:02:47.600
+things tomorrow as well.
+
+00:02:47.640 --> 00:02:53.120
+So I decided to learn programming, which I didn't like in the beginning.
+
+00:02:53.120 --> 00:02:57.800
+And this is why I started my career in software development as a software
+
+00:02:57.800 --> 00:03:00.560
+tester, a manual tester.
+
+00:03:00.560 --> 00:03:05.280
+But after I started learning programming to automate the work that I was
+
+00:03:05.280 --> 00:03:10.960
+doing, I kind of got passionate about software development in general.
+
+00:03:10.960 --> 00:03:14.560
+Of course, started with test automation of the work that I was doing
+
+00:03:14.560 --> 00:03:20.080
+manually, but kind of got interested in the whole software development
+
+00:03:20.080 --> 00:03:24.640
+lifecycle, learned a little bit of front-end, a little bit of back-end, a
+
+00:03:24.640 --> 00:03:30.640
+little bit of continuous integration, infrastructure, all that is related to
+
+00:03:30.640 --> 00:03:33.080
+software development.
+
+00:03:33.080 --> 00:03:38.920
+For the past at least 10 or 11 years, I've been working more focused
+
+00:03:38.920 --> 00:03:49.170
+on test automation, moved from a role where I was the person that was
+
+00:03:49.170 --> 00:03:57.730
+responsible for writing the tests, and nowadays very aligned with what you
+
+00:03:57.730 --> 00:04:04.610
+and Brent and your guests discuss here and in the Slack group as well.
+
+00:04:04.610 --> 00:04:10.450
+I'm more into disseminating the quality culture to everyone involved in
+
+00:04:10.450 --> 00:04:16.290
+developing software because I think quality is everyone's responsibility.
+
+00:04:16.290 --> 00:04:23.090
+At the company I work nowadays, I am still the person kind of responsible
+
+00:04:23.090 --> 00:04:32.170
+for some kind of test automation while we are maturing in this matter, but
+
+00:04:32.210 --> 00:04:37.690
+always with the mindset of disseminating knowledge so everyone can
+
+00:04:37.690 --> 00:04:40.690
+contribute to that kind of stuff.
+
+00:04:40.690 --> 00:04:49.330
+As an educator, I kind of started sharing knowledge in 2014 with a blog.
+
+00:04:49.330 --> 00:04:55.850
+Afterwards, in 2015, I started a YouTube channel.
+
+00:04:55.850 --> 00:05:00.850
+Actually, the A-B testing podcast inspired me to have my own podcast as
+
+00:05:00.890 --> 00:05:01.890
+well.
+
+00:05:01.890 --> 00:05:08.130
+After a while, for a moment, I was hosting three different podcasts, two of
+
+00:05:08.130 --> 00:05:11.810
+them in Portuguese, one of them in English.
+
+00:05:11.810 --> 00:05:15.370
+The one in Portuguese is the translation would be something like testing
+
+00:05:15.370 --> 00:05:22.610
+abroad, where we invite guests that work with software testing but live
+
+00:05:22.610 --> 00:05:26.530
+abroad to bring this experience for our audience.
+
+00:05:26.530 --> 00:05:28.730
+The other one is called Tech and Accent.
+
+00:05:28.770 --> 00:05:34.010
+It's kind of to this mystify that you have to have a perfect accent to live
+
+00:05:34.010 --> 00:05:37.290
+and work abroad if you are a native speaker.
+
+00:05:37.290 --> 00:05:42.050
+And the other one is the one of my brand talking about testing, where I
+
+00:05:42.050 --> 00:05:47.130
+invite guests to talk about software development in general.
+
+00:05:47.130 --> 00:05:54.690
+And after I was doing podcasts, YouTube and blog, I also started an
+
+00:05:54.730 --> 00:06:00.650
+online course teaching test automation.
+
+00:06:00.650 --> 00:06:06.450
+At the moment, I have more than 24,000 students that I have already
+
+00:06:06.450 --> 00:06:09.490
+teached with online recorded courses.
+
+00:06:09.490 --> 00:06:10.570
+Geez.
+
+00:06:10.570 --> 00:06:13.010
+That's a little bit about myself.
+
+00:06:13.010 --> 00:06:15.690
+You have more reach than the three listeners of the A-B testing
+
+00:06:15.690 --> 00:06:16.170
+podcast.
+
+00:06:16.170 --> 00:06:19.150
+What are you doing here, slumming over here?
+
+00:06:19.150 --> 00:06:21.150
+Yeah, but that's a little bit about myself.
+
+00:06:21.150 --> 00:06:23.390
+I am passionate about sharing knowledge.
+
+00:06:23.430 --> 00:06:25.830
+It's the way I learn the most.
+
+00:06:25.830 --> 00:06:33.130
+In the beginning, when I started my blog, I was the first consumer of it.
+
+00:06:33.130 --> 00:06:39.660
+And I learn a lot by sharing the knowledge that I gain.
+
+00:06:39.660 --> 00:06:45.540
+Because I think if I can pass to others what I am learning and they
+
+00:06:45.540 --> 00:06:49.550
+understand, it means that I am understanding better what I am learning.
+
+00:06:49.710 --> 00:06:55.190
+It's one of the reasons the old angerweasel.com blog, I did that
+
+00:06:55.190 --> 00:06:58.110
+partially because I learned things myself by trying to write about
+
+00:06:58.110 --> 00:07:02.070
+them, but also trying to just share some of the education.
+
+00:07:02.070 --> 00:07:05.830
+And if you remember, the reason the A-B testing podcast is around
+
+00:07:05.830 --> 00:07:08.070
+is one, just because Brent and I wanted a place to hang out.
+
+00:07:08.070 --> 00:07:11.950
+But two, we wanted to talk about the changes that were happening.
+
+00:07:11.950 --> 00:07:16.350
+You've lived some of these and give people an idea of what those
+
+00:07:16.350 --> 00:07:17.150
+may look like.
+
+00:07:17.190 --> 00:07:21.710
+It's around, I don't think all of what we do education, but awareness, at least.
+
+00:07:22.910 --> 00:07:24.870
+So I have a couple of questions.
+
+00:07:24.870 --> 00:07:29.550
+One is, before I forget, after we're done here, please send me as many links
+
+00:07:29.550 --> 00:07:33.310
+as you want for me to put in the show notes, and I'll include those
+
+00:07:33.310 --> 00:07:34.110
+when I post this.
+
+00:07:34.110 --> 00:07:38.790
+But you've been in the business for a while, done a lot of things, the
+
+00:07:38.790 --> 00:07:44.670
+traditional test things, also moving into let's help the team ship better
+
+00:07:44.670 --> 00:07:45.270
+quality.
+
+00:07:45.750 --> 00:07:49.790
+Can you talk a little bit more of what that shift's been like, especially
+
+00:07:49.790 --> 00:07:53.150
+like, because a lot of people will dig their heads in the sand and not
+
+00:07:53.150 --> 00:07:54.470
+believe this change is happening.
+
+00:07:54.950 --> 00:07:57.430
+What was that change like for you in the company?
+
+00:07:57.430 --> 00:07:58.430
+Did they accept it?
+
+00:07:58.430 --> 00:07:59.470
+Did they push back?
+
+00:07:59.470 --> 00:08:00.270
+Was it natural?
+
+00:08:00.270 --> 00:08:01.270
+Was it mandated?
+
+00:08:01.430 --> 00:08:03.990
+I'm kind of curious what that transition was like, both for you
+
+00:08:03.990 --> 00:08:05.310
+personally and for the company.
+
+00:08:06.640 --> 00:08:07.000
+Yeah.
+
+00:08:07.000 --> 00:08:13.560
+So when I started my career, I worked in very big and enterprise
+
+00:08:13.560 --> 00:08:14.200
+companies.
+
+00:08:14.200 --> 00:08:19.140
+So I worked for HP, I worked for Dell computers.
+
+00:08:19.140 --> 00:08:24.460
+I worked for automatic data processing, which are American companies
+
+00:08:24.460 --> 00:08:30.870
+that have their offices in Brazil as well.
+
+00:08:31.150 --> 00:08:36.230
+And the first time I moved to a more, let's say, agile way of
+
+00:08:36.230 --> 00:08:40.110
+working was when I moved from my hometown, Porto Alegre in the
+
+00:08:40.150 --> 00:08:44.110
+south of Brazil to a startup in Florianópolis, also in the south of
+
+00:08:44.110 --> 00:08:47.750
+Brazil, one of the most beautiful cities in Brazil, if I can say.
+
+00:08:49.070 --> 00:08:56.150
+And in this company, we were around 20 people, around 12 developers.
+
+00:08:56.710 --> 00:09:03.400
+And it's kind of funny because I was hired as the second tester of
+
+00:09:03.400 --> 00:09:07.800
+this company because the other tester that they have there was
+
+00:09:07.800 --> 00:09:12.760
+working for two years and he couldn't take vacation because he was the
+
+00:09:12.760 --> 00:09:15.800
+only one that knew how to write the automated tests.
+
+00:09:16.320 --> 00:09:17.960
+And so he trained me.
+
+00:09:17.960 --> 00:09:19.240
+And that's, I'm going to interrupt for a second.
+
+00:09:19.360 --> 00:09:21.040
+That's a problem into itself, right?
+
+00:09:21.040 --> 00:09:24.480
+If you're ever in a position where you can't take a vacation,
+
+00:09:24.560 --> 00:09:26.880
+something over overarching is wrong.
+
+00:09:27.000 --> 00:09:28.000
+Anyway, please continue.
+
+00:09:28.800 --> 00:09:29.080
+Yeah.
+
+00:09:29.080 --> 00:09:32.520
+So he trained me so he could take vacation afterwards.
+
+00:09:32.560 --> 00:09:33.800
+He went on vacation.
+
+00:09:33.800 --> 00:09:38.320
+He came back and I thought to myself, what if this guy lives,
+
+00:09:38.840 --> 00:09:41.800
+we might be able to go on vacations as well.
+
+00:09:41.800 --> 00:09:47.580
+So I decided to change the approach to not be the only one doing testing.
+
+00:09:48.020 --> 00:09:54.620
+So one of the approaches that I used, so we were doing test
+
+00:09:54.620 --> 00:10:01.220
+automation using Cucumber in a programming language that was not
+
+00:10:01.220 --> 00:10:04.620
+the language that the developers were used to write code.
+
+00:10:05.140 --> 00:10:10.340
+And at that time, there was a new test framework coming up.
+
+00:10:10.780 --> 00:10:14.500
+We were starting a project using the same technology.
+
+00:10:14.860 --> 00:10:19.700
+And then I decided, what if we move for this specific project to this
+
+00:10:19.700 --> 00:10:23.460
+other framework that is in the same language that the developers are already
+
+00:10:23.460 --> 00:10:30.560
+used to, and then we started experimenting with it and we start.
+
+00:10:30.640 --> 00:10:36.180
+And I started doing knowledge sharing sessions, pair programming, pair
+
+00:10:36.180 --> 00:10:39.100
+testing with the developers, coding dojos.
+
+00:10:39.140 --> 00:10:42.620
+So I could go on vacation and they could take care of the
+
+00:10:42.620 --> 00:10:44.220
+tasks when I was not there.
+
+00:10:44.820 --> 00:10:47.700
+I would say it was a success.
+
+00:10:47.700 --> 00:10:51.380
+I worked for this company for a couple of years before I moved
+
+00:10:51.820 --> 00:10:56.180
+from Brazil to Europe and they never hired a QA anymore.
+
+00:10:57.340 --> 00:11:00.580
+And they still build very high quality software.
+
+00:11:00.580 --> 00:11:01.100
+When was this?
+
+00:11:01.100 --> 00:11:01.940
+What year was this?
+
+00:11:02.500 --> 00:11:05.420
+It was from 2014 until 2016.
+
+00:11:05.420 --> 00:11:09.820
+Which is great because what's interesting is that is right around
+
+00:11:09.820 --> 00:11:15.820
+the time the A-B testing podcast first started, but that is
+
+00:11:16.220 --> 00:11:17.900
+principle number seven in action.
+
+00:11:18.220 --> 00:11:21.340
+You spread information across the team so you don't need
+
+00:11:21.340 --> 00:11:23.460
+specialists to bottleneck the system.
+
+00:11:23.820 --> 00:11:24.900
+So that's incredible.
+
+00:11:24.900 --> 00:11:29.020
+And so I'll just point out again, this is the echo chamber of our
+
+00:11:29.020 --> 00:11:32.140
+audience who all get this, but there is a large group of engineering
+
+00:11:32.140 --> 00:11:35.940
+teams out there who just don't believe that can happen, but, or
+
+00:11:35.940 --> 00:11:40.020
+think I'm making stuff up that I'm being somehow aspirational, but
+
+00:11:40.020 --> 00:11:43.260
+these things are happening before Brent and I even began talking
+
+00:11:43.260 --> 00:11:45.100
+about them, which comes back to the reason we talked about it.
+
+00:11:45.100 --> 00:11:45.980
+Cause we saw it happening.
+
+00:11:46.260 --> 00:11:47.180
+It's happening more.
+
+00:11:47.740 --> 00:11:49.060
+It's just very interesting.
+
+00:11:49.220 --> 00:11:50.140
+Anyway, please continue.
+
+00:11:51.100 --> 00:11:51.340
+Yeah.
+
+00:11:51.340 --> 00:11:54.580
+And after that, I moved to Europe first.
+
+00:11:54.580 --> 00:11:57.210
+I moved to Norway.
+
+00:11:57.290 --> 00:12:01.650
+I worked in a company that do video conferences, video
+
+00:12:01.650 --> 00:12:03.930
+conferencing service that runs in the web.
+
+00:12:04.010 --> 00:12:08.410
+It was kind of one of the first video conferences services that was using
+
+00:12:08.410 --> 00:12:13.810
+WebRTC, which is an open source project by Google that run that you
+
+00:12:13.810 --> 00:12:17.770
+can do like web socket connection to the peer to peer video and audio
+
+00:12:18.810 --> 00:12:24.490
+connection, which was a very interesting challenge because usually
+
+00:12:24.530 --> 00:12:28.570
+when you were doing test automation, you were testing things with you
+
+00:12:28.570 --> 00:12:31.210
+think about the end user perspective.
+
+00:12:31.210 --> 00:12:34.450
+You open a browser and you interact with the application as the
+
+00:12:34.450 --> 00:12:40.170
+user, just with one browser in this company, we were opening lots of
+
+00:12:40.170 --> 00:12:45.240
+browsers, Chrome in one side, Firefox in another side, and checking
+
+00:12:45.240 --> 00:12:49.520
+if video and audio was being transmitted from one side to the
+
+00:12:49.520 --> 00:12:52.320
+other, if screen sharing was working.
+
+00:12:53.160 --> 00:12:59.400
+And in this company, I was hired because I had specialized in this
+
+00:12:59.440 --> 00:13:02.480
+framework that we used in the other company that they decided to
+
+00:13:02.480 --> 00:13:09.240
+experiment with and they were building their software using
+
+00:13:09.280 --> 00:13:13.320
+Angular and I was like kind of starting to get to become an
+
+00:13:13.320 --> 00:13:16.480
+expert in Protractor, which was the test mission to that.
+
+00:13:17.080 --> 00:13:18.120
+I remember Protractor.
+
+00:13:18.120 --> 00:13:18.560
+Wow.
+
+00:13:19.120 --> 00:13:26.720
+I even wrote a book about it, which discontinuated the framework,
+
+00:13:27.080 --> 00:13:28.120
+but it was quite an experience.
+
+00:13:28.120 --> 00:13:32.160
+As a quick aside, that's funny because when I worked on Microsoft
+
+00:13:32.160 --> 00:13:35.920
+Teams, which is worse now, again, I was working on it about that
+
+00:13:35.920 --> 00:13:41.880
+time, 2016, we made the design choice, should we use React,
+
+00:13:41.880 --> 00:13:45.760
+should we use Angular, and we decided on Angular, wrong
+
+00:13:45.760 --> 00:13:49.280
+choice, oh well, so we used a lot of Protractor was the way to
+
+00:13:49.280 --> 00:13:51.920
+write automation for that, but the devs wrote it, but anyway,
+
+00:13:52.200 --> 00:13:53.880
+interesting flash from the past, please continue.
+
+00:13:54.860 --> 00:13:57.980
+Yeah, and it's interesting because so I moved me and my
+
+00:13:57.980 --> 00:14:01.420
+wife and a couple of cats we brought from Brazil to Europe
+
+00:14:02.180 --> 00:14:04.260
+and I was working super happy.
+
+00:14:04.260 --> 00:14:08.060
+I was a user of the service I was building even before
+
+00:14:08.060 --> 00:14:13.220
+joining the company, but my wife, she works with marketing.
+
+00:14:13.340 --> 00:14:17.900
+It was impossible for her to get a job in the Nordics without
+
+00:14:17.900 --> 00:14:21.220
+speaking a Nordic language, so we decided we had to move to
+
+00:14:21.220 --> 00:14:22.700
+a more international place.
+
+00:14:23.180 --> 00:14:27.140
+And then we went from Norway to Amsterdam to live in the Netherlands
+
+00:14:27.140 --> 00:14:32.260
+where we spend four years in there, passed by many different companies
+
+00:14:32.740 --> 00:14:38.820
+because I think I mentioned to you in the last episode that I am very
+
+00:14:38.820 --> 00:14:41.820
+selective with the kind of work that I get.
+
+00:14:41.900 --> 00:14:45.980
+And if I am not happy, I don't mind just leaving.
+
+00:14:46.700 --> 00:14:51.620
+So I jumped from one job to another until I found something
+
+00:14:51.620 --> 00:14:53.260
+that was interested to me.
+
+00:14:53.700 --> 00:14:54.860
+You wanted to say something?
+
+00:14:54.940 --> 00:14:57.980
+Yeah, I mean, that was the thing right before we recorded.
+
+00:14:58.740 --> 00:15:00.220
+I said there was something I wanted to dive into.
+
+00:15:00.220 --> 00:15:02.420
+So if I can have a tangent for a moment.
+
+00:15:02.980 --> 00:15:03.620
+Of course.
+
+00:15:03.700 --> 00:15:08.420
+I wanted to, that story you told last time where you got a job
+
+00:15:09.260 --> 00:15:13.740
+and you showed up on the first day and said, nah, and you left that job.
+
+00:15:14.620 --> 00:15:17.820
+So one, I love that story.
+
+00:15:18.300 --> 00:15:22.860
+And two, as I've mentioned, I am looking for a job.
+
+00:15:22.860 --> 00:15:23.780
+I'm being selective.
+
+00:15:23.780 --> 00:15:25.180
+I'm thinking about what I want to do.
+
+00:15:25.180 --> 00:15:27.340
+And I've actually gone back and forth a little bit on,
+
+00:15:29.200 --> 00:15:30.880
+do I want to work for a company?
+
+00:15:30.880 --> 00:15:33.000
+Do I want to maybe I'll try and do some consulting.
+
+00:15:33.000 --> 00:15:37.360
+I think that I think if I did the consulting thing, I think it would snow.
+
+00:15:37.400 --> 00:15:38.320
+I think it was snowball.
+
+00:15:38.320 --> 00:15:43.320
+But also, I don't know if I I may want to I may want to work in a company first
+
+00:15:43.320 --> 00:15:47.930
+and first of the year interest is spiking up.
+
+00:15:47.930 --> 00:15:49.130
+So there are some more opportunities out there.
+
+00:15:49.130 --> 00:15:50.170
+I'm figuring out what I want to do.
+
+00:15:50.170 --> 00:15:54.930
+But I am after my last gig, I am so afraid of showing up to a job that I am
+
+00:15:55.330 --> 00:15:56.850
+where all the interviews go great.
+
+00:15:56.850 --> 00:15:58.210
+They tell me all the things I want to hear.
+
+00:15:58.210 --> 00:15:59.450
+I feel like, yeah, this is it.
+
+00:15:59.450 --> 00:16:00.650
+I feel good about day one.
+
+00:16:00.970 --> 00:16:03.650
+And I get there and I go, oh, no.
+
+00:16:05.190 --> 00:16:08.670
+So I hope I hope I can one
+
+00:16:09.390 --> 00:16:11.270
+a couple of things I want to ask you
+
+00:16:11.270 --> 00:16:13.950
+that aren't all about me, but they are all about me.
+
+00:16:13.950 --> 00:16:15.310
+It's my podcast, dammit.
+
+00:16:15.310 --> 00:16:19.510
+I I I would love to have that courage to leave.
+
+00:16:19.510 --> 00:16:21.150
+And I think I'm kind of setting myself up.
+
+00:16:21.150 --> 00:16:24.630
+I have a job that requires, you know, I'm an air quote relocation.
+
+00:16:25.510 --> 00:16:27.390
+I made I would not move.
+
+00:16:27.390 --> 00:16:29.470
+I would get temporary housing and try it out for a walk.
+
+00:16:29.470 --> 00:16:32.830
+So I'm not going to sell myself to that.
+
+00:16:32.910 --> 00:16:35.230
+And also, I would negotiate for more remote work.
+
+00:16:35.230 --> 00:16:37.730
+But I'm curious.
+
+00:16:37.730 --> 00:16:39.570
+So that's that's I'm going to do a lot of due diligence.
+
+00:16:39.570 --> 00:16:41.330
+Now, I'm going to track down employees that work at these
+
+00:16:41.330 --> 00:16:43.610
+whatever company I decided to go to and really figure out what it's like
+
+00:16:43.610 --> 00:16:44.290
+before I go there.
+
+00:16:44.290 --> 00:16:46.810
+I want to make sure I can do what I do and do what I do best
+
+00:16:47.210 --> 00:16:49.690
+safely and in a good environment where I can actually have the impact
+
+00:16:49.690 --> 00:16:53.050
+I want to have. If that fails, I want to be not afraid to say,
+
+00:16:53.050 --> 00:16:54.210
+you know what? Nope.
+
+00:16:54.210 --> 00:16:57.930
+I'm going to try again and, you know, take whatever comes back with that.
+
+00:17:00.730 --> 00:17:03.610
+So the question I have is I want to know more about like what we're
+
+00:17:04.050 --> 00:17:07.730
+one, what were the things that really what was the tipping point
+
+00:17:07.730 --> 00:17:10.010
+that really made you say no, really noped you out of there.
+
+00:17:10.370 --> 00:17:13.130
+And then two, if you could do it again and like there are some due
+
+00:17:13.130 --> 00:17:17.170
+diligence, like during the interview or during the lead up to taking that job.
+
+00:17:17.170 --> 00:17:20.050
+What would you do differently now?
+
+00:17:20.050 --> 00:17:23.490
+Well, actually, it was a little bit of my fault as well.
+
+00:17:24.370 --> 00:17:28.650
+So the main thing is that I've been working remotely
+
+00:17:29.130 --> 00:17:31.410
+since before the pandemic.
+
+00:17:31.770 --> 00:17:35.490
+So when I was still living in the Netherlands, I worked for GitLab,
+
+00:17:35.490 --> 00:17:37.730
+which started as a remote company.
+
+00:17:38.450 --> 00:17:43.330
+I joined them when they were already like a big company for a pre IPO.
+
+00:17:45.250 --> 00:17:50.050
+And I got used to working remotely and I continued working remotely
+
+00:17:50.050 --> 00:17:52.050
+all other gigs that I worked for.
+
+00:17:54.030 --> 00:18:00.290
+And in the Netherlands, there was a time that I decided to quit my job
+
+00:18:00.290 --> 00:18:07.330
+when I was at GitLab for a year and a half to work on my own my own business.
+
+00:18:07.330 --> 00:18:12.690
+I am a kind of an entrepreneur, have a company with just myself.
+
+00:18:13.370 --> 00:18:17.050
+When you were saying that I might work for myself, I might work
+
+00:18:17.050 --> 00:18:18.930
+for someone else, for a company.
+
+00:18:18.930 --> 00:18:20.410
+I do both nowadays.
+
+00:18:20.410 --> 00:18:22.730
+I have my own company, I have my own clients and I have
+
+00:18:23.090 --> 00:18:25.890
+my own job as well, like as an employee.
+
+00:18:26.530 --> 00:18:33.250
+So I quit my job at GitLab, spent like a kind of a sabbatical year
+
+00:18:34.210 --> 00:18:40.450
+thinking about life while building my own business and trying things
+
+00:18:40.450 --> 00:18:43.040
+and failing and adjusting.
+
+00:18:43.040 --> 00:18:44.800
+I want to live here.
+
+00:18:44.800 --> 00:18:46.320
+I like the way you're living your life.
+
+00:18:46.320 --> 00:18:47.280
+I just want to say that.
+
+00:18:47.280 --> 00:18:50.640
+Traveling, living abroad, taking a year off to think about
+
+00:18:50.640 --> 00:18:53.200
+what you want to do, having a balance between your own stuff
+
+00:18:53.200 --> 00:18:54.240
+and the corporate stuff.
+
+00:18:54.240 --> 00:18:55.040
+I like it.
+
+00:18:55.920 --> 00:19:00.160
+And I would say that it's like a partnership between me and my wife.
+
+00:19:00.720 --> 00:19:04.160
+She was dependent of my visa for a while.
+
+00:19:04.160 --> 00:19:07.360
+I had to be dependent of her visa for a while as well.
+
+00:19:08.000 --> 00:19:08.800
+We are Brazilians.
+
+00:19:08.800 --> 00:19:09.520
+We live in Europe.
+
+00:19:09.520 --> 00:19:13.040
+We don't have a European citizenship.
+
+00:19:13.040 --> 00:19:16.640
+So we depend on a working visa to stay in Europe still.
+
+00:19:17.360 --> 00:19:20.560
+Nowadays, we have applied for Spanish citizenship, which is
+
+00:19:20.560 --> 00:19:24.320
+probably going to come this year, but we still depend on a visa.
+
+00:19:24.320 --> 00:19:29.040
+So this is really a partnership between the both of us.
+
+00:19:32.380 --> 00:19:38.540
+So I decided that I want to have a sabbatical to work on my own stuff
+
+00:19:38.540 --> 00:19:41.740
+and think about what I was going to do afterwards.
+
+00:19:42.620 --> 00:19:47.340
+Worked for a company in the Netherlands before moving to Spain
+
+00:19:47.340 --> 00:19:49.580
+for about five months.
+
+00:19:50.300 --> 00:19:55.900
+And then I decided to leave because we wanted to move again.
+
+00:19:55.900 --> 00:20:00.940
+So we lived in Oslo, in Norway, then in the Netherlands, in Amsterdam.
+
+00:20:00.940 --> 00:20:05.740
+And there were three things that we did not like.
+
+00:20:05.740 --> 00:20:07.500
+One, the weather.
+
+00:20:07.500 --> 00:20:08.380
+We are Brazilians.
+
+00:20:08.380 --> 00:20:09.980
+We have very good weather in Brazil.
+
+00:20:09.980 --> 00:20:17.790
+We got not used to the weather, nor in Oslo,
+
+00:20:17.870 --> 00:20:20.270
+neither in Amsterdam.
+
+00:20:21.950 --> 00:20:28.350
+The language is a great barrier for you to feel part of the country you live.
+
+00:20:28.910 --> 00:20:32.430
+I speak a little bit of Norwegian, but I can't communicate.
+
+00:20:32.430 --> 00:20:35.310
+I can't have a conversation with someone that speaks fluently
+
+00:20:35.310 --> 00:20:36.030
+in Norwegian.
+
+00:20:36.030 --> 00:20:39.710
+I can just read some things and introduce myself,
+
+00:20:39.710 --> 00:20:41.630
+but I can't make a conversation.
+
+00:20:41.630 --> 00:20:44.990
+I never learned Norwegian Dutch.
+
+00:20:44.990 --> 00:20:47.950
+It's a very difficult language.
+
+00:20:47.950 --> 00:20:50.350
+So we decided that we wanted to move to a place
+
+00:20:51.070 --> 00:20:55.890
+that we would have a good weather,
+
+00:20:57.090 --> 00:20:59.170
+culture that is more similar to us,
+
+00:20:59.810 --> 00:21:01.970
+and also a language that we speak.
+
+00:21:01.970 --> 00:21:04.930
+So we came to Spain where we have the three things.
+
+00:21:06.050 --> 00:21:07.970
+My wife, we speak Spanish.
+
+00:21:07.970 --> 00:21:09.410
+We have a Latin culture.
+
+00:21:09.410 --> 00:21:10.210
+We are Latins.
+
+00:21:11.010 --> 00:21:14.850
+And we have a very good weather here in Barcelona where we live.
+
+00:21:15.650 --> 00:21:21.310
+And in Barcelona, I started working for Typeform at first.
+
+00:21:21.310 --> 00:21:25.070
+I worked for them with them for almost a year.
+
+00:21:26.350 --> 00:21:29.790
+And my role at Typeform was quality assistance,
+
+00:21:30.590 --> 00:21:31.550
+assistant.
+
+00:21:31.550 --> 00:21:34.590
+So we had a team of four quality assistants,
+
+00:21:36.510 --> 00:21:40.270
+and we were basically assisting many developer teams
+
+00:21:40.270 --> 00:21:43.870
+that have different needs in terms of quality.
+
+00:21:43.870 --> 00:21:47.790
+Some of them need a hand with test automation.
+
+00:21:47.790 --> 00:21:50.510
+Some of them were doing test automation just great,
+
+00:21:50.510 --> 00:21:56.220
+and we would give them a hand with, I don't know.
+
+00:21:56.220 --> 00:21:59.740
+There was a case where we were using
+
+00:21:59.740 --> 00:22:05.500
+a very expensive SAS for doing visual regression testing.
+
+00:22:05.500 --> 00:22:08.140
+So we decided to experiment with open source solutions
+
+00:22:08.140 --> 00:22:10.140
+that we could host on our own
+
+00:22:10.140 --> 00:22:12.780
+and replace the very expensive one.
+
+00:22:12.780 --> 00:22:13.740
+So we did that.
+
+00:22:14.860 --> 00:22:17.260
+We were doing trainings and that kind of thing.
+
+00:22:17.900 --> 00:22:19.900
+And then there were layoffs.
+
+00:22:19.900 --> 00:22:24.460
+The quality team was dismantled.
+
+00:22:24.460 --> 00:22:25.900
+And I decided, you know what?
+
+00:22:25.900 --> 00:22:28.620
+I'm going to go back to what I did in the Netherlands,
+
+00:22:28.620 --> 00:22:31.660
+focus on my own job, on my own business.
+
+00:22:31.660 --> 00:22:34.620
+And I did that for about two years.
+
+00:22:36.700 --> 00:22:39.500
+In these two years that I, like when you do,
+
+00:22:40.660 --> 00:22:43.700
+like most of my clients, they are from Brazil,
+
+00:22:43.700 --> 00:22:45.620
+and I live in Europe.
+
+00:22:45.620 --> 00:22:48.980
+And the Brazilian currency is very low
+
+00:22:48.980 --> 00:22:52.340
+if you make the change between Brazilian reais and euros.
+
+00:22:52.340 --> 00:22:55.300
+So you have to get quite a big amount of money
+
+00:22:55.860 --> 00:22:58.340
+to have clients in Brazil to live in Europe.
+
+00:22:58.900 --> 00:23:01.620
+So I was experimenting with different things,
+
+00:23:01.620 --> 00:23:04.100
+like my online courses were giving me
+
+00:23:04.100 --> 00:23:05.860
+some part of my revenue.
+
+00:23:05.860 --> 00:23:07.540
+At the same time, I was experimenting
+
+00:23:07.540 --> 00:23:10.820
+with different kind of services that I could offer,
+
+00:23:10.820 --> 00:23:13.940
+doing a little bit of consulting for a few clients.
+
+00:23:14.900 --> 00:23:19.140
+So one thing that I did, which I did already five classes,
+
+00:23:20.100 --> 00:23:23.540
+was a mentorship called Test Design Masterclass
+
+00:23:24.420 --> 00:23:30.260
+where I teach software design applied to test automation,
+
+00:23:30.260 --> 00:23:31.380
+to software testing.
+
+00:23:31.940 --> 00:23:36.340
+This masterclass, I teach more than 40 students
+
+00:23:36.340 --> 00:23:39.540
+on this already, and it was inspired by this book here
+
+00:23:39.540 --> 00:23:40.500
+that I'm going to show you.
+
+00:23:41.620 --> 00:23:43.620
+It's called A Philosophy of Software Design.
+
+00:23:43.620 --> 00:23:44.580
+I have not read that one.
+
+00:23:45.220 --> 00:23:49.460
+And I love the cover, which is kind of spaghetti coat on top.
+
+00:23:49.460 --> 00:23:52.180
+Then you apply the philosophy of software design,
+
+00:23:52.180 --> 00:23:55.140
+and then you have very well decoupled software in the bottom.
+
+00:23:56.340 --> 00:23:57.860
+I'd like to point out for our listeners
+
+00:23:57.860 --> 00:24:00.260
+that there are very few books on software I haven't read.
+
+00:24:00.260 --> 00:24:01.940
+There probably are a lot, but I haven't read that one.
+
+00:24:01.940 --> 00:24:02.740
+It sounds like it's a good one.
+
+00:24:02.740 --> 00:24:04.020
+I'll put it on my list.
+
+00:24:04.020 --> 00:24:05.460
+I highly recommend it.
+
+00:24:05.460 --> 00:24:07.060
+It's from John Osterhout.
+
+00:24:07.060 --> 00:24:10.980
+He was a professor at the CES course in Stanford.
+
+00:24:14.740 --> 00:24:17.860
+And he basically wrote the book as what he was doing
+
+00:24:17.860 --> 00:24:20.340
+at Stanford, the university.
+
+00:24:20.340 --> 00:24:22.500
+So he was teaching software design
+
+00:24:22.500 --> 00:24:27.300
+in a very different way that other universities were doing.
+
+00:24:27.300 --> 00:24:35.220
+So he would give to his students a kind of a softer product
+
+00:24:35.220 --> 00:24:36.660
+that they had to build.
+
+00:24:36.660 --> 00:24:38.020
+And they would build it for...
+
+00:24:40.100 --> 00:24:43.780
+So they would have classes on software design,
+
+00:24:43.780 --> 00:24:46.100
+but they would have this exercise
+
+00:24:46.100 --> 00:24:48.180
+of building an application on their own.
+
+00:24:48.740 --> 00:24:51.140
+And they would send to him for review,
+
+00:24:51.140 --> 00:24:55.300
+and he would give feedback so they could apply
+
+00:24:56.180 --> 00:24:59.780
+the principles of software design while they were learning.
+
+00:24:59.780 --> 00:25:03.540
+And they would have a few rounds of building
+
+00:25:03.540 --> 00:25:07.700
+and receiving feedback and updating the code
+
+00:25:07.700 --> 00:25:08.740
+based on the feedback.
+
+00:25:08.740 --> 00:25:10.500
+And in the second round, they would not send
+
+00:25:11.380 --> 00:25:13.380
+just for the professor to review,
+
+00:25:13.380 --> 00:25:15.780
+but also to the other peers.
+
+00:25:15.780 --> 00:25:18.660
+So I decided to copy what he was doing
+
+00:25:19.220 --> 00:25:22.180
+teaching software design, but applied to software testing.
+
+00:25:22.180 --> 00:25:24.100
+So I built a web application,
+
+00:25:25.170 --> 00:25:32.430
+and I gave to my students the exercise
+
+00:25:32.430 --> 00:25:36.590
+of you have to write tests for this application.
+
+00:25:36.590 --> 00:25:38.430
+You have to write end-to-end tests.
+
+00:25:38.430 --> 00:25:40.990
+You have to write tests for the API.
+
+00:25:40.990 --> 00:25:44.910
+You have to write tests for the specific components
+
+00:25:44.910 --> 00:25:46.430
+of the front end.
+
+00:25:46.430 --> 00:25:49.470
+You have to write accessibility tests
+
+00:25:49.470 --> 00:25:53.310
+for the things to make sure the application is accessible.
+
+00:25:53.310 --> 00:25:58.190
+And depending on the level of seniority of the students,
+
+00:25:58.190 --> 00:26:02.350
+they would have more difficult or easier exercises.
+
+00:26:03.390 --> 00:26:04.750
+If they were very senior,
+
+00:26:04.750 --> 00:26:06.270
+they could even apply that
+
+00:26:06.270 --> 00:26:08.590
+to doing continuous integration as well.
+
+00:26:10.190 --> 00:26:13.630
+It's been a very nice experiment now.
+
+00:26:14.270 --> 00:26:19.550
+I'm going to go with the sixth class in June this year.
+
+00:26:21.570 --> 00:26:24.770
+But after two years just working on my own
+
+00:26:24.770 --> 00:26:26.850
+for the first year, it worked pretty well.
+
+00:26:26.850 --> 00:26:32.210
+The second year, it wasn't doing as well as I imagined.
+
+00:26:32.210 --> 00:26:35.650
+And then I decided to go back to the market.
+
+00:26:36.930 --> 00:26:40.690
+And then I was very selective on finding a new job.
+
+00:26:40.690 --> 00:26:42.370
+I got this one that I mentioned.
+
+00:26:44.060 --> 00:26:47.100
+And now I realize that I am telling all that
+
+00:26:47.100 --> 00:26:49.340
+because of the question you asked about the job.
+
+00:26:49.340 --> 00:26:51.740
+Yeah, but before you go on, as we do,
+
+00:26:51.740 --> 00:26:54.140
+I have two follow-up questions before we get to the end point.
+
+00:26:54.860 --> 00:26:57.820
+I love the journey here because, again,
+
+00:26:57.820 --> 00:27:00.060
+it underscores that the principles
+
+00:27:00.060 --> 00:27:02.300
+that Brendan and I have talked about are not things...
+
+00:27:02.300 --> 00:27:03.900
+It's not like we invented them and said,
+
+00:27:03.900 --> 00:27:04.780
+these are going to happen.
+
+00:27:04.780 --> 00:27:06.220
+We just put some labels on things
+
+00:27:06.220 --> 00:27:07.420
+that were already happening.
+
+00:27:07.420 --> 00:27:09.260
+It's great to hear this happen independently.
+
+00:27:10.380 --> 00:27:10.860
+Two questions.
+
+00:27:10.860 --> 00:27:11.980
+One's sort of an easy one.
+
+00:27:11.980 --> 00:27:14.860
+You mentioned at a company you had four quality assistants
+
+00:27:14.860 --> 00:27:16.780
+and their term quality assistant
+
+00:27:16.780 --> 00:27:18.780
+I think originally came from Atlassian.
+
+00:27:18.780 --> 00:27:19.900
+I don't know the name exactly.
+
+00:27:19.900 --> 00:27:21.340
+They wanted people to help.
+
+00:27:21.340 --> 00:27:23.420
+They wanted quality folks to help developers
+
+00:27:23.420 --> 00:27:24.300
+do better testing.
+
+00:27:24.300 --> 00:27:26.540
+So I understand your journey.
+
+00:27:26.540 --> 00:27:28.620
+I'm just curious, the other folks
+
+00:27:28.620 --> 00:27:31.820
+that were quality assistants or quality advisors,
+
+00:27:31.820 --> 00:27:33.580
+quality coaches, whatever you want to call them,
+
+00:27:35.580 --> 00:27:38.220
+was that a role they also grew in independently?
+
+00:27:38.220 --> 00:27:39.900
+Did they have to kind of be taught to do that?
+
+00:27:39.900 --> 00:27:41.980
+Did they go there because they saw the light of it?
+
+00:27:41.980 --> 00:27:44.220
+Were they reluctant to do that?
+
+00:27:45.420 --> 00:27:46.540
+And I ask for a reason,
+
+00:27:46.540 --> 00:27:48.380
+but I'm just curious to have to describe
+
+00:27:48.380 --> 00:27:49.260
+every single one of them.
+
+00:27:49.260 --> 00:27:52.780
+But briefly, what was their journey to this role
+
+00:27:52.780 --> 00:27:53.740
+and how did they receive it?
+
+00:27:54.620 --> 00:28:00.500
+Actually, the company didn't have this role before.
+
+00:28:00.500 --> 00:28:04.660
+They were like normal quality engineers in the beginning.
+
+00:28:04.660 --> 00:28:07.780
+So they were transitioning to quality assistants
+
+00:28:07.780 --> 00:28:11.380
+and they hired me when they were in this transition.
+
+00:28:11.380 --> 00:28:13.700
+So besides helping the developers,
+
+00:28:13.700 --> 00:28:18.900
+I was also helping my other peers as quality assistants
+
+00:28:19.060 --> 00:28:24.740
+to grow into this kind of model of working.
+
+00:28:24.740 --> 00:28:25.380
+How did that go?
+
+00:28:26.460 --> 00:28:28.780
+It went pretty well, I would say,
+
+00:28:29.900 --> 00:28:32.540
+especially for the youngest one,
+
+00:28:32.540 --> 00:28:36.060
+which was not as senior as the other two,
+
+00:28:37.260 --> 00:28:39.260
+because he was more open-minded.
+
+00:28:39.260 --> 00:28:41.500
+The other one, they had already their issues.
+
+00:28:41.500 --> 00:28:42.460
+I'm not surprised.
+
+00:28:42.460 --> 00:28:44.700
+I think the folks that have been in traditional
+
+00:28:45.660 --> 00:28:48.060
+versus modern, traditional testing for a long time,
+
+00:28:48.060 --> 00:28:50.700
+they want to hold onto those roots a little tighter
+
+00:28:50.700 --> 00:28:55.820
+and moving to giving someone else that expertise
+
+00:28:55.820 --> 00:28:57.340
+can be difficult for them.
+
+00:28:57.340 --> 00:29:02.460
+They want to hold on to the notion
+
+00:29:02.460 --> 00:29:06.940
+that they have the right mindset to do it properly
+
+00:29:06.940 --> 00:29:09.580
+and nobody else does, which often not all,
+
+00:29:09.580 --> 00:29:10.780
+a lot of folks will have.
+
+00:29:10.780 --> 00:29:12.620
+I have a funny story about Microsoft.
+
+00:29:12.620 --> 00:29:13.580
+Really quickly, when I first worked there,
+
+00:29:13.580 --> 00:29:15.020
+I worked on networking on Windows 95
+
+00:29:15.020 --> 00:29:16.540
+and we had a guy there who was a network,
+
+00:29:16.540 --> 00:29:17.900
+a network admin.
+
+00:29:17.900 --> 00:29:19.500
+I did a lot of work to make network work.
+
+00:29:21.580 --> 00:29:24.380
+He was asked to share some of his knowledge with us
+
+00:29:24.380 --> 00:29:25.980
+so we could all do better network testing
+
+00:29:25.980 --> 00:29:28.300
+and he refused because he said,
+
+00:29:28.300 --> 00:29:29.820
+I took certification in classes.
+
+00:29:29.820 --> 00:29:31.740
+I shouldn't have to share this information,
+
+00:29:31.740 --> 00:29:33.900
+which is a horrible, horrible approach.
+
+00:29:33.900 --> 00:29:35.820
+And he was escrowed out of the building the next day.
+
+00:29:35.820 --> 00:29:39.740
+It was fine, but information sharing is great.
+
+00:29:39.740 --> 00:29:42.640
+So as people move into these roles,
+
+00:29:42.640 --> 00:29:43.840
+I worry a little bit that,
+
+00:29:43.840 --> 00:29:45.840
+I mean, there is a tough transition.
+
+00:29:45.920 --> 00:29:47.600
+You have to have some sort of leadership support.
+
+00:29:47.600 --> 00:29:49.040
+The company wanted to move that direction.
+
+00:29:49.040 --> 00:29:50.960
+So it makes sense.
+
+00:29:50.960 --> 00:29:53.200
+The other question, and I'm always curious.
+
+00:29:53.200 --> 00:29:54.160
+But if I can interrupt,
+
+00:29:54.960 --> 00:29:56.880
+I would say that the other two,
+
+00:29:56.880 --> 00:30:00.880
+they were not reluctant completely,
+
+00:30:00.880 --> 00:30:05.600
+but simply the youngest one was more open-minded.
+
+00:30:05.600 --> 00:30:08.320
+The other one, we complement each other very well.
+
+00:30:08.320 --> 00:30:10.880
+So there were things that they didn't like to do
+
+00:30:10.880 --> 00:30:13.200
+and they would do while there were things
+
+00:30:13.200 --> 00:30:14.880
+that they were very great on doing.
+
+00:30:14.960 --> 00:30:17.120
+Like teaching disseminating knowledge.
+
+00:30:17.120 --> 00:30:19.680
+So we would complement each other very well.
+
+00:30:19.680 --> 00:30:20.320
+I would say.
+
+00:30:20.320 --> 00:30:20.640
+That's fair.
+
+00:30:20.640 --> 00:30:21.760
+Thanks for the clarification on that.
+
+00:30:21.760 --> 00:30:22.480
+That makes sense.
+
+00:30:23.040 --> 00:30:24.720
+The other question I have, unrelated.
+
+00:30:25.360 --> 00:30:27.120
+I talked about your test design masterclass.
+
+00:30:29.280 --> 00:30:30.800
+There's whole books on test design
+
+00:30:30.800 --> 00:30:32.000
+that are mostly useless.
+
+00:30:33.920 --> 00:30:35.040
+The trick with test design,
+
+00:30:35.040 --> 00:30:36.240
+I just talked to some folks
+
+00:30:37.200 --> 00:30:38.800
+at a company I'm working with
+
+00:30:40.220 --> 00:30:42.300
+about test design yesterday.
+
+00:30:42.300 --> 00:30:43.100
+And the challenge is,
+
+00:30:43.900 --> 00:30:45.980
+if you have, for example, Chad GPT,
+
+00:30:45.980 --> 00:30:47.500
+here's an application, Chad GPT,
+
+00:30:47.500 --> 00:30:49.100
+please generate me a list of test cases.
+
+00:30:50.290 --> 00:30:52.050
+It will generate you a list of test cases
+
+00:30:52.050 --> 00:30:54.050
+as requested and they'll be fine.
+
+00:30:54.050 --> 00:30:56.770
+And they'll probably be the test cases
+
+00:30:56.770 --> 00:30:59.250
+that most testers would generate.
+
+00:30:59.810 --> 00:31:00.530
+And that's great.
+
+00:31:01.410 --> 00:31:02.610
+Well, it isn't great because
+
+00:31:04.880 --> 00:31:06.960
+the trick is in test design
+
+00:31:06.960 --> 00:31:09.280
+to design not just the tests well,
+
+00:31:09.280 --> 00:31:10.720
+but design the right tests.
+
+00:31:11.680 --> 00:31:14.160
+And so much of testing,
+
+00:31:14.160 --> 00:31:15.760
+whether it's developer testing
+
+00:31:15.760 --> 00:31:17.120
+or by dedicated testing,
+
+00:31:17.840 --> 00:31:20.240
+will over test some parts of the application
+
+00:31:21.040 --> 00:31:23.600
+and under test some other parts
+
+00:31:23.600 --> 00:31:24.320
+of the application.
+
+00:31:24.320 --> 00:31:25.360
+That's where principle five,
+
+00:31:25.360 --> 00:31:26.640
+we use data to help figure out
+
+00:31:26.640 --> 00:31:28.240
+where the worst in those places may be.
+
+00:31:28.960 --> 00:31:30.480
+But I'm just curious in your approach
+
+00:31:30.480 --> 00:31:32.240
+to test design, maybe just give us
+
+00:31:32.240 --> 00:31:35.600
+a little high level abstract or synopsis.
+
+00:31:35.600 --> 00:31:37.200
+What is your approach to test design?
+
+00:31:37.840 --> 00:31:41.360
+And is it does it coincide with the norms
+
+00:31:41.360 --> 00:31:42.320
+a little off the tracks?
+
+00:31:42.320 --> 00:31:43.280
+Is there a new approach?
+
+00:31:43.280 --> 00:31:44.800
+I'm just kind of curious
+
+00:31:44.800 --> 00:31:48.240
+because this is a even today
+
+00:31:48.240 --> 00:31:49.840
+where we have developers doing
+
+00:31:49.840 --> 00:31:52.560
+most of the testing in many teams.
+
+00:31:53.200 --> 00:31:54.480
+Test design is still a challenge.
+
+00:31:55.040 --> 00:31:56.800
+So I'm just curious if you can just
+
+00:31:56.800 --> 00:31:58.240
+just this is a nice little promo
+
+00:31:58.240 --> 00:31:59.120
+for your course as well.
+
+00:32:00.160 --> 00:32:00.960
+At a high level,
+
+00:32:00.960 --> 00:32:02.160
+what is your approach to that?
+
+00:32:03.200 --> 00:32:06.400
+So what I try to do is pass away
+
+00:32:06.400 --> 00:32:09.520
+everything that I learned from the moment
+
+00:32:09.520 --> 00:32:11.360
+that I started working as a tester
+
+00:32:11.360 --> 00:32:13.840
+until the current moment.
+
+00:32:14.480 --> 00:32:17.840
+So I kind of invented 14 principles
+
+00:32:17.840 --> 00:32:18.720
+of test design.
+
+00:32:19.760 --> 00:32:21.760
+I can list them to you if you don't mind.
+
+00:32:21.760 --> 00:32:24.560
+The first one is the description
+
+00:32:24.560 --> 00:32:26.000
+of the suite, the sub suite
+
+00:32:26.000 --> 00:32:27.200
+and the test cases,
+
+00:32:27.200 --> 00:32:29.360
+which is more about what you just said,
+
+00:32:29.360 --> 00:32:31.360
+thinking about what test cases
+
+00:32:31.360 --> 00:32:34.080
+make sense for the thing you were testing.
+
+00:32:34.080 --> 00:32:35.680
+Then I talk about test levels,
+
+00:32:36.480 --> 00:32:38.320
+like the unit testing,
+
+00:32:38.320 --> 00:32:40.320
+the tests in the top of the pyramid,
+
+00:32:40.320 --> 00:32:41.440
+the integration testing,
+
+00:32:41.440 --> 00:32:42.720
+that kind of things.
+
+00:32:42.720 --> 00:32:44.480
+I talk about abstractions.
+
+00:32:44.480 --> 00:32:46.240
+I talk about assertions.
+
+00:32:46.240 --> 00:32:48.240
+I talk about independence,
+
+00:32:48.240 --> 00:32:49.760
+how tests should be independent
+
+00:32:49.760 --> 00:32:51.360
+of each other.
+
+00:32:51.360 --> 00:32:53.280
+I talk about infrastructure
+
+00:32:53.280 --> 00:32:54.720
+and environments for running
+
+00:32:54.720 --> 00:32:56.160
+the tests against.
+
+00:32:56.160 --> 00:32:58.640
+I talk about tools, accessibility,
+
+00:32:58.640 --> 00:33:00.400
+testability, security,
+
+00:33:01.200 --> 00:33:02.800
+the size of your tests,
+
+00:33:03.600 --> 00:33:05.280
+the conventions you should follow,
+
+00:33:06.000 --> 00:33:08.320
+the arrange, act, assert pattern.
+
+00:33:08.320 --> 00:33:09.600
+And I talk also about
+
+00:33:09.600 --> 00:33:11.760
+performance optimizations.
+
+00:33:11.760 --> 00:33:14.720
+So I give them kind of lecture
+
+00:33:14.720 --> 00:33:16.320
+about these different topics.
+
+00:33:16.320 --> 00:33:16.960
+In the beginning,
+
+00:33:16.960 --> 00:33:19.440
+in the first two classes,
+
+00:33:19.440 --> 00:33:22.240
+I would give them in the first hour.
+
+00:33:22.240 --> 00:33:26.560
+So it's like one month classes
+
+00:33:26.560 --> 00:33:29.280
+on the Saturdays where I would,
+
+00:33:29.280 --> 00:33:30.000
+in the first hour,
+
+00:33:30.000 --> 00:33:30.960
+give them lectures.
+
+00:33:30.960 --> 00:33:31.920
+And in the second time,
+
+00:33:31.920 --> 00:33:33.760
+it would focus more on the exercises.
+
+00:33:33.760 --> 00:33:34.800
+And then they would,
+
+00:33:34.800 --> 00:33:36.480
+after the class,
+
+00:33:36.480 --> 00:33:38.640
+have to do the exercises on their own.
+
+00:33:39.360 --> 00:33:41.120
+They would have like four or five days
+
+00:33:41.120 --> 00:33:43.120
+to do the work and send for my review.
+
+00:33:43.120 --> 00:33:44.880
+So I would review and they would have,
+
+00:33:44.880 --> 00:33:47.920
+they would come back with the feedback.
+
+00:33:49.140 --> 00:33:50.820
+After, in the third one,
+
+00:33:50.820 --> 00:33:54.180
+I decided that I spend too much time
+
+00:33:55.140 --> 00:33:56.500
+lecturing about test design.
+
+00:33:56.500 --> 00:33:58.980
+So I prerecorded the lessons
+
+00:33:58.980 --> 00:34:00.980
+and I would give them a free course
+
+00:34:02.180 --> 00:34:03.700
+teaching exactly what I would.
+
+00:34:03.700 --> 00:34:06.740
+So we would spend more time on practical stuff.
+
+00:34:06.740 --> 00:34:08.100
+And actually, as an aside,
+
+00:34:08.100 --> 00:34:08.660
+there's a whole,
+
+00:34:11.840 --> 00:34:13.440
+in the U.S. where education is poor
+
+00:34:13.440 --> 00:34:14.320
+to start off with,
+
+00:34:14.320 --> 00:34:15.200
+there are some folks trying
+
+00:34:15.200 --> 00:34:15.680
+to make it better.
+
+00:34:15.680 --> 00:34:16.800
+And one of the techniques they use
+
+00:34:16.800 --> 00:34:18.640
+is to give students the lecture
+
+00:34:18.640 --> 00:34:19.680
+to take home
+
+00:34:19.680 --> 00:34:20.960
+and then use the in-person time
+
+00:34:20.960 --> 00:34:21.680
+with the instructor
+
+00:34:21.680 --> 00:34:23.040
+to actually get practical advice
+
+00:34:23.040 --> 00:34:23.840
+and to walk through stuff
+
+00:34:23.840 --> 00:34:24.960
+and answer questions.
+
+00:34:24.960 --> 00:34:26.480
+I think it's very effective.
+
+00:34:27.680 --> 00:34:29.120
+And it was a learning for me.
+
+00:34:29.840 --> 00:34:31.920
+It was like something that I realized
+
+00:34:31.920 --> 00:34:34.880
+that we could spend more time
+
+00:34:34.880 --> 00:34:37.360
+like with asking questions
+
+00:34:37.360 --> 00:34:38.480
+and answering them
+
+00:34:39.360 --> 00:34:40.480
+while they would have
+
+00:34:41.360 --> 00:34:42.640
+the live time with me.
+
+00:34:43.200 --> 00:34:44.880
+And then they could take
+
+00:34:44.880 --> 00:34:46.400
+the lectures on their own.
+
+00:34:50.860 --> 00:34:52.620
+So the way it works,
+
+00:34:52.620 --> 00:34:54.380
+it's like through code reviews.
+
+00:34:54.380 --> 00:34:55.980
+So they have to create,
+
+00:34:55.980 --> 00:34:57.660
+so they have to fork the project
+
+00:34:57.660 --> 00:34:59.820
+on GitHub, work on,
+
+00:34:59.820 --> 00:35:02.060
+clone their own fork
+
+00:35:02.060 --> 00:35:03.580
+on their own machines,
+
+00:35:03.580 --> 00:35:04.780
+do the exercises,
+
+00:35:04.780 --> 00:35:05.980
+create pull requests
+
+00:35:05.980 --> 00:35:06.940
+so it could review.
+
+00:35:07.820 --> 00:35:09.580
+And then I would give them
+
+00:35:09.580 --> 00:35:11.180
+very constructive feedback.
+
+00:35:11.180 --> 00:35:11.980
+And the feedback
+
+00:35:11.980 --> 00:35:13.020
+that I would give them
+
+00:35:13.740 --> 00:35:15.900
+is it would be always related
+
+00:35:15.900 --> 00:35:18.140
+to one of these 14 principles
+
+00:35:18.140 --> 00:35:19.260
+that I just mentioned.
+
+00:35:19.900 --> 00:35:23.100
+And I would tell why they are
+
+00:35:25.810 --> 00:35:27.410
+not following the principle,
+
+00:35:28.740 --> 00:35:29.940
+what was the problem
+
+00:35:29.940 --> 00:35:32.020
+of not following the principle
+
+00:35:32.020 --> 00:35:34.100
+and how they could apply
+
+00:35:34.100 --> 00:35:35.380
+the principle
+
+00:35:35.380 --> 00:35:37.300
+so they would really learn
+
+00:35:37.300 --> 00:35:38.420
+and they would be able
+
+00:35:38.420 --> 00:35:40.020
+to apply the principle
+
+00:35:40.020 --> 00:35:41.540
+in a second round.
+
+00:35:41.540 --> 00:35:42.420
+And in the last,
+
+00:35:42.420 --> 00:35:44.340
+in the final class,
+
+00:35:45.220 --> 00:35:46.980
+I show them my solution.
+
+00:35:46.980 --> 00:35:48.500
+This is how I would solve.
+
+00:35:48.500 --> 00:35:50.020
+This is how I would do
+
+00:35:50.020 --> 00:35:50.900
+all the exercise.
+
+00:35:50.900 --> 00:35:52.020
+And then we spend
+
+00:35:52.020 --> 00:35:52.980
+a couple of hours
+
+00:35:52.980 --> 00:35:53.780
+where I show them
+
+00:35:56.420 --> 00:35:57.460
+all the test cases
+
+00:35:57.540 --> 00:35:58.180
+that I wrote
+
+00:35:58.180 --> 00:35:59.380
+in the different levels
+
+00:35:59.380 --> 00:36:00.180
+and I explained
+
+00:36:00.180 --> 00:36:01.060
+the different things
+
+00:36:01.060 --> 00:36:02.260
+and they can use that
+
+00:36:02.260 --> 00:36:03.060
+as a reference.
+
+00:36:06.540 --> 00:36:08.060
+And so that's a little bit
+
+00:36:08.060 --> 00:36:09.820
+about the test design
+
+00:36:09.820 --> 00:36:10.940
+master class.
+
+00:36:10.940 --> 00:36:11.740
+No, that's natural.
+
+00:36:11.740 --> 00:36:12.620
+I recommend it.
+
+00:36:12.620 --> 00:36:13.420
+Please send a link
+
+00:36:14.460 --> 00:36:15.180
+with the other links
+
+00:36:15.180 --> 00:36:15.820
+you're going to send me.
+
+00:36:16.540 --> 00:36:17.500
+Of course.
+
+00:36:17.500 --> 00:36:17.820
+All right.
+
+00:36:17.820 --> 00:36:18.540
+So here we are.
+
+00:36:18.540 --> 00:36:20.380
+We are a half hour-ish in,
+
+00:36:20.380 --> 00:36:21.420
+a little more.
+
+00:36:21.420 --> 00:36:23.500
+And now lots of background,
+
+00:36:23.500 --> 00:36:24.140
+which is great.
+
+00:36:24.140 --> 00:36:25.180
+And lots of interjections
+
+00:36:25.180 --> 00:36:26.620
+for me, not so great.
+
+00:36:26.620 --> 00:36:28.300
+But what was the question
+
+00:36:28.300 --> 00:36:28.860
+I asked?
+
+00:36:28.860 --> 00:36:29.980
+You'll remember better than I can.
+
+00:36:29.980 --> 00:36:30.860
+Go ahead and answer it.
+
+00:36:30.860 --> 00:36:32.540
+It was related to me
+
+00:36:32.540 --> 00:36:33.260
+leaving the job
+
+00:36:33.260 --> 00:36:33.980
+in the first day.
+
+00:36:33.980 --> 00:36:35.100
+Yes, yes.
+
+00:36:35.100 --> 00:36:37.500
+So after a while,
+
+00:36:37.500 --> 00:36:38.860
+I decided, you know what?
+
+00:36:38.860 --> 00:36:39.900
+I want to go back
+
+00:36:40.700 --> 00:36:42.540
+to work as an employee.
+
+00:36:44.460 --> 00:36:46.060
+But still having my own company
+
+00:36:46.060 --> 00:36:47.660
+and I started looking for jobs.
+
+00:36:47.660 --> 00:36:49.180
+And one of the things that
+
+00:36:49.180 --> 00:36:50.380
+I thought I was ready
+
+00:36:50.380 --> 00:36:51.740
+to go back to the office.
+
+00:36:52.380 --> 00:36:54.700
+So I was looking for,
+
+00:36:54.700 --> 00:36:55.500
+so as I said,
+
+00:36:55.500 --> 00:36:56.380
+I am very selective.
+
+00:36:56.380 --> 00:36:57.500
+So I was looking for
+
+00:36:58.060 --> 00:36:59.820
+the work that it would be
+
+00:37:00.540 --> 00:37:02.780
+in a domain that I wanted to work on
+
+00:37:02.780 --> 00:37:03.820
+with the technology
+
+00:37:03.820 --> 00:37:05.020
+that I feel comfortable.
+
+00:37:06.220 --> 00:37:07.100
+But not just because
+
+00:37:07.100 --> 00:37:08.140
+I feel comfortable,
+
+00:37:08.140 --> 00:37:09.020
+but because I know
+
+00:37:09.020 --> 00:37:09.820
+I would be able
+
+00:37:09.820 --> 00:37:11.100
+to contribute a lot.
+
+00:37:15.780 --> 00:37:18.420
+But I thought I would be ready
+
+00:37:18.420 --> 00:37:20.020
+to go back to the office.
+
+00:37:20.020 --> 00:37:22.690
+And then when I arrived there
+
+00:37:22.690 --> 00:37:23.490
+in the first day,
+
+00:37:23.490 --> 00:37:25.250
+I realized that I wasn't.
+
+00:37:25.250 --> 00:37:26.930
+It was like a very small office
+
+00:37:26.930 --> 00:37:27.490
+with like,
+
+00:37:28.700 --> 00:37:29.180
+I don't know,
+
+00:37:30.210 --> 00:37:31.490
+10 or 20 guys
+
+00:37:32.290 --> 00:37:34.130
+all in the same small office
+
+00:37:34.130 --> 00:37:35.250
+in a cool working place
+
+00:37:35.250 --> 00:37:36.290
+here in Barcelona.
+
+00:37:37.890 --> 00:37:39.570
+So this is one of the things
+
+00:37:39.570 --> 00:37:40.770
+that I felt that
+
+00:37:40.770 --> 00:37:42.450
+I was actually not ready
+
+00:37:42.450 --> 00:37:43.730
+to go back to the office.
+
+00:37:43.730 --> 00:37:45.250
+At least not every day.
+
+00:37:45.250 --> 00:37:46.690
+I wouldn't mind going
+
+00:37:46.690 --> 00:37:48.850
+once a week or twice maybe.
+
+00:37:48.850 --> 00:37:52.210
+But having to be there every day,
+
+00:37:53.250 --> 00:37:54.610
+it was kind of something
+
+00:37:54.610 --> 00:37:56.850
+that I thought I would be ready,
+
+00:37:56.850 --> 00:37:57.570
+but I wasn't.
+
+00:37:57.570 --> 00:37:59.010
+And the other thing is that,
+
+00:37:59.730 --> 00:38:00.530
+and this is something
+
+00:38:00.530 --> 00:38:03.010
+that was actually something
+
+00:38:03.010 --> 00:38:04.530
+that I even mentioned
+
+00:38:05.570 --> 00:38:07.090
+during the interview process.
+
+00:38:07.090 --> 00:38:09.490
+And they said that it wouldn't happen,
+
+00:38:09.490 --> 00:38:11.090
+but it actually happened
+
+00:38:11.090 --> 00:38:12.450
+is that half of the team
+
+00:38:12.450 --> 00:38:15.490
+they were Germans and Austrians.
+
+00:38:15.490 --> 00:38:17.170
+And they would be speaking German
+
+00:38:17.170 --> 00:38:18.610
+during the work time.
+
+00:38:18.610 --> 00:38:20.290
+And I felt completely lost.
+
+00:38:21.810 --> 00:38:23.010
+And I wanted to be
+
+00:38:23.010 --> 00:38:25.410
+in a more diverse place
+
+00:38:25.410 --> 00:38:27.330
+where I would have
+
+00:38:27.330 --> 00:38:29.010
+people from different backgrounds.
+
+00:38:29.010 --> 00:38:29.970
+But we would always
+
+00:38:29.970 --> 00:38:31.170
+speak in the same language.
+
+00:38:31.170 --> 00:38:33.410
+So I would feel part.
+
+00:38:33.410 --> 00:38:35.730
+So I came to Barcelona
+
+00:38:35.730 --> 00:38:36.610
+to be in a place
+
+00:38:36.610 --> 00:38:38.930
+where I understand what people say.
+
+00:38:38.930 --> 00:38:40.530
+And then I would get a job
+
+00:38:40.530 --> 00:38:41.730
+where I wasn't understanding
+
+00:38:41.730 --> 00:38:42.930
+what my colleagues were saying.
+
+00:38:43.650 --> 00:38:45.330
+So this was the second thing
+
+00:38:45.330 --> 00:38:47.010
+that made me leave.
+
+00:38:47.570 --> 00:38:49.490
+And then I decided,
+
+00:38:49.490 --> 00:38:50.770
+and then I continued
+
+00:38:50.770 --> 00:38:51.970
+searching for jobs.
+
+00:38:51.970 --> 00:38:53.170
+And now I'm working
+
+00:38:53.170 --> 00:38:54.930
+as a senior QA engineer
+
+00:38:54.930 --> 00:38:56.530
+in a company here in Barcelona.
+
+00:38:57.250 --> 00:39:00.450
+My role is senior QA engineer
+
+00:39:00.450 --> 00:39:03.360
+slash QA advisor.
+
+00:39:04.480 --> 00:39:05.440
+I like that second half.
+
+00:39:06.400 --> 00:39:07.200
+Talk to me about that.
+
+00:39:07.200 --> 00:39:08.240
+Do you do more of the first
+
+00:39:08.240 --> 00:39:09.040
+or more of the second?
+
+00:39:09.600 --> 00:39:12.320
+So this is how it works.
+
+00:39:13.760 --> 00:39:14.720
+I work in a company
+
+00:39:14.720 --> 00:39:18.000
+where we develop different products,
+
+00:39:18.640 --> 00:39:20.320
+be them mobile products
+
+00:39:20.320 --> 00:39:22.000
+or web products,
+
+00:39:22.000 --> 00:39:24.480
+different teams they have there.
+
+00:39:24.480 --> 00:39:27.920
+It's like as if each product
+
+00:39:27.920 --> 00:39:30.000
+was like a mini startup.
+
+00:39:30.000 --> 00:39:32.320
+They have their own stack.
+
+00:39:32.320 --> 00:39:34.160
+They have their own way of working.
+
+00:39:36.080 --> 00:39:38.160
+And in the team that I work,
+
+00:39:38.160 --> 00:39:40.320
+the idea is that we are going to,
+
+00:39:40.320 --> 00:39:41.440
+we are doing things
+
+00:39:41.440 --> 00:39:43.840
+differently than most of the teams.
+
+00:39:44.800 --> 00:39:46.720
+I am a really believer
+
+00:39:46.720 --> 00:39:48.400
+that if you want a different results,
+
+00:39:48.400 --> 00:39:49.760
+you have to do things different.
+
+00:39:50.640 --> 00:39:52.320
+And my manager is very aligned
+
+00:39:52.320 --> 00:39:53.280
+with that as well.
+
+00:39:53.360 --> 00:39:54.800
+So we are doing things different
+
+00:39:55.680 --> 00:39:57.680
+to prove that we can build software
+
+00:39:57.680 --> 00:39:59.280
+with a very high quality
+
+00:39:59.280 --> 00:40:00.880
+and that our users
+
+00:40:00.880 --> 00:40:02.320
+will love the software
+
+00:40:02.320 --> 00:40:03.280
+that they pay for.
+
+00:40:04.240 --> 00:40:07.490
+So we can spread it
+
+00:40:07.490 --> 00:40:08.770
+to the rest of the company.
+
+00:40:08.770 --> 00:40:12.450
+So I am in this company
+
+00:40:12.450 --> 00:40:13.730
+in my fourth month
+
+00:40:14.290 --> 00:40:16.370
+and I'm still working just
+
+00:40:16.370 --> 00:40:18.690
+as the senior QA engineer
+
+00:40:18.690 --> 00:40:20.130
+for the team I work on
+
+00:40:20.690 --> 00:40:21.810
+until we prove
+
+00:40:21.810 --> 00:40:25.730
+that we are getting
+
+00:40:25.730 --> 00:40:27.170
+the results that we want.
+
+00:40:27.170 --> 00:40:28.450
+So we are going to spread
+
+00:40:29.390 --> 00:40:30.670
+to the rest of the team
+
+00:40:30.670 --> 00:40:32.350
+and then I'm going to act more
+
+00:40:32.350 --> 00:40:33.630
+as the advisor
+
+00:40:33.630 --> 00:40:35.150
+for the rest of the company.
+
+00:40:36.270 --> 00:40:38.830
+We are actually getting started
+
+00:40:38.830 --> 00:40:40.430
+with this with some knowledge
+
+00:40:40.430 --> 00:40:41.790
+sharing sessions about the things
+
+00:40:41.790 --> 00:40:43.150
+that we are doing differently
+
+00:40:43.790 --> 00:40:45.790
+and the results that we are getting
+
+00:40:45.790 --> 00:40:48.030
+from doing these things differently.
+
+00:40:48.030 --> 00:40:50.430
+And when I say doing things differently
+
+00:40:50.430 --> 00:40:52.990
+is about using like for example
+
+00:40:53.710 --> 00:40:56.750
+most of the projects
+
+00:40:56.750 --> 00:40:58.750
+they use a test framework
+
+00:40:58.750 --> 00:41:01.310
+that was built in inside the company.
+
+00:41:01.310 --> 00:41:03.870
+We decided to go with a test framework
+
+00:41:03.870 --> 00:41:05.870
+that is a standard in the industry.
+
+00:41:06.590 --> 00:41:08.350
+And when I joined
+
+00:41:08.350 --> 00:41:09.470
+we had no tests.
+
+00:41:09.470 --> 00:41:11.630
+Nowadays we have a few hundreds
+
+00:41:13.230 --> 00:41:18.910
+and we have 107 end-to-end tests
+
+00:41:18.910 --> 00:41:19.950
+at the moment
+
+00:41:19.950 --> 00:41:23.310
+and although it's kind of a big number
+
+00:41:23.310 --> 00:41:25.230
+for a short time already
+
+00:41:26.270 --> 00:41:27.390
+they run very fast
+
+00:41:27.390 --> 00:41:29.070
+because we parallelize them
+
+00:41:29.070 --> 00:41:30.910
+in 10 different runners.
+
+00:41:30.910 --> 00:41:32.350
+We give feedback to the team
+
+00:41:32.350 --> 00:41:33.070
+in four minutes
+
+00:41:33.070 --> 00:41:35.150
+we run these 107 tests.
+
+00:41:36.270 --> 00:41:38.270
+We do cross browser testing.
+
+00:41:39.870 --> 00:41:42.670
+We are trying to do things differently
+
+00:41:42.670 --> 00:41:44.190
+and achieve great results
+
+00:41:44.190 --> 00:41:45.550
+so we can spread the word.
+
+00:41:46.110 --> 00:41:51.230
+And then we are starting to
+
+00:41:52.990 --> 00:41:56.430
+with a smaller group of other teams
+
+00:41:56.430 --> 00:41:57.550
+share what we are doing
+
+00:41:59.330 --> 00:42:00.290
+for them to learn
+
+00:42:00.290 --> 00:42:01.090
+from what we are doing
+
+00:42:01.090 --> 00:42:03.970
+but also to know what they are doing
+
+00:42:03.970 --> 00:42:05.330
+and learn from them as well
+
+00:42:05.330 --> 00:42:07.010
+to implement good things
+
+00:42:07.010 --> 00:42:09.730
+that they might be doing in our process.
+
+00:42:10.610 --> 00:42:13.090
+So the advisor part is more
+
+00:42:13.810 --> 00:42:16.850
+for when we make the project a success
+
+00:42:16.850 --> 00:42:17.890
+then we spread the word
+
+00:42:17.890 --> 00:42:19.170
+to the rest of the teams
+
+00:42:19.170 --> 00:42:20.370
+that are doing other stuff.
+
+00:42:21.180 --> 00:42:21.980
+I love it.
+
+00:42:21.980 --> 00:42:22.540
+I love it.
+
+00:42:22.540 --> 00:42:24.540
+Again, walk on the talk.
+
+00:42:24.540 --> 00:42:25.900
+I love your journey
+
+00:42:25.900 --> 00:42:27.500
+your experience where you're at
+
+00:42:27.500 --> 00:42:30.460
+the pragmatic approach to growth
+
+00:42:30.460 --> 00:42:31.820
+you've had throughout your career.
+
+00:42:31.820 --> 00:42:32.620
+All very cool.
+
+00:42:34.060 --> 00:42:36.020
+So how do you
+
+00:42:36.020 --> 00:42:37.300
+are you still doing consult
+
+00:42:37.300 --> 00:42:38.340
+you get your classes
+
+00:42:38.340 --> 00:42:39.860
+a little bit consulting work for Brazil
+
+00:42:39.860 --> 00:42:40.820
+your full-time job.
+
+00:42:42.260 --> 00:42:42.980
+What else do you do?
+
+00:42:42.980 --> 00:42:43.780
+What do you do for fun?
+
+00:42:44.580 --> 00:42:46.100
+What's your what are you doing?
+
+00:42:46.100 --> 00:42:47.460
+You're not working all the time.
+
+00:42:48.420 --> 00:42:49.140
+Not working.
+
+00:42:49.140 --> 00:42:53.300
+I read like at the moment for example
+
+00:42:53.300 --> 00:42:55.380
+I don't know if it was I actually
+
+00:42:56.180 --> 00:42:58.500
+this is a book that many people
+
+00:42:58.500 --> 00:43:00.340
+mentioned in different podcasts
+
+00:43:00.340 --> 00:43:01.540
+that they listen to
+
+00:43:01.540 --> 00:43:02.660
+but I think you mentioned
+
+00:43:02.660 --> 00:43:04.500
+outlive in the previous podcast.
+
+00:43:04.500 --> 00:43:06.260
+Yeah, I have a copy right over here.
+
+00:43:06.260 --> 00:43:09.220
+So yeah, I bought it in Spanish.
+
+00:43:09.220 --> 00:43:10.180
+So yours is in Spanish.
+
+00:43:10.180 --> 00:43:11.540
+Yours is different than mine.
+
+00:43:11.540 --> 00:43:13.140
+Yeah, I read in Spanish
+
+00:43:13.140 --> 00:43:14.660
+in Portuguese and in English
+
+00:43:14.660 --> 00:43:16.260
+so I can practice the three languages.
+
+00:43:16.260 --> 00:43:16.980
+That's very cool.
+
+00:43:16.980 --> 00:43:17.620
+That's very cool.
+
+00:43:17.620 --> 00:43:19.060
+So I bought it
+
+00:43:19.060 --> 00:43:20.980
+and I just read the introduction
+
+00:43:20.980 --> 00:43:23.220
+because when I
+
+00:43:23.220 --> 00:43:24.580
+when you said about the book
+
+00:43:24.580 --> 00:43:26.020
+it was like the 10th time
+
+00:43:26.020 --> 00:43:27.220
+that I had heard about it
+
+00:43:27.220 --> 00:43:28.340
+I decided you know what
+
+00:43:28.340 --> 00:43:29.620
+I'm going to buy it.
+
+00:43:29.620 --> 00:43:30.740
+I went to the store
+
+00:43:30.740 --> 00:43:33.540
+it was the only copy that they had.
+
+00:43:33.540 --> 00:43:35.940
+So I thought I have to have it
+
+00:43:36.820 --> 00:43:38.740
+but nowadays I am reading
+
+00:43:39.700 --> 00:43:40.580
+Amir Klink
+
+00:43:41.300 --> 00:43:43.060
+There's No Time to Lose
+
+00:43:43.060 --> 00:43:44.820
+this is a sailor from Brazil
+
+00:43:45.620 --> 00:43:47.300
+which is a writer as well
+
+00:43:48.580 --> 00:43:49.060
+and he
+
+00:43:49.780 --> 00:43:51.540
+this is kind of a biography
+
+00:43:51.540 --> 00:43:53.220
+kind of a book
+
+00:43:53.940 --> 00:43:57.940
+but he wrote a few books
+
+00:43:57.940 --> 00:43:59.460
+from the trips he made
+
+00:44:00.180 --> 00:44:00.980
+the first one
+
+00:44:03.540 --> 00:44:05.540
+he crossed the ocean
+
+00:44:05.540 --> 00:44:07.380
+from Africa to Brazil
+
+00:44:08.020 --> 00:44:10.580
+in a rowing boat in 100 days
+
+00:44:11.300 --> 00:44:12.900
+the name of the book in Portuguese
+
+00:44:12.900 --> 00:44:14.340
+would be in English
+
+00:44:14.340 --> 00:44:16.100
+would be 100 days between
+
+00:44:19.700 --> 00:44:20.900
+the sky and the sea
+
+00:44:20.900 --> 00:44:21.220
+something like that.
+
+00:44:21.220 --> 00:44:22.820
+That sounds harder than the PCT.
+
+00:44:23.700 --> 00:44:25.460
+Yeah and then he
+
+00:44:26.660 --> 00:44:27.380
+sleeping on the dirt
+
+00:44:27.380 --> 00:44:28.340
+is way easier than trying to sleep
+
+00:44:28.340 --> 00:44:28.900
+in a row boat.
+
+00:44:30.420 --> 00:44:31.940
+It's a fascinating book
+
+00:44:31.940 --> 00:44:33.860
+and he's a fascinating person
+
+00:44:33.860 --> 00:44:35.860
+I even and he is
+
+00:44:36.500 --> 00:44:38.500
+I don't know if he is from Paraty
+
+00:44:38.500 --> 00:44:40.020
+which is a city in
+
+00:44:41.060 --> 00:44:42.660
+in the state of Rio de Janeiro
+
+00:44:43.220 --> 00:44:44.420
+but the way he describes
+
+00:44:44.420 --> 00:44:45.780
+the city in his books
+
+00:44:46.420 --> 00:44:48.420
+made me always wanted to go there
+
+00:44:48.420 --> 00:44:50.820
+so I don't know
+
+00:44:50.820 --> 00:44:53.060
+12 years ago I went on vacation there
+
+00:44:53.060 --> 00:44:56.210
+and I felt like I already knew
+
+00:44:56.210 --> 00:44:58.130
+the city because he described so much
+
+00:44:59.330 --> 00:45:02.530
+then he wrote another book
+
+00:45:02.530 --> 00:45:03.250
+which is called
+
+00:45:03.570 --> 00:45:07.650
+Paraty between two poles
+
+00:45:07.650 --> 00:45:09.810
+where he went from Rio de Janeiro
+
+00:45:09.810 --> 00:45:11.330
+to the Arctic
+
+00:45:11.330 --> 00:45:12.530
+and then to Africa
+
+00:45:12.530 --> 00:45:14.050
+and then to South Pole
+
+00:45:14.050 --> 00:45:16.290
+where he stayed 14 months
+
+00:45:16.290 --> 00:45:18.690
+because the boat got frozen
+
+00:45:18.690 --> 00:45:20.370
+and he built a boat
+
+00:45:21.010 --> 00:45:22.450
+a sailing boat
+
+00:45:22.450 --> 00:45:25.250
+for one person to sail on their own
+
+00:45:25.250 --> 00:45:26.370
+without anyone else.
+
+00:45:28.130 --> 00:45:30.770
+The complete trip was 22 months
+
+00:45:30.770 --> 00:45:32.450
+it's an incredible story
+
+00:45:33.090 --> 00:45:35.890
+and then the third book I read from him
+
+00:45:35.890 --> 00:45:38.530
+is Sea Without End
+
+00:45:38.530 --> 00:45:40.050
+the translation would be
+
+00:45:40.050 --> 00:45:42.610
+where he did the shortest
+
+00:45:42.610 --> 00:45:45.490
+but most difficult journey
+
+00:45:45.490 --> 00:45:46.690
+around the globe
+
+00:45:46.690 --> 00:45:50.690
+which was around the Antarctic Pole.
+
+00:45:51.410 --> 00:45:52.850
+Oh yeah you can get around
+
+00:45:52.850 --> 00:45:53.810
+the world quickly that way.
+
+00:45:54.930 --> 00:45:55.810
+If you're going around the world
+
+00:45:55.810 --> 00:45:56.850
+there's this crossing
+
+00:45:56.850 --> 00:45:57.890
+all the longitudinal lines.
+
+00:45:58.770 --> 00:46:01.650
+And he did it again
+
+00:46:01.650 --> 00:46:03.330
+in a sailing boat
+
+00:46:03.330 --> 00:46:06.130
+for one person to sail on their own
+
+00:46:07.650 --> 00:46:09.090
+but I read a lot
+
+00:46:09.090 --> 00:46:10.450
+I read fiction
+
+00:46:12.450 --> 00:46:15.970
+I'm reading also the Barack Obama biography
+
+00:46:16.610 --> 00:46:17.650
+the promised land
+
+00:46:18.610 --> 00:46:20.450
+I love reading about technology
+
+00:46:20.450 --> 00:46:21.650
+a bunch of books
+
+00:46:21.650 --> 00:46:23.890
+about software design
+
+00:46:24.610 --> 00:46:26.130
+TDD
+
+00:46:26.690 --> 00:46:27.650
+this kind of things.
+
+00:46:28.690 --> 00:46:30.850
+Yeah you read more than I did
+
+00:46:30.850 --> 00:46:31.890
+when I was reading at my most
+
+00:46:31.890 --> 00:46:32.450
+it's amazing.
+
+00:46:33.010 --> 00:46:33.410
+Very cool.
+
+00:46:34.210 --> 00:46:35.090
+And besides that
+
+00:46:37.090 --> 00:46:38.370
+a few things more about me
+
+00:46:38.370 --> 00:46:39.810
+I love exercising
+
+00:46:39.810 --> 00:46:41.330
+so I go to the gym
+
+00:46:41.330 --> 00:46:43.090
+like six days a week
+
+00:46:44.690 --> 00:46:46.210
+and I love spending time
+
+00:46:46.210 --> 00:46:46.850
+with my family
+
+00:46:46.850 --> 00:46:48.610
+I love skateboarding as well
+
+00:46:48.610 --> 00:46:50.050
+cooking I'm vegan
+
+00:46:50.050 --> 00:46:51.650
+and I love cooking vegan food.
+
+00:46:52.130 --> 00:46:54.530
+Oh a good friend of mine is vegan
+
+00:46:54.530 --> 00:46:56.530
+and I've been pretty much
+
+00:46:56.530 --> 00:46:57.090
+eating vegan
+
+00:46:57.090 --> 00:46:57.890
+since I got back from the trail
+
+00:46:57.890 --> 00:46:58.770
+because my son's vegan
+
+00:46:59.410 --> 00:47:01.410
+and so yeah oh my gosh
+
+00:47:01.410 --> 00:47:03.970
+you get more and more interesting.
+
+00:47:03.970 --> 00:47:07.890
+So I've been vegan for the past four years
+
+00:47:07.890 --> 00:47:09.970
+and before that I was vegetarian
+
+00:47:09.970 --> 00:47:10.370
+since 2017.
+
+00:47:10.370 --> 00:47:11.810
+I've been vegan by proximity
+
+00:47:11.810 --> 00:47:13.250
+for the last three months
+
+00:47:13.970 --> 00:47:15.330
+for how long since I've been back
+
+00:47:15.330 --> 00:47:17.250
+but we made some
+
+00:47:17.730 --> 00:47:18.850
+a friend and I made some
+
+00:47:19.650 --> 00:47:21.490
+Indian curry from scratch
+
+00:47:21.490 --> 00:47:22.450
+chickpea curry
+
+00:47:22.450 --> 00:47:23.890
+it was incredible
+
+00:47:23.890 --> 00:47:25.010
+with fresh curry leaves
+
+00:47:25.010 --> 00:47:25.890
+went to the Indian market
+
+00:47:25.890 --> 00:47:26.850
+got the fresh curry leaves.
+
+00:47:28.050 --> 00:47:29.490
+There's a YouTuber
+
+00:47:29.490 --> 00:47:30.610
+rainbow plant life
+
+00:47:30.610 --> 00:47:31.970
+I call a rainbow lady
+
+00:47:31.970 --> 00:47:34.050
+just a great story
+
+00:47:34.050 --> 00:47:34.850
+while she's cooking
+
+00:47:34.850 --> 00:47:35.890
+she doesn't take herself too seriously
+
+00:47:35.890 --> 00:47:36.370
+which I like
+
+00:47:36.370 --> 00:47:37.570
+but all vegan food
+
+00:47:37.570 --> 00:47:39.090
+that I've been learning a lot from
+
+00:47:39.090 --> 00:47:40.530
+and trying some recipes.
+
+00:47:41.570 --> 00:47:43.410
+So that's really interesting as well
+
+00:47:43.410 --> 00:47:45.090
+and so what you'll find
+
+00:47:45.090 --> 00:47:45.810
+in reading
+
+00:47:45.810 --> 00:47:47.090
+as I can segue back to Outlive
+
+00:47:47.090 --> 00:47:47.890
+by Peter Attia
+
+00:47:49.010 --> 00:47:49.730
+the book is about
+
+00:47:50.290 --> 00:47:51.410
+there's a lot of science in there
+
+00:47:51.410 --> 00:47:52.050
+he's a doctor
+
+00:47:52.050 --> 00:47:54.530
+but it's a lot about maximizing
+
+00:47:54.530 --> 00:47:56.050
+what he calls your health span
+
+00:47:56.050 --> 00:47:57.090
+versus your lifespan
+
+00:47:58.290 --> 00:47:59.010
+and all the things
+
+00:47:59.010 --> 00:47:59.890
+you should be doing
+
+00:47:59.890 --> 00:48:00.850
+or you can do
+
+00:48:00.850 --> 00:48:01.810
+and the things that affect you
+
+00:48:01.810 --> 00:48:02.210
+going down
+
+00:48:02.210 --> 00:48:03.970
+it's all from physical health
+
+00:48:03.970 --> 00:48:05.490
+mental health etc
+
+00:48:05.490 --> 00:48:06.450
+that affect your ability
+
+00:48:06.450 --> 00:48:09.010
+to have a long life
+
+00:48:09.010 --> 00:48:10.050
+that you live fully
+
+00:48:10.610 --> 00:48:12.210
+versus the long decline
+
+00:48:12.210 --> 00:48:12.930
+that a lot of people
+
+00:48:12.930 --> 00:48:13.970
+including my father had
+
+00:48:15.410 --> 00:48:16.290
+where it just
+
+00:48:16.290 --> 00:48:17.570
+it's just a horrible way to go.
+
+00:48:17.570 --> 00:48:18.290
+I would like to
+
+00:48:18.290 --> 00:48:19.570
+I would like to live my life fully
+
+00:48:20.130 --> 00:48:20.690
+and then be dead.
+
+00:48:21.410 --> 00:48:21.970
+Same here.
+
+00:48:23.410 --> 00:48:23.890
+And the book
+
+00:48:24.770 --> 00:48:26.210
+it doesn't put it quite that morbidly
+
+00:48:26.210 --> 00:48:26.850
+but it's about like
+
+00:48:26.850 --> 00:48:28.450
+why we should live full lives
+
+00:48:28.450 --> 00:48:29.490
+as long as we can
+
+00:48:30.290 --> 00:48:31.250
+and there's nothing we can do
+
+00:48:31.250 --> 00:48:31.970
+to help with that
+
+00:48:31.970 --> 00:48:33.650
+and I don't know if he mentions
+
+00:48:33.650 --> 00:48:34.850
+a vegan diet directly
+
+00:48:34.850 --> 00:48:37.570
+but I think for me
+
+00:48:37.570 --> 00:48:40.770
+I've felt my vegan by proximity
+
+00:48:40.770 --> 00:48:41.650
+because just don't cook meat
+
+00:48:41.650 --> 00:48:42.130
+in the house
+
+00:48:42.130 --> 00:48:43.650
+and I've kind of lost
+
+00:48:43.650 --> 00:48:44.850
+most of my taste for it
+
+00:48:45.650 --> 00:48:49.360
+is yeah, it's felt good.
+
+00:48:50.540 --> 00:48:52.540
+Yeah, I became vegan
+
+00:48:52.540 --> 00:48:54.380
+for healthy reasons
+
+00:48:54.380 --> 00:48:55.900
+I wanted to become more healthy
+
+00:48:55.900 --> 00:48:57.340
+and I feel that
+
+00:48:57.340 --> 00:48:59.260
+I am more healthy nowadays
+
+00:48:59.260 --> 00:49:00.380
+I exercise because
+
+00:49:00.380 --> 00:49:02.220
+I want to have a healthy life
+
+00:49:02.220 --> 00:49:03.020
+I also go to the gym
+
+00:49:03.020 --> 00:49:03.660
+six days a week.
+
+00:49:04.780 --> 00:49:06.700
+I stopped drinking
+
+00:49:06.700 --> 00:49:07.980
+because I want to have a healthy life
+
+00:49:07.980 --> 00:49:08.460
+Did not stop
+
+00:49:09.500 --> 00:49:10.620
+I can't give up everything
+
+00:49:11.500 --> 00:49:12.140
+Yeah, of course
+
+00:49:12.700 --> 00:49:15.580
+Everyone has their things
+
+00:49:15.580 --> 00:49:16.620
+I still do things
+
+00:49:16.620 --> 00:49:17.820
+that are not healthy as well
+
+00:49:17.820 --> 00:49:19.580
+but I try to live
+
+00:49:20.700 --> 00:49:21.820
+No, good for you
+
+00:49:21.820 --> 00:49:23.020
+especially when I got back
+
+00:49:23.020 --> 00:49:23.740
+from the PCT
+
+00:49:23.740 --> 00:49:24.780
+I went to the doctor
+
+00:49:24.780 --> 00:49:25.580
+just get a physical
+
+00:49:25.580 --> 00:49:26.940
+and got my blood test
+
+00:49:26.940 --> 00:49:27.820
+and I have the blood
+
+00:49:27.820 --> 00:49:28.540
+of a 20 year old
+
+00:49:28.540 --> 00:49:29.420
+so I want to do what I can
+
+00:49:29.420 --> 00:49:29.980
+to kind of keep
+
+00:49:29.980 --> 00:49:30.780
+as healthy as I am
+
+00:49:30.780 --> 00:49:32.220
+when I got back from trail
+
+00:49:32.220 --> 00:49:33.500
+I've gained almost 10 pounds
+
+00:49:33.500 --> 00:49:34.060
+when I got back
+
+00:49:34.060 --> 00:49:35.500
+but I lost a lot of weight on trail
+
+00:49:35.500 --> 00:49:36.380
+so I'm okay with that
+
+00:49:38.460 --> 00:49:39.100
+I know why
+
+00:49:39.100 --> 00:49:39.660
+I know how to
+
+00:49:40.380 --> 00:49:41.420
+you know, I'm not worried
+
+00:49:41.420 --> 00:49:42.780
+about baloney or anything
+
+00:49:43.420 --> 00:49:44.060
+Of course
+
+00:49:44.060 --> 00:49:45.020
+I talked to some folks
+
+00:49:45.020 --> 00:49:46.380
+who have gained like 30 pounds
+
+00:49:46.380 --> 00:49:47.180
+since they got back
+
+00:49:47.180 --> 00:49:48.060
+I said not for me
+
+00:49:48.060 --> 00:49:49.420
+No, I'm happy right here
+
+00:49:50.380 --> 00:49:51.340
+So yeah
+
+00:49:52.780 --> 00:49:53.740
+I love where you're coming from
+
+00:49:53.740 --> 00:49:54.620
+I feel like we're living
+
+00:49:55.340 --> 00:49:55.820
+you're living
+
+00:49:56.460 --> 00:49:57.580
+a better version of my life
+
+00:49:57.580 --> 00:49:58.380
+I kind of like it
+
+00:50:00.060 --> 00:50:01.580
+It's good to hear all that
+
+00:50:02.140 --> 00:50:03.500
+I hope the conversation
+
+00:50:03.500 --> 00:50:05.020
+is inspired for someone else
+
+00:50:05.020 --> 00:50:06.540
+listening to the other one
+
+00:50:06.540 --> 00:50:07.580
+There's a lot in there
+
+00:50:07.580 --> 00:50:08.060
+like I said
+
+00:50:08.060 --> 00:50:09.180
+I'm glad that it
+
+00:50:09.340 --> 00:50:10.700
+you were living the principle
+
+00:50:10.700 --> 00:50:11.820
+before Brent and I
+
+00:50:11.820 --> 00:50:13.420
+even discovered what they were
+
+00:50:13.420 --> 00:50:14.380
+and even the first time
+
+00:50:14.380 --> 00:50:14.860
+I went to
+
+00:50:15.420 --> 00:50:16.140
+let's kudos
+
+00:50:16.140 --> 00:50:17.260
+to Ministry of Testing
+
+00:50:17.260 --> 00:50:19.100
+who had me come give a talk
+
+00:50:19.100 --> 00:50:20.820
+on modern testing
+
+00:50:20.820 --> 00:50:22.660
+which isn't at all about testing
+
+00:50:22.660 --> 00:50:25.140
+and often can threaten testers
+
+00:50:25.140 --> 00:50:27.300
+I went and did that talk in 2016
+
+00:50:28.420 --> 00:50:29.700
+in Brighton, England
+
+00:50:30.420 --> 00:50:31.940
+and I had people
+
+00:50:31.940 --> 00:50:33.220
+come up to me after the talk
+
+00:50:33.780 --> 00:50:34.980
+and thank me
+
+00:50:34.980 --> 00:50:35.860
+for putting a label
+
+00:50:35.860 --> 00:50:37.060
+to things they're already doing
+
+00:50:37.060 --> 00:50:38.020
+folks like you
+
+00:50:38.020 --> 00:50:38.740
+and said
+
+00:50:38.740 --> 00:50:39.780
+oh this is happening
+
+00:50:39.780 --> 00:50:40.740
+we're not making this up
+
+00:50:40.740 --> 00:50:41.380
+I knew we weren't
+
+00:50:41.380 --> 00:50:42.020
+but it was good
+
+00:50:42.020 --> 00:50:43.220
+it's good to get confirmation
+
+00:50:43.220 --> 00:50:44.340
+affirmation on those things
+
+00:50:45.620 --> 00:50:46.120
+so yeah
+
+00:50:47.300 --> 00:50:48.900
+today as a matter of fact
+
+00:50:48.900 --> 00:50:49.620
+I have
+
+00:50:49.620 --> 00:50:50.420
+speaking of jobs
+
+00:50:50.420 --> 00:50:52.020
+I have an interview coming up
+
+00:50:52.020 --> 00:50:53.060
+not at the top of the hour
+
+00:50:53.060 --> 00:50:54.580
+but the top of the next hour
+
+00:50:54.580 --> 00:50:56.740
+and then I have a meeting
+
+00:50:56.740 --> 00:50:57.540
+good luck on that
+
+00:50:57.540 --> 00:50:58.500
+after that
+
+00:50:58.500 --> 00:50:59.220
+I have an interview
+
+00:50:59.860 --> 00:51:00.900
+then I have something else
+
+00:51:00.900 --> 00:51:01.780
+I forget what it is
+
+00:51:03.540 --> 00:51:04.660
+anyway I have something else
+
+00:51:04.660 --> 00:51:05.700
+and then I'm going to the gym
+
+00:51:06.740 --> 00:51:07.140
+awesome
+
+00:51:07.140 --> 00:51:07.940
+but what do I have
+
+00:51:07.940 --> 00:51:08.740
+now I have to look
+
+00:51:08.740 --> 00:51:10.020
+because I was all set
+
+00:51:10.020 --> 00:51:11.620
+I know I had two more meetings
+
+00:51:11.620 --> 00:51:12.420
+I have an interview
+
+00:51:12.420 --> 00:51:13.380
+oh I'm meeting with
+
+00:51:13.380 --> 00:51:14.340
+I'm on the alumni board
+
+00:51:14.340 --> 00:51:14.980
+for my university
+
+00:51:14.980 --> 00:51:15.860
+I'm having a meeting with them
+
+00:51:16.740 --> 00:51:17.460
+after that
+
+00:51:17.460 --> 00:51:18.740
+and then I will head to the gym
+
+00:51:19.870 --> 00:51:21.230
+dinner with the neighbors
+
+00:51:21.230 --> 00:51:22.110
+on a flight tomorrow
+
+00:51:22.110 --> 00:51:24.270
+to go visit a friend
+
+00:51:24.270 --> 00:51:26.720
+in California
+
+00:51:26.720 --> 00:51:27.520
+etc etc
+
+00:51:27.520 --> 00:51:28.720
+so busy life myself
+
+00:51:30.160 --> 00:51:30.880
+I realized
+
+00:51:31.760 --> 00:51:33.840
+that in my mini retirement
+
+00:51:33.840 --> 00:51:35.600
+I am maximizing my time
+
+00:51:35.600 --> 00:51:38.590
+for enjoyment of experiences
+
+00:51:38.590 --> 00:51:40.110
+and life and cooking
+
+00:51:40.110 --> 00:51:40.990
+and lots of gym
+
+00:51:40.990 --> 00:51:41.790
+I play pickleball
+
+00:51:41.790 --> 00:51:42.910
+with the senior citizens
+
+00:51:44.270 --> 00:51:46.270
+just trying to enjoy myself
+
+00:51:46.270 --> 00:51:48.110
+until inevitably I decide
+
+00:51:48.110 --> 00:51:48.990
+not I decide
+
+00:51:48.990 --> 00:51:49.710
+inevitably
+
+00:51:51.710 --> 00:51:53.550
+I will take a job
+
+00:51:53.550 --> 00:51:54.910
+that is more fun to do
+
+00:51:55.630 --> 00:51:56.910
+than sleeping in
+
+00:51:56.910 --> 00:51:57.790
+and going to play pickleball
+
+00:51:57.790 --> 00:51:58.270
+in the morning
+
+00:51:58.830 --> 00:51:59.470
+that's my goal
+
+00:52:00.190 --> 00:52:01.070
+awesome
+
+00:52:01.070 --> 00:52:02.110
+and I hope I have the courage
+
+00:52:02.110 --> 00:52:03.150
+if I take a job
+
+00:52:03.150 --> 00:52:04.190
+and I show up on the first day
+
+00:52:04.190 --> 00:52:04.990
+I hope I have the courage
+
+00:52:04.990 --> 00:52:05.710
+to walk out of this
+
+00:52:05.710 --> 00:52:06.350
+not what I wanted
+
+00:52:06.910 --> 00:52:08.350
+I hope you donate it
+
+00:52:08.350 --> 00:52:09.470
+I hope I don't need it either
+
+00:52:12.370 --> 00:52:12.770
+all right
+
+00:52:12.770 --> 00:52:13.730
+anything else you want to add
+
+00:52:13.730 --> 00:52:14.530
+before we close out today
+
+00:52:14.530 --> 00:52:15.970
+this has been just a fascinating talk
+
+00:52:15.970 --> 00:52:17.010
+I love hearing your story
+
+00:52:17.010 --> 00:52:18.770
+our listeners are going to love it also
+
+00:52:18.770 --> 00:52:20.210
+I'm so happy to have you on
+
+00:52:20.210 --> 00:52:21.090
+and talk through these things
+
+00:52:21.730 --> 00:52:23.250
+anything else you want to throw out there?
+
+00:52:23.250 --> 00:52:24.450
+I think we covered
+
+00:52:24.450 --> 00:52:25.170
+most of the things
+
+00:52:25.170 --> 00:52:26.530
+that they took notes
+
+00:52:26.530 --> 00:52:28.210
+that they wanted to cover
+
+00:52:29.810 --> 00:52:31.650
+one other like curiosity
+
+00:52:31.650 --> 00:52:33.010
+about myself
+
+00:52:33.010 --> 00:52:34.210
+I love tattoos
+
+00:52:34.210 --> 00:52:35.410
+as you can see
+
+00:52:35.410 --> 00:52:37.010
+I have even JavaScript
+
+00:52:37.010 --> 00:52:38.930
+running on my arm here
+
+00:52:39.250 --> 00:52:40.530
+which means that JavaScript
+
+00:52:40.530 --> 00:52:41.650
+can run anywhere
+
+00:52:41.650 --> 00:52:42.210
+and I have
+
+00:52:44.210 --> 00:52:45.570
+have I shown you?
+
+00:52:45.570 --> 00:52:46.450
+you haven't
+
+00:52:46.450 --> 00:52:47.650
+my PCT tattoo
+
+00:52:48.480 --> 00:52:49.920
+oh that's awesome
+
+00:52:49.920 --> 00:52:51.360
+there's the trail
+
+00:52:51.360 --> 00:52:53.200
+there's a marmot up here
+
+00:52:53.840 --> 00:52:54.800
+that's super cool
+
+00:52:54.800 --> 00:52:56.480
+there's a deer back here somewhere
+
+00:52:56.480 --> 00:52:57.120
+there you see him
+
+00:52:57.680 --> 00:52:58.240
+that's awesome
+
+00:52:58.240 --> 00:53:00.320
+I have my arm covered as well
+
+00:53:00.320 --> 00:53:01.680
+and I'm covering my back
+
+00:53:03.040 --> 00:53:04.400
+nowadays like the artist
+
+00:53:04.400 --> 00:53:05.440
+that tattoos me
+
+00:53:05.440 --> 00:53:06.560
+is in Brazil
+
+00:53:06.560 --> 00:53:08.560
+so every time I travel to Brazil
+
+00:53:08.560 --> 00:53:10.080
+I come back with new tattoos
+
+00:53:10.960 --> 00:53:12.480
+I just walk down the street about a mile
+
+00:53:12.480 --> 00:53:13.600
+but you fly to Brazil
+
+00:53:13.600 --> 00:53:14.640
+whatever you know
+
+00:53:14.640 --> 00:53:16.400
+yeah I have to fly to Brazil
+
+00:53:16.400 --> 00:53:17.440
+to tattoo myself
+
+00:53:17.440 --> 00:53:18.320
+I did a few
+
+00:53:18.320 --> 00:53:19.280
+a couple of tattoos
+
+00:53:19.280 --> 00:53:20.480
+here in Europe already
+
+00:53:21.200 --> 00:53:23.440
+but most of them I do in Brazil
+
+00:53:23.440 --> 00:53:24.880
+and it's something
+
+00:53:24.880 --> 00:53:26.400
+that I'm passionate about as well
+
+00:53:26.960 --> 00:53:27.440
+very cool
+
+00:53:27.440 --> 00:53:28.000
+you are
+
+00:53:28.000 --> 00:53:29.200
+and I have this one over here
+
+00:53:29.200 --> 00:53:30.880
+and a couple on the shoulders
+
+00:53:30.880 --> 00:53:32.960
+and I'm getting there
+
+00:53:34.240 --> 00:53:35.520
+you are fascinating
+
+00:53:35.520 --> 00:53:36.720
+and I hope that we end up
+
+00:53:36.720 --> 00:53:38.080
+crossing paths somewhere
+
+00:53:39.520 --> 00:53:40.960
+I hope so as well
+
+00:53:40.960 --> 00:53:42.480
+job at a company that
+
+00:53:42.480 --> 00:53:44.240
+that has an office in Spain
+
+00:53:44.240 --> 00:53:44.880
+in Barcelona
+
+00:53:44.880 --> 00:53:46.080
+so I can come visit you
+
+00:53:46.080 --> 00:53:47.120
+that's my goal
+
+00:53:47.120 --> 00:53:48.080
+or we'll meet in Brazil
+
+00:53:48.080 --> 00:53:48.880
+we'll figure it out
+
+00:53:49.740 --> 00:53:50.460
+awesome
+
+00:53:50.460 --> 00:53:51.500
+we'll figure it out
+
+00:53:51.500 --> 00:53:52.940
+thank you so much for being on here
+
+00:53:52.940 --> 00:53:55.580
+this has been a delight
+
+00:53:56.300 --> 00:53:56.860
+I have
+
+00:53:56.860 --> 00:53:57.820
+likewise
+
+00:53:57.820 --> 00:53:59.100
+learned so much
+
+00:53:59.100 --> 00:54:00.060
+and I'm so excited
+
+00:54:00.060 --> 00:54:01.180
+I just love your path
+
+00:54:01.180 --> 00:54:01.820
+and I feel like
+
+00:54:03.100 --> 00:54:05.020
+we definitely are
+
+00:54:05.020 --> 00:54:05.820
+kindred spirits
+
+00:54:05.820 --> 00:54:06.620
+at least at some point
+
+00:54:06.620 --> 00:54:07.580
+I've found a lot of points
+
+00:54:07.580 --> 00:54:08.140
+I just
+
+00:54:08.140 --> 00:54:10.700
+yeah there's a lot of cool stuff about you
+
+00:54:10.700 --> 00:54:11.820
+which is really saying
+
+00:54:11.820 --> 00:54:12.860
+if you're like me
+
+00:54:12.860 --> 00:54:13.820
+there's cool stuff about me
+
+00:54:13.820 --> 00:54:14.700
+I have to think about this
+
+00:54:14.700 --> 00:54:15.340
+my therapist
+
+00:54:15.340 --> 00:54:16.460
+but in the meantime
+
+00:54:16.460 --> 00:54:18.220
+just you're an inspiration for me
+
+00:54:18.220 --> 00:54:19.900
+that's for sure
+
+00:54:19.900 --> 00:54:20.940
+well we can be an inspiration
+
+00:54:20.940 --> 00:54:21.340
+for each other
+
+00:54:21.340 --> 00:54:21.900
+how about that
+
+00:54:22.540 --> 00:54:23.420
+awesome
+
+00:54:23.420 --> 00:54:24.140
+all right
+
+00:54:24.140 --> 00:54:25.820
+I think this is episode 225
+
+00:54:25.820 --> 00:54:27.180
+of the AB testing podcast
+
+00:54:28.220 --> 00:54:29.100
+thank you so much
+
+00:54:29.100 --> 00:54:30.220
+Valmar for being on the show
+
+00:54:30.220 --> 00:54:31.660
+and thank you everyone for listening
+
+00:54:31.660 --> 00:54:32.780
+we'll see you next time
+
+00:54:32.780 --> 00:54:35.980
+thanks for having me
+

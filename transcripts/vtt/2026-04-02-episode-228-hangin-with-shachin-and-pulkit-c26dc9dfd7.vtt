@@ -1,0 +1,1460 @@
+WEBVTT
+
+00:00:05.420 --> 00:00:12.140
+Welcome to AB testing podcast your modern testing podcast your hosts Alan and Brent
+
+00:00:12.140 --> 00:00:20.580
+He's not here to guide you through topics on testing leadership Agile and anything else that comes to mind now on with the ship
+
+00:00:21.100 --> 00:00:26.580
+Welcome back to AB testing your favorite podcast about whatever it's about this week
+
+00:00:27.140 --> 00:00:31.140
+Brent my co-founder and partner in this podcast is not here
+
+00:00:31.180 --> 00:00:33.860
+He is a wiring cat 6 into Satya's
+
+00:00:34.220 --> 00:00:39.500
+10,000 foot garden house this week and so a little little preoccupied there that should be
+
+00:00:40.300 --> 00:00:46.020
+Flying by so instead I have two very cool people. I have Shachin and pulkit here
+
+00:00:47.140 --> 00:00:51.900
+connected mainly talking about for at first talking about adaptive leadership, which we'll get to at some point today, but
+
+00:00:52.700 --> 00:00:58.140
+Probably we're gonna talk about AI and testing and those sorts of things, but let me just let them get started
+
+00:00:58.180 --> 00:01:03.780
+So Shachin tell me a little bit about yourself and maybe a couple things I want to talk about today. Sure. Sure
+
+00:01:04.220 --> 00:01:06.220
+Thank you Alan for inviting
+
+00:01:06.940 --> 00:01:10.140
+Great to be here and a little bit about myself
+
+00:01:10.500 --> 00:01:17.900
+I'm a technologist by profession been working in building enterprise applications for 25 plus years
+
+00:01:18.740 --> 00:01:21.620
+or smart small companies large companies
+
+00:01:22.420 --> 00:01:25.660
+Everything last 20 years. I have been running
+
+00:01:26.300 --> 00:01:33.420
+My own consulting company is estimate strategies in building custom applications for for our
+
+00:01:34.300 --> 00:01:36.310
+customers
+
+00:01:36.310 --> 00:01:39.190
+during this my journey
+
+00:01:40.310 --> 00:01:45.030
+one of the things that that always seemed like a bottleneck is
+
+00:01:46.070 --> 00:01:49.780
+the testing and especially the regression testing so
+
+00:01:50.940 --> 00:01:52.940
+we get to the end of a
+
+00:01:53.300 --> 00:01:55.180
+sprint and
+
+00:01:55.220 --> 00:01:57.740
+Takes way too long to do regression testing
+
+00:01:58.940 --> 00:02:02.780
+And sometimes many times it becomes a bottleneck to for release
+
+00:02:03.340 --> 00:02:05.640
+so we've been
+
+00:02:05.640 --> 00:02:09.960
+dabbling with test automation because that is the you know, the
+
+00:02:11.200 --> 00:02:13.500
+conventional wisdom and
+
+00:02:13.500 --> 00:02:21.200
+Been working with selenium playwright, etc. Etc about 10 years back when the recording playback was the wonk
+
+00:02:21.840 --> 00:02:30.200
+We built a product called Zen verify it was reasonably successful eventually sold a license to KPMG and got out and
+
+00:02:31.520 --> 00:02:35.280
+Last year year before last when when the AI
+
+00:02:35.840 --> 00:02:37.840
+Gen AI came into being
+
+00:02:38.520 --> 00:02:39.840
+we
+
+00:02:39.840 --> 00:02:41.840
+Realized that it's a unique opportunity
+
+00:02:42.680 --> 00:02:43.960
+to
+
+00:02:43.960 --> 00:02:47.120
+to make the test automation
+
+00:02:47.640 --> 00:02:53.640
+Just change the way the test automation it's done and make it a lot simpler lot
+
+00:02:54.560 --> 00:03:01.340
+Easier lot faster lot cheaper and that was the genesis of ever test
+
+00:03:02.640 --> 00:03:04.640
+So and then here here we are
+
+00:03:05.400 --> 00:03:11.080
+I'll hand over to pulkit. We'll talk about a lot of other things about test automation in a bit
+
+00:03:11.560 --> 00:03:16.250
+Now we'll talk about automation and AI. I think quite a bit today. I can already tell so
+
+00:03:16.730 --> 00:03:23.290
+A little bit about yourself. All right. Well, thank you for inviting us Alan. My name is pulkit. I
+
+00:03:25.530 --> 00:03:27.610
+Have more of a
+
+00:03:29.890 --> 00:03:31.330
+Sort of
+
+00:03:31.330 --> 00:03:35.970
+unorthodox journey to getting to here now, I'm a co-founder of ever test but
+
+00:03:36.890 --> 00:03:40.130
+Getting here. I sort of started my career in consulting
+
+00:03:40.930 --> 00:03:42.930
+and then I've worked in
+
+00:03:43.050 --> 00:03:44.290
+In
+
+00:03:44.290 --> 00:03:49.090
+Global health policy actually in for a variety different nonprofits
+
+00:03:50.370 --> 00:03:52.370
+in India and Africa
+
+00:03:53.290 --> 00:03:55.290
+various different parts of the world and
+
+00:03:56.250 --> 00:04:00.010
+Then I was working for a domestic health care technology company
+
+00:04:01.010 --> 00:04:02.490
+and
+
+00:04:02.490 --> 00:04:04.810
+one of the things that we struggled with
+
+00:04:05.730 --> 00:04:10.930
+We're developing this health care product was on the QA side and just thinking about
+
+00:04:11.290 --> 00:04:13.290
+How to make sure that our
+
+00:04:13.770 --> 00:04:17.970
+You know state is of high quality while at the same time
+
+00:04:19.370 --> 00:04:24.330
+Getting the ROI that we want from from QA and that just was a struggle
+
+00:04:24.330 --> 00:04:29.610
+I wasn't directly as connected to it. I was working on a few other areas, but it was an area that I just had
+
+00:04:30.130 --> 00:04:31.970
+noted and
+
+00:04:31.970 --> 00:04:36.130
+Then I went to grad school coming out of it. This came I came out of it
+
+00:04:37.090 --> 00:04:40.970
+Around the time of the that chat GPT was coming out and
+
+00:04:41.730 --> 00:04:46.650
+That sort of AI boom and I was interested in sort of seeing the ways in which
+
+00:04:47.250 --> 00:04:51.970
+You know AI can be leveraged in a productive direction. I
+
+00:04:52.930 --> 00:04:56.130
+Had gotten connected with Sheldon and we were talking about
+
+00:04:57.530 --> 00:05:00.050
+Ever test and just this idea of like AI
+
+00:05:00.690 --> 00:05:06.570
+Cute AI for QA and test automation sounded like an interesting area
+
+00:05:06.570 --> 00:05:09.570
+I was kind of wanting to do something entrepreneurial. So
+
+00:05:10.210 --> 00:05:14.890
+that's kind of how how it all came together and you know,
+
+00:05:15.890 --> 00:05:17.530
+Happy to talk about
+
+00:05:17.530 --> 00:05:19.530
+adaptive leadership to
+
+00:05:20.090 --> 00:05:22.090
+We'll get there because I think
+
+00:05:24.620 --> 00:05:30.020
+We don't an adaptive leadership if read that the half its book on this is just true and we've talked about in the podcast
+
+00:05:30.020 --> 00:05:32.020
+before but just in a nutshell, it's
+
+00:05:33.020 --> 00:05:35.020
+technical problems writing code
+
+00:05:35.580 --> 00:05:37.580
+kind of the easy one it's
+
+00:05:38.460 --> 00:05:42.940
+Adaptive challenges are the ones where you don't know what the answer looks like when you're yet
+
+00:05:42.940 --> 00:05:47.480
+but you're working towards a solution anyway, and there's there's there's all kind there's
+
+00:05:48.520 --> 00:05:51.560
+Influence organizational change and reading people all part of that
+
+00:05:51.560 --> 00:05:56.000
+It's the kind of challenges that I love and software development and I feel like this is gonna be a good setup
+
+00:05:56.000 --> 00:05:58.760
+It's kind of where we're at with AI
+
+00:05:59.600 --> 00:06:01.600
+Especially in testing but across the industry
+
+00:06:01.600 --> 00:06:08.160
+I think probably you may have seen the report from Anthropic a few weeks ago that showed a
+
+00:06:08.440 --> 00:06:13.800
+Bunch of different level did a radar chart bunch of levels of knowledge work and how much was currently leveraging AI which I was not
+
+00:06:13.800 --> 00:06:15.750
+Good leverage AI
+
+00:06:15.750 --> 00:06:17.750
+we're in a phase of
+
+00:06:18.990 --> 00:06:25.070
+Growth in I'm just gonna say knowledge work which includes testing and software and anything else that requires right brain working
+
+00:06:25.750 --> 00:06:27.760
+where
+
+00:06:27.800 --> 00:06:32.720
+We don't we are learning what the future is going to look like and
+
+00:06:33.880 --> 00:06:35.400
+I'm a
+
+00:06:35.400 --> 00:06:38.880
+continue with my intro and ask you guys a question about this what I see from
+
+00:06:40.840 --> 00:06:43.120
+the engineering community is one
+
+00:06:44.120 --> 00:06:48.960
+Everything's moving a lot faster. Just like it did when agile started, you know 20-ish years ago. Oh my gosh
+
+00:06:48.960 --> 00:06:54.400
+We're moving faster. How do we keep up with AI another exponential shift in velocity as far as code generation?
+
+00:06:54.600 --> 00:06:57.120
+how do we keep up delivering quality software and
+
+00:06:57.800 --> 00:07:01.920
+On one camp it's not a it's a it's a spectrum under dichotomy
+
+00:07:01.920 --> 00:07:07.640
+But on one end you have folks who think oh AI is never going to help anybody. It's just it's just a dumb little toy
+
+00:07:07.640 --> 00:07:12.520
+I'm going to ignore it. Those people are wrong. There are also people who think oh my gosh
+
+00:07:12.520 --> 00:07:17.800
+AI is gonna solve all of our problems. You don't even need humans anymore to deliver software. Those people are also wrong
+
+00:07:18.240 --> 00:07:23.750
+The answer is going to always be in the middle somewhere independent on context when you're shipping the customer problems
+
+00:07:23.750 --> 00:07:25.750
+You're trying to solve AI
+
+00:07:25.830 --> 00:07:27.830
+Solves a lot of problems
+
+00:07:27.870 --> 00:07:31.750
+it's solved a lot of problems already with code generation and
+
+00:07:32.190 --> 00:07:36.110
+I think and we'll we'll talk about your product a little bit at the very end of the product
+
+00:07:36.110 --> 00:07:38.590
+I think in general we can talk about for our audience is
+
+00:07:41.770 --> 00:07:47.150
+Well, sorry question. I have two questions at once, but I'll ask the easy one first. How are testers?
+
+00:07:48.650 --> 00:07:55.890
+What are the best ways testers today can leverage AI to help them do their job better? What are a couple things you see that?
+
+00:07:55.890 --> 00:07:59.250
+They should be doing either one of you can answer you both can answer like what are they missing?
+
+00:07:59.250 --> 00:08:04.330
+What what should if I'm a tester and I've been maybe I'm not brand new, but a couple years in and
+
+00:08:05.250 --> 00:08:09.490
+What should I be using? How should I be using AI to make me better at my job?
+
+00:08:10.210 --> 00:08:17.860
+So I'll take it up first and and when when we talk about tester, I am going with a with a
+
+00:08:18.740 --> 00:08:20.740
+more broad
+
+00:08:20.740 --> 00:08:22.340
+Broad
+
+00:08:22.340 --> 00:08:30.040
+Definition of tester rather than you know, just a test automation person. Oh, yeah, that's a that's a that's a yeah
+
+00:08:30.040 --> 00:08:32.040
+That's a yeah, so
+
+00:08:32.600 --> 00:08:34.600
+so
+
+00:08:34.800 --> 00:08:38.390
+Testers
+
+00:08:38.390 --> 00:08:39.790
+again, I'm
+
+00:08:39.790 --> 00:08:46.430
+If you don't mind, I'll take a little bit of a utopian view where where we have AI doing certain things and
+
+00:08:47.190 --> 00:08:49.590
+And testers will do other things
+
+00:08:50.690 --> 00:08:52.560
+I think
+
+00:08:52.560 --> 00:08:55.640
+Number one testers can definitely use AI
+
+00:08:56.560 --> 00:08:58.640
+to
+
+00:08:58.640 --> 00:09:06.150
+build a bunch of test cases and AI is good about AI is good about
+
+00:09:07.780 --> 00:09:10.560
+Building the test cases looking at the edge conditions
+
+00:09:13.780 --> 00:09:20.940
+Building whole bunch of different data variations for these tests test cases. It's good at that
+
+00:09:24.580 --> 00:09:27.380
+Testers
+
+00:09:27.380 --> 00:09:29.420
+Should in my view
+
+00:09:30.060 --> 00:09:36.080
+Be responsible to curate that list AI can come up with
+
+00:09:36.930 --> 00:09:42.740
+thousands of tests. Do you really want all those thousands? Are there
+
+00:09:43.900 --> 00:09:45.700
+25 of those
+
+00:09:45.700 --> 00:09:49.320
+which handle majority of the
+
+00:09:51.270 --> 00:09:53.270
+Majority of the cases
+
+00:09:54.240 --> 00:09:58.760
+For the current scenario for the product you are working on
+
+00:10:00.870 --> 00:10:02.870
+AI also
+
+00:10:03.440 --> 00:10:07.350
+Would not know in many cases would not know
+
+00:10:08.070 --> 00:10:14.830
+the business rules which are behind the scene AI AI can review the
+
+00:10:15.630 --> 00:10:17.630
+the UI in
+
+00:10:18.150 --> 00:10:19.990
+majority of the
+
+00:10:19.990 --> 00:10:23.270
+That I would say a lot of enterprises are not very comfortable AI
+
+00:10:24.190 --> 00:10:26.910
+Reviewing the code also all of that's changing
+
+00:10:27.390 --> 00:10:29.230
+So
+
+00:10:29.230 --> 00:10:33.190
+But but there is these testers should know
+
+00:10:35.200 --> 00:10:36.520
+the
+
+00:10:36.520 --> 00:10:43.360
+Do should have the domain knowledge and should know the the hidden business rules and
+
+00:10:43.960 --> 00:10:46.150
+They should be
+
+00:10:46.190 --> 00:10:50.790
+Helping AI to write those test cases. Yeah, I
+
+00:10:52.560 --> 00:10:55.600
+Agree and a couple things. I want to jump in here a couple things are
+
+00:10:56.360 --> 00:10:59.120
+Some of the things you mentioned the same things that came about
+
+00:10:59.120 --> 00:11:01.600
+When as auto test automation took off
+
+00:11:03.120 --> 00:11:09.330
+I wrote an automated test. I should run this test forever regardless whether it provides any value
+
+00:11:09.330 --> 00:11:12.210
+We can do the same thing with AI now. We can generate tests faster
+
+00:11:12.730 --> 00:11:18.620
+What AI can help with is maybe help us figure out how to prune those things down. I have written very fancy
+
+00:11:19.420 --> 00:11:24.700
+Awesome algorithms for test selection based on change that would run the proper subtest of
+
+00:11:24.740 --> 00:11:26.580
+Proper subtest of
+
+00:11:26.580 --> 00:11:31.700
+Subsuite of tests based on a particular change or risk or whatever and they were fantastic. I'm very proud of those things
+
+00:11:31.700 --> 00:11:35.620
+I would never write that thing again. I would let AI figure it out. Yeah. Yeah. Yeah
+
+00:11:36.420 --> 00:11:40.380
+and I think we're a lot of I'll just add here let you build on this is
+
+00:11:42.350 --> 00:11:46.070
+Yes, we can use AI to help create a lot of test cases
+
+00:11:46.070 --> 00:11:50.390
+There's some things that knows and doesn't know but it opens up to me
+
+00:11:50.830 --> 00:11:55.750
+I'll have you build on this is I think it opens up some opportunities for
+
+00:11:56.110 --> 00:12:00.350
+Creativity from the tester because they can think all these things I just give it and give AI an idea
+
+00:12:00.670 --> 00:12:04.110
+And it can run with either in test cases or test generation or any test itself
+
+00:12:04.110 --> 00:12:08.350
+And then I can while it's doing that I can think of more ideas. So
+
+00:12:09.070 --> 00:12:10.430
+tester
+
+00:12:10.430 --> 00:12:15.150
+Becomes more of a domain expert and an orchestrator
+
+00:12:17.960 --> 00:12:24.720
+Orchestrator for the AI now now when we say tester, in fact, in fact in the new in the new world and
+
+00:12:26.150 --> 00:12:29.070
+We'll get than I were talking this morning is that
+
+00:12:30.310 --> 00:12:34.950
+In my view the product manager would be a great tester
+
+00:12:36.110 --> 00:12:39.150
+Product manager knows what needs to be built
+
+00:12:39.670 --> 00:12:44.950
+What needs to happen? Sure. So why not? Why not write the test cases?
+
+00:12:45.970 --> 00:12:48.850
+Even before product is built in plain English
+
+00:12:49.650 --> 00:12:52.740
+This is what should happen
+
+00:12:53.180 --> 00:12:55.180
+Absolutely, right and this is where
+
+00:12:55.340 --> 00:12:58.100
+Yeah, I think
+
+00:12:58.100 --> 00:13:00.180
+Very good idea. It should be done. I
+
+00:13:00.780 --> 00:13:02.490
+worry
+
+00:13:02.490 --> 00:13:07.250
+Especially in this in this world where we're making software so much faster
+
+00:13:07.250 --> 00:13:13.010
+If we're still relying on a person called the tester to do all the testing your business is in trouble
+
+00:13:13.010 --> 00:13:16.330
+You can't keep up that testing can now happen that
+
+00:13:16.850 --> 00:13:21.970
+Evaluation just testing such an overload of word now that evaluation of quality and fit and
+
+00:13:23.050 --> 00:13:29.570
+Are we trying to build the right thing so much that could happen so much earlier and I feel like a lot of the
+
+00:13:30.530 --> 00:13:35.250
+Focus of AI and genetic AI especially are around. How do we generate code faster?
+
+00:13:35.250 --> 00:13:40.410
+I think we're missing the beat if we're still waiting to for someone
+
+00:13:41.090 --> 00:13:44.530
+Downstream to get all the testing for that testing ab more than ever
+
+00:13:45.050 --> 00:13:51.130
+Needs to happen all the time and more than ever we always talk about whole team quality or whole team testing more than ever
+
+00:13:51.890 --> 00:13:57.770
+everyone involved in the creation of the product needs to be testing it from the very beginning because they can do it easily if they're
+
+00:13:57.930 --> 00:14:01.490
+Because the tools are there to even cover the gaps
+
+00:14:01.490 --> 00:14:05.330
+They don't know a lot of like, you know, even today, but especially five years ago
+
+00:14:05.410 --> 00:14:07.490
+There's folks in the testing community who would say
+
+00:14:08.010 --> 00:14:12.970
+Well, I have the expertise in testing they can't yeah, that's such a BS
+
+00:14:13.770 --> 00:14:15.770
+And more now than ever before
+
+00:14:16.730 --> 00:14:23.290
+So absolutely product everyone they should be testing everything all the time and then the testers
+
+00:14:23.290 --> 00:14:28.610
+But you know, if you have a person called a tester on your team and not all teams do if there's a dedicated team
+
+00:14:28.610 --> 00:14:35.050
+Or person for that they are asking the most creative questions around fit and they're looking at you know
+
+00:14:35.090 --> 00:14:40.090
+I can imagine I used to stare at dashboards of customer data and now I can just give AI that data here
+
+00:14:40.090 --> 00:14:43.690
+Here's the here's all the data. I have on how the customers use our product
+
+00:14:43.690 --> 00:14:49.110
+Tell me the top five areas to go explore and give me some ideas to how to find issues and maybe they're
+
+00:14:49.530 --> 00:14:53.770
+BAM and I like that is where we should be
+
+00:14:54.440 --> 00:14:57.760
+But I don't think everyone's there yet. They're still trying to figure out how to keep
+
+00:14:57.920 --> 00:15:00.600
+yeah, and I just to build on that I
+
+00:15:01.360 --> 00:15:03.420
+Mean, I think that's right. I think the
+
+00:15:05.080 --> 00:15:07.080
+One of the
+
+00:15:07.780 --> 00:15:14.740
+Things that is a pitfall and that I worry about a little bit going forward is that because it's become so much easier
+
+00:15:14.860 --> 00:15:16.860
+And we've seen this with some of our
+
+00:15:17.660 --> 00:15:22.420
+discovery calls and even some of our you know customer engagements where
+
+00:15:23.180 --> 00:15:27.580
+because uh AI can create tests and
+
+00:15:28.340 --> 00:15:31.320
+Hopefully, you know to varying degrees of success maintain tests
+
+00:15:32.320 --> 00:15:37.840
+More easily there's kind of a output or oriented mentality
+
+00:15:38.280 --> 00:15:42.760
+And this kind of goes a little bit to the adaptive challenge piece of the whole thing
+
+00:15:42.760 --> 00:15:44.760
+You know where there's some foot there's more
+
+00:15:44.760 --> 00:15:49.580
+There's I think too much focus on checking the box of saying, okay
+
+00:15:49.580 --> 00:15:55.640
+Have I created enough test cases? Do I have enough test cases for this part of the application for that part?
+
+00:15:56.560 --> 00:16:01.160
+You know have you know, is there enough work for everyone to do the?
+
+00:16:01.320 --> 00:16:08.040
+Like a certain number of tests per, you know, release cycle or whatever. None of these things matter, right?
+
+00:16:11.280 --> 00:16:15.640
+Focus on what are you testing right? Do you are you focusing?
+
+00:16:15.640 --> 00:16:21.300
+It's very easy to create a test and I think this is one of the challenges also with some of the autonomous testing
+
+00:16:21.300 --> 00:16:26.280
+Tools is that it's very easy to like for that for an AI to even like come up with us
+
+00:16:26.280 --> 00:16:33.680
+But you need to be thoughtful and creative to your point to think about what are the right tests to keep in mind?
+
+00:16:33.960 --> 00:16:37.460
+What are the parts of the application that you think are most at risk?
+
+00:16:38.000 --> 00:16:42.120
+What are the parts of the user journey that you want to really hone in on?
+
+00:16:42.300 --> 00:16:47.720
+Some parts more than other parts because at the end of the day if you're just writing tests for the sake of writing tests
+
+00:16:47.800 --> 00:16:51.040
+which I think unfortunately as like as
+
+00:16:52.000 --> 00:16:59.040
+Obvious of a point as it is that it's that's not an ideal way of doing things. No, it's still not implicated
+
+00:16:59.040 --> 00:17:03.720
+I think too many organizations still consider QA as a
+
+00:17:04.360 --> 00:17:11.440
+second string operation of just we're going to you know, like how the check the box to do it rather than
+
+00:17:12.160 --> 00:17:18.480
+Incorporating it fundamentally quality fundamentally as a core principle in product development, right?
+
+00:17:18.480 --> 00:17:25.280
+Yeah, and I just wrote about this I posted yesterday like the false dichotomy of false equivalence of testing
+
+00:17:26.040 --> 00:17:32.240
+And a lot of companies they will we do testing so we have quality and now especially with the tools we have
+
+00:17:32.520 --> 00:17:35.080
+and again getting software out is great we can
+
+00:17:36.040 --> 00:17:38.040
+something I talk about a lot is
+
+00:17:38.900 --> 00:17:45.820
+AI is an amplifier if you if you are a mediocre software team with a mediocre product idea
+
+00:17:46.060 --> 00:17:52.220
+You will be able to create a mediocre product much faster yay you right
+
+00:17:53.340 --> 00:17:55.340
+You know customers they don't want
+
+00:17:56.100 --> 00:18:02.900
+Software, they want their problem solved. So what we want to do from like if we how do we ask this question?
+
+00:18:03.420 --> 00:18:05.420
+How can we use AI?
+
+00:18:05.660 --> 00:18:07.660
+To make sure we're building
+
+00:18:10.310 --> 00:18:14.790
+Definitions of quality here, but how what are ways we could leverage AI as a team
+
+00:18:15.510 --> 00:18:17.510
+To make sure we're delivering
+
+00:18:17.830 --> 00:18:19.670
+software that
+
+00:18:19.670 --> 00:18:26.500
+Solves problems for customers in a way. They enjoy because that's what the world's missing a lot of today. Yeah in
+
+00:18:27.020 --> 00:18:29.020
+Microsoft Teams, I'm talking to you
+
+00:18:34.220 --> 00:18:37.050
+So it's see
+
+00:18:37.970 --> 00:18:42.060
+Testing I've been a developer all my life and to me
+
+00:18:42.740 --> 00:18:45.020
+It
+
+00:18:45.020 --> 00:18:47.380
+Development faces the same exact issues
+
+00:18:47.740 --> 00:18:52.050
+So like I said that there are people who say I can never solve anything
+
+00:18:52.050 --> 00:18:55.400
+there are people who say they can solve everything and I
+
+00:18:56.090 --> 00:18:57.810
+have been using
+
+00:18:57.810 --> 00:19:03.370
+Cloud code to to write code for the last several months and I have several people
+
+00:19:03.410 --> 00:19:06.130
+I know who have been also doing that and
+
+00:19:07.900 --> 00:19:09.900
+the rate of success
+
+00:19:10.900 --> 00:19:15.180
+Eventually the rate of success to build quality code is
+
+00:19:16.020 --> 00:19:19.660
+varies a lot in some cases
+
+00:19:20.460 --> 00:19:24.540
+You are able to replace from your you are able to increase the
+
+00:19:25.340 --> 00:19:28.660
+velocity by five to six X in some cases
+
+00:19:28.660 --> 00:19:31.700
+It's it's not even one X
+
+00:19:31.700 --> 00:19:38.940
+It's even worse than human writing code because it just generates some add so many bugs same cloud code
+
+00:19:39.060 --> 00:19:41.780
+Same AI tool. It's the orchestrator
+
+00:19:42.300 --> 00:19:48.810
+Yeah, which is and actually expand on what the orchestrator is because I have I think we're in agreement on this
+
+00:19:48.810 --> 00:19:54.690
+So the orchestrator is the person who is using the tools who's providing. Yes. Yes
+
+00:19:55.930 --> 00:20:01.610
+And you know, you can go to internet and you can find all sorts of problems and you can try it and there are
+
+00:20:01.610 --> 00:20:04.570
+I just read a couple of days back
+
+00:20:04.570 --> 00:20:08.450
+Hey, you know this this open source prompt if you use it, then it will solve everything
+
+00:20:08.610 --> 00:20:11.250
+No
+
+00:20:12.130 --> 00:20:13.210
+You
+
+00:20:13.210 --> 00:20:17.730
+You have to have you have to know what you are doing
+
+00:20:19.340 --> 00:20:24.340
+Yes, if you are doing something that other people have already done before then sure sure sure go
+
+00:20:24.740 --> 00:20:29.100
+But if you are doing something new, which is the only thing that matters
+
+00:20:29.700 --> 00:20:34.390
+then you have to know what you are doing how it should be done and
+
+00:20:34.980 --> 00:20:40.100
+Then AI AI is nothing like is only like a helper
+
+00:20:40.340 --> 00:20:46.860
+You have a helper. Yes, you you ask it to do stuff. It will do stuff. You ask garbage in garbage out
+
+00:20:47.740 --> 00:20:54.620
+That absolutely same thing for testing. So you you ask AI to create a scarce a little creators case
+
+00:20:55.060 --> 00:21:00.060
+So I I was giving another example to somebody that in many
+
+00:21:01.100 --> 00:21:03.100
+organizations I have worked with
+
+00:21:03.380 --> 00:21:10.540
+They have a they have a rule that for unit test should cover 70% of the code or 80% of the code
+
+00:21:10.700 --> 00:21:13.700
+And there are tools to check whether it does or not
+
+00:21:14.300 --> 00:21:16.980
+Sir AI I can create
+
+00:21:18.330 --> 00:21:20.330
+unit tests in
+
+00:21:20.650 --> 00:21:27.040
+Half an hour that will cover that kind of code and it will be meaning and and a hundred percent code coverages
+
+00:21:27.760 --> 00:21:31.040
+Yeah, I cannot do that. Oh, no, it's it's well, it's no, it's
+
+00:21:31.720 --> 00:21:34.480
+What I found every time I've worked on code coverage
+
+00:21:34.480 --> 00:21:39.920
+I found dead code that couldn't be reached and and just get it out of there, but I think with AI
+
+00:21:40.800 --> 00:21:47.400
+90 to 100 percent and again, it's just it doesn't even verify functional correctives. It verifies the code paths about hit
+
+00:21:47.560 --> 00:21:49.560
+It's a nice little min bar
+
+00:21:49.720 --> 00:21:53.240
+With AI tools, I would say the min bar is down 90 95
+
+00:21:53.240 --> 00:21:57.200
+Maybe even a hundred depending on the software, but you have to know how to use it
+
+00:21:57.360 --> 00:22:04.000
+If you don't it will it will create 70 80 percent of the coverage or even 90 percent coverage
+
+00:22:04.080 --> 00:22:07.160
+But the remaining 10 percent is what was really important
+
+00:22:08.160 --> 00:22:14.960
+Yeah, well and actually it is let me talk about I'm gonna steal a little bit of something I talked about in a different podcast on
+
+00:22:14.960 --> 00:22:17.080
+different platform and riff on it here I
+
+00:22:19.020 --> 00:22:25.820
+Have been in tech a long time. I've seen a lot of lead code type interview questions, which are completely irrelevant now
+
+00:22:25.820 --> 00:22:30.620
+Yes, and I think it's interesting if I was going to interview someone like here's a great
+
+00:22:30.620 --> 00:22:34.100
+Here's it. Here's what a tech interview I think should be in
+
+00:22:34.620 --> 00:22:36.620
+This is April 1st
+
+00:22:36.660 --> 00:22:43.090
+In 2026 I think you know give somebody a general problem to solve not a
+
+00:22:44.090 --> 00:22:47.170
+Reversal length list or wherever the canonical example is some
+
+00:22:48.130 --> 00:22:50.970
+something something not huge something we've done and
+
+00:22:51.930 --> 00:22:59.010
+Have it prompt and I hate the term prompt engineering. I think it's just critical thinking and and knowing your domain
+
+00:23:00.290 --> 00:23:05.530
+It's a bloodless word for like a really creative. Oh, I hate yeah. Yeah, I like
+
+00:23:06.010 --> 00:23:11.790
+And you can be wrong too. So what I want them to do is prompt Claude to generate some code and then
+
+00:23:13.310 --> 00:23:16.920
+If I'm interviewing someone say I'm interviewing you a polka I want you to
+
+00:23:18.250 --> 00:23:21.010
+Maybe I'll do you shot you near more of a coder. I would
+
+00:23:22.010 --> 00:23:24.010
+like tell me what this code is doing and
+
+00:23:25.250 --> 00:23:28.430
+You could just explain how the code works should be able to do that
+
+00:23:28.430 --> 00:23:33.650
+And that's I think the ability to read codes coming more and more important. What shortcomings do you see here?
+
+00:23:33.970 --> 00:23:39.810
+Go ahead and you know, I'll have you prompted enough for the thing compiles and builds with it now create unit tests for it
+
+00:23:40.490 --> 00:23:45.970
+Or create do create some tests for it and how high I could ask you how high of coverage think is is viable
+
+00:23:46.770 --> 00:23:52.130
+And what does this mean a lot of times when you're trying to get to that last 10% of code coverage
+
+00:23:52.130 --> 00:23:54.690
+it is the error paths and
+
+00:23:55.170 --> 00:23:59.250
+That's where good prompting and testing or on testability could come in
+
+00:23:59.250 --> 00:24:02.050
+Like how do we generate these errors, which often just don't get covered
+
+00:24:02.250 --> 00:24:07.050
+We try and walk through the debugger a bit we can do that we can write the code so that we can
+
+00:24:08.010 --> 00:24:14.970
+Generate the errors away. We can generate the error handling and make sure it works correctly the whether it's just error handling or exceptions
+
+00:24:14.970 --> 00:24:18.730
+There's a lot of that critical thinking and systems thinking that's
+
+00:24:19.290 --> 00:24:24.140
+Far more important than it's ever been. It's always been important. Oh my god. It's so much more important now
+
+00:24:24.140 --> 00:24:27.140
+We can get those things out of people because those are the people
+
+00:24:27.860 --> 00:24:29.940
+The people that can do well at that kind of interview
+
+00:24:29.940 --> 00:24:31.940
+I think are the folks that are going to make in the software of the future
+
+00:24:31.940 --> 00:24:34.940
+I agree the folks that and like writing code
+
+00:24:34.940 --> 00:24:40.940
+You know this because it's the easy part writing code is easy. It's always been easy now. It's faster
+
+00:24:40.940 --> 00:24:44.940
+It's easy not to think about it. It's everything else. It's hard. How do we make sure we're solving the right problem?
+
+00:24:44.940 --> 00:24:45.940
+How do we make sure it's working?
+
+00:24:45.940 --> 00:24:50.940
+How do we make sure it's actually doing what we thought it was going to do or the or are the requirements?
+
+00:24:50.940 --> 00:24:55.940
+We made actually correct you any of them conflict. I remember god 20 years ago doing
+
+00:24:55.940 --> 00:24:58.940
+Requirements reviews and finding you know all these
+
+00:24:59.940 --> 00:25:04.060
+Just it was it was tedious work
+
+00:25:04.060 --> 00:25:08.060
+But trying to find out where requirements may conflict with each other. Hey, I could do it in five seconds
+
+00:25:08.060 --> 00:25:12.060
+I don't have to do that anymore. It's great. All right. I'm off my soapbox. But anyway, that's right there
+
+00:25:12.060 --> 00:25:16.060
+I did want to say just one thing on I agree with
+
+00:25:17.060 --> 00:25:20.060
+Everything y'all are saying. I just wanted to add a point
+
+00:25:20.060 --> 00:25:26.060
+That you know, you asked this question Alan about you know, how do you create how do you leverage AI?
+
+00:25:26.060 --> 00:25:28.060
+to create
+
+00:25:29.060 --> 00:25:36.060
+Products that delight right that are high-quality and that people actually want to use right and you know
+
+00:25:36.060 --> 00:25:38.060
+Y'all had a very I think
+
+00:25:39.060 --> 00:25:42.060
+You know useful conversation around ways in which
+
+00:25:43.060 --> 00:25:45.060
+We can creatively use AI to do that
+
+00:25:45.060 --> 00:25:51.060
+But I think you know again in some ways going back to the adaptive challenge part of this whole thing is like at some level
+
+00:25:51.060 --> 00:26:00.060
+That's the like that's the technical layer, right? But there's also a sort of adaptive layer where you also have to
+
+00:26:01.060 --> 00:26:05.060
+The as an organization you have to have a culture of wanting to delight
+
+00:26:05.060 --> 00:26:08.190
+Right, like that has to be in like an incentive
+
+00:26:08.190 --> 00:26:12.190
+Right that this is an important thing and you use the example of teams, right?
+
+00:26:12.190 --> 00:26:18.190
+And the reality is that a lot of b2b applications, especially b2b enterprise applications
+
+00:26:18.190 --> 00:26:22.190
+There is just not the incentive to create delightful props
+
+00:26:22.190 --> 00:26:27.190
+Right, like teams look at you know, if you look at teams versus slack, right?
+
+00:26:27.190 --> 00:26:29.190
+Slack is just a more delightful product
+
+00:26:29.190 --> 00:26:33.190
+Why is that because it's targeting a different market and it has a different business model
+
+00:26:33.190 --> 00:26:38.190
+And it's not something that you just get for free because you already have a Microsoft license, right?
+
+00:26:38.190 --> 00:26:44.190
+And so therefore teams and you know Microsoft never had the incentive to build a delightful product in the first place
+
+00:26:44.190 --> 00:26:47.190
+Right, so you can have all the best AI in the world
+
+00:26:47.190 --> 00:26:51.190
+But if you don't have the right kind of product to build a delightful product
+
+00:26:51.190 --> 00:26:54.190
+It's not something that you just get for free because you already have a Microsoft license
+
+00:26:55.190 --> 00:26:59.190
+Right, so you can have all the best AI in the world, but if you don't have the right
+
+00:27:00.190 --> 00:27:05.190
+Incentives in place and the right culture in place then it'll fall short anyways
+
+00:27:05.190 --> 00:27:10.190
+Yeah, we want to focus I have a team story, but we want to focus on I think too many
+
+00:27:10.190 --> 00:27:16.190
+Organizations are focused on creating software versus delighting the customer that has to change. I actually worked on teams
+
+00:27:16.190 --> 00:27:20.190
+It was the product that made me leave Microsoft and
+
+00:27:24.220 --> 00:27:29.220
+Our VP was he was sure people would switch away from slack to teams and said no not this product
+
+00:27:29.220 --> 00:27:36.220
+This product is for people that don't know they need collaboration software your market is people that already have office 365
+
+00:27:36.220 --> 00:27:40.220
+You can shove exactly and that's that and that's fine
+
+00:27:40.220 --> 00:27:44.220
+And then the curse of Microsoft to give them although teams is you know
+
+00:27:44.220 --> 00:27:48.220
+Nine years later after I left is a much worse product than when I left the company
+
+00:27:48.220 --> 00:27:52.700
+And I can happily say that publicly
+
+00:27:52.700 --> 00:27:57.900
+The difficult thing in a company like Microsoft and their quality is not good and
+
+00:27:57.900 --> 00:28:02.900
+Some of that comes up to their credit is and they there's a way to solve this or smart people there
+
+00:28:02.900 --> 00:28:06.900
+But they're trying to make software for millions and millions of users
+
+00:28:06.900 --> 00:28:12.900
+That's their their benefit and their curse trying they have you know thousands of feature requests a day
+
+00:28:12.900 --> 00:28:18.900
+In trying to make something for everyone often windows teams
+
+00:28:18.900 --> 00:28:21.900
+Even word to some extent they're making something for no one
+
+00:28:21.900 --> 00:28:27.900
+So it's it's a difficult place to be I don't think it's an unsolvable problem by any means but
+
+00:28:27.900 --> 00:28:35.900
+They also know that folks are locked into enterprise agreements office and windows and it just has to be good enough and that's fine
+
+00:28:35.900 --> 00:28:43.900
+But most companies for better for worse and for better I'll put it don't have millions and millions of customers
+
+00:28:43.900 --> 00:28:50.900
+We're trying to delight tens of thousands or hundreds thousands customers sometimes millions of customers
+
+00:28:50.900 --> 00:28:54.900
+And we have a little better shot at it and that's but go back to your point polket
+
+00:28:54.900 --> 00:29:02.900
+God I wish we'd stop working on creating more mediocre software and create software that actually makes people happy and solves their problems
+
+00:29:02.900 --> 00:29:09.900
+Yeah I think I think sorry just one last piece on this I think yes I wish that that was the case
+
+00:29:09.900 --> 00:29:16.900
+And one thing that I maybe to throw it back at both of y'all if that's okay a question that I I you know I'm
+
+00:29:16.900 --> 00:29:23.900
+Grappling with a little bit as I you know I'm a newer to this area than y'all who are much more deeply experienced but
+
+00:29:23.900 --> 00:29:36.150
+You know to what extent do how can we make it so that organizations care more about quality to begin with
+
+00:29:36.150 --> 00:29:42.150
+Right because I think one of the like I use like I'll give you a specific example I was talking about B2B as a challenge
+
+00:29:42.150 --> 00:29:50.150
+Which I think is true but it's not just B2B I use an app I know you're on there too Alan Substack right
+
+00:29:50.150 --> 00:30:00.150
+Substack is B2C right it's a very buggy app its mobile platform is terrible its web might be even worse
+
+00:30:00.150 --> 00:30:10.150
+There's all kinds of times where I have to like you know close down the app and restart it the experiences leaves a lot to be wanting
+
+00:30:10.150 --> 00:30:16.150
+And yet it's a B2C app with you know whatever millions of people on it
+
+00:30:16.150 --> 00:30:23.150
+And I think the you know if the CEO of Substack was here today they would say well the status quo is working
+
+00:30:23.150 --> 00:30:33.150
+And it is and this is again a false equivalence that buggy doesn't necessarily mean low quality
+
+00:30:33.150 --> 00:30:38.180
+And this is where a lot of testers get stuck so if I have this is something Brake used to say and I'll steal his idea is
+
+00:30:38.180 --> 00:30:43.180
+If I have two bits of software one has no known bugs and has a thousand users
+
+00:30:43.180 --> 00:30:48.180
+And one has a bunch of work around people work around but it has a hundred thousand users
+
+00:30:48.180 --> 00:30:55.180
+Which one is higher quality which one brings more value to the customer the one with more users you know other factors involved there
+
+00:30:55.180 --> 00:31:02.180
+But if it's again customers don't want software they want their problems solved despite the bugs in Substack
+
+00:31:02.180 --> 00:31:09.180
+It solves a significant problem better than WordPress for a lot of users
+
+00:31:09.180 --> 00:31:19.180
+So that's yeah could they make it a more delightful experience sure and they probably will over time is it quality is it quality enough
+
+00:31:19.180 --> 00:31:23.250
+And this is maybe something maybe we'll never get out of this maybe good enough is always good enough
+
+00:31:23.250 --> 00:31:33.310
+I don't think windows or teams are good enough but some stack is good enough right and yeah it's a I'm hoping with a
+
+00:31:33.310 --> 00:31:37.310
+I'm late you answer shots not talk too much here but I'm hoping with AI maybe we can push the needle
+
+00:31:37.310 --> 00:31:44.310
+Maybe maybe the bar of good enough can get higher as we again focus on using it everywhere and not just for code generation
+
+00:31:44.310 --> 00:32:01.860
+I hope I hope so the challenge I am seeing is that there is a notion in the corporate world now that with AI we can be 10x faster
+
+00:32:01.860 --> 00:32:18.830
+And we can cut the cost to one tenth and but they have not spent enough time or resources to train their people
+
+00:32:18.830 --> 00:32:28.660
+They simply assume that AI is doing stuff in like in like you and I were talking that is the orchestrator
+
+00:32:28.660 --> 00:32:37.490
+But they believe that if you have cloud code it will just write code and everything will kosher
+
+00:32:37.490 --> 00:32:42.490
+You know we can get rid of all the other engineers and have two people and they will write all the code
+
+00:32:42.490 --> 00:32:59.740
+So also what I have seen personal experience funny thing so I was working on a bug and I had AI fix that bug
+
+00:32:59.740 --> 00:33:11.400
+It did bug is fixed three days later I found another bug deep down somewhere else that was not there before
+
+00:33:11.400 --> 00:33:18.400
+And then I started tracing back and get and I found that when the AI fixed that back introduced the other one
+
+00:33:18.400 --> 00:33:27.910
+And why it did that I asked him why did you do that just say sorry there was no reason no reason whatsoever to touch that other part
+
+00:33:27.910 --> 00:33:41.620
+But it did and it is the challenge we have now is that it is writing so much code that it is not possible to review everything
+
+00:33:41.620 --> 00:33:47.900
+And then you can ask AI to review and yes it does a decent job but then again it is AI versus AI
+
+00:33:47.900 --> 00:34:02.320
+So I think what is possible and I am fearful of that is that in the pursuit of writing code faster cheaper building products faster cheaper
+
+00:34:02.320 --> 00:34:07.320
+We will we will build a lot of video product
+
+00:34:07.320 --> 00:34:12.880
+Yeah I agree completely
+
+00:34:12.880 --> 00:34:25.710
+So and I don't know what is the solution here because everything in these corporations is dependent on their stock prices or their valuation
+
+00:34:25.710 --> 00:34:32.810
+And the costs have to go down productivity has to increase and that is the only thing that matters
+
+00:34:32.810 --> 00:34:41.400
+Quality maybe second degree second level
+
+00:34:41.400 --> 00:34:53.990
+Yeah it's a wild time so oh my gosh so many thoughts around AI
+
+00:34:53.990 --> 00:35:07.050
+I wonder if I don't know I just the flashes of former test conferences and LinkedIn and it's like there's just a lot of misinformation out there
+
+00:35:07.050 --> 00:35:16.050
+And on the training aspect I think you're on to something that that's missing and I haven't thought this far I'm wondering out loud as I do on this podcast
+
+00:35:16.050 --> 00:35:21.050
+I'm wondering given again I hate I'm not going to call it prompt engine call it the orchestrator
+
+00:35:21.050 --> 00:35:32.110
+Given the difficulty and how different the code may be generated based on the instructions in the context I give Claude in our example
+
+00:35:32.110 --> 00:35:45.240
+I wonder I'm wondering wonder out loud if pair programming is actually even more beneficial in in in in prompt driven coding
+
+00:35:45.240 --> 00:35:51.240
+That's very interesting like like like if you like shots and we're going to we're going to pair codes and get a plot
+
+00:35:51.240 --> 00:35:58.240
+And you type in here's the promise that oh wait also tell it this and like we can we can do that and then the same thing I'm typing
+
+00:35:58.240 --> 00:36:06.240
+Okay all right the test for this thing and you go oh also give it this bit of context I do it better we can learn so much more from each other on
+
+00:36:06.240 --> 00:36:15.240
+Because there's a lot of variability in like even when you generated the bug you could say or you fix the bug
+
+00:36:15.240 --> 00:36:21.240
+You know please highlight any down please highlight any downstream even give it a Claude MD
+
+00:36:21.240 --> 00:36:29.240
+When you do a bug fix always tell me any risk of downstream things I should go test or verify to make something else fixed
+
+00:36:29.240 --> 00:36:41.750
+Like we can like these are it's these are things that can learn and maybe pairing on those things is a more interesting way to learn that
+
+00:36:41.750 --> 00:36:55.750
+It's a very interesting thought very interesting thought and I have found that continually working with the with the AI and providing it the context is extremely useful
+
+00:36:55.750 --> 00:37:10.230
+And just to give you an example so our our product rights builds code from plain English so plain English to let's say plain English to play right
+
+00:37:10.230 --> 00:37:20.480
+Now you can if you you can give Claude plain English and it will write code but that code will not be executed
+
+00:37:20.480 --> 00:37:34.600
+Now if you give it a whole bunch of context and context could be like what is a what is the app does what does it do what are the different what are the different business processes
+
+00:37:34.600 --> 00:37:48.790
+What is the intent what what is the HTML look like what is the DOM look like all of this information if you provide it the code what it writes is then executed
+
+00:37:48.790 --> 00:38:01.300
+So huge huge huge difference with the context and that applies to test test automation that applies to writing I mean development that applies to everything
+
+00:38:01.300 --> 00:38:21.670
+Yeah so there's a question I often ask I used to ask people 10 years ago around test suites I'm gonna ask you like I'll ask you what gives you confidence that a product is shippable
+
+00:38:21.670 --> 00:38:32.920
+Where does the confidence come from yeah I'll follow up at the same time where does it come from today and how can we use AI to increase that confidence
+
+00:38:32.920 --> 00:38:46.360
+That's a good good way to think about it so so I've been I've been building and shipping products and when I can see that
+
+00:38:46.360 --> 00:38:57.870
+So I when when the product is built and is ready and MVP let's just say an MVP is ready to be shipped or I was told that it is ready to be shipped
+
+00:38:57.870 --> 00:39:16.040
+What I would like to see is that the core workflows all work without any hiccups if the core workflows all work without hiccup I am okay for an MVP
+
+00:39:16.040 --> 00:39:26.300
+And if if some edge case doesn't work we can deal with that because again looking back the good enough software but the core thing has to work it needs to look good
+
+00:39:26.300 --> 00:39:46.620
+It cannot have any crashes and things like that now where AI can help is fine-tuning and if I can tell AI let's just say that there are 2000 test cases
+
+00:39:46.620 --> 00:40:06.120
+If I can give it the core workflows it should be able to tell me hey these are the 25 or 50 test cases we should go if these work then then we are good right now we are doing all this manually
+
+00:40:06.120 --> 00:40:21.940
+Interesting new world interesting new world we are in
+
+00:40:21.940 --> 00:40:30.940
+Let's we have a tough one more question we will get to the wrap up here I am going to ask this because you gave me a whole bunch of questions I got to like one and a half of them
+
+00:40:30.940 --> 00:40:40.010
+Before we get into a little bit about what you are doing with your product like what is something around AI and testing or AI and quality or AI and engineering I should have asked you
+
+00:40:40.010 --> 00:40:46.010
+Let's pick a question that I should have asked you and we will answer it
+
+00:40:46.010 --> 00:41:11.790
+I got one I think one thing in terms of the like where a lot of the automation platforms today are going I think there is one of the things that we are
+
+00:41:11.790 --> 00:41:32.420
+Trying to solve for that I think is a little bit missing and that I wonder about maybe in a question form what I would say is like what do you think where do you think the autonomous testing trend is heading
+
+00:41:32.420 --> 00:41:51.580
+Right this sort of everyone is sort of talking about autonomous testing what is what does autonomous testing actually mean and and where does it fit into you know the overall QA experience
+
+00:41:51.580 --> 00:41:56.580
+Awesome Shachin that question is for you
+
+00:41:56.580 --> 00:42:20.440
+So I see multiple lanes of autonomous testing right now one is where you have a PRD or some description and based on that AI is writing the test cases and also executing the test cases
+
+00:42:20.440 --> 00:42:41.530
+So that there are some products that are working on that and there is another set where autonomous testing is more like a tool for automation engineer where they can
+
+00:42:41.530 --> 00:43:13.860
+They can just write faster test automation and what there is another lane where if we have English test cases then autonomous testing is taking those test cases and executing those at a greater
+
+00:43:13.860 --> 00:43:34.860
+Resolution so that between number one and three number one is more high level description and number three is specific test cases with test steps and it is able to execute those so these are the three lanes I am seeing right now and maybe I am missing
+
+00:43:34.860 --> 00:43:53.250
+And I think you know I keep on thinking of false equivalencies or dichotomies and we are here also I think what is going to be critical is you know when we talk about autonomous testing agents some folks go hell yeah that is going to make my job so easy
+
+00:43:53.250 --> 00:44:04.250
+Well it will not test everything so I am not going to use it and yeah they are not going to test everything you know what they are going to test a lot and there is agents that have not even been invented yet and context we can give these agents
+
+00:44:04.250 --> 00:44:26.250
+Given lists of strings that are known to be bad you can give them so much context to do better what I think is really needed is if I was going to be a successful tester today I would lean the hell into using autonomous agents but also there are some people think well we do not need testers anymore because we have autonomous agents and those people are super wrong also
+
+00:44:27.250 --> 00:44:53.500
+It is being able to recognize you know I have created autonomous agents or given context existing ones to do all this testing for me I should be smart enough to understand what testing is remaining what else I will call it testing but what else is remaining for me to make sure we have a quality product for our customers that we can get to them in a good enough or better state in a timely manner doesn't mean you need to ship 25 times a day
+
+00:44:53.500 --> 00:45:14.500
+But if I want like it's just it's a systems issue I can use these autonomous agents to do just all kinds of things I can recognize what they don't cover and then I can do that work myself either through again manually or exploration I can create diagnostic tools to help with those things I can create new autonomous agents
+
+00:45:14.500 --> 00:45:41.600
+It's being able to continually leverage these things is where the future is going to come from I think I and I see this on LinkedIn I need to spend less time there but I see so many folks say well this won't find the bugs that I find and that's great you can still find those but leverage these for the bugs for everything else and also maybe and I've seen people very experienced consultants and testing very excited about finding bugs that no customer would ever actually find because I think that's what we need to do
+
+00:45:44.600 --> 00:46:12.720
+because there there's edge cases and there's obscurity that doesn't matter so yeah I'm I think there's something there so thanks for that answer so we got just a couple of minutes here left again I don't this isn't a marketing show I want to talk about testing and AI but you guys are awesome I want to talk just a little bit about ever test and what talk about what problem software solves tell me just a little bit about ever test and what problem it's solving for for teams
+
+00:46:12.720 --> 00:46:31.720
+Well, so maybe I will start with a specific one, like, you know shots and, you know, feel free to give a more generalized answer but I did want to pick up on this piece just because it feels like such a good transition from what you just said, Alan is, and I think it connects.
+
+00:46:31.720 --> 00:46:43.720
+So I think, you know, the whatever test. Well, so ever test is an AI enabled automation platform right fundamentally that's what we do.
+
+00:46:43.720 --> 00:46:57.720
+We, we translate and with the modality we use is translating plain English test instructions, whether that's an existing manual test case, or whether that's a, you know, a test case that you're writing from scratch.
+
+00:46:57.720 --> 00:47:20.720
+Playwright scripts primarily so and it's code that you own and is exportable. And, you know, we, we try to make it the code as resilient as possible to make it as unlikely to break, but then we also do have maintenance self healing features on top of it like many, many other applications.
+
+00:47:20.720 --> 00:47:32.720
+I think what sets us apart, or what the kind of problem that we're trying to solve. And honestly Alan I'd love to get your, your thoughts on this.
+
+00:47:32.720 --> 00:47:52.720
+It relates to this point about autonomous testing, right, which is that to us I think autonomous testing is really really strong for a lot of forms of exploratory testing and creative kinds of different types of tests that, you know, maybe, you know, you're trying to, you know, scan an application
+
+00:47:52.720 --> 00:48:01.750
+and figure out and have the AI help you, you work with the AI to come up with what are some of the tests that I couldn't think of or what are the right tests to be doing and that sort of thing.
+
+00:48:01.750 --> 00:48:07.820
+But there's also I think what I would, I would sort of
+
+00:48:07.820 --> 00:48:18.820
+draw a distinction between autonomous testing, and maybe precision oriented testing. And I think where we try to focus on is more on that side of precision oriented testing.
+
+00:48:18.820 --> 00:48:33.820
+And the idea there is like, what about those specific cases where you, where you have a very specific thing that you want to test right, there's, there's, there's times for sort of like, allowing the AI to help you blue sky come up with different tests, but there's also a time for
+
+00:48:33.820 --> 00:48:47.820
+I already have thought deeply about this I've worked with my team, etc. And I know the tests that I specifically want to do. And I want to like write those, you know, and I want to offer those in a very specific fashion.
+
+00:48:47.820 --> 00:49:00.820
+But I want to use AI to be able to create it more quickly. So that's where I think where we try to solve that particular challenge of precision oriented testing where it's like, okay, you can write your test case step by step in plain English.
+
+00:49:00.820 --> 00:49:19.820
+And we, you know, we, we sort of are have trained our AI to understand, you know, complex types of assertions, complex kinds of steps right conditional, you know, conditional steps that might exist or branching, or, you know, all kinds of
+
+00:49:19.820 --> 00:49:38.820
+sort of complex validations, like maybe you want to validate that every entry in a table that's filtered matches the criteria of the filter. And, you know, now you actually have to scan through 250 entries. And, you know, you're out of the box.
+
+00:49:39.820 --> 00:49:58.820
+solution might just give up after the first like 10 rows and say, yeah, 10 rows match, but we're like, sort of trying to be very precise in, you know, how we, you know, think about the translation between plain English and automation such that we try to have make sure that what we
+
+00:49:58.820 --> 00:50:07.820
+produce as automation precisely matches the intent of, of the user to begin with. So that's kind of in a nutshell.
+
+00:50:07.820 --> 00:50:28.100
+I would, I would add the business rules, because like we were talking that AI may not know the business rules, but a domain expert work. So if the domain expert writes specific test cases to test all of those business rules in a very, very specific way.
+
+00:50:28.100 --> 00:50:35.100
+We can convert those into playwright and to run those test cases.
+
+00:50:35.100 --> 00:50:51.100
+Yeah, cool. I think it's going to be, there's just, it's a fun time to be in software development and software. I mean, things are changing and some people are, you know, change is hard for a lot of people, I should say.
+
+00:50:51.100 --> 00:51:09.100
+But also if you ride that wave, it's, man, it's so much fun. There's so much cool stuff coming out. And I was waiting for, like I mentioned, there was a chat GPT came out. I've been waiting for people to really innovate on AI. And we're really seeing a wave of that happen, especially in the last year, but it's just accelerating.
+
+00:51:09.100 --> 00:51:24.100
+So it's exciting to see stuff coming out. It's a good time. Well, in some ways it's a good time to be in tech. Another way is people are still trying to figure out how to, yeah, there's lots of weird changes happening in the world. I will leave it at that.
+
+00:51:24.100 --> 00:51:28.100
+Oh my.
+
+00:51:28.100 --> 00:51:35.100
+Yeah, there is, but a lot of fun too, even for those of us kind of on the outside looking in right now, but it's fun.
+
+00:51:35.100 --> 00:51:37.100
+Yeah. All right.
+
+00:51:37.100 --> 00:51:49.100
+Thank you so much for reaching out. This has been a absolute blast. Thank you for coming on here. This has been, I don't know, some episode of AB testing, maybe Brent will be back next time. Probably not. We'll see you soon.
+
+00:51:49.100 --> 00:51:50.100
+Thank you very much.
+
+00:51:50.100 --> 00:51:53.100
+Thank you.
+

@@ -1,0 +1,4190 @@
+WEBVTT
+
+00:00:00.020 --> 00:00:06.420
+Hi everyone, Spy here. This week we're doing a replay of episode 103 where Jason Huggins
+
+00:00:06.420 --> 00:00:14.100
+joined us in an episode called The Croissants are Selenium. You all have heard my viewpoints
+
+00:00:14.100 --> 00:00:21.410
+on UI automation and this whole episode recording came about because I was harping on some
+
+00:00:21.410 --> 00:00:27.410
+of the ridiculousness of Selenium selector based UI automation. Jason was on the show
+
+00:00:27.490 --> 00:00:32.290
+to both agree and defend his space. Good conversation. We're going to have Jason on
+
+00:00:32.290 --> 00:00:37.090
+live again sometime soon. So I thought it would be a good time to share this episode,
+
+00:00:37.730 --> 00:00:42.210
+kind of put things back into context. Again, this is episode 103. Hope you enjoy the show.
+
+00:00:53.380 --> 00:00:57.950
+Welcome to AP Testers, the modern testing podcast. Join your hosts, Alan
+
+00:01:00.290 --> 00:01:04.450
+and Brent. I am mindless agile robot. I must iterate.
+
+00:01:05.010 --> 00:01:08.130
+Gah! As we talk about software engineering,
+
+00:01:08.130 --> 00:01:13.330
+software quality, leadership and whatever else comes to mind. Now on with the show.
+
+00:01:14.210 --> 00:01:18.290
+Hey Brent, I'm having a great day. How are you doing? I'm me too. Let's go.
+
+00:01:21.020 --> 00:01:27.100
+Listeners may recall that listen to our last episode. We went off a little bit on UI
+
+00:01:27.100 --> 00:01:32.220
+automation. Could you say that? It's accurate, right? I went off that that's ambiguous. I
+
+00:01:32.220 --> 00:01:42.240
+would say we we allowed our inner passions out. We did. We did. Yeah. Again, our rants were
+
+00:01:42.240 --> 00:01:48.480
+against UI automation, but we did refer to an enabler of that, which is Selenium and
+
+00:01:49.120 --> 00:01:53.680
+which to our credit, we said was a super great tool, maybe too good because it enabled
+
+00:01:53.680 --> 00:02:00.180
+people to do dumb things. And then and then stuff happened. And then we got to here.
+
+00:02:01.680 --> 00:02:07.680
+We did. We did. And we have a very special guest today. Former ThoughtWorks employee. Oh,
+
+00:02:08.240 --> 00:02:14.670
+hold on. Hold on. I have to I have to build up to it. I have to create drama and I need
+
+00:02:14.670 --> 00:02:20.830
+some swelling music. By the way, Episode 103. Thank you. Welcome to the podcast.
+
+00:02:22.110 --> 00:02:28.270
+Put a number on it. Former Google employee, former ThoughtWorks employee, current founder,
+
+00:02:28.270 --> 00:02:36.430
+I believe, of Tapster Robotics. But for the context of our episode, we'd like to welcome
+
+00:02:36.430 --> 00:02:42.110
+the inventor of Selenium, Jason Huggins. Well, now I can say hello. Hi. Now you can say hello.
+
+00:02:42.110 --> 00:02:51.360
+Sorry. Yeah. Yeah, we're super excited to have you here. And Brent and I are going to sit
+
+00:02:51.360 --> 00:02:55.520
+down and let you know. We'll we'll ask questions. We'll interact. You seem pretty
+
+00:02:55.520 --> 00:03:00.800
+nice so far. So we're not expecting any dressing down, but we're really excited to have you here.
+
+00:03:00.800 --> 00:03:07.360
+So thank you again for coming and talking with us today. Thanks. And I suppose as a
+
+00:03:07.360 --> 00:03:12.720
+as a courtesy to the rest of the world, like this lets me being a guest on a podcast lets
+
+00:03:12.720 --> 00:03:20.880
+me not start my own podcast. So I don't want to contribute to a proliferation of more things
+
+00:03:20.880 --> 00:03:25.600
+in the world. So what part of the world are you in right now, Jason? Right now I'm in Chicago,
+
+00:03:25.600 --> 00:03:32.000
+just west of the city and my house in Oak Park. Gotcha. Yeah. So and you are both in
+
+00:03:32.000 --> 00:03:38.750
+the wonderful state of Washington. Yes. No, I was just thinking it because Alan ordinarily
+
+00:03:38.750 --> 00:03:43.550
+is a fantastic technician. I'm sure he could grease the wheels for you. And if you wanted
+
+00:03:43.630 --> 00:03:52.750
+to get a podcast going. Awesome. Yeah. I think we'd like to start off with and we'll see where
+
+00:03:52.750 --> 00:03:56.270
+the discussion goes. Oh, this is we have no outline, which is typical for A.B. testing.
+
+00:03:56.270 --> 00:04:01.410
+Sometimes we throw a little bit of a lean coffee list on the board. But today I just
+
+00:04:01.410 --> 00:04:08.130
+like to start with you. You listen to episode one or two. I did. I'd like to hear your
+
+00:04:08.130 --> 00:04:12.930
+reaction and thoughts and where we were, what you like about it and what you maybe didn't
+
+00:04:12.930 --> 00:04:21.360
+like about it. Got it. So it's everything you said. I think like the summary is that
+
+00:04:22.400 --> 00:04:25.920
+the punch lines you were trying to get to at the end, I totally agree with.
+
+00:04:25.920 --> 00:04:31.760
+And it's like I there's a certain level of like a lot of the things that were said just
+
+00:04:31.760 --> 00:04:36.000
+triggered a lot of stories in my mind. And I realized like, wow, like those stories,
+
+00:04:36.000 --> 00:04:38.880
+not a lot of people know those stories, right? Like the project where Selenium came from or,
+
+00:04:39.520 --> 00:04:43.600
+you know, or various things where I realized like, oh, yeah, I totally agree with that.
+
+00:04:43.600 --> 00:04:46.960
+Like that was a horrible thing that they, you know, that the team decided to do or
+
+00:04:46.960 --> 00:04:50.720
+other times like, no, anyway, it's just like just I just follow the stories and realize like
+
+00:04:50.720 --> 00:04:53.680
+some of that context wasn't there. But I was glad some of the stories got through like the
+
+00:04:53.680 --> 00:04:57.680
+story where the name came from. Right. Whatever. Anyway, and that was I
+
+00:04:57.680 --> 00:05:02.080
+totally trying to remember. Like I heard this once. I hope this is true. I was ready to
+
+00:05:02.080 --> 00:05:06.400
+edit that out if it wasn't. I looked it up while I was writing. Right. And so there's
+
+00:05:06.400 --> 00:05:10.480
+this book called Made to Stick. And ironically, I don't remember much of the book. However,
+
+00:05:10.480 --> 00:05:15.520
+it talks about all the different ways why ideas stick. And one of them apparently
+
+00:05:16.400 --> 00:05:20.000
+was the name of Selenium and where it came from. People who were kind of in the trenches
+
+00:05:20.000 --> 00:05:24.400
+for years with testing the fact that it was there to cure or sorry, to slay the Mercury
+
+00:05:24.400 --> 00:05:27.760
+monster. They thought that was very humorous. But and I didn't realize I was following
+
+00:05:27.760 --> 00:05:32.960
+following a long tradition of people very in a pun clever way or they think they're clever,
+
+00:05:33.200 --> 00:05:36.240
+like naming something after what they think they're going against. Anyway,
+
+00:05:37.600 --> 00:05:43.520
+but I stumbled into where I read that. I stumbled into this. I think I saw Angie Jones
+
+00:05:43.520 --> 00:05:48.400
+tweet where she kind of oh, she was mad at me. She called you out and I was like, oh,
+
+00:05:48.400 --> 00:05:51.520
+oh, what is this? And I saw the whole thread and like, wow, this is blowing up. And then
+
+00:05:51.520 --> 00:05:55.120
+like, wow, OK, so listen to the whole thing. So yeah, to be fair, yes, I did feel
+
+00:05:55.120 --> 00:05:59.120
+triggered a couple of times. We're like, wow, that's a bold statement. But then again,
+
+00:05:59.120 --> 00:06:03.520
+you know, well, there's a certain level of it. I backed off it. I said I and the tweet
+
+00:06:03.520 --> 00:06:07.280
+in question, like ever all the listeners have seen it said reason I hate Selenium
+
+00:06:07.280 --> 00:06:12.320
+is because people use shitty selectors. And really, it's not Selenium. It's right.
+
+00:06:12.320 --> 00:06:17.040
+What it enabled it. And yeah, right. Yes. This conversation could go in a
+
+00:06:17.040 --> 00:06:20.620
+million of directions. But there's one of the things I was just thinking like
+
+00:06:20.620 --> 00:06:25.020
+it's specifically in that context of selectors. Right. For me, my relationship
+
+00:06:25.100 --> 00:06:29.820
+with the Selenium project, you know, we started the project in 2004. Right. So
+
+00:06:29.820 --> 00:06:34.140
+that's a that's a lot of years. Right. And I'm not day to day on the project
+
+00:06:34.140 --> 00:06:39.820
+anymore. Right. Simon Stewart is the leader of the project now. And so I'm
+
+00:06:39.820 --> 00:06:43.980
+just kind of the the old guy who next to the campfire who just, you know,
+
+00:06:43.980 --> 00:06:48.300
+has stories sitting in his rocking chair kind of thing like, hey, kid. Anyway.
+
+00:06:48.300 --> 00:06:53.820
+Yeah. Why does it work this way? Right. Right. Well, like, can you believe this
+
+00:06:53.820 --> 00:06:56.940
+weird sequence of events where, you know, that you pushed on this and then all of
+
+00:06:56.940 --> 00:07:01.650
+this other stuff happened on the other side? But yeah, I don't know whether I
+
+00:07:01.650 --> 00:07:05.090
+should just like super stay above the frame, you know, super like general or
+
+00:07:05.090 --> 00:07:08.930
+like going to like really nitty, you know, like speaking of horrible CSS
+
+00:07:08.930 --> 00:07:10.530
+selectors, let me tell you about that story. Anyway.
+
+00:07:13.410 --> 00:07:19.570
+So Jason, the first thing I hear is is maybe you don't agree with the
+
+00:07:19.890 --> 00:07:25.410
+details or where Alan pointed the finger in his tweet, but it sounds like
+
+00:07:25.410 --> 00:07:30.460
+you agree with the sentiment. Yeah. OK. So I went back and pulled out
+
+00:07:30.460 --> 00:07:34.860
+some quotes because and because I wanted to make sure I got this right.
+
+00:07:34.860 --> 00:07:36.940
+And the thing was, it's like I totally agree with it, but there was
+
+00:07:36.940 --> 00:07:42.690
+like a context that's missing. Right. So what was one of them?
+
+00:07:45.100 --> 00:07:47.980
+Is it the one where Brent said UI automation is immoral?
+
+00:07:47.980 --> 00:07:51.180
+Oh, I like that line. Yeah. I mean, I'm kidding. I don't like that line.
+
+00:07:51.820 --> 00:07:54.460
+Definitely was triggered. I mean, I like it in the sense of like,
+
+00:07:54.460 --> 00:07:57.900
+yeah, very memorable, sticky, controversial. But let me but more
+
+00:07:58.460 --> 00:08:03.660
+specifically. So specifically, I just to make sure I'm not already being
+
+00:08:03.660 --> 00:08:09.260
+misquoted. I said, I believe I can make that argument and I stand by that.
+
+00:08:09.260 --> 00:08:12.940
+I was just trying to check. Yeah. Yeah.
+
+00:08:13.420 --> 00:08:20.220
+So like, exactly. There's something about the context is the dev teams
+
+00:08:20.220 --> 00:08:25.280
+and testing teams are separate. And I think you were was it?
+
+00:08:26.560 --> 00:08:30.000
+Why is UI testing exists? We have to go through the top layer, blah, blah.
+
+00:08:30.000 --> 00:08:32.800
+Why is that? Because that's where that's not what they're paid for.
+
+00:08:32.800 --> 00:08:35.520
+This is because here's the line, because there's a separation between
+
+00:08:35.520 --> 00:08:38.080
+testers and developers, given those worlds, so many make sense.
+
+00:08:38.080 --> 00:08:39.840
+But I'm like, no, get rid of those worlds.
+
+00:08:39.840 --> 00:08:42.880
+And the thing is, I totally agree with that punchline.
+
+00:08:42.880 --> 00:08:46.160
+And so that the context that's kind of missing here is that Selenium
+
+00:08:46.880 --> 00:08:50.000
+came from a project with no testers or no testing team, we were just
+
+00:08:50.000 --> 00:08:54.400
+developers. And we were trying to get this app out the door.
+
+00:08:55.840 --> 00:09:01.330
+And there's a whole context of like, we didn't have any functional
+
+00:09:01.330 --> 00:09:05.170
+testing tool. We went months with just unit tests.
+
+00:09:05.170 --> 00:09:11.730
+And we decided after months of headache and frustration, a very specific
+
+00:09:11.730 --> 00:09:15.650
+technical problems where things were breaking in one browser and fixed
+
+00:09:15.650 --> 00:09:17.890
+in the other. And Brent, you mentioned this like, hey, in the
+
+00:09:17.890 --> 00:09:19.570
+cross browser testing context, that makes sense.
+
+00:09:19.570 --> 00:09:22.450
+So at the time, this was like Firefox and IE, IE 6.
+
+00:09:22.450 --> 00:09:25.090
+And Firefox before it was even 1.0, it was like 0.8.
+
+00:09:25.090 --> 00:09:29.250
+Anyway, so we as a developer team with no testing, no testers,
+
+00:09:29.970 --> 00:09:32.210
+and no separate testing team, that's why we created this tool.
+
+00:09:32.930 --> 00:09:36.130
+And so and I've spent my career like, kind of avoiding those
+
+00:09:36.130 --> 00:09:39.250
+situations where there's a separate siloed testing team.
+
+00:09:39.250 --> 00:09:42.770
+And I think maybe like where I felt compelled to kind of like, you know,
+
+00:09:42.770 --> 00:09:45.890
+put up my hand and be on the show because I feel like I'm
+
+00:09:45.890 --> 00:09:49.410
+you're arguing for a thing that I've actually I feel like I've
+
+00:09:49.410 --> 00:09:51.810
+spent all my time kind of trying to stay in there.
+
+00:09:51.810 --> 00:09:55.650
+Like I kind of know about and I feel like you're also in that same
+
+00:09:55.650 --> 00:09:59.170
+spot where there is dysfunction and having these separate teams and you're
+
+00:09:59.170 --> 00:10:02.610
+actively trying to avoid that as well and bring people along saying like,
+
+00:10:02.610 --> 00:10:03.810
+doesn't have to be this way, right?
+
+00:10:03.810 --> 00:10:06.450
+So in that sense, we're like very spiritually aligned, right?
+
+00:10:07.250 --> 00:10:09.810
+But what I think I see and it's not so much your words, but I think
+
+00:10:09.810 --> 00:10:13.170
+I definitely see this as a trend is people are forgetting that
+
+00:10:13.170 --> 00:10:17.250
+Sonium started as a developer tool, like for developers by developers
+
+00:10:17.250 --> 00:10:17.890
+kind of thing.
+
+00:10:17.890 --> 00:10:20.770
+And I say that specifically because it's kind of an annoying tagline.
+
+00:10:22.370 --> 00:10:25.650
+But it's ironically like this Cypress team, the Cypress other,
+
+00:10:25.650 --> 00:10:28.290
+the testing tool, they're specifically using that as a marketing
+
+00:10:28.290 --> 00:10:31.570
+tool against Sonium is like, well, Cypress is this quote, unquote,
+
+00:10:31.570 --> 00:10:35.490
+you know, real for real developers, whatever.
+
+00:10:35.490 --> 00:10:40.130
+So there's this weird thing where there's this trend and again,
+
+00:10:40.130 --> 00:10:43.570
+like architecturally, it's literally the implement, like everything that
+
+00:10:43.570 --> 00:10:46.690
+was in Sonium one, the version that was like 15 years old,
+
+00:10:46.690 --> 00:10:50.130
+everything about Cypress is how we did that first version.
+
+00:10:50.130 --> 00:10:52.770
+And basically I threw it all away and we merged with Simon's
+
+00:10:52.770 --> 00:10:54.130
+WebDriver project to make Sonium two.
+
+00:10:54.130 --> 00:10:56.770
+So not only like do they not know their history, like they really
+
+00:10:56.770 --> 00:10:57.730
+don't know their history.
+
+00:10:57.730 --> 00:11:00.050
+Anyway, and the marketing line, like that was my marketing line,
+
+00:11:00.050 --> 00:11:02.770
+which is basically kind of like what punks do when they're trying to
+
+00:11:02.770 --> 00:11:03.810
+make some noise, right?
+
+00:11:03.810 --> 00:11:07.730
+But there's, but I got some criticism at the very beginning by
+
+00:11:07.730 --> 00:11:10.930
+creators of other testing tools saying that Sonium was too geeky.
+
+00:11:10.930 --> 00:11:14.530
+The only kind of selectors we actually kind of, Alan,
+
+00:11:14.530 --> 00:11:17.410
+you mentioned this, like, you know, add a unique ID or data ID.
+
+00:11:17.970 --> 00:11:20.370
+That was the only thing that Sonium supported at the beginning.
+
+00:11:20.370 --> 00:11:22.290
+And when people would say that like, oh, you should support all
+
+00:11:22.290 --> 00:11:23.810
+these other things, like I was kind of ambivalent.
+
+00:11:23.810 --> 00:11:25.650
+Like, yeah, sure, go ahead, knock yourself out, go do it.
+
+00:11:25.650 --> 00:11:28.290
+But when I use this tool, I'm going to go in the source code,
+
+00:11:28.290 --> 00:11:31.330
+modify it, make it so there's ID tags and whatever.
+
+00:11:31.330 --> 00:11:34.290
+So it came from like this really, like it was actually like
+
+00:11:34.290 --> 00:11:38.610
+really not usable by most testers and testing teams.
+
+00:11:38.610 --> 00:11:41.330
+And it kind of was actively avoiding kind of working on
+
+00:11:41.330 --> 00:11:43.010
+projects where there was like, where there was a separate
+
+00:11:43.010 --> 00:11:44.530
+siloed testing scene.
+
+00:11:44.530 --> 00:11:48.210
+So what I've seen, though, is testing.
+
+00:11:48.210 --> 00:11:48.930
+Sorry, go ahead.
+
+00:11:48.930 --> 00:11:49.410
+No, I see.
+
+00:11:49.410 --> 00:11:50.530
+And then it got out of control.
+
+00:11:50.530 --> 00:11:51.170
+You lost that.
+
+00:11:51.170 --> 00:11:55.330
+Yeah, I think what happened right is that the, you know,
+
+00:11:55.490 --> 00:11:57.970
+I don't know what metaphor I'm looking for at the moment,
+
+00:11:57.970 --> 00:12:03.010
+but the testers and testing teams are getting kind of pushed
+
+00:12:03.010 --> 00:12:04.850
+out of the nest, if you will, right?
+
+00:12:04.850 --> 00:12:06.770
+I kind of look at it like in two different directions.
+
+00:12:06.770 --> 00:12:07.810
+There's a whole bunch of people.
+
+00:12:08.370 --> 00:12:10.210
+They want to stay employed, rightfully so.
+
+00:12:10.210 --> 00:12:11.890
+And so they're pushed into writing more code and
+
+00:12:11.890 --> 00:12:12.610
+writing automation.
+
+00:12:12.610 --> 00:12:15.410
+And that's kind of where they end up at the
+
+00:12:15.410 --> 00:12:17.250
+Sonium meetups and Sonium conferences, because like
+
+00:12:17.250 --> 00:12:19.170
+they're being pushed either pulled or pushed or whatever
+
+00:12:19.170 --> 00:12:21.410
+to like learn this thing, keep their job.
+
+00:12:21.410 --> 00:12:23.490
+If nothing else, like, you know, learn automation,
+
+00:12:23.490 --> 00:12:24.290
+become a coder.
+
+00:12:24.290 --> 00:12:26.130
+And then there's another side where I think it's
+
+00:12:26.130 --> 00:12:28.450
+totally a fine path.
+
+00:12:28.450 --> 00:12:31.890
+But I think it's maybe harder to find people talking
+
+00:12:31.890 --> 00:12:33.490
+about this and arguing about it at conferences,
+
+00:12:33.490 --> 00:12:35.090
+things like that, but like a business analyst
+
+00:12:35.090 --> 00:12:37.330
+where you're sitting at a dashboard and like you're
+
+00:12:37.330 --> 00:12:39.250
+looking at like Google Analytics or some kind of
+
+00:12:39.250 --> 00:12:41.090
+thing where you're kind of you're sitting there
+
+00:12:41.090 --> 00:12:42.850
+with a kind of a clipboard and you're kind of more
+
+00:12:42.850 --> 00:12:44.930
+kind of as an analysis to maybe figuring out what
+
+00:12:44.930 --> 00:12:45.810
+needs to get tested.
+
+00:12:45.810 --> 00:12:47.250
+You're not writing code, but you're kind of like
+
+00:12:47.250 --> 00:12:48.290
+looking at the system as a whole.
+
+00:12:48.290 --> 00:12:50.850
+I think that's a totally valid track for testers.
+
+00:12:50.850 --> 00:12:53.170
+And I think what's going away is just like people just,
+
+00:12:53.170 --> 00:12:55.630
+you know, sitting there clicking a button.
+
+00:12:55.630 --> 00:12:56.130
+Right.
+
+00:12:56.750 --> 00:12:58.910
+And unfortunately, those kind of jobs stick around
+
+00:12:58.910 --> 00:13:01.790
+is because management in some level thinks that
+
+00:13:01.790 --> 00:13:03.550
+testing is sitting there clicking a button.
+
+00:13:03.550 --> 00:13:03.790
+Right.
+
+00:13:03.790 --> 00:13:04.830
+So they put out a job, correct?
+
+00:13:04.830 --> 00:13:05.870
+Like you need a button clicker.
+
+00:13:05.870 --> 00:13:08.510
+There's actually so I don't know if you're
+
+00:13:08.510 --> 00:13:09.310
+much of a reader.
+
+00:13:09.310 --> 00:13:10.430
+We just we just met.
+
+00:13:10.430 --> 00:13:14.350
+Have you heard of Nancy Forgren's book Accelerate?
+
+00:13:15.070 --> 00:13:15.570
+I have not.
+
+00:13:16.110 --> 00:13:17.470
+I am a reader, but I have not read that.
+
+00:13:17.470 --> 00:13:19.310
+OK, I definitely recommend.
+
+00:13:19.310 --> 00:13:20.670
+It's Nicole Forsgren.
+
+00:13:20.670 --> 00:13:21.710
+Is it Nicole?
+
+00:13:21.710 --> 00:13:22.590
+Oh, I'm sorry.
+
+00:13:22.910 --> 00:13:26.830
+Nicole, she she keynoted the the sauce conference.
+
+00:13:26.830 --> 00:13:27.710
+Oh, you know what?
+
+00:13:27.710 --> 00:13:31.230
+I think I quoted her as Nancy at the webinar yesterday as well.
+
+00:13:31.870 --> 00:13:34.270
+Sorry, it's Nicole Forsgren.
+
+00:13:34.270 --> 00:13:35.390
+I'm just going to call her Dr.
+
+00:13:35.390 --> 00:13:35.870
+Forsgren.
+
+00:13:35.870 --> 00:13:37.390
+I think I got the last name.
+
+00:13:37.390 --> 00:13:37.950
+Got it.
+
+00:13:37.950 --> 00:13:42.270
+Anyway, so she's spent the last four years
+
+00:13:42.270 --> 00:13:49.230
+looking at certain constructs, particularly lean and agile type of constructs.
+
+00:13:49.230 --> 00:13:52.750
+But it's studying it, researching it.
+
+00:13:52.750 --> 00:13:56.270
+And this book is sort of the published results of her research.
+
+00:13:56.910 --> 00:14:00.510
+And one of the things that she came out and stated is
+
+00:14:02.030 --> 00:14:07.550
+Dev owning the the testing and the automation of the tests
+
+00:14:08.350 --> 00:14:11.550
+is correlated with positive business outcomes.
+
+00:14:12.350 --> 00:14:16.830
+But interestingly enough, test owning and maintaining it
+
+00:14:17.390 --> 00:14:20.590
+is not correlated with business outcomes.
+
+00:14:22.030 --> 00:14:25.950
+I, about 10 years ago, left the QA job, went to dev.
+
+00:14:27.150 --> 00:14:29.070
+Like you did not have a test team.
+
+00:14:29.790 --> 00:14:33.950
+And I completely from experience, I completely see why, right?
+
+00:14:33.950 --> 00:14:40.830
+Once you have the dev team owning it, they don't like like everyone else.
+
+00:14:40.830 --> 00:14:43.390
+They don't like maintaining test automation.
+
+00:14:44.190 --> 00:14:49.310
+And what you find is that they naturally build stronger test designs
+
+00:14:49.310 --> 00:14:55.710
+to make it easier for them to keep the quality high, keep the system moving.
+
+00:14:56.430 --> 00:15:01.390
+Yeah, I guess I do have to push back just on a little bit, like be an annoying person here
+
+00:15:02.590 --> 00:15:06.030
+in the sense of like setting up an us versus them kind of dichotomy there.
+
+00:15:06.030 --> 00:15:09.390
+I feel like I think it gets the clicks in the views.
+
+00:15:09.390 --> 00:15:15.420
+But I think I'm kind of sitting there imagining someone who's in that testing role.
+
+00:15:16.060 --> 00:15:22.340
+And through no fault of their own, they're trying to figure out what's their kind of next move, right?
+
+00:15:22.340 --> 00:15:25.860
+If they're now thinking like, oh, wow, okay, my role is not going to lead to business success.
+
+00:15:25.860 --> 00:15:28.020
+I'm thinking like, okay, let's not divide.
+
+00:15:28.020 --> 00:15:30.340
+Well, because you're not don't have the title developer.
+
+00:15:31.700 --> 00:15:34.340
+Let's find a way to like forget the labels for a second.
+
+00:15:34.340 --> 00:15:35.540
+Let's actually get to that.
+
+00:15:35.540 --> 00:15:37.220
+Okay, what causes business success, right?
+
+00:15:37.220 --> 00:15:41.620
+Regardless of title or role or whatever, what can that person do?
+
+00:15:41.620 --> 00:15:42.740
+What's some tangible thing that they can do?
+
+00:15:42.740 --> 00:15:45.220
+So if you have an opportunity, I'll do a pitch.
+
+00:15:45.220 --> 00:15:51.620
+Go back and listen to the AB testing podcast, say starting around episode 80.
+
+00:15:51.620 --> 00:15:53.700
+This is actually what the modern testing principles.
+
+00:15:53.700 --> 00:15:54.740
+What was that number again?
+
+00:15:54.740 --> 00:15:55.140
+80.
+
+00:15:55.700 --> 00:15:56.180
+80.
+
+00:15:56.180 --> 00:15:57.780
+80, start at 80.
+
+00:15:57.780 --> 00:15:58.340
+Vintage.
+
+00:15:58.340 --> 00:15:58.740
+All right.
+
+00:15:58.740 --> 00:16:01.700
+So one of the things that is a big passion for Alan and I
+
+00:16:02.990 --> 00:16:08.030
+is we actually think that the world is very rapidly changing.
+
+00:16:08.030 --> 00:16:10.670
+We're seeing a lot of studies that sort of agree with this.
+
+00:16:11.470 --> 00:16:15.950
+It's even more than what you started talking about earlier where
+
+00:16:17.410 --> 00:16:20.450
+we see, you know, test is a bunch of button clickers, right?
+
+00:16:20.930 --> 00:16:27.300
+So that's been an issue ever since I've been in this career.
+
+00:16:27.300 --> 00:16:30.820
+But now we're seeing the reason why I brought up Dr.
+
+00:16:30.820 --> 00:16:39.940
+Forsgren's analysis is it will further solidify the opinion of folks like that
+
+00:16:39.940 --> 00:16:43.300
+because now we have an expert claiming proof of it.
+
+00:16:43.940 --> 00:16:47.460
+So what Alan and I are doing, we actually believe that these
+
+00:16:47.460 --> 00:16:51.380
+testers are extremely talented and valuable people.
+
+00:16:51.380 --> 00:16:58.590
+But we do see a threat pending sometime soonish.
+
+00:16:59.550 --> 00:17:03.950
+And that could be measured in decades, but we see this rapidly accelerating.
+
+00:17:03.950 --> 00:17:06.270
+And so what we're trying to do is reach them and say,
+
+00:17:06.270 --> 00:17:08.830
+hey, start investing yourself.
+
+00:17:08.830 --> 00:17:11.550
+Start finding a new role.
+
+00:17:13.390 --> 00:17:17.230
+One of my favorite ways of describing this is you can either be the butterfly
+
+00:17:17.230 --> 00:17:18.350
+or you can be the wind.
+
+00:17:19.890 --> 00:17:25.410
+We need people to recognize that this is a possibility.
+
+00:17:25.490 --> 00:17:31.710
+And hey, if we're wrong, they've invested in themselves and they've grown themselves.
+
+00:17:31.710 --> 00:17:40.430
+If we're right, then they still won't be part of the calling, I guess, for lack of a better word.
+
+00:17:40.430 --> 00:17:44.590
+I guess we're, again, where I felt compelled to say, hey, okay, let's talk.
+
+00:17:45.710 --> 00:17:50.510
+I got kind of that gist of that, again, kind of a random metaphor coming out of my brain.
+
+00:17:52.030 --> 00:17:54.910
+It sounded like you were sitting in a cafe in England
+
+00:17:54.910 --> 00:17:58.270
+complaining about the croissants and saying, gosh, I can't wait to get out of England.
+
+00:17:58.270 --> 00:18:01.550
+Let's get to France and we'll never have to deal with croissants anymore, right?
+
+00:18:01.550 --> 00:18:05.390
+Because metaphorically, croissants are selenium.
+
+00:18:05.390 --> 00:18:08.030
+Anyway, and so there's a certain feeling of I'm sitting here going,
+
+00:18:08.030 --> 00:18:10.350
+I'm sitting in France thinking, wow, I'm surrounded by
+
+00:18:10.990 --> 00:18:13.630
+all these croissants or selenium or whatever my metaphor is.
+
+00:18:13.630 --> 00:18:14.670
+I hope it's making sense.
+
+00:18:14.670 --> 00:18:16.110
+But there's a certain level of that.
+
+00:18:17.310 --> 00:18:22.030
+I totally get this whole encouraging, empowering testers.
+
+00:18:22.030 --> 00:18:24.510
+But I guess I'm here to say selenium is on the other side.
+
+00:18:25.230 --> 00:18:26.190
+It's on the other side, right?
+
+00:18:27.550 --> 00:18:28.350
+It's there.
+
+00:18:29.550 --> 00:18:31.550
+And I guess that was the point.
+
+00:18:31.550 --> 00:18:32.590
+So I guess the show's over now.
+
+00:18:35.150 --> 00:18:36.270
+Oh, no, no, no, no.
+
+00:18:36.270 --> 00:18:38.430
+There are croissants in France is what I'm trying to say.
+
+00:18:38.430 --> 00:18:39.230
+I'm getting hungry.
+
+00:18:40.590 --> 00:18:41.550
+I'm working.
+
+00:18:41.550 --> 00:18:44.110
+Okay, wait, who's the croissant?
+
+00:18:44.110 --> 00:18:45.390
+Is selenium the croissant?
+
+00:18:45.390 --> 00:18:45.870
+What are we saying?
+
+00:18:45.870 --> 00:18:46.990
+Selenium the croissant.
+
+00:18:46.990 --> 00:18:49.550
+You were saying, if we can just get rid of the selenium stuff
+
+00:18:49.550 --> 00:18:54.750
+and get testers into more awesome, follow these principles, right?
+
+00:18:55.150 --> 00:18:56.190
+Then no more selenium.
+
+00:18:56.190 --> 00:18:58.990
+And I'm here to say, actually, when you're following all those principles,
+
+00:18:58.990 --> 00:19:00.830
+selenium came out of that environment.
+
+00:19:00.830 --> 00:19:01.630
+Oh, yeah, yeah.
+
+00:19:01.630 --> 00:19:08.590
+So if what we said last episode got interpreted that way, yeah, that's false.
+
+00:19:09.790 --> 00:19:11.550
+But I also kind of agree in the sense of,
+
+00:19:11.550 --> 00:19:15.540
+I think this is the true of any, dare I say it, popular thing, right?
+
+00:19:15.540 --> 00:19:18.180
+Selenium's popular, but so are PHP, right?
+
+00:19:18.180 --> 00:19:20.980
+Like any kind of popular language or framework or whatever,
+
+00:19:20.980 --> 00:19:25.300
+eventually, there's a lot of low-hanging fruit to make fun of, right?
+
+00:19:25.300 --> 00:19:28.100
+Because there's so many people doing bad things with it.
+
+00:19:28.100 --> 00:19:32.180
+And so there's a certain level of like, it's a big target.
+
+00:19:32.180 --> 00:19:36.340
+So let's make sure that everyone listening is on the same page.
+
+00:19:36.340 --> 00:19:41.860
+I think all of us agree selenium is a great tool.
+
+00:19:42.700 --> 00:19:46.860
+And I think all of us agree several great tools
+
+00:19:46.860 --> 00:19:50.060
+will encourage really bad ways of using them.
+
+00:19:50.880 --> 00:19:51.200
+Right.
+
+00:19:51.760 --> 00:19:54.160
+Metaphorically, croissants are made with a stick of butter,
+
+00:19:54.160 --> 00:19:55.920
+and that'll super spike your cholesterol,
+
+00:19:55.920 --> 00:19:57.440
+so you shouldn't actually eat croissants.
+
+00:19:57.440 --> 00:19:58.320
+But they're delicious.
+
+00:19:59.200 --> 00:20:00.160
+That's what I'm trying to say.
+
+00:20:00.160 --> 00:20:01.040
+Mmm, butter.
+
+00:20:03.040 --> 00:20:05.360
+Well, if croissants were originally,
+
+00:20:05.360 --> 00:20:08.320
+and by the way, the title of this episode is going to be,
+
+00:20:09.280 --> 00:20:10.640
+the croissants are selenium.
+
+00:20:12.160 --> 00:20:13.040
+I think that happens.
+
+00:20:13.040 --> 00:20:14.240
+I hope this metaphor makes sense.
+
+00:20:15.440 --> 00:20:16.240
+But they're really bad for you.
+
+00:20:16.240 --> 00:20:17.600
+You should have, you know.
+
+00:20:17.600 --> 00:20:19.360
+It's like saying the croissants are,
+
+00:20:19.360 --> 00:20:21.200
+I mean, the croissants came out of a place
+
+00:20:21.200 --> 00:20:23.280
+where they were for a certain type of people,
+
+00:20:23.920 --> 00:20:26.160
+and they've been adopted.
+
+00:20:26.160 --> 00:20:28.320
+Now, everyone's eating the croissants,
+
+00:20:28.320 --> 00:20:29.360
+and they're eating them wrong.
+
+00:20:32.690 --> 00:20:34.930
+They're eating them all the time, maybe, is the...
+
+00:20:34.930 --> 00:20:36.450
+Maybe, they're eating them too much.
+
+00:20:37.330 --> 00:20:39.410
+You're supposed to eat croissants at the proper time.
+
+00:20:39.410 --> 00:20:41.730
+And coming out of the environment you built it out of,
+
+00:20:41.730 --> 00:20:43.250
+and people are like, what?
+
+00:20:45.600 --> 00:20:47.950
+And our French listeners are going, what?
+
+00:20:47.950 --> 00:20:48.910
+These guys are so wrong.
+
+00:20:50.670 --> 00:20:52.030
+Ooh la la.
+
+00:20:52.030 --> 00:20:53.710
+The croissants are a lie.
+
+00:20:53.710 --> 00:20:54.190
+Okay.
+
+00:20:54.190 --> 00:20:54.590
+All right.
+
+00:20:54.590 --> 00:20:57.070
+Next time, I won't bring up food right before lunch.
+
+00:20:57.070 --> 00:20:57.630
+Sorry.
+
+00:20:57.630 --> 00:21:01.150
+I guess our argument is that we're highly aligned
+
+00:21:01.150 --> 00:21:02.430
+on where selenium came out of,
+
+00:21:02.430 --> 00:21:05.950
+and I think developers that use selenium
+
+00:21:05.950 --> 00:21:08.910
+use it very responsibly and well.
+
+00:21:08.910 --> 00:21:10.750
+Like, if you're a developer and you end up,
+
+00:21:10.750 --> 00:21:12.350
+best way for me to test this is through the,
+
+00:21:12.350 --> 00:21:14.590
+is via the web page, I'm going to go do this,
+
+00:21:14.590 --> 00:21:17.710
+and you end up, you would never settle as a developer
+
+00:21:17.710 --> 00:21:20.030
+for going, yep, this selector looks fine.
+
+00:21:20.030 --> 00:21:23.950
+You would go add an ID for it and make the code look good.
+
+00:21:24.860 --> 00:21:28.460
+The problem is, I mentioned this before,
+
+00:21:28.460 --> 00:21:32.860
+is that what's happened is selenium is being used
+
+00:21:32.860 --> 00:21:37.580
+as a way for testers to learn the code,
+
+00:21:37.580 --> 00:21:39.260
+to write code, to...
+
+00:21:39.900 --> 00:21:42.540
+But working in a siloed environment sometimes,
+
+00:21:42.540 --> 00:21:44.140
+they end up being totally happy.
+
+00:21:44.140 --> 00:21:45.500
+Like, this is the way you do it.
+
+00:21:45.500 --> 00:21:46.700
+You write selectors like this,
+
+00:21:46.700 --> 00:21:49.900
+I just right click and copy out of dev tools,
+
+00:21:49.900 --> 00:21:52.780
+and I get this thing that looks like gibberish,
+
+00:21:52.780 --> 00:21:54.220
+but that's how I write my automation,
+
+00:21:54.220 --> 00:21:55.740
+and it ends up being super fragile.
+
+00:21:55.740 --> 00:21:59.580
+And by that automation being fragile,
+
+00:21:59.580 --> 00:22:02.300
+they now have a job maintaining automation,
+
+00:22:02.300 --> 00:22:04.780
+and now their entire job is maintaining automation,
+
+00:22:04.780 --> 00:22:06.540
+and we think that's a really, really bad thing.
+
+00:22:07.550 --> 00:22:08.050
+Right.
+
+00:22:08.430 --> 00:22:09.310
+Let me add...
+
+00:22:09.310 --> 00:22:10.990
+Yeah, and that's where I think I agree, totally agree.
+
+00:22:11.630 --> 00:22:14.190
+So Jason, you said that the current,
+
+00:22:14.750 --> 00:22:17.230
+the selector model that Alan's referring to
+
+00:22:18.430 --> 00:22:22.190
+wasn't a feature when it was still in your control?
+
+00:22:23.070 --> 00:22:24.670
+Right. I mean, if you go back to,
+
+00:22:24.670 --> 00:22:25.950
+I think the very first...
+
+00:22:25.950 --> 00:22:27.710
+I'm not sure if even CSS selectors
+
+00:22:27.710 --> 00:22:29.950
+were even a spec back in 2004.
+
+00:22:30.830 --> 00:22:33.710
+Someone's going to look that up and see when it came out.
+
+00:22:33.710 --> 00:22:35.470
+I wouldn't be surprised if like 2007, 2008,
+
+00:22:35.470 --> 00:22:36.030
+or something like that.
+
+00:22:37.150 --> 00:22:38.910
+The moral equivalence,
+
+00:22:38.910 --> 00:22:41.150
+or immoral equivalence of CSS selectors
+
+00:22:41.150 --> 00:22:42.750
+was XPath at the time.
+
+00:22:42.750 --> 00:22:43.790
+That was the first thing that I think
+
+00:22:43.790 --> 00:22:45.550
+may be one of the next things that came after.
+
+00:22:45.550 --> 00:22:46.190
+No, that's so...
+
+00:22:46.190 --> 00:22:49.310
+When I was using Selenium, that's what I was doing,
+
+00:22:49.310 --> 00:22:53.060
+and it drove me batty.
+
+00:22:53.060 --> 00:22:54.420
+Right, and given your...
+
+00:22:56.260 --> 00:22:57.060
+I could guess why.
+
+00:22:57.620 --> 00:23:01.300
+Because XPath was native code in Firefox and Safari,
+
+00:23:01.300 --> 00:23:03.860
+and all the browsers except Internet Explorer.
+
+00:23:03.860 --> 00:23:08.100
+And so we had to emulate XPath selector kind of stuff.
+
+00:23:08.100 --> 00:23:10.100
+We had to use a JavaScript library in IE,
+
+00:23:10.100 --> 00:23:12.900
+which meant, I think it increased the time of execution
+
+00:23:12.900 --> 00:23:15.620
+by like a hundredfold or something ridiculous, right?
+
+00:23:15.620 --> 00:23:17.220
+And anyway, so like...
+
+00:23:18.100 --> 00:23:19.140
+Can I share a story?
+
+00:23:19.140 --> 00:23:19.860
+Yeah, yeah, yeah.
+
+00:23:20.500 --> 00:23:20.820
+Got it.
+
+00:23:20.820 --> 00:23:22.180
+So there's this one thing where, Alan,
+
+00:23:22.180 --> 00:23:23.380
+you were kind of pointing out of like, yeah,
+
+00:23:23.380 --> 00:23:25.540
+just like, well, you should use IDs.
+
+00:23:25.540 --> 00:23:27.620
+The one thing I felt very triggered was like,
+
+00:23:27.620 --> 00:23:28.900
+there's this one time when I was at Google,
+
+00:23:28.900 --> 00:23:30.580
+and I was talking with the Google Maps team,
+
+00:23:30.580 --> 00:23:34.930
+and they were using XPath to get to all of the...
+
+00:23:34.930 --> 00:23:37.090
+They were actually testing Google Maps, obviously,
+
+00:23:37.090 --> 00:23:38.690
+but there were all the map tiles,
+
+00:23:38.690 --> 00:23:40.690
+you know, like go from one location to the other.
+
+00:23:40.690 --> 00:23:42.210
+And there's all these different kind of,
+
+00:23:42.290 --> 00:23:45.330
+how do you test a global map tool?
+
+00:23:45.330 --> 00:23:46.210
+It's a very specific case,
+
+00:23:46.210 --> 00:23:48.450
+but also there's some crazy corner cases, right?
+
+00:23:48.450 --> 00:23:50.530
+And I just went in there, as I usually do,
+
+00:23:50.530 --> 00:23:53.410
+and say, well, if the XPath stuff is not working,
+
+00:23:53.410 --> 00:23:54.130
+don't use it.
+
+00:23:54.130 --> 00:23:56.770
+Put ID tags everywhere and just test that.
+
+00:23:56.770 --> 00:23:58.450
+And they're like, if we add an ID tag
+
+00:23:58.450 --> 00:24:01.330
+to every map tile at every elevation,
+
+00:24:01.330 --> 00:24:04.210
+we will increase the storage required for Google Maps
+
+00:24:04.210 --> 00:24:06.130
+by like, you know, 5, 10X or something.
+
+00:24:06.130 --> 00:24:09.580
+And that was already a pretty big number to start with, right?
+
+00:24:09.580 --> 00:24:11.580
+So I realized, oh, okay, that's bad advice.
+
+00:24:11.660 --> 00:24:13.820
+And so through process of kind of elimination,
+
+00:24:13.820 --> 00:24:15.260
+I realized they had to use XPath.
+
+00:24:15.260 --> 00:24:16.140
+There was no other...
+
+00:24:16.140 --> 00:24:17.580
+Because they couldn't instrument the code.
+
+00:24:17.580 --> 00:24:19.740
+So, you know, that was part of like one of my jobs
+
+00:24:19.740 --> 00:24:21.980
+when I was there of like helping them figure out
+
+00:24:21.980 --> 00:24:24.140
+how to make things go faster.
+
+00:24:24.780 --> 00:24:26.220
+No, it didn't cross anybody's mind to like,
+
+00:24:26.220 --> 00:24:27.020
+let's just not test it.
+
+00:24:27.020 --> 00:24:28.620
+What's the money ever do to any browser testing?
+
+00:24:28.620 --> 00:24:29.500
+There was a certain level of like,
+
+00:24:29.500 --> 00:24:31.820
+no, it's given that we will do this browser testing.
+
+00:24:31.820 --> 00:24:33.180
+Their specific problem though is like,
+
+00:24:33.180 --> 00:24:34.620
+because once they run it in IE,
+
+00:24:34.620 --> 00:24:37.580
+the tests were taking forever.
+
+00:24:37.580 --> 00:24:40.460
+But they ended up having to get to the closest location
+
+00:24:40.460 --> 00:24:42.140
+before you jump into all the map tiles
+
+00:24:42.140 --> 00:24:45.580
+where you kind of get to like its parent element,
+
+00:24:45.580 --> 00:24:46.620
+like a div or something like that.
+
+00:24:46.620 --> 00:24:49.260
+And then from there, then you start navigating children
+
+00:24:49.260 --> 00:24:51.660
+and like go forward three steps to go to the left,
+
+00:24:51.660 --> 00:24:52.620
+back up one.
+
+00:24:52.620 --> 00:24:55.100
+And that was the selector and it was super annoying.
+
+00:24:55.660 --> 00:24:58.620
+I think the project years later, so anyway,
+
+00:24:58.620 --> 00:25:00.700
+end of random anecdote of Google Maps,
+
+00:25:00.700 --> 00:25:01.820
+but like it's a problem
+
+00:25:01.820 --> 00:25:04.860
+and sometimes you can't really do the right thing, I guess.
+
+00:25:04.860 --> 00:25:08.380
+But we jumped to kind of recommending CSS selectors
+
+00:25:08.380 --> 00:25:11.020
+years later because for one, under the hood,
+
+00:25:12.060 --> 00:25:14.060
+in whatever version of IE came out,
+
+00:25:14.060 --> 00:25:15.980
+it was also natively implemented.
+
+00:25:16.540 --> 00:25:17.340
+So if you switch to that,
+
+00:25:17.340 --> 00:25:19.980
+we didn't have to kind of shim in a JavaScript library
+
+00:25:19.980 --> 00:25:20.380
+to do that.
+
+00:25:20.380 --> 00:25:23.900
+So like people just naturally moved from Xpath to CSS.
+
+00:25:23.900 --> 00:25:25.580
+But again, either way,
+
+00:25:25.580 --> 00:25:27.100
+either of those things are not ideal.
+
+00:25:27.100 --> 00:25:29.500
+Ideally, you would go after some kind of unique tag
+
+00:25:29.500 --> 00:25:30.620
+to make it like super clear.
+
+00:25:31.490 --> 00:25:32.850
+Anyway, but it really came down
+
+00:25:32.850 --> 00:25:34.210
+to like the browser implementations
+
+00:25:34.210 --> 00:25:36.690
+and what was faster over time CSS selectors
+
+00:25:36.690 --> 00:25:37.570
+kind of became faster.
+
+00:25:37.570 --> 00:25:40.930
+But yeah, people, when they start doing kind of like,
+
+00:25:40.930 --> 00:25:43.730
+find the parent element, go down five children,
+
+00:25:43.730 --> 00:25:45.170
+it becomes very much like, you know,
+
+00:25:45.170 --> 00:25:46.930
+you're telling instructions to someone who's blindfolded,
+
+00:25:46.930 --> 00:25:49.490
+like, okay, turn left, go forward three paces, turn right.
+
+00:25:49.490 --> 00:25:51.410
+Like that's, yeah, that's ridiculous.
+
+00:25:52.050 --> 00:25:53.730
+Yeah, that won't scale.
+
+00:25:53.730 --> 00:25:55.250
+No, the thing is, is-
+
+00:25:55.250 --> 00:25:56.930
+But if you're on the Google Maps team,
+
+00:25:56.930 --> 00:25:58.610
+then you might have to do that.
+
+00:25:58.610 --> 00:25:59.570
+Well, no, no, no.
+
+00:25:59.570 --> 00:26:01.090
+I mean, for every rule,
+
+00:26:01.090 --> 00:26:03.170
+there's exceptions that are valid, right?
+
+00:26:04.130 --> 00:26:05.650
+The thing I'm wondering right now,
+
+00:26:06.450 --> 00:26:08.210
+and we kind of did last episode
+
+00:26:08.210 --> 00:26:09.890
+under the assumption it's dominant,
+
+00:26:09.890 --> 00:26:11.410
+but the thing I'm wondering right now
+
+00:26:11.410 --> 00:26:16.370
+is the CSS style, the way everyone automates
+
+00:26:17.330 --> 00:26:18.050
+with Selenium.
+
+00:26:18.050 --> 00:26:19.570
+No, it's not the way everyone automates.
+
+00:26:19.570 --> 00:26:20.450
+Is it dominant?
+
+00:26:21.090 --> 00:26:23.330
+Oh, actually, I would love to ask you this.
+
+00:26:23.330 --> 00:26:27.890
+So you were saying like, tools can enable like gold
+
+00:26:27.890 --> 00:26:30.370
+or I forgot to write it down,
+
+00:26:30.370 --> 00:26:32.130
+but basically like you can do an awesome thing
+
+00:26:32.130 --> 00:26:34.370
+or you can do kind of crap, right?
+
+00:26:34.370 --> 00:26:35.570
+But a different kind of tool
+
+00:26:35.570 --> 00:26:37.010
+can maybe add some safety rails there.
+
+00:26:37.010 --> 00:26:38.690
+So it actually kind of prevents
+
+00:26:38.690 --> 00:26:40.450
+the ability to do that bad thing, right?
+
+00:26:40.450 --> 00:26:41.250
+Completely agree.
+
+00:26:41.810 --> 00:26:43.890
+So in that context, I'm curious,
+
+00:26:44.530 --> 00:26:46.850
+was it a mistake to put the CSS selectors in there
+
+00:26:46.850 --> 00:26:48.610
+or would it be an improvement?
+
+00:26:48.610 --> 00:26:49.970
+I don't know how to phrase this question,
+
+00:26:49.970 --> 00:26:51.650
+but like if we have an opinion
+
+00:26:51.650 --> 00:26:52.850
+on the correct way to do it
+
+00:26:52.850 --> 00:26:54.610
+or the incorrect way to do it,
+
+00:26:54.610 --> 00:26:55.730
+let's say CSS selectors,
+
+00:26:56.450 --> 00:26:59.570
+should CSS selectors as a way of finding elements,
+
+00:26:59.570 --> 00:27:00.770
+should that be removed from the tool?
+
+00:27:00.770 --> 00:27:02.610
+If it gets abused so much,
+
+00:27:02.610 --> 00:27:03.410
+should that be removed?
+
+00:27:04.820 --> 00:27:06.500
+It can't at this stage
+
+00:27:06.500 --> 00:27:08.980
+because I think whether it's dominant or not,
+
+00:27:11.060 --> 00:27:12.740
+we all agree that these siloed test teams,
+
+00:27:12.740 --> 00:27:13.700
+these separate test teams,
+
+00:27:13.700 --> 00:27:15.540
+are not a great way to make software,
+
+00:27:15.540 --> 00:27:18.580
+but I think that's where selenium is being used a lot
+
+00:27:18.580 --> 00:27:21.380
+and these teams, sometimes the only way for them to,
+
+00:27:22.100 --> 00:27:23.460
+sometimes they don't even have an option
+
+00:27:23.460 --> 00:27:25.220
+to communicate with the developers
+
+00:27:25.220 --> 00:27:25.860
+and ask them to ask the ID tags.
+
+00:27:25.860 --> 00:27:27.140
+Right, which is just sad.
+
+00:27:27.140 --> 00:27:27.860
+That is very sad.
+
+00:27:27.860 --> 00:27:29.780
+Yes, yeah, it breaks my heart.
+
+00:27:29.780 --> 00:27:30.420
+It's sad.
+
+00:27:30.420 --> 00:27:32.580
+Well, the one I'm more worried about
+
+00:27:32.580 --> 00:27:37.540
+is the one where there's a negative relationship
+
+00:27:37.540 --> 00:27:39.140
+between the test and dev teams
+
+00:27:40.020 --> 00:27:43.460
+and dev is not adding the device IDs
+
+00:27:43.460 --> 00:27:45.300
+and we get feedback along those lines
+
+00:27:47.010 --> 00:27:49.890
+and test says, okay, we'll screw you,
+
+00:27:49.890 --> 00:27:53.090
+I'll go with CSS or the stylesheet approach
+
+00:27:53.090 --> 00:27:54.770
+and work around the fact
+
+00:27:54.770 --> 00:27:55.970
+that you're not helping us do the right thing.
+
+00:27:55.970 --> 00:27:57.250
+Of course, it's a missed opportunity
+
+00:27:57.250 --> 00:27:58.290
+to ask the question like,
+
+00:27:58.290 --> 00:28:00.530
+should we even have tests at all?
+
+00:28:00.530 --> 00:28:01.730
+Or at least at this level, right?
+
+00:28:01.730 --> 00:28:03.010
+Yes, oh, yes.
+
+00:28:04.370 --> 00:28:06.610
+I was setting you up for you to totally,
+
+00:28:06.610 --> 00:28:07.570
+I was setting up the straw man.
+
+00:28:10.850 --> 00:28:11.730
+You didn't take my bait.
+
+00:28:12.690 --> 00:28:14.850
+Well, I was thinking about it earlier
+
+00:28:14.850 --> 00:28:16.530
+so I'm going to ask you this question
+
+00:28:17.490 --> 00:28:18.530
+and actually this is really good
+
+00:28:18.530 --> 00:28:21.250
+because we can talk about the origins of selenium again
+
+00:28:21.250 --> 00:28:22.530
+and these stories are all great.
+
+00:28:22.530 --> 00:28:24.690
+You can just tell random stories about selenium
+
+00:28:24.690 --> 00:28:26.210
+as much as you want and we'll fit them in
+
+00:28:27.010 --> 00:28:28.690
+but the question I want to ask is
+
+00:28:29.490 --> 00:28:31.410
+work with development teams using selenium
+
+00:28:32.620 --> 00:28:36.540
+my hypothesis and my experience anecdotally
+
+00:28:36.540 --> 00:28:39.980
+is that when dev teams own those selenium tests
+
+00:28:39.980 --> 00:28:41.980
+they're actually very good about writing
+
+00:28:41.980 --> 00:28:43.260
+only the tests they need
+
+00:28:43.260 --> 00:28:46.300
+versus trying to automate everything with selenium
+
+00:28:46.300 --> 00:28:48.860
+which unfortunately these we see more often
+
+00:28:48.860 --> 00:28:50.700
+these silo test teams what they try and do.
+
+00:28:52.060 --> 00:28:53.980
+So how did, what are some heuristics you used
+
+00:28:53.980 --> 00:28:56.140
+to figure out what you would test in selenium
+
+00:28:56.140 --> 00:28:56.940
+and what you wouldn't?
+
+00:28:57.940 --> 00:29:00.180
+What I would test with selenium, what I wouldn't.
+
+00:29:00.180 --> 00:29:01.860
+I used to give a little talks about this
+
+00:29:02.100 --> 00:29:06.260
+trying to mentally remind myself of all my little slideshows.
+
+00:29:07.060 --> 00:29:08.180
+The number one thing would be
+
+00:29:08.180 --> 00:29:09.860
+I think there's like failure modes, right?
+
+00:29:09.860 --> 00:29:11.860
+That someone kind of gets super enthusiastic
+
+00:29:11.860 --> 00:29:14.020
+and they just test anything that moves, right?
+
+00:29:14.020 --> 00:29:15.380
+So I've got lots of opinions on this
+
+00:29:15.380 --> 00:29:16.740
+but I can also kind of go back to
+
+00:29:17.300 --> 00:29:20.900
+what we did originally like why it existed.
+
+00:29:20.900 --> 00:29:22.100
+Wait, wait, wait, Jason
+
+00:29:22.660 --> 00:29:24.740
+why would we not test the things that don't move?
+
+00:29:25.570 --> 00:29:26.130
+Whoa.
+
+00:29:26.130 --> 00:29:26.610
+Yeah, right.
+
+00:29:26.610 --> 00:29:27.570
+Okay, just broke my brain.
+
+00:29:29.490 --> 00:29:30.450
+I'm going to ignore that question.
+
+00:29:30.450 --> 00:29:31.170
+Yeah, fair enough.
+
+00:29:32.290 --> 00:29:33.490
+So it started as a,
+
+00:29:33.490 --> 00:29:35.890
+it really was from a regression point of view.
+
+00:29:35.890 --> 00:29:36.850
+The very specific thing,
+
+00:29:36.850 --> 00:29:39.010
+I call this like the sine wave of quality
+
+00:29:39.010 --> 00:29:42.450
+where the reason why it was basically pencils down,
+
+00:29:42.450 --> 00:29:44.690
+screw this, we are going to solve this problem
+
+00:29:44.690 --> 00:29:46.130
+and then selenium came out of it was
+
+00:29:47.410 --> 00:29:49.810
+this dumb little button in Firefox is working
+
+00:29:49.810 --> 00:29:52.610
+and then someone did something to it,
+
+00:29:52.610 --> 00:29:53.250
+forgot what it was
+
+00:29:53.250 --> 00:29:55.010
+but it would break it in Internet Explorer.
+
+00:29:55.010 --> 00:29:59.470
+And so the bug report would be it's broken in IE, fix it.
+
+00:29:59.470 --> 00:30:00.350
+So they go and do that.
+
+00:30:00.350 --> 00:30:01.790
+They push it in, we push it to production
+
+00:30:02.750 --> 00:30:05.230
+of course, they've now broken it in Firefox, right?
+
+00:30:05.230 --> 00:30:06.830
+So the next week we support,
+
+00:30:06.830 --> 00:30:09.150
+we put in a bug saying Firefox is broken.
+
+00:30:09.790 --> 00:30:11.870
+This little button in Firefox is broken, fix it.
+
+00:30:11.870 --> 00:30:13.550
+So they go in and fix it.
+
+00:30:13.550 --> 00:30:14.590
+When they test it in Firefox,
+
+00:30:14.590 --> 00:30:16.510
+we push it to production and what happens?
+
+00:30:16.510 --> 00:30:17.630
+It's now broken in IE.
+
+00:30:17.630 --> 00:30:18.430
+So there was this like,
+
+00:30:18.430 --> 00:30:20.110
+we were not making any progress
+
+00:30:20.110 --> 00:30:21.710
+and we were regressing, right?
+
+00:30:23.310 --> 00:30:24.670
+And so I kind of,
+
+00:30:24.670 --> 00:30:28.270
+I forced this as a kind of like a no retreat,
+
+00:30:28.270 --> 00:30:30.830
+kind of like sometimes there's a different metaphor,
+
+00:30:30.830 --> 00:30:31.390
+like a ratchet.
+
+00:30:31.390 --> 00:30:33.070
+Like you're kind of moving up and up
+
+00:30:33.070 --> 00:30:34.830
+on like a roller coaster, right?
+
+00:30:34.830 --> 00:30:36.750
+It keeps you from back sledding, right?
+
+00:30:36.750 --> 00:30:39.070
+No, it sounds like you were on a merry-go-round.
+
+00:30:39.070 --> 00:30:39.550
+What was that?
+
+00:30:39.550 --> 00:30:41.470
+I said, it sounds like you were on a merry-go-round.
+
+00:30:42.670 --> 00:30:44.270
+Or the caffeine is just finally kicking in, right?
+
+00:30:44.270 --> 00:30:44.770
+Yeah.
+
+00:30:46.670 --> 00:30:48.110
+It was just, yeah, right.
+
+00:30:48.110 --> 00:30:48.430
+Oh, right.
+
+00:30:48.430 --> 00:30:49.550
+The project felt whatever.
+
+00:30:49.550 --> 00:30:50.350
+It was a circle.
+
+00:30:50.350 --> 00:30:51.470
+Time is a flat circle, right?
+
+00:30:52.030 --> 00:30:52.990
+It was very frustrating.
+
+00:30:52.990 --> 00:30:57.150
+And so I kind of went with this observation, if you will,
+
+00:30:57.150 --> 00:30:59.710
+not an opinion just observing the team collectively
+
+00:30:59.710 --> 00:31:02.030
+that you tell them to fix it in Firefox,
+
+00:31:02.030 --> 00:31:03.790
+to fix it in Firefox because they're good developers,
+
+00:31:03.790 --> 00:31:05.630
+but they're not covering every base.
+
+00:31:05.630 --> 00:31:08.430
+And so we said like, let's automate this for one.
+
+00:31:08.430 --> 00:31:11.300
+And then two, like, let's solve it.
+
+00:31:11.300 --> 00:31:13.300
+So over time, over the first couple of months
+
+00:31:13.300 --> 00:31:16.100
+of Selenium kind of being on the project,
+
+00:31:16.100 --> 00:31:18.420
+we were finding little cases like that,
+
+00:31:18.420 --> 00:31:20.660
+or we were kind of sort of backsliding.
+
+00:31:20.660 --> 00:31:21.540
+Like we fixed one thing,
+
+00:31:21.540 --> 00:31:22.900
+but we break something over there.
+
+00:31:22.900 --> 00:31:25.700
+And so initially, basically the test names
+
+00:31:25.700 --> 00:31:28.420
+were kind of tracked to like whatever random regression
+
+00:31:28.420 --> 00:31:30.260
+bug ID that they were linked to, right?
+
+00:31:30.260 --> 00:31:32.260
+And I don't see this actually a lot in a lot of teams.
+
+00:31:32.260 --> 00:31:35.940
+They kind of are more upfront, right?
+
+00:31:35.940 --> 00:31:37.060
+So here's a feature.
+
+00:31:37.060 --> 00:31:38.500
+What's the automated test for that feature?
+
+00:31:38.500 --> 00:31:40.340
+And there you go, right?
+
+00:31:40.340 --> 00:31:42.020
+So over time, we eventually,
+
+00:31:42.660 --> 00:31:44.180
+as new features were being created,
+
+00:31:44.180 --> 00:31:45.860
+again, because the Selenium project came,
+
+00:31:45.860 --> 00:31:47.060
+there were six months of development
+
+00:31:47.060 --> 00:31:49.220
+before we had any user interface tool,
+
+00:31:49.220 --> 00:31:50.980
+which of course is kind of potentially mind blowing
+
+00:31:50.980 --> 00:31:53.860
+of like maybe that was a good thing.
+
+00:31:53.860 --> 00:31:54.340
+I don't know.
+
+00:31:54.340 --> 00:31:56.740
+Like maybe all projects should go six months
+
+00:31:56.740 --> 00:31:58.340
+and then do Selenium tests later.
+
+00:31:58.340 --> 00:32:00.420
+If they like maybe they're like,
+
+00:32:00.420 --> 00:32:02.020
+maybe that's the prognosis.
+
+00:32:02.020 --> 00:32:03.300
+Like don't do anything day one,
+
+00:32:03.300 --> 00:32:05.220
+wait three months and then see if you need it, right?
+
+00:32:05.220 --> 00:32:05.780
+I don't know.
+
+00:32:05.780 --> 00:32:06.340
+But the other thing,
+
+00:32:06.340 --> 00:32:09.540
+eventually we added like new feature tests,
+
+00:32:10.340 --> 00:32:11.540
+but we got a lot of value.
+
+00:32:11.540 --> 00:32:13.380
+I got personally as like the project manager
+
+00:32:13.380 --> 00:32:15.860
+of this thing, like, and whatever,
+
+00:32:15.860 --> 00:32:18.260
+like I could finally see the team was not backsliding.
+
+00:32:18.260 --> 00:32:20.100
+And so kind of a regression testing point of view,
+
+00:32:20.100 --> 00:32:22.260
+but also like in that context of like
+
+00:32:22.260 --> 00:32:23.860
+cross browser regression testing,
+
+00:32:23.860 --> 00:32:25.140
+making sure that when you,
+
+00:32:25.140 --> 00:32:26.900
+we were specifically doing something on one browser,
+
+00:32:26.900 --> 00:32:28.340
+we weren't inadvertently breaking something
+
+00:32:28.340 --> 00:32:29.700
+on the other side of the room, right?
+
+00:32:29.700 --> 00:32:31.540
+And I kind of, I get value in that.
+
+00:32:31.540 --> 00:32:33.220
+But in that bigger context of what you're asking,
+
+00:32:33.220 --> 00:32:35.860
+like, right, kind of we,
+
+00:32:35.860 --> 00:32:37.300
+there was a million other kinds of ways
+
+00:32:37.300 --> 00:32:38.420
+that we could do it, but, you know,
+
+00:32:38.420 --> 00:32:39.700
+given that we had limited resources,
+
+00:32:39.700 --> 00:32:41.940
+we kind of focused on those kinds of tests
+
+00:32:41.940 --> 00:32:43.620
+that we thought were the most useful.
+
+00:32:43.620 --> 00:32:46.100
+When I give kind of this little speech to other people,
+
+00:32:46.100 --> 00:32:46.900
+I also kind of say like,
+
+00:32:46.900 --> 00:32:48.980
+you're going to write tests ahead of time,
+
+00:32:50.180 --> 00:32:51.300
+or actually it doesn't matter the context,
+
+00:32:51.300 --> 00:32:53.140
+but if you're going to like to start from zero,
+
+00:32:53.140 --> 00:32:54.020
+what would you test?
+
+00:32:54.100 --> 00:32:56.580
+And one would be like the money path, I call it, right?
+
+00:32:56.580 --> 00:32:57.860
+The, there's some path.
+
+00:32:58.740 --> 00:33:00.820
+One, step one, whatever you're doing,
+
+00:33:00.820 --> 00:33:01.860
+hopefully it's making money.
+
+00:33:01.860 --> 00:33:04.180
+If it's not, solve that problem.
+
+00:33:04.180 --> 00:33:05.700
+Don't go write a bunch of selenium tests
+
+00:33:05.700 --> 00:33:06.980
+if your startup is-
+
+00:33:06.980 --> 00:33:08.740
+The more we automate, the more we'll make.
+
+00:33:09.300 --> 00:33:10.500
+Right, and so like A,
+
+00:33:11.780 --> 00:33:13.140
+find money somehow, you know,
+
+00:33:13.140 --> 00:33:14.180
+either profits or grants
+
+00:33:14.180 --> 00:33:16.020
+or however you want to do it, right?
+
+00:33:16.020 --> 00:33:17.780
+And then there is a money path, right?
+
+00:33:17.780 --> 00:33:19.300
+So maybe don't spend so much time
+
+00:33:20.260 --> 00:33:22.100
+writing an entire framework around,
+
+00:33:22.100 --> 00:33:23.940
+you know, changing the color settings
+
+00:33:23.940 --> 00:33:26.020
+or your header profile or your foot,
+
+00:33:26.020 --> 00:33:29.300
+but there is a path where people can swipe a credit card
+
+00:33:29.300 --> 00:33:30.980
+and give you money and sign up for the thing, right?
+
+00:33:30.980 --> 00:33:31.940
+So if you're going to start somewhere,
+
+00:33:32.660 --> 00:33:33.300
+focus on that
+
+00:33:33.300 --> 00:33:34.740
+and then you kind of build things around it.
+
+00:33:34.740 --> 00:33:35.620
+Sometimes there's this metaphor,
+
+00:33:35.620 --> 00:33:37.860
+it's not my metaphor, but very cliched.
+
+00:33:37.860 --> 00:33:40.820
+Like it's kind of like paving the cow paths, right?
+
+00:33:40.820 --> 00:33:42.180
+Where you kind of look where people are going
+
+00:33:42.180 --> 00:33:43.860
+and then that's where you figure out
+
+00:33:43.860 --> 00:33:45.940
+where to put the site, the concrete for the sidewalks.
+
+00:33:45.940 --> 00:33:48.420
+I look at that, but it's also like following where,
+
+00:33:49.220 --> 00:33:50.100
+where people,
+
+00:33:50.100 --> 00:33:51.700
+like what's the most valuable path
+
+00:33:51.700 --> 00:33:53.700
+through your application and start there.
+
+00:33:54.500 --> 00:33:56.020
+Eventually, maybe over time,
+
+00:33:56.020 --> 00:33:59.060
+you go to the lesser used paths.
+
+00:33:59.060 --> 00:34:00.900
+But again, if it's kind of a focused developer team,
+
+00:34:00.900 --> 00:34:01.780
+maybe they don't get to it.
+
+00:34:02.580 --> 00:34:04.180
+You touched on something I want you to
+
+00:34:04.900 --> 00:34:08.100
+set me straight on if needed, probably needed.
+
+00:34:09.620 --> 00:34:12.180
+I haven't used Selenium in about three years,
+
+00:34:12.980 --> 00:34:14.420
+but the last project I used it on
+
+00:34:14.420 --> 00:34:17.780
+was a project using Angular back at Microsoft.
+
+00:34:18.580 --> 00:34:22.980
+And we had, and again, kudos to Jim Evans
+
+00:34:22.980 --> 00:34:24.900
+for trying to make that IE WebDriver work.
+
+00:34:24.900 --> 00:34:26.340
+I think he's done some great work.
+
+00:34:26.340 --> 00:34:28.100
+I'm not sure where that was at the time,
+
+00:34:28.100 --> 00:34:32.500
+but we had a really hard time with our Selenium test
+
+00:34:32.500 --> 00:34:37.860
+getting them to run across Chrome, IE, Firefox, and Safari.
+
+00:34:38.420 --> 00:34:40.660
+Right. Yeah, that's unfortunate, right?
+
+00:34:40.660 --> 00:34:42.420
+Because it was started to be that, right?
+
+00:34:42.420 --> 00:34:45.300
+So it's like, it's not living up to its raison d'etre.
+
+00:34:46.020 --> 00:34:47.460
+If that was like in that moment,
+
+00:34:47.460 --> 00:34:49.220
+like it needed to be a cross browser tool.
+
+00:34:49.980 --> 00:34:51.420
+Yeah, because that's where we see,
+
+00:34:52.620 --> 00:34:54.060
+like the story used to describe,
+
+00:34:54.060 --> 00:34:55.820
+like if you want to make sure these elements
+
+00:34:55.820 --> 00:34:59.580
+continue to work across browsers, super powerful.
+
+00:35:00.220 --> 00:35:01.900
+But there is a parallel universe here.
+
+00:35:01.900 --> 00:35:03.340
+Like, so there's from like a, you know,
+
+00:35:03.340 --> 00:35:05.740
+correct way, like if I'm meditating on that phrase
+
+00:35:05.740 --> 00:35:07.980
+of like they solve the wrong problem really well, right?
+
+00:35:07.980 --> 00:35:10.940
+One way that we could have solved that problem well,
+
+00:35:10.940 --> 00:35:12.620
+in a completely different way,
+
+00:35:12.700 --> 00:35:17.660
+is John Resig created the jQuery project, right?
+
+00:35:17.660 --> 00:35:22.300
+Same goal was JavaScript is super buggy cross browser.
+
+00:35:22.300 --> 00:35:24.140
+And so it created one API
+
+00:35:24.140 --> 00:35:26.700
+that if you write to the jQuery API,
+
+00:35:26.700 --> 00:35:28.780
+then you've solved your cross browser problems.
+
+00:35:28.780 --> 00:35:31.020
+Very elegant solution to the same problem,
+
+00:35:31.020 --> 00:35:32.860
+completely different context, right?
+
+00:35:32.860 --> 00:35:35.820
+So like there's a different kind of recommendation there,
+
+00:35:35.820 --> 00:35:37.340
+right, is not so much use jQuery,
+
+00:35:37.340 --> 00:35:39.260
+but there's a certain level like find ways
+
+00:35:39.980 --> 00:35:42.620
+to avoid the cross browser testing problem
+
+00:35:42.620 --> 00:35:45.260
+without necessarily throwing all the weight
+
+00:35:45.260 --> 00:35:47.740
+at the selenium level or the testing level, right?
+
+00:35:47.740 --> 00:35:49.500
+Maybe there's a different framework you can use
+
+00:35:50.930 --> 00:35:53.650
+or just give up, quit, go hiking across the country
+
+00:35:53.650 --> 00:35:54.290
+and give up all the way.
+
+00:35:54.290 --> 00:35:59.360
+No, I mean, I'm actually thinking, so there's,
+
+00:35:59.360 --> 00:36:03.040
+I see a move, I don't know if this is going to take off,
+
+00:36:03.120 --> 00:36:09.760
+but I see a lot of browser companies basing on Chrome now,
+
+00:36:11.100 --> 00:36:16.900
+and I wonder if essentially that sort of standardization
+
+00:36:16.900 --> 00:36:18.580
+is going to keep pushing forward
+
+00:36:20.180 --> 00:36:22.980
+to what degree that will eliminate cross browser.
+
+00:36:22.980 --> 00:36:27.460
+Yeah, I sadly am, I don't want to speak for you guys,
+
+00:36:27.460 --> 00:36:30.290
+but like there's a certain,
+
+00:36:30.290 --> 00:36:34.210
+I guess I'm now at risk of being that guy
+
+00:36:34.210 --> 00:36:36.210
+who's seen this, the business cycles,
+
+00:36:36.210 --> 00:36:37.730
+and now I'm in the corner saying,
+
+00:36:37.730 --> 00:36:39.650
+we've done this all before, like,
+
+00:36:39.650 --> 00:36:42.700
+basically like note one, no one listens to that guy,
+
+00:36:42.700 --> 00:36:45.980
+but the person, that guy or girl is also totally right,
+
+00:36:45.980 --> 00:36:47.980
+right, like where everything is a fad,
+
+00:36:48.540 --> 00:36:49.900
+everything's been done before.
+
+00:36:49.900 --> 00:36:50.940
+There's a certain level of like,
+
+00:36:51.660 --> 00:36:53.340
+so if nothing else, like to your point,
+
+00:36:53.340 --> 00:36:55.100
+like there's kind of browser consolidation,
+
+00:36:55.100 --> 00:36:56.300
+everyone's kind of like choose,
+
+00:36:56.300 --> 00:36:58.140
+like getting on the bandwagon,
+
+00:36:58.140 --> 00:36:59.500
+it's all going to be Chrome.
+
+00:36:59.500 --> 00:37:01.020
+I would look at it saying like, well,
+
+00:37:01.020 --> 00:37:04.540
+inevitably Google will become like Microsoft
+
+00:37:04.540 --> 00:37:06.940
+and realize it has all the power of the universe
+
+00:37:06.940 --> 00:37:08.380
+and go super evil,
+
+00:37:08.380 --> 00:37:11.980
+and then naturally some Firefox-like thing
+
+00:37:11.980 --> 00:37:16.060
+will come out of that and punch the air,
+
+00:37:16.060 --> 00:37:17.020
+like shake their fists,
+
+00:37:17.020 --> 00:37:18.540
+kind of like give a Braveheart speech
+
+00:37:18.540 --> 00:37:19.420
+and say Google is evil,
+
+00:37:19.420 --> 00:37:20.780
+we're going to do this other thing,
+
+00:37:20.780 --> 00:37:22.220
+and it will effectively,
+
+00:37:22.220 --> 00:37:25.180
+there'll be another 10 years, 15 years of the Firefox,
+
+00:37:25.180 --> 00:37:26.540
+there'll be a new Firefox
+
+00:37:26.540 --> 00:37:28.780
+that will fight the old evil Chrome.
+
+00:37:28.780 --> 00:37:29.820
+This is like inevitable, right?
+
+00:37:29.820 --> 00:37:32.380
+So I'm not too worried about Chrome,
+
+00:37:32.380 --> 00:37:33.980
+like a kind of a monoculture around Chrome
+
+00:37:33.980 --> 00:37:36.540
+because if it gets too much of a problem,
+
+00:37:36.540 --> 00:37:39.090
+it will then, history will repeat itself
+
+00:37:39.090 --> 00:37:42.130
+and then there will be kind of a blossoming
+
+00:37:42.130 --> 00:37:43.170
+of a bunch of options.
+
+00:37:43.170 --> 00:37:45.010
+But right now we're in kind of a consolidation mode
+
+00:37:45.810 --> 00:37:47.650
+and that's just, I don't know,
+
+00:37:47.650 --> 00:37:48.770
+I guess I just look at it,
+
+00:37:48.770 --> 00:37:50.290
+it's like, I guess it's maybe a problem,
+
+00:37:50.290 --> 00:37:51.890
+but I'm not so fired up about it.
+
+00:37:51.890 --> 00:37:52.930
+Got you.
+
+00:37:52.930 --> 00:37:55.170
+Magically, somehow it'll solve itself in 10 years,
+
+00:37:55.170 --> 00:37:56.130
+I guess is what I'm trying to say.
+
+00:37:56.610 --> 00:37:58.290
+In hindsight, I'm wondering,
+
+00:37:58.290 --> 00:37:59.490
+I have two thoughts in my head,
+
+00:37:59.490 --> 00:38:01.010
+I'll see if I can keep them straight.
+
+00:38:01.010 --> 00:38:02.690
+But one thing I'm wondering is
+
+00:38:03.890 --> 00:38:06.450
+if those Selenium tests we had were just,
+
+00:38:07.170 --> 00:38:08.690
+I mean, they were fairly simple,
+
+00:38:08.690 --> 00:38:09.810
+but maybe too complex.
+
+00:38:09.810 --> 00:38:11.250
+Maybe what you want to test there is
+
+00:38:12.450 --> 00:38:14.210
+for cross browser compatibility,
+
+00:38:14.210 --> 00:38:17.010
+I'm wondering if there is some heuristic around
+
+00:38:17.010 --> 00:38:18.130
+writing simple tests
+
+00:38:18.130 --> 00:38:19.410
+and the simpler the test is
+
+00:38:19.410 --> 00:38:21.570
+or the less crazy you try and get,
+
+00:38:21.570 --> 00:38:24.660
+maybe the more apt that test is to run,
+
+00:38:24.660 --> 00:38:25.780
+successfully across browsers.
+
+00:38:26.420 --> 00:38:27.540
+Yeah, it sounds like we could
+
+00:38:28.900 --> 00:38:30.020
+put a consulting hat on there,
+
+00:38:30.020 --> 00:38:30.980
+I'd love to dive down
+
+00:38:30.980 --> 00:38:32.500
+and specifically see the lines of code
+
+00:38:32.500 --> 00:38:35.060
+and see why is it working here and not there.
+
+00:38:35.860 --> 00:38:38.020
+And to be fair, it's been three years
+
+00:38:38.020 --> 00:38:42.420
+and there's so much progress on all fronts
+
+00:38:42.420 --> 00:38:44.020
+on the WebDriver projects that it's...
+
+00:38:45.300 --> 00:38:46.980
+No, thanks to me, absolutely not.
+
+00:38:46.980 --> 00:38:49.780
+Like this is all thanks to Jim and Simon
+
+00:38:49.780 --> 00:38:51.060
+and there's a million other people
+
+00:38:51.060 --> 00:38:53.060
+that are day to day in the trenches
+
+00:38:53.060 --> 00:38:54.020
+working on the project now.
+
+00:38:54.100 --> 00:38:56.020
+The other thought in my head is
+
+00:38:56.020 --> 00:38:57.700
+because of the Braveheart quote,
+
+00:38:57.700 --> 00:38:58.740
+now I'm wondering if that's where
+
+00:38:58.740 --> 00:39:00.580
+the Brave browser got their name from.
+
+00:39:01.790 --> 00:39:02.270
+I don't know.
+
+00:39:03.150 --> 00:39:04.270
+Which Braveheart quote?
+
+00:39:05.230 --> 00:39:06.750
+Oh, I was just imagining,
+
+00:39:07.550 --> 00:39:08.750
+in my mind, I was just imagining,
+
+00:39:09.470 --> 00:39:11.070
+was it, I'm blanking out his name,
+
+00:39:11.070 --> 00:39:13.470
+but it's the actor,
+
+00:39:13.470 --> 00:39:15.710
+Mel Gibson, like just standing on his horse,
+
+00:39:15.710 --> 00:39:17.390
+just encouraging people to go into battle.
+
+00:39:18.190 --> 00:39:19.470
+I can't even remember why I was saying.
+
+00:39:19.470 --> 00:39:21.390
+Anyway, it was the rallying cry.
+
+00:39:21.390 --> 00:39:22.430
+Yeah, right, right, right.
+
+00:39:22.430 --> 00:39:24.030
+Yeah, someone's going to have some rallying cries
+
+00:39:24.030 --> 00:39:26.190
+saying we need to fight these browsers.
+
+00:39:26.190 --> 00:39:27.070
+Whatever.
+
+00:39:27.070 --> 00:39:27.630
+Where were we?
+
+00:39:28.350 --> 00:39:29.550
+You're asking two old guys
+
+00:39:29.550 --> 00:39:32.190
+who can't remember where they park their cars.
+
+00:39:32.190 --> 00:39:32.990
+I don't know.
+
+00:39:32.990 --> 00:39:34.430
+Well, so the one thing
+
+00:39:34.430 --> 00:39:36.350
+that Jason started talking about
+
+00:39:36.350 --> 00:39:37.230
+reminded me of...
+
+00:39:37.230 --> 00:39:38.270
+I can just sense so many people
+
+00:39:38.270 --> 00:39:39.550
+rolling their eyes listening to this right now.
+
+00:39:40.750 --> 00:39:41.950
+We expected a fight.
+
+00:39:42.510 --> 00:39:44.110
+No, the...
+
+00:39:44.110 --> 00:39:44.910
+I am the steel...
+
+00:39:44.910 --> 00:39:45.950
+I am the top Google search
+
+00:39:45.950 --> 00:39:47.230
+for steel cage knife fight, by the way.
+
+00:39:47.230 --> 00:39:48.430
+I want to point that out.
+
+00:39:48.430 --> 00:39:49.150
+You are? Why?
+
+00:39:49.790 --> 00:39:51.550
+Well, it's a funny story.
+
+00:39:51.550 --> 00:39:53.230
+So everyone, stop what you're doing,
+
+00:39:53.230 --> 00:39:55.070
+Google the phrase steel cage knife fight.
+
+00:39:55.630 --> 00:39:57.310
+And the story there was...
+
+00:39:57.310 --> 00:39:58.830
+This was the Google test automate...
+
+00:39:58.830 --> 00:39:59.790
+I totally cut you off, Brent.
+
+00:39:59.790 --> 00:40:00.030
+I'm sorry.
+
+00:40:00.030 --> 00:40:00.750
+No, no, it's fine.
+
+00:40:00.750 --> 00:40:01.310
+Story time.
+
+00:40:02.270 --> 00:40:04.750
+This was the Google test automation conference 2007.
+
+00:40:04.750 --> 00:40:08.430
+So this is Google's second test conference.
+
+00:40:08.430 --> 00:40:10.110
+And there's a whole awesome backstory
+
+00:40:10.110 --> 00:40:11.790
+on even why Google did this test conference
+
+00:40:11.790 --> 00:40:12.590
+for a couple of years.
+
+00:40:12.590 --> 00:40:14.030
+And I've got some conspiracy theories
+
+00:40:14.030 --> 00:40:14.910
+on why they stopped doing it.
+
+00:40:14.910 --> 00:40:16.910
+But anyway, not important to the story.
+
+00:40:16.910 --> 00:40:19.390
+So I'm there in New York City
+
+00:40:19.470 --> 00:40:23.950
+and I was drafted in to give a talk to replace a speaker.
+
+00:40:23.950 --> 00:40:25.230
+At that time, I was a Googler.
+
+00:40:25.230 --> 00:40:27.070
+I'd been there for six months.
+
+00:40:27.070 --> 00:40:29.470
+Simon Stewart was still at ThoughtWorks
+
+00:40:29.470 --> 00:40:31.550
+and I had just left ThoughtWorks the year before.
+
+00:40:32.430 --> 00:40:34.190
+He was there to present WebDriver.
+
+00:40:35.630 --> 00:40:37.630
+And I had seen WebDriver
+
+00:40:37.630 --> 00:40:39.550
+when we were both at ThoughtWorks a year earlier.
+
+00:40:40.940 --> 00:40:45.980
+And anyways, I was ready to not be impressed by his talk.
+
+00:40:46.540 --> 00:40:49.420
+And also, there were a lot of Selenium talks at GTAC.
+
+00:40:49.420 --> 00:40:52.620
+And also, I was super awkward and weird about it, right?
+
+00:40:52.620 --> 00:40:55.500
+Because I didn't realize it was being used that much.
+
+00:40:56.780 --> 00:40:59.500
+Anyway, so I was sitting through Simon's talk
+
+00:40:59.500 --> 00:41:01.580
+and I realized he had fixed...
+
+00:41:01.580 --> 00:41:03.340
+I'm kind of sitting there with crossed arms thinking like,
+
+00:41:03.340 --> 00:41:06.800
+OK, waiting to take notes and shoot everything down.
+
+00:41:06.800 --> 00:41:08.640
+And he had fixed all of the problem.
+
+00:41:08.640 --> 00:41:11.440
+Every conceptual, architectural, whatever you want to call it,
+
+00:41:11.440 --> 00:41:14.160
+idea that I was against WebDriver and how he did things.
+
+00:41:14.160 --> 00:41:15.360
+He fixed all those problems
+
+00:41:15.360 --> 00:41:16.640
+and it was awesome and brilliant.
+
+00:41:17.200 --> 00:41:20.880
+In an instant, as I'm watching his talk about WebDriver,
+
+00:41:20.880 --> 00:41:21.760
+I realized this is it.
+
+00:41:22.400 --> 00:41:24.160
+This really is the Selenium killer.
+
+00:41:24.160 --> 00:41:26.720
+This is all the things I would wish we could do
+
+00:41:26.720 --> 00:41:28.160
+in a future version of Selenium.
+
+00:41:28.160 --> 00:41:29.840
+So then I had kind of a choice there.
+
+00:41:29.840 --> 00:41:31.840
+It could either be my new best friend
+
+00:41:31.840 --> 00:41:34.240
+or I could find some weird passive-aggressive way
+
+00:41:34.240 --> 00:41:35.440
+to super hate on him, right?
+
+00:41:35.440 --> 00:41:37.680
+Because he's clearly made the better tech.
+
+00:41:37.680 --> 00:41:39.840
+So these were our presentations, right?
+
+00:41:39.840 --> 00:41:41.840
+The other footnote to history, my talk was
+
+00:41:42.640 --> 00:41:45.520
+I created an AWS account two days before
+
+00:41:45.520 --> 00:41:48.320
+and got access to like 20 machines in the cloud.
+
+00:41:48.320 --> 00:41:51.760
+And I wondered if I could run a browser test in the cloud.
+
+00:41:51.760 --> 00:41:52.560
+I thought that would be interesting.
+
+00:41:52.560 --> 00:41:53.840
+And this is like 2007, right?
+
+00:41:53.840 --> 00:41:56.160
+So that was actually AWS had only been around
+
+00:41:56.160 --> 00:41:57.680
+for maybe six months or a year at that point.
+
+00:41:57.680 --> 00:41:58.960
+So this was like a new thing in the world.
+
+00:41:58.960 --> 00:42:00.720
+Anyway, side note to that thing.
+
+00:42:00.720 --> 00:42:03.200
+But the reason why Steelcage and I fight,
+
+00:42:03.200 --> 00:42:04.080
+long story long,
+
+00:42:04.080 --> 00:42:06.000
+they were lightning talks at the very last day.
+
+00:42:06.000 --> 00:42:09.040
+And so I proposed kind of as a way to encourage this.
+
+00:42:09.680 --> 00:42:12.000
+He's either figuring out whether he's my new best friend
+
+00:42:12.000 --> 00:42:13.280
+or my new enemy.
+
+00:42:13.280 --> 00:42:16.240
+I proposed doing a dueling lightning talk
+
+00:42:16.240 --> 00:42:20.080
+where we would both talk about Selenium and WebDriver
+
+00:42:20.080 --> 00:42:22.800
+as a kind of set it up as a debate.
+
+00:42:22.800 --> 00:42:24.160
+Kind of like in Wink and Douglass debate
+
+00:42:24.160 --> 00:42:25.200
+or something like that, whatever.
+
+00:42:25.200 --> 00:42:28.160
+But with the caveat where I would have to argue
+
+00:42:28.800 --> 00:42:31.840
+for and against WebDriver and he would have to argue
+
+00:42:31.840 --> 00:42:34.560
+or I would have to argue for like five reasons
+
+00:42:34.560 --> 00:42:36.400
+why WebDriver is awesome and Selenium is horrible.
+
+00:42:36.400 --> 00:42:37.920
+That would be my side.
+
+00:42:37.920 --> 00:42:39.360
+And then Simon would stand up there
+
+00:42:39.360 --> 00:42:41.520
+and give five reasons why WebDriver is horrible
+
+00:42:41.520 --> 00:42:42.400
+and Selenium is awesome, right?
+
+00:42:42.400 --> 00:42:45.920
+So we would like flip sides, arguably, whatever.
+
+00:42:45.920 --> 00:42:49.600
+Anyway, so the thing was that conversation
+
+00:42:49.600 --> 00:42:52.480
+and I can't believe he went along with it
+
+00:42:52.480 --> 00:42:52.960
+and we did this thing.
+
+00:42:52.960 --> 00:42:54.640
+But there was like a lot of ha ha,
+
+00:42:54.640 --> 00:42:56.880
+I'm serious kind of conversations of like,
+
+00:42:56.880 --> 00:42:58.720
+well, what if we merged projects, right?
+
+00:42:58.720 --> 00:43:00.080
+What if we joined forces?
+
+00:43:00.640 --> 00:43:02.880
+And so that it kind of started at that,
+
+00:43:03.760 --> 00:43:06.240
+you know, GTAC 2007 New York City.
+
+00:43:06.240 --> 00:43:08.160
+That's where the WebDriver,
+
+00:43:08.160 --> 00:43:10.320
+like the idea of WebDriver joining this Selenium project
+
+00:43:10.880 --> 00:43:11.600
+started.
+
+00:43:11.600 --> 00:43:13.040
+And it started with kind of like, yeah,
+
+00:43:13.040 --> 00:43:16.640
+this very kind of joke and idea of like,
+
+00:43:16.640 --> 00:43:18.240
+let's do a steel cage knife bite where of course
+
+00:43:18.240 --> 00:43:20.000
+it comes out that we're just all friends, right?
+
+00:43:20.000 --> 00:43:21.280
+No, I think that was brilliant.
+
+00:43:21.920 --> 00:43:24.400
+Particularly, you know, if you felt beforehand
+
+00:43:24.400 --> 00:43:26.080
+that WebDriver was the better product,
+
+00:43:26.080 --> 00:43:27.120
+which is what I heard, right?
+
+00:43:27.120 --> 00:43:29.760
+You're like, let's set up the game so I win.
+
+00:43:29.760 --> 00:43:30.260
+Well done.
+
+00:43:31.760 --> 00:43:34.720
+Well, there was a specific idea that he implemented
+
+00:43:34.720 --> 00:43:38.240
+that I kind of like, oh, that was the wrong idea.
+
+00:43:38.960 --> 00:43:40.480
+There was something in the water,
+
+00:43:40.480 --> 00:43:43.600
+like with there's an older framework idea
+
+00:43:43.600 --> 00:43:45.280
+called FIT, Framework for Integrated Testing.
+
+00:43:45.280 --> 00:43:46.960
+Ward Cunningham, more famous for creating,
+
+00:43:48.080 --> 00:43:50.240
+right, right, more famous for creating Wikipedia,
+
+00:43:50.240 --> 00:43:51.840
+or sorry, not Wikipedia, but the Wiki.
+
+00:43:54.560 --> 00:43:56.080
+But then there was other projects that are out there
+
+00:43:56.080 --> 00:43:57.200
+where they're kind of running with this idea.
+
+00:43:57.200 --> 00:43:58.560
+And even with the first version of Selenium,
+
+00:43:58.560 --> 00:44:01.040
+also kind of ran with the idea for implementing FIT.
+
+00:44:01.040 --> 00:44:03.760
+My first, my one and only maybe email to Ward Cunningham
+
+00:44:03.760 --> 00:44:05.760
+was like, has anyone done FIT for JavaScript?
+
+00:44:05.760 --> 00:44:07.200
+If not, great, I'm going to go do that, right?
+
+00:44:07.200 --> 00:44:09.200
+So that was like part of its tagline.
+
+00:44:09.200 --> 00:44:10.880
+And I realized at some point later, like, wow,
+
+00:44:10.880 --> 00:44:14.640
+that was like a bad idea to do that.
+
+00:44:14.640 --> 00:44:16.400
+Especially if it's a developer tool,
+
+00:44:16.400 --> 00:44:18.720
+like if you're writing a developer tool for developers,
+
+00:44:18.720 --> 00:44:20.640
+they would rather write in Python or Java
+
+00:44:20.640 --> 00:44:21.920
+or C Sharp or whatever.
+
+00:44:21.920 --> 00:44:23.600
+They don't want to write in HTML tables
+
+00:44:23.600 --> 00:44:24.240
+or something like that, right?
+
+00:44:24.240 --> 00:44:24.960
+It was kind of ridiculous.
+
+00:44:26.480 --> 00:44:28.000
+But there are other frameworks that are still out there
+
+00:44:29.200 --> 00:44:30.000
+that still use that.
+
+00:44:30.080 --> 00:44:33.680
+And when I first saw Simon's first implementation
+
+00:44:33.680 --> 00:44:35.680
+of WebDriver, he was also kind of doing
+
+00:44:35.680 --> 00:44:39.120
+that first kind of user interface or facade into it
+
+00:44:39.120 --> 00:44:41.520
+was like a fit like we had to write your tests and tables
+
+00:44:41.520 --> 00:44:43.120
+and we're like, ah, man, here we go again.
+
+00:44:43.760 --> 00:44:46.160
+But when he gave that presentation in New York,
+
+00:44:46.160 --> 00:44:47.040
+he got rid of all of that.
+
+00:44:47.040 --> 00:44:48.640
+He just got to like the chocolatey goodness
+
+00:44:49.280 --> 00:44:52.640
+of the stuff and the like just footnote to history.
+
+00:44:52.640 --> 00:44:54.880
+But the specific thing was Selenium 1,
+
+00:44:54.880 --> 00:44:56.640
+like at that time, the state of the art for Selenium,
+
+00:44:56.640 --> 00:44:58.720
+everything was emulated in JavaScript.
+
+00:44:58.720 --> 00:45:00.880
+Again, same way that Cypress is implemented now.
+
+00:45:00.880 --> 00:45:03.680
+It's all injected JavaScript in the browser.
+
+00:45:03.680 --> 00:45:06.000
+And Simon solved it kind of at the operating system level
+
+00:45:06.000 --> 00:45:07.920
+where you would ask the operating system
+
+00:45:07.920 --> 00:45:10.000
+to click a button or something like that.
+
+00:45:10.000 --> 00:45:13.520
+So as far as the browser is from the browser's perspective,
+
+00:45:13.520 --> 00:45:17.040
+the events were more native and less flaky
+
+00:45:17.040 --> 00:45:18.080
+or something like that.
+
+00:45:18.080 --> 00:45:20.160
+Anyway, I'm getting super in the weeds here.
+
+00:45:20.160 --> 00:45:22.000
+But where were we?
+
+00:45:23.200 --> 00:45:24.560
+One thing I wanted to mention
+
+00:45:24.560 --> 00:45:27.200
+and then I'll ask for probably some closing comments
+
+00:45:27.200 --> 00:45:29.280
+from you or anyone you can get to.
+
+00:45:29.280 --> 00:45:31.520
+I went to maybe the last,
+
+00:45:31.520 --> 00:45:34.880
+I think it was the next to the last GTAC conference.
+
+00:45:34.880 --> 00:45:35.520
+Yeah.
+
+00:45:35.520 --> 00:45:39.680
+And ironically, I may actually be using that word
+
+00:45:39.680 --> 00:45:40.960
+correctly in this case.
+
+00:45:40.960 --> 00:45:44.800
+Or yeah, I nicknamed it the flaky test conference
+
+00:45:44.800 --> 00:45:47.920
+because every single talk had some flavor
+
+00:45:47.920 --> 00:45:50.480
+of talking about how to deal with flaky tests.
+
+00:45:50.480 --> 00:45:51.280
+Right.
+
+00:45:51.280 --> 00:45:52.800
+And I think it's just interesting
+
+00:45:52.800 --> 00:45:56.080
+that came up in my head while you were talking.
+
+00:45:56.320 --> 00:45:57.840
+I don't know why you need to,
+
+00:45:57.840 --> 00:45:59.840
+I mean, it's one slide.
+
+00:45:59.840 --> 00:46:01.680
+It just says the word delete.
+
+00:46:02.720 --> 00:46:03.680
+Right.
+
+00:46:03.680 --> 00:46:05.600
+What I find fascinating was why Google
+
+00:46:06.240 --> 00:46:09.360
+started that series of conferences.
+
+00:46:10.080 --> 00:46:11.760
+The first one was LTAC.
+
+00:46:11.760 --> 00:46:13.840
+So it was the London Test Automation Conference.
+
+00:46:13.840 --> 00:46:16.480
+Alan Hutchison based in the New York,
+
+00:46:16.480 --> 00:46:18.480
+or sorry, in the London office there.
+
+00:46:20.370 --> 00:46:22.530
+Here's the thing about the whole GTAC conference.
+
+00:46:22.530 --> 00:46:23.730
+Secretly it was,
+
+00:46:23.970 --> 00:46:25.970
+oh, what they were finding was that
+
+00:46:25.970 --> 00:46:28.130
+it's really hard to find developers
+
+00:46:28.130 --> 00:46:29.650
+who are interested in testing.
+
+00:46:29.650 --> 00:46:31.810
+So this was a way of flushing people out in the world
+
+00:46:31.810 --> 00:46:35.090
+of the self-identify as people
+
+00:46:35.090 --> 00:46:36.610
+who are just totally geek out on this stuff.
+
+00:46:36.610 --> 00:46:37.010
+Right.
+
+00:46:37.010 --> 00:46:40.780
+It's really hard to find that developer,
+
+00:46:42.060 --> 00:46:43.340
+test-minded developer, if you will.
+
+00:46:43.980 --> 00:46:45.900
+So for a couple of years, it was secretly,
+
+00:46:46.620 --> 00:46:49.420
+secretly, very secretly on the lowdown,
+
+00:46:49.420 --> 00:46:51.740
+kind of a recruiting effort for Google.
+
+00:46:51.740 --> 00:46:52.140
+Right.
+
+00:46:52.140 --> 00:46:53.660
+At some point, the cat was out of the bag
+
+00:46:53.660 --> 00:46:55.260
+and it became obviously a recruiting thing.
+
+00:46:55.260 --> 00:46:57.660
+So why would people then send their employees
+
+00:46:57.660 --> 00:46:59.340
+off to a Google conference
+
+00:46:59.340 --> 00:47:01.260
+to then just be poached and then leave?
+
+00:47:01.260 --> 00:47:01.500
+Right.
+
+00:47:01.500 --> 00:47:05.020
+So once that was obvious, it was impossible.
+
+00:47:05.020 --> 00:47:06.060
+Who's going to go?
+
+00:47:06.060 --> 00:47:07.660
+If you're not already a Googler,
+
+00:47:07.660 --> 00:47:08.940
+why would you send your employees there?
+
+00:47:08.940 --> 00:47:09.260
+Right.
+
+00:47:09.260 --> 00:47:10.620
+But there was a good couple of,
+
+00:47:10.620 --> 00:47:12.700
+there was some beautiful years there at the beginning
+
+00:47:12.700 --> 00:47:14.860
+where there really wasn't a developer
+
+00:47:15.660 --> 00:47:17.900
+really geeky, really nerdy in the weeds.
+
+00:47:17.900 --> 00:47:20.060
+Let's just tons and tons of code,
+
+00:47:21.020 --> 00:47:22.460
+developer-focused testing conference.
+
+00:47:23.180 --> 00:47:24.540
+The other kind of context here was like,
+
+00:47:24.540 --> 00:47:25.980
+I didn't even know when we started Selenium
+
+00:47:25.980 --> 00:47:27.500
+that testing was a profession,
+
+00:47:27.500 --> 00:47:28.140
+that there were books,
+
+00:47:28.140 --> 00:47:29.500
+that there were conferences
+
+00:47:29.500 --> 00:47:30.700
+and all kinds of things like that.
+
+00:47:30.700 --> 00:47:33.020
+So kind of leading like in forms,
+
+00:47:33.020 --> 00:47:34.540
+and I would only go to developer conferences
+
+00:47:34.540 --> 00:47:37.580
+like JSConf or PyCon or things like that.
+
+00:47:37.580 --> 00:47:38.540
+Only after a couple of years,
+
+00:47:38.540 --> 00:47:41.260
+I finally went to see testing conferences
+
+00:47:41.260 --> 00:47:43.340
+like Star East, Star West,
+
+00:47:43.340 --> 00:47:45.500
+or SDPCon, things like that.
+
+00:47:45.500 --> 00:47:48.060
+But Alan was specifically trying to find developer,
+
+00:47:49.180 --> 00:47:50.860
+test-minded developers, if you will.
+
+00:47:51.180 --> 00:47:53.660
+And he felt like there wasn't a lot of real
+
+00:47:53.660 --> 00:47:55.820
+in the weed, gnarly geekiness.
+
+00:47:55.820 --> 00:47:57.100
+So to fix stuff like you asked,
+
+00:47:57.100 --> 00:47:57.660
+yes, you could delete it.
+
+00:47:57.660 --> 00:48:00.220
+I think in 2007, I completely agree with that.
+
+00:48:00.220 --> 00:48:02.220
+I think, I don't think that's...
+
+00:48:02.220 --> 00:48:04.540
+Back in 2007, like 12 years ago,
+
+00:48:05.260 --> 00:48:07.180
+yeah, I completely agree with that.
+
+00:48:08.460 --> 00:48:13.020
+The separation of roles was a big thing
+
+00:48:13.020 --> 00:48:13.900
+at a lot of companies.
+
+00:48:13.900 --> 00:48:15.900
+Microsoft still had a test team, right?
+
+00:48:15.900 --> 00:48:16.540
+For sure.
+
+00:48:16.540 --> 00:48:19.580
+They had almost 10,000 testers at that time.
+
+00:48:20.450 --> 00:48:22.770
+So finding test-minded developers.
+
+00:48:22.770 --> 00:48:25.890
+Matter of fact, I think 2007 is even
+
+00:48:25.890 --> 00:48:28.610
+sort of pre the dominance of TDD
+
+00:48:28.610 --> 00:48:32.050
+and sort of design constructs
+
+00:48:32.050 --> 00:48:35.250
+that now are very popular in the industry.
+
+00:48:36.350 --> 00:48:39.630
+So I don't think that world exists today.
+
+00:48:39.630 --> 00:48:42.590
+I wonder how often or to what degree I'm right.
+
+00:48:43.950 --> 00:48:45.390
+I'm thinking, again, putting myself
+
+00:48:45.390 --> 00:48:47.870
+in the seat of the listener here,
+
+00:48:47.870 --> 00:48:48.990
+and I'm just thinking like listening
+
+00:48:48.990 --> 00:48:50.190
+to myself tell all these wonderful,
+
+00:48:50.190 --> 00:48:51.950
+cool stories, which I thought was a good idea.
+
+00:48:51.950 --> 00:48:52.510
+Maybe it is.
+
+00:48:52.510 --> 00:48:52.910
+I don't know.
+
+00:48:52.910 --> 00:48:53.310
+Probably not.
+
+00:48:53.310 --> 00:48:54.110
+But I'm thinking like, okay,
+
+00:48:54.110 --> 00:48:56.750
+was there any actionable thing going forward?
+
+00:48:56.750 --> 00:48:58.590
+Like, okay, now we know what the industry
+
+00:48:58.590 --> 00:49:00.110
+was like a couple of years ago.
+
+00:49:00.110 --> 00:49:01.710
+Like, yeah, now what?
+
+00:49:01.710 --> 00:49:02.110
+So what?
+
+00:49:02.110 --> 00:49:03.310
+Okay, go eat croissants.
+
+00:49:03.310 --> 00:49:05.550
+That's the moral of the story.
+
+00:49:06.910 --> 00:49:10.910
+So actually, yeah, so it's time for us to close,
+
+00:49:10.910 --> 00:49:11.790
+but why don't you...
+
+00:49:13.070 --> 00:49:14.270
+Here's a suggestion.
+
+00:49:14.270 --> 00:49:18.930
+Jason, do you have any regrets
+
+00:49:19.010 --> 00:49:21.650
+around how Selenium is being used today,
+
+00:49:21.650 --> 00:49:23.970
+or do you have any guidance around how...
+
+00:49:25.010 --> 00:49:28.210
+So again, I mentioned, I think I can make an argument
+
+00:49:28.210 --> 00:49:31.170
+it's immoral, or it's UI automation
+
+00:49:31.170 --> 00:49:32.450
+to some degree is immoral.
+
+00:49:33.410 --> 00:49:35.890
+And yes, that's hyperbole,
+
+00:49:35.890 --> 00:49:38.290
+but I think all three of us know
+
+00:49:38.290 --> 00:49:42.050
+that that is non-tribially true
+
+00:49:42.050 --> 00:49:44.290
+when we look at it from a business context.
+
+00:49:44.930 --> 00:49:47.090
+Anything you want to mention on that regrets,
+
+00:49:47.090 --> 00:49:49.250
+like, is there one thing,
+
+00:49:49.250 --> 00:49:51.170
+if you had an audience to tell testers,
+
+00:49:51.810 --> 00:49:55.250
+hey, please stop doing this with my baby,
+
+00:49:55.250 --> 00:49:56.130
+what would you want to say?
+
+00:49:57.250 --> 00:49:57.730
+Oh, man.
+
+00:49:58.850 --> 00:49:59.810
+And that could be anything.
+
+00:49:59.810 --> 00:50:02.290
+It doesn't have to be even related
+
+00:50:02.290 --> 00:50:03.570
+to what we talked about today.
+
+00:50:04.300 --> 00:50:05.420
+I guess I would just say,
+
+00:50:05.420 --> 00:50:07.180
+web testing is just so yesterday,
+
+00:50:07.180 --> 00:50:08.620
+it's all about robots right now.
+
+00:50:12.620 --> 00:50:13.100
+Stop.
+
+00:50:13.820 --> 00:50:16.300
+Really, I've got a lot to say on that stuff,
+
+00:50:16.700 --> 00:50:18.220
+I don't know how to put a bow on that.
+
+00:50:18.220 --> 00:50:19.340
+There's a certain level of like,
+
+00:50:20.140 --> 00:50:22.060
+I'm that dangerous engineer who,
+
+00:50:22.060 --> 00:50:23.900
+that whole like, they spent so much time
+
+00:50:23.900 --> 00:50:24.940
+figuring out how they could do it,
+
+00:50:24.940 --> 00:50:27.420
+they don't spend enough time deciding,
+
+00:50:27.420 --> 00:50:28.620
+figuring out, spending enough time
+
+00:50:28.620 --> 00:50:29.660
+thinking about whether they should.
+
+00:50:30.620 --> 00:50:32.620
+I put myself in this role where it's like,
+
+00:50:34.460 --> 00:50:36.700
+where I look, I get motivated
+
+00:50:36.700 --> 00:50:39.500
+when someone tells me something is impossible.
+
+00:50:39.500 --> 00:50:40.940
+Selenium came from a time
+
+00:50:40.940 --> 00:50:43.180
+where people said it is impossible
+
+00:50:43.180 --> 00:50:44.620
+to test JavaScript, right?
+
+00:50:44.620 --> 00:50:45.500
+And I rejected that.
+
+00:50:45.500 --> 00:50:46.620
+And so Selenium came from like,
+
+00:50:46.620 --> 00:50:48.300
+the massive motivation was like,
+
+00:50:48.300 --> 00:50:49.260
+ta-da, here it is.
+
+00:50:49.260 --> 00:50:50.700
+Here is a tool that you can use
+
+00:50:50.700 --> 00:50:51.740
+to test JavaScript, right?
+
+00:50:52.540 --> 00:50:54.220
+I wanted to win that argument.
+
+00:50:55.100 --> 00:50:56.540
+It's a completely different argument,
+
+00:50:56.540 --> 00:50:58.460
+but it needs to happen on whether you should,
+
+00:50:59.330 --> 00:51:00.610
+I want to kind of take off the table,
+
+00:51:00.610 --> 00:51:02.530
+you shouldn't do it because you can't do it.
+
+00:51:02.530 --> 00:51:05.490
+I feel like that is not a great argument.
+
+00:51:06.370 --> 00:51:08.770
+It can shut down conversations for sure,
+
+00:51:08.770 --> 00:51:10.130
+but I don't like that.
+
+00:51:10.130 --> 00:51:12.290
+I would rather encourage people to say,
+
+00:51:12.290 --> 00:51:13.410
+assuming we can do it,
+
+00:51:13.410 --> 00:51:14.770
+and assuming we can totally do it well,
+
+00:51:14.850 --> 00:51:16.050
+we can solve that problem really well.
+
+00:51:16.770 --> 00:51:18.290
+Should we be solving that problem, right?
+
+00:51:18.290 --> 00:51:21.250
+And this is where we totally agree.
+
+00:51:21.250 --> 00:51:24.770
+Find that higher level above the browsers.
+
+00:51:25.490 --> 00:51:26.930
+Should we be writing a web app?
+
+00:51:26.930 --> 00:51:27.890
+Should it be a mobile app?
+
+00:51:27.890 --> 00:51:29.970
+Should we be making an app at all, right?
+
+00:51:31.490 --> 00:51:32.290
+Try to find that.
+
+00:51:32.290 --> 00:51:33.490
+And maybe some of these decisions
+
+00:51:33.490 --> 00:51:34.690
+kind of come out of it.
+
+00:51:34.690 --> 00:51:36.450
+**Jade,** So you mentioned robots.
+
+00:51:37.730 --> 00:51:39.410
+One of our listeners asked a question
+
+00:51:39.410 --> 00:51:40.610
+on Slack the other day,
+
+00:51:40.610 --> 00:51:42.050
+and one of the opinion,
+
+00:51:42.610 --> 00:51:44.210
+hey, specifically,
+
+00:51:44.210 --> 00:51:48.210
+do we think AI is going to kill Selenium?
+
+00:51:50.670 --> 00:51:55.330
+Now, I essentially said a very long worded version of
+
+00:51:56.610 --> 00:51:57.650
+not anytime soon.
+
+00:51:59.090 --> 00:51:59.890
+But what's your thoughts?
+
+00:51:59.890 --> 00:52:02.140
+**Matt,** So this is interesting.
+
+00:52:02.860 --> 00:52:04.700
+No, I don't think it will,
+
+00:52:04.700 --> 00:52:06.220
+because it's like an overhyped word
+
+00:52:06.220 --> 00:52:08.300
+that means everything and nothing right now.
+
+00:52:08.300 --> 00:52:09.980
+So there's no way anything
+
+00:52:09.980 --> 00:52:11.900
+could possibly live up to this hype, right?
+
+00:52:11.900 --> 00:52:13.260
+Unless by killing Selenium,
+
+00:52:13.260 --> 00:52:15.500
+it kills half the planet and therefore,
+
+00:52:16.460 --> 00:52:18.140
+some kind of doomsday terminator scenario.
+
+00:52:18.140 --> 00:52:18.860
+We're like, well, yeah,
+
+00:52:18.860 --> 00:52:21.020
+technically as an afterthought, right?
+
+00:52:21.820 --> 00:52:23.180
+After effect, whatever.
+
+00:52:24.140 --> 00:52:25.740
+So a couple of years ago,
+
+00:52:25.740 --> 00:52:26.780
+I had this idea,
+
+00:52:26.780 --> 00:52:28.940
+and I guess I didn't think to put AI
+
+00:52:28.940 --> 00:52:29.660
+in the word of it
+
+00:52:29.660 --> 00:52:31.740
+because it wasn't this buzzword thing.
+
+00:52:31.740 --> 00:52:32.540
+But I thought like,
+
+00:52:32.540 --> 00:52:34.460
+you know what definitely needs to stop happening
+
+00:52:34.460 --> 00:52:36.060
+is people spending their whole day
+
+00:52:36.060 --> 00:52:38.220
+staring at the Selenium API
+
+00:52:38.220 --> 00:52:38.940
+and trying to figure out
+
+00:52:38.940 --> 00:52:41.260
+how to craft the perfect test.
+
+00:52:41.340 --> 00:52:43.500
+And I thought it would be more useful use of time
+
+00:52:44.460 --> 00:52:47.660
+to maybe look at Google analytical data,
+
+00:52:47.660 --> 00:52:48.700
+see where like basically
+
+00:52:48.700 --> 00:52:50.300
+that's that cow paths metaphor.
+
+00:52:51.180 --> 00:52:52.620
+Find where people are going,
+
+00:52:52.620 --> 00:52:54.220
+which kind of means like
+
+00:52:54.220 --> 00:52:55.340
+put stuff out in production
+
+00:52:55.340 --> 00:52:56.780
+and see how people are using it
+
+00:52:56.780 --> 00:52:59.580
+and then use that to inform how you should test.
+
+00:52:59.580 --> 00:53:01.420
+But then take it one step further.
+
+00:53:01.420 --> 00:53:03.660
+If it now like if there's like this path
+
+00:53:03.660 --> 00:53:04.380
+that's emerging
+
+00:53:04.380 --> 00:53:06.300
+because you've kind of instrumented things,
+
+00:53:06.300 --> 00:53:08.140
+why don't you just have that spit out
+
+00:53:08.140 --> 00:53:10.700
+the Selenium test suite for you, right?
+
+00:53:10.780 --> 00:53:12.300
+It's effectively converting a log file
+
+00:53:12.300 --> 00:53:13.260
+to a Selenium test.
+
+00:53:13.260 --> 00:53:14.700
+And then taking it one step further,
+
+00:53:14.700 --> 00:53:16.140
+not even like doing anything.
+
+00:53:16.140 --> 00:53:17.500
+You could stop there and say,
+
+00:53:17.500 --> 00:53:19.260
+okay, download your Selenium test suite
+
+00:53:19.260 --> 00:53:20.940
+and install it into your CI.
+
+00:53:20.940 --> 00:53:23.100
+But how about you go one step further beyond that
+
+00:53:23.100 --> 00:53:25.420
+and it automatically runs
+
+00:53:25.420 --> 00:53:27.180
+basically today's production code
+
+00:53:27.180 --> 00:53:31.740
+against your newest version
+
+00:53:31.740 --> 00:53:33.660
+that's in source control,
+
+00:53:33.660 --> 00:53:35.260
+but you haven't pushed to production yet, right?
+
+00:53:35.260 --> 00:53:36.460
+And so then you start doing
+
+00:53:36.460 --> 00:53:38.620
+kind of like an A-B test, if you will,
+
+00:53:38.620 --> 00:53:41.100
+of like, okay, you know, production,
+
+00:53:41.100 --> 00:53:43.580
+we had roughly this number of paths
+
+00:53:43.580 --> 00:53:45.420
+to sign up for credit cards and whatever,
+
+00:53:45.420 --> 00:53:47.340
+run all effectively this log data
+
+00:53:47.340 --> 00:53:49.660
+against our production candidate.
+
+00:53:49.660 --> 00:53:52.220
+And as long as things aren't grossly out of bounds,
+
+00:53:52.220 --> 00:53:56.620
+then that's like it vaguely seems like we've tested things
+
+00:53:56.620 --> 00:53:58.140
+like we haven't broken anything
+
+00:53:58.140 --> 00:53:59.980
+and push that to production.
+
+00:53:59.980 --> 00:54:01.180
+And it basically get to a point
+
+00:54:01.180 --> 00:54:03.660
+where no one opened an IDE
+
+00:54:04.460 --> 00:54:07.260
+and looked at the Selenium or the WebDriver API
+
+00:54:07.260 --> 00:54:08.300
+and wrote a test.
+
+00:54:08.380 --> 00:54:09.660
+Like the system wrote those tests.
+
+00:54:10.220 --> 00:54:12.940
+There is a patent out there.
+
+00:54:12.940 --> 00:54:15.180
+It's called, I thought it was rather clever,
+
+00:54:15.180 --> 00:54:16.300
+analytics-driven development.
+
+00:54:16.300 --> 00:54:17.420
+So I patented ADD.
+
+00:54:19.820 --> 00:54:21.820
+And it's this idea that you would take
+
+00:54:22.620 --> 00:54:23.980
+this analytical data
+
+00:54:23.980 --> 00:54:25.420
+and you would generate test cases
+
+00:54:25.420 --> 00:54:26.780
+and then use those automatically
+
+00:54:26.780 --> 00:54:28.380
+to test your stuff that's out there.
+
+00:54:28.380 --> 00:54:30.300
+And I would argue that, well,
+
+00:54:30.300 --> 00:54:32.300
+that's like a machine learning algorithm.
+
+00:54:32.300 --> 00:54:33.580
+That is AI.
+
+00:54:33.580 --> 00:54:35.340
+And so does that kill Selenium?
+
+00:54:35.340 --> 00:54:36.540
+No, like under the hood,
+
+00:54:36.540 --> 00:54:39.340
+you would still have some automation engine
+
+00:54:39.340 --> 00:54:42.460
+that would run steps that automate a browser.
+
+00:54:42.460 --> 00:54:43.900
+So that doesn't go away.
+
+00:54:43.900 --> 00:54:45.020
+And if anything else, because-
+
+00:54:45.020 --> 00:54:46.540
+But the human screwing it up does.
+
+00:54:47.580 --> 00:54:48.060
+Yeah, maybe.
+
+00:54:48.060 --> 00:54:49.260
+But you're going to screw things up
+
+00:54:49.260 --> 00:54:50.940
+in awesome new ways.
+
+00:54:52.300 --> 00:54:55.100
+So it ends up being like all technology.
+
+00:54:55.100 --> 00:54:58.060
+It will now be pushed down
+
+00:54:58.060 --> 00:54:59.900
+into a lower level of the stack
+
+00:54:59.900 --> 00:55:02.140
+that we're barely aware of.
+
+00:55:02.140 --> 00:55:04.060
+And there's these metaphors
+
+00:55:04.060 --> 00:55:05.660
+about leaky abstractions or something.
+
+00:55:05.660 --> 00:55:06.620
+It'll be something like we're
+
+00:55:07.580 --> 00:55:09.180
+almost like compiling to assembly.
+
+00:55:09.180 --> 00:55:09.820
+It's there.
+
+00:55:09.820 --> 00:55:11.020
+Someone super wants to geek out.
+
+00:55:11.020 --> 00:55:11.980
+They might have to pop the hood
+
+00:55:11.980 --> 00:55:12.940
+and go down there.
+
+00:55:12.940 --> 00:55:14.220
+But people will be spending
+
+00:55:14.220 --> 00:55:15.580
+all their time kind of manipulating
+
+00:55:16.300 --> 00:55:17.660
+machine learning kind of data sets
+
+00:55:17.660 --> 00:55:19.340
+of like, oh, how do we replicate
+
+00:55:19.340 --> 00:55:19.980
+production data
+
+00:55:20.620 --> 00:55:21.660
+before we push to production?
+
+00:55:21.660 --> 00:55:23.180
+Like, oh, well, maybe find-
+
+00:55:23.180 --> 00:55:24.380
+There'll be all these arguments
+
+00:55:24.380 --> 00:55:26.620
+about how do we basically coach
+
+00:55:28.140 --> 00:55:30.060
+again, from a cow paths metaphor,
+
+00:55:30.060 --> 00:55:32.610
+how can we maybe herd
+
+00:55:32.610 --> 00:55:33.570
+these virtual animals,
+
+00:55:33.570 --> 00:55:34.690
+whatever you want to call it.
+
+00:55:34.850 --> 00:55:36.050
+How can we modify-
+
+00:55:37.170 --> 00:55:38.450
+How do we create these data sets?
+
+00:55:38.450 --> 00:55:40.290
+How do we encourage this AI
+
+00:55:40.290 --> 00:55:41.890
+that is like almost like an-
+
+00:55:43.170 --> 00:55:44.610
+Not so much an artificial intelligence
+
+00:55:44.610 --> 00:55:45.810
+that can go back in time and kill us,
+
+00:55:45.810 --> 00:55:47.490
+but it might be like it's like a puppy
+
+00:55:47.490 --> 00:55:48.690
+or some sheep.
+
+00:55:48.690 --> 00:55:51.330
+Like, how do we modify these AI things
+
+00:55:51.330 --> 00:55:52.850
+into kind of testing their software
+
+00:55:52.850 --> 00:55:54.290
+the way we want them to?
+
+00:55:54.290 --> 00:55:55.170
+But under the hood,
+
+00:55:55.170 --> 00:55:57.570
+the engine that it will be doing
+
+00:55:57.570 --> 00:55:58.530
+to do its thing
+
+00:55:58.530 --> 00:56:00.370
+will be Selenium or WebDriver, right?
+
+00:56:00.370 --> 00:56:02.130
+But will people be writing Selenium tests?
+
+00:56:02.130 --> 00:56:03.570
+Like, I'm not convinced
+
+00:56:03.570 --> 00:56:04.690
+that people will be,
+
+00:56:04.690 --> 00:56:06.210
+but they'll need to be able to read them
+
+00:56:06.210 --> 00:56:09.170
+because if the AI spits out total garbage,
+
+00:56:09.170 --> 00:56:10.370
+someone will have to go in there
+
+00:56:10.370 --> 00:56:10.930
+and fix it.
+
+00:56:10.930 --> 00:56:12.690
+Just like today, someone somewhere
+
+00:56:12.690 --> 00:56:14.610
+has to go into some source code
+
+00:56:14.610 --> 00:56:15.890
+and modify COBOL
+
+00:56:15.890 --> 00:56:18.210
+because like the IRS or Social Security
+
+00:56:18.210 --> 00:56:20.370
+couldn't print checks last week.
+
+00:56:20.370 --> 00:56:21.730
+Like, that code's still there,
+
+00:56:21.730 --> 00:56:22.850
+but most of the time,
+
+00:56:22.850 --> 00:56:24.050
+you don't care about it.
+
+00:56:24.050 --> 00:56:25.650
+It'll hopefully just work.
+
+00:56:26.290 --> 00:56:28.690
+So maybe Selenium's future
+
+00:56:28.690 --> 00:56:30.610
+is that it's like COBOL.
+
+00:56:30.610 --> 00:56:33.010
+It's everywhere, but you don't care.
+
+00:56:33.010 --> 00:56:34.050
+Until you don't get paid.
+
+00:56:34.610 --> 00:56:36.610
+So I'm going to tweet that right now.
+
+00:56:36.610 --> 00:56:39.810
+Inventor of Selenium says it's just like COBOL.
+
+00:56:41.890 --> 00:56:43.570
+All right, thank you.
+
+00:56:44.130 --> 00:56:44.610
+Yeah, yeah.
+
+00:56:45.570 --> 00:56:46.850
+This has been awesome having you on.
+
+00:56:46.850 --> 00:56:47.730
+I love the stories.
+
+00:56:47.730 --> 00:56:49.810
+I think it's good to hear that
+
+00:56:50.370 --> 00:56:51.650
+it's good for you not to yell at us
+
+00:56:52.370 --> 00:56:53.970
+and find some agreement there
+
+00:56:53.970 --> 00:56:56.530
+and point out our hyperbole.
+
+00:56:56.530 --> 00:56:57.810
+We appreciate that.
+
+00:56:57.810 --> 00:56:59.730
+But yeah, these stories are fantastic.
+
+00:56:59.730 --> 00:57:01.170
+Thank you so much for volunteering
+
+00:57:01.170 --> 00:57:02.370
+to be on our show.
+
+00:57:02.370 --> 00:57:02.690
+Thanks.
+
+00:57:03.410 --> 00:57:03.810
+All right.
+
+00:57:04.450 --> 00:57:05.410
+I'm still Alan.
+
+00:57:05.410 --> 00:57:06.290
+And I'm Brent.
+
+00:57:06.290 --> 00:57:07.810
+Oh, and I'm Jason Huggins.
+
+00:57:07.810 --> 00:57:08.450
+All right.
+
+00:57:08.450 --> 00:57:09.090
+Thanks, everybody.
+
+00:57:09.090 --> 00:57:10.130
+We'll see you next time.
+
+00:57:10.130 --> 00:57:12.290
+Bye.
+
