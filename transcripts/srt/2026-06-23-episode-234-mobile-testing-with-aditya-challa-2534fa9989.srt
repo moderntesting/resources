@@ -1,0 +1,5096 @@
+1
+00:00:04,430 --> 00:00:09,550
+Welcome to ABE Testing Podcast, your modern testing podcast.
+
+2
+00:00:09,550 --> 00:00:15,630
+Your hosts, Alan and Brent, will be here to guide you through topics on testing, leadership,
+
+3
+00:00:15,630 --> 00:00:18,310
+agile, and anything else that comes to mind.
+
+4
+00:00:18,310 --> 00:00:20,900
+Now on with the show.
+
+5
+00:00:20,900 --> 00:00:22,740
+Hey everyone, it's Alan.
+
+6
+00:00:22,740 --> 00:00:24,060
+Brent is not here.
+
+7
+00:00:24,060 --> 00:00:30,620
+Brent is actually working on a spaceship that Satya is building powered entirely
+
+8
+00:00:30,620 --> 00:00:31,620
+by GPUs.
+
+9
+00:00:31,620 --> 00:00:33,780
+It's going to be interesting to see how that comes out.
+
+10
+00:00:33,900 --> 00:00:35,580
+He'll be back soon.
+
+11
+00:00:35,580 --> 00:00:37,940
+We have a lot of stuff to keep talking about.
+
+12
+00:00:37,940 --> 00:00:41,260
+I was thinking just during the intro, it's the modern testing podcast.
+
+13
+00:00:41,260 --> 00:00:42,460
+We haven't talked.
+
+14
+00:00:42,460 --> 00:00:45,380
+Again, modern testing principles aren't that modern, aren't about testing.
+
+15
+00:00:45,380 --> 00:00:46,540
+Sometimes we talk about testing.
+
+16
+00:00:46,540 --> 00:00:49,380
+A lot of times we just talk about life, leadership, everything else.
+
+17
+00:00:49,380 --> 00:00:52,580
+We're going to do a little bit of all of that today because I have a guest.
+
+18
+00:00:52,580 --> 00:00:55,020
+Aditya Chala is here with me today.
+
+19
+00:00:55,020 --> 00:00:59,540
+So Aditya, introduce yourself and then we'll get going on a great conversation today.
+
+20
+00:00:59,540 --> 00:01:01,220
+Say hello and introduce yourself.
+
+21
+00:01:01,220 --> 00:01:02,460
+Yeah, hello everybody.
+
+22
+00:01:02,460 --> 00:01:03,580
+Thank you, Alan.
+
+23
+00:01:03,660 --> 00:01:05,660
+And thank you for having me here.
+
+24
+00:01:05,660 --> 00:01:08,580
+I'm very excited about the conversation you're going to have.
+
+25
+00:01:08,580 --> 00:01:09,780
+I'm Aditya Chala.
+
+26
+00:01:09,780 --> 00:01:11,820
+I'm co-founder of QA pilot.
+
+27
+00:01:11,820 --> 00:01:15,740
+We are a mobile app testing platform.
+
+28
+00:01:15,740 --> 00:01:20,620
+Our genesis is that we think that most testing platforms focus on web,
+
+29
+00:01:20,620 --> 00:01:22,180
+not enough on mobile.
+
+30
+00:01:22,180 --> 00:01:26,180
+And that's essentially what got us to building this platform
+
+31
+00:01:26,180 --> 00:01:29,980
+because my co-founder has experience in delivering, you know,
+
+32
+00:01:29,980 --> 00:01:33,020
+large enterprise mobile app which are used by hundreds of millions of people
+
+33
+00:01:33,020 --> 00:01:38,220
+and he found the gap in the market that there's no real good
+
+34
+00:01:38,220 --> 00:01:39,980
+mobile app testing platform.
+
+35
+00:01:39,980 --> 00:01:42,420
+And that's really why we started building QA pilot.
+
+36
+00:01:42,420 --> 00:01:46,860
+And that's also, I think we're seeing a reasonable amount of traction
+
+37
+00:01:46,860 --> 00:01:51,440
+because it's genuinely an underserved part of the market.
+
+38
+00:01:51,440 --> 00:01:52,960
+Yeah, yeah, that's interesting.
+
+39
+00:01:52,960 --> 00:01:55,160
+So we'll talk a little bit about QA pilot.
+
+40
+00:01:55,160 --> 00:01:56,680
+I'm not going to stop you from talking about it.
+
+41
+00:01:56,680 --> 00:02:01,160
+But I really want to talk about a lot today is challenges in mobile testing
+
+42
+00:02:01,160 --> 00:02:03,240
+because the challenges continue.
+
+43
+00:02:03,280 --> 00:02:04,120
+It's always been hard.
+
+44
+00:02:04,120 --> 00:02:05,840
+Challenges continue to grow.
+
+45
+00:02:05,840 --> 00:02:10,320
+And then there's this I'm not sure if our listeners have heard of this thing
+
+46
+00:02:10,320 --> 00:02:15,400
+called AI that is changing the way software is being developed massively.
+
+47
+00:02:15,400 --> 00:02:17,960
+So we're dealing with that, too.
+
+48
+00:02:17,960 --> 00:02:22,920
+So why is so let's just kind of get into it.
+
+49
+00:02:22,920 --> 00:02:24,680
+Let's talk about mobile testing.
+
+50
+00:02:24,680 --> 00:02:27,160
+So I got my phone here.
+
+51
+00:02:27,160 --> 00:02:28,640
+You may have a different phone.
+
+52
+00:02:28,640 --> 00:02:32,160
+In fact, everyone has a different phone because there are ten thousand
+
+53
+00:02:32,160 --> 00:02:35,080
+different phones out in there, and most of them are Android or Apple,
+
+54
+00:02:35,080 --> 00:02:37,280
+but not all of them are in the different versions of Android.
+
+55
+00:02:37,280 --> 00:02:38,080
+They use different things.
+
+56
+00:02:38,080 --> 00:02:41,640
+There's different apps and there's a gazillion apps each of the app stores.
+
+57
+00:02:41,960 --> 00:02:44,800
+So other than that,
+
+58
+00:02:44,800 --> 00:02:46,960
+why is mobile testing so difficult these days?
+
+59
+00:02:46,960 --> 00:02:49,200
+And why? Actually, I shouldn't even say these days.
+
+60
+00:02:49,200 --> 00:02:52,440
+In general, why is mobile testing difficult?
+
+61
+00:02:52,440 --> 00:02:54,420
+And maybe not talked about enough.
+
+62
+00:02:54,420 --> 00:02:58,700
+Yeah, let me try and I mean, we work on this together, right?
+
+63
+00:02:58,700 --> 00:03:02,180
+I mean, I'm sure you have. Yeah, I have my ideas.
+
+64
+00:03:02,180 --> 00:03:06,780
+Yeah, so we'll start from the beginning, right?
+
+65
+00:03:06,780 --> 00:03:07,980
+It's almost like a history lesson.
+
+66
+00:03:07,980 --> 00:03:14,380
+So most web testing tools or UI testing tools start with having a good idea
+
+67
+00:03:14,380 --> 00:03:15,980
+of what locators are, right?
+
+68
+00:03:15,980 --> 00:03:20,220
+You need to be able to locate an element on a screen or some user interface.
+
+69
+00:03:20,740 --> 00:03:22,740
+And the next time you come onto it for testing,
+
+70
+00:03:22,740 --> 00:03:26,060
+you should be able to identify it with a reasonable degree of confidence.
+
+71
+00:03:26,460 --> 00:03:29,760
+Right. And all testing tools
+
+72
+00:03:30,160 --> 00:03:32,560
+essentially expect to be able to do that.
+
+73
+00:03:33,160 --> 00:03:36,800
+And for that, they use something called the DOM in web.
+
+74
+00:03:36,800 --> 00:03:40,080
+And there are a whole bunch of other things which have been built around it.
+
+75
+00:03:40,280 --> 00:03:42,400
+There are accessibility trees and so on.
+
+76
+00:03:42,400 --> 00:03:45,760
+And if the developers use the accessibility trees on the DOM effectively,
+
+77
+00:03:46,240 --> 00:03:49,640
+then you can write your test scripts in a less flaky,
+
+78
+00:03:49,640 --> 00:03:52,440
+less brittle manner, and they stand the test of time.
+
+79
+00:03:53,120 --> 00:03:57,120
+Now, that paradigm, when you move to mobile,
+
+80
+00:03:58,840 --> 00:04:01,440
+doesn't work very well for a variety of reasons, right?
+
+81
+00:04:01,440 --> 00:04:06,920
+Because one, most browsers are broadly the same.
+
+82
+00:04:07,440 --> 00:04:09,600
+Most websites are broadly the same.
+
+83
+00:04:10,760 --> 00:04:14,600
+And they, you can also test them on headless browsers.
+
+84
+00:04:15,040 --> 00:04:18,000
+Whereas in mobile, you have two gates, right?
+
+85
+00:04:18,000 --> 00:04:20,960
+You have the Apple gate, the Android gate, and within Android,
+
+86
+00:04:20,960 --> 00:04:22,560
+you have different flavors.
+
+87
+00:04:22,560 --> 00:04:24,840
+And you can build your apps in different ways
+
+88
+00:04:24,840 --> 00:04:26,880
+and not all of them follow the same structure.
+
+89
+00:04:27,240 --> 00:04:29,480
+So creating this automation becomes a problem
+
+90
+00:04:30,080 --> 00:04:34,970
+in a way in which it is reliable,
+
+91
+00:04:35,800 --> 00:04:38,480
+not flaky, not brittle, right? That's one.
+
+92
+00:04:38,640 --> 00:04:42,660
+The second issue you have is with mobile.
+
+93
+00:04:43,340 --> 00:04:47,060
+You also have, like you said, the proliferation of OS versions,
+
+94
+00:04:47,060 --> 00:04:49,460
+Android, iOS devices.
+
+95
+00:04:49,460 --> 00:04:51,460
+You have to test on real devices.
+
+96
+00:04:51,580 --> 00:04:53,580
+And that adds another level of complexity.
+
+97
+00:04:54,820 --> 00:04:57,300
+And then finally, I think this will be interesting,
+
+98
+00:04:57,300 --> 00:05:00,700
+which we should probably speak about more today,
+
+99
+00:05:00,700 --> 00:05:05,120
+is what AI is doing and what cloud
+
+100
+00:05:05,120 --> 00:05:09,620
+and all of the other tools did is collapse the SDLC,
+
+101
+00:05:09,620 --> 00:05:11,380
+the software development lifecycle.
+
+102
+00:05:11,380 --> 00:05:12,820
+AI is doing that even more, right?
+
+103
+00:05:12,820 --> 00:05:14,820
+You won't be able to deploy multiple times.
+
+104
+00:05:14,820 --> 00:05:16,260
+But you can't do that in mobile.
+
+105
+00:05:16,260 --> 00:05:18,020
+Mobile, you put a mobile app,
+
+106
+00:05:18,020 --> 00:05:20,900
+somebody has to approve it for it to go onto the app store.
+
+107
+00:05:20,900 --> 00:05:23,260
+And then the consumer has to download it.
+
+108
+00:05:23,260 --> 00:05:26,100
+So unlike web, where you push it into production
+
+109
+00:05:26,100 --> 00:05:29,060
+and the consumer comes on and gets the latest version,
+
+110
+00:05:29,060 --> 00:05:30,540
+in mobile, there's a lag.
+
+111
+00:05:30,540 --> 00:05:34,060
+And I think this is an underappreciated part of the SDLC
+
+112
+00:05:34,060 --> 00:05:35,780
+and what's happening with AI and SDLC,
+
+113
+00:05:35,780 --> 00:05:39,900
+that all the tools which talk about all the changes in SDLC
+
+114
+00:05:39,900 --> 00:05:42,300
+just don't talk about this aspect of mobile.
+
+115
+00:05:42,300 --> 00:05:45,420
+And I think all of this just makes mobile a different beast.
+
+116
+00:05:46,060 --> 00:05:47,740
+And that was more complex,
+
+117
+00:05:48,500 --> 00:05:52,180
+that you can't take what you've learned in other types of testing
+
+118
+00:05:52,180 --> 00:05:53,780
+and apply it blindly on mobile.
+
+119
+00:05:54,960 --> 00:05:57,160
+I think you can't.
+
+120
+00:05:57,160 --> 00:05:58,720
+And that applies to desktops as well.
+
+121
+00:05:58,720 --> 00:06:01,000
+I'm thinking while I talk, which happens sometimes,
+
+122
+00:06:01,000 --> 00:06:03,400
+and it may or may not make sense.
+
+123
+00:06:03,400 --> 00:06:07,430
+A lot of, you're right about apps,
+
+124
+00:06:07,430 --> 00:06:11,110
+you can't update, like you can't push an update
+
+125
+00:06:11,110 --> 00:06:14,190
+to a user every five minutes like you can with a web page.
+
+126
+00:06:14,190 --> 00:06:15,270
+Yeah.
+
+127
+00:06:15,310 --> 00:06:20,380
+I think some applications use a lot of content
+
+128
+00:06:20,380 --> 00:06:25,260
+from the internet, or they download in real time,
+
+129
+00:06:25,260 --> 00:06:26,300
+so you can make those changes.
+
+130
+00:06:26,300 --> 00:06:27,620
+But at the same time,
+
+131
+00:06:28,620 --> 00:06:30,500
+phones don't always have internet connections
+
+132
+00:06:30,500 --> 00:06:32,140
+and no one wants to ship an app that won't work
+
+133
+00:06:32,140 --> 00:06:33,340
+if you don't have internet connection.
+
+134
+00:06:33,340 --> 00:06:36,580
+So it is interesting there.
+
+135
+00:06:36,580 --> 00:06:39,740
+So as fast as AI development can go,
+
+136
+00:06:40,300 --> 00:06:43,940
+you are limited in how often you can update your users.
+
+137
+00:06:43,940 --> 00:06:45,580
+And I'm thinking, this is true,
+
+138
+00:06:45,580 --> 00:06:47,700
+I'm just thinking this while I'm saying it.
+
+139
+00:06:47,700 --> 00:06:51,940
+So as much as now with AI speed development,
+
+140
+00:06:51,940 --> 00:06:54,500
+it's got to be a better word for that.
+
+141
+00:06:54,500 --> 00:06:55,900
+You can develop features much faster
+
+142
+00:06:55,900 --> 00:06:58,420
+as a matter of web pages, applications, whatever.
+
+143
+00:06:59,460 --> 00:07:06,460
+If I'm only able to push an update to my users once a week,
+
+144
+00:07:06,460 --> 00:07:09,180
+maybe more often if they're in pilot programs,
+
+145
+00:07:09,180 --> 00:07:10,740
+maybe less often if they're,
+
+146
+00:07:10,740 --> 00:07:13,760
+because it's their choice when to update,
+
+147
+00:07:13,800 --> 00:07:15,480
+I can get them a brand,
+
+148
+00:07:15,480 --> 00:07:18,080
+it could be a whole new application in two weeks.
+
+149
+00:07:18,600 --> 00:07:19,640
+Exactly.
+
+150
+00:07:19,640 --> 00:07:26,140
+And so it's not only a functional testing issue,
+
+151
+00:07:26,140 --> 00:07:28,620
+it's like you can't do it.
+
+152
+00:07:28,620 --> 00:07:29,940
+I'm thinking about the user perspective,
+
+153
+00:07:29,940 --> 00:07:32,940
+you can't do it because if I go to open,
+
+154
+00:07:34,820 --> 00:07:37,300
+I freaked out when they changed my Spotify icon.
+
+155
+00:07:37,300 --> 00:07:39,100
+The app was the same.
+
+156
+00:07:39,100 --> 00:07:41,300
+Like, what do you do?
+
+157
+00:07:41,300 --> 00:07:42,140
+I want to talk about,
+
+158
+00:07:42,140 --> 00:07:43,460
+I'm going to get back to the testing side of this,
+
+159
+00:07:43,500 --> 00:07:46,380
+but I haven't thought about this deeply until this moment
+
+160
+00:07:46,380 --> 00:07:51,680
+is all the AI tools give you the ability to move so fast
+
+161
+00:07:51,680 --> 00:07:53,320
+and change so much so quickly.
+
+162
+00:07:54,580 --> 00:07:56,220
+Regardless of the testing problem,
+
+163
+00:07:56,220 --> 00:07:59,180
+how do you resist not adding nine features
+
+164
+00:07:59,180 --> 00:08:01,260
+to your mobile application over the pace of a week?
+
+165
+00:08:01,260 --> 00:08:03,300
+And you may not ask your opinion on that,
+
+166
+00:08:03,300 --> 00:08:05,500
+but like, what do you do?
+
+167
+00:08:05,500 --> 00:08:07,860
+Like I could, if I was an app developer,
+
+168
+00:08:07,860 --> 00:08:09,820
+I could just keep on adding features and things
+
+169
+00:08:09,820 --> 00:08:13,100
+and just kind of go wild in a way
+
+170
+00:08:13,100 --> 00:08:14,540
+that I could never have done before
+
+171
+00:08:15,380 --> 00:08:17,740
+and yet it's a lot of shock for a user
+
+172
+00:08:17,740 --> 00:08:19,260
+as they download the new application
+
+173
+00:08:19,260 --> 00:08:20,300
+and it has eight new features
+
+174
+00:08:20,300 --> 00:08:21,730
+and they don't know how to use them.
+
+175
+00:08:21,730 --> 00:08:22,930
+No, absolutely.
+
+176
+00:08:22,930 --> 00:08:24,770
+Let me add more complexity in this, right?
+
+177
+00:08:24,770 --> 00:08:28,250
+And I think you touched on it,
+
+178
+00:08:28,250 --> 00:08:31,260
+which is there's web functionality,
+
+179
+00:08:31,260 --> 00:08:32,340
+which is in mobile apps, right?
+
+180
+00:08:32,340 --> 00:08:34,380
+You have this content which is coming in.
+
+181
+00:08:34,380 --> 00:08:39,060
+Now you have parts of your SDLC or your CI, CD pipelines
+
+182
+00:08:39,060 --> 00:08:42,420
+which push into production every five minutes
+
+183
+00:08:42,420 --> 00:08:44,580
+or can push in every day
+
+184
+00:08:45,500 --> 00:08:47,220
+and mobile is a different pace, right?
+
+185
+00:08:47,220 --> 00:08:50,540
+Both are moving at different velocities across your team.
+
+186
+00:08:50,540 --> 00:08:52,900
+So it also becomes a management problem
+
+187
+00:08:52,900 --> 00:08:56,890
+where the risk which you see in web
+
+188
+00:08:56,890 --> 00:08:59,570
+is very different from how you perceive risk on mobile.
+
+189
+00:08:59,570 --> 00:09:02,770
+And therefore, because,
+
+190
+00:09:02,770 --> 00:09:04,330
+and I don't think we speak about that enough, right?
+
+191
+00:09:04,330 --> 00:09:06,570
+Because in web, you can fix forward,
+
+192
+00:09:06,570 --> 00:09:10,050
+you can launch, you find a mistake, you fix it.
+
+193
+00:09:10,050 --> 00:09:11,930
+And therefore, the amount of testing you do,
+
+194
+00:09:11,970 --> 00:09:14,890
+the tools you need, the way the SRE team
+
+195
+00:09:14,890 --> 00:09:17,050
+and the dev team and the mobile team,
+
+196
+00:09:17,050 --> 00:09:19,330
+the QA team work together is very different
+
+197
+00:09:19,330 --> 00:09:23,250
+from how mobile should work for the same amount of risk.
+
+198
+00:09:23,250 --> 00:09:28,120
+And it's something which is, I think, changing
+
+199
+00:09:28,120 --> 00:09:30,520
+and something which I hope
+
+200
+00:09:30,520 --> 00:09:32,520
+that we'll have a better answer in a year
+
+201
+00:09:32,520 --> 00:09:35,360
+and that because of what my focus,
+
+202
+00:09:37,390 --> 00:09:41,430
+I'll be in the midst of this change, right?
+
+203
+00:09:41,430 --> 00:09:43,110
+So how do we test it?
+
+204
+00:09:44,100 --> 00:09:46,220
+Even so, let's say,
+
+205
+00:09:47,060 --> 00:09:49,740
+let's be more realistic for the user.
+
+206
+00:09:49,740 --> 00:09:51,300
+We're still, in the space of a week,
+
+207
+00:09:51,300 --> 00:09:55,180
+we can still add or fix or change or enhance
+
+208
+00:09:55,180 --> 00:09:56,860
+major functionality in a week.
+
+209
+00:09:59,220 --> 00:10:01,980
+In my experience, the folks,
+
+210
+00:10:01,980 --> 00:10:04,340
+well, I'll try to give a leading answer here.
+
+211
+00:10:05,740 --> 00:10:09,140
+How does that change how we need to test these things?
+
+212
+00:10:09,140 --> 00:10:10,860
+Can we still do script-based automation?
+
+213
+00:10:10,860 --> 00:10:13,300
+Can we still, are we using AI?
+
+214
+00:10:14,100 --> 00:10:15,260
+How do we keep up?
+
+215
+00:10:15,260 --> 00:10:17,860
+How do testers keep up if,
+
+216
+00:10:17,860 --> 00:10:19,100
+the thing they're testing this week
+
+217
+00:10:19,100 --> 00:10:21,500
+is so much different than the thing they tested last week
+
+218
+00:10:21,500 --> 00:10:25,210
+and the release train's gotta keep on going?
+
+219
+00:10:25,210 --> 00:10:27,050
+No, I think script-based automation
+
+220
+00:10:27,050 --> 00:10:30,210
+still is the bedrock of all automation, right?
+
+221
+00:10:30,210 --> 00:10:31,570
+Especially functional UI.
+
+222
+00:10:31,570 --> 00:10:33,090
+The other types of automation, but functional,
+
+223
+00:10:33,090 --> 00:10:36,610
+I think it's not going anywhere, I would think.
+
+224
+00:10:36,610 --> 00:10:38,450
+I mean, as much as people would like to believe
+
+225
+00:10:38,450 --> 00:10:41,250
+that visual and it's going to take over, et cetera,
+
+226
+00:10:41,250 --> 00:10:43,450
+I think we prefer a hybrid kind of approach
+
+227
+00:10:43,450 --> 00:10:48,830
+where there is a script-based where,
+
+228
+00:10:48,830 --> 00:10:52,620
+which gives that kind of reliability and consistency
+
+229
+00:10:52,620 --> 00:10:55,620
+in testing across multiple devices.
+
+230
+00:10:55,620 --> 00:10:58,430
+And then the fallbacks are all hybrid.
+
+231
+00:10:58,430 --> 00:11:00,430
+Now, I think what, the other thing which changes,
+
+232
+00:11:00,430 --> 00:11:03,390
+and I think which testers have always complained about,
+
+233
+00:11:03,390 --> 00:11:05,550
+which make, which become particularly easy
+
+234
+00:11:05,550 --> 00:11:07,750
+in today's AI world and AI ID world,
+
+235
+00:11:07,750 --> 00:11:09,030
+is that testers complain
+
+236
+00:11:09,030 --> 00:11:12,450
+when elements don't have proper IDs, right?
+
+237
+00:11:12,450 --> 00:11:14,290
+And that's something that you hear testers do all day.
+
+238
+00:11:14,290 --> 00:11:16,650
+Yeah, that's been true in web automation forever, yeah.
+
+239
+00:11:16,650 --> 00:11:20,850
+Forever, but in today's world of AI ID,
+
+240
+00:11:20,850 --> 00:11:24,530
+it's just one prompt to get the correct locators
+
+241
+00:11:24,530 --> 00:11:29,530
+added to your web or your mobile application, right?
+
+242
+00:11:30,210 --> 00:11:32,530
+So there are things which make life easier
+
+243
+00:11:32,530 --> 00:11:35,890
+because it doesn't require the rigor
+
+244
+00:11:37,700 --> 00:11:39,620
+for a developer to actually make life easy
+
+245
+00:11:39,620 --> 00:11:41,420
+for a tester who comes downstream.
+
+246
+00:11:41,420 --> 00:11:43,020
+It's just a couple of prompts,
+
+247
+00:11:43,020 --> 00:11:46,620
+and you'll actually get good IDs across your application,
+
+248
+00:11:46,620 --> 00:11:49,380
+which then makes scripting that much more effective.
+
+249
+00:11:49,380 --> 00:11:51,420
+So I think scripting is there.
+
+250
+00:11:51,420 --> 00:11:55,260
+What we think, we think is that
+
+251
+00:11:55,260 --> 00:11:57,460
+there is definitely a place for AI.
+
+252
+00:11:57,460 --> 00:11:59,660
+There is definitely a place for
+
+253
+00:11:59,660 --> 00:12:02,060
+what can be done without human intervention.
+
+254
+00:12:03,060 --> 00:12:06,980
+But the way we see it is that the bulk of the work
+
+255
+00:12:06,980 --> 00:12:09,700
+has to be a combination of AI and human,
+
+256
+00:12:09,700 --> 00:12:10,940
+so human in the loop.
+
+257
+00:12:11,380 --> 00:12:13,700
+And that then doesn't become,
+
+258
+00:12:13,700 --> 00:12:16,740
+it's not so much of an AI problem as it's a design problem.
+
+259
+00:12:16,740 --> 00:12:18,940
+Because when you're designing the product,
+
+260
+00:12:18,940 --> 00:12:21,540
+you need to make sure you bring the human
+
+261
+00:12:21,540 --> 00:12:22,380
+in at the right point.
+
+262
+00:12:22,380 --> 00:12:24,980
+You give the human the right audit trails.
+
+263
+00:12:24,980 --> 00:12:27,580
+You give the human the right visibility
+
+264
+00:12:27,580 --> 00:12:29,980
+into what the AI has done to correct AI,
+
+265
+00:12:29,980 --> 00:12:31,500
+to verify AI, right?
+
+266
+00:12:31,500 --> 00:12:34,980
+And to be able to make the verification cost and time
+
+267
+00:12:34,980 --> 00:12:37,220
+lower than what it takes a human
+
+268
+00:12:37,220 --> 00:12:38,660
+to actually do it manually.
+
+269
+00:12:38,660 --> 00:12:39,900
+Now if you see a lot of tools,
+
+270
+00:12:39,900 --> 00:12:41,220
+the complaint is that,
+
+271
+00:12:41,220 --> 00:12:43,060
+oh, I could have just done it manually
+
+272
+00:12:43,060 --> 00:12:44,300
+in this amount of time.
+
+273
+00:12:44,300 --> 00:12:47,420
+So I think it's more of a design problem.
+
+274
+00:12:47,420 --> 00:12:50,460
+And just putting a chat bot on products
+
+275
+00:12:50,460 --> 00:12:51,780
+is not the way out.
+
+276
+00:12:51,780 --> 00:12:53,140
+And I think that's been,
+
+277
+00:12:53,140 --> 00:12:58,430
+in my view, where the industry has gone,
+
+278
+00:12:58,430 --> 00:13:01,590
+just slap a chat bot onto different parts of the product.
+
+279
+00:13:01,590 --> 00:13:05,030
+Well, it's an easy way to tone up modern.
+
+280
+00:13:05,030 --> 00:13:08,110
+And then get whatever chat bot
+
+281
+00:13:08,110 --> 00:13:09,830
+to write your Python code for you.
+
+282
+00:13:10,830 --> 00:13:13,150
+So I'm going to play out something,
+
+283
+00:13:13,150 --> 00:13:14,390
+a conversation I've had before,
+
+284
+00:13:14,390 --> 00:13:16,990
+because I think it applies here as well.
+
+285
+00:13:16,990 --> 00:13:18,470
+And I'm curious on your thoughts.
+
+286
+00:13:18,470 --> 00:13:20,950
+I do believe, like here's the challenge.
+
+287
+00:13:20,950 --> 00:13:21,910
+I'm not sure what I believe.
+
+288
+00:13:21,910 --> 00:13:23,470
+I think I have a belief.
+
+289
+00:13:23,470 --> 00:13:25,630
+The challenge is that it doesn't matter
+
+290
+00:13:25,630 --> 00:13:27,550
+whether it's mobile where you can ship once a week
+
+291
+00:13:27,550 --> 00:13:29,950
+or web where you can ship 50 times a day.
+
+292
+00:13:29,950 --> 00:13:34,140
+The pace of development is the same in both places.
+
+293
+00:13:34,140 --> 00:13:37,300
+So I talked to a couple of different companies
+
+294
+00:13:37,300 --> 00:13:38,140
+about what are they doing
+
+295
+00:13:38,140 --> 00:13:39,140
+about the pace of development?
+
+296
+00:13:39,140 --> 00:13:40,620
+I talked about, well, do we have,
+
+297
+00:13:40,620 --> 00:13:43,000
+it started from, well, we'll have humans
+
+298
+00:13:43,000 --> 00:13:44,760
+do all the code reviews.
+
+299
+00:13:44,760 --> 00:13:47,640
+And then the humans can't keep up, there's no way.
+
+300
+00:13:47,640 --> 00:13:48,960
+Okay, how do we figure out
+
+301
+00:13:48,960 --> 00:13:52,260
+which reviews the humans get involved in?
+
+302
+00:13:52,260 --> 00:13:53,100
+And they can figure out,
+
+303
+00:13:53,100 --> 00:13:55,540
+and even AI can help you find the algorithm for that.
+
+304
+00:13:55,540 --> 00:13:58,380
+Or do you pull the humans out completely?
+
+305
+00:13:58,380 --> 00:13:59,220
+No, that's too much.
+
+306
+00:13:59,220 --> 00:14:01,180
+Maybe it is, maybe it isn't, I don't know.
+
+307
+00:14:01,180 --> 00:14:02,820
+And so the challenge is,
+
+308
+00:14:02,820 --> 00:14:05,140
+I believe you that we're still in a place
+
+309
+00:14:05,140 --> 00:14:07,300
+where we need the human,
+
+310
+00:14:07,300 --> 00:14:11,050
+but also inevitably,
+
+311
+00:14:11,050 --> 00:14:15,020
+if you use that human even moderately,
+
+312
+00:14:15,020 --> 00:14:17,020
+it is the bottle, the human, it,
+
+313
+00:14:17,020 --> 00:14:20,980
+the human is the bottleneck in that release process.
+
+314
+00:14:20,980 --> 00:14:22,780
+So I'm curious,
+
+315
+00:14:22,780 --> 00:14:24,860
+maybe answer two questions at once here,
+
+316
+00:14:24,860 --> 00:14:27,380
+but how do you figure out,
+
+317
+00:14:27,380 --> 00:14:29,940
+how do you optimize the human involvement
+
+318
+00:14:29,940 --> 00:14:32,320
+while maintaining velocity?
+
+319
+00:14:32,320 --> 00:14:34,920
+And then how do you handle the risk?
+
+320
+00:14:34,920 --> 00:14:37,780
+Like, you want the human involved.
+
+321
+00:14:37,980 --> 00:14:40,780
+I presume because it's risk reduction.
+
+322
+00:14:40,780 --> 00:14:41,620
+Exactly.
+
+323
+00:14:41,620 --> 00:14:43,940
+The human can plug in, okay, I get what's going on here.
+
+324
+00:14:43,940 --> 00:14:45,140
+I can see things a little bit differently.
+
+325
+00:14:45,140 --> 00:14:47,900
+I can blah, blah, blah that the AI maybe can't do.
+
+326
+00:14:49,340 --> 00:14:52,140
+How do you balance human intervention
+
+327
+00:14:52,140 --> 00:14:56,340
+with velocity with risk?
+
+328
+00:14:56,340 --> 00:15:00,340
+Yeah, so I think those are the three parameters.
+
+329
+00:15:00,340 --> 00:15:01,620
+I think it's a really hard question.
+
+330
+00:15:01,620 --> 00:15:03,380
+So I can't wait for your answer.
+
+331
+00:15:04,740 --> 00:15:07,140
+So let's see, I mean,
+
+332
+00:15:07,180 --> 00:15:09,220
+some of the, I'll think through, right, with you.
+
+333
+00:15:09,220 --> 00:15:13,660
+Hopefully you can help me with question, you know,
+
+334
+00:15:13,660 --> 00:15:14,500
+yeah, anyway.
+
+335
+00:15:14,500 --> 00:15:16,860
+I'll interact, but I want to start.
+
+336
+00:15:16,860 --> 00:15:19,380
+This is a good place to dwell for a bit.
+
+337
+00:15:19,380 --> 00:15:20,500
+Yeah, for sure.
+
+338
+00:15:20,500 --> 00:15:23,240
+So the thing is,
+
+339
+00:15:23,240 --> 00:15:27,490
+I think the framing that human is a bottleneck
+
+340
+00:15:27,490 --> 00:15:28,970
+will always be true
+
+341
+00:15:28,970 --> 00:15:31,930
+because that's a constraining resource,
+
+342
+00:15:31,930 --> 00:15:33,770
+irrespective of whether you go one X,
+
+343
+00:15:33,770 --> 00:15:36,530
+10 X or 100 X, right?
+
+344
+00:15:36,530 --> 00:15:39,130
+And today machines have always,
+
+345
+00:15:39,130 --> 00:15:41,120
+will always go faster than humans.
+
+346
+00:15:41,120 --> 00:15:42,320
+Now the question is,
+
+347
+00:15:44,100 --> 00:15:47,990
+how little of a bottleneck can the human be?
+
+348
+00:15:47,990 --> 00:15:50,870
+Can the human increase their throughput by 10 X?
+
+349
+00:15:50,870 --> 00:15:52,350
+So you're still a bottleneck
+
+350
+00:15:52,350 --> 00:15:54,110
+because machines will still move faster,
+
+351
+00:15:54,110 --> 00:15:56,510
+but overall throughput is increasing 10 X.
+
+352
+00:15:56,510 --> 00:15:58,390
+And I think that's where,
+
+353
+00:15:58,390 --> 00:16:00,150
+that's how I would see it.
+
+354
+00:16:00,150 --> 00:16:02,630
+We want quality engineers with the people
+
+355
+00:16:02,630 --> 00:16:04,910
+and we think of it as release managers,
+
+356
+00:16:04,910 --> 00:16:06,950
+people who are taking the risk
+
+357
+00:16:07,390 --> 00:16:10,110
+that something can be released into production,
+
+358
+00:16:10,110 --> 00:16:12,550
+can do their things 10 X faster
+
+359
+00:16:12,550 --> 00:16:16,030
+while keeping risk same or mitigating risk.
+
+360
+00:16:16,030 --> 00:16:18,950
+And what are the tools they need to be able to do that
+
+361
+00:16:18,950 --> 00:16:21,190
+is how I would think about it, I think.
+
+362
+00:16:21,190 --> 00:16:23,790
+And those are the tools I think we are building.
+
+363
+00:16:23,790 --> 00:16:25,190
+So if you look at,
+
+364
+00:16:25,190 --> 00:16:27,830
+we talk a lot about release readiness
+
+365
+00:16:28,830 --> 00:16:31,070
+and all the tools you require for release readiness.
+
+366
+00:16:31,070 --> 00:16:33,350
+So for example, I'll give you an example.
+
+367
+00:16:33,350 --> 00:16:34,350
+In today's CI, CD,
+
+368
+00:16:34,350 --> 00:16:37,830
+so we are not a replacement for security testing.
+
+369
+00:16:37,830 --> 00:16:38,910
+You need to get security testing.
+
+370
+00:16:38,910 --> 00:16:40,950
+You need to get experts in security
+
+371
+00:16:40,950 --> 00:16:42,070
+to security test your app,
+
+372
+00:16:42,070 --> 00:16:44,630
+but they do it periodically.
+
+373
+00:16:44,630 --> 00:16:46,990
+You can't get them to do it all the time.
+
+374
+00:16:46,990 --> 00:16:48,310
+But what you also need
+
+375
+00:16:48,310 --> 00:16:50,710
+as somebody who's releasing stuff into production
+
+376
+00:16:50,710 --> 00:16:52,990
+is to make sure the wrong SDK,
+
+377
+00:16:52,990 --> 00:16:56,550
+wrong version of the SDK with the wrong adapter,
+
+378
+00:16:56,550 --> 00:16:58,190
+et cetera, has not gone into production.
+
+379
+00:16:58,190 --> 00:17:00,350
+So you need to be able to track those.
+
+380
+00:17:00,350 --> 00:17:04,190
+And what trackers have gone into your mobile app
+
+381
+00:17:04,190 --> 00:17:05,630
+as part of the SDK.
+
+382
+00:17:05,630 --> 00:17:08,830
+So these are things which wouldn't have been a problem
+
+383
+00:17:08,830 --> 00:17:10,310
+even a few years ago,
+
+384
+00:17:10,310 --> 00:17:12,430
+because they got taken care of
+
+385
+00:17:12,430 --> 00:17:14,470
+in your agile development process.
+
+386
+00:17:14,470 --> 00:17:15,870
+In agile development process,
+
+387
+00:17:15,870 --> 00:17:18,030
+there's handover from A to B to C.
+
+388
+00:17:18,030 --> 00:17:20,230
+And in that, you saw exactly what the change was
+
+389
+00:17:20,230 --> 00:17:23,270
+in the risk which was being moved from A to B.
+
+390
+00:17:23,270 --> 00:17:25,190
+But today, that is not there
+
+391
+00:17:25,190 --> 00:17:27,030
+because you're moving much faster, like you said.
+
+392
+00:17:27,030 --> 00:17:28,990
+So the key elements,
+
+393
+00:17:28,990 --> 00:17:31,310
+making sure let's say a particular tracker
+
+394
+00:17:31,310 --> 00:17:33,470
+doesn't go into production by mistake,
+
+395
+00:17:33,470 --> 00:17:35,350
+because you used it in your,
+
+396
+00:17:36,820 --> 00:17:37,660
+what do you call it,
+
+397
+00:17:37,660 --> 00:17:43,050
+in your staging environment for some specific activity.
+
+398
+00:17:43,410 --> 00:17:45,570
+Those are things I think become even more important.
+
+399
+00:17:45,570 --> 00:17:46,410
+And those are the things
+
+400
+00:17:46,410 --> 00:17:49,730
+which the tools need to equip the human
+
+401
+00:17:49,730 --> 00:17:51,210
+to make sure the human is comfortable
+
+402
+00:17:51,210 --> 00:17:54,950
+going at the 10x speed.
+
+403
+00:17:54,950 --> 00:17:55,790
+Yeah.
+
+404
+00:17:55,790 --> 00:17:57,550
+So, and that's exactly,
+
+405
+00:17:57,550 --> 00:17:59,230
+I think what we need are,
+
+406
+00:17:59,230 --> 00:18:00,470
+I'm gonna build on that.
+
+407
+00:18:00,470 --> 00:18:02,950
+I think you're on to something.
+
+408
+00:18:02,950 --> 00:18:04,030
+I don't know if I,
+
+409
+00:18:04,030 --> 00:18:07,260
+I mean, I wish,
+
+410
+00:18:07,260 --> 00:18:08,860
+it is a thing where I think you're right,
+
+411
+00:18:08,860 --> 00:18:09,900
+but I don't want to admit it.
+
+412
+00:18:09,900 --> 00:18:12,620
+And that the human's always going to be the bottleneck.
+
+413
+00:18:12,620 --> 00:18:14,140
+I don't want,
+
+414
+00:18:14,140 --> 00:18:17,460
+I want bottlenecks or the least bottleneck as possible.
+
+415
+00:18:17,460 --> 00:18:19,900
+But where I think in addition to,
+
+416
+00:18:19,900 --> 00:18:22,150
+a lot of people are focusing on,
+
+417
+00:18:22,150 --> 00:18:23,790
+I'm gonna tangent a little bit here.
+
+418
+00:18:23,790 --> 00:18:25,230
+There's a lot of companies like yours
+
+419
+00:18:25,230 --> 00:18:26,670
+and other companies looking at testing tools,
+
+420
+00:18:26,670 --> 00:18:27,590
+development tools,
+
+421
+00:18:27,590 --> 00:18:29,870
+how to build stuff faster
+
+422
+00:18:29,870 --> 00:18:32,070
+and then how to test things faster.
+
+423
+00:18:32,070 --> 00:18:34,310
+What I spent a chunk of my early,
+
+424
+00:18:34,310 --> 00:18:36,070
+like a long time ago writing,
+
+425
+00:18:36,070 --> 00:18:39,590
+like we're diagnostic and debugging tools.
+
+426
+00:18:39,590 --> 00:18:42,310
+Like help me figure out what's going on.
+
+427
+00:18:42,310 --> 00:18:43,350
+Wrote tools,
+
+428
+00:18:43,350 --> 00:18:47,630
+oh my God, 20 years ago to deep dive
+
+429
+00:18:47,630 --> 00:18:49,470
+into true type fonts when they were brand new
+
+430
+00:18:49,470 --> 00:18:51,750
+and be able to like look at all the gray areas
+
+431
+00:18:51,750 --> 00:18:53,790
+and figure out why it may look fuzzy
+
+432
+00:18:53,790 --> 00:18:55,150
+or whose font may be buggy
+
+433
+00:18:55,150 --> 00:18:57,230
+or why this weird font from some weird place
+
+434
+00:18:57,230 --> 00:18:59,030
+is crashing, crashing windows.
+
+435
+00:19:01,020 --> 00:19:02,380
+What I haven't seen yet,
+
+436
+00:19:02,380 --> 00:19:04,300
+and maybe it's because these are happening
+
+437
+00:19:05,140 --> 00:19:06,100
+internally and companies are not shipping,
+
+438
+00:19:06,100 --> 00:19:09,980
+but the investment cost in ROI
+
+439
+00:19:09,980 --> 00:19:11,620
+for building these diagnostic tools
+
+440
+00:19:11,620 --> 00:19:13,260
+where I would spend two weeks writing something
+
+441
+00:19:13,260 --> 00:19:15,420
+can be done in a couple of hours at most.
+
+442
+00:19:16,560 --> 00:19:21,560
+I wonder if the way we reduce the bottleneck of humans
+
+443
+00:19:22,280 --> 00:19:24,520
+is to give humans these diagnostic tools
+
+444
+00:19:24,520 --> 00:19:26,200
+to help them figure out
+
+445
+00:19:26,200 --> 00:19:28,000
+if things are working in the way they expect
+
+446
+00:19:28,000 --> 00:19:29,200
+or not faster.
+
+447
+00:19:30,620 --> 00:19:32,260
+And I think the answer is yes,
+
+448
+00:19:32,260 --> 00:19:34,570
+I just haven't proven it myself yet.
+
+449
+00:19:34,770 --> 00:19:38,370
+I'm curious, how much do you think diagnostic
+
+450
+00:19:38,370 --> 00:19:40,290
+and debugging tools are going to,
+
+451
+00:19:40,290 --> 00:19:43,560
+are those going to become more important?
+
+452
+00:19:43,560 --> 00:19:45,280
+Kind of stays something that some teams use
+
+453
+00:19:45,280 --> 00:19:46,440
+or don't use?
+
+454
+00:19:46,440 --> 00:19:47,600
+What's your opinion on that?
+
+455
+00:19:47,600 --> 00:19:49,240
+What happens in that area?
+
+456
+00:19:49,240 --> 00:19:50,360
+I have no doubt about it.
+
+457
+00:19:50,360 --> 00:19:53,560
+I think it becomes more and more important
+
+458
+00:19:53,560 --> 00:19:55,080
+because it just gives the human
+
+459
+00:19:55,080 --> 00:19:58,400
+who's moving things forward that much confidence
+
+460
+00:19:58,400 --> 00:20:00,760
+that if something goes wrong, there's a fallback.
+
+461
+00:20:00,760 --> 00:20:02,200
+And that's where the whole shift left,
+
+462
+00:20:02,200 --> 00:20:04,660
+shift right conversation also probably
+
+463
+00:20:05,500 --> 00:20:06,940
+comes in where you want to be able to take
+
+464
+00:20:06,940 --> 00:20:08,580
+what's happening in production
+
+465
+00:20:08,580 --> 00:20:11,420
+and inform what you want to do next
+
+466
+00:20:11,420 --> 00:20:13,300
+in development, right?
+
+467
+00:20:13,300 --> 00:20:14,580
+You want to see a certain pattern
+
+468
+00:20:14,580 --> 00:20:16,140
+which is coming up in production
+
+469
+00:20:16,140 --> 00:20:17,900
+and make sure you're testing for that the next time
+
+470
+00:20:17,900 --> 00:20:19,220
+if you missed it this time.
+
+471
+00:20:19,220 --> 00:20:22,380
+And I think we think a lot about that.
+
+472
+00:20:22,380 --> 00:20:26,460
+We think a lot about how you can take data
+
+473
+00:20:26,460 --> 00:20:28,780
+from your observability traces
+
+474
+00:20:28,780 --> 00:20:31,900
+and map them into testing flows.
+
+475
+00:20:32,860 --> 00:20:35,780
+Yes, thank you for bringing that up.
+
+476
+00:20:35,780 --> 00:20:39,900
+Yeah, and to make sure that you run that
+
+477
+00:20:39,900 --> 00:20:44,220
+from on multiple devices in multiple conditions
+
+478
+00:20:44,220 --> 00:20:45,700
+because in mobile you're also running it
+
+479
+00:20:45,700 --> 00:20:46,980
+in different conditions, right?
+
+480
+00:20:46,980 --> 00:20:49,500
+Whether your handset has enough memory,
+
+481
+00:20:49,500 --> 00:20:51,980
+enough bandwidth and so on
+
+482
+00:20:51,980 --> 00:20:54,820
+and making sure things are working okay, right?
+
+483
+00:20:54,820 --> 00:20:57,180
+And I think we have,
+
+484
+00:20:57,180 --> 00:20:58,300
+so I don't think,
+
+485
+00:20:58,300 --> 00:21:00,140
+so I think the way to think about it
+
+486
+00:21:00,140 --> 00:21:02,420
+from a tool perspective for testing
+
+487
+00:21:03,870 --> 00:21:05,510
+because that's my point of view
+
+488
+00:21:05,510 --> 00:21:07,350
+and maybe it's too narrow
+
+489
+00:21:07,350 --> 00:21:09,150
+but that's still my point of view is
+
+490
+00:21:10,310 --> 00:21:14,900
+to be able to integrate with the observability providers
+
+491
+00:21:14,900 --> 00:21:17,660
+and match it to specific test runs.
+
+492
+00:21:17,660 --> 00:21:21,580
+So we think a lot about looking at memory, CPU,
+
+493
+00:21:21,580 --> 00:21:23,660
+why the test run is going on and so on.
+
+494
+00:21:25,340 --> 00:21:26,980
+Yeah, and it goes back,
+
+495
+00:21:26,980 --> 00:21:31,050
+this is going back many years,
+
+496
+00:21:31,690 --> 00:21:33,530
+at least 10 years, 12 years
+
+497
+00:21:33,530 --> 00:21:37,090
+when I worked at Microsoft,
+
+498
+00:21:37,090 --> 00:21:39,090
+we would have a lot even in our,
+
+499
+00:21:39,090 --> 00:21:40,970
+I'm just thinking about Xbox One for example right now
+
+500
+00:21:40,970 --> 00:21:43,970
+because I ran across some old email
+
+501
+00:21:43,970 --> 00:21:45,650
+about this this weekend
+
+502
+00:21:45,650 --> 00:21:48,930
+and we couldn't ship every day.
+
+503
+00:21:48,930 --> 00:21:51,130
+We would update our beta users.
+
+504
+00:21:51,130 --> 00:21:52,210
+It was a big download
+
+505
+00:21:52,210 --> 00:21:53,610
+and download speeds were slower back then.
+
+506
+00:21:53,610 --> 00:21:56,410
+So as frequently as they would commit to downloading
+
+507
+00:21:57,370 --> 00:22:02,850
+but we collected a lot of information.
+
+508
+00:22:02,850 --> 00:22:04,170
+And of course, when we collect information,
+
+509
+00:22:04,170 --> 00:22:05,650
+it's not a big upload,
+
+510
+00:22:05,650 --> 00:22:07,130
+it's little bits of data
+
+511
+00:22:07,130 --> 00:22:08,850
+that help us figure out what's going on.
+
+512
+00:22:08,850 --> 00:22:11,850
+But we could tell what features people were using
+
+513
+00:22:11,850 --> 00:22:13,490
+and you can do the same thing with mobile today,
+
+514
+00:22:13,490 --> 00:22:14,330
+much easier.
+
+515
+00:22:14,330 --> 00:22:16,210
+AI can even help you figure out how to do this.
+
+516
+00:22:16,210 --> 00:22:18,250
+But the point is if I deliver a new feature
+
+517
+00:22:18,250 --> 00:22:19,730
+or a change to a feature
+
+518
+00:22:20,890 --> 00:22:22,410
+and this goes onto the development side,
+
+519
+00:22:22,410 --> 00:22:24,810
+I can't just think of here's my feature.
+
+520
+00:22:24,970 --> 00:22:27,130
+I used to call it forum driven development.
+
+521
+00:22:27,130 --> 00:22:28,290
+I'll deliver a new feature
+
+522
+00:22:28,290 --> 00:22:29,610
+and wait for people to talk about in the forum
+
+523
+00:22:29,610 --> 00:22:30,610
+to see if it's any good or not,
+
+524
+00:22:30,610 --> 00:22:31,850
+which is really stupid.
+
+525
+00:22:33,730 --> 00:22:36,010
+You wanna have, you wanna be able to,
+
+526
+00:22:36,010 --> 00:22:37,610
+I ship a new feature.
+
+527
+00:22:37,610 --> 00:22:41,570
+My canonical fake name is shimmery blue menus.
+
+528
+00:22:41,570 --> 00:22:43,570
+And I wanna know if people are using them,
+
+529
+00:22:43,570 --> 00:22:44,610
+what experience they're having,
+
+530
+00:22:44,610 --> 00:22:46,250
+does CPU spike or RAM spike
+
+531
+00:22:46,250 --> 00:22:47,450
+when they're using these things.
+
+532
+00:22:47,450 --> 00:22:51,250
+And my feature includes all the information,
+
+533
+00:22:51,250 --> 00:22:54,210
+all the code to make sure I can collect that data
+
+534
+00:22:54,210 --> 00:22:55,050
+and see what's going on.
+
+535
+00:22:55,050 --> 00:22:56,490
+Even if I can't,
+
+536
+00:22:56,490 --> 00:22:57,970
+like as soon as I deploy,
+
+537
+00:22:57,970 --> 00:22:59,810
+I can begin getting that information
+
+538
+00:22:59,810 --> 00:23:01,730
+and figuring out what I may need to change
+
+539
+00:23:01,730 --> 00:23:04,730
+or adjust or tweak or delete
+
+540
+00:23:04,730 --> 00:23:06,370
+before the release the next week
+
+541
+00:23:06,370 --> 00:23:08,530
+or whenever the next release goes out.
+
+542
+00:23:08,530 --> 00:23:11,290
+I think it's more important than ever,
+
+543
+00:23:11,290 --> 00:23:13,450
+just considering the amount of volume that can,
+
+544
+00:23:13,450 --> 00:23:15,330
+volume of changes that can go into any update
+
+545
+00:23:15,330 --> 00:23:19,510
+of an application that we have the ability
+
+546
+00:23:19,510 --> 00:23:21,870
+to understand how customers are using that feature.
+
+547
+00:23:21,870 --> 00:23:23,790
+And then as you said,
+
+548
+00:23:23,790 --> 00:23:28,150
+pull that directly into how teams approach testing for that.
+
+549
+00:23:28,150 --> 00:23:31,110
+Like, oh, here's all the time you hear teams say,
+
+550
+00:23:31,110 --> 00:23:33,890
+oh, customers are actually using this
+
+551
+00:23:33,890 --> 00:23:35,490
+different than we thought.
+
+552
+00:23:35,490 --> 00:23:38,810
+And they sound almost surprised,
+
+553
+00:23:38,810 --> 00:23:39,850
+but you shouldn't be surprised
+
+554
+00:23:39,850 --> 00:23:41,210
+because we can't pretend they're gonna use it.
+
+555
+00:23:41,210 --> 00:23:42,850
+But if you don't have the data,
+
+556
+00:23:42,850 --> 00:23:44,450
+you never know and you'd be on optimizing
+
+557
+00:23:44,450 --> 00:23:45,970
+for the wrong flow.
+
+558
+00:23:45,970 --> 00:23:48,420
+So it becomes super important.
+
+559
+00:23:48,420 --> 00:23:50,300
+And if we can drive that back into our testing
+
+560
+00:23:50,300 --> 00:23:52,220
+and the automation we create for these apps,
+
+561
+00:23:53,180 --> 00:23:54,360
+it's even better because then
+
+562
+00:23:54,360 --> 00:23:56,680
+as much as we're not the customer,
+
+563
+00:23:56,680 --> 00:24:01,120
+we can at least try and make sure their scenarios
+
+564
+00:24:01,120 --> 00:24:03,370
+are working in a way that we're happy with.
+
+565
+00:24:03,370 --> 00:24:04,530
+No, I couldn't agree more.
+
+566
+00:24:04,530 --> 00:24:07,490
+I mean, that's exactly I think where the tools are going
+
+567
+00:24:07,490 --> 00:24:10,920
+because I think as much as they say
+
+568
+00:24:10,920 --> 00:24:14,520
+there is a gate for mobile with the app store,
+
+569
+00:24:14,520 --> 00:24:17,520
+that doesn't mean that the SDLC process is not changing.
+
+570
+00:24:17,520 --> 00:24:19,400
+And I think all of these are the changes
+
+571
+00:24:19,400 --> 00:24:22,080
+which are happening as we speak.
+
+572
+00:24:22,720 --> 00:24:23,560
+And it's very exciting, I think.
+
+573
+00:24:23,560 --> 00:24:25,800
+It's very exciting to be part of this.
+
+574
+00:24:25,800 --> 00:24:27,560
+And I think in two years, it'll be very different
+
+575
+00:24:27,560 --> 00:24:30,520
+and we'll see how all of this plays out.
+
+576
+00:24:30,520 --> 00:24:31,360
+Yeah.
+
+577
+00:24:31,360 --> 00:24:33,760
+But yeah, it'll be different, yeah.
+
+578
+00:24:33,760 --> 00:24:35,960
+I wanna talk about one challenge I've heard about
+
+579
+00:24:35,960 --> 00:24:38,680
+and but I'll reference something you said earlier.
+
+580
+00:24:38,680 --> 00:24:39,840
+You're talking about web testing
+
+581
+00:24:39,840 --> 00:24:41,520
+and there's a couple different engines.
+
+582
+00:24:41,520 --> 00:24:44,480
+There's most things are WebKit or Chrome
+
+583
+00:24:44,480 --> 00:24:47,240
+and a few other flavors around.
+
+584
+00:24:47,240 --> 00:24:48,520
+But if you're a Chrome based browser,
+
+585
+00:24:48,520 --> 00:24:49,640
+all the automation just works
+
+586
+00:24:49,640 --> 00:24:51,680
+and the rest is pretty close.
+
+587
+00:24:52,640 --> 00:24:54,560
+That's about as much as I'll say about it.
+
+588
+00:24:54,560 --> 00:24:57,200
+And it's getting better now with AI tools, et cetera.
+
+589
+00:24:58,750 --> 00:25:00,310
+Famous quote that I can't remember who said
+
+590
+00:25:00,310 --> 00:25:03,390
+or what the quote was about abstraction and programming
+
+591
+00:25:03,390 --> 00:25:04,510
+and everything's an abstraction
+
+592
+00:25:04,510 --> 00:25:06,430
+and people just try and make everything easier.
+
+593
+00:25:06,430 --> 00:25:07,670
+And by making things easier,
+
+594
+00:25:07,670 --> 00:25:09,110
+they also making more difficult.
+
+595
+00:25:09,110 --> 00:25:13,150
+And the latest case in point for that comment
+
+596
+00:25:13,150 --> 00:25:14,660
+is Flutter.
+
+597
+00:25:14,660 --> 00:25:16,580
+And for those that don't know Flutter
+
+598
+00:25:16,580 --> 00:25:21,180
+is Google's UI toolkit for cross-platform apps
+
+599
+00:25:21,180 --> 00:25:23,380
+which is great developers that can write once
+
+600
+00:25:23,380 --> 00:25:25,340
+one code base renders everywhere.
+
+601
+00:25:25,340 --> 00:25:27,020
+Yay, easier.
+
+602
+00:25:27,970 --> 00:25:31,290
+Except it's sort of a nightmare for traditional test tools
+
+603
+00:25:31,290 --> 00:25:36,290
+because they don't have the same accessibility trees.
+
+604
+00:25:36,730 --> 00:25:40,090
+In fact, it's basically painting on the screen
+
+605
+00:25:40,090 --> 00:25:41,530
+as far as I can tell.
+
+606
+00:25:41,530 --> 00:25:46,530
+And it's a yay for developers
+
+607
+00:25:46,930 --> 00:25:49,290
+unless those developers are good developers
+
+608
+00:25:49,290 --> 00:25:50,930
+and decide the need to test their code too.
+
+609
+00:25:50,930 --> 00:25:52,250
+And we can do model via controller
+
+610
+00:25:52,250 --> 00:25:53,610
+and test below the UI level
+
+611
+00:25:53,610 --> 00:25:55,250
+which they should be doing anyway.
+
+612
+00:25:55,250 --> 00:25:57,890
+But we always want at least a little bit
+
+613
+00:25:57,890 --> 00:25:59,770
+testing automation pyramid
+
+614
+00:25:59,770 --> 00:26:01,210
+which is just by mentioning that
+
+615
+00:26:01,210 --> 00:26:02,770
+people will probably turn off the podcast.
+
+616
+00:26:02,770 --> 00:26:03,770
+I'm very sorry.
+
+617
+00:26:03,770 --> 00:26:06,530
+It is not, I've always said the test automation pyramid
+
+618
+00:26:06,530 --> 00:26:10,450
+is not a desired goal of your automation.
+
+619
+00:26:10,450 --> 00:26:12,250
+It's how your automation ends up
+
+620
+00:26:12,250 --> 00:26:14,450
+if you have a well-designed application.
+
+621
+00:26:14,450 --> 00:26:16,530
+And I'm sorry.
+
+622
+00:26:16,530 --> 00:26:17,730
+I hope I didn't hurt anybody's feelings
+
+623
+00:26:17,730 --> 00:26:18,570
+for bringing it up.
+
+624
+00:26:19,450 --> 00:26:21,410
+You always want to write a little bit of UI automation,
+
+625
+00:26:21,410 --> 00:26:22,410
+those end-to-end tests.
+
+626
+00:26:22,410 --> 00:26:24,050
+I wouldn't base all of your testing on that
+
+627
+00:26:24,050 --> 00:26:27,410
+because then you're in so much trouble.
+
+628
+00:26:27,410 --> 00:26:29,210
+But anyway, back to the topic.
+
+629
+00:26:30,250 --> 00:26:32,610
+Flutter is awesome as an app developer
+
+630
+00:26:32,610 --> 00:26:33,730
+and a pain in the butt
+
+631
+00:26:33,730 --> 00:26:35,530
+when they try and test their code.
+
+632
+00:26:37,010 --> 00:26:37,850
+Talk a little bit about that.
+
+633
+00:26:37,850 --> 00:26:39,330
+I know QA palette helps with that,
+
+634
+00:26:39,330 --> 00:26:40,570
+but talk about the challenge
+
+635
+00:26:40,570 --> 00:26:44,770
+and how teams just kind of tackle that in general.
+
+636
+00:26:44,770 --> 00:26:48,090
+Yeah, no, Flutter for testers is a nightmare, right?
+
+637
+00:26:48,090 --> 00:26:50,890
+Because it breaks everything you've done
+
+638
+00:26:50,890 --> 00:26:54,250
+to test React Native apps on native apps, right?
+
+639
+00:26:54,250 --> 00:26:55,770
+Like you said, it's a painting.
+
+640
+00:26:55,770 --> 00:27:01,310
+And therefore, it is rendering widgets
+
+641
+00:27:01,910 --> 00:27:03,950
+rather than elements and so on, right?
+
+642
+00:27:03,950 --> 00:27:07,070
+As you do in a traditional app.
+
+643
+00:27:07,070 --> 00:27:09,830
+And within the widgets, you have locator elements
+
+644
+00:27:09,830 --> 00:27:11,150
+which need locators.
+
+645
+00:27:11,150 --> 00:27:14,190
+And none of these are actually available on Flutter.
+
+646
+00:27:14,190 --> 00:27:17,510
+So either the developer gives IDs of some sort
+
+647
+00:27:17,550 --> 00:27:19,150
+which you can handle.
+
+648
+00:27:19,150 --> 00:27:23,620
+And then, or you need to be able to create these IDs
+
+649
+00:27:23,620 --> 00:27:25,940
+as a testing tool on the fly
+
+650
+00:27:25,940 --> 00:27:28,580
+with a reasonable degree of confidence
+
+651
+00:27:28,580 --> 00:27:30,180
+that they won't change when you open it
+
+652
+00:27:30,180 --> 00:27:31,660
+in the next device.
+
+653
+00:27:31,660 --> 00:27:34,300
+And I think that's something we've learned the hard way.
+
+654
+00:27:34,300 --> 00:27:37,740
+Like I said, my co-founder runs a company
+
+655
+00:27:37,740 --> 00:27:40,500
+which builds mobile apps for large enterprises
+
+656
+00:27:40,500 --> 00:27:41,860
+and some of them are Flutter, right?
+
+657
+00:27:41,860 --> 00:27:45,260
+So you had first-hand experience in testing Flutter apps
+
+658
+00:27:45,260 --> 00:27:47,340
+and through a lot of trial and error,
+
+659
+00:27:47,340 --> 00:27:49,820
+I think you've understood what kind of locators
+
+660
+00:27:49,820 --> 00:27:55,170
+to assign to different modes of Flutter apps, essentially.
+
+661
+00:27:56,210 --> 00:27:59,130
+And so some of it is visual, some of it is hybrid,
+
+662
+00:27:59,130 --> 00:28:03,530
+some of it is the ID which is given by the developer.
+
+663
+00:28:03,530 --> 00:28:06,290
+And a combination of that essentially works
+
+664
+00:28:06,290 --> 00:28:07,530
+reasonably well.
+
+665
+00:28:07,530 --> 00:28:08,690
+It breaks once in a while,
+
+666
+00:28:08,690 --> 00:28:11,130
+but I think it works quite well.
+
+667
+00:28:11,130 --> 00:28:13,690
+Now, there are other problems with Flutter as well, right?
+
+668
+00:28:13,690 --> 00:28:14,970
+The other problem with Flutter is
+
+669
+00:28:14,970 --> 00:28:16,330
+you still have to interact with the app
+
+670
+00:28:16,330 --> 00:28:17,810
+and you go through App PM.
+
+671
+00:28:17,810 --> 00:28:21,410
+And so a simple thing like set value
+
+672
+00:28:21,410 --> 00:28:24,210
+is something which you do as part of a testing flow.
+
+673
+00:28:24,210 --> 00:28:26,690
+It works very differently in Flutter
+
+674
+00:28:26,690 --> 00:28:29,330
+versus a React Native or a Native application.
+
+675
+00:28:29,330 --> 00:28:30,370
+And therefore, when you're working
+
+676
+00:28:30,370 --> 00:28:31,490
+with the Flutter application,
+
+677
+00:28:31,490 --> 00:28:33,930
+you need essentially a different middleware
+
+678
+00:28:33,930 --> 00:28:35,650
+between your application and App PM
+
+679
+00:28:35,650 --> 00:28:37,210
+and then the mobile app
+
+680
+00:28:37,210 --> 00:28:40,330
+for the whole automation flow to work well.
+
+681
+00:28:40,330 --> 00:28:42,730
+And I think that's essentially
+
+682
+00:28:42,730 --> 00:28:44,290
+what we've spent a lot of time building,
+
+683
+00:28:44,290 --> 00:28:45,890
+the middleware.
+
+684
+00:28:46,050 --> 00:28:48,170
+It works well, we continue to improve it.
+
+685
+00:28:48,170 --> 00:28:52,700
+And I think our customers are very happy with this
+
+686
+00:28:52,700 --> 00:28:54,300
+because there's nothing else in the market
+
+687
+00:28:54,300 --> 00:28:58,700
+which allows you to do black box Flutter testing.
+
+688
+00:28:58,700 --> 00:29:02,700
+And I say black box because a lot of the testing tools
+
+689
+00:29:02,700 --> 00:29:06,300
+and the ecosystem around Flutter are all gray box
+
+690
+00:29:06,300 --> 00:29:08,540
+because they're essentially developer led.
+
+691
+00:29:08,540 --> 00:29:10,460
+Developers love gray box tools.
+
+692
+00:29:10,460 --> 00:29:12,900
+And then there isn't a black box tool out there.
+
+693
+00:29:12,900 --> 00:29:15,820
+And ours is, I would say still a work in progress,
+
+694
+00:29:15,860 --> 00:29:18,690
+but very good, yeah.
+
+695
+00:29:18,690 --> 00:29:20,650
+Yeah, well, and you know I believe
+
+696
+00:29:20,650 --> 00:29:21,850
+that developers should write
+
+697
+00:29:21,850 --> 00:29:24,050
+the vast majority of automation.
+
+698
+00:29:24,050 --> 00:29:25,170
+So I'm totally okay with that,
+
+699
+00:29:25,170 --> 00:29:29,250
+but there are some scenarios
+
+700
+00:29:29,250 --> 00:29:30,410
+that are good to run once in a while.
+
+701
+00:29:30,410 --> 00:29:35,370
+So I think that,
+
+702
+00:29:35,370 --> 00:29:37,370
+yeah, I think having both is good.
+
+703
+00:29:38,610 --> 00:29:41,090
+It's still, yeah, there's,
+
+704
+00:29:43,760 --> 00:29:45,320
+yeah, I'll leave it at that
+
+705
+00:29:45,320 --> 00:29:46,160
+without getting too opinion
+
+706
+00:29:46,200 --> 00:29:49,000
+because I wanna, we have plenty of time left,
+
+707
+00:29:49,000 --> 00:29:51,240
+but I have a topic that's gonna take a while.
+
+708
+00:29:51,240 --> 00:29:54,680
+We cannot do an AI testing podcast.
+
+709
+00:29:54,680 --> 00:29:56,120
+I mean, I'm gonna replace Brent
+
+710
+00:29:56,120 --> 00:29:58,160
+with someone with an I first name.
+
+711
+00:29:58,160 --> 00:30:00,320
+Ian, if you're out there, you're hired.
+
+712
+00:30:02,030 --> 00:30:07,360
+How does, so many topics on AI we can talk about.
+
+713
+00:30:07,360 --> 00:30:08,840
+Agentic AI is something I've been playing
+
+714
+00:30:08,840 --> 00:30:12,040
+with quite a bit or a little bit at least.
+
+715
+00:30:12,040 --> 00:30:14,280
+Super interesting, super fun.
+
+716
+00:30:15,280 --> 00:30:19,850
+What is, I think your product does this,
+
+717
+00:30:19,850 --> 00:30:23,250
+but what does, what is the impact of,
+
+718
+00:30:23,250 --> 00:30:25,210
+or what is agentic AI in testing?
+
+719
+00:30:25,210 --> 00:30:29,210
+Like how should we use agentic AI in general to help?
+
+720
+00:30:29,210 --> 00:30:31,060
+I'm not even saying testing
+
+721
+00:30:31,060 --> 00:30:32,740
+because I care much more about quality
+
+722
+00:30:32,740 --> 00:30:33,980
+than I do about testing.
+
+723
+00:30:33,980 --> 00:30:36,180
+So how do you use agentic AI to reduce risk
+
+724
+00:30:36,180 --> 00:30:37,380
+and make sure that we're building
+
+725
+00:30:37,380 --> 00:30:40,080
+a quality product for our customers?
+
+726
+00:30:40,080 --> 00:30:43,740
+Yeah, so maybe we take a step back, right,
+
+727
+00:30:43,740 --> 00:30:47,060
+about AI in general, in AI and then we'll come back.
+
+728
+00:30:47,060 --> 00:30:48,340
+Step backs are good.
+
+729
+00:30:48,340 --> 00:30:53,560
+Yeah, and so the way I think about AI, right?
+
+730
+00:30:54,960 --> 00:30:59,360
+AI is essentially great at pattern matching.
+
+731
+00:30:59,360 --> 00:31:01,760
+It's one of the things it does really well.
+
+732
+00:31:01,760 --> 00:31:04,680
+I call it very, very fancy autocomplete.
+
+733
+00:31:04,680 --> 00:31:08,780
+Yeah, and a lot of the innovation
+
+734
+00:31:08,780 --> 00:31:12,180
+has been in using this ability in different ways
+
+735
+00:31:12,180 --> 00:31:14,820
+to get, to predict the next token and so on, right?
+
+736
+00:31:15,460 --> 00:31:18,660
+And then you create content, you create all kinds of things.
+
+737
+00:31:18,660 --> 00:31:24,720
+Now, I think actually the recency bias,
+
+738
+00:31:24,840 --> 00:31:27,600
+you know, the CEO of Palo Alto Networks, right,
+
+739
+00:31:27,600 --> 00:31:32,600
+Nikesh Arora, he had a great message on X
+
+740
+00:31:33,560 --> 00:31:37,810
+or Twitter yesterday where he spoke about
+
+741
+00:31:37,810 --> 00:31:43,260
+the current AI tug of war, so to say,
+
+742
+00:31:43,340 --> 00:31:44,940
+is between breadth and depth
+
+743
+00:31:44,940 --> 00:31:46,380
+because at a consumer level,
+
+744
+00:31:46,380 --> 00:31:49,860
+people think AI is great because consumers need breadth.
+
+745
+00:31:49,860 --> 00:31:51,300
+You want to be able to ask whatever you want
+
+746
+00:31:51,300 --> 00:31:53,570
+to get a reasonably good answer, you're fine.
+
+747
+00:31:53,570 --> 00:31:56,450
+But the enterprise use cases, you need depth
+
+748
+00:31:56,450 --> 00:31:59,850
+and you need a very high degree of confidence.
+
+749
+00:31:59,850 --> 00:32:01,970
+And that's where the risk parameters change
+
+750
+00:32:01,970 --> 00:32:04,090
+and that's where you bring in FDEs,
+
+751
+00:32:04,090 --> 00:32:05,530
+you bring in all these guardrails,
+
+752
+00:32:05,530 --> 00:32:07,130
+you're building all this scaffolding.
+
+753
+00:32:07,130 --> 00:32:08,250
+It takes a lot of time to get
+
+754
+00:32:08,250 --> 00:32:10,090
+an enterprise use case correctly.
+
+755
+00:32:10,090 --> 00:32:12,690
+And I think that feeds into testing, right?
+
+756
+00:32:12,690 --> 00:32:15,330
+Because testing is essentially about risk
+
+757
+00:32:15,330 --> 00:32:16,730
+and you don't want to add a tool
+
+758
+00:32:16,730 --> 00:32:20,170
+which adds 10 or 20% of risk or variability
+
+759
+00:32:20,170 --> 00:32:22,330
+to the risk you want to reduce.
+
+760
+00:32:22,330 --> 00:32:24,650
+So I think at a high level, that's what it is.
+
+761
+00:32:24,650 --> 00:32:27,450
+Now, what can AI do well nevertheless, right?
+
+762
+00:32:27,450 --> 00:32:28,890
+Because it's a new paradigm.
+
+763
+00:32:28,890 --> 00:32:31,710
+And the way I think about it is that
+
+764
+00:32:31,710 --> 00:32:36,940
+over a period of time, testing and risk verification,
+
+765
+00:32:38,380 --> 00:32:40,460
+this whole industry has come up
+
+766
+00:32:40,460 --> 00:32:43,340
+with its own nomenclature to talk to each other
+
+767
+00:32:43,340 --> 00:32:48,660
+to interact, to manage auditability,
+
+768
+00:32:48,980 --> 00:32:53,180
+to manage risk, to manage consistency and reliability.
+
+769
+00:32:53,180 --> 00:32:55,420
+And one of them is the BDD format, right?
+
+770
+00:32:55,420 --> 00:32:57,700
+Yeah, it's easy to understand things, right?
+
+771
+00:32:57,700 --> 00:33:01,140
+So the way we use AI, for example,
+
+772
+00:33:01,140 --> 00:33:04,980
+is to, we've got all these adapters
+
+773
+00:33:04,980 --> 00:33:07,860
+which convert your FSD, your PRD,
+
+774
+00:33:07,860 --> 00:33:11,220
+your test cases written in your test case management tool
+
+775
+00:33:11,220 --> 00:33:12,460
+into BDD.
+
+776
+00:33:12,460 --> 00:33:15,220
+And we don't call it BDD, we call it predictive BDD
+
+777
+00:33:15,220 --> 00:33:18,540
+because it's what we predicted from our tool.
+
+778
+00:33:18,540 --> 00:33:20,340
+And we present it, and again,
+
+779
+00:33:20,340 --> 00:33:21,900
+coming back to what I said about making
+
+780
+00:33:21,900 --> 00:33:24,100
+the quality engineer the superhero,
+
+781
+00:33:24,100 --> 00:33:25,500
+we have to present it to the quality engineer
+
+782
+00:33:25,500 --> 00:33:28,260
+in a way in which they can verify quickly
+
+783
+00:33:28,260 --> 00:33:30,260
+so they 10x their volume, right?
+
+784
+00:33:30,260 --> 00:33:32,220
+So that's how I would think about,
+
+785
+00:33:32,220 --> 00:33:35,220
+that's one way in which you can use AI in testing
+
+786
+00:33:35,220 --> 00:33:37,180
+without adding to the risk
+
+787
+00:33:37,180 --> 00:33:40,340
+because anytime you use AI, you're adding risk
+
+788
+00:33:40,380 --> 00:33:42,940
+because there's a variability, inherent variability.
+
+789
+00:33:42,940 --> 00:33:46,170
+So coming back to this primitive, so to say,
+
+790
+00:33:46,170 --> 00:33:48,490
+a BDD or knowledge graphs and so on,
+
+791
+00:33:48,490 --> 00:33:50,150
+helps with that.
+
+792
+00:33:50,150 --> 00:33:50,990
+Yeah.
+
+793
+00:33:50,990 --> 00:33:52,550
+And then just, I'm going to,
+
+794
+00:33:52,550 --> 00:33:54,030
+I need a fake name for this,
+
+795
+00:33:54,030 --> 00:33:56,830
+but a little translation,
+
+796
+00:33:56,830 --> 00:33:59,070
+because actually not everyone listed the podcast
+
+797
+00:33:59,070 --> 00:34:02,630
+I found out is our tech folks necessarily,
+
+798
+00:34:02,630 --> 00:34:04,670
+or tech adjacent a lot of times,
+
+799
+00:34:04,670 --> 00:34:07,190
+but BDD is behavior-driven development
+
+800
+00:34:07,190 --> 00:34:10,590
+where you're trying to describe the behavior
+
+801
+00:34:11,430 --> 00:34:12,790
+first and then you implement the code
+
+802
+00:34:12,790 --> 00:34:15,790
+to make that behavior occur.
+
+803
+00:34:15,790 --> 00:34:16,990
+So that's what BDD is.
+
+804
+00:34:16,990 --> 00:34:17,830
+You mentioned PRD,
+
+805
+00:34:17,830 --> 00:34:19,430
+which is a product requirements doc.
+
+806
+00:34:19,430 --> 00:34:21,150
+It's just a requirements doc.
+
+807
+00:34:21,150 --> 00:34:26,250
+So I like to translate the TLAs for everyone,
+
+808
+00:34:26,610 --> 00:34:27,610
+just to double check,
+
+809
+00:34:27,610 --> 00:34:28,850
+make sure we're on the same page,
+
+810
+00:34:28,850 --> 00:34:31,610
+but yeah, that makes sense.
+
+811
+00:34:31,610 --> 00:34:36,870
+So one thing, a couple episodes ago,
+
+812
+00:34:36,870 --> 00:34:37,710
+when Brent was back
+
+813
+00:34:37,710 --> 00:34:39,390
+and we're going to get him a new microphone
+
+814
+00:34:39,390 --> 00:34:40,430
+and continue a conversation,
+
+815
+00:34:40,430 --> 00:34:41,270
+we're talking about changing
+
+816
+00:34:41,270 --> 00:34:42,430
+the modern testing principles
+
+817
+00:34:42,430 --> 00:34:44,110
+towards some AI principles.
+
+818
+00:34:44,110 --> 00:34:46,190
+And one thing we're talking about,
+
+819
+00:34:46,190 --> 00:34:47,030
+and you mentioned,
+
+820
+00:34:47,030 --> 00:34:47,870
+I want to hear you dive
+
+821
+00:34:47,870 --> 00:34:49,390
+into a little bit deeper,
+
+822
+00:34:49,390 --> 00:34:50,990
+is trustworthiness.
+
+823
+00:34:52,430 --> 00:34:53,830
+AI can create all this code.
+
+824
+00:34:53,830 --> 00:34:55,190
+AI can test all this code.
+
+825
+00:34:55,190 --> 00:34:56,830
+AI can evaluate a bunch of stuff.
+
+826
+00:34:56,830 --> 00:34:58,510
+AI can look at the customer workflows.
+
+827
+00:34:58,510 --> 00:35:02,530
+AI can give us all kinds of information.
+
+828
+00:35:02,530 --> 00:35:03,530
+Keeping in mind,
+
+829
+00:35:03,530 --> 00:35:05,370
+AI is just a fancy autocomplete
+
+830
+00:35:05,370 --> 00:35:07,850
+or a parrot that puts together words
+
+831
+00:35:07,850 --> 00:35:09,690
+and code based on what it seemed before.
+
+832
+00:35:09,690 --> 00:35:11,130
+So it's a little frightening.
+
+833
+00:35:12,130 --> 00:35:13,890
+So we lose some trustworthiness
+
+834
+00:35:13,890 --> 00:35:15,370
+on the development side.
+
+835
+00:35:15,370 --> 00:35:17,730
+We have to trust what created is good.
+
+836
+00:35:17,730 --> 00:35:19,250
+Then we have to trust the tests
+
+837
+00:35:19,250 --> 00:35:21,610
+that AI created to make sure they're actually,
+
+838
+00:35:21,610 --> 00:35:24,250
+there's a lot of blind faith going on here.
+
+839
+00:35:24,250 --> 00:35:26,810
+How do we get over that trustworthiness gap?
+
+840
+00:35:26,810 --> 00:35:27,730
+What do we need to do
+
+841
+00:35:27,730 --> 00:35:29,650
+to make sure that what we're delivering now
+
+842
+00:35:29,650 --> 00:35:32,210
+at lightning speed for millions of people
+
+843
+00:35:32,210 --> 00:35:33,450
+is actually trustworthy
+
+844
+00:35:33,450 --> 00:35:36,890
+and isn't going to attack us in our sleep?
+
+845
+00:35:36,890 --> 00:35:38,890
+So I don't think I have a single answer,
+
+846
+00:35:38,890 --> 00:35:42,250
+but I think there are a lot of things which are-
+
+847
+00:35:42,250 --> 00:35:43,450
+If there was a single answer,
+
+848
+00:35:43,450 --> 00:35:45,490
+I would just go sell that and be rich.
+
+849
+00:35:46,650 --> 00:35:47,490
+But I'm not.
+
+850
+00:35:49,490 --> 00:35:51,410
+So, I mean, there are a lot of building blocks, right?
+
+851
+00:35:51,410 --> 00:35:54,730
+We did speak about how the fix forward,
+
+852
+00:35:54,730 --> 00:35:57,090
+the SRE bit feeds into this, right?
+
+853
+00:35:57,090 --> 00:35:58,410
+The ability to be able to see
+
+854
+00:35:58,410 --> 00:36:01,090
+what the user is doing and react quickly
+
+855
+00:36:01,090 --> 00:36:02,850
+reduces some of the risk
+
+856
+00:36:02,850 --> 00:36:06,610
+which we are adding to make this whole thing faster.
+
+857
+00:36:06,610 --> 00:36:10,530
+And I truly believe that it's essentially a design problem
+
+858
+00:36:10,530 --> 00:36:12,450
+to make sure that you surface
+
+859
+00:36:12,450 --> 00:36:14,290
+the right things to the human
+
+860
+00:36:14,290 --> 00:36:16,410
+so that the human can take action
+
+861
+00:36:16,410 --> 00:36:18,210
+either after it's gone into production
+
+862
+00:36:18,210 --> 00:36:19,490
+or before it goes into production
+
+863
+00:36:19,490 --> 00:36:21,410
+if you're a mobile app.
+
+864
+00:36:21,410 --> 00:36:22,490
+And I think there are some of the ways
+
+865
+00:36:22,490 --> 00:36:26,160
+in which the systems are improving.
+
+866
+00:36:26,160 --> 00:36:28,080
+There are also all these frameworks, right?
+
+867
+00:36:28,080 --> 00:36:30,120
+A lot of the reason why,
+
+868
+00:36:30,120 --> 00:36:31,960
+like a lot of JavaScript frameworks,
+
+869
+00:36:31,960 --> 00:36:33,760
+you would use them in development.
+
+870
+00:36:33,760 --> 00:36:35,480
+The part of the reason you would use these frameworks
+
+871
+00:36:35,480 --> 00:36:37,240
+is because there is risk mitigation
+
+872
+00:36:38,280 --> 00:36:40,480
+when you're shipping things at scale.
+
+873
+00:36:40,480 --> 00:36:41,960
+So I think some of these things also,
+
+874
+00:36:41,960 --> 00:36:45,400
+I think we'll see some really cool frameworks coming
+
+875
+00:36:45,400 --> 00:36:49,320
+which could essentially mitigate certain types of risks
+
+876
+00:36:49,320 --> 00:36:51,560
+which are AI specific, right?
+
+877
+00:36:51,560 --> 00:36:54,240
+Which we're not able to solve in other ways.
+
+878
+00:36:54,240 --> 00:36:55,280
+Now, I don't know what they are,
+
+879
+00:36:55,280 --> 00:36:56,560
+but you see them happening.
+
+880
+00:36:56,560 --> 00:36:59,120
+So for example, when WebRTC came in
+
+881
+00:36:59,120 --> 00:37:00,920
+and there were a new type of interacting
+
+882
+00:37:00,920 --> 00:37:01,880
+through sockets, et cetera,
+
+883
+00:37:01,880 --> 00:37:03,520
+you had a whole bunch of frameworks
+
+884
+00:37:03,520 --> 00:37:06,400
+which came in to help you build WebRTC applications
+
+885
+00:37:06,400 --> 00:37:07,800
+in a reliable fashion.
+
+886
+00:37:07,800 --> 00:37:10,360
+So I don't see that yet happening for AI,
+
+887
+00:37:10,360 --> 00:37:12,550
+but it will happen, I think.
+
+888
+00:37:12,550 --> 00:37:13,390
+Yeah, and I think,
+
+889
+00:37:13,390 --> 00:37:15,310
+I'm gonna go back to my diagnostic tool comment
+
+890
+00:37:15,310 --> 00:37:16,750
+and think out loud while I talk here,
+
+891
+00:37:16,750 --> 00:37:18,750
+but we've seen already
+
+892
+00:37:20,030 --> 00:37:21,190
+some of the newer models
+
+893
+00:37:21,190 --> 00:37:24,190
+finding critical security issues
+
+894
+00:37:24,190 --> 00:37:28,150
+in applications that have been out for years,
+
+895
+00:37:28,150 --> 00:37:30,310
+many, many years, decades.
+
+896
+00:37:30,310 --> 00:37:32,670
+And so you can say that in a way,
+
+897
+00:37:32,670 --> 00:37:35,990
+AI is increasing trustworthiness,
+
+898
+00:37:35,990 --> 00:37:37,830
+but we're kind of,
+
+899
+00:37:37,830 --> 00:37:39,670
+there's a metaphor here I can't think of,
+
+900
+00:37:39,670 --> 00:37:42,470
+but we're creating and slaying the monster
+
+901
+00:37:42,470 --> 00:37:43,310
+at the same time,
+
+902
+00:37:43,310 --> 00:37:45,030
+because without these same AI tools,
+
+903
+00:37:45,030 --> 00:37:48,830
+we would never find these security vulnerabilities.
+
+904
+00:37:48,830 --> 00:37:52,510
+So my opinion is on this,
+
+905
+00:37:52,510 --> 00:37:54,940
+this is not thought of in advance,
+
+906
+00:37:54,940 --> 00:37:56,980
+but just thinking out loud right now is,
+
+907
+00:37:58,300 --> 00:38:00,180
+yeah, the AI tool is gonna create code fast,
+
+908
+00:38:01,100 --> 00:38:01,940
+we're gonna have AI testing tools
+
+909
+00:38:01,940 --> 00:38:02,780
+to help functional correctness,
+
+910
+00:38:02,780 --> 00:38:04,580
+and we're gonna analyze everything I said before
+
+911
+00:38:04,580 --> 00:38:07,140
+about analyzing how users are using the software.
+
+912
+00:38:08,900 --> 00:38:09,980
+As I think about it more,
+
+913
+00:38:09,980 --> 00:38:11,500
+these diagnostic tools,
+
+914
+00:38:11,500 --> 00:38:14,100
+these things that look at the code,
+
+915
+00:38:14,100 --> 00:38:14,940
+not just the code,
+
+916
+00:38:14,940 --> 00:38:17,980
+but the application as it's running
+
+917
+00:38:17,980 --> 00:38:19,700
+and analyze it,
+
+918
+00:38:20,820 --> 00:38:23,940
+and maybe even communicate back to the other agents
+
+919
+00:38:23,940 --> 00:38:26,060
+to fix the code as it finds its issues.
+
+920
+00:38:26,060 --> 00:38:28,020
+I think there is something there
+
+921
+00:38:28,020 --> 00:38:29,820
+that increases trustworthiness,
+
+922
+00:38:30,420 --> 00:38:31,740
+but ultimately,
+
+923
+00:38:33,480 --> 00:38:35,520
+it's sort of up to the customer to trust it.
+
+924
+00:38:35,520 --> 00:38:36,720
+As the developers of this thing,
+
+925
+00:38:36,720 --> 00:38:41,080
+we don't, I mean, we can trust the tools all we want,
+
+926
+00:38:41,080 --> 00:38:42,760
+we can trust that we've built the right thing,
+
+927
+00:38:42,760 --> 00:38:45,720
+we can trust that we evaluated all the risks,
+
+928
+00:38:45,720 --> 00:38:50,000
+but if it needs to solve the problem for the customer
+
+929
+00:38:50,000 --> 00:38:52,200
+in a way that doesn't compromise their data
+
+930
+00:38:52,200 --> 00:38:55,280
+or their personal information or anything else they have.
+
+931
+00:38:55,280 --> 00:38:57,320
+So they ultimately,
+
+932
+00:38:57,320 --> 00:38:58,640
+you know, the modern testing people talk about
+
+933
+00:38:58,640 --> 00:39:01,440
+ultimately the customer can only evaluate quality,
+
+934
+00:39:01,440 --> 00:39:04,160
+but trustworthiness is part of quality.
+
+935
+00:39:04,160 --> 00:39:06,920
+So we can do a lot.
+
+936
+00:39:06,920 --> 00:39:08,880
+And I just think there's more,
+
+937
+00:39:08,880 --> 00:39:11,000
+the more we have the machines do,
+
+938
+00:39:11,000 --> 00:39:15,130
+the more we need the machines to do.
+
+939
+00:39:15,130 --> 00:39:15,970
+I just made that up,
+
+940
+00:39:15,970 --> 00:39:17,850
+and I think it's actually true.
+
+941
+00:39:17,850 --> 00:39:22,130
+The more we have AI develop all of our code for us,
+
+942
+00:39:22,130 --> 00:39:23,810
+the more we need to have AI
+
+943
+00:39:23,810 --> 00:39:27,510
+make sure that code is trustworthy.
+
+944
+00:39:27,510 --> 00:39:29,470
+This is frightening, but true.
+
+945
+00:39:29,470 --> 00:39:30,790
+No, it's definitely true.
+
+946
+00:39:32,430 --> 00:39:34,710
+I haven't thought of it in those terms.
+
+947
+00:39:36,230 --> 00:39:37,990
+And I probably haven't thought of all of this
+
+948
+00:39:37,990 --> 00:39:40,350
+in enough depth, I think, to...
+
+949
+00:39:40,350 --> 00:39:41,230
+So, I mean, neither.
+
+950
+00:39:41,230 --> 00:39:42,350
+I'm just making it up on the fly.
+
+951
+00:39:42,350 --> 00:39:43,870
+That's what we do on this podcast.
+
+952
+00:39:43,870 --> 00:39:45,670
+So all that said,
+
+953
+00:39:45,670 --> 00:39:47,430
+let's talk about the future a little bit.
+
+954
+00:39:47,430 --> 00:39:49,870
+If that's, you said it's true.
+
+955
+00:39:49,870 --> 00:39:51,710
+You agreed and you think about it some more,
+
+956
+00:39:51,710 --> 00:39:55,950
+but Brent and I started this podcast,
+
+957
+00:39:55,950 --> 00:39:58,830
+gosh, 12, 13, a long time ago,
+
+958
+00:39:58,830 --> 00:40:03,830
+because we were beginning to see a lot more teams
+
+959
+00:40:04,590 --> 00:40:06,110
+shift to agile practices,
+
+960
+00:40:06,110 --> 00:40:07,310
+and a bunch of testers wondering,
+
+961
+00:40:07,310 --> 00:40:10,350
+well, what do we do if things are moving so fast?
+
+962
+00:40:10,350 --> 00:40:11,670
+All kinds of stuff.
+
+963
+00:40:11,670 --> 00:40:14,230
+We talked about delivery and how you accelerate
+
+964
+00:40:14,230 --> 00:40:15,750
+the achievement of shippable quality,
+
+965
+00:40:15,750 --> 00:40:17,590
+and we made our principles,
+
+966
+00:40:17,590 --> 00:40:19,510
+which really are DevOps principles,
+
+967
+00:40:19,510 --> 00:40:22,630
+but they were advice things for testers to think about
+
+968
+00:40:22,630 --> 00:40:25,400
+and how they shifted into the new world.
+
+969
+00:40:25,400 --> 00:40:27,760
+All those things are a hundred times more true today
+
+970
+00:40:27,800 --> 00:40:29,720
+because everything is much, much faster.
+
+971
+00:40:29,720 --> 00:40:30,840
+Testers are in the same place.
+
+972
+00:40:30,840 --> 00:40:32,360
+Like, oh my God, we're moving so fast.
+
+973
+00:40:32,360 --> 00:40:33,440
+What do I do?
+
+974
+00:40:33,440 --> 00:40:35,280
+Same thing's happening with AI.
+
+975
+00:40:35,280 --> 00:40:37,360
+So if things, not if,
+
+976
+00:40:37,360 --> 00:40:39,520
+things are already moving at this speed.
+
+977
+00:40:39,520 --> 00:40:41,160
+And if I looked at LinkedIn,
+
+978
+00:40:41,160 --> 00:40:45,390
+I see a bunch of folks in testing roles,
+
+979
+00:40:45,390 --> 00:40:47,630
+trying to figure out what to do, how to keep up,
+
+980
+00:40:47,630 --> 00:40:48,870
+what, like, how do I,
+
+981
+00:40:48,870 --> 00:40:50,670
+why is my job still relevant?
+
+982
+00:40:50,670 --> 00:40:52,750
+Or how come I have so much to do?
+
+983
+00:40:52,750 --> 00:40:53,590
+Or whatever.
+
+984
+00:40:53,590 --> 00:40:56,270
+Varying complaints based on the speed
+
+985
+00:40:56,310 --> 00:40:58,870
+of software development in 2026.
+
+986
+00:40:58,870 --> 00:41:01,700
+So where do you think that role's going?
+
+987
+00:41:01,700 --> 00:41:03,380
+Like what's happening to the folks
+
+988
+00:41:03,380 --> 00:41:06,140
+who are in these testing positions right now,
+
+989
+00:41:06,140 --> 00:41:07,620
+who are, I mean,
+
+990
+00:41:07,620 --> 00:41:09,140
+some of them are adapting into new roles,
+
+991
+00:41:09,140 --> 00:41:09,980
+some are doing different things.
+
+992
+00:41:09,980 --> 00:41:11,220
+Like, I'll just leave it at that.
+
+993
+00:41:11,220 --> 00:41:13,340
+Like what, what do you think is happening
+
+994
+00:41:13,340 --> 00:41:16,500
+to the QA role as a, or the testing role
+
+995
+00:41:16,500 --> 00:41:19,940
+as a result of all of this AI everywhere?
+
+996
+00:41:19,940 --> 00:41:20,780
+Yeah.
+
+997
+00:41:20,780 --> 00:41:24,340
+So I think it's definitely the amount of change
+
+998
+00:41:24,340 --> 00:41:26,700
+which is coming in due to AI.
+
+999
+00:41:27,300 --> 00:41:28,580
+There's going to be change in the role, right?
+
+1000
+00:41:28,580 --> 00:41:31,020
+And people need, everybody needs to adapt.
+
+1001
+00:41:31,020 --> 00:41:36,850
+But I don't think the primary role changes.
+
+1002
+00:41:36,850 --> 00:41:38,970
+Or the primary, the gate, the release,
+
+1003
+00:41:38,970 --> 00:41:40,850
+readiness, release, confidence,
+
+1004
+00:41:40,850 --> 00:41:42,530
+the person who's going to give that confidence,
+
+1005
+00:41:42,530 --> 00:41:43,890
+I don't think that changes.
+
+1006
+00:41:43,890 --> 00:41:45,730
+That's always going to be there in an enterprise,
+
+1007
+00:41:45,730 --> 00:41:47,730
+especially a larger enterprise.
+
+1008
+00:41:47,730 --> 00:41:52,760
+Now, where that person sits could change.
+
+1009
+00:41:52,880 --> 00:41:54,320
+Now, for example, if you're seeing
+
+1010
+00:41:54,320 --> 00:41:57,400
+in a lot of web organizations
+
+1011
+00:41:57,400 --> 00:42:00,920
+that development essentially is happening in pods
+
+1012
+00:42:00,920 --> 00:42:04,080
+where you have product managers, developers,
+
+1013
+00:42:04,080 --> 00:42:07,040
+testers all sitting together, sometimes even in SRE.
+
+1014
+00:42:07,040 --> 00:42:09,560
+And, you know, just pushing stuff into production, right?
+
+1015
+00:42:09,560 --> 00:42:11,000
+Because they have these environments,
+
+1016
+00:42:11,000 --> 00:42:13,480
+you've created this integration, test frameworks,
+
+1017
+00:42:13,480 --> 00:42:14,840
+and so on.
+
+1018
+00:42:14,840 --> 00:42:17,720
+And all of that is because of agile processes,
+
+1019
+00:42:17,720 --> 00:42:20,640
+which is you have these tools where you can.
+
+1020
+00:42:20,640 --> 00:42:21,720
+That's been true forever.
+
+1021
+00:42:21,720 --> 00:42:24,320
+I think maybe it becomes, I'll interrupt it.
+
+1022
+00:42:24,320 --> 00:42:25,280
+This has all been true.
+
+1023
+00:42:25,280 --> 00:42:27,080
+We already see large corporations
+
+1024
+00:42:27,080 --> 00:42:28,600
+who have not had dedicated test teams
+
+1025
+00:42:28,600 --> 00:42:29,800
+for many, many, many years.
+
+1026
+00:42:29,800 --> 00:42:31,400
+And they're doing, people could complain,
+
+1027
+00:42:31,400 --> 00:42:32,440
+oh my gosh, they have a bug.
+
+1028
+00:42:32,440 --> 00:42:33,600
+And they do, but they're also making
+
+1029
+00:42:33,600 --> 00:42:34,960
+a crap ton of money.
+
+1030
+00:42:34,960 --> 00:42:37,880
+And money is really where, I mean,
+
+1031
+00:42:37,880 --> 00:42:39,200
+customers are finding enough value in it
+
+1032
+00:42:39,200 --> 00:42:41,440
+to give them money, so it's good enough.
+
+1033
+00:42:41,440 --> 00:42:43,880
+So I think all those things were true
+
+1034
+00:42:43,880 --> 00:42:45,080
+with agile practices.
+
+1035
+00:42:45,080 --> 00:42:46,000
+I think it could become, again,
+
+1036
+00:42:46,000 --> 00:42:48,480
+a hundred times more true today.
+
+1037
+00:42:48,480 --> 00:42:51,040
+If I don't think there's a world anywhere
+
+1038
+00:42:51,040 --> 00:42:53,680
+where I know this still happens.
+
+1039
+00:42:53,680 --> 00:42:55,600
+I don't think it's sustainable at all
+
+1040
+00:42:55,640 --> 00:42:57,920
+where there's this test team that sits separately
+
+1041
+00:42:57,920 --> 00:42:59,880
+from the dev team trying to test quality
+
+1042
+00:42:59,880 --> 00:43:00,760
+into the product.
+
+1043
+00:43:00,760 --> 00:43:03,880
+That was dumb three years ago before AI.
+
+1044
+00:43:03,880 --> 00:43:04,680
+It is extreme.
+
+1045
+00:43:04,680 --> 00:43:08,760
+It's not only dumb, it's irresponsible today.
+
+1046
+00:43:08,760 --> 00:43:10,400
+So yeah, I think we do have,
+
+1047
+00:43:10,400 --> 00:43:12,280
+I think you nailed it, not,
+
+1048
+00:43:12,280 --> 00:43:13,120
+we're beginning to see this.
+
+1049
+00:43:13,120 --> 00:43:14,120
+Like we have to.
+
+1050
+00:43:14,120 --> 00:43:17,680
+Like be the testing expert,
+
+1051
+00:43:17,680 --> 00:43:20,040
+but your focus is on quality, not testing.
+
+1052
+00:43:20,040 --> 00:43:22,560
+How do you raise quality across the team?
+
+1053
+00:43:22,560 --> 00:43:24,120
+And yeah, sit with these folks
+
+1054
+00:43:24,120 --> 00:43:25,480
+and work together and figure out,
+
+1055
+00:43:26,440 --> 00:43:28,000
+because even SRE, yeah,
+
+1056
+00:43:28,000 --> 00:43:30,720
+everybody involved in creation to delivery,
+
+1057
+00:43:30,720 --> 00:43:32,680
+everything from developer desktop
+
+1058
+00:43:32,680 --> 00:43:35,520
+all the way to customer desktop conversations.
+
+1059
+00:43:35,520 --> 00:43:37,640
+I think, talking about human in the loop,
+
+1060
+00:43:37,640 --> 00:43:39,960
+and I'm on a soapbox here, as you can tell,
+
+1061
+00:43:39,960 --> 00:43:43,720
+I think team communication and team collaboration
+
+1062
+00:43:43,720 --> 00:43:46,640
+in this speed of AI have also become
+
+1063
+00:43:46,640 --> 00:43:50,060
+a hundred times more important.
+
+1064
+00:43:50,060 --> 00:43:52,540
+Yeah, and I think there'll be new tools
+
+1065
+00:43:52,540 --> 00:43:55,180
+which will enable this.
+
+1066
+00:43:55,180 --> 00:43:57,820
+For example, the whole Jira, Git, et cetera,
+
+1067
+00:43:57,820 --> 00:44:01,700
+there's all tools which are required in an agile world.
+
+1068
+00:44:01,700 --> 00:44:03,180
+When you move from waterfall to agile,
+
+1069
+00:44:03,180 --> 00:44:04,460
+you needed these tools so that
+
+1070
+00:44:04,460 --> 00:44:06,140
+people can communicate faster.
+
+1071
+00:44:06,140 --> 00:44:08,660
+So, and I agree, I think with the AI world,
+
+1072
+00:44:08,660 --> 00:44:10,260
+people will move even faster.
+
+1073
+00:44:10,260 --> 00:44:11,220
+Are these tools enough?
+
+1074
+00:44:11,220 --> 00:44:12,460
+Do you need different types of tools?
+
+1075
+00:44:12,460 --> 00:44:15,490
+You need some of these tools to be bundled together,
+
+1076
+00:44:15,490 --> 00:44:17,250
+some of these tools to be unbundled
+
+1077
+00:44:17,250 --> 00:44:20,610
+into separate atomic functionality, maybe.
+
+1078
+00:44:20,610 --> 00:44:22,610
+And I'm sure all of this is happening, right?
+
+1079
+00:44:22,650 --> 00:44:25,770
+And like I said, next two years is going to be fun.
+
+1080
+00:44:28,130 --> 00:44:30,330
+And I think the best, for me, I think,
+
+1081
+00:44:30,330 --> 00:44:32,570
+see, if I was outside the industry
+
+1082
+00:44:32,570 --> 00:44:34,610
+and commenting on the industry,
+
+1083
+00:44:34,610 --> 00:44:37,770
+I think it's easier for me to have a strong opinion
+
+1084
+00:44:37,770 --> 00:44:39,930
+on what might happen.
+
+1085
+00:44:39,930 --> 00:44:41,730
+But when I'm so deep into it,
+
+1086
+00:44:41,730 --> 00:44:43,210
+when I'm talking to customers,
+
+1087
+00:44:43,210 --> 00:44:47,090
+dozens of customers every week,
+
+1088
+00:44:49,370 --> 00:44:52,210
+my mindset is to just listen and absorb
+
+1089
+00:44:52,410 --> 00:44:54,490
+and evolve with what's happening, right?
+
+1090
+00:44:54,490 --> 00:44:57,290
+And I don't really need to have such a strong opinion
+
+1091
+00:44:57,290 --> 00:45:00,010
+of exactly what will happen two years from now.
+
+1092
+00:45:00,010 --> 00:45:01,890
+Oh, well, I'm going to ask you about that.
+
+1093
+00:45:01,890 --> 00:45:03,130
+I think you're stronger than me.
+
+1094
+00:45:03,130 --> 00:45:04,930
+So let's, because you're in this space
+
+1095
+00:45:04,930 --> 00:45:06,170
+much more than I am.
+
+1096
+00:45:07,370 --> 00:45:08,370
+Paint me a picture.
+
+1097
+00:45:08,370 --> 00:45:11,090
+What does mobile software delivery look like
+
+1098
+00:45:11,090 --> 00:45:14,760
+two or three years from now?
+
+1099
+00:45:14,760 --> 00:45:15,600
+Yes.
+
+1100
+00:45:18,320 --> 00:45:20,240
+I see the look of, oh my God, that's a hard,
+
+1101
+00:45:20,240 --> 00:45:21,760
+okay, go on, give it a shot.
+
+1102
+00:45:24,420 --> 00:45:26,780
+So the amount of change that is going to be really,
+
+1103
+00:45:26,780 --> 00:45:29,380
+so like about even six months ago,
+
+1104
+00:45:29,380 --> 00:45:30,220
+if you ask me this,
+
+1105
+00:45:30,220 --> 00:45:33,100
+it would say that all these wipe coding tools,
+
+1106
+00:45:33,100 --> 00:45:34,740
+they couldn't make mobile apps.
+
+1107
+00:45:34,740 --> 00:45:36,100
+They couldn't.
+
+1108
+00:45:36,100 --> 00:45:38,260
+And I personally thought it was going to take
+
+1109
+00:45:38,260 --> 00:45:41,140
+much longer to find wipe coding tools,
+
+1110
+00:45:41,140 --> 00:45:42,980
+which could make reliable mobile apps,
+
+1111
+00:45:42,980 --> 00:45:46,140
+good mobile apps at that point,
+
+1112
+00:45:46,140 --> 00:45:48,220
+at the beginning of 2026.
+
+1113
+00:45:48,220 --> 00:45:49,820
+And then three months later,
+
+1114
+00:45:49,820 --> 00:45:52,450
+you have a whole bunch of these new tools
+
+1115
+00:45:53,370 --> 00:45:57,300
+which build great mobile apps through wipe coding, right?
+
+1116
+00:45:57,300 --> 00:46:00,220
+So things are moving much faster than I thought.
+
+1117
+00:46:02,640 --> 00:46:06,780
+I think the large enterprise mobile app delivery
+
+1118
+00:46:06,780 --> 00:46:07,860
+doesn't change much.
+
+1119
+00:46:09,160 --> 00:46:10,840
+People who are already in business,
+
+1120
+00:46:10,840 --> 00:46:12,240
+but the newer ones,
+
+1121
+00:46:13,750 --> 00:46:14,590
+I would think changes
+
+1122
+00:46:14,590 --> 00:46:16,310
+because they're essentially completely AI native
+
+1123
+00:46:16,310 --> 00:46:17,750
+in terms of how they built it,
+
+1124
+00:46:17,750 --> 00:46:19,560
+how they deliver it.
+
+1125
+00:46:19,560 --> 00:46:23,160
+But with mobile, the gate, the app store,
+
+1126
+00:46:23,840 --> 00:46:26,820
+the Play Store gate will definitely,
+
+1127
+00:46:26,820 --> 00:46:28,860
+I think reduce the speed of change
+
+1128
+00:46:28,860 --> 00:46:30,220
+from what we have today,
+
+1129
+00:46:30,220 --> 00:46:34,060
+because that is not an open source gate
+
+1130
+00:46:34,060 --> 00:46:36,740
+that is tightly controlled by two large enterprises.
+
+1131
+00:46:36,740 --> 00:46:39,580
+And I don't think that's going to change any time soon.
+
+1132
+00:46:39,580 --> 00:46:42,240
+And then I don't see any force
+
+1133
+00:46:42,240 --> 00:46:43,680
+which is going to change that.
+
+1134
+00:46:43,680 --> 00:46:46,640
+And as long as that is a constant,
+
+1135
+00:46:46,640 --> 00:46:48,840
+and I think it will be a constant two years from now,
+
+1136
+00:46:48,840 --> 00:46:53,310
+that is going to temper the rate of change in mobile.
+
+1137
+00:46:53,350 --> 00:46:54,190
+So that's one.
+
+1138
+00:46:56,060 --> 00:47:03,360
+Then, yeah, so I would say that would be my thoughts
+
+1139
+00:47:03,480 --> 00:47:06,000
+on what it'd be in a couple of years.
+
+1140
+00:47:06,000 --> 00:47:09,240
+And I wonder a little bit if that could change.
+
+1141
+00:47:09,240 --> 00:47:11,680
+I don't see app, and I don't think it will.
+
+1142
+00:47:12,700 --> 00:47:16,820
+Apple especially really want to control their ecosystem.
+
+1143
+00:47:17,860 --> 00:47:21,180
+Android, of course, you can sideload APKs.
+
+1144
+00:47:21,180 --> 00:47:25,960
+It's not for everyone.
+
+1145
+00:47:26,240 --> 00:47:27,640
+And I wonder if someone,
+
+1146
+00:47:27,640 --> 00:47:29,280
+I don't even know the legal ramification
+
+1147
+00:47:29,280 --> 00:47:31,400
+if someone were to make that easy and do an alternate,
+
+1148
+00:47:31,400 --> 00:47:33,080
+I think that's probably not even allowed.
+
+1149
+00:47:33,080 --> 00:47:35,060
+So you're right.
+
+1150
+00:47:35,060 --> 00:47:37,220
+I think even though there's less control
+
+1151
+00:47:37,220 --> 00:47:38,860
+on the Android side, it will stay there.
+
+1152
+00:47:38,860 --> 00:47:40,500
+So you still have to go through the gate
+
+1153
+00:47:40,500 --> 00:47:41,900
+to get to customers.
+
+1154
+00:47:43,440 --> 00:47:44,440
+Yeah, I don't know.
+
+1155
+00:47:45,760 --> 00:47:47,720
+Yeah, part of me, given the pace of change
+
+1156
+00:47:47,720 --> 00:47:48,880
+we've seen over the last,
+
+1157
+00:47:48,880 --> 00:47:51,320
+the acceleration over the last two years,
+
+1158
+00:47:52,040 --> 00:47:56,560
+I, there may be a future there that I just can't imagine.
+
+1159
+00:47:56,560 --> 00:47:58,920
+I think it'll be interesting to see what happens.
+
+1160
+00:47:58,920 --> 00:48:03,170
+Yeah, so what is happening on web?
+
+1161
+00:48:03,170 --> 00:48:06,690
+And I think this one thing will continue to...
+
+1162
+00:48:06,690 --> 00:48:09,330
+So one thing which is definitely happening
+
+1163
+00:48:09,330 --> 00:48:12,010
+is number of apps in the app store
+
+1164
+00:48:12,010 --> 00:48:13,650
+and number of submissions in the app store
+
+1165
+00:48:13,650 --> 00:48:17,530
+as per both Google and Apple numbers is increasing.
+
+1166
+00:48:17,530 --> 00:48:19,490
+It's going through the roof right now.
+
+1167
+00:48:19,490 --> 00:48:22,010
+Because of these wipe coding tools,
+
+1168
+00:48:22,610 --> 00:48:23,450
+like I said in the last few months,
+
+1169
+00:48:23,450 --> 00:48:26,210
+I made it so much easier to build good mobile apps.
+
+1170
+00:48:26,210 --> 00:48:27,930
+One thing which has happened in web,
+
+1171
+00:48:27,930 --> 00:48:31,250
+which might start happening in mobile
+
+1172
+00:48:31,250 --> 00:48:35,130
+is use and throw applications, right?
+
+1173
+00:48:35,130 --> 00:48:36,610
+So you see, like for example,
+
+1174
+00:48:36,610 --> 00:48:38,970
+the football World Cup started, me and my friends,
+
+1175
+00:48:38,970 --> 00:48:43,970
+instead of using a fantasy World Cup tool
+
+1176
+00:48:44,810 --> 00:48:46,690
+or something which is out there,
+
+1177
+00:48:46,690 --> 00:48:50,610
+we built our own fun website where we play,
+
+1178
+00:48:51,530 --> 00:48:54,450
+you know, this fantasy thing amongst ourselves, right?
+
+1179
+00:48:54,450 --> 00:48:55,490
+And that's use and throw.
+
+1180
+00:48:55,490 --> 00:48:57,290
+We built it, now we're going to throw it away
+
+1181
+00:48:57,290 --> 00:48:58,250
+after the World Cup's over.
+
+1182
+00:48:58,250 --> 00:49:01,130
+We're not going to monetize it, nothing, right?
+
+1183
+00:49:01,130 --> 00:49:03,970
+I can see some of that happening in mobile
+
+1184
+00:49:03,970 --> 00:49:06,250
+and the testing needs for that to be slightly different
+
+1185
+00:49:06,250 --> 00:49:08,330
+because you're doing it in a closed group.
+
+1186
+00:49:08,330 --> 00:49:10,930
+You don't have the problem of having to test it
+
+1187
+00:49:10,930 --> 00:49:13,970
+in the wild across devices which you,
+
+1188
+00:49:13,970 --> 00:49:16,330
+across thousands of devices, OS versions.
+
+1189
+00:49:16,330 --> 00:49:18,050
+Now, what that means for testing,
+
+1190
+00:49:18,050 --> 00:49:19,290
+what that means for quality,
+
+1191
+00:49:19,290 --> 00:49:21,130
+what that means for verification.
+
+1192
+00:49:21,130 --> 00:49:22,090
+I haven't thought through enough,
+
+1193
+00:49:22,090 --> 00:49:26,250
+but that's a trend which I think
+
+1194
+00:49:26,250 --> 00:49:28,010
+we will see in mobile for sure
+
+1195
+00:49:28,010 --> 00:49:30,050
+because I see that already happening in web,
+
+1196
+00:49:30,050 --> 00:49:31,980
+use and throw applications.
+
+1197
+00:49:31,980 --> 00:49:33,460
+Yeah, makes sense.
+
+1198
+00:49:33,460 --> 00:49:34,300
+Cool.
+
+1199
+00:49:34,300 --> 00:49:39,340
+Well, the time drunk, slinky, time flew by.
+
+1200
+00:49:39,460 --> 00:49:40,980
+Lots, I want to give you another minute here,
+
+1201
+00:49:40,980 --> 00:49:44,040
+but just a fantastic conversation.
+
+1202
+00:49:44,040 --> 00:49:44,880
+Thank you so much.
+
+1203
+00:49:44,880 --> 00:49:47,600
+I wanted to give you just a minute here at the end
+
+1204
+00:49:47,600 --> 00:49:50,440
+to talk about a little bit about QA pilot
+
+1205
+00:49:50,440 --> 00:49:52,720
+and how you're helping us solve some of these problems.
+
+1206
+00:49:52,720 --> 00:49:54,640
+I tried to keep it out of the conversation up to now,
+
+1207
+00:49:54,640 --> 00:49:57,600
+but since you're here and had a great conversation,
+
+1208
+00:49:57,600 --> 00:49:59,520
+let's go and take a minute and just kind of tell people
+
+1209
+00:49:59,520 --> 00:50:01,520
+a little bit about the product your company's building
+
+1210
+00:50:01,520 --> 00:50:04,080
+and what problems it's helping to solve.
+
+1211
+00:50:04,080 --> 00:50:07,920
+Yeah, so I think we've spoken about a lot of the
+
+1212
+00:50:07,920 --> 00:50:09,720
+issues in mobile testing, right?
+
+1213
+00:50:09,720 --> 00:50:12,040
+And thank you for leading the conversation
+
+1214
+00:50:12,040 --> 00:50:14,560
+and covering so much of the ground, right?
+
+1215
+00:50:14,560 --> 00:50:16,680
+So one of the issues is
+
+1216
+00:50:16,720 --> 00:50:18,800
+that you can build mobile apps in different technologies
+
+1217
+00:50:18,800 --> 00:50:19,720
+and you have these gates.
+
+1218
+00:50:19,720 --> 00:50:21,920
+You can build React Native mobile applications,
+
+1219
+00:50:21,920 --> 00:50:23,200
+you can build Flutter applications,
+
+1220
+00:50:23,200 --> 00:50:24,800
+you can build native applications.
+
+1221
+00:50:24,800 --> 00:50:26,880
+And then you need to go through the Android
+
+1222
+00:50:26,880 --> 00:50:29,920
+and Apple iOS gates.
+
+1223
+00:50:29,920 --> 00:50:33,000
+Now what we've done, and that really adds
+
+1224
+00:50:33,000 --> 00:50:34,920
+a lot of complexity and pain to mobile app testing.
+
+1225
+00:50:34,920 --> 00:50:36,880
+So I think our secret sauce is this middleware
+
+1226
+00:50:36,880 --> 00:50:41,700
+which you build, which sits between the device
+
+1227
+00:50:41,700 --> 00:50:43,180
+on which the testing is happening
+
+1228
+00:50:43,180 --> 00:50:46,540
+and the application on which the tests are written.
+
+1229
+00:50:46,540 --> 00:50:48,140
+So that's really the secret sauce
+
+1230
+00:50:49,020 --> 00:50:51,100
+which reduces a lot of the flakiness,
+
+1231
+00:50:51,100 --> 00:50:54,260
+makes things work very well from version one
+
+1232
+00:50:54,260 --> 00:50:55,260
+to version two.
+
+1233
+00:50:55,260 --> 00:50:57,820
+The next thing where a lot of the AI comes in
+
+1234
+00:50:57,820 --> 00:51:02,850
+is taking test cases in your test case management suits
+
+1235
+00:51:04,490 --> 00:51:07,650
+and different documents and converting them
+
+1236
+00:51:07,650 --> 00:51:09,930
+into BDD format, predictive BDD,
+
+1237
+00:51:09,930 --> 00:51:14,450
+and making them run iteratively on mobile applications.
+
+1238
+00:51:14,450 --> 00:51:16,650
+And I think a combination of these two
+
+1239
+00:51:18,730 --> 00:51:23,730
+reduce a lot of the regression and sanity time
+
+1240
+00:51:23,730 --> 00:51:28,730
+spent by quality teams for our customers.
+
+1241
+00:51:28,930 --> 00:51:31,250
+Now on top of that, we have all these connectors
+
+1242
+00:51:31,250 --> 00:51:35,810
+into dev IDEs and SRE IDEs which allow people
+
+1243
+00:51:35,810 --> 00:51:39,370
+to get a view of quality on both sides,
+
+1244
+00:51:39,370 --> 00:51:41,090
+both shift left and shift right.
+
+1245
+00:51:41,090 --> 00:51:43,250
+And then finally, like I said,
+
+1246
+00:51:43,250 --> 00:51:46,610
+our thought is always to build for the person
+
+1247
+00:51:46,610 --> 00:51:48,930
+who is responsible to sign up on the release.
+
+1248
+00:51:48,930 --> 00:51:51,170
+And that's what I see QA people as, right?
+
+1249
+00:51:51,170 --> 00:51:53,290
+Now, whether you call it quality testers,
+
+1250
+00:51:53,290 --> 00:51:55,010
+verification, whatever you might call it,
+
+1251
+00:51:55,010 --> 00:51:56,890
+the people who are finally signing off,
+
+1252
+00:51:56,890 --> 00:51:57,730
+they're taking the risk
+
+1253
+00:51:57,730 --> 00:51:59,370
+that something goes in production
+
+1254
+00:51:59,370 --> 00:52:00,850
+will work well in production.
+
+1255
+00:52:00,850 --> 00:52:02,850
+That role is not changing.
+
+1256
+00:52:02,850 --> 00:52:05,810
+Now that role needs will change though
+
+1257
+00:52:05,810 --> 00:52:08,090
+in today's, as the world changes, right?
+
+1258
+00:52:08,090 --> 00:52:10,530
+As AI takes over this DLC.
+
+1259
+00:52:10,530 --> 00:52:11,890
+What does that person need?
+
+1260
+00:52:11,930 --> 00:52:13,970
+And that's a prime focus for us.
+
+1261
+00:52:13,970 --> 00:52:16,250
+And we continue to build what we call
+
+1262
+00:52:16,250 --> 00:52:19,570
+the release readiness suit of products.
+
+1263
+00:52:19,570 --> 00:52:22,530
+And yeah, this is what we would give our customers.
+
+1264
+00:52:22,530 --> 00:52:24,330
+And we're right in the midst of this.
+
+1265
+00:52:24,330 --> 00:52:27,460
+And as the world changes, we'll also evolve with it.
+
+1266
+00:52:27,460 --> 00:52:30,900
+Well, thank you again for chatting today.
+
+1267
+00:52:30,900 --> 00:52:33,900
+This podcast, it's gone out as you're listening to this
+
+1268
+00:52:33,900 --> 00:52:34,980
+if you got this far.
+
+1269
+00:52:34,980 --> 00:52:36,500
+So thanks again, Chella.
+
+1270
+00:52:36,500 --> 00:52:38,180
+It's been great to have you here.
+
+1271
+00:52:38,180 --> 00:52:39,380
+Thank you so much.
+
+1272
+00:52:39,380 --> 00:52:40,900
+We'll talk to you soon.
+
+1273
+00:52:40,940 --> 00:52:42,260
+Lovely, Alan.
+
+1274
+00:52:42,260 --> 00:52:43,500
+Thank you for having me.
+
