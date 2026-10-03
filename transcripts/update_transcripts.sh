@@ -15,6 +15,11 @@ else
     source "$VENV_DIR/bin/activate"
 fi
 
+# Work around faster-whisper passing an argument newer PyAV removed
+for f in "$VENV_DIR"/lib/python3*/site-packages/faster_whisper/audio.py; do
+    [ -f "$f" ] && sed -i '' 's/, metadata_errors="ignore"//' "$f"
+done
+
 cd "$SCRIPT_DIR/code"
 python3 podcast_pipeline.py "$@"
 
