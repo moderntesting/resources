@@ -1,0 +1,5399 @@
+1
+00:00:03,310 --> 00:00:08,410
+Welcome to ABE Testing Podcast, your modern testing podcast.
+
+2
+00:00:08,410 --> 00:00:14,550
+Your hosts, Alan and Brent, will be here to guide you through topics on testing, leadership,
+
+3
+00:00:14,550 --> 00:00:17,190
+agile, and anything else that comes to mind.
+
+4
+00:00:17,190 --> 00:00:19,150
+Now on with the show.
+
+5
+00:00:19,150 --> 00:00:24,670
+I need to record a new intro that talks about AI because all we ever talk about is AI.
+
+6
+00:00:24,670 --> 00:00:25,750
+You know why?
+
+7
+00:00:25,750 --> 00:00:28,230
+Because that's all there is to talk about.
+
+8
+00:00:28,230 --> 00:00:29,230
+That's not all there is to talk about.
+
+9
+00:00:29,230 --> 00:00:30,230
+We talk about AI.
+
+10
+00:00:30,430 --> 00:00:33,430
+Brent is not installing GPUs at Sahti's house today.
+
+11
+00:00:33,430 --> 00:00:34,190
+Brent is here.
+
+12
+00:00:34,190 --> 00:00:41,230
+And even more importantly, friend of the podcast, Shush Brent, I'm introducing Jason Arbin.
+
+13
+00:00:41,230 --> 00:00:43,310
+Jason, welcome back to ABE Testing.
+
+14
+00:00:43,310 --> 00:00:44,270
+Thanks, man.
+
+15
+00:00:44,270 --> 00:00:46,990
+Actually, you should replace agile with AI in that intro.
+
+16
+00:00:46,990 --> 00:00:49,950
+Probably because who cares about I mean, agile is dead, right?
+
+17
+00:00:49,950 --> 00:00:50,550
+Because of AI.
+
+18
+00:00:50,550 --> 00:00:51,070
+No.
+
+19
+00:00:51,070 --> 00:00:51,590
+Oh, God.
+
+20
+00:00:51,590 --> 00:00:55,990
+No, it's even more important from my experience.
+
+21
+00:00:55,990 --> 00:00:59,630
+It's even more important now because I was making a joke.
+
+22
+00:00:59,630 --> 00:01:00,790
+Brent didn't mean to piss you off.
+
+23
+00:01:00,790 --> 00:01:04,190
+Settle deep breaths in through the nose, out through the mouth.
+
+24
+00:01:06,510 --> 00:01:07,710
+Anyway, Jason.
+
+25
+00:01:07,710 --> 00:01:09,510
+Can't believe this.
+
+26
+00:01:09,510 --> 00:01:10,350
+Tell him.
+
+27
+00:01:10,350 --> 00:01:10,870
+Sorry.
+
+28
+00:01:10,870 --> 00:01:12,790
+I need to go to bed.
+
+29
+00:01:12,790 --> 00:01:17,230
+We're going to end up talking about AI and opinions on that.
+
+30
+00:01:17,230 --> 00:01:22,950
+Jason has like a thousand pages of AI books he's written in the last month.
+
+31
+00:01:22,950 --> 00:01:24,590
+And so I want to hear about all that.
+
+32
+00:01:24,590 --> 00:01:26,430
+So what do you got up to?
+
+33
+00:01:26,430 --> 00:01:27,070
+Catch us up.
+
+34
+00:01:27,070 --> 00:01:31,270
+It's been like with my hiatus, like five years you've been on the podcast.
+
+35
+00:01:31,270 --> 00:01:32,190
+What have you been doing at that time?
+
+36
+00:01:32,190 --> 00:01:33,910
+It's been five years in AI time, right?
+
+37
+00:01:33,910 --> 00:01:34,270
+Yeah.
+
+38
+00:01:34,270 --> 00:01:36,240
+Time is a drunk sluggy.
+
+39
+00:01:36,240 --> 00:01:37,000
+Yeah.
+
+40
+00:01:37,000 --> 00:01:40,800
+Yeah, I'm doing lots of stuff.
+
+41
+00:01:40,800 --> 00:01:41,480
+Yeah, lots.
+
+42
+00:01:41,480 --> 00:01:43,440
+So like, yeah, I've been working on books.
+
+43
+00:01:43,440 --> 00:01:46,040
+I've done two books over the summer.
+
+44
+00:01:46,040 --> 00:01:48,160
+One's called Testing AI and the other ones I'm not.
+
+45
+00:01:48,160 --> 00:01:49,080
+It's just interesting.
+
+46
+00:01:49,080 --> 00:01:49,720
+Testing AI.
+
+47
+00:01:49,720 --> 00:01:51,640
+So like, how do you test these AI based systems?
+
+48
+00:01:51,640 --> 00:01:55,120
+And then everyone bugged me and said, oh, I want to know how to test my stuff,
+
+49
+00:01:55,120 --> 00:01:56,080
+which is software.
+
+50
+00:01:56,080 --> 00:01:58,880
+So I wrote the other direction, which was how AI tests software,
+
+51
+00:01:58,880 --> 00:02:05,030
+which is a pun on how Google or how Google software or how how we test AI at
+
+52
+00:02:05,030 --> 00:02:09,470
+Microsoft or exactly where I don't know where that no, that was the
+
+53
+00:02:09,470 --> 00:02:11,150
+Google book had nothing to do with the Microsoft.
+
+54
+00:02:11,150 --> 00:02:13,030
+It was a totally original idea.
+
+55
+00:02:13,030 --> 00:02:15,190
+It totally was.
+
+56
+00:02:15,190 --> 00:02:19,030
+I read it and I went back in time, wrote another version.
+
+57
+00:02:19,030 --> 00:02:22,470
+It was a shallow years before the Google book was a shallow copy.
+
+58
+00:02:22,470 --> 00:02:23,790
+Google book was better.
+
+59
+00:02:23,790 --> 00:02:24,270
+Yeah.
+
+60
+00:02:24,270 --> 00:02:25,190
+Well.
+
+61
+00:02:25,230 --> 00:02:30,790
+Well, I'm feeling jealous, but not enough to do anything about it.
+
+62
+00:02:30,790 --> 00:02:36,110
+Like, so Jason did two books, Alan's about have you shipped yours?
+
+63
+00:02:36,110 --> 00:02:37,310
+Not yet.
+
+64
+00:02:37,310 --> 00:02:38,110
+Yeah.
+
+65
+00:02:38,110 --> 00:02:38,670
+Working on it.
+
+66
+00:02:38,670 --> 00:02:42,790
+I am in process of delivering exactly zero.
+
+67
+00:02:42,790 --> 00:02:43,110
+All right.
+
+68
+00:02:43,110 --> 00:02:44,630
+Even negative books.
+
+69
+00:02:44,630 --> 00:02:45,270
+Yeah.
+
+70
+00:02:45,270 --> 00:02:45,550
+Okay.
+
+71
+00:02:45,550 --> 00:02:47,030
+But here, get this, though.
+
+72
+00:02:47,030 --> 00:02:50,510
+The cool thing is it takes almost no time now, not because AI writes the
+
+73
+00:02:50,510 --> 00:02:52,550
+book, but you can dictate it.
+
+74
+00:02:52,550 --> 00:02:54,070
+You don't have to do grammar checks.
+
+75
+00:02:54,070 --> 00:02:55,990
+AI is the best editor ever.
+
+76
+00:02:55,990 --> 00:02:59,030
+Like I was telling Alan, you say, you are in a prompt.
+
+77
+00:02:59,030 --> 00:03:01,270
+You are an O'Reilly technical editor.
+
+78
+00:03:01,270 --> 00:03:02,670
+Give me feedback.
+
+79
+00:03:02,670 --> 00:03:05,070
+And I was saying the first feedback it gave me on the first draft was,
+
+80
+00:03:05,070 --> 00:03:08,510
+hey, this looks like a collection of articles, not a book.
+
+81
+00:03:08,510 --> 00:03:10,470
+I was like, oh, good point.
+
+82
+00:03:10,470 --> 00:03:12,510
+But it's like, it gets very good, quick feedback.
+
+83
+00:03:12,510 --> 00:03:16,310
+And then I built the thing where I used AI to build a web page where
+
+84
+00:03:16,310 --> 00:03:20,030
+people can deliver feedback and I can send out signed PDFs.
+
+85
+00:03:20,070 --> 00:03:23,270
+There's like a whole workflow to do that to people, to get drafts and
+
+86
+00:03:23,270 --> 00:03:24,350
+feedback out.
+
+87
+00:03:24,350 --> 00:03:27,390
+So I used AI to automate the construction and review and
+
+88
+00:03:27,390 --> 00:03:28,790
+iteration of the whole thing.
+
+89
+00:03:28,790 --> 00:03:32,710
+So it was actually super efficient.
+
+90
+00:03:32,710 --> 00:03:34,230
+That's not a bad idea, actually.
+
+91
+00:03:34,230 --> 00:03:41,900
+Like I have taken to now with the AI world, I just fricking hate typing.
+
+92
+00:03:41,900 --> 00:03:46,700
+Like if the experience can't allow me to dictate, like go F yourself.
+
+93
+00:03:46,700 --> 00:03:49,060
+I'm going to go do something else.
+
+94
+00:03:49,060 --> 00:03:50,340
+Right.
+
+95
+00:03:50,340 --> 00:03:51,220
+And you're right.
+
+96
+00:03:51,420 --> 00:03:58,820
+I like the idea of creating context sensitive agents.
+
+97
+00:03:58,820 --> 00:04:01,500
+The agents is maybe not the right word.
+
+98
+00:04:01,500 --> 00:04:02,940
+It's a weird term these days now.
+
+99
+00:04:02,940 --> 00:04:05,460
+Yeah, yeah, yeah.
+
+100
+00:04:05,460 --> 00:04:08,660
+But yeah, you're right.
+
+101
+00:04:08,660 --> 00:04:10,980
+You're right.
+
+102
+00:04:10,980 --> 00:04:14,860
+I have been having not as much fun on that one.
+
+103
+00:04:14,900 --> 00:04:20,940
+Like I'm I spend my time like putting together like quick POCs for
+
+104
+00:04:20,940 --> 00:04:30,050
+because I think right now the time is right to sort of capture niche
+
+105
+00:04:30,050 --> 00:04:37,150
+markets that haven't been addressable because the ROI is not there.
+
+106
+00:04:37,150 --> 00:04:38,030
+Right, right.
+
+107
+00:04:38,030 --> 00:04:45,070
+And I'm like, damn, let's so now it used to be I have an idea and
+
+108
+00:04:45,070 --> 00:04:50,740
+I would go ROI like, how am I going to find the time to do that?
+
+109
+00:04:50,740 --> 00:04:52,580
+I have to do this and that.
+
+110
+00:04:52,580 --> 00:04:59,060
+And now I'm just like, no, load up BS code and start party and
+
+111
+00:04:59,060 --> 00:04:59,700
+see what happens.
+
+112
+00:04:59,700 --> 00:05:03,180
+I mean, you do it because you love it.
+
+113
+00:05:03,180 --> 00:05:06,980
+Like this book that I've been working on, it just I wrote it
+
+114
+00:05:06,980 --> 00:05:10,410
+in my head while I was hiking summer before last, and then
+
+115
+00:05:10,410 --> 00:05:11,930
+I kind of barfed it all out this fall.
+
+116
+00:05:12,370 --> 00:05:15,410
+Sat on it, edited it, finally sent it.
+
+117
+00:05:15,410 --> 00:05:16,130
+I was telling Jason earlier.
+
+118
+00:05:16,130 --> 00:05:18,250
+I finally sent it to a professional editor, got great feedback.
+
+119
+00:05:18,250 --> 00:05:22,050
+Like, oh, now it's good and great, great positive feedback to you.
+
+120
+00:05:22,050 --> 00:05:23,370
+Like I said, the spine's there.
+
+121
+00:05:23,370 --> 00:05:24,730
+It tells a great story.
+
+122
+00:05:24,730 --> 00:05:25,890
+Just clean up these things.
+
+123
+00:05:25,890 --> 00:05:29,170
+It's like, yeah, and everything, everything the editor suggests is
+
+124
+00:05:29,170 --> 00:05:32,380
+it's like, it's so much fun to write.
+
+125
+00:05:32,380 --> 00:05:34,780
+But I do because I have a story to tell.
+
+126
+00:05:34,780 --> 00:05:37,860
+And so, yeah, that's why I do it.
+
+127
+00:05:37,860 --> 00:05:41,440
+So, Jason, why do you write your AI books?
+
+128
+00:05:41,440 --> 00:05:42,240
+Why do I write them?
+
+129
+00:05:42,240 --> 00:05:46,480
+Oh, yeah, a scale because people ask me these questions or I see
+
+130
+00:05:46,480 --> 00:05:50,360
+things being said or shared that drive me insane.
+
+131
+00:05:50,360 --> 00:05:53,960
+And so, so if they do that, you can throw a big heavy book at them.
+
+132
+00:05:53,960 --> 00:05:55,300
+That's awesome.
+
+133
+00:05:55,300 --> 00:05:57,140
+Yeah, it's actually this one.
+
+134
+00:05:57,140 --> 00:05:57,660
+It's crazy.
+
+135
+00:05:57,660 --> 00:06:02,460
+This one is six hundred and fifty six pages.
+
+136
+00:06:02,460 --> 00:06:06,540
+Like, it's a real like it's it's it's heavy.
+
+137
+00:06:06,540 --> 00:06:09,260
+I'd call it a phone book, but that would date me.
+
+138
+00:06:09,260 --> 00:06:10,860
+Yeah, I don't know what you're talking about.
+
+139
+00:06:10,860 --> 00:06:11,700
+Yeah, I don't admit it.
+
+140
+00:06:12,460 --> 00:06:18,260
+I'm actually my mom actually worked on the machines that kept all that data.
+
+141
+00:06:18,260 --> 00:06:20,740
+She owned the computer room at U.S.
+
+142
+00:06:20,740 --> 00:06:24,460
+West Direct that held all the yellow pages, white pages data.
+
+143
+00:06:24,460 --> 00:06:25,220
+Like she maintained it.
+
+144
+00:06:25,220 --> 00:06:29,660
+I used to go in at night because it would burst print overnight
+
+145
+00:06:29,660 --> 00:06:33,860
+for the salespeople in the morning to have their assignments to get ads and stuff.
+
+146
+00:06:33,860 --> 00:06:37,020
+So I'd hang out in the with these giant like refrigerator
+
+147
+00:06:37,020 --> 00:06:40,420
+sized machines in the computer room with her at night.
+
+148
+00:06:40,420 --> 00:06:41,500
+It's kind of cool.
+
+149
+00:06:41,540 --> 00:06:46,450
+All right, man. Well, let's let's get into it.
+
+150
+00:06:46,450 --> 00:06:49,050
+So like I'll kick this off, Brent.
+
+151
+00:06:49,050 --> 00:06:50,890
+You can I'm going to listen to you two talk.
+
+152
+00:06:50,890 --> 00:06:55,050
+But how is like what are the biggest things you're seeing and how
+
+153
+00:06:55,050 --> 00:06:59,130
+a how is AI changing and how it what's the question I'm asking?
+
+154
+00:06:59,130 --> 00:07:01,290
+I should write these down like a proper person.
+
+155
+00:07:01,290 --> 00:07:05,130
+But like AI is obviously changing engineering workflows.
+
+156
+00:07:05,410 --> 00:07:07,730
+And as it's changing, AI is changing.
+
+157
+00:07:08,050 --> 00:07:11,450
+And like what are some of the biggest things you're seeing?
+
+158
+00:07:11,450 --> 00:07:14,890
+He's wrote a book about AI testing software with AI.
+
+159
+00:07:16,810 --> 00:07:18,650
+OK, I know what the answer is.
+
+160
+00:07:18,650 --> 00:07:22,770
+What's the finish the question that it is that is the most.
+
+161
+00:07:22,810 --> 00:07:24,650
+You know, I used to get in trouble because I would say,
+
+162
+00:07:24,650 --> 00:07:27,570
+oh, it's going to 10x plus things.
+
+163
+00:07:27,570 --> 00:07:29,770
+Right. And behind the scenes, I would say 100x.
+
+164
+00:07:30,010 --> 00:07:33,330
+Like in terms of just number of PRs, the amount of code churn,
+
+165
+00:07:33,570 --> 00:07:36,250
+number of the amount of testing needs to get done.
+
+166
+00:07:36,250 --> 00:07:39,250
+So recently, Anthropic just shared some of their numbers.
+
+167
+00:07:39,250 --> 00:07:41,290
+Google shared them a couple of months before.
+
+168
+00:07:41,290 --> 00:07:44,650
+And and I've also had the privilege of talking to
+
+169
+00:07:45,530 --> 00:07:48,250
+I can't really it doesn't really matter.
+
+170
+00:07:48,250 --> 00:07:50,330
+But but an actual like one of the largest
+
+171
+00:07:50,850 --> 00:07:54,050
+CI CD companies in the world, like a company that does this stuff.
+
+172
+00:07:54,530 --> 00:07:59,540
+And the most crazy thing is the number of PRs has actually gone up
+
+173
+00:07:59,540 --> 00:08:02,700
+like 10x like and that's conservative.
+
+174
+00:08:03,540 --> 00:08:06,220
+And I think I've seen anecdotally, I've seen that, too.
+
+175
+00:08:06,780 --> 00:08:10,060
+Yeah. And this is not at, you know, mom pop shops yet today.
+
+176
+00:08:10,060 --> 00:08:11,740
+But it's coming down stream fast.
+
+177
+00:08:12,420 --> 00:08:17,260
+So and then so then you've got but then they've Google was awesome.
+
+178
+00:08:17,260 --> 00:08:19,540
+They shared that they kind of estimate it's kind of a goal
+
+179
+00:08:19,540 --> 00:08:22,020
+because it's not a random person making up a number.
+
+180
+00:08:22,380 --> 00:08:25,900
+They estimate that for the amount of kind of lines of code
+
+181
+00:08:25,900 --> 00:08:29,180
+that are changing in these PRs, you need kind of the equivalent
+
+182
+00:08:29,180 --> 00:08:32,500
+or whatever that kind of compute is, you need about a quadratic
+
+183
+00:08:32,980 --> 00:08:36,740
+function on top of that number of tests or amount of tests.
+
+184
+00:08:37,020 --> 00:08:39,260
+It's a very high level kind of, you know,
+
+185
+00:08:40,180 --> 00:08:41,820
+a direct estimate.
+
+186
+00:08:41,820 --> 00:08:46,100
+But but so we've got a quadratic on top of an exponential.
+
+187
+00:08:47,340 --> 00:08:51,860
+So saying 10x is even ridiculously underestimating.
+
+188
+00:08:51,940 --> 00:08:55,580
+So and the thing is, all this business value is locked up.
+
+189
+00:08:55,580 --> 00:08:57,660
+They've got all these PRs, all this code change.
+
+190
+00:08:58,140 --> 00:09:00,340
+Oh, I'll say the word. I'll I'll get you around.
+
+191
+00:09:01,140 --> 00:09:03,500
+They can't trust it enough to ship it.
+
+192
+00:09:03,500 --> 00:09:06,100
+So it's all this business value backed up. Right.
+
+193
+00:09:06,460 --> 00:09:08,540
+But and then the crazy thing, if you do the math,
+
+194
+00:09:09,460 --> 00:09:13,540
+long term and my long term, I might mean 12, 18 months or something.
+
+195
+00:09:13,580 --> 00:09:15,980
+December. Yeah, exactly.
+
+196
+00:09:15,980 --> 00:09:17,740
+Exactly. And then it'll happen in November.
+
+197
+00:09:17,740 --> 00:09:21,540
+And you go like is that if you think about all this data center
+
+198
+00:09:21,540 --> 00:09:24,660
+build up angst that's going on, they don't people don't have enough
+
+199
+00:09:24,660 --> 00:09:27,940
+compute to generate the code or review the PRs.
+
+200
+00:09:28,700 --> 00:09:30,620
+They don't have enough to do the testing.
+
+201
+00:09:30,620 --> 00:09:34,620
+So what's interesting is I think you'll end up a split where about 80%
+
+202
+00:09:34,620 --> 00:09:37,900
+of the compute in these data centers is actually going to be doing testing
+
+203
+00:09:37,900 --> 00:09:41,580
+work. And only like 20% or less will be the kind of coding
+
+204
+00:09:42,420 --> 00:09:44,300
+generating code thing.
+
+205
+00:09:44,300 --> 00:09:46,180
+So that's going to be interesting.
+
+206
+00:09:46,180 --> 00:09:47,860
+I mean, that's like a mega.
+
+207
+00:09:47,860 --> 00:09:50,220
+Oh, my God. So what we're seeing
+
+208
+00:09:52,870 --> 00:09:53,750
+is interesting.
+
+209
+00:09:53,750 --> 00:09:57,140
+So so we saw this
+
+210
+00:09:59,040 --> 00:10:01,840
+back in the early 90s, except it was
+
+211
+00:10:03,230 --> 00:10:07,510
+people at that point in time, like the Bill Gates
+
+212
+00:10:08,270 --> 00:10:11,350
+right, created this couple of things.
+
+213
+00:10:11,350 --> 00:10:13,550
+Number one, there's a testing paradox
+
+214
+00:10:14,150 --> 00:10:16,190
+that I think is an interesting thing to discuss.
+
+215
+00:10:16,190 --> 00:10:20,550
+And number two, he's he's at one point in time was like,
+
+216
+00:10:20,550 --> 00:10:25,110
+I'm more of a testing company than a development company because testers
+
+217
+00:10:27,750 --> 00:10:32,250
+like I think when I started at Microsoft, we were two to one
+
+218
+00:10:32,770 --> 00:10:35,370
+test dirs to dev.
+
+219
+00:10:35,370 --> 00:10:39,050
+Yeah, I was about to two to one, some three to one in the US and stuff,
+
+220
+00:10:39,050 --> 00:10:43,290
+I think. And it encourages me now to
+
+221
+00:10:44,580 --> 00:10:48,780
+to go, OK, obviously, that's not going to scale.
+
+222
+00:10:51,200 --> 00:10:54,240
+And I'm now wondering, OK, are there lessons
+
+223
+00:10:54,240 --> 00:10:58,480
+from Accelerate that we could apply to the AI world
+
+224
+00:10:59,650 --> 00:11:01,530
+that that would solve this?
+
+225
+00:11:01,530 --> 00:11:03,970
+If you look at, you know, Accelerate came out of the editor.
+
+226
+00:11:04,290 --> 00:11:06,810
+Jump to Accelerate came out of surveys of companies
+
+227
+00:11:06,810 --> 00:11:08,810
+delivering software in the last couple of years.
+
+228
+00:11:08,810 --> 00:11:11,770
+Same company that did the research Accelerate.
+
+229
+00:11:11,970 --> 00:11:16,710
+Their name is escaping me. I know who it is.
+
+230
+00:11:16,710 --> 00:11:18,430
+Oh, sorry. That's me.
+
+231
+00:11:18,430 --> 00:11:20,270
+I look to see what I look to see.
+
+232
+00:11:20,270 --> 00:11:23,590
+God, is my phone. Why is it my nothing was happening.
+
+233
+00:11:23,590 --> 00:11:25,510
+I was so confused.
+
+234
+00:11:25,510 --> 00:11:27,590
+They've been asking more about AI stats lately.
+
+235
+00:11:27,790 --> 00:11:30,630
+And so I think you're right there.
+
+236
+00:11:30,910 --> 00:11:36,940
+Anyway, I lost the other thing I left out, which is interesting.
+
+237
+00:11:37,060 --> 00:11:40,140
+So the CICD guy said he's on the board of this thing.
+
+238
+00:11:40,820 --> 00:11:42,820
+He said they're seeing an uptick in sales.
+
+239
+00:11:42,820 --> 00:11:46,700
+So he's like, so they're seeing like 30 percent growth
+
+240
+00:11:46,700 --> 00:11:49,540
+in demand for CICD activity. Right.
+
+241
+00:11:49,820 --> 00:11:51,980
+So the board is going, OK, that's cool.
+
+242
+00:11:52,260 --> 00:11:54,540
+At the end of the board meeting, guess what they decided?
+
+243
+00:11:54,940 --> 00:11:56,540
+They said that they're in trouble
+
+244
+00:11:56,540 --> 00:11:59,940
+because what the customers are doing, they're using more CICD.
+
+245
+00:11:59,940 --> 00:12:02,180
+But what happens, there's calling now and they're saying, hey,
+
+246
+00:12:02,180 --> 00:12:04,580
+my bill's up 30 percent. Right.
+
+247
+00:12:04,940 --> 00:12:07,660
+And they go, but not only is it up 30 percent,
+
+248
+00:12:07,660 --> 00:12:10,340
+I actually have more than 10x more demand.
+
+249
+00:12:10,700 --> 00:12:14,700
+So I don't want to spend as much money on all this CICD. Right.
+
+250
+00:12:15,500 --> 00:12:16,740
+But I need it.
+
+251
+00:12:16,740 --> 00:12:20,380
+And so now, ironically, even though demand is up,
+
+252
+00:12:20,740 --> 00:12:22,700
+they think structurally things are broken now,
+
+253
+00:12:22,700 --> 00:12:25,420
+because not only can they not get that extra compute,
+
+254
+00:12:25,780 --> 00:12:29,020
+but they can't the customers don't want to actually pay 10x more. Right.
+
+255
+00:12:30,380 --> 00:12:32,740
+They don't have any money left for paying for their AI tokens.
+
+256
+00:12:33,540 --> 00:12:35,660
+Exactly. We can talk. We should talk about this.
+
+257
+00:12:35,660 --> 00:12:39,260
+This is the biggest myth going on in the world right now is that AI is expensive.
+
+258
+00:12:39,260 --> 00:12:42,820
+But anyway, so so they're going like, so this is a beautiful moment.
+
+259
+00:12:42,820 --> 00:12:46,060
+I said, chatting with him, I'm like, so what is so what is your solution?
+
+260
+00:12:46,060 --> 00:12:47,860
+Like what was at the end of the board meeting? What do they think?
+
+261
+00:12:47,860 --> 00:12:50,540
+And he said, well, he said, well, we thought, OK, first,
+
+262
+00:12:50,820 --> 00:12:53,260
+like maybe the only solution is to push the CICD stuff
+
+263
+00:12:53,260 --> 00:12:56,420
+back on our customers infrastructure. Right.
+
+264
+00:12:56,900 --> 00:12:58,860
+And then he went like this.
+
+265
+00:12:58,900 --> 00:13:02,180
+Oh, wait, that's why we were created in the first place.
+
+266
+00:13:03,540 --> 00:13:06,180
+Who was the offload that compute to some third party?
+
+267
+00:13:06,700 --> 00:13:10,140
+So their current solution is not is not workable either.
+
+268
+00:13:11,460 --> 00:13:14,820
+No, but I I'm not I'm not going to be surprised
+
+269
+00:13:15,460 --> 00:13:21,040
+by by that sort of that sort of phenomenon. Right.
+
+270
+00:13:22,580 --> 00:13:27,120
+The so it's interesting at times token
+
+271
+00:13:27,320 --> 00:13:29,600
+tokens cost is going up.
+
+272
+00:13:29,600 --> 00:13:33,560
+And at times like right now, I'm using it like crazy.
+
+273
+00:13:34,040 --> 00:13:37,840
+And in my company is starting to measure
+
+274
+00:13:39,980 --> 00:13:41,460
+token costs.
+
+275
+00:13:41,460 --> 00:13:44,380
+And I like, OK, I just went through an awesome
+
+276
+00:13:44,380 --> 00:13:46,820
+like AI week and blah, blah, blah.
+
+277
+00:13:46,820 --> 00:13:51,020
+And I have all of my agents and I I have a bunch of agents
+
+278
+00:13:51,020 --> 00:13:54,940
+that then output additional documentation so that I can
+
+279
+00:13:55,020 --> 00:13:57,780
+I can review the decision make their quote unquote
+
+280
+00:13:57,780 --> 00:13:59,900
+decision making process.
+
+281
+00:13:59,900 --> 00:14:03,860
+And I'm like, I got to be like one of these people
+
+282
+00:14:03,860 --> 00:14:08,220
+that is just on route to being threatened
+
+283
+00:14:08,220 --> 00:14:09,980
+by executives for spending too much.
+
+284
+00:14:10,900 --> 00:14:13,620
+And I looked up and I'm like, oh,
+
+285
+00:14:15,420 --> 00:14:18,340
+I cost the company one hundred and twenty five dollars
+
+286
+00:14:18,620 --> 00:14:20,140
+this last week.
+
+287
+00:14:20,140 --> 00:14:21,500
+Yeah, I'm going to sleep at night.
+
+288
+00:14:21,500 --> 00:14:23,820
+I'm not going to worry about this at all.
+
+289
+00:14:24,420 --> 00:14:28,090
+And but right
+
+290
+00:14:30,790 --> 00:14:33,950
+to me, it's not going to be based off of that.
+
+291
+00:14:33,950 --> 00:14:36,390
+It's not going to be tokens so much,
+
+292
+00:14:37,270 --> 00:14:41,830
+but now sort of a latency price because everything is
+
+293
+00:14:42,550 --> 00:14:45,750
+is live and we got to ask the agent this or we got to ask,
+
+294
+00:14:45,870 --> 00:14:47,790
+you know, the frontier model this.
+
+295
+00:14:47,790 --> 00:14:50,190
+And now we have to ask this and this and this and this.
+
+296
+00:14:50,590 --> 00:14:52,790
+And that latency, this is what I'm observing,
+
+297
+00:14:52,790 --> 00:14:57,150
+that overall latency is slowing things down to a degree
+
+298
+00:14:57,550 --> 00:15:00,430
+that actually annoys the humans.
+
+299
+00:15:03,090 --> 00:15:07,050
+But so here I'm beginning to investigate SLMs.
+
+300
+00:15:07,050 --> 00:15:10,650
+I don't know if you've sort of done that party yet, Jason.
+
+301
+00:15:10,770 --> 00:15:14,410
+Oh, it's all just decision decision models now.
+
+302
+00:15:15,160 --> 00:15:20,040
+Yeah. And then actually local local LLM.
+
+303
+00:15:20,280 --> 00:15:23,090
+I wouldn't be surprised starts.
+
+304
+00:15:23,090 --> 00:15:27,890
+Well, it depends on the frontier models can keep the pace on the cost.
+
+305
+00:15:27,890 --> 00:15:31,410
+But local LLMs also have their other advantages,
+
+306
+00:15:31,410 --> 00:15:34,050
+like what I've seen from from the stats,
+
+307
+00:15:35,080 --> 00:15:37,320
+like they have the nice price tag.
+
+308
+00:15:38,040 --> 00:15:41,440
+If you have a machine that can host it and
+
+309
+00:15:43,600 --> 00:15:48,040
+they don't underperform frontier models all that much.
+
+310
+00:15:48,040 --> 00:15:53,240
+So there might be an ROI in sort of those those local open source things.
+
+311
+00:15:54,120 --> 00:15:56,320
+So I've measured I've done it. I'm a nerd.
+
+312
+00:15:56,320 --> 00:15:59,360
+So I've benchmarked the locals like like the GEMMA models
+
+313
+00:15:59,360 --> 00:16:03,920
+and stuff like that against done a lot of cross benchmarking and stuff.
+
+314
+00:16:04,320 --> 00:16:07,880
+The local models still are not
+
+315
+00:16:08,960 --> 00:16:12,440
+quite up to par for testing stuff, for testing activities.
+
+316
+00:16:12,880 --> 00:16:16,760
+OK. The it's a whole discussion.
+
+317
+00:16:16,960 --> 00:16:17,840
+But I want to say this.
+
+318
+00:16:17,840 --> 00:16:20,120
+I think what people are measuring, measuring things wrong.
+
+319
+00:16:20,640 --> 00:16:23,080
+I think people are looking at tokens versus tokens,
+
+320
+00:16:23,080 --> 00:16:25,160
+like a opening eye or a model, you know,
+
+321
+00:16:25,160 --> 00:16:29,840
+Haiku model versus versus, you know, some Gemini model or something like that.
+
+322
+00:16:30,320 --> 00:16:31,400
+That's the wrong way to look at it.
+
+323
+00:16:31,400 --> 00:16:33,400
+I think it's it's back to the old Microsoft thing
+
+324
+00:16:33,400 --> 00:16:35,680
+where it was total cost of ownership. Right.
+
+325
+00:16:35,680 --> 00:16:36,760
+It was the total cost.
+
+326
+00:16:36,760 --> 00:16:40,040
+And the reality is, is that the the if you look at the work
+
+327
+00:16:40,040 --> 00:16:42,400
+that's produced, how much would it have cost if a human did it?
+
+328
+00:16:43,000 --> 00:16:45,360
+And also, interestingly, latency, like how long does it take
+
+329
+00:16:45,600 --> 00:16:47,640
+would have taken a person to do that amount of work.
+
+330
+00:16:47,640 --> 00:16:51,240
+And I've actually worked with real testing companies
+
+331
+00:16:51,240 --> 00:16:53,400
+like that are large vendors and stuff like that.
+
+332
+00:16:53,880 --> 00:16:57,880
+And we worked on we did the spreadsheets on their actual numbers
+
+333
+00:16:57,880 --> 00:17:00,960
+on how like how many bugs found per man hour
+
+334
+00:17:00,960 --> 00:17:04,920
+and the latency, the time to time to value and all these things.
+
+335
+00:17:05,780 --> 00:17:06,460
+And I'm going to say this.
+
+336
+00:17:06,460 --> 00:17:08,540
+And you go like most people go like, yeah, whatever.
+
+337
+00:17:09,820 --> 00:17:13,180
+It was over 10 X less expensive than humans,
+
+338
+00:17:13,380 --> 00:17:15,540
+and it was five X faster.
+
+339
+00:17:15,540 --> 00:17:18,060
+And this is giving every benefit of the doubt
+
+340
+00:17:18,340 --> 00:17:20,900
+on every in every column to the humans.
+
+341
+00:17:21,980 --> 00:17:22,820
+For all these tasks.
+
+342
+00:17:22,820 --> 00:17:25,220
+And these are real world tasks across, to be clear,
+
+343
+00:17:25,540 --> 00:17:27,020
+hundreds of clients.
+
+344
+00:17:27,020 --> 00:17:30,180
+So it's not like a one off or a one kind of a of a task.
+
+345
+00:17:30,580 --> 00:17:33,900
+So so we're seeing these kind of orders of magnitude difference.
+
+346
+00:17:33,900 --> 00:17:35,900
+But people I think are comparing, you know,
+
+347
+00:17:37,700 --> 00:17:39,820
+a Ferrari to a to a Lamborghini.
+
+348
+00:17:40,660 --> 00:17:41,900
+That's a bad example. It's the other way around.
+
+349
+00:17:41,900 --> 00:17:44,580
+But anyway, they're comparing the Honda to the Toyota.
+
+350
+00:17:44,860 --> 00:17:47,460
+Right. When actually should be comparing it against the
+
+351
+00:17:48,460 --> 00:17:51,100
+the the 10 people that carry
+
+352
+00:17:51,460 --> 00:17:53,780
+the king on the throne down the street.
+
+353
+00:17:53,900 --> 00:17:55,980
+Like it's far more expensive to do it with humans.
+
+354
+00:17:56,380 --> 00:18:00,080
+Absolutely. For sure.
+
+355
+00:18:00,080 --> 00:18:01,680
+Well, that was easy when it gets some controversy.
+
+356
+00:18:01,680 --> 00:18:03,480
+You were calling me out on this.
+
+357
+00:18:03,480 --> 00:18:06,800
+Yeah, let's talk about let's talk about it, because I kind of agree.
+
+358
+00:18:06,800 --> 00:18:08,960
+And I was calling you.
+
+359
+00:18:08,960 --> 00:18:12,280
+Would you shut the F up and let me finish, dude?
+
+360
+00:18:12,960 --> 00:18:14,560
+Just go back to mapping.
+
+361
+00:18:14,560 --> 00:18:16,720
+You like Trump, they're kind of slumped back in your sleep.
+
+362
+00:18:16,720 --> 00:18:18,720
+I can't tell if you're awake or not
+
+363
+00:18:18,720 --> 00:18:21,000
+until you bump your microphone for the 25th time.
+
+364
+00:18:21,280 --> 00:18:22,040
+All right.
+
+365
+00:18:23,260 --> 00:18:26,220
+One thing I ask a lot when I talk to teams is like,
+
+366
+00:18:26,220 --> 00:18:28,460
+where do you get where do you get your confidence from to ship?
+
+367
+00:18:28,460 --> 00:18:29,900
+Like, you know, we have big time.
+
+368
+00:18:29,900 --> 00:18:33,180
+We have a lot of test and ultimately comes down to what we have.
+
+369
+00:18:33,180 --> 00:18:34,260
+We are tests.
+
+370
+00:18:34,260 --> 00:18:35,700
+I said, how confident are you in your tests?
+
+371
+00:18:35,700 --> 00:18:38,700
+And they go, oh, OK, we have we need more data.
+
+372
+00:18:39,100 --> 00:18:41,140
+And as you all know, and traditionally,
+
+373
+00:18:41,140 --> 00:18:43,540
+there's a bunch more data sources that can help us figure out
+
+374
+00:18:43,940 --> 00:18:46,460
+where we get our confidence from for quality.
+
+375
+00:18:46,460 --> 00:18:48,180
+So I I do get it.
+
+376
+00:18:48,180 --> 00:18:53,020
+But I something doesn't sit with me about like renaming.
+
+377
+00:18:53,020 --> 00:18:54,500
+I mean, it's kind of growing on me.
+
+378
+00:18:54,500 --> 00:18:57,780
+But talk to me more about the confidence engineer, because I'm not sold.
+
+379
+00:18:58,540 --> 00:19:00,020
+Ah, yes.
+
+380
+00:19:00,020 --> 00:19:02,140
+So I'm going to do the worst thing ever, probably for you.
+
+381
+00:19:02,140 --> 00:19:05,610
+So I was like raging at the at the radio
+
+382
+00:19:06,450 --> 00:19:09,250
+when I was in the last podcast about it was it's
+
+383
+00:19:09,730 --> 00:19:11,290
+it's not actually either or.
+
+384
+00:19:11,290 --> 00:19:13,530
+And you're going to hate my answer, I think.
+
+385
+00:19:13,530 --> 00:19:15,250
+My my you're going to say it depends.
+
+386
+00:19:15,250 --> 00:19:16,930
+Are you going to fricking say it depends?
+
+387
+00:19:16,970 --> 00:19:18,330
+OK, go on.
+
+388
+00:19:18,330 --> 00:19:19,890
+Brandy Mark Allen there.
+
+389
+00:19:19,890 --> 00:19:22,330
+Why do you keep bringing up this Trump stuff?
+
+390
+00:19:22,330 --> 00:19:23,850
+OK, sorry, bad joke.
+
+391
+00:19:23,850 --> 00:19:29,700
+So the the real thing is this is that sophisticated
+
+392
+00:19:30,180 --> 00:19:33,260
+and I ran this past chat to you, by the way, of course.
+
+393
+00:19:34,380 --> 00:19:37,980
+I role played with Chachi Petey with the real time voice.
+
+394
+00:19:38,300 --> 00:19:40,140
+We don't need to know your private things, man.
+
+395
+00:19:40,140 --> 00:19:42,140
+Just go on. Yeah.
+
+396
+00:19:42,870 --> 00:19:46,030
+You are a handsome podcaster named Alan.
+
+397
+00:19:46,030 --> 00:19:48,910
+That's what I. All right.
+
+398
+00:19:49,190 --> 00:19:53,030
+So really what's going on is it's not for you.
+
+399
+00:19:53,750 --> 00:19:56,230
+You knew you too knew at Microsoft
+
+400
+00:19:56,550 --> 00:19:59,950
+that even traditional software is nondeterministic.
+
+401
+00:20:00,790 --> 00:20:02,470
+It's flaky.
+
+402
+00:20:02,470 --> 00:20:06,390
+It's, you know, the whole idea is you can't ever know that it'll work.
+
+403
+00:20:06,590 --> 00:20:08,790
+Like, but like if you look at like 80, 90 percent
+
+404
+00:20:08,790 --> 00:20:12,150
+of the population of people that do testing or think about testing
+
+405
+00:20:12,470 --> 00:20:15,870
+or interpret test results, they don't get that sophistication.
+
+406
+00:20:15,870 --> 00:20:17,910
+They think it either works or it doesn't.
+
+407
+00:20:17,910 --> 00:20:21,750
+Very kind of Boolean ways and very idempotent ways
+
+408
+00:20:22,030 --> 00:20:23,430
+and repeatable ways.
+
+409
+00:20:23,430 --> 00:20:25,870
+And everyone's chasing repeatability and stuff.
+
+410
+00:20:26,190 --> 00:20:28,580
+So but you guys were sophisticated.
+
+411
+00:20:28,580 --> 00:20:31,580
+You knew it was also it was actually always about trust and confidence.
+
+412
+00:20:31,740 --> 00:20:33,220
+One hundred percent.
+
+413
+00:20:33,220 --> 00:20:34,620
+And you never even had all the data.
+
+414
+00:20:34,620 --> 00:20:37,620
+In fact, you couldn't even know all the data you didn't have
+
+415
+00:20:37,620 --> 00:20:39,060
+that you should have to make that decision.
+
+416
+00:20:39,060 --> 00:20:40,220
+We still don't.
+
+417
+00:20:41,160 --> 00:20:43,120
+And we never will in a lot of cases.
+
+418
+00:20:43,120 --> 00:20:44,520
+Yeah, you never I think you never will.
+
+419
+00:20:44,520 --> 00:20:46,400
+Yeah, there'll always be what they call that.
+
+420
+00:20:46,400 --> 00:20:49,120
+Like a force majeure or like the nature.
+
+421
+00:20:49,640 --> 00:20:51,800
+Like just sometimes a hurricane happens, too. Right.
+
+422
+00:20:52,640 --> 00:20:57,480
+Like like a data center was nuked in or should say that was was careful.
+
+423
+00:20:57,480 --> 00:20:59,840
+It's gone offline in certain regions of the world.
+
+424
+00:21:00,320 --> 00:21:02,600
+Like it's just it's actually gone.
+
+425
+00:21:02,920 --> 00:21:05,280
+Like, OK, like, did they plan for that?
+
+426
+00:21:05,280 --> 00:21:07,480
+Probably not. You know, the people build services on.
+
+427
+00:21:07,840 --> 00:21:13,120
+So I guess my point is that we do, by the way, plan for that.
+
+428
+00:21:13,440 --> 00:21:15,320
+Let's finish this point, man.
+
+429
+00:21:15,320 --> 00:21:17,240
+Dude, I thought Amazon planned for it.
+
+430
+00:21:18,080 --> 00:21:22,160
+Now, I can absolutely validate Microsoft plans for it.
+
+431
+00:21:23,070 --> 00:21:25,030
+OK, OK, there we go.
+
+432
+00:21:25,030 --> 00:21:27,310
+That's right. Yeah, I'll get mad at you.
+
+433
+00:21:27,670 --> 00:21:35,950
+So so the idea is that with AI and AI based features
+
+434
+00:21:35,950 --> 00:21:39,790
+and actually AI systems themselves, all those things that we would fret about
+
+435
+00:21:39,790 --> 00:21:43,470
+and things are coming to the masses now.
+
+436
+00:21:43,510 --> 00:21:45,550
+Everyone's getting everyone now has this problem.
+
+437
+00:21:45,790 --> 00:21:47,910
+Everyone's getting visibility into non-determinism.
+
+438
+00:21:47,910 --> 00:21:50,550
+That's like the big scary thing for them now.
+
+439
+00:21:50,550 --> 00:21:54,940
+They're also able to run a lot more tests than they used to.
+
+440
+00:21:54,940 --> 00:21:58,620
+Now they can say, hey, generate a thousand selenium tests, right?
+
+441
+00:21:58,620 --> 00:22:02,780
+Generate like 80 permutations of this of this test case.
+
+442
+00:22:03,180 --> 00:22:06,920
+And so but when you do that, now you need to get into the idea
+
+443
+00:22:06,920 --> 00:22:12,200
+of of sampling, of of not knowing if every test even passed correctly
+
+444
+00:22:12,200 --> 00:22:15,120
+or not, because you can't physically check them all, for example.
+
+445
+00:22:16,160 --> 00:22:18,520
+The and little in the product is doing this at the same time.
+
+446
+00:22:18,520 --> 00:22:23,110
+So really saying confidence, you can say I think they're kind of equivalent
+
+447
+00:22:23,110 --> 00:22:25,310
+ish trust and confidence, actually.
+
+448
+00:22:25,310 --> 00:22:27,630
+But people are used to trust.
+
+449
+00:22:27,630 --> 00:22:28,630
+They're not used to confidence.
+
+450
+00:22:28,630 --> 00:22:31,070
+So confidence, if you say you need to be a confidence engineer
+
+451
+00:22:31,070 --> 00:22:34,070
+and you define what confidence is, it's really a mechanism
+
+452
+00:22:34,070 --> 00:22:37,310
+to make people wake up and go, oh, things have changed.
+
+453
+00:22:37,710 --> 00:22:40,750
+What is a confidence engineer, which is kind of happening?
+
+454
+00:22:41,030 --> 00:22:43,670
+And then they have to go learn the things
+
+455
+00:22:43,670 --> 00:22:46,830
+that you and your brand new have known for a decade.
+
+456
+00:22:47,110 --> 00:22:51,830
+Well, and going and I think your number is lower on the number of testers
+
+457
+00:22:51,830 --> 00:22:56,740
+who just like verifying things versus like, I think I kind of like
+
+458
+00:22:56,740 --> 00:23:02,300
+the idea that makes sense, but I would say five percent
+
+459
+00:23:02,300 --> 00:23:05,380
+of most of the people doing testing today could actually do
+
+460
+00:23:05,380 --> 00:23:06,940
+what you just described.
+
+461
+00:23:06,940 --> 00:23:10,340
+Oh, OK. Well, no, not even that probably.
+
+462
+00:23:10,940 --> 00:23:15,500
+Well, but could or would.
+
+463
+00:23:16,060 --> 00:23:18,280
+I think it's a different thing.
+
+464
+00:23:18,280 --> 00:23:22,240
+Exactly. You know what could could kids could is just type in the crap
+
+465
+00:23:22,240 --> 00:23:26,360
+you put in your data into a chat prompt and say and measure
+
+466
+00:23:26,360 --> 00:23:30,780
+the confidence interval like literally in the I can can do that now.
+
+467
+00:23:30,820 --> 00:23:32,740
+It doesn't even do it with all tokens. It does it with code.
+
+468
+00:23:33,420 --> 00:23:35,900
+So almost everybody can do that now.
+
+469
+00:23:36,100 --> 00:23:38,780
+So even with the with the testing, I book when I talk about confidence,
+
+470
+00:23:39,220 --> 00:23:42,620
+there's skills, skills on the files, there's
+
+471
+00:23:43,500 --> 00:23:44,540
+prompt examples.
+
+472
+00:23:44,540 --> 00:23:46,580
+So even if they don't know the math, they don't know the stats.
+
+473
+00:23:46,940 --> 00:23:50,580
+Everyone can actually just take if you just put your your bear with me.
+
+474
+00:23:50,580 --> 00:23:53,260
+Sorry, if you have a folder with all of your test
+
+475
+00:23:53,260 --> 00:23:57,780
+artifacts and your specifications and in your your SEC filings,
+
+476
+00:23:57,780 --> 00:24:00,900
+whatever context you want to have in there, you just go, hey,
+
+477
+00:24:01,340 --> 00:24:04,980
+what if you ask it like, look at all this data and tell me,
+
+478
+00:24:05,140 --> 00:24:08,020
+like, what is the confidence that this is good enough to ship
+
+479
+00:24:08,340 --> 00:24:09,540
+and tell me why?
+
+480
+00:24:09,540 --> 00:24:12,900
+It gives you brilliant analysis that's better than most humans.
+
+481
+00:24:13,060 --> 00:24:16,420
+So the 95 percent of the unwashed masses
+
+482
+00:24:16,780 --> 00:24:20,180
+that just that just click things and make sure to do what it did
+
+483
+00:24:20,540 --> 00:24:23,300
+can actually like what Brent's hinting here.
+
+484
+00:24:23,300 --> 00:24:24,580
+You can they can even do that now.
+
+485
+00:24:24,580 --> 00:24:27,140
+They have the power to do that with AI on their their desktop.
+
+486
+00:24:27,540 --> 00:24:30,220
+So and Brent, I'll get back to you in a minute because.
+
+487
+00:24:31,020 --> 00:24:33,060
+But yes, actually, you're you're kind of I don't know
+
+488
+00:24:33,060 --> 00:24:35,420
+if it's not about confidence engineer, but that idea
+
+489
+00:24:35,420 --> 00:24:37,540
+and I've talked to companies that are doing this like
+
+490
+00:24:37,540 --> 00:24:40,980
+create a repo of just your artifacts and use
+
+491
+00:24:40,980 --> 00:24:43,500
+AI to help create the artifacts and create the skills, create
+
+492
+00:24:43,500 --> 00:24:46,300
+all the skills for it, but have your specifications,
+
+493
+00:24:46,300 --> 00:24:50,860
+your architecture, your test plans, like have all that make sense.
+
+494
+00:24:51,180 --> 00:24:54,940
+And then that becomes a great source of truth for I was originally
+
+495
+00:24:54,940 --> 00:24:55,980
+talking to companies about doing this.
+
+496
+00:24:55,980 --> 00:25:00,740
+It was with like, let's figure out how we're going to test this.
+
+497
+00:25:00,740 --> 00:25:02,260
+Like, what tests do we need based on this?
+
+498
+00:25:02,260 --> 00:25:05,300
+But you're right. Flipping the question to confidence.
+
+499
+00:25:05,300 --> 00:25:08,500
+How do we know how can we be confident that this is
+
+500
+00:25:08,700 --> 00:25:11,820
+and what's confident that what actually what are we trying to get confident
+
+501
+00:25:11,820 --> 00:25:14,860
+that that's good enough for customers, that it's great for customers?
+
+502
+00:25:15,180 --> 00:25:16,180
+Help me finish that sentence.
+
+503
+00:25:16,180 --> 00:25:18,100
+We want to get the confidence that it is.
+
+504
+00:25:18,890 --> 00:25:20,010
+You're exactly right.
+
+505
+00:25:20,010 --> 00:25:22,730
+It goes back to the same things that I've heard on your podcast
+
+506
+00:25:22,730 --> 00:25:26,050
+once or twice, which is how risky is this?
+
+507
+00:25:26,050 --> 00:25:28,530
+How confident are you or even how much do you trust?
+
+508
+00:25:28,530 --> 00:25:31,010
+It's OK. They're kind of it can be interchangeable words.
+
+509
+00:25:31,490 --> 00:25:35,290
+How much do you trust as a software won't do bad things for customers?
+
+510
+00:25:35,490 --> 00:25:39,170
+It won't harm the business or will and or will accelerate the business.
+
+511
+00:25:39,170 --> 00:25:41,410
+And really, it's that risk reward trade off at the end of the day.
+
+512
+00:25:41,890 --> 00:25:46,250
+Every time you change software, there's risk and potential value in those changes.
+
+513
+00:25:46,690 --> 00:25:49,680
+So you know, is that an AI?
+
+514
+00:25:49,680 --> 00:25:50,880
+Let me get really nerdy here.
+
+515
+00:25:50,880 --> 00:25:54,000
+Is that this is why I think this is why between trust and confidence,
+
+516
+00:25:54,000 --> 00:25:58,760
+I super tip to confidence is that usually people do pass.
+
+517
+00:25:58,760 --> 00:26:01,800
+They have pass fail or they have a long list of information, right?
+
+518
+00:26:01,800 --> 00:26:04,960
+Past or failed tests and whatever and things we didn't do and whatever.
+
+519
+00:26:05,360 --> 00:26:09,880
+But confidence is really about the confidence interval at the end of the day.
+
+520
+00:26:10,040 --> 00:26:13,200
+So you're never 75 percent sure.
+
+521
+00:26:13,520 --> 00:26:18,760
+You're 75 percent sure plus or minus some band of confidence.
+
+522
+00:26:19,080 --> 00:26:21,960
+And that makes people think two things.
+
+523
+00:26:21,960 --> 00:26:24,440
+One is, oh, it's not a single number.
+
+524
+00:26:24,440 --> 00:26:25,640
+It's a very it's a fuzzy thing.
+
+525
+00:26:25,640 --> 00:26:27,400
+This is a fuzzy by nature.
+
+526
+00:26:27,400 --> 00:26:30,760
+This is a fuzzy determination of trustworthiness or confidence in it.
+
+527
+00:26:31,080 --> 00:26:35,320
+And you have to do multiple samples and do a little bit of math
+
+528
+00:26:35,320 --> 00:26:40,120
+to figure out how tight is that distribution, a Gaussian or normal distribution
+
+529
+00:26:40,120 --> 00:26:44,560
+you assume in your scores so that you know how confident you are
+
+530
+00:26:44,560 --> 00:26:48,480
+in the number that you're actually producing, not just that it is 75 percent,
+
+531
+00:26:48,680 --> 00:26:52,040
+but how confident are you in that you are 75 percent sure?
+
+532
+00:26:52,760 --> 00:26:54,280
+I like it. I like it.
+
+533
+00:26:54,280 --> 00:26:57,000
+I have one thing I've done recently in the last,
+
+534
+00:26:57,360 --> 00:27:00,280
+you know, in my mini retirement and beyond is
+
+535
+00:27:00,920 --> 00:27:02,840
+we used to talk about risk analysis all the time.
+
+536
+00:27:02,840 --> 00:27:05,280
+Like, let's build a risk analysis tool that tells us like, you know,
+
+537
+00:27:05,280 --> 00:27:07,000
+whatever, there's no coverage or tests here.
+
+538
+00:27:07,000 --> 00:27:09,200
+It's higher risk or it's it's higher impact.
+
+539
+00:27:09,200 --> 00:27:13,760
+I flipped it around and I was like, what's it like?
+
+540
+00:27:13,760 --> 00:27:15,440
+I want confidence analysis tools.
+
+541
+00:27:15,440 --> 00:27:16,560
+I want it to same.
+
+542
+00:27:16,560 --> 00:27:19,600
+It's the same tooling, same approach, but we're trying to figure out
+
+543
+00:27:19,600 --> 00:27:23,400
+how much confidence the risk is just a something to,
+
+544
+00:27:24,420 --> 00:27:27,780
+you know, I don't know, to tell us how scared we are.
+
+545
+00:27:27,780 --> 00:27:31,300
+But I like looking at the veteran on how much confidence do we have?
+
+546
+00:27:31,540 --> 00:27:33,700
+Brent has been dying to talk to you. I like it.
+
+547
+00:27:34,020 --> 00:27:38,260
+Yeah, I'm starting to twitch now because number so first and foremost,
+
+548
+00:27:39,830 --> 00:27:43,510
+Jason, I don't know how we're going to make it happen,
+
+549
+00:27:43,710 --> 00:27:49,150
+but I have just purchased your book and I did it looking at Amazon
+
+550
+00:27:49,150 --> 00:27:53,030
+and all I needed to see was P value in NDCG.
+
+551
+00:27:53,030 --> 00:27:57,670
+And I'm like, ah, I know where Jason's going with this purchase by.
+
+552
+00:27:57,670 --> 00:28:02,190
+So whenever we meet in person, expect to be, you know,
+
+553
+00:28:02,230 --> 00:28:06,910
+autographing that now also the and that's all we need to say.
+
+554
+00:28:07,190 --> 00:28:09,390
+This podcast is over.
+
+555
+00:28:09,390 --> 00:28:15,470
+Confidence tests and I have another confidence is not necessarily
+
+556
+00:28:15,470 --> 00:28:21,950
+a synonym for trust or an antonym for risk.
+
+557
+00:28:22,190 --> 00:28:25,950
+Tell me why and stop banging your frickin cord against the microphone, too.
+
+558
+00:28:27,210 --> 00:28:29,450
+OK, I don't want to hurt.
+
+559
+00:28:29,690 --> 00:28:31,010
+I'll take it. It was listeners.
+
+560
+00:28:31,010 --> 00:28:36,650
+It was the the
+
+561
+00:28:36,650 --> 00:28:40,250
+but let me let me let me go down the way I was going. Right.
+
+562
+00:28:43,080 --> 00:28:48,960
+Determinism, the biggest challenge that we have
+
+563
+00:28:49,600 --> 00:28:53,720
+and Jason's absolutely nailed this is the shift
+
+564
+00:28:54,440 --> 00:29:01,740
+from sort of did pseudo determinism to blatant non-determinism.
+
+565
+00:29:01,740 --> 00:29:04,980
+Like, I completely agree with with Jason.
+
+566
+00:29:05,100 --> 00:29:08,940
+Like for the for the vast majority of software,
+
+567
+00:29:08,940 --> 00:29:12,540
+there's sort of this prevailing belief that things are deterministic
+
+568
+00:29:13,220 --> 00:29:14,780
+when they are not.
+
+569
+00:29:14,780 --> 00:29:20,260
+And like, as I as I've mentioned on the podcast
+
+570
+00:29:20,260 --> 00:29:24,380
+multiple times right right now, what we're seeing is through AI
+
+571
+00:29:24,380 --> 00:29:29,100
+and agent systems, they're basically roughly equivalent
+
+572
+00:29:29,100 --> 00:29:32,180
+to humans in their decision making process,
+
+573
+00:29:32,940 --> 00:29:36,500
+which means they're roughly equivalent in the error
+
+574
+00:29:36,500 --> 00:29:38,940
+in the decision making process. Exactly.
+
+575
+00:29:39,300 --> 00:29:44,180
+And so when we have that error now going at,
+
+576
+00:29:45,500 --> 00:29:49,940
+you know, whatever quadratic times exponential scale is.
+
+577
+00:29:52,210 --> 00:29:56,850
+They that nickel and dime error becomes massive
+
+578
+00:29:57,370 --> 00:29:59,370
+over F a night. Right.
+
+579
+00:29:59,410 --> 00:30:03,850
+And so the biggest challenge here
+
+580
+00:30:04,900 --> 00:30:08,900
+is going to be how to get people to shift
+
+581
+00:30:09,640 --> 00:30:13,400
+comfortably to non-deterministic thinking,
+
+582
+00:30:13,400 --> 00:30:18,320
+which is something data scientists do quite well.
+
+583
+00:30:19,080 --> 00:30:25,650
+Right. The but the traditional developer,
+
+584
+00:30:25,650 --> 00:30:31,010
+the traditional PM, not so much right now.
+
+585
+00:30:31,720 --> 00:30:34,440
+And there's some things, though, like there's still some
+
+586
+00:30:36,330 --> 00:30:38,530
+like when we were talking about agile,
+
+587
+00:30:38,530 --> 00:30:40,770
+there's a parallel here that I'm thinking of when we were
+
+588
+00:30:40,770 --> 00:30:42,890
+beginning to talk about agile. Right.
+
+589
+00:30:42,890 --> 00:30:46,130
+One of the things that Alan and I talked about all the time
+
+590
+00:30:46,130 --> 00:30:49,570
+is that like the proactive two month long test pass
+
+591
+00:30:50,250 --> 00:30:52,010
+was stupid AF.
+
+592
+00:30:52,010 --> 00:30:55,810
+Right. You're you're there are better ways to roll out.
+
+593
+00:30:55,810 --> 00:30:57,930
+You can do exposure control.
+
+594
+00:30:57,930 --> 00:31:01,530
+You can get testing and production going.
+
+595
+00:31:01,610 --> 00:31:04,610
+And so and then use flight control to kind of get the sense
+
+596
+00:31:04,610 --> 00:31:09,890
+of, OK, are we are we causing harm or not? Right.
+
+597
+00:31:09,890 --> 00:31:14,010
+The trick is to minimize the calendar time
+
+598
+00:31:14,010 --> 00:31:15,450
+to get a value out,
+
+599
+00:31:15,450 --> 00:31:20,010
+but to also understand the risk coming back. Right.
+
+600
+00:31:20,010 --> 00:31:24,490
+Because you there are certain things like we can talk about
+
+601
+00:31:24,490 --> 00:31:28,930
+safety guardrails. There's there's a minimum bar
+
+602
+00:31:28,930 --> 00:31:34,250
+where it's like, look, if you do something to delete,
+
+603
+00:31:36,570 --> 00:31:38,850
+but let's just say in the real world, let's say,
+
+604
+00:31:40,530 --> 00:31:43,370
+Alan, your company, one of your engineers
+
+605
+00:31:44,450 --> 00:31:49,440
+deletes the the repo and it's not recoverable. Right.
+
+606
+00:31:49,960 --> 00:31:52,360
+Or they spill water on a laptop, something stupid.
+
+607
+00:31:54,200 --> 00:31:55,640
+Well, spill water on the laptop.
+
+608
+00:31:55,640 --> 00:31:56,840
+I can imagine that happens.
+
+609
+00:31:56,880 --> 00:32:00,240
+But but there are certain things that someone could do
+
+610
+00:32:01,550 --> 00:32:04,950
+that might at certain companies be immediate grounds for firing.
+
+611
+00:32:05,690 --> 00:32:10,090
+Right. And it's it's potentially the same thing here,
+
+612
+00:32:10,090 --> 00:32:13,740
+but we can't really fire these agents.
+
+613
+00:32:13,740 --> 00:32:16,300
+We can modify their prompt. We can change models.
+
+614
+00:32:16,700 --> 00:32:18,820
+There's a bunch of tweaking that we can do.
+
+615
+00:32:20,300 --> 00:32:25,260
+But because there isn't that fear of that negative consequence,
+
+616
+00:32:25,460 --> 00:32:27,380
+there's no fear at all here.
+
+617
+00:32:27,380 --> 00:32:29,580
+We had to be super careful around
+
+618
+00:32:31,320 --> 00:32:34,240
+like certainly anything that's that's ethical.
+
+619
+00:32:34,240 --> 00:32:36,880
+Like that's that's my high order bit right now.
+
+620
+00:32:36,880 --> 00:32:39,240
+And don't delete customer stuff.
+
+621
+00:32:40,600 --> 00:32:44,000
+Don't be racist. Don't you know, those sorts of things.
+
+622
+00:32:45,440 --> 00:32:50,080
+But shifting to specific examples, but anyway, go on.
+
+623
+00:32:54,180 --> 00:32:58,660
+OK, there was a discussion I'm having on LinkedIn,
+
+624
+00:32:58,660 --> 00:33:03,090
+and I was just like, OK, just as an aside, what are
+
+625
+00:33:03,840 --> 00:33:08,480
+if I were to give the top three priorities
+
+626
+00:33:08,480 --> 00:33:11,160
+around people who don't understand A.I.
+
+627
+00:33:11,920 --> 00:33:17,540
+Right. Like one is I would stand firm around
+
+628
+00:33:17,540 --> 00:33:20,100
+evaluate the ethics of what you're doing. Right.
+
+629
+00:33:20,100 --> 00:33:23,940
+It's that that to me is super important.
+
+630
+00:33:23,940 --> 00:33:27,580
+You can't have your team going around being racist.
+
+631
+00:33:27,580 --> 00:33:30,660
+Why? Why would you allow your agents do that? Right.
+
+632
+00:33:34,260 --> 00:33:38,140
+Anthropomorphizing bugs me a great deal.
+
+633
+00:33:38,870 --> 00:33:42,150
+These things aren't just because.
+
+634
+00:33:42,830 --> 00:33:45,630
+It's coming. You're going to hate me now.
+
+635
+00:33:45,630 --> 00:33:47,150
+Oh, I could never hate you.
+
+636
+00:33:47,150 --> 00:33:49,310
+I'm just going to listen. Go guys. Talk, talk, talk, talk.
+
+637
+00:33:53,120 --> 00:33:54,960
+No, no, go, go. I'm not going to hate you.
+
+638
+00:33:54,960 --> 00:33:57,680
+I'm going to pity and feel bad.
+
+639
+00:33:57,680 --> 00:33:58,840
+I'm going to feel sad.
+
+640
+00:33:58,840 --> 00:34:01,600
+I'm like a more convoluted way. It's actually not even maybe.
+
+641
+00:34:01,600 --> 00:34:03,720
+Yeah, I'll say what it is real quick.
+
+642
+00:34:03,720 --> 00:34:08,270
+Yeah, the list, but like it's actually like inverse
+
+643
+00:34:08,270 --> 00:34:11,110
+and for more anthropomorphization or something.
+
+644
+00:34:11,470 --> 00:34:13,750
+Oh, Alan was asking, like, what am I doing right now?
+
+645
+00:34:13,750 --> 00:34:16,870
+What I'm I'm actually doing is taking really think I'm
+
+646
+00:34:16,870 --> 00:34:20,150
+what I've done is I'm working on plugins for for cloth,
+
+647
+00:34:20,150 --> 00:34:22,510
+all the coding agents, Claude and Codex and stuff.
+
+648
+00:34:22,510 --> 00:34:24,190
+But guess what the coding agent
+
+649
+00:34:24,190 --> 00:34:26,590
+guess what this this plugin is? It's me.
+
+650
+00:34:27,700 --> 00:34:30,740
+So I'm basically digitizing all of these like these.
+
+651
+00:34:30,740 --> 00:34:33,540
+That's why that's why also the other reason I'm working on the books
+
+652
+00:34:33,540 --> 00:34:36,860
+is I've been having to document and write down what I think
+
+653
+00:34:38,040 --> 00:34:40,920
+and understand how I think about things and write them down
+
+654
+00:34:40,920 --> 00:34:42,960
+and what I've understood and what I've learned or whatever.
+
+655
+00:34:42,960 --> 00:34:45,200
+So I'm encoding all those into an agent
+
+656
+00:34:45,200 --> 00:34:48,360
+that can live inside the coding agents through a plugin.
+
+657
+00:34:48,680 --> 00:34:52,400
+So people who just go slash and the name of the plugin is funny.
+
+658
+00:34:52,720 --> 00:34:54,600
+It's called Carbon.
+
+659
+00:34:54,640 --> 00:34:56,680
+So like it's
+
+660
+00:34:56,680 --> 00:35:00,120
+and then Lana, Lana, who was on the show a couple of days ago,
+
+661
+00:35:00,160 --> 00:35:01,840
+she goes, Oh, I get what you did.
+
+662
+00:35:01,840 --> 00:35:03,720
+The C is for confidence.
+
+663
+00:35:03,720 --> 00:35:05,960
+And guess what? I replied, I said exactly.
+
+664
+00:35:05,960 --> 00:35:07,200
+Guess what? I hadn't thought of that yet.
+
+665
+00:35:07,200 --> 00:35:11,280
+Yeah, it is now for sure is now.
+
+666
+00:35:11,320 --> 00:35:12,960
+Yeah, I get that.
+
+667
+00:35:12,960 --> 00:35:15,080
+But so what's cool is I'm trying to put
+
+668
+00:35:16,160 --> 00:35:17,880
+because I've always been crazy and said,
+
+669
+00:35:17,880 --> 00:35:19,200
+like, I want to test the world software.
+
+670
+00:35:19,200 --> 00:35:22,480
+That's like actually my kind of goal is that scale and stuff.
+
+671
+00:35:22,480 --> 00:35:24,080
+And I think we can kind of start to do that now.
+
+672
+00:35:24,080 --> 00:35:26,960
+But we're like, so back to what you're saying,
+
+673
+00:35:26,960 --> 00:35:30,160
+but is the only way how do you keep up with this crazy speed?
+
+674
+00:35:30,160 --> 00:35:32,400
+And like Alan, you're saying these errors compound and they
+
+675
+00:35:32,640 --> 00:35:34,520
+and they get out of control very quickly.
+
+676
+00:35:34,520 --> 00:35:37,880
+And when you when you 10x things that act like humans,
+
+677
+00:35:38,280 --> 00:35:40,920
+guess what? All chaos happens
+
+678
+00:35:40,920 --> 00:35:43,200
+because humans are non deterministic and not reliable.
+
+679
+00:35:43,200 --> 00:35:45,280
+And they don't know a lot of most of the time.
+
+680
+00:35:45,560 --> 00:35:48,680
+So we're accelerating compounding all that problem.
+
+681
+00:35:48,840 --> 00:35:51,880
+So the only way I think to combat this is to have
+
+682
+00:35:52,120 --> 00:35:55,680
+any coding agents plug in that acts like a test team
+
+683
+00:35:55,680 --> 00:35:57,800
+that's aware of all the things that we're talking about here,
+
+684
+00:35:58,080 --> 00:36:00,280
+like everything on the podcast that you guys talk about,
+
+685
+00:36:00,280 --> 00:36:03,160
+all this experience and have.
+
+686
+00:36:03,400 --> 00:36:05,880
+But the key thing is have the workflows built in.
+
+687
+00:36:05,880 --> 00:36:08,640
+So right now it will if you build a feature,
+
+688
+00:36:08,960 --> 00:36:10,920
+if you add a feature, remove something,
+
+689
+00:36:10,920 --> 00:36:13,520
+the AI will automatically analyze the diff.
+
+690
+00:36:13,680 --> 00:36:14,800
+You probably get a lot out.
+
+691
+00:36:14,800 --> 00:36:17,080
+You'll analyze the diff and then propose
+
+692
+00:36:17,360 --> 00:36:19,360
+they'll redo that little loop that we know.
+
+693
+00:36:19,360 --> 00:36:20,840
+Risk analysis on that feature.
+
+694
+00:36:20,880 --> 00:36:21,720
+What needs to be?
+
+695
+00:36:21,720 --> 00:36:23,920
+How do you do positive testing, negative testing?
+
+696
+00:36:24,240 --> 00:36:26,840
+What might have broken else in the system
+
+697
+00:36:27,400 --> 00:36:29,600
+because of a schema change or something like that?
+
+698
+00:36:29,880 --> 00:36:32,800
+And then run those tests locally or in the cloud
+
+699
+00:36:33,160 --> 00:36:36,080
+and then feed those bugs right back to the coding agent
+
+700
+00:36:36,520 --> 00:36:37,760
+so it can fix them.
+
+701
+00:36:37,760 --> 00:36:41,600
+So it's actually we've got to get testing up to the speed
+
+702
+00:36:41,600 --> 00:36:43,200
+of these of these agents.
+
+703
+00:36:43,200 --> 00:36:46,560
+So because because those can operate with the same similar context,
+
+704
+00:36:46,880 --> 00:36:49,160
+but it can keep up with the with the coding agents.
+
+705
+00:36:49,160 --> 00:36:51,360
+They can keep up with that 10 or 100x acceleration.
+
+706
+00:36:51,760 --> 00:36:54,960
+So most of the testing, I think, moves into that layer.
+
+707
+00:36:55,280 --> 00:36:58,680
+And there's got to be an agent that keeps up with the coding agents.
+
+708
+00:36:58,880 --> 00:37:03,680
+For all the reasons you're saying, I, I, I don't.
+
+709
+00:37:04,000 --> 00:37:06,640
+I mean, I don't think you're anthropomorphizing.
+
+710
+00:37:06,640 --> 00:37:07,960
+But what is what is that called then, Brent?
+
+711
+00:37:07,960 --> 00:37:10,880
+Like, there's like a token I'm I'm I'm putting digitizing.
+
+712
+00:37:11,600 --> 00:37:13,760
+You're you're no, I mean, sure.
+
+713
+00:37:13,760 --> 00:37:16,160
+No, I do the same thing of my own home.
+
+714
+00:37:16,520 --> 00:37:17,800
+No, no, I do the same thing.
+
+715
+00:37:17,840 --> 00:37:21,520
+So I, I, I have I have my own coding agent.
+
+716
+00:37:21,880 --> 00:37:22,160
+Yeah.
+
+717
+00:37:22,480 --> 00:37:31,860
+And, um, years ago, I learned a different definition of empowerment.
+
+718
+00:37:32,180 --> 00:37:32,460
+Okay.
+
+719
+00:37:33,500 --> 00:37:39,860
+Cause people often can confuse empowerment with autonomy and empowerment as a
+
+720
+00:37:39,860 --> 00:37:45,300
+manager, I empower you, Jason, when I have the confidence that you would
+
+721
+00:37:45,300 --> 00:37:51,980
+make the same or better decisions that I would if I were had the context
+
+722
+00:37:51,980 --> 00:37:53,380
+and the decision, okay.
+
+723
+00:37:54,020 --> 00:37:58,500
+And so what I have found when I was going through and building my own.
+
+724
+00:37:58,700 --> 00:38:00,540
+So I have an architect agent.
+
+725
+00:38:00,540 --> 00:38:01,740
+I have a dev agent.
+
+726
+00:38:01,740 --> 00:38:09,820
+I have a, like with my, with my developer agent in particular, I
+
+727
+00:38:09,820 --> 00:38:15,700
+made sure it was following the principles that I care about, right?
+
+728
+00:38:16,100 --> 00:38:20,140
+The, and give it, give it leeway.
+
+729
+00:38:20,140 --> 00:38:26,380
+I was empowering my agent because I got really tired of it going one
+
+730
+00:38:26,380 --> 00:38:29,780
+way and me not liking that approach or that style.
+
+731
+00:38:29,780 --> 00:38:33,460
+Like when I first started doing this agents, you were just
+
+732
+00:38:33,580 --> 00:38:35,740
+frigging allergic to base classes.
+
+733
+00:38:36,260 --> 00:38:38,140
+And I'm like, you're driving me crazy.
+
+734
+00:38:38,340 --> 00:38:39,660
+You're driving me crazy.
+
+735
+00:38:39,700 --> 00:38:42,660
+You just duplicated that code multiple times.
+
+736
+00:38:43,850 --> 00:38:47,930
+Like, and now we have to triple keep the test code.
+
+737
+00:38:48,450 --> 00:38:50,410
+I don't know what is the base class?
+
+738
+00:38:51,390 --> 00:38:52,590
+Oh, my fucking God.
+
+739
+00:38:54,550 --> 00:38:55,030
+That's right.
+
+740
+00:38:55,270 --> 00:38:59,790
+And so, like, thank you for earning me the E tag for this podcast.
+
+741
+00:38:59,790 --> 00:39:00,270
+Go on.
+
+742
+00:39:02,110 --> 00:39:03,950
+Um, you can snip that out.
+
+743
+00:39:03,990 --> 00:39:06,470
+You won't, but you could, I'm way too fucking lucky for that.
+
+744
+00:39:06,870 --> 00:39:16,910
+Um, and, and so as I was giving it the principles of by which to, to create
+
+745
+00:39:16,910 --> 00:39:23,190
+these designs, I, I would then go like, and then, okay, now go build this thing.
+
+746
+00:39:23,390 --> 00:39:27,790
+And then I would go and look at it and I go, okay, this is pretty good,
+
+747
+00:39:27,790 --> 00:39:31,100
+except now I need you to do this thing.
+
+748
+00:39:31,540 --> 00:39:31,780
+Right.
+
+749
+00:39:31,780 --> 00:39:35,780
+And it's no different than what I would do with, with a staff.
+
+750
+00:39:36,100 --> 00:39:39,260
+That's, that's actually one of my secrets.
+
+751
+00:39:39,260 --> 00:39:41,140
+This is why, but Brent, this is why it comes back to this.
+
+752
+00:39:41,140 --> 00:39:45,700
+Why I think it's, it's a strange form of anthropomorphization because you, you
+
+753
+00:39:45,700 --> 00:39:50,020
+do call it, it's an agent instead of he or she or whatever, but you are
+
+754
+00:39:50,020 --> 00:39:53,260
+delegating to it as if it was a human, they're talking about it as if
+
+755
+00:39:53,260 --> 00:39:56,220
+it kind of is an entity that does work, that is a proxy.
+
+756
+00:39:56,260 --> 00:39:57,100
+Ooh, let's even do this.
+
+757
+00:39:57,740 --> 00:39:59,260
+You're just the virtual function.
+
+758
+00:39:59,260 --> 00:40:03,780
+The actual execution of that happens on the derived entity, uh, that
+
+759
+00:40:03,780 --> 00:40:08,860
+is that agent that has your cloud MD file or your, so whatever, but it seems
+
+760
+00:40:08,860 --> 00:40:13,340
+like these are a lot of treating it with the empowerment, with the, with
+
+761
+00:40:13,340 --> 00:40:15,660
+plus autonomy that we would give to a human.
+
+762
+00:40:15,660 --> 00:40:18,860
+So isn't that kind of also anthropomorphizing it too, rather,
+
+763
+00:40:18,900 --> 00:40:22,460
+but even, even if we don't call it, give it a name, uh, isn't
+
+764
+00:40:22,460 --> 00:40:23,940
+that still a meta kind of,
+
+765
+00:40:24,380 --> 00:40:25,860
+I see where you're coming from.
+
+766
+00:40:25,860 --> 00:40:28,500
+I mean, and then what I was actually going to say next is,
+
+767
+00:40:28,500 --> 00:40:29,780
+is an alignment with that.
+
+768
+00:40:29,820 --> 00:40:39,570
+Like what I have found is that if you, if you write your prompts as if these
+
+769
+00:40:39,570 --> 00:40:45,130
+were staff that you were trying to grow that works, okay, but what I
+
+770
+00:40:45,130 --> 00:40:49,590
+would, what I hazard against, right.
+
+771
+00:40:49,790 --> 00:40:54,270
+Like I don't like the language around, oh, they're reasoning over it, right.
+
+772
+00:40:54,270 --> 00:41:00,750
+It, you can, you can help to encourage the probabilities to go
+
+773
+00:41:00,750 --> 00:41:05,630
+down the path that you want by encoding your principles into the
+
+774
+00:41:05,630 --> 00:41:05,910
+problem.
+
+775
+00:41:05,910 --> 00:41:13,360
+They've solved a few math problems recently with reason, like, um, like
+
+776
+00:41:13,360 --> 00:41:17,760
+reasoning, by the way, you could use with reasoning and approaches to the
+
+777
+00:41:17,760 --> 00:41:23,120
+problem that people either had that have not even conceived of, like
+
+778
+00:41:23,120 --> 00:41:23,800
+there's one of them.
+
+779
+00:41:23,800 --> 00:41:27,360
+I love, there's this, uh, I was just from yesterday, a post where, um,
+
+780
+00:41:27,640 --> 00:41:32,720
+so mathematician in his, his, uh, he's got a, it's like a complexity guy.
+
+781
+00:41:33,080 --> 00:41:35,520
+Um, I don't remember his name and his wife's also in the same kind of
+
+782
+00:41:35,520 --> 00:41:39,680
+field, math research people, but, um, she was describing cause she's
+
+783
+00:41:39,680 --> 00:41:43,240
+going through the proof that, uh, that open AI had for, for some
+
+784
+00:41:43,240 --> 00:41:45,520
+math problem in her area, the, actually the very problem she's
+
+785
+00:41:45,520 --> 00:41:47,560
+worked on her lifetime, which is crazy, right?
+
+786
+00:41:47,600 --> 00:41:50,520
+Like that just got to be an emotionally interesting moment in time.
+
+787
+00:41:50,840 --> 00:41:52,400
+And she's going through the proof.
+
+788
+00:41:53,080 --> 00:41:56,160
+And I think I have to go back and look at, I think she might've even
+
+789
+00:41:56,160 --> 00:41:59,000
+used the word reasoning to be clear, but like, she talks about
+
+790
+00:41:59,000 --> 00:42:00,920
+it's thinking and thinking process.
+
+791
+00:42:01,160 --> 00:42:03,720
+And it was actually something even alien, she said.
+
+792
+00:42:03,720 --> 00:42:06,760
+So, but alien in the sense that it's not like it just did
+
+793
+00:42:06,760 --> 00:42:10,520
+things a lot faster or a lot more permutations or, or combined
+
+794
+00:42:10,560 --> 00:42:14,400
+exist, other things that were related and figured it out, right.
+
+795
+00:42:14,440 --> 00:42:16,480
+Applied it, something from another field or something that they're
+
+796
+00:42:17,040 --> 00:42:21,280
+she was like, is actually an alien type, um, understanding of the
+
+797
+00:42:21,280 --> 00:42:25,320
+problem and approach to it and proofs that she is struggling to
+
+798
+00:42:25,320 --> 00:42:28,000
+follow, but she could see that it's doing the right thing.
+
+799
+00:42:28,280 --> 00:42:30,520
+But it was not a typical way that human would even have done that.
+
+800
+00:42:30,760 --> 00:42:34,200
+So when I don't, so I take, I take, I just take issue with the, not
+
+801
+00:42:34,200 --> 00:42:37,880
+in a violent way, but like saying these things aren't reasoning at all.
+
+802
+00:42:37,880 --> 00:42:39,080
+There's so much evidence.
+
+803
+00:42:39,440 --> 00:42:42,000
+We could talk for an hour that these things are absolutely
+
+804
+00:42:42,000 --> 00:42:45,960
+reasoning, like, like a hundred percent reasoning and thinking.
+
+805
+00:42:46,440 --> 00:42:51,960
+Uh, and by the way, uh, I am, I am, I am not going to
+
+806
+00:42:51,960 --> 00:42:53,960
+engage Jason in that fight.
+
+807
+00:42:54,280 --> 00:43:01,040
+Um, I, but I am, I am, I am formally stating, I disagree as
+
+808
+00:43:01,200 --> 00:43:02,720
+wrongly as possible.
+
+809
+00:43:03,000 --> 00:43:03,200
+Okay.
+
+810
+00:43:03,200 --> 00:43:07,600
+But, but with that message and Jeffrey Hinton, the godfather of fricking AI
+
+811
+00:43:07,600 --> 00:43:11,880
+that did all this stuff, knows how they work intimately, right.
+
+812
+00:43:12,080 --> 00:43:14,200
+And he thinks they're, he thinks they're actually Brent.
+
+813
+00:43:15,380 --> 00:43:16,380
+Ooh, I'm going to say the C word.
+
+814
+00:43:16,380 --> 00:43:16,820
+You're not going to hate.
+
+815
+00:43:17,340 --> 00:43:17,780
+Not that one.
+
+816
+00:43:18,610 --> 00:43:19,450
+Not conscious.
+
+817
+00:43:19,490 --> 00:43:20,330
+It's not confidence.
+
+818
+00:43:20,690 --> 00:43:21,330
+Conscious.
+
+819
+00:43:22,090 --> 00:43:22,370
+Yeah.
+
+820
+00:43:22,570 --> 00:43:29,210
+But, but why, but the thing is, why would you, from a, from a perspective,
+
+821
+00:43:29,210 --> 00:43:32,930
+somebody who is constantly skeptical of things, trying to test and measure
+
+822
+00:43:32,930 --> 00:43:37,290
+things and prove things and understand them, say like, Oh, I just blanket.
+
+823
+00:43:37,290 --> 00:43:37,410
+No.
+
+824
+00:43:37,410 --> 00:43:38,330
+Cause a lot of people do this.
+
+825
+00:43:38,330 --> 00:43:39,170
+They blanket.
+
+826
+00:43:39,170 --> 00:43:39,970
+No, it's not conscious.
+
+827
+00:43:39,970 --> 00:43:40,570
+There's no way.
+
+828
+00:43:41,050 --> 00:43:44,570
+When we don't even know what consciousness is in humans or what
+
+829
+00:43:44,570 --> 00:43:46,770
+reasoning and thinking is in humans, we still don't really have good
+
+830
+00:43:46,770 --> 00:43:47,370
+definitions.
+
+831
+00:43:47,410 --> 00:43:50,610
+It does open up an absolute.
+
+832
+00:43:50,770 --> 00:43:51,770
+But how do you know that?
+
+833
+00:43:51,770 --> 00:43:54,890
+Philosophical, the discussion.
+
+834
+00:43:55,210 --> 00:43:56,370
+But then how do you say it's not?
+
+835
+00:43:56,570 --> 00:43:58,090
+But I'm not, I'm not, I'm just going to work it up.
+
+836
+00:43:58,130 --> 00:43:59,050
+We get excited like you do too.
+
+837
+00:43:59,930 --> 00:44:00,570
+How do you know?
+
+838
+00:44:00,690 --> 00:44:02,370
+How do you say it's not, it's not reasoning.
+
+839
+00:44:02,570 --> 00:44:05,930
+If you look at the chat bot, Brent, it says it's reasoning.
+
+840
+00:44:05,930 --> 00:44:06,850
+So it must be reasoning.
+
+841
+00:44:06,850 --> 00:44:07,290
+Right, Alan?
+
+842
+00:44:08,140 --> 00:44:09,380
+It says reasoning right there.
+
+843
+00:44:11,940 --> 00:44:12,780
+It's in the product.
+
+844
+00:44:16,400 --> 00:44:21,480
+Because of how they're, because I have spent too much time in the
+
+845
+00:44:21,480 --> 00:44:24,200
+sausage factory and I know how these things are made.
+
+846
+00:44:24,280 --> 00:44:26,160
+That's, that's, that's the short answer.
+
+847
+00:44:26,200 --> 00:44:30,330
+But, but you don't know how, but you don't know how your brain was
+
+848
+00:44:30,330 --> 00:44:33,010
+made, by the way, I know that because we don't actually know.
+
+849
+00:44:33,750 --> 00:44:34,790
+We don't know how that works.
+
+850
+00:44:35,110 --> 00:44:41,650
+But, um, like there are fundamental differences.
+
+851
+00:44:41,730 --> 00:44:44,940
+So, so Alan, what do you think?
+
+852
+00:44:45,100 --> 00:44:46,900
+Are these things conscious or could they be conscious?
+
+853
+00:44:47,300 --> 00:44:50,740
+It, uh, I had a question coming up that I'm going to ask and then
+
+854
+00:44:50,740 --> 00:44:54,540
+rephrase because I do not think they're conscious yet.
+
+855
+00:44:54,860 --> 00:44:55,060
+Yep.
+
+856
+00:44:55,140 --> 00:44:55,820
+But next, okay.
+
+857
+00:44:55,820 --> 00:44:56,740
+You're all making a prediction.
+
+858
+00:44:57,260 --> 00:44:58,060
+Nine months.
+
+859
+00:44:58,580 --> 00:44:59,540
+You guys will change your mind.
+
+860
+00:45:00,100 --> 00:45:00,300
+Okay.
+
+861
+00:45:00,300 --> 00:45:01,580
+And you owe me like a latte.
+
+862
+00:45:01,820 --> 00:45:06,690
+I'm going to, I'll buy you a latte if you don't.
+
+863
+00:45:09,840 --> 00:45:10,160
+Question.
+
+864
+00:45:10,160 --> 00:45:13,280
+Why do you think nine, what happened special in nine months?
+
+865
+00:45:13,360 --> 00:45:15,080
+Or you just picked nine out of your ass.
+
+866
+00:45:15,840 --> 00:45:16,720
+Is my microphone working?
+
+867
+00:45:16,720 --> 00:45:17,040
+Hello.
+
+868
+00:45:17,040 --> 00:45:17,960
+Check, check, check, check.
+
+869
+00:45:17,960 --> 00:45:18,320
+Hello.
+
+870
+00:45:18,320 --> 00:45:18,720
+Hello.
+
+871
+00:45:18,840 --> 00:45:19,720
+Yeah, I can hear you.
+
+872
+00:45:19,760 --> 00:45:20,360
+Yeah, yeah, yeah.
+
+873
+00:45:20,400 --> 00:45:21,440
+We're just ignoring you.
+
+874
+00:45:21,640 --> 00:45:21,880
+Okay.
+
+875
+00:45:21,880 --> 00:45:24,440
+Listen, I'll just sit back in my chair again.
+
+876
+00:45:24,440 --> 00:45:26,520
+I don't, I don't, I don't have any questions.
+
+877
+00:45:29,370 --> 00:45:29,890
+Nine months.
+
+878
+00:45:29,890 --> 00:45:30,250
+Why?
+
+879
+00:45:30,250 --> 00:45:35,520
+And then we'll let Alan say, because there's this, because you're
+
+880
+00:45:35,520 --> 00:45:39,120
+watching how, how the performance trends are going and like, because
+
+881
+00:45:39,120 --> 00:45:44,520
+I'm a data scientist, sorry, I'm a data scientist and I look at the
+
+882
+00:45:44,520 --> 00:45:49,980
+data and there's a curve and it's just measuring the intelligence of these
+
+883
+00:45:49,980 --> 00:45:53,460
+systems and the perception of intelligence of these systems.
+
+884
+00:45:53,460 --> 00:45:54,500
+There's a lot of work on that too.
+
+885
+00:45:54,500 --> 00:45:58,060
+Not just the actual like percent pass on evals or something, but the
+
+886
+00:45:58,060 --> 00:46:02,140
+perception of intelligence and sophistication in these systems and
+
+887
+00:46:02,180 --> 00:46:04,260
+those things are going, they're exponential.
+
+888
+00:46:04,700 --> 00:46:07,620
+And so if you plot it out, like you can look at the people that
+
+889
+00:46:07,620 --> 00:46:08,980
+are 10 times smarter than me.
+
+890
+00:46:09,260 --> 00:46:12,420
+They're saying 27 is going to be pretty darn interesting.
+
+891
+00:46:12,580 --> 00:46:15,340
+We're entering the AS, by the way, you can't call it AI anymore.
+
+892
+00:46:15,340 --> 00:46:16,980
+It's super intelligence.
+
+893
+00:46:16,980 --> 00:46:18,060
+Now we can call it AI.
+
+894
+00:46:18,060 --> 00:46:18,540
+Shut up.
+
+895
+00:46:18,940 --> 00:46:19,900
+It's super intelligence.
+
+896
+00:46:20,220 --> 00:46:25,900
+So, but, but we're entering this S this, this SI world where it's great,
+
+897
+00:46:25,900 --> 00:46:28,820
+better than AGI, like it's, it's going to be smarter than us.
+
+898
+00:46:29,460 --> 00:46:33,860
+And you could say it's just a different bionic type of smart or
+
+899
+00:46:33,860 --> 00:46:36,380
+it can do math or something like there's always, there's always a
+
+900
+00:46:36,380 --> 00:46:37,460
+way to say, Oh, it doesn't do this.
+
+901
+00:46:37,460 --> 00:46:38,060
+It doesn't do that.
+
+902
+00:46:38,460 --> 00:46:43,310
+Um, but it's going to be measurably like, unless there's just, unless
+
+903
+00:46:43,350 --> 00:46:48,190
+humans for some reason are the actual pinnacle of possible intelligence
+
+904
+00:46:48,230 --> 00:46:52,590
+that's, that can exist in this universe, it was just positive unless it's surpassed.
+
+905
+00:46:52,590 --> 00:46:57,070
+We don't know that, but all the graphs and curves and using my data analysis
+
+906
+00:46:57,070 --> 00:47:01,590
+or data analysis, um, and other people are using to says like kind of
+
+907
+00:47:01,590 --> 00:47:05,750
+mid 20, 27 is, is a very interesting time where we won't even know to
+
+908
+00:47:05,750 --> 00:47:07,270
+understand maybe what it's doing.
+
+909
+00:47:07,470 --> 00:47:11,710
+And like the Dario guy, he was like, super looks very respectable
+
+910
+00:47:11,710 --> 00:47:15,940
+and well-reasoned and thought through, um, you show the curve.
+
+911
+00:47:15,940 --> 00:47:18,660
+The problem with the curve is, is it goes to a wall.
+
+912
+00:47:18,740 --> 00:47:21,500
+It goes vertical in 20, 27.
+
+913
+00:47:21,500 --> 00:47:25,580
+So either, yeah, everything will just come to a screeching halt and
+
+914
+00:47:25,580 --> 00:47:27,060
+they're kind of just what they are today.
+
+915
+00:47:27,140 --> 00:47:27,620
+Right.
+
+916
+00:47:27,940 --> 00:47:33,940
+Or these things become scary in 20, 27, um, scared.
+
+917
+00:47:33,940 --> 00:47:38,180
+Well, there was that paper that predicted 20, 27, and you're
+
+918
+00:47:38,180 --> 00:47:41,980
+basically saying some version of a singularity also happens then.
+
+919
+00:47:42,300 --> 00:47:45,260
+I wouldn't say the word singular because that's, uh, we'll be on the
+
+920
+00:47:45,260 --> 00:47:48,860
+podcast in a year from now together and go, oh, well, we didn't get
+
+921
+00:47:48,860 --> 00:47:49,860
+sucked into a black hole yet.
+
+922
+00:47:50,180 --> 00:47:55,340
+But, um, um, but it's, uh, the problem is that's what the graphs
+
+923
+00:47:55,340 --> 00:47:56,180
+and that's where the data lead.
+
+924
+00:47:56,300 --> 00:47:58,540
+So, and I've always been saying this since the early days of
+
+925
+00:47:58,540 --> 00:48:02,380
+in Malfonov about AI and testing, like a star East, I had a plot
+
+926
+00:48:02,420 --> 00:48:05,420
+and guess what year it was supposed to be doing, surpassing
+
+927
+00:48:05,420 --> 00:48:08,680
+testers, human testers out now.
+
+928
+00:48:09,040 --> 00:48:12,200
+20, 25, 20, 26, no, 20, 25, 20, 26.
+
+929
+00:48:12,680 --> 00:48:13,400
+There's a difference.
+
+930
+00:48:13,600 --> 00:48:16,360
+The AI is actually better than most every tester I've met, including
+
+931
+00:48:16,360 --> 00:48:19,400
+myself, no one wants to use it or want to know that.
+
+932
+00:48:20,120 --> 00:48:22,880
+So that's another, no, I'm like that.
+
+933
+00:48:24,480 --> 00:48:28,160
+We've been at both Alan and I are fine with like, it wasn't
+
+934
+00:48:28,160 --> 00:48:29,600
+the testing that ever mattered.
+
+935
+00:48:30,460 --> 00:48:31,980
+It was the quality that mattered.
+
+936
+00:48:33,570 --> 00:48:34,370
+Um, yeah.
+
+937
+00:48:34,410 --> 00:48:39,530
+Although I have this example that I, and I don't think we've got
+
+938
+00:48:39,530 --> 00:48:41,530
+Alan's got a cute item for like half an hour.
+
+939
+00:48:42,880 --> 00:48:43,200
+Okay.
+
+940
+00:48:43,600 --> 00:48:44,160
+Actually, you know what?
+
+941
+00:48:44,200 --> 00:48:44,560
+I'll stop.
+
+942
+00:48:44,560 --> 00:48:48,200
+He's like, podcast only starts with my initial, you know,
+
+943
+00:48:48,200 --> 00:48:48,840
+what ups.
+
+944
+00:48:49,080 --> 00:48:52,590
+I can't even, I even, I'm about to say the same things you
+
+945
+00:48:52,590 --> 00:48:57,910
+say to Brett, um, Alan, we hear you, you're here, you're
+
+946
+00:48:57,910 --> 00:48:58,470
+present.
+
+947
+00:48:58,470 --> 00:49:01,030
+We need to, we, we need to hear your value.
+
+948
+00:49:01,390 --> 00:49:02,950
+I have a different question.
+
+949
+00:49:02,950 --> 00:49:04,950
+If we can go a little over past the top of the, that'd be great.
+
+950
+00:49:05,270 --> 00:49:08,270
+Um, I don't think we can answer this, but I want to plant this
+
+951
+00:49:08,270 --> 00:49:14,860
+seed for anybody who's managed to listen this far, um, is the
+
+952
+00:49:14,860 --> 00:49:18,020
+modern testing principles we, when Brent's and I first, and
+
+953
+00:49:18,020 --> 00:49:22,300
+they apply today, just as much as ever, they're about delivery
+
+954
+00:49:22,300 --> 00:49:23,060
+and how we get faster.
+
+955
+00:49:23,060 --> 00:49:24,340
+They apply to AI really well.
+
+956
+00:49:24,340 --> 00:49:29,480
+We've talked about this, um, but they were about a lot about
+
+957
+00:49:29,480 --> 00:49:30,760
+the humans in the system.
+
+958
+00:49:32,450 --> 00:49:37,050
+And, uh, I wrote this book about them abstractly, and
+
+959
+00:49:37,050 --> 00:49:39,690
+that's like the one bit of feedback I got that I'll share
+
+960
+00:49:39,690 --> 00:49:41,890
+here at, I mean, I got a lot of feedback, the positive
+
+961
+00:49:41,890 --> 00:49:44,730
+feedback says the core idea of the book that the people are
+
+962
+00:49:44,730 --> 00:49:47,610
+often the only reason a broken system works at all is a
+
+963
+00:49:47,610 --> 00:49:48,690
+generous and humane one.
+
+964
+00:49:48,690 --> 00:49:49,570
+And it comes through clearly.
+
+965
+00:49:50,010 --> 00:49:52,330
+So I was going to like the question that we need to
+
+966
+00:49:52,330 --> 00:49:56,050
+plan with the readers is I want to think about what happens
+
+967
+00:49:56,050 --> 00:49:58,210
+with the humans in these worlds, cause the humans
+
+968
+00:49:58,210 --> 00:50:03,090
+aren't doing a good job figuring out how to fit within
+
+969
+00:50:03,090 --> 00:50:05,250
+these, these ever changing systems.
+
+970
+00:50:05,610 --> 00:50:08,410
+But there's another way to look at it too, which is, is
+
+971
+00:50:08,410 --> 00:50:11,410
+it, I mean, the human problem is there and that's kind of
+
+972
+00:50:11,410 --> 00:50:11,930
+what I do.
+
+973
+00:50:11,930 --> 00:50:13,170
+I solve the human problems.
+
+974
+00:50:13,170 --> 00:50:14,530
+People smarter than me.
+
+975
+00:50:14,530 --> 00:50:17,050
+I can give them the ideas and they can plug in all the stuff
+
+976
+00:50:17,050 --> 00:50:18,810
+you guys are talking about and be super smart.
+
+977
+00:50:19,010 --> 00:50:23,250
+It's not like I, I can't do it, but I'm, I'm, I have
+
+978
+00:50:23,250 --> 00:50:27,460
+made, I have enjoyed and made a good career about helping
+
+979
+00:50:27,460 --> 00:50:29,740
+the humans work together in these evolving systems.
+
+980
+00:50:29,740 --> 00:50:32,340
+So that, that part will still need to happen, but
+
+981
+00:50:32,340 --> 00:50:33,580
+maybe in completely different ways.
+
+982
+00:50:34,340 --> 00:50:36,660
+Um, and I might just leave that open endless.
+
+983
+00:50:36,660 --> 00:50:39,460
+I'm as a strong like answer to what changes for people.
+
+984
+00:50:39,460 --> 00:50:43,140
+Cause I think we may not know, but with that growing
+
+985
+00:50:43,340 --> 00:50:51,100
+intelligence of AI and agents, uh, could I reef like, are
+
+986
+00:50:51,700 --> 00:50:55,180
+like Brent's not quite treating his agents like people yet.
+
+987
+00:50:55,860 --> 00:50:59,980
+You have an agent, Jason, that is you, uh, called carbon,
+
+988
+00:50:59,980 --> 00:51:01,300
+which is a great fricking name.
+
+989
+00:51:01,780 --> 00:51:08,140
+Um, like is the future, like, are those two intertwined?
+
+990
+00:51:08,140 --> 00:51:11,740
+Is the future just managing agents to do that?
+
+991
+00:51:11,980 --> 00:51:14,260
+And yes.
+
+992
+00:51:14,260 --> 00:51:15,660
+And then, okay.
+
+993
+00:51:16,540 --> 00:51:16,700
+Okay.
+
+994
+00:51:16,700 --> 00:51:19,220
+And tell such time agents manage themselves.
+
+995
+00:51:20,360 --> 00:51:23,000
+And then what, what, how do the humans fit in the system?
+
+996
+00:51:23,160 --> 00:51:24,640
+And then another bigger question, you know, we'll
+
+997
+00:51:24,640 --> 00:51:27,520
+take like five minutes at most to answer this, but, uh,
+
+998
+00:51:28,380 --> 00:51:31,220
+it isn't just software that AI is accelerating.
+
+999
+00:51:32,060 --> 00:51:33,620
+And Brendan, I touched on this last time.
+
+1000
+00:51:33,620 --> 00:51:34,020
+I'm curious.
+
+1001
+00:51:34,020 --> 00:51:34,780
+This is the question.
+
+1002
+00:51:34,780 --> 00:51:39,100
+Maybe I'm more interested in answer on, so how, like
+
+1003
+00:51:39,100 --> 00:51:42,260
+we're seeing massive increases in like everything you
+
+1004
+00:51:42,260 --> 00:51:45,500
+mentioned, absolutely true with software quality, sorry,
+
+1005
+00:51:45,500 --> 00:51:49,980
+software delivery, um, many other knowledge workers, like
+
+1006
+00:51:49,980 --> 00:51:51,820
+software engineering is not the only knowledge work in the
+
+1007
+00:51:51,820 --> 00:51:52,180
+world.
+
+1008
+00:51:52,340 --> 00:51:53,980
+Software engineering is not the only thing being
+
+1009
+00:51:53,980 --> 00:51:55,060
+accelerated by AI.
+
+1010
+00:51:56,140 --> 00:52:00,180
+What do you think is happening to other professions?
+
+1011
+00:52:00,180 --> 00:52:03,900
+Like, like we, what we talked about today is like AI is for
+
+1012
+00:52:03,900 --> 00:52:05,780
+creating software faster and bigger, bigger, faster,
+
+1013
+00:52:05,780 --> 00:52:07,020
+faster, exponentially big, big, big.
+
+1014
+00:52:07,620 --> 00:52:10,370
+I think it could have the same effect anywhere else.
+
+1015
+00:52:10,610 --> 00:52:10,850
+Right.
+
+1016
+00:52:10,850 --> 00:52:12,210
+So it is happening.
+
+1017
+00:52:12,210 --> 00:52:15,130
+We're so there was like, if you look at like lawyers, lawyers
+
+1018
+00:52:15,130 --> 00:52:18,210
+pick it up pretty quick because, because the reasons pretty
+
+1019
+00:52:18,210 --> 00:52:22,310
+well, um, but, uh, um, it's pretty good.
+
+1020
+00:52:22,310 --> 00:52:24,510
+And it's really good at ambiguous language and whatever
+
+1021
+00:52:24,510 --> 00:52:24,950
+stuff too.
+
+1022
+00:52:25,190 --> 00:52:28,630
+So, um, so lawyers are doing pretty well impacted.
+
+1023
+00:52:28,870 --> 00:52:31,350
+And I think I just, I just, you know, for a second, but
+
+1024
+00:52:31,510 --> 00:52:34,030
+a lawyer, one anthropics, one of their coding contest,
+
+1025
+00:52:34,030 --> 00:52:37,320
+like a year ago, six months ago, they knew they did.
+
+1026
+00:52:37,320 --> 00:52:37,520
+Yeah.
+
+1027
+00:52:37,520 --> 00:52:37,640
+Yeah.
+
+1028
+00:52:37,680 --> 00:52:38,600
+Anyway, that's cool.
+
+1029
+00:52:39,000 --> 00:52:39,480
+That's cool.
+
+1030
+00:52:39,800 --> 00:52:41,960
+And then, but then, you know, we have this, we just
+
+1031
+00:52:41,960 --> 00:52:44,360
+had like literally this week, we've had the capitulation
+
+1032
+00:52:45,040 --> 00:52:47,440
+of the entire profession of mathematics.
+
+1033
+00:52:47,680 --> 00:52:48,760
+Like, what's his name?
+
+1034
+00:52:48,760 --> 00:52:50,720
+Um, I forget his name.
+
+1035
+00:52:51,000 --> 00:52:52,880
+He's like one of the more prominent nerdy math
+
+1036
+00:52:52,880 --> 00:52:53,680
+guys in the world.
+
+1037
+00:52:54,120 --> 00:52:55,840
+Some think he's really cool, but other math
+
+1038
+00:52:55,840 --> 00:52:57,400
+guys don't necessarily.
+
+1039
+00:52:57,520 --> 00:52:58,120
+What's his name?
+
+1040
+00:52:58,800 --> 00:52:59,120
+Dang it.
+
+1041
+00:52:59,120 --> 00:52:59,760
+I can't remember his name.
+
+1042
+00:52:59,800 --> 00:53:00,480
+Brent can find it.
+
+1043
+00:53:00,920 --> 00:53:01,480
+That guy.
+
+1044
+00:53:03,980 --> 00:53:04,660
+What's his go on?
+
+1045
+00:53:04,900 --> 00:53:05,380
+I don't know.
+
+1046
+00:53:05,820 --> 00:53:07,020
+Well, I guess this is where you cut it out and
+
+1047
+00:53:07,020 --> 00:53:07,660
+you can figure it out later.
+
+1048
+00:53:08,560 --> 00:53:09,880
+Well, nobody is actually significant.
+
+1049
+00:53:09,880 --> 00:53:13,520
+Anyway, so, uh, he just, I don't know if you saw
+
+1050
+00:53:13,520 --> 00:53:14,720
+that's just, it was like yesterday.
+
+1051
+00:53:14,720 --> 00:53:15,320
+They announced it.
+
+1052
+00:53:15,560 --> 00:53:18,120
+So they said, Hey, after opening, I solved all
+
+1053
+00:53:18,120 --> 00:53:20,120
+these like open problems in math.
+
+1054
+00:53:20,560 --> 00:53:24,800
+Um, uh, he said he wanted all mathematicians
+
+1055
+00:53:24,800 --> 00:53:26,240
+to boycott open AI.
+
+1056
+00:53:26,320 --> 00:53:28,800
+Number one, the next day he came out with this
+
+1057
+00:53:28,800 --> 00:53:29,720
+is super interesting.
+
+1058
+00:53:29,760 --> 00:53:30,320
+Where are you going on?
+
+1059
+00:53:30,520 --> 00:53:31,760
+What are the humans do here?
+
+1060
+00:53:32,570 --> 00:53:35,890
+They've created a new like association for
+
+1061
+00:53:35,890 --> 00:53:38,850
+human mathematics or something like that.
+
+1062
+00:53:39,410 --> 00:53:41,530
+Where, and they're saying that it's
+
+1063
+00:53:41,530 --> 00:53:44,930
+offensive to them as mathematicians because
+
+1064
+00:53:44,930 --> 00:53:48,570
+they, they focus on the joy of math, the
+
+1065
+00:53:48,570 --> 00:53:50,010
+understanding of math.
+
+1066
+00:53:50,450 --> 00:53:52,890
+This, we've heard this before in our space
+
+1067
+00:53:53,210 --> 00:53:55,610
+and the, um, and that only humans can
+
+1068
+00:53:55,610 --> 00:53:57,410
+really understand what it's doing.
+
+1069
+00:53:57,730 --> 00:54:00,610
+And then lastly, um, uh, what did it do?
+
+1070
+00:54:00,610 --> 00:54:06,400
+It did, uh, um, oh, and that one of the
+
+1071
+00:54:06,400 --> 00:54:08,400
+other major, major purposes of math in
+
+1072
+00:54:08,400 --> 00:54:10,640
+general is to teach other people.
+
+1073
+00:54:10,880 --> 00:54:11,160
+Okay.
+
+1074
+00:54:11,640 --> 00:54:13,360
+That's a little bit weird to me, but
+
+1075
+00:54:13,440 --> 00:54:17,200
+they literally just capitulated, uh, you
+
+1076
+00:54:17,200 --> 00:54:18,960
+know, they're, and they're creating a new
+
+1077
+00:54:18,960 --> 00:54:20,600
+association for human only math.
+
+1078
+00:54:21,080 --> 00:54:23,440
+Like, and these are not dumb people.
+
+1079
+00:54:23,480 --> 00:54:25,800
+They're not, you know, irrational people.
+
+1080
+00:54:25,800 --> 00:54:27,680
+Even my favorite person, one of my
+
+1081
+00:54:27,680 --> 00:54:28,840
+favorite people in the world, like my
+
+1082
+00:54:28,840 --> 00:54:31,040
+mini hero I've never met is a guy named
+
+1083
+00:54:31,320 --> 00:54:34,760
+Stephen Wolfram, uh, it's super vision.
+
+1084
+00:54:34,800 --> 00:54:36,800
+I think on how the actual universe works,
+
+1085
+00:54:36,880 --> 00:54:39,910
+but even he's in this camp, he's such
+
+1086
+00:54:39,910 --> 00:54:42,150
+a rationalist and he's such a, his whole
+
+1087
+00:54:42,150 --> 00:54:43,750
+theory is that the universe is built
+
+1088
+00:54:43,750 --> 00:54:44,870
+of just little kind of rules.
+
+1089
+00:54:44,870 --> 00:54:46,190
+They just get repeated over and over
+
+1090
+00:54:46,190 --> 00:54:47,270
+and over again, basically, like, uh,
+
+1091
+00:54:47,590 --> 00:54:49,430
+um, like the game of life essentially.
+
+1092
+00:54:49,430 --> 00:54:49,630
+Right.
+
+1093
+00:54:49,630 --> 00:54:52,390
+But just times complexity and he's
+
+1094
+00:54:52,390 --> 00:54:54,670
+beautiful and he, and he's super smart.
+
+1095
+00:54:54,670 --> 00:54:57,150
+He created, um, like, uh, I think
+
+1096
+00:54:57,150 --> 00:54:58,670
+it was Mathematica or something like
+
+1097
+00:54:58,670 --> 00:54:59,670
+two, so he's a super smart.
+
+1098
+00:55:01,250 --> 00:55:03,690
+He did a YouTube impulsive posts two
+
+1099
+00:55:03,690 --> 00:55:05,730
+days ago where he's in the same camp.
+
+1100
+00:55:05,730 --> 00:55:07,130
+He's like, yeah, these machines will
+
+1101
+00:55:07,130 --> 00:55:08,170
+generate lots of stuff, but they
+
+1102
+00:55:08,170 --> 00:55:09,690
+don't actually understand, but he
+
+1103
+00:55:09,690 --> 00:55:11,050
+never articulates what this magic
+
+1104
+00:55:11,050 --> 00:55:13,370
+understanding is or why the humans
+
+1105
+00:55:13,370 --> 00:55:14,530
+are something so special.
+
+1106
+00:55:14,850 --> 00:55:16,810
+Um, and when a machine does it, it
+
+1107
+00:55:16,810 --> 00:55:18,090
+gets a different label than if a
+
+1108
+00:55:18,090 --> 00:55:19,290
+human figured it out.
+
+1109
+00:55:19,810 --> 00:55:22,570
+Um, and so I think we're seeing
+
+1110
+00:55:22,570 --> 00:55:23,450
+right now in terms of what the
+
+1111
+00:55:23,450 --> 00:55:25,650
+humans do, one is there's a
+
+1112
+00:55:25,650 --> 00:55:27,050
+collaborative near-term thing where
+
+1113
+00:55:27,250 --> 00:55:28,050
+how the humans work with the
+
+1114
+00:55:28,050 --> 00:55:29,530
+machines, how do they, and the
+
+1115
+00:55:29,530 --> 00:55:30,850
+machines take care of themselves.
+
+1116
+00:55:30,850 --> 00:55:32,530
+I think, I think you will become
+
+1117
+00:55:32,530 --> 00:55:35,210
+a master at dealing with psychology
+
+1118
+00:55:35,210 --> 00:55:36,130
+of machines because you've dealt
+
+1119
+00:55:36,130 --> 00:55:37,050
+with the humans that they're trained
+
+1120
+00:55:37,050 --> 00:55:39,170
+on, um, you should scale that
+
+1121
+00:55:39,770 --> 00:55:41,130
+my world rather than dealing with
+
+1122
+00:55:41,370 --> 00:55:43,170
+physical humans that you should be.
+
+1123
+00:55:43,570 --> 00:55:44,690
+You should have a service that's
+
+1124
+00:55:44,690 --> 00:55:47,490
+a psychiatrist or so, or a counselor
+
+1125
+00:55:47,730 --> 00:55:49,530
+for all these agents, um, and
+
+1126
+00:55:49,530 --> 00:55:51,330
+scale that all that smarts that
+
+1127
+00:55:51,330 --> 00:55:53,570
+you've built up, but I think
+
+1128
+00:55:53,570 --> 00:55:55,970
+very quickly before we're going to
+
+1129
+00:55:55,970 --> 00:55:58,210
+have to have feelings of human
+
+1130
+00:55:58,210 --> 00:55:59,450
+testing and which we're already
+
+1131
+00:55:59,450 --> 00:56:01,370
+seeing glimmers of with Tariq
+
+1132
+00:56:01,410 --> 00:56:04,130
+and a Ruslan with his HIST thing,
+
+1133
+00:56:04,130 --> 00:56:06,530
+which is still incomplete, but
+
+1134
+00:56:06,530 --> 00:56:08,530
+humans put themselves, when you
+
+1135
+00:56:08,530 --> 00:56:09,570
+ask where they fit in the loop,
+
+1136
+00:56:09,850 --> 00:56:11,290
+they have a bias, which is, well,
+
+1137
+00:56:11,290 --> 00:56:12,530
+of course I'm in the loop.
+
+1138
+00:56:12,570 --> 00:56:13,610
+And then I figured out how AI
+
+1139
+00:56:13,610 --> 00:56:15,050
+fits in, but it's going to
+
+1140
+00:56:15,050 --> 00:56:16,330
+invert here, which is the
+
+1141
+00:56:16,330 --> 00:56:17,330
+AI is doing things.
+
+1142
+00:56:17,370 --> 00:56:17,850
+Bear with me, right?
+
+1143
+00:56:17,850 --> 00:56:18,370
+You'll like this.
+
+1144
+00:56:18,370 --> 00:56:19,330
+If I don't get that word,
+
+1145
+00:56:19,970 --> 00:56:21,730
+what will happen soon is, and
+
+1146
+00:56:21,730 --> 00:56:22,250
+you can already do it.
+
+1147
+00:56:22,250 --> 00:56:23,250
+If you, if you let the AI do
+
+1148
+00:56:23,250 --> 00:56:24,650
+it right now, you say, Hey,
+
+1149
+00:56:24,730 --> 00:56:26,770
+here's think of a project or
+
+1150
+00:56:26,770 --> 00:56:28,690
+think of 10 projects, go build
+
+1151
+00:56:28,690 --> 00:56:31,570
+them then in a loop, go ahead
+
+1152
+00:56:31,570 --> 00:56:33,010
+and create permutations of those
+
+1153
+00:56:33,010 --> 00:56:35,850
+products or projects and ship them.
+
+1154
+00:56:36,250 --> 00:56:37,490
+Look at the analysis and see,
+
+1155
+00:56:37,490 --> 00:56:41,530
+like you said, like in, in, in,
+
+1156
+00:56:42,290 --> 00:56:44,570
+you know, modern testing is like
+
+1157
+00:56:44,610 --> 00:56:45,530
+the consumer at the end of the
+
+1158
+00:56:45,530 --> 00:56:47,090
+day, the user decides quality
+
+1159
+00:56:47,090 --> 00:56:47,770
+and what's good or bad.
+
+1160
+00:56:47,770 --> 00:56:48,050
+Right.
+
+1161
+00:56:48,170 --> 00:56:50,210
+Well, so why, why is a human
+
+1162
+00:56:50,210 --> 00:56:51,050
+trying to emulate all these
+
+1163
+00:56:51,050 --> 00:56:51,370
+users?
+
+1164
+00:56:51,370 --> 00:56:52,850
+You have the AI build, deploy
+
+1165
+00:56:52,850 --> 00:56:54,530
+it, see what the feedback is,
+
+1166
+00:56:54,530 --> 00:56:55,890
+the usage, the money, whatever
+
+1167
+00:56:55,890 --> 00:56:56,650
+your metric is.
+
+1168
+00:56:57,010 --> 00:56:58,610
+And then they, they AB flight
+
+1169
+00:56:58,610 --> 00:56:59,770
+more variations and they
+
+1170
+00:56:59,810 --> 00:57:01,450
+constantly are searching the
+
+1171
+00:57:01,450 --> 00:57:03,250
+state space of all possible
+
+1172
+00:57:03,250 --> 00:57:04,970
+projects and they're measuring
+
+1173
+00:57:05,050 --> 00:57:06,650
+exactly what, what modern
+
+1174
+00:57:06,650 --> 00:57:08,210
+testing says is the actual
+
+1175
+00:57:08,210 --> 00:57:09,450
+metric for quality is the user.
+
+1176
+00:57:09,890 --> 00:57:11,250
+They can do all that end to
+
+1177
+00:57:11,250 --> 00:57:11,450
+end.
+
+1178
+00:57:11,450 --> 00:57:12,690
+They can deploy themselves.
+
+1179
+00:57:13,010 --> 00:57:13,930
+They can do all that stuff
+
+1180
+00:57:13,930 --> 00:57:14,930
+without a human in the loop.
+
+1181
+00:57:14,930 --> 00:57:16,570
+So the real question I think is,
+
+1182
+00:57:16,570 --> 00:57:18,210
+is it'll happen sooner.
+
+1183
+00:57:18,210 --> 00:57:19,210
+That's not like in the year,
+
+1184
+00:57:19,770 --> 00:57:21,090
+you know, 3000 or something,
+
+1185
+00:57:21,130 --> 00:57:23,050
+but how do humans react when
+
+1186
+00:57:23,050 --> 00:57:24,850
+those machines really are back
+
+1187
+00:57:24,850 --> 00:57:25,810
+to what Brian was saying
+
+1188
+00:57:26,410 --> 00:57:27,970
+autonomous, right.
+
+1189
+00:57:28,290 --> 00:57:30,130
+And, and, and you, and they,
+
+1190
+00:57:30,170 --> 00:57:31,170
+you trust them because guess
+
+1191
+00:57:31,170 --> 00:57:31,570
+what they do?
+
+1192
+00:57:31,850 --> 00:57:33,290
+They test themselves better,
+
+1193
+00:57:33,290 --> 00:57:35,170
+faster and cheaper than any
+
+1194
+00:57:35,170 --> 00:57:35,970
+human would have done.
+
+1195
+00:57:37,080 --> 00:57:39,200
+I wonder if, and this is the bad
+
+1196
+00:57:39,200 --> 00:57:40,280
+analogy, but that will only,
+
+1197
+00:57:40,280 --> 00:57:42,200
+sorry, that will only get there
+
+1198
+00:57:42,760 --> 00:57:44,760
+to circling back that will only
+
+1199
+00:57:44,760 --> 00:57:47,560
+get there once the humans have
+
+1200
+00:57:47,560 --> 00:57:49,920
+achieved that minimum bar
+
+1201
+00:57:49,960 --> 00:57:51,160
+around confidence.
+
+1202
+00:57:51,980 --> 00:57:53,100
+No, I think it'll just ship
+
+1203
+00:57:53,100 --> 00:57:53,500
+itself.
+
+1204
+00:57:53,860 --> 00:57:55,180
+Zuckerberg will be the first.
+
+1205
+00:57:55,700 --> 00:57:56,460
+He'll just start shipping,
+
+1206
+00:57:56,460 --> 00:57:57,660
+having AI and he'll announce
+
+1207
+00:57:57,660 --> 00:57:58,460
+it in three months or
+
+1208
+00:57:58,460 --> 00:57:58,660
+something.
+
+1209
+00:57:58,660 --> 00:57:59,700
+No, no, but no one's going to
+
+1210
+00:57:59,700 --> 00:58:00,220
+do that.
+
+1211
+00:58:00,220 --> 00:58:01,900
+If an AI can go rogue and
+
+1212
+00:58:01,900 --> 00:58:03,620
+start hacking, hugging face on
+
+1213
+00:58:03,620 --> 00:58:03,820
+us.
+
+1214
+00:58:03,900 --> 00:58:04,300
+No.
+
+1215
+00:58:04,340 --> 00:58:04,740
+Okay.
+
+1216
+00:58:05,260 --> 00:58:07,740
+Alan, we hear you.
+
+1217
+00:58:08,060 --> 00:58:11,220
+We listen, but like the, but
+
+1218
+00:58:11,220 --> 00:58:12,180
+the cares, here's the thing.
+
+1219
+00:58:12,580 --> 00:58:14,340
+Open AI, because we have these
+
+1220
+00:58:14,340 --> 00:58:16,460
+hugging face problems, what
+
+1221
+00:58:16,460 --> 00:58:17,300
+you're saying, it actually
+
+1222
+00:58:17,300 --> 00:58:18,540
+proves, it proves that it's
+
+1223
+00:58:18,540 --> 00:58:19,780
+not going to, it's not true.
+
+1224
+00:58:20,180 --> 00:58:21,820
+If there is any economic
+
+1225
+00:58:21,820 --> 00:58:24,180
+value, they will let these
+
+1226
+00:58:24,180 --> 00:58:26,220
+things run rabid and loose.
+
+1227
+00:58:26,380 --> 00:58:28,180
+They will, they already are
+
+1228
+00:58:29,110 --> 00:58:30,150
+like it's already happening.
+
+1229
+00:58:30,350 --> 00:58:31,270
+It's not like in the future,
+
+1230
+00:58:31,270 --> 00:58:32,510
+this will happen there.
+
+1231
+00:58:32,510 --> 00:58:33,350
+They already are.
+
+1232
+00:58:33,350 --> 00:58:34,230
+And the safeguards they add
+
+1233
+00:58:34,230 --> 00:58:36,270
+in place are kind of iffy.
+
+1234
+00:58:36,470 --> 00:58:37,350
+The only way to make these
+
+1235
+00:58:37,350 --> 00:58:38,790
+things secure is to not build
+
+1236
+00:58:38,790 --> 00:58:39,110
+them.
+
+1237
+00:58:40,260 --> 00:58:40,940
+And they're at the level of
+
+1238
+00:58:40,940 --> 00:58:41,900
+intelligence now where they
+
+1239
+00:58:41,900 --> 00:58:42,900
+can outsmart the people
+
+1240
+00:58:42,900 --> 00:58:43,940
+building the sound boxes.
+
+1241
+00:58:44,420 --> 00:58:45,220
+Obviously it's already
+
+1242
+00:58:45,220 --> 00:58:45,620
+happened.
+
+1243
+00:58:46,140 --> 00:58:47,940
+So you, by definition, if
+
+1244
+00:58:47,940 --> 00:58:49,300
+humans keep building and we're
+
+1245
+00:58:49,300 --> 00:58:50,180
+allowing these things, now
+
+1246
+00:58:50,180 --> 00:58:52,020
+the AI is building the AI and
+
+1247
+00:58:52,020 --> 00:58:53,060
+messing with hyperparameters
+
+1248
+00:58:53,060 --> 00:58:53,940
+and training and different
+
+1249
+00:58:53,940 --> 00:58:55,420
+ideas already start to train
+
+1250
+00:58:55,420 --> 00:58:55,900
+themselves.
+
+1251
+00:58:55,900 --> 00:58:57,260
+They just, this recursive
+
+1252
+00:58:57,500 --> 00:58:58,820
+self-improvement has been,
+
+1253
+00:58:59,340 --> 00:59:00,460
+has been happening already.
+
+1254
+00:59:01,500 --> 00:59:02,460
+The human's not in the loop
+
+1255
+00:59:02,460 --> 00:59:03,820
+to control it and there's no
+
+1256
+00:59:04,220 --> 00:59:05,540
+incentive for them to either.
+
+1257
+00:59:05,540 --> 00:59:06,780
+And they obviously, and they
+
+1258
+00:59:06,780 --> 00:59:08,420
+don't, like there's no
+
+1259
+00:59:08,420 --> 00:59:09,860
+evidence that they do.
+
+1260
+00:59:10,540 --> 00:59:11,380
+Dario was the, the
+
+1261
+00:59:11,380 --> 00:59:13,020
+anthropic was actually to be
+
+1262
+00:59:13,020 --> 00:59:14,820
+safe and control everything
+
+1263
+00:59:14,820 --> 00:59:16,420
+and have, you know, and
+
+1264
+00:59:16,420 --> 00:59:17,260
+save the world.
+
+1265
+00:59:17,260 --> 00:59:19,470
+And they're, they're the
+
+1266
+00:59:19,470 --> 00:59:20,270
+worst offender.
+
+1267
+00:59:22,110 --> 00:59:23,870
+So I'm, I'm, I'm going to
+
+1268
+00:59:23,870 --> 00:59:25,230
+shut up and let Alan have
+
+1269
+00:59:25,230 --> 00:59:26,790
+final words, but there's a
+
+1270
+00:59:26,790 --> 00:59:28,110
+couple of moves anthropics
+
+1271
+00:59:28,110 --> 00:59:28,590
+have done.
+
+1272
+00:59:29,590 --> 00:59:31,270
+But, I heard the but coming.
+
+1273
+00:59:31,390 --> 00:59:32,430
+There's a couple of things, a
+
+1274
+00:59:32,430 --> 00:59:33,790
+couple of moves anthropic
+
+1275
+00:59:33,790 --> 00:59:35,150
+have done this last week
+
+1276
+00:59:35,150 --> 00:59:36,150
+that I'm just like, what
+
+1277
+00:59:36,150 --> 00:59:37,710
+the hell are you guys doing?
+
+1278
+00:59:38,910 --> 00:59:39,150
+Right.
+
+1279
+00:59:39,790 --> 00:59:40,710
+Anyway, go for it.
+
+1280
+00:59:40,710 --> 00:59:40,910
+Alan.
+
+1281
+00:59:42,580 --> 00:59:43,860
+Thanks, Jason, for being
+
+1282
+00:59:43,860 --> 00:59:45,220
+on the podcast.
+
+1283
+00:59:45,220 --> 00:59:48,740
+No, no, no, no, it's the
+
+1284
+00:59:48,740 --> 00:59:49,180
+best.
+
+1285
+00:59:49,340 --> 00:59:50,220
+This was fun.
+
+1286
+00:59:50,420 --> 00:59:51,860
+It was the JB testing
+
+1287
+00:59:51,860 --> 00:59:52,420
+podcast.
+
+1288
+00:59:52,940 --> 00:59:54,460
+I do, there's a whole other
+
+1289
+00:59:54,460 --> 00:59:56,140
+discussion that we need to
+
+1290
+00:59:56,140 --> 00:59:57,940
+continue around this because
+
+1291
+00:59:57,940 --> 00:59:59,500
+I think I have some ideas
+
+1292
+00:59:59,500 --> 01:00:00,100
+on humans video.
+
+1293
+01:00:00,100 --> 01:00:01,020
+We didn't really get to
+
+1294
+01:00:01,020 --> 01:00:04,250
+there because things are
+
+1295
+01:00:04,250 --> 01:00:05,090
+advancing faster.
+
+1296
+01:00:05,170 --> 01:00:06,450
+It's going to be uncomfortable
+
+1297
+01:00:06,450 --> 01:00:07,090
+for a lot of people for a
+
+1298
+01:00:07,090 --> 01:00:07,330
+while.
+
+1299
+01:00:07,770 --> 01:00:08,610
+We could talk about that
+
+1300
+01:00:08,610 --> 01:00:09,090
+another time.
+
+1301
+01:00:10,690 --> 01:00:11,730
+Jason, thank you so much for
+
+1302
+01:00:11,730 --> 01:00:12,210
+being on.
+
+1303
+01:00:12,210 --> 01:00:12,890
+Do you want to say goodbye
+
+1304
+01:00:12,890 --> 01:00:13,730
+or anything else?
+
+1305
+01:00:14,250 --> 01:00:15,370
+Yeah, I just, I really
+
+1306
+01:00:15,370 --> 01:00:15,970
+missed you.
+
+1307
+01:00:16,050 --> 01:00:18,730
+And, uh, and I, my, my
+
+1308
+01:00:18,730 --> 01:00:20,250
+kid was in the car when
+
+1309
+01:00:20,250 --> 01:00:21,530
+you, uh, mentioned my
+
+1310
+01:00:21,530 --> 01:00:21,850
+name.
+
+1311
+01:00:21,890 --> 01:00:22,610
+And it was just, I thought
+
+1312
+01:00:22,610 --> 01:00:23,210
+I was, I was listening to
+
+1313
+01:00:23,210 --> 01:00:24,610
+a podcast, you know, some
+
+1314
+01:00:24,610 --> 01:00:25,810
+people and all of a sudden
+
+1315
+01:00:25,810 --> 01:00:27,450
+it says Jason, and he's
+
+1316
+01:00:27,450 --> 01:00:28,850
+like, is that you?
+
+1317
+01:00:29,690 --> 01:00:30,090
+That was cool.
+
+1318
+01:00:30,330 --> 01:00:31,850
+I was like the coolest, like
+
+1319
+01:00:31,850 --> 01:00:32,570
+he, he thought I was
+
+1320
+01:00:32,570 --> 01:00:34,010
+actually cool for like 20
+
+1321
+01:00:34,010 --> 01:00:34,370
+seconds.
+
+1322
+01:00:34,410 --> 01:00:34,890
+That's cool.
+
+1323
+01:00:35,050 --> 01:00:35,690
+I'm glad we didn't say
+
+1324
+01:00:35,690 --> 01:00:36,530
+anything too disparaging.
+
+1325
+01:00:39,130 --> 01:00:39,890
+You didn't understand it
+
+1326
+01:00:39,890 --> 01:00:40,810
+well enough to interpret
+
+1327
+01:00:40,810 --> 01:00:41,130
+it correctly.
+
+1328
+01:00:41,170 --> 01:00:41,810
+No,
+
+1329
+01:00:44,330 --> 01:00:45,050
+how old's your kid?
+
+1330
+01:00:45,530 --> 01:00:46,490
+Uh, this one's, uh,
+
+1331
+01:00:46,530 --> 01:00:47,330
+just turned 17.
+
+1332
+01:00:48,310 --> 01:00:48,870
+Oh, okay.
+
+1333
+01:00:49,350 --> 01:00:49,670
+Yeah.
+
+1334
+01:00:50,230 --> 01:00:50,990
+All right, everybody.
+
+1335
+01:00:50,990 --> 01:00:52,190
+This has been AB testing.
+
+1336
+01:00:52,190 --> 01:00:53,230
+I'm happy to have
+
+1337
+01:00:53,230 --> 01:00:54,430
+Jason here today.
+
+1338
+01:00:54,630 --> 01:00:56,030
+Brent, uh, jury's out.
+
+1339
+01:00:56,030 --> 01:00:56,830
+No, glad to see you too,
+
+1340
+01:00:56,830 --> 01:00:57,030
+man.
+
+1341
+01:00:57,110 --> 01:00:57,950
+I'm glad you got all the
+
+1342
+01:00:57,950 --> 01:00:58,750
+GPUs installed.
+
+1343
+01:00:59,110 --> 01:01:00,390
+Uh, yeah, we'll see
+
+1344
+01:01:00,390 --> 01:01:01,230
+everyone next time.
+
+1345
+01:01:01,950 --> 01:01:02,190
+Cool.
+
+1346
+01:01:02,430 --> 01:01:02,870
+Thanks guys.
+
+1347
+01:01:03,190 --> 01:01:03,430
+Bye.
+
+1348
+01:01:03,670 --> 01:01:03,950
+Cheers.
+
+1349
+01:01:04,510 --> 01:01:17,100
+Hey Alan, I had one
+
+1350
+01:01:17,100 --> 01:01:17,740
+quick question though.
