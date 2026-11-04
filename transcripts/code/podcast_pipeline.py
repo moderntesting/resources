@@ -29,6 +29,8 @@ Flags:
   --no-push     commit but don't push
 """
 
+from __future__ import annotations  # allows `str | None` hints on Python 3.9
+
 import argparse
 import email.utils
 import glob
